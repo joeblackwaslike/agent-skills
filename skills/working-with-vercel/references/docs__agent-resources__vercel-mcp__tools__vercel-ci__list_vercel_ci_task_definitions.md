@@ -13,8 +13,8 @@ related:
 summary: Use list_vercel_ci_task_definitions with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_definitions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "259ad89191ca1d9bd9594167cce6f82e5d12c6890a016d17806a243be2a6d4bb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fd05395fd2a436f005a1c063eae6b4455214be8a1c426d0c6e4f0a06bb2409e1"
 ---
 
 # list_vercel_ci_task_definitions
@@ -30,8 +30,8 @@ List Task Definitions
 - [list_vercel_ci_job_definitions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_job_definitions) — Use list_vercel_ci_job_definitions with Vercel MCP.
 - [list_vercel_ci_task_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_runs) — Use list_vercel_ci_task_runs with Vercel MCP.
 - [list_vercel_ci_job_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_job_runs) — Use list_vercel_ci_job_runs with Vercel MCP.
-- [get_vercel_ci_job_definition](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_job_definition) — Use get_vercel_ci_job_definition with Vercel MCP.
 - [List all task definitions for a job run](https://vercel.com/docs/rest-api/vercel-ci/list-all-task-definitions-for-a-job-run) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
+- [get_vercel_ci_job_definition](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_job_definition) — Use get_vercel_ci_job_definition with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_definitions.graph.md](/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_definitions.graph.md)
 <!-- /docsgraph:related -->
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

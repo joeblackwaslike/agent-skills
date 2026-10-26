@@ -12,8 +12,8 @@ related:
 summary: Vercel helps reduce data transfer and improve performance by supporting both Gzip and Brotli compression
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/how-vercel-cdn-works/compression.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "51d905c71675edb3957b5415015d32677b959fbeda126270e00a7e1444139b4b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "005b771d96dd8dd672d902128033a21cf613b2a60074c9fddd6de18d948dd00c"
 ---
 
 # Vercel CDN Compression
@@ -26,16 +26,16 @@ Vercel helps reduce data transfer and improve performance by supporting both Gzi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Why is running another CDN on top of Vercel not recommended?](https://vercel.com/kb/guide/why-running-another-cdn-on-top-of-vercel-is-not-recommended) — Information about possible strategies when using a CDN on top of Vercel.
 - [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 - [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
-- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
 
 Full cross-link map for this page: [/docs/how-vercel-cdn-works/compression.graph.md](/docs/how-vercel-cdn-works/compression.graph.md)
 <!-- /docsgraph:related -->
@@ -125,3 +125,6 @@ For example, most image formats are already compressed such as JPEG, PNG, WebP, 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

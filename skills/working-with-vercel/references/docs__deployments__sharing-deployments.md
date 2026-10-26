@@ -16,8 +16,8 @@ related:
 summary: Learn how to share a preview deployment with your team and external collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/sharing-deployments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3d6a91d4d0a6b5af9fd2bc4ed913e38f6142fdf00bb7fdb2d9c39257de711725"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dd51d784d342e64468176c673f307aa28cc413cf9611da437955465caff56f8d"
 ---
 
 # Sharing a Preview Deployment
@@ -36,8 +36,9 @@ By default, members of your [Vercel team](/docs/accounts#creating-a-team) that h
 - [Invite collaborators to view and comment on your deployments](https://vercel.com/changelog/invite-collaborators-to-view-and-comment-on-your-deployments)
 - [Preview deployments for retail campaign review](https://vercel.com/kb/guide/preview-deployments-retail-campaign-review) — Use preview deployments so merchandising, brand, and engineering review a retail campaign on one live URL before launch.
 - [Protected Preview Deployments available on all plans](https://vercel.com/changelog/protected-preview-deployments-available-on-all-plans)
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
+- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/sharing-deployments.graph.md](/docs/deployments/sharing-deployments.graph.md)
@@ -118,3 +119,6 @@ Deployment protection allows you to secure your preview deployments, with [Authe
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

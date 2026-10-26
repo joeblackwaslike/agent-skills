@@ -1,51 +1,39 @@
 ---
 title: Next.js Pages Router
-description: Learn how to build your first agent with the AI SDK and Next.js Pages Router.
+description: Add an agent with a streaming chat interface to an existing Next.js Pages Router application.
 url: "https://ai-sdk.dev/docs/getting-started/nextjs-pages-router"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nextjs-pages-router.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "5a4e6314c81177d33ca1d8a23c4d28d3ed92ba222a0c84bc5ee91fb67598b372"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "51692eeb7e048cc410a68e377160f49d2e1754ea90964c0a93114726ce2c5592"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
-The AI SDK is a powerful TypeScript library designed to help developers build AI-powered applications.
+This guide shows how to add an agent with a streaming chat user interface to an existing Next.js Pages Router application.
 
-In this quickstart tutorial, you'll build a simple agent with a streaming chat user interface. Along the way, you'll learn key concepts and techniques that are fundamental to using the AI SDK in your own projects.
+For new applications, we recommend the [Next.js App Router
+quickstart](/docs/getting-started/nextjs-app-router).
 
 If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/prompt-engineering) and [HTTP Streaming](/docs/foundations/streaming), you can optionally read these documents first.
 
 ## Prerequisites
 
-To follow this quickstart, you'll need:
+To follow this guide, you'll need:
 
+- An existing Next.js 13+ application using the Pages Router.
 - Node.js 22+ and pnpm installed on your local development machine.
-- A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
+- A [Vercel AI Gateway](https://vercel.com/ai-gateway) API key.
 
 If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
-## Setup Your Application
+## Set Up Your Application
 
-Start by creating a new Next.js application. This command will create a new directory named `my-ai-app` and set up a basic Next.js application inside it.
-
-Be sure to select no when prompted to use the App Router. If you are looking
-for the Next.js App Router quickstart guide, you can find it
-[here](/docs/getting-started/nextjs-app-router).
-
-```
-pnpm create next-app@latest my-ai-app
-```
-
-Navigate to the newly created directory:
-
-```
-cd my-ai-app
-```
+Open a terminal in the root directory of your existing Next.js Pages Router application.
 
 ### Install dependencies
 
-Install `ai` and `@ai-sdk/react`, the AI package and AI SDK's React hooks. The AI SDK's [ Vercel AI Gateway provider ](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
+Install `ai` and `@ai-sdk/react`, the AI package and AI SDK's React hooks. The AI SDK's [Vercel AI Gateway provider](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
 
 This guide uses the Vercel AI Gateway provider so you can access hundreds of
 models from different providers with one API key, but you can switch to any
@@ -117,9 +105,9 @@ This Route Handler creates a POST request endpoint at `/api/chat`.
 
 ## Choosing a Provider
 
-The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [ community ](/providers/community-providers) packages.
+The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) packages.
 
-This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
+This guide uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
 ```ts
 model: "anthropic/claude-sonnet-5.5";
@@ -159,7 +147,7 @@ Pick the approach that best matches how you want to manage providers across your
 
 ## Wire up the UI
 
-Now that you have an API route that can query an LLM, it's time to set up your frontend. The AI SDK's [ UI ](/docs/ai-sdk-ui) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
+Now that you have an API route that can query an LLM, it's time to set up your frontend. The AI SDK's [UI](/docs/ai-sdk-ui) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
 
 Update your root page (`pages/index.tsx`) with the following code to show a list of chat messages and provide a user message input:
 

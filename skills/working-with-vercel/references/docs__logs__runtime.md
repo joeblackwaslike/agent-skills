@@ -16,13 +16,13 @@ related:
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "29fcb8152d6860b129838f98f8b0537e31126174e0a48b8f56e13e38bd867e99"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "288bedf8e5cf4db245ca212436a3011d338f4509674200687c53a2c9a2fb6506"
 ---
 
 # Runtime Logs
 
-> **Availability**: Runtime Logs are available on all plans
+> Runtime Logs are available on all plans
 
 The **Logs** section in the sidebar allows you to view, search, inspect, and [share](#log-sharing) your runtime logs without any third-party integration. You can also filter and group your [runtime logs](#what-are-runtime-logs) based on the relevant fields.
 
@@ -39,9 +39,9 @@ The **Logs** section in the sidebar allows you to view, search, inspect, and [sh
 - [Improved streaming runtime logs exports](https://vercel.com/changelog/improved-streaming-runtime-logs-exports)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Building Ecommerce Sites with Next.js and Shopify](https://vercel.com/kb/guide/building-ecommerce-sites-with-next-js-and-shopify) — Learn how to integrate Next.js and Shopify together for the fastest storefronts using the Storefront GraphQL API.
+- [Migrate Fly.io worker processes to Vercel Daemons](https://vercel.com/kb/guide/migrate-fly-io-workers-to-vercel-daemons) — Migrate Fly.io workers to Vercel Daemons with your existing Dockerfile. Map process settings, preserve queue state, and
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [How to deploy a Python backend with Vercel Services ](https://vercel.com/kb/guide/python-backend-on-vercel) — Deploy a Python backend with a Next.js frontend on Vercel. Learn how to configure both apps with Vercel Services, use a
-- [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 
@@ -279,3 +279,6 @@ With [Observability Plus](/docs/observability/observability-plus), you can view 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

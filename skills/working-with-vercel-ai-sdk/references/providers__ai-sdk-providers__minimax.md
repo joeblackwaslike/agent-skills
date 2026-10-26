@@ -1,11 +1,11 @@
 ---
 title: MiniMax
-description: Learn how to use MiniMax models with the AI SDK.
+description: Learn how to use MiniMax with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "939a851b67b77eec0f9e96662b8a808c0821b5d75477157f600133e92d78961a"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "f93b6feda9b84b24d4fdc41af0afb09268dad9e74f3a3dc866405523d0d9acb9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -13,16 +13,59 @@ sha256: "939a851b67b77eec0f9e96662b8a808c0821b5d75477157f600133e92d78961a"
 The [MiniMax](https://www.minimax.io) provider offers access to the MiniMax-M
 series of language models through the MiniMax API, including models with
 reasoning capabilities, as well as video generation with the MiniMax-H series.
+You can use MiniMax models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/minimax`.
 
-API keys can be obtained from the [MiniMax Platform](https://platform.minimax.io).
+```ts provider="minimax" model="minimax/minimax-m3"
+import { generateText } from 'ai';
 
-## Setup
+const { text } = await generateText({
+  model: "minimax/minimax-m3",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
 
-The MiniMax provider is available via the `@ai-sdk/minimax` module. You can install it with:
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/minimax
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/minimax`
+
+For direct access to MiniMax, install `ai` and `@ai-sdk/minimax`:
+
+```bash
+pnpm add ai @ai-sdk/minimax
+```
+
+Set your MiniMax API credential in the `MINIMAX_API_KEY` environment variable:
+
+```bash
+export MINIMAX_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/minimax`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/minimax` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
+
+API keys can be obtained from the [MiniMax Platform](https://platform.minimax.io).
 
 ## Provider Instance
 
@@ -97,6 +140,138 @@ const model = minimax.languageModel('minimax-m3');
 MiniMax language models can be used in the `streamText` function
 (see [AI SDK Core](/docs/ai-sdk-core)).
 
+### Sampling Parameters
+
+For MiniMax M3.1 and later model IDs, `temperature` accepts values from `0` to `2`, and
+`topP` accepts values from `0` to `1`. Both are forwarded when adaptive thinking
+is explicitly enabled or when using the top-level `reasoning` setting.
+Omit them to use MiniMax's defaults.
+
+```ts
+const { text } = await generateText({
+  model: minimax('minimax-m3.1-flash'),
+  temperature: 1.5,
+  topP: 0.9,
+  reasoning: 'low',
+  maxOutputTokens: 16384,
+  prompt: 'Invent three names for a café on the moon.',
+});
+```
+
+### Prompt Caching
+
+For MiniMax M3.1 and later model IDs, mark stable text with
+`providerOptions.minimax.cacheControl`. The provider forwards it as
+`cache_control` on the corresponding API content block. You can also set it on
+a system message, or on a user message to mark its final content block.
+
+```ts
+import { minimax, type MiniMaxCacheControlOptions } from '@ai-sdk/minimax';
+import { generateText } from 'ai';
+
+const result = await generateText({
+  model: minimax('minimax-m3.1-flash'),
+  reasoning: 'low',
+  maxOutputTokens: 16384,
+  messages: [
+    {
+      role: 'user',
+      content: [
+        {
+          type: 'text',
+          text: 'Long reference material reused across requests...',
+          providerOptions: {
+            minimax: {
+              cacheControl: { type: 'ephemeral' },
+            } satisfies MiniMaxCacheControlOptions,
+          },
+        },
+        { type: 'text', text: 'Summarize the reference material.' },
+      ],
+    },
+  ],
+});
+
+console.log(result.usage.inputTokenDetails.cacheReadTokens);
+console.log(result.usage.inputTokenDetails.cacheWriteTokens);
+```
+
+Keep the stable prefix unchanged and place the changing question after it.
+A cache marker does not guarantee a hit; inspect cache-read token usage to check
+whether cached content was reused. This option does not specify a cache lifetime.
+
+Existing `providerOptions.anthropic.cacheControl` settings continue to work.
+When both namespaces specify cache control on the same block, `minimax` takes
+precedence.
+
+### Image and Video Input
+
+MiniMax M3.1 and later model IDs accept images and videos in user messages with both
+`generateText` and `streamText`. Pass file bytes, base64 data, or a public HTTP(S)
+URL. URLs are sent directly to MiniMax.
+
+```ts
+import { minimax, type MiniMaxVideoPartOptions } from '@ai-sdk/minimax';
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: minimax('minimax-m3.1-flash'),
+  maxOutputTokens: 16384,
+  messages: [
+    {
+      role: 'user',
+      content: [
+        { type: 'text', text: 'Summarize this video.' },
+        {
+          type: 'file',
+          mediaType: 'video/mp4',
+          data: new URL('https://example.com/video.mp4'),
+          providerOptions: {
+            minimax: { fps: 1 } satisfies MiniMaxVideoPartOptions,
+          },
+        },
+      ],
+    },
+  ],
+});
+```
+
+Set media options on each file part under `providerOptions.minimax`:
+
+- **Video `fps`** *number*: Frame sampling rate from `0.2` to `5`. Omit it to use
+  the server default. The recommended starting value is `1`.
+- **Image `detail`** *'low' | 'default' | 'high'*: Image processing detail. Higher
+  detail can use more tokens. Use `MiniMaxImagePartOptions` for this option.
+
+For example, an image part can specify
+`providerOptions: { minimax: { detail: 'high' } }` with `mediaType: 'image/png'`.
+
+For videos already uploaded to MiniMax, pass a provider reference:
+
+```ts
+const videoPart = {
+  type: 'file' as const,
+  mediaType: 'video/mp4',
+  data: {
+    type: 'reference' as const,
+    reference: { minimax: 'your-uploaded-file-id' },
+  },
+  providerOptions: { minimax: { fps: 1 } },
+};
+```
+
+The reference becomes `mm_file://your-uploaded-file-id`. A reference already
+starting with `mm_file://` is also accepted. Use the reference object rather than
+passing an `mm_file://` string as file data. Uploads are managed separately through
+the MiniMax Files API; this provider does not upload the file automatically.
+
+MiniMax documents JPEG, PNG, GIF, and WebP images (up to 10 MB), and MP4, AVI,
+MOV, and MKV videos (up to 50 MB for inline or URL input). Uploaded videos can be
+up to 512 MB. The request body limit is 64 MB, including base64 overhead. Audio
+input is not supported. See the
+[MiniMax API docs](https://platform.minimax.io/docs/api-reference/text-anthropic-api)
+for details.
+
 ### Reasoning
 
 MiniMax-M models can produce intermediate reasoning ("thinking") before their
@@ -123,9 +298,61 @@ console.log(text);
 
 See [AI SDK UI: Chatbot](/docs/ai-sdk-ui/chatbot#reasoning) for more details on how to integrate reasoning into your chatbot.
 
+#### Reasoning Effort
+
+MiniMax M3.1 Flash always reasons. Use `effort` to control reasoning depth:
+
+```ts
+import { minimax, type MiniMaxLanguageModelOptions } from '@ai-sdk/minimax';
+import { generateText } from 'ai';
+
+const { text, reasoningText } = await generateText({
+  model: minimax('minimax-m3.1-flash'),
+  maxOutputTokens: 16384,
+  providerOptions: {
+    minimax: {
+      effort: 'low',
+    } satisfies MiniMaxLanguageModelOptions,
+  },
+  prompt:
+    'What is the smallest positive integer divisible by every integer from 1 to 10?',
+});
+
+console.log(reasoningText);
+console.log(text);
+```
+
+The output token budget includes both reasoning and the final answer. Higher
+effort levels may need a larger budget.
+
+You can also use the top-level `reasoning` setting with MiniMax M3.1 and later model IDs:
+
+```ts
+const { text } = await generateText({
+  model: minimax('minimax-m3.1-flash'),
+  reasoning: 'high',
+  maxOutputTokens: 16384,
+  prompt:
+    'What is the smallest positive integer divisible by every integer from 1 to 10?',
+});
+```
+
+The levels `'low'`, `'medium'`, `'high'`, `'xhigh'`, and `'max'` map directly to
+MiniMax's effort levels. `'minimal'` maps to `'low'` with a compatibility warning.
+For M3.1 and later model IDs, `'none'` also maps to `'low'` with a
+compatibility warning. Omitting `reasoning` or setting it to `'provider-default'`
+leaves the server default unchanged. An explicit `providerOptions.minimax.effort`
+takes precedence over `reasoning`.
+
 ### Provider Options
 
 The following optional provider options are available for MiniMax language models:
+
+- **effort** *'low' | 'medium' | 'high' | 'xhigh' | 'max'*
+
+  Controls reasoning depth for MiniMax M3.1 and later model IDs. Higher levels can use more
+  reasoning tokens and increase latency. Maps to `output_config.effort` in the
+  MiniMax API. When omitted, the server uses its default (`'max'` for M3.1 Flash).
 
 - **thinking** *object*
 
@@ -139,7 +366,8 @@ The following optional provider options are available for MiniMax language model
   When omitted, the model uses its provider-side default.
 
   Thinking control is only supported on `minimax-m3`. The M2.x models always
-  think, so `'disabled'` has no effect on them.
+  think, so `'disabled'` has no effect on them. `MiniMax-M3.1-Flash` always
+  thinks and returns an error if `'disabled'` is sent.
 
 ## Video Models
 
@@ -367,6 +595,7 @@ MiniMax video results include `providerMetadata.minimax`:
 
 | Model                    | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ------------------------ | ----------- | ----------------- | ---------- | -------------- |
+| `MiniMax-M3.1-Flash`     | ✓           | ✓                 | ✓          | ✓              |
 | `minimax-m3`             | ✗           | ✓                 | ✓          | ✓              |
 | `minimax-m2.7`           | ✗           | ✓                 | ✓          | ✓              |
 | `minimax-m2.7-highspeed` | ✗           | ✓                 | ✓          | ✓              |

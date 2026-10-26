@@ -16,8 +16,8 @@ related:
 summary: Move your installation of a Native Integration from one Vercel team to another, including its resources and prepayment balances.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/transferring-an-integration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3e478943205d1a936ba52a7331f48c546832b87084095e6c77a2430af3b3b228"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9f9f3c8ade0aa9eae133e2e1f037ccdd2b9a95b3d07573f860b0a8337b83b495"
 ---
 
 # Transferring an Integration
@@ -31,12 +31,11 @@ You can transfer your installation of a [Native Integration](/docs/integrations/
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Transfer Marketplace resources between teams](https://vercel.com/changelog/transfer-marketplace-resources-between-teams)
-- [Transfer Vercel projects with zero downtime](https://vercel.com/blog/transfer-vercel-projects-with-zero-downtime)
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Requirements for listing an Integration](https://vercel.com/docs/integrations/create-integration/submit-integration) — Learn about all the requirements and guidelines needed when creating your Integration.
 - [Create an Integration](https://vercel.com/docs/integrations/create-integration) — Learn how to create and manage your own integration for internal or public use with Vercel.
-- [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
+- [Requirements for listing an Integration](https://vercel.com/docs/integrations/create-integration/submit-integration) — Learn about all the requirements and guidelines needed when creating your Integration.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/transferring-an-integration.graph.md](/docs/integrations/install-an-integration/transferring-an-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -106,3 +105,6 @@ After the transfer, reconnect each project to the integration on the target team
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

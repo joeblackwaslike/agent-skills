@@ -16,13 +16,13 @@ related:
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a9720079cc3f7c090c0eee131e45dd903b943bb776144c5e4e566f417af20611"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ca2b181b7c7d123b4d40e070cc7bb9b38801c5bfc0c325e7af9f67317e488aaa"
 ---
 
 # Storage on Vercel Marketplace
 
-> **Availability**: Marketplace Storage Integrations are available on all plans
+> Marketplace Storage Integrations are available on all plans
 
 The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provides integrations with different storage providers to provision databases and data stores directly from your Vercel dashboard.
 
@@ -42,8 +42,8 @@ The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provid
 - [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
-- [Integrated billing for Supabase, Redis, and EdgeDB](https://vercel.com/changelog/integrated-billing-for-supabase-redis-and-edgedb)
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 
 Full cross-link map for this page: [/docs/marketplace-storage.graph.md](/docs/marketplace-storage.graph.md)
 <!-- /docsgraph:related -->
@@ -252,3 +252,6 @@ Consider these factors when selecting a storage provider:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

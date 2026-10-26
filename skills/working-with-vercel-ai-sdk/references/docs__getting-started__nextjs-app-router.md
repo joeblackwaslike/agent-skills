@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Next.js App
 url: "https://ai-sdk.dev/docs/getting-started/nextjs-app-router"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nextjs-app-router.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "09570f4ade5079702d012cdfa83382c5b731ec17d92e08db5e307c096d54540b"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "e3bf766c122af7a8bdf75fbaaa3cd4369196fb726c95829caf694d6bcf2d89fe"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,7 +21,7 @@ If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/p
 To follow this quickstart, you'll need:
 
 - Node.js 22+ and pnpm installed on your local development machine.
-- A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
+- A [Vercel AI Gateway](https://vercel.com/ai-gateway) API key.
 
 If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
@@ -31,8 +31,8 @@ Start by creating a new Next.js application. This command will create a new dire
 
 <div className="mb-4">
   Be sure to select yes when prompted to use the App Router and Tailwind CSS.
-  If you are looking for the Next.js Pages Router quickstart guide, you can
-  find it [here](/docs/getting-started/nextjs-pages-router).
+  If you are adding the AI SDK to an existing Pages Router application, follow
+  the [Pages Router guide](/docs/getting-started/nextjs-pages-router).
 </div>
 
 ```
@@ -47,7 +47,7 @@ cd my-ai-app
 
 ### Install dependencies
 
-Install `ai` and `@ai-sdk/react`, the AI package and AI SDK's React hooks. The AI SDK's [ Vercel AI Gateway provider ](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
+Install `ai` and `@ai-sdk/react`, the AI package and AI SDK's React hooks. The AI SDK's [Vercel AI Gateway provider](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
 
 This guide uses the Vercel AI Gateway provider so you can access hundreds of
 models from different providers with one API key, but you can switch to any
@@ -115,7 +115,7 @@ This Route Handler creates a POST request endpoint at `/api/chat`.
 
 ## Choosing a Provider
 
-The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [ community ](/providers/community-providers) packages.
+The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) packages.
 
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
@@ -157,7 +157,7 @@ Pick the approach that best matches how you want to manage providers across your
 
 ## Wire up the UI
 
-Now that you have a Route Handler that can query an LLM, it's time to setup your frontend. The AI SDK's [ UI ](/docs/ai-sdk-ui) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
+Now that you have a Route Handler that can query an LLM, it's time to set up your frontend. The AI SDK's [UI](/docs/ai-sdk-ui) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
 
 Update your root page (`app/page.tsx`) with the following code to show a list of chat messages and provide a user message input:
 

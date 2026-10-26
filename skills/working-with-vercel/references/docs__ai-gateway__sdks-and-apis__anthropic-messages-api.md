@@ -17,8 +17,8 @@ related:
 summary: Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images, and extended thinking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e84d2622df112687e3510ebdcf81f2655c31e7d272b2e838e24bafd3e0ee0e42"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7d9c9c13d606faef4744bf46f48d644c02858bf473e856699283bc7b8d31f0b2"
 ---
 
 # Anthropic Messages API with AI Gateway
@@ -35,12 +35,14 @@ AI Gateway provides Anthropic Messages API endpoints, so you can use the Anthrop
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
 - [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway)
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
-- [Mistral Large 4 now available on AI Gateway](https://vercel.com/changelog/mistral-large-4-now-available-on-ai-gateway)
-- [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use the Claude Platform on AWS provider.
+- [Kimi K3.1 Pro and Kimi K3.1 Pro Highspeed are available now in AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-and-kimi-k3-1-pro-highspeed-are-available-now-in-ai-gateway)
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
+- [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
 - [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk) — Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed brief
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
+- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
+- [AI Gateway Anthropic Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic) — Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 - [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.graph.md)
 <!-- /docsgraph:related -->
@@ -72,6 +74,11 @@ The AI Gateway supports the following Anthropic Messages API endpoints:
 
 - [`POST /v1/messages`](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) - Create messages, with support for [streaming](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming), [tool calling](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling), [extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning), [structured outputs](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs), and [images](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images)
 - `POST /v1/messages/count_tokens` - [Count tokens](https://docs.anthropic.com/en/docs/build-with-claude/token-counting) in a message before sending it to Claude, for managing context windows and costs
+
+* [`POST /v1/messages/batches`](#message-batches) - Create a message batch
+* [`GET /v1/messages/batches`](#message-batches) - List message batches
+* [`GET /v1/messages/batches/{batch_id}`](#message-batches) - Retrieve a message batch
+* [`GET /v1/messages/batches/{batch_id}/results`](#message-batches) - Read message batch results
 
 For advanced features, see:
 
@@ -197,6 +204,177 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
     ]
   }'
 ```
+
+## Message batches
+
+Use the Anthropic SDK's `client.messages.batches` methods to submit requests for asynchronous processing, poll for completion, and read results.
+
+> **💡 Note:** Message batches are in early access. Your team must have access enabled before
+> you can submit a batch through AI Gateway.
+
+### Submit a batch and read results
+
+Install `@anthropic-ai/sdk` for TypeScript or JavaScript, or `anthropic` for Python. Set `AI_GATEWAY_API_KEY` to your AI Gateway API key. Use `https://ai-gateway.vercel.sh` as the SDK base URL, without `/v1`.
+
+Set `AI_GATEWAY_BATCH_IDEMPOTENCY_KEY` to a value you persist for this batch, such as `sentiment-eval-2026-09-17`. Reuse that value and the identical payload when retrying submission. AI Gateway returns the existing batch for a matching retry. A new key creates a new batch; reusing a key with a different payload returns an error.
+
+The example prints the batch ID, checks status up to 20 times at 30-second intervals, and reads results when processing ends:
+
+#### TypeScript
+
+```typescript filename="batch.ts"
+import Anthropic from '@anthropic-ai/sdk';
+import { setTimeout } from 'node:timers/promises';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+const key = process.env.AI_GATEWAY_BATCH_IDEMPOTENCY_KEY;
+if (!key) throw new Error('Set AI_GATEWAY_BATCH_IDEMPOTENCY_KEY');
+
+let batch = await client.messages.batches.create(
+  {
+    requests: [{
+      custom_id: 'review-1',
+      params: {
+        model: 'anthropic/claude-haiku-4.5',
+        max_tokens: 64,
+        messages: [{ role: 'user', content: 'Classify as positive or negative: I love this app.' }],
+      },
+    }],
+  },
+  { headers: { 'Idempotency-Key': key } },
+);
+console.log('Batch ID:', batch.id);
+
+for (let attempt = 0; attempt < 20 && batch.processing_status !== 'ended'; attempt++) {
+  await setTimeout(30_000);
+  batch = await client.messages.batches.retrieve(batch.id);
+}
+if (batch.processing_status !== 'ended') {
+  throw new Error(`Still processing. Resume polling batch ${batch.id} later.`);
+}
+if (!batch.results_url) {
+  throw new Error(`No downloadable results for batch ${batch.id}.`);
+}
+
+const results = await client.messages.batches.results(batch.id);
+for await (const item of results) {
+  if (item.result.type === 'succeeded') {
+    console.log(item.custom_id, item.result.message.content);
+  } else {
+    console.error(item.custom_id, item.result);
+  }
+}
+```
+
+#### JavaScript
+
+```javascript filename="batch.mjs"
+import Anthropic from '@anthropic-ai/sdk';
+import { setTimeout } from 'node:timers/promises';
+
+const client = new Anthropic({
+  apiKey: process.env.AI_GATEWAY_API_KEY,
+  baseURL: 'https://ai-gateway.vercel.sh',
+});
+const key = process.env.AI_GATEWAY_BATCH_IDEMPOTENCY_KEY;
+if (!key) throw new Error('Set AI_GATEWAY_BATCH_IDEMPOTENCY_KEY');
+
+let batch = await client.messages.batches.create(
+  {
+    requests: [{
+      custom_id: 'review-1',
+      params: {
+        model: 'anthropic/claude-haiku-4.5',
+        max_tokens: 64,
+        messages: [{ role: 'user', content: 'Classify as positive or negative: I love this app.' }],
+      },
+    }],
+  },
+  { headers: { 'Idempotency-Key': key } },
+);
+console.log('Batch ID:', batch.id);
+
+for (let attempt = 0; attempt < 20 && batch.processing_status !== 'ended'; attempt++) {
+  await setTimeout(30_000);
+  batch = await client.messages.batches.retrieve(batch.id);
+}
+if (batch.processing_status !== 'ended') {
+  throw new Error(`Still processing. Resume polling batch ${batch.id} later.`);
+}
+if (!batch.results_url) {
+  throw new Error(`No downloadable results for batch ${batch.id}.`);
+}
+
+const results = await client.messages.batches.results(batch.id);
+for await (const item of results) {
+  if (item.result.type === 'succeeded') {
+    console.log(item.custom_id, item.result.message.content);
+  } else {
+    console.error(item.custom_id, item.result);
+  }
+}
+```
+
+#### Python
+
+```python filename="batch.py"
+import os
+import time
+import anthropic
+
+client = anthropic.Anthropic(
+    api_key=os.environ['AI_GATEWAY_API_KEY'],
+    base_url='https://ai-gateway.vercel.sh',
+)
+batch = client.messages.batches.create(
+    requests=[{
+        'custom_id': 'review-1',
+        'params': {
+            'model': 'anthropic/claude-haiku-4.5',
+            'max_tokens': 64,
+            'messages': [{'role': 'user', 'content': 'Classify as positive or negative: I love this app.'}],
+        },
+    }],
+    extra_headers={'Idempotency-Key': os.environ['AI_GATEWAY_BATCH_IDEMPOTENCY_KEY']},
+)
+print('Batch ID:', batch.id, flush=True)
+
+for _ in range(20):
+    if batch.processing_status == 'ended':
+        break
+    time.sleep(30)
+    batch = client.messages.batches.retrieve(batch.id)
+if batch.processing_status != 'ended':
+    raise RuntimeError(f'Still processing. Resume polling batch {batch.id} later.')
+if not batch.results_url:
+    raise RuntimeError(f'No downloadable results for batch {batch.id}.')
+
+for item in client.messages.batches.results(batch.id):
+    if item.result.type == 'succeeded':
+        print(item.custom_id, item.result.message.content)
+    else:
+        print(item.custom_id, item.result)
+```
+
+Save the printed batch ID to resume polling with `client.messages.batches.retrieve` later. The batch keeps processing after the example stops waiting.
+
+When processing ends, a non-null `results_url` indicates that results are available. The SDK uses this URL when you call `results`. Individual requests can still fail. Match each result to its request by `custom_id`, regardless of result order. Successful results include `result.message`; other results report `errored`, `canceled`, or `expired`.
+
+### List batches
+
+Use `await client.messages.batches.list({ limit: 20 })` in TypeScript or JavaScript, or `client.messages.batches.list(limit=20)` in Python. The default page size is 20, with a maximum of 100. Pass either `after_id` or `before_id` to paginate, never both.
+
+### Batch requirements
+
+- Submit up to 1,000 requests per batch, all using the same model.
+- Give each request a unique `custom_id` of 1–64 characters using letters, numbers, underscores, or hyphens (`[A-Za-z0-9_-]`).
+- Batch requests don't support streaming, provider-executed tools, or Model Context Protocol (MCP) servers.
+- Batch cancellation and deletion aren't supported through AI Gateway.
+- You can use [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok) credentials saved to your team. Request-scoped raw provider keys aren't supported.
+- [Zero Data Retention (ZDR)](/docs/ai-gateway/security-and-compliance/zdr) isn't available for batches.
 
 ## Parameters
 
@@ -424,3 +602,6 @@ The API returns standard HTTP status codes and error responses:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

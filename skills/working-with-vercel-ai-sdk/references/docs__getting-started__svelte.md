@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Svelte.
 url: "https://ai-sdk.dev/docs/getting-started/svelte"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/svelte.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "1040c32e7e291e034df02f242fc6b1843023f000d4a499588ab4a98d976a968d"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "709da493c2ca9f09c1dc77d85afe459ac0deed3c674db9cebfca716eb7a18c0e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,7 +21,7 @@ If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/p
 To follow this quickstart, you'll need:
 
 - Node.js 22+ and pnpm installed on your local development machine.
-- A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
+- A [Vercel AI Gateway](https://vercel.com/ai-gateway) API key.
 
 If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
@@ -41,7 +41,7 @@ cd my-ai-app
 
 ### Install Dependencies
 
-Install `ai` and `@ai-sdk/svelte`, the AI package and AI SDK's Svelte bindings. The AI SDK's [ Vercel AI Gateway provider ](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
+Install `ai` and `@ai-sdk/svelte`, the AI package and AI SDK's Svelte bindings. The AI SDK's [Vercel AI Gateway provider](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
 
 This guide uses the Vercel AI Gateway provider so you can access hundreds of
 models from different providers with one API key, but you can switch to any
@@ -120,7 +120,7 @@ Let's take a look at what is happening in this code:
 
 ## Choosing a Provider
 
-The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [ community ](/providers/community-providers) packages.
+The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) packages.
 
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 

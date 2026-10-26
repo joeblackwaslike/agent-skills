@@ -14,8 +14,8 @@ related:
 summary: Monitor AI Gateway requests in the Vercel dashboard. Inspect token usage, latency, spend, and logs at team, project, and API key scopes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2e54c4d5feb655eb1b514d68fbcef7d3201234b71bc2aeb5b19199afac21928f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "403cbb52d4677d24ef7f974ab7c278069ac137a8061b919e5d51535d23e4d59d"
 ---
 
 # AI Gateway Observability
@@ -111,3 +111,6 @@ Once in project scope, you'll see the same metrics filtered to show only the act
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

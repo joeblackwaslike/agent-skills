@@ -12,13 +12,13 @@ related:
 summary: Requires review of usage of the beforeInteractive strategy in Script (next/script) elements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_before_interactive.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "d29fc2e3697281a3dce066a70835978dabf6827e6b1c14dfac84a832b1dd6fac"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "40f74deba9656daa7414045f2f25cb994b8a8cedbe4b42b416fe7d7ff107d08f"
 ---
 
 # NEXTJS_NO_BEFORE_INTERACTIVE
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 The default [loading strategy](https://nextjs.org/docs/basic-features/script#strategy)
 for [`next/script`](https://nextjs.org/docs/basic-features/script) is optimised
@@ -57,3 +57,6 @@ exception should be added to the allowlist.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

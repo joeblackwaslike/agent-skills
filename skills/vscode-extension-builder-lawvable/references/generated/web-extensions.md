@@ -1,8 +1,8 @@
 ---
 title: "Web Extensions"
 source: "https://code.visualstudio.com/api/extension-guides/web-extensions"
-fetched_at: "2026-10-19T09:38:05.422Z"
-sha256: "0ed381a54258aa515a15d34a3959b7f9faaf55195b0ae3026c9be672ede7d386"
+fetched_at: "2026-10-26T09:46:27.214Z"
+sha256: "dfb3af7d04fcf494b93a4e7aa8c51734fe8d5d2eb09c85863a4947e067e2de74"
 ---
 
 # Web Extensions
@@ -396,6 +396,25 @@ $ mkdir -p $HOME/certs
 $ cd $HOME/certs
 $ mkcert -install
 $ mkcert localhost
+```
+
+vscode.dev is [cross-origin isolated](https://developer.mozilla.org/docs/Web/API/Window/crossOriginIsolated), so some extension resources served from localhost, including extension icons and classic worker scripts, require the `Cross-Origin-Resource-Policy: cross-origin` header. Without this header, icons fail to load (the console shows `ERR_BLOCKED_BY_RESPONSE.NotSameOriginAfterDefaultedToSameOriginByCoep`), and browser-based language servers that run in web workers might not start. The `--cors` option of `serve` doesn't add this header, so create a `serve.json` file in your extension folder:
+
+
+```
+{
+  "headers": [
+    {
+      "source": "**/*",
+      "headers": [
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "cross-origin"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 Then, from your extension's path, start an HTTP server by running `npx serve`:
@@ -855,4 +874,4 @@ export function run(): Promise&#x3C;void> {
 - [lsp-web-extension-sample](https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-web-extension-sample)
 
  
- 10/14/2026
+ 10/21/2026

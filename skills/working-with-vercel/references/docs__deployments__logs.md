@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "18de16328125df67de67eb81ce9c99ca92af6cd9ddc9b3128ce18df77abfe2bd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f066c81d13bee24b2e92e87f7b628aceff462eb7c8b7dd1efdb0a242637e4d0d"
 ---
 
 # Accessing Build Logs
@@ -38,9 +38,9 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How do I resolve a 'module not found' error?](https://vercel.com/kb/guide/how-do-i-resolve-a-module-not-found-error) — Information on resolving a 'module not found' error.
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [How Vercel Agent accesses production safely](https://vercel.com/blog/how-vercel-agent-accesses-production-safely)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [Logs](https://vercel.com/docs/logs) — Use logs to find information on deployment builds, function executions, and more.
-- [Link and share Build Logs](https://vercel.com/changelog/link-and-share-build-logs)
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md)
@@ -89,3 +89,6 @@ You can use [Drains](/docs/drains) to export, store, and analyze your build logs
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

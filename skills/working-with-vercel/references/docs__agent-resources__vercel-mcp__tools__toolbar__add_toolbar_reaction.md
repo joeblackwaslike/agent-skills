@@ -13,8 +13,8 @@ related:
 summary: Use add_toolbar_reaction with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ae41bc1666f1483a61eb9d888cda881761297803f0cb04fc0a12fd80e8ec5af9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "050805efa73d899641455da14ab1f9ed0723c4e86e49314d98f6607a2414d182"
 ---
 
 # add_toolbar_reaction
@@ -29,8 +29,8 @@ Add an emoji reaction to a message in a toolbar thread.
 
 - [reply_to_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/reply_to_toolbar_thread) — Use reply_to_toolbar_thread with Vercel MCP.
 - [edit_toolbar_message](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/edit_toolbar_message) — Use edit_toolbar_message with Vercel MCP.
-- [Emoji reactions now available in Preview Deployment comments ](https://vercel.com/changelog/emoji-reactions-now-available-in-preview-deployment-comments)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
+- [Emoji reactions now available in Preview Deployment comments ](https://vercel.com/changelog/emoji-reactions-now-available-in-preview-deployment-comments)
 - [get_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/get_toolbar_thread) — Use get_toolbar_thread with Vercel MCP.
 - [change_toolbar_thread_resolve_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status) — Use change_toolbar_thread_resolve_status with Vercel MCP.
 - [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost) — Learn how to use the Vercel Toolbar in production and local environments.
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

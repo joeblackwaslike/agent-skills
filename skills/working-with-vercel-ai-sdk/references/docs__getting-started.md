@@ -4,13 +4,15 @@ description: "Welcome to the AI SDK documentation!"
 url: "https://ai-sdk.dev/docs/getting-started"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "f6c366a39daa054f927031eb36c00914bb93d1af9678ca5b8f92683733ef0c89"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "09bb0e20f07883c5cf4b62c82238a93ad2a75138aaa7d07ef1847b358b9b5497"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The following guides are intended to provide you with an introduction to some of the core features provided by the AI SDK.
+
+[Using an existing Next.js Pages Router app?](/docs/getting-started/nextjs-pages-router)
 
 ## Backend Framework Examples
 

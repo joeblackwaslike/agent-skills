@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage your Git provider connections using the vercel git CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/git.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "51b56e82408a2a984741d7b621d6b6ee222dfdacc453e0c870a7443e80326efd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "405cefe6b2676c21b8dc752a4b0ca0695c03d9d7990bc9bd1c36b77568faa9f2"
 ---
 
 # vercel git
@@ -28,11 +28,11 @@ enabling deployments to Vercel through Git.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 - [Git settings](https://vercel.com/docs/project-configuration/git-settings) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
-- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/cli/git.graph.md](/docs/cli/git.graph.md)
 <!-- /docsgraph:related -->
@@ -95,3 +95,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

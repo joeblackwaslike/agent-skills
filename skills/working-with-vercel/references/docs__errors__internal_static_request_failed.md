@@ -12,8 +12,8 @@ related:
 summary: This error occurs when a request for a static file in a project fails.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_static_request_failed.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4863148967329f9c9f7b614c34ece385d68d3857d256d856adddd1d44c5cfe41"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "db3a22b12a684af9051235b71a14cfd628357e86a806d5b8b35a8a42b6f14e3c"
 ---
 
 # INTERNAL_STATIC_REQUEST_FAILED
@@ -36,3 +36,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

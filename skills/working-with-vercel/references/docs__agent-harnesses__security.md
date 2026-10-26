@@ -16,8 +16,8 @@ related:
 summary: What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, and how to write tools that a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/security.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d434447bd327817e2ffd89c6f6e0953f7c28977b2826e533f1d09c0e71f1128e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "beb5a9475230e926eff397ad4477562f51db8c0d6f60653c54703c7d3d32848a"
 ---
 
 # Security for Durable Agent Harnesses
@@ -30,12 +30,12 @@ An agent harness runs what a model decides. On Vercel, the harness runs in your 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [HarnessAgent](https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent) — Create and run AI SDK HarnessAgent sessions.
+- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
+- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
+- [Security Model](https://eve.dev/docs/concepts/security-model) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
 - [UI](https://ai-sdk.dev/docs/ai-sdk-harnesses/ui) — Use AI SDK harnesses with useChat.
-- [Pi](https://ai-sdk.dev/providers/ai-sdk-harnesses/pi) — Learn how to use the Pi harness adapter.
-- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
-- [Self-Hosting Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/self-hosting) — Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
+- [Self-Hosting Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/self-hosting) — Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx
 - [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 
 Full cross-link map for this page: [/docs/agent-harnesses/security.graph.md](/docs/agent-harnesses/security.graph.md)
@@ -222,3 +222,6 @@ export function withSessionOwnership({ createRoute, start }: {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

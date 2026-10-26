@@ -2,7 +2,7 @@
 
 Latest release versions for commonly used GitHub Actions.
 Auto-updated by `scripts/update_docs.js` — do not edit manually.
-Last updated: 2026-10-19
+Last updated: 2026-10-26
 
 ## GitHub Official
 
@@ -10,7 +10,7 @@ Last updated: 2026-10-19
 |--------|-----------|-----------|
 | `actions/checkout` | `v7.0.1` | `uses: actions/checkout@v7.0.1` |
 | `actions/setup-node` | `v7.1.0` | `uses: actions/setup-node@v7.1.0` |
-| `actions/setup-python` | `v7.0.0` | `uses: actions/setup-python@v7.0.0` |
+| `actions/setup-python` | `v7.1.0` | `uses: actions/setup-python@v7.1.0` |
 | `actions/setup-java` | `v6.1.0` | `uses: actions/setup-java@v6.1.0` |
 | `actions/setup-go` | `v7.0.0` | `uses: actions/setup-go@v7.0.0` |
 | `actions/cache` | `v6.1.0` | `uses: actions/cache@v6.1.0` |
@@ -31,7 +31,7 @@ Last updated: 2026-10-19
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `docker/login-action` | `v4.6.0` | `uses: docker/login-action@v4.6.0` |
+| `docker/login-action` | `v4.7.0` | `uses: docker/login-action@v4.7.0` |
 | `docker/build-push-action` | `v7.4.0` | `uses: docker/build-push-action@v7.4.0` |
 | `docker/metadata-action` | `v6.2.0` | `uses: docker/metadata-action@v6.2.0` |
 | `docker/setup-buildx-action` | `v4.4.1` | `uses: docker/setup-buildx-action@v4.4.1` |
@@ -43,25 +43,16 @@ Last updated: 2026-10-19
 |--------|-----------|-----------|
 | `aws-actions/configure-aws-credentials` | `v6.3.0` | `uses: aws-actions/configure-aws-credentials@v6.3.0` |
 | `aws-actions/amazon-ecr-login` | `v2.1.7` | `uses: aws-actions/amazon-ecr-login@v2.1.7` |
-| `google-github-actions/auth` | `v3` | `uses: google-github-actions/auth@v3` |
-| `google-github-actions/setup-gcloud` | `v3.0.1` | `uses: google-github-actions/setup-gcloud@v3.0.1` |
-| `azure/login` | `v3.1.0` | `uses: azure/login@v3.1.0` |
 
 ## Release & Publishing
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `googleapis/release-please-action` | `v5.0.0` | `uses: googleapis/release-please-action@v5.0.0` |
-| `softprops/action-gh-release` | `v3.0.3` | `uses: softprops/action-gh-release@v3.0.3` |
-| `peaceiris/actions-gh-pages` | `v4.1.0` | `uses: peaceiris/actions-gh-pages@v4.1.0` |
 
 ## Code Quality
 
 | Action | Latest tag | Pin usage |
 |--------|-----------|-----------|
-| `codecov/codecov-action` | `v7.1.1` | `uses: codecov/codecov-action@v7.1.1` |
-| `github/codeql-action/init` | `codeql-bundle-v2.27.2` | `uses: github/codeql-action/init@codeql-bundle-v2.27.2` |
-| `dependabot/fetch-metadata` | `v3.1.0` | `uses: dependabot/fetch-metadata@v3.1.0` |
 
 ## Pinning to SHA (recommended for production)
 

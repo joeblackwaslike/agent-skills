@@ -17,8 +17,8 @@ related:
 summary: Use the Vercel Flags core evaluation library directly for custom setups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/core.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "de9fe40e12673910aee0e970015a4f20de3ad6a6dc21f6866a30c1c1aac44247"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f2267f50173a493fe49bdf71c7538edac6fb00554bd891c4636876317805b904"
 ---
 
 # Using the Core Library
@@ -34,9 +34,9 @@ The `@vercel/flags-core` library provides direct access to the Vercel Flags eval
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
@@ -56,28 +56,29 @@ Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/core.graph.md]
 
 ## Installation
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/flags-core
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/flags-core
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/flags-core
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/flags-core
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/flags-core
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/flags-core
+```
+
+**npm**
+
+```bash
+npm i @vercel/flags-core
+```
+
+**bun**
+
+```bash
+bun add @vercel/flags-core
+```
 
 ## Creating a client
 
@@ -307,3 +308,6 @@ This outputs detailed information about the client's data source connections, fa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

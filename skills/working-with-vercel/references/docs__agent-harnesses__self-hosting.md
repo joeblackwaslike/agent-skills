@@ -15,8 +15,8 @@ related:
 summary: Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx on your own servers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/self-hosting.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c1b40e15982d5828a766736b202879da5eab2fd93b1d1d8ec419fd6588e58a66"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "470a2bb8f8c4de9be440b8a7f413af6734290224a581ce5dd4bfdbcf6da51aab"
 ---
 
 # Self-Hosting Durable Agent Harnesses
@@ -29,10 +29,11 @@ A durable harness keeps its sessions behind a World, the storage and queue inter
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Worlds](https://workflow-sdk.dev/docs/configuration/worlds) — Select and configure Local, Postgres, Vercel, or custom Worlds.
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [What is WorkflowAgent?](https://vercel.com/kb/guide/what-is-workflowagent) — Build durable AI agents with WorkflowAgent: tool calls that retry as workflow steps, suspend for human approval, and res
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [What is WorkflowAgent?](https://vercel.com/kb/guide/what-is-workflowagent) — Build durable AI agents with WorkflowAgent: tool calls that retry as workflow steps, suspend for human approval, and res
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Running Codex Durably on Vercel](https://vercel.com/docs/agent-harnesses/codex) — Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
@@ -243,3 +244,6 @@ eve selects its World in `agent.ts`. See [Self-host eve](https://eve.dev/docs/gu
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

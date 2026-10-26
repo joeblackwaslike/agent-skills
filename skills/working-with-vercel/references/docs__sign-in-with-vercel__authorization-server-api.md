@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Authorization Server API
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "787e0cf01b294bc3d05196f9f6f4dcb35e1fafd5a13ae08d28e49013175d0ea7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3dd93e9a8beebd44ca3335503f0d9a2f3fcc2e5827e038e44d4cc0e68b8bb5d7"
 ---
 
 # Authorization Server API
@@ -33,9 +33,9 @@ The Authorization Server API exposes a set of endpoints which are used by your a
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Getting started with Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/getting-started) — Learn how to get started with Sign in with Vercel
+- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
-- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
 - [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/authorization-server-api.graph.md](/docs/sign-in-with-vercel/authorization-server-api.graph.md)
@@ -687,3 +687,6 @@ export async function GET(): Promise<Response> {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

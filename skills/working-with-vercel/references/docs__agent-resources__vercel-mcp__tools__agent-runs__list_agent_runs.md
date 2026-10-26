@@ -9,17 +9,17 @@ prerequisites:
   - /docs/agent-resources/vercel-mcp/tools/agent-runs
   - /docs/agent-resources/vercel-mcp/tools
 related:
-  []
+  - /docs/eve/agent-runs
 summary: Use list_agent_runs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1dae05e6f503da59c8992c9f52436e787f968638dcbc8b54b5fa5131d992ffd7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "10e4e60a5c93b4c1086fed3b11f42f353a4e2a966199998515fff09352347431"
 ---
 
 # list_agent_runs
 
-Use this tool with agents built with [eve](https://eve.dev/docs/guides/deployment/vercel#inspect-agent-runs).
+Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
 
 
 <!-- docsgraph:related -->
@@ -31,7 +31,6 @@ Use this tool with agents built with [eve](https://eve.dev/docs/guides/deploymen
 - [get_agent_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run) — Use get_agent_run with Vercel MCP.
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
-- [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects)
 - [get_agent_run_trace](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace) — Use get_agent_run_trace with Vercel MCP.
 - [Agent Runs](https://vercel.com/docs/eve/agent-runs) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
 - [List task runs for a job run](https://vercel.com/docs/rest-api/vercel-ci/list-task-runs-for-a-job-run) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
@@ -59,3 +58,6 @@ List Agent Runs for a Vercel project. The response includes summaries, status, m
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

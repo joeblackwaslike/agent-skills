@@ -17,8 +17,8 @@ related:
 summary: Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/express.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "19984f21a78064d73bcbaafd9b1255be8180be98f979d37ad6952851194eee19"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "58c61c6f24f918c15acace6cc8b2e651cd17e0960e20f2a13fd04c60b356c43a"
 ---
 
 # Express on Vercel
@@ -33,11 +33,11 @@ Express is a fast, unopinionated, minimalist web framework for Node.js. You can 
 
 - [Experimental build mode for Hono and Express projects](https://vercel.com/changelog/experimental-build-mode-hono-express)
 - [Zero-configuration Express backends](https://vercel.com/changelog/zero-configuration-express-backends)
-- [Use Vercel Passport with Node.js and Python backends](https://vercel.com/kb/guide/vercel-passport-backend-frameworks) — Secure internal apps and verify a visitor's identity with Vercel Passport in your backend, with examples for Express, Ho
-- [How to Build a Weather API with Express and Vercel](https://vercel.com/kb/guide/weather-api-with-express) — Provide real-time weather data to apps and websites with a single Express route.
+- [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
 - [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel) — This is my wonderful
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
 
@@ -177,6 +177,22 @@ To serve static assets, place them in the `public/**` directory. They will be se
 
 When you deploy an Express app to Vercel, your Express application becomes a single [Vercel Function](/docs/functions) and uses [Fluid compute](/docs/fluid-compute) by default. This means your Express app will automatically scale up and down based on traffic.
 
+## Stream responses
+
+Use `res.write()` to send response chunks and `res.end()` to finish the response. See the [Express streaming example](/kb/guide/ship-a-express-app-on-vercel#stream-responses) for a route running on Vercel.
+
+## Run scheduled tasks
+
+Use [Cron Jobs](/docs/cron-jobs) to call an Express route on a schedule. Configure the route and schedule, then check the request's `Authorization` header against your `CRON_SECRET` environment variable before running the task. See the [Express cron job example](/kb/guide/ship-a-express-app-on-vercel#run-scheduled-tasks-with-cron-jobs).
+
+## Protect an internal API
+
+Use Vercel Passport to require sign-in through your company's identity provider before requests reach your Express app. Passport requires an Enterprise plan. Follow the [Express Passport guide](/kb/guide/vercel-passport-backend-frameworks#express) to verify visitor identity and authorize access within your app.
+
+## Monitor and debug requests
+
+Use [Runtime Logs](/docs/functions/logs) to inspect application output and errors, and [Observability](/docs/observability) to investigate request duration and failures. See [monitoring Express with Observability](/kb/guide/ship-a-express-app-on-vercel#monitor-performance-with-observability) for details.
+
 ## Limitations
 
 - `express.static()` will not serve static assets. You must use [the `public/**` directory](#serving-static-assets).
@@ -201,3 +217,6 @@ Learn more about deploying Express projects on Vercel with the following resourc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

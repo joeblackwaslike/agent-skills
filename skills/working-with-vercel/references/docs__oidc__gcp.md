@@ -13,13 +13,13 @@ related:
 summary: "Learn how to configure your GCP project to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/gcp.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "85d0414595ddae982130a8f55dc9d542156ad2f23f4947dd29df88461cab57c1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "33718ba2d595ff2c9b5b8ae0747726351dfa6ff658c23e629582b4ca6a08b62b"
 ---
 
 # Connect to Google Cloud Platform (GCP)
 
-> **Availability**: Secure backend access with OIDC federation is available on all plans
+> Secure backend access with OIDC federation is available on all plans
 
 To understand how GCP supports OIDC through Workload Identity Federation, consult the [GCP documentation](https://cloud.google.com/iam/docs/workload-identity-federation).
 
@@ -29,12 +29,12 @@ To understand how GCP supports OIDC through Workload Identity Federation, consul
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
-- [AI Gateway Authentication and BYOK](https://vercel.com/docs/ai-gateway/authentication-and-byok) — Authenticate AI Gateway requests with API keys or OIDC tokens, and configure bring your own key \\(BYOK\\) credentials for
+- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 
 Full cross-link map for this page: [/docs/oidc/gcp.graph.md](/docs/oidc/gcp.graph.md)
 <!-- /docsgraph:related -->
@@ -139,28 +139,29 @@ In the following example, you create a [Vercel function](/docs/functions/quickst
 
 Install the following packages:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i google-auth-library @ai-sdk/google-vertex ai @vercel/oidc
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add google-auth-library @ai-sdk/google-vertex ai @vercel/oidc
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i google-auth-library @ai-sdk/google-vertex ai @vercel/oidc
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add google-auth-library @ai-sdk/google-vertex ai @vercel/oidc
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i google-auth-library @ai-sdk/google-vertex ai @vercel/oidc
+```
+
+**yarn**
+
+```bash
+yarn add google-auth-library @ai-sdk/google-vertex ai @vercel/oidc
+```
+
+**npm**
+
+```bash
+npm i google-auth-library @ai-sdk/google-vertex ai @vercel/oidc
+```
+
+**bun**
+
+```bash
+bun add google-auth-library @ai-sdk/google-vertex ai @vercel/oidc
+```
 
 In the API route for this function, use the following code to perform the following tasks:
 
@@ -268,3 +269,6 @@ export const GET = async (req: Request) => {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

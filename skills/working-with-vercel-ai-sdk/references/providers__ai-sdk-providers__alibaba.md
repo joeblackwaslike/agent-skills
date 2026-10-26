@@ -1,26 +1,69 @@
 ---
 title: Alibaba
-description: Learn how to use Alibaba Cloud Model Studio (Qwen) models with the AI SDK.
+description: Learn how to use Alibaba with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "f4e90a18bf605b28360a4439c0c86411b8d1bd742449ad0d187bff4709653358"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "bf6f321ece2faced9d26e173ab33ac721053dc5e5b3437e71c983c43b5c3ddb1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Alibaba Cloud Model Studio](https://modelstudio.console.alibabacloud.com/) provides access to the Qwen model series, including advanced reasoning capabilities.
+You can use Alibaba models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/alibaba`.
 
-API keys can be obtained from the [Console](https://modelstudio.console.alibabacloud.com/).
+```ts provider="alibaba" model="alibaba/qwen3.7-max"
+import { generateText } from 'ai';
 
-## Setup
+const { text } = await generateText({
+  model: "alibaba/qwen3.7-max",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
 
-The Alibaba provider is available via the `@ai-sdk/alibaba` module. You can install it with:
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/alibaba
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/alibaba`
+
+For direct access to Alibaba, install `ai` and `@ai-sdk/alibaba`:
+
+```bash
+pnpm add ai @ai-sdk/alibaba
+```
+
+Set your Alibaba API credential in the `ALIBABA_API_KEY` environment variable:
+
+```bash
+export ALIBABA_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/alibaba`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/alibaba` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
+
+API keys can be obtained from the [Console](https://modelstudio.console.alibabacloud.com/).
 
 ## Provider Instance
 

@@ -13,8 +13,8 @@ related:
 summary: The router cannot match the route to any of the known patterns. This is a routing error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/router_cannot_match.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5137c3453ef83b39790cd85b6f0ef7569191124db8e8d971d0214e2e53ab7936"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a69291f45f58d6f91a43ac216872dab1062ac824285ad9dc897a15f649793ed9"
 ---
 
 # ROUTER_CANNOT_MATCH
@@ -38,3 +38,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

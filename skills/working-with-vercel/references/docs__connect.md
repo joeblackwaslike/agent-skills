@@ -8,21 +8,21 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/connect/legal
   - /docs/connect/quickstart
   - /docs/connect/concepts
   - /docs/connect/concepts/connectors
   - /docs/connect/concepts/tokens
-  - /docs/connect/concepts/authentication
 summary: Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflake, without storing provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "449c7cdcf2a06374dccab9bd6cac9569b882881f48d3e07e745b0a82323cce86"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "84013893a0dfd225d2900543ebd6ee5cf393ee80bf8652fef47089465686f9c3"
 ---
 
 # Vercel Connect
 
-> **Availability**: Vercel Connect is available on all plans
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
 
 With [Vercel Connect](/connect), your deployed apps can talk to other services. First, you set up a connection **once** to Slack, GitHub, Microsoft, Snowflake, Salesforce, or any OAuth or API-key service at the team level. Then, any project you allow can use this connection. Your code asks Connect for access at the moment it needs it, so no provider API key ever lives in your environment variables.
 
@@ -32,15 +32,15 @@ With [Vercel Connect](/connect), your deployed apps can talk to other services. 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect)
+- [Vercel Connect adds managed Stripe API keys](https://vercel.com/changelog/vercel-connect-adds-managed-stripe-api-keys)
 - [Vercel Connect adds observability support](https://vercel.com/changelog/vercel-connect-adds-observability-support)
-- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
@@ -66,6 +66,8 @@ To do any of these, you [pick a connector](/connect/browse) for the provider you
 - **[Refresh and revocation](/docs/connect/concepts/tokens#caching-and-refresh)**: Let tokens refresh automatically, and revoke at the provider when supported.
 - **[Trigger forwarding](/docs/connect/concepts/triggers)**: Fan out verified webhooks to the project destinations you register on the connector.
 - **[Connector branding](/docs/connect/concepts/connectors#branding)**: Set a per-connector icon, background color, and accent color.
+
+* **[Secure Compute routing](/docs/connect/concepts/connectors#secure-compute-routing)**: Route a supported connector's token requests and provider API calls through a dedicated network with static egress IP addresses.
 
 Read the [guide to using Vercel Connect in your project](/kb/guide/vercel-connect) for a broader walkthrough of these capabilities.
 
@@ -164,6 +166,8 @@ Vercel Connect applies platform limits and per-minute rate limits to SDK methods
 
 Use Vercel Connect when you need delegated runtime credentials, when the same provider serves multiple Vercel projects or environments, or when an agent needs to act on behalf of a user. Use a [Vercel Integration](/docs/integrations) instead when you want a marketplace-managed install for a provider-billed product.
 
+When moving an employee-built app onto managed connections, review the accounts and permissions each connection grants. Storing a credential in Connect preserves the authority that credential already has. Read [What is shadow AI, and how do you manage it?](/i/what-is-shadow-ai) for guidance on reviewing existing apps and bringing approved uses under company oversight.
+
 ## Start with a template
 
 Deploy an eve template to start building AI agents that use Vercel Connect to
@@ -193,3 +197,6 @@ securely access third-party services and APIs:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

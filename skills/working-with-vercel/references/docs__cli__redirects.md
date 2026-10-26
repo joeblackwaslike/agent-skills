@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage project-level redirects using the vercel redirects CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/redirects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a51c8a5d17cc2eb59ef86263be307f8fc817734a02a51bbdb25e0cf6237e104b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "598b11df93f80b261731763c09c62b908ef0b8ca764942fa26151d26f846398a"
 ---
 
 # vercel redirects
@@ -27,10 +27,11 @@ The `vercel redirects` command lets you manage redirects for a project. Redirect
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Getting Started](https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
+- [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 
 Full cross-link map for this page: [/docs/cli/redirects.graph.md](/docs/cli/redirects.graph.md)
@@ -273,3 +274,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

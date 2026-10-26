@@ -13,8 +13,8 @@ related:
 summary: Use create_kms_issuer with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2d931096c96f44bb91fe7bf73cd6fca12b2e17b7bf7979c618bc4f0ad80122d8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "162b9ddf7c3b867df67b1d578e088bdd1577bb727cf9b56cecab0073561d5f47"
 ---
 
 # create_kms_issuer
@@ -30,8 +30,8 @@ Create a KMS issuer with server-generated signing keys for your team. Configure 
 - [create_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_signing_key) — Use create_kms_signing_key with Vercel MCP.
 - [create_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer_policy) — Use create_kms_issuer_policy with Vercel MCP.
 - [update_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer) — Use update_kms_issuer with Vercel MCP.
-- [activate_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/activate_kms_signing_key) — Use activate_kms_signing_key with Vercel MCP.
 - [update_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer_policy) — Use update_kms_issuer_policy with Vercel MCP.
+- [activate_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/activate_kms_signing_key) — Use activate_kms_signing_key with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer.graph.md)
 <!-- /docsgraph:related -->
@@ -52,3 +52,6 @@ The API generates the signing key. Do not send a PEM key or either import field.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

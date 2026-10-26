@@ -17,8 +17,8 @@ related:
 summary: Cap AI Gateway spend for your team, a project, an individual API key, or a team member with budgets, refresh periods, spend alerts, and defaults.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "da45ecc9b13b6b2b12bf9701d100b5b0f4f48d3d1f8d0a80ec129ebce36c4703"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3e6ab1401f44ebac4e720e75aa3b384c9f6ad81bf65f36f2d823505786c4e9d0"
 ---
 
 # AI Gateway Budgets and Spend Limits
@@ -32,16 +32,15 @@ A budget caps AI Gateway spend at one of four scopes:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts)
+- [Baseten's Mammoth-1 and Elephant-1 now available on AI Gateway for free](https://vercel.com/changelog/basetens-mammoth-1-and-elephant-1-now-available-on-ai-gateway-for-free)
 - [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
 - [Liquid AI's d1-ultra now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
-- [Perplexity's Decider V1.2 models now available on AI Gateway](https://vercel.com/changelog/perplexity-decider-v1-2-models-now-available-on-ai-gateway)
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
-- [Spend Management](https://vercel.com/docs/spend-management) — Learn how to get notified about your account spend and configure a webhook.
+- [vercel budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
 - [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
-- [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/budgets.graph.md](/docs/ai-gateway/observability-and-spend/budgets.graph.md)
 <!-- /docsgraph:related -->
@@ -125,7 +124,7 @@ Each refresh period resets at the start of its window in UTC:
 | `monthly` | The first of the month at midnight UTC |
 | `none`    | Never resets; the limit is cumulative  |
 
-Editing a budget keeps the spend already accumulated in the current period. Deleting a budget removes that cap immediately. A project, key, or member covered by a [default budget](#default-budgets) falls back to the default rather than becoming unlimited. Re-creating a budget later starts metering from that point, not retroactively.
+Editing a budget keeps the spend already accumulated in the current period. Deleting a budget removes that cap immediately. A project, key, or member covered by a [default budget](#default-budgets) falls back to the default rather than becoming unlimited. Re-creating a budget later doesn't reset it: the budget comes back with the spend it had already counted in the current period, which for `none` is everything since it was first set.
 
 ## When a budget is exceeded
 
@@ -382,7 +381,7 @@ curl -X DELETE "https://api.vercel.com/ai-gateway/budgets/defaults?teamId=$VERCE
 
 ## API key budgets
 
-An API key budget caps how much a single key can spend, independently of any team or project budget. You manage it from the API Keys page or the CLI.
+An API key budget caps how much a single key can spend, independently of any team or project budget. You manage it from the API Keys page, the CLI, or the REST API.
 
 ### Set an API key budget at creation
 
@@ -418,6 +417,26 @@ To bound spend in time as well as amount, pair the budget with an expiration. Bu
 ```bash filename="terminal"
 vercel ai-gateway api-keys create --name contractor --limit 50 --refresh-period none --expiration 30d
 ```
+
+#### API
+
+Create the key with an `aiGatewayQuota` object. Only `limitAmount` is required, and `refreshPeriod` defaults to `none`:
+
+```bash filename="terminal"
+curl -X POST "https://api.vercel.com/v1/api-keys?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "purpose": "ai-gateway",
+    "name": "my-api-key",
+    "aiGatewayQuota": {
+      "limitAmount": 10,
+      "refreshPeriod": "monthly"
+    }
+  }'
+```
+
+The response returns the key's value in `apiKeyString`, which you can't retrieve again, and its ID in `apiKey.id`. Store the ID: you need it to change or remove the budget later. Every field is in the [Create an API key reference](/docs/rest-api/sdk/untagged/createapikeys).
 
 > **💡 Note:** A new budget is not enforced instantly. For up to a minute or two after the
 > key is created, requests may not be counted against the budget. Once active,
@@ -487,7 +506,7 @@ curl "https://api.vercel.com/ai-gateway/budgets/list?teamId=$VERCEL_TEAM_ID&scop
 
 ### Add or change an API key budget
 
-Give an existing key a budget, or change the one it has, from the dashboard or the CLI.
+Give an existing key a budget, or change the one it has, from the dashboard, the CLI, or the REST API.
 
 #### Dashboard
 
@@ -514,6 +533,28 @@ vercel ai-gateway budgets set api-key my-key --limit 50 --refresh-period weekly
 | `--limit <AMOUNT>`          | Spending limit in dollars (minimum `$1`).          |
 | `--refresh-period <PERIOD>` | `daily`, `weekly`, `monthly` (default), or `none`. |
 
+#### API
+
+Send a `PATCH` to the key's quota with the fields you want to change. If the key has no budget yet, this creates one, and `limitAmount` is required:
+
+```bash filename="terminal"
+curl -X PATCH "https://api.vercel.com/v1/api-keys/$API_KEY_ID/quota?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "limitAmount": 50,
+    "refreshPeriod": "weekly"
+  }'
+```
+
+The response returns the key and its updated budget, including current spend in `quota.currentSpend`. Every field is in the [Update an AI Gateway API key budget reference](/docs/rest-api/sdk/ai-gateway/update-an-ai-gateway-api-key-budget).
+
+A few things to know when you call this endpoint:
+
+- **Key ID**: use the `apiKey.id` returned when you created the key, or find it with `vercel ai-gateway api-keys list`.
+- **Token**: use a [Vercel access token](/docs/rest-api#creating-an-access-token) that belongs to a user. The endpoint rejects tokens that don't.
+- **Rate limits**: you can make up to 1,000 budget changes per hour per user and 2,000 per hour per team. Past that, requests return `429` until the window resets.
+
 ### Remove an API key budget
 
 Removing a budget lifts that key's own cap. A key covered by the [API key default](#api-key-default-budgets) falls back to it; otherwise the key reverts to unlimited.
@@ -534,7 +575,24 @@ vercel ai-gateway budgets remove api-key my-key
 ✓ Removed         budget for my-key
 ```
 
-Removing the budget doesn't touch the key itself. To give the key a budget again later, re-run `budgets set api-key`; metering starts from that point, not retroactively.
+Removing the budget doesn't touch the key itself. To give the key a budget again later, re-run `budgets set api-key`.
+
+#### API
+
+Send the same `PATCH` as [Add or change an API key budget](#add-or-change-an-api-key-budget) with `archived` set to `true`:
+
+```bash filename="terminal"
+curl -X PATCH "https://api.vercel.com/v1/api-keys/$API_KEY_ID/quota?teamId=$VERCEL_TEAM_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{ "archived": true }'
+```
+
+To give the key a budget again later, send a `PATCH` with a `limitAmount`.
+
+> **💡 Note:** Re-adding a budget doesn't reset its spend (see [refresh
+> periods](#how-budgets-work)). To give a key a fresh allowance, raise
+> `limitAmount` by the amount you want to allow instead.
 
 ### API key default budgets
 
@@ -767,3 +825,6 @@ Budgets limit usage; they do not reserve or purchase capacity. Your team still n
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

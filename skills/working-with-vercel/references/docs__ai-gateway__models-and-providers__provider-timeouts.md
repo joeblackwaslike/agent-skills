@@ -12,11 +12,12 @@ related:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/models-and-providers/provider-options
+  - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "187ac352105c5ad3349812186b603a95442fdeda79547fe66e280a6ce7c1d348"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "14d988859fd70487f7512e43527845cb4fdc213614f0196cb0d99c67e1639b00"
 ---
 
 # AI Gateway Provider Timeouts
@@ -31,10 +32,10 @@ You can set per-provider timeouts to trigger fast failover when a provider is sl
 
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Customize timeouts for faster automatic failover on Vercel AI Gateway](https://vercel.com/changelog/provider-level-custom-timeouts-for-faster-fail-over-on-ai-gateway)
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
-- [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 - [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
+- [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-timeouts.graph.md](/docs/ai-gateway/models-and-providers/provider-timeouts.graph.md)
@@ -450,7 +451,14 @@ When a provider times out, the attempt metadata includes `providerTimeout` and `
 
 For more details on reading provider metadata, see [Provider Options](/docs/ai-gateway/models-and-providers/provider-options#example-provider-metadata-output).
 
+## Timeouts in virtual models
+
+A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can pin provider timeouts for its BYOK providers. The virtual model's values override the request's.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

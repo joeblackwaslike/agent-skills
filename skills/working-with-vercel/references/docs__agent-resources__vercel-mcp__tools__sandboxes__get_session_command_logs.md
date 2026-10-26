@@ -13,8 +13,8 @@ related:
 summary: Use get_session_command_logs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command_logs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "37ae4767c61b12928442cbd6c49425869fb308c3f60488641144c3929e37198b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6f8fba0e0f7db8395d90a7739e844e19e2eab689ee8802251c365926a77dfe1d"
 ---
 
 # get_session_command_logs
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

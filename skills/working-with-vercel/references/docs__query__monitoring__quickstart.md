@@ -17,8 +17,8 @@ related:
 summary: "In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3ba9c09adade222cbb45ec457bb9a9fb16e295b3d6896efb32035177d6d51af8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "efa60521c5a40a473da56def98a832bb9f7a422a02b3d07aad1a54713ac87d06"
 ---
 
 # Monitoring Quickstart
@@ -32,8 +32,8 @@ Monitoring is now
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring)
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
@@ -104,3 +104,6 @@ In the following guide you will learn how to view the most requested posts on yo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

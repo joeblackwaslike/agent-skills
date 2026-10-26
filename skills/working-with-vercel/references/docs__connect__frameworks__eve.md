@@ -9,21 +9,21 @@ prerequisites:
   - /docs/connect/frameworks
   - /docs/connect
 related:
+  - /docs/connect/legal
   - /docs/connect/concepts/authentication
   - /docs/connect/concepts/triggers
   - /docs/cli/connect
   - /docs/connect/concepts/installations
-  - /docs/connect/concepts/tokens
 summary: Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, and authenticate inbound...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/eve.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "622d209bb234498eead259b148d5dde41e288a1f5e579c38d47b636c301bce78"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "55c212eef2f17c34da6b89042d861f67a2178f50ef8e699641b6cdf9a03a4e39"
 ---
 
 # eve with Vercel Connect
 
-> **Availability**: Vercel Connect is available on all plans
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
 
 The `@vercel/connect/eve` entrypoint adapts Vercel Connect credentials to
 eve's connection and channel APIs. It uses your deployment's
@@ -37,9 +37,9 @@ tokens, so your app doesn't store provider refresh tokens.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
-- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
@@ -294,7 +294,7 @@ derive this principal from the sender. For a web app, configure the eve
 channel's route authentication to return `principalType: 'user'`. Without an
 authenticated user principal, the first user-scoped connection call fails with
 `reason: 'principal_required'`. See
-[eve's authentication guide](https://eve.dev/docs/guides/auth-and-route-protection)
+[eve authentication](/docs/eve/authentication)
 for route authentication options.
 
 Pass `connect()` directly to `defineMcpClientConnection`. The string can be a
@@ -525,3 +525,6 @@ out-of-policy bearer tokens return no authenticated session.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

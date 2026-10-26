@@ -12,8 +12,8 @@ related:
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "57fee0f6e27023bc2992db3972646fd4ffbd999a251833a20877d1caeb9798ea"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3587aab6fba21f2c676baf6772eb5613f8b61ee5b1efbf83708f1b1716c20fab"
 ---
 
 # Workflow Concepts
@@ -32,11 +32,11 @@ You write async/await code as usual, and the framework handles queues, retry log
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
-- [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
-- [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps) — Understand the two function types that make up a workflow.
 - [Python](https://workflow-sdk.dev/docs/getting-started/python) — Set up the Workflow Python SDK in your Python application.
-- [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries) — Control how steps handle failures and customize retry behavior.
+- [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps) — Understand the two function types that make up a workflow.
+- [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/workflows/concepts.graph.md](/docs/workflows/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -195,6 +195,8 @@ export async function POST(req: Request) {
 
 When a hook receives data, the workflow resumes automatically. You don't need polling, message queues, or manual state management.
 
+For human review, authenticate the reviewer and check their authority for the specific action before resuming the workflow. Confirm that the request still matches the version they reviewed, and record the approval separately from execution. See [Designing human review for enterprise AI decisions](/i/human-review-enterprise-ai-decisions) for review patterns that account for changed requests and failed actions.
+
 ## Skew Protection
 
 By default, Workflows keep running on the deployment they were created on, so you can deploy new versions of your
@@ -208,3 +210,6 @@ To stop runs on a deployment you no longer want executing, cancel them from the 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

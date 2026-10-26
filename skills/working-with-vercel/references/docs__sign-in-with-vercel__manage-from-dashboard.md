@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "eacbc16842ac59d10c0000633553514382c72e917c88355f868eed6bfa059fa2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "03cc9401ba0928b5848911f23e5e0cd20cccdc3d191cbad133b59823f315e52f"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
@@ -36,9 +36,9 @@ To manage any third-party apps, or create a new one yourself, you need to create
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/manage-from-dashboard.graph.md](/docs/sign-in-with-vercel/manage-from-dashboard.graph.md)
 <!-- /docsgraph:related -->
@@ -172,3 +172,6 @@ Learn more about scopes and permissions in the [scopes and permissions](/docs/si
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

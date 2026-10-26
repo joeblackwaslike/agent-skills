@@ -13,8 +13,8 @@ related:
 summary: Use upsert_connector_project_connection with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/upsert_connector_project_connection.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5f526217e74ec82d25c07f8eb0fb2b0d9963ca97116f0d305b340122c2bfbfd5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6d834c7bda9dcc08dce8b01c3f11ad9416cd7713619885895a7fe943682ba073"
 ---
 
 # upsert_connector_project_connection
@@ -50,3 +50,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/netwo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage project-level routing rules using the vercel routes CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/routes.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1f0f2bef8eceac9695cc9895627ff8cc9ae478f34f6ba6334ec1b8af47c9e8cf"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5108ef4c4870675a30c52e6665a430fde22663b6d566396e432a638740c3c092"
 ---
 
 # vercel routes
@@ -30,11 +30,11 @@ The `vercel routes` command lets you manage routing rules for a project. These r
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Inside the Vercel intern experience](https://vercel.com/blog/inside-the-vercel-intern-experience)
-- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
+- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+- [Routing](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing) — Vercel MCP tools for routing.
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 
 Full cross-link map for this page: [/docs/cli/routes.graph.md](/docs/cli/routes.graph.md)
 <!-- /docsgraph:related -->
@@ -486,3 +486,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -4,8 +4,8 @@ description: Use the LM Studio OpenAI compatible API with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers/lmstudio"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/lmstudio.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "53d1b32dfe5eb7eb538a6640dd56d19edf13e6bd0495cdc055b3d0fbfa209fbf"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "b2f2815facac0da1b2f081ca8e7437a7ee52fa01ab8cba5f14c84899c3c39716"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -13,7 +13,7 @@ sha256: "53d1b32dfe5eb7eb538a6640dd56d19edf13e6bd0495cdc055b3d0fbfa209fbf"
 [LM Studio](https://lmstudio.ai/) is a user interface for running local models.
 
 It contains an OpenAI compatible API server that you can use with the AI SDK.
-You can start the local server under the [Local Server tab](https://lmstudio.ai/docs/basics/server) in the LM Studio UI ("Start Server" button).
+You can start the local server under the [Local Server tab](https://lmstudio.ai/docs/developer/core/server) in the LM Studio UI ("Start Server" button).
 
 ## Setup
 

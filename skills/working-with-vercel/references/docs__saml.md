@@ -15,13 +15,15 @@ related:
 summary: Learn how to configure SAML SSO for your organization on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/saml.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "31400acd30b01a00682e9e3bbf084219505a06eeffe159eeaba11de6b2f7a32a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cc277a90e49089f459ca29921249aaf34fe16bf489cddfd7ca3cb7f03670df94"
 ---
 
 # SAML Single Sign-On
 
-> **Availability**: SAML is available on Enterprise and Pro plans
+> SAML is available on Enterprise and Pro plans
+>
+> Those with the owner role can access this feature
 
 To manage the [members](/docs/rbac/managing-team-members) of your team through a third-party identity provider like [Okta](https://www.okta.com/) or [Auth0](https://auth0.com/), you can set up the Security Assertion Markup Language (SAML) [feature](#configuring-saml-sso) from your team's settings.
 
@@ -36,10 +38,10 @@ To manage the [members](/docs/rbac/managing-team-members) of your team through a
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available)
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel) — Learn how to Sign in with Vercel
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
-- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Two-factor enforcement](https://vercel.com/docs/two-factor-enforcement) — Learn how to enforce two-factor authentication \\(2FA\\) for your Vercel team members to enhance security.
 
 Full cross-link map for this page: [/docs/saml.graph.md](/docs/saml.graph.md)
 <!-- /docsgraph:related -->
@@ -138,3 +140,6 @@ Vercel supports the following third-party SAML providers:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

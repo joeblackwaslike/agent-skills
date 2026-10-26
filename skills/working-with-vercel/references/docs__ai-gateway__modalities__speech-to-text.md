@@ -15,8 +15,8 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4c4597413ea6445f37ed04518e67bc462a4803751640a7e3de63cdf2437ee5be"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "18c1907f2fe22a29beee470b6435dd1b19403fbe8b0d6aea1c055cc19410d9bb"
 ---
 
 # AI Gateway Speech to Text
@@ -32,11 +32,11 @@ Transcribe recorded audio into text with transcription models such as `openai/wh
 - [AI Gateway now supports streaming transcription](https://vercel.com/changelog/ai-gateway-now-supports-streaming-transcription)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
 - [Gemini 3.5 Transcribe now available on AI Gateway](https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway)
-- [ElevenLabs](https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs) — Learn how to use the ElevenLabs provider for the AI SDK.
+- [Rev.ai](https://ai-sdk.dev/providers/ai-sdk-providers/revai) — Learn how to set up the Rev.ai provider and check AI Gateway availability.
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway)
-- [transcribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe) — API Reference for transcribe.
-- [experimental_streamTranscribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-transcribe) — API Reference for experimental_streamTranscribe.
+- [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
+- [GPT-Live](https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live) — Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md)
 <!-- /docsgraph:related -->
@@ -300,3 +300,6 @@ Speaker IDs and word timing are in `result.providerMetadata.azure.phrases`. `mic
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

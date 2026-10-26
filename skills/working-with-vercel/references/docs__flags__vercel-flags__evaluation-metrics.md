@@ -16,8 +16,8 @@ related:
 summary: Track Vercel Flags evaluations and see which variant each evaluation returns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bdbdc0c3c603e223da5d5d0b72a80ae9eec60a18f6df0f665c8247b190d7e75a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c044ba2b4907b1b6d186121d7a583f0eab25e267ac81dcafe8d2ea7c5ac6a88a"
 ---
 
 # Flag Evaluation Metrics
@@ -37,6 +37,7 @@ Evaluation metrics show how often a feature flag is evaluated and which variants
 - [Observability](https://vercel.com/docs/flags/observability) — Track feature flag evaluations and analyze their impact with Web Analytics.
 - [Using the Core Library](https://vercel.com/docs/flags/vercel-flags/sdks/core) — Use the Vercel Flags core evaluation library directly for custom setups.
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/evaluation-metrics.graph.md](/docs/flags/vercel-flags/evaluation-metrics.graph.md)
 <!-- /docsgraph:related -->
@@ -92,3 +93,6 @@ Clients that report evaluations also report their SDK version. The warning clear
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

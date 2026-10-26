@@ -14,8 +14,8 @@ related:
 summary: View and filter runtime logs or CDN request records for your Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/logs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2ae3f0c3696cce2b67112f04e99fc66a719957dbf5d277f0b57b43bfe7d493cc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "16692edbcb45b7eaa4d35f7142007de0ffffc9f8c008d5e9ee89fdd8ee736a0b"
 ---
 
 # vercel logs
@@ -34,7 +34,7 @@ The `vercel logs` command shows runtime logs for your project. Use `vercel logs 
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/logs.graph.md](/docs/cli/logs.graph.md)
 <!-- /docsgraph:related -->
@@ -231,3 +231,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,12 +12,11 @@ related:
   - /docs/networking/secure-compute
   - /docs/projects
   - /docs/routing-middleware
-  - /docs/glossary
 summary: Connect Vercel deployments to AWS-hosted backends through AWS PrivateLink endpoint services without using the public internet.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/privatelink.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e564c087800fa5d17bc612277dd249af8288b20216d4ce8454293c732eb45ced"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c2e17c7a2399b0d4cbf2245d039a2eacf9a8782a7b9e910c52505527c1df3ba3"
 ---
 
 # AWS PrivateLink
@@ -36,10 +35,10 @@ With PrivateLink, you can connect your Vercel deployments to AWS-hosted backend 
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
-- [List PrivateLink endpoints](https://vercel.com/docs/rest-api/networking/list-private-link-endpoints) — GET /v1/networking/privatelink/endpoints — Lists all PrivateLink endpoints for a project.
-- [Create a PrivateLink endpoint](https://vercel.com/docs/rest-api/networking/create-a-private-link-endpoint) — POST /v1/networking/privatelink/endpoints — Creates a PrivateLink endpoint for a project.
 - [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
+- [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/networking/privatelink.graph.md](/docs/networking/privatelink.graph.md)
 <!-- /docsgraph:related -->
@@ -102,7 +101,7 @@ Before you start, confirm you have:
 
 ### Routing Middleware support
 
-PrivateLink connections are region-specific and do not apply to [Routing Middleware](/docs/routing-middleware), which runs at the [edge](/docs/glossary#edge).
+PrivateLink connections are region-specific and do not apply to [Routing Middleware](/docs/routing-middleware), which runs at the edge.
 
 ### DNS
 
@@ -133,3 +132,6 @@ Assigning a PrivateLink connection to a project applies to all environments in t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

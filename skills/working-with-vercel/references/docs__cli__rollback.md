@@ -14,8 +14,8 @@ related:
 summary: Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rollback.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "037d075c2a5b0072e9348460ebdd9a145fedef5120550d58b00b923be8ec358c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9e7e2d42d26735fcb584ca02b455f232bbf07ed7adda5d05b4a39cb84775efb0"
 ---
 
 # vercel rollback
@@ -29,11 +29,11 @@ The `vercel rollback` command is used to [roll back production deployments](/doc
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Instant Rollback public beta now available in the CLI](https://vercel.com/changelog/instant-rollback-public-beta-cli)
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [request_rollback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_rollback) — Use request_rollback with Vercel MCP.
 - [vercel remove](https://vercel.com/docs/cli/remove) — Learn how to remove a deployment using the vercel remove CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/rollback.graph.md](/docs/cli/rollback.graph.md)
 <!-- /docsgraph:related -->
@@ -128,3 +128,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

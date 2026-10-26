@@ -15,8 +15,8 @@ related:
 summary: Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users-account-update.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "27fc46127c167f64cad3cc8cbc5c4a4740fca13f5bbbb7c604be186aeedf8341"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e692ea7719f91366fba57d2a1c3468ff5743aae76fbd88d5c2975cb7b51cb847"
 ---
 
 # Transition your Hobby team after EMU enrollment
@@ -32,20 +32,17 @@ Enabling [Enterprise Managed Users](/docs/security/enterprise-managed-users) (EM
 - [Enterprise Managed Users is now generally available](https://vercel.com/changelog/enterprise-managed-users)
 - [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
 - [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
-- [Easier transitions between hobby and pro](https://vercel.com/changelog/2024-01-account-changes)
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [September 2020](https://vercel.com/blog/changelog-september-2020)
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Transferring a project](https://vercel.com/docs/projects/transferring-projects) — Learn how to transfer a project between Vercel teams.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
+- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users-account-update.graph.md](/docs/security/enterprise-managed-users-account-update.graph.md)
 <!-- /docsgraph:related -->
 
-> **Availability**: Hobby team transition (Beta) is available on Enterprise plans upon request from your account team.
+> Hobby team transition is available in Beta on Enterprise plans upon request from your account team.
 
 ## Who sees the account update screen
 
@@ -180,3 +177,6 @@ If a partner returns an error because your old identity is still linked under th
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -1,26 +1,76 @@
 ---
 title: Cerebras
-description: "Learn how to use Cerebras's models with the AI SDK."
+description: Learn how to use Cerebras with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "db4afb1e916b476767adca3f97378c9cccb59a92be2a57050584a89e5599df42"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "513b43bf5120012b762f17a2f2b6d41ee270e926628dbaa30afbb4ffb7b3f043"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Cerebras](https://cerebras.ai) provider offers access to powerful language models through the Cerebras API, including their high-speed inference capabilities powered by Wafer-Scale Engines and CS-3 systems.
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/cerebras` to connect directly to Cerebras.
 
-API keys can be obtained from the [Cerebras Platform](https://cloud.cerebras.ai).
+```ts provider="cerebras" model="openai/gpt-oss-120b"
+import { generateText } from 'ai';
 
-## Setup
+const { text } = await generateText({
+  model: "openai/gpt-oss-120b",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['cerebras'],
+    },
+  },
+});
 
-The Cerebras provider is available via the `@ai-sdk/cerebras` module. You can install it with:
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/cerebras
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['cerebras']`. This sends the request to Cerebras first, then falls back to other available providers of the same model if Cerebras is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to Cerebras. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by Cerebras through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Using `@ai-sdk/cerebras`
+
+For direct access to Cerebras, install `ai` and `@ai-sdk/cerebras`:
+
+```bash
+pnpm add ai @ai-sdk/cerebras
+```
+
+Set your Cerebras API credential in the `CEREBRAS_API_KEY` environment variable:
+
+```bash
+export CEREBRAS_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/cerebras`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/cerebras` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
+
+API keys can be obtained from the [Cerebras Platform](https://cloud.cerebras.ai).
 
 ## Provider Instance
 

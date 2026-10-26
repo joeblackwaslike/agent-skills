@@ -16,13 +16,13 @@ related:
 summary: Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments in this overview.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ef6301461e3c23ee6b6f6958c5d7769bcf5b771a57d45a2193349f8f5ed4f33e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bbf144981aa93d8e058b9950cc3db32b768972943da070fa90c0242758d56b23"
 ---
 
 # Comments Overview
 
-> **Availability**: Comments are available on all plans
+> Comments are available on all plans
 
 Comments allow teams [and invited participants](/docs/comments/how-comments-work#sharing) to give direct feedback on [preview deployments](/docs/deployments/environments#preview-environment-pre-production) or other environments through the Vercel Toolbar. Comments can be added to any part of the UI, opening discussion threads that [can be linked to Slack threads](/docs/comments/integrations#use-the-vercel-app-for-slack). This feature is **enabled by default** on *all* preview deployments, for all account plans, free of charge. The only requirement is that all users must have a Vercel account.
 
@@ -34,16 +34,16 @@ Comments allow teams [and invited participants](/docs/comments/how-comments-work
 
 - [How to prototype a storefront section in v0 and ship it to Next.js](https://vercel.com/kb/guide/how-to-prototype-a-storefront-section-in-v0) — Learn how v0 prototyping works for storefront sections, from a scoped prompt to a pull request in your existing Next.js
 - [Preview deployments for retail campaign review](https://vercel.com/kb/guide/preview-deployments-retail-campaign-review) — Use preview deployments so merchandising, brand, and engineering review a retail campaign on one live URL before launch.
-- [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments)
 - [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience)
+- [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments)
 - [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation)
 - [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta)
-- [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available)
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
-- [Comments now available in Vercel's Slack integration](https://vercel.com/changelog/comments-now-available-in-vercels-slack-integration)
-- [Comments are now visible in your dashboard notifications](https://vercel.com/changelog/comments-are-now-visible-in-your-dashboard-notifications)
+- [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available)
+- [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
+- [Sharable Links](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) — Learn how to share your deployments with external users.
 
 Full cross-link map for this page: [/docs/comments.graph.md](/docs/comments.graph.md)
 <!-- /docsgraph:related -->
@@ -76,3 +76,6 @@ To leave a comment:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

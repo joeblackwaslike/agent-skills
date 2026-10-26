@@ -13,8 +13,8 @@ related:
 summary: Use get_custom_environment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_custom_environment.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ad2a4393f26d0d290024b95d5d9378c31b1dec3b3e4f8bee793161e8571af476"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f687f34a3a280400647fd6566ee13242a7e22a19116395f699efd796c5852ce2"
 ---
 
 # get_custom_environment
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/envir
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

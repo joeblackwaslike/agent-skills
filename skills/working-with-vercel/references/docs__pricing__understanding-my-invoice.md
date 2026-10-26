@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/understanding-my-invoice.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3b6ea28c3ea165812471ad91b05acede5b359551d5769107385656b455fc267a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c1e4fe9a9f0af9f278d71968043d37f22b8c6c2ac077e58618ed60b33e5fec13"
 ---
 
 # Billing & Invoices
@@ -31,10 +31,9 @@ You can view your current invoice from the **Settings** section in your dashboar
 
 - [Threshold billing is now enabled for Pro teams](https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams)
 - [Updates to Legal Terms](https://vercel.com/changelog/updates-to-legal-terms-june-2026)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
-- [Where can I get copies of my Vercel Invoices?](https://vercel.com/kb/guide/where-can-i-get-copies-of-my-vercel-invoices) — Learn about how you can get access to your Vercel invoices.
-- [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
+- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
+- [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
@@ -161,3 +160,6 @@ For more information on Vercel's pricing, and guidance on optimizing consumption
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -17,8 +17,8 @@ related:
 summary: Deploy Koa applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/koa.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5bb0e3baf6c61ea6e045fd3669fa912ad47c6c13cc173430b2589849615c3ca9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c28b7bf2a33d471f8f516677e9594e44a709613468654bcf70a9186540b9edc4"
 ---
 
 # Koa on Vercel
@@ -33,13 +33,13 @@ Koa is an expressive HTTP middleware framework for building web applications and
 
 - [Zero-configuration support for Koa](https://vercel.com/changelog/zero-configuration-support-for-koa)
 - [How to ship a Hono app on Vercel](https://vercel.com/kb/guide/ship-a-hono-app-on-vercel) — Deploy a Hono app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and conf
-- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [Build with a Hono starter template](https://vercel.com/kb/guide/build-with-a-hono-starter-template) — Deploy a Hono app to Vercel from a starter template. Compare the Hono API starter, MCP server, AI SDK, Slack Bolt, Next.
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
-- [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 - [Hono on Vercel](https://vercel.com/docs/frameworks/backend/hono) — Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurati
+- [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
+- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
 
 Full cross-link map for this page: [/docs/frameworks/backend/koa.graph.md](/docs/frameworks/backend/koa.graph.md)
 <!-- /docsgraph:related -->
@@ -106,6 +106,18 @@ vc deploy
 
 When you deploy a Koa app to Vercel, your Koa application becomes a single [Vercel Function](/docs/functions) and uses [Fluid compute](/docs/fluid-compute) by default. Vercel automatically scales your Koa app up and down based on traffic.
 
+## Stream responses
+
+Assign a readable stream to `ctx.body` to send data as it becomes available. See the [Koa streaming example](/kb/guide/ship-a-koa-app-on-vercel#stream-responses) for a route running on Vercel.
+
+## Run scheduled tasks
+
+Use [Cron Jobs](/docs/cron-jobs) to call a Koa route on a schedule. Configure the route and schedule, then check the request's `Authorization` header against your `CRON_SECRET` environment variable before running the task. See the [Koa cron job example](/kb/guide/ship-a-koa-app-on-vercel#run-scheduled-tasks-with-cron-jobs).
+
+## Monitor and debug requests
+
+Use [Runtime Logs](/docs/functions/logs) to inspect application output and errors, and [Observability](/docs/observability) to investigate request duration and failures. See [monitoring Koa with Observability](/kb/guide/ship-a-koa-app-on-vercel#monitor-performance-with-observability) for details.
+
 ## Limitations
 
 All [Vercel Functions limitations](/docs/functions/limitations) apply to the Koa application, including the standard bundle size limit of 250MB for Node.js applications. [Large Functions](/docs/functions/limitations#large-functions-beta) support Node.js bundles up to 5GB on Fluid compute when enabled (public beta).
@@ -123,3 +135,6 @@ Learn more about deploying Koa projects on Vercel with the following resources:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

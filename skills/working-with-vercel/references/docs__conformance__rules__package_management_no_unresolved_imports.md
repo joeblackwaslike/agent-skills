@@ -12,13 +12,13 @@ related:
 summary: Import statements that can not be resolved to a local file or a package from package.json dependencies are not allowed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_management_no_unresolved_imports.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "81cd062d18c5a0e364a0b6ff2b47361d62d63a03c3e7c0e4f6fb8d61fc00d3e2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4675cb6a21321c8ebf6a7c378dc73b371e9f1b4488296fe7890135951ca537c8"
 ---
 
 # PACKAGE_MANAGEMENT_NO_UNRESOLVED_IMPORTS
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 All imports must be able to be resolved to a file local to the workspace or a
 package declared as a dependency within the `package.json` file. This ensures
@@ -53,3 +53,6 @@ on the `next` package should be added.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

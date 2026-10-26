@@ -16,8 +16,8 @@ related:
 summary: Connect Mistral Vibe to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/vibe.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "46a57c50c49f42480d25147423c729bbdf534197fa31d92d7d9c4ec3f3ef1c90"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c923c3e9aae80fe1cbd81ffd2447e15888d6b91b51cbcafb85bb09689c48edd2"
 ---
 
 # Mistral Vibe with AI Gateway
@@ -113,3 +113,6 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

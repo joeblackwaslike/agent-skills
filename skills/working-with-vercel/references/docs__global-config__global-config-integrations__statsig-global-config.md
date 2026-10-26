@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Statsig integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8dd322d9a75068085078529c7c6215ec09ffc0b40966333cd929073ace8569d2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "89e17b607b6e6db01c3a4ef77568ce6a257fe49fd3fa93207655b5ce02686009"
 ---
 
 # Using Global Config with Statsig
@@ -31,10 +31,8 @@ This guide will help you get started with using Vercel's Statsig integration wit
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Global Config](https://flags-sdk.dev/docs/providers/global-config)
-- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta)
-- [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config) — Learn how to use Global Config with Vercel's DevCycle integration.
+- [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
@@ -49,78 +47,69 @@ Statsig is a statistics engine that enables you to automate A/B testing and make
 Before using this integration, you should have:
 
 1. The latest version of Vercel CLI. To check your version, use `vercel --version`. To [install](/docs/cli#installing-vercel-cli) or update Vercel CLI, use:
-   <CodeBlock>
-     <Code tab="pnpm">
-       ```bash
-       pnpm i -g vercel@latest
-       ```
-     </Code>
-     <Code tab="yarn">
-       ```bash
-       yarn global add vercel@latest
-       ```
-     </Code>
-     <Code tab="npm">
-       ```bash
-       npm i -g vercel@latest
-       ```
-     </Code>
-     <Code tab="bun">
-       ```bash
-       bun add -g vercel@latest
-       ```
-     </Code>
-   </CodeBlock>
+
+   **pnpm**
+   ```bash
+   pnpm i -g vercel@latest
+   ```
+   **yarn**
+   ```bash
+   yarn global add vercel@latest
+   ```
+   **npm**
+   ```bash
+   npm i -g vercel@latest
+   ```
+   **bun**
+   ```bash
+   bun add -g vercel@latest
+   ```
 2. A project. If you don't have one, you can run the following terminal commands to create a Next project:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm create next-app@latest
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn create next-app@latest
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npx create-next-app@latest
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bunx create-next-app@latest
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm create next-app@latest
+```
+
+**yarn**
+
+```bash
+yarn create next-app@latest
+```
+
+**npm**
+
+```bash
+npx create-next-app@latest
+```
+
+**bun**
+
+```bash
+bunx create-next-app@latest
+```
 
 1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects#creating-a-project)
 2. A Global Config. If you don't have one, follow [the Global Config quickstart](/docs/global-config/get-started)
 3. The Global Config SDK:
-   <CodeBlock>
-     <Code tab="pnpm">
-       ```bash
-       pnpm i @vercel/global-config
-       ```
-     </Code>
-     <Code tab="yarn">
-       ```bash
-       yarn add @vercel/global-config
-       ```
-     </Code>
-     <Code tab="npm">
-       ```bash
-       npm i @vercel/global-config
-       ```
-     </Code>
-     <Code tab="bun">
-       ```bash
-       bun add @vercel/global-config
-       ```
-     </Code>
-   </CodeBlock>
+
+   **pnpm**
+   ```bash
+   pnpm i @vercel/global-config
+   ```
+   **yarn**
+   ```bash
+   yarn add @vercel/global-config
+   ```
+   **npm**
+   ```bash
+   npm i @vercel/global-config
+   ```
+   **bun**
+   ```bash
+   bun add @vercel/global-config
+   ```
 
 - ### Set up the Statsig integration
   Visit [the Statsig page in the Integration Marketplace](/marketplace/statsig) and select the **Add Integration** button. Then:
@@ -318,3 +307,6 @@ Now that you have set up the Statsig Global Config integration, you can explore 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

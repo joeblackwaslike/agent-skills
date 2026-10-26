@@ -16,8 +16,8 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "09bbf3dd29dc782cd5c4f43f9e39724eda6755b7d901fe59a41ed7cef56ef810"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "df53d3b39693e55b49186aab5a581d795c158ac517738b69ff4b4cb60bcdc3f7"
 ---
 
 # Queues concepts
@@ -37,7 +37,8 @@ Vercel Queues is a durable event streaming system for asynchronous workloads. Yo
 - [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations) — Build a custom framework integration using the Workflow SDK compiler and combined runtime handler.
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
+- [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
 
 Full cross-link map for this page: [/docs/queues/concepts.graph.md](/docs/queues/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -400,3 +401,6 @@ In push mode, triggers in different services have independent [consumer groups](
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

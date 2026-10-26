@@ -12,13 +12,13 @@ related:
   - /docs/cli/init
   - /docs/project-configuration/vercel-json
   - /docs/cli/deploy
-  - /docs/cdn
-  - /docs/environment-variables
+  - /docs/services
+  - /docs/services/routing
 summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5b0c4b868c77555ed9200174b7be1746e5b19689ba2eae7b17e5b40bdf9020b8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0af6a21d90198e29f67d2a69512139940b2db966c4d21dbad1465c6fa5cdc4ed"
 ---
 
 # Deploy a Django app on Vercel
@@ -33,20 +33,23 @@ project settings.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
-- [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
-- [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [Zero-configuration Django support](https://vercel.com/changelog/zero-configuration-django-support)
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Build with a Flask starter template](https://vercel.com/kb/guide/build-with-a-flask-starter-template) — Deploy a Flask app to Vercel from a starter template. Compare the Flask Hello World starter, AI SDK, alt text generator,
+- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Deploy a Flask app on Vercel](https://vercel.com/docs/frameworks/backend/flask) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
+- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Routing Middleware: Python Reference](https://vercel.com/docs/routing-middleware/python-reference) — Reference for writing Routing Middleware in Python with the vercel-proxy package, including setup, routes, requests, and
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/django.graph.md](/docs/frameworks/full-stack/django.graph.md)
 <!-- /docsgraph:related -->
 
 ## Create or import your project
+
+To move an existing Django project from another platform, follow the Python API migration guide for [Heroku](/kb/guide/migrate-a-python-api-from-heroku-to-vercel), [Render](/kb/guide/migrate-a-python-api-from-render-to-vercel), or [Railway](/kb/guide/migrate-a-python-api-from-railway-to-vercel).
 
 Create a Django project or use an existing one:
 
@@ -157,6 +160,10 @@ vc deploy
 ```
 
 > **💡 Note:** Minimum CLI version required: 50.38.0
+
+## Deploy with a frontend
+
+Use [Vercel Services](/docs/services) to deploy a Django backend and a frontend in one project. Configure [service routing](/docs/services/routing) to expose the backend at a public path, or use [service bindings](/docs/services/bindings) for private calls from the frontend's server code.
 
 ## Serving static assets
 
@@ -347,6 +354,12 @@ channel layer. `InMemoryChannelLayer` only coordinates connections within one
 function instance. Learn more about [managing persistent state](/docs/functions/websockets#manage-persistent-state), [handling
 reconnects](/docs/functions/websockets#handle-disconnections-and-reconnects), and [WebSocket limits](/docs/functions/websockets#limits-and-pricing).
 
+## Run background tasks
+
+Enqueue background work from Django views with [Celery](/docs/frameworks/backend/celery) or [Dramatiq](/docs/frameworks/backend/dramatiq). Their Vercel integrations run tasks in queue-triggered functions independently of the request that enqueues them.
+
+For a worker that must run continuously, compare [Functions, containers, and Daemons](/kb/guide/vercel-functions-containers-daemons) before choosing how to deploy it.
+
 ## Limitations
 
 All [Vercel Functions limitations](/docs/functions/limitations) apply to Django applications, including:
@@ -365,3 +378,6 @@ For more about deploying Django on Vercel, see:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

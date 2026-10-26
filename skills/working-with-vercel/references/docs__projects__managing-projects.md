@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your projects through the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/managing-projects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "112496da71e916566cdc43b0e47afca731c367ecb970ce8ba5458c1b695cbf30"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dfad7b2b7eb2e136d14cd89a2418403c9115adfd5f1fa10fe0b40ef1ef4e8fd2"
 ---
 
 # Managing projects
@@ -35,8 +35,8 @@ You can manage your project on Vercel in your project's dashboard. To learn more
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
 Full cross-link map for this page: [/docs/projects/managing-projects.graph.md](/docs/projects/managing-projects.graph.md)
@@ -211,3 +211,6 @@ To delete a project:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

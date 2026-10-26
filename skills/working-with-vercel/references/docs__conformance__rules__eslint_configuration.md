@@ -12,13 +12,13 @@ related:
 summary: Requires that a workspace package has ESLint installed and configured correctly
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/eslint_configuration.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "a297757ae4943830d31324c53b89016166e715d35b37ffa71952ea1e79e2e84e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fa14f463eb31cf0902aa2baa90f6d57d79134937c4bf27e26605411b8d647e4f"
 ---
 
 # ESLINT_CONFIGURATION
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 [ESLint](https://eslint.org/) is a tool to statically analyze code to find and
 report problems. ESLint is required to be enabled for every workspace package
@@ -82,3 +82,6 @@ You should also add `"eslint-config-custom": "workspace:*"` to your
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

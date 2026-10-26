@@ -16,8 +16,8 @@ related:
 summary: Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1f544a03eef96c7d20372c599722f53f99845b76b3d0d9fe184c38d9a8a664cb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "94ac9f33ea55a225e4ddaed97f8624355b40c27b3fccc1dc9d03e00ea2056d5b"
 ---
 
 # Anthropic Messages Streaming with AI Gateway
@@ -30,10 +30,10 @@ Set `stream: true` on a [Messages](/docs/ai-gateway/sdks-and-apis/anthropic-mess
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm) — Learn how to use the AI SDK to stream LLM responses.
+- [Streaming in web applications](https://vercel.com/kb/guide/what-is-streaming) — Learn how streaming works in web applications. Explore benefits, use cases, and implementation details with Vercel Funct
 - [OpenAI Chat Completions Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming) — Stream OpenAI Chat Completions responses token by token as they are generated through AI Gateway.
-- [OpenResponses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming) — Stream responses token by token using the OpenResponses API through AI Gateway.
 - [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
+- [OpenResponses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming) — Stream responses token by token using the OpenResponses API through AI Gateway.
 - [Anthropic Messages Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images) — Send images and PDF documents as part of your Anthropic API message requests through AI Gateway.
 - [Streaming](https://vercel.com/docs/functions/streaming-functions) — Learn how to stream responses from Vercel Functions.
 
@@ -145,3 +145,6 @@ Streaming responses use [Server-Sent Events (SSE)](https://developer.mozilla.org
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

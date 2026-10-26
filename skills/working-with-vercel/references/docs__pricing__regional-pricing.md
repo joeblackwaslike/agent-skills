@@ -16,8 +16,8 @@ related:
 summary: Vercel pricing for Managed Infrastructure resources in different regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f2e2d49310db2ac7364cfb21f00d99b4c5f677907534dfd24bd63427ef96b61f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "467423c8a3a2e56d453b4cb1422c427ac944ee9bd33dae6a945f47405294a1a7"
 ---
 
 # Regional Pricing
@@ -112,3 +112,6 @@ For more information on Managed Infrastructure pricing, see the [pricing documen
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,11 +12,12 @@ related:
   - /docs/ai-gateway/security-and-compliance/zdr
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/sdks-and-apis
+  - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "479ce4d2db73c791190bd54af03922d7f66d7af84d961555874367a47dd0fbb0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "94adad89c651997a6c9095805c12d38530f906bcc96a0592057dd087f2742d27"
 ---
 
 # AI Gateway Disallow Prompt Training
@@ -36,7 +37,6 @@ No training on prompt data is available to all AI Gateway users at no extra char
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway)
-- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md](/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md)
 <!-- /docsgraph:related -->
@@ -601,7 +601,16 @@ xAI
 
 Terms of service
 
+Vercel Token Pass models are served through the `token-pass` provider. Token Pass currently serves its models through Wafer and follows Wafer's data policy and terms.
+
+## Prompt training restrictions in virtual models
+
+A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can restrict its traffic to providers that don't train on request data. The setting only tightens: either side can turn it on, and neither side can turn it off.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

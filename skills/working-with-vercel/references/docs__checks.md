@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Checks in your Vercel workflow...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/checks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "662be0f3b1a98c7cfaada9ac107b5cdcc895518948aa920d22e7ccbbf5771132"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "21cd9d32bbfc94d59f4921143a1e93b009cd75b7f6d466515a498c60ad3e6285"
 ---
 
 # Working with Checks
@@ -87,3 +87,6 @@ Once you have [created your integration](/docs/integrations/create-integration/m
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

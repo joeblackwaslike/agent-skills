@@ -16,8 +16,8 @@ related:
 summary: Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ae0c8ebe0da3bb6e956f0dd28a5cb4786a18ec4367c088c0e99a5e26671d9ccd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "312a504630141770cca1cfb812734f9199b0b3a0829fba16562d32b1ac927f3a"
 ---
 
 # Observability
@@ -39,9 +39,9 @@ Find production errors, capture request traces, and discover queryable metrics f
 - [Enhanced firewall data now available in Monitoring](https://vercel.com/changelog/enhanced-firewall-data-now-available-in-monitoring)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [Caching audits: Five antipatterns that cost you performance and money](https://vercel.com/kb/guide/caching-antipatterns) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [How to integrate AI into your business](https://vercel.com/blog/how-to-integrate-ai-into-your-business)
 
@@ -67,11 +67,11 @@ vercel curl --trace --json /api/hello
 vercel metrics schema
 ```
 
-> **Availability**: Observability is available on all plans
+> Observability is available on all plans
 
 ### Observability feature access
 
-You can use Observability on all plans to monitor your projects. [Observability Plus](/docs/observability/observability-plus) is available on Paid Pro and Enterprise teams, providing [additional features and metrics](/docs/observability/observability-plus#limitations), higher limits, and increased retention. Pro Trial does not include Observability Plus by default.
+You can use Observability on all plans to monitor your projects. [Observability Plus](/docs/observability/observability-plus) is available on Pro and Enterprise teams, providing [additional features and metrics](/docs/observability/observability-plus#limitations), higher limits, and increased retention.&#x20;
 
 ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/observability/O11y-Tab-Light.png)
 
@@ -137,7 +137,7 @@ If you've [excluded specific projects](/docs/observability/observability-plus#ma
 
 Users on all plans can use Observability at no additional cost, with some [limitations](/docs/observability/observability-plus#limitations). The Observability section in the sidebar is available on the project dashboard for all projects in the team.
 
-Paid Pro and Enterprise teams can use [Observability Plus](/docs/observability/observability-plus) for additional features, higher limits, and increased retention.
+Pro and Enterprise teams can use [Observability Plus](/docs/observability/observability-plus) for additional features, higher limits, and increased retention.
 
 You can also [manage which projects](/docs/observability/observability-plus#managing-projects) are included in your Observability Plus subscription to control costs.
 
@@ -165,3 +165,6 @@ For step-by-step debugging workflows using the Vercel CLI with Observability dat
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

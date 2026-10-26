@@ -16,13 +16,13 @@ related:
 summary: Learn how to set up Code Owners for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners/getting-started.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "179f3e504e2d90d5bdc6772e4c92fdced9229c8d495fc5130f7665c44b5f752a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "faeb1ef72d4372ca8164419b0fb1fe3aba1f96b7d0bbbe9e5eb96cb0a7b639ea"
 ---
 
 # Getting Started with Code Owners
 
-> **Availability**: Code Owners are available on Enterprise plans
+> Code Owners are available on Enterprise plans
 
 To [set up Code Owners](#setting-up-code-owners-in-your-repository) in your repository, you'll need to do the following:
 
@@ -70,53 +70,43 @@ enforcing review checks for merging PRs.
   If you have an existing `CODEOWNERS` file in your repository, you can use the CLI to automatically migrate your repository to use Vercel Code Owners. Otherwise, you can skip this step.
 
   Start by running this command in your repository's root:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm --package=@vercel-private/code-owners dlx vercel-code-owners init
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn --package=@vercel-private/code-owners dlx vercel-code-owners init
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx --package=@vercel-private/code-owners -- vercel-code-owners init
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx --package=@vercel-private/code-owners vercel-code-owners init
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm --package=@vercel-private/code-owners dlx vercel-code-owners init
+  ```
+  **yarn**
+  ```bash
+  yarn --package=@vercel-private/code-owners dlx vercel-code-owners init
+  ```
+  **npm**
+  ```bash
+  npx --package=@vercel-private/code-owners -- vercel-code-owners init
+  ```
+  **bun**
+  ```bash
+  bunx --package=@vercel-private/code-owners vercel-code-owners init
+  ```
   > **💡 Note:** `yarn dlx` only works with Yarn version 2 or newer, for Yarn v1 use the npx
   > command.
   After running, check the installation success by executing:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm vercel-code-owners
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn vercel-code-owners
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx vercel-code-owners
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx vercel-code-owners
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm vercel-code-owners
+  ```
+  **yarn**
+  ```bash
+  yarn vercel-code-owners
+  ```
+  **npm**
+  ```bash
+  npx vercel-code-owners
+  ```
+  **bun**
+  ```bash
+  bunx vercel-code-owners
+  ```
 
 - ### Install the GitHub App into a repository
   To install, you must be an organization owner or have the GitHub App Manager permissions.
@@ -137,28 +127,23 @@ enforcing review checks for merging PRs.
   @org/team1
   ```
   Then, run the [`validate`](/docs/code-owners/cli#validate) command to check the syntax and merge your changes into your repository:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx vercel-code-owners validate
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx vercel-code-owners validate
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx vercel-code-owners validate
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx vercel-code-owners validate
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx vercel-code-owners validate
+  ```
+  **yarn**
+  ```bash
+  yarn dlx vercel-code-owners validate
+  ```
+  **npm**
+  ```bash
+  npx vercel-code-owners validate
+  ```
+  **bun**
+  ```bash
+  bunx vercel-code-owners validate
+  ```
 
 - ### Test Code Owners on a new pull request
   With the `.vercel.approvers` file merged into the main branch, test the flow by modifying
@@ -194,3 +179,6 @@ Adding your repository to your team's Vercel [dashboard](https://vercel.com/d?to
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

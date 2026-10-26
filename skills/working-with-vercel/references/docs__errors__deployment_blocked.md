@@ -13,8 +13,8 @@ related:
 summary: The deployment was blocked due to certain conditions. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_blocked.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "efd46e5c0563b87fef3924cfcac19647c3b1202aa6593fa252098fd3166f010d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a30b546b1e3c72a52e240819237fe535dbf4314a92fc4ca33210342064c98bf0"
 ---
 
 # DEPLOYMENT_BLOCKED
@@ -40,3 +40,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

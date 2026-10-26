@@ -13,8 +13,8 @@ related:
 summary: Use create_observability_query with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "317ee91df5fb34993a09ee25516e49f3f9a509c9c1e70b2bccc6bb8e0e4e1cb1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "64ef734b2c035ded447eef61688bc06d0ef7fff4cd5607153661c450151c5fba"
 ---
 
 # create_observability_query
@@ -31,7 +31,7 @@ Query observability data.
 - [get_observability_schema](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema) — Use get_observability_schema with Vercel MCP.
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
-- [get_bulk_availability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_availability) — Use get_bulk_availability with Vercel MCP.
+- [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.graph.md)
 <!-- /docsgraph:related -->
@@ -47,3 +47,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to apply custom domain aliases to your Vercel deployments using the vercel alias CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alias.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "40ad12bb9750696c810b6e499af8adb6f6e7e09d1438ec8cbf304a111fd28e10"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3841a6a8e42af2a37bffd327dc9f51d0c5c325ed54e36a74dd9df4ac18ece76b"
 ---
 
 # vercel alias
@@ -31,12 +31,11 @@ The `vercel alias` command allows you to apply [custom domains](/docs/domains/wo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Microfrontends routing now applies to vc alias and branch domains](https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains)
-- [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli) — Learn how to automatically alias a Vercel preview deployment.
 - [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias) — POST /v2/deployments/{id}/aliases — Creates a new alias for the deployment resolved from the given deployment or alias I
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
 - [List Deployment Aliases](https://vercel.com/docs/rest-api/aliases/list-deployment-aliases) — GET /v2/deployments/{id}/aliases — Retrieves all Aliases for the Deployment with the given ID. The authenticated user or
+- [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias) — GET /v4/aliases/{idOrAlias} — Retrieves an Alias for the given host name or alias ID.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Delete an Alias](https://vercel.com/docs/rest-api/aliases/delete-an-alias) — DELETE /v2/aliases/{aliasId} — Delete an Alias with the specified ID.
 
 Full cross-link map for this page: [/docs/cli/alias.graph.md](/docs/cli/alias.graph.md)
 <!-- /docsgraph:related -->
@@ -157,3 +156,6 @@ If a custom domain belongs to an account you can't access, follow [claiming doma
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text responses using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/text.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1dd45a81ac4b32697a249b508dcb0810ac93cb1cc7fdb20c7aa0947a0d039b81"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5a2682523eddff204c8f409f791104680de20206a4e5eb7110656391c7b9c006"
 ---
 
 # AI Gateway Text Generation Quickstart
@@ -32,11 +32,11 @@ Stream a text response through AI Gateway.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
-- [Generate Text with Chat Prompt](https://ai-sdk.dev/cookbook/node/generate-text-with-chat-prompt) — Learn how to generate text with chat prompt using the AI SDK and Node
-- [Generate Text with Chat Prompt](https://ai-sdk.dev/cookbook/next/generate-text-with-chat-prompt) — Learn how to generate text with chat prompt using the AI SDK and Next.js
-- [Generate Text](https://ai-sdk.dev/cookbook/next/generate-text) — Learn how to generate text using the AI SDK and Next.js.
-- [Generate Text](https://ai-sdk.dev/cookbook/node/generate-text) — Learn how to generate text using the AI SDK and Node
+- [AI Gateway Speech Quickstart: Transcription and TTS](https://vercel.com/docs/ai-gateway/getting-started/speech) — Generate speech and transcribe it using AI Gateway.
 - [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation) — Generate text responses with the OpenAI Responses API through AI Gateway.
+- [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video) — Generate a video from a text prompt using AI Gateway.
+- [OpenResponses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation) — Generate text responses using the OpenResponses API through AI Gateway.
+- [AI Gateway Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image) — Generate an image from a text prompt using AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.md](/docs/ai-gateway/getting-started/text.graph.md)
 <!-- /docsgraph:related -->
@@ -50,7 +50,7 @@ Paste this prompt into a coding agent with terminal access:
 **Agent prompt**
 
 ```text
-AI_GATEWAY_TEXT_GENERATION_PROMPT
+Add streaming text generation through AI Gateway in the current environment. Use the AI Gateway skill for this task. If it is unavailable, run npx skills add vercel/vercel-plugin --skill ai-gateway, then find and read its SKILL.md before continuing. Reuse the environment's language, framework, package manager, and AI client when possible, and add only required dependencies. Read AI_GATEWAY_API_KEY from the environment. If it is missing, run npx vercel@latest whoami and pause for login if needed. Determine the team, then run npx vercel@latest --scope <team-slug> ai-gateway api-keys create --name <descriptive-name>. Capture stdout directly into AI_GATEWAY_API_KEY for the request or existing ignored secret storage, and never expose the value. Use openai/gpt-6-astra, stream the generated text, run the result, and report the output.
 ```
 
 ### Run the Node.js example
@@ -100,3 +100,6 @@ node index.mts
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

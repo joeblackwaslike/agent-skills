@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar in production and local environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1d84500a2c8b59d487c7f6916d63553826790d9c7495c343e40e2d7b26e75594"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c62183d602b946361fa02c36fc7d6db56f092860ffdefa4cd81661df5cb928f0"
 ---
 
 # Add the Vercel Toolbar to local and production environments
@@ -52,3 +52,6 @@ All toolbar features such as [Comments](/docs/comments/using-comments), [Feature
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

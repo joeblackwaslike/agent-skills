@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the Deep Infra native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1cef7f88a6c1fae513c989ce53569281185c24c08686146560ea8e0655708bfd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "10c7c341e160e56cf3706c91bbf682f3fe31bb0c5c13fab22c1410b0cb2e7661"
 ---
 
 # Vercel Deep Infra Integration
@@ -33,8 +33,8 @@ cloud providers.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
+- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 - [Vercel Groq Integration](https://vercel.com/docs/agent-resources/integrations-for-models/groq) — Learn how to add the Groq native integration with Vercel.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
@@ -65,28 +65,23 @@ To follow this guide, you'll need the following:
 
 - An existing [Vercel project](/docs/projects/overview#creating-a-project)
 - The latest version of [Vercel CLI](/docs/cli#installing-vercel-cli)
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn global add vercel@latest
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add -g vercel@latest
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i -g vercel@latest
+  ```
+  **yarn**
+  ```bash
+  yarn global add vercel@latest
+  ```
+  **npm**
+  ```bash
+  npm i -g vercel@latest
+  ```
+  **bun**
+  ```bash
+  bun add -g vercel@latest
+  ```
 
 ### Add the provider to your project
 
@@ -125,3 +120,6 @@ To follow this guide, you'll need the following:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

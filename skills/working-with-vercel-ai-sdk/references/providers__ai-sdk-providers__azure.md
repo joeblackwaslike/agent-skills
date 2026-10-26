@@ -1,24 +1,77 @@
 ---
 title: Azure OpenAI
-description: Learn how to use the Azure OpenAI provider for the AI SDK.
+description: Learn how to use Azure OpenAI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/azure"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "5e6d94969c9785ab3e997eceb18de8f8dcee146f67104ee2449c0f1b6672ffc9"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "b1e64ce3564479f3e20aef11c2ed74a98af4c0331332e0112b17dcd0e0202a5a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service) provider contains language model support for the Azure OpenAI chat API.
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/azure` to connect directly to Azure OpenAI.
 
-## Setup
+```ts provider="azure" model="openai/gpt-6-astra"
+import { generateText } from 'ai';
 
-The Azure OpenAI provider is available in the `@ai-sdk/azure` module. You can install it with
+const { text } = await generateText({
+  model: "openai/gpt-6-astra",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['azure'],
+    },
+  },
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/azure
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['azure']`. This sends the request to Azure OpenAI first, then falls back to other available providers of the same model if Azure OpenAI is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to Azure OpenAI. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by Azure OpenAI through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Using `@ai-sdk/azure`
+
+For direct access to Azure OpenAI, install `ai` and `@ai-sdk/azure`:
+
+```bash
+pnpm add ai @ai-sdk/azure
+```
+
+Set your Azure API key and resource name:
+
+```bash
+export AZURE_API_KEY=your_api_key_here
+export AZURE_RESOURCE_NAME=your_resource_name
+```
+
+The direct example uses an Azure deployment name. Replace it with the deployment name configured in your resource.
+
+Use the direct provider for your Azure deployments, Microsoft Entra ID authentication, or Azure-specific APIs. Replace the deployment name in the Azure example with one from your resource.
+
+The following sections document the direct `@ai-sdk/azure` provider, including
+its model factories and settings. Gateway model and feature availability can
+differ.
 
 ## Provider Instance
 
@@ -170,6 +223,19 @@ const model = azure('your-deployment-name');
 
 You need to pass your deployment name as the first argument.
 
+You can optionally pass the underlying model ID in a settings object:
+
+```ts
+const model = azure('production-chat', { modelId: 'gpt-5' });
+```
+
+The SDK uses the model ID as the model identity, including in telemetry, and
+to detect model capabilities such as reasoning support. API requests still use the deployment name.
+The model ID returned by Azure in response metadata is preserved.
+
+If omitted, the deployment name is used for model identity and capability detection.
+Keep the supplied model ID aligned with the model running in your deployment.
+
 ### Reasoning Models
 
 Azure exposes the thinking of `DeepSeek-R1` in the generated text using the `<think>` tag.
@@ -210,7 +276,7 @@ and support structured data generation with [`Output`](/docs/reference/ai-sdk-co
 
 Azure OpenAI sends larger chunks than OpenAI. This can lead to the perception
 that the response is slower. See [Troubleshooting: Azure OpenAI Slow To
-Stream](/docs/troubleshooting/common-issues/azure-stream-slow)
+Stream](/docs/troubleshooting/azure-stream-slow)
 
 ### Provider Options
 
@@ -476,13 +542,13 @@ also work with `streamText`. See the [OpenAI reasoning effort
 guide](/providers/ai-sdk-providers/openai#changing-reasoning-effort-mid-conversation)
 for continuation, compaction, and configuration restrictions.
 
-The SDK infers support for effort updates from the deployment name passed to
-`azure.responses()`. The name must identify a supported GPT-6-or-later model
-family, such as `gpt-6-astra`. A custom name such as `production` is not
-recognized, even when the underlying deployment runs GPT-6. In that case,
-message-level updates throw, and request-level updates are omitted with a
-warning. Setting `forceReasoning: true` does not override this capability
-check.
+The SDK infers support for effort updates from the optional `modelId` setting
+passed to `azure.responses()`, falling back to the deployment name. The ID must identify
+a supported GPT-6-or-later model family, such as `gpt-6-astra`. A custom name
+such as `production` is not recognized, even when the underlying deployment
+runs GPT-6. Pass the underlying model ID, for example
+`azure.responses('production', { modelId: 'gpt-6-astra' })`, to enable detection
+for a custom deployment name.
 
 #### Web Search Tool
 

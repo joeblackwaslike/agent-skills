@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b12f68b9f3ecd921da0037d3e1fe74e86408b89ffcf8efeab427be51f2118b1e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "51575a601b1ef96a8323f91e8a08e2dbd84ac7b210a840109ff94cf069d7671d"
 ---
 
 # Tracing
@@ -37,11 +37,11 @@ In observability, tracing is the process of collecting and analyzing how a reque
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
-- [How to set up instrumentation with OpenTelemetry](https://nextjs.org/docs/app/guides/open-telemetry) — Learn how to instrument your Next.js app with OpenTelemetry.
 - [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
-- [Tracing](https://workflow-sdk.dev/docs/observability/tracing) — Trace workflow execution end to end with OpenTelemetry.
+- [How to instrument your Next.js app with OpenTelemetry](https://nextjs.org/docs/pages/guides/open-telemetry) — Learn how to instrument your Next.js app with OpenTelemetry.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/tracing.graph.md](/docs/tracing.graph.md)
 <!-- /docsgraph:related -->
@@ -202,3 +202,6 @@ attribute.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

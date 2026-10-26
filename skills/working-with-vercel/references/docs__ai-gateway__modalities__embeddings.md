@@ -14,8 +14,8 @@ related:
 summary: Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation (RAG) through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/embeddings.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "eacc7e052346de986618c11a7239138462db78457d361f79c1242131b2e3e4c6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fa9a44ba1bb42a857ae597e8a3302cef69488d2c2d948a7e164545e6def23972"
 ---
 
 # AI Gateway Embeddings
@@ -31,8 +31,8 @@ Generate vector embeddings for semantic search, similarity matching, and retriev
 - [AI Gateway Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/embeddings.graph.md](/docs/ai-gateway/modalities/embeddings.graph.md)
 <!-- /docsgraph:related -->
@@ -248,3 +248,6 @@ Follow the [TanStack AI setup guide](/docs/ai-gateway/ecosystem/framework-integr
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

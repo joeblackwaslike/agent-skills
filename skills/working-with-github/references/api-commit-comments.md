@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/commits/comments"
-fetched_at: "2026-08-17T04:47:04.101Z"
-sha256: "5ef84500e6342976f9d386944f20403be0cc0bb6f4da3762b01eeaad1775b77c"
+fetched_at: "2026-10-26T09:52:24.329Z"
+sha256: "93c66653c8b1522e7bd0cb2d3942830fd168f09c5d7994fe430a91994602671a"
 ---
 
 # REST API endpoints for commit comments
@@ -12,7 +12,7 @@ Use the REST API to interact with commit comments.
 
 You can create, edit, and view commit comments using the REST API. A commit comment is a comment made on a specific commit. For more information, see [Working with comments](/en/rest/guides/working-with-comments#commit-comments).
 
-> \[!NOTE]
+> [!NOTE]
 > Most endpoints use `Authorization: Bearer <YOUR-TOKEN>` and `Accept: application/vnd.github+json` headers, plus `X-GitHub-Api-Version: 2026-03-10`. Curl examples below omit these standard headers for brevity.
 
 ## List commit comments for a repository

@@ -13,8 +13,8 @@ related:
 summary: Use list_team_flags with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4fc0e3a6adefca201dbbd3f7672c393c88c938c311862afda87c11dceb213f5f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7d5f8cf4b11e97aa5c7569bdafd5be7735edf5558cb7d2fc9e3ce569099507d2"
 ---
 
 # list_team_flags
@@ -54,3 +54,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

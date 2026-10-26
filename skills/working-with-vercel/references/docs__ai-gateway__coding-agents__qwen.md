@@ -16,8 +16,8 @@ related:
 summary: Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/qwen.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3165741dd00d2b3af1e382c97556d6f1c2454aa4e34502cadd3537a1eeb361ff"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c42271028e1846209c82eaf52cd1370e4f441972b52f8a08e13b05ee3b474af9"
 ---
 
 # Qwen Code with AI Gateway
@@ -34,8 +34,8 @@ sha256: "3165741dd00d2b3af1e382c97556d6f1c2454aa4e34502cadd3537a1eeb361ff"
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/qwen.graph.md](/docs/ai-gateway/coding-agents/qwen.graph.md)
 <!-- /docsgraph:related -->
@@ -127,3 +127,6 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -9,21 +9,21 @@ prerequisites:
   - /docs/connect/frameworks
   - /docs/connect
 related:
+  - /docs/connect/legal
   - /docs/ai-gateway
   - /docs/connect/quickstart
   - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
   - /docs/connect/concepts/authentication
-  - /docs/connect/concepts/tokens
 summary: Connect a TanStack AI app to OAuth-protected MCP servers with Vercel Connect, handle user consent, and manage MCP clients.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/tanstack-ai.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "07e8324a6887bc0272f4858a9c2a3533e33d86e51aed94dca86c571a40712017"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "45ff7a3b73caf1940068f6b2d19469d1b2a732cf267bcd7cd6f9fbb452766a07"
 ---
 
 # TanStack AI with Vercel Connect
 
-> **Availability**: Vercel Connect is available on all plans
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
 
 Connect a TanStack AI chat route to Linear's Model Context Protocol (MCP) server. Vercel Connect supplies OAuth tokens and handles account consent, while TanStack AI discovers and calls the server's tools using a model served through [AI Gateway](/docs/ai-gateway).
 
@@ -36,10 +36,9 @@ Connect a TanStack AI chat route to Linear's Model Context Protocol (MCP) server
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
 - [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
-- [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
+- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
 Full cross-link map for this page: [/docs/connect/frameworks/tanstack-ai.graph.md](/docs/connect/frameworks/tanstack-ai.graph.md)
 <!-- /docsgraph:related -->
@@ -271,6 +270,20 @@ Connect's OAuth consent grants access to a provider account. TanStack AI's `need
 
 For tools that create, update, delete, send, or spend, configure [TanStack AI tool approval](https://tanstack.com/ai/latest/docs/tools/tool-approval) separately. Granting Linear access doesn't approve every tool call. The Connect adapter doesn't turn OAuth consent into a TanStack interrupt automatically.
 
+## Use authenticated MCP tools in a Chat SDK bot
+
+Use [Chat SDK](/docs/chat-sdk) to bring a TanStack AI agent with Connect-authenticated MCP tools to Slack or a browser chat. Start with the [Chat SDK response handler](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai#use-chat-sdk-with-tanstack-ai), then apply this page's MCP setup inside the handler:
+
+1. Resolve the sender to an authenticated application user and use that user's stable ID as the Connect subject. For Slack, establish a verified account link between the workspace user and your application account. For browser chat, use the same signed-in identity that authenticates the Web Adapter request.
+2. Create an MCP client for that user with `connectMCPTransport`, then pass it to `chat()` through `mcp: { clients: [mcpClient] }`.
+3. Await `thread.post(stream)` to deliver the response. TanStack AI's managed MCP integration closes the client when the run ends. Close the client yourself if setup fails before streaming starts.
+
+Handle `getConsentChallenge(error)` before posting the model stream. In a Slack handler, send the consent link privately to the requesting user and end the turn. For browser chat, complete consent in your application's account-connection flow before submitting the message. After consent, ask the user to send the message again. A webhook response or an already-started Web Adapter stream cannot navigate the user's browser to a consent page.
+
+Connect's [Chat SDK helpers](/docs/connect/frameworks/chat-sdk), such as `connectSlackAdapter`, configure the bot's platform credentials. `connectMCPTransport` authenticates access to the separate MCP server on behalf of your application user. Configure each connector for the environment where the bot runs.
+
+See [Chat SDK's TanStack AI integration](https://chat-sdk.dev/docs/ai/tanstack-ai) for history conversion and chat tools, or [Chat SDK with TanStack Start](/docs/chat-sdk/frameworks/tanstack-start#add-browser-chat-with-the-web-adapter) for browser chat with the Web Adapter. The Web Adapter streams text responses but doesn't forward tool calls to the client. Implement TanStack AI's approval and resume flow separately when tools require approval.
+
 ## Next steps
 
 - [TanStack AI with MCP](/docs/mcp/integrations/tanstack-ai): Call tools from an MCP server hosted on Vercel.
@@ -284,3 +297,6 @@ For tools that create, update, delete, send, or spend, configure [TanStack AI to
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

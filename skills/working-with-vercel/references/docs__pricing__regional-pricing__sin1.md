@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Singapore (sin1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/sin1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "438990fa709919af5e231e61faff6f88f4066b595cc772b96a04b5269f2e0e50"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "87c3de96d03d006a87f880a95d9af524ffb967b4f85fd2ae7174b588c4bfd748"
 ---
 
 # Singapore (sin1) pricing
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

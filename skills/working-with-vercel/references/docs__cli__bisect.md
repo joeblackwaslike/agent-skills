@@ -12,8 +12,8 @@ related:
 summary: Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/bisect.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8fb3a83cf6c5c3912915d4790e2000b3afa72fd6b054d5d4c6c322412deaac07"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7117e56320b677f1b5dac501e469db5c81e896652dd1dadfa1c9f69fe41c1858"
 ---
 
 # vercel bisect
@@ -30,7 +30,7 @@ The `vercel bisect` command can be used to perform a [binary search](https://wik
 - [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
-- [vercel remove](https://vercel.com/docs/cli/remove) — Learn how to remove a deployment using the vercel remove CLI command.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 
 Full cross-link map for this page: [/docs/cli/bisect.graph.md](/docs/cli/bisect.graph.md)
 <!-- /docsgraph:related -->
@@ -138,3 +138,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use read_access_group with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/read_access_group.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b594282a6cab0b1dcc0862256208f26bb3a2f0fc97a5e3f34d4ade4c475eec1e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "38c14e92042e9c39024a991c0a29cef4c502e52947439bd8fcc51ed9666c1000"
 ---
 
 # read_access_group
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

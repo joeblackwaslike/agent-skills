@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Mumbai, India (bom1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/bom1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "456cbd12dcbbcf4c346bfc00e9aeccacce13928c11c5972e584517b74658890a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3303d2fb67d98ddb2732478d6ad8d08bf4fc553ee91e40c375bddb35ed751941"
 ---
 
 # Mumbai, India (bom1) pricing
@@ -32,10 +32,10 @@ The table below shows Managed Infrastructure products with pricing specific to t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Tokyo, Japan \\(hnd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hnd1) — Vercel pricing for the Tokyo, Japan \\(hnd1\\) region.
-- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 - [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/bom1.graph.md](/docs/pricing/regional-pricing/bom1.graph.md)
 <!-- /docsgraph:related -->
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

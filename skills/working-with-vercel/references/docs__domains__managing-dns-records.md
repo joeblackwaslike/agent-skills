@@ -13,8 +13,8 @@ related:
 summary: Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c138f8e3d8409e198a1c5f5a8222968a80f57697cb9306954c62eaf5006e13d2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1932a5dba9ae96395902b77ed0df487f62563c62b6d4d95886eb9bdfcb132662"
 ---
 
 # Managing DNS Records
@@ -32,7 +32,7 @@ Once you've added a domain and it's using Vercel's nameservers, you can view its
 - [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
 - [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
 - [DNS Records UI](https://vercel.com/blog/dns-records-ui)
-- [How can I do a "Zero Downtime" DNS migration to Vercel?](https://vercel.com/kb/guide/zero-downtime-migration-for-dns) — Information about how to migrate your DNS records to Vercel without downtime.
+- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
@@ -272,3 +272,6 @@ Nameserver changes can take up to 48 hours to propagate. If you bought the domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -4,8 +4,8 @@ description: An overview of AI SDK RSC.
 url: "https://ai-sdk.dev/docs/ai-sdk-rsc/overview"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/overview.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ff299feaa84f95d5854dddd21ddb22ac46335bd9fe443d79fea163d0f3079dbe"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "c89f103040fbe903c79c32ae10c0684f0305cae7a3906960485ada098e6a7d58"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,7 +17,7 @@ RSC to UI, see our [migration guide](/docs/ai-sdk-rsc/migrating-to-ui).
 The `@ai-sdk/rsc` package is compatible with frameworks that support React
 Server Components.
 
-[React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components) (RSC) allow you to write UI that can be rendered on the server and streamed to the client. RSCs enable [ Server Actions ](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#with-client-components), a new way to call server-side code directly from the client just like any other function with end-to-end type-safety. This combination opens the door to a new way of building AI applications, allowing the large language model (LLM) to generate and stream UI directly from the server to the client.
+[React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components) (RSC) allow you to write UI that can be rendered on the server and streamed to the client. RSCs enable [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations#with-client-components), a new way to call server-side code directly from the client just like any other function with end-to-end type-safety. This combination opens the door to a new way of building AI applications, allowing the large language model (LLM) to generate and stream UI directly from the server to the client.
 
 ## AI SDK RSC Functions
 

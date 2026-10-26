@@ -14,8 +14,8 @@ related:
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4c63855ac34087863ba15b3c60532355581732e12b8797f66930b67f233c4ca3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "622e40c479fc4256a2df081120c4c456041a2e8c72e28a41001c233ed5fd63f0"
 ---
 
 # Implementing secrets rotation
@@ -30,10 +30,11 @@ When your integration provisions resources with credentials (like API keys, data
 
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration) — Rotate Hypertune API keys with zero-downtime.
-- [How to rotate the secrets of your Upstash integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-upstash-integration) — Rotate Upstash API keys, JWT secrets, and database passwords.
 - [How to rotate the secrets of your Clerk integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-clerk-integration) — Rotate Clerk API keys
 - [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration) — This will guide you how to update the password for a Neon project.
+- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration) — This will guide you how to update the password for a Redis databse.
 - [Rotating environment variables](https://vercel.com/docs/environment-variables/rotating-secrets) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
+- [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
 - [Vercel KMS Key Rotation](https://vercel.com/docs/kms/concepts/key-rotation) — How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued to
 - [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets) — PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets — This endpoint updates the secrets of
@@ -262,3 +263,6 @@ When testing your implementation:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

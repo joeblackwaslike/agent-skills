@@ -16,8 +16,8 @@ related:
 summary: Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/continue.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6441eeb76067fe59d397513390072c22639441253e8489cb7d13d2dd3fcbec7c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c7933a0b116b192e0244353947213ee404e2bf202e1bd89b3ed72dea4e64a605"
 ---
 
 # Continue CLI with AI Gateway
@@ -116,3 +116,6 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

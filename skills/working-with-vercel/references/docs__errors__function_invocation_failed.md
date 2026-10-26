@@ -12,8 +12,8 @@ related:
 summary: The invocation of a function failed. This is a function error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/function_invocation_failed.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5c5d8412d67515e356dcacdf65d29d90ec026055658017a045dc26945115be84"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "777e59683c17f9d3eedbca49f3d5bfe8b933a0dab341f83dbb23a6c6f2f7fe48"
 ---
 
 # FUNCTION_INVOCATION_FAILED
@@ -42,3 +42,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

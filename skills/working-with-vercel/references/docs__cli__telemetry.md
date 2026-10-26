@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage telemetry collection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/telemetry.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "718b40db6e5260108885ae96ba3e6a88025b9c6beec3cec5b6570169539a8579"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "db1816daaef619e2bdae4c4c8d360671e1de59e0ba9a401a3323f8f8be08fbb1"
 ---
 
 # vercel telemetry
@@ -29,10 +29,9 @@ The `vercel telemetry` command allows you to enable or disable telemetry collect
 - [Telemetry](https://vercel.com/docs/cli/about-telemetry) — Vercel CLI collects telemetry data about general usage.
 - [Telemetry](https://turborepo.dev/docs/telemetry) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
 - [CLI Telemetry](https://eve.dev/docs/reference/telemetry) — Learn what eve CLI telemetry collects and how to control it.
-- [telemetry](https://turborepo.dev/docs/reference/telemetry) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
 - [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/telemetry.graph.md](/docs/cli/telemetry.graph.md)
@@ -120,3 +119,6 @@ For more information about Vercel's privacy practices, please see our [**Privacy
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

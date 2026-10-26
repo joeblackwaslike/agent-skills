@@ -13,8 +13,8 @@ related:
 summary: Use aggregate_events with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3e37564ea2696501a51b634081e3e594c4973d64fa7d1f24e90bce39ec7726be"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "271a789795d84d19279e2af3b2e8007682cd5c1ff3cf45c4ca3bb5ea4c3589e2"
 ---
 
 # aggregate_events
@@ -55,3 +55,6 @@ Enable [Web Analytics](/docs/analytics) for your project before querying its dat
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

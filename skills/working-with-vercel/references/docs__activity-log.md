@@ -14,13 +14,13 @@ related:
 summary: Learn how to use the Activity Log, which provides a list of all events on a team, chronologically organized since its creation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/activity-log.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1f32777c0638a066d4d21f6e1b07aef1351cbc0045ce79e295d84d9a79eea07b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "18daf6371f1706c1c31090347a048f658d58448d4eba72d33b17be410bdc8e9d"
 ---
 
 # Using the Activity Log
 
-> **Availability**: Activity Log is available on all plans
+> Activity Log is available on all plans
 
 The [Activity Log](/dashboard/activity) provides a list of all events on a [team](/docs/accounts#teams), chronologically organized since its creation. These events include:
 
@@ -40,7 +40,7 @@ The [Activity Log](/dashboard/activity) provides a list of all events on a [team
 - [List Event Types](https://vercel.com/docs/rest-api/user/list-event-types) — GET /v1/events/types — Returns the list of user-facing event types with descriptions.
 - [Update the microfrontends settings](https://vercel.com/docs/rest-api/projects/update-the-microfrontends-settings) — PATCH /v1/projects/{projectId}/microfrontends — Update the microfrontends settings for a project.
 - [List projects in a microfrontends group](https://vercel.com/docs/rest-api/microfrontends/list-projects-in-a-microfrontends-group) — GET /v1/microfrontends/groups/{groupId}/projects — Get the microfrontends for a given group ID.
-- [Delete a project avatar](https://vercel.com/docs/rest-api/projects/delete-a-project-avatar) — DELETE /v1/projects/{idOrName}/avatar — Remove the avatar of the project identified by \\`idOrName\\`. Deletes the chosen
+- [Upload a project avatar](https://vercel.com/docs/rest-api/projects/upload-a-project-avatar) — POST /v1/projects/{idOrName}/avatar — Upload an image as the avatar of the project identified by \\`idOrName\\`. The reque
 
 Full cross-link map for this page: [/docs/activity-log.graph.md](/docs/activity-log.graph.md)
 <!-- /docsgraph:related -->
@@ -402,6 +402,7 @@ The table below shows a list of events logged on the Activity page.
 | organization-dsync-sync-start | Active | Directory sync was started for an organization. |
 | organization-name-update | Active | The name of an organization was updated. |
 | organization-slug-update | Active | The slug of an organization was updated. |
+| organization-sso-deleted | Active | An Organization's SSO connection was deleted. |
 | organization-sso-enforced | Active | SSO enforcement was configured for an Organization. |
 | organization-team-create | Active | A team was created in an organization. |
 | organization-team-delete | Active | A team was deleted from an organization. |
@@ -583,6 +584,7 @@ The table below shows a list of events logged on the Activity page.
 | spend-deleted | Active | A spend management budget was deleted. |
 | spend-updated | Active | A spend management budget was updated. |
 | sso-login | Active | A user logged in to a team via SAML Single Sign-On. |
+| startup-terms-accepted | Active | An owner accepted the Flexible Commitment for Startups terms. |
 | storage-accept-tos | Active | Acceptance of storage terms of service |
 | storage-access-token-set | Active | A storage access token was set. |
 | storage-accessed-data-browser | Active | Made a query to the store from the Data tab |
@@ -710,8 +712,12 @@ The table below shows a list of events logged on the Activity page.
 | webhook-created | Active | A webhook was created. |
 | webhook-deleted | Active | A webhook was deleted. |
 | webhook-updated | Active | A webhook was updated. |
+| xaa-updated | Active | Trusted identity providers for cross-app access were modified. |
 
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

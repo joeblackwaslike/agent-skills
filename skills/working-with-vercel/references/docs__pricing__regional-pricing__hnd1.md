@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Tokyo, Japan (hnd1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/hnd1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3c4927e3feb37a40cbbb86e5429d503c98cf11e7cb52d3b9cc822d18f312b082"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0c561b44b8b7c0a33a6f848c49fcc65b2177d1aab3ffe10576bb4a7b092608bd"
 ---
 
 # Tokyo, Japan (hnd1) pricing
@@ -32,8 +32,8 @@ The table below shows Managed Infrastructure products with pricing specific to t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Osaka, Japan \\(kix1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/kix1) — Vercel pricing for the Osaka, Japan \\(kix1\\) region.
-- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
 - [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
+- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
 - [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

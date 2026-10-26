@@ -17,8 +17,8 @@ related:
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bff65d4541ffd5dd3ab8c2d6025409da598bd6a6ddb8b09fabe53c0ae9776cb5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "91e220924fe537ba1fc66133e8973c3306d10c3ea00caa31b052a0c75507c64e"
 ---
 
 # Drives
@@ -32,17 +32,17 @@ Drives provide persistent storage that you mount into a sandbox as a working dir
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
-- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create snapshot-backed persistent sandboxes on Vercel.
+- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
 - [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta)
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
 - [Vercel Drives is now generally available](https://vercel.com/changelog/vercel-drives-is-now-generally-available)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 - [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape)
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
+- [Running Pi Durably on Vercel](https://vercel.com/docs/agent-harnesses/pi) — Make a Pi agent durable on Vercel so a crashed turn resumes in a new function instead of starting over.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/drives.graph.md](/docs/sandbox/concepts/drives.graph.md)
 <!-- /docsgraph:related -->
@@ -76,7 +76,7 @@ Drives also support [read-only snapshots](#snapshots) for sharing a point-in-tim
 
 - Agent workspace: store an agent workspace that persists across sandbox runs, building context over time.
 - Shared cache: cache dependencies, build artifacts, or other large data.
-- Pre-seeding data: pre-seed a drive with data, then spin up compute on demand when needed.
+- Pre-seeding data: pre-seed a drive with data, then spin up compute on demand when needed. [Share datasets across analysis sandboxes](/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp#how-to-share-large-datasets-across-sandboxes-with-vercel-drives) by loading a dataset once and mounting read-only snapshots in separate query sandboxes.
 
 ### Example: a shared dependency cache
 
@@ -394,3 +394,6 @@ Deploy an eve template to start building AI agents that store and search files o
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

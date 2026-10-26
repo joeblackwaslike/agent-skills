@@ -14,8 +14,8 @@ related:
 summary: How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued tokens keep verifying.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/key-rotation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "800f3525065e33bcf3cc6ff19c3ec05696bd274cdd8798ac947b855291f89461"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "edb248868dc993b1bfb6dd99ffa7ab0b23ce219b757535a7b13046890014435b"
 ---
 
 # Vercel KMS Key Rotation
@@ -94,3 +94,6 @@ To rotate an external issuer, include the new key material as an `importKey` (a 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

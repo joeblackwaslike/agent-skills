@@ -16,8 +16,8 @@ related:
 summary: Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One decision requests through it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "80ae97fa79065ded5fd9cd0d7dd318b0bfe2155aff44c4c01c86781c7010cd44"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "083ed01e4517bd2ca722fb6c0ffda2329a7c57a8f1dae039dd37d4fc04632ee7"
 ---
 
 # TypeSafe API with AI Gateway
@@ -36,9 +36,8 @@ Keep using the [TypeSafe SDK](https://docs.typesafe.ai/introduction) and route r
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
 - [Perplexity's Decider V1.2 models now available on AI Gateway](https://vercel.com/changelog/perplexity-decider-v1-2-models-now-available-on-ai-gateway)
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
-- [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai) — Use TypeSafe System One models for typed decisions with the AI SDK.
 - [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
-- [Automatic Model Selection](https://eve.dev/docs/guides/decide) — Choose agent models automatically or ask typed questions in your tools and application code.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/typesafe.graph.md](/docs/ai-gateway/sdks-and-apis/typesafe.graph.md)
 <!-- /docsgraph:related -->
@@ -264,7 +263,7 @@ AI Gateway omits these headers when the condition doesn't match. Use them to det
 
 AI Gateway also sends the deprecated `x-ai-gateway-evaluation-fallback-*` headers with identical values. Read the `x-ai-gateway-decision-fallback-*` headers in new code.
 
-See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks#use-the-typesafe-compatible-api) for Boolean probability conditions, compound policies, the complete sentinel response, and two-stage cost and latency.
+See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks#use-the-typesafe-compatible-api) for Boolean probability conditions, compound policies, virtual models, the complete sentinel response, and two-stage cost and latency.
 
 ## Errors
 
@@ -291,3 +290,6 @@ Errors returned by the model provider are passed through unchanged, so a client 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

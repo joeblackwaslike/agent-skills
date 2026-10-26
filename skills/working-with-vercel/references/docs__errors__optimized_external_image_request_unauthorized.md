@@ -12,8 +12,8 @@ related:
 summary: The external image request is unauthorized. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/optimized_external_image_request_unauthorized.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3e54817d203ea0471ce69e8dab15b1500c10a91eb3f2d5bb0a36e19979d4fdf7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "744f2047cebf221063a9672509bb0bfe48202e1512557b84b643d1065921fa01"
 ---
 
 # OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

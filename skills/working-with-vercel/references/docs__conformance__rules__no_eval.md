@@ -12,13 +12,13 @@ related:
 summary: Prevent unsafe usage of eval() in your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_eval.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "b22279455f7d615616f69f7cb07b822de6fa7f8a310738768267b06052cc79a5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5248e534f86cde335bae479c22644bd7b01ec0e10a253fb9e353eed98f60f1b9"
 ---
 
 # NO_EVAL
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 JavaScript's `eval()` function is potentially dangerous, is often misused, and
 might cause security issues. Using `eval()` on untrusted code can open an
@@ -82,3 +82,6 @@ setTimeout(() => {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

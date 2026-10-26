@@ -4,8 +4,8 @@ description: Trace and monitor your AI SDK applications with Confident AI
 url: "https://ai-sdk.dev/providers/observability/confident-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/confident-ai.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c78095cefb655a56c7027f33a69fc3a06fdd91e392ec9fcec4948253f9044363"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "587249a5988ec401e0f6a8ff146b9e6b412757ab94e48fc4d1a5d64b45433aa6"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -110,7 +110,7 @@ finished, so spans are exported before the function freezes.
 
 You can configure what happens to your incoming traces on Confident AI's [workflows page](https://www.confident-ai.com/docs/llm-tracing/workflows).
 
-<img alt="Confident AI workflows page" src="https://confident-docs.s3.us-east-1.amazonaws.com/confident-trace-workflows.png" width="2880" height="1570" />
+<img alt="Confident AI workflows page" src={__img0} placeholder="blur" />
 
 Here's the workflows you can configure:
 

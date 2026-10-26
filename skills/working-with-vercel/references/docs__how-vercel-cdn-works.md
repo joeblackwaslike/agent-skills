@@ -1,5 +1,5 @@
 ---
-title: How Vercel CDN works
+title: How Vercel CDN Works
 product: vercel
 url: /docs/how-vercel-cdn-works
 canonical_url: "https://vercel.com/docs/how-vercel-cdn-works"
@@ -16,11 +16,11 @@ related:
 summary: "Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low latency."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/how-vercel-cdn-works.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b88728eb3ca2bac3faee23edd0b87201ffad4b35f920f68fe5dfc21f154651f4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "696890531aba847fc295ccd7331a92b0ede25e863b6991afaecd5e1965cb3d56"
 ---
 
-# How Vercel CDN works
+# How Vercel CDN Works
 
 Every request to a Vercel deployment flows through a globally distributed CDN before it reaches your application code. The CDN handles routing, caching, security, and compression automatically, so your app is fast by default.
 
@@ -35,13 +35,13 @@ Every request to a Vercel deployment flows through a globally distributed CDN be
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
 - [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
-- [Why is running another CDN on top of Vercel not recommended?](https://vercel.com/kb/guide/why-running-another-cdn-on-top-of-vercel-is-not-recommended) — Information about possible strategies when using a CDN on top of Vercel.
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 
 Full cross-link map for this page: [/docs/how-vercel-cdn-works.graph.md](/docs/how-vercel-cdn-works.graph.md)
 <!-- /docsgraph:related -->
@@ -104,3 +104,6 @@ If you use [Vercel Functions](/docs/functions) without a framework, run [`vercel
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

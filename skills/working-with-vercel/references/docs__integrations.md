@@ -16,8 +16,8 @@ related:
 summary: "Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless content, commerce, and more."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2bf40094ee50d3fc0b07e77de1c054815e6c2adb0367626e8e7e176deb0abbf9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "88ab626d56bb748647c30125aad64a136998baf61e23228b5a404d99c5043ac7"
 ---
 
 # Vercel Integrations
@@ -35,13 +35,13 @@ Integrations allow you to extend the capabilities of Vercel by connecting with t
 - [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure)
 - [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently)
 - [Improvements and fixes](https://vercel.com/changelog/may-2022-papercuts)
-- [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
+- [Build a Claude Managed Agent with Vercel Workflow](https://vercel.com/kb/guide/claude-managed-agent-vercel) — Learn how to build a Claude Managed Agent on Vercel with auth, credential vaults, durable polling, and a chat UI.
+- [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk) — Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed brief
+- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
+- [Debug and Troubleshoot Logs with Vercel and Sematext](https://vercel.com/kb/guide/debugging-and-troubleshooting-vercel-logs-with-sematext) — Automatically send all Vercel logs to Sematext to understand how your application is running.
+- [Give your eve agent an email inbox with Resend](https://vercel.com/kb/guide/eve-agent-with-resend) — Connect an eve agent to email using the Chat SDK channel and the Resend adapter. Handle inbound email, threaded replies,
 - [Expanding observability on Vercel](https://vercel.com/blog/expanding-observability-on-vercel)
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
-- [Log Drains](https://vercel.com/blog/log-drains)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 
 Full cross-link map for this page: [/docs/integrations.graph.md](/docs/integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -113,3 +113,6 @@ When you add a connectable account integration through the Vercel dashboard, you
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

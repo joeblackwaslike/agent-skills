@@ -16,8 +16,8 @@ related:
 summary: "Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, rename, remove, and configure..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7c3a8552da4e3ee1019ba2125a2692ec6ec6b4f920bd8a272b4d126df5212c22"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "acdf4373d7316aeff27204d0949b88d5d65b819941f50cc3ab2a9274a0c14740"
 ---
 
 # vercel project
@@ -33,9 +33,9 @@ The `vercel project` command manages your Vercel Projects from the terminal: lis
 - [Update Project Settings from the Vercel CLI](https://vercel.com/changelog/update-project-settings-from-the-vercel-cli)
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
-- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 - [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md)
@@ -586,3 +586,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

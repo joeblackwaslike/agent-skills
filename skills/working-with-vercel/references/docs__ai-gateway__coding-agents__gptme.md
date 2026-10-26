@@ -16,8 +16,8 @@ related:
 summary: Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/gptme.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a0f8e1b586f28f08a701c95ff4f99147fffc73f4070e4a0d140f22ec3045aec2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6e0acf5629bbc2af822396c72041f4942ecb4632e4810aedafa637b54eee4eba"
 ---
 
 # gptme with AI Gateway
@@ -33,8 +33,8 @@ sha256: "a0f8e1b586f28f08a701c95ff4f99147fffc73f4070e4a0d140f22ec3045aec2"
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
-- [Goose with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/goose) — Connect Goose to AI Gateway with the Vercel CLI or a custom OpenAI-compatible provider.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/gptme.graph.md](/docs/ai-gateway/coding-agents/gptme.graph.md)
 <!-- /docsgraph:related -->
@@ -111,3 +111,6 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

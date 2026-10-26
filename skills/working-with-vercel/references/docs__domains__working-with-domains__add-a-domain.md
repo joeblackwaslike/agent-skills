@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/add-a-domain.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "726f56b7f42c8266b34097e3cb964741823d1416cce5cd8f521e878a4e8baab4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "17b0dcb238b1962a43990348ea9d2dabc01a80ad431eeb39639629bce6e2d80b"
 ---
 
 # Adding & Configuring a Custom Domain
@@ -38,8 +38,8 @@ Vercel provides all deployments with a `vercel.app` URL, which enables you to sh
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
 - [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
 - [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Anatomy of the Checks API](https://vercel.com/docs/checks/creating-checks) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration to register any arbitra
 
@@ -179,3 +179,6 @@ DNS changes can take time to propagate. Use [DNS verification](/docs/domains/man
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

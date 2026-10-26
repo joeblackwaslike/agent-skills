@@ -13,8 +13,8 @@ related:
 summary: Use list_toolbar_threads with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/list_toolbar_threads.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c4e385ffac0d295b4c83b9f67a69fe54796123bee8d0a52b317785dddc37aee2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3415aa3016f720e44d7eccf6ded5fdb2d583519a43a53520c1564ab8a9228c4a"
 ---
 
 # list_toolbar_threads
@@ -31,7 +31,7 @@ List [Vercel Toolbar](/docs/vercel-toolbar) comment threads for a team. Returns 
 - [change_toolbar_thread_resolve_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status) — Use change_toolbar_thread_resolve_status with Vercel MCP.
 - [reply_to_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/reply_to_toolbar_thread) — Use reply_to_toolbar_thread with Vercel MCP.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
-- [list_connectors](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connectors) — Use list_connectors with Vercel MCP.
+- [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolbar/list_toolbar_threads.graph.md](/docs/agent-resources/vercel-mcp/tools/toolbar/list_toolbar_threads.graph.md)
 <!-- /docsgraph:related -->
@@ -53,3 +53,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

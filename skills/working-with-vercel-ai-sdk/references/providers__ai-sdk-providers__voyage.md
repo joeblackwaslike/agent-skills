@@ -1,24 +1,67 @@
 ---
 title: Voyage AI
-description: Learn how to use the Voyage AI provider for embedding and reranking with the AI SDK.
+description: Learn how to use Voyage AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "9c347f92e5f1ed182a3f079145895b5ed6b29df929939627ea248036aab8ef45"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "0fc627c366eae63d448b642cb5ea42488627462833da5bbdf53395f8a4a1553b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Voyage AI](https://www.voyageai.com/) provider contains embedding and reranking model support for the Voyage AI API.
+You can use Voyage AI models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/voyage`.
 
-## Setup
+```ts provider="voyage" model="voyage/voyage-4"
+import { embed } from 'ai';
 
-The Voyage AI provider is available in the `@ai-sdk/voyage` module. You can install it with
+const { embedding } = await embed({
+  model: "voyage/voyage-4",
+  value: 'A vegetarian lasagna recipe.',
+});
+
+console.log(embedding);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/voyage
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/voyage`
+
+For direct access to Voyage AI, install `ai` and `@ai-sdk/voyage`:
+
+```bash
+pnpm add ai @ai-sdk/voyage
+```
+
+Set your Voyage AI API credential in the `VOYAGE_API_KEY` environment variable:
+
+```bash
+export VOYAGE_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/voyage`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/voyage` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

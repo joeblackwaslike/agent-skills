@@ -4,8 +4,8 @@ description: Learn about tool calling and multi-step calls (using stopWhen) with
 url: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "9e212b1aa7648a0c381d9e81b95288f084ef38ee8f69de1c5f65e5e88e583f2f"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "dab6020bf99be7fb5b0f60284e8b5280b07ac0e90f5401e0d36cdd72b5635a70"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -808,6 +808,13 @@ It supports the following settings:
 - `required`: the model must call a tool. It can choose which tool to call.
 - `none`: the model must not call tools
 - `{ type: 'tool', toolName: string (typed) }`: the model must call the specified tool
+
+When `toolChoice` is `'none'`, the SDK prevents local tool execution even if the
+model returns a tool call. Such responses produce a
+[`ToolChoiceViolationError`](/docs/reference/ai-sdk-errors/ai-tool-choice-violation-error).
+With `streamText`, tool parts are withheld from the stream, so client-side tools
+are not invoked either. Tool call repair and input refinement are skipped for
+rejected tool calls.
 
 ```ts {19}
 import { z } from 'zod';

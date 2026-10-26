@@ -15,13 +15,13 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b3b13127678746e7e6ed1d8d4fc0bc3a6c1b5f4938728aabf3ae52ba276dc6a2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4949ff7d4ca33ff39019bf5d56716a2c57d49c100f1ceddaea8b2898c783723e"
 ---
 
 # Reference
 
-> **Availability**: Flags Explorer is available on all plans
+> Flags Explorer is available on all plans
 
 The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint), the [FLAGS\_SECRET environment variable](/docs/flags/flags-explorer/reference#flags_secret-environment-variable), the [override cookie](/docs/flags/flags-explorer/reference#override-cookie), [flag definitions](/docs/flags/flags-explorer/reference#definitions), and [flag values](/docs/flags/flags-explorer/reference#values).
 
@@ -35,8 +35,8 @@ The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
-- [Statsig](https://flags-sdk.dev/docs/providers/statsig)
 - [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js)
+- [Statsig](https://flags-sdk.dev/docs/providers/statsig)
 - [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag) — PUT /v1/projects/{projectIdOrName}/feature-flags/flags — Create a new feature flag for a project. The flag must have a u
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md)
@@ -703,3 +703,6 @@ For more information, see the following sections:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/help.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9f2fb28e30d5a1e58d5ba8eee840bfb5cbf05c421b47e9f93e0ecda766a72fb5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "df2e5a8e61ea828af5eb0d83f49c40db16b3fa58f8259faf9774975e0a536fc7"
 ---
 
 # vercel help
@@ -27,10 +27,10 @@ The `vercel help` command generates a list of all available Vercel CLI commands 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [use_vercel_cli](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli) — Use use_vercel_cli with Vercel MCP.
-- [Documentation and CLI](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Vercel MCP tools for documentation and cli.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
+- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [vercel contract](https://vercel.com/docs/cli/contract) — Learn how to view contract commitment information for your Vercel account using the vercel contract CLI command.
 
 Full cross-link map for this page: [/docs/cli/help.graph.md](/docs/cli/help.graph.md)
 <!-- /docsgraph:related -->
@@ -59,3 +59,6 @@ information about a specific Vercel CLI command.*
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

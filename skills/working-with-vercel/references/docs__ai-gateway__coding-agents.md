@@ -16,8 +16,8 @@ related:
 summary: Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "14f0cb8d83e98ff794823a7cfa1d0c4c178fe7fbcfb16d30146ace42b39b3d50"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "db5f557235c4002c91fc8fb8c1c8365238d3f2f46326c6d4a1b3eb67b9d8d765"
 ---
 
 # Coding Agents and Chat Platforms with AI Gateway
@@ -31,13 +31,13 @@ Route coding agents and chat platforms through AI Gateway to share model access,
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
+- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
 - [10x more capacity for Laguna S 2.1 on AI Gateway](https://vercel.com/changelog/10x-more-capacity-for-laguna-s-2-1-on-ai-gateway)
 - [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Claude Fable 5.1 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-1-now-available-on-ai-gateway)
-- [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
-- [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 
@@ -125,6 +125,10 @@ See each agent's page for what its endpoint adds. Agents with a first-party AI G
 | **Billing**        | Multiple invoices, multiple accounts | One Vercel invoice              |
 | **Reliability**    | Single point of failure              | Automatic provider fallbacks    |
 | **Observability**  | Limited or no visibility             | Full request traces and metrics |
+
+## Configure an agent's model with a virtual model
+
+Coding agents send AI Gateway a model ID with each request, but they usually can't attach AI Gateway options such as provider order, model fallbacks, regional inference, or zero data retention. To apply those settings to an agent, create a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models#using-a-virtual-model-with-claude-code-codex-and-other-coding-agents) and select `vmc/<slug>` as the agent's model. AI Gateway lists your team's virtual models in the model catalogs agents load, so the slug appears in pickers such as `/model` in Claude Code and Codex. You can change the virtual model's settings later without editing each developer's config.
 
 ## Featured agents
 
@@ -325,3 +329,6 @@ Once your tools are connected, view usage in the [Observability section in the s
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

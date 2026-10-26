@@ -14,13 +14,13 @@ related:
 summary: Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/privacy-policy.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "dee08c5e6f2a990d8d46a301271c80dad3cfb4feb75b23962c46ba13267adee1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dd3144b117c1a9691e2ed8c78e273c367c5cb0168c1b152b7b85c0d1292cb975"
 ---
 
 # Vercel Speed Insights Privacy & Compliance
 
-> **Availability**: Speed Insights is available on all plans
+> Speed Insights is available on all plans
 
 To ensure that the Speed Insights feature can be used despite many different regulatory limitations around the world, we've designed it in such a way that it provides you with information without being tied to, or associated with, any individual visitor or IP address.
 
@@ -32,10 +32,10 @@ To ensure that the Speed Insights feature can be used despite many different reg
 
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
-- [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
-- [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 - [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
+- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
+- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 
 Full cross-link map for this page: [/docs/speed-insights/privacy-policy.graph.md](/docs/speed-insights/privacy-policy.graph.md)
@@ -83,3 +83,6 @@ The Resilient Intake does not depend on a single predictable URL path for data c
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

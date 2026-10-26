@@ -14,8 +14,8 @@ related:
 summary: "Learn how to set up Vercel's private registry for use locally, in Vercel, and in your CI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/private-registry.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "4aecaba521623ba8655c9dc42df4b8fd0106a17bb6fd5fb4faf1534dca013604"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "96b40dc25dff2efb10a3dca2717d8c8f300d4591f2845bdfba7597f63802e235"
 ---
 
 # Working with Vercel
@@ -39,28 +39,23 @@ This guide covers Vercel's private registry packages. For information on using y
 
   Execute the following command to configure your package manager to fetch
   packages with the `@vercel-private` scope from the private registry. If you're using modern Yarn (v2 or newer) see the [Using modern versions of Yarn](#setting-registry-server-using-modern-versions-of-yarn) section below.
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      npm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      npm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
+  ```
+  **yarn**
+  ```bash
+  npm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
+  ```
+  **npm**
+  ```bash
+  npm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
+  ```
+  **bun**
+  ```bash
+  npm config set --location=project @vercel-private:registry "https://vercel-private-registry.vercel.sh/registry"
+  ```
   This command creates an `.npmrc` file (or updates one if it exists) at the root
   of your workspace. We recommend committing this file to your repository, as it
   will help other engineers get on board faster.
@@ -77,28 +72,23 @@ This guide covers Vercel's private registry packages. For information on using y
   summarize this step in your team's onboarding documentation.
 
   To log in, use the following command and follow the prompts:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm login --scope=@vercel-private
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      npm login --scope=@vercel-private
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm login --scope=@vercel-private
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      npm login --scope=@vercel-private
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm login --scope=@vercel-private
+  ```
+  **yarn**
+  ```bash
+  npm login --scope=@vercel-private
+  ```
+  **npm**
+  ```bash
+  npm login --scope=@vercel-private
+  ```
+  **bun**
+  ```bash
+  npm login --scope=@vercel-private
+  ```
   > **💡 Note:** The minimum required version of npm to log into the registry is 8.14.0. For
   > pnpm, version 7.0.0 or higher is required.
   During this process, you will be asked to log in to your Vercel account. Ensure
@@ -121,28 +111,23 @@ This guide covers Vercel's private registry packages. For information on using y
 
 - ### Verify your setup
   Verify your login status by executing:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm whoami --registry=https://vercel-private-registry.vercel.sh/registry
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn npm whoami --scope=vercel-private
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm whoami --registry=https://vercel-private-registry.vercel.sh/registry
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun pm whoami --registry=https://vercel-private-registry.vercel.sh/registry
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm whoami --registry=https://vercel-private-registry.vercel.sh/registry
+  ```
+  **yarn**
+  ```bash
+  yarn npm whoami --scope=vercel-private
+  ```
+  **npm**
+  ```bash
+  npm whoami --registry=https://vercel-private-registry.vercel.sh/registry
+  ```
+  **bun**
+  ```bash
+  bun pm whoami --registry=https://vercel-private-registry.vercel.sh/registry
+  ```
   > **💡 Note:** The Yarn command only works with Yarn version 2 or newer, use the npm command
   > if using Yarn v1.
   You should see your Vercel username returned if everything is set up correctly.
@@ -191,44 +176,39 @@ This guide covers Vercel's private registry packages. For information on using y
   }
   ```
   Then add the following script to the `scripts` field in your `package.json`:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      {
-        "scripts": {
-          "pnpm:devPreinstall": "node preinstall.mjs"
-        }
-      }
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      {
-        "scripts": {
-          "preinstall": "node preinstall.mjs"
-        }
-      }
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      {
-        "scripts": {
-          "preinstall": "node preinstall.mjs"
-        }
-      }
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      {
-        "scripts": {
-          "preinstall": "node preinstall.mjs"
-        }
-      }
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  {
+    "scripts": {
+      "pnpm:devPreinstall": "node preinstall.mjs"
+    }
+  }
+  ```
+  **yarn**
+  ```bash
+  {
+    "scripts": {
+      "preinstall": "node preinstall.mjs"
+    }
+  }
+  ```
+  **npm**
+  ```bash
+  {
+    "scripts": {
+      "preinstall": "node preinstall.mjs"
+    }
+  }
+  ```
+  **bun**
+  ```bash
+  {
+    "scripts": {
+      "preinstall": "node preinstall.mjs"
+    }
+  }
+  ```
 
 ## Setting up Vercel
 
@@ -309,3 +289,6 @@ By default, GitHub workflows are not required. To require the workflow in your r
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

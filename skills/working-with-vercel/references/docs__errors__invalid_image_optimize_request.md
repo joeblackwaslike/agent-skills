@@ -12,8 +12,8 @@ related:
 summary: The query string is using an invalid value for q, w, or url parameters. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/invalid_image_optimize_request.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "ce37fea5a382eafaefa5eb1c1d3c8ee1251ceb03f3c79919ddfcef69abbf313a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fb6bf8f076a69d1728025f09d9c26ea6074a6fb23ffcfcc6f51ce58cb64d8c0a"
 ---
 
 # INVALID_IMAGE_OPTIMIZE_REQUEST
@@ -50,3 +50,6 @@ Run `next dev` locally to reproduce the error and get additional details.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -17,8 +17,8 @@ related:
 summary: Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "31c4aa47265c5258bee08259923256ff46e1927c908c3abf78232ffca0d39904"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "18f9f2140f655071700da2a757c59d66b4db246270b64e0f1c9cd3fbe3994e83"
 ---
 
 # Webhook triggers for Vercel Connect
@@ -35,14 +35,13 @@ A **trigger** is an incoming webhook from a third-party service that Vercel Conn
 - [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect)
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
-- [Creating & Triggering Deploy Hooks](https://vercel.com/docs/deploy-hooks) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
+- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks) — Learn how to set up webhooks and use them with Vercel Integrations.
+- [Creating & Triggering Deploy Hooks](https://vercel.com/docs/deploy-hooks) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 
 Full cross-link map for this page: [/docs/connect/concepts/triggers.graph.md](/docs/connect/concepts/triggers.graph.md)
 <!-- /docsgraph:related -->
@@ -180,3 +179,6 @@ If the target does not resolve to a deployment, or the receiving handler returns
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

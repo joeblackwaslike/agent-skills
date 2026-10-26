@@ -12,8 +12,8 @@ related:
 summary: The microfrontend configuration file is invalid.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_microfrontends_invalid_configuration_error.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "2eb3c36056378ef56580b75e204316f4f903bab2f6d294159fc02268f61fb979"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b2b7d0b6afdf98e05e4654a923a5c5af195cc23ba4a1048608dfa1d53f50c937"
 ---
 
 # INTERNAL_MICROFRONTENDS_INVALID_CONFIGURATION_ERROR
@@ -34,3 +34,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

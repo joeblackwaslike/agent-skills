@@ -17,13 +17,15 @@ related:
 summary: Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2e7d2c286aa18bf262b617881e4acb0a35deb6ad226e5569e035486fd36d164f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7c70c4892a3205bf9f3b00b6ded1802e6e1c9acb419d3da439da7f79a2e32f1f"
 ---
 
 # Restrict access to deployments with Vercel Authentication
 
-> **Availability**: Vercel Authentication is available on all plans
+> Vercel Authentication is available on all plans
+>
+> Those with the owner, member and admin roles can manage Vercel Authentication
 
 Vercel Authentication lets you restrict access to your public and non-public deployments. It is the **recommended** approach to protecting your deployments. When enabled, it allows only users with deployment access to view and comment on your site.
 
@@ -64,7 +66,9 @@ After login, Vercel redirects the user and sets a cookie in the browser if they 
 
 ## Access requests
 
-> **Availability**: Access requests are available on all plans
+> Access requests are available on all plans
+>
+> Those with the owner, member, admin and developer roles can accept or reject access requests
 
 When a Vercel user visits your protected deployment, but they do not have permission to access it, they have the option to request access for their Vercel account.
 This request triggers an email and Vercel notification to the branch authors.
@@ -100,7 +104,7 @@ Disabling Vercel Authentication renders all existing deployments unprotected. Wh
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Environment configuration** | Can be enabled for different environments. See [Choose which URLs to protect](/docs/deployment-protection#choose-which-urls-to-protect)                                                                                           |
 | **Compatibility**             | Works alongside [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)                                                      |
-| **Bypass methods**            | Can be bypassed using [Shareable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) |
+| **Bypass methods**            | Can be bypassed using [Shareable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation), or by callers listed in [Trusted Sources](/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources) |
 | **Disabling**                 | All existing deployments become unprotected when Vercel Authentication is disabled                                                                                                                                                                                                     |
 | **Re-enabling**               | Users who have logged in previously will still have access without re-authenticating                                                                                                                                                                                                   |
 | **Token scope**               | Tokens are valid for a single URL and are not reusable across different URLs                                                                                                                                                                                                           |
@@ -161,3 +165,6 @@ You can configure Vercel Authentication using `vercel_authentication` in the `ve
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

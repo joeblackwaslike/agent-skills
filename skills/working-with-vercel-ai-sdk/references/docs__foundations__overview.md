@@ -4,8 +4,8 @@ description: An overview of foundational concepts critical to understanding the 
 url: "https://ai-sdk.dev/docs/foundations/overview"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/overview.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "95381ef59f76c56227e627cee9f3d4281c5927ba7f64381d440d7354a08a24ab"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "f71f7d4ef8dd95ae6b90fdb75d0873cab83357a61e3489bb2f5dfa150802a5f7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -41,7 +41,7 @@ However, it's crucial to understand LLMs' limitations. When asked about less kno
 
 An **embedding model** is used to convert complex data (like words or images) into a dense vector (a list of numbers) representation, known as an embedding. Unlike generative models, embedding models do not generate new text or data. Instead, they provide representations of semantic and syntactic relationships between entities that can be used as input for other models or other natural language processing tasks.
 
-In the next section, you will learn about the difference between models providers and models, and which ones are available in the AI SDK.
+In the next section, you will learn about the difference between model providers and models, and which ones are available in the AI SDK.
 
 ---
 

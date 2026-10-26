@@ -13,8 +13,8 @@ related:
 summary: Use update_project_protection_bypass with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_protection_bypass.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "954e776e32a9ef8b0e3e0d10a5e2f1b79ce06de200dd77db0b9b06d4f26b2b89"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7be225961b8af56ba235f594d365a445eeaa030ac4b4f3d0f51cca3b970320d3"
 ---
 
 # update_project_protection_bypass
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "dbb3018206828068484c0b89866105c7f6a219045c4d138c324746e8ee0ecbd1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "724402718fb7a507ef47ad692525ac7221bb270080a37d22ea74fd5193ed2cef"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -34,11 +34,13 @@ The `vercel.ts` file lets you configure and override the default behavior of Ver
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers) — Add custom HTTP headers to your Next.js app.
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
-- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [Static Configuration with vercel.toml](https://vercel.com/docs/project-configuration/vercel-toml) — Configure your Vercel project with a TOML file using the same properties as vercel.json.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md)
 <!-- /docsgraph:related -->
@@ -66,28 +68,29 @@ To migrate from `vercel.json`, copy its contents into your `config` export, then
 
 Install the NPM package to get access to types and helpers.
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/config
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/config
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/config
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/config
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/config
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/config
+```
+
+**npm**
+
+```bash
+npm i @vercel/config
+```
+
+**bun**
+
+```bash
+bun add @vercel/config
+```
 
 Create a `vercel.ts` in your project root and export a typed config. The example below shows how to configure build commands, framework settings, routing rules (rewrites and redirects), and headers:
 
@@ -234,7 +237,7 @@ This value overrides the [Build Command](/docs/builds/configure-a-build#build-co
 
 ## bunVersion
 
-> **Availability**: The Bun runtime (Beta) is available on all plans
+> The Bun runtime is available in Beta on all plans
 
 **Type:** `string`
 
@@ -968,7 +971,7 @@ You can also set `regions` on individual functions using the [`functions`](/docs
 
 ## functionFailoverRegions
 
-> **Availability**: Setting failover regions for Vercel functions are available on Enterprise plans
+> Setting failover regions for Vercel functions are available on Enterprise plans
 
 Set this property to specify the [region](/docs/functions/configuring-functions/region) to which a Vercel Function should fallback when the default region(s) are unavailable.
 
@@ -1230,3 +1233,6 @@ For details on legacy properties, see the [legacy section of the static configur
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

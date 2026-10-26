@@ -12,8 +12,8 @@ related:
 summary: The internal function is not ready to be invoked. This is a Vercel error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_function_not_ready.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "fcdf38b0e4cc28c4cab39115709bd4cb68f65835767945f3df9836fdd93ba77f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "40445057a433e977b02ad4567f0380b78bc72827c5c86b327735fb32f3ae346d"
 ---
 
 # INTERNAL_FUNCTION_NOT_READY
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

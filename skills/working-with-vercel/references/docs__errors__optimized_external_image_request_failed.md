@@ -12,8 +12,8 @@ related:
 summary: The request for an optimized external image failed. This is a server error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/optimized_external_image_request_failed.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "53de70b5605314004f9359ea7198f4d98c72b3ab8187e9a7b7ce659ebd79dc6c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f005fb10e0bc58ca0b379aa56def80775b30ee50268243d67314f9c8207aeac1"
 ---
 
 # OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED
@@ -35,3 +35,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

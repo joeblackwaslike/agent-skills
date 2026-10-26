@@ -16,8 +16,8 @@ related:
 summary: End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sessions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/workflows.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d78f1a28934d6490280938c33ca8744b6da4739a465d1d43c4b59cec04fe8091"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a4c4e798b6a33010084afbd88d48f6061c4aa1da0a0e4e185e176500cb20a96d"
 ---
 
 # CLI Workflows
@@ -35,12 +35,13 @@ These workflows show how to compose multiple Vercel CLI commands into complete w
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Python](https://workflow-sdk.dev/docs/getting-started/python) — Set up the Workflow Python SDK in your Python application.
+- [How to migrate from DurableAgent to WorkflowAgent](https://vercel.com/kb/guide/durableagent-to-workflowagent) — Switch your app from \\`DurableAgent\\` \\(@workflow/ai\\) to \\`WorkflowAgent\\` \\(@ai-sdk/workflow\\) by updating imports, st
+- [Observability](https://workflow-sdk.dev/docs/observability) — Inspect and debug workflow runs using the CLI and web UI.
 - [CLI and Web UI](https://workflow-sdk.dev/docs/configuration/cli-and-web-ui) — Configure workflow inspect, workflow cancel, workflow web, workflow health, and observability tooling.
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
-- [Observability](https://workflow-sdk.dev/docs/observability) — Inspect and debug workflow runs using the CLI and web UI.
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 
 Full cross-link map for this page: [/docs/agent-resources/workflows.graph.md](/docs/agent-resources/workflows.graph.md)
 <!-- /docsgraph:related -->
@@ -111,3 +112,6 @@ These workflows are designed as composition patterns. Each one shows a complete 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

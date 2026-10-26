@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for teams and users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "639075316277e85bee3e4ca5c30e4c0e41ff2fffc05dde2952b527b75e80581b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ce579452c89ecf736cd36529502e5c80cb3b2814101d5fe691973b2dc7b7ecef"
 ---
 
 # Teams and Users
@@ -28,10 +28,10 @@ Inspect your account and teams, list team members, and read activity events. The
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
-- [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
-- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
 - [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 - [Invite a user](https://vercel.com/docs/rest-api/teams/invite-a-user) — POST /v2/teams/{teamId}/members — Invite a user to join the team specified in the URL. The authenticated user needs to b
+- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
+- [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams.graph.md](/docs/agent-resources/vercel-mcp/tools/teams.graph.md)
 <!-- /docsgraph:related -->
@@ -126,3 +126,6 @@ List User Events.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

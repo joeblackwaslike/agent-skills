@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a new AI provider to your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bd40d0179f42da8b6e33db49d9342fca51a39a741e6b46094a8b3c1278925bdb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f2353f26f303eb86f5acae8a995e37d9b035e00a6424fd0ae85ff721b682d585"
 ---
 
 # Adding a Provider
@@ -31,13 +31,13 @@ When you Open **AI** in the sidebar, you'll see a list of installed AI integrati
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
+- [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
-- [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
+- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md](/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md)
 <!-- /docsgraph:related -->
@@ -93,3 +93,6 @@ Once you add a provider, the **AI** section in the sidebar will display a list o
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

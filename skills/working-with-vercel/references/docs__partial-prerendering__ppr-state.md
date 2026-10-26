@@ -13,8 +13,8 @@ related:
 summary: "Understand the PPR state that describes how a Partial Prerendering page was served: as a static shell, a partial resume, or fully dynamic."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering/ppr-state.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "a4cb5f296d9f38ee489b5ff354b3a7f9b4a725ed49d260f3534d2f8baf272663"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "579ff075443534f0d7ce42b117119ef8f24e842e34d7977e221f3946ab06db6c"
 ---
 
 # Partial Prerendering State
@@ -175,3 +175,6 @@ With an empty shell, there is nothing for the CDN to serve ahead of the render, 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

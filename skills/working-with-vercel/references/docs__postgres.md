@@ -13,8 +13,8 @@ related:
 summary: Learn how to use Postgres databases through the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/postgres.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "ce8152b28b651080566f1bf31daa4f10896954add72b45c05c9161e21d620377"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3abea43f2af6a69f4199d11cb6b51d2df3bba0005b5207fc79fd23b6e344fdb2"
 ---
 
 # Postgres on Vercel
@@ -38,3 +38,6 @@ Vercel enables you to use Postgres by integrating with external database provide
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -17,8 +17,8 @@ related:
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "50961c6d80993ffba702bf83d4e13de277f7527c9fb1970b9c1a955af3014a79"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "636b3e83e01bb47edeb6ececb0b857c5a9017886cc3e679cadbf3488a4595369"
 ---
 
 # Using the Integrations REST API
@@ -32,8 +32,8 @@ Learn how to authenticate and use the Integrations REST API to build your native
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
-- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
 - [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
@@ -835,3 +835,6 @@ async function handleInvoiceRefunded(webhook: WebhookPayload) {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

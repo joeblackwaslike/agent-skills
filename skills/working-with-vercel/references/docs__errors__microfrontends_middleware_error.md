@@ -12,8 +12,8 @@ related:
 summary: The microfrontend middleware returned an invalid application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/microfrontends_middleware_error.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4801f494800fcc40bbc0985e147a86d350273c1d59e3f673206e0649fca5fe8b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4890fba15afeb14fcc9b272aa3aec24488e01ec196378a4d0da52cbb5ee1faae"
 ---
 
 # MICROFRONTENDS_MIDDLEWARE_ERROR
@@ -31,3 +31,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

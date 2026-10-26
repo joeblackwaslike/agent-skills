@@ -13,8 +13,8 @@ related:
 summary: Use create_deployment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "03b05bf2d3965607d8ccb53a0dce29258e8eb79fceab2fdcaabfeb1860def5d4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e0bec06a21a0ab521c6dca243ce3e92ddca3fd17f8c003e86995e913883d6cbc"
 ---
 
 # create_deployment
@@ -30,9 +30,9 @@ Create a [deployment](/docs/deployments) from a Git source or files. Put `name`,
 - [Create Deployment](https://v0.app/docs/api/v1/reference/deployments/create) — Create a new deployment for a specific chat and version. This will trigger a deployment to Vercel.
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 - [cancel_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment) — Use cancel_deployment with Vercel MCP.
+- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
 - [request_promote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_promote) — Use request_promote with Vercel MCP.
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -53,3 +53,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

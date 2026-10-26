@@ -4,8 +4,8 @@ description: Learn how to upload skills and use provider references with the AI 
 url: "https://ai-sdk.dev/docs/ai-sdk-core/skill-uploads"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/skill-uploads.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "d95d4acdad1a14472bd63988573cd3fb402ec025792f669cbc3acab63d17122c"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "302363859056e2c862972dfa6273ed06452ff25a3e22ffd904bb66db7fded343"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -19,7 +19,7 @@ that providers can load, e.g. in sandboxed container environments.
 
 In the AI SDK, the uploaded skill is identified by a `ProviderReference` — a
 `Record<string, string>` mapping provider names to provider-specific identifiers.
-This concept is used for other provider specific asset references too, such as
+This concept is used for other provider-specific asset references too, such as
 uploaded media files.
 
 ```ts
@@ -35,7 +35,7 @@ const { providerReference } = await uploadSkill({
   files: [
     {
       path: 'my-skill/SKILL.md',
-      content: readFileSync('./SKILL.md'),
+      data: readFileSync('./SKILL.md'),
     },
   ],
   displayTitle: 'My Skill',
@@ -62,16 +62,16 @@ As a shorthand, you can pass a provider instance directly to `api` instead of ca
 ```ts {2}
 const { providerReference } = await uploadSkill({
   api: anthropic, // shorthand for anthropic.skills()
-  files: [{ path: 'my-skill/SKILL.md', content: readFileSync('./SKILL.md') }],
+  files: [{ path: 'my-skill/SKILL.md', data: readFileSync('./SKILL.md') }],
   displayTitle: 'My Skill',
 });
 ```
 
 ## Skill Files
 
-A skill is composed of one or more files, each with a relative `path` and `content`.
-File content can be provided as a `Uint8Array` (e.g. from `fs.readFileSync`) or as a
-base64-encoded string:
+A skill is composed of one or more files, each with a relative `path` and `data`.
+
+File content can be provided as a `Uint8Array` (for example, from `fs.readFileSync`) or as a base64-encoded string. Alternatively, `data` can be provided as a tagged object with either `type: 'text'` or `type: 'data'` to explicitly specify the content format:
 
 ```ts
 const { providerReference } = await uploadSkill({
@@ -79,11 +79,25 @@ const { providerReference } = await uploadSkill({
   files: [
     {
       path: 'my-skill/SKILL.md',
-      content: readFileSync('./SKILL.md'), // Uint8Array
+      data: readFileSync('./SKILL.md'), // Uint8Array
     },
     {
       path: 'my-skill/helper.py',
-      content: readFileSync('./helper.py'),
+      data: readFileSync('./helper.py'),
+    },
+    {
+      path: 'my-skill/data.json',
+      data: {
+        type: 'data',
+        data: Buffer.from(JSON.stringify({ foo: 'bar' })).toString('base64'),
+      },
+    },
+    {
+      path: 'my-skill/README.txt',
+      data: {
+        type: 'text',
+        text: 'This is a skill for demonstrating skill uploads.',
+      },
     },
   ],
 });
@@ -128,11 +142,11 @@ merge the references:
 const [openaiUpload, anthropicUpload] = await Promise.all([
   uploadSkill({
     api: openai.skills(),
-    files: [{ path: 'my-skill/SKILL.md', content: skillSource }],
+    files: [{ path: 'my-skill/SKILL.md', data: skillSource }],
   }),
   uploadSkill({
     api: anthropic.skills(),
-    files: [{ path: 'my-skill/SKILL.md', content: skillSource }],
+    files: [{ path: 'my-skill/SKILL.md', data: skillSource }],
     displayTitle: 'My Skill',
   }),
 ]);

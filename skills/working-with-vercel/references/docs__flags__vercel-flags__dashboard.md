@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your feature flags using the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "aaf83946820205db4885a6930072274432fbc2d475cd0f185569da5710e7fb1c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e6ffb2b7c40739ec9f5380380221ee7bab81117190b13f493ac9f09fbe68d32d"
 ---
 
 # Managing flags in the dashboard
@@ -31,14 +31,14 @@ The **Flags** section in your Vercel dashboard sidebar is the central place to m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer) — View and override your application's feature flags from the Vercel Toolbar
+- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard.graph.md](/docs/flags/vercel-flags/dashboard.graph.md)
 <!-- /docsgraph:related -->
@@ -104,7 +104,7 @@ For more information on entities, see [Entities](/docs/flags/vercel-flags/dashbo
 
 ### SDK Keys
 
-SDK Keys are secrets for manual authentication and cross-project flag evaluation.
+SDK Keys are secrets for manual authentication.
 
 To share flags across projects, such as in a microfrontend setup, create a dedicated SDK Key in one project and add it to the other project's environment variables. See [How to use flags of another project](/docs/flags/vercel-flags/dashboard/sdk-keys#how-to-use-flags-of-another-project) for details.
 
@@ -126,3 +126,6 @@ For more information on archiving flags, see [Archive](/docs/flags/vercel-flags/
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

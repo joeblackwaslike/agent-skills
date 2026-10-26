@@ -12,8 +12,8 @@ related:
 summary: The DNS hostname resolved to a private IP address or an IPv6 address during an external rewrite. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/dns_hostname_resolved_private.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "46df5105699fb51e1e68861b2ea475ba4c33d38a34f17a8b773dc5d2e39a8b51"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "90f399f6d604d6412b341ce2f2a6039661cb14d313dced65c6a4d64868dfecc5"
 ---
 
 # DNS_HOSTNAME_RESOLVED_PRIVATE
@@ -41,3 +41,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

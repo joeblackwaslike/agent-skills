@@ -12,8 +12,8 @@ related:
 summary: "The internal invocation of a function failed. This is Vercel's error."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_function_invocation_failed.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "36518f30b73cca4d9ffb78edb369bee7f1dc1765cf985b43005f699f7542cf84"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "318d2bb30f9eaa17e061424e51daf1979934b68a46cb1f07ab296618f73de048"
 ---
 
 # INTERNAL_FUNCTION_INVOCATION_FAILED
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

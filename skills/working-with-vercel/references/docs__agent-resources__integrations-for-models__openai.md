@@ -13,8 +13,8 @@ related:
 summary: "Integrate your Vercel project with OpenAI's powerful suite of models."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/openai.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "512c39e0dc41276d22ce3e614e1c6bd4bb574be41fd5c31af2f63035e18fb425"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b72e01f7c0e50c4aaf5aa0c076cc86e07b74aaf08f046dde959b245b7ef63f53"
 ---
 
 # Vercel & OpenAI Integration
@@ -28,13 +28,11 @@ Vercel integrates with [OpenAI](https://platform.openai.com/overview) to enable 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel)
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
-- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
+- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/openai.graph.md](/docs/agent-resources/integrations-for-models/openai.graph.md)
 <!-- /docsgraph:related -->
@@ -76,28 +74,29 @@ Integrating OpenAI into your Vercel project is seamless with the [AI SDK](https:
 
 Install the AI SDK in your project with your favorite package manager:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i ai
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add ai
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i ai
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add ai
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i ai
+```
+
+**yarn**
+
+```bash
+yarn add ai
+```
+
+**npm**
+
+```bash
+npm i ai
+```
+
+**bun**
+
+```bash
+bun add ai
+```
 
 You can use the SDK to build AI applications with [React (Next.js)](https://ai-sdk.dev/docs/getting-started/nextjs-app-router), [Vue (Nuxt)](https://ai-sdk.dev/docs/getting-started/nuxt), [Svelte (SvelteKit)](https://ai-sdk.dev/docs/getting-started/svelte), and [Node.js](https://ai-sdk.dev/docs/getting-started/nodejs).
 
@@ -111,3 +110,6 @@ Learn more about using [tools with the AI SDK](https://ai-sdk.dev/docs/foundatio
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

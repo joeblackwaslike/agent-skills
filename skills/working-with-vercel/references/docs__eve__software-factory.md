@@ -14,8 +14,8 @@ related:
 summary: Understand what software factories are, when to use them, and how eve coordinates agents from work item to reviewed change.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/software-factory.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e67135761c58ced5bb80b628e59b2387ff2f314a6962ba9e09a7558c8b221b7f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b0a9e099ebc280674c4dfa8cafb656054a7168a19ab1f9d1071440313158ebc6"
 ---
 
 # How Software Factories Work
@@ -32,8 +32,8 @@ Software factories organize AI agents into repeatable development workflows that
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
 - [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
 - [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
-- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
-- [Introducing eve](https://vercel.com/blog/introducing-eve)
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [Vercel Workflows](https://vercel.com/docs/workflows) — Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deploymen
 
 Full cross-link map for this page: [/docs/eve/software-factory.graph.md](/docs/eve/software-factory.graph.md)
 <!-- /docsgraph:related -->
@@ -92,7 +92,7 @@ Several eve capabilities support the workflow:
 | Access external services           | [Connections](/docs/eve/concepts#connections) link agents to services and can use Vercel Connect for delegated credentials.      |
 | Inspect a run                      | [Agent Runs](/docs/eve/agent-runs) shows the sessions and tool calls behind an outcome.                                          |
 
-Foreman, the [eve software factory template](https://eve.dev/templates/eve-software-factory-template), is one implementation of this pattern. It routes GitHub and Linear work through classifier, analyst, implementer, and reviewer agents. Its workflow ends with a reviewed draft pull request; a person decides when to mark it ready and merge it.
+Foreman, the [eve software factory template](/templates/eve/eve-software-factory), is one implementation of this pattern. It routes GitHub and Linear work through classifier, analyst, implementer, and reviewer agents. Its workflow ends with a reviewed draft pull request; a person decides when to mark it ready and merge it.
 
 ## Explore software factory implementations
 
@@ -110,3 +110,6 @@ These resources put the concepts into practice:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -4,8 +4,8 @@ description: Learn about tools with the AI SDK.
 url: "https://ai-sdk.dev/docs/foundations/tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/tools.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "b9c993fa4c67b49c2ee57800b060b16c2f8ba24e035dde39dec5106e3c8de073"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "f372ec883ce2c6b716544204a81ab972da88e6d48dde7f1faf0129957532534c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -37,7 +37,7 @@ React components.
 
 If the LLM decides to use a tool, it will generate a tool call.
 Tools with an `execute` function are run automatically when these calls are generated.
-The output of the tool calls are returned using tool result objects.
+The output of the tool calls is returned using tool result objects.
 
 You can automatically pass tool results back to the LLM
 using [multi-step calls](/docs/ai-sdk-core/tools-and-tool-calling#multi-step-calls-using-stopwhen) with `streamText` and `generateText`.
@@ -151,7 +151,7 @@ page. See [Anthropic Provider](/providers/ai-sdk-providers/anthropic) and
 
 ## Schemas
 
-Schemas are used to define and validate the [tool input](/docs/ai-sdk-core/tools-and-tool-calling), tools outputs, and structured output generation.
+Schemas are used to define and validate the [tool input](/docs/ai-sdk-core/tools-and-tool-calling), tool outputs, and structured output generation.
 
 The AI SDK supports the following schemas:
 

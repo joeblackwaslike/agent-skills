@@ -1,24 +1,67 @@
 ---
 title: Anthropic
-description: Learn how to use the Anthropic provider for the AI SDK.
+description: Learn how to use Anthropic with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "0ec50c0c1d6c24b5446b230dd19fb0fadae24a4e679f6a5a37c70d2c3df5fd18"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "284e5a1b3d35962c6a55e62a45486a18b3be923397bdb676de8d59abadb1bb89"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Anthropic](https://www.anthropic.com/) provider contains language model support for the [Anthropic Messages API](https://docs.anthropic.com/claude/reference/messages_post).
+You can use Anthropic models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/anthropic`.
 
-## Setup
+```ts provider="anthropic" model="anthropic/claude-sonnet-5.5"
+import { generateText } from 'ai';
 
-The Anthropic provider is available in the `@ai-sdk/anthropic` module. You can install it with
+const { text } = await generateText({
+  model: "anthropic/claude-sonnet-5.5",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/anthropic
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/anthropic`
+
+For direct access to Anthropic, install `ai` and `@ai-sdk/anthropic`:
+
+```bash
+pnpm add ai @ai-sdk/anthropic
+```
+
+Set your Anthropic API credential in the `ANTHROPIC_API_KEY` environment variable:
+
+```bash
+export ANTHROPIC_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/anthropic`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/anthropic` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

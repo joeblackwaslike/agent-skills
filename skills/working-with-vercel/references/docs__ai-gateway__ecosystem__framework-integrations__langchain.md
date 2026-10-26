@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b51a380bac88d2f9b943578d576ad638c0dcb9f35e759899fc1c9b04b4cc12a7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c8a48ff8698e26711748ce3f0381bd68310e66a85f932ccbd5b9909059100fd3"
 ---
 
 # LangChain with AI Gateway
@@ -30,7 +30,6 @@ with LangChain to access various AI models and providers.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Building an AI chatbot with Next.js, Langchain, and OpenAI](https://vercel.com/kb/guide/nextjs-langchain-vercel-ai) — Dive into the world of LangChain.js and Next.js with our detailed guide. Learn how to set up a chatbot, structure output
 - [LangChain](https://vercel.com/docs/sandbox/ecosystem/langchain) — Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI
 - [Langfuse with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse) — Trace and monitor AI Gateway requests with Langfuse. Configure an OpenAI client and wrap it with observeOpenAI to log mo
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
@@ -52,28 +51,23 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 
 - ### Install dependencies
   Install the required LangChain packages along with the `dotenv` and `@types/node` packages:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i langchain @langchain/core @langchain/openai dotenv @types/node
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add langchain @langchain/core @langchain/openai dotenv @types/node
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i langchain @langchain/core @langchain/openai dotenv @types/node
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add langchain @langchain/core @langchain/openai dotenv @types/node
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i langchain @langchain/core @langchain/openai dotenv @types/node
+  ```
+  **yarn**
+  ```bash
+  yarn add langchain @langchain/core @langchain/openai dotenv @types/node
+  ```
+  **npm**
+  ```bash
+  npm i langchain @langchain/core @langchain/openai dotenv @types/node
+  ```
+  **bun**
+  ```bash
+  bun add langchain @langchain/core @langchain/openai dotenv @types/node
+  ```
 
 - ### Configure environment variables
   Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway#using-the-ai-gateway-with-an-api-key):
@@ -126,31 +120,29 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 
 - ### Running the application
   Run your application using Node.js:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx tsx index.ts
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx tsx index.ts
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx tsx index.ts
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx tsx index.ts
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx tsx index.ts
+  ```
+  **yarn**
+  ```bash
+  yarn dlx tsx index.ts
+  ```
+  **npm**
+  ```bash
+  npx tsx index.ts
+  ```
+  **bun**
+  ```bash
+  bunx tsx index.ts
+  ```
   You should see a response from the AI model in your console.
 
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

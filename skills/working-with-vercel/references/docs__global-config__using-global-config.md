@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Configs in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/using-global-config.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e429378cd3251e9c329b9aaeb41c1a6ce5939e0f57e3de29a2e849572d8d0bbe"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "74ba985db770df4995c776837c0fed140ce25f75554099504df1064bc5c30b66"
 ---
 
 # Using Global Config
@@ -35,7 +35,7 @@ sha256: "e429378cd3251e9c329b9aaeb41c1a6ce5939e0f57e3de29a2e849572d8d0bbe"
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
 - [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config/using-global-config.graph.md](/docs/global-config/using-global-config.graph.md)
 <!-- /docsgraph:related -->
@@ -209,3 +209,6 @@ Backups are taken when you make any changes either through the dashboard or API.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

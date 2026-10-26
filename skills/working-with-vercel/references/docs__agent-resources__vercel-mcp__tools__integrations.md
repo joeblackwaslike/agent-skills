@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9db809b277f571cd89fc8df6d9b5f40d043c0996765da803231ec96dbe07208b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4d731c6dd6fd00e6467c1a830f6e72c205de66fb8998aa45a79789f045d89658"
 ---
 
 # Integrations
@@ -30,8 +30,8 @@ Inspect integration configurations and billing plans, search repositories, and l
 - [List products for integration configuration](https://vercel.com/docs/rest-api/integrations/list-products-for-integration-configuration) — GET /v1/integrations/configuration/{id}/products — Returns products available for an integration configuration. Each pro
 - [List integration billing plans](https://vercel.com/docs/rest-api/integrations/list-integration-billing-plans) — GET /v1/integrations/integration/{integrationIdOrSlug}/products/{productIdOrSlug}/plans — Get a list of billing plans fo
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Get configurations for the authenticated user or team](https://vercel.com/docs/rest-api/integrations/get-configurations-for-the-authenticated-user-or-team) — GET /v1/integrations/configurations — Allows to retrieve all configurations for an authenticated integration. When the \\
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -122,3 +122,6 @@ List git repositories linked to namespace by provider.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

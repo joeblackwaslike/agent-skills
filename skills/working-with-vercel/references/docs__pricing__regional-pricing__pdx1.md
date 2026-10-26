@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Portland, USA (pdx1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/pdx1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5d9466e8bb578c9c1677850314f1c19723d5d9e80c24a640559364bde8169f1e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1710f4573e281d7de166e3e2143547ed761413689dcebffb22c72820a8bed27f"
 ---
 
 # Portland, USA (pdx1) pricing
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

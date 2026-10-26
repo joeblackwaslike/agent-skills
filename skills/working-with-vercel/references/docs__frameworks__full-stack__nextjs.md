@@ -17,8 +17,8 @@ related:
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e8866ef711ed7ea40b8516186e134ca26efd9c1d0a88075b189dbbe7c576de30"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7abdc59294692741cfbb68d246600f62c13703130fd30a1555b4f2b7d4b36be2"
 ---
 
 # Next.js on Vercel
@@ -33,16 +33,16 @@ sha256: "e8866ef711ed7ea40b8516186e134ca26efd9c1d0a88075b189dbbe7c576de30"
 
 - [Deploying](https://nextjs.org/docs/app/getting-started/deploying) — Learn how to deploy your Next.js application.
 - [How to deploy your Next.js application](https://nextjs.org/docs/pages/getting-started/deploying) — Learn how to deploy your Next.js application.
-- [Building Ecommerce Sites with Next.js and Shopify](https://vercel.com/kb/guide/building-ecommerce-sites-with-next-js-and-shopify) — Learn how to integrate Next.js and Shopify together for the fastest storefronts using the Storefront GraphQL API.
-- [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
-- [Next.js on Vercel vs Cloudflare](https://vercel.com/kb/guide/next-js-on-vercel-vs-cloudflare) — Compare running Next.js on Vercel Functions with Fluid compute against Cloudflare Workers with the OpenNext Cloudflare a
-- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
+- [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
+- [Adding keyboard shortcuts to React apps with TanStack Hotkeys](https://vercel.com/kb/guide/adding-keyboard-shortcuts-to-react-apps-with-tanstack-hotkeys) — Add cross-platform keyboard shortcuts to your React app with TanStack Hotkeys. Install, register, scope, and display sho
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
+- [Fetching Data](https://nextjs.org/docs/app/getting-started/fetching-data) — Learn how to fetch data and stream content that depends on data.
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart) — Learn how you can leverage Vercel Image Optimization in your projects.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nextjs.graph.md](/docs/frameworks/full-stack/nextjs.graph.md)
 <!-- /docsgraph:related -->
@@ -680,7 +680,7 @@ To see your generated image, run `npm run dev` in your terminal and visit the `/
 
 When deploying middleware with Next.js on Vercel, you get access to built-in helpers that expose each request's geolocation information. You also get access to the `NextRequest` and `NextResponse` objects, which enable rewrites, continuing the middleware chain, and more.
 
-See [the Middleware API docs](/docs/routing-middleware/api) for more information.
+See [the Middleware API docs](/docs/routing-middleware/js-reference) for more information.
 
 **To summarize, Middleware with Next.js on Vercel:**
 
@@ -689,6 +689,18 @@ See [the Middleware API docs](/docs/routing-middleware/api) for more information
 - Helps you achieve the best performance for serving content globally
 
 [Learn more about Middleware](/docs/routing-middleware)
+
+## Build a bot with Chat SDK
+
+Use [Chat SDK](/docs/chat-sdk) to build bots that respond to messages and interactions in chat platforms. A Next.js Route Handler receives platform webhooks, while `after` lets the bot finish processing after acknowledging each event.
+
+Follow the [Chat SDK quickstart](/docs/chat-sdk/quickstart) to build a Slack bot with persistent Redis state and deploy it on Vercel.
+
+## Protect an internal app with Passport
+
+Use [Vercel Passport](/docs/passport) to require sign-in through your company's identity provider before requests reach your Next.js app. Passport requires an Enterprise plan. Your app can use the verified visitor identity to personalize pages and authorize access to sensitive operations.
+
+Follow [Identify users and control access in Next.js with Vercel Passport](/kb/guide/vercel-passport-nextjs) to read identity with `getIdentity()` from `@vercel/passport` in an App Router project. The guide covers group-based access checks in Server Components and Server Actions, recording visitor actions, and forwarding identity to another backend. Apply authorization checks in server-side code, including each protected Server Action and Route Handler.
 
 ## Draft Mode
 
@@ -729,28 +741,29 @@ To use Web Analytics, navigate to the Analytics section in your project dashboar
 
 To track visitors and page views, we recommend first installing our `@vercel/analytics` package by running the terminal command below in the root directory of your Next.js project:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/analytics
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/analytics
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/analytics
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/analytics
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/analytics
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/analytics
+```
+
+**npm**
+
+```bash
+npm i @vercel/analytics
+```
+
+**bun**
+
+```bash
+bun add @vercel/analytics
+```
 
 Then, follow the instructions below to add the `Analytics` component to your app either using the `pages` directory or the `app` directory.
 
@@ -1029,3 +1042,6 @@ Learn more about deploying Next.js projects on Vercel with the following resourc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

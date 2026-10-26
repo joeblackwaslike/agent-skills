@@ -13,8 +13,8 @@ related:
 summary: Use patch_edge_config_items with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/patch_edge_config_items.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9fe96d5c2328ebcf224367450a8d98ea05d31ac2840282d2f58715eb0ccefe24"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "18ec5260a6f6f5cac594dd5746bbdc46673b7aa24629a64c73066e0315ca007a"
 ---
 
 # patch_edge_config_items
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

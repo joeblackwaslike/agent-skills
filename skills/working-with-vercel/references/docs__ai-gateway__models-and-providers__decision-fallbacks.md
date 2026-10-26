@@ -9,21 +9,21 @@ prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/models-and-providers/virtual-models
   - /docs/ai-gateway/models-and-providers/routing-rules
   - /docs/ai-gateway/modalities/decision
   - /docs/ai-gateway/models-and-providers/model-fallbacks
   - /docs/ai-gateway/models-and-providers/provider-options
-  - /docs/ai-gateway/sdks-and-apis/openai-decisions
 summary: Escalate uncertain AI Gateway decision results to another model with confidence, probability, and compound conditions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/decision-fallbacks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "828681e43712705f67f67978ed18c301f41e310ff67121a3498acbc1cfe1cc0d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9b12891cc5342fc6e9a536f005f477f51a57c2b92b8a7e54f8b1f26233891f2f"
 ---
 
 # Decision Fallbacks
 
-Decision fallbacks rerun a successful decision with another model when an answer is uncertain. You opt in per request by adding one conditional object to `providerOptions.gateway.models`. Requests without a conditional `models` entry keep their existing behavior.
+Decision fallbacks rerun a successful decision with another model when an answer is uncertain. You opt in per request or [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) by adding one conditional object to `providerOptions.gateway.models`. Requests without a conditional `models` entry keep their existing behavior.
 
 
 <!-- docsgraph:related -->
@@ -34,9 +34,10 @@ Decision fallbacks rerun a successful decision with another model when an answer
 - [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks)
 - [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
 - [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
+- [Perplexity](https://ai-sdk.dev/providers/ai-sdk-providers/perplexity) — Learn how to use Perplexity with AI Gateway and the direct provider.
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
 - [experimental_decide](https://ai-sdk.dev/docs/reference/ai-sdk-core/decide) — Decide answers to typed questions against shared state with a decision model.
-- [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md)
 <!-- /docsgraph:related -->
@@ -557,7 +558,65 @@ const result = await decide({
 });
 ```
 
-The conditional model object currently does not accept nested `providerOptions`. Use top-level provider options for a direct model.
+The conditional model object currently does not accept nested `providerOptions`. Use top-level provider options for a direct model. Use a [fallback virtual model](#use-a-virtual-model-as-the-fallback) when only the fallback should get a provider order, provider-only routing, provider options, bring your own key (BYOK) credentials, an inference region, or a service tier.
+
+## Use a virtual model as the fallback
+
+A request-scoped condition can target a virtual model. The virtual model's model and routing configuration apply only to the fallback attempt:
+
+```json
+{
+  "model": "typesafe-ai/jev",
+  "state": "I was charged twice and need help.",
+  "questions": {
+    "intent": {
+      "type": "choice",
+      "instructions": "Which team should handle this?",
+      "criteria": {
+        "billing": "Charges and refunds",
+        "technical": "Bugs and outages"
+      }
+    }
+  },
+  "providerOptions": {
+    "gateway": {
+      "models": [
+        {
+          "model": "vmc/high-reasoning-fallback",
+          "when": { "question": "intent", "confidenceBelow": 0.6 }
+        }
+      ]
+    }
+  }
+}
+```
+
+Configure `vmc/high-reasoning-fallback` with the fallback model, provider routing, and provider-specific reasoning options you want.
+
+If the fallback virtual model has its own string fallbacks, AI Gateway tries them after its model and before any string fallbacks in the request. Its own conditional policy doesn't run, so the request still makes at most two decision stages.
+
+## Store the fallback policy in a virtual model
+
+A decision virtual model can store the conditional policy so every caller uses it:
+
+```json filename="Virtual model configuration"
+{
+  "modelSlug": "typesafe-ai/jev",
+  "models": [
+    {
+      "model": "vmc/high-reasoning-fallback",
+      "when": {
+        "question": "intent",
+        "confidenceBelow": 0.6
+      }
+    }
+  ]
+}
+```
+
+In the dashboard, open a decision virtual model, add the fallback model as the first entry under **Model Fallbacks**, and select **Add Condition** on it. Choose **Any question** or enter a request question ID, choose the predicate, and combine conditions. A virtual model cannot discover or validate the questions that future requests will send. A condition that names a question needs callers to send a matching ID and question type, which AI Gateway validates at runtime. A condition without a question works with any questions, as described in [Check every question](#check-every-question).
+
+When a virtual model has a `models` policy, it replaces the request's `providerOptions.gateway.models` value. A request can also target a fallback virtual model from its own policy, as shown above.
 
 ## Use the HTTP decision API
 
@@ -725,7 +784,12 @@ Choose thresholds from your own results and risk tolerance. Start by recording t
 - [OpenAI-Compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions)
 - [TypeSafe-compatible API](/docs/ai-gateway/sdks-and-apis/typesafe)
 
+* [Virtual Models](/docs/ai-gateway/models-and-providers/virtual-models)
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

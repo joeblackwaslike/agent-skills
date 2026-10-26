@@ -13,8 +13,8 @@ related:
 summary: Use create_session_directory with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e5198d0c7592d99e4870f282b8b74c0ef6fc10129d8e657e1d28546a083fc95e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4b25d29a7fe01a48918ef8e39d1d8174a2d2f6685ba664bad39656aec537e369"
 ---
 
 # create_session_directory
@@ -31,7 +31,7 @@ Create a directory.
 - [create_sandboxes_sessions_by_session_id_snapshot_v3](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v3) — Use create_sandboxes_sessions_by_session_id_snapshot_v3 with Vercel MCP.
 - [write_session_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/write_session_files) — Use write_session_files with Vercel MCP.
 - [run_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command) — Use run_session_command with Vercel MCP.
-- [extend_session_timeout](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/extend_session_timeout) — Use extend_session_timeout with Vercel MCP.
+- [get_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session) — Use get_session with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

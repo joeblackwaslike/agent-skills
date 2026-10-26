@@ -17,8 +17,8 @@ related:
 summary: Explore Vercel MCP tools for projects, deployments, domains, sandboxes, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b65c0af2343d7a2707caa0d8c745e3ffd5bd4a7ba7e86dae5a9ad5345f3ca634"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "599c549474815fd1ace303802a6e45b1b5d1a4ded5be80e25056528829c20a0f"
 ---
 
 # Tools
@@ -34,13 +34,11 @@ Vercel MCP tools let your AI assistant work with your projects, deployments, log
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
 - [Tools](https://ai-sdk.dev/docs/foundations/tools) — Learn about tools with the AI SDK.
 - [@v0-sdk/ai-tools](https://v0.app/docs/api/v1/packages/ai-tools) — AI SDK tools for the v0 API
-- [AI Tools Example](https://v0.app/docs/api/v1/examples/ai-tools) — Using v0-sdk with AI SDK for programmatic interaction
-- [AI Tools](https://v0.app/docs/api/v1/adapters/ai-tools) — Integrate v0 API with AI SDK to build autonomous agents and intelligent workflows
 - [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
-- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools.graph.md](/docs/agent-resources/vercel-mcp/tools.graph.md)
 <!-- /docsgraph:related -->
@@ -59,7 +57,7 @@ Ask your assistant to list your teams and projects to check its access. If a tea
 
 ## Tool availability
 
-Your connection's tool list shows the tools you can call and their current parameters. This reference covers 217 catalog tools and 30 workflow or widget tools. Availability depends on server configuration, client support, and team or project scope. Some connections expose a smaller workflow tool list. Tools with the same name can have different parameters on those connections. Follow the schema returned by your connection.
+Your connection's tool list shows the tools you can call and their current parameters. This reference covers 217 catalog tools and 31 workflow or widget tools. Availability depends on server configuration, client support, and team or project scope. Some connections expose a smaller workflow tool list. Tools with the same name can have different parameters on those connections. Follow the schema returned by your connection.
 
 A listed tool still requires the relevant OAuth grant and Vercel permissions. Tools available in one AI client might not be available in another. This reference does not guarantee that every listed tool has approval for every client.
 
@@ -96,8 +94,8 @@ Browse the categories below, or expand a category in the sidebar to find a tool.
 5 tools](/docs/agent-resources/vercel-mcp/tools/billing)[Caching
 6 tools](/docs/agent-resources/vercel-mcp/tools/caching)[Checks
 1 tool](/docs/agent-resources/vercel-mcp/tools/checks)[Deployments
-17 tools](/docs/agent-resources/vercel-mcp/tools/deployments)[Documentation and CLI
-2 tools](/docs/agent-resources/vercel-mcp/tools/documentation)[Domains and DNS
+17 tools](/docs/agent-resources/vercel-mcp/tools/deployments)[Documentation, CLI, and Feedback
+3 tools](/docs/agent-resources/vercel-mcp/tools/documentation)[Domains and DNS
 28 tools](/docs/agent-resources/vercel-mcp/tools/domains)[Drains
 5 tools](/docs/agent-resources/vercel-mcp/tools/drains)[Environment Variables
 7 tools](/docs/agent-resources/vercel-mcp/tools/environment-variables)[Feature Flags
@@ -123,3 +121,6 @@ Browse the categories below, or expand a category in the sidebar to find a tool.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

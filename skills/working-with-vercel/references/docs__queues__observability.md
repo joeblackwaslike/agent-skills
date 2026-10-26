@@ -15,8 +15,8 @@ related:
 summary: Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/observability.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2b57b2bc803635395470e25f8343338df544977a3055028eb0d7307f3ca82c1d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7f7765b39c4e101a56ae944889515d2fa4045818df41aaa5486bff6c7ed58aa1"
 ---
 
 # Queues Observability
@@ -33,7 +33,7 @@ The **Queues** observability tab provides visibility into your queue operations,
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
-- [Build Queues](https://vercel.com/docs/builds/build-queues) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 - [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
 
 Full cross-link map for this page: [/docs/queues/observability.graph.md](/docs/queues/observability.graph.md)
@@ -121,3 +121,6 @@ When the alert fires, open the queue's **Consumers** table to find the consumer 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

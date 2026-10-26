@@ -14,8 +14,8 @@ related:
 summary: Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5451cc423565b68d24e395588ff0121fb08971edbc08b4ed7c4b73d655d0b100"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f5bfea73e350378478abc896d347d219d8db9f8ef3b84ce0bbae5ffc10507fa8"
 ---
 
 # vercel teams
@@ -31,8 +31,8 @@ The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list
 - [vercel switch](https://vercel.com/docs/cli/switch) — Learn how to switch between different team scopes using the vercel switch CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
+- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
 
 Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md)
 <!-- /docsgraph:related -->
@@ -266,3 +266,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

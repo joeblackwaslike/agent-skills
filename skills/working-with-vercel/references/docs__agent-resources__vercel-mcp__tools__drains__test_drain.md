@@ -13,8 +13,8 @@ related:
 summary: Use test_drain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/test_drain.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b49847503d33cf2dfdba785c11655afb51406968118e5db3c18e444492f23a16"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7cd6328cedb3d3ae74d63451125b40d99b3a4eaba1c58de7f4ee44158e369896"
 ---
 
 # test_drain
@@ -31,7 +31,7 @@ Validate Drain delivery configuration.
 - [update_drain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/update_drain) — Use update_drain with Vercel MCP.
 - [get_drain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/get_drain) — Use get_drain with Vercel MCP.
 - [list_drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/list_drains) — Use list_drains with Vercel MCP.
-- [Delete a drain](https://vercel.com/docs/rest-api/drains/delete-a-drain) — DELETE /v1/drains/{id} — Delete a specific Drain by passing the drain id in the URL.
+- [Validate Drain delivery configuration](https://vercel.com/docs/rest-api/drains/validate-drain-delivery-configuration) — POST /v1/drains/test — Validate the delivery configuration of a Drain using sample events.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/drains/test_drain.graph.md](/docs/agent-resources/vercel-mcp/tools/drains/test_drain.graph.md)
 <!-- /docsgraph:related -->
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/drain
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -4,8 +4,8 @@ description: API Reference for uploadSkill.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/upload-skill"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/upload-skill.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "48632f31d9785255284d2e8cdfde43b0a13ee491f7a2efe018f77538380e69f0"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "c7cd73714304a3bab01d548c8dddb42b1ce6c56dbd5dfef072063bed3a9e2210"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -22,7 +22,7 @@ const { providerReference } = await uploadSkill({
   files: [
     {
       path: 'my-skill/SKILL.md',
-      content: readFileSync('./SKILL.md'),
+      data: readFileSync('./SKILL.md'),
     },
   ],
   displayTitle: 'My Skill',
@@ -40,7 +40,7 @@ import { uploadSkill } from "ai"
 ### Parameters
 
 - `api` (`SkillsV4 | ProviderV4`): The skills API interface to use for uploading. Can be a \`SkillsV4\` instance (e.g. \`anthropic.skills()\`) or a provider instance directly (e.g. \`anthropic\`), in which case \`.skills()\` is called automatically.
-- `files` (`SkillsV4File[]`): The files that make up the skill. Each file has a relative \`path\` and \`content\` (either a \`Uint8Array\` or a base64-encoded string).
+- `files` (`UploadSkillFile[]`): The files that make up the skill. Each file must have a relative \`path\` and \`data\`. The \`data\` can be a string, a \`Uint8Array\`, or an object with \`type: 'text'\` and a string \`text\` value, or \`type: 'data'\` and a string \`data\` value.
 - `displayTitle?` (`string`): Human-readable title for the skill.
 - `providerOptions?` (`ProviderOptions`): Additional provider-specific options.
 

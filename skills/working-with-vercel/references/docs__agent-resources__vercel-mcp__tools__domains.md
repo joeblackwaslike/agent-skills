@@ -14,8 +14,8 @@ related:
 summary: Vercel MCP tools for domains and dns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0bce05216ae1c89d30fbc8335ebb12cc58585c30216ebd396aff1e8a0f56e1fa"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6ec5b05c57d8a73b3c2fa65550fa882eb195ce445e5afc787bf782670e95326d"
 ---
 
 # Domains and DNS
@@ -28,10 +28,10 @@ Check domain availability and pricing, then manage domains connected to your acc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing) — Vercel MCP tools for billing and purchases.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
+- [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing) — Vercel MCP tools for billing and purchases.
 - [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
-- [Get price data for multiple domains](https://vercel.com/docs/rest-api/domains-registrar/get-price-data-for-multiple-domains) — POST /v1/registrar/domains/price — Get price data for multiple domains in a single request.
+- [Get Domain Availability and Pricing](https://vercel.com/docs/rest-api/domains-registrar/get-domain-availability-and-pricing) — POST /v1/registrar/domains/search — Start domain research here. Get registration availability and pricing for 1–200 exac
 - [Get Domain Verification Record](https://vercel.com/docs/rest-api/domains/get-domain-verification-record) — GET /v9/domains/{domain}/verification — Get the TXT verification record needed to claim ownership of a domain for the au
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains.graph.md](/docs/agent-resources/vercel-mcp/tools/domains.graph.md)
@@ -357,3 +357,6 @@ Update an existing DNS record.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

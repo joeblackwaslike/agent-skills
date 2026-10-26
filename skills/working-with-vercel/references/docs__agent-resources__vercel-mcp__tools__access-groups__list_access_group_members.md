@@ -13,8 +13,8 @@ related:
 summary: Use list_access_group_members with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7b9779b459bee7fd0f1125d500d37d552b0dfdd55797bf3af00e71a9953b40f1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9a899c8a585cb81573f51d2bb01fa51ad891e548efbc2f28057739e662f7778a"
 ---
 
 # list_access_group_members
@@ -31,7 +31,7 @@ List members of an access group.
 - [list_access_group_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects) — Use list_access_group_projects with Vercel MCP.
 - [list_team_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members) — Use list_team_members with Vercel MCP.
 - [List members of an access group](https://vercel.com/docs/rest-api/access-groups/list-members-of-an-access-group) — GET /v1/access-groups/{idOrName}/members — List members of an access group
-- [read_access_group](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/read_access_group) — Use read_access_group with Vercel MCP.
+- [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members.graph.md](/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members.graph.md)
 <!-- /docsgraph:related -->
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

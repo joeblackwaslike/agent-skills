@@ -9,20 +9,20 @@ prerequisites:
   []
 related:
   - /docs/agent/private-dependencies
+  - /docs/agent/chat/dashboard
+  - /docs/agent/chat/slack
+  - /docs/agent/chat
   - /docs/agent/pr-review
-  - /docs/agent/investigation
-  - /docs/agent/installation
-  - /docs/agent/chat/permissions
 summary: Use Vercel Agent to investigate production issues, review code, and take approved actions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ebb5f38a2bef32bddb01a61d8c08237b2a29df67166dd4ac7c8efed8f6a1a58c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "aa11babea0eeb089e7a78ca4880397162679ce2c2d3879aadc43ea58dc542f45"
 ---
 
 # Vercel Agent
 
-> **Availability**: Vercel Agent (Public Beta) is available on Enterprise and Pro plans
+> Vercel Agent is available in Public Beta on Enterprise and Pro plans
 
 Vercel Agent is an AI assistant built into Vercel. Use it to understand your projects, investigate production issues, review code, and take approved actions.
 
@@ -42,7 +42,7 @@ Vercel Agent is an AI assistant built into Vercel. Use it to understand your pro
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
-- [Introducing Vercel for Slack](https://vercel.com/blog/introducing-vercel-for-slack)
+- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/agent.graph.md](/docs/agent.graph.md)
@@ -59,6 +59,10 @@ Chat in Slack, dashboard chat, Investigations, and Code Review are in public bet
 ## Explore Vercel Agent
 
 ### Chat
+
+Ask questions about your projects, investigate what is happening in production, and take approved actions. Use chat from the [dashboard](/docs/agent/chat/dashboard) or [Slack](/docs/agent/chat/slack).
+
+Learn more in the [Chat overview](/docs/agent/chat).
 
 ### Code Review
 
@@ -104,3 +108,6 @@ For information about data access, staff review, product improvement, retention,
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

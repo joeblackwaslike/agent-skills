@@ -1,8 +1,8 @@
 ---
 title: "VS Code Dev Containers guide"
 source: "https://code.visualstudio.com/docs/devcontainers/containers"
-fetched_at: "2026-10-19T09:37:30.763Z"
-sha256: "4127acabb9f1d53dc6b14a1667ac1e86ed5b16cbb1ed9ad6fcd0aeb686346906"
+fetched_at: "2026-10-26T09:46:05.169Z"
+sha256: "a161dd312910830a36035f167b82f5500a51393bd2fe007d07fa90d919b23246"
 ---
 
 # VS Code Dev Containers guide
@@ -931,4 +931,4 @@ Check issue #8278 for a potential workaround.
 
                 
                 
-                10/14/2026
+                10/21/2026

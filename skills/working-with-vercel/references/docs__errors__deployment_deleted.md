@@ -12,8 +12,8 @@ related:
 summary: The deployment has been removed
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_deleted.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "b9eeca4afe6ec7f08cef32aef24d2266642deaeae1e5592157a2419de054fe17"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "16fcce90e10df53249cb72e253f29af5b9c4a976af23d4b73c22118a30a9b600"
 ---
 
 # DEPLOYMENT_DELETED
@@ -39,3 +39,6 @@ To restore a deleted deployment, open **Settings** in the sidebar of your projec
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

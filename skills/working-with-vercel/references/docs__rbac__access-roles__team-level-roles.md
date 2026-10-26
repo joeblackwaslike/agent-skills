@@ -15,13 +15,13 @@ related:
 summary: Learn about the different team level roles and the permissions they provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/team-level-roles.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1735bd6f3b6cc838b25bf945f5f9809d5ea5e210b035dcbd28a15b81019f5302"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dac9d7b9fd7dcd18c05ebfbbff48191c8a9d6d5dd05d63a3378c61d94e5b6770"
 ---
 
 # Team Level Roles
 
-> **Availability**: Team level roles are available on Enterprise and Pro plans
+> Team level roles are available on Enterprise and Pro plans
 
 Team level roles are designed to provide a comprehensive level of control and access to the team as a whole. These roles are assigned to individuals and are applicable to all projects within the team. This allows for a centralized level of control and access, while still maintaining the security and integrity of the team as a whole.
 
@@ -35,11 +35,9 @@ Team level roles are designed to provide a comprehensive level of control and ac
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
 - [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams)
-- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans)
-- [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers)
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 - [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 
 Full cross-link map for this page: [/docs/rbac/access-roles/team-level-roles.graph.md](/docs/rbac/access-roles/team-level-roles.graph.md)
@@ -54,3 +52,6 @@ Full cross-link map for this page: [/docs/rbac/access-roles/team-level-roles.gra
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

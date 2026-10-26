@@ -13,8 +13,8 @@ related:
 summary: Use check_domain_availability_and_price with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7fda706583e808522fdfbde5a1a5b4a1085b4d9fab786ac38a52da24fbbe538a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8c4416b2c9747a712aef61ca92e8aedf5e73fb3e09f9c1dcf096142fbe64fe24"
 ---
 
 # check_domain_availability_and_price
@@ -30,8 +30,8 @@ Check if domain names are available for purchase and get pricing information
 - [get_domain_availability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_availability) — Use get_domain_availability with Vercel MCP.
 - [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 - [Get Domain Availability and Pricing](https://vercel.com/docs/rest-api/domains-registrar/get-domain-availability-and-pricing) — POST /v1/registrar/domains/search — Start domain research here. Get registration availability and pricing for 1–200 exac
-- [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains) — Use buy_domains with Vercel MCP.
 - [Get availability for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-availability-for-a-domain) — GET /v1/registrar/domains/{domain}/availability — Get availability for a specific domain. If the domain is available, it
+- [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains) — Use buy_domains with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price.graph.md)
 <!-- /docsgraph:related -->
@@ -46,3 +46,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

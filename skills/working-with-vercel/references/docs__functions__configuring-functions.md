@@ -9,15 +9,15 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/functions/runtimes
+  - /docs/functions/configuring-functions/runtime
   - /docs/project-configuration/vercel-json
   - /docs/functions/configuring-functions/region
   - /docs/functions/limitations
-  - /docs/functions/configuring-functions/duration
 summary: Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "44c5450c62dfad5e7f4ae0c57235d41a7441e1325e68a7abeebd935c4fadf072"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6654c44a50249c1a01c60b808f798437bdb4896a1257da160eba11e9f53332d3"
 ---
 
 # Configuring Functions
@@ -31,9 +31,9 @@ You can configure Vercel functions in many ways, including the runtime, region, 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
+- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python) — Learn about available APIs when working with Vercel Functions in Python.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
@@ -51,7 +51,7 @@ With Vercel, you can configure the runtime of a function in any of the following
 
 - **Node.js**: When working with a TypeScript or JavaScript function, you can use the Node.js runtime by setting a config option within the function. For more information, see the [runtimes](/docs/functions/runtimes).
 - **Ruby**, **Python**, **Go**: These have similar functionality and limitations as Node.js functions. The configuration for these runtimes gets based on the file extension.
-- **Community runtimes**: You can specify any other [runtime](/docs/functions/runtimes#community-runtimes), by using the [`functions`](/docs/project-configuration/vercel-json#functions) property in your `vercel.json` file.
+- **Community runtimes**: You can specify any other [runtime](/docs/functions/configuring-functions/runtime#other-runtimes), by using the [`functions`](/docs/project-configuration/vercel-json#functions) property in your `vercel.json` file.
 
 See [choosing a runtime](/docs/functions/runtimes) for more information.
 
@@ -79,3 +79,6 @@ See [configuring a function's memory](/docs/functions/configuring-functions/memo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use get_domain_project_domains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "faace6323e65b3ebe33321b29513ce378b3f1cbd8f04848b1d6898cb3ac407ef"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d1f286828d5d6bbfe9e5e91d142f8e029789050c52dfcec3e5fb7d3ccdfc5d81"
 ---
 
 # get_domain_project_domains
@@ -31,7 +31,7 @@ List all project domains associated with an apex domain owned by the authenticat
 - [list_project_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains) — Use list_project_domains with Vercel MCP.
 - [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
 - [List Project Domains by Apex Domain](https://vercel.com/docs/rest-api/domains/list-project-domains-by-apex-domain) — GET /v1/domains/{domain}/project-domains — List all project domains associated with an apex domain owned by the authenti
-- [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
+- [get_records](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_records) — Use get_records with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains.graph.md)
 <!-- /docsgraph:related -->
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

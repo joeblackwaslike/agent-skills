@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/issues"
-fetched_at: "2026-10-05T11:18:57.736Z"
-sha256: "0852e255d32c1228c3324785b4e0911d0857d6418632cbccd22fd5da4783d100"
+fetched_at: "2026-10-26T09:52:24.329Z"
+sha256: "9e0c2d88d605d4826bfb0772a4e3f0cec889c275acc7f8f73f133d5a3320d84b"
 ---
 
 # REST API endpoints for issues
@@ -145,7 +145,19 @@ Array of `Issue`:
       * `site_admin`: required, boolean
       * `starred_at`: string
       * `user_view_type`: string
-  * `labels`: required, array of object
+  * `labels`: required, array of items:
+    * one of:
+      * **string**
+      * **object**
+        * `id`: integer, format: int64
+        * `node_id`: string
+        * `url`: string, format: uri
+        * `name`: string
+        * `description`: string or null
+        * `color`: string or null
+        * `default`: boolean
+        * `archived_by`: all of:
+          * **Simple User** (see above)
   * `assignees`: array of `Simple User` (see above)
   * `milestone`: required, any of:
     * **null**
@@ -557,13 +569,13 @@ application/vnd.github.full+json: Returns raw, text, and HTML representations. R
 
 - **`issue_field_values`** (string)
   A comma-separated list of issue field filters in field_slug:value format.
-Only issues matching all specified field values are returned.
-Requires issue fields to be enabled for the repository. Issue fields are
-not available for user-owned repositories, and field availability for
-organization-owned public repositories depends on the organization's
-visibility settings. For example, priority:Urgent,severity:High filters
-issues where the priority field is Urgent AND the severity field is
-High.
+  Only issues matching all specified field values are returned.
+  Requires issue fields to be enabled for the repository. Issue fields are
+  not available for user-owned repositories, and field availability for
+  organization-owned public repositories depends on the organization's
+  visibility settings. For example, priority:Urgent,severity:High filters
+  issues where the priority field is Urgent AND the severity field is
+  High.
 
 - **`labels`** (string)
   A list of comma separated label names. Example: bug,ui,@high
@@ -755,7 +767,19 @@ curl -L \
     * `site_admin`: required, boolean
     * `starred_at`: string
     * `user_view_type`: string
-* `labels`: required, array of object
+* `labels`: required, array of items:
+  * one of:
+    * **string**
+    * **object**
+      * `id`: integer, format: int64
+      * `node_id`: string
+      * `url`: string, format: uri
+      * `name`: string
+      * `description`: string or null
+      * `color`: string or null
+      * `default`: boolean
+      * `archived_by`: all of:
+        * **Simple User** (see above)
 * `assignees`: array of `Simple User` (see above)
 * `milestone`: required, any of:
   * **null**
@@ -1265,7 +1289,19 @@ curl -L \
         * `site_admin`: required, boolean
         * `starred_at`: string
         * `user_view_type`: string
-    * `labels`: required, array of object
+    * `labels`: required, array of items:
+      * one of:
+        * **string**
+        * **object**
+          * `id`: integer, format: int64
+          * `node_id`: string
+          * `url`: string, format: uri
+          * `name`: string
+          * `description`: string or null
+          * `color`: string or null
+          * `default`: boolean
+          * `archived_by`: all of:
+            * **Simple User** (see above)
     * `assignees`: array of `Simple User` (see above)
     * `milestone`: required, any of:
       * **null**
@@ -1608,10 +1644,10 @@ Note that, if you choose not to pass any parameters, you'll need to set Content-
 - **`lock_reason`** (string)
   The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:
 
-off-topic
-too heated
-resolved
-spam
+  off-topic
+  too heated
+  resolved
+  spam
   Can be one of: `off-topic`, `too heated`, `resolved`, `spam`
 
 ### HTTP response status codes

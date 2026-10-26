@@ -13,8 +13,8 @@ related:
 summary: Use ui_get_build_log_excerpt with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "12691c079290a95d3677cdde086f1c65e7c9aea57ab70f352fa9a16721f84b21"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ccc792627e7c0862adfaf4366260040221744f2abb0e9d8642744de1d54e29ec"
 ---
 
 # ui_get_build_log_excerpt
@@ -29,9 +29,9 @@ The deployments card uses this app-only tool to read its latest build-log lines.
 
 - [get_deployment_build_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_build_logs) — Use get_deployment_build_logs with Vercel MCP.
 - [list_deployment_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events) — Use list_deployment_events with Vercel MCP.
-- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
 - [Accessing Build Logs](https://vercel.com/docs/deployments/logs) — Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possi
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
+- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
+- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt.graph.md)
 <!-- /docsgraph:related -->
@@ -51,3 +51,6 @@ This tool appears with the deployments card. Its response includes log entries a
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

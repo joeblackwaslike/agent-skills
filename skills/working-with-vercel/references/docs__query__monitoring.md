@@ -16,8 +16,8 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more with Monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7c5d9375798eaaf74952f7eef4f044910970fb953642876dfaa55074da09a8ae"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "812b9b9f7a2423137744e3a191e911d4061b7418fe6c6f5b32151f59907bcbe3"
 ---
 
 # Monitoring
@@ -30,8 +30,8 @@ Monitoring is now
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
 - [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring)
+- [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
 - [Monitoring is now available to view traffic and performance data for improved observability ](https://vercel.com/changelog/monitoring-is-now-available-to-view-traffic-and-performance-data-for)
 - [Monitoring is in public beta for Enterprise Teams](https://vercel.com/changelog/monitoring-is-in-public-beta-for-enterprise-teams)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
@@ -57,7 +57,7 @@ for monitoring your project.
 
 **Monitoring** allows you to visualize and quantify the performance and traffic of your projects on Vercel. You can use [example queries](/docs/query/monitoring/monitoring-reference#example-queries) or create [custom queries](/docs/query/monitoring/quickstart#create-a-new-query) to debug and optimize bandwidth, errors, performance, and bot traffic issues in a production or preview deployment.
 
-> **Availability**: Monitoring is available on Enterprise plans
+> Monitoring is available on Enterprise plans
 
 ## Monitoring chart
 
@@ -101,7 +101,9 @@ Get the most comprehensive suite of tools, including queries, by enabling [Obser
 
 ## Manage IP Address visibility for Monitoring
 
-> **Availability**: Managing IP Address visibility is available on Enterprise and Pro plans
+> Managing IP Address visibility is available on Enterprise and Pro plans
+>
+> Those with the owner, admin role can access this feature
 
 Vercel creates events each time a request is made to your website. These events include unique parameters such as execution time and bandwidth used.
 
@@ -137,3 +139,6 @@ For more information on what to do next, we recommend the following articles:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

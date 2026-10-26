@@ -13,8 +13,8 @@ related:
 summary: Use git_namespaces with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "be873739f34c1cf4f8e3731899d9694bda4896628b83c18578f0d26754190d72"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "281bfe6122df09333bb4f866f11c768b35ce361c4704e762de188fd1f86955c3"
 ---
 
 # git_namespaces
@@ -28,10 +28,10 @@ Lists git namespaces for a supported provider. Supported providers are `github`,
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [List git namespaces by provider](https://vercel.com/docs/rest-api/integrations/list-git-namespaces-by-provider) — GET /v1/integrations/git-namespaces — Lists git namespaces for a supported provider. Supported providers are \\`github\\`,
-- [search_repo](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/search_repo) — Use search_repo with Vercel MCP.
 - [List git repositories linked to namespace by provider](https://vercel.com/docs/rest-api/integrations/list-git-repositories-linked-to-namespace-by-provider) — GET /v1/integrations/search-repo — Lists git repositories linked to a namespace \\`id\\` for a supported provider. A speci
+- [search_repo](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/search_repo) — Use search_repo with Vercel MCP.
 - [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.
-- [get_git_deployment_context](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context) — Use get_git_deployment_context with Vercel MCP.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces.graph.md)
 <!-- /docsgraph:related -->
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

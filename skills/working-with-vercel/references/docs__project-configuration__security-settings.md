@@ -16,8 +16,8 @@ related:
 summary: Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibility, Git Fork Protection, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/security-settings.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "815bed2c570fb67ca3f5404a0575177ff16f81a1ff0e397d15a138c28f59f5f3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6089ed450d2331601c1b3a7400c246fbcccc4a3321c6c50ca41bae951e6d6ffa"
 ---
 
 # Security settings
@@ -33,15 +33,15 @@ To adjust your project's security settings:
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [General settings](https://vercel.com/docs/project-configuration/general-settings) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
 
 Full cross-link map for this page: [/docs/project-configuration/security-settings.graph.md](/docs/project-configuration/security-settings.graph.md)
 <!-- /docsgraph:related -->
 
 1. Select your project from your [dashboard](/dashboard)
-2. Open **Settings** in the sidebar and select [**Security**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fsecurity\&title=Go+to+Security+settings)
+2. Open [**Security**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fsecurity\&title=Go+to+Security+settings) and select **Settings** in the sidebar
 
 From here you can enable or disable [Attack Mode](/docs/vercel-firewall/attack-mode), [Logs and Source Protection](#build-logs-and-source-protection), [Vercel Support Code Visibility](#vercel-support-code-visibility) and [Git Fork Protection](#git-fork-protection).
 
@@ -57,7 +57,7 @@ By default, the following paths mentioned below can only be accessed by you and 
 > to be publicly accessible. <br /><br />
 
 None of your existing deployments will be affected when you toggle this
-setting. If you’d like to make the source code or logs private on your
+setting. If you'd like to make the source code or logs private on your
 existing deployments, the only option is to delete these deployments.
 
 This setting is overwritten when a deployment is created using Vercel CLI with the [`--public` option](/docs/cli/deploy#public) or the [`public` property](/docs/project-configuration/vercel-json#public) is used in `vercel.json`.
@@ -69,10 +69,9 @@ This setting is overwritten when a deployment is created using Vercel CLI with t
 
 ## Vercel Support Code Visibility
 
-> **Availability**: Vercel Support Code Visibility is available on Enterprise and Pro plans
+> Vercel Support Code Visibility is available on Enterprise and Pro plans
 
-Vercel provides a setting that controls the visibility of your source code to our Vercel Support team. By default, this setting is disabled, ensuring that your code remains confidential and accessible only to you and your team.
-Our Vercel Support team might request for this setting to be enabled to troubleshoot specific issues related to your code.
+This setting controls whether the Vercel Support team can view your deployment's source code. By default, it's disabled, so the source code is visible only to you and your team. The Vercel Support team might ask you to enable it to troubleshoot specific issues related to your source code. To allow them, open [Security](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fsecurity\&title=Project+Security+Settings), enable **Vercel Support Code Visibility**, and click **Save**, then confirm by entering your `team-slug/project-name` and clicking Enable.
 
 ## Git fork protection
 
@@ -101,3 +100,6 @@ This section also provides information on the recently deleted deployments
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

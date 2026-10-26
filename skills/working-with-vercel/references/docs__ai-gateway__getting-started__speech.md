@@ -16,8 +16,8 @@ related:
 summary: Generate speech and transcribe it using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "46c9924cfd4ab9d387b4240f944c34b60f784aaadfa19f09e9f0313aa404feba"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0a2f865e90ddd9da180d31880e564b01026d55505de08ebf38f2442c98f236ce"
 ---
 
 # AI Gateway Speech Quickstart: Transcription and TTS
@@ -35,7 +35,7 @@ Generate speech from text through AI Gateway, save the audio, and transcribe it 
 - [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway)
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
+- [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text) — Generate and stream text responses using AI Gateway.
 - [Realtime Voice with AI Gateway](https://vercel.com/docs/ai-gateway/modalities/realtime) — Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/speech.graph.md](/docs/ai-gateway/getting-started/speech.graph.md)
@@ -110,3 +110,6 @@ node index.mts
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

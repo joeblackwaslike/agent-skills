@@ -4,8 +4,8 @@ description: Learn how to configure and authenticate with AI providers in the AI
 url: "https://ai-sdk.dev/docs/getting-started/choosing-a-provider"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/choosing-a-provider.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "d9d0e5dc9944f8f0e1d703c9744e5a63b694b2a41919156aca602c809800ba58"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "6cad02e5259015909eb0d00392859bc87fdb2f15f215a5f38678f8fdb6e2f857"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -78,7 +78,7 @@ See [available providers](/providers/ai-sdk-providers) for setup instructions fo
 
 ## Custom Providers
 
-You can build your own provider to integrate any service with the AI SDK. The AI SDK provides a [Language Model Specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v3) that ensures compatibility across providers.
+You can build your own provider to integrate any service with the AI SDK. The AI SDK provides a [Language Model Specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4) that ensures compatibility across providers.
 
 ```ts
 import { generateText } from 'ai';

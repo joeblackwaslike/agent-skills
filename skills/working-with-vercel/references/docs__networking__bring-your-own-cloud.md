@@ -16,13 +16,13 @@ related:
 summary: Bring Your Own Cloud (BYOC) lets you run Vercel Functions behind your project in your own AWS account while Vercel routes requests and serves your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b6aba3bd8303437ce0dc165362bd7c5216f350c6f41af469987ab175dd883536"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "57f8463083b83d0509b27ffe0ee1af74b6758cd1f270bd69a7672acac2d24381"
 ---
 
 # Bring Your Own Cloud
 
-> **Availability**: Bring Your Own Cloud is available on Enterprise plans and is set up through your Vercel account team. Contact your account team to request access.
+> Bring Your Own Cloud is available on Enterprise plans and is set up through your Vercel account team. Contact your account team to request access.
 
 Bring Your Own Cloud (BYOC) lets you run the [Vercel Functions](/docs/functions) behind your project as AWS Lambda functions in your own AWS account. Vercel still routes requests, serves static assets, and manages the deployment, while your team owns the functions, their IAM permissions, and their network access.
 
@@ -32,13 +32,14 @@ Bring Your Own Cloud (BYOC) lets you run the [Vercel Functions](/docs/functions)
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Bring Your Own Cloud on AWS is now generally available](https://vercel.com/changelog/bring-your-own-cloud-on-aws-is-now-generally-available)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
+- [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud.graph.md](/docs/networking/bring-your-own-cloud.graph.md)
 <!-- /docsgraph:related -->
@@ -179,3 +180,6 @@ To build your own provisioning tool, see the [BYOC provisioning reference](/docs
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

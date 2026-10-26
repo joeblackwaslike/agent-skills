@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS records for your users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/domain-connect.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "92c68465762a1c1473577cd56283d7de8ba6d30ed61de2e5670112a91a889fae"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3b70de51cbcea95514ab072b74d6b63c337222467312d970e2ea2bbe51859f59"
 ---
 
 # Domain Connect
@@ -37,8 +37,8 @@ sha256: "92c68465762a1c1473577cd56283d7de8ba6d30ed61de2e5670112a91a889fae"
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
-- [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers) — Learn about nameservers and the benefits Vercel nameservers provide.
+- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 
 Full cross-link map for this page: [/docs/domains/domain-connect.graph.md](/docs/domains/domain-connect.graph.md)
 <!-- /docsgraph:related -->
@@ -349,3 +349,6 @@ Read the full Domain Connect protocol specification on GitHub.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

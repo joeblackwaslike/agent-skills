@@ -15,13 +15,13 @@ related:
 summary: Requires that every package.json file has the description field set.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_description_required.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "92411ec57441d6af4baf78c2a6e841c75cc6069bccd73c8d2d6dd44788c507f4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dab2f2dbf57bdcaedf0b4a2819bb4ae9eb002b287fcaa4caab8ee41f7b594eef"
 ---
 
 # PACKAGE_JSON_DESCRIPTION_REQUIRED
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 This check ensures that every `package.json` has a `description` field.
 This field is used to describe the workspace's purpose within the monorepo.
@@ -44,3 +44,6 @@ what the package does and when it should be used.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

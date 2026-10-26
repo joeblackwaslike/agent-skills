@@ -13,8 +13,8 @@ related:
 summary: "Learn why reverse proxy servers are not recommended with Vercel's firewall."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/reverse-proxy.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "36938ac8433dfa212ca0a5de5889a3fb734386ba7fcb2fda82f2e5ecb9e05fd3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1336b626b41f141e281afef8eaf9400117a068fe38928e20c0677228a18c2331"
 ---
 
 # Reverse Proxy Servers and Vercel
@@ -27,16 +27,17 @@ sha256: "36938ac8433dfa212ca0a5de5889a3fb734386ba7fcb2fda82f2e5ecb9e05fd3"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Should I use Cloudflare in front of Vercel?](https://vercel.com/kb/guide/cloudflare-with-vercel) — Information on using Cloudflare together with Vercel.
-- [Using Self-hosted & Reverse Proxies with Vercel](https://vercel.com/kb/guide/how-to-setup-verified-proxy) — Learn about using self-hosted or reverse proxies with Vercel deployments.
 - [Accessing Vercel-hosted sites from mainland China](https://vercel.com/kb/guide/accessing-vercel-hosted-sites-from-mainland-china) — Understand why Vercel-hosted sites may be slow or inaccessible in mainland China, and explore steps to improve performan
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
+- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting) — Learn how to troubleshoot common issues with Vercel Web Analytics.
-- [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
-- [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
 
 Full cross-link map for this page: [/docs/security/reverse-proxy.graph.md](/docs/security/reverse-proxy.graph.md)
 <!-- /docsgraph:related -->
@@ -79,7 +80,7 @@ Verified Proxy is automatically enabled for the providers listed below on all pl
 
 ### Self-hosted reverse proxies (Verified Proxy Advanced)
 
-> **Availability**: Verified Proxy Advanced is available on Enterprise plans
+> Verified Proxy Advanced is available on Enterprise plans
 
 Ensure that the following requirements are met if you are running self-hosted reverse proxies:
 
@@ -106,3 +107,6 @@ If the origin certificate hasn't been issued, use [certificate diagnostics](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

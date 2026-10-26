@@ -1,24 +1,67 @@
 ---
 title: QuiverAI
-description: Learn how to use QuiverAI models with the AI SDK.
+description: Learn how to use QuiverAI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "4c9a0ba33da01aa8cae7d89627731aa15177604a56d0eb6e308b12760cd44713"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "60d2d4195ab6cd19b2c7125e78fd27f008209b2f3615cb74b89e64e245393c79"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [QuiverAI](https://quiver.ai/) provides Arrow language models that can reason about and create SVG documents, plus native SVG generation, vectorization, editing, and animation endpoints. The AI SDK provider exposes Arrow 2 through `generateText` and `streamText` and exposes image operations through `generateImage`.
+You can use QuiverAI models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/quiverai`.
 
-## Setup
+```ts provider="quiverai" model="quiverai/arrow-2"
+import { generateText } from 'ai';
 
-The QuiverAI provider is available via the `@ai-sdk/quiverai` module. You can install it with
+const { text } = await generateText({
+  model: "quiverai/arrow-2",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/quiverai
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/quiverai`
+
+For direct access to QuiverAI, install `ai` and `@ai-sdk/quiverai`:
+
+```bash
+pnpm add ai @ai-sdk/quiverai
+```
+
+Set your QuiverAI API credential in the `QUIVERAI_API_KEY` environment variable:
+
+```bash
+export QUIVERAI_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/quiverai`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/quiverai` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

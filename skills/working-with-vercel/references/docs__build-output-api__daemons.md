@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel Daemons are represented in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/daemons.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4dc453070dfd247f0fb77dec2f709ed29ebb00587981917b726e78fa2ace9126"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e5a446e0696071288f513fb9aef815070d7c4ca08cba9e3226fc3acdd13b4f29"
 ---
 
 # Daemons
@@ -31,13 +31,12 @@ A deployment can declare [daemons](/docs/daemons), which are long-running contai
 
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
-- [Managing Daemons](https://vercel.com/docs/daemons/managing-daemons) — Deploy, scale, stop, and monitor Vercel Daemons with vercel.json and the dashboard.
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [Managing Daemons](https://vercel.com/docs/daemons/managing-daemons) — Deploy, scale, stop, and monitor Vercel Daemons with vercel.json and the dashboard.
 - [Daemons Limits](https://vercel.com/docs/daemons/limits) — Limits on the configuration, size, and capabilities of Vercel Daemons during the beta.
+- [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/build-output-api/daemons.graph.md](/docs/build-output-api/daemons.graph.md)
 <!-- /docsgraph:related -->
@@ -92,7 +91,7 @@ type DaemonDescriptor = {
 | **command**   | `string[]`               | No       | The command and arguments to run. Defaults to the image's `ENTRYPOINT` and `CMD`.                                                                 |
 | **instances** | `Record<string, number>` | Yes      | The number of instances to run in each region, keyed by region ID. Each count is an integer from `0` to `100`.                                    |
 | **resources** | `object`                 | No       | The memory for each instance. See [`resources`](/docs/daemons/config-reference#resources).                                                         |
-| **terminationGracePeriodSeconds** | `number` | No | The number of seconds Vercel waits after `SIGTERM` before terminating the instance. An integer from `0` to `3600`. Defaults to `10`. See [`terminationGracePeriodSeconds`](/docs/daemons/config-reference#terminationgraceperiodseconds). |
+| **terminationGracePeriodSeconds** | `number` | No | The number of seconds Vercel waits after `SIGTERM` before terminating the instance. An integer from `0` to `3600`. Defaults to `30`. See [`terminationGracePeriodSeconds`](/docs/daemons/config-reference#terminationgraceperiodseconds). |
 
 ```json filename=".vercel/output/daemons/worker/.vc-config.json"
 {
@@ -138,3 +137,6 @@ When you use `vercel build`, the CLI builds each daemon's `Dockerfile`, pushes t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

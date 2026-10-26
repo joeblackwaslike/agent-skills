@@ -16,8 +16,8 @@ related:
 summary: The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfigurations, and shows how to fix them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/security-dashboard.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "05f13b620d800c487ee501d0b103bd33b5b5e26760df279f3d4ef22050add205"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d61cff08fa545e4e0e62a868d65214c0593ec127053293f794042755076e12e6"
 ---
 
 # Security Dashboard
@@ -37,8 +37,8 @@ The Security Dashboard aggregates the security posture of every account and proj
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report) — Learn how to preview and download Vercel compliance documents from the dashboard.
-- [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
 
 Full cross-link map for this page: [/docs/security/security-dashboard.graph.md](/docs/security/security-dashboard.graph.md)
 <!-- /docsgraph:related -->
@@ -183,3 +183,6 @@ Access to the Security Dashboard depends on your team role. Some checks read dat
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

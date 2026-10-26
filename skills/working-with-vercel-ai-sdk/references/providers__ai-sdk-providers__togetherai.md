@@ -1,25 +1,74 @@
 ---
 title: Together.ai
-description: "Learn how to use Together.ai's models with the AI SDK."
+description: Learn how to use Together.ai with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "ee14587aa086b7c96aa7b2206f25af87dcd454c1a6039571dffab106dad95cc7"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "34e061f4a860ee2d11240af554ef99b763d93a98cade3994807b3f2aa114d61c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Together.ai](https://together.ai) provider contains support for 200+ open-source models through the [Together.ai API](https://docs.together.ai/reference).
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/togetherai` to connect directly to Together.ai.
 
-## Setup
+```ts provider="togetherai" model="deepseek/deepseek-v4-flash-0731"
+import { generateText } from 'ai';
 
-The Together.ai provider is available via the `@ai-sdk/togetherai` module. You can
-install it with
+const { text } = await generateText({
+  model: "deepseek/deepseek-v4-flash-0731",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['togetherai'],
+    },
+  },
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/togetherai
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['togetherai']`. This sends the request to Together.ai first, then falls back to other available providers of the same model if Together.ai is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to Together.ai. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by Together.ai through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Using `@ai-sdk/togetherai`
+
+For direct access to Together.ai, install `ai` and `@ai-sdk/togetherai`:
+
+```bash
+pnpm add ai @ai-sdk/togetherai
+```
+
+Set your Together.ai API credential in the `TOGETHER_API_KEY` environment variable:
+
+```bash
+export TOGETHER_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/togetherai`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/togetherai` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-10-19T09:37:30.763Z"
-sha256: "751912f0e06fd6cd1452d8908fc56aee2102834e919d517590b65313e9f56d86"
+fetched_at: "2026-10-26T09:46:05.169Z"
+sha256: "63859f06551059cbcc85a7b69814e2f7997669df811a010577844d3e08d40038"
 ---
 
 # Available features index
@@ -139,11 +139,11 @@ Features
 | Conda, Mamba (Miniforge) | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/miniforge:2` | `2.0.2` |
 | Pandoc | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/pandoc:1` | `1.0.0` |
 | Quarto CLI | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/quarto-cli:1` | `1.1.5` |
-| R (via apt) | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/r-apt:0` | `0.5.0` |
+| R (via apt) | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/r-apt:1` | `1.0.0` |
 | R packages from the DESCRIPTION file (via pak) | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/r-dependent-packages:0` | `0.2.0` |
 | R history | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/r-history:0` | `0.2.0` |
-| R packages (via pak) | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/r-packages:1` | `1.1.0` |
-| R (via rig) | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/r-rig:1` | `1.2.4` |
+| R packages (via pak) | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/r-packages:2` | `2.0.0` |
+| R (via rig) | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/r-rig:2` | `2.0.0` |
 | renv cache | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/renv-cache:0` | `0.1.2` |
 | RStudio Server | Rocker Project | `ghcr.io/rocker-org/devcontainer-features/rstudio-server:0` | `0.3.1` |
 | fish | Meaningful | `ghcr.io/meaningful-ooo/devcontainer-features/fish:2` | `2.0.0` |
@@ -153,7 +153,7 @@ Features
 | Kind | Mike Priscella | `ghcr.io/mpriscella/features/kind:1` | `1.0.1` |
 | Sops | Mike Priscella | `ghcr.io/mpriscella/features/sops:1` | `1.0.2` |
 | Beads CLI (bd) | eitsupi | `ghcr.io/eitsupi/devcontainer-features/beads-cli:1` | `1.0.0` |
-| DuckDB CLI | eitsupi | `ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1` | `1.1.1` |
+| DuckDB CLI | eitsupi | `ghcr.io/eitsupi/devcontainer-features/duckdb-cli:1` | `1.1.2` |
 | Task | eitsupi | `ghcr.io/eitsupi/devcontainer-features/go-task:1` | `1.0.4` |
 | jq, yq, gojq, xq, jaq | eitsupi | `ghcr.io/eitsupi/devcontainer-features/jq-likes:2` | `2.1.1` |
 | jj (Jujutsu) | eitsupi | `ghcr.io/eitsupi/devcontainer-features/jujutsu-cli:1` | `1.0.0` |
@@ -619,11 +619,11 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.30` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.23` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.142` |
-| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.43` |
-| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.43` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.81` |
-| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.42` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.144` |
+| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.44` |
+| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.44` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.83` |
+| Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.43` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.28` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
 | dmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/dmnlint:1` | `1.0.1` |
@@ -1359,13 +1359,15 @@ Features
 | Essential Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/essential-dev:1` | `1.2.4` |
 | git absorb — Automatic Fixup Commits | baxyz | `ghcr.io/helpers4/devcontainer/git-absorb:1` | `1.2.3` |
 | GitHub Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/github-dev:1` | `1.0.7` |
+| Graphite Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/graphite-dev:1` | `1.0.0` |
 | helpers4 Common Library | baxyz | `ghcr.io/helpers4/devcontainer/helpers4-common:1` | `1.2.3` |
+| Kimi Code Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/kimi-dev:1` | `1.0.0` |
 | Mistral Vibe Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/mistral-dev:1` | `1.3.2` |
-| Nub — Fast TypeScript/Node Toolchain | baxyz | `ghcr.io/helpers4/devcontainer/nub:1` | `1.2.3` |
+| Nub — Fast TypeScript/Node Toolchain | baxyz | `ghcr.io/helpers4/devcontainer/nub:1` | `1.2.4` |
 | Org Workspace | baxyz | `ghcr.io/helpers4/devcontainer/org-workspace:1` | `1.1.0` |
 | Automatic Package Installation | baxyz | `ghcr.io/helpers4/devcontainer/package-auto-install:1` | `1.2.3` |
 | Peon Ping — AI Agent Sound Notifications | baxyz | `ghcr.io/helpers4/devcontainer/peon-ping:1` | `1.3.2` |
-| Playwright Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/playwright-dev:1` | `1.3.1` |
+| Playwright Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/playwright-dev:1` | `1.3.2` |
 | pnpm Store (shared) | baxyz | `ghcr.io/helpers4/devcontainer/pnpm-store:1` | `1.3.1` |
 | Shell History | baxyz | `ghcr.io/helpers4/devcontainer/shell-history:1` | `1.0.0` |
 | TypeScript Development Environment | baxyz | `ghcr.io/helpers4/devcontainer/typescript-dev:1` | `1.0.8` |
@@ -1386,7 +1388,7 @@ Features
 | Bundler cache | Rails Core Team | `ghcr.io/rails/devcontainer/features/bundler-cache:1` | `1.0.1` |
 | MySQL Client | Rails Core Team | `ghcr.io/rails/devcontainer/features/mysql-client:1` | `1.1.1` |
 | Postgres Client | Rails Core Team | `ghcr.io/rails/devcontainer/features/postgres-client:1` | `1.2.0` |
-| Ruby | Rails Core Team | `ghcr.io/rails/devcontainer/features/ruby:2` | `2.2.5` |
+| Ruby | Rails Core Team | `ghcr.io/rails/devcontainer/features/ruby:2` | `2.2.6` |
 | SQLite3 | Rails Core Team | `ghcr.io/rails/devcontainer/features/sqlite3:1` | `1.0.0` |
 | Go Air | NLstn | `ghcr.io/nlstn/devcontainer-features/go-air:1` | `1.0.0` |
 | PostgreSQL Client (psql) | NLstn | `ghcr.io/nlstn/devcontainer-features/psql:1` | `1.0.0` |
@@ -1400,7 +1402,7 @@ Features
 | .config/ | devcontainer-config | `ghcr.io/devcontainer-config/features/dot-config:5` | `5.0.0` |
 | Features | devcontainer-config | `ghcr.io/devcontainer-config/features/features:0` | `0.1.0` |
 | Unset Git Credential Helper | devcontainer-config | `ghcr.io/devcontainer-config/features/unset-git-credential-helper:0` | `0.1.0` |
-| Initialize User | devcontainer-config | `ghcr.io/devcontainer-config/features/user-init:4` | `4.0.0` |
+| Initialize User | devcontainer-config | `ghcr.io/devcontainer-config/features/user-init:4` | `4.1.0` |
 | Android Debug Bridge (adb) and Fastboot | Evit15 | `ghcr.io/Evit15/devcontainer-features/adb-fastboot:1` | `1.0.1` |
 | fexec | roboslone | `ghcr.io/roboslone/go-framework/fexec:1` | `1.0.0` |
 | Oh My Posh | Bipin Paul | `ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1` | `1.1.0` |
@@ -1521,7 +1523,7 @@ Features
 | Playwright CLI | cjcrobin | `ghcr.io/cjcrobin/devcontainer-features/playwright-cli:1` | `1.0.0` |
 | Qoder CLI | cjcrobin | `ghcr.io/cjcrobin/devcontainer-features/qodercli:1` | `1.0.0` |
 | Google Cloud CLI | aqua | `ghcr.io/aqua/devcontainer-gcloud/gcloud:1` | `1.0.2` |
-| betterleaks | kuju63 | `ghcr.io/kuju63/devcontainer-features/betterleaks:1` | `1.3.0` |
+| betterleaks | kuju63 | `ghcr.io/kuju63/devcontainer-features/betterleaks:1` | `1.4.0` |
 | act | Stephen Mott | `ghcr.io/srzstephen/devcontainer-features/act:1` | `1.0.1` |
 | AWS AgentCore CLI | Stephen Mott | `ghcr.io/srzstephen/devcontainer-features/agentcore:1` | `1.0.1` |
 | AWS SAM CLI | Stephen Mott | `ghcr.io/srzstephen/devcontainer-features/aws-sam-cli:1` | `1.0.1` |
@@ -1551,13 +1553,14 @@ Features
 | Bun | Raineworks | `ghcr.io/raine-works/devcontainer-features/bun:1` | `1.0.0` |
 | Deno | Raineworks | `ghcr.io/raine-works/devcontainer-features/deno:1` | `1.0.0` |
 | Node.js with package managers | Raineworks | `ghcr.io/raine-works/devcontainer-features/node:1` | `1.0.0` |
-| Claude Code | Jartan LLC | `ghcr.io/jartan-llc/enchantments/claude-code:1` | `1.0.1` |
-| codebase-memory-mcp | Jartan LLC | `ghcr.io/jartan-llc/enchantments/codebase-memory-mcp:1` | `1.0.2` |
-| Per-device environment variables | Jartan LLC | `ghcr.io/jartan-llc/enchantments/container-env:1` | `1.0.0` |
-| GitHub CLI login persistence | Jartan LLC | `ghcr.io/jartan-llc/enchantments/gh-config:1` | `1.0.0` |
+| Claude Code | Jartan LLC | `ghcr.io/jartan-llc/enchantments/claude-code:1` | `1.1.0` |
+| codebase-memory-mcp | Jartan LLC | `ghcr.io/jartan-llc/enchantments/codebase-memory-mcp:1` | `1.1.1` |
+| Per-device environment variables | Jartan LLC | `ghcr.io/jartan-llc/enchantments/container-env:1` | `1.2.0` |
+| GitHub CLI login persistence | Jartan LLC | `ghcr.io/jartan-llc/enchantments/gh-config:1` | `1.1.0` |
 | grimoire plugins | Jartan LLC | `ghcr.io/jartan-llc/enchantments/grimoire:1` | `1.0.1` |
-| Liza | Jartan LLC | `ghcr.io/jartan-llc/enchantments/liza:1` | `1.0.2` |
-| Liza toolchain | Jartan LLC | `ghcr.io/jartan-llc/enchantments/liza-toolchain:1` | `1.1.1` |
+| Liza | Jartan LLC | `ghcr.io/jartan-llc/enchantments/liza:1` | `1.1.0` |
+| Liza toolchain | Jartan LLC | `ghcr.io/jartan-llc/enchantments/liza-toolchain:1` | `1.3.0` |
+| Stripe CLI | Jartan LLC | `ghcr.io/jartan-llc/enchantments/stripe-cli:1` | `1.0.0` |
 
 
             

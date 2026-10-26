@@ -17,8 +17,8 @@ related:
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "60c61f81fa79dc29737a2973fa7bbbf08a2ae54179d4960b353ad7ae52573e2c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8ea8d18af3ef7d0bb8b295b14f6db5d4bdc731aabfe2f2c75ea592dd86a9b2c6"
 ---
 
 # WAF Custom Rules
@@ -41,15 +41,17 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
-- [vercel firewall](https://vercel.com/docs/cli/firewall) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
-- [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk) — Learn how to configure a custom rule with rate limit in your code.
+- [How Vercel Agent accesses production safely](https://vercel.com/blog/how-vercel-agent-accesses-production-safely)
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/custom-rules.graph.md](/docs/vercel-firewall/vercel-waf/custom-rules.graph.md)
 <!-- /docsgraph:related -->
 
 [Get started](#get-started) by reviewing the [Best practices for applying rules](#best-practices-for-applying-rules) section.
 
-> **Availability**: WAF Custom Rules are available on all plans
+> WAF Custom Rules are available on all plans
+>
+> Those with the member, viewer, developer, administrator and security roles can access this feature
 
 ## Access roles
 
@@ -78,7 +80,7 @@ When you apply a [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting)
 
 ## Persistent actions
 
-> **Availability**: Persistent Actions are available on Enterprise and Pro plans
+> Persistent Actions are available on Enterprise and Pro plans
 
 When a custom rule blocks a client's request, future requests from the same client can still pass through if they do not match the rule's condition. To deny all requests from that client, identify the client through [traffic monitoring](/docs/vercel-firewall/vercel-waf) and create an IP Address rule.
 
@@ -234,3 +236,6 @@ For complete documentation on route configuration options, including `has`, `mis
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

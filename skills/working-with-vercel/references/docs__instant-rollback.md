@@ -8,7 +8,7 @@ type: how-to
 prerequisites:
   []
 related:
-  - /docs/cron-jobs
+  - /docs/cron-jobs/manage-cron-jobs
   - /docs/deployments/promoting-a-deployment
   - /docs/cli/promote
   - /docs/rbac/access-roles
@@ -16,8 +16,8 @@ related:
 summary: Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed production deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/instant-rollback.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "113d68f2cd9ffad69ac8879ee7c67c8ece0368b99784bc1eba1c7f6f2dd7b27f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "168c6de0666dee6b7758a258d77d19cdf8ff25b7770efed5c36ecf39b7854d81"
 ---
 
 # Performing an Instant Rollback on a Deployment
@@ -49,7 +49,7 @@ Full cross-link map for this page: [/docs/instant-rollback.graph.md](/docs/insta
 - Vercel treats the rolled-back deployment as a restored version of a previous deployment
 - The configuration used for the rolled-back deployment may become stale
 - Vercel won't update environment variables if you change them in the project settings and will roll back to a previous build
-- If the project uses [cron jobs](/docs/cron-jobs), they will be reverted to the state of the rolled back deployment
+- If the project uses [cron jobs](/docs/cron-jobs/manage-cron-jobs#rollbacks-with-cron-jobs), Vercel restores the cron job definitions associated with the target deployment. The project's **Disable Cron Jobs** setting persists across rollbacks and deployment promotions, so disabled cron jobs remain disabled until you explicitly re-enable them
 
 For teams on a Pro or Enterprise plan, all deployments previously aliased to a production domain are [eligible to roll back](#eligible-deployments). Hobby users can roll back to the immediately previous deployment.
 
@@ -151,3 +151,6 @@ To compare the manual promotion options, see [Manually promoting to Production](
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

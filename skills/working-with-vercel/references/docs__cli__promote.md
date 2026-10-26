@@ -12,8 +12,8 @@ related:
 summary: Learn how to promote an existing deployment using the vercel promote CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/promote.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "88a08dc99c3c9cf5755b8651cc6179019f7cde42bbb474cb8cf40d11bc54b15c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1d37ffe73408651e9c5e880f3b5512f0cbc4a28202158f061addeca7212a578b"
 ---
 
 # vercel promote
@@ -28,9 +28,9 @@ The `vercel promote` command is used to promote an existing deployment to be the
 
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment) — Learn how to promote deployments to production on Vercel.
+- [request_promote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_promote) — Use request_promote with Vercel MCP.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 
 Full cross-link map for this page: [/docs/cli/promote.graph.md](/docs/cli/promote.graph.md)
 <!-- /docsgraph:related -->
@@ -114,3 +114,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

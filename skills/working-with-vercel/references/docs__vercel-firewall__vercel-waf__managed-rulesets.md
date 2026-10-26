@@ -10,15 +10,15 @@ prerequisites:
   - /docs/vercel-firewall
 related:
   - /docs/rbac/access-roles
+  - /docs/vercel-firewall/vercel-waf/usage-and-pricing
   - /docs/bot-management
   - /docs/vercel-firewall/firewall-concepts
   - /docs/vercel-firewall/vercel-waf/rule-configuration
-  - /docs/vercel-firewall/vercel-waf/custom-rules
 summary: Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "719fae7e173f2038579a9238c9ef7658acface06e49f605b983ed5c75263e17e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "36f2b8bdaa62538d07e71c4b1591f331d33eaf31ff7f70fb99c08d96632965db"
 ---
 
 # WAF Managed Rulesets
@@ -39,9 +39,9 @@ WAF Managed Rulesets are collections of predefined WAF rules based on standards 
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
-- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md](/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md)
@@ -60,7 +60,7 @@ The following ruleset(s) are currently available:
 
 ## Configure OWASP core ruleset
 
-> **Availability**: OWASP core ruleset is available on Enterprise plans
+> OWASP core ruleset is available on Enterprise plans . [Review pricing information here](/docs/vercel-firewall/vercel-waf/usage-and-pricing#managed-ruleset-pricing).
 
 To enable and configure [OWASP Core Ruleset](https://owasp.org/www-project-top-ten/) for your project, follow these steps:
 
@@ -80,7 +80,7 @@ To enable and configure [OWASP Core Ruleset](https://owasp.org/www-project-top-t
 
 ## Configure Bot Protection Managed Ruleset
 
-> **Availability**: Bot Protection Managed Ruleset is available on all plans
+> Bot Protection Managed Ruleset is available on all plans
 
 The ruleset is **inactive by default**. In the dashboard this is labeled **Off**. Matching traffic is not evaluated and reaches your application.
 
@@ -97,7 +97,7 @@ To enable and configure [bot protection](/docs/bot-management#bot-protection-man
 
 ## Configure AI Bots Managed Ruleset
 
-> **Availability**: AI Bots Managed Ruleset is available on all plans
+> AI Bots Managed Ruleset is available on all plans
 
 The ruleset is **inactive by default**. In the dashboard this is labeled **Allow**. Matching traffic is not evaluated and reaches your application.
 
@@ -134,3 +134,6 @@ The Vercel WAF executes rules on incoming traffic in the following order:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

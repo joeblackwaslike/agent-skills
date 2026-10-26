@@ -15,8 +15,8 @@ related:
 summary: Server action for programmatically adding custom domains to Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1c9ae19a3a7a3f7720ff07aa0f4d37c1bdb865dcb74981cb30afc6c699d175d7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f6c89a6858fee3019ae92a86d21298ec201ab1baeb10462c0a2d8e5f2f51ccbf"
 ---
 
 # Add Custom Domain
@@ -36,7 +36,7 @@ The Add Custom Domain action is a server-side utility that allows platforms to p
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [add_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/add_project_domain) — Use add_project_domain with Vercel MCP.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Add an existing domain to the Vercel platform](https://vercel.com/docs/rest-api/domains/add-an-existing-domain-to-the-vercel-platform) — POST /v7/domains — This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/actions/add-custom-domain.graph.md](/docs/platforms/platform-elements/actions/add-custom-domain.graph.md)
 <!-- /docsgraph:related -->
@@ -65,3 +65,6 @@ npx shadcn@latest add https://registry.platforms.guide/add-custom-domain.json
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

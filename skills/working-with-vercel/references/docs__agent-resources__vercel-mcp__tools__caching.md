@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "35e5ce2bcda4ba6dc1d91a2e8fd0d89bd459494a89e648f3abe1888ffe003920"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dd2664ca46af4038a52da519f9f76fc2bef549d37efb0c60b6c78af7e0184cb0"
 ---
 
 # Caching
@@ -27,7 +27,6 @@ Manage cached build artifacts and check Remote Caching status for your account o
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Upload a cache artifact](https://vercel.com/docs/rest-api/artifacts/upload-a-cache-artifact) — PUT /v8/artifacts/{hash} — Uploads a cache artifact identified by the \\`hash\\` specified on the path. The cache artifact
 - [Download a cache artifact](https://vercel.com/docs/rest-api/artifacts/download-a-cache-artifact) — GET /v8/artifacts/{hash} — Downloads a cache artifact indentified by its \\`hash\\` specified on the request path. The art
 - [Check if a cache artifact exists](https://vercel.com/docs/rest-api/artifacts/check-if-a-cache-artifact-exists) — HEAD /v8/artifacts/{hash} — Check that a cache artifact with the given \\`hash\\` exists. This request returns response he
@@ -124,3 +123,6 @@ Upload a cache artifact.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

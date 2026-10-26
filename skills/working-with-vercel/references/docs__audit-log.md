@@ -16,13 +16,15 @@ related:
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0a388b40662a1e12ed9509754d945b662e66549d21e3e9907d83ed227a2b9213"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b6d608023fcad763dd71043dfe6126e8b916e72434225044ba6c79f21b15f2cc"
 ---
 
 # Audit Logs
 
-> **Availability**: Audit Logs are available on Enterprise plans
+> Audit Logs are available on Enterprise plans
+>
+> Those with the owner role can access this feature
 
 Audit logs help you track and analyze your [team members'](/docs/rbac/managing-team-members) activity. They can be accessed by team members with the [owner](/docs/rbac/access-roles#owner-role) role, and are available to customers on [enterprise](/docs/plans/enterprise) plans.
 
@@ -41,9 +43,9 @@ Audit logs help you track and analyze your [team members'](/docs/rbac/managing-t
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption) — Understand how workflow and step data is encrypted at rest.
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 
 Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md)
 <!-- /docsgraph:related -->
@@ -64,7 +66,7 @@ Reports generated for the last 90 days (three months) will not impact your billi
 
 ## Custom SIEM Log Streaming
 
-> **Availability**: Custom SIEM Log Streaming is available for purchase on Enterprise plans
+> Custom SIEM Log Streaming is available for purchase on Enterprise plans
 
 > **⚠️ Warning:** Vercel is replacing Custom SIEM Log Streaming with [Audit Log
 > Drains](/docs/drains/reference/audit-logs). If you stream audit logs to a SIEM,
@@ -364,3 +366,6 @@ Refers to actions performed by any [team member](/docs/rbac).
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

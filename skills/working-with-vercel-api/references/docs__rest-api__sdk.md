@@ -3,7 +3,7 @@ title: Vercel SDK Reference
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-10-19
+last_updated: 2026-10-26
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-10-19T09:46:49.617Z"
-sha256: "a73ff6200c5a0d76c8d07107421b0d6326218833c45c8acf8b4d13ccb7115661"
+fetched_at: "2026-10-26T09:55:26.604Z"
+sha256: "b640ee5fb260782cfccdfa5bf32869412376ccd101487d2cd2100dcd2a9357c8"
 ---
 
 # Vercel SDK Reference
@@ -63,6 +63,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/ai-gateway/budgets/defaults/list`](/docs/rest-api/sdk/ai-gateway/list-ai-gateway-budget-defaults.md) | List AI Gateway budget defaults |
 | **PUT** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/sdk/ai-gateway/upsert-ai-gateway-budget-default.md) | Upsert AI Gateway budget default |
 | **DELETE** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/sdk/ai-gateway/archive-ai-gateway-budget-default.md) | Archive AI Gateway budget default |
+| **PATCH** | [`/api-keys/{apiKeyID}/quota`](/docs/rest-api/sdk/ai-gateway/update-an-ai-gateway-api-key-budget.md) | Update an AI Gateway API key budget |
 
 ## Artifacts
 
@@ -145,6 +146,14 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v2/connect/projects/{projectId}/connectors`](/docs/rest-api/sdk/connect/list-connectors-for-a-project.md) | List connectors for a project |
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/sdk/connect/get-a-connect-token.md) | Get a Connect token |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/sdk/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
+
+## Daemons
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/projects/{idOrName}/daemons`](/docs/rest-api/sdk/daemons/get-project-daemons.md) | Get project daemons |
+| **PUT** | [`/v1/projects/{idOrName}/daemons/{daemonName}/instances`](/docs/rest-api/sdk/daemons/override-a-project-daemon-s-instance-counts.md) | Override a project daemon's instance counts |
+| **POST** | [`/v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart`](/docs/rest-api/sdk/daemons/force-restart-a-project-daemon-instance.md) | Force restart a project daemon instance |
 
 ## Deployments
 
@@ -302,6 +311,9 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions`](/docs/rest-api/sdk/feature-flags/list-flag-versions.md) | List flag versions |
 | **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/settings`](/docs/rest-api/sdk/feature-flags/get-project-flag-settings.md) | Get project flag settings |
 | **PATCH** | [`/v1/projects/{projectIdOrName}/feature-flags/settings`](/docs/rest-api/sdk/feature-flags/update-project-flag-settings.md) | Update project flag settings |
+| **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/labels`](/docs/rest-api/sdk/feature-flags/list-attribute-labels.md) | List attribute labels |
+| **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/labels/counts`](/docs/rest-api/sdk/feature-flags/list-attribute-label-counts.md) | List attribute label counts |
+| **POST** | [`/v1/projects/{projectIdOrName}/feature-flags/labels/lookup`](/docs/rest-api/sdk/feature-flags/look-up-attribute-labels.md) | Look up attribute labels |
 | **GET** | [`/v1/teams/{teamId}/feature-flags/settings`](/docs/rest-api/sdk/feature-flags/list-team-project-flag-settings.md) | List team project flag settings |
 | **GET** | [`/v2/teams/{teamId}/feature-flags/flags`](/docs/rest-api/sdk/feature-flags/list-all-flags-for-a-team.md) | List all flags for a team |
 | **GET** | [`/v1/teams/{teamId}/feature-flags/flags`](/docs/rest-api/sdk/feature-flags/list-all-flags-for-a-team-1.md) | List all flags for a team |
@@ -408,6 +420,18 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 |---|---|---|
 | **GET** | [`/v1/observability/manage/configuration/projects`](/docs/rest-api/sdk/observability/lists-disabled-observability-plus-projects.md) | Lists disabled Observability Plus projects |
 | **PUT** | [`/v1/observability/manage/configuration/projects/{projectIdOrName}`](/docs/rest-api/sdk/observability/updates-a-disabled-observability-plus-project-setting.md) | Updates a disabled Observability Plus project setting |
+
+## Organizations
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/organizations`](/docs/rest-api/sdk/organizations/list-organizations.md) | List Organizations |
+| **POST** | [`/v1/organizations`](/docs/rest-api/sdk/organizations/create-an-organization.md) | Create an Organization |
+| **GET** | [`/v1/organizations/{organizationId}`](/docs/rest-api/sdk/organizations/get-an-organization.md) | Get an Organization |
+| **PATCH** | [`/v1/organizations/{organizationId}`](/docs/rest-api/sdk/organizations/update-an-organization.md) | Update an Organization |
+| **GET** | [`/v1/organizations/{organizationId}/teams`](/docs/rest-api/sdk/organizations/list-organization-teams.md) | List Organization Teams |
+| **POST** | [`/v1/organizations/{organizationId}/teams`](/docs/rest-api/sdk/organizations/create-or-add-team-to-organization.md) | Create or Add Team to Organization |
+| **DELETE** | [`/v1/organizations/{organizationId}/teams/{targetTeamId}`](/docs/rest-api/sdk/organizations/delete-team-from-organization.md) | Delete Team from Organization |
 
 ## Projectmembers
 
@@ -682,3 +706,6 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

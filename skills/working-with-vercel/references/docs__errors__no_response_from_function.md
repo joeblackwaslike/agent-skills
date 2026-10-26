@@ -13,8 +13,8 @@ related:
 summary: The application did not respond correctly, this is likely due to an exception being thrown from the function handler.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/no_response_from_function.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "d8490f728d3248ad1a6933177f3af82c13070d945a2d8e00fa9611c71ef6f396"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ff1834bf7bc62366c5fcfbcf74a91c0a9d2ca725a580a37e2254c38c135b48c6"
 ---
 
 # NO_RESPONSE_FROM_FUNCTION
@@ -46,3 +46,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

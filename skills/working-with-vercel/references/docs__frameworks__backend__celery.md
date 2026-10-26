@@ -9,21 +9,21 @@ prerequisites:
   - /docs/frameworks/backend
   - /docs/frameworks
 related:
+  - /docs/frameworks/backend/fastapi
+  - /docs/frameworks/backend/flask
+  - /docs/frameworks/full-stack/django
   - /docs/caching/runtime-cache
   - /docs/cli/deploy
-  - /docs/queues/concepts
-  - /docs/functions
-  - /docs/functions/limitations
 summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without a long-lived worker process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "454ea43c292484be056c7dc0eb9d69f53cd37ca1f6829c7b1f7191ccbdc9c4b1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "66ffa157c50503ffc9e904a9a5cdf23aaa99533c67df3b9127bdec620d3adb8f"
 ---
 
 # Run background tasks with Celery on Vercel
 
-> **Availability**: Vercel Queues (Beta) are available on all plans
+> Vercel Queues are available in Beta on all plans
 
 Deploy Celery on Vercel with the Python runtime, Vercel Queues, and Vercel
 Functions. Vercel builds each Celery worker as a private, queue-triggered
@@ -39,8 +39,8 @@ Vercel Function, so you don't need to run a long-lived worker process.
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
+- [Migrate Railway workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-railway-workers-to-vercel-daemons) — Move Railway workers to Vercel Daemons with Docker configuration, broker migration, shutdown testing, a gradual queue ha
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel)
-- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 
 Full cross-link map for this page: [/docs/frameworks/backend/celery.graph.md](/docs/frameworks/backend/celery.graph.md)
 <!-- /docsgraph:related -->
@@ -64,8 +64,10 @@ dependencies = [
 ]
 ```
 
-This example uses FastAPI to enqueue tasks. You can use any supported Python web
-framework for the producer.
+This example uses [FastAPI](/docs/frameworks/backend/fastapi) to enqueue tasks.
+You can also enqueue tasks from [Flask](/docs/frameworks/backend/flask) or
+[Django](/docs/frameworks/full-stack/django). Follow the framework's deployment
+guide to configure the web application that produces tasks.
 
 ### Define the Celery application
 
@@ -375,6 +377,8 @@ duration and bundle size.
 - **Periodic tasks**: `celery beat` requires a long-running process. Use [Vercel
   Cron Jobs](/docs/cron-jobs) to call a route that enqueues Celery tasks.
 
+If your worker requires a continuous process instead of queue-triggered invocations, see [choosing between Functions, containers, and Daemons](/kb/guide/vercel-functions-containers-daemons). That guide explains when to package an existing worker as a Daemon.
+
 ## More resources
 
 For more about deploying Celery on Vercel, see:
@@ -388,3 +392,6 @@ For more about deploying Celery on Vercel, see:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

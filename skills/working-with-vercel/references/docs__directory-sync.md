@@ -14,13 +14,15 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d16e3677266b20a6633ef4e02b236c926612132c5259bdc4dd4a85253ec5e57e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4cf30fa7e277488e91bb6292176437461630b8e25ebc57c4082056eb505eb493"
 ---
 
 # Directory Sync
 
-> **Availability**: Directory Sync is available on Enterprise plans
+> Directory Sync is available on Enterprise plans
+>
+> Those with the owner role can access this feature
 
 Directory Sync helps teams manage their organization membership from a third-party identity provider like Google Directory or Okta. Directory Sync is only available for **Enterprise Teams** and can only be configured by [**Team Owners**](/docs/rbac/access-roles#owner-role).
 
@@ -34,9 +36,9 @@ Directory Sync helps teams manage their organization membership from a third-par
 - [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available)
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 - [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings) — POST /v1/teams/{teamId}/dsync-roles — Update the Directory Sync role mappings for a Team. This endpoint allows updating
-- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
+- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/directory-sync.graph.md](/docs/directory-sync.graph.md)
 <!-- /docsgraph:related -->
@@ -96,3 +98,6 @@ If access is lost due to removal of team owners, use the following group names t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

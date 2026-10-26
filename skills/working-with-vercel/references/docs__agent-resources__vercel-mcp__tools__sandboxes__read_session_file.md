@@ -13,8 +13,8 @@ related:
 summary: Use read_session_file with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/read_session_file.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "809df6c28528f8dbfbc5ead507ef98ae3adab40a4066844e96446de4e73ba06f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3c8f19d238971ae07ab18b4c0a7d16f30096d380598398b98477f7d1a644c948"
 ---
 
 # read_session_file
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

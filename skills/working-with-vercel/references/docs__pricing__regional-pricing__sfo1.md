@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the San Francisco, USA (sfo1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/sfo1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e9b477a78cc3aea749fa2e5ba0abd7eaa45363e0a1d4672385efca8bd0e9a33f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "01cdba1921d0a22d9eedcd1f440d5bd1d0a6095185d72923a34faed9e5d9a7b9"
 ---
 
 # San Francisco, USA (sfo1) pricing
@@ -35,7 +35,7 @@ The table below shows Managed Infrastructure products with pricing specific to t
 - [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
-- [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
+- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/sfo1.graph.md](/docs/pricing/regional-pricing/sfo1.graph.md)
 <!-- /docsgraph:related -->
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

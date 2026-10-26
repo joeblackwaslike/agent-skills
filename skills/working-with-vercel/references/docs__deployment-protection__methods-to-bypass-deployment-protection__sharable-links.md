@@ -15,13 +15,13 @@ related:
 summary: Learn how to share your deployments with external users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e6f27588d89fd0aba9b9f170c781a6995125f49241cc0dfe48ef479a76694193"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2a7487fb4d8d183862062f9a3e84db05c68b0c98b563aaa714eec6db5655c9bd"
 ---
 
 # Sharable Links
 
-> **Availability**: Shareable Links are available on all plans
+> Shareable Links are available on all plans
 
 Shareable links allow external users to securely access your deployments through a query string parameter.
 Shareable links include the ability to leave [Comments](/docs/comments) on deployments which have them enabled.
@@ -37,10 +37,9 @@ Shareable links include the ability to leave [Comments](/docs/comments) on deplo
 - [Protected Preview Deployments available on all plans](https://vercel.com/changelog/protected-preview-deployments-available-on-all-plans)
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
-- [Invite collaborators to view and comment on your deployments](https://vercel.com/changelog/invite-collaborators-to-view-and-comment-on-your-deployments)
 - [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
-- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 - [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Public and Shared Repositories](https://vercel.com/docs/container-registry/public-and-shared-repositories) — Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
 
@@ -97,3 +96,6 @@ You can view and manage all the existing Shareable Links for your team in the fo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

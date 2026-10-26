@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4b2693115b34a1ecf7fdb86e6072687bfa0f1b6d04dc9b64b11a0a51ce4156c8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "01caf34ba47894683f3e8a9ae8046fb4b16c618844270e4b92e82559490f80a2"
 ---
 
 # Account Management
@@ -39,9 +39,9 @@ When you first sign up for Vercel, you'll create an account. This account is use
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
-- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 - [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md)
 <!-- /docsgraph:related -->
@@ -361,3 +361,6 @@ If you wish to remove your primary email address, you will need to set a new pri
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

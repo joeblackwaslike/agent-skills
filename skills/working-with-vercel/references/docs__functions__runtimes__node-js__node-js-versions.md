@@ -13,8 +13,8 @@ related:
 summary: Learn about the supported Node.js versions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/node-js-versions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3a7c63c10b5130c744f9176bbe755f1a19d0424f752cade0ca6cf3f3fc8b483b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "86505920d6b017d09485e508adac39a962b96f5fa1881427e2cefbdd40b26ca2"
 ---
 
 # Supported Node.js versions
@@ -38,8 +38,8 @@ By default, a new project uses the latest Node.js LTS version available on Verce
 - [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
 - [Package Managers](https://vercel.com/docs/package-managers) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
 - [Set the Python version for your Vercel project](https://vercel.com/docs/functions/runtimes/python/python-version) — Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
-- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
-- [Fluid compute](https://vercel.com/docs/fluid-compute) — Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to ru
+- [General settings](https://vercel.com/docs/project-configuration/general-settings) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js/node-js-versions.graph.md](/docs/functions/runtimes/node-js/node-js-versions.graph.md)
 <!-- /docsgraph:related -->
@@ -91,3 +91,6 @@ To verify the Node.js version your Deployment is using, either run `node -v` in 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

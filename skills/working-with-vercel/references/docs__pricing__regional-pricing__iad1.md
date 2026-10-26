@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Washington D.C., USA (iad1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/iad1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "00c541310d27784b852b6eb1b936bdeddf5d808b2d07213c6b8af00b49434a19"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e42ee9e5dd407ed943a29760709dfc67ad3acd87ebb654d2fd1ba49084e6207c"
 ---
 
 # Washington D.C., USA (iad1) pricing
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

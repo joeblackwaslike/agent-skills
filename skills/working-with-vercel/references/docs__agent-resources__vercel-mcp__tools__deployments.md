@@ -15,8 +15,8 @@ related:
 summary: Vercel MCP tools for deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0a79701e75d32cc3e856c662303c58a800971fc0f5c02ef7364dd6d47a7aff86"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b0b02dec627a28ade240dc9a34d54a26292c28e0e9704157cf420663a78c9d7b"
 ---
 
 # Deployments
@@ -32,8 +32,8 @@ Create and inspect deployments for your projects, including their files and buil
 - [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
 - [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
-- [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -315,3 +315,6 @@ Fetch content directly from a Vercel deployment URL (with [authentication](/docs
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

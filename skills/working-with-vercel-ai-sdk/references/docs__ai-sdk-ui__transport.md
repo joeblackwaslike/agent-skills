@@ -4,8 +4,8 @@ description: Learn how to use custom transports with useChat.
 url: "https://ai-sdk.dev/docs/ai-sdk-ui/transport"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/transport.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "650b2d53098a58a29724db70f514d5eea5bc94ac1a3b75c693e8c70e060db97f"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "ef81ab8a50f7320423d15051e86745b43ce52d963c76bc1f4567fd932257fbfb"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -270,6 +270,94 @@ streams, use a non-negative cursor and follow the server-side conversion in the
 WorkflowAgent guide.
 
 For the full API reference, see [`WorkflowChatTransport`](/docs/reference/ai-sdk-workflow/workflow-chat-transport). For server-side endpoint setup, see the [WorkflowAgent guide](/docs/agents/workflow-agent#resumable-streaming-with-workflowchattransport).
+
+## Chat SDK Web Adapter
+
+The [Chat SDK](https://chat-sdk.dev) Web adapter (`@chat-adapter/web`) serves a `useChat` endpoint from a Chat SDK bot. It speaks the [UI message stream protocol](/docs/ai-sdk-ui/stream-protocol), so the default transport works without changes. Use it when the same bot also runs on Slack, Microsoft Teams, Discord, or other [chat platforms](/docs/agents/chat-platforms), and you want one set of handlers for all of them.
+
+```bash
+pnpm add ai @ai-sdk/react chat @chat-adapter/web @chat-adapter/state-redis
+```
+
+On the server, register the Web adapter and handle messages with `onDirectMessage`. Each browser conversation is a direct message thread:
+
+```ts title="lib/bot.ts"
+import { Chat } from 'chat';
+import { toAiMessages } from 'chat/ai';
+import { createWebAdapter } from '@chat-adapter/web';
+import { createRedisState } from '@chat-adapter/state-redis';
+import { ToolLoopAgent } from 'ai';
+import { getSession } from './session'; // your app's auth
+
+const agent = new ToolLoopAgent({
+  model: 'anthropic/claude-sonnet-5.5',
+  instructions: 'You are a helpful assistant.',
+});
+
+export const bot = new Chat({
+  userName: 'mybot',
+  adapters: {
+    web: createWebAdapter({
+      userName: 'mybot',
+      // Identify the caller from your app's session. Returning null responds with 401.
+      getUser: async () => {
+        const session = await getSession();
+        return session ? { id: session.userId } : null;
+      },
+    }),
+  },
+  state: createRedisState(),
+});
+
+bot.onDirectMessage(async thread => {
+  const { messages } = await bot.history.thread.list(thread.id, {
+    limit: 20,
+  });
+
+  const result = await agent.stream({
+    messages: await toAiMessages(messages),
+    abortSignal: thread.signal,
+  });
+
+  await thread.post(result.fullStream);
+});
+```
+
+```ts title="app/api/chat/route.ts"
+import { after } from 'next/server';
+import { bot } from '@/lib/bot';
+
+export async function POST(request: Request): Promise<Response> {
+  return bot.webhooks.web(request, {
+    waitUntil: task => after(() => task),
+  });
+}
+```
+
+On the client, point the default transport at the route:
+
+```tsx title="app/page.tsx"
+'use client';
+
+import { useChat } from '@ai-sdk/react';
+import { DefaultChatTransport } from 'ai';
+
+export default function Chat() {
+  const { messages, sendMessage } = useChat({
+    transport: new DefaultChatTransport({ api: '/api/chat' }),
+  });
+
+  // ... render chat UI
+}
+```
+
+Things to know:
+
+- **Authentication**: browser requests have no platform signature, so `getUser` is the security boundary. Resolve the user from your app's session and return `null` to reject the request.
+- **Conversation history**: the adapter ignores the message history in the request body. It stores each conversation's messages in the state adapter, and `bot.history.thread.list()` reads them back. The chat `id` from `useChat` identifies the conversation.
+- **Stopping**: the adapter honors the request's abort signal, so calling `stop()` in `useChat` stops the handler's stream.
+
+For all options, including the `ag-ui` protocol and `useChat` wrappers for React, Vue, and Svelte, see the [Web adapter docs](https://chat-sdk.dev/adapters/official/web).
 
 ## Building Custom Transports
 

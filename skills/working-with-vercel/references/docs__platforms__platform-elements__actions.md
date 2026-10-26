@@ -14,8 +14,8 @@ related:
 summary: Server actions you can install to run common platform tasks against the Vercel API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1e0a05111ff60a9bb82419b3be53a847f9321814a36656d66c6b86d30bcb41f8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "579f68690bb658dcfe8d9b8989c6923227fce6d2d864f0dc996667b9af6e34a4"
 ---
 
 # Actions
@@ -31,8 +31,8 @@ Actions are server-side functions that wrap common Vercel API calls so you can a
 - [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action) — These actions allow integration providers to set up automated tasks with Vercel deployments.
 - [Update deployment integration action](https://vercel.com/docs/rest-api/deployments/update-deployment-integration-action) — PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} —
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Documentation and CLI](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Vercel MCP tools for documentation and cli.
 - [Invoice Actions](https://vercel.com/docs/rest-api/marketplace/invoice-actions) — POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions — This endpoint allows the part
+- [Add an existing domain to the Vercel platform](https://vercel.com/docs/rest-api/domains/add-an-existing-domain-to-the-vercel-platform) — POST /v7/domains — This endpoint is used for adding a new apex domain name with Vercel for the authenticating user. Note
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/actions.graph.md](/docs/platforms/platform-elements/actions.graph.md)
 <!-- /docsgraph:related -->
@@ -45,3 +45,6 @@ Full cross-link map for this page: [/docs/platforms/platform-elements/actions.gr
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

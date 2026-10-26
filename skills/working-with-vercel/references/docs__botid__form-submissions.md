@@ -12,8 +12,8 @@ related:
 summary: How to properly handle form submissions with BotID protection
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/form-submissions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "252344932a7c358488ced288f72985ff034dc5a0325645b513bd92bcc421b750"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8dbf24338c6de0b46dad039ac087fa7a7260653be53a6210f85feaeb33a23bd0"
 ---
 
 # Form Submissions
@@ -31,10 +31,11 @@ BotID does **not** support traditional HTML forms that use the `action` and `met
 - [Using SvelteKit Form Actions](https://vercel.com/kb/guide/using-sveltekit-form-actions) — This guide explains how to use form actions in SvelteKit to handle form submissions, process form data, and enhance form
 - [How to create forms with API Routes](https://nextjs.org/docs/pages/guides/forms) — Learn how to handle form submissions and data mutations with Next.js.
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
-- [Form](https://nextjs.org/docs/pages/api-reference/components/form) — Learn how to use the `\<Form\>` component to handle form submissions and search params updates with client-side navigation
-- [Form Component](https://nextjs.org/docs/app/api-reference/components/form) — Learn how to use the `\<Form\>` component to handle form submissions and search params updates with client-side navigation
-- [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
+- [Form](https://nextjs.org/docs/pages/api-reference/components/form) — Learn how to use the `\<Form\>` component to handle form submissions and search params updates with client-side navigation
+- [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
+- [submit_feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/submit_feedback) — Send feedback about Vercel or its MCP tools.
+- [Vercel Formspree Integration](https://vercel.com/docs/integrations/cms/formspree) — Learn how to integrate Formspree with Vercel. Follow our tutorial to set up Formspree and manage form submissions on you
 
 Full cross-link map for this page: [/docs/botid/form-submissions.graph.md](/docs/botid/form-submissions.graph.md)
 <!-- /docsgraph:related -->
@@ -116,3 +117,6 @@ export default function ContactForm() {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

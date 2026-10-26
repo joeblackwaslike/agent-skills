@@ -1,25 +1,74 @@
 ---
 title: Groq
-description: Learn how to use Groq.
+description: Learn how to use Groq with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/groq"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "0a52716e0efd0a55d803ca83b7d6803b625ab5737b274f3905ab1805dce3a708"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "2584a89da014336687f3c4a597a3a3b9760f59cd2410fe2c602a006a8d04d4af"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Groq](https://groq.com/) provider contains language model support for the Groq API.
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/groq` to connect directly to Groq.
 
-## Setup
+```ts provider="groq" model="openai/gpt-oss-120b"
+import { generateText } from 'ai';
 
-The Groq provider is available via the `@ai-sdk/groq` module.
-You can install it with
+const { text } = await generateText({
+  model: "openai/gpt-oss-120b",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['groq'],
+    },
+  },
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/groq
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['groq']`. This sends the request to Groq first, then falls back to other available providers of the same model if Groq is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to Groq. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by Groq through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Using `@ai-sdk/groq`
+
+For direct access to Groq, install `ai` and `@ai-sdk/groq`:
+
+```bash
+pnpm add ai @ai-sdk/groq
+```
+
+Set your Groq API credential in the `GROQ_API_KEY` environment variable:
+
+```bash
+export GROQ_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/groq`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/groq` provider, including
+its model factories and settings. Gateway model and feature availability can
+differ.
 
 ## Provider Instance
 

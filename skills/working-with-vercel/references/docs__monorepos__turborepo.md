@@ -16,8 +16,8 @@ related:
 summary: Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware hashing, and Remote Caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ac3cb732235a6d5ec838ca0586d39f542a2453215d7da6d0a542f0da2972cf89"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7661e26423780bc408d47eb9781339519d7cb4db6c8602f027f2b28379c30a95"
 ---
 
 # Deploying Turborepo to Vercel
@@ -34,14 +34,14 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 - [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/pages/guides/ci-build-caching) — Learn how to configure CI to cache Next.js builds
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
 - [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
 - [Caching](https://turborepo.dev/docs/crafting-your-repository/caching) — Configure task caching to avoid repeating work, using fingerprinting for inputs and restoring outputs from cache.
-- [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 - [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/monorepos/turborepo.graph.md](/docs/monorepos/turborepo.graph.md)
 <!-- /docsgraph:related -->
@@ -163,51 +163,41 @@ You do not need to host your project on Vercel to use Vercel Remote Caching. For
 
 - ### Link your project to the Vercel Remote Cache
   First, authenticate with the Turborepo CLI **from the root of your monorepo**:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx turbo login
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx turbo login
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx turbo login
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx turbo login
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx turbo login
+  ```
+  **yarn**
+  ```bash
+  yarn dlx turbo login
+  ```
+  **npm**
+  ```bash
+  npx turbo login
+  ```
+  **bun**
+  ```bash
+  bunx turbo login
+  ```
   Then, use [`turbo link`](https://turborepo.com/docs/reference/command-line-reference#turbo-link) to link your Turborepo to your [remote cache](/docs/monorepos/remote-caching#link-to-the-remote-cache). This command should be run **from the root of your monorepo**:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx turbo link
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx turbo link
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx turbo link
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx turbo link
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx turbo link
+  ```
+  **yarn**
+  ```bash
+  yarn dlx turbo link
+  ```
+  **npm**
+  ```bash
+  npx turbo link
+  ```
+  **bun**
+  ```bash
+  bunx turbo link
+  ```
   Next, `cd` into each project in your Turborepo and run `vercel link` to link each directory within the monorepo to your Vercel Project.
 
   As a Team owner, you can also [enable caching within the Vercel Dashboard](/docs/monorepos/remote-caching#enable-and-disable-remote-caching-for-your-team).
@@ -300,3 +290,6 @@ If you are using a version of Turborepo below 2.4.1, you may encounter issues wi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "17bf1551cc48a169d9e802be5d8a95f82b22b87e272a4a4bef37c1627180e14b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ba3ecd715458dcaae783b383893ae1a6c12631f9a5cd36d753d63c36904c00d0"
 ---
 
 # Transferring a project
@@ -31,16 +31,14 @@ You can transfer projects between your Vercel teams with **zero downtime** and *
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Projects can now be transferred to Personal Accounts](https://vercel.com/changelog/projects-can-now-be-transferred-to-personal-accounts)
-- [How do I delete a Vercel team?](https://vercel.com/kb/guide/how-do-i-delete-a-vercel-team) — Information on deleting a Vercel team.
 - [Transfer Vercel projects with zero downtime](https://vercel.com/blog/transfer-vercel-projects-with-zero-downtime)
 - [Projects can now be transferred without downtime](https://vercel.com/changelog/projects-can-now-be-transferred-without-downtime)
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
 - [Create project transfer request](https://vercel.com/docs/rest-api/projects/create-project-transfer-request) — POST /projects/{idOrName}/transfer-request — Initiates a project transfer request from one team to another. \<br/\> Return
+- [Accept project transfer request](https://vercel.com/docs/rest-api/projects/accept-project-transfer-request) — PUT /projects/transfer-request/{code} — Accept a project transfer request initated by another team. \<br/\> The \\`code\\` i
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 
 Full cross-link map for this page: [/docs/projects/transferring-projects.graph.md](/docs/projects/transferring-projects.graph.md)
 <!-- /docsgraph:related -->
@@ -136,3 +134,6 @@ Adding these features is optional.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

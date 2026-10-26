@@ -15,8 +15,8 @@ related:
 summary: Learn how to run and test your microfrontends locally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fc8f604d30a48079d21a832c8a698a9f4d7abc49356fc75c94074ff37e619123"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "80793bc7de1d4d4187b4addadc8728d5859f97677816d6d68d27e4f61d26bd7c"
 ---
 
 # Microfrontends local development
@@ -31,12 +31,11 @@ To provide a seamless local development experience, `@vercel/microfrontends` pro
 
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
-- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
+- [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration) — Configure your microfrontends.json.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
-- [Using Monorepos](https://vercel.com/docs/monorepos) — Vercel provides support for monorepos. Learn how to deploy a monorepo here.
-- [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 
 Full cross-link map for this page: [/docs/microfrontends/local-development.graph.md](/docs/microfrontends/local-development.graph.md)
 <!-- /docsgraph:related -->
@@ -337,3 +336,6 @@ Set this variable to the value of the protected project's [Protection Bypass for
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

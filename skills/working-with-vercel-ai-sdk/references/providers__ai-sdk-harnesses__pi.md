@@ -4,8 +4,8 @@ description: Learn how to use the Pi harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "618889b4546e6ff062a915d82dc504384801283700b1502cc3a534b01f20459c"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "cf71d53f40ede47ab38e8ecb5388727ce0b9a0f79a96866fde45d50ac7fb83d5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -215,6 +215,13 @@ prompt templates also remain disabled.
 
 ## Session Reattachment
 
+Pi keeps its live session journal in a host temporary directory. On detach,
+stop, or suspension, the adapter copies the journal to
+`$HOME/.ai-sdk-harness/.agent-runs/<encoded-sessionId>/pi/<session-file>.jsonl`.
+Here, `$HOME` belongs to the sandbox; the saved journal is outside
+`sessionWorkDir`. A future process restores that journal after the caller
+reattaches the sandbox and supplies the saved lifecycle state.
+
 By default, Pi keeps a suspended turn alive for an efficient continuation in
 the same process when the incoming request has compatible settings and runtime
 resources. Changed request-scoped settings or sandbox handles cause a cold
@@ -355,6 +362,9 @@ Pi supports built-in tool approval requests when `permissionMode` is
 
 Pi does not support structured output. Supplying `output` to `HarnessAgent`
 causes the turn to throw `HarnessCapabilityUnsupportedError`.
+
+Pi does not support user messages with text parts after image parts; all text
+must appear before the first image.
 
 ## Related
 

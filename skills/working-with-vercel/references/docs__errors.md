@@ -12,8 +12,8 @@ related:
 summary: Use this guide to find specific solutions and insights for common Vercel errors.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6accb3dd740755c13a4de927fe4accf591dd0724c511e6993d567cad6c378984"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "11a0a131ff2c50176696baefef0a13a08199dad99afb11d8fdfdede8d4028c23"
 ---
 
 # Error Codes
@@ -29,13 +29,10 @@ When developing your application with Vercel, you may encounter a variety of err
 - [Vercel now supports customizing platform error pages](https://vercel.com/changelog/vercel-now-supports-customizing-platform-error-pages)
 - [View specific error codes in runtime logs](https://vercel.com/changelog/view-specific-error-codes-in-runtime-logs)
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
-- [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
-- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
-- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Custom error pages](https://vercel.com/docs/custom-error-pages) — Learn how to configure custom error pages for 5xx server errors on Vercel.
 - [REST API Errors](https://vercel.com/docs/rest-api/errors) — General and specific errors you may encounter when using the Vercel REST API.
-- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
 - [Get the auth code for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-the-auth-code-for-a-domain) — GET /v1/registrar/domains/{domain}/auth-code — Get the auth code for a domain. This is required to transfer a domain fro
 
 Full cross-link map for this page: [/docs/errors.graph.md](/docs/errors.graph.md)
@@ -51,3 +48,6 @@ For general error handling guidance, that covers dashboard related errors, see [
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

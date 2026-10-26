@@ -17,8 +17,8 @@ related:
 summary: Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0bd74bea7c5c863eaa1e06e0f846f0a0d74e388ab5be24ba7e99305b0ce5dfbe"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a501682a9d7b9a4cd1537d89d2cab0f07730e448f17e19e2afe6d55fa79112b5"
 ---
 
 # OpenAI Responses API with AI Gateway
@@ -37,7 +37,7 @@ The [OpenAI Responses API](https://developers.openai.com/api/reference/responses
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
-- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses) — Get started with the OpenAI Responses API using the AI SDK.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [OpenAI Codex with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openai-codex) — Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses.graph.md](/docs/ai-gateway/sdks-and-apis/responses.graph.md)
@@ -161,3 +161,6 @@ When an error occurs, the API returns a JSON object with details about what went
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

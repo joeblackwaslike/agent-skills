@@ -16,8 +16,8 @@ related:
 summary: Stream OpenAI Chat Completions responses token by token as they are generated through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f22d676917248fbd93bfb63032308faa169edd60a3b1e2c7ebc0a561f2e20f26"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2208c65a1524e879035300692b6c6b6a77ee57bf16e1f156a39e00b5cd8d597f"
 ---
 
 # OpenAI Chat Completions Streaming with AI Gateway
@@ -30,13 +30,11 @@ Set `stream: true` on a [chat completion](/docs/ai-gateway/sdks-and-apis/openai-
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm) — Learn how to use the AI SDK to stream LLM responses.
-- [Stream Text with Chat Prompt](https://ai-sdk.dev/cookbook/next/stream-text-with-chat-prompt) — Learn how to generate text using the AI SDK and Next.js
 - [OpenResponses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming) — Stream responses token by token using the OpenResponses API through AI Gateway.
-- [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
 - [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
+- [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
 - [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
-- [Streaming](https://vercel.com/docs/functions/streaming-functions) — Learn how to stream responses from Vercel Functions.
+- [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming.graph.md)
 <!-- /docsgraph:related -->
@@ -162,3 +160,6 @@ For more details about the SSE specification, see the [W3C specification](https:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

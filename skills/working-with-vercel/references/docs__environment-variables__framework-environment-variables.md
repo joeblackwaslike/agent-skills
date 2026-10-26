@@ -13,8 +13,8 @@ related:
 summary: "Framework environment variables are automatically populated by the Vercel, based on your project's framework."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/framework-environment-variables.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e19c6b2218a9f3eced783c41542694dd8cb11d2cbb468205d3bd2bd2d0b7d181"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "361af9326355a33598e20d1ff0c4d4b6618a00190a69189f2aa70e2edd8c9656"
 ---
 
 # Framework environment variables
@@ -28,11 +28,13 @@ Frameworks typically use a prefix to expose environment variables to the browser
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
-- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
+- [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/environment-variables/framework-environment-variables.graph.md](/docs/environment-variables/framework-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -2517,3 +2519,6 @@ SANITY_STUDIO_VERCEL_GIT_PULL_REQUEST_ID=23
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

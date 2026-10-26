@@ -13,17 +13,17 @@ related:
   - /docs/queues
   - /docs/functions
   - /docs/frameworks/backend/fastapi
-  - /docs/queues/pricing
+  - /docs/frameworks/backend/flask
 summary: Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process background tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/dramatiq.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e1df79e4eed97a5b16ef5b69b455c97b8254f54af8fa62c47eb20fafe9ebdb2e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0cfd28fda6c7d3891cb6766449cf5cefbfdf4633e620d6fe03492ad8f00b09ed"
 ---
 
 # Deploy Dramatiq workers on Vercel
 
-> **Availability**: Vercel Queues (Beta) are available on all plans
+> Vercel Queues are available in Beta on all plans
 
 [Dramatiq](https://dramatiq.io/) is a distributed task processing library for
 Python. You declare functions as actors, send them messages, and workers run
@@ -39,9 +39,9 @@ them in the background.
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
-- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
-- [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel)
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
+- [Daemons](https://vercel.com/docs/daemons) — Run long-running background workers, such as queue consumers and workflow workers, next to your app with Vercel Daemons.
 
 Full cross-link map for this page: [/docs/frameworks/backend/dramatiq.graph.md](/docs/frameworks/backend/dramatiq.graph.md)
 <!-- /docsgraph:related -->
@@ -69,7 +69,9 @@ dependencies = [
 ```
 
 This example uses [FastAPI](/docs/frameworks/backend/fastapi) to enqueue
-messages. You can use any supported Python web framework for the producer.
+messages. You can also send messages from [Flask](/docs/frameworks/backend/flask)
+or [Django](/docs/frameworks/full-stack/django). Follow the framework's deployment
+guide to configure the web application that produces messages.
 
 ### Define the broker and actors
 
@@ -328,6 +330,8 @@ duration and bundle size.
   queues, so `broker.flush()`, `broker.flush_all()`, and `broker.join()` raise
   `NotImplementedError`. Use Dramatiq's `StubBroker` in unit tests instead.
 
+If your worker requires a continuous process instead of queue-triggered invocations, see [choosing between Functions, containers, and Daemons](/kb/guide/vercel-functions-containers-daemons). That guide explains when to package an existing worker as a Daemon.
+
 ## More resources
 
 For more about deploying Dramatiq on Vercel, see:
@@ -342,3 +346,6 @@ For more about deploying Dramatiq on Vercel, see:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

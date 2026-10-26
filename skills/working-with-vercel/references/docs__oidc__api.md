@@ -12,13 +12,13 @@ related:
 summary: "Learn how to configure your own API to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/api.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "634906f933eee603940e7c11e408cd7a1bc88e5e5350fe3022c1e2c5cba95f40"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "72a2bd0c63c9181e1b372625249e1d20632dd14d34559b0f3e71047058c71f56"
 ---
 
 # Connect to your own API
 
-> **Availability**: Secure backend access with OIDC federation is available on all plans
+> Secure backend access with OIDC federation is available on all plans
 
 ## Validate the tokens
 
@@ -30,12 +30,11 @@ To configure your own API to accept Vercel's OIDC tokens, you need to validate t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [Connect to Google Cloud Platform \\(GCP\\)](https://vercel.com/docs/oidc/gcp) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
-- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 
 Full cross-link map for this page: [/docs/oidc/api.graph.md](/docs/oidc/api.graph.md)
 <!-- /docsgraph:related -->
@@ -44,28 +43,29 @@ Full cross-link map for this page: [/docs/oidc/api.graph.md](/docs/oidc/api.grap
 
 Install the following package:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i jose
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add jose
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i jose
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add jose
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i jose
+```
+
+**yarn**
+
+```bash
+yarn add jose
+```
+
+**npm**
+
+```bash
+npm i jose
+```
+
+**bun**
+
+```bash
+bun add jose
+```
 
 In the code example below, you use the `jose.jwtVerify` function to verify the token. The `issuer`, `audience`, and `subject` are validated against the token's claims.
 
@@ -118,28 +118,29 @@ Make sure that you:
 
 Install the following package:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/oidc
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/oidc
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/oidc
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/oidc
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/oidc
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/oidc
+```
+
+**npm**
+
+```bash
+npm i @vercel/oidc
+```
+
+**bun**
+
+```bash
+bun add @vercel/oidc
+```
 
 In the code example below, the `getVercelOidcToken` function is used to retrieve the OIDC token from your Vercel environment.
 You can then use this token to authenticate the request to the external API.
@@ -193,3 +194,6 @@ const { payload } = await jose.jwtVerify(token, JWKS, {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage scopes and permissions for Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3a02e9c7cf3aaba6485fa41fe6ebdfa65b3fe8794c012343c1021898accc60f4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bb5d6d9a5adb614f6c2b4662c589276e2a7c26016752a1d4425e0115b56863e4"
 ---
 
 # Scopes and Permissions
@@ -30,9 +30,9 @@ Scopes define what data is included in the [ID Token](/docs/sign-in-with-vercel/
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
-- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Add a repository permission](https://vercel.com/docs/rest-api/vcr/add-a-repository-permission) — POST /v1/vcr/repository/{idOrName}/permissions — Grant a team access to a VCR repository. Sharing applies to the whole r
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/scopes-and-permissions.graph.md](/docs/sign-in-with-vercel/scopes-and-permissions.graph.md)
 <!-- /docsgraph:related -->
@@ -99,7 +99,7 @@ The following permissions are available:
 | Remote Cache | Read Only, Read and Write | Manage Remote Cache. |
 | Team | Read Only | Read your Vercel team data. |
 | Team Members | Read and Write | Invite, remove, and change the roles of team members. |
-| Webhooks | Read Only | List webhooks. |
+| Webhooks | Read Only, Read and Write | List available events and create, read, update, and delete webhooks. |
 
 
 ### Project Permissions
@@ -128,3 +128,6 @@ The following permissions are available:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

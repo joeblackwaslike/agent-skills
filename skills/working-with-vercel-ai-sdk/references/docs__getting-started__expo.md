@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Expo.
 url: "https://ai-sdk.dev/docs/getting-started/expo"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/expo.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "c90a31e5f7843878f365104319ed82c6be14c6e7ffb0c7271dead4f02e09757d"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "35e1dd6e0a67b80ffaa5236eac8947e70211fdc9e7275646addb83044262f168"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -19,7 +19,7 @@ If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/p
 To follow this quickstart, you'll need:
 
 - Node.js 22+ and pnpm installed on your local development machine.
-- A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
+- A [Vercel AI Gateway](https://vercel.com/ai-gateway) API key.
 
 If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
@@ -41,7 +41,7 @@ This guide requires Expo 52 or higher.
 
 ### Install dependencies
 
-Install `ai` and `@ai-sdk/react`, the AI package and AI SDK's React hooks. The AI SDK's [ Vercel AI Gateway provider ](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
+Install `ai` and `@ai-sdk/react`, the AI package and AI SDK's React hooks. The AI SDK's [Vercel AI Gateway provider](/providers/ai-sdk-providers/ai-gateway) ships with the `ai` package. You'll also install `zod`, a schema validation library used for defining tool inputs.
 
 This guide uses the Vercel AI Gateway provider so you can access hundreds of
 models from different providers with one API key, but you can switch to any
@@ -118,7 +118,7 @@ Function and set `EXPO_PUBLIC_API_BASE_URL` to that function's base URL.
 
 ## Choosing a Provider
 
-The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [ community ](/providers/community-providers) packages.
+The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) packages.
 
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
@@ -160,7 +160,7 @@ Pick the approach that best matches how you want to manage providers across your
 
 ## Wire up the UI
 
-Now that you have an API route that can query an LLM, it's time to setup your frontend. The AI SDK's [ UI ](/docs/ai-sdk-ui) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
+Now that you have an API route that can query an LLM, it's time to set up your frontend. The AI SDK's [UI](/docs/ai-sdk-ui) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
 
 Update your root page (`app/(tabs)/index.tsx`) with the following code to show a list of chat messages and provide a user message input:
 

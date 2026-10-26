@@ -12,13 +12,13 @@ related:
 summary: "Prevent the use of `\"postinstall\"` script in packages."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_postinstall_script.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "232112c77bf7e3073b0e35d5d1ea81de95c93d47624882359cd023d9b79c821b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cfd8c916807530106dfccc395a0596ffef5e1312b3d023b3f4a888be69a51277"
 ---
 
 # NO_POSTINSTALL_SCRIPT
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 > **💡 Note:** This rule is available from version 1.4.0.
 
@@ -40,3 +40,6 @@ If you hit this issue, you can resolve it by removing the `"postinstall"` script
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

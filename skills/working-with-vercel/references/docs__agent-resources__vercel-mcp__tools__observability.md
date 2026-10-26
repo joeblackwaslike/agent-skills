@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bcdadd5a3de47191569bbe46a0ed1e9ff59e8ac661021b476e2510ffe3d42f63"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "21f6a373a5d6b97c52aa26c1057f59f83be0fde18f8937fcd0039a7abd7aa575"
 ---
 
 # Observability
@@ -29,9 +29,9 @@ Investigate errors and request behavior in your projects with runtime logs and t
 
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability.graph.md](/docs/agent-resources/vercel-mcp/tools/observability.graph.md)
 <!-- /docsgraph:related -->
@@ -130,3 +130,6 @@ Get runtime logs for a project or deployment. Runtime logs include application o
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

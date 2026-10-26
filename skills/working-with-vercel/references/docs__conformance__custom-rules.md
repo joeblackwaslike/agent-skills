@@ -16,13 +16,13 @@ related:
 summary: Learn how Conformance improves collaboration, productivity, and software quality at scale.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "3beae354edb2402368013ef87d9c853de16eef7a030bc2e7e6fa4556e50b08ef"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7d4fddd3801d3838b5902dbeae98fffd4b23c2a0c0725cc238ff35fbedd6a979"
 ---
 
 # Conformance Custom Rules
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 Vercel's built-in Conformance rules are crafted from extensive experience in developing large-scale codebases and high-quality web applications. Recognizing the unique needs of different companies, teams, and products, Vercel offers configurable, no-code custom rules. These allow for tailored solutions to specific challenges.
 
@@ -161,3 +161,6 @@ version of that package.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,12 +12,12 @@ related:
   - /docs/functions
   - /docs/cdn-cache
   - /docs/routing-middleware
-  - /docs/routing-middleware/api
+  - /docs/routing-middleware/js-reference
 summary: "Learn how to use Vercel's features with Gatsby."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/gatsby.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6900e63fe8ef5f88c10be3aa6f70ec205a3bceec7896f8afe1f53ae9f3215916"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9000772ce1bf7b338331415d72395f3add151c789f107109f3923a00d3366619"
 ---
 
 # Gatsby on Vercel
@@ -382,7 +382,7 @@ export default function middleware(request: Request): Response {
 **To summarize, Routing Middleware with Gatsby on Vercel:**
 
 - Executes before a request is processed on a site, allowing you to modify responses to user requests
-- Runs on *all* requests, but can be scoped to specific paths [through a `matcher` config](/docs/routing-middleware/api#match-paths-based-on-custom-matcher-config)
+- Runs on *all* requests, but can be scoped to specific paths [through a `matcher` config](/docs/routing-middleware/js-reference#match-paths-based-on-custom-matcher-config)
 - Uses our lightweight Edge Runtime to keep costs low and responses fast
 
 [Learn more about Routing Middleware](/docs/routing-middleware)
@@ -425,3 +425,6 @@ See [our Frameworks documentation page](/docs/frameworks) to learn about the ben
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "823ab48ec289e7143ff52c90841e9215e3b46df907525bca2877fd47e6716eef"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "eeb86a4d453dfcb4da45927a26c995ecc9c086a48e105f91dcc847e99ef33404"
 ---
 
 # Projects overview
@@ -36,11 +36,11 @@ Everything you deploy on Vercel lives in a project: a frontend, backend APIs, ba
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
-- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
+- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart) — Programmatically host code for user-generated or AI-generated applications on Vercel.
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/projects.graph.md](/docs/projects.graph.md)
 <!-- /docsgraph:related -->
@@ -61,7 +61,7 @@ Use [Vercel Functions](/docs/functions) to deploy API routes, webhooks, streamed
 
 [Fluid Compute](/docs/fluid-compute) adds optimized concurrency, dynamic scaling, background processing, and failover to supported runtimes. Use it for workloads that spend time waiting on database queries, API calls, and AI requests.
 
-Vercel Functions can serve [WebSocket connections](/docs/functions/websockets) (currently in [Beta](/docs/release-phases#beta)) for realtime applications, chat, collaboration, and AI streaming. Connections remain on the function instance that accepted them, so applications should handle reconnects and store shared state in a durable data store.
+Vercel Functions can serve [WebSocket connections](/docs/functions/websockets) for realtime applications, chat, collaboration, and AI streaming. Connections remain on the function instance that accepted them, so applications should handle reconnects and store shared state in a durable data store.
 
 ### Containerized applications and multi-service projects
 
@@ -82,7 +82,7 @@ Workflows support JavaScript, TypeScript, and Python through the [Workflow SDK](
 
 ### AI applications and agent workloads
 
-Combine a project with the [AI SDK](/docs/ai-sdk), [AI Gateway](/docs/ai-gateway), and [Chat SDK](https://chat-sdk.dev/) to build AI applications, chat experiences, and model-powered APIs. AI Gateway provides a unified API for model providers, routing, fallbacks, usage tracking, and spend controls.
+Combine a project with the [AI SDK](/docs/ai-sdk), [AI Gateway](/docs/ai-gateway), and [Chat SDK](/docs/chat-sdk) to build AI applications, chat experiences, and model-powered APIs. AI Gateway provides a unified API for model providers, routing, fallbacks, usage tracking, and spend controls.
 
 Use [Vercel Sandbox](/docs/sandbox) to run untrusted or agent-generated code in isolated Linux microVMs. Sandboxes support command execution, files, processes, exposed ports, snapshots, persistent environments, remote storage, and custom OCI images through the Vercel Container Registry.
 
@@ -134,3 +134,6 @@ To learn more about limits on the number of projects you can have, see [Limits](
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

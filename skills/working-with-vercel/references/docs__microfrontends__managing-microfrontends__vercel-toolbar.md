@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "94763e12f0b3944ca82bd092e936680bf0cfce727006544c79d96a200c2b1062"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "27989362b7930894ae4ec0c627e6bac80a29e6683f266c84ef5c693196bde05a"
 ---
 
 # Managing with the Vercel Toolbar
@@ -31,12 +31,11 @@ Using the [Vercel Toolbar](/docs/vercel-toolbar), you can visualize and independ
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
-- [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost) — Learn how to use the Vercel Toolbar in your local environment.
-- [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md](/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md)
 <!-- /docsgraph:related -->
@@ -80,3 +79,6 @@ You can enable [debug headers](/docs/microfrontends/troubleshooting#debug-header
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

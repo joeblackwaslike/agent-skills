@@ -15,8 +15,8 @@ related:
 summary: Enterprise Managed Users (EMU) lets your Vercel team manage the sign-in identity of every member. Members sign in through your SAML SSO provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "96720fa774a7b799aa82d65208c5a23f12afb13b031b5ba6efe0a7c0ba417f57"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "91b3944a75ef4c3e274afb55623f55822ca4e77544110194c409724ce86dd8aa"
 ---
 
 # Enterprise Managed Users (EMU)
@@ -32,22 +32,24 @@ Enterprise Managed Users (EMU) lets your team own and control each member's Verc
 - [Enterprise Managed Users is now generally available](https://vercel.com/changelog/enterprise-managed-users)
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [Easier transitions between hobby and pro](https://vercel.com/changelog/2024-01-account-changes)
+- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
+- [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
+- [Easier transitions between hobby and pro](https://vercel.com/changelog/2024-01-account-changes)
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
-- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users.graph.md](/docs/security/enterprise-managed-users.graph.md)
 <!-- /docsgraph:related -->
 
 This guide explains the prerequisites for enabling EMU, how to enable it for your team, what changes for your members, and how existing Hobby teams on your verified domains are handled.
 
-> **Availability**: Enterprise Managed Users are available on Enterprise plans
+> Enterprise Managed Users are available on Enterprise plans
+>
+> Those with the Owner role can access this feature
 
 ## When to use Enterprise Managed Users
 
@@ -326,3 +328,6 @@ If the acquired company keeps its own email domain, verify and claim that domain
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

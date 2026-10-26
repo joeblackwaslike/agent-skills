@@ -13,8 +13,8 @@ related:
 summary: A content moderation interface for reporting abuse with categorization, validation, and privacy-focused design.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/report-abuse.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "23c377765e166c23a08afb7878bb0dc70332271183b74a84e4b453075e24a1b3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "774f32efa02a3e7daf888235b32e2760d3a7369103e5d7e322639e1917559819"
 ---
 
 # Report Abuse
@@ -30,13 +30,11 @@ The Report Abuse block provides platforms with a professional content moderation
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
-- [Limit Abuse with Rate Limiting](https://vercel.com/kb/guide/limit-abuse-with-rate-limiting) — Learn how to protect your authentication endpoints against abuse.
-- [Error Reports for Your Projects with URIports and Vercel](https://vercel.com/kb/guide/client-side-error-reports-with-uriports-vercel) — Enable error reporting for your websites deployed with Vercel and act fast on issues.
-- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment) — A component for users to claim ownership of Vercel deployments created on their behalf.
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data) — Learn how to redact sensitive data from your Web Analytics events.
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment) — A component for users to claim ownership of Vercel deployments created on their behalf.
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
-- [DNS Table](https://vercel.com/docs/platforms/platform-elements/blocks/dns-table) — A DNS record display component with one-click copying for guiding users through domain configuration.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/report-abuse.graph.md](/docs/platforms/platform-elements/blocks/report-abuse.graph.md)
 <!-- /docsgraph:related -->
@@ -367,3 +365,6 @@ const ModerationWorkflow = {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

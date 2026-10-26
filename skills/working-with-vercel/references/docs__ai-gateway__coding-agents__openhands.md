@@ -15,8 +15,8 @@ related:
 summary: Connect OpenHands to AI Gateway with the Vercel CLI or an OpenAI-compatible LLM configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openhands.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e718df8dd9852389021009b52ae177d7a6fa3dedba840cfe2042453a6b709dad"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6ea912ba622840fd7ddaff1c0eb5b2d59fe28a96f4f7e1c26ffef040581eb807"
 ---
 
 # OpenHands with AI Gateway
@@ -117,3 +117,6 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

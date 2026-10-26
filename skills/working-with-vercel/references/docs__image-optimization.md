@@ -16,13 +16,13 @@ related:
 summary: Transform and optimize images to improve page load performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "56a3fd4acecfb0923fc19ce9302682751b60dae76e276da06f48b14fae5d0299"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8eb0fd5f3e2ac4c4febcec18f61b80ad90b53461b97962b76f756483025dc104"
 ---
 
 # Image Optimization with Vercel
 
-> **Availability**: Image Optimization is available on all plans
+> Image Optimization is available on all plans
 
 Vercel supports dynamically transforming unoptimized images to reduce the file size while maintaining high quality. These optimized images are cached on the [Vercel CDN](/docs/cdn), meaning they're available close to users whenever they're requested.
 
@@ -32,7 +32,6 @@ Vercel supports dynamically transforming unoptimized images to reduce the file s
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy) — Backwards compatible Image Optimization with the Legacy Image component.
 - [New Observability dashboard for Image Optimization](https://vercel.com/changelog/new-observability-dashboard-for-image-optimization)
 - [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image)
@@ -40,10 +39,11 @@ Vercel supports dynamically transforming unoptimized images to reduce the file s
 - [How to improve Core Web Vitals](https://vercel.com/kb/guide/how-to-improve-core-web-vitals) — Improve Core Web Vitals \\(INP, LCP, CLS\\) with metric-specific fixes, field-data measurement, and Next.js/Vercel perform
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network)
 - [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud)
-- [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization)
 - [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
+- [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 
 Full cross-link map for this page: [/docs/image-optimization.graph.md](/docs/image-optimization.graph.md)
 <!-- /docsgraph:related -->
@@ -266,3 +266,6 @@ For more information on what to do next, we recommend the following articles:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

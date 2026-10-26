@@ -15,8 +15,8 @@ related:
 summary: Use the vercel vcr command group to manage Vercel Container Registry repositories, tags, and images from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/cli-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7fe901ade4774d83d5717c7d3653cc6dec56cba2fc2470e2e57b37bba9b5eff6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "593cdbabc6ea12cd4dd66b8d2eaa4ef78ff09b8270256a4a488004cf5cb3b67a"
 ---
 
 # Container Registry CLI Reference
@@ -31,11 +31,12 @@ The `vercel vcr` command group lets you manage [Vercel Container Registry](/docs
 
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli)
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
-- [vercel blob](https://vercel.com/docs/cli/blob) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
-- [List repository images](https://vercel.com/docs/rest-api/vcr/list-repository-images) — GET /v1/vcr/repository/{idOrName}/images — List images for a container registry repository, including their tags.
+- [vercel blob](https://vercel.com/docs/cli/blob) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
+- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 
 Full cross-link map for this page: [/docs/container-registry/cli-reference.graph.md](/docs/container-registry/cli-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -48,28 +49,29 @@ Each command operates on a single Vercel project. By default, the CLI uses the [
 
 Install the Vercel CLI globally to use the `vercel vcr` commands:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i -g vercel
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn global add vercel
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i -g vercel
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add -g vercel
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i -g vercel
+```
+
+**yarn**
+
+```bash
+yarn global add vercel
+```
+
+**npm**
+
+```bash
+npm i -g vercel
+```
+
+**bun**
+
+```bash
+bun add -g vercel
+```
 
 ## Authentication
 
@@ -839,3 +841,6 @@ vercel vcr config my-repository --public false
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

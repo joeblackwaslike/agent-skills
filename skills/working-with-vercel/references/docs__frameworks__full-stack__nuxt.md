@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/cli
   - /docs/functions
-  - /docs/incremental-static-regeneration
-  - /docs/cdn
-  - /docs/image-optimization
+  - /docs/eve
+  - /docs/services
+  - /docs/passport
 summary: Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nuxt.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c2f75356cd5d4fe306faab9941485f8105f2d2adb1d9f4e94ca978714f508a84"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cee9ff24c73098d0f3e5799ca884032f41952146c43325e1bbe0a3ecac5e37fc"
 ---
 
 # Nuxt on Vercel
@@ -31,17 +31,18 @@ Nuxt is an open-source framework that streamlines the process of creating modern
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
-- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
-- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
-- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
+- [Rendering strategies for retail: ISR vs SSR vs static](https://vercel.com/kb/guide/ssr-vs-ssg-vs-isr-vs-csr-for-ecommerce) — Choose between SSR, SSG, ISR, and CSR for each ecommerce surface. Compare rendering modes on freshness, personalization,
+- [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
+- [Vercel Integration Guide for SAP Composable Storefront](https://vercel.com/kb/guide/integration-guide-for-sap-composable-storefront) — Integrate Vercel and SAP Composable Storefront with advanced rendering methods by leveraging the Vercel Build Output API
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
-- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nuxt.graph.md](/docs/frameworks/full-stack/nuxt.graph.md)
 <!-- /docsgraph:related -->
@@ -159,6 +160,12 @@ export default defineEventHandler(() => 'Hello World!');
 ```
 
 You can test your API Routes with `nuxt dev`.
+
+## Build an agent app with eve
+
+Use the `eve/nuxt` module to connect your Nuxt frontend to an [eve agent](/docs/eve). The module starts the agent alongside Nuxt during development and auto-imports the `useEveAgent` composable for sending messages and streaming responses.
+
+On Vercel, the module deploys the agent through [Vercel Services](/docs/services) alongside your Nuxt app in one project. Follow the [eve Nuxt integration guide](https://eve.dev/docs/guides/frontend/nuxt) to register the module, connect your Vue components, and configure authentication for browser requests.
 
 ## Reading and writing files
 
@@ -423,6 +430,12 @@ export default defineNuxtRouteMiddleware(() => {
 
 [Learn more about Middleware](https://nuxt.com/docs/guide/directory-structure/middleware)
 
+## Protect an internal app with Passport
+
+Use [Vercel Passport](/docs/passport) to require sign-in through your company's identity provider before requests reach your Nuxt app. Passport requires an Enterprise plan. Your app can use the verified visitor identity to personalize pages and authorize access to sensitive routes.
+
+Follow [Personalize and lock down a Nuxt app with Vercel Passport](/kb/guide/vercel-passport-nuxt) to read identity with `getIdentity()` from `@vercel/passport` in Nuxt 4 server routes, restrict access by group, and record visitor actions. Reading identity requires server-side rendering or server routes; a fully static `nuxt generate` build has no server code to read it.
+
 ## Server-Side Rendering (SSR)
 
 Server-Side Rendering (SSR) allows you to render pages dynamically on the server. This is useful for pages where the rendered data needs to be unique on every request. For example, checking authentication or looking at the location of an incoming request.
@@ -683,3 +696,6 @@ Learn more about deploying Nuxt projects on Vercel with the following resources:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

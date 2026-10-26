@@ -13,8 +13,8 @@ related:
 summary: HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/api.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fccf680da2b46940dfd3eec21ff4359d1dbc449326b6879155a157e17c5dac0d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7dbf87dfb2323f2b4557135d1246257cd6e098b0f0b7101a0c122d1e76fa6f34"
 ---
 
 # API Reference
@@ -27,11 +27,11 @@ The Vercel Queues API is a REST API for publishing, consuming, and managing mess
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
-- [Vercel Queues: Python SDK Reference](https://vercel.com/docs/queues/python-sdk) — Publish and consume messages with the Vercel Queues Python SDK.
-- [Poll Mode](https://vercel.com/docs/queues/poll-mode) — Consume messages from Vercel Queues by polling on your own schedule, from any environment.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
+- [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
+- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 
 Full cross-link map for this page: [/docs/queues/api.graph.md](/docs/queues/api.graph.md)
 <!-- /docsgraph:related -->
@@ -328,3 +328,6 @@ The `receiptHandle` must be URL-encoded in the path.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use get_domain_contact_verification with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7ab609495e7f336e75e128745a726192d11c8cca62b57b5d77fdbbcfe9e35ae5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "086e70ea765213408d2e8ab03ecee9ec4a0511ef9f3d91618c8470b6e79473e5"
 ---
 
 # get_domain_contact_verification
@@ -47,3 +47,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

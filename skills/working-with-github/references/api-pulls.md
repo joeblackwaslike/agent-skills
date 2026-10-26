@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/pulls"
-fetched_at: "2026-10-05T11:18:57.736Z"
-sha256: "34b7e77748a0aada7f5494b08f846e8b9b9506ccc5cda9d768ffb1f86504a310"
+fetched_at: "2026-10-26T09:52:24.329Z"
+sha256: "8215f8cae1e308984728ffd55aa82ef973f6cdeae1a9f05151024994566f56e0"
 ---
 
 # REST API endpoints for pull requests
@@ -27,7 +27,7 @@ Pull requests have these possible link relations:
 * `commits`: The API location of this pull request's [commits](#list-commits-on-a-pull-request)
 * `statuses`: The API location of this pull request's [commit statuses](/en/rest/commits#commit-statuses), which are the statuses of its `head` branch
 
-> \[!NOTE]
+> [!NOTE]
 > Most endpoints use `Authorization: Bearer <YOUR-TOKEN>` and `Accept: application/vnd.github+json` headers, plus `X-GitHub-Api-Version: 2026-03-10`. Curl examples below omit these standard headers for brevity.
 
 ## List pull requests

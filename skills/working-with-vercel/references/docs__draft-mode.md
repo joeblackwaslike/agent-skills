@@ -16,8 +16,8 @@ related:
 summary: "Vercel's Draft Mode enables you to view your unpublished headless CMS content on your site before publishing it."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/draft-mode.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e2ecc4bd0ad1070fcca444203ec585be2bdff4ad61bcc1bceeaaf79a10b465fc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "59048e8e6ce77a4805c20f63bab7df2785065d2a455bcfbf308a4d4a4ae5049e"
 ---
 
 # Draft Mode
@@ -36,12 +36,12 @@ Draft Mode lets you view your unpublished headless CMS content on your website r
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images via Dockerfile.vercel, frame
 - [draftMode](https://nextjs.org/docs/app/api-reference/functions/draft-mode) — API Reference for the draftMode function.
-- [How to preview content with Preview Mode in Next.js](https://nextjs.org/docs/pages/guides/preview-mode) — Next.js has the preview mode for statically generated pages. You can learn how it works here.
 - [Enhanced content management for your headless CMS](https://vercel.com/blog/enhanced-content-management-for-headless-cmses)
+- [How to preview content with Preview Mode in Next.js](https://nextjs.org/docs/pages/guides/preview-mode) — Next.js has the preview mode for statically generated pages. You can learn how it works here.
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
-- [Partial prerendering: Building towards a new default rendering model for web applications](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts) — Learn how draft flags work and how to promote them to Vercel Flags.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Edit Mode](https://vercel.com/docs/edit-mode) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
 
 Full cross-link map for this page: [/docs/draft-mode.graph.md](/docs/draft-mode.graph.md)
 <!-- /docsgraph:related -->
@@ -233,3 +233,6 @@ Viewers outside your Vercel team cannot enable Draft Mode or see your draft cont
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

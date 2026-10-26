@@ -13,8 +13,8 @@ related:
 summary: Build SaaS applications that serve multiple domains from a single Next.js codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/multi-tenant-template.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8a06cb5b00bd34abc741fad329321dd0293df5235299c1aae24e2c47f06a128c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7cfae701abfda12373261021b45aa86ba8fd756b1e87c33e71ab09527304ebe4"
 ---
 
 # Multi-Tenant Template
@@ -27,9 +27,7 @@ Multi-tenant applications allow you to serve different customers with unique dom
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
-- [How to build multi-tenant apps in Next.js](https://nextjs.org/docs/app/guides/multi-tenant) — Learn how to build multi-tenant apps with the App Router.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/proxy-and-routing) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
@@ -255,3 +253,6 @@ Whether you're building a white-label solution, a marketplace platform, or a con
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

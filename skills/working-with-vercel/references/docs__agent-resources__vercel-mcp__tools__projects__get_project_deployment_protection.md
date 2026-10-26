@@ -13,8 +13,8 @@ related:
 summary: Use get_project_deployment_protection with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "aec708dd625257052ee5f7d0320f7bea9c8eaed83fbe4a093c1cd9fd8b444433"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a0a3ea706a833f7ee17a73400ddd751c6b1d3ae475263717701acb4aceab2e0f"
 ---
 
 # get_project_deployment_protection
@@ -47,3 +47,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,13 +12,13 @@ related:
 summary: Requires that a workspace package is configured with required React plugins and rules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/eslint_react_rules_required.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "154fca66d1c1a2acb7b6e55f4fc60505a2cb0cdb082a02c63f206efc07bbe91b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "db44b5a11894332061728dc01fa0cf3fed9dcae4eb2e0f61465662795fa09400"
 ---
 
 # ESLINT_REACT_RULES_REQUIRED
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 This Conformance check requires that ESLint plugins for React are configured
 correctly in your application, including:
@@ -87,3 +87,6 @@ You should also add `"eslint-config-custom": "workspace:*"` to your
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a new AI model to your Vercel projects
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ed6628093c2a5673a4fdddb1b261260b91d400bb11a6ca37197388c2a3d717dd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b2abb423597e84845eff252402112c5f9236fef3f3f949d21231346315453688"
 ---
 
 # Adding a Model
@@ -33,10 +33,11 @@ If you have integrations installed, scroll to the bottom to access the models ex
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
-- [AI models](https://v0.app/docs/ai-models) — Add AI functionality to your v0 projects by integrating AI models and platforms.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
-- [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [Vercel AI Gateway: Models, Routing, and Observability](https://vercel.com/docs/ai-gateway) — Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, r
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-model.graph.md](/docs/agent-resources/integrations-for-models/adding-a-model.graph.md)
 <!-- /docsgraph:related -->
@@ -98,3 +99,6 @@ Once you have decided on the model you want to add to your project:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

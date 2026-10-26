@@ -12,8 +12,8 @@ related:
 summary: The unit identifier of the Range header in the request is not supported. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/range_unit_not_supported.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5c2d42a581e4c5466570f367216f47eb5e2295b29751c430f1c5c3fa6b9c577d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f8a383dc2e7ca312985fed60fb4471b6b1cd9f0f8fb5e7d29bd203c1064acf8d"
 ---
 
 # RANGE_UNIT_NOT_SUPPORTED
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

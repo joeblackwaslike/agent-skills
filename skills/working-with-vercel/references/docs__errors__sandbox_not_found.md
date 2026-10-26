@@ -12,8 +12,8 @@ related:
 summary: The Sandbox could not be found on Vercel. This is a platform error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/sandbox_not_found.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "9f8d0dada96e8067ac84e492eedacd8c5e142d734f198484dbceba96fa63a657"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8c85d424617225849b35a5d5aa39e6907cfadea2f2cf3520c096473c94019809"
 ---
 
 # SANDBOX_NOT_FOUND
@@ -35,3 +35,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

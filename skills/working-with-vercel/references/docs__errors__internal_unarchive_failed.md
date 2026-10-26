@@ -12,8 +12,8 @@ related:
 summary: Unarchiving of the deployment or resource failed. This is an internal error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_unarchive_failed.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "67ad2e8c6cc3c8c722c8363f1a91ce98d0ee6bdd1760b14ba7ec967bbe2e27d0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fd513df23cd8b9a0c9ed2f04b06ced30eab177312f77257ca9f0ebcdfadc52ef"
 ---
 
 # INTERNAL_UNARCHIVE_FAILED
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

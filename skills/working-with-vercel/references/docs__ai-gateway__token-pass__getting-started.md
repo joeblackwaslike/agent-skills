@@ -17,8 +17,8 @@ related:
 summary: Subscribe to Token Pass, create a Token Pass API key, connect a coding agent, and confirm your first request uses Token Pass credit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/token-pass/getting-started.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "029a56444d89a8e75a7cf8d3198cc97cfecf608ab0dee65f9fb0d07ac2269c64"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f7a96228096628fb1f6f7b96016003ad06046a90ebe47d7bcb2080b349432dd2"
 ---
 
 # Getting Started with Token Pass
@@ -63,7 +63,7 @@ Before you start, you need:
   > setup command again with a regular AI Gateway API key.
 
 - ### Select a featured model
-  In your agent's model picker, choose `zai/glm-5.3` or `moonshotai/kimi-k3`. If the agent has a fast mode, turn it off. Fast variants aren't featured models, so a Token Pass API key can't use them.
+  In your agent's model picker, choose `zai/glm-5.3`, `moonshotai/kimi-k3`, or `deepseek/deepseek-v4.1-flash`. If the agent has a fast mode, turn it off. Fast variants aren't featured models, so a Token Pass API key can't use them.
 
   Each agent handles model selection differently. [Coding and personal agents](/docs/ai-gateway/token-pass/coding-agents) has the steps for fx, Claude Code, Codex, Cline, and OpenCode.
 
@@ -112,3 +112,6 @@ https://vercel.com/docs/ai-gateway/token-pass/coding-agents.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

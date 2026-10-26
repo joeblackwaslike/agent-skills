@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d0e1abb7b2f0671405eaf6f30d39cb8a14c3adb6d97dfa999dd6e352876fddf4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "63be98cbde0db7e100262e467694d7fac9f630ca7f71f6c6d0e1f7688c2af3fd"
 ---
 
 # SDKs
@@ -34,8 +34,8 @@ There are multiple ways to use Vercel Flags, depending on your framework and how
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js)
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks.graph.md](/docs/flags/vercel-flags/sdks.graph.md)
@@ -99,3 +99,6 @@ Set the separate `FLAGS_SECRET` environment variable when you use Flags Explorer
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

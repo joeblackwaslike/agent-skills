@@ -12,8 +12,8 @@ related:
 summary: Review the standard, deployment, and visitor identity claims in a Passport token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/token-claims.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8caadee57fe26032621a508bcf2e29118be1cd78156619da0717c97cd544773e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4f34597e01da2030a25aa17593767cf4896ead79ef3712342209d76fa71673bd"
 ---
 
 # Passport token claims
@@ -97,3 +97,6 @@ Reading or decoding a JWT does not verify it. Before trusting these claims, veri
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

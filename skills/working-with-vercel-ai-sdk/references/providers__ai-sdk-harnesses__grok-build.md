@@ -4,8 +4,8 @@ description: Learn how to use the Grok Build harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "78cb838752e6a94b9462ac27669da694ab81761eaa9e1b7876ab6ca7b81be99b"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "f81a84b671297bc45409e1e1be4f9c2dcd78be20fd099f4e6c686d76a48972b4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -231,7 +231,7 @@ safe built-in operations internally without sending a permission request.
   `permissionMode: 'allow-all'` with this adapter. Host-executed AI SDK tool
   approvals still work.
 - A changed host-tool catalog requires Grok Build to refresh its ACP MCP tool
-  list. If the implementation retains stale tools, the turn fails explicitly.
+  list. If the agent retains stale tools, the turn fails explicitly.
 - Custom `headers` are not natively supported and only applied via
   sandbox-external request transformations. When a sandbox without that
   capability is provided, custom `headers` therefore cannot be passed and are

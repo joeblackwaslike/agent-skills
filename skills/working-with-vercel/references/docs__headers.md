@@ -16,8 +16,8 @@ related:
 summary: This reference covers the list of request, response, cache-control, and custom response headers included with deployments with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "296b31f0dc0edeae41517ab81ff8fda728eb35ebfe8a44b11c37ea820a4e430e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "677bd24423d4fb781a6ce5f1882a3db09ad592f41a214a51c847014c510959bf"
 ---
 
 # System Headers
@@ -74,3 +74,6 @@ To learn about the cache-control headers sent to each Vercel deployment and how 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

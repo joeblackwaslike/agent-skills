@@ -13,8 +13,8 @@ related:
 summary: Use list_vercel_ci_task_runs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_runs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "15311977ed4708021f193e279489db192d91fa259934504172c1cee16abd13e8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c240b57aae9b068d183c20deedafaba6fa44d83e3bed7637f2e990c632cda8ca"
 ---
 
 # list_vercel_ci_task_runs
@@ -31,7 +31,7 @@ List task runs within a Vercel CI job run.
 - [list_vercel_ci_task_definitions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_definitions) — Use list_vercel_ci_task_definitions with Vercel MCP.
 - [get_vercel_ci_job_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_job_run) — Use get_vercel_ci_job_run with Vercel MCP.
 - [get_vercel_ci_task_run_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_task_run_logs) — Use get_vercel_ci_task_run_logs with Vercel MCP.
-- [list_vercel_ci_job_definitions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_job_definitions) — Use list_vercel_ci_job_definitions with Vercel MCP.
+- [List task runs for a job run](https://vercel.com/docs/rest-api/vercel-ci/list-task-runs-for-a-job-run) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_runs.graph.md](/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_runs.graph.md)
 <!-- /docsgraph:related -->
@@ -52,3 +52,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

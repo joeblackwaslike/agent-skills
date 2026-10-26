@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "10ba49cea40ce5db642fc22b260a82290acc2bae58a5eed972383d085942c67d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "94be5109d973c5b1d3b84e4a084813f04166488cc88d8b52662f92ca6fbb5d24"
 ---
 
 # Vercel CMS Integrations
@@ -33,10 +33,11 @@ Vercel Content Management System (CMS) Integrations allow you to connect your pr
 - [Rendering strategies for retail: ISR vs SSR vs static](https://vercel.com/kb/guide/ssr-vs-ssg-vs-isr-vs-csr-for-ecommerce) — Choose between SSR, SSG, ISR, and CSR for each ecommerce surface. Compare rendering modes on freshness, personalization,
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Vercel Commerce and Payments Integrations](https://vercel.com/docs/integrations/ecommerce) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
 
 Full cross-link map for this page: [/docs/integrations/cms.graph.md](/docs/integrations/cms.graph.md)
 <!-- /docsgraph:related -->
@@ -56,28 +57,23 @@ Once a CMS has been installed, and a project linked you can pull in environment 
 
 - ### Install the Vercel CLI
   To pull in environment variables from your CMS to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn global add vercel@latest
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add -g vercel@latest
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i -g vercel@latest
+  ```
+  **yarn**
+  ```bash
+  yarn global add vercel@latest
+  ```
+  **npm**
+  ```bash
+  npm i -g vercel@latest
+  ```
+  **bun**
+  ```bash
+  bun add -g vercel@latest
+  ```
 
 - ### Install your CMS integration
   Navigate to the CMS integration you want to install into your project, and follow the steps to install the integration.
@@ -134,3 +130,6 @@ This method is generally setup through webhooks or APIs that trigger a deploymen
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

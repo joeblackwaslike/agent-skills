@@ -13,8 +13,8 @@ related:
 summary: Use update_rolling_release_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "dfb0f19128a7d6bcd2b1bc8c3dfc0ad6861aff181f7c42b8b8c616e9d74898ff"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ef2a543ba58586817fecf314c99f4a1a2b1bbbb53c29cd53f1d75a28e1b1a31b"
 ---
 
 # update_rolling_release_config
@@ -30,8 +30,8 @@ Update the rolling release settings for the project.
 - [get_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config) — Use get_rolling_release_config with Vercel MCP.
 - [complete_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/complete_rolling_release) — Use complete_rolling_release with Vercel MCP.
 - [start_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/start_rolling_release) — Use start_rolling_release with Vercel MCP.
-- [update_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project) — Use update_project with Vercel MCP.
 - [approve_rolling_release_stage](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/approve_rolling_release_stage) — Use approve_rolling_release_stage with Vercel MCP.
+- [Update the rolling release settings for the project](https://vercel.com/docs/rest-api/rolling-release/update-the-rolling-release-settings-for-the-project) — PATCH /v1/projects/{idOrName}/rolling-release/config — Update \\(or disable\\) Rolling Releases for a project. When disabl
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

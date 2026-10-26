@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3c78c14d04fe40b65580006f42ddab902f67e591be4b678a80475bf9e1eff0ff"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9dc1c7865ee74ea47cde63fe2743c0c19fbcd4a212e860c417072f3751bb12d5"
 ---
 
 # Vercel Firewall
@@ -38,8 +38,8 @@ The Vercel Firewall is a robust, multi-layered security system designed to prote
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
+- [Emergency Redirect](https://vercel.com/kb/guide/emergency-redirect) — Learn how to implement an emergency redirect without re-deploying your site.
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 
@@ -71,13 +71,15 @@ When you have more than one custom rule, you can [customize](/docs/vercel-firewa
 
 ## Platform-wide firewall
 
-> **Availability**: DDoS Mitigation is available on all plans
+> DDoS Mitigation is available on all plans
 
 Vercel provides automated [DDoS mitigation](/docs/vercel-firewall/ddos-mitigation) for all deployments, regardless of the plan that you are on. With this automated DDoS mitigation, we block incoming traffic if we identify abnormal or suspicious levels of incoming requests.
 
 ## Vercel WAF
 
-> **Availability**: Vercel WAF is available on all plans
+> Vercel WAF is available on all plans
+>
+> Those with the member, viewer, developer and administrator roles can access this feature
 
 The [Vercel WAF](/docs/vercel-firewall/vercel-waf) complements the platform-wide firewall by allowing you to define custom protection strategies using the following tools:
 
@@ -101,3 +103,6 @@ You can use the following tools to [monitor the internet traffic](/docs/vercel-f
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

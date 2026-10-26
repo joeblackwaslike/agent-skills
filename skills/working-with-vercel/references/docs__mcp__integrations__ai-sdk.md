@@ -17,8 +17,8 @@ related:
 summary: Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations/ai-sdk.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9c252d664d3a61860cad08e247f45a2de67badc33c5eb19b03c6892abf2b97c6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "87061c33ce014e81a51586c18099fe8d77eb668e9fc7f220eab2054c67c3114d"
 ---
 
 # AI SDK with MCP
@@ -35,8 +35,7 @@ Use the [AI SDK](/docs/ai-sdk) to call tools from a [Model Context Protocol (MCP
 - [Add MCP Apps to your AI SDK application](https://vercel.com/kb/guide/ai-sdk-mcp-apps) — Build an MCP Apps host with the AI SDK using @ai-sdk/mcp and @ai-sdk/react to filter model-visible tools, read ui:// res
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
-- [Model Context Protocol (MCP) Tools](https://ai-sdk.dev/cookbook/next/mcp-tools) — Learn how to use MCP tools with the AI SDK and Next.js
-- [Model Context Protocol (MCP) Tools](https://ai-sdk.dev/cookbook/node/mcp-tools) — Learn how to use MCP tools with the AI SDK and Node
+- [How to perform large-scale data analysis with Vercel Sandbox and MCP](https://vercel.com/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) — Use Vercel Sandbox and an MCP server built with \\`mcp-handler\\` to let AI agents run DuckDB SQL and Python on large data
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
 - [TanStack AI with MCP](https://vercel.com/docs/mcp/integrations/tanstack-ai) — Connect TanStack AI to a Model Context Protocol server on Vercel and call its tools with models served through AI Gatewa
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
@@ -56,28 +55,29 @@ Before you begin, you need:
 
 Install the AI SDK and its MCP client:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i ai @ai-sdk/mcp
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add ai @ai-sdk/mcp
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i ai @ai-sdk/mcp
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add ai @ai-sdk/mcp
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i ai @ai-sdk/mcp
+```
+
+**yarn**
+
+```bash
+yarn add ai @ai-sdk/mcp
+```
+
+**npm**
+
+```bash
+npm i ai @ai-sdk/mcp
+```
+
+**bun**
+
+```bash
+bun add ai @ai-sdk/mcp
+```
 
 ## Configure the connection
 
@@ -186,3 +186,6 @@ For JavaScript, run `node --env-file=.env index.mjs`. Your terminal displays the
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

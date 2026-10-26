@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel routes public requests to services and how each service handles its own routes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/routing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "59fcb1807def2ab8076496f6feea38a3beecc48322e807d6ee280fe78a7503aa"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "84cf103d1bf12ccad519aefeb9b495df61cebfc770784c15b6bbf6a507920ab2"
 ---
 
 # Services routing
@@ -39,12 +39,11 @@ owner. For how services are defined and built, see [Services](/docs/services).
 - [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
-- [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
-- [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
+- [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 
 Full cross-link map for this page: [/docs/services/routing.graph.md](/docs/services/routing.graph.md)
 <!-- /docsgraph:related -->
@@ -196,3 +195,6 @@ Top-level rewrites are public ingress. To let one service call another over the 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

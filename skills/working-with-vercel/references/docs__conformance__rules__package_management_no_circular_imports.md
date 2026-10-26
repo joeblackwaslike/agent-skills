@@ -12,13 +12,13 @@ related:
 summary: Circular imports between two files are not allowed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_management_no_circular_imports.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ba036b33000444ab741929dc628464fa7ba239f9e68bc98ce04c188d6d2c7f7c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8644615e117ad2ef42168feb9d3a0b2031a2bc5e44d7fd5e033349c86576aa54"
 ---
 
 # PACKAGE_MANAGEMENT_NO_CIRCULAR_IMPORTS
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 This check ensures that there is no path through import statements back to the
 original file. This helps to keep dependencies between files clean, which aids
@@ -64,3 +64,6 @@ avoid the circular import.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

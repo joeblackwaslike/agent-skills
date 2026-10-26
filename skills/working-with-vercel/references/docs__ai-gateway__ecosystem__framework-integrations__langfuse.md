@@ -13,8 +13,8 @@ related:
 summary: Trace and monitor AI Gateway requests with Langfuse. Configure an OpenAI client and wrap it with observeOpenAI to log model generations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6c09f818cd5496b8330ec49ced77e76ce8753e8fd6c8cd6228dc7117f5afdbfc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "83c7050908d42ae957a043259af924da7bdca120422ac471bc4bbce37b351d31"
 ---
 
 # Langfuse with AI Gateway
@@ -31,12 +31,11 @@ with Langfuse to access various AI models and providers.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Langfuse](https://ai-sdk.dev/providers/observability/langfuse) — Monitor, evaluate and debug your AI SDK application with Langfuse
-- [Building an AI chatbot with Next.js, Langchain, and OpenAI](https://vercel.com/kb/guide/nextjs-langchain-vercel-ai) — Dive into the world of LangChain.js and Next.js with our detailed guide. Learn how to set up a chatbot, structure output
 - [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [LangChain](https://vercel.com/docs/sandbox/ecosystem/langchain) — Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/langfuse.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/langfuse.graph.md)
 <!-- /docsgraph:related -->
@@ -53,28 +52,23 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 
 - ### Install dependencies
   Install the required Langfuse packages along with the `dotenv` and `@types/node` packages:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i langfuse openai dotenv @types/node
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add langfuse openai dotenv @types/node
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i langfuse openai dotenv @types/node
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add langfuse openai dotenv @types/node
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i langfuse openai dotenv @types/node
+  ```
+  **yarn**
+  ```bash
+  yarn add langfuse openai dotenv @types/node
+  ```
+  **npm**
+  ```bash
+  npm i langfuse openai dotenv @types/node
+  ```
+  **bun**
+  ```bash
+  bun add langfuse openai dotenv @types/node
+  ```
 
 - ### Configure environment variables
   Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway#using-the-ai-gateway-with-an-api-key)
@@ -124,31 +118,29 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 
 - ### Running the application
   Run your application using Node.js:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx tsx index.ts
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx tsx index.ts
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx tsx index.ts
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx tsx index.ts
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx tsx index.ts
+  ```
+  **yarn**
+  ```bash
+  yarn dlx tsx index.ts
+  ```
+  **npm**
+  ```bash
+  npx tsx index.ts
+  ```
+  **bun**
+  ```bash
+  bunx tsx index.ts
+  ```
   You should see a response from the AI model in your console.
 
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

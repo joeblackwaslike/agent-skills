@@ -13,13 +13,13 @@ related:
 summary: Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6a8b588eeeed7314082fbc8d206423b39e462d73cf24ed721688f192d4ec76e2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0f85981919d21c7ba74bd4eca330ef7d9cf4bd864dba91fda1798b0bc6cffb03"
 ---
 
 # WAF Rate Limiting
 
-> **Availability**: WAF Rate Limiting is available on all plans
+> WAF Rate Limiting is available on all plans
 
 Rate limiting allows you to control the number of times that a request from the same source can hit your application within a specific timeframe. This could happen due to multiple reasons, such as malicious activity or a software bug.
 
@@ -36,6 +36,7 @@ Rate limiting allows you to control the number of times that a request from the 
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel WAF rate limiting now generally available](https://vercel.com/changelog/vercel-waf-rate-limiting-now-generally-available)
+- [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 - [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall)
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk) — Learn how to configure a custom rule with rate limit in your code.
 - [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
@@ -90,10 +91,10 @@ The use of rate limiting rules helps ensure that only intended traffic reaches y
 | Included counting keys | IP, JA4 Digest                        | IP, JA4 Digest                        | IP, JA4 Digest, User Agent and arbitrary Header keys |
 | Counting algorithm     | Fixed window                          | Fixed window                          | Fixed window, Token bucket                           |
 | Counting window        | Minimum: **10s**, Maximum: **10mins** | Minimum: **10s**, Maximum: **10mins** | Minimum: **10s**, Maximum: **1hr**                   |
-| Number of rules        | 1 per project                         | 40 per project                        | 1000 per project                                     |
+| Number of rules        | 1 per project                         | 40 per project | 250 per project |
 | Included requests      | 1,000,000 Allowed requests            | Usage-based                           | Custom                                               |
 
-The Hobby limit above applies to WAF Rate Limiting rules. Hobby projects can have up to 3 total [custom firewall rules](/docs/vercel-firewall/vercel-waf/custom-rules).
+Hobby projects can have one WAF Rate Limiting rule within their total of 3 [custom firewall rules](/docs/vercel-firewall/vercel-waf/custom-rules).
 
 ## Pricing
 
@@ -107,3 +108,6 @@ The pricing is based on the region(s) from which the requests come from.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

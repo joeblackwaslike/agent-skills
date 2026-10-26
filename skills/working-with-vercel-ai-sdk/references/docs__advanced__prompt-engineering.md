@@ -4,8 +4,8 @@ description: Learn how to engineer prompts for LLMs with the AI SDK
 url: "https://ai-sdk.dev/docs/advanced/prompt-engineering"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/prompt-engineering.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "407f7d82da05fc9020408da0296c0385585cee39a96617699c602d491dcc7eaf"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "9f318617fc1fd714a241bee9a242b8dc2302f58b774c6a3df60c5b8a4592248e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -22,7 +22,7 @@ Prompts are the starting points for LLMs. They are the inputs that trigger the m
 
 ## Why is prompt engineering needed?
 
-Prompt engineering currently plays a pivotal role in shaping the responses of LLMs. It allows us to tweak the model to respond more effectively to a broader range of queries. This includes the use of techniques like semantic search, command grammars, and the ReActive model architecture. The performance, context window, and cost of LLMs varies between models and model providers which adds further constraints to the mix. For example, the GPT-4 model is more expensive than GPT-3.5-turbo and significantly slower, but it can also be more effective at certain tasks. And so, like many things in software engineering, there is a trade-offs between cost and performance.
+Prompt engineering currently plays a pivotal role in shaping the responses of LLMs. It allows us to tweak the model to respond more effectively to a broader range of queries. This includes the use of techniques like semantic search, command grammars, and the ReActive model architecture. The performance, context window, and cost of LLMs varies between models and model providers which adds further constraints to the mix. For example, the GPT-4 model is more expensive than GPT-3.5-turbo and significantly slower, but it can also be more effective at certain tasks. And so, like many things in software engineering, there is a trade-off between cost and performance.
 
 To assist with comparing and tweaking LLMs, we've built an AI playground that allows you to compare the performance of different models side-by-side online. When you're ready, you can even generate code with the AI SDK to quickly use your prompt and your selected model into your own applications.
 

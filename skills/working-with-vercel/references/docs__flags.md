@@ -16,8 +16,8 @@ related:
 summary: "Control feature visibility, run experiments, and ship with confidence using Vercel's feature flags platform."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f1d43acd11dd6065cc71f4bbf0c83c35a377f9421b67a5256f2b79bd2f0c270a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4568afb06125653a0ce1d4ad719f186b628167a3dbf9fafaaf889cbedc6bb64e"
 ---
 
 # Flags
@@ -31,17 +31,17 @@ Vercel provides a complete feature flags platform. Use Vercel as your feature fl
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Vercel Flags no longer requires SDK Keys for Vercel deployments](https://vercel.com/changelog/authenticate-vercel-flags-with-openid-connect-by-default)
 - [Manage Vercel Flags segments with Vercel CLI](https://vercel.com/changelog/manage-vercel-flags-segments-with-vercel-cli)
 - [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli)
 - [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags)
 - [Timestamp attributes are now supported in Vercel Flags](https://vercel.com/changelog/timestamp-attributes-are-now-supported-in-vercel-flags)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
 - [Vercel Web Analytics](https://vercel.com/docs/analytics) — With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top refe
 - [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/flags.graph.md](/docs/flags.graph.md)
 <!-- /docsgraph:related -->
@@ -94,3 +94,6 @@ Track flag evaluations in Runtime Logs and analyze their impact on user behavior
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

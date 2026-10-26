@@ -17,8 +17,8 @@ related:
 summary: A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a runtime token request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/project-links.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f17040d764d00b83825a62c74a6717fe925fad8251407ee05629551d1e127f0e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c291b2d840f1e790a40818cc2fba2aeea898dea3457c7efac01879fb1855101f"
 ---
 
 # Project links in Vercel Connect
@@ -36,8 +36,8 @@ A **project link** connects a team-owned connector to one Vercel project on the 
 - [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
-- [Disconnect a connector from a project](https://vercel.com/docs/rest-api/connect/disconnect-a-connector-from-a-project) — DELETE /v1/connect/connectors/{connector}/projects/{projectId} — Disconnect a connector from a project.
 
 Full cross-link map for this page: [/docs/connect/concepts/project-links.graph.md](/docs/connect/concepts/project-links.graph.md)
 <!-- /docsgraph:related -->
@@ -97,3 +97,6 @@ Deleting a Custom Environment immediately prevents deployments that use its iden
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

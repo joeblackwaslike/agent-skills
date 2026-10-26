@@ -16,13 +16,13 @@ related:
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "23e0d6a2b3c671d1807840447d325abe0e1b2464fe55b1ca0f7c7cda5d98c73b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5a90e2c6a5b5c71968fa9f384e949974be03502061e52cb8953baf65e41ffa5f"
 ---
 
 # Code Review
 
-> **Availability**: Vercel Agent Code Review (Public Beta) is available on Enterprise and Pro plans
+> Vercel Agent Code Review is available in Public Beta on Enterprise and Pro plans
 
 Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validated suggestions on your pull requests as one capability within the broader Vercel Agent.
 
@@ -41,7 +41,6 @@ Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validate
 - [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
-- [Introducing Vercel for Slack](https://vercel.com/blog/introducing-vercel-for-slack)
 - [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta)
 - [Installation](https://vercel.com/docs/agent/installation) — Let AI automatically install Web Analytics and Speed Insights in your app
 
@@ -162,3 +161,6 @@ Code Review never trains on customer code if your Vercel team's [data preference
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

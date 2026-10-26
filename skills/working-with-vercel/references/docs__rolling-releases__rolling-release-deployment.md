@@ -16,8 +16,8 @@ related:
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0cf9451341a0f84bc3fa8e69b0c6a49ed2e961bf257fbbb6d8e9843efb22dc39"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "55f01bb575c49ce798a3e26a123bd950b4693cc62664a8ea4999237929adad51"
 ---
 
 # Performing a rolling release deployment
@@ -35,8 +35,8 @@ Use this guide to gradually roll out a new production deployment using rolling r
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 - [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
+- [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment) — Learn how to promote deployments to production on Vercel.
 
 Full cross-link map for this page: [/docs/rolling-releases/rolling-release-deployment.graph.md](/docs/rolling-releases/rolling-release-deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -183,3 +183,6 @@ vercel logs --environment production --level error --since 30m --expand
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

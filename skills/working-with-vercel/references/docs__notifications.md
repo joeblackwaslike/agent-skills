@@ -16,13 +16,13 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c5c1ebbbfaff974253dc5d795b3aab6bdfe548b6fd87bfbf26a7a2f9f666e4f5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "be4e75a560a617743b4b2bf697a510cab0ccc2dda2eaa6aaae799a8c0317db64"
 ---
 
 # Notifications
 
-> **Availability**: Notifications are available on all plans
+> Notifications are available on all plans
 
 Vercel sends configurable notifications to you through the [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and email. These notifications enable you to view and manage important alerts about your [deployments](/docs/deployments), [domains](/docs/domains), [integrations](/docs/integrations), [account](/docs/accounts), and [usage](/docs/pricing/manage-and-optimize-usage).
 
@@ -36,13 +36,11 @@ Vercel sends configurable notifications to you through the [dashboard](https://v
 - [Get notified on build failures and more with new notification controls](https://vercel.com/changelog/new-notification-controls-available-in-public-beta)
 - [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app)
 - [September 2020](https://vercel.com/blog/changelog-september-2020)
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts) — Configure alert rules and notification destinations for Vercel Observability alerts.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Alerts](https://vercel.com/docs/alerts) — Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you ca
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md)
 <!-- /docsgraph:related -->
@@ -89,7 +87,9 @@ You can receive feedback on your deployments with the Comments feature. When som
 
 ### On-demand usage notifications
 
-> **Availability**: Customizing on-demand usage notifications is available on Pro plans
+> Customizing on-demand usage notifications is available on Pro plans
+>
+> Those with the owner role can access this feature
 
 You'll receive notifications as you accrue usage past the [included amounts](/docs/limits/fair-use-guidelines#typical-monthly-usage-guidelines) for products like Vercel Functions, Image Optimization, and more.
 
@@ -154,3 +154,6 @@ It is *not* possible to disable all notifications for alerts that are critical t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

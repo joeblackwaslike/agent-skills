@@ -17,13 +17,13 @@ related:
 summary: Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache/data-cache.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "da8fe40b8f23c66ada4ef372877a6e2b717ff34365eb561013a2f7369ea61e42"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4a9044cb73c217bdf5908e427c63b90538016ba7cdfc6ee89ebc58c3c45e3944"
 ---
 
 # Data Cache for Next.js
 
-> **Availability**: Data Cache (Beta) is available on all plans
+> Data Cache is available in Beta on all plans
 
 Data cache is a specialized, granular cache introduced with Next.js 13 for storing [segment-level data](https://nextjs.org/docs/app/getting-started/fetching-data) while using [Next.js App Router](/docs/frameworks/full-stack/nextjs). When using [Next.js caching APIs](https://nextjs.org/docs/app/getting-started/caching) such as `fetch` or `unstable_cache`, Vercel automatically scaffolds globally distributed infrastructure for you with no additional configuration.
 
@@ -33,18 +33,17 @@ Data cache is a specialized, granular cache introduced with Next.js 13 for stori
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
 - [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
-- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
-- [Introducing the Vercel Data Cache: Optimized caching for React Server Components](https://vercel.com/changelog/introducing-vercel-data-cache)
-- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
-- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
+- [Introducing the Vercel Data Cache: Optimized caching for React Server Components](https://vercel.com/changelog/introducing-vercel-data-cache)
+- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
+- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package) — Learn about available APIs when working with Vercel Functions.
-- [Getting started with ISR](https://vercel.com/docs/incremental-static-regeneration/quickstart) — Learn how to set up Incremental Static Regeneration \\(ISR\\) with time-based and on-demand revalidation.
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/caching/runtime-cache/data-cache.graph.md](/docs/caching/runtime-cache/data-cache.graph.md)
 <!-- /docsgraph:related -->
@@ -229,7 +228,7 @@ When the system triggers a revalidation, Vercel marks the corresponding path or 
 
 ## Manually purging data cache
 
-> **💡 Note:** You need to have the [member](/docs/rbac/access-roles#member-role) role to perform this task.
+> **💡 Note:** You need to have a [member](/docs/rbac/access-roles#member-role) role to perform this task.
 
 CDN cache and Data cache are different cache layers. CDN cache stores full HTTP responses, while Data cache stores Next.js data fetch results.
 
@@ -318,3 +317,6 @@ Both Data cache and ISR support time-based revalidation, on-demand revalidation,
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Agent from your Vercel dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/dashboard.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "34394c1854d89a2c49623d240128bb623c814c9dd8971c55fb1220af10798df2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b875e59b72b697908488ccfc2cfc2b1f46bfdf259d93bf57ebb11b7e2eb2e093"
 ---
 
 # Dashboard
@@ -73,7 +73,9 @@ Open the **New Chat** menu in the Vercel Agent panel, then select a conversation
 
 ## Enable or disable dashboard chat
 
-> **Availability**: Managing Vercel Agent chat is available on Enterprise and Pro plans
+> Managing Vercel Agent chat is available on Enterprise and Pro plans
+>
+> Those with the owner and billing roles can access this feature
 
 Dashboard chat is available to eligible Pro and Enterprise teams. Hobby and Pro trial teams are not eligible.
 
@@ -105,3 +107,6 @@ Only a team Owner or Billing member can change this setting. Other members can a
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

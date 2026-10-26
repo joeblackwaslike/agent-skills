@@ -10,11 +10,12 @@ prerequisites:
 related:
   - /docs/projects/managing-projects
   - /docs/botid/local-development-behavior
+  - /docs/botid/verify-on-page-load
 summary: Step-by-step guide to setting up BotID protection in your Vercel project
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/get-started.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b5ed089aa64d4c1cbc77e58e16a0ec833eb591529e07b91ac992c7c94f8bf0ac"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "62554f0e2259f37fcf32a973c998366360282a590b79d78f986945e112ad2ea4"
 ---
 
 # Get Started with BotID
@@ -33,108 +34,40 @@ This guide shows you how to add BotID protection to your Vercel project. BotID b
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
 - [The AI Cloud: A unified platform for AI workloads](https://vercel.com/blog/the-ai-cloud-a-unified-platform-for-ai-workloads)
-- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
-- [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
+- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
+- [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data) — Learn how to redact sensitive data from your Web Analytics events.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/botid/get-started.graph.md](/docs/botid/get-started.graph.md)
 <!-- /docsgraph:related -->
 
-The setup involves three main components:
-
-- Client-side component to run challenges.
-- Server-side verification to classify sessions.
-- Route configuration to ensure requests are routed through BotID.
+The setup involves client-side protection to attach BotID headers and server-side verification with `checkBotId()`.
 
 ## Step by step guide
 
 Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs/projects/managing-projects#creating-a-project) on Vercel**.
 
+Vercel automatically routes BotID challenge and detection requests. You don't need the `withBotId` wrapper in your Next.js configuration, the `botid/nuxt` module, or manual BotID rewrites in `vercel.json`. Existing BotID rewrites can be removed. Keep the client-side and server-side setup below.
+
 - ### Install the package
   Add BotID to your project:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i botid
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add botid
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i botid
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add botid
-      ```
-    </Code>
-  </CodeBlock>
 
-- ### Configure redirects
-  Use the appropriate configuration method for your framework to set up proxy rewrites. This ensures that ad-blockers, third party scripts, and more won't make BotID any less effective.
-  ```ts filename="next.config.ts" framework=nextjs-app
-  import { withBotId } from 'botid/next/config';
-
-  const nextConfig = {
-    // Your existing Next.js config
-  };
-
-  export default withBotId(nextConfig);
+  **pnpm**
+  ```bash
+  pnpm i botid
   ```
-  ```js filename="next.config.js" framework=nextjs-app
-  import { withBotId } from 'botid/next/config';
-
-  const nextConfig = {
-    // Your existing Next.js config
-  };
-
-  export default withBotId(nextConfig);
+  **yarn**
+  ```bash
+  yarn add botid
   ```
-  ```ts filename="nuxt.config.ts" framework=nuxt
-  export default defineNuxtConfig({
-    modules: ['botid/nuxt'],
-  });
+  **npm**
+  ```bash
+  npm i botid
   ```
-  ```js filename="nuxt.config.js" framework=nuxt
-  export default defineNuxtConfig({
-    modules: ['botid/nuxt'],
-  });
-  ```
-  > For \['other']:
-  For other frameworks, add the following configuration values to your `vercel.json`:
-  > **💡 Note:** When using `vercel.json` configuration, these rewrites only apply in
-  > production. For local development behavior, see the [Local Development
-  > Behavior](/docs/botid/local-development-behavior) section.
-  ```json filename="vercel.json" framework=other
-  {
-    "rewrites": [
-      {
-        "source": "/149e9513-01fa-4fb0-aad4-566afd725d1b/2d206a39-8ed7-437e-a3be-862e0f06eea3/a-4-a/c.js",
-        "destination": "https://api.vercel.com/bot-protection/v1/challenge"
-      },
-      {
-        "source": "/149e9513-01fa-4fb0-aad4-566afd725d1b/2d206a39-8ed7-437e-a3be-862e0f06eea3/:path*",
-        "destination": "https://api.vercel.com/bot-protection/v1/proxy/:path*"
-      }
-    ],
-    "headers": [
-      {
-        "source": "/149e9513-01fa-4fb0-aad4-566afd725d1b/2d206a39-8ed7-437e-a3be-862e0f06eea3/:path*",
-        "headers": [
-          {
-            "key": "X-Frame-Options",
-            "value": "SAMEORIGIN"
-          }
-        ]
-      }
-    ]
-  }
+  **bun**
+  ```bash
+  bun add botid
   ```
 
 - ### Add client-side protection
@@ -605,13 +538,13 @@ Before setting up BotID, ensure you have **a JavaScript [project deployed](/docs
   > a page in your application to the protected route.
 
 - ### Enable BotID deep analysis in Vercel (Recommended)
-  > **Availability**: BotID Deep Analysis are available on Enterprise and Pro plans
+  > BotID Deep Analysis are available on Enterprise and Pro plans
   From the [Vercel dashboard](/dashboard)
   - Select your Project
   - Click the **Firewall** tab
   - Click **Rules**
   - Enable **Vercel BotID Deep Analysis**
-  [Go to Firewall Rules](<getDeepLink({&#xA;    to: '/[team]/[project]/firewall/rules',&#xA;    title: 'Open Firewall Rules',&#xA;  })>)
+  [Go to Firewall Rules](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall%2Frules\&title=Open+Firewall+Rules)
 
 ## Complete examples
 
@@ -706,7 +639,14 @@ async function processCheckout(data: any) {
 }
 ```
 
+## Verify visitors on page load
+
+To verify a browser before a later interaction, review [verify visitors on page load and issue a signed verification cookie](/docs/botid/verify-on-page-load). Your server can validate that cookie on subsequent requests until it expires.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,8 +12,8 @@ related:
 summary: Vercel CLI collects telemetry data about general usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/about-telemetry.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e410aa7ef00fc4df8c52e0404e8c7af1966241c32c48c507ce253bfeb942c5be"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6f86ae1e317f1d93a15f31157ff63efde047222edde1450db3222b932325b7eb"
 ---
 
 # Telemetry
@@ -36,10 +36,10 @@ Vercel CLI Telemetry collects telemetry to improve Vercel's products and service
 - [CLI Telemetry](https://eve.dev/docs/reference/telemetry) — Learn what eve CLI telemetry collects and how to control it.
 - [telemetry](https://turborepo.dev/docs/reference/telemetry) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [vercel feedback](https://vercel.com/docs/cli/feedback) — Send bugs, friction, and feature requests to the Vercel team using the vercel feedback CLI command.
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/about-telemetry.graph.md](/docs/cli/about-telemetry.graph.md)
 <!-- /docsgraph:related -->
@@ -103,3 +103,6 @@ Alternatively, you may opt-out by setting an environment variable: `VERCEL_TELEM
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,13 +12,13 @@ related:
   - /docs/connect
   - /docs/connect/legal
   - /docs/cli/connect
+  - /docs/networking/secure-compute
   - /docs/connect/concepts/installations
-  - /docs/connect/concepts/project-links
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "85958f687f150e5d2b7bec20d4521c23b72e2659817f0e21c7d859f9b8da89ea"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b857b8f51db904010acac674d3a3757644c54346a61ef0cc93e808cff25b29a9"
 ---
 
 # Connectors in Vercel Connect
@@ -36,12 +36,11 @@ A **connector** is the team-owned record that represents one third-party service
 - [Vercel Connect adds 100+ preset connectors](https://vercel.com/changelog/vercel-connect-preset-connectors)
 - [Vercel Connect now supports Secure Compute](https://vercel.com/changelog/vercel-connect-secure-compute)
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft)
-- [Vercel Connect](https://v0.app/docs/vercel-connect) — Connect your v0 apps and agents to third-party services – no API keys required.
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Networking](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking) — Vercel MCP tools for networking.
+- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 - [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
 - [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
-- [Webhook triggers for Vercel Connect](https://vercel.com/docs/connect/concepts/triggers) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
-- [Networking](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking) — Vercel MCP tools for networking.
 
 Full cross-link map for this page: [/docs/connect/concepts/connectors.graph.md](/docs/connect/concepts/connectors.graph.md)
 <!-- /docsgraph:related -->
@@ -80,6 +79,22 @@ A known service publishes one or more **connection methods**: the distinct ways 
 
 Known services work in the dashboard and from the CLI. Running [`vercel connect create <service>`](/docs/cli/connect#vercel-connect-create) prompts you for the product, the connection method, and the credentials that method needs, so you can create a connector without leaving the terminal. Run `vercel connect create <service> --help` to see what a service supports.
 
+## Secure Compute routing
+
+Use Secure Compute routing when a provider requires requests from allowlisted IP addresses. Vercel Connect routes the connector's token requests and provider API calls through a dedicated [Secure Compute network](/docs/networking/secure-compute). This setting applies to requests Vercel Connect sends to the provider, not API calls your application makes directly.
+
+Secure Compute routing is available for supported team-owned connectors. API key connectors don't support this setting.
+
+Before configuring routing, [create a Secure Compute network for your team](/docs/networking/secure-compute#enabling-secure-compute) and wait for it to finish provisioning. Then configure the connector:
+
+1. Open the connector's settings in the Vercel dashboard.
+2. In **Secure Compute Routing**, select a network from **Secure Compute Network**.
+3. Click **Save**.
+
+The section displays the selected network's **IP addresses**. Click an address to copy it for your provider's allowlist. Click **View network** to open the network's settings in a new tab.
+
+To restore direct egress, select **None** and click **Save**. This removes routing from the connector without deleting the network.
+
 ## Branding
 
 A connector carries a name, an icon, and accent and background colors. Slack propagates the icon to the workspace. Other providers may display branding on their login and consent screens, or only inside the Vercel dashboard.
@@ -99,3 +114,6 @@ Connectors are created, updated, and deleted by team members through the dashboa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,13 +12,13 @@ related:
   - /docs/cli/ai-gateway
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway/sdks-and-apis/responses/websockets
+  - /docs/ai-gateway/models-and-providers/virtual-models
   - /docs/agent-harnesses/codex
-  - /docs/ai-gateway/sdks-and-apis/responses
 summary: Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8a1a2a65134a0fc4152280f5895c93846751f1ec8a4418a99154711c53df1409"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2c96ce89d0ae9f16aa92222695b55d21d426a1692bc988317214644207df346d"
 ---
 
 # OpenAI Codex with AI Gateway
@@ -32,14 +32,13 @@ sha256: "8a1a2a65134a0fc4152280f5895c93846751f1ec8a4418a99154711c53df1409"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway)
-- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli) — Learn how to use the Codex CLI provider to access OpenAI GPT-5 models through the Codex CLI.
 - [Codex](https://ai-sdk.dev/providers/ai-sdk-harnesses/codex) — Learn how to use the Codex harness adapter.
+- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli) — Learn how to use the Codex CLI provider to access OpenAI GPT-5 models through the Codex CLI.
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [GPT 5.2 Codex now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-2-codex-now-available-on-vercel-ai-gateway)
 - [Codex CLI (App Server)](https://ai-sdk.dev/providers/community-providers/codex-app-server) — Learn how to use the Codex CLI App Server provider for mid-execution message injection and persistent threads.
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
-- [GPT 5.1 Codex Max now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-max-now-available-on-vercel-ai-gateway)
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openai-codex.graph.md](/docs/ai-gateway/coding-agents/openai-codex.graph.md)
 <!-- /docsgraph:related -->
@@ -164,6 +163,12 @@ model = "openai/gpt-5.5-pro"
 
 Every model in the gateway catalog works here, not only OpenAI ones. The examples stay on OpenAI models because Codex reads their metadata natively.
 
+To apply AI Gateway settings such as provider order, model fallbacks, regional inference, or zero data retention to Codex requests, create a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models#using-a-virtual-model-with-claude-code-codex-and-other-coding-agents) and use its slug as the model. Codex lists your team's virtual models in `/model`, and the slug also works with `--model` and in `config.toml`:
+
+```bash
+codex --model vmc/coding-agent
+```
+
 > **💡 Note:** When using non-OpenAI models through the gateway, you may see warnings about
 > model metadata not being found. These warnings are safe to ignore since the
 > gateway handles model routing.
@@ -224,3 +229,6 @@ Use it everywhere on this page. It serves `/codex/v1/models` in the proprietary 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

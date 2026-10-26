@@ -13,8 +13,8 @@ related:
 summary: Use record_events with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/record_events.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "60266fa3ec5cb0ebc354a19da564c4d4e08d14620a2954ed3e23cdca4599200a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5491541b92038ccfff4dd8b49adcaa22808e4f57f00c62f4d960e6b3e0631865"
 ---
 
 # record_events
@@ -31,7 +31,7 @@ Record an artifacts cache usage event.
 - [Record an artifacts cache usage event](https://vercel.com/docs/rest-api/artifacts/record-an-artifacts-cache-usage-event) — POST /v8/artifacts/events — Records an artifacts cache usage event. The body of this request is an array of cache usage
 - [artifact_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query) — Use artifact_query with Vercel MCP.
 - [upload_artifact](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/upload_artifact) — Use upload_artifact with Vercel MCP.
-- [update_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/update_record) — Use update_record with Vercel MCP.
+- [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
 - [create_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record) — Use create_record with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/caching/record_events.graph.md](/docs/agent-resources/vercel-mcp/tools/caching/record_events.graph.md)
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/cachi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

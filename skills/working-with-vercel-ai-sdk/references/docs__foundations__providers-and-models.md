@@ -4,8 +4,8 @@ description: Learn about the providers and models available in the AI SDK.
 url: "https://ai-sdk.dev/docs/foundations/providers-and-models"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "3e9a73692fc86989bda9c99d01f8fcc94a17c91c2fdc9a173797c3e2f1c70274"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "b22f9ea0d1097ecaf4f051d1cff3134cc84210ffbe6132413f44786f41b44745"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -14,7 +14,7 @@ Companies such as OpenAI and Anthropic (providers) offer access to a range of la
 
 Each provider typically has its own unique method for interfacing with their models, complicating the process of switching providers and increasing the risk of vendor lock-in.
 
-To solve these challenges, AI SDK Core offers a standardized approach to interacting with LLMs through a [language model specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v3) that abstracts differences between providers. This unified interface allows you to switch between providers with ease while using the same API for all providers.
+To solve these challenges, AI SDK Core offers a standardized approach to interacting with LLMs through a [language model specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4) that abstracts differences between providers. This unified interface allows you to switch between providers with ease while using the same API for all providers.
 
 Here is an overview of the AI SDK Provider Architecture:
 
@@ -53,7 +53,7 @@ You can also use the [OpenAI Compatible provider](/providers/openai-compatible-p
 - [LM Studio](/providers/openai-compatible-providers/lmstudio)
 - [Heroku](/providers/openai-compatible-providers/heroku)
 
-Our [language model specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v3) is published as an open-source package, which you can use to create [custom providers](/providers/community-providers/custom-providers).
+Our [language model specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4) is published as an open-source package, which you can use to create [custom providers](/providers/community-providers/custom-providers).
 
 The open-source community has created the following providers:
 

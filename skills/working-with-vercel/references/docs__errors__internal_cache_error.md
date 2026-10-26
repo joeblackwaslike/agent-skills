@@ -12,8 +12,8 @@ related:
 summary: An unexpected error happened when CDN is fetching data from the Vercel CDN cache.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_cache_error.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "a7f84542df2146b84c35facada16148727f0749c6e2e98e831746e26de62ddb5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ebf03258aa87d4ef30530002646edef88ae27bc5b155225919c67ba42f92dda8"
 ---
 
 # INTERNAL_CACHE_ERROR
@@ -34,3 +34,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

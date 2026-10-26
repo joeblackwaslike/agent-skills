@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your application."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4240883e4c9a1ad76f45ec4c03e52972ba463409b871f41a5e39cf34e9d8eae2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "76eca0d0bbeef1cbbe08c7adc23f09f483f38167c126f278628ea2aeec5ec83c"
 ---
 
 # Routing
@@ -32,13 +32,12 @@ Vercel's CDN evaluates routing rules on every request before checking any cache 
 
 - [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules)
 - [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment)
-- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Services routing](https://vercel.com/docs/services/routing) — Learn how Vercel routes public requests to services and how each service handles its own routes.
 - [Routing Middleware](https://vercel.com/docs/routing-middleware) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Get project routing rules](https://vercel.com/docs/rest-api/project-routes/get-project-routing-rules) — GET /v1/projects/{projectId}/routes — Get the routing rules for a project. Supports searching by name/ID/pattern, filter
-- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
+- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 
 Full cross-link map for this page: [/docs/routing.graph.md](/docs/routing.graph.md)
 <!-- /docsgraph:related -->
@@ -114,3 +113,6 @@ Vercel can also [cache responses from external origins](/docs/caching/cdn-cache)
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

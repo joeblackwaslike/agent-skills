@@ -12,8 +12,8 @@ related:
 summary: The end value of the Range header in the request is invalid. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/range_end_not_valid.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "641bb86b511aa4cf8c65baf5191dfc00712b3c911c9b66274a856ef9bc230a4e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "06a3936fb0abb6bdb74b80c032704b3a5bd29eedb92abb4e49ffc07423e62e82"
 ---
 
 # RANGE_END_NOT_VALID
@@ -38,3 +38,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

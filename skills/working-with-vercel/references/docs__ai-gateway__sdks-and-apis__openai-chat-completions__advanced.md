@@ -17,8 +17,8 @@ related:
 summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "82c393d9469c9799f06435cfc4a77b6c081746113fc063faa84a9bdc7d638a19"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "90b5316e6efb6224e6b2af616a6fdb26b51c65523f9ee6d7cafe9abd120b526b"
 ---
 
 # OpenAI Chat Completions Configuration with AI Gateway
@@ -32,11 +32,11 @@ Control which providers serve your request, what happens when one fails, and how
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [OpenAI Compatible Providers](https://ai-sdk.dev/providers/openai-compatible-providers) — Use OpenAI compatible providers with the AI SDK.
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management) — Learn how to work with multiple providers and models
+- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai) — Learn how to use xAI with AI Gateway and the direct provider.
 - [Bring Your Own Key \\(BYOK\\) to AI Gateway](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok) — Learn how to configure your own provider keys with AI Gateway.
-- [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md)
 <!-- /docsgraph:related -->
@@ -911,3 +911,6 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

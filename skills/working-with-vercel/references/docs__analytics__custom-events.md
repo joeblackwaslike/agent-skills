@@ -16,13 +16,13 @@ related:
 summary: Learn how to send custom analytics events from your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/custom-events.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "567a0d60c85ee5e88adcaf131116c12c4ee3522a863b9f9ea34fafdaf7d35546"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6dc89459386423e6c11165d906d6948c88abfc6a58a54c43946a5b4b0eb50346"
 ---
 
 # Tracking custom events
 
-> **Availability**: Custom Events are available on Enterprise and Pro plans
+> Custom Events are available on Enterprise and Pro plans
 
 Vercel Web Analytics allows you to track custom events in your application using the `track()` function.
 This is useful for tracking user interactions, such as button clicks, form submissions, or purchases.
@@ -42,7 +42,7 @@ This is useful for tracking user interactions, such as button clicks, form submi
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
-- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
 
 Full cross-link map for this page: [/docs/analytics/custom-events.graph.md](/docs/analytics/custom-events.graph.md)
 <!-- /docsgraph:related -->
@@ -506,3 +506,6 @@ Once you have tracked an event, you can view and filter for it in the dashboard.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

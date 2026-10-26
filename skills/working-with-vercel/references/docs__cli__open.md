@@ -16,8 +16,8 @@ related:
 summary: Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/open.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "48514cac4915e9bc756a93f9897f32d37b17b5aaf95198056f0fd89a46bfc2d3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d47f3d43f8c1fe92df2b98a02ce5f8d430aa3ec502fcbc291b21a48f5363bdc5"
 ---
 
 # vercel open
@@ -124,3 +124,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

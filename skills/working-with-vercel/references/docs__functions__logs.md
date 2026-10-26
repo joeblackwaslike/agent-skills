@@ -16,8 +16,8 @@ related:
 summary: Use runtime logs to debug and monitor your Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/logs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fb67e8adcaa856ab8ff2571e59e18d03bbc1a82a8228ddf94e63ef8bef7a72e8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "67b86a11a51a42edc6e854fd759c6efda74dc75867524dd9f845d0e5177e802c"
 ---
 
 # Vercel Function Logs
@@ -32,10 +32,10 @@ Vercel Functions allow you to debug and monitor your functions using runtime log
 
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
-- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
 - [Evolving Vercel Functions](https://vercel.com/blog/evolving-vercel-functions)
 - [Enhanced Logs to search, inspect, and share runtime logs](https://vercel.com/changelog/enhanced-logs-ui-to-search-inspect-and-share-application-logs)
-- [Runtime logs now show event sequences for Vercel requests](https://vercel.com/changelog/runtime-logs-now-show-event-sequences-for-vercel-requests)
+- [Logs](https://vercel.com/docs/logs) — Use logs to find information on deployment builds, function executions, and more.
+- [Accessing Build Logs](https://vercel.com/docs/deployments/logs) — Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possi
 - [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
@@ -84,3 +84,6 @@ Pages that use SSR, such as those that call `getServerSideProps` or export [`rev
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

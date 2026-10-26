@@ -14,8 +14,8 @@ related:
 summary: Learn how you can leverage Vercel Image Optimization in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7f5b018ddbf79a996f446f5560807c9df5fa5bfec322f773a0b3c50411f5c6b1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "25971ca794878cdfc512fd1a6b7723e00719b491a170e8c3746bd4ad7810748d"
 ---
 
 # Getting started with Image Optimization
@@ -29,14 +29,14 @@ This guide will help you get started with using Vercel Image Optimization in you
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
-- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
+- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
+- [How to Integrate Optimizely Feature Experimentation with Next.js and Vercel](https://vercel.com/kb/guide/how-to-integrate-optimizely-feature-experimentation-next-vercel) — This guide covers setting up feature flags, implementing A/B tests, and optimizing performance using React Server Compon
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Vercel and Sitecore XM Cloud Integration](https://vercel.com/docs/integrations/cms/sitecore) — Integrate Vercel with Sitecore XM Cloud to deploy your content.
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/image-optimization/quickstart.graph.md](/docs/image-optimization/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -52,28 +52,23 @@ Help me set up image optimization in this project. First, make sure the Vercel C
 - A Vercel account. If you don't have one, you can [sign up for free](https://vercel.com/signup).
 - A Vercel project. If you don't have one, you can [create a new project](https://vercel.com/new).
 - The Vercel CLI installed. If you don't have it, you can install it using the following command:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i -g vercel
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn global add vercel
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i -g vercel
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add -g vercel
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i -g vercel
+  ```
+  **yarn**
+  ```bash
+  yarn global add vercel
+  ```
+  **npm**
+  ```bash
+  npm i -g vercel
+  ```
+  **bun**
+  ```bash
+  bun add -g vercel
+  ```
 
 - ### Import images
   > For \['astro']:
@@ -214,28 +209,23 @@ Help me set up image optimization in this project. First, make sure the Vercel C
   ```
   > For \['nuxt']:
   Install the `@nuxt/image` package:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @nuxt/image
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @nuxt/image
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @nuxt/image
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @nuxt/image
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @nuxt/image
+  ```
+  **yarn**
+  ```bash
+  yarn add @nuxt/image
+  ```
+  **npm**
+  ```bash
+  npm i @nuxt/image
+  ```
+  **bun**
+  ```bash
+  bun add @nuxt/image
+  ```
   Then, add the module to the `modules` array in your Nuxt config:
   ```js filename="nuxt.config.js" framework=all
   export default defineNuxtConfig({
@@ -503,3 +493,6 @@ Now that you've set up Vercel Image Optimization, you can explore the following:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

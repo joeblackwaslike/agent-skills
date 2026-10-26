@@ -16,8 +16,8 @@ related:
 summary: Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0a3fe2097fd85faccedcecfcb225fd84a8ddc4605a2cdadd0a0ad2877d3ee022"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ca29ea61317e3522b1e292de04cd92080eb7bff45b262e9910bcf1b6dd7bc475"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -34,13 +34,12 @@ The `@vercel/microfrontends` package includes test utilities to help avoid commo
 
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
-- [Why is my deployed project giving a 404?](https://vercel.com/kb/guide/why-is-my-deployed-project-giving-404) — Vercel 404 errors often hit healthy builds when routing metadata does not match the request path. Learn the causes and h
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
-- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
 - [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Get microfrontends config for a project](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project) — GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config — Get the microfrontends config for a project by
 
 Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.md](/docs/microfrontends/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -228,3 +227,6 @@ Next.js Pages Router routes:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

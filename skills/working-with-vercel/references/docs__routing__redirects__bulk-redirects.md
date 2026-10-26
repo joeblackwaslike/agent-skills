@@ -16,13 +16,13 @@ related:
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "85b0a745562b861e94ef70a043549cb58a30d529143560a06520c0aa624ab51c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8686071c482eaaf3accd31cf56301fa07c1faeacd0388650deb8ec05459d831c"
 ---
 
 # Bulk Redirects
 
-> **Availability**: Bulk Redirects are available on Enterprise and Pro plans
+> Bulk Redirects are available on Enterprise and Pro plans
 
 With bulk redirects, you can handle thousands of simple path-to-path or path-to-URL redirects efficiently. You can configure bulk redirects at deployment time through files in your repository, or at runtime through the dashboard, API, or CLI. They are framework agnostic and Vercel processes them before any other route specified in your deployment.
 
@@ -33,6 +33,7 @@ With bulk redirects, you can handle thousands of simple path-to-path or path-to-
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Bulk redirects are now generally available](https://vercel.com/changelog/bulk-redirects-are-now-generally-available)
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Bulk redirects UI, API, and CLI now generally available](https://vercel.com/changelog/bulk-redirects-ui-api-and-cli-now-generally-available)
 - [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel)
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
@@ -100,3 +101,6 @@ Each project includes bulk redirect capacity based on your plan, shown in the ta
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

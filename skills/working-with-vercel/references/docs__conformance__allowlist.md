@@ -12,13 +12,13 @@ related:
 summary: Learn how to use allowlists to bypass your Conformance rules to merge changes into your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/allowlist.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "654a1731c17aa95d1b9bc6acc8177743abbef8d73503a35df32c8fef3f12182e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "90d12aa28385f4e84474ae4d483b80b92cc79149597e15bf6cb195f788b2ffbf"
 ---
 
 # Conformance Allowlists
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 Conformance allowlists enable developers to integrate code into the codebase, bypassing specific Conformance rules when necessary. This helps with collaboration, ensures gradual rule implementation, and serves as a systematic checklist for addressing issues.
 
@@ -81,53 +81,55 @@ active errors in a package:
 
 From the package directory:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm conformance --allowlist-errors
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn conformance --allowlist-errors
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm run conformance -- --allowlist-errors
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun run conformance -- --allowlist-errors
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm conformance --allowlist-errors
+```
+
+**yarn**
+
+```bash
+yarn conformance --allowlist-errors
+```
+
+**npm**
+
+```bash
+npm run conformance -- --allowlist-errors
+```
+
+**bun**
+
+```bash
+bun run conformance -- --allowlist-errors
+```
 
 From the root of a monorepo:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm --filter=<package-name> conformance --allowlist-errors
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn workspace <package-name> conformance --allowlist-errors
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm run conformance --workspace=<package-name> -- --allowlist-errors
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun run conformance --filter <package-name> -- --allowlist-errors
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm --filter=<package-name> conformance --allowlist-errors
+```
+
+**yarn**
+
+```bash
+yarn workspace <package-name> conformance --allowlist-errors
+```
+
+**npm**
+
+```bash
+npm run conformance --workspace=<package-name> -- --allowlist-errors
+```
+
+**bun**
+
+```bash
+bun run conformance --filter <package-name> -- --allowlist-errors
+```
 
 ## Configuring Code Owners for Allowlists
 
@@ -152,3 +154,6 @@ The `:required` check ensures any modifications need the specified owners' revie
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

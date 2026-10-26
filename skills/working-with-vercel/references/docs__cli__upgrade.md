@@ -13,8 +13,8 @@ related:
 summary: Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/upgrade.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b72f09400883ac74c24de622d1f35e2efee7508fa8cab5fcd551b0b843562f6e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4bd448d58f1720220fe7bcc5a5b149e9106263eb5117518e3bbe9359e66a4139"
 ---
 
 # vercel upgrade
@@ -27,10 +27,10 @@ The `vercel upgrade` command upgrades the Vercel CLI on your machine to the late
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 
 Full cross-link map for this page: [/docs/cli/upgrade.graph.md](/docs/cli/upgrade.graph.md)
@@ -184,3 +184,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,8 +12,8 @@ related:
 summary: The function returned a non-string body. This is a function error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/body_not_a_string_from_function.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c3452f2d64a40d0b4e01cbb430d979dfeffeb3c9ce38e9aee6d37398adc9e0df"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b1dd0d809e7c7c755f693c7d7bdaf16736b1fe4be86db060c6968ca73d57736e"
 ---
 
 # BODY_NOT_A_STRING_FROM_FUNCTION
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

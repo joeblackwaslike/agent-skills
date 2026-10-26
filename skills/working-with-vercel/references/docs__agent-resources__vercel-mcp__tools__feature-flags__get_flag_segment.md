@@ -13,8 +13,8 @@ related:
 summary: Use get_flag_segment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_segment.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "09b6191af76d9ea871d8dbbcfc216eee52fbeaff6af0b1449532209927bb88bc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "556b1e61550bb36ba7a9c46631a1255743801188a4a8bb208bb052bdf51b9d25"
 ---
 
 # get_flag_segment
@@ -30,8 +30,8 @@ Retrieve a feature flag segment by ID or slug.
 - [list_flag_segments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_segments) — Use list_flag_segments with Vercel MCP.
 - [update_flag_segment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_segment) — Use update_flag_segment with Vercel MCP.
 - [get_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag) — Use get_flag with Vercel MCP.
-- [get_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings) — Use get_flag_settings with Vercel MCP.
 - [Get a segment](https://vercel.com/docs/rest-api/feature-flags/get-a-segment) — GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Retrieve a feature flag segment by ID or s
+- [get_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings) — Use get_flag_settings with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_segment.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_segment.graph.md)
 <!-- /docsgraph:related -->
@@ -50,3 +50,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

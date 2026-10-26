@@ -16,8 +16,8 @@ related:
 summary: Learn how to create your own Checks with Vercel Integrations. You can build your own Integration to register any arbitrary Check for your deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/checks/creating-checks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "88244298ba6c6185944964c23b34d2eade032f869238bbb07b96690740041db4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a3f9c835dc315b9a5126b6ceb41813f50bdf2b9688c6fedc4f8d1a84cce267f3"
 ---
 
 # Anatomy of the Checks API
@@ -30,12 +30,11 @@ Checks API extends the build and deploy process once your deployment is ready. E
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Checkly Integration and Checks API now generally available](https://vercel.com/changelog/checkly-integration-and-checks-api-now-generally-available)
 - [Checks API Reference](https://vercel.com/docs/checks/checks-api) — The Vercel Checks API let you create tests and assertions that run after each deployment has been built, and are powered
-- [Checks](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks) — Vercel MCP tools for checks.
-- [Deployment Checks](https://vercel.com/docs/deployment-checks) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 - [Get a check run](https://vercel.com/docs/rest-api/checks-v2/get-a-check-run) — GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} — Return a detailed response for a single check run.
 - [Create a check run](https://vercel.com/docs/rest-api/checks-v2/create-a-check-run) — POST /v2/deployments/{deploymentId}/check-runs — Creates a new check run for a deployment.
+- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
+- [Deployment Checks](https://vercel.com/docs/deployment-checks) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 
 Full cross-link map for this page: [/docs/checks/creating-checks.graph.md](/docs/checks/creating-checks.graph.md)
 <!-- /docsgraph:related -->
@@ -193,3 +192,6 @@ However, your deployment will fail if the `conclusion` updates to one of the fol
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

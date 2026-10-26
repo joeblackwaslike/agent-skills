@@ -13,8 +13,8 @@ related:
 summary: Use get_edge_config_item with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_item.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a17ea1cfd8b79618d3a1f72f20921eef7fe05ab0e48a6e4ac7272342a2f7c0ac"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "43acc5efcec952eb98f238396861caab9f2f5b7c30163137617b2ff6843a06db"
 ---
 
 # get_edge_config_item
@@ -31,7 +31,7 @@ Returns a specific Global Config Item.
 - [get_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config) — Use get_edge_config with Vercel MCP.
 - [get_edge_config_token](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_token) — Use get_edge_config_token with Vercel MCP.
 - [get_edge_configs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_configs) — Use get_edge_configs with Vercel MCP.
-- [get_edge_config_tokens](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_tokens) — Use get_edge_config_tokens with Vercel MCP.
+- [Get a Global Config item](https://vercel.com/docs/rest-api/global-config/get-a-global-config-item) — GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey} — Returns a specific Global Config Item.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_item.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_item.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

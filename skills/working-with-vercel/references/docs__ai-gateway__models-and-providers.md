@@ -16,8 +16,8 @@ related:
 summary: Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web search, and compare provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "39f3ae02b3ccd3ecd29302934b6f10657028ea8bda1f527eefd3546fac13746f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "729fed48e15947099aab5dbdc7f1080e5b574af79f29cae4056bfd8d280720ca"
 ---
 
 # AI Gateway Models and Providers
@@ -34,10 +34,12 @@ The AI Gateway's unified API provides flexibility, allowing you to switch betwee
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
-- [Choosing a Provider](https://ai-sdk.dev/docs/getting-started/choosing-a-provider) — Learn how to configure and authenticate with AI providers in the AI SDK.
-- [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway)
-- [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
-- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Chat SDK](https://vercel.com/docs/chat-sdk) — Build bots for Slack and other chat platforms with Chat SDK, and deploy them on Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers.graph.md](/docs/ai-gateway/models-and-providers.graph.md)
 <!-- /docsgraph:related -->
@@ -49,8 +51,8 @@ Full cross-link map for this page: [/docs/ai-gateway/models-and-providers.graph.
 
 Configure how AI Gateway selects providers and routes requests, and apply capabilities to any model:
 
-- **Routing and selection**: [Provider options](/docs/ai-gateway/models-and-providers/provider-options), [provider filtering and ordering](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering), [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks), [decision fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks), [provider timeouts](/docs/ai-gateway/models-and-providers/provider-timeouts), and [routing rules](/docs/ai-gateway/models-and-providers/routing-rules)
-- **Performance and cost**: [Automatic caching](/docs/ai-gateway/models-and-providers/automatic-caching), [service tiers](/docs/ai-gateway/models-and-providers/service-tiers), [uptime and status](/docs/ai-gateway/models-and-providers/uptime), and [metrics](/docs/ai-gateway/models-and-providers/metrics)
+- **Routing and selection**: [Provider options](/docs/ai-gateway/models-and-providers/provider-options), [provider filtering and ordering](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering), [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks), [decision fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks), [provider timeouts](/docs/ai-gateway/models-and-providers/provider-timeouts), [routing rules](/docs/ai-gateway/models-and-providers/routing-rules), and [virtual models](/docs/ai-gateway/models-and-providers/virtual-models)
+- **Performance and cost**: [Automatic caching](/docs/ai-gateway/models-and-providers/automatic-caching), [service tiers](/docs/ai-gateway/models-and-providers/service-tiers), [batch processing](/docs/ai-gateway/models-and-providers/batch-processing), [uptime and status](/docs/ai-gateway/models-and-providers/uptime), and [metrics](/docs/ai-gateway/models-and-providers/metrics)
 - **Model capabilities**: [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) and [web search](/docs/ai-gateway/models-and-providers/web-search)
 
 ### What are models and providers?
@@ -291,3 +293,6 @@ const videoModels = models.filter((m) => m.type === 'video');
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

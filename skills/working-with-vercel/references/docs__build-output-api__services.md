@@ -15,8 +15,8 @@ related:
 summary: Learn how a deployment with multiple services is structured in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/services.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "98dae1b4aa0a9f6bda9ea87b513e34cc8783f9acb96a440acba3b265f25f89e5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d45a07ba7af2906af2c69ef38684eb8214fbf903ba0e2d86df88a39332b887ea"
 ---
 
 # Services
@@ -36,9 +36,9 @@ A deployment can contain multiple services. In the Build Output API, each servic
 - [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/build-output-api/services.graph.md](/docs/build-output-api/services.graph.md)
 <!-- /docsgraph:related -->
@@ -109,3 +109,6 @@ A service is internal by default. Public traffic reaches it only when the top-le
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use get_web_analytics with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e7e8e9eeb6c50cc4c9db6adbcfd67a43c10729adf0a1637899b1f2ce3485897c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "035eb800afb33745fd923e60fb975971600af0937b8ceadb4ad30f883ba216e6"
 ---
 
 # get_web_analytics
@@ -27,11 +27,10 @@ Query Web Analytics for a Vercel project. Count mode returns total visitors and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
 - [aggregate_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews) — Use aggregate_pageviews with Vercel MCP.
 - [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [count_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_events) — Use count_events with Vercel MCP.
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [count_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_pageviews) — Use count_pageviews with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics.graph.md](/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics.graph.md)
@@ -55,3 +54,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/web-a
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -14,8 +14,8 @@ related:
 summary: Use the Vercel CLI to query Speed Insights metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "052e9b53f7b40b821b7b7c2cb276f5bda9e6ecd927bfc580d374c07b17fe9183"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d57873c81440d825f699cbc05d61e0bfea0911483a31c78c875dbf45dc573a9f"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -30,11 +30,10 @@ Use `vercel metrics` to query Speed Insights data from your terminal. You can re
 
 - [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/speed-insights/accessing-metrics-with-vercel-cli.graph.md](/docs/speed-insights/accessing-metrics-with-vercel-cli.graph.md)
 <!-- /docsgraph:related -->
@@ -150,3 +149,6 @@ For all options, see the [`vercel metrics` reference](/docs/cli/metrics). For wh
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,8 +12,8 @@ related:
 summary: The request for an Routing Middleware was not completed successfully. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/middleware_invocation_failed.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "e8ea87230392ca635436eabfa3122ee8e15f7aeceb2f44cd77567bfbc90f9495"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a3fb165e1cb6797bee6df3249fdb371cbfa00f8d1c97bcf01e389aa348d6782b"
 ---
 
 # MIDDLEWARE_INVOCATION_FAILED
@@ -36,3 +36,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

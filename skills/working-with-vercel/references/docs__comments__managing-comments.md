@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/managing-comments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d83b5837dd93ff55824b636a63fd01ff4d7ec40946feac65ee265c88d032d9d3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c4bedb47f44029af13c65e9c58cc477244a9b6dea55f507096a023b5073558c8"
 ---
 
 # Managing Comments on Preview Deployments
@@ -31,13 +31,12 @@ You can resolve comments by selecting the **☐ Resolve** checkbox that appears 
 - [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments)
 - [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience)
 - [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation)
-- [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available)
 - [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
-- [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta)
+- [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available)
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
-- [Markdown support for comments on Preview Deployments ](https://vercel.com/changelog/markdown-support-for-comments-on-preview-deployments)
-- [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
+- [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta)
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Notifications](https://vercel.com/docs/notifications) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
 
@@ -157,3 +156,6 @@ On desktop, you can hover your cursor over a comment's timestamp to view less de
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

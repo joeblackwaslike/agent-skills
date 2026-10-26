@@ -17,8 +17,8 @@ related:
 summary: Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/nitro.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0adf6b1d894cfcf98a3aa98fafd2db9f925bfd2435959294c7504d98010839ad"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "90600b5e61dcda9a077ab8f7224a625822a05e865dff047ef6af5f63691257af"
 ---
 
 # Nitro on Vercel
@@ -35,9 +35,9 @@ Nitro is a full-stack framework with TypeScript-first support. It includes files
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
-- [Use Vercel Passport with Node.js and Python backends](https://vercel.com/kb/guide/vercel-passport-backend-frameworks) — Secure internal apps and verify a visitor's identity with Vercel Passport in your backend, with examples for Express, Ho
-- [Zero-configuration support for Nitro](https://vercel.com/changelog/zero-configuration-support-for-nitro)
-- [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
+- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
+- [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+- [Chat SDK with Nitro](https://vercel.com/docs/chat-sdk/frameworks/nitro) — Add a Chat SDK bot to Nitro, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
 
 Full cross-link map for this page: [/docs/frameworks/backend/nitro.graph.md](/docs/frameworks/backend/nitro.graph.md)
@@ -213,6 +213,22 @@ export default defineNuxtConfig({
 
 When you deploy a Nitro app to Vercel, your server routes automatically become [Vercel Functions](/docs/functions) and use [Fluid compute](/docs/fluid-compute) by default.
 
+### Configure functions by route
+
+Use `vercel.functionRules` in your Nitro configuration to override function settings for specific route patterns. See the [per-route function configuration example](/kb/guide/ship-a-nitro-app-on-vercel#set-per-route-function-configuration) for duration, memory, and region settings.
+
+## Run scheduled tasks
+
+Nitro converts `scheduledTasks` into Vercel Cron Jobs at build time. Follow the [Nitro scheduled tasks example](/kb/guide/ship-a-nitro-app-on-vercel#run-scheduled-tasks-as-cron-jobs) to enable tasks, define schedules, and secure the handler with `CRON_SECRET`.
+
+## Process queue messages
+
+Use [Vercel Queues](/docs/queues) to process messages independently of an API response. Follow the [Nitro Queues guide](/kb/guide/ship-a-nitro-app-on-vercel#process-messages-with-vercel-queues) to configure topics, handle messages in a plugin, and send messages from a route.
+
+## Protect an internal API
+
+Use Vercel Passport to require sign-in through your company's identity provider before requests reach your Nitro app. Passport requires an Enterprise plan. Follow the [Nitro Passport guide](/kb/guide/vercel-passport-backend-frameworks#nitro) to verify visitor identity and authorize access within your app.
+
 ## More resources
 
 Learn more about deploying Nitro projects on Vercel with the following resources:
@@ -227,3 +243,6 @@ Learn more about deploying Nitro projects on Vercel with the following resources
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

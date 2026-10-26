@@ -12,8 +12,8 @@ related:
 summary: Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/whoami.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "87bc7ff1f31f1810e71186e6d7a730795d02da1485d9cd208644360e98e2af6c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6219375538df447c39b4830cbaade481751cf62063eb22224f42a5fc934156ed"
 ---
 
 # vercel whoami
@@ -66,3 +66,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6ee0c0ab27e57236dd13a1a813f6fdcda88259aea4c9fbdd881eeea75db05ccd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c87b9f5f0806178af0f1974a0430d235b7a84a9c874f1d8a5811127e3e154a4d"
 ---
 
 # Managing microfrontends
@@ -34,7 +34,6 @@ With a project's **Microfrontends** settings of the Vercel dashboard, you can:
 - [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths)
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
-- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available)
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
@@ -338,3 +337,6 @@ If you are using Turborepo with `--env-mode=strict`, you need to either add `ROU
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

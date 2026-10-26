@@ -1,24 +1,75 @@
 ---
 title: Amazon Bedrock
-description: Learn how to use the Amazon Bedrock provider.
+description: Learn how to use Amazon Bedrock with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "d6d120264a564000e8f7fe33465ae0da3d7cedc445d9631d6dcd7436782cd3c2"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "98e7878599191cc53944f6f0daaeea470e526473f07c1a87d857072d9576684c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Amazon Bedrock provider for the [AI SDK](/docs) contains language model support for the [Amazon Bedrock](https://aws.amazon.com/bedrock) APIs.
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/amazon-bedrock` to connect directly to Amazon Bedrock.
 
-## Setup
+```ts provider="amazon" model="amazon/nova-pro"
+import { generateText } from 'ai';
 
-The Bedrock provider is available in the `@ai-sdk/amazon-bedrock` module. You can install it with
+const { text } = await generateText({
+  model: "amazon/nova-pro",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['bedrock'],
+    },
+  },
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/amazon-bedrock
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['bedrock']`. This sends the request to Amazon Bedrock first, then falls back to other available providers of the same model if Amazon Bedrock is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to Amazon Bedrock. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by Amazon Bedrock through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Using `@ai-sdk/amazon-bedrock`
+
+For direct access to Amazon Bedrock, install `ai` and `@ai-sdk/amazon-bedrock`:
+
+```bash
+pnpm add ai @ai-sdk/amazon-bedrock
+```
+
+Set your Amazon Bedrock API credential in the `AWS_BEARER_TOKEN_BEDROCK` environment variable:
+
+```bash
+export AWS_BEARER_TOKEN_BEDROCK=your_api_key_here
+export AWS_REGION=us-east-1
+```
+
+Use the direct provider for AWS authentication, account-specific inference profiles, or Bedrock-specific APIs. Gateway and Bedrock use different model IDs.
+
+The following sections document the direct `@ai-sdk/amazon-bedrock` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ### Prerequisites
 

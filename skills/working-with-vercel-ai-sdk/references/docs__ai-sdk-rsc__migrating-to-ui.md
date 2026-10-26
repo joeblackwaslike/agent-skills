@@ -4,8 +4,8 @@ description: Learn how to migrate from AI SDK RSC to AI SDK UI.
 url: "https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-rsc/migrating-to-ui.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "53285e190e9eda9b2b7382b8858975d48bceec6d479055e5d601568d66146b84"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "077be2e334f6a74001929341d304227b71a8cb7c4c93b0ee1b7f22c5065bad88"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -171,7 +171,7 @@ export default function Page() {
 
 In AI SDK RSC, `streamUI` does not support parallel tool calls. You will have to use a combination of `streamText`, `createStreamableUI` and `createStreamableValue`.
 
-With AI SDK UI, `useChat` comes with built-in support for parallel tool calls. You can define multiple tools in the `streamText` and have them called them in parallel. The `useChat` hook will then handle the parallel tool calls for you automatically.
+With AI SDK UI, `useChat` comes with built-in support for parallel tool calls. You can define multiple tools in the `streamText` and have them called in parallel. The `useChat` hook will then handle the parallel tool calls for you automatically.
 
 ### Multi-Step Tool Calls
 

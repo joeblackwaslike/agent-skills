@@ -14,13 +14,13 @@ related:
 summary: Configure alert rules and notification destinations for Vercel Observability alerts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts/configure-alerts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bee97071524bdc9c98a8afa069c3f4a20fded829faef3492937704857b33b361"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7a26f6c3731ba4eacbdd110a6f06c9922b2bac07070ac46822c520aebfb94986"
 ---
 
 # Configure alerts
 
-> **Availability**: Alerts are available on Enterprise and Pro plans with Observability Plus
+> Alerts are available on Enterprise and Pro plans with Observability Plus
 
 Use alert rules to notify your team when Vercel detects error or usage anomalies.
 
@@ -32,11 +32,10 @@ Use alert rules to notify your team when Vercel detects error or usage anomalies
 
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Anomaly alert configuration now available](https://vercel.com/changelog/anomaly-alert-configuration-now-available)
-- [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
-- [Notifications](https://vercel.com/docs/notifications) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Notifications](https://vercel.com/docs/notifications) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 
 Full cross-link map for this page: [/docs/alerts/configure-alerts.graph.md](/docs/alerts/configure-alerts.graph.md)
@@ -103,6 +102,10 @@ Run `vercel alerts rules schema --type built-in` to see every field, including u
 
 Vercel calculates alert severity automatically from multiple signals, for example z-score and error-rate impact.
 
+- **Low**: Minor or controlled impact.
+- **Medium**: Service degradation or meaningful failures.
+- **High**: Significant impact requiring prompt attention.
+
 ### Configure 4xx error detections
 
 Create a separate built-in alert rule when you want to detect 4xx client errors. This keeps your default 5xx alert rule in place while tuning a separate alert rule for client errors.
@@ -168,3 +171,6 @@ The webhook payload is documented in [Alerts triggered](/docs/webhooks/webhooks-
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c1075e57a174d550c511de41bef0ff97e85075f14515e192b106758f491529c8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "90df4f3b3e51236759b035c16532a16b169d126a124f7f9112ebc3dac297d79b"
 ---
 
 # Vercel Storage overview
@@ -42,8 +42,8 @@ Upload generated files with Vercel Blob, read low-latency configuration with Glo
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
-- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Storage](https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage) — Vercel MCP tools for storage.
 
 Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md)
 <!-- /docsgraph:related -->
@@ -82,7 +82,9 @@ See [best practices](#best-practices) for optimizing your storage usage.
 
 ## Store generated files with Vercel Blob
 
-> **Availability**: Vercel Blob is available on all plans
+> Vercel Blob is available on all plans
+>
+> Those with the owner, member, developer role can access this feature
 
 Vercel Blob stores generated files, user uploads, images, videos, and other large objects in public or private stores.
 
@@ -98,7 +100,7 @@ You should use Vercel Blob if you need to:
 
 ## Read runtime configuration with Global Config
 
-> **Availability**: Global Config is available on all plans
+> Global Config is available on all plans
 
 A Global Config is a global data store that enables you to read data in the region closest to the user without querying an external database or hitting upstream servers. Most lookups return in less than 1ms, and 99% of reads will return under 10ms.
 
@@ -116,7 +118,7 @@ You should use Global Config if you need to:
 
 ## Provision databases through Vercel Marketplace
 
-> **Availability**: Marketplace Storage is available on all plans
+> Marketplace Storage is available on all plans
 
 The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) connects agents and applications to relational data, sessions, rate limits, embeddings, and semantic search through providers like Neon, Upstash, and Supabase. Vercel injects provisioned resource credentials as environment variables.
 
@@ -197,3 +199,6 @@ You can transfer [Marketplace](/docs/marketplace-storage) resources between team
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

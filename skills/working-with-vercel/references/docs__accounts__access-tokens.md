@@ -16,8 +16,8 @@ related:
 summary: Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate API and CLI requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts/access-tokens.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1b72cdfcdc89f7511dba72123efa47dc39e46f52aa98b86336a8522053f0809f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fd7f30c185e77ce218f28298dca69d1fe33aef69482ce525c0401068f2f6acc7"
 ---
 
 # Access tokens
@@ -33,8 +33,8 @@ Vercel access tokens authenticate requests to the [Vercel REST API](/docs/rest-a
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Project-scoped Tokens](https://vercel.com/changelog/project-scoped-tokens)
 - [Make Your First Vercel API Request](https://vercel.com/docs/rest-api/getting-started) — Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
-- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
+- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
 
@@ -176,3 +176,6 @@ You can create tokens without the dashboard through two paths.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

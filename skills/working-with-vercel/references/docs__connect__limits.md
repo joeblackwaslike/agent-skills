@@ -15,8 +15,8 @@ related:
 summary: Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/limits.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fd2a328651b2deffc0ca183eb209db3490154a291329d136d5e0c4fc61a93a17"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b1c554d05dd6ecb8df4fd44e7b64dd281854eb26fbf5ed0ac644be4e0195d8b8"
 ---
 
 # Vercel Connect Limits
@@ -31,7 +31,6 @@ The following limits apply. Contact your account team if you need higher limits.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
@@ -110,3 +109,6 @@ For the SDK methods `getToken` and `getTokenResponse`, a `429` response throws a
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

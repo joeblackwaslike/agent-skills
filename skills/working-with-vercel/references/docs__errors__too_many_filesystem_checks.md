@@ -14,8 +14,8 @@ related:
 summary: Too many filesystem checks occurred while processing the request. This is a routing error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/too_many_filesystem_checks.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "a8cc5b6264386c38bdb5ab40ab37e9956a52ee5651d3c716b3c6a612bc51daea"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2fe591505ab65c3bab017816222b45c9e65b1774c759b5e08c78a25440b8133a"
 ---
 
 # TOO_MANY_FILESYSTEM_CHECKS
@@ -39,3 +39,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

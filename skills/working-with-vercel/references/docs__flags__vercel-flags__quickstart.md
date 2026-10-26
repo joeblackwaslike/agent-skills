@@ -17,8 +17,8 @@ related:
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a7252f867543a8db20e51dd846cad7d6161ba8cfc9300d7b0b5df416af460573"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d6b1483ecb7113ce5a54499d90912765e3cf28427f4e4db5c731d03c6c0828a0"
 ---
 
 # Getting Started with Vercel Flags
@@ -31,12 +31,11 @@ This guide walks you through creating a feature flag in the Vercel Dashboard and
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/quickstart.graph.md](/docs/flags/vercel-flags/quickstart.graph.md)
@@ -74,28 +73,23 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
   **Flags SDK**
 
   The [Flags SDK](/docs/flags/vercel-flags/sdks/flags-sdk) is a framework-native way to define and evaluate feature flags. It works with any flag provider through adapters. The `@flags-sdk/vercel` adapter connects it to your Vercel Flags project, and `@vercel/flags-core` is the evaluation engine used behind the scenes.
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i flags @flags-sdk/vercel
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add flags @flags-sdk/vercel
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i flags @flags-sdk/vercel
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add flags @flags-sdk/vercel
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i flags @flags-sdk/vercel
+  ```
+  **yarn**
+  ```bash
+  yarn add flags @flags-sdk/vercel
+  ```
+  **npm**
+  ```bash
+  npm i flags @flags-sdk/vercel
+  ```
+  **bun**
+  ```bash
+  bun add flags @flags-sdk/vercel
+  ```
   To let your coding assistant also write the flag declarations, install the Flags SDK skill:
   ```bash filename="terminal"
   npx skills add vercel/flags --skill flags-sdk
@@ -103,53 +97,43 @@ Help me set up Vercel Flags in this project. First, make sure the Vercel CLI is 
   **OpenFeature**
 
   [OpenFeature](https://openfeature.dev/) is a vendor-neutral standard for feature flags. The `@vercel/flags-core` package includes the Vercel Flags evaluation engine and the OpenFeature provider.
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @openfeature/server-sdk @vercel/flags-core
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @openfeature/server-sdk @vercel/flags-core
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @openfeature/server-sdk @vercel/flags-core
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @openfeature/server-sdk @vercel/flags-core
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @openfeature/server-sdk @vercel/flags-core
+  ```
+  **yarn**
+  ```bash
+  yarn add @openfeature/server-sdk @vercel/flags-core
+  ```
+  **npm**
+  ```bash
+  npm i @openfeature/server-sdk @vercel/flags-core
+  ```
+  **bun**
+  ```bash
+  bun add @openfeature/server-sdk @vercel/flags-core
+  ```
   **Core**
 
   The [@vercel/flags-core](/docs/flags/vercel-flags/sdks/core) library gives you direct access to the Vercel Flags evaluation engine. Use it when you need full control or are working outside of supported frameworks.
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @vercel/flags-core
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @vercel/flags-core
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @vercel/flags-core
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @vercel/flags-core
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @vercel/flags-core
+  ```
+  **yarn**
+  ```bash
+  yarn add @vercel/flags-core
+  ```
+  **npm**
+  ```bash
+  npm i @vercel/flags-core
+  ```
+  **bun**
+  ```bash
+  bun add @vercel/flags-core
+  ```
 
 - ### Evaluate the flag in your application
   **Flags SDK**
@@ -369,3 +353,6 @@ Your flag is working. Here's what to explore next:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

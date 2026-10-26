@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "38b0db04daa11d3f028dfb656d1adbf5f25d0f2f8ecb0c5860f5c6fd64f293ac"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f53958a8ddcd2ec0096cfe1b41c90caf946428eb6dafee76453bd2bbadd35862"
 ---
 
 # Using Global Config with Split
@@ -33,16 +33,19 @@ This guide will help you get started with using Vercel's Split integration with 
 
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
+- [TanStack Start](https://ai-sdk.dev/docs/getting-started/tanstack-start) — Learn how to build your first agent with the AI SDK and TanStack Start.
+- [Expo](https://ai-sdk.dev/docs/getting-started/expo) — Learn how to build your first agent with the AI SDK and Expo.
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
-- [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
+- [Next.js App Router](https://ai-sdk.dev/docs/getting-started/nextjs-app-router) — Learn how to build your first agent with the AI SDK and Next.js App Router.
+- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route) — API reference for the route.js special file.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
-- [Routing Middleware API](https://vercel.com/docs/routing-middleware/api) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md)
 <!-- /docsgraph:related -->
 
-> **Availability**: The Split Global Config integration (Beta) is available on all plans
+> The Split Global Config integration is available in Beta on all plans
 
 Split is a feature flag provider that tracks event data, enabling you to release features, target them to audiences, and measure their impact on customer experience metrics securely.
 
@@ -53,78 +56,69 @@ The Split Global Config integration enables you to write your [Split rollout pla
 Before using this integration, you should have:
 
 1. The latest version of Vercel CLI. To check your version, use `vercel --version`. To [install](/docs/cli#installing-vercel-cli) or update Vercel CLI, use:
-   <CodeBlock>
-     <Code tab="pnpm">
-       ```bash
-       pnpm i -g vercel@latest
-       ```
-     </Code>
-     <Code tab="yarn">
-       ```bash
-       yarn global add vercel@latest
-       ```
-     </Code>
-     <Code tab="npm">
-       ```bash
-       npm i -g vercel@latest
-       ```
-     </Code>
-     <Code tab="bun">
-       ```bash
-       bun add -g vercel@latest
-       ```
-     </Code>
-   </CodeBlock>
+
+   **pnpm**
+   ```bash
+   pnpm i -g vercel@latest
+   ```
+   **yarn**
+   ```bash
+   yarn global add vercel@latest
+   ```
+   **npm**
+   ```bash
+   npm i -g vercel@latest
+   ```
+   **bun**
+   ```bash
+   bun add -g vercel@latest
+   ```
 2. A project. If you don't have one, you can run the following terminal commands to create a Next project:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm create next-app@latest
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn create next-app@latest
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npx create-next-app@latest
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bunx create-next-app@latest
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm create next-app@latest
+```
+
+**yarn**
+
+```bash
+yarn create next-app@latest
+```
+
+**npm**
+
+```bash
+npx create-next-app@latest
+```
+
+**bun**
+
+```bash
+bunx create-next-app@latest
+```
 
 1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects#creating-a-project)
 2. A Global Config. If you don't have one, follow [the Global Config quickstart](/docs/global-config/get-started)
 3. The Global Config SDK:
-   <CodeBlock>
-     <Code tab="pnpm">
-       ```bash
-       pnpm i @vercel/global-config
-       ```
-     </Code>
-     <Code tab="yarn">
-       ```bash
-       yarn add @vercel/global-config
-       ```
-     </Code>
-     <Code tab="npm">
-       ```bash
-       npm i @vercel/global-config
-       ```
-     </Code>
-     <Code tab="bun">
-       ```bash
-       bun add @vercel/global-config
-       ```
-     </Code>
-   </CodeBlock>
+
+   **pnpm**
+   ```bash
+   pnpm i @vercel/global-config
+   ```
+   **yarn**
+   ```bash
+   yarn add @vercel/global-config
+   ```
+   **npm**
+   ```bash
+   npm i @vercel/global-config
+   ```
+   **bun**
+   ```bash
+   bun add @vercel/global-config
+   ```
 
 > **💡 Note:** To configure this integration, Split Admin access (Split Admin users can add
 > feature flags and segments, and edit them at will) is required.
@@ -180,28 +174,22 @@ Before using this integration, you should have:
 - ### Use the Split integration in your code
   Open your project's code on your local machine and do the following:
   1. Install Split's Browser SDK, Vercel integration utilities, and Vercel's Global Config SDK:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
-      ```
-    </Code>
-  </CodeBlock>
+  **pnpm**
+  ```bash
+  pnpm i @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
+  ```
+  **yarn**
+  ```bash
+  yarn add @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
+  ```
+  **npm**
+  ```bash
+  npm i @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
+  ```
+  **bun**
+  ```bash
+  bun add @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
+  ```
   2. Create an API route in your project. The following example fetches a treatement based on which user is visiting. You can specify the user by appending `?userKey=Joe` or `?userKey=Bobby` to the URL when visiting the route:
   ```ts filename="app/api/marketing-example/route.ts" framework=nextjs-app
   import {
@@ -609,3 +597,6 @@ Now that you have set up the Split Global Config integration, you can explore th
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

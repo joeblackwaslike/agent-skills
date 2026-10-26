@@ -12,8 +12,8 @@ related:
 summary: The external image request is invalid. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/optimized_external_image_request_invalid.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "73e0824b2097b2efe93cd2ea6bd5168b4eecadae8338d166c7f0471b119953ab"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ef09a10bfbf76725e6773e5f8c903e40b6a382449b2bee39394620246faa288a"
 ---
 
 # OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID
@@ -36,3 +36,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

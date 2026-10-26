@@ -16,13 +16,13 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "99b63639f9684738bb5029728bf9f3c19ef433ce6550a228e4189e0da8204687"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "02d7db43ef14240f44e38dcddb9c1cd8e69ae7532929edff271d6e3f41ce5546"
 ---
 
 # Secure Compute
 
-> **Availability**: Secure Compute is available for purchase on Enterprise plans
+> Secure Compute is available for purchase on Enterprise plans
 
 Secure Compute creates private connections between your [Vercel Functions](/docs/functions) and your backend infrastructure like databases, APIs, or any private services you're running.
 
@@ -253,3 +253,6 @@ The maximum number of VPC peering connections that can be established per networ
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

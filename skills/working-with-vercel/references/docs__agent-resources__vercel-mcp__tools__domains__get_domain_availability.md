@@ -13,8 +13,8 @@ related:
 summary: Use get_domain_availability with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_availability.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a37deda7d6cecefc7a2e1d6c7a20d6dd8d71d13dc4016814fb293286bd765836"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b4b218125393e8079cca69e2aa6f67236a5a8bacc41527ffadaff5297e15d589"
 ---
 
 # get_domain_availability
@@ -29,9 +29,9 @@ Check whether a domain is available to register.
 
 - [get_bulk_availability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_availability) — Use get_bulk_availability with Vercel MCP.
 - [check_domain_availability_and_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price) — Use check_domain_availability_and_price with Vercel MCP.
+- [Get availability for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-availability-for-a-domain) — GET /v1/registrar/domains/{domain}/availability — Get availability for a specific domain. If the domain is available, it
 - [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
-- [Get availability for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-availability-for-a-domain) — GET /v1/registrar/domains/{domain}/availability — Get availability for a specific domain. If the domain is available, it
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_domain_availability.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_domain_availability.graph.md)
 <!-- /docsgraph:related -->
@@ -45,3 +45,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

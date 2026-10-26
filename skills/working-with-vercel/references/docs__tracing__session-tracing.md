@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2c8757b7f7a5c3dca85ea3f24869fe57c625fcde3bbce7e07bceedb86830ef62"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e7e6b323f029b2f61372ffffff279f5b26815265c21f729f167bd1516c6a3528"
 ---
 
 # Session tracing
@@ -34,11 +34,11 @@ With session tracing, you can use the Vercel toolbar to trace **your** own brows
 - [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
-- [Agent Runs](https://vercel.com/docs/eve/agent-runs) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
-- [create_trace_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session) — Use create_trace_session with Vercel MCP.
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [create_trace_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session) — Use create_trace_session with Vercel MCP.
+- [Instrumentation](https://vercel.com/docs/tracing/instrumentation) — Learn how to instrument your application to understand performance and infrastructure details.
 - [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
+- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 
 Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md)
 <!-- /docsgraph:related -->
@@ -130,3 +130,6 @@ Session Tracing follows the shared [Tracing limitations](/docs/tracing#limitatio
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

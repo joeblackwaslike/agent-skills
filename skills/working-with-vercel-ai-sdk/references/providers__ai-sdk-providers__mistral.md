@@ -1,11 +1,11 @@
 ---
 title: Mistral AI
-description: Learn how to use Mistral.
+description: Learn how to use Mistral AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "89fb224310bdcae041f1cd60d1d7c0400b409692aa8daea3b6d78b89ae1cf8e9"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "b8fc9bf495461987870af7327173048caefd3f8f215ef8f3ba48cf84a52c8ef7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -13,14 +13,57 @@ sha256: "89fb224310bdcae041f1cd60d1d7c0400b409692aa8daea3b6d78b89ae1cf8e9"
 The [Mistral AI](https://mistral.ai/) provider contains language model,
 embedding model, speech model, and transcription model support for Mistral
 APIs.
+You can use Mistral AI models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/mistral`.
 
-## Setup
+```ts provider="mistral" model="mistral/mistral-medium-3.5"
+import { generateText } from 'ai';
 
-The Mistral provider is available in the `@ai-sdk/mistral` module. You can install it with
+const { text } = await generateText({
+  model: "mistral/mistral-medium-3.5",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/mistral
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/mistral`
+
+For direct access to Mistral AI, install `ai` and `@ai-sdk/mistral`:
+
+```bash
+pnpm add ai @ai-sdk/mistral
+```
+
+Set your Mistral AI API credential in the `MISTRAL_API_KEY` environment variable:
+
+```bash
+export MISTRAL_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/mistral`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/mistral` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 
@@ -453,7 +496,7 @@ You can create models that call the
 using the `.transcription()` factory method:
 
 ```ts
-const model = mistral.transcription('voxtral-mini-latest');
+const model = mistral.transcription('voxtral-mini-transcribe-3-0');
 ```
 
 Use Mistral transcription models with [`transcribe`](/docs/reference/ai-sdk-core/transcribe):
@@ -464,7 +507,7 @@ import { transcribe } from 'ai';
 import { readFile } from 'node:fs/promises';
 
 const result = await transcribe({
-  model: mistral.transcription('voxtral-mini-latest'),
+  model: mistral.transcription('voxtral-mini-transcribe-3-0'),
   audio: await readFile('audio.mp3'),
 });
 ```
@@ -482,13 +525,14 @@ import { transcribe } from 'ai';
 import { readFile } from 'node:fs/promises';
 
 const result = await transcribe({
-  model: mistral.transcription('voxtral-mini-latest'),
+  model: mistral.transcription('voxtral-mini-transcribe-3-0'),
   audio: await readFile('audio.mp3'),
   providerOptions: {
     mistral: {
       timestampGranularities: ['segment'],
       diarize: true,
-      contextBias: ['Vercel', 'AI_SDK'],
+      returnLanguage: true,
+      contextBias: ['Vercel', 'AI SDK', 'A discussion about TypeScript.'],
     } satisfies MistralTranscriptionModelOptions,
   },
 });
@@ -500,25 +544,36 @@ The following optional provider options are available:
 
   The language of the audio, such as `en`. Providing it can improve accuracy.
 
+- **returnLanguage** *boolean*
+
+  Return the detected language with Voxtral 3. Without this option, the response
+  language is normally absent. Cannot be `true` when `language` is provided.
+
 - **temperature** *number*
 
   The sampling temperature for the transcription.
 
 - **timestampGranularities** *Array\<'segment' | 'word'>*
 
-  Timestamp granularities to include in the response. Mistral does not support
-  combining this option with `language`; the SDK throws an
-  `InvalidArgumentError` when both are provided.
+  Timestamp granularities to include in the response. Voxtral 3 supports only
+  `segment` and allows it to be combined with `language`. The SDK rejects this
+  combination for the legacy IDs `voxtral-mini-2507`, `voxtral-mini-2602`, and
+  `voxtral-mini-latest`, throwing an `InvalidArgumentError`. Other model IDs are
+  allowed to send the combination to Mistral. Model-specific timestamp and
+  diarization requirements are validated by the Mistral API.
 
 - **diarize** *boolean*
 
-  Whether to identify speakers in the transcription.
+  Whether to identify speakers in the transcription. Voxtral 3 requires
+  `timestampGranularities: ['segment']` when this option is `true`.
 
 - **contextBias** *string\[]*
 
-  Up to 100 words or phrases that guide spelling for names, technical terms,
-  or domain-specific vocabulary. Items cannot contain commas or whitespace;
-  use underscores for multi-word phrases.
+  Words, phrases, or descriptions of the recording that guide spelling for
+  names, technical terms, or domain-specific vocabulary. Voxtral 3 accepts spaces
+  and punctuation and has no fixed entry limit; entries share the context window
+  with the audio. Earlier models require entries without commas or whitespace
+  and support up to 100 entries.
 
 The normalized result includes transcript text, language, timed segments, and
 duration when returned by Mistral. Mistral token and prompt-audio usage is
@@ -532,9 +587,11 @@ model.
 
 ### Model Capabilities
 
-| Model                 | Timestamps | Diarization | Context Bias |
-| --------------------- | ---------- | ----------- | ------------ |
-| `voxtral-mini-latest` | ✓          | ✓           | ✓            |
+| Model                          | Timestamps | Diarization | Context Bias |
+| ------------------------------ | ---------- | ----------- | ------------ |
+| `voxtral-mini-transcribe-3-0`  | ✓          | ✓           | ✓            |
+| `voxtral-small-transcribe-3-0` | ✓          | ✓           | ✓            |
+| `voxtral-mini-latest`          | ✓          | ✓           | ✓            |
 
 ## Speech Models
 
@@ -543,7 +600,7 @@ You can create models that call the
 the `.speech()` factory method:
 
 ```ts
-const model = mistral.speech('voxtral-mini-tts-2603');
+const model = mistral.speech('voxtral-mini-tts-3-0');
 ```
 
 Use a preset or saved voice ID with [`generateSpeech`](/docs/reference/ai-sdk-core/generate-speech):
@@ -553,9 +610,9 @@ import { mistral } from '@ai-sdk/mistral';
 import { generateSpeech } from 'ai';
 
 const result = await generateSpeech({
-  model: mistral.speech('voxtral-mini-tts-2603'),
+  model: mistral.speech('voxtral-mini-tts-3-0'),
   text: 'Hello from the AI SDK!',
-  voice: 'en_paul_neutral',
+  voice: 'gb_jane_neutral',
   outputFormat: 'mp3',
 });
 
@@ -565,7 +622,38 @@ const audio = result.audio.uint8Array;
 The Mistral speech model maps `voice` to Mistral's `voice_id`. It supports
 `mp3`, `wav`, `pcm`, `flac`, and `opus` output formats and defaults to `mp3`.
 The `instructions`, `speed`, and `language` settings are not supported and
-produce warnings when provided.
+produce warnings when provided. Voxtral 3 style instructions are not available
+at launch. To control emotion and pace, include tags such as `[emotion=happy]`
+and `[pace=slow]` directly in `text`.
+
+Voxtral 3 supports additional delivery controls through `providerOptions.mistral`:
+
+- **expressiveness** *number*
+
+  A value from 1 to 5 controlling expressiveness. Higher values trade voice
+  similarity and stability for stronger delivery. Omit it to use the service default.
+
+- **phonemeHints** *Record\<string, string\[]>*
+
+  Map words in the input to lists of IPA phonemes. Mistral validates the supported
+  phoneme inventory. See [custom pronunciation](https://docs.mistral.ai/studio/audio/text-to-speech/custom-pronunciation).
+
+```ts
+import { mistral, type MistralSpeechModelOptions } from '@ai-sdk/mistral';
+import { generateSpeech } from 'ai';
+
+const result = await generateSpeech({
+  model: mistral.speech('voxtral-mini-tts-3-0'),
+  text: '[emotion=happy] I like tomato soup.',
+  voice: 'gb_jane_neutral',
+  providerOptions: {
+    mistral: {
+      expressiveness: 1.5,
+      phonemeHints: { tomato: ['t', 'ə', 'm', 'ɑ', 't', 'oʊ'] },
+    } satisfies MistralSpeechModelOptions,
+  },
+});
+```
 
 Mistral also supports one-off voice cloning with base64-encoded reference
 audio. Pass it through `providerOptions.mistral.refAudio` and use
@@ -579,7 +667,7 @@ import { generateSpeech } from 'ai';
 const referenceAudio = await readFile('./reference.mp3');
 
 const result = await generateSpeech({
-  model: mistral.speech('voxtral-mini-tts-2603'),
+  model: mistral.speech('voxtral-mini-tts-3-0'),
   text: 'Hello from the AI SDK!',
   providerOptions: {
     mistral: {
@@ -601,6 +689,7 @@ streaming speech API is not exposed through `SpeechModelV4`.
 
 | Model                   | Saved Voices | Reference Audio | Non-Streaming |
 | ----------------------- | ------------ | --------------- | ------------- |
+| `voxtral-mini-tts-3-0`  | ✓            | ✓               | ✓             |
 | `voxtral-mini-tts-2603` | ✓            | ✓               | ✓             |
 
 ## Embedding Models

@@ -13,8 +13,8 @@ related:
 summary: Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2374cd1993bc3e048a6509a44eb967375fda787a27bced816976fafee7a06353"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f8995b1e215365ce05c64aad8bad46a05f73ae90d53491ff139bb61884a8feac"
 ---
 
 # Anthropic Messages Structured Outputs with AI Gateway
@@ -28,11 +28,11 @@ Structured outputs constrain completed model responses to a JSON Schema. Check f
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data) — Learn how to generate structured data with the AI SDK.
-- [Output](https://ai-sdk.dev/docs/reference/ai-sdk-core/output) — API Reference for Output.
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
-- [Output Schema](https://eve.dev/docs/guides/client/output-schema) — Request structured results from eve client turns and read typed data from MessageResult.
 - [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
-- [Stream Object](https://ai-sdk.dev/cookbook/next/stream-object) — Learn how to stream object using the AI SDK and Next.js
+- [Output](https://ai-sdk.dev/docs/reference/ai-sdk-core/output) — API Reference for Output.
+- [OpenAI Responses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs) — Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
+- [AI Gateway Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation) — Generate and stream text from 300+ models through AI Gateway, with tool calling and structured output.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.graph.md)
 <!-- /docsgraph:related -->
@@ -596,3 +596,6 @@ A completed structured response contains JSON in a `text` content block:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -14,8 +14,8 @@ related:
 summary: Use buy_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/buy_domain.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "dbb9feeae26d1e527554f20ea67491fb0ca026d8851faefa662ba855e92b87b9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ffafdfa6b5e35dc5c9bbb84e70574730bf66e59f8866eb8788b00a00e26899b7"
 ---
 
 # buy_domain
@@ -73,3 +73,6 @@ The `contact` object requires the following fields with an optional `companyName
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

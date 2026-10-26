@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8f6507342e4970e6cc7e32b390a538f1b749f1b77c59d923cd52ebcba3042fa6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "497551e9e4cc3953ae18a5b785198912653436ba735d5cc2c24ac51c8ab78160"
 ---
 
 # Managing Domain Renewals and Redemptions
@@ -29,15 +29,15 @@ Custom domains purchased through or registered with Vercel are [automatically re
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Free domain with Pro offer now includes .app and .dev](https://vercel.com/changelog/app-and-dev-domains-included-with-free-domain-for-pro)
+- [Eight more TLDs now eligible for a free domain with Pro](https://vercel.com/changelog/eight-more-tlds-now-eligible-for-a-free-domain-with-pro)
 - [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions)
 - [Self-serve domain renewals and redemptions now available](https://vercel.com/changelog/self-serve-domain-renewals-and-redemptions-now-available)
 - [Lifecycle of a domain](https://vercel.com/kb/guide/lifecycle-of-a-domain) — Understand the states a .com domain passes through from registration to deletion, and how to renew or recover it at each
-- [Auto Renewal can now be disabled for Domains](https://vercel.com/changelog/auto-renewal-can-now-be-disabled-for-domains)
-- [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Renew a domain](https://vercel.com/docs/rest-api/domains-registrar/renew-a-domain) — POST /v1/registrar/domains/{domain}/renew — Renew a domain
-- [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
+- [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/renew-a-domain.graph.md](/docs/domains/working-with-domains/renew-a-domain.graph.md)
@@ -155,3 +155,6 @@ Third-Party Domains (ones not purchased with or transferred into Vercel) are not
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

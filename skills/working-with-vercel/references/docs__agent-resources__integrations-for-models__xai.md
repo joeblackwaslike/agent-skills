@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the xAI native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/xai.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1f6e48b261392761179b8b7016cf3b754bff0f8851222433dd4e9d35fbd3b899"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "579bc46e925ba882ac79a8370e1d5a5ecb0f5b12b44ff1493a06e8ed15bcf433"
 ---
 
 # Vercel xAI Integration
@@ -35,7 +35,7 @@ chat and vision AI capabilities with integrated billing through Vercel.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
-- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
+- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/xai.graph.md](/docs/agent-resources/integrations-for-models/xai.graph.md)
 <!-- /docsgraph:related -->
@@ -61,28 +61,23 @@ To follow this guide, you'll need the following:
 
 - An existing [Vercel project](/docs/projects/overview#creating-a-project)
 - The latest version of [Vercel CLI](/docs/cli#installing-vercel-cli)
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn global add vercel@latest
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add -g vercel@latest
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i -g vercel@latest
+  ```
+  **yarn**
+  ```bash
+  yarn global add vercel@latest
+  ```
+  **npm**
+  ```bash
+  npm i -g vercel@latest
+  ```
+  **bun**
+  ```bash
+  bun add -g vercel@latest
+  ```
 
 ### Add the provider to your project
 
@@ -121,3 +116,6 @@ To follow this guide, you'll need the following:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

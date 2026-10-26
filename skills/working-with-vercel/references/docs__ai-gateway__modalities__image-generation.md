@@ -16,8 +16,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e33b38db5bd330c94c5bb263e372ddfadc7bbdb768ae99cb98d792d1f191aef6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a5c91143d7e1ce33c6075c3ada2dc4e22c7cf2ba19797426c6e1f260d46d4b43"
 ---
 
 # AI Gateway Image Generation
@@ -56,3 +56,6 @@ To implement image generation with AI Gateway, use one of the following methods:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

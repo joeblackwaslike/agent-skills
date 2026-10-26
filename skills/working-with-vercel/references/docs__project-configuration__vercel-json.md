@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f41d680d51d5bc3ec063f79c07672ae47c82f0757e15eac313cf4352477a34b9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "818e1dc85e09829fe3a59db4755ddaf666e2c932b12450e9f9d63af4e2a144c1"
 ---
 
 # Static Configuration with vercel.json
@@ -40,8 +40,8 @@ The `vercel.json` file lets you configure, and override the default behavior of 
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers) — Add custom HTTP headers to your Next.js app.
 - [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
-- [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-json.graph.md](/docs/project-configuration/vercel-json.graph.md)
 <!-- /docsgraph:related -->
@@ -99,7 +99,7 @@ This value overrides the [Build Command](/docs/builds/configure-a-build#build-co
 
 ## bunVersion
 
-> **Availability**: The Bun runtime (Beta) is available on all plans
+> The Bun runtime is available in Beta on all plans
 
 **Type:** `string`
 
@@ -573,12 +573,16 @@ The `proxy` property can be used to explicitly configure the file Vercel builds 
 
 ### Value definition
 
-- `entrypoint` (required): The path to your Routing Middleware file, relative to your project root. Must end in `.js` or `.ts`, must reference an existing file, and can live in a subdirectory such as `src/proxy.ts`.
-- `matcher` (optional): A path matcher starting with `/`, or an array of path matchers starting with `/`, that defines which requests run your Routing Middleware. See [matcher config](/docs/routing-middleware/api#match-paths-based-on-custom-matcher-config) for the supported syntax.
+- `entrypoint` (required): Your Routing Middleware entrypoint, relative to your project root. It must reference an existing file and can live in a subdirectory. Use one of these forms:
+  - TypeScript or JavaScript: a file path ending in `.ts` or `.js`, such as `src/proxy.ts`. See the [JS reference](/docs/routing-middleware/js-reference).
+  - Python: a `module:attribute` value that names an ASGI or WSGI app, such as `proxy:proxy`. See the [Python reference](/docs/routing-middleware/python-reference).
+- `matcher` (optional): A path matcher starting with `/`, or an array of path matchers starting with `/`, that defines which requests run your Routing Middleware. See [path matching](/docs/routing-middleware#path-matching) for the supported syntax.
 
 ### Description
 
-The following configuration builds `proxy.ts` as your Routing Middleware and runs it on requests under `/api`:
+The following configuration builds your entrypoint as Routing Middleware and runs it on requests under `/api`:
+
+#### TypeScript
 
 ```json filename="vercel.json"
 {
@@ -590,29 +594,42 @@ The following configuration builds `proxy.ts` as your Routing Middleware and run
 }
 ```
 
-Your entrypoint exports the handler as a default export:
-
 ```ts filename="proxy.ts"
 export default function proxy(request: Request) {
   return new Response('Hello from your Routing Middleware!');
 }
 ```
 
-```js filename="proxy.js"
-export default function proxy(request) {
-  return new Response('Hello from your Routing Middleware!');
+#### Python
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "proxy": {
+    "entrypoint": "proxy:proxy",
+    "matcher": "/api/:func*"
+  }
 }
+```
+
+```python filename="proxy.py"
+from vercel.proxy import PlainTextResponse, Proxy, Request, Response
+
+proxy = Proxy()
+
+
+@proxy.route("/api/{path:path}")
+def hello(request: Request) -> Response:
+    return PlainTextResponse("Hello from your Routing Middleware!")
 ```
 
 ### Runtime
 
-An entrypoint configured through `proxy` runs on the [Node.js runtime](/docs/functions/runtimes/node-js).
-
-A `middleware.ts` file that sets `runtime: 'nodejs'` in its exported `config` behaves the same as `"proxy": { "entrypoint": "middleware.ts" }`.
+TypeScript and JavaScript entrypoints run on the [Node.js runtime](/docs/functions/runtimes/node-js), or on the [Bun runtime](/docs/functions/runtimes/bun) if you set [`bunVersion`](#bunversion). Python entrypoints run on the [Python runtime](/docs/functions/runtimes/python). Your Routing Middleware must use the same runtime as your app.
 
 ### Setting the matcher
 
-You can set either `proxy.matcher` in `vercel.json`, or export a `config` object with a `matcher` property from your entrypoint.
+You can set `proxy.matcher` in `vercel.json`. In TypeScript and JavaScript, you can instead export a `config` object with a `matcher` property from your entrypoint.
 
 The matcher accepts a single path or an array of paths:
 
@@ -630,7 +647,7 @@ Without a matcher, your Routing Middleware runs on every request.
 
 ### Setting function options
 
-Set duration, memory, and other per-function options with the [`functions`](#functions) property, keyed on your entrypoint path:
+Set duration, memory, and other per-function options with the [`functions`](#functions) property:
 
 ```json filename="vercel.json"
 {
@@ -645,6 +662,8 @@ Set duration, memory, and other per-function options with the [`functions`](#fun
   }
 }
 ```
+
+Use your entrypoint's file path as the key in `functions`, such as `proxy.ts` or `proxy.py`.
 
 ## redirects
 
@@ -920,7 +939,7 @@ You can also set `regions` on individual functions using the [`functions`](/docs
 
 ## functionFailoverRegions
 
-> **Availability**: Setting failover regions for Vercel functions are available on Enterprise plans
+> Setting failover regions for Vercel functions are available on Enterprise plans
 
 Set this property to specify the [region](/docs/functions/configuring-functions/region) to which a Vercel Function should fallback when the default region(s) are unavailable.
 
@@ -1929,3 +1948,6 @@ When at least one `builds` item is specified, only the outputs of the build proc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -1,24 +1,67 @@
 ---
 title: OpenAI
-description: Learn how to use the OpenAI provider for the AI SDK.
+description: Learn how to use OpenAI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/openai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "8512c6bf3160a3994300b325d8caafe53a74139290af79751ff8ebfd6c39f51f"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "273a794b3ae6c55f00ccad0c49daf1b538bacaf26e8bd1307c53236909215f02"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [OpenAI](https://openai.com/) provider contains language model support for the OpenAI responses, chat, and completion APIs, as well as embedding model support for the OpenAI embeddings API.
+You can use OpenAI models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/openai`.
 
-## Setup
+```ts provider="openai" model="openai/gpt-6-astra"
+import { generateText } from 'ai';
 
-The OpenAI provider is available in the `@ai-sdk/openai` module. You can install it with
+const { text } = await generateText({
+  model: "openai/gpt-6-astra",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/openai
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/openai`
+
+For direct access to OpenAI, install `ai` and `@ai-sdk/openai`:
+
+```bash
+pnpm add ai @ai-sdk/openai
+```
+
+Set your OpenAI API credential in the `OPENAI_API_KEY` environment variable:
+
+```bash
+export OPENAI_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/openai`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/openai` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 
@@ -240,7 +283,7 @@ and returns a warning. Use the Responses API for GPT-6 tool calling.
 OpenAI structured outputs have several
 [limitations](https://openai.com/index/introducing-structured-outputs-in-the-api),
 in particular around the [supported
-schemas](https://platform.openai.com/docs/guides/structured-outputs/supported-schemas),
+schemas](https://developers.openai.com/api/docs/guides/structured-outputs#supported-schemas),
 and are therefore opt-in. For example, optional schema properties are not
 supported. You need to change Zod `.nullish()` and `.optional()` to
 `.nullable()`.
@@ -274,7 +317,7 @@ supported. You need to change Zod `.nullish()` and `.optional()` to
   A cache key for manual prompt caching control. Used by OpenAI to cache responses for similar requests to optimize your cache hit rates.
 
 - **promptCacheOptions** *object*
-  Configures prompt caching for GPT-5.6 and later models. `mode` can be `'implicit'` or `'explicit'`, and `ttl` currently only supports `'30m'`. In explicit mode, only content blocks marked with a prompt cache breakpoint are cached.
+  Configures prompt caching for GPT-5.6 and later models. `mode` can be `'implicit'` or `'explicit'`. `ttl` sets the minimum cache lifetime: `'30m'` (default) or `'12h'`. 12-hour writes are billed at a higher rate, and `usage.raw.input_tokens_details.cache_write_tokens_details` splits cache writes into `ttl_30m_tokens` and `ttl_12h_tokens`. Set `prewarm` to `true` to write the prompt to the cache without generating output. In explicit mode, only content blocks marked with a prompt cache breakpoint are cached.
 
 - **promptCacheRetention** *'in\_memory' | '24h'*
   The legacy retention policy for models before GPT-5.6. Set to `'24h'` to enable extended prompt caching on supported models. For GPT-5.6 and later models, use `promptCacheOptions.ttl` instead.
@@ -1891,6 +1934,12 @@ const result = await generateText({
 });
 ```
 
+For non-streaming JSON output with `generateText`, when a response contains
+messages marked with `phase: 'final_answer'`, the SDK parses only the last such
+message into `result.output`. This prevents commentary or repeated final answers
+from being joined into invalid JSON. The returned `text`, `content`, response
+messages, and token usage still include the complete response as before.
+
 #### Typed providerMetadata in Text Parts
 
 When using the OpenAI Responses API, the SDK attaches OpenAI-specific metadata to output parts via `providerMetadata`.
@@ -2772,7 +2821,7 @@ including `gpt-4o` and `gpt-4o-mini`.
   not need to be explicitly enabled.
 - You can use the response `usage` to access the number of prompt tokens that were a cache hit via `usage.inputTokenDetails.cacheReadTokens`.
 - For GPT-5.6 and later models, `usage.inputTokenDetails.cacheWriteTokens` reports tokens written to the cache.
-- For GPT-5.6 and later models, `promptCacheOptions.ttl` sets a minimum cache lifetime of 30 minutes. Earlier models generally retain in-memory prefixes for 5-10 minutes of inactivity, up to one hour.
+- For GPT-5.6 and later models, `promptCacheOptions.ttl` sets a minimum cache lifetime of 30 minutes. Chat models only support `'30m'`. The 12-hour lifetime is available on [Responses models](#responses-models). Earlier models generally retain in-memory prefixes for 5-10 minutes of inactivity, up to one hour.
 
 ```ts {9}
 import { openai } from '@ai-sdk/openai';
@@ -2805,7 +2854,7 @@ const { text, usage } = await generateText({
 console.log('Cached tokens:', usage.inputTokenDetails.cacheReadTokens);
 ```
 
-GPT-5.6 and later models support explicit cache breakpoints on text, image, and file content blocks. Set a request-level cache key and mark the end of each reusable prefix with `promptCacheBreakpoint`:
+GPT-5.6 and later models support explicit cache breakpoints on text, image, and file content blocks. Set a request-level cache key and mark the end of each reusable prefix with `promptCacheBreakpoint`. With Responses models, a breakpoint can set its own `ttl` (for example `{ mode: 'explicit', ttl: '12h' }`) to override the request-level `promptCacheOptions.ttl`:
 
 ```ts {9-12,20-28}
 import {

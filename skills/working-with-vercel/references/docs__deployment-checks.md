@@ -14,8 +14,8 @@ related:
 summary: Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-checks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "af0a964312f0fb81db85923daf8ceb465e46bfa000be81b348ca5e15cb65b326"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "06387a25c1a6e8e5b6323ab7a978ac310827d50fc363f65afa9b06d2015e5569"
 ---
 
 # Deployment Checks
@@ -31,15 +31,14 @@ Deployment Checks are conditions that must be met before promoting a production 
 - [Block Vercel deployment promotions with GitHub Actions](https://vercel.com/changelog/block-vercel-deployment-promotions-with-github-actions)
 - [Native Deployment Checks are now available](https://vercel.com/changelog/native-deployment-checks)
 - [Vercel Microfrontends checks for missing configuration](https://vercel.com/changelog/vercel-microfrontends-checks-for-missing-configuration)
+- [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [How can I use GitHub Actions with Vercel?](https://vercel.com/kb/guide/how-can-i-use-github-actions-with-vercel) — GitHub Actions with Vercel works best when you skip duplicate builds. Learn the 4-command CLI pattern, --prebuilt flag,
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Working with Checks](https://vercel.com/docs/checks) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
-- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [List check runs for a deployment](https://vercel.com/docs/rest-api/checks-v2/list-check-runs-for-a-deployment) — GET /v2/deployments/{deploymentId}/check-runs — List all check runs for a deployment.
 
 Full cross-link map for this page: [/docs/deployment-checks.graph.md](/docs/deployment-checks.graph.md)
 <!-- /docsgraph:related -->
@@ -72,8 +71,49 @@ With Deployment Checks, you introduce a new step that ensures the safety of the 
 
 You can add Deployment Checks from multiple sources:
 
-- **GitHub Checks**: Import GitHub Actions workflow results as Deployment Checks. Vercel reads commit statuses and check run results to determine if a deployment should be promoted.
-- **Integration Checks**: Third-party integrations from the [Vercel Marketplace](/marketplace) can provide checks for testing, monitoring, and observability.
+- **Native Deployment Checks (Vercel)**: Vercel runs built-in checks for your deployment, including script-based lint and typecheck jobs, and Vercel-provided checks such as Microfrontends Config Present.
+
+* **GitHub Checks**: Import GitHub Actions workflow results as Deployment Checks. Vercel reads commit statuses and check run results to determine if a deployment should be promoted.
+* **Integration Checks**: Third-party integrations from the [Vercel Marketplace](/marketplace) can provide checks for testing, monitoring, and observability.
+
+## Native Deployment Checks
+
+Native Deployment Checks let Vercel run checks directly on your deployment, without requiring external CI configuration. Script-based checks clone your repository, install dependencies, and run the corresponding script from your `package.json`.
+
+### Available checks
+
+| Check | Script | Description |
+| --- | --- | --- |
+| **Lint** | `lint` | Catches code style issues and potential errors |
+| **Typecheck** | `typecheck`, `type-check`, or `check-types` | Verifies type safety across your codebase |
+| **Microfrontends Config Present** | — | Verifies that `microfrontends.json` is included in the deployment's build outputs |
+
+### Requirements
+
+- Script-based checks require a `package.json` with a matching script for each check you enable. If no matching script is found, the check is automatically skipped.
+- Supported package managers: npm, pnpm, yarn, and bun (detected from your lock file).
+
+### Adding Native Deployment Checks
+
+- ### Navigate to Deployment Checks settings
+  Visit [your project's Deployment Checks settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23deployment-checks) and select **Add Checks**.
+
+- ### Select Vercel as the provider
+  In the provider selection step, choose **Vercel**, then select **Next**.
+
+- ### Choose which checks to enable
+  Select **Lint**, **Typecheck**, or both. Each check corresponds to a script in your `package.json`. Then select **Add**.
+
+- ### Checks run on your next deployment
+  After adding, the selected checks will run on each new deployment. You can view check status, logs, and results directly in the deployment detail view.
+
+### Configuring environments
+
+By default, Native Deployment Checks run on all deployment environments. You can configure which environments each check runs on (for example, production only, or both production and preview) from the check's settings in the Deployment Checks list.
+
+### Viewing logs
+
+When a Native Deployment Check runs, you can view its real-time logs directly in the deployment detail view by selecting the **Logs** button next to the check. This streams output from the lint or typecheck command as it runs.
 
 ## GitHub Checks
 
@@ -118,6 +158,13 @@ You can bypass Deployment Checks by selecting [Force Promote](/docs/deployments/
 
 ## Limitations
 
+### Native Deployment Checks
+
+- Script-based Native Deployment Checks only run if your project has a compatible script in `package.json`. If no matching script is found, the check is automatically skipped.
+- The supported scripts are `lint` for lint checks, and `typecheck`, `type-check`, or `check-types` for typecheck.
+
+### GitHub Checks
+
 GitHub and GitHub Actions have edge cases with status reporting. These behaviors are matched in GitHub-backed Deployment Checks.
 
 - To trigger a workflow in response to Vercel deployments using [`repository_dispatch`](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#repository_dispatch), use the [`vercel/repository-dispatch/actions/status@v1`](https://github.com/marketplace/actions/deployment-status-update) action to set a status on the commit for Vercel Deployment Checks. This ensures the commit that triggered the deployment is the one used to determine if the Deployment Checks are met.
@@ -130,3 +177,6 @@ GitHub and GitHub Actions have edge cases with status reporting. These behaviors
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

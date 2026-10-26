@@ -17,8 +17,8 @@ related:
 summary: Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and how to run locally and in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/elysia.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fb21869c0e756e9c20ad66ecfe282ab3f3bbd5c23133f59882cc67e729c2066a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cf9e8ef1bb463926f6dfc6b5dcaf236fb5399211079600bda5d03ff17acf1185"
 ---
 
 # Elysia on Vercel
@@ -32,13 +32,14 @@ Elysia is an ergonomic web framework for building backend servers with Bun. Desi
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Elysia can now be automatically deployed on Vercel](https://vercel.com/changelog/support-for-elysia)
-- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
-- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Hono on Vercel](https://vercel.com/docs/frameworks/backend/hono) — Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurati
 
 Full cross-link map for this page: [/docs/frameworks/backend/elysia.graph.md](/docs/frameworks/backend/elysia.graph.md)
 <!-- /docsgraph:related -->
@@ -130,6 +131,10 @@ vc dev
 
 > **💡 Note:** Minimum CLI version required: 49.0.0
 
+## Deploy with a frontend
+
+Use [Vercel Services](/docs/services) to deploy an Elysia backend and a frontend in one project. Configure [service routing](/docs/services/routing) to expose the backend at a public path, or use [service bindings](/docs/services/bindings) for private calls from the frontend's server code.
+
 ## Using Node.js
 
 Ensure `type` is set to `module` in your `package.json` file:
@@ -187,6 +192,18 @@ In Vercel, [Routing Middleware](/docs/routing-middleware) executes before a requ
 
 When you deploy an Elysia app to Vercel, your server endpoints automatically run as [Vercel Functions](/docs/functions) and use [Fluid compute](/docs/fluid-compute) by default.
 
+## Stream responses
+
+Use a generator handler with `yield` to stream response chunks from Elysia. See the [Elysia streaming example](/kb/guide/ship-a-elysia-app-on-vercel#stream-responses) for plain text and server-sent events.
+
+## Run scheduled tasks
+
+Use [Cron Jobs](/docs/cron-jobs) to call an Elysia route on a schedule. Configure the route and schedule, then check the request's `Authorization` header against your `CRON_SECRET` environment variable before running the task. See the [Elysia cron job example](/kb/guide/ship-a-elysia-app-on-vercel#run-scheduled-tasks-with-cron-jobs).
+
+## Monitor and debug requests
+
+Use [Runtime Logs](/docs/functions/logs) to inspect application output and errors, and [Observability](/docs/observability) to investigate request duration and failures. See [monitoring Elysia with Observability](/kb/guide/ship-a-elysia-app-on-vercel#monitor-performance-with-observability) for details.
+
 ## More resources
 
 - [Elysia documentation](https://elysiajs.com)
@@ -197,3 +214,6 @@ When you deploy an Elysia app to Vercel, your server endpoints automatically run
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

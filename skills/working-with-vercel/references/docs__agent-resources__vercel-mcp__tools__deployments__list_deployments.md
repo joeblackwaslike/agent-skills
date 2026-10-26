@@ -13,8 +13,8 @@ related:
 summary: Use list_deployments with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "872d1344047f9133a1f0fd547717dfb9b7a0d8d731f5e7bf4794970210b01774"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "33a7cca9326fc6c8c0ad6166f4fda0bdd58f9c72c0194c2d82788e81fe389768"
 ---
 
 # list_deployments
@@ -29,8 +29,8 @@ List [deployments](/docs/deployments), optionally filtered by project.
 
 - [list_deployment_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events) — Use list_deployment_events with Vercel MCP.
 - [open_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments) — Use open_deployments with Vercel MCP.
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
+- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.graph.md)
@@ -72,3 +72,6 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

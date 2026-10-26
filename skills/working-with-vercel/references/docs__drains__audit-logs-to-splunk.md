@@ -13,13 +13,13 @@ related:
 summary: Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector (HEC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-splunk.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "048e8ce6531bef1c134d879f0d9445ac5c7a4f322bc65efb2973b82d35ed3485"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "613330c0ad8214564d8b6ed05106f42db02535f5e5cf200ead71e8938ba1a858"
 ---
 
 # Drain Audit Logs to Splunk
 
-> **Availability**: Audit Log Drains are available on Enterprise plans
+> Audit Log Drains are available on Enterprise plans
 
 Audit Log Drains can forward team activity events to [Splunk](https://www.splunk.com/) using the [HTTP Event Collector (HEC)](https://help.splunk.com/en/data-management/collect-http-event-data/use-hec-in-splunk-cloud-platform/set-up-and-use-http-event-collector-in-splunk-web). Use this setup to ingest audit logs into Splunk for security monitoring, compliance review, and search.
 
@@ -105,3 +105,6 @@ See the [Audit Log Drains reference](/docs/drains/reference/audit-logs#splunk-he
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

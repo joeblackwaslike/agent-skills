@@ -16,8 +16,8 @@ related:
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "39bf32b5db5ce3c7b2d3063146036ce198010cd21b7ce3d407b0836fbc4522d7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4892332f86de9d5bb4c2443de046572f4ff2c8c6bd64a19835aae1dc6edfb4b7"
 ---
 
 # Pricing for Web Analytics
@@ -39,8 +39,8 @@ After you enable Vercel Web Analytics, your plan determines which features you c
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
@@ -66,7 +66,7 @@ On every billing cycle, Hobby teams receive the included event allowance listed 
 Vercel charges Pro teams for collected events based on usage, subject to the Pro monthly usage credit.
 If your team is on the Hobby plan, we will [pause](#hobby) the collection, as you cannot be charged for extra events.
 
-Pro teams can also purchase the [Web Analytics Plus add-on](#pro-with-web-analytics-plus) for an additional $10.00/month per team, which grants access to more features and an extended reporting window.
+Pro teams can also purchase the [Web Analytics Plus add-on](#pro-with-web-analytics-plus) for an additional $10/month per team, which grants access to more features and an extended reporting window.
 
 ## Usage
 
@@ -102,7 +102,7 @@ For Teams on a Pro trial, the [trial will end](/docs/plans/pro-plan/trials#post-
 > **💡 Note:** Note that while you will not be charged during the time of the trial, once the
 > trial ends, you will be charged for the events collected during the trial
 
-You will be charged $0.00. These numbers are based on a per-billing cycle basis. Vercel will [send you notifications](/docs/notifications#on-demand-usage-notifications) when you get closer to spending your included credit.
+You will be charged $0.03 per 1K events. These numbers are based on a per-billing cycle basis. Vercel will [send you notifications](/docs/notifications#on-demand-usage-notifications) when you get closer to spending your included credit.
 
 Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spend-amount) to get notified or to automatically take action, such as [using a webhook](/docs/spend-management#configuring-a-webhook) or pausing your projects when your usage hits a set spend amount.
 
@@ -110,7 +110,7 @@ Analytics data is not collected while your project is paused, but becomes access
 
 ### Pro with Web Analytics Plus
 
-Teams on the Pro plan can optionally extend usage and capabilities through the Web Analytics Plus [add-on](/docs/pricing#pro-plan-add-ons) for an additional $10.00/month per team.
+Teams on the Pro plan can optionally extend usage and capabilities through the Web Analytics Plus [add-on](/docs/pricing#pro-plan-add-ons) for an additional $10/month per team.
 
 When enabled, all projects within the team have access to additional features.
 
@@ -148,3 +148,6 @@ While only the reporting window is guaranteed to be stored, Vercel may store you
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use change_toolbar_thread_resolve_status with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5651052b0cea1119460d6fbe443348b96866fde40f888c2c513f18dbfc086620"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6e131bc50cda3bb25ded13b2e6ec3d01a54529af1a73b9c17e00ce4eda0080b2"
 ---
 
 # change_toolbar_thread_resolve_status
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

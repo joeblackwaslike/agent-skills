@@ -13,8 +13,8 @@ related:
 summary: Use approve_rolling_release_stage with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/approve_rolling_release_stage.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ab375920920eb3202a588c863e87c6b478e187483347339c75190888bb47dbce"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8836511ce2d08becf13b73d8800f95138652f4c860a281baa5691d1ec8f42668"
 ---
 
 # approve_rolling_release_stage
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

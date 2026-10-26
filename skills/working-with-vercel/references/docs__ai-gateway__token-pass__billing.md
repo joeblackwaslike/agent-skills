@@ -9,15 +9,15 @@ prerequisites:
   - /docs/ai-gateway/token-pass
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/token-pass
   - /docs/ai-gateway/token-pass/models-and-routing
   - /docs/ai-gateway/security-and-compliance/zdr
-  - /docs/ai-gateway/token-pass
   - /docs/ai-gateway/observability-and-spend/observability
 summary: How Vercel charges for Token Pass, how you receive and use credit, and what happens when you cancel or downgrade.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/token-pass/billing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5109e6da2d7f2aea12b781ed9b45f31c3cda351087a387313f34a1823f181bde"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "51f7d10f1c94f4569c0e72dfbc9da4f7f71113ad6a9caa78296fb22b782bae4b"
 ---
 
 # Token Pass Credits and Billing
@@ -39,7 +39,7 @@ Token Pass is a monthly add-on to your team's Pro subscription. Vercel charges i
 
 ## How Token Pass credit works
 
-AI Gateway prices each Token Pass request at the Token Pass provider's per-token rates, shown on the [model page](/ai-gateway/models), and deducts the cost from your Token Pass credit.
+AI Gateway prices each Token Pass request at the model's [list price](/docs/ai-gateway/token-pass#list-price) and deducts the cost from your Token Pass credit.
 
 Token Pass credit is a separate balance from your AI Gateway credits:
 
@@ -106,3 +106,6 @@ Check these places:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

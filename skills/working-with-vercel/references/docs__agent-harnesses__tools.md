@@ -16,8 +16,8 @@ related:
 summary: What tools do when a durable agent harness resumes after a crash, where its files live, and how to keep typed state with a session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/tools.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b671898842a8d48ad11a182fd6bb56943dda2a6f371a9da3b11c7eb6efb37883"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "412e8988c22f16c0ab4e836bb97b77fcc0e7447802391552bd8ca450308759b8"
 ---
 
 # Tools, Files, and Documents in Durable Agent Harnesses
@@ -30,15 +30,14 @@ A durable harness keeps each session in a log: the conversation and every model 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Pi](https://ai-sdk.dev/providers/ai-sdk-harnesses/pi) — Learn how to use the Pi harness adapter.
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
-- [Tools](https://ai-sdk.dev/docs/ai-sdk-harnesses/tools) — Use tools with AI SDK harnesses.
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Self-Hosting Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/self-hosting) — Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx
-- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
+- [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 
 Full cross-link map for this page: [/docs/agent-harnesses/tools.graph.md](/docs/agent-harnesses/tools.graph.md)
 <!-- /docsgraph:related -->
@@ -290,3 +289,6 @@ With `durable-harness/pi`, `promptDocs: [Todos]` also puts the listed documents 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

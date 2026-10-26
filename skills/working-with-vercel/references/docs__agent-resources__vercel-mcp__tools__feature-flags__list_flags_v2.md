@@ -13,8 +13,8 @@ related:
 summary: Use list_flags_v2 with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a237aef4e15428ef7d99a1c852dbfa43f8cee7213b725262d3e42309d0c18ae3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7b3d4eb9a303ab64f6b45900e58c8cf54b27a9a56857ad823c990e1aadcc019e"
 ---
 
 # list_flags_v2
@@ -31,7 +31,7 @@ List flags.
 - [list_team_flags_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags_v2) — Use list_team_flags_v2 with Vercel MCP.
 - [list_team_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags) — Use list_team_flags with Vercel MCP.
 - [list_flag_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_versions) — Use list_flag_versions with Vercel MCP.
-- [list_team_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings) — Use list_team_flag_settings with Vercel MCP.
+- [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags) — GET /v2/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. Returns an opaque cursor
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2.graph.md)
 <!-- /docsgraph:related -->
@@ -56,3 +56,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

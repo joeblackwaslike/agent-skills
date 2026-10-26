@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "952ffb475ed8dd9093f2db910326e9cebe3a2c820bc1290ed96cc252d8d4ad01"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "256817cbc670dd7a4c19fdb0abeafe06b8e9262728063553d57532420e006845"
 ---
 
 # LiteLLM with AI Gateway
@@ -105,3 +105,6 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

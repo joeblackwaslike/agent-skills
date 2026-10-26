@@ -9,8 +9,8 @@ tags:
   - agent
   - mcp
 source: "https://ai-sdk.dev/cookbook/next/mcp-tools.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ddb770bd49b5939f8a9536c0ace53543629d4fdb9ee8e7c2c745521373d3f01b"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "61d3b301e515817760aae689a3ad4ac4d19964d6e692f196dfa4c5a0384aedc0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -37,9 +37,9 @@ import {
 import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
 import { openai } from '@ai-sdk/openai';
 // Optional: Official transports if you prefer them
-// import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio';
-// import { SSEClientTransport } from '@modelcontextprotocol/sdk/client/sse';
-// import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp';
+// import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
+// import { SSEClientTransport } from '@modelcontextprotocol/sdk/client/sse.js';
+// import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 
 export async function POST(req: Request) {
   const { prompt }: { prompt: string } = await req.json();

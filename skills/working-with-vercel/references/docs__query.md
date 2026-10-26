@@ -16,13 +16,13 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more in observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "61e8bb8f028c627a0eb7967754c9b74f05ab77ea3e6778fd1f196ff91f600366"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0f8b8b2102392a88f5ccf7be9674bb534b9afe68092b138df870e39b81a2f37a"
 ---
 
 # Query
 
-> **Availability**: Query is available on Enterprise and Pro plans
+> Query is available on Enterprise and Pro plans
 
 You can use Query to get deeper visibility into your application when debugging issues, monitoring usage, or optimizing for speed and reliability. Query lets you explore traffic, errors, latency and similar metrics to:
 
@@ -38,10 +38,9 @@ You can use Query to get deeper visibility into your application when debugging 
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli)
-- [Query data on external API requests in Vercel Observability](https://vercel.com/changelog/query-data-on-external-api-requests-in-vercel-observability)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
@@ -61,7 +60,9 @@ To query these metrics from your terminal, use [`vercel metrics` (`vc metrics`)]
 
 Full Query access requires [Observability Plus](/docs/observability/observability-plus). With free observability, you can open a query. To modify filters or create new queries, enable [Observability Plus](/docs/observability/observability-plus).
 
-> **Availability**: Enabling and disabling Observability Plus are available on Enterprise and Pro plans
+> Enabling and disabling Observability Plus are available on Enterprise and Pro plans
+>
+> Those with the owner role can access this feature
 
 See [Observability Plus](/docs/observability/observability-plus) for plan details and enablement.
 
@@ -104,7 +105,9 @@ See [Observability Plus](/docs/observability/observability-plus) for plan detail
 
 ## Manage IP Address visibility for Query
 
-> **Availability**: Managing IP Address visibility is available on Enterprise and Pro plans
+> Managing IP Address visibility is available on Enterprise and Pro plans
+>
+> Those with the owner, admin role can access this feature
 
 Vercel creates events each time a request is made to your website. These events include unique parameters such as execution time and bandwidth used.
 
@@ -125,3 +128,6 @@ Certain events such as `public_ip` may be considered personal information under 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

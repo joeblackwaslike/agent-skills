@@ -14,8 +14,8 @@ related:
 summary: Connect Grok Build to AI Gateway with environment variables. Populate the model picker from the model catalog and monitor requests and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "18a46e84c25332e55be1b30c40fa47357e7dcd85528462f5aa45169f41129ea8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b8b93e60b00703b1e1d8614b2f24361f71c356b05f1a373cfc5655469aec88e8"
 ---
 
 # Grok Build with AI Gateway
@@ -30,11 +30,10 @@ sha256: "18a46e84c25332e55be1b30c40fa47357e7dcd85528462f5aa45169f41129ea8"
 
 - [Grok Build 0.1 now available on Vercel AI Gateway](https://vercel.com/changelog/grok-build-0-1-now-available-on-vercel-ai-gateway)
 - [Grok 4.7 now available on AI Gateway, fx, and eve](https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve)
-- [Grok 4.6 now available on AI Gateway](https://vercel.com/changelog/grok-4-6-now-available-on-ai-gateway)
-- [Grok 4.3 on AI Gateway](https://vercel.com/changelog/grok-4-3-on-ai-gateway)
-- [Grok 4.5 now available on AI Gateway](https://vercel.com/changelog/grok-4-5-now-available-on-ai-gateway)
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Vercel Groq Integration](https://vercel.com/docs/agent-resources/integrations-for-models/groq) — Learn how to add the Groq native integration with Vercel.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/grok-build.graph.md](/docs/ai-gateway/coding-agents/grok-build.graph.md)
 <!-- /docsgraph:related -->
@@ -125,3 +124,6 @@ Grok Build's web search tool requires a separate model configured to use the Ope
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

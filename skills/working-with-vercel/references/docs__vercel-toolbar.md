@@ -16,13 +16,13 @@ related:
 summary: Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, use Draft Mode for previewing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bdd098b0057579a5620ab0248c1f2ad1cf95f9b5b2ca7841bbcb8bfea273e9f4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4cd594c2fa6e54bf5f68454ba9b9f90698c8783ca3e3b12e6a18f3d5a091578c"
 ---
 
 # Vercel Toolbar
 
-> **Availability**: Vercel Toolbar is available on all plans
+> Vercel Toolbar is available on all plans
 
 The Vercel Toolbar is a tool that assists in the iteration and development process. Through the toolbar, you can:
 
@@ -43,7 +43,7 @@ The Vercel Toolbar is a tool that assists in the iteration and development proce
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
-- [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 
 Full cross-link map for this page: [/docs/vercel-toolbar.graph.md](/docs/vercel-toolbar.graph.md)
 <!-- /docsgraph:related -->
@@ -148,3 +148,6 @@ When logged into the Vercel Toolbar, you'll find a **Preferences** button in the
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

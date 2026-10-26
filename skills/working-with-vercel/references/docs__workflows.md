@@ -12,12 +12,12 @@ related:
   - /docs/agent-harnesses
   - /docs/workflows/concepts
   - /docs/workflows/pricing
-  - /docs/regions
+  - /docs/workflows/retention
 summary: Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deployments with Vercel Workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "91aed1a0c231ba3ddd2ab23c3ead5dd38cdffe9ec7d7a466b8e4bb6026006760"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e1efda34225521724e2d7adee1181e99977a0dfbbdc1c8a0148b7649de712b4d"
 ---
 
 # Vercel Workflows
@@ -32,8 +32,8 @@ Vercel Workflows runs multi-step logic as durable code that can retry failed ste
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Configure where run state lives in Vercel Workflows](https://vercel.com/changelog/configure-where-run-state-lives-in-vercel-workflows)
 - [Expanded search for workflow runs in Vercel Observability](https://vercel.com/changelog/expanded-search-for-workflow-runs-in-vercel-observability)
@@ -80,28 +80,29 @@ Your workflows are:
 
 Install the Workflow SDK package:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i workflow
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add workflow
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i workflow
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add workflow
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i workflow
+```
+
+**yarn**
+
+```bash
+yarn add workflow
+```
+
+**npm**
+
+```bash
+npm i workflow
+```
+
+**bun**
+
+```bash
+bun add workflow
+```
 
 Follow the [Workflow SDK getting started guide](https://workflow-sdk.dev/docs/getting-started) to create your first workflow.
 
@@ -117,6 +118,7 @@ If you're using Pi, Claude Code, Codex, or OpenCode, [`durable-harness`](/docs/a
 - [**Multi-region**](/docs/workflows#multi-region): Run workflows close to your users across all Vercel Function regions.
 - [**Skew Protection**](/docs/workflows/concepts#skew-protection): Protect your workflows from version skew.
 - [**Usage-based pricing**](/docs/workflows/pricing): Pay only for Events, Data Written, and Data Retained.
+- [**Data retention**](/docs/workflows/retention): See how long Vercel keeps run data, where Vercel stores it, and how to delete it sooner.
 
 ## Multi-region
 
@@ -148,6 +150,8 @@ The `region` option controls where the run's data is stored and where its queue 
 
 Multi-region requires `workflow` version `5.0.0-beta.33` or later. Runs created by the 4.x release line always live in `iad1`. Workflows locks each run's region at creation. To run in a different region, start a new run. Upgrading the SDK does not migrate runs created before the upgrade.
 
+To learn which run data stays in the run's region, see [Where Vercel stores run data](/docs/workflows/retention#where-vercel-stores-run-data).
+
 ## Observability
 
 Every step, input, output, sleep, and error inside a workflow is recorded automatically.
@@ -166,9 +170,17 @@ decrypted Workflow run data without granting owner-level access, assign the
 **Workflow Run Data Viewer** extended permission. For compatible roles and
 assignment details, see [Extended Permissions](/docs/rbac/access-roles/extended-permissions).
 
+## Run durable tasks from chat
+
+Combine [Chat SDK](/docs/chat-sdk) with Workflows to start durable tasks from chat messages and pause for human approval. Chat SDK handles platform events and replies, while Workflows persists execution across waits and retries.
+
+Follow [Chat SDK with Vercel Workflows](/docs/chat-sdk/integrations/workflows) to build a Slack approval flow with authorized approvers and a timeout. For another example, see the [human-in-the-loop guide](/kb/guide/human-in-the-loop-with-chat-sdk-and-workflow-sdk).
+
 ## Resources
 
 **Pricing and Limits**: Billing, included usage, and service limits. [Learn more →](/docs/workflows/pricing)
+
+**Data Retention**: How long Vercel keeps run data, where Vercel stores it, and how to delete it. [Learn more →](/docs/workflows/retention)
 
 **Concepts**: Learn how workflows, steps, sleeps, and hooks work together. [Learn more →](/docs/workflows/concepts)
 
@@ -188,3 +200,6 @@ assignment details, see [Extended Permissions](/docs/rbac/access-roles/extended-
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

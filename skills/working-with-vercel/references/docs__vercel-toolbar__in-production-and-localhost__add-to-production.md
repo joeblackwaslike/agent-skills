@@ -17,8 +17,8 @@ related:
 summary: Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access the toolbar.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b0e840a11c6d1e0178817cf4191431b1a4789f8a160eaa40b4022773ad1ed28f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f98622a51d5ff06f9f353aeeec7cd0dbba9290e934102bb46a6e78474653b5c3"
 ---
 
 # Add the Vercel Toolbar to your production environment
@@ -35,12 +35,11 @@ As a [team owner](/docs/rbac/access-roles#owner-role) or [member](/docs/rbac/acc
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
-- [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic)
-- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
+- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost) — Learn how to use the Vercel Toolbar in your local environment.
+- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
-- [Comments Overview](https://vercel.com/docs/comments) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-localhost/add-to-production.graph.md](/docs/vercel-toolbar/in-production-and-localhost/add-to-production.graph.md)
 <!-- /docsgraph:related -->
@@ -57,28 +56,23 @@ For team members that do not use the browser extension or if you have more compl
 
 - ### Install the `@vercel/toolbar` package and link your project
   Install the package in your project using the following command:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @vercel/toolbar
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @vercel/toolbar
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @vercel/toolbar
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @vercel/toolbar
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @vercel/toolbar
+  ```
+  **yarn**
+  ```bash
+  yarn add @vercel/toolbar
+  ```
+  **npm**
+  ```bash
+  npm i @vercel/toolbar
+  ```
+  **bun**
+  ```bash
+  bun add @vercel/toolbar
+  ```
   Then link your local project to your Vercel project with the [`vercel link`](/docs/cli/link) command using [Vercel CLI](/docs/cli).
   ```bash filename="terminal"
   vercel link [path-to-directory]
@@ -348,3 +342,6 @@ Provided [the Vercel toolbar is enabled](/docs/vercel-toolbar/managing-toolbar#e
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

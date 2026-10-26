@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up webhooks and use them with Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a23763707503bf8b676693580e52b5f5ae6f6d34fa7174fabc5a04523e57df40"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a9362fa6a83b8690129a05f0cd691a70faf66a85372229b073ea7b21c5186e04"
 ---
 
 # Setting Up Webhooks
@@ -36,9 +36,9 @@ A webhook is a trigger-based HTTP endpoint configured to receive HTTP POST reque
 - [Configurable webhooks ](https://vercel.com/changelog/configurable-webhooks)
 - [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook) — POST /v1/webhooks — Creates a webhook
 - [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook) — GET /v1/webhooks/{id} — Get a webhook
-- [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks) — GET /v1/webhooks — Get a list of webhooks
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
-- [get_webhooks](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_webhooks) — Use get_webhooks with Vercel MCP.
+- [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks) — GET /v1/webhooks — Get a list of webhooks
+- [Webhook triggers for Vercel Connect](https://vercel.com/docs/connect/concepts/triggers) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 
 Full cross-link map for this page: [/docs/webhooks.graph.md](/docs/webhooks.graph.md)
 <!-- /docsgraph:related -->
@@ -47,7 +47,7 @@ Webhooks configured with Vercel can trigger a deployment when a specific event o
 
 ## Account Webhooks
 
-> **Availability**: Account Webhooks are available on Enterprise and Pro plans
+> Account Webhooks are available on Enterprise and Pro plans
 
 Vercel allows you to add a [generic](# "What is a generic webhook?") endpoint for events from your dashboard. [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) teams will be able to configure these webhooks at the account level.
 
@@ -141,3 +141,6 @@ Here's a [list of supported event types](/docs/webhooks/webhooks-api#supported-e
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

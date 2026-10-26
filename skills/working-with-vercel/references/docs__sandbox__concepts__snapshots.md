@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "aa562c49f48c6e87db76b96bc1c433273c8cc90c8af55afea0fbbe7b7c8ded04"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7d62ff484051b24c0ee0479b835fa61eaf7f84a0742c9e0a7b87f18677806579"
 ---
 
 # Snapshots
@@ -39,9 +39,10 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Filesystem snapshots supported on Vercel Sandboxes](https://vercel.com/changelog/filesystem-snapshots-supported-on-vercel-sandboxes)
 - [Vercel Sandbox snapshots now allow custom retention periods](https://vercel.com/changelog/vercel-sandbox-snapshots-now-allow-custom-retention-periods)
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot) — POST /v2/sandboxes/sessions/{sessionId}/snapshot — Creates a point-in-time snapshot of a running session's filesystem. S
-- [Transferring a project](https://vercel.com/docs/projects/transferring-projects) — Learn how to transfer a project between Vercel teams.
+- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Get a snapshot](https://vercel.com/docs/rest-api/sandboxes/get-a-snapshot) — GET /v2/sandboxes/snapshots/{snapshotId} — Retrieves detailed information about a specific snapshot, including its creat
+- [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots) — GET /v2/sandboxes/snapshots — Retrieves a paginated list of snapshots for a specific project.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md)
 <!-- /docsgraph:related -->
@@ -350,3 +351,6 @@ await sandbox.update({
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

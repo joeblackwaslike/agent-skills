@@ -17,8 +17,8 @@ related:
 summary: Restrict AI Gateway routing to models that have specific capabilities using the has option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7725d5ff4e05ef9579a07aa9ce26113613ee59481cd24237283b02c633ead1dd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "424c3b6d79edf6fc0b2ab4f95f4b9424634fd052b7430661a097a5ef3f975223"
 ---
 
 # AI Gateway Model Filtering
@@ -31,11 +31,12 @@ sha256: "7725d5ff4e05ef9579a07aa9ce26113613ee59481cd24237283b02c633ead1dd"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
-- [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
+- [AI Gateway Disallow Prompt Training](https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training) — Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-filtering.graph.md](/docs/ai-gateway/models-and-providers/model-filtering.graph.md)
 <!-- /docsgraph:related -->
@@ -373,7 +374,14 @@ A negated condition also matches providers with no recorded weight format.
 
 Set `has` under `providerOptions.gateway` in every request format shown above. OpenAI and Anthropic Python clients pass that object through `extra_body`; TypeScript clients spread the Gateway extension into the request. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences).
 
+## Capability filtering in virtual models
+
+A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can require capabilities for all of its traffic. Its `has` list replaces the request's, and every capability in it must hold.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

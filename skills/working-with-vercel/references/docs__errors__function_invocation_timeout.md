@@ -15,8 +15,8 @@ related:
 summary: The request for a Vercel Function reached the timeout threshold. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/function_invocation_timeout.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "6752f6263ab295781d27f998435815e4431adc39c1d1d937c95d6e31a36f7889"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "42fc9b08ebea89af68f961141e88973e7ab73b64d500efb9eb0b07d1ba4645be"
 ---
 
 # FUNCTION_INVOCATION_TIMEOUT
@@ -47,3 +47,6 @@ For more information on Vercel Functions timeouts, see [What can I do about Verc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

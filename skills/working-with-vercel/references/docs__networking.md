@@ -16,8 +16,8 @@ related:
 summary: Connect your Vercel projects to backend services with static IPs and secure networking options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "da3530833654d0229bfa06aa46836543716d898cda6077f8fd5c2b4c898bbd16"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b507610222b1e93f40d93919a8833ad14ebc7b504f50167523bbe81491fc7f60"
 ---
 
 # Networking
@@ -35,12 +35,11 @@ Connect your projects to backend services that require IP allowlisting, AWS Priv
 - [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [AWS PrivateLink is now available on Pro and Enterprise](https://vercel.com/changelog/aws-privatelink-is-now-available-on-pro-and-enterprise)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
-- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
-- [Flat Rate CDN](https://vercel.com/docs/pricing/flat-rate-cdn) — Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
+- [Flat Rate CDN](https://vercel.com/docs/pricing/flat-rate-cdn) — Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 
 Full cross-link map for this page: [/docs/networking.graph.md](/docs/networking.graph.md)
 <!-- /docsgraph:related -->
@@ -69,7 +68,7 @@ When your database or API needs to see traffic from known IP addresses, Static I
 
 - **Use case**: IP allowlisting for databases, APIs, and legacy systems
 - **Network**: Shared VPC with subnet-level isolation
-- [**Pricing**](/docs/networking/static-ips#pricing): $100.00/month per project + [Private Data Transfer](/docs/pricing/regional-pricing) at regional rates
+- [**Pricing**](/docs/networking/static-ips#pricing): $100/month per project + [Private Data Transfer](/docs/pricing/regional-pricing) at regional rates
 
 [Learn more about Static IPs](/docs/networking/static-ips)
 
@@ -132,3 +131,6 @@ Keep tabs on your usage in the **Team Settings** **Usage** tab under the **Priva
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

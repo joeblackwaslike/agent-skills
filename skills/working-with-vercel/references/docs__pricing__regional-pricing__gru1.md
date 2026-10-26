@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the São Paulo, Brazil (gru1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/gru1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0986589352ebb177945573bc43698e380bd6ad7a209570406645e5728d19627a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "aec52d3636a3265dfbf7a6a4fce0c5aad5fc5524d2ed421e0781c053878881e7"
 ---
 
 # São Paulo, Brazil (gru1) pricing
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

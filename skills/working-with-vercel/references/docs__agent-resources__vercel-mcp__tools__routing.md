@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for routing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ed900c379518d53b9daedc60e191ac45f73c16829e30c5360e1e9e01bd9838da"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6e01c08ffe616b45e926b09638103dd8f0157a9b9402de7d987ae8b2b4eec8bf"
 ---
 
 # Routing
@@ -29,9 +29,9 @@ Control where requests go with project routing rules, redirects, and deployment 
 
 - [Promote, restore, or discard a routing rule version](https://vercel.com/docs/rest-api/project-routes/promote-restore-or-discard-a-routing-rule-version) — POST /v1/projects/{projectId}/routes/versions — Promote staged routing rules to production, restore a previous productio
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [Get routing rule version history](https://vercel.com/docs/rest-api/project-routes/get-routing-rule-version-history) — GET /v1/projects/{projectId}/routes/versions — Get the version history for a project's routing rules. Returns the stagin
-- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 - [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing.graph.md](/docs/agent-resources/vercel-mcp/tools/routing.graph.md)
 <!-- /docsgraph:related -->
@@ -275,3 +275,6 @@ Promote, restore, or discard a routing rule version.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

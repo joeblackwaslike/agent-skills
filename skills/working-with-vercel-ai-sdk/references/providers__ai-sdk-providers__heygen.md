@@ -1,24 +1,72 @@
 ---
 title: HeyGen
-description: Learn how to use the HeyGen video generation provider for the AI SDK.
+description: Learn how to use HeyGen with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/heygen"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/heygen.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "d5acdbc4f0c1232543569ae43de3ea203b66b54a345fd0171f1cdd8e41e2f8b5"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "e4d923afc0629e2f8949b897fcbd9518facf9e268554ba1f9aa195124d35dea1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [HeyGen](https://developers.heygen.com/docs/models/heygen-video) provider supports `heygen-video-1`, a video generation model with text-to-video, image-to-video, and reference-to-video modes. Generated clips include audio.
+You can use HeyGen models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/heygen`.
 
-This provider supports video generation only. HeyGen's avatar, voice, translation, and video editing APIs are not included.
+```ts provider="heygen" model="heygen/heygen-video-1"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import { writeFile } from 'node:fs/promises';
 
-## Setup
+const { video } = await generateVideo({
+  model: "heygen/heygen-video-1",
+  prompt: 'A paper boat drifting across a calm lake at sunrise.',
+  duration: 5,
+  aspectRatio: '16:9',
+});
+
+await writeFile('video.mp4', video.uint8Array);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/heygen
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/heygen`
+
+For direct access to HeyGen, install `ai` and `@ai-sdk/heygen`:
+
+```bash
+pnpm add ai @ai-sdk/heygen
+```
+
+Set your HeyGen API credential in the `HEYGEN_API_KEY` environment variable:
+
+```bash
+export HEYGEN_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/heygen`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/heygen` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
+
+This provider supports video generation only. HeyGen's avatar, voice, translation, and video editing APIs are not included.
 
 ## Provider Instance
 

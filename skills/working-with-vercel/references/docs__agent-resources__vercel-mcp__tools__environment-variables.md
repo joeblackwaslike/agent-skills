@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "cfc1dca53e833e98ace09d82fb4cbcdcd3893b018dafc2753f2ef620cbcdf9e7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f5104d6c64857093c889bfd2071d104a938007a16f18da440bea0bf3d6e2295f"
 ---
 
 # Environment Variables
@@ -27,11 +27,11 @@ Read and update project environment variables, inspect custom environments, and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Retrieve the environment variables of a project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-the-environment-variables-of-a-project-by-id-or-name) — GET /v10/projects/{idOrName}/env — Retrieve the environment variables for a given project by passing either the project
-- [Retrieve a custom environment](https://vercel.com/docs/rest-api/environment/retrieve-a-custom-environment) — GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} — Retrieve a custom environment for the project. M
-- [Retrieve custom environments](https://vercel.com/docs/rest-api/environment/retrieve-custom-environments) — GET /v9/projects/{idOrName}/custom-environments — Retrieve custom environments for the project. Must not be named 'Produ
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
-- [Lists all Shared Environment Variables for a team](https://vercel.com/docs/rest-api/environment/lists-all-shared-environment-variables-for-a-team) — GET /v1/env — Lists all Shared Environment Variables for a team, taking into account optional filters.
+- [Retrieve a custom environment](https://vercel.com/docs/rest-api/environment/retrieve-a-custom-environment) — GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} — Retrieve a custom environment for the project. M
+- [Environment variables](https://vercel.com/docs/environment-variables) — Learn more about environment variables on Vercel.
+- [Retrieve the environment variables of a project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-the-environment-variables-of-a-project-by-id-or-name) — GET /v10/projects/{idOrName}/env — Retrieve the environment variables for a given project by passing either the project
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md](/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -136,3 +136,6 @@ Retrieve custom environments.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

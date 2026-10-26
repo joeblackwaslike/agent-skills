@@ -17,8 +17,8 @@ related:
 summary: Ask typed questions about shared state and get back structured choices, scores, and boolean probabilities through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/decision.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "cf461d918bdbb21a3b8be27ff8b9307be67be7d1097067353dd20c4c19efdad5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "172096207862333adb61465d4a7e18e9a4b69b48f7ee742c60072518f05d4285"
 ---
 
 # Decision
@@ -32,13 +32,13 @@ Ask typed questions about a piece of shared state and get structured answers bac
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
+- [Baseten's Mammoth-1 and Elephant-1 now available on AI Gateway for free](https://vercel.com/changelog/basetens-mammoth-1-and-elephant-1-now-available-on-ai-gateway-for-free)
 - [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
 - [Liquid AI's d1-ultra now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
 - [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
-- [Perplexity's Decider V1.2 models now available on AI Gateway](https://vercel.com/changelog/perplexity-decider-v1-2-models-now-available-on-ai-gateway)
 - [Automatic Model Selection](https://eve.dev/docs/guides/decide) — Choose agent models automatically or ask typed questions in your tools and application code.
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/decision.graph.md](/docs/ai-gateway/modalities/decision.graph.md)
@@ -91,6 +91,8 @@ Each key in `questions` becomes a key in `answers`:
   refunded: { type: 'boolean', probability: 0.99 }
 }
 ```
+
+For an application example, see [Using decision models in enterprise apps](/i/decision-models-enterprise-apps). The guide classifies purchase requests while keeping spending approvals, validated amounts, and routing rules in application code.
 
 ## Question types
 
@@ -214,7 +216,7 @@ export async function GET() {
 
 Decision fallbacks can rerun a successful decision with another model when a Choice or Score has low confidence, a Boolean probability falls inside an uncertain band, or a compound condition matches. Configure the policy under `providerOptions.gateway.models` for AI SDK `decide`, `POST /v1/evaluate`, or the TypeSafe-compatible API.
 
-Decision fallbacks are opt-in and support one successful-response fallback stage. See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks) for the condition contract, full-request rerun behavior, response metadata, and two-stage billing.
+Decision fallbacks are opt-in and support one successful-response fallback stage. See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks) for the condition contract, full-request rerun behavior, virtual model configuration, response metadata, and two-stage billing.
 
 ## Structured state
 
@@ -355,6 +357,10 @@ console.log(result.usage);
 // { inputTokens: 283, outputTokens: 21 }
 ```
 
+## Evaluate before automating
+
+Test both the model's answer and the action your application takes with it. Use representative cases with agreed outcomes, then measure incorrect actions and human review workload in a pilot before enabling automatic execution. Follow [Testing AI decisions before automating enterprise workflows](/i/testing-ai-decisions-enterprise-workflows) to define evaluation cases and rollout criteria.
+
 ## Next steps
 
 - Explore [Jev guides and use cases](/kb/jev-from-typesafe-ai)
@@ -366,3 +372,6 @@ console.log(result.usage);
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

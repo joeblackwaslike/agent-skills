@@ -16,13 +16,13 @@ related:
 summary: Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/comments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6804a84f7eac43889771a7253bfa0c1ae15a158d17cdb414097f984dedb1194d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "aa8b33a02f856d9675b7afa2465fcc75b8d38effcab98134b67cf5e768f4edf7"
 ---
 
 # vercel comments
 
-> **Availability**: The vercel comments command (Beta) is available on all plans
+> The vercel comments command is available in Beta on all plans
 
 The `vercel comments` command lets you review and manage existing [Vercel Toolbar Comments](/docs/comments) from the terminal. You can list, inspect, reply to, resolve, reopen, and open threads, as well as edit or delete their messages. Use the [Vercel Toolbar](/docs/vercel-toolbar) to create new comment threads.
 
@@ -35,9 +35,9 @@ The `vercel comments` command lets you review and manage existing [Vercel Toolba
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [Integrations for Comments](https://vercel.com/docs/comments/integrations) — Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/comments.graph.md](/docs/cli/comments.graph.md)
 <!-- /docsgraph:related -->
@@ -238,3 +238,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

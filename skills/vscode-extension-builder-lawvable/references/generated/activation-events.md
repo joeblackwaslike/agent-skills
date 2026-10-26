@@ -1,8 +1,8 @@
 ---
 title: "Activation Events"
 source: "https://code.visualstudio.com/api/references/activation-events"
-fetched_at: "2026-10-19T09:38:05.422Z"
-sha256: "b77525f27726bf946b47968b2f3df5eb823f5fbc43b00c125516499d15145aa0"
+fetched_at: "2026-10-26T09:46:27.214Z"
+sha256: "89ce64539498de8225e419d430950cc6280a9258ca9ac85eb8cf6f7e86ee0154"
 ---
 
 # Activation Events
@@ -445,6 +445,8 @@ This activation event is emitted when the issue reporter is opened (for example,
 
 An activation event emitted when the specified chat participant is invoked.
 
+Chat participants are deprecated and are not supported in the Copilot harness. This event remains relevant for Local harness compatibility. See [Replace chat participants](https://code.visualstudio.com/docs/agent-customization/migrate-customizations#_replace-chat-participants).
+
 
 ```
 "activationEvents": [
@@ -483,4 +485,4 @@ The `*` activation event is emitted and interested extensions will be activated 
 **Note:** An extension **must** export an `activate()` function from its main module and it will be invoked **only once** by VS Code when any of the specified activation events is emitted. Also, an extension **should** export a `deactivate()` function from its main module to perform cleanup tasks on VS Code shutdown. Extension **must** return a Promise from `deactivate()` if the cleanup process is asynchronous. An extension may return `undefined` from `deactivate()` if the cleanup runs synchronously.
 
  
- 10/14/2026
+ 10/21/2026

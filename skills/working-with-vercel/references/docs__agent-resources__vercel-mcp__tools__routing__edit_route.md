@@ -13,8 +13,8 @@ related:
 summary: Use edit_route with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/edit_route.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ae5ef7ebcb415a10dff4d4de8dd3bbf177fc7bef2e98951dae64cac82a68f517"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "496d22a6a4df089fb012ad50bdd96fc003383b74951a9b0b3899cfa2e47c3cef"
 ---
 
 # edit_route
@@ -50,3 +50,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

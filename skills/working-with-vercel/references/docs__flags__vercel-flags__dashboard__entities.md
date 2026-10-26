@@ -16,8 +16,8 @@ related:
 summary: Define entities and their attributes for precise feature flag targeting.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b0223fec158b89aca91ec5549883c47442c528be33227d0ccc8f2124b7c89e55"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d49ae68f5302e84f8dd212b7b04b85b85f8683709b612a6e905532253876cc71"
 ---
 
 # Entities
@@ -37,6 +37,7 @@ Entities represent the things your application knows about: users, teams, device
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/entities.graph.md](/docs/flags/vercel-flags/dashboard/entities.graph.md)
 <!-- /docsgraph:related -->
@@ -233,3 +234,6 @@ See [Segments](/docs/flags/vercel-flags/dashboard/segments) for creating reusabl
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

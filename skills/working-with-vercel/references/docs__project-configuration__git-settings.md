@@ -15,8 +15,8 @@ related:
 summary: Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/git-settings.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d610742c4b226aff4755d354718ac0d16e89b7868a06236a47bf363ac2f00baa"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5209ea0ad75793440aaada8245c9608ca4fc804568cb84752ffbd4fff0dd2d19"
 ---
 
 # Git settings
@@ -33,8 +33,8 @@ Once you have [connected a Git repository](/docs/git#deploying-a-git-repository)
 - [Edit Git settings for all projects in a repo](https://vercel.com/changelog/edit-git-settings-for-all-projects-in-a-repo)
 - [Repository checkout and Git LFS downloads are now faster](https://vercel.com/changelog/repository-checkout-and-git-lfs-downloads-are-now-faster)
 - [New Git Integration Settings](https://vercel.com/blog/new-git-integration-settings)
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
@@ -82,3 +82,6 @@ When enabled, Vercel will only create deployments for commits that have been ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

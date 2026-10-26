@@ -14,8 +14,8 @@ related:
 summary: Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/link.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2c5b185232761f75d86e37ce9171cddc5e8fa31c78f7c9e3205543e990735a7f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "88acbcb2c9a0d1674c9ee8a093a8dd7d6aa16c5a5b96f9e2294b6e384f2fefa5"
 ---
 
 # vercel link
@@ -31,11 +31,13 @@ The `vercel link` command links your local directory to a [Vercel Project](/docs
 - [Faster, predictable project linking in the Vercel CLI](https://vercel.com/changelog/faster-predictable-project-linking-in-the-vercel-cli)
 - [Preserve local environment variables when linking with the Vercel CLI](https://vercel.com/changelog/preserve-local-environment-variables-when-linking-with-the-vercel-cli)
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
+- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.
 
 Full cross-link map for this page: [/docs/cli/link.graph.md](/docs/cli/link.graph.md)
 <!-- /docsgraph:related -->
@@ -119,3 +121,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

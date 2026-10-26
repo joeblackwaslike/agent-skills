@@ -15,8 +15,8 @@ related:
 summary: Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2d82566d098b44ba8ceefb3ee261ea7acbaa8f535289a0b626736fd0dc319334"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "34f694a7742d0a6feaccaa11c14539581451f552bbd53619a5802108bc6d2581"
 ---
 
 # Cohere Rerank API with AI Gateway
@@ -31,9 +31,9 @@ AI Gateway provides Cohere-compatible Rerank API endpoints, so you can use the [
 
 - [Reranking](https://ai-sdk.dev/docs/ai-sdk-core/reranking) — Learn how to rerank documents with the AI SDK.
 - [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank) — API Reference for rerank.
-- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere) — Learn how to use the Cohere provider for the AI SDK.
+- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere) — Learn how to use Cohere with AI Gateway and the direct provider.
 - [Voyage Rerank 3 and Rerank 3 Lite are now available on AI Gateway](https://vercel.com/changelog/voyage-rerank-3-and-rerank-3-lite-are-now-available-on-ai-gateway)
-- [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage) — Learn how to use the Voyage AI provider for embedding and reranking with the AI SDK.
+- [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage) — Learn how to use Voyage AI with AI Gateway and the direct provider.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [Get virtual model config](https://vercel.com/docs/rest-api/ai-gateway/get-virtual-model-config) — GET /ai-gateway/virtual-model-configs — Get a virtual model config
 
@@ -251,3 +251,6 @@ The API returns standard HTTP status codes. Errors follow the Cohere error forma
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

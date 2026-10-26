@@ -12,13 +12,13 @@ related:
 summary: Learn more about Notebooks and how they allow you to organize and save your queries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notebooks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "de94b3a4c663a56b078084507be58f83fa31deedf64b3e30d0cc08c096e6ba93"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "41c3991dc2fe7e3287839a4d1c8a29f2cde6732cacf2bbc149e841fbd0b9087d"
 ---
 
 # Notebooks
 
-> **Availability**: Notebooks are available on Enterprise and Pro plans
+> Notebooks are available on Enterprise and Pro plans
 
 **Notebooks** allow you to collect and manage multiple queries related to your application's metrics and performance data.
 
@@ -31,13 +31,11 @@ sha256: "de94b3a4c663a56b078084507be58f83fa31deedf64b3e30d0cc08c096e6ba93"
 - [Create and share queries with notebooks in Vercel Observability](https://vercel.com/changelog/create-and-share-queries-with-notebooks-in-vercel-observability)
 - [Query and visualize workflow data in Vercel Observability](https://vercel.com/changelog/query-and-visualize-workflow-data-in-vercel-observability)
 - [Run and share custom queries in Observability Plus](https://vercel.com/changelog/run-and-share-custom-queries-in-observability-plus)
-- [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
-- [New custom visualization in Vercel Observability](https://vercel.com/changelog/new-custom-visualization-in-vercel-observability)
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Monitoring Quickstart](https://vercel.com/docs/query/monitoring/quickstart) — In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/notebooks.graph.md](/docs/notebooks.graph.md)
 <!-- /docsgraph:related -->
@@ -92,3 +90,6 @@ As a Notebook owner, you have complete control over your notebook. You can add n
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

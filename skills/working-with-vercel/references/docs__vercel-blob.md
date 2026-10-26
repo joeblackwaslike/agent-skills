@@ -8,25 +8,25 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/cdn
   - /docs/functions
   - /docs/vercel-blob/private-storage
   - /docs/vercel-blob/public-storage
   - /docs/cli/blob
-  - /docs/regions
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ca77a76f595b0546d2ea3bc1fe9c29721770d341e65e7008f364fdb57b0790f9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "00e100bee3e6fc01950aa497c3f0eb62e80414b42b1149f4267953af4ba78139"
 ---
 
 # Vercel Blob
 
-> **Availability**: Vercel Blob is available on all plans
+> Vercel Blob is available on all plans
+>
+> Those with the owner, member, developer role can access this feature
 
-## Use cases
-
-[Vercel Blob](/storage/blob) is an object storage service for uploading files at build time or at runtime (for example, when users submit files). Common use cases include:
+[Vercel Blob](/storage/blob) is Vercel's object storage for files. Use it to store images, videos, documents, and other files your app uploads or serves. Each store lives in [one region that you choose](#choosing-your-blob-store-region), and Vercel's [CDN](/docs/cdn) [caches your files](#caching) close to your users, leveraging Vercel CDN network infrastructure. Stores are private or public, and you can store files up to 5 TB.
 
 
 <!-- docsgraph:related -->
@@ -34,6 +34,8 @@ sha256: "ca77a76f595b0546d2ea3bc1fe9c29721770d341e65e7008f364fdb57b0790f9"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos) — Recommendations and best practices for optimizing videos in your Next.js application.
 - [Databases](https://v0.app/docs/databases) — Build full-stack applications with v0's database integrations.
 - [Amazon S3 joins the Vercel Marketplace](https://vercel.com/changelog/amazon-s3-joins-the-vercel-marketplace)
@@ -44,14 +46,17 @@ sha256: "ca77a76f595b0546d2ea3bc1fe9c29721770d341e65e7008f364fdb57b0790f9"
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
-- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 
 Full cross-link map for this page: [/docs/vercel-blob.graph.md](/docs/vercel-blob.graph.md)
 <!-- /docsgraph:related -->
 
+## Use cases
+
+You can upload files to Vercel Blob at build time or at runtime (for example, when users submit files). Common use cases include:
+
 - Files for display and download such as avatars, screenshots, cover images, and videos
 - Large files such as video and audio to take advantage of the global network
+- Persistent preferences and context for [eve agents](#store-eve-agent-memory)
 - Files that you would normally store in an external file storage solution like Amazon S3. With your project hosted on Vercel, you can readily access and manage these files with Vercel Blob
 
 > **💡 Note:** Stored files are referred to as "blobs" once they're in the storage system,
@@ -101,6 +106,22 @@ uploaded = await blob.put_blob(
 You can create and manage your Vercel Blob stores from your [account dashboard](/dashboard) or the [Vercel CLI](/docs/cli/blob). You can create blob stores in any of the 19 [regions](/docs/regions#region-list) to optimize performance and meet data residency requirements. You can scope your Vercel Blob stores to your Hobby team or [team](/docs/accounts#creating-a-team), and [connect them to as many projects as you want](#connecting-a-store-to-your-projects).
 
 To get started, see the [server-side](/docs/vercel-blob/server-upload), or [client-side](/docs/vercel-blob/client-upload) quickstart guides. Or visit the full API reference for the [JS SDK](/docs/vercel-blob/using-blob-sdk) or the [Python SDK](/docs/vercel-blob/python-sdk-reference).
+
+## Store eve agent memory
+
+Use [eve](/docs/eve)'s built-in `fileMemory()` provider to persist short user preferences and stable facts across conversations in a [private Vercel Blob store](/docs/vercel-blob/private-storage). Each memory scope has its own document, which eve recalls before each turn. The model updates memory with `save_memory` and `remove_memory` tools.
+
+To add file memory to an existing eve project, run:
+
+```bash filename="terminal"
+eve add memory/file
+```
+
+Choose **Install and set up** to create the memory definition in `agent/memory/file.ts` and create or reuse a private Blob store connected to your linked project through OIDC. When you run `eve dev` locally, memory stays in the development process and clears when you restart it.
+
+For a working example, deploy the [eve Memory Agent template](/templates/eve/eve-memory-agent). The Slack assistant keeps personal preferences separate from shared channel conventions, using authenticated user and channel identities to determine who shares each memory. See the [template repository](https://github.com/vercel-labs/eve-memory-agent-template) for setup and customization.
+
+Read [Choose an eve memory provider](/kb/guide/choose-an-eve-memory-provider) for file memory configuration and a comparison with providers that support semantic retrieval or automatic capture.
 
 ## Connecting a store to your projects
 
@@ -549,3 +570,6 @@ For complex sorting, sort results client-side using the upload time or other pro
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

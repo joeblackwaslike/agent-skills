@@ -1,26 +1,76 @@
 ---
 title: GMI Cloud
-description: "Learn how to use GMI Cloud's models with the AI SDK."
+description: Learn how to use GMI Cloud with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "f0fb905bd132dcc3edadd25e8b847c08bda18a0591eff787e29389cbed3c6ade"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "e39cf8fe3675e5b844311b7038c309b97c7748e8151bffbdc589596fd687ac44"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [GMI Cloud](https://www.gmicloud.ai) provider offers access to open-weight language models through GMI Cloud's GPU inference platform, over an OpenAI-compatible API.
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/gmicloud` to connect directly to GMI Cloud.
 
-API keys can be obtained from the [GMI Cloud console](https://console.gmicloud.ai).
+```ts provider="gmicloud" model="deepseek/deepseek-v4-flash-0731"
+import { generateText } from 'ai';
 
-## Setup
+const { text } = await generateText({
+  model: "deepseek/deepseek-v4-flash-0731",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['gmicloud'],
+    },
+  },
+});
 
-The GMI Cloud provider is available via the `@ai-sdk/gmicloud` module. You can install it with:
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/gmicloud
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['gmicloud']`. This sends the request to GMI Cloud first, then falls back to other available providers of the same model if GMI Cloud is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to GMI Cloud. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by GMI Cloud through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Using `@ai-sdk/gmicloud`
+
+For direct access to GMI Cloud, install `ai` and `@ai-sdk/gmicloud`:
+
+```bash
+pnpm add ai @ai-sdk/gmicloud
+```
+
+Set your GMI Cloud API credential in the `GMI_CLOUD_APIKEY` environment variable:
+
+```bash
+export GMI_CLOUD_APIKEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/gmicloud`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/gmicloud` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
+
+API keys can be obtained from the [GMI Cloud console](https://console.gmicloud.ai).
 
 ## Provider Instance
 

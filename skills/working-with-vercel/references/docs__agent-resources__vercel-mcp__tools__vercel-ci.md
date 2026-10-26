@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for CI invocations, jobs, tasks, and logs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "eb9c0c8309209468c7584b021b50c15977892bdfef0cda03fa29bcf6f284a407"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "efbf153945031cab39d31163467a4e7c2d3943bb7a40e7be1cc2d93c7f632a21"
 ---
 
 # Vercel CI
@@ -275,3 +275,6 @@ Retry support depends on the invocation source and terminal state. Native-check 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

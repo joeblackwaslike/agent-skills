@@ -8,12 +8,15 @@ type: integration
 prerequisites:
   []
 related:
+  - /docs/chat-sdk
+  - /docs/chat-sdk/quickstart
+  - /docs/chat-sdk/integrations/ai-gateway
   - /docs/connect/frameworks/ai-sdk-and-mcp
 summary: Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "dd9434fcae57a1f9f2e990a1987d85ba6fd12d021b7fb2920dd956f13006d6b2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bf7667fb556003c107bd5c67703191594f7d54ed6fd9abfed0dce5510d6c4bab"
 ---
 
 # AI SDK
@@ -29,13 +32,14 @@ Build TypeScript agents and AI applications with one API for models, tools, stru
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
+- [Building AI-powered Article Embeddings with Chroma and GPT-4](https://vercel.com/kb/guide/ai-powered-article-embeddings-with-chroma-and-gpt-4) — This guide provides step-by-step instructions on using Chroma and GPT-4 to build AI-powered article embeddings for tasks
+- [Upload provider files with AI SDK](https://vercel.com/kb/guide/ai-sdk-file-uploads) — Use uploadFile in the AI SDK to upload an image, PDF, or document to a provider, get a ProviderReference, and reference
+- [Add MCP Apps to your AI SDK application](https://vercel.com/kb/guide/ai-sdk-mcp-apps) — Build an MCP Apps host with the AI SDK using @ai-sdk/mcp and @ai-sdk/react to filter model-visible tools, read ui:// res
+- [Pass state to AI SDK tools and agents with context](https://vercel.com/kb/guide/ai-sdk-runtime-and-tool-context) — Use runtimeContext, toolsContext, and contextSchema in the AI SDK to pass tenant data, credentials, and other server-sid
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
-- [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [AI SDK by Vercel](https://ai-sdk.dev/docs/introduction) — The AI SDK is the TypeScript toolkit for building AI applications and agents with React, Next.js, Vue, Svelte, Node.js,
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
+- [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
@@ -188,32 +192,37 @@ const { text } = await generateText({
 
 The AI SDK is available as a package. To install it, run the following command:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i ai
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add ai
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i ai
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add ai
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i ai
+```
+
+**yarn**
+
+```bash
+yarn add ai
+```
+
+**npm**
+
+```bash
+npm i ai
+```
+
+**bun**
+
+```bash
+bun add ai
+```
 
 See the [AI SDK Getting Started](https://ai-sdk.dev/docs/getting-started) guide for more information on how to get started with the AI SDK.
 
 Follow [Build AI agents with AI Gateway and AI SDK](/kb/guide/ai-gateway-and-ai-sdk) to set up authentication, stream responses, and add tools and model fallbacks.
+
+## Bring an agent to chat platforms
+
+Use [Chat SDK](/docs/chat-sdk) to handle messages and interactions in platforms such as Slack, and AI SDK to generate responses and call tools. Start with the [Chat SDK quickstart](/docs/chat-sdk/quickstart), then follow [Chat SDK with AI Gateway](/docs/chat-sdk/integrations/ai-gateway) to stream model responses using conversation history.
 
 ## Use Vercel Connect with AI SDK
 
@@ -257,3 +266,6 @@ Start with an AI SDK template to build a chatbot or route form submissions with 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

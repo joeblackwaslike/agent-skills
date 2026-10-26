@@ -16,8 +16,8 @@ related:
 summary: Set up Vercel Queues with the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bbb044622a273cec68ad07e4c5571afa5004350be13300c27dc09347f1032f0f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "03abba2035aea1e58b25f815d64206cf9b02d9af0be099937b53239a9c6430c8"
 ---
 
 # Quickstart
@@ -34,11 +34,10 @@ This guide shows how to send your first queue message and process it with the Ve
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
-- [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
-- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
+- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Getting Started with Chat SDK](https://vercel.com/docs/chat-sdk/quickstart) — Create a Slack bot with the Chat SDK CLI, connect it to Slack through Vercel Connect, and deploy it on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/queues/quickstart.graph.md](/docs/queues/quickstart.graph.md)
@@ -64,38 +63,31 @@ In this quickstart:
 
 - ### Install the SDK
   Install the SDK so your app can send messages and receive push callbacks.
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @vercel/queue
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @vercel/queue
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @vercel/queue
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @vercel/queue
-      ```
-    </Code>
-    <Code tab="uv">
-      ```bash
-      uv add vercel
-      ```
-    </Code>
-    <Code tab="pip">
-      ```bash
-      pip install vercel
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @vercel/queue
+  ```
+  **yarn**
+  ```bash
+  yarn add @vercel/queue
+  ```
+  **npm**
+  ```bash
+  npm i @vercel/queue
+  ```
+  **bun**
+  ```bash
+  bun add @vercel/queue
+  ```
+  **uv**
+  ```bash
+  uv add vercel
+  ```
+  **pip**
+  ```bash
+  pip install vercel
+  ```
 
 - ### Link your Vercel project and pull credentials
   The SDK authenticates via [OIDC](/docs/oidc). Link your project if you haven't already, then pull environment variables so the SDK can authenticate during local development:
@@ -219,3 +211,6 @@ This works locally with `vercel dev` so you can test without deploying. Next.js 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

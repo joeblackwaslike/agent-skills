@@ -12,17 +12,17 @@ related:
   - /docs/oidc/gcp
   - /docs/oidc/azure
   - /docs/oidc/api
-  - /docs/cli/env
+  - /docs/security/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources
 summary: Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0023f3f3303b18324ac458fdc2dd20360b3e028741271ff5fe71673e508fa2e9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "767bc86696ebd64704d7431678299f26c5f9e6f505882ab8c31f98d88b7d773e"
 ---
 
 # OpenID Connect (OIDC) Federation
 
-> **Availability**: Secure backend access with OIDC federation is available on all plans
+> Secure backend access with OIDC federation is available on all plans
 
 When you create long-lived, persistent credentials in your backend to allow access from your web applications, you increase the security risk of these credentials being leaked and hacked. You can mitigate this risk with OpenID Connect (OIDC) federation which issues short-lived, non-persistent tokens that are signed by Vercel's OIDC Identity Provider (IdP).
 
@@ -32,18 +32,18 @@ When you create long-lived, persistent credentials in your backend to allow acce
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Authentication](https://eve.dev/docs/guides/auth-and-route-protection) — Secure your agent's HTTP routes with an ordered auth walk, verifier helpers, and connection OAuth via Vercel Connect.
+- [Sandbox Troubleshooting](https://eve.dev/docs/sandbox/troubleshooting) — Causes and fixes for common eve sandbox errors in the sandbox file, after a build, when a session resumes, and during ev
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
 - [The skills.sh API is now available](https://vercel.com/changelog/the-skills-sh-api-is-now-available)
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection)
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [Run Cursor Cloud Agents on Vercel Sandbox](https://vercel.com/kb/guide/cursor-vercel-sandbox) — Learn how to run Cursor Cloud Agents on Vercel Sandbox with BYOM worker pools, durable workflows, isolated microVMs, and
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
+- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
-- [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available)
 
 Full cross-link map for this page: [/docs/oidc.graph.md](/docs/oidc.graph.md)
 <!-- /docsgraph:related -->
@@ -68,6 +68,8 @@ To securely connect your deployment with your backend, configure your backend to
 - [Connect to Google Cloud Platform (GCP)](/docs/oidc/gcp)
 - [Connect to Microsoft Azure](/docs/oidc/azure)
 - [Connect to your own API](/docs/oidc/api)
+
+* [Reach another Vercel project's protected deployments with Trusted Sources](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources)
 
 ## Issuer mode
 
@@ -134,3 +136,6 @@ Understand the structure of an OIDC token.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

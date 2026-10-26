@@ -12,8 +12,8 @@ related:
 summary: Fine-grained control over BotID detection levels and backend domain configuration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/advanced-configuration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "76d1cc766601e42ccd94aeac47cc26ab370d944e9f1d03f36412fb96c7cf6ba4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "23d403dee60fba59ca87466c85f4526b36c1dca736d53c8847f63a7907e81783"
 ---
 
 # Advanced BotID Configuration
@@ -31,12 +31,10 @@ When you need fine-grained control over BotID's detection levels, you can specif
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
-- [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
+- [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
-- [Attack Mode](https://vercel.com/docs/vercel-firewall/attack-mode) — Learn how to use Attack Mode to help control who has access to your site when it's under attack.
 
 Full cross-link map for this page: [/docs/botid/advanced-configuration.graph.md](/docs/botid/advanced-configuration.graph.md)
 <!-- /docsgraph:related -->
@@ -173,3 +171,6 @@ export default async function handler(
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

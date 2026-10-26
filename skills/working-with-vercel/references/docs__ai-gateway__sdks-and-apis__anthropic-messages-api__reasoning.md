@@ -17,8 +17,8 @@ related:
 summary: Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9f4d154215e8749e2ae799ffb1c7175837bbb49f3a32e54329b37a2110eff302"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "09739fdab9e9ac11c47744f89836255f770a999dcafbfbf5cf4bbd93d93c1d8a"
 ---
 
 # Anthropic Messages Extended Thinking with AI Gateway
@@ -35,8 +35,8 @@ Anthropic calls reasoning **extended thinking**. Configure it with the `thinking
 - [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4) — Get started with Claude 4 using the AI SDK.
 - [Get started with Claude 3.7 Sonnet](https://ai-sdk.dev/cookbook/guides/sonnet-3-7) — Get started with Claude 3.7 Sonnet using the AI SDK.
 - [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
-- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 - [AI Gateway Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
+- [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.graph.md)
 <!-- /docsgraph:related -->
@@ -292,3 +292,6 @@ When the provider returns thinking content, the response includes thinking block
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

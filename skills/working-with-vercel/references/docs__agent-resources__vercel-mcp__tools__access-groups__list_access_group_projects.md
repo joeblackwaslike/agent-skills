@@ -13,8 +13,8 @@ related:
 summary: Use list_access_group_projects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3cac8749ab982dfb762caecd93b009320e5d8546f6b73ef5af39c61d4f8742df"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "15a56222977a42250748287fa7e79821a78cea67d826e3815b9c43ab34984253"
 ---
 
 # list_access_group_projects
@@ -30,8 +30,8 @@ List projects of an access group.
 - [list_access_groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups) — Use list_access_groups with Vercel MCP.
 - [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members) — Use list_access_group_members with Vercel MCP.
 - [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
-- [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
 - [get_observability_configuration_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_configuration_projects) — Use get_observability_configuration_projects with Vercel MCP.
+- [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects.graph.md](/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects.graph.md)
 <!-- /docsgraph:related -->
@@ -50,3 +50,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

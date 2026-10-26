@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Paris, France (cdg1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/cdg1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "40ccbb920436da7bf2d4b7e4baa1721d506212769e87ce95fd52237df0d1c229"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6b425a58567f4edf861170e1c4396b0c0f06a9ef01cdf8f78ff04425c8e7e98d"
 ---
 
 # Paris, France (cdg1) pricing
@@ -35,7 +35,7 @@ The table below shows Managed Infrastructure products with pricing specific to t
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [Montréal, Canada \\(yul1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/yul1) — Vercel pricing for the Montréal, Canada \\(yul1\\) region.
 - [Washington D.C., USA \\(iad1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/iad1) — Vercel pricing for the Washington D.C., USA \\(iad1\\) region.
-- [Frankfurt, Germany \\(fra1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/fra1) — Vercel pricing for the Frankfurt, Germany \\(fra1\\) region.
+- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/cdg1.graph.md](/docs/pricing/regional-pricing/cdg1.graph.md)
 <!-- /docsgraph:related -->
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

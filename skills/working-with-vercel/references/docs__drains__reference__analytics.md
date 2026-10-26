@@ -13,8 +13,8 @@ related:
 summary: Learn about Web Analytics Drains - data formats and custom events configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/analytics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e5a1f0d3245cdfcba1fba3b4af9937373e646dc599fdfa3036b07f4c9543fd0b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4396f37b47d751344a3731af2726b1e47b27dcdd48784bf9d834ee7009c608b9"
 ---
 
 # Web Analytics Drains Reference
@@ -30,8 +30,8 @@ If a Web Analytics Drains has been configured, Vercel will send page views and c
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 
 Full cross-link map for this page: [/docs/drains/reference/analytics.graph.md](/docs/drains/reference/analytics.graph.md)
@@ -116,3 +116,6 @@ For more information on Web Analytics Drains and how to use them, refer to the f
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

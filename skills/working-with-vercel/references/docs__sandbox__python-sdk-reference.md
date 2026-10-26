@@ -16,8 +16,8 @@ related:
 summary: Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persistence, and network policies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/python-sdk-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "54695c6262a0023d77640b8fff6a1a9e3b285c8f4b0a8860592a4dee8459d058"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "837a4fd83f2cc8c81de8b5c676f84243d2cd663a8db6894b87542ea6f4c62d0a"
 ---
 
 # Python SDK Reference
@@ -35,13 +35,12 @@ Use the Vercel Sandbox Python SDK to create isolated Linux microVMs, run process
 - [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create snapshot-backed persistent sandboxes on Vercel.
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
 - [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes) — Vercel MCP tools for sandboxes.
-- [Tags](https://vercel.com/docs/sandbox/concepts/tags) — Categorize sandboxes by environment, team, or any other criteria using key-value tags.
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 
 Full cross-link map for this page: [/docs/sandbox/python-sdk-reference.graph.md](/docs/sandbox/python-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -1139,3 +1138,6 @@ asyncio.run(main())
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

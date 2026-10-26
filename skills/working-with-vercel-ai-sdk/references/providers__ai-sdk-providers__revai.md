@@ -1,24 +1,67 @@
 ---
 title: Rev.ai
-description: Learn how to use the Rev.ai provider for the AI SDK.
+description: Learn how to set up the Rev.ai provider and check AI Gateway availability.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/revai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "fa541720982164543c97c42a1505208b9cfd44a25422d112099a63c298c5169f"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "1560b46177a812752adcfb73d80c22f2029f3d36bc23fcb6e5b161d7a87ad847"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Rev.ai](https://www.rev.ai/) provider contains language model support for the Rev.ai transcription API.
+Rev.ai models are not currently available through [AI Gateway](https://vercel.com/ai-gateway/models), so the opening example uses `@ai-sdk/revai` directly. See [Using AI Gateway](#using-ai-gateway) below for supported alternatives.
 
-## Setup
+```ts
+import { transcribe } from 'ai';
+import { revai } from '@ai-sdk/revai';
+import { readFile } from 'node:fs/promises';
 
-The Rev.ai provider is available in the `@ai-sdk/revai` module. You can install it with
+const { text } = await transcribe({
+  model: revai.transcription('machine'),
+  audio: await readFile('audio.mp3'),
+});
+
+console.log(text);
+```
+
+The example transcribes an `audio.mp3` file from your project.
+
+## Using AI Gateway
+
+The current [AI Gateway model catalog](https://vercel.com/ai-gateway/models) does not list Rev.ai models. Use `@ai-sdk/revai` for the APIs on this page. To use other transcription models through Gateway, install `ai` and configure a Gateway API key:
 
 ```bash
-pnpm add @ai-sdk/revai
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [Gateway documentation](/providers/ai-sdk-providers/ai-gateway) for supported models and APIs.
+
+## Using `@ai-sdk/revai`
+
+For direct access to Rev.ai, install `ai` and `@ai-sdk/revai`:
+
+```bash
+pnpm add ai @ai-sdk/revai
+```
+
+Set your Rev.ai API credential in the `REVAI_API_KEY` environment variable:
+
+```bash
+export REVAI_API_KEY=your_api_key_here
+```
+
+The following sections document the direct `@ai-sdk/revai` provider, including
+its model factories and settings. Gateway model and feature availability can
+differ.
 
 ## Provider Instance
 

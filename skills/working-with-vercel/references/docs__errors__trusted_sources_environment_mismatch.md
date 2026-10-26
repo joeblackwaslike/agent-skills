@@ -12,8 +12,8 @@ related:
 summary: "The Trusted Sources OIDC token presented with the request comes from an environment that isn't permitted to reach the target deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/trusted_sources_environment_mismatch.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "c4c3abc2ceb28d9386b4149ec8804afef3a668276c8ebd11077b7eef62d9511a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "80863640a0c828106915e9bf22279ce6afcf985bbee07ad252f18d46ed31ef3b"
 ---
 
 # TRUSTED_SOURCES_ENVIRONMENT_MISMATCH
@@ -43,3 +43,6 @@ For more details on how rules are matched and which claims are checked, see the 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and reach your own VPC over VPC...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/secure-compute.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1fd87b19a0582d0ff696b2538479116ade552e67c1cd5f1ba12ba32f297d7c5b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "546bc4d87e66c8a907c74828503a14deec53f54628fcc1082d9d4589a344f202"
 ---
 
 # Using Secure Compute with Sandbox
@@ -38,7 +38,6 @@ Attaching a Vercel Sandbox to a [Secure Compute](/docs/networking/secure-compute
 - [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
 - [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Networking](https://vercel.com/docs/networking) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/secure-compute.graph.md](/docs/sandbox/concepts/secure-compute.graph.md)
 <!-- /docsgraph:related -->
@@ -237,3 +236,6 @@ See [Secure Compute pricing](/docs/networking/secure-compute#pricing) for curren
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

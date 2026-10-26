@@ -15,8 +15,8 @@ related:
 summary: The request was blocked by the OWASP Core Ruleset managed ruleset because its cumulative anomaly score exceeded the configured threshold.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/anomaly_score_exceeded.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "bb079b438c86250738f4cb5141acfdaf78af3f3c5885959a2569fb7ad9f1ab1e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6ca254559cffa219d228a5e00899bf7610146193656a4ead632d3bd1a380b3ff"
 ---
 
 # ANOMALY_SCORE_EXCEEDED
@@ -129,3 +129,6 @@ You can also manage firewall rules as code using the [Terraform provider](https:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

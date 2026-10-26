@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "266251661f421c093fa23053870b9196bdd75791ed83c8866a0ad11df04101b9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7aab3fb7fd177d5d20be15161ed3ab648ce036e4f03fbd07a7d9df82d3cb925a"
 ---
 
 # Backends on Vercel
@@ -34,10 +34,7 @@ Backends deployed to Vercel receive the benefits of Vercel's infrastructure, inc
 - [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
 - [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
-- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Vercel Functions](https://vercel.com/docs/functions) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 
 Full cross-link map for this page: [/docs/frameworks/backend.graph.md](/docs/frameworks/backend.graph.md)
@@ -82,6 +79,11 @@ To process background tasks with Python, you can deploy [Celery](/docs/framework
 
 If you are transitioning from a fully managed server or containerized environment to Vercel’s serverless architecture, you may need to rethink a few concepts in your application since there is no longer a server always running in the background.
 
+For platform-specific migration steps, choose the guide for your application:
+
+- **Python API**: Migrate from [Heroku](/kb/guide/migrate-a-python-api-from-heroku-to-vercel), [Render](/kb/guide/migrate-a-python-api-from-render-to-vercel), or [Railway](/kb/guide/migrate-a-python-api-from-railway-to-vercel).
+- **Docker app**: Migrate from [Railway](/kb/guide/migrate-railway-to-vercel), [Fly.io](/kb/guide/migrate-fly-io-to-vercel), [Render](/kb/guide/migrate-render-to-vercel), [Google Cloud Run](/kb/guide/migrate-cloud-run-to-vercel), or [AWS](/kb/guide/migrate-containers-from-aws-to-vercel).
+
 The following are generally applicable to serverless, and therefore Vercel Functions (running with or without Fluid compute).
 
 ### WebSockets
@@ -98,3 +100,6 @@ To manage database connections efficiently, [use the `attachDatabasePool` functi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

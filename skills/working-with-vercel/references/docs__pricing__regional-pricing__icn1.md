@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Seoul, South Korea (icn1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/icn1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "51cddc4bb9969bc018839fb9da20d4490dfbea70d55b455aa8e45e5f3a66174d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cf161ef06fd2a88f43b0fbf8dcdd2c9e1135dfb7f111b269f8a366e30af7c778"
 ---
 
 # Seoul, South Korea (icn1) pricing
@@ -32,9 +32,9 @@ The table below shows Managed Infrastructure products with pricing specific to t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Cape Town, South Africa \\(cpt1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cpt1) — Vercel pricing for the Cape Town, South Africa \\(cpt1\\) region.
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [Stockholm, Sweden \\(arn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/arn1) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
 - [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1) — Vercel pricing for the Singapore \\(sin1\\) region.
-- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/icn1.graph.md](/docs/pricing/regional-pricing/icn1.graph.md)
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

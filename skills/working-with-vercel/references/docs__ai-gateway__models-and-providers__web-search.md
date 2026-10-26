@@ -14,8 +14,8 @@ related:
 summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "16440c119212c9e2a91c6052930f87b9d9a0871baeb082532dcb6e9ee4e777e0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f19a2a8bbb3756da889088bab3bd7f8f54fbab469a518ea4496b2001b1d1f818"
 ---
 
 # AI Gateway Web Search
@@ -34,10 +34,9 @@ AI Gateway provides built-in search tools that let AI models access current web 
 - [Tako Search is free on AI Gateway through September 30](https://vercel.com/changelog/tako-search-is-free-on-ai-gateway-through-september-30th)
 - [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent) — Learn how to build an agent that has access to web with the AI SDK and Node
 - [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway)
-- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use the Azure OpenAI provider for the AI SDK.
-- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai) — Learn how to use xAI Grok and Imagine.
 - [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model)
-- [Groq](https://ai-sdk.dev/providers/ai-sdk-providers/groq) — Learn how to use Groq.
+- [Exa joins the Vercel AI Gateway and Agent Marketplace](https://vercel.com/changelog/exa-joins-vercel-ai-gateway-agent-marketplace)
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
 - [Tool Search](https://ai-sdk.dev/docs/ai-sdk-core/tool-search) — Let models discover tools on demand, with direct calling or cache-preserving code mode.
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
@@ -458,9 +457,10 @@ The `exaSearch` tool can be used with any model regardless of the model provider
 
 To use Exa Search, import `gateway` from `ai` and pass `gateway.tools.exaSearch()` to the `tools` parameter. When the model needs current information, it calls the tool and AI Gateway routes the request to [Exa's Search API](https://exa.ai/docs/reference/search-api-guide-for-coding-agents).
 
-> **💡 Note:** Exa web search requests are charged at $7 per 1,000 requests. Each request
-> includes up to 10 results. Additional requested results beyond 10 are charged
-> at $1 per 1,000 additional results.
+> **💡 Note:** Exa web search requests are charged at $7 per 1,000 `auto` or `fast` requests
+> and $4 per 1,000 `instant` requests. Each request includes up to 10 results.
+> Additional requested results beyond 10 are charged at $1 per 1,000 additional
+> results.
 
 #### streamText
 
@@ -944,11 +944,11 @@ includes the corresponding AI Gateway server tool.
 
 The `parallelSearch` tool can be used with any model regardless of the model provider or creator. [Parallel AI](https://parallel.ai/) provides LLM-optimized web search that extracts relevant excerpts from web pages, making it ideal for research tasks and information retrieval.
 
-To use Parallel Search, import `gateway` from `ai` and pass `gateway.tools.parallelSearch()` to the `tools` parameter. When the model needs current information, it calls the tool and AI Gateway routes the request to [Parallel's search API](https://docs.parallel.ai/search/search-quickstart).
+To use Parallel Search, import `gateway` from `ai` and pass `gateway.tools.parallelSearch()` to the `tools` parameter. When the model needs current information, it calls the tool and AI Gateway routes the request to [Parallel's Search API](https://docs.parallel.ai/api-reference/search/search).
 
-> **💡 Note:** Parallel web search requests are charged at $5 per 1,000 requests (includes up
-> to 10 results per request). Additional results beyond 10 are charged at $1 per
-> 1,000 additional results.
+> **💡 Note:** Parallel web search requests are charged at $5 per 1,000 requests in every
+> search mode (includes up to 10 results per request). Additional results beyond
+> 10 are charged at $1 per 1,000 additional results.
 
 #### streamText
 
@@ -1002,24 +1002,44 @@ export async function POST(request: Request) {
 
 ### Parallel parameters
 
+The `mode` parameter trades excerpt depth for latency. Every mode costs the same, $5 per 1,000 requests:
+
+| Mode         | Behavior                                                              |
+| ------------ | --------------------------------------------------------------------- |
+| `'turbo'`    | Lowest latency, shorter excerpts. Supports English and Japanese only. |
+| `'fast'`     | Low latency, shorter excerpts.                                        |
+| `'basic'`    | Balanced latency and excerpt depth. This is the default.              |
+| `'advanced'` | Most thorough results, higher latency.                                |
+
+When you don't set `mode`, the model can choose one for each search, and AI Gateway uses `'basic'` if the model doesn't send one. The `'one-shot'` and `'agentic'` modes are deprecated but still accepted. AI Gateway runs `'one-shot'` as `'basic'` and `'agentic'` as `'advanced'`, at the same price.
+
 You can configure the `parallelSearch` tool with these parameters:
 
-- `mode`: Search mode preset. Values: `'one-shot'` (comprehensive results with longer excerpts, default) or `'agentic'` (concise, token-efficient results for multi-step workflows).
+- `mode`: Search mode. Values: `'turbo'`, `'fast'`, `'basic'` (default), or `'advanced'`.
 - `maxResults`: Maximum number of results to return (1-20). Defaults to 10.
-- `searchQueries`: Optional list of keyword search queries to supplement the objective.
-- `sourcePolicy`: Controls which domains and date ranges to include or exclude.
-  - `includeDomains`: List of domains to restrict search results to (e.g., `['arxiv.org', 'nature.com']`).
-  - `excludeDomains`: List of domains to exclude from search results.
-  - `afterDate`: Only return results published after this date (format: `YYYY-MM-DD`).
+- `location`: ISO 3166-1 alpha-2 country code to localize results, such as `'us'`. Parallel ignores invalid codes and returns a warning.
+- `maxCharsTotal`: Maximum total characters across all result excerpts.
+- `sourcePolicy`: Controls which domains and date ranges to include or exclude. The include and exclude lists can hold up to 200 entries combined.
+  - `includeDomains`: Domains or domain/path prefixes to restrict search results to, such as `['arxiv.org', 'docs.python.org/3']`.
+  - `excludeDomains`: Domains or domain/path prefixes to exclude from search results.
+  - `afterDate`: Only return results published on or after this date (format: `YYYY-MM-DD`).
 - `excerpts`: Controls result excerpt length.
   - `maxCharsPerResult`: Maximum characters per result excerpt.
-  - `maxCharsTotal`: Maximum total characters across all result excerpts.
+  - `maxCharsTotal`: Deprecated. Use the top-level `maxCharsTotal` instead.
 - `fetchPolicy`: Controls content freshness.
-  - `maxAgeSeconds`: Maximum age of cached content in seconds for time-sensitive queries.
+  - `maxAgeSeconds`: Maximum age of cached content, in seconds, before Parallel fetches the page live. The minimum is 600 seconds, and AI Gateway raises lower values to 600.
+  - `timeoutSeconds`: Timeout for a live fetch, up to 55 seconds.
+  - `disableCacheFallback`: Set to `true` to return an error instead of older cached content when a live fetch fails. Defaults to `false`.
+
+The model supplies the `objective` and two or three keyword `searchQueries` for each search. If the model sends no queries, AI Gateway searches with the objective.
+
+AI Gateway applies options you set in `parallelSearch()` as developer defaults, overriding model-generated values.
+
+Each tool result contains a `search_id`, a `session_id`, and `results`, ordered by decreasing relevance. Each result has a `url`, a `title`, a `publish_date` (both may be `null`), and `excerpts`, an array of markdown strings. The tool result can also include `usage` and `warnings`, for example when Parallel ignores an invalid `location`.
 
 #### streamText
 
-```typescript filename="parallel-web-search-params.ts" {9-21}
+```typescript filename="parallel-web-search-params.ts" {9-22}
 import { gateway, streamText } from 'ai';
 
 export async function POST(request: Request) {
@@ -1030,7 +1050,8 @@ export async function POST(request: Request) {
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch({
-        mode: 'one-shot',
+        mode: 'advanced',
+        location: 'us',
         maxResults: 5,
         sourcePolicy: {
           includeDomains: ['arxiv.org', 'nature.com', 'science.org'],
@@ -1049,7 +1070,7 @@ export async function POST(request: Request) {
 
 #### generateText
 
-```typescript filename="parallel-web-search-params.ts" {9-21}
+```typescript filename="parallel-web-search-params.ts" {9-22}
 import { gateway, generateText } from 'ai';
 
 export async function POST(request: Request) {
@@ -1060,7 +1081,8 @@ export async function POST(request: Request) {
     prompt,
     tools: {
       parallel_search: gateway.tools.parallelSearch({
-        mode: 'one-shot',
+        mode: 'advanced',
+        location: 'us',
         maxResults: 15,
         sourcePolicy: {
           includeDomains: ['arxiv.org', 'nature.com', 'science.org'],
@@ -1506,3 +1528,6 @@ export async function POST(request: Request) {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: The DNS server was unable to fulfill the DNS request due to an internal issue or misconfiguration. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/dns_hostname_server_error.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "9b8531c0caf6e8b2e13f73e6b1a6479d34de13a4424d07b1fe7becf49f557693"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "93860380576b7b0e2f14da9a3abe86e54e843d1952d7e17a684d946a4e4c2f7b"
 ---
 
 # DNS_HOSTNAME_SERVER_ERROR
@@ -38,3 +38,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

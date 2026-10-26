@@ -12,8 +12,8 @@ related:
 summary: The request for a Edge Function was not completed successfully due to an internal error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_edge_function_invocation_failed.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "5153b5b27a3d7ec2d0ebd30354f6277e09539de4f0dc82307ea540e35b533afd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7b43c33af3d49b02ea62db385f3660a3a25da021c009333efc8682d270b804d9"
 ---
 
 # INTERNAL_EDGE_FUNCTION_INVOCATION_FAILED
@@ -32,3 +32,6 @@ While this error can be caused by a variety of issues, it's transient and retryi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,13 +16,13 @@ related:
 summary: "With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top referrers, and demographics."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "62240b2139d98aedf5ffb28b15cd6ff9ddd41e3cd3f70cf6bf3c5fc79aade19a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "eb483319d7596ba5659cf0c57152efbf2ba355400cfac40fb5aed4faea7652b0"
 ---
 
 # Vercel Web Analytics
 
-> **Availability**: Web Analytics are available on all plans
+> Web Analytics are available on all plans
 
 - To set up Web Analytics for your project, see the [Quickstart](/docs/analytics/quickstart).
 - To monitor your site's performance, use [Speed Insights](/docs/speed-insights).
@@ -113,3 +113,6 @@ Web Analytics doesn't count traffic that comes from automated processes or accou
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

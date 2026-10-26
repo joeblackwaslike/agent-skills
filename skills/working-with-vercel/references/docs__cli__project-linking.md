@@ -14,8 +14,8 @@ related:
 summary: Learn how to link existing Vercel Projects with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project-linking.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d493e4dbb10eea78cde021ead8fb182b9c745334d803a0b676acab4e7eec0842"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8d74302f7968b541adf678cda408773179e1689d9a91ce07793be9f8db539873"
 ---
 
 # Linking Projects with Vercel CLI
@@ -34,8 +34,8 @@ want to [deploy](/docs/cli/deploy) your directory to. You can choose to either [
 - [Faster, predictable project linking in the Vercel CLI](https://vercel.com/changelog/faster-predictable-project-linking-in-the-vercel-cli)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 
 Full cross-link map for this page: [/docs/cli/project-linking.graph.md](/docs/cli/project-linking.graph.md)
@@ -103,3 +103,6 @@ The status line shows **Build Command** and **Output Directory** inline. If you 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

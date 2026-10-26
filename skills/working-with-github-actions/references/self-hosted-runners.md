@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/runners/self-hosted-runners.md"
-fetched_at: "2026-07-20T06:51:31.659Z"
-sha256: "60eafd8311bf418abf41f0334b726b1729336a44deee93239bf1d3fb7a20014d"
+fetched_at: "2026-10-26T09:51:55.825Z"
+sha256: "570da958730391e031f7185d0d763a926a097edfcfdbf585a4808c4ee75e5604"
 ---
 
 ## Requirements for self-hosted runner machines
@@ -43,7 +43,6 @@ You can use a machine as a self-hosted runner as long as it meets these requirem
 
 * `x64` - Linux, macOS, Windows.
 * `ARM64` - Linux, macOS{% ifversion actions-windows-arm %}, Windows (currently in {% data variables.release-phases.public_preview %}){% endif %}.
-* `ARM32` - Linux.
 
 ## Routing precedence for self-hosted runners
 

@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "279fc6b9033d6bdb7f52c6b549fbe259e35c06d9c90a4f05e50ec5427d86063f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "badd8b4d51c5bdaf2bef60ab2bc50a1184f60a48b168b0e709141619f0ed241c"
 ---
 
 # Vercel KMS Concepts
@@ -33,8 +33,8 @@ These pages explain the parts of Vercel KMS you configure once and rely on over 
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
-- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 - [Vercel KMS SDK Reference](https://vercel.com/docs/kms/ts-sdk-reference) — API reference for @vercel/kms, including signJWT, signMessage, region resolution, and signing the KMS API directly witho
+- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 
 Full cross-link map for this page: [/docs/kms/concepts.graph.md](/docs/kms/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/kms/concepts.graph.md](/docs/kms/conce
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

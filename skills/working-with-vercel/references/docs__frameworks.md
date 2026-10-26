@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter what tool you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "40f72af86eec5d708d1378a7df9e98ce004ee54659ec1c7acfb6d61637facfe8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e732d8e3175b3a91514cdb28344823313107c67da008edde3b9b027b9fffa640"
 ---
 
 # Frameworks on Vercel
@@ -40,8 +40,8 @@ Vercel has first-class support for [a wide range of the most popular frameworks]
 - [Expanding the experimentation ecosystem with Edge Config and LaunchDarkly](https://vercel.com/blog/edge-config-and-launch-darkly)
 - [Framework-defined infrastructure](https://vercel.com/blog/framework-defined-infrastructure)
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [The developer experience of the Frontend Cloud](https://vercel.com/blog/the-developer-experience-of-the-frontend-cloud)
-- [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud)
 
 Full cross-link map for this page: [/docs/frameworks.graph.md](/docs/frameworks.graph.md)
 <!-- /docsgraph:related -->
@@ -102,3 +102,6 @@ Learn more about deploying your preferred framework on Vercel with the following
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

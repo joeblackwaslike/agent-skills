@@ -17,8 +17,8 @@ related:
 summary: Process large volumes of text generation requests asynchronously through AI Gateway at discounted batch prices, with results available within 24...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "887a5eb68fec1cbd2f6ff0d018aad0f4b3e93357f8542b734f8d6c7049a601ec"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c27deba09285a031770a15c1e8a379d1b89af201d31faddcdf6d1020fb7e3929"
 ---
 
 # AI Gateway Batch Processing
@@ -302,3 +302,6 @@ Batch processing doesn't support [zero data retention](/docs/ai-gateway/security
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

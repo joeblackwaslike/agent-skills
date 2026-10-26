@@ -15,13 +15,13 @@ related:
 summary: Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/managing-usage.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bd8cf7a5c9581e37c3de14c473e4a5ea15fa24d98d6c197b98f92d81f08a7f36"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fae56881ff740e7c2eaa4697fd31a7f377bf98d1916c106fb98144c0ea90356b"
 ---
 
 # Managing Usage & Costs
 
-> **Availability**: Speed Insights is available on all plans
+> Speed Insights is available on all plans
 
 Use the [`@vercel/speed-insights`](https://www.npmjs.com/package/@vercel/speed-insights) package to measure and reduce your Speed Insights usage.
 
@@ -205,3 +205,6 @@ For maximum cost control, you can combine both options. The `sampleRate` determi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

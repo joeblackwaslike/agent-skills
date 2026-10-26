@@ -1,7 +1,7 @@
 ---
 source: "https://google.github.io/styleguide/shellguide.html"
-fetched_at: "2026-10-19T09:38:26.830Z"
-sha256: "bf1b46d5a4c83f1fbed21b816312694862f6f147dfadcb729f2e65ba290d0749"
+fetched_at: "2026-10-26T09:46:43.925Z"
+sha256: "75620638a7362768738f2081c261bcaae3fd19520d7f003fdd49c68282935e39"
 ---
 
 Google Style Guides | Style guides for Google-originated open-source projects
@@ -87,6 +87,11 @@ script early to avoid a more time-consuming rewrite at a later date.
   When assessing the complexity of your code (e.g. to decide whether to switch
 languages) consider whether the code is easily maintainable by people other
 than its author.
+
+If you want to migrate an existing program from shell to a proper language but
+you’re unsure how, checkout the
+Deshell Playbook. It
+will guide you through a robust approach for smoothly replacing production code.
 
 Shell Files and Interpreter Invocation
 
@@ -826,12 +831,12 @@ for line in "${lines[@]}"; do
 done
 echo "${last_line}"
 
-Note: Be cautious using a for-loop to iterate over output, as in for var in
-$(...), as the output is split by whitespace, not by line. Sometimes you will
-know this is safe because the output can’t contain any unexpected whitespace,
-but where this isn’t obvious or doesn’t improve readability (such as a long
-command inside $(...)), a while read loop or readarray is often safer
-and clearer.
+Note: Be cautious using a for-loop to iterate over output, as in
+for var in $(...), as the output is split by whitespace, not by line.
+Sometimes you will know this is safe because the output can’t contain any
+unexpected whitespace, but where this isn’t obvious or doesn’t improve
+readability (such as a long command inside $(...)), a while read loop or
+readarray is often safer and clearer.
 
 Arithmetic
 

@@ -16,8 +16,8 @@ related:
 summary: Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit top-ups and spending budgets.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "54464a1a60e660c3e16da50ea558e67d21c9d4d599644667a48f77fe1b312f69"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dd7bb6047c1c147374ba5ef371b232ab5ac29c697bfc731b1764e38d694cf3dc"
 ---
 
 # AI Gateway Pricing
@@ -35,12 +35,11 @@ sha256: "54464a1a60e660c3e16da50ea558e67d21c9d4d599644667a48f77fe1b312f69"
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Pricing](https://v0.app/docs/pricing) — Understand the v0 plans, pricing, and usage limits.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing) — Understand Vercel Agent pricing and how to track costs
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing.graph.md](/docs/ai-gateway/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -173,3 +172,6 @@ When your balance drops below the threshold, AI Gateway automatically charges yo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

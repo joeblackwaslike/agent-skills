@@ -13,8 +13,8 @@ related:
 summary: Learn what Deployment Storage includes, how Vercel measures it, and how to control your usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "76ec9234738596476a131ffcb99d9e43124c8e009fb922db73a32dfc2b471f0b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3733f8ca398fd99b80b8c54d9216e337ba7d2720b3590fa86f50d378116a8391"
 ---
 
 # Deployment Storage
@@ -33,8 +33,8 @@ Deployment Storage is cloud storage for the build output and Vercel Function bun
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment) — Information on deleting an individual deployment.
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/deployment-storage.graph.md](/docs/deployment-storage.graph.md)
@@ -116,3 +116,6 @@ For help reducing Deployment Storage usage, see the [optimization guide](/docs/d
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -14,8 +14,8 @@ related:
 summary: Manage SDK Keys for Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/sdk-keys.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bd9a79b56efac46cc5be6e093ce3e27b783de6d6485ee684f68fb3cbc88ec7c4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2b4341697eeca028e1cb6f410d0ec495a062559ef1d311f676d7ae6ae119b800"
 ---
 
 # SDK Keys
@@ -33,9 +33,9 @@ Vercel Flags supports OpenID Connect (OIDC) for applications in the same Vercel 
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [SDKs](https://vercel.com/docs/flags/vercel-flags/sdks) — Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 - [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key) — PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Creates an SDK key.
-- [Using the Core Library](https://vercel.com/docs/flags/vercel-flags/sdks/core) — Use the Vercel Flags core evaluation library directly for custom setups.
-- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Get all SDK keys](https://vercel.com/docs/rest-api/feature-flags/get-all-sdk-keys) — GET /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Gets all SDK keys for a project.
+- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/sdk-keys.graph.md](/docs/flags/vercel-flags/dashboard/sdk-keys.graph.md)
 <!-- /docsgraph:related -->
@@ -151,7 +151,7 @@ The list shows a masked preview of each key (for example, `vf_server_abc********
 
 ## How to create an SDK Key
 
-Create SDK Keys for manual credentials, such as cross-project evaluation or external environments.
+Create SDK Keys when your application needs manual credentials.
 
 1. Go to the [SDK Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fflags%2Fsdk-keys\&title=Go+to+SDK+Keys) for your project
 2. Click **Create SDK Key**, select the target environment, and give the key a descriptive label
@@ -161,7 +161,7 @@ Create SDK Keys for manual credentials, such as cross-project evaluation or exte
 
 ## How to use flags of another project
 
-To evaluate flags from a different project, use an SDK Key from the project that owns the flags.
+To evaluate flags from a different project with an SDK Key, use a key from the project that owns the flags.
 
 This is useful when multiple applications share the same flags, for example in a microfrontend setup or when a shared feature flag controls behavior across several services.
 
@@ -209,3 +209,6 @@ After deletion, the old key stops working, so redeploy your application with the
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/builds.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8ba2d3aefbc026ede27b3af2f23fb4bc124e49168550b6b84c15d298c39001f4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e63aac45cd5eba4e0730011f0d72e10c7528f585645886965a5e1f8ea1022d2e"
 ---
 
 # How Vercel builds your application
@@ -30,14 +30,13 @@ When you push code to Vercel, your source files need to be transformed into some
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How can I use Bitbucket Pipelines with Vercel?](https://vercel.com/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel) — Learn how to use Bitbucket Pipelines to deploy to Vercel including support for Bitbucket Data Center.
+- [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/fundamentals/builds.graph.md](/docs/fundamentals/builds.graph.md)
 <!-- /docsgraph:related -->
@@ -109,3 +108,6 @@ Your application is now live. When users visit your site, their requests flow th
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

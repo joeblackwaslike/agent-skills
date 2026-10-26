@@ -13,8 +13,8 @@ related:
 summary: Define tools the model can call with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0d0e8998542419285b1081ab11c92c51513d137da7cb68c0bd1cfa6c0f43dd8f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2eb452de4d1e020798ffa92fa940104cba865ee3adfabc7a41aecff1e0b2af2a"
 ---
 
 # OpenAI Responses Tool Calling with AI Gateway
@@ -31,8 +31,8 @@ Define tools with JSON Schema parameters. The model can call them, and you can f
 - [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Reflection AI's Beam now available on AI Gateway for free](https://vercel.com/changelog/reflection-ai-beam-now-available-on-ai-gateway-for-free)
 - [OpenResponses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling) — Define tools the model can call using the OpenResponses API through AI Gateway.
-- [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools) — Learn how to call tools using the AI SDK and Node
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [Anthropic Messages Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling) — Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/tool-calling.graph.md](/docs/ai-gateway/sdks-and-apis/responses/tool-calling.graph.md)
 <!-- /docsgraph:related -->
@@ -257,3 +257,6 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

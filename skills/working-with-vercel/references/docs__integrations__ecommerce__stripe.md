@@ -13,8 +13,8 @@ related:
 summary: Connect your Stripe account to Vercel and accept payments in your applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/ecommerce/stripe.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ae13443622dee5dabc880c562390c1ea5efd85bc58cfeca4000e2f3a38c98055"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2e8e297f98fb9e2738c8140a9450c7d938b8ce4b24e8328dbf1d65d304562cd8"
 ---
 
 # Stripe Integration
@@ -34,10 +34,11 @@ Connect your [Stripe](https://docs.stripe.com/) account to Vercel to accept paym
 - [Getting started with Next.js, TypeScript, and Stripe Checkout](https://vercel.com/kb/guide/getting-started-with-nextjs-typescript-stripe) — Add payments functionality to your Next.js applications with Stripe and deploy to Vercel.
 - [Vercel is now available in Stripe Projects](https://vercel.com/changelog/vercel-is-now-available-in-stripe-projects)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 
 Full cross-link map for this page: [/docs/integrations/ecommerce/stripe.graph.md](/docs/integrations/ecommerce/stripe.graph.md)
 <!-- /docsgraph:related -->
@@ -130,3 +131,6 @@ After connecting Stripe to your project, try these resources:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

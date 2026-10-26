@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the London, UK (lhr1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/lhr1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f3f0b430f7836614058f8f5b7686038ba9ed388a3fccc5df92d7a6895aea30e9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bf024bc00b6d0ebbc9bcbbefaab6ee15e249d9f8efadf90398a80936920556dd"
 ---
 
 # London, UK (lhr1) pricing
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

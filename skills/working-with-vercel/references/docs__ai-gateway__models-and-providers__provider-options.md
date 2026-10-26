@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "714f1fac596703d53080b2225576d6dba6e169b3ae8270d4f798d94138e38b8e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fac4668bed164083033fc9366af2805ea71d85d9eb3fdf373b7bb220d465320f"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -31,17 +31,18 @@ AI Gateway can route your AI model requests across multiple AI providers. Each p
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Google](https://ai-sdk.dev/providers/ai-sdk-providers/google) — Learn how to use Google models through AI Gateway or the direct Google provider.
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
+- [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs) — Learn how to use Black Forest Labs with AI Gateway and the direct provider.
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
+- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere) — Learn how to use Cohere with AI Gateway and the direct provider.
+- [Fal](https://ai-sdk.dev/providers/ai-sdk-providers/fal) — Learn how to use Fal with AI Gateway and the direct provider.
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
+- [MiniMax M3.1 Flash now available on AI Gateway for free](https://vercel.com/changelog/minimax-m3-1-flash-now-available-on-ai-gateway-for-free)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
-- [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
-- [Providers and Models](https://ai-sdk.dev/docs/foundations/providers-and-models) — Learn about the providers and models available in the AI SDK.
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
+- [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway)
 - [Hermes with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/hermes) — Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, an
 - [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-options.graph.md](/docs/ai-gateway/models-and-providers/provider-options.graph.md)
 <!-- /docsgraph:related -->
@@ -970,11 +971,20 @@ Z.AI
 
 z.ai
 
+Vercel Token Pass models are served through the `token-pass` provider. Token Pass currently serves its models through Wafer and follows Wafer's terms and conditions.
+
 > **💡 Note:** Provider availability may vary by model. Some models may only be available
 > through specific providers or may have different capabilities depending on the
 > provider used.
+
+## Provider options in virtual models
+
+A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can pin provider options for all of its traffic. The virtual model's options for a provider merge with the request's, and the virtual model wins when both set the same key.
 
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

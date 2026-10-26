@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7b3f8aeaf22c6baf69092bda342796805b6af0ad1dc1aadd29cbba15769538c4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "556446a802096117b8678aff835601f8a3f95948e23f5380bbf2429cb1a5daac"
 ---
 
 # Limits
@@ -35,15 +35,15 @@ You can raise many of the limits on this page. The process depends on your plan:
 - [Vercel Integration](https://v0.app/docs/vercel-integration) — How v0 and Vercel work in tandem.
 - [CDN origin timeout increased to two minutes](https://vercel.com/changelog/cdn-origin-timeout-increased-to-two-minutes)
 - [CLI deployment limits removed](https://vercel.com/changelog/cli-deployment-limits-removed)
+- [Deployments now show build cache size](https://vercel.com/changelog/deployments-now-show-build-cache-size)
 - [Increased limit for projects per Git repo](https://vercel.com/changelog/increased-limit-for-projects-per-git-repo)
-- [Vercel Sandbox now supports 10,000 concurrent sandboxes and 5,000 vCPUs per minute](https://vercel.com/changelog/vercel-sandbox-now-supports-10-000-concurrent-sandboxes-and-5-000-vcpus-per-minute)
+- [Skipped monorepo deployments no longer count against limits](https://vercel.com/changelog/skipped-monorepo-deployments-no-longer-count-against-limits)
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 
 Full cross-link map for this page: [/docs/limits.graph.md](/docs/limits.graph.md)
 <!-- /docsgraph:related -->
@@ -250,11 +250,11 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Description | Name | Limit | Duration (Seconds) | Scope |
 |-------------|------|-------|-------------------|-------|
 | Abuse report creation per minute. | `api-abuse-create-report` | 200 | 60 | `owner` |
-| Artifacts requests per minute (Free). | `api-artifacts-free` | 200 | 60 | `owner` |
+| Artifacts requests per minute (Free). | `api-artifacts-free` | 300 | 60 | `owner` |
 | Requests per minute to fetch the microfrontends groups for a team. | `api-microfrontends-groups` | 30 | 60 | `owner` |
 | Requests per minute to fetch the microfrontends config for a team. | `api-microfrontends-config` | 30 | 60 | `owner` |
 | Requests per minute to fetch the deployment of the best default app. | `api-microfrontends-best-default-app-deployment` | 30 | 60 | `owner` |
-| Artifacts requests per minute (Paid). | `api-artifacts-paid` | 20000 | 60 | `owner` |
+| Artifacts requests per minute (Paid). | `api-artifacts-paid` | 30000 | 60 | `owner` |
 | Remote Cache purge requests per minute. | `api-artifacts-remote-caching-purge` | 5 | 60 | `owner` |
 | Project production deployment per minute. | `api-projects-production-deployment` | 500 | 60 | `user` |
 | Project expiration updates per minute. | `api-projects-deployment-expiration` | 100 | 60 | `owner` |
@@ -370,6 +370,8 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Uploads per day (Enterprise). | `api-upload-enterprise` | 80000 | 86400 | `owner` |
 | API key creation per team per hour. | `api-keys-post-team` | 500 | 3600 | `team` |
 | API key creation per user per hour. | `api-keys-post-user` | 32 | 3600 | `user` |
+| API key budget updates per team per hour. | `api-keys-quota-patch-team` | 2000 | 3600 | `team` |
+| API key budget updates per user per hour. | `api-keys-quota-patch-user` | 1000 | 3600 | `user` |
 | Token retrieval per minute. | `api-user-tokens-get` | 160 | 60 | `owner` |
 | Token creation per hour. | `api-user-tokens-post` | 32 | 3600 | `owner` |
 | Token deletion per ten minutes. | `api-user-tokens-delete` | 120 | 600 | `owner` |
@@ -408,6 +410,7 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Marketplace integration installations per minute. | `api-integrations-marketplace-integration-install` | 120 | 3600 | `user` |
 | Marketplace integration uninstallations per minute. | `api-integrations-marketplace-integration-uninstall` | 120 | 3600 | `user` |
 | Marketplace integration secrets rotation requests per minute. | `api-integrations-marketplace-request-secrets-rotation` | 120 | 60 | `user` |
+| Marketplace integration resource secrets syncs to connected projects per minute. | `api-integrations-marketplace-sync-resource-secrets` | 60 | 60 | `user` |
 | Marketplace integration security rules operations per minute. | `api-integrations-marketplace-security-rules` | 120 | 60 | `user` |
 | Marketplace integration transfers per minute. | `api-integrations-marketplace-integration-transfer` | 120 | 3600 | `user` |
 | Marketplace purchase provisions per minute. | `api-integrations-marketplace-provision-purchase` | 120 | 3600 | `user` |
@@ -489,10 +492,10 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Log Drain deletion per minute. | `api-drains-delete` | 60 | 60 | `user` |
 | Log Drain test per minute. | `api-drains-test` | 30 | 60 | `user` |
 | Log Drain update per minute. | `api-drains-update` | 30 | 60 | `user` |
-| Drain create per minute. | `api-drains-create-drain` | 30 | 60 | `user` |
-| Drain delete per minute. | `api-drains-delete-drain` | 30 | 60 | `user` |
+| Drain create per minute. | `api-drains-create-drain` | 300 | 60 | `user` |
+| Drain delete per minute. | `api-drains-delete-drain` | 300 | 60 | `user` |
 | Drain retrieval per minute. | `api-drains-get-drain` | 100 | 60 | `user` |
-| Drain update per minute. | `api-drains-update-drain` | 30 | 60 | `user` |
+| Drain update per minute. | `api-drains-update-drain` | 300 | 60 | `user` |
 | Drain test per minute. | `api-drains-test-drain` | 30 | 60 | `user` |
 | Runtime Logs retrieval per minute. | `runtime-logs-get` | 100 | 60 | `user` |
 | Request Logs retrieval per minute. | `request-logs-get` | 240 | 60 | `user` |
@@ -664,3 +667,6 @@ The **dynamic quotas** table consists of the following five columns:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

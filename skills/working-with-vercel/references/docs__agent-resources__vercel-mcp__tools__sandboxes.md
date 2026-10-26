@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "639f9f95bcc8dcb07946950a89b8acb43e61ff3f56187afd6aaad8954d412667"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d10f06979fd541d106882b02c8fa814b8da3a4bb6240eb219c0956b9813ee683"
 ---
 
 # Sandboxes
@@ -28,10 +28,10 @@ Create sandboxes to run commands and work with files in isolated environments. Y
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 - [Python SDK Reference](https://vercel.com/docs/sandbox/python-sdk-reference) — Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persisten
 - [JS SDK Reference](https://vercel.com/docs/sandbox/sdk-reference) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
-- [List sessions](https://vercel.com/docs/rest-api/sandboxes/list-sessions) — GET /v2/sandboxes/sessions — Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted
+- [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox) — Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md)
 <!-- /docsgraph:related -->
@@ -351,3 +351,6 @@ Write files.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

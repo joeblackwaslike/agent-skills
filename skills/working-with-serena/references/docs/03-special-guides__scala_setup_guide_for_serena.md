@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/03-special-guides/scala_setup_guide_for_serena.md"
-fetched_at: "2026-08-17T04:47:57.671Z"
-sha256: "cbe1c367bc91db771d471d2d43d6954d349211a290e1a42ab5a9913561f7032b"
+fetched_at: "2026-10-26T09:52:48.732Z"
+sha256: "eaa81dd2966537af204791a1e4891db9362c5f838a6ccbf5b92e1c3386383dd6"
 ---
 
 # Scala Setup Guide for Serena
@@ -125,6 +125,8 @@ Metals uses an H2 database (`.metals/metals.mv.db`) to cache semantic informatio
 - **H2 AUTO_SERVER**: The first instance becomes the TCP server; subsequent instances connect as clients
 - **Bloop Build Server**: All instances share a single Bloop process (port 8212)
 - **Compilation Results**: Shared via Bloop — no duplicate compilation
+
+Because the Bloop process is shared, Serena leaves it running when it stops. If you would rather not leave it behind, enable `terminate_bloop_on_stop` in the Scala language server settings (see the [configuration reference](../02-usage/050_configuration.md)).
 
 ### Stale Lock Detection
 

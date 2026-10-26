@@ -15,8 +15,8 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d1cde39634e61f8f4763f7589aa9c5ec9bc3465ad98ac63da6cbe192e03dd616"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3aaf889de4ef46c87a52a5420fb5ae2031e88d182c367b987a034cb0f2a6c8ce"
 ---
 
 # OpenAI Responses Reasoning with AI Gateway
@@ -31,10 +31,9 @@ For models that support reasoning, set the `reasoning` parameter to control how 
 
 - [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
 - [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
-- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning) — Learn how to control reasoning across providers with the top-level reasoning parameter.
-- [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
 - [OpenAI Chat Completions Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning) — Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
 - [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [Anthropic Messages Extended Thinking with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gatewa
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/responses/reasoning.graph.md)
 <!-- /docsgraph:related -->
@@ -110,3 +109,6 @@ To inspect reasoning, check returned usage and reasoning items where available. 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

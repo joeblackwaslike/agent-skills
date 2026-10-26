@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the Vercel Deploy Button source URL parameters.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-button/source.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "1e5b466ef327955d3b86f4860201aa4b4c6bc02658e2d2c2a14bb7ed9d9734b6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f7faced5ab313725e3a70efddaceaa23a0b5250e611f68742f98cbb1aee15c09"
 ---
 
 # Deploy Button Source
@@ -157,3 +157,6 @@ https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2F
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

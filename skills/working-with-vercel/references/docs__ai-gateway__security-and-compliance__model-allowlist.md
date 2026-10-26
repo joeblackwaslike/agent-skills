@@ -10,12 +10,13 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/security-and-compliance/provider-allowlist
+  - /docs/ai-gateway/models-and-providers/virtual-models
   - /docs/ai-gateway/authentication-and-byok/byok
 summary: Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ed21bcddf6ae13b68c87590a96b99c857dd227b22bd8f4fc6a7e9957df13e056"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "62358b43c37ed02607b2ae700b25978d90b1d5a701ba66aa370917226c51db83"
 ---
 
 # AI Gateway Model Allowlist
@@ -30,12 +31,11 @@ The model allowlist lets team owners restrict which models can be used through A
 
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway)
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
+- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 - [Update virtual model config](https://vercel.com/docs/rest-api/ai-gateway/update-virtual-model-config) — PATCH /ai-gateway/virtual-model-configs — Update a virtual model config
-- [Create virtual model config](https://vercel.com/docs/rest-api/ai-gateway/create-virtual-model-config) — POST /ai-gateway/virtual-model-configs — Create a virtual model config \\(VMC\\)
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md)
 <!-- /docsgraph:related -->
@@ -81,6 +81,10 @@ When AI Gateway adds a new model after you enable the allowlist, the new model i
 
 To clear the badges, decide which new models to enable and click **Save**. A save with no changes also counts as acknowledgment and clears the badges. Disabled new models stay disabled until you enable them.
 
+## Virtual models
+
+A request through a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) is evaluated against the underlying model it resolves to. If that model is not on the allowlist, the request is blocked, even though the virtual model itself is not listed in the settings.
+
 ## Provider allowlist
 
 The model allowlist and the [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist) are independent checks, and a request must pass both:
@@ -113,3 +117,6 @@ Team members on non-owner roles can view the current configuration but cannot mo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

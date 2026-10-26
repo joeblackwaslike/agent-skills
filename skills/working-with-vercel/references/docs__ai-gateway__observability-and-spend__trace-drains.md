@@ -17,8 +17,8 @@ related:
 summary: Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain billing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0c900a2f0ef9eb42acac1370daa1c4ea9950f3a0aa9f796068ad8837ce7c078d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "82b6d6e2e73e329554c2e1dca359abd987a2a83005153a2e13bac8afd0963de4"
 ---
 
 # AI Gateway Trace Drains
@@ -34,17 +34,16 @@ AI Gateway produces an [OpenTelemetry](https://opentelemetry.io/docs/concepts/si
 - [Export AI Gateway traces with Vercel Drains](https://vercel.com/changelog/export-ai-gateway-traces-with-vercel-drains)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
-- [Introducing Trace Drains on the Vercel Marketplace](https://vercel.com/changelog/introducing-trace-drains-on-the-vercel-marketplace)
 - [Tracing](https://vercel.com/docs/tracing) — Learn how to trace your application to understand performance and infrastructure details.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
+- [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
-- [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/trace-drains.graph.md](/docs/ai-gateway/observability-and-spend/trace-drains.graph.md)
 <!-- /docsgraph:related -->
 
-> **Availability**: Trace Drains are available on Enterprise and Pro plans
+> Trace Drains are available on Enterprise and Pro plans
 
 For the underlying drain configuration and OTLP formats, see the [Drains documentation](/docs/drains).
 
@@ -230,3 +229,6 @@ Each provider attempt span records one upstream call:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for Global Config.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e9d8fec1daa063edbb851b9867ed0d96f35ca0a3e75c8aa1a26ba773da0c4644"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "eb2b1be9abc44197638b9a14a866ded06876c657ffe8d18eea326918ed956dbf"
 ---
 
 # Global Config
@@ -206,3 +206,6 @@ Updates a Global Config.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

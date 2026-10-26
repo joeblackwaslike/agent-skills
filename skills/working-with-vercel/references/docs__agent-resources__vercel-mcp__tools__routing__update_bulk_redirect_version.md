@@ -13,8 +13,8 @@ related:
 summary: Use update_bulk_redirect_version with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f93b37002e12c260326882d01a04f5e74806715a3c1975a6465485f2f98b01ad"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "877902682fb45fce248464b81dac2b548ff9855df2c9c25ec5096bbc2450b7b4"
 ---
 
 # update_bulk_redirect_version
@@ -29,8 +29,8 @@ Promote a staging version to production or restore a previous production version
 
 - [list_bulk_redirect_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirect_versions) — Use list_bulk_redirect_versions with Vercel MCP.
 - [update_route_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions) — Use update_route_versions with Vercel MCP.
-- [restore_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/restore_redirects) — Use restore_redirects with Vercel MCP.
 - [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
+- [restore_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/restore_redirects) — Use restore_redirects with Vercel MCP.
 - [update_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project) — Use update_project with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version.graph.md)
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

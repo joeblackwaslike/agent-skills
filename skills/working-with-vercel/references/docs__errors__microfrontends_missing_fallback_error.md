@@ -13,8 +13,8 @@ related:
 summary: The microfrontend request did not have a fallback for the environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/microfrontends_missing_fallback_error.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "05709a44745cd25b0015dc93d2c6255f212081a3b053d88e294f296e76a02517"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9384cec7cdd8343bba40613da110bac522525696f011cbd3e42c1123837f094d"
 ---
 
 # MICROFRONTENDS_MISSING_FALLBACK_ERROR
@@ -35,3 +35,6 @@ If the issue persists after checking that every project has a deployment in the 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

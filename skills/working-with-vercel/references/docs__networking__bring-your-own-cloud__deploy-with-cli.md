@@ -17,13 +17,13 @@ related:
 summary: Build a project, provision its functions in your AWS account, and complete a Bring Your Own Cloud (BYOC) deployment with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-cli.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9d8eebd3432960be1bc7b6ebb49847db88958be771812c834e1f7be21c90c716"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "01ef187910013619f45e1d7fec460b7ef3c2b7d9c48370fb016db46a2dcfd132"
 ---
 
 # Deploying with BYOC Using the Vercel CLI
 
-> **Availability**: Bring Your Own Cloud is available on Enterprise plans and is set up through your Vercel account team. Contact your account team to request access.
+> Bring Your Own Cloud is available on Enterprise plans and is set up through your Vercel account team. Contact your account team to request access.
 
 Create a [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud) deployment from your machine or CI with the Vercel CLI. You initialize a deployment, build it, generate its AWS resource descriptor, provision the functions in your AWS account, and then tell Vercel to complete the deployment.
 
@@ -35,12 +35,12 @@ Create a [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud) de
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
-- [Bring Your Own Cloud on AWS is now generally available](https://vercel.com/changelog/bring-your-own-cloud-on-aws-is-now-generally-available)
 - [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
-- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide) — Learn how to deploy an AI application to production on Vercel
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/deploy-with-cli.graph.md](/docs/networking/bring-your-own-cloud/deploy-with-cli.graph.md)
 <!-- /docsgraph:related -->
@@ -205,3 +205,6 @@ For function packages larger than 50 MB, upload the ZIP files to a private Amazo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use put_firewall_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/put_firewall_config.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "14ef7df41512ae38af3c2ca06c3ccfb5f228b3cf804f23b59b281b4db4eab3b6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ca1fe7aab788f23318797298f18a564510a62a130a68ef4e268ec0773ec1fc95"
 ---
 
 # put_firewall_config
@@ -30,8 +30,8 @@ Put Firewall Configuration.
 - [update_firewall_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/update_firewall_config) — Use update_firewall_config with Vercel MCP.
 - [get_firewall_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config) — Use get_firewall_config with Vercel MCP.
 - [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
+- [Update Firewall Configuration](https://vercel.com/docs/rest-api/security/update-firewall-configuration) — PATCH /v1/security/firewall/config — Process updates to modify the existing firewall config for a project
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
-- [update_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config) — Use update_rolling_release_config with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firewall/put_firewall_config.graph.md](/docs/agent-resources/vercel-mcp/tools/firewall/put_firewall_config.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firew
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

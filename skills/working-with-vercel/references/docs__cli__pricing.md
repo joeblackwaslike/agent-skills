@@ -13,8 +13,8 @@ related:
 summary: Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2e39982e94d53aaf292e8e09387211747c40d9b50e51e1dde1cf529240355333"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9d8474343b1b839cdde3739736a132758de2b74934e754ba29ab2d00518619ba"
 ---
 
 # vercel pricing
@@ -87,3 +87,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

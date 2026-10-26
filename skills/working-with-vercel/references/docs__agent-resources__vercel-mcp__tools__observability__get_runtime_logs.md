@@ -13,8 +13,8 @@ related:
 summary: Use get_runtime_logs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6b895af88ba0870a3c13d45a733d7439f2823e25c9196823ae49b8d9b9755e3c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f670880fa47f56bf493f176e48ee4d932a2ac044f97dbfada8d24606310e4f11"
 ---
 
 # get_runtime_logs
@@ -30,8 +30,8 @@ Get runtime logs for a project or deployment. Runtime logs include application o
 - [get_runtime_errors](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors) — Use get_runtime_errors with Vercel MCP.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
-- [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs.graph.md)
 <!-- /docsgraph:related -->
@@ -57,3 +57,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use list_project_domains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "66c2b2ae6adbacb500e8e51feb71a8db8f9f48adef6405965c018bb0ecdaf528"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c776b7b0731e65e52cd2a6e5ba6156eb2b37aef0b478380560b529b1dbdeae9b"
 ---
 
 # list_project_domains
@@ -59,3 +59,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

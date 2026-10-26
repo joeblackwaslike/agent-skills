@@ -12,13 +12,13 @@ related:
 summary: Use Code Owners to define users or teams that are responsible for directories and files in your codebase
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners/code-approvers.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "0dbd5254679595a69d143eea1e20c344e6c570f6bbe753b8878888307d20f392"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "85115f2135bfc4f2e2b940a19ea430e0ff28e0134195d6794303c59d39c70519"
 ---
 
 # Code Approvers
 
-> **Availability**: Code Owners are available on Enterprise plans
+> Code Owners are available on Enterprise plans
 
 Code Approvers are a list of [GitHub usernames or teams](https://docs.github.com/en/organizations/organizing-members-into-teams/about-teams) that can review and accept pull request changes to a directory or file.
 
@@ -267,3 +267,6 @@ pnpm-lock.yaml *
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

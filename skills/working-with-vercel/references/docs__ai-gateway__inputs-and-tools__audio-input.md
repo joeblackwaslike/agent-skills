@@ -17,8 +17,8 @@ related:
 summary: Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supported API format.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "37c7a7440bc6619dbb256e28a5e0d12b7be6a6fee0b2695ba0025cf8c01a708d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5c9459b644cef5c82b9db613270c7c8f15572c76b785ef23ca1c1f2d3a7af0db"
 ---
 
 # AI Gateway Audio Input
@@ -345,3 +345,6 @@ For request details and failures, inspect [AI Gateway logs](/docs/ai-gateway/obs
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

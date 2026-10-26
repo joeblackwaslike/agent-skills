@@ -16,8 +16,8 @@ related:
 summary: Learn how to stream responses from Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/streaming-functions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1e72ea9340226cbe09eaf13eb88728696af1837a3dfa0a2aeeb2e5eca6dfe49f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ac9ff2c3261c17c508d0c913212db96ded29e52541408bc570149a1199dd7e66"
 ---
 
 # Streaming
@@ -39,9 +39,9 @@ AI providers can be slow when producing responses, but many make their responses
 - [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
 - [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications)
 - [Building a GPT-3 app with Next.js and streaming (historical)](https://vercel.com/blog/gpt-3-app-next-js-vercel-edge-functions)
-- [Streaming responses from LLMs](https://vercel.com/kb/guide/streaming-from-llm) — Learn how to use the AI SDK to stream LLM responses.
-- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
 - [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web)
+- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
+- [How streaming helps build faster web applications](https://vercel.com/blog/how-streaming-helps-build-faster-web-applications)
 
 Full cross-link map for this page: [/docs/functions/streaming-functions.graph.md](/docs/functions/streaming-functions.graph.md)
 <!-- /docsgraph:related -->
@@ -58,28 +58,23 @@ The following example shows how to send a message to one of OpenAI's models and 
 2. You should be using Node.js 20 or later and the [latest version](/docs/cli#updating-vercel-cli) of the Vercel CLI.
 3. You should copy your OpenAI API key in the `.env.local` file with name `OPENAI_API_KEY`. See the [AI SDK docs](https://ai-sdk.dev/docs/getting-started#configure-openai-api-key) for more information on how to do this.
 4. Install the `ai` package:
-   <CodeBlock>
-     <Code tab="pnpm">
-       ```bash
-       pnpm i ai
-       ```
-     </Code>
-     <Code tab="yarn">
-       ```bash
-       yarn add ai
-       ```
-     </Code>
-     <Code tab="npm">
-       ```bash
-       npm i ai
-       ```
-     </Code>
-     <Code tab="bun">
-       ```bash
-       bun add ai
-       ```
-     </Code>
-   </CodeBlock>
+
+   **pnpm**
+   ```bash
+   pnpm i ai
+   ```
+   **yarn**
+   ```bash
+   yarn add ai
+   ```
+   **npm**
+   ```bash
+   npm i ai
+   ```
+   **bun**
+   ```bash
+   bun add ai
+   ```
 
 **app/api/streaming-example/route.ts**
 
@@ -245,3 +240,6 @@ When your function is streaming, it will be able to take advantage of the extend
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

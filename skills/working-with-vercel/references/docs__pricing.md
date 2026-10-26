@@ -16,8 +16,8 @@ related:
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d18a5b19810686ecd9b624d38234886a56817c90df8be83e517ab9c4f8eb0f4a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7012e7eaa9c1a4890035ebf8bd4422681b6f18b1b4630ef21242e1abf8461509"
 ---
 
 # Pricing on Vercel
@@ -32,11 +32,12 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 
 - [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines)
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms)
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Build Queues](https://vercel.com/docs/builds/build-queues) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [vercel pricing](https://vercel.com/docs/cli/pricing) — Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 
 Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -166,6 +167,34 @@ Monitoring is now part of [Observability Plus](/docs/observability/observability
 | Enterprise | 10,000 | $0.002/month per additional 25,000 |
 
 
+#### [Custom environments](/docs/deployments/environments#pricing-and-limits)
+
+Plan
+
+Included per project
+
+Additional environments
+
+Maximum per project
+
+Pro
+
+1
+
+$50 per month for each pack of five
+
+16
+
+Enterprise
+
+12
+
+$50 per month for each pack of five
+
+22
+
+You can purchase more custom environments from each project's environment settings. See [custom environments pricing and limits](/docs/deployments/environments#pricing-and-limits) for purchase steps and how to stop the monthly charge.
+
 #### [Builds](/docs/builds/managing-builds)
 
 Basic build machines are included with Hobby. For paid teams, Basic is priced at $0.007 per build minute, based on 2 vCPUs at $0.0035 per CPU minute.
@@ -225,3 +254,6 @@ For more information on Vercel's pricing, guidance on optimizing consumption, an
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

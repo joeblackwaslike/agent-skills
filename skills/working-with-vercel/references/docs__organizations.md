@@ -16,8 +16,8 @@ related:
 summary: Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/organizations.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "84964aa5d8ec4d90cb3032c036edfe7e47da227d0406748a9c121e8302673b50"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "96aa04a46b560fd0130b71eefb54fb69cc54f18e56376a855a92c24efe1e3408"
 ---
 
 # Organizations
@@ -34,14 +34,14 @@ An organization groups multiple Vercel [teams](/docs/accounts) under a single en
 - [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
 - [Create or Add Team to Organization](https://vercel.com/docs/rest-api/organizations/create-or-add-team-to-organization) — POST /v1/organizations/{organizationId}/teams — Create a new team under an organization, or add an existing team. \\`mode
 - [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [List Organizations](https://vercel.com/docs/rest-api/organizations/list-organizations) — GET /v1/organizations — List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission o
-- [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan) — Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve
+- [Create an Organization](https://vercel.com/docs/rest-api/organizations/create-an-organization) — POST /v1/organizations — Create a new Organization. This endpoint is in private beta. Contact your Vercel account team f
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
 Full cross-link map for this page: [/docs/organizations.graph.md](/docs/organizations.graph.md)
 <!-- /docsgraph:related -->
 
-> **Availability**: Organizations (Private Beta) are available to Enterprise plans with Flexible Commitment (Flex) billing. Contact your account team to request access.
+> Organizations are available in Private Beta to Enterprise plans with Flexible Commitment (Flex) billing. Contact your account team to request access.
 
 ## When to use organizations
 
@@ -83,7 +83,18 @@ An organization can have one [SAML Single Sign-On](/docs/saml) connection that e
 
 Organization Directory Sync maps groups in your identity provider to roles on your teams, so access on Vercel follows group membership in your directory. Configure it in the Identity & Access section. For each directory group, you can grant Organization access and choose a Default access role, which the group's members get on every team in the organization, including teams created later. To give the group a different role on a specific team, set a team-level role. That role overrides the default for that team only.
 
-Directory Sync starts syncing after at least one directory group has Organization Admin access. You must be an Organization Admin to configure organization Directory Sync.
+You must be an Organization Admin to configure organization Directory Sync. Vercel doesn't start syncing the directory until at least one directory group has the Organization Admin permission. Until then, the Directory Sync row shows **Setup Required** and notes that syncing starts once a group has Organization Admin.
+
+To grant the Organization Admin permission to a directory group:
+
+1. Open the organization's **Settings** page and go to the **Identity & Access** section.
+2. In the **Directory Sync** row, select **Configure** and complete the walkthrough to connect a directory from your identity provider.
+3. In the **Directory Sync** row, open the actions menu and select **Manage**.
+4. Select a directory group from the list.
+5. In the **Organization access** dropdown, select **Organization Admin**.
+6. Select **Save**.
+
+After at least one group has Organization Admin, Vercel begins syncing the directory and applies each group's Default access role and any team-level overrides.
 
 ### Turn on Enterprise Managed Users for organization teams
 
@@ -329,3 +340,6 @@ Organizations are in private beta, and some capabilities aren't available yet:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

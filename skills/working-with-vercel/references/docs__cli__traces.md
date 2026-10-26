@@ -15,8 +15,8 @@ related:
 summary: Search spans across a team, inspect request traces, capture session traces, or manage project trace sampling rules from the terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "848ae4e584fe92e569fbfb7388cbc79807dcea99aa02d15dce039e051a13ca08"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "37677e6e64ac58bbd5fffc4525ea134023feeb23f7521733f89473e1fc703097"
 ---
 
 # vercel traces
@@ -31,11 +31,12 @@ The `vercel traces` command lets you search spans across a team, inspect request
 
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
+- [run](https://turborepo.dev/docs/reference/run) — All flags and options for the `turbo run` command used to execute tasks.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel flags](https://vercel.com/docs/cli/flags) — Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 - [vercel project](https://vercel.com/docs/cli/project) — Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, renam
 - [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
+- [vercel firewall](https://vercel.com/docs/cli/firewall) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
 
 Full cross-link map for this page: [/docs/cli/traces.graph.md](/docs/cli/traces.graph.md)
 <!-- /docsgraph:related -->
@@ -515,3 +516,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to implement common Vercel platform features through the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/features.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "430b9413e065bd8c5d7c49a52bf8f61c3296ae8de6b8adb341bab4c94c2a7f0b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "72edf75a3636c17b95bc684dc5a6cadeb1018a011f77dbbec6690a89339a861a"
 ---
 
 # Features
@@ -34,8 +34,8 @@ helper functions.
 
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 
 Full cross-link map for this page: [/docs/build-output-api/features.graph.md](/docs/build-output-api/features.graph.md)
@@ -164,3 +164,6 @@ To trigger "On-Demand Incremental Static Regeneration (ISR)" and revalidate a pa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

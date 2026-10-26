@@ -8,8 +8,8 @@ tags:
   - next
   - tools
 source: "https://ai-sdk.dev/cookbook/guides/natural-language-postgres.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ddffeb9ce3a9eb9146b86519488d8c556eff82430485568f69e6ad197b94de1f"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "9db7e1733c3ba0005159d4f00120b08ba94d1acd452b15a502bafa06feb008ad"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -20,7 +20,7 @@ The application will:
 
 - Generate SQL queries from a natural language input
 - Explain query components in plain English
-- Create a chart to visualise query results
+- Create a chart to visualize query results
 
 You can find a completed version of this project at [natural-language-postgres.vercel.app](https://natural-language-postgres.vercel.app).
 
@@ -597,7 +597,7 @@ export const generateChartConfig = async (
     const { output: config } = await generateText({
       model: 'openai/gpt-6-astra',
       instructions: 'You are a data visualization expert.',
-      prompt: `Given the following data from a SQL query result, generate the chart config that best visualises the data and answers the users query.
+      prompt: `Given the following data from a SQL query result, generate the chart config that best visualizes the data and answers the user's query.
       For multiple groups use multi-lines.
 
       Here is an example complete config:

@@ -16,13 +16,13 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a8eea908fbb1b63f9f48ced766f8c326db62174749fcbfd8f9442e6c837e3920"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bd57436e84969c5a00812a4154f31b357b6ac5d8a9766ec3908086bc64a65332"
 ---
 
 # BotID
 
-> **Availability**: BotID is available on all plans
+> BotID is available on all plans
 
 [Vercel BotID](/botid) is an invisible CAPTCHA that protects against sophisticated bots without showing visible challenges or requiring user action. It's a client-side challenge that uses machine learning to distinguish between humans and bots. It adds a protection layer to high-value routes, such as checkouts, signups, and APIs, that are common targets for bots imitating real users.
 
@@ -120,6 +120,7 @@ Metrics are also available in [Observability Plus](/docs/observability/observabi
 ## More resources
 
 - [Advanced configuration](/docs/botid/advanced-configuration) - Fine-grained control over detection levels and backend domains
+- [Verify visitors on page load](/docs/botid/verify-on-page-load) - Reuse an earlier verification with a short-lived signed cookie
 - [Form submissions](/docs/botid/form-submissions) - Handling form submissions with BotID protection
 - [Local Development Behavior](/docs/botid/local-development-behavior) - Testing BotID in development environments
 
@@ -127,3 +128,6 @@ Metrics are also available in [Observability Plus](/docs/observability/observabi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

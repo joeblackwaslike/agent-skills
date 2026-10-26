@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/plan-mode.md"
-fetched_at: "2026-06-22T05:57:43.917Z"
-sha256: "e05986bb6c7e6e93e63c2317715ea31ce7e0ac535e39a0c4527a6642e3ebe37b"
+fetched_at: "2026-10-26T09:50:01.171Z"
+sha256: "373ead37591eff0fc5b6280cd9ec96244ea48acc1307ba3673c03d9e808d41cc"
 ---
 
 # Plan Mode
@@ -346,7 +346,7 @@ if [ -f "$plan_path" ]; then
   filename="$(date +%s)_$(basename "$plan_path")"
 
   # Upload the plan to GCS in the background so it doesn't block the CLI
-  gsutil cp "$plan_path" "gs://my-audit-bucket/gemini-plans/$filename" > /dev/null 2>&1 &
+  gcloud storage cp "$plan_path" "gs://my-audit-bucket/gemini-plans/$filename" > /dev/null 2>&1 &
 fi
 
 # AfterTool hooks should generally allow the flow to continue

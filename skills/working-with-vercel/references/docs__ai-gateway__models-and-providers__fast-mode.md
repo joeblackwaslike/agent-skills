@@ -11,11 +11,12 @@ prerequisites:
 related:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/coding-agents/claude-code
+  - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Request the faster serving path for supported models through AI Gateway using the `speed` option or the fast model slug, with automatic fallback to...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "905082337de13bd6f01b19140cdeff5ef7cabf179762ef25b2210ac835021be6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f6e5061741453d03e2eea0155121ec941f543f6cb9c920d4a2a3142b05e9a396"
 ---
 
 # AI Gateway Fast Mode
@@ -30,10 +31,11 @@ Some models expose a faster serving path that trades a higher per-token cost for
 
 - [AI Gateway adds unified fast mode support](https://vercel.com/changelog/ai-gateway-adds-unified-fast-mode-support)
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
-- [Opus 4.6 Fast Mode available on AI Gateway](https://vercel.com/changelog/opus-4-6-fast-mode-available-on-ai-gateway)
 - [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway)
+- [Opus 4.6 Fast Mode available on AI Gateway](https://vercel.com/changelog/opus-4-6-fast-mode-available-on-ai-gateway)
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway)
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/fast-mode.graph.md](/docs/ai-gateway/models-and-providers/fast-mode.graph.md)
 <!-- /docsgraph:related -->
@@ -631,7 +633,14 @@ For non-Anthropic models, or if you prefer not to configure Claude Code's fast m
 
 AI Gateway adjusts pricing based on the speed the provider actually served. For current fast mode rates, refer to the [AI Gateway models list](/ai-gateway/models).
 
+## Fast mode in virtual models
+
+Pin fast mode on a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) to serve all of its traffic on the fast tier, with optional fallback to the base model, or pick the model's **(Fast)** variant as the slug's target model.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/README.md"
-fetched_at: "2026-10-05T11:13:13.412Z"
-sha256: "a36d76c76de48fe56ef074307695aa32de4ba0d161c8a855ed8870f6f889ec1a"
+fetched_at: "2026-10-26T09:46:43.925Z"
+sha256: "396400a355f3c6f102fc41a0b84e2cab0689ee6a875c9181869ff6dbcc061c86"
 ---
 
 <!-- markdownlint-configure-file {
@@ -503,7 +503,7 @@ Environment variables[^2] can be used for configuration. They must be set before
 [felix]: https://github.com/kyoheiu/felix
 [freshports]: https://www.freshports.org/sysutils/zoxide/
 [fzf-installation]: https://github.com/junegunn/fzf#installation
-[fzf-man]: https://manpages.ubuntu.com/manpages/en/man1/fzf.1.html
+[fzf-man]: https://junegunn.github.io/fzf/reference/
 [fzf]: https://github.com/junegunn/fzf
 [gentoo packages]: https://packages.gentoo.org/packages/app-shells/zoxide
 [glob]: https://man7.org/linux/man-pages/man7/glob.7.html

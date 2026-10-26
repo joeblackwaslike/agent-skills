@@ -1,24 +1,74 @@
 ---
 title: DeepInfra
-description: "Learn how to use DeepInfra's models with the AI SDK."
+description: Learn how to use DeepInfra with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "8346eaa4ae9a22da1d2ddef3edc0845f965fe095db1a6371b3287e414c7bb901"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "c59ba8a9ed3eaa87e061ceda3620886a95af80addd69d23dd2960d567c889b2c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [DeepInfra](https://deepinfra.com) provider contains support for state-of-the-art models through the DeepInfra API, including Llama 3, Mixtral, Qwen, and many other popular open-source models.
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/deepinfra` to connect directly to DeepInfra.
 
-## Setup
+```ts provider="deepinfra" model="meta/llama-4-scout"
+import { generateText } from 'ai';
 
-The DeepInfra provider is available via the `@ai-sdk/deepinfra` module. You can install it with:
+const { text } = await generateText({
+  model: "meta/llama-4-scout",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['deepinfra'],
+    },
+  },
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/deepinfra
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['deepinfra']`. This sends the request to DeepInfra first, then falls back to other available providers of the same model if DeepInfra is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to DeepInfra. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by DeepInfra through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Using `@ai-sdk/deepinfra`
+
+For direct access to DeepInfra, install `ai` and `@ai-sdk/deepinfra`:
+
+```bash
+pnpm add ai @ai-sdk/deepinfra
+```
+
+Set your DeepInfra API credential in the `DEEPINFRA_API_KEY` environment variable:
+
+```bash
+export DEEPINFRA_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/deepinfra`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/deepinfra` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

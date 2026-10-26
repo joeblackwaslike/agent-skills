@@ -16,13 +16,15 @@ related:
 summary: Reference for the Vercel Blob JavaScript SDK, @vercel/blob, which lets you access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "06772c8e7ba5d5464d28ec5dd9af19ec8cde1c1d97fa6d5333e2efddf3186710"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ae3f97e0eb6f84296aebc979b5cd391567a62b58551588a0dcc88e17bb1b0e7e"
 ---
 
 # JS SDK Reference
 
-> **Availability**: Vercel Blob is available on all plans
+> Vercel Blob is available on all plans
+>
+> Those with the owner, member, developer role can access this feature
 
 Use the `@vercel/blob` package to upload, download, list, copy, and delete blobs from JavaScript and TypeScript applications, and to handle uploads directly from the browser.
 
@@ -55,28 +57,29 @@ To start using the [Vercel Blob](/storage/blob) SDK, follow the steps below:
 
 Vercel Blob works with any frontend framework. Begin by installing the package:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/blob
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/blob
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/blob
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/blob
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/blob
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/blob
+```
+
+**npm**
+
+```bash
+npm i @vercel/blob
+```
+
+**bun**
+
+```bash
+bun add @vercel/blob
+```
 
 - ### Create a Blob store
   Create a Blob store from the dashboard or the Vercel CLI.
@@ -1683,3 +1686,6 @@ try {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

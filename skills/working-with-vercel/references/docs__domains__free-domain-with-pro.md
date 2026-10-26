@@ -16,8 +16,8 @@ related:
 summary: Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain search.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/free-domain-with-pro.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f80cb7fad7d7a4f4a907457328e2e98c9ac279c115e8b11d5b4e25b7983ba0da"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8f59e0f590f3efcc4ce98916b9b38a9f9877ffc8c1043288a0a799791a66bba9"
 ---
 
 # Free Domain with Pro
@@ -31,15 +31,15 @@ Every paid Pro team gets one free first-year custom domain. You choose an [eligi
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Free domain with Pro offer now includes .app and .dev](https://vercel.com/changelog/app-and-dev-domains-included-with-free-domain-for-pro)
+- [Eight more TLDs now eligible for a free domain with Pro](https://vercel.com/changelog/eight-more-tlds-now-eligible-for-a-free-domain-with-pro)
 - [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions)
 - [Search domains without authentication](https://vercel.com/changelog/search-domains-without-authentication)
-- [Unlimited custom domains for all Pro teams](https://vercel.com/changelog/unlimited-custom-domains-for-all-pro-teams)
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Claim Domain Ownership](https://vercel.com/docs/rest-api/domains/claim-domain-ownership) — POST /v9/domains/{domain}/claim — Claim ownership of a domain for the authenticated team by verifying a TXT record. The
 
 Full cross-link map for this page: [/docs/domains/free-domain-with-pro.graph.md](/docs/domains/free-domain-with-pro.graph.md)
 <!-- /docsgraph:related -->
@@ -48,12 +48,20 @@ Full cross-link map for this page: [/docs/domains/free-domain-with-pro.graph.md]
 
 The offer only covers these top-level domains (TLDs):
 
+- `.agency`
 - `.app`
+- `.co`
+- `.company`
 - `.dev`
+- `.digital`
+- `.info`
+- `.live`
 - `.online`
+- `.pro`
 - `.site`
 - `.space`
 - `.store`
+- `.studio`
 - `.tech`
 - `.website`
 
@@ -98,3 +106,6 @@ Use these pages to manage your plan, domains, and renewals:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

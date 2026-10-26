@@ -15,13 +15,13 @@ related:
 summary: Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-s3.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c40b0b0b617ec6bdd303746a01c5c9082ed963e28fc2fdfd1eaaf9803222a6b0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cf226b6ac07ac1cffa597015d852739f8d14d5552ce4545b3b628a7e4a8a888d"
 ---
 
 # Drain Audit Logs to S3
 
-> **Availability**: Audit Log Drains are available on Enterprise plans
+> Audit Log Drains are available on Enterprise plans
 
 Audit Log Drains can write team activity events directly to your Amazon S3 bucket. Use this setup when you want audit logs stored in your AWS account for security archives, compliance retention, or downstream analysis.
 
@@ -32,12 +32,11 @@ Audit Log Drains can write team activity events directly to your Amazon S3 bucke
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
-- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \\(HEC\\).
-- [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Drains Security](https://vercel.com/docs/drains/security) — Learn how to secure your Drains endpoints with authentication and signature verification.
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-s3.graph.md](/docs/drains/audit-logs-to-s3.graph.md)
 <!-- /docsgraph:related -->
@@ -302,3 +301,6 @@ If the drain test fails with an AWS KMS error for a customer managed AWS KMS key
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -4,8 +4,8 @@ description: Let models orchestrate AI SDK tools with sandboxed JavaScript and T
 url: "https://ai-sdk.dev/docs/ai-sdk-core/code-mode"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/code-mode.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "1796fa4daedf9f98bcc3ab9a6bc6ca556102f2e00db40d089603dd8944b96e3a"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "027d5bdca48955754a5bbf8b4b5fc3723f309a656dc57ab33583a74cb0efa242"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -254,6 +254,7 @@ payloads, console output, and tool calls. Override them with
 const codeMode = codeModeTool({
   executionPolicy: {
     timeoutMs: 30_000,
+    cpuTimeoutMs: 10_000,
     memoryLimitBytes: 64 * 1024 * 1024,
     maxResultBytes: 1024 * 1024,
     maxBridgeRequests: 100,
@@ -264,7 +265,8 @@ const codeMode = codeModeTool({
 
 The available limits are:
 
-- `timeoutMs`: total execution time
+- `timeoutMs`: total execution time, including time spent waiting on tools
+- `cpuTimeoutMs`: CPU time spent running sandboxed code, excluding tool waits
 - `memoryLimitBytes`: QuickJS memory
 - `maxStackSizeBytes`: QuickJS stack
 - `maxSourceBytes`: generated source code

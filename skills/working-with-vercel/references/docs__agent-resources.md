@@ -16,8 +16,8 @@ related:
 summary: Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "da70b41da120092000975f7b4e717b01c56251ff4564d26c88632e8178d5b574"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c96b294d32d1890265cc74f65283ce86ab3be369dedb62d9a96fed2a971ab408"
 ---
 
 # Agent Resources
@@ -33,14 +33,13 @@ Give AI coding tools Vercel documentation, reusable skills, and secure access to
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Coding Agents](https://ai-sdk.dev/docs/getting-started/coding-agents) — Learn how to set up the AI SDK for use with coding agents, including installing skills, accessing bundled docs, and usin
 - [How Next.js supports AI coding agents](https://nextjs.org/docs/app/guides/ai-agents) — Learn how Next.js helps AI coding agents use current framework guidance, inspect applications, verify changes, and repor
+- [Coding Agents](https://ai-sdk.dev/docs/getting-started/coding-agents) — Learn how to set up the AI SDK for use with coding agents, including installing skills, accessing bundled docs, and usin
 - [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
 - [Agentic features](https://v0.app/docs/agentic-features) — v0's intelligent agent capabilities for web search, browser use, terminal commands, error fixing, and external tool inte
-- [Extending with Agents](https://vercel.shop/docs/getting-started/extending-with-agents) — Use coding agents like fx, Claude Code, Cursor, and Codex to personalize and extend your storefront.
-- [Ship It](https://eve.dev/docs/tutorial/ship-it) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
-- [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 
 Full cross-link map for this page: [/docs/agent-resources.graph.md](/docs/agent-resources.graph.md)
 <!-- /docsgraph:related -->
@@ -171,3 +170,6 @@ Deploy an eve template, then customize the agent for your use case:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

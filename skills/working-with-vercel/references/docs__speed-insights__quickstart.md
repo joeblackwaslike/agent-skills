@@ -16,8 +16,8 @@ related:
 summary: "Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f1c93149d8edcc3218df71baaadb231349bba51d806297bc86c2220a6fb63056"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c4f9ed23b313546fa69e66b98b3f164b372e8e9e6f13967f51551c244bca8a90"
 ---
 
 # Getting started with Speed Insights
@@ -40,13 +40,13 @@ This guide will help you get started with using Vercel Speed Insights on your pr
 - [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart) — Learn how you can leverage Vercel Image Optimization in your projects.
 
 Full cross-link map for this page: [/docs/speed-insights/quickstart.graph.md](/docs/speed-insights/quickstart.graph.md)
 <!-- /docsgraph:related -->
 
-> **Availability**: Speed Insights is available on all plans
+> Speed Insights is available on all plans
 
 To view instructions on using the Vercel Speed Insights in your project for your framework, use the **Choose a framework** dropdown on the right (at the bottom in mobile view).
 
@@ -62,28 +62,29 @@ Help me add Vercel Speed Insights to this project. First, make sure the Vercel C
 - A Vercel project. If you don't have one, you can [create a new project](https://vercel.com/new).
 - The Vercel CLI installed. If you don't have it, you can install it using the following command:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i -g vercel
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn global add vercel
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i -g vercel
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add -g vercel
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i -g vercel
+```
+
+**yarn**
+
+```bash
+yarn global add vercel
+```
+
+**npm**
+
+```bash
+npm i -g vercel
+```
+
+**bun**
+
+```bash
+bun add -g vercel
+```
 
 > **💡 Note:** Version 2 package updates are available. For details, see [What's new in
 > version 2](/docs/speed-insights/package#what's-new-in-version-2.x).
@@ -93,28 +94,23 @@ Help me add Vercel Speed Insights to this project. First, make sure the Vercel C
 - ### Add `@vercel/speed-insights` to your project
   > For \['nextjs', 'nextjs-app', 'sveltekit', 'remix',  'create-react-app', 'nuxt', 'vue', 'other', 'astro']:
   Using the package manager of your choice, add the `@vercel/speed-insights` package to your project:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @vercel/speed-insights
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @vercel/speed-insights
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @vercel/speed-insights
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @vercel/speed-insights
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @vercel/speed-insights
+  ```
+  **yarn**
+  ```bash
+  yarn add @vercel/speed-insights
+  ```
+  **npm**
+  ```bash
+  npm i @vercel/speed-insights
+  ```
+  **bun**
+  ```bash
+  bun add @vercel/speed-insights
+  ```
   > For \['html']:
   > **💡 Note:** When using the HTML implementation, there is no need to install the
   > `@vercel/speed-insights` package.
@@ -537,3 +533,6 @@ Now that you have Vercel Speed Insights set up, you can explore the following to
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

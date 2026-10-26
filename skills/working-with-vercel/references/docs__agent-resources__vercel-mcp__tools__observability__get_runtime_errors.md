@@ -13,8 +13,8 @@ related:
 summary: Use get_runtime_errors with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9c5f9bb5a9e914159da7677ee8d11828ec0c2d0c4ab6e3a06ff28e9bda3c458c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "15e67a5453b86324706cda1f13a87b10e18df469ab4ff5ad08a98903c342006b"
 ---
 
 # get_runtime_errors
@@ -30,8 +30,8 @@ Get grouped runtime error clusters for a project. Each cluster includes the erro
 - [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
 - [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
 - [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
+- [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [get_agent_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run) — Use get_agent_run with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md)
 <!-- /docsgraph:related -->
@@ -50,3 +50,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

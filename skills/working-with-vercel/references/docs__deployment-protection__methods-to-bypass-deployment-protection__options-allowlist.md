@@ -15,13 +15,13 @@ related:
 summary: Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b51d07dcec7967b54a89ddbc83e0fa2abc6f1529f6b11908757e9a15c8f41dbf"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "aff39dec50957f54620d00a7eaaea235a0d3a95052d1abb069c3a79ecddfdfcf"
 ---
 
 # OPTIONS Allowlist
 
-> **Availability**: OPTIONS Allowlist is available on all plans
+> OPTIONS Allowlist is available on all plans
 
 You can use OPTIONS Allowlist to disable Deployment Protection (including [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection), and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)) on any incoming CORS preflight `OPTIONS` request for a list of paths.
 
@@ -94,3 +94,6 @@ For example, if you specify `/api`, all requests to paths that start with `/api`
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

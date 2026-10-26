@@ -12,8 +12,8 @@ related:
 summary: The .vercelignore file allows you to define which files and directories should be ignored when uploading your project to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/vercel-ignore.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "7292ff770aec3d300dca152ea16ab38ab9adb19aae2a04bfaaee7a66488d6d94"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "701e87c712d5123564a36cb13368186cda4fcde2ffc35e60ce9f1c342e5f3071"
 ---
 
 # Exclude Files from Deployments with .vercelignore
@@ -59,3 +59,6 @@ If you have a monorepo, a `.vercelignore` in the project root directory always t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

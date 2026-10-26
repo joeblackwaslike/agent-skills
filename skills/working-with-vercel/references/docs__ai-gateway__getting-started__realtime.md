@@ -15,8 +15,8 @@ related:
 summary: Start a realtime speech session using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "92e2e69c8178105c92dbd5b9a4b1265b78467f63cda603e9bc8d970edcd54d87"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "760d524adc939c0b8a9f01487003c2c3e19504d2affc74eccbd7b6319c5c3d3c"
 ---
 
 # AI Gateway Realtime Quickstart
@@ -34,9 +34,9 @@ Start a realtime speech session through AI Gateway.
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
-- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
+- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/realtime.graph.md](/docs/ai-gateway/getting-started/realtime.graph.md)
 <!-- /docsgraph:related -->
@@ -133,3 +133,6 @@ node realtime.mts
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

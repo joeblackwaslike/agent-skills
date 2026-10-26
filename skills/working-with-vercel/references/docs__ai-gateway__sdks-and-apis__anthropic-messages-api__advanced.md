@@ -15,8 +15,8 @@ related:
 summary: Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "106fc34c0333c2e3d88e03ed760282373bc55daca93b97d6a99878cdbdbbb3b0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "89254783cddb5b6eb4ea3e7b2e436a3d8d5fc6e659bbd965bba8d5f7333dd8b8"
 ---
 
 # Anthropic Messages Configuration with AI Gateway
@@ -31,9 +31,9 @@ Give Claude access to the web, bound how long a provider may take, and cache pro
 
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
-- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [Anthropic Messages Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling) — Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
+- [Anthropic Messages Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) — Create messages using the Anthropic Messages API format with support for streaming through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.graph.md)
 <!-- /docsgraph:related -->
@@ -169,3 +169,6 @@ For full details, supported providers, and examples, see [Automatic Caching](/do
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, routing, and provider failover.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bac2155790802907161e32bb0ac25a4a1284223cd910358de4639a91c1f01f13"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9a38a7e7e096474cf2e8daa317782385df3e5e84c98c16fee60adac6a0dbbbb5"
 ---
 
 # Vercel AI Gateway: Models, Routing, and Observability
@@ -35,7 +35,7 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
-- [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai) — Feed thread history into TanStack AI's chat() and give it Chat SDK tools, with no runtime dependency on @tanstack/ai.
+- [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai) — Feed thread history into TanStack AI's chat(), give it Chat SDK tools, and serve a TanStack AI browser chat from the sam
 - [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
 - [Deployment](https://eve.dev/docs/guides/deployment/overview) — Choose a deployment strategy and prepare an eve agent for production.
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
@@ -78,11 +78,11 @@ curl https://ai-gateway.vercel.sh/v1/chat/completions \
   }'
 ```
 
-> **Availability**: AI Gateway is available on all plans
+> AI Gateway is available on all plans. Your use of each AI provider is subject to their terms listed on each model's page and subject to Vercel's [AI Product Terms](/legal/ai-product-terms).
 
 ## Use AI Gateway across modalities and clients
 
-Vercel AI Gateway gives applications and coding agents shared access to models across providers. It supports [modalities](/docs/ai-gateway/modalities) including text generation, image generation, video generation, speech, transcription, realtime, embeddings, and reranking. Add [files and tool calls](/docs/ai-gateway/inputs-and-tools) where the selected model supports them.
+Vercel AI Gateway gives applications and coding agents shared access to models across providers. It supports [modalities](/docs/ai-gateway/modalities) including text generation, image generation, video generation, speech, transcription, realtime, embeddings, reranking, and decisions. Add [files and tool calls](/docs/ai-gateway/inputs-and-tools) where the selected model supports them.
 
 Call AI Gateway from any environment with the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk), [OpenAI Chat Completions](/docs/ai-gateway/sdks-and-apis/openai-chat-completions), [OpenAI Responses API](/docs/ai-gateway/sdks-and-apis/responses), [Anthropic Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api), a [supported coding agent](/docs/ai-gateway/coding-agents), or a [framework integration](/docs/ai-gateway/ecosystem/framework-integrations).
 
@@ -119,7 +119,7 @@ Budgets cover spend billed through AI Gateway system credentials. BYOK spend is 
 
 **Models and providers**: Choose models and configure routing, filtering, fallbacks, caching, and service tiers. [Learn more →](/docs/ai-gateway/models-and-providers)
 
-**Modalities**: Work with text, images, video, speech, realtime, embeddings, and reranking. [Learn more →](/docs/ai-gateway/modalities)
+**Modalities**: Work with text, images, video, speech, realtime, embeddings, reranking, and decisions. [Learn more →](/docs/ai-gateway/modalities)
 
 **Observability and spend**: Inspect requests, usage, latency, routing attempts, and cost. [Learn more →](/docs/ai-gateway/observability-and-spend)
 
@@ -135,3 +135,6 @@ Explore [chat platforms](/docs/ai-gateway/chat-platforms) and [ecosystem integra
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

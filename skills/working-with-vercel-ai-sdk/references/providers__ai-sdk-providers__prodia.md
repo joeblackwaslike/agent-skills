@@ -1,24 +1,67 @@
 ---
 title: Prodia
-description: Learn how to use Prodia models with the AI SDK.
+description: Learn how to use Prodia with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "5a687dd68a672e76ed317ae780d02c1d6f52a79137ada9e5fef8f6d677d06970"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "ca80b640fcf5ca7b57ef81ec0cbeb26abb67ed9e97a254df9455e42da737a796"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Prodia](https://prodia.com/) is a fast inference platform for generative AI, offering high-speed image generation with FLUX and Stable Diffusion models.
+You can use Prodia models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/prodia`.
 
-## Setup
+```ts provider="prodia" model="prodia/flux-fast-schnell"
+import { generateImage } from 'ai';
 
-The Prodia provider is available via the `@ai-sdk/prodia` module. You can install it with
+const { image } = await generateImage({
+  model: "prodia/flux-fast-schnell",
+  prompt: 'A sunlit mountain village in watercolor.',
+});
+
+console.log(image.base64);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/prodia
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/prodia`
+
+For direct access to Prodia, install `ai` and `@ai-sdk/prodia`:
+
+```bash
+pnpm add ai @ai-sdk/prodia
+```
+
+Set your Prodia API credential in the `PRODIA_TOKEN` environment variable:
+
+```bash
+export PRODIA_TOKEN=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/prodia`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/prodia` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

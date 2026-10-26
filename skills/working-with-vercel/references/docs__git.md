@@ -11,18 +11,18 @@ related:
   - /docs/git/vercel-for-github
   - /docs/git/vercel-for-gitlab
   - /docs/git/vercel-for-bitbucket
+  - /docs/git/vercel-for-origin
   - /docs/git/vercel-for-azure-pipelines
-  - /docs/deployments/environments
 summary: Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production branch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "18f3e30c32fcac1ebc00f54e25a442ec393db6d7dbd80c41dae6663045479513"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1893cc7b01f765204a464e03e147528b963aa20ba6a90ace1bf772913dd9339f"
 ---
 
 # Deploying Git Repositories with Vercel
 
-Vercel allows for **automatic deployments on every branch push** and merges onto the [production branch](#production-branch) of your [GitHub](/docs/git/vercel-for-github), [GitLab](/docs/git/vercel-for-gitlab), [Bitbucket](/docs/git/vercel-for-bitbucket), and [Azure DevOps Pipelines](/docs/git/vercel-for-azure-pipelines) projects.
+Vercel allows for **automatic deployments on every branch push** and merges onto the [production branch](#production-branch) of your [GitHub](/docs/git/vercel-for-github), [GitLab](/docs/git/vercel-for-gitlab), [Bitbucket](/docs/git/vercel-for-bitbucket), [Origin](/docs/git/vercel-for-origin), and [Azure DevOps Pipelines](/docs/git/vercel-for-azure-pipelines) projects.
 
 
 <!-- docsgraph:related -->
@@ -93,7 +93,9 @@ Before disabling GitHub `deployment_status` events, check whether any GitHub Act
 - [Bitbucket Standard](https://www.atlassian.com/software/bitbucket/pricing)
 - [Bitbucket Premium](https://www.atlassian.com/software/bitbucket/pricing)
 
-* [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines)
+* [Origin](/docs/git/vercel-for-origin) (public beta)
+
+- [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines)
 
 ### Self-Hosted examples
 
@@ -105,7 +107,7 @@ If your provider is not listed here, you can also use the [Vercel CLI to deploy]
 
 ## Deploying a Git repository
 
-Setting up your GitHub, GitLab, or Bitbucket repository on Vercel is only a matter of clicking the ["New Project"](/new) button on the top right of your dashboard and following the steps.
+Setting up your GitHub, GitLab, Bitbucket, or Origin repository on Vercel is only a matter of clicking the ["New Project"](/new) button on the top right of your dashboard and following the steps.
 
 > **💡 Note:** For Azure DevOps repositories, use the [Vercel Deployment
 > Extension](/docs/git/vercel-for-azure-pipelines)
@@ -238,3 +240,6 @@ Alternatively, teams on the Pro plan can use [custom environments](/docs/deploym
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

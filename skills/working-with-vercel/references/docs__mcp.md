@@ -15,8 +15,8 @@ related:
 summary: Learn more about MCP and how you can use it on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9d306a9b67dff12f434aae78bb1884f6e211b6ce5d0b145a24ca260eda155385"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "46d3b07e7a03b0766d99056cb8a24d194190aa8e7d658da18a97366e7fd57ce9"
 ---
 
 # Model Context Protocol
@@ -39,8 +39,8 @@ sha256: "9d306a9b67dff12f434aae78bb1884f6e211b6ce5d0b145a24ca260eda155385"
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
 - [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers)
-- [Model Context Protocol (MCP) Tools](https://ai-sdk.dev/cookbook/node/mcp-tools) — Learn how to use MCP tools with the AI SDK and Node
-- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp)
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/mcp.graph.md](/docs/mcp.graph.md)
 <!-- /docsgraph:related -->
@@ -89,3 +89,6 @@ Learn more about Model Context Protocol and explore available MCP servers.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

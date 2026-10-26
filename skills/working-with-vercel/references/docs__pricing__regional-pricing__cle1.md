@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Cleveland, USA (cle1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/cle1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d0c99f6b356809139bc6c19bba415e356b874b95b9a86f9fc5331be4e948d7ae"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "98dccec9d82d670668c86a1c2347a3751e942fa84d059169645a3a750710337b"
 ---
 
 # Cleveland, USA (cle1) pricing
@@ -34,8 +34,8 @@ The table below shows Managed Infrastructure products with pricing specific to t
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
 - [Washington D.C., USA \\(iad1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/iad1) — Vercel pricing for the Washington D.C., USA \\(iad1\\) region.
+- [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/cle1.graph.md](/docs/pricing/regional-pricing/cle1.graph.md)
 <!-- /docsgraph:related -->
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

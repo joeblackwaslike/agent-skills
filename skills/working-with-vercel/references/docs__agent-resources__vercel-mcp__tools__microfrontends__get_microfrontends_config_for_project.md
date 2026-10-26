@@ -13,8 +13,8 @@ related:
 summary: Use get_microfrontends_config_for_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "65ae8195486bee08f4ef4e874dde961cf7ee7d365b46d48cf145e25dc9f07b8e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e25bfc5857d4d0f68efdae3ee566361251f8ca2b1e6e72d1d3166490f3bee12f"
 ---
 
 # get_microfrontends_config_for_project
@@ -30,8 +30,8 @@ Get microfrontends config for a project.
 - [get_microfrontends_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config) — Use get_microfrontends_config with Vercel MCP.
 - [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
 - [Get microfrontends config for a project](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project) — GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config — Get the microfrontends config for a project by
-- [get_connector_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection) — Use get_connector_project_connection with Vercel MCP.
 - [get_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env) — Use get_project_env with Vercel MCP.
+- [get_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config) — Use get_rolling_release_config with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project.graph.md](/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project.graph.md)
 <!-- /docsgraph:related -->
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/micro
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

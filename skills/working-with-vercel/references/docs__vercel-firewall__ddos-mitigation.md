@@ -16,13 +16,13 @@ related:
 summary: Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/ddos-mitigation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "677f30e896e2871dd134893577f670a3d7122a16dce34b971a425f4aa2dc254c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "83f9b0dadf327d645c1d640201edf902a7a432663d79d45284ca4910732252ae"
 ---
 
 # DDoS Mitigation
 
-> **Availability**: DDoS Mitigation is available on all plans
+> DDoS Mitigation is available on all plans
 
 Vercel provides automatic DDoS mitigation for all deployments, regardless of your plan. We block incoming traffic if we identify abnormal or suspicious levels of incoming requests.
 
@@ -37,13 +37,13 @@ Vercel provides automatic DDoS mitigation for all deployments, regardless of you
 - [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Bot Protection: One-click managed ruleset now in public beta](https://vercel.com/blog/one-click-bot-protection-now-in-public-beta)
-- [Temporarily disable Vercel Firewall system DDoS mitigations](https://vercel.com/changelog/temporarily-disable-vercel-firewall-system-ddos-mitigations)
 - [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
-- [Mitigating Denial of Wallet risks with Vercel](https://vercel.com/blog/mitigating-denial-of-wallet-risks-with-vercel)
+- [Temporarily disable Vercel Firewall system DDoS mitigations](https://vercel.com/changelog/temporarily-disable-vercel-firewall-system-ddos-mitigations)
 - [Protectd: Evolving Vercel’s always-on denial-of-service mitigations](https://vercel.com/blog/protectd-evolving-vercels-always-on-denial-of-service-mitigations)
+- [Mitigating Denial of Wallet risks with Vercel](https://vercel.com/blog/mitigating-denial-of-wallet-risks-with-vercel)
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
-- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 
 Full cross-link map for this page: [/docs/vercel-firewall/ddos-mitigation.graph.md](/docs/vercel-firewall/ddos-mitigation.graph.md)
 <!-- /docsgraph:related -->
@@ -76,7 +76,7 @@ Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spe
 
 ## Bypass System-level Mitigations
 
-> **Availability**: Bypass System-level Mitigations are available on Enterprise and Pro plans
+> Bypass System-level Mitigations are available on Enterprise and Pro plans
 
 While Vercel's system-level mitigations (such as [DDoS protection](/docs/vercel-firewall/ddos-mitigation)) safeguards your websites and applications, it can happen that they block traffic from trusted sources like proxies or shared networks in situations where traffic from these proxies or shared networks was identified as malicious. You can temporarily pause all automatic mitigations for a specific project. This can be useful on business-critical events such as Black Friday.
 
@@ -119,3 +119,6 @@ You can monitor usage in the [Vercel Dashboard](/dashboard) under the **Usage** 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

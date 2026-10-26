@@ -16,13 +16,15 @@ related:
 summary: Learn how your Vercel Blob store is secured
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/security.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "756e5b40fceab6c45b2904f52af5cdefd765c99d86551ebce751e17bbb66ff5d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f4cf5f28feee86ce019b1cc40260422d3ebccabd5cefee027e1b87e6eebbe702"
 ---
 
 # Security
 
-> **Availability**: Vercel Blob is available on all plans
+> Vercel Blob is available on all plans
+>
+> Those with the owner, member, developer role can access this feature
 
 ## Private storage
 
@@ -39,13 +41,11 @@ For files that require authentication, use [private storage](/docs/vercel-blob/p
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available)
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
+- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
-- [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 
 Full cross-link map for this page: [/docs/vercel-blob/security.graph.md](/docs/vercel-blob/security.graph.md)
 <!-- /docsgraph:related -->
@@ -93,3 +93,6 @@ The [OWASP core ruleset](/docs/vercel-firewall/vercel-waf/managed-rulesets#confi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

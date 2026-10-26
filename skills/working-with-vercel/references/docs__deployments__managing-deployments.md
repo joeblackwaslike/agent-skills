@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7eff0eb52b59477e22070a10d391edf9c56303f2436daec5a28eb21f65b770fc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c97d7454178892701d2ea09052b876bfe0e026d1d37d7fd4d7b81af2b0148ef5"
 ---
 
 # Managing Deployments
@@ -157,3 +157,6 @@ Other than your custom needs to redeploy, it's always recommended to redeploy yo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

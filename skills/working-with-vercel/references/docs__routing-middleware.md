@@ -10,19 +10,19 @@ prerequisites:
 related:
   - /docs/fluid-compute
   - /docs/functions/runtimes/node-js
+  - /docs/functions/runtimes/bun
+  - /docs/functions/runtimes/python
   - /docs/project-configuration/vercel-json
-  - /docs/routing/project-routing-rules
-  - /docs/routing/redirects
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "df1e237bbd79901d7a7f4cfccb9269e5607eeb675fb7607bcbbbe30058d7046b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7ecf3f91d24f4f3096f898d2f5602606b7bd7617f50ea29186270ae59e7dabb8"
 ---
 
 # Routing Middleware
 
-> **Availability**: Routing Middleware is available on all plans
+> Routing Middleware is available on all plans
 
 Routing Middleware **executes code *before* a request is processed on a site**, and are built on top of [fluid compute](/docs/fluid-compute). Based on the request, you can modify the response.
 
@@ -38,10 +38,10 @@ Routing Middleware **executes code *before* a request is processed on a site**, 
 - [Edge Functions are now available in Public Beta](https://vercel.com/changelog/edge-functions-are-now-available-in-public-beta)
 - [Edge Functions are now generally available](https://vercel.com/changelog/edge-functions-are-now-generally-available)
 - [A/B Testing on Vercel](https://vercel.com/kb/guide/ab-testing-on-vercel) — Learn best practices for A/B testing on Vercel
-- [Adding a response header](https://vercel.com/kb/guide/add-response-header) — Learn how to add a response header in your Middleware.
 - [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [Build with a Flask starter template](https://vercel.com/kb/guide/build-with-a-flask-starter-template) — Deploy a Flask app to Vercel from a starter template. Compare the Flask Hello World starter, AI SDK, alt text generator,
+- [Build with a Hono starter template](https://vercel.com/kb/guide/build-with-a-hono-starter-template) — Deploy a Hono app to Vercel from a starter template. Compare the Hono API starter, MCP server, AI SDK, Slack Bolt, Next.
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Billions of dollars, billions of requests: Black Friday-Cyber Monday 2024](https://vercel.com/blog/black-friday-cyber-monday-2024-recap)
 
@@ -50,7 +50,7 @@ Full cross-link map for this page: [/docs/routing-middleware.graph.md](/docs/rou
 
 Because it runs globally before the cache, Routing Middleware is an effective way of providing personalization to statically generated content. Depending on the incoming request, you can execute custom logic, rewrite, redirect, add headers and more, before returning a response.
 
-Routing Middleware runs on the [Node.js](/docs/functions/runtimes/node-js) runtime. See [runtime options](#runtime-options) for information on how to change the runtime of your Routing Middleware.
+You can write Routing Middleware in TypeScript or JavaScript, which run on [Node.js](/docs/functions/runtimes/node-js) or [Bun](/docs/functions/runtimes/bun), or in Python, which runs on [Python](/docs/functions/runtimes/python). See [runtime options](#runtime-options) for details.
 
 ## Static configuration or Routing Middleware
 
@@ -68,9 +68,11 @@ You can express these common tasks with static configuration in [`vercel.json`](
 
 Use Routing Middleware when the decision depends on logic that static rules can't express, such as verifying a session token, calling an API, or assigning visitors to an A/B test.
 
-## Creating a Routing Middleware
+## Creating Routing Middleware
 
-You can use Routing Middleware with [**any framework**](/docs/frameworks). To add a Routing Middleware to your app, point the [`proxy`](/docs/project-configuration/vercel-json#proxy) property in `vercel.json` at your entrypoint:
+To add Routing Middleware to your app, point the [`proxy`](/docs/project-configuration/vercel-json#proxy) property in `vercel.json` at your entrypoint:
+
+#### TypeScript
 
 ```json filename="vercel.json"
 {
@@ -81,9 +83,7 @@ You can use Routing Middleware with [**any framework**](/docs/frameworks). To ad
 }
 ```
 
-Your entrypoint exports the handler as a default export:
-
-```ts v0="build" filename="proxy.ts" framework=all
+```ts v0="build" filename="proxy.ts"
 import { next } from '@vercel/functions';
 
 export default function proxy(request: Request) {
@@ -102,63 +102,139 @@ export default function proxy(request: Request) {
 }
 ```
 
-```js v0="build" filename="proxy.js" framework=all
-import { next } from '@vercel/functions';
+#### Python
 
-export default function proxy(request) {
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "proxy": {
+    "entrypoint": "proxy:proxy"
+  }
+}
+```
+
+```python filename="proxy.py"
+from vercel.proxy import Proxy, RedirectResponse, Request, Response
+
+proxy = Proxy()
+
+
+# Redirect old paths
+@proxy.route("/old-page")
+def old_page(request: Request) -> Response:
+    return RedirectResponse("/new-page", status_code=302)
+
+
+# Requests that match no route continue to your app unchanged
+```
+
+```toml filename="pyproject.toml"
+[dependency-groups]
+"vercel.proxy" = ["vercel-proxy"]
+```
+
+The entrypoint can live in a subdirectory, such as `src/proxy.ts` or `app.proxy:proxy`. See the [JS reference](/docs/routing-middleware/js-reference) and the [Python reference](/docs/routing-middleware/python-reference) for each language's API.
+
+In TypeScript and JavaScript, you can also skip `vercel.json` and use the `middleware.ts` file convention. See the [JS reference](/docs/routing-middleware/js-reference#using-the-file-convention).
+
+Your Routing Middleware must use the same runtime as your app. If the runtimes don't match, the build fails with `proxy_runtime_mismatch`.
+
+> **💡 Note:** You can't use `proxy` with frameworks that build their own routing
+> middleware, such as Next.js and Astro. In Next.js 16 and later, add a
+> `proxy.ts` file at your project root instead, or a `middleware.ts` file in
+> earlier versions. See the [Next.js proxy
+> documentation](https://nextjs.org/docs/app/api-reference/file-conventions/proxy)
+> for details.
+
+## Path matching
+
+Without a matcher, your Routing Middleware runs on **every** request, including requests for static files. This adds latency and cost to each request. Set `proxy.matcher` to one path or a list of paths:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "proxy": {
+    "entrypoint": "proxy.ts",
+    "matcher": ["/about/:path*", "/dashboard/:path*"]
+  }
+}
+```
+
+Each matcher must start with `/`. In TypeScript and JavaScript, you can also export a [`config`](/docs/routing-middleware/js-reference#match-paths-based-on-custom-matcher-config) object with a `matcher` property instead.
+
+The following examples show `matcher` values.
+
+### Match a single path
+
+```json
+"/about/:path*"
+```
+
+### Match using regex
+
+The matcher has full [regex](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Regular_Expressions) support for cases such as negative lookaheads or character matching.
+
+#### Match based on a negative lookahead
+
+To match all request paths except for the ones starting with:
+
+- `api` (API routes)
+- `_next/static` (static files)
+- `favicon.ico` (favicon file)
+
+```json
+["/((?!api|_next/static|favicon.ico).*)"]
+```
+
+#### Match based on character matching
+
+To match `/blog/123` but not `/blog/abc`:
+
+```json
+["/blog/:slug(\\d{1,})"]
+```
+
+For help on writing your own regex path matcher, see [Path to regexp](https://github.com/pillarjs/path-to-regexp#path-to-regexp-1).
+
+## Geolocation headers
+
+Vercel adds geolocation headers, such as `x-vercel-ip-country` and `x-vercel-ip-city`, to every request your Routing Middleware receives. See [request headers](/docs/headers/request-headers) for the full list.
+
+The following example redirects visitors from one country away from a page:
+
+#### TypeScript
+
+```ts filename="proxy.ts"
+import { geolocation, next } from '@vercel/functions';
+
+export default function proxy(request: Request) {
   const url = new URL(request.url);
+  const { country } = geolocation(request);
 
-  // Redirect old paths
-  if (url.pathname === '/old-page') {
-    return new Response(null, {
-      status: 302,
-      headers: { Location: '/new-page' },
-    });
+  if (url.pathname === '/secret-page' && country === 'SE') {
+    return Response.redirect(new URL('/login', request.url));
   }
 
-  // Continue to the next handler
   return next();
 }
 ```
 
-The entrypoint can live in a subdirectory, such as `src/proxy.ts`. Add [`proxy.matcher`](/docs/project-configuration/vercel-json#proxy) to limit which paths run your Routing Middleware.
+#### Python
 
-> **💡 Note:** You can't use `proxy` with frameworks that build their own routing
-> middleware, such as Next.js and Astro. In Next.js 16 and later, add a
-> `proxy.ts` file at your project root instead. See the [Next.js proxy
-> documentation](https://nextjs.org/docs/app/api-reference/file-conventions/proxy)
-> for details.
+```python filename="proxy.py"
+from vercel.proxy import ContinueResponse, Proxy, RedirectResponse, Request, Response
 
-### Using the file convention
+proxy = Proxy()
 
-You can also create a `middleware.ts` file at your project's root directory and skip `vercel.json`:
 
-```ts filename="middleware.ts" framework=all
-export default function middleware(request: Request) {
-  return new Response('Hello from your Middleware!');
-}
-
-export const config = {
-  runtime: 'nodejs',
-};
+@proxy.route("/secret-page")
+def secret_page(request: Request) -> Response:
+    if request.headers.get("x-vercel-ip-country") == "SE":
+        return RedirectResponse("/login")
+    return ContinueResponse()
 ```
 
-```js filename="middleware.js" framework=all
-export default function middleware(request) {
-  return new Response('Hello from your Middleware!');
-}
-
-export const config = {
-  runtime: 'nodejs',
-};
-```
-
-> For \['nextjs', 'nextjs-app']:
-
-> **💡 Note:** The `middleware.ts` file should be at the same
-> level as your `app` or `pages` directory (even if you're using a `src`
-> directory). See the [Quickstart](/docs/routing-middleware/getting-started)
-> guide for more information.
+In TypeScript and JavaScript, read them with the [`geolocation()`](/docs/functions/functions-api-reference/vercel-functions-package#geolocation) helper from `@vercel/functions`. In Python, read them from `request.headers`.
 
 ## Logging
 
@@ -181,31 +257,9 @@ The following limits apply to requests processed by Routing Middleware:
 
 ## Runtime options
 
-Routing Middleware is available on the [Node.js](/docs/functions/runtimes/node-js) and [Bun](/docs/functions/runtimes/bun) runtimes. An entrypoint set through the [`proxy`](/docs/project-configuration/vercel-json#proxy) property runs on Node.js.
+TypeScript and JavaScript Routing Middleware runs on the [Node.js](/docs/functions/runtimes/node-js) runtime by default. To use [Bun](/docs/functions/runtimes/bun), set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in your `vercel.json` file. With the `middleware.ts` file convention, also set the [`runtime` config](/docs/routing-middleware/js-reference#specify-runtime) to `nodejs`.
 
-With the `middleware.ts` file convention, the default runtime is Node.js. You can set the runtime explicitly by exporting a [`config`](/docs/routing-middleware/api#config-object) object with a `runtime` property in your `middleware.ts` file.
-
-To use the Bun runtime, set [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) in your `vercel.json` file and your runtime config to `nodejs`.
-
-```ts filename="middleware.ts" framework=other
-export const config = {
-  runtime: 'nodejs',
-};
-export default function middleware(request: Request) {
-  // Your middleware logic here
-  return new Response('Hello from your Middleware!');
-}
-```
-
-```js filename="middleware.js" framework=other
-export const config = {
-  runtime: 'nodejs'
-}
-export default function middleware(request) {
-  // Your middleware logic here
-  return new Response('Hello from your Middleware!');
-}
-```
+Python Routing Middleware runs on the [Python](/docs/functions/runtimes/python) runtime.
 
 ## Pricing
 
@@ -225,7 +279,8 @@ The [Vercel Observability dashboard](/docs/observability) provides visibility in
 Learn more about Routing Middleware by exploring the following resources:
 
 - [Getting Started with Routing Middleware](/docs/routing-middleware/getting-started)
-- [Routing Middleware API Reference](/docs/routing-middleware/api)
+- [Routing Middleware JS reference](/docs/routing-middleware/js-reference)
+- [Routing Middleware Python reference](/docs/routing-middleware/python-reference)
 - [Fluid compute](/docs/fluid-compute)
 - [Runtimes](/docs/functions/runtimes)
 
@@ -233,3 +288,6 @@ Learn more about Routing Middleware by exploring the following resources:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

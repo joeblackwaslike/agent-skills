@@ -13,8 +13,8 @@ related:
 summary: Use upload_artifact with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/upload_artifact.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4c5831f87e1a3c6f277dc40331c929ee88729e007f12a5ab441c45bd2d73fb5a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "847cd06c8fc056f70efd700176264682c62065ee4f685ce6381cca385c0bc6ec"
 ---
 
 # upload_artifact
@@ -27,10 +27,10 @@ Upload a cache artifact.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Upload a cache artifact](https://turborepo.dev/docs/openapi/artifacts/upload-artifact) — Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with
 - [Upload a cache artifact](https://vercel.com/docs/rest-api/artifacts/upload-a-cache-artifact) — PUT /v8/artifacts/{hash} — Uploads a cache artifact identified by the \\`hash\\` specified on the path. The cache artifact
-- [Download a cache artifact](https://vercel.com/docs/rest-api/artifacts/download-a-cache-artifact) — GET /v8/artifacts/{hash} — Downloads a cache artifact indentified by its \\`hash\\` specified on the request path. The art
+- [Upload a cache artifact](https://turborepo.dev/docs/openapi/artifacts/upload-artifact) — Uploads a cache artifact identified by the `hash` specified on the path. The cache artifact can then be downloaded with
 - [artifact_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query) — Use artifact_query with Vercel MCP.
+- [Download a cache artifact](https://vercel.com/docs/rest-api/artifacts/download-a-cache-artifact) — GET /v8/artifacts/{hash} — Downloads a cache artifact indentified by its \\`hash\\` specified on the request path. The art
 - [upload_file](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/upload_file) — Use upload_file with Vercel MCP.
 - [record_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/record_events) — Use record_events with Vercel MCP.
 
@@ -57,3 +57,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/cachi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

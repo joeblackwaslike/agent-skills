@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "124c8c5f3f7dff489d99f21cf1646e25fdcc7de4c3f1d620d3d123968eba9849"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f7eae88f60da7c9bfd167ebe9a8bd6ceffab468a93ee78172eb3cfeef6fe022a"
 ---
 
 # Vercel CLI Overview
@@ -37,7 +37,7 @@ Vercel gives you multiple ways to interact with and configure your Vercel Projec
 - [Configure weighted traffic splits for Vercel Flags from the Vercel CLI](https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli)
 - [Copy-to-Prompt instructions now available for Flags](https://vercel.com/changelog/copy-to-prompt-instructions-now-available-for-flags)
 - [Deploy Hono backends with zero configuration](https://vercel.com/changelog/deploy-hono-backends-with-zero-configuration)
-- [Experimental native binaries for Vercel CLI](https://vercel.com/changelog/experimental-native-binaries-for-vercel-cli)
+- [Deploy without an account using Vercel CLI](https://vercel.com/changelog/deploy-without-an-account-using-vercel-cli)
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [How to automatically approve tool calls in eve with Jev](https://vercel.com/kb/guide/auto-approve-tool-calls-eve-jev) — Use Jev to review tool calls in eve, allow routine actions, and request human approval when needed. Configure the policy
@@ -52,28 +52,29 @@ If you'd like to interface with the platform programmatically, check out the [RE
 
 To download and install Vercel CLI, run the following command:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i -g vercel
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn global add vercel
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i -g vercel
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add -g vercel
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i -g vercel
+```
+
+**yarn**
+
+```bash
+yarn global add vercel
+```
+
+**npm**
+
+```bash
+npm i -g vercel
+```
+
+**bun**
+
+```bash
+bun add -g vercel
+```
 
 ## Updating Vercel CLI
 
@@ -81,30 +82,33 @@ When there is a new release of Vercel CLI, running any command will show you a m
 
 If you have installed our command-line interface through [npm](http://npmjs.org/) or [Yarn](https://yarnpkg.com), the easiest way to update it is by running the installation command yet again.
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i -g vercel@latest
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn global add vercel@latest
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i -g vercel@latest
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add -g vercel@latest
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i -g vercel@latest
+```
+
+**yarn**
+
+```bash
+yarn global add vercel@latest
+```
+
+**npm**
+
+```bash
+npm i -g vercel@latest
+```
+
+**bun**
+
+```bash
+bun add -g vercel@latest
+```
 
 If you see permission errors, please read npm's [official guide](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally). Yarn depends on the same configuration as npm.
+
+To see what changed in each version, browse the [release notes](/docs/cli/release-notes).
 
 ## Checking the version
 
@@ -266,6 +270,18 @@ vercel blob copy [from-url] [to-pathname]
 ```
 
 [Learn more about the blob command](/docs/cli/blob)
+
+### budgets
+
+Manage your team's [Spend Management](/docs/spend-management) budget: view current on-demand spend, set a budget, and remove it.
+
+```bash
+vercel budgets
+vercel budgets set --amount 200 --pause --webhook https://example.com/spend
+vercel budgets remove --yes
+```
+
+[Learn more about the budgets command](/docs/cli/budgets)
 
 ### build
 
@@ -1041,3 +1057,6 @@ vercel whoami
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

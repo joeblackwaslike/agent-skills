@@ -14,8 +14,8 @@ related:
 summary: Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "95b1ecd3cb961f9670454992a12bdbb6a3f5d4a70ce5b926a03e0a8e33ddff00"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a3b157a5e45a865367971a77d64502ea9d9d575c5e7cba4b93dfadd039f71aad"
 ---
 
 # AI Gateway Motion Control Video Generation
@@ -29,12 +29,11 @@ Transfer motion from a reference video to a character in an image. The model ana
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
-- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use the Kling AI provider for the AI SDK.
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
-- [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/motion-control.graph.md](/docs/ai-gateway/modalities/video-generation/motion-control.graph.md)
 <!-- /docsgraph:related -->
@@ -202,3 +201,6 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your charact
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: "Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3cbad27d57581eafc19f5afead5fdb70da7d634c2b7f17fdf9bf45ade45e9c0b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "99be58d27d359ba73619e2a836503d25b03d8c51621d4e3c2839203592880441"
 ---
 
 # Vercel CDN overview
@@ -51,7 +51,7 @@ Unlike traditional CDNs that only cache static assets, Vercel's CDN is framework
 - **Git-driven and previewable**: Every CDN change is scoped to a branch and deployed to a unique [preview URL](/docs/deployments/environments#preview-environment-pre-production), so you can test routing, caching, and security rules before they reach production.
 - **Global network**: [126+ PoPs across 51 countries and 20+ Vercel regions](/docs/regions), with built-in request acceleration and high-availability architecture.
 - **Framework-aware, zero config**: CDN configuration and [caching policies](/docs/caching) are an output of the build and deployment process if you are using a supported framework, eliminating the need to define manual cache-control headers.
-- **Standard CDN directives**: When needed, you can override [routing and caching rules](/docs/routing). You can also proxy and cache responses from external backends with [external rewrites](/docs/routing/rewrites#external-rewrites), and [invalidate content by tag](/docs/caching/cdn-cache/purge) across all frameworks and backends.
+- **Standard CDN directives**: When needed, you can override [routing and caching rules](/docs/routing). You can also proxy and cache responses from external backends with [external rewrites](/docs/routing/rewrites#rewrites-to-external-origins), and [invalidate content by tag](/docs/caching/cdn-cache/purge) across all frameworks and backends.
 - **Default protections**: Unmetered, always-on [DDoS mitigation and network-level security](/docs/vercel-firewall) on every deployment at no extra cost.
 
 ## What you can build
@@ -91,7 +91,7 @@ The CDN evaluates routing rules before checking any cache. Redirects return a ne
 
 - [Redirects](/docs/routing/redirects)
 - [Rewrites](/docs/routing/rewrites)
-- [Reverse proxy with external rewrites](/docs/routing/rewrites#external-rewrites)
+- [Reverse proxy with external rewrites](/docs/routing/rewrites#rewrites-to-external-origins)
 
 ## Security
 
@@ -175,3 +175,6 @@ Flex CDN is available only to teams using Flat Rate CDN. To move a project onto 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

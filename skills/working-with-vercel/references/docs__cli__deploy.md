@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9be445a40243c4d35d23af26559ebab09245cfe6892a9f456488a2f3f4b76e90"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "af8915ff0cae2e793bd6888acabec7aa5e500a0939e35f1c172fdeca271ae033"
 ---
 
 # vercel deploy
@@ -31,17 +31,17 @@ The `vercel deploy` command deploys Vercel projects, executable from the project
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [CLI archive deployments are now up to 30% faster with split-tgz archive option](https://vercel.com/changelog/cli-archive-deployments-are-now-up-to-30-faster-with-split-tgz-archive)
+- [Deploy without an account using Vercel CLI](https://vercel.com/changelog/deploy-without-an-account-using-vercel-cli)
 - [Dry-run deployments with Vercel CLI](https://vercel.com/changelog/dry-run-deployments-with-vercel-cli)
 - [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs)
 - [Split-tgz is now the default CLI archive deployment behavior](https://vercel.com/changelog/split-tgz-is-now-the-default-cli-archive-deployment-behavior)
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [How to alias a preview deployment using the CLI](https://vercel.com/kb/guide/how-to-alias-a-preview-deployment-using-the-cli) — Learn how to automatically alias a Vercel preview deployment.
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
-- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/cli/deploy.graph.md](/docs/cli/deploy.graph.md)
 <!-- /docsgraph:related -->
@@ -70,7 +70,7 @@ vercel index.html
 vercel deploy README.md
 ```
 
-Authenticated single-file deployments accept any file extension. Use `--dry` to preview the deployment without uploading. For a temporary deployment without logging in, the file must have a `.html` extension:
+When you're logged in, single-file deployments accept any file extension. A single-file [temporary deployment](#temporary) supports only `.html` files. To deploy other files without logging in, run `vercel deploy --temporary` on a directory, which works for any project. Use `--dry` to preview the deployment without uploading:
 
 ```bash filename="terminal"
 vercel index.html --dry
@@ -392,6 +392,22 @@ Use the `--target` option to define the environment you want to deploy to. This 
 vercel deploy --target=staging
 ```
 
+### Temporary
+
+The `--temporary` option creates a temporary deployment without logging in. It applies only when the CLI has no credentials. If you are logged in, the CLI creates a normal deployment instead.
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project locally first and deploys the prebuilt output, unless you pass [`--prebuilt`](#prebuilt) with an existing `.vercel/output` directory. Temporary deployments always target production, so passing [`--target`](#target) with any other value returns an error.
+
+After deploying, the CLI prints a claim URL and how long until the deployment expires. [Claim it](/docs/deployments/claim-deployments#claim-a-temporary-deployment) to keep it live, then run [`vercel login`](/docs/cli/login) to keep deploying that project.
+
+Until the temporary project expires, you can run `vercel deploy --temporary` again to redeploy it. Once it expires, you can't redeploy it as a temporary deployment. Create an account with [`vercel signup`](/docs/cli/signup), then run `vercel deploy` to deploy it again.
+
+> **💡 Note:** Temporary deployments are not available in CI environments or in a directory already linked to a Vercel project. In those cases, the CLI asks you to log in instead.
+
 ### Guidance
 
 The `--guidance` option displays suggested next steps and commands after deployment completes. This can help you discover relevant CLI commands for common post-deployment tasks.
@@ -425,3 +441,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

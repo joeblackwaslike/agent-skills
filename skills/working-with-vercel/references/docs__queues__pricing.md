@@ -14,8 +14,8 @@ related:
 summary: "Understand how Vercel Queues billing works, what's included, and which service limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2fd60325fa15408cd89ed33bafac0cf2054a95d6c21a5c7ae8d4e6ec018c1718"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "60b5b6dc546671b9bdcf2a6ac81fc6f1b12034138bb32434dc5ca6638da1fe10"
 ---
 
 # Pricing and Limits
@@ -30,10 +30,10 @@ Vercel Queues is billed per API operation. Every API call counts as at least one
 
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
-- [Queues concepts](https://vercel.com/docs/queues/concepts) — Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 - [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
-- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 
 Full cross-link map for this page: [/docs/queues/pricing.graph.md](/docs/queues/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -80,3 +80,6 @@ Functions invoked by Queues in push mode continue to be charged at the [existing
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

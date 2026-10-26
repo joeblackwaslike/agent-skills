@@ -13,11 +13,12 @@ related:
   - /docs/cli/ai-gateway
   - /docs/ai-gateway/models-and-providers/fast-mode
   - /docs/agent-harnesses/claude-code
+  - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b58d99ec7b19e75285011662cdbad6e668710c723774a9260694cc4d455dc1e8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7715dfbf20d04e269e6fb645ac6b0c0fd5c532a92f717e5ba4d73667f34083f0"
 ---
 
 # Claude Code and Claude Agent SDK with AI Gateway
@@ -34,10 +35,10 @@ AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-a
 - [Claude Code Max via AI Gateway, available now for Claude Code](https://vercel.com/changelog/claude-code-max-via-ai-gateway-available-now-for-claude-code)
 - [Claude Opus 5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-now-available-on-ai-gateway)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
-- [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Claude Code](https://ai-sdk.dev/providers/community-providers/claude-code) — Learn how to use the Claude Code provider to access Claude models through the Claude Agent SDK.
+- [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code)
 - [Collaborating with Anthropic on Claude Sonnet 4.5 to power intelligent coding agents](https://vercel.com/blog/collaborating-with-anthropic-on-claude-sonnet-4-5)
+- [Claude Code](https://ai-sdk.dev/providers/community-providers/claude-code) — Learn how to use the Claude Code provider to access Claude models through the Claude Agent SDK.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
@@ -267,6 +268,8 @@ export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1
 
 Then run `/model` inside Claude Code to switch between gateway models. [`npx vercel@latest ai-gateway setup`](/docs/cli/ai-gateway#setup) writes both of these for you.
 
+Your team's [virtual models](/docs/ai-gateway/models-and-providers/virtual-models#using-a-virtual-model-with-claude-code-codex-and-other-coding-agents) appear in the picker as `claude-code/vmc/<slug>`. Pick one to apply its provider routing, fallbacks, regional inference, zero data retention, and provider options to every Claude Code request. Claude Code can't send those AI Gateway options itself.
+
 > **💡 Note:** If you're routing through Bedrock or Vertex AI providers, set
 > `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1` in your environment. Claude Code
 > and the Agent SDK automatically add Anthropic-specific beta headers that
@@ -276,3 +279,6 @@ Then run `/model` inside Claude Code to switch between gateway models. [`npx ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

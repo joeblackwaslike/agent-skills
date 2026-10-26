@@ -14,8 +14,8 @@ related:
 summary: Keep AI Gateway conversations on the provider that holds their prompt cache, using session IDs, fingerprinting, and pin lifetimes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/session-affinity.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a4687d0ceb4e970e2fdf6a43ebe575d1787377539eafa0631aa7e5aa063374d7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "247d1e8d69ed499b33a3eb7ef0d6b90b42a02821e967db7c4b59e7ad0aee3dc5"
 ---
 
 # AI Gateway Session Affinity
@@ -28,12 +28,12 @@ A provider's prompt cache lives on the provider account that served your request
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
+- [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity)
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [AI Gateway Regional Inference](https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference) — Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compl
-- [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 - [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
-- [AI Gateway Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts) — Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/session-affinity.graph.md](/docs/ai-gateway/models-and-providers/session-affinity.graph.md)
 <!-- /docsgraph:related -->
@@ -337,3 +337,6 @@ The `affinity.outcome` field has one of these values. AI Gateway can add values 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

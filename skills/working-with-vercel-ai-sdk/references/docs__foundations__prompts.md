@@ -4,8 +4,8 @@ description: Learn about the Prompt structure used in the AI SDK.
 url: "https://ai-sdk.dev/docs/foundations/prompts"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/prompts.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "42b1e83aa41e291b4b9d04e26381985e3f263175d4cf7c0da63833565ef443db"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "260736d9ba2b4abf3baeae11d86996570c98d76944197b205fa0bee91792248e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -61,7 +61,7 @@ instructions via the `instructions` property.
 const result = await generateText({
   model: "anthropic/claude-sonnet-5.5",
   instructions:
-    `You help planning travel itineraries. ` +
+    `You help plan travel itineraries. ` +
     `Respond to the users' request with a list ` +
     `of the best stops to make in their destination.`,
   prompt:
@@ -474,7 +474,7 @@ const result = await generateText({
 });
 ```
 
-### Tool messages
+### Tool Messages
 
 [Tools](/docs/foundations/tools) (also known as function calling) are programs
 that you can provide an LLM to extend its built-in functionality. This can be
@@ -607,7 +607,7 @@ const result = await generateText({
   model: "anthropic/claude-sonnet-5.5",
   allowSystemInMessages: true,
   messages: [
-    { role: 'system', content: 'You help planning travel itineraries.' },
+    { role: 'system', content: 'You help plan travel itineraries.' },
     {
       role: 'user',
       content:

@@ -3,7 +3,7 @@ title: get-invoice
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice"
-last_updated: 2026-10-19
+last_updated: 2026-10-26
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-invoice on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "094289614b7b23bb06f526c5228763de74e30511cc12ffb7d798aa1b14179e5c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "926059d6c78d02c7846d264f54af01e6da690fed9aba8b3f367778e98352289a"
 ---
 
 # Get Invoice
@@ -73,15 +73,19 @@ Success
     "units": "string" // required // Units for item's quantity.
   ],
   "memo": "string" // Additional memo for the invoice.,
+  "outstandingTotal": "string" // Amount still owed on the invoice, per the payment processor. Can be positive even for states "refunded" or "refund_requested", since a refund does not settle an unpaid remainder. A dollar-based decimal string. Absent when no payment data is available yet.,
   "paidAt": "string" // Moment the invoice was paid. ISO 8601 timestamp.,
+  "paidTotal": "string" // Total amount paid and retained: payments received minus refunds applied. A dollar-based decimal string. Absent when no payment data is available yet.,
+  "pendingRefundTotal": "string" // Requested refund amount not yet applied by the payment processor: "refundTotal" minus "refundedTotal". A dollar-based decimal string. Only present when a refund was requested or applied.,
   "period": { // required
     "end": "string" // required,
     "start": "string" // required
   },
   "refundedAt": "string" // Most recent moment the invoice was refunded. ISO 8601 timestamp.,
-  "refundReason": "string" // The reason for refund. Only applicable for states "refunded" or "refund_request".,
-  "refundTotal": "string" // Refund amount. Only applicable for states "refunded" or "refund_request". A dollar-based decimal string.,
-  "state": "string" // required // Invoice state.,
+  "refundedTotal": "string" // Total refund amount applied by the payment processor, on the same pre-tax basis as "refundTotal". Counts both money returned and debt cancelled on unpaid invoices. May be lower than "refundTotal", which is the requested amount. A dollar-based decimal string. Only present when a refund was requested or applied.,
+  "refundReason": "string" // The reason for refund. Only present when a refund has been requested.,
+  "refundTotal": "string" // Total refund amount requested. Only present when a refund has been requested. A dollar-based decimal string.,
+  "state": "string" // required // Invoice state. Reports the payment state of the invoice; refund progress is reported separately via "refundedTotal" and "pendingRefundTotal". The states "refunded" and "refund_requested" only appear when the payment state cannot be determined.,
   "test": "boolean" // Whether the invoice is in the testmode (no real transaction created).,
   "total": "string" // required // Invoice total amount. A dollar-based decimal string.,
   "updated": "string" // required // System update date. ISO 8601 timestamp.
@@ -124,3 +128,6 @@ Success
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

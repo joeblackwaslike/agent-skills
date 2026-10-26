@@ -16,8 +16,8 @@ related:
 summary: How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "57009f5f0f9fab933121a06710e4851f8c71bf8a21a6a6895f4f656038d6940c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8f02cc8d5fc7281829dcff3b89e8cd7801656872883b376c77f88fcf8eff5ad6"
 ---
 
 # Vercel Connect Pricing
@@ -32,14 +32,12 @@ Vercel Connect is billed by token requests and triggers.
 
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
-- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing) — Understand Vercel Agent pricing and how to track costs
 - [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 
 Full cross-link map for this page: [/docs/connect/pricing.graph.md](/docs/connect/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -91,3 +89,6 @@ For platform limits and API rate limits, see [Limits](/docs/connect/limits).
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use microfrontends on Vercel to split apart large applications, improve developer experience and make incremental migrations easier.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ebe3158d63d5749c893baacd9c72f0a8f066c6257749818077419c9aae5850d2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bf72a65e99c54c0eea5235aece62c62194675924a500eecb647cb7b755e3ee17"
 ---
 
 # Microfrontends
@@ -41,7 +41,7 @@ Microfrontends allow you to split a single application into smaller, independent
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Reference](https://vercel.com/docs/flags/flags-explorer/reference) — In-depth reference for configuring the Flags Explorer
 
 Full cross-link map for this page: [/docs/microfrontends.graph.md](/docs/microfrontends.graph.md)
 <!-- /docsgraph:related -->
@@ -116,3 +116,6 @@ Microfrontends usage can be viewed in the **Vercel Delivery Network** section of
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

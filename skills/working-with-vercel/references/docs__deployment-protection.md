@@ -16,8 +16,8 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f98bf79d72e78de054cac1bb9919577ff51f8a61c4f99a64844c978c9676e89b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2b5b73c023f8f9ad44366147f9913c1e328ce2e4d2d23f62384badd8a6421a23"
 ---
 
 # Deployment Protection on Vercel
@@ -89,7 +89,7 @@ When setting a team default, choose the protection level (All Deployments, Stand
 
 ## Standard Protection
 
-> **Availability**: Standard Protection is available on all plans
+> Standard Protection is available on all plans
 
 **Standard Protection** is the recommended option for most projects. It protects all domains except [production domains](/docs/domains/working-with-domains/add-a-domain "Production Domains").
 
@@ -140,7 +140,7 @@ Bypassing protection using [Protection Bypass for Automation](/docs/deployment-p
 
 ## All Deployments
 
-> **Availability**: Protecting all deployments is available on all plans
+> Protecting all deployments is available on all plans
 
 Select **All Deployments** to secure all deployments (both preview and production), restricting public access entirely.
 
@@ -157,7 +157,7 @@ You can combine All Deployments protection with any of the following methods:
 
 ## Only Production Deployments
 
-> **Availability**: Protecting production deployments is available on Enterprise plans
+> Protecting production deployments is available on Enterprise plans
 
 Use [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) to restrict access to production deployments to a specific list of IPv4 addresses.
 
@@ -203,3 +203,6 @@ See [Usage & Pricing for Deployment Protection](/docs/deployment-protection/usag
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

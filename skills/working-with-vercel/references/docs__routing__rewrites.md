@@ -16,8 +16,8 @@ related:
 summary: Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/rewrites.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c5728bd44448ccb2a76bf124ab67be110f07e11436a6871753dedaf0857d5d2f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fe7aa4fcffb829008bc5ce5f9b86ffb5e0ccfab2ad930857a7b5b61b0d8042dd"
 ---
 
 # Rewrites on Vercel
@@ -35,10 +35,10 @@ A rewrite routes a request to a different destination without changing the URL i
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [rewrites](https://nextjs.org/docs/pages/api-reference/config/next-config-js/rewrites) — Add rewrites to your Next.js app.
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Redirects and rewrites now available in Observability](https://vercel.com/changelog/redirects-and-rewrites-now-available-in-observability)
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
 - [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
@@ -443,3 +443,6 @@ This converts `/products/shirts/123` to `/shop?category=shirts&item=123`.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

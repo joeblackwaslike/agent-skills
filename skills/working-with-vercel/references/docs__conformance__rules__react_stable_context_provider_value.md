@@ -12,13 +12,13 @@ related:
 summary: Prevent non-stable values from being used in React Context providers that could cause unnecessary re-renders.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/react_stable_context_provider_value.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "6a46fed397506b23241dd8db42289eb2d1a74ff79c73b4ddcac6490cbfff46dd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ed7edb4079d7ed897e6f5a4803edca75cd674e9ca43dbc04b3e353ab50c2d57e"
 ---
 
 # REACT_STABLE_CONTEXT_PROVIDER_VALUE
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 When non-stable values (i.e. object identities) are used as the `value` prop for `Context.Provider`,
 React will trigger cascading updates to all components that use this context value on each
@@ -51,3 +51,6 @@ fix this by wrapping with `useMemo`.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

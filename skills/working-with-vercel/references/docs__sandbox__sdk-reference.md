@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ddfcc482754e4233aeba764688f2d87db322135f335a72855bf8840ecdbe2977"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ca439abc797b31928049dd764504b0a74bfcbdcc193f0fd6806e9fb44d87b61a"
 ---
 
 # JS SDK Reference
@@ -40,8 +40,8 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -52,28 +52,29 @@ For Python, see the [Python SDK Reference](/docs/sandbox/python-sdk-reference).
 
 Install the SDK:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/sandbox
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/sandbox
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/sandbox
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/sandbox
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/sandbox
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/sandbox
+```
+
+**npm**
+
+```bash
+npm i @vercel/sandbox
+```
+
+**bun**
+
+```bash
+bun add @vercel/sandbox
+```
 
 After installation, link your project and pull environment variables with `vercel link` and `vercel env pull` so the SDK can read a Vercel OpenID Connect (OIDC) token.
 
@@ -1539,7 +1540,7 @@ The `deny-all` mode can be set to restrict sandbox network access. It blocks all
 
 #### `allow`
 
-> **Availability**: Transformation and forwarding rules are available on Enterprise and Pro plans
+> Transformation and forwarding rules are available on Enterprise and Pro plans
 
 The `allow` property allows the user to provide a list of website or API domains to allow access to.
 Traffic identification is based on SNI (server-name indicator), hence only TLS traffic is currently supported.
@@ -2081,3 +2082,6 @@ To learn more on each method, see [Authentication](/docs/sandbox/concepts/authen
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

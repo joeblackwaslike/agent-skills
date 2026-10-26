@@ -13,8 +13,8 @@ related:
 summary: Use create_sandboxes_sessions_by_session_id_snapshot_v2 with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v2.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f68e321c002d474c1e04c4bae86b4c6a1bef908d69c2f1012cde258f81484f61"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "53b265192a616d3bc28302377bbb8a8886870de9896beb3ddec35101ca54d8ef"
 ---
 
 # create_sandboxes_sessions_by_session_id_snapshot_v2
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

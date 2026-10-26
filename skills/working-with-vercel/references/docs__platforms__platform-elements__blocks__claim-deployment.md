@@ -14,8 +14,8 @@ related:
 summary: A component for users to claim ownership of Vercel deployments created on their behalf.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c868856425e15091fb8359ba4221edc072abaea18455dfc4d958366beb254dbb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "86412ff2d5c0c044838600ca9dcc6d17ac7a35a0c35c0c927a9b17b0af08efc8"
 ---
 
 # Claim Deployment
@@ -34,10 +34,10 @@ The Claim Deployment block provides a polished interface for platforms that depl
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Claimed deployments now include third-party resources](https://vercel.com/changelog/claimed-deployments-now-include-third-party-resources)
 - [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
+- [Deploying to Vercel Without Logging In](https://vercel.com/docs/deployments/deploy-without-logging-in) — Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Custom Domain](https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain) — A complete domain management interface with DNS verification and real-time status tracking.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/claim-deployment.graph.md](/docs/platforms/platform-elements/blocks/claim-deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -110,3 +110,6 @@ The component uses shadcn/ui components internally, allowing you to customize th
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

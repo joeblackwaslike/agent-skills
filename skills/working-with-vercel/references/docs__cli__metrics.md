@@ -14,8 +14,8 @@ related:
 summary: Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "de783ff75ede02ed4c56fe3e7fb8c7fe3c8edfe8de99aee7176f7da5941991f8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d3f21484b0b7bcef607f3281bbe325d03d7e42630b8a85c0ff72887d9c7b6340"
 ---
 
 # vercel metrics
@@ -39,7 +39,7 @@ The `vercel metrics` command, also available as `vc metrics`, lets you discover 
 Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metrics.graph.md)
 <!-- /docsgraph:related -->
 
-> **Availability**: Metrics other than Web Analytics and Speed Insights metrics are available on Enterprise and Pro plans with Observability Plus
+> Metrics other than Web Analytics and Speed Insights metrics are available on Enterprise and Pro plans with Observability Plus
 
 Use `vercel metrics schema` before you build a query. Without an argument, the command lists the metrics available to your account. Pass a metric name or prefix to inspect its dimensions and aggregations.
 
@@ -158,7 +158,7 @@ Prefix: `vercel.ai_gateway.request`
 | `vercel.ai_gateway.request.output_tokens` | Number of output tokens. |
 | `vercel.ai_gateway.request.cached_input_tokens` | Number of cached input tokens. |
 | `vercel.ai_gateway.request.cache_creation_input_tokens` | Number of input tokens used to create a cache entry. |
-| `vercel.ai_gateway.request.cache_creation1h_input_tokens` | Number of input tokens used to create a one-hour cache entry. |
+| `vercel.ai_gateway.request.cache_creation1h_input_tokens` | Number of input tokens written to the longer-lived cache entry. One hour for Anthropic models and 12 hours for OpenAI models on the OpenAI provider. |
 | `vercel.ai_gateway.request.audio_input_tokens` | Number of audio input tokens. |
 | `vercel.ai_gateway.request.audio_output_tokens` | Number of audio output tokens. |
 | `vercel.ai_gateway.request.audio_duration_seconds` | Audio duration, in seconds. |
@@ -588,3 +588,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

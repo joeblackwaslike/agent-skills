@@ -13,8 +13,8 @@ related:
 summary: Use get_deployment_feature_flags with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_feature_flags.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6ac183a2505981995a5dccfa1cc73e809cc7fac864d08a11c1c2579800b87586"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8ea1d8560f52cedea5ee4e9629b71664cba1187d7904a160e12983c30716ca84"
 ---
 
 # get_deployment_feature_flags
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

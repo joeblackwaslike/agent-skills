@@ -13,8 +13,8 @@ related:
 summary: Use get_deployment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9d6579f78d7f3ddff47e380add8e5b03c5f22be1ed0ba4bf6f62ea53217af0c5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fe94b4c2768649388c75a84ff5639172f79d58cafa7c0cfafa85772fcff0a160"
 ---
 
 # get_deployment
@@ -27,12 +27,11 @@ Get a [deployment](/docs/deployments) by ID or hostname.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Get Deployment](https://v0.app/docs/api/v1/reference/deployments/get-by-id) — Get a deployment by ID. This will return the details of the deployment, including the inspector URL, chat ID, project ID
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
 - [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
 - [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
-- [get_git_deployment_context](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context) — Use get_git_deployment_context with Vercel MCP.
 - [get_deployment_feature_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_feature_flags) — Use get_deployment_feature_flags with Vercel MCP.
+- [get_git_deployment_context](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context) — Use get_git_deployment_context with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -59,3 +58,6 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

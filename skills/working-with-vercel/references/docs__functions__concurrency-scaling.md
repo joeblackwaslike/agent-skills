@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel automatically scales your functions to handle traffic surges.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/concurrency-scaling.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a92e2049b110196e585c0336d3dac747b90e48f7353fd6c7e11ae2334117c181"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "77f22b230cfdf142c84c3423b47d0d979a3b9f228c5b0d46c830596dd6769764"
 ---
 
 # Concurrency scaling
@@ -37,11 +37,11 @@ Vercel automatically scales your functions to handle traffic surges, ensuring op
 - [Vercel Functions now scale 12x faster for high-volume requests](https://vercel.com/changelog/vercel-functions-now-scale-12x-faster-for-high-volume-requests)
 - [What should I do if I receive a 503 error on Vercel?](https://vercel.com/kb/guide/what-should-i-do-if-i-receive-a-503-error-on-vercel) — Learn about when Serverless Functions return a 503 status code and what can be done about them.
 - [What is Vercel's policy regarding load testing deployments?](https://vercel.com/kb/guide/what-s-vercel-s-policy-regarding-load-testing-deployments) — Learn about Vercel's policies regarding load tests.
-- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued) — Learn about why your Vercel builds may be getting queued and how to resolve this.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Vercel Connect Limits](https://vercel.com/docs/connect/limits) — Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 - [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits) — Understand the limits and features available for Vercel for Platforms.
-- [Usage & Pricing for Cron Jobs](https://vercel.com/docs/cron-jobs/usage-and-pricing) — Learn about cron jobs usage and pricing details.
+- [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/functions/concurrency-scaling.graph.md](/docs/functions/concurrency-scaling.graph.md)
 <!-- /docsgraph:related -->
@@ -72,3 +72,6 @@ If you exceed the limit, a [`503 FUNCTION_THROTTLED`](/docs/errors/function_thro
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "64dc815f068e2a6bd63433ea81359166bedee5573fd842667f49dce42e030414"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cce0a38c8815acfa1d19c170b66e5d81f17667301070b0611c5fe4c14f1fd9c1"
 ---
 
 # OpenAI Chat Completions Structured Outputs with AI Gateway
@@ -29,10 +29,10 @@ Generate structured JSON responses that conform to a specific schema, ensuring p
 
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Reflection AI's Beam now available on AI Gateway for free](https://vercel.com/changelog/reflection-ai-beam-now-available-on-ai-gateway-for-free)
-- [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data) — Learn how to generate structured data with the AI SDK.
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 - [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
 - [OpenAI Responses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs) — Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
+- [OpenAI Chat Completions Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming) — Stream OpenAI Chat Completions responses token by token as they are generated through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.graph.md)
 <!-- /docsgraph:related -->
@@ -669,3 +669,6 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

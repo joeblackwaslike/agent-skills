@@ -1,26 +1,73 @@
 ---
 title: Topaz Labs
-description: Learn how to use the Topaz Labs provider for the AI SDK.
+description: Learn how to use Topaz Labs with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/topaz"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/topaz.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "3cba06f387c79db218dc4be407d47aaf8e40e087eaa666fb7f23c1d43a95eea5"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "5ef1375cba17d07b5eff4c6ffd3fb4ac87ebd9ce9bfbbcc6577613525a22256a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Topaz Labs](https://www.topazlabs.com/) provider contains support for Topaz Labs' image and video enhancement models.
+You can use Topaz Labs models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/topaz`.
 
-Topaz models **enhance media you supply**. They upscale, denoise, sharpen and restore an existing image or video. They do not generate media from a text prompt, so the input file is the required part of the request and a text prompt is ignored.
+```ts provider="topaz" model="topaz/wonder-3.5"
+import { generateImage } from 'ai';
+import { readFile } from 'node:fs/promises';
 
-## Setup
+const { image } = await generateImage({
+  model: "topaz/wonder-3.5",
+  prompt: { images: [await readFile('input.png')] },
+  size: '4096x4096',
+});
 
-The Topaz Labs provider is available in the `@ai-sdk/topaz` module. You can install it with
+console.log(image.base64);
+```
+
+The example reads an existing `input.png` image to enhance.
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/topaz
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/topaz`
+
+For direct access to Topaz Labs, install `ai` and `@ai-sdk/topaz`:
+
+```bash
+pnpm add ai @ai-sdk/topaz
+```
+
+Set your Topaz Labs API credential in the `TOPAZ_API_KEY` environment variable:
+
+```bash
+export TOPAZ_API_KEY=your_api_key_here
+```
+
+Topaz enhances media you supply. The example requires an `input.png` file; these models do not generate images from a text prompt.
+
+The following sections document the direct `@ai-sdk/topaz` provider, including
+its model factories and settings. Gateway model and feature availability can
+differ.
+
+Topaz models **enhance media you supply**. They upscale, denoise, sharpen and restore an existing image or video. They do not generate media from a text prompt, so the input file is the required part of the request and a text prompt is ignored.
 
 ## Provider Instance
 

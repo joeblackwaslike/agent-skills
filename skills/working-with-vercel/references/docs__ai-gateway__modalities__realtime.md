@@ -16,8 +16,8 @@ related:
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f0d481f00232cdb6abbfbb8208dce32d710caf841fe5271b1c825c099e4111f3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "20e221178424d64c2f74f78fbc366327714de477cc5ba7adc762ca4ee80bd843"
 ---
 
 # Realtime Voice with AI Gateway
@@ -33,11 +33,10 @@ Build voice agents that listen and respond in real time. With the AI SDK, you st
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
 - [Grok Voice Think Fast 2.0 now available on AI Gateway](https://vercel.com/changelog/grok-voice-think-fast-2-0-now-available-on-ai-gateway)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
+- [WebSocket support is now generally available](https://vercel.com/changelog/websocket-support-is-now-generally-available)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
-- [AI SDK 7](https://vercel.com/blog/ai-sdk-7)
-- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
-- [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md)
 <!-- /docsgraph:related -->
@@ -182,3 +181,6 @@ Teams also have a limit on concurrent realtime sessions. Additional connection a
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

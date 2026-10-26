@@ -17,8 +17,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8228db198a895189bac284a8a8ff8802f87c3d678cae5ae38dfaeb1f507b3b3c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "419d8c084a8e1fd9675477b0cf9bc382626c969c4c83e83dfe7a8f215fff527e"
 ---
 
 # AI Gateway Video Generation
@@ -38,10 +38,10 @@ AI Gateway supports video generation, letting you create videos from text prompt
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [MiniMax H3 and H3 Max are 50% off on AI Gateway](https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway)
 - [Wan 3.0 now available on AI Gateway](https://vercel.com/changelog/wan-3-0-now-available-on-ai-gateway)
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
 - [generateVideo](https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video) — API Reference for durable video generation in workflows.
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba Cloud Model Studio (Qwen) models with the AI SDK.
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation.graph.md](/docs/ai-gateway/modalities/video-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -633,3 +633,6 @@ export async function register() {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

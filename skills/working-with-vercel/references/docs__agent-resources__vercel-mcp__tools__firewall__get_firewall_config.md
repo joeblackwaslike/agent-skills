@@ -13,8 +13,8 @@ related:
 summary: Use get_firewall_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b8c3badcb2aa1a6619b29dfb1be6b316f1cfd0d865c30c081e881fc5ffa808ab"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6941268e89bdf744966202d2dffd61bb32d54280c90a905fe71eff24acf908e7"
 ---
 
 # get_firewall_config
@@ -29,9 +29,9 @@ Read Firewall Configuration.
 
 - [put_firewall_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/put_firewall_config) — Use put_firewall_config with Vercel MCP.
 - [update_firewall_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/update_firewall_config) — Use update_firewall_config with Vercel MCP.
-- [get_microfrontends_config_for_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project) — Use get_microfrontends_config_for_project with Vercel MCP.
 - [get_microfrontends_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config) — Use get_microfrontends_config with Vercel MCP.
-- [get_configuration](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_configuration) — Use get_configuration with Vercel MCP.
+- [get_microfrontends_config_for_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project) — Use get_microfrontends_config_for_project with Vercel MCP.
+- [Update Firewall Configuration](https://vercel.com/docs/rest-api/security/update-firewall-configuration) — PATCH /v1/security/firewall/config — Process updates to modify the existing firewall config for a project
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config.graph.md](/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firew
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

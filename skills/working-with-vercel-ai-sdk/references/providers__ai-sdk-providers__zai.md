@@ -1,32 +1,69 @@
 ---
 title: Z.AI
-description: "Learn how to use Z.AI's GLM models with the AI SDK."
+description: Learn how to use Z.AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/zai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/zai.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "72583dbd41f303253710c1a29cec146a6242197b3aef766771e19ad62d6bf5f0"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "f0c81bb6856b068763df50f0e38b9b247d0a2c8f32ce645c18a2b7055c663a69"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Z.AI](https://z.ai/) provider gives you access to GLM language and vision models through the Z.AI API.
+You can use Z.AI models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/zai`.
+
+```ts provider="zai" model="zai/glm-5.3"
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: "zai/glm-5.3",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
+
+```bash
+pnpm add ai
+```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/zai`
+
+For direct access to Z.AI, install `ai` and `@ai-sdk/zai`:
+
+```bash
+pnpm add ai @ai-sdk/zai
+```
+
+Set your Z.AI API credential in the `ZAI_API_KEY` environment variable:
+
+```bash
+export ZAI_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/zai`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/zai` provider, including
+its model factories and settings. Gateway model and feature availability can
+differ.
 
 API keys can be created in the [Z.AI API key console](https://z.ai/manage-apikey/apikey-list).
-
-## Setup
-
-The Z.AI provider is available through the `@ai-sdk/zai` package. Install it with:
-
-```bash
-pnpm add @ai-sdk/zai
-```
-
-Set the `ZAI_API_KEY` environment variable:
-
-```bash
-ZAI_API_KEY=your-api-key
-```
 
 ## Provider Instance
 

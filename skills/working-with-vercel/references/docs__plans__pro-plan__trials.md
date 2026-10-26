@@ -17,8 +17,8 @@ related:
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e6daa8da20eaa58ba30ae57001837821c1bdca1002f023d0fb173a4c6ac2febf"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8088300be41e6c61c67a54d03aef1d2c5a83d1a1dd41962715042b68dadefa7c"
 ---
 
 # Understanding Vercel
@@ -34,11 +34,10 @@ Vercel offers three plan tiers: **Hobby**, **Pro**, and **Enterprise**.
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
-- [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
 
 Full cross-link map for this page: [/docs/plans/pro-plan/trials.graph.md](/docs/plans/pro-plan/trials.graph.md)
 <!-- /docsgraph:related -->
@@ -74,14 +73,14 @@ The trial plan includes a $20 credit and follows the same [general limits](/docs
 
 To monitor the current usage of your Team's projects, see the [Usage](/docs/pricing/manage-and-optimize-usage) guide.
 
+[Observability Plus](/docs/observability/observability-plus) is enabled by default during the Pro trial. On-demand Observability Plus event usage counts against the $20 Pro trial credit. After the trial, standard Pro billing applies if you continue with a Pro plan.
+
 The following Pro features are **not available** on the trial:
 
-- [Observability Plus](/docs/observability/observability-plus) (available on Paid Pro only)
-
-* [Drains](/docs/drains)
-* [Account webhooks](/docs/webhooks#account-webhooks)
-* [Free first-year domain with Pro](/docs/plans/pro-plan#free-first-year-domain-with-pro)
-* [Sandbox failover regions](/docs/sandbox/concepts/regions#failover-regions)
+- [Drains](/docs/drains)
+- [Account webhooks](/docs/webhooks#account-webhooks)
+- [Free first-year domain with Pro](/docs/plans/pro-plan#free-first-year-domain-with-pro)
+- [Sandbox failover regions](/docs/sandbox/concepts/regions#failover-regions)
 
 The free first-year domain offer is excluded from the Pro trial and becomes available once your team is on a paid Pro plan.
 
@@ -132,3 +131,6 @@ No charges apply for the months of inactivity. Billing will only cover the curre
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/billing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "dea0f6ccd0187b8072da08e59003256b5c7fe99d9aa4b986dabc5939006b6154"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "edd152f33a9df45507b98261262b94ab98c543dcdc379c70cf4c76268e31cc5c"
 ---
 
 # Billing FAQ for Pro Plan
@@ -34,9 +34,9 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
-- [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
 
 Full cross-link map for this page: [/docs/plans/pro-plan/billing.graph.md](/docs/plans/pro-plan/billing.graph.md)
 <!-- /docsgraph:related -->
@@ -222,3 +222,6 @@ The monthly credit gives teams flexibility to allocate usage based on their actu
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

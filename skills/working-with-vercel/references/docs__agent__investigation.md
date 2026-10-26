@@ -13,13 +13,13 @@ related:
 summary: Let AI investigate your error alerts to help you debug faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/investigation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9bf5fb3d8fea7316463466b4be21ecaeea5a1f0cd8e3606ca245408da3ac505b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dce15a48553a55b0a90f653b78d4450268eed6ffba2a5919e684c2474d842b60"
 ---
 
 # Investigation
 
-> **Availability**: Vercel Agent Investigation (Public Beta) is available on Enterprise and Pro plans with Observability Plus
+> Vercel Agent Investigation is available in Public Beta on Enterprise and Pro plans with Observability Plus
 
 When you get an anomaly alert, Vercel Agent can investigate your logs and metrics to help you find the root cause. Vercel Agent displays anomaly highlights in the Vercel dashboard.
 
@@ -113,3 +113,6 @@ Once disabled, Vercel Agent Investigation won't run automatically on any new ale
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

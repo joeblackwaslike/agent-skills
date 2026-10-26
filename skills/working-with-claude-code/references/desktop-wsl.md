@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-wsl.md"
-fetched_at: "2026-08-03T07:26:05.770Z"
-sha256: "acbb2a4fa359dc84d507d8b7cea5b4153e194fe45b993d10837452b2fabe8ffc"
+fetched_at: "2026-10-26T09:47:04.845Z"
+sha256: "887bdabff86b2c629b88f60e10585116f7c137a5bbe4e0d9ef15191e388a9e1c"
 ---
 
 > ## Documentation Index
@@ -24,30 +24,38 @@ Use a WSL session when your repository lives inside the distribution's filesyste
 
 ## Start a WSL session
 
-<Steps>
-  <Step title="Pick a distribution">
-    Start a new session in the Code tab and open the environment picker. Your installed WSL 2 distributions appear in a **WSL** section. Pick one.
-  </Step>
+**1. Pick a distribution**
 
-  <Step title="Choose a folder">
-    The session starts in the distribution's home directory. Use the folder picker to choose a project folder. Browsing happens inside the distribution, with Linux paths like `/home/you/project`.
-  </Step>
+Start a new session in the Code tab and open the [environment selector](https://code.claude.com/docs/en/desktop.md#start-a-session) under the prompt box, or above it in the [earlier layout](https://code.claude.com/docs/en/desktop.md#check-which-layout-you-have). Your installed WSL 2 distributions appear under **WSL**. Pick one.
 
-  <Step title="Trust the folder">
-    The first session in a folder shows the workspace trust dialog. You grant trust per distribution and folder. A folder you trust in one distribution isn't trusted in another distribution or at the same path on Windows.
-  </Step>
-</Steps>
+**2. Choose a folder**
+
+The session starts in the distribution's home directory. Use the folder picker to choose a project folder. Browsing happens inside the distribution, with Linux paths like `/home/you/project`.
+
+**3. Trust the folder**
+
+The first session in a folder shows the workspace trust dialog. You grant trust per distribution and folder. A folder you trust in one distribution isn't trusted in another distribution or at the same path on Windows.
 
 The first session in a distribution takes a little longer while Claude sets up inside it. You can also open a `\\wsl.localhost\...` folder from the normal folder picker, and it reopens inside that distribution.
-
-Folders you've used recently appear in the picker per distribution, so reconnecting to a project is one click.
 
 ## What works in a WSL session
 
 Parallel sessions, side chats, visual diff review, branch and pull request status, and worktrees all work, backed by the git and toolchain inside the distribution. "Open in editor" opens VS Code connected to the distribution through [Remote - WSL](https://code.visualstudio.com/docs/remote/wsl).
 
-A few features aren't available in WSL sessions yet: the integrated terminal, connectors and plugins, session forking, the file browser pane, and file suggestions when you type `@` in the composer.
+If a Desktop feature is unavailable or limited in a WSL session, check whether it's one of these:
+
+* **Terminal and connectors**: your session may lack the [integrated terminal](https://code.claude.com/docs/en/desktop.md#run-commands-in-the-terminal), [connectors](https://code.claude.com/docs/en/desktop.md#connect-external-tools), or both. See [If the terminal or connectors are unavailable](#check-for-the-terminal-and-connectors).
+* **[Plugins](https://code.claude.com/docs/en/desktop.md#install-plugins)**: not available in WSL sessions
+* **File editing**: you can view files in the [file pane](https://code.claude.com/docs/en/desktop.md#open-and-edit-files) but can't edit them there, so ask Claude to make the changes
+* **Attachments**: if the **+** menu shows **Add image** in place of **Add files or photos**, you can attach only images. See [Add files and context to prompts](https://code.claude.com/docs/en/desktop.md#add-files-and-context-to-prompts).
+
+### If the terminal or connectors are unavailable
+
+You can't turn on the integrated terminal or connectors for a WSL session yourself:
+
+* **Claude account**: the two features are rolling out separately. Select **Help > Check for Updates…**, and if a feature is still missing after you update, there's nothing to do.
+* **[Third-party provider](https://code.claude.com/docs/en/third-party-integrations.md)**: WSL sessions don't get the terminal or connectors, and updating Desktop doesn't change that
 
 ## Managed devices
 
-On devices managed by an organization, WSL sessions may be unavailable. If session start fails with a message that the device is managed, that's controlled by your administrator. Administrators: see [how settings reach devices](/docs/en/admin-setup#decide-how-settings-reach-devices) in the deployment guide.
+On devices managed by an organization, WSL sessions may be unavailable. If session start fails with a message that the device is managed, that's controlled by your administrator. Administrators: see [how settings reach devices](https://code.claude.com/docs/en/admin-setup.md#decide-how-settings-reach-devices) in the deployment guide.

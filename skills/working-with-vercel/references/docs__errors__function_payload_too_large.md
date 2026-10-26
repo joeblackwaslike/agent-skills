@@ -13,8 +13,8 @@ related:
 summary: The payload sent to the function is too large. This is a function error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/function_payload_too_large.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "17f71b5c49767464c6589311c582d68a5beb298f01e152b4513590407f6e24a1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "21f72b8ac1f1f52481a10b7126a94707514b3e64fcc73027066230924ce0c96c"
 ---
 
 # FUNCTION_PAYLOAD_TOO_LARGE
@@ -39,3 +39,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

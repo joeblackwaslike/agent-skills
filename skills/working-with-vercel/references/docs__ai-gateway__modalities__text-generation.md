@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text from 300+ models through AI Gateway, with tool calling and structured output.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-generation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4cdf33a656147cc81b6355b60c0c644ece368b0ece2bf9e1dec43dc40a85113f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "66d361bab76c2649a24fa338d63b7b6ac3b0d5e88e2ed6da4c2ed11e61378bfe"
 ---
 
 # AI Gateway Text Generation
@@ -35,8 +35,8 @@ Text generation is the default modality in AI Gateway. You send a prompt and a m
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 - [AI Gateway Provider Filtering, Ordering, and Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) — Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by co
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [AI Gateway Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers) — Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service t
+- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-generation.graph.md](/docs/ai-gateway/modalities/text-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -890,3 +890,6 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

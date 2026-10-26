@@ -4,8 +4,8 @@ description: API reference for the useChat hook.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "a3fdb57c3e2b089a23b859e6b55f4567fc81796c7fab63e3eb334761ae08e162"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "79fa7a0516a368f2b03c6f8528a9f8dff406f084b9a3e1b2d3e8cd91d688f8fa"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -94,7 +94,7 @@ import { Chat } from '@ai-sdk/angular'
     - `isAbort` (`boolean`): True when the request has been aborted by the client.
     - `isDisconnect` (`boolean`): True if the server has been disconnected, e.g. because of a network error.
     - `isError` (`boolean`): True if errors during streaming caused the response to stop early.
-    - `finishReason?` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason why the model finished generating the response. Undefined if the finish reason was not provided by the model.
+    - `finishReason?` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'interrupted' | 'other'`): The reason why the model finished generating the response. Undefined if the finish reason was not provided by the model.
 - `onError?` (`(error: Error) => void`): Callback function to be called when an error is encountered.
 - `onData?` (`(dataPart: DataUIPart) => void`): Optional callback function that is called when a data part is received.
 - `throttle?` (`number`): React and Vue only. Custom throttle wait time in milliseconds for reactive chat message updates. Positive values reduce UI update frequency without delaying stream processing or callbacks, and the latest messages are published before a ready or error status. Default is undefined, which disables throttling.

@@ -17,8 +17,8 @@ related:
 summary: Run Cursor Cloud Agents on Vercel Sandbox by backing a Cursor Self-Hosted Machines Team Pool with one isolated microVM per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/cursor.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ef8a867162c796e689fd27d07f93b993bdf356ff064e7920a3b3140a185d517b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "83445f039be6b15c873869d7ef285692f2685e5cca7d8b84543891330add6e94"
 ---
 
 # Cursor Cloud Agents
@@ -40,9 +40,8 @@ clones code, runs commands, edits files, and executes tests.
 - [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor) — Learn how to use the Cursor harness adapter.
 - [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
-- [OpenAI Agents API](https://vercel.com/docs/sandbox/ecosystem/openai-agents-api) — Connect OpenAI Agents API sessions to Vercel Sandbox for isolated code execution and persistent workspace files.
 - [Cursor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cursor) — Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, an
+- [AgentEnv by Scale AI](https://vercel.com/docs/sandbox/ecosystem/agentenv) — Run evaluations with AgentEnv by Scale AI using separate Vercel sandboxes for the environment and agent.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/cursor.graph.md](/docs/sandbox/ecosystem/cursor.graph.md)
 <!-- /docsgraph:related -->
@@ -222,3 +221,6 @@ considerations](/kb/guide/cursor-vercel-sandbox#production-considerations).
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

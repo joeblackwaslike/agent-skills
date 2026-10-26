@@ -12,8 +12,8 @@ related:
 summary: Learn about the different phases of the Vercel Product release cycle and the requirements that a Product must meet before being assigned to a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/release-phases.md"
-fetched_at: "2026-09-07T09:06:21.866Z"
-sha256: "6ce5d99b8d90b0378c0a2e7ea81ee431eb88fc3599974df0a7e3f71c590e0901"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7f1ff2e20599ca4becd420851bfd88f2d9ccab4fd34eea982261109a02ae47cf"
 ---
 
 # Release Phases for Vercel
@@ -98,3 +98,6 @@ The ultimate state after Deprecation is Sunset. Sunset implies that there should
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

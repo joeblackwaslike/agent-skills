@@ -17,8 +17,8 @@ related:
 summary: Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9f4aa0fb65124b0338de41981990e9602236aa493c5d458c501e184d78cd082c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "01b290016ce853a5b1f96aebd41b6d47d46750054175e9aaa381e83afe38e675"
 ---
 
 # Remix on Vercel
@@ -33,16 +33,15 @@ Remix is a fullstack, [server-rendered](#server-side-rendering-ssr) React framew
 
 - [Remix without limits (historical)](https://vercel.com/blog/vercel-remix-integration-with-edge-functions-support)
 - [Support for Remix with Vite](https://vercel.com/changelog/support-for-remix-with-vite)
-- [Support for Remix v2](https://vercel.com/changelog/support-for-remix-v2)
 - [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [Support for Remix v2](https://vercel.com/changelog/support-for-remix-v2)
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
-- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
+- [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/remix.graph.md](/docs/frameworks/full-stack/remix.graph.md)
 <!-- /docsgraph:related -->
@@ -82,28 +81,29 @@ To best experience Vercel features such as [streaming](#response-streaming), [Ve
 
 To get started, navigate to the root directory of your Remix project with your terminal and install `@vercel/remix` with your preferred package manager:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/remix
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/remix
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/remix
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/remix
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/remix
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/remix
+```
+
+**npm**
+
+```bash
+npm i @vercel/remix
+```
+
+**bun**
+
+```bash
+bun add @vercel/remix
+```
 
 ## Vercel Vite Preset
 
@@ -314,28 +314,29 @@ To use Analytics, navigate to the Analytics section in your project dashboard si
 
 To track visitors and page views, we recommend first installing our `@vercel/analytics` package by running the terminal command below in the root directory of your Remix project:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/analytics
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/analytics
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/analytics
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/analytics
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/analytics
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/analytics
+```
+
+**npm**
+
+```bash
+npm i @vercel/analytics
+```
+
+**bun**
+
+```bash
+bun add @vercel/analytics
+```
 
 Then, follow the instructions below to add the `Analytics` component to your app. The `Analytics` component is a wrapper around Vercel's tracking script, offering a seamless integration with Remix.
 
@@ -481,3 +482,6 @@ Learn more about deploying Remix projects on Vercel with the following resources
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

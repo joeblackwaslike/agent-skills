@@ -17,8 +17,8 @@ related:
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2a169ced93af59f1264429ca071efd0fee3266895465c8d94e819f4b6bc31987"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "528f0ad2b9bf1708401e7826574cb97e56fd268acbf57bec999592b52e5dabd1"
 ---
 
 # Building Integrations with Vercel REST API
@@ -208,3 +208,6 @@ No, integration configuration IDs (`icfg_*`) are not reused after an integration
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

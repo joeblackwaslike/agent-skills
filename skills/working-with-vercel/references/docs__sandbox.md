@@ -16,8 +16,8 @@ related:
 summary: Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "cdc0cab3a838e46e2f0ddebbf129f8f2d2f6136cc4c1a84b3d3db168834c0ef0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f9f6d0bac1c2782bd8c280e4e57257ca76d79ae4c09cd11371406092fc765eb2"
 ---
 
 # Vercel Sandbox
@@ -42,8 +42,8 @@ Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel San
 - [Data downloaded by Vercel Sandbox is now free](https://vercel.com/changelog/data-downloaded-by-vercel-sandbox-is-now-free)
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
-- [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
 
 Full cross-link map for this page: [/docs/sandbox.graph.md](/docs/sandbox.graph.md)
 <!-- /docsgraph:related -->
@@ -90,6 +90,8 @@ The Sandbox SDKs are the recommended way to integrate Vercel Sandbox into your a
 
 For end-to-end examples using these interfaces, browse the [Vercel Sandbox
 guides](/kb/vercel-sandbox).
+
+[Analyze large datasets with Sandbox and MCP](/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) to run agent-generated SQL and Python while keeping the dataset outside the model's context window.
 
 ## Authentication
 
@@ -152,3 +154,6 @@ For detailed information about the sandbox environment, see [Concepts](/docs/san
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

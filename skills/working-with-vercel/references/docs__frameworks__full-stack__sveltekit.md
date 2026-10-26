@@ -17,8 +17,8 @@ related:
 summary: Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f007546fb1e6c6b21907f398ecd4f66b956fb97442ae42e846b6f18a32201793"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2fc1473cc6ff19b9a77fc4b2e4fa66ee7165b0643b901e5975187acef27371b0"
 ---
 
 # SvelteKit on Vercel
@@ -33,14 +33,16 @@ SvelteKit is a frontend framework that enables you to build Svelte applications 
 
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
 - [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel)
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
+- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5)
-- [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
-- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
+- [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
-- [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+- [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/sveltekit.graph.md](/docs/frameworks/full-stack/sveltekit.graph.md)
 <!-- /docsgraph:related -->
@@ -68,28 +70,23 @@ The following instructions will guide you through adding the Vercel adapter to y
 
 - ### Install SvelteKit's Vercel adapter plugin
   You can add [the Vercel adapter](https://kit.svelte.dev/docs/adapter-vercel) to your SvelteKit project by running the following command:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @sveltejs/adapter-vercel
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @sveltejs/adapter-vercel
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @sveltejs/adapter-vercel
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @sveltejs/adapter-vercel
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @sveltejs/adapter-vercel
+  ```
+  **yarn**
+  ```bash
+  yarn add @sveltejs/adapter-vercel
+  ```
+  **npm**
+  ```bash
+  npm i @sveltejs/adapter-vercel
+  ```
+  **bun**
+  ```bash
+  bun add @sveltejs/adapter-vercel
+  ```
 
 - ### Add the Vercel adapter to your Svelte config
   Add the Vercel adapter to your `svelte.config.js` file, [which should be at the root of your project directory](https://kit.svelte.dev/docs/configuration).
@@ -560,28 +557,29 @@ To use Web Analytics, open **Analytics** in your project sidebar on Vercel and s
 
 To track visitors and page views, we recommend first installing our `@vercel/analytics` package by running the terminal command below in the root directory of your SvelteKit project:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/analytics
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/analytics
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/analytics
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/analytics
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/analytics
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/analytics
+```
+
+**npm**
+
+```bash
+npm i @vercel/analytics
+```
+
+**bun**
+
+```bash
+bun add @vercel/analytics
+```
 
 In your SvelteKit project's main `+layout.svelte` file, add the following `<script>`:
 
@@ -713,3 +711,6 @@ Learn more about deploying SvelteKit projects on Vercel with the following resou
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

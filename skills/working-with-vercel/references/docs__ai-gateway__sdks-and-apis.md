@@ -16,8 +16,8 @@ related:
 summary: Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere Rerank APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d0fd8e0dfd5fc1ebc2369db7a8555753d23772517cee508bb60ff1271248e00f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "34a0690973b6ea51f7a938fd62e102ffe0c9487bc88c8c57f16f59873947e3f9"
 ---
 
 # AI Gateway SDKs and APIs
@@ -33,9 +33,9 @@ Use AI Gateway with the AI SDK, the AI SDK for Python beta, or compatible OpenAI
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
 - [AI SDK 4.2](https://vercel.com/blog/ai-sdk-4-2)
+- [Open Responses](https://ai-sdk.dev/providers/ai-sdk-providers/open-responses) — Learn how to use Open Responses with AI Gateway and the direct provider.
+- [Vercel AI SDK vs TanStack AI](https://vercel.com/kb/guide/vercel-ai-sdk-vs-tanstack-ai) — Compare the Vercel AI SDK and TanStack AI for building AI-powered TypeScript applications and agents. Learn how AI SDK a
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
-- [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
-- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis.graph.md](/docs/ai-gateway/sdks-and-apis.graph.md)
@@ -369,3 +369,6 @@ The CLI setup commands complement the API examples. Each coding agent chooses it
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

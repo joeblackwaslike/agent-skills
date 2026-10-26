@@ -17,8 +17,8 @@ related:
 summary: "As an integration provider, understanding how your service interacts with Vercel's platform will help you create and optimize your integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/native-integration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "273255189a1920c63b05086397ede5c6dc6f8b2cc5969e13bb4cb08d30ac6653"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "41812358ca34bb1e3559489743bce1a1317eb527d601784dda6bf129ed9b7ef9"
 ---
 
 # Native integration concepts
@@ -221,3 +221,6 @@ To successfully implement your native integration, you'll need to handle several
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

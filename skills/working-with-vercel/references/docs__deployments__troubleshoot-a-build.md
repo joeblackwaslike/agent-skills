@@ -16,8 +16,8 @@ related:
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7ca3eb34f42c5cf501539dff8e894c0594997bac3feae4a9e725f49eaae6e4ae"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "37046d43990f8207e2e17f150b2315618b2d23e196fccf2983907b294ff14bf9"
 ---
 
 # Troubleshooting Build Errors
@@ -30,6 +30,7 @@ You can troubleshoot build errors that occur during the Build step of your deplo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Build cache storage increased for larger build machines](https://vercel.com/changelog/build-cache-storage-increased-for-larger-build-machines)
 - [Enhanced Builds now have double the compute](https://vercel.com/changelog/enhanced-builds-now-have-double-the-compute)
 - [Improved error messages for failed or canceled builds](https://vercel.com/changelog/improved-error-messages-for-failed-or-canceled-builds)
@@ -37,11 +38,10 @@ You can troubleshoot build errors that occur during the Build step of your deplo
 - [Yarn 2+ dependency caching now supported](https://vercel.com/changelog/yarn-2-dependency-caching-now-supported)
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
 - [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
-- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
-- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md)
 <!-- /docsgraph:related -->
@@ -179,7 +179,16 @@ The first Build in a Project will take longer as the Build cache is initially em
 
 ### What is cached
 
-Vercel caches files based on the [Framework Preset](/docs/builds/configure-a-build#framework-preset) selected in your [Project settings](/docs/projects#project-settings). The following files are cached in addition to `node_modules/**`:
+A successful build saves the following to the Build cache, with all paths relative to the repository root:
+
+- **Builder output.** Each [builder](/docs/builds) that runs during your build contributes its own cache output. The `@vercel/node` builder caches every `node_modules` and `.yarn/cache` directory in the repository (the glob `**/{node_modules,.yarn/cache}/**`). Framework builders add the framework-preset files listed below. The `@vercel/static` builder contributes nothing to the cache.
+- **Everything under `.vercel/builders`.** The builders Vercel installs to run your build.
+- **Files under `.vercel/cache`, except pnpm's cache directory.** Files that tools write here persist across builds. Under `.vercel/cache/pnpm`, only `lockfile-verified.jsonl` is retained, as described below.
+- **`lockfile-verified.jsonl`** from pnpm, under `.vercel/cache/pnpm`. See [Caching process](#caching-process) for how pnpm uses this file.
+
+Anything under `.vercel/output` is never cached. Restoring it would make the next deployment appear prebuilt.
+
+Vercel caches framework-preset files based on the [Framework Preset](/docs/builds/configure-a-build#framework-preset) selected in your [Project settings](/docs/projects#project-settings). The following files are cached in addition to the builder output above:
 
 Note that the framework detection is dependent on the preset selection made in the [Build settings](/docs/builds/configure-a-build#build-and-development-settings). You should make sure that the correct framework is set for your project for optimum build caching.
 
@@ -200,6 +209,8 @@ Let's say that under your account `MyTeam`, you have a project `MySite` that is 
 If you create a new Git branch in `MyCode` and make a commit to it, there is no cache for that specific branch. In this case, the last [production Deployment](/docs/deployments/environments#production-environment) cache is used to create a preview deployment and a new branch cache is created for subsequent commits to the new branch.
 
 If you use [Vercel functions](/docs/functions) to process HTTP requests in your project, each Vercel Function is built separately in the Build step and has its own cache, based on the [Runtime](/docs/functions/runtimes) used. Therefore, the number and size of Vercel functions will affect your Build time. For Next.js projects, Vercel functions are bundled to optimize Build resources as described [here](/docs/functions/configuring-functions/advanced-configuration#bundling-vercel-functions).
+
+When you use pnpm, Vercel points pnpm's cache directory at `.vercel/cache/pnpm` in the repository root by setting the `pnpm_config_cache_dir` environment variable on pnpm 11 and later, and `npm_config_cache_dir` on older pnpm versions. A value you set yourself for those variables, or for `PNPM_CONFIG_CACHE_DIR` or `NPM_CONFIG_CACHE_DIR`, takes precedence. From that directory, only `lockfile-verified.jsonl`, pnpm's record of a successful lockfile verification, is kept in the Build cache. The registry metadata, `dlx` installs, and runtime checksums that pnpm also writes there are dropped. pnpm decides whether a stored verdict is still valid, so changing the lockfile or a relevant setting re-runs verification. Keeping this file lets a subsequent build skip re-verifying an unchanged lockfile, which shortens the [Install Command](/docs/builds/configure-a-build#install-command).
 
 At the end of each Build step, successful builds will update the cache and failed builds will **not modify** the existing cache.
 
@@ -226,3 +237,6 @@ Sometimes, you may not want to use the Build cache for a specific deployment. Yo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

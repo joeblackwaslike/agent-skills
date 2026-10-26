@@ -12,8 +12,8 @@ related:
 summary: Learn how to integrate an iframe into your application to support PCI DSS compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/pci-dss.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c1d133f9bb75e82164abb364a2c4dd5a26e5382cf5168889c48c2f5d589b9676"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4c420a86dbaea71625f86d18303b648f05404488ef03ac37ca721680439a7a9c"
 ---
 
 # PCI DSS iframe Integration
@@ -32,12 +32,11 @@ When you use an [\`iframe\`](https://developer.mozilla.org/en-US/docs/Web/HTML/E
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe)
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [Vercel Commerce and Payments Integrations](https://vercel.com/docs/integrations/ecommerce) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [Stripe Integration](https://vercel.com/docs/integrations/ecommerce/stripe) — Connect your Stripe account to Vercel and accept payments in your applications.
 - [Content Security Policy](https://vercel.com/docs/cdn-security/security-headers) — Learn how the Content Security Policy \\(CSP\\) offers defense against web vulnerabilities, its key features, and best pra
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
-- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 
 Full cross-link map for this page: [/docs/security/pci-dss.graph.md](/docs/security/pci-dss.graph.md)
 <!-- /docsgraph:related -->
@@ -113,3 +112,6 @@ In accordance with Vercel's [shared responsibility model](/docs/security/shared-
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

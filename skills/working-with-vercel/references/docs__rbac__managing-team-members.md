@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/managing-team-members.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9d829a50a4035c3787a3418a01360e201ecbc7d3b347d993d84cdce82333ff3e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b00c9dca89fe464822d2a9a67b3fcec976f85b7a62de978c28ccc5cf91a999f0"
 ---
 
 # Managing Team Members
@@ -31,16 +31,18 @@ As the team owner, you have the ability to manage your team's composition and th
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
-- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
+- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 
 Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/docs/rbac/managing-team-members.graph.md)
 <!-- /docsgraph:related -->
 
 ## Adding team members and assigning roles
 
-> **Availability**: Inviting new team members is available on Enterprise and Pro plans
+> Inviting new team members is available on Enterprise and Pro plans
+>
+> Those with the owner role can access this feature
 
 1. From the dashboard, select your team from the team switcher
 2. Open **Settings** in the sidebar and go to [**Members**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fmembers\&title=Go+to+Members+settings)
@@ -50,7 +52,9 @@ Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/
 
 4. By default only the team level roles are visible in the dropdown. If you choose to assign the [contributor role](/docs/rbac/access-roles#contributor-role) to the new member, a second dropdown will be accessible by selecting the **Assign Project Roles** button. You can then select the project, and their role on that project you want to assign the contributor to:
 
-> **Availability**: Assigning project roles is available on Enterprise plans
+> Assigning project roles is available on Enterprise plans
+>
+> Those with the owner role can access this feature
 
 ![Assigning a contributor role to a new member.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/rbac/rbac-settings-assign-contributor-light.png)
 
@@ -61,7 +65,9 @@ Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/
 
 ## Assigning project roles
 
-> **Availability**: Assigning project roles is available on Enterprise plans
+> Assigning project roles is available on Enterprise plans
+>
+> Those with the owner role can access this feature
 
 Team [owners](/docs/rbac/access-roles#owner-role) can assign project roles to team members with the [contributor role](/docs/rbac/access-roles#contributor-role), enabling control over their project-related actions. You can assign these roles during team invitations or to existing members.
 
@@ -98,3 +104,6 @@ Vercel is also [SCIM](# "System for Cross-domain Identity Management") compliant
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

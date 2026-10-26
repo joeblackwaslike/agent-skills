@@ -16,8 +16,8 @@ related:
 summary: Set up fx, Claude Code, Codex, Cline, and OpenCode to use Token Pass, and use Token Pass in agents you build yourself.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/token-pass/coding-agents.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7e1653166289f41e47082f1c3a35bf6ec92557e60a6ffcc352ee73e7c316f952"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d730d86b9491daafe2f394daacd4039cf9d6a9e150c770ab350a66a1f4150d0e"
 ---
 
 # Using Token Pass with Coding and Personal Agents
@@ -33,10 +33,11 @@ Make sure that:
 
 Use one of the featured model IDs:
 
-| Model   | Model ID             |
-| ------- | -------------------- |
-| Kimi K3 | `moonshotai/kimi-k3` |
-| GLM 5.3 | `zai/glm-5.3`        |
+| Model               | Model ID                       |
+| ------------------- | ------------------------------ |
+| Kimi K3             | `moonshotai/kimi-k3`           |
+| GLM 5.3             | `zai/glm-5.3`                  |
+| DeepSeek V4.1 Flash | `deepseek/deepseek-v4.1-flash` |
 
 A Token Pass API key only works with featured models. These agent settings send requests elsewhere, so those requests fail with a `403`:
 
@@ -62,7 +63,7 @@ npx vercel@latest ai-gateway setup --agent fx --key "$AI_GATEWAY_API_KEY"
 
 This exports `AI_GATEWAY_API_KEY` from your shell startup file and pins fx's `credential_source` to that key. Open a new terminal so the key loads.
 
-In fx, run `/model` and choose `zai/glm-5.3` or `moonshotai/kimi-k3`. When you pick Kimi K3, fx preselects **Fast** in the speed step. Choose standard speed instead. If Fast is already on, run `/fast` to turn it off.
+In fx, run `/model` and choose `zai/glm-5.3`, `moonshotai/kimi-k3`, or `deepseek/deepseek-v4.1-flash`. When you pick Kimi K3, fx preselects **Fast** in the speed step. Choose standard speed instead. If Fast is already on, run `/fast` to turn it off.
 
 To start fx on a featured model without changing your saved default:
 
@@ -154,7 +155,7 @@ To set up the Cline VS Code extension, open Cline's settings and follow these st
 
 1. Set **API Provider** to **Vercel AI Gateway**.
 2. Paste your Token Pass API key.
-3. Set the model to `zai/glm-5.3` or `moonshotai/kimi-k3`.
+3. Set the model to `zai/glm-5.3`, `moonshotai/kimi-k3`, or `deepseek/deepseek-v4.1-flash`.
 
 ## OpenCode
 
@@ -164,7 +165,7 @@ Connect OpenCode:
 npx vercel@latest ai-gateway setup --agent opencode --key "$AI_GATEWAY_API_KEY"
 ```
 
-In OpenCode, run `/models` and choose GLM 5.3 or Kimi K3 under Vercel AI Gateway. To make one the default, set `model` in `opencode.json`:
+In OpenCode, run `/models` and choose GLM 5.3, Kimi K3, or DeepSeek V4.1 Flash under Vercel AI Gateway. To make one the default, set `model` in `opencode.json`:
 
 ```json filename="opencode.json"
 {
@@ -226,3 +227,6 @@ See [When credit runs out](/docs/ai-gateway/token-pass/models-and-routing#when-c
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

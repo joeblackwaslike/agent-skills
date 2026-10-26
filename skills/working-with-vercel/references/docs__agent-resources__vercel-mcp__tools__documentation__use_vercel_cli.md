@@ -13,8 +13,8 @@ related:
 summary: Use use_vercel_cli with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1f43e041ecbbeec53efbefe5746b41389e3b0ae800ec41737e11796b7fa20771"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8ec50d8c7c83738b24be52ee54460e2ec66e1e3c2c3e9958d4ed18c1e3e8585c"
 ---
 
 # use_vercel_cli
@@ -28,10 +28,10 @@ This tool is available through the `https://mcp.vercel.com/cli/mcp` connection.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
-- [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
-- [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
+- [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel mcp](https://vercel.com/docs/cli/mcp) — Set up Model Context Protocol \\(MCP\\) usage with a Vercel project using the vercel mcp CLI command.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli.graph.md](/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Instructs the LLM to use Vercel CLI commands with --help flag for information.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

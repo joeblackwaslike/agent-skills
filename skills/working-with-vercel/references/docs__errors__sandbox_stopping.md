@@ -13,8 +13,8 @@ related:
 summary: The Sandbox is mid-shutdown and is no longer accepting commands. This is a transient state.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/sandbox_stopping.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "4e510289575cd37b1bf65a0d9f480d5ee81ada9482d1f219267f7296fa243833"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b62a136e5f808cf351da68b56f846c12e6b863e86faba4f7f29efd6d17c98bd5"
 ---
 
 # SANDBOX_STOPPING
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

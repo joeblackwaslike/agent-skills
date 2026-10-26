@@ -4,8 +4,8 @@ description: Learn how to connect to Model Context Protocol (MCP) servers and us
 url: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "8780929232901d8225b5db0ad51c7bbe5ab22ea90a0278d90fad6b62412f60d5"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "7ff2fe22c72c22033a75ba085737ee4cab7702186557993ce0215529e7b18eb8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -208,6 +208,33 @@ tokens are invalid.
 
 ### OAuth Authorization Server Validation
 
+Pre-registered confidential clients must be bound to their authorization server
+before starting OAuth. Set `issuer` on the credentials returned by
+`clientInformation()` to the issuer of the server that registered the client:
+
+```typescript
+clientInformation() {
+  return {
+    client_id: process.env.OAUTH_CLIENT_ID!,
+    client_secret: process.env.OAUTH_CLIENT_SECRET!,
+    issuer: 'https://accounts.example.com',
+  };
+}
+```
+
+The issuer must exactly match the discovered issuer. The SDK rejects a mismatch
+before redirecting or sending credentials, even if a stored authorization flow
+pin names the discovered server. Dynamic client registration attaches this
+binding automatically.
+
+Existing complete authorization server bindings on credentials, stored tokens,
+or `authorizationServerInformation()` are also supported. Without a binding,
+a pre-registered client secret or custom `addClientAuthentication` handler is
+rejected, even when `validateAuthorizationServerURL` accepts the selected server.
+Approving a server does not establish that the credentials belong to it.
+Do not derive the credential issuer from the MCP server's metadata; configure it
+from the client's registration.
+
 When using MCP OAuth in server-side applications, the MCP server can advertise
 the OAuth authorization server to use. If you connect to MCP servers outside
 your control, implement `validateAuthorizationServerURL` on your
@@ -235,8 +262,8 @@ const myOAuthClientProvider = {
 ```
 
 This hook is called before the SDK fetches authorization server metadata, so a
-rejected URL is not requested. It is optional and does not change existing OAuth
-flows unless you implement it.
+rejected URL is not requested. The hook is an optional additional restriction;
+it does not replace the credential binding required for confidential clients.
 
 ### OAuth Callback Issuer Validation
 

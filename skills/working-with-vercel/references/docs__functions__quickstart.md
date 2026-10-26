@@ -16,8 +16,8 @@ related:
 summary: Build your first Vercel Function in a few steps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8723f9dd92721a9ea5b4f5585b8b2c9a3cfeac04e8f4eff0c1139ff0515e1951"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "308873706f5e43e40a2d1b4f63aae688327181f259e2e9a0ce25f8743f046989"
 ---
 
 # Getting started with Vercel Functions
@@ -32,10 +32,10 @@ In this guide, you'll learn how to get started with Vercel Functions using your 
 
 - [Function invocations now billed per unit](https://vercel.com/changelog/function-invocations-now-billed-per-unit)
 - [Vercel Functions now have faster and fewer cold starts](https://vercel.com/changelog/vercel-functions-now-have-faster-and-fewer-cold-starts)
-- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to Use ML Models from Hugging Face in Vercel Functions](https://vercel.com/kb/guide/ml-models-hugging-face) — This guide provides step-by-step instructions on how to integrate ML models from Hugging Face into Vercel Functions
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
-- [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
@@ -65,28 +65,29 @@ Help me create a Vercel Function in this project. First, inspect the project to 
 
 - You can use an existing project or create a new one. If you don't have one, you can run the following terminal command to create a Next.js project:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm create next-app@latest
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn create next-app@latest
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npx create-next-app@latest
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bunx create-next-app@latest
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm create next-app@latest
+```
+
+**yarn**
+
+```bash
+yarn create next-app@latest
+```
+
+**npm**
+
+```bash
+npx create-next-app@latest
+```
+
+**bun**
+
+```bash
+bunx create-next-app@latest
+```
 
 ## Create a Vercel Function
 
@@ -171,3 +172,6 @@ Now that you have set up a Vercel Function, you can explore the following topics
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

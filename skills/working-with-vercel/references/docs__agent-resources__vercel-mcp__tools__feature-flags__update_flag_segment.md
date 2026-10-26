@@ -13,8 +13,8 @@ related:
 summary: Use update_flag_segment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_segment.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5e410288337301ff2ef98b0417bd3410aa1109a3376622351a97fa4a33f707fa"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "170fa97b7415ae892831b7d143e6f2fc7e8da01312239b3792ee21e492fd7610"
 ---
 
 # update_flag_segment
@@ -31,7 +31,7 @@ Update an existing feature flag segment.
 - [update_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag) — Use update_flag with Vercel MCP.
 - [list_flag_segments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_segments) — Use list_flag_segments with Vercel MCP.
 - [update_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_settings) — Use update_flag_settings with Vercel MCP.
-- [create_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flag) — Use create_flag with Vercel MCP.
+- [Update a segment](https://vercel.com/docs/rest-api/feature-flags/update-a-segment) — PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Update an existing feature flag segment.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_segment.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_segment.graph.md)
 <!-- /docsgraph:related -->
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

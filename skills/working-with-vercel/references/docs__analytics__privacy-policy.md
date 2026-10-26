@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/privacy-policy.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c6d43e3d57e6aaf490dee644751fe99cff83d8ab81f936eb1341f06ae5c80e67"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a0f3c495e34a20a943a877b5b834fcdfee2fd49943cf2789891cd8c6932fd0ea"
 ---
 
 # Privacy and Compliance
@@ -35,7 +35,7 @@ Vercel takes a privacy-focused approach to our products and strives to enable ou
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting) — Learn how to troubleshoot common issues with Vercel Web Analytics.
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
 
 Full cross-link map for this page: [/docs/analytics/privacy-policy.graph.md](/docs/analytics/privacy-policy.graph.md)
 <!-- /docsgraph:related -->
@@ -95,3 +95,6 @@ The Resilient Intake does not depend on a single predictable URL path for data c
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

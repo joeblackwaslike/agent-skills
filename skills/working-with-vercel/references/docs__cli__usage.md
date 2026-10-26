@@ -13,8 +13,8 @@ related:
 summary: Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/usage.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c5728c87d520e4426be67943a6c9037495c8e56450f8c80c1964881c728d28e3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2545cdc24816f328e17550f0929903f77b7a38887f93b7198b1b4fc358e58769"
 ---
 
 # vercel usage
@@ -30,9 +30,9 @@ The `vercel usage` command displays billing usage for the current billing period
 - [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api)
 - [vercel pricing](https://vercel.com/docs/cli/pricing) — Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [vercel budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/usage.graph.md](/docs/cli/usage.graph.md)
 <!-- /docsgraph:related -->
@@ -162,3 +162,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bbe05676697720a3eb6a491a9368577d91687be8ffc11aaf539188a6f0202117"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ab231299a18abc227ff8ac45fc073eb068622c0ff6b054ce7c087487fe5eec20"
 ---
 
 # ISR Usage and Pricing
@@ -40,8 +40,8 @@ This page covers ISR costs, usage metrics, and optimization strategies. To decid
 - [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
+- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
-- [Stockholm, Sweden \\(arn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/arn1) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration/limits-and-pricing.graph.md](/docs/incremental-static-regeneration/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -133,3 +133,6 @@ When viewing your ISR writes chart, you can group by sum of units to see a total
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

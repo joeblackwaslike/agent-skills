@@ -13,8 +13,8 @@ related:
 summary: Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect (OIDC) or a Personal Access Token (PAT).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "56f2ef17e99313b86e2a31cbf3cfc73424e9042f2a755806cb9b2d64361cd917"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d499217c55bf6ee2dce4c1022959d744749d7b811879b98233306d51b52dfde1"
 ---
 
 # Use Remote Caching from External CI/CD
@@ -30,10 +30,10 @@ You can use [Vercel Remote Cache](/docs/monorepos/remote-caching) with Turborepo
 - [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
 - [Turborepo and Vercel Remote Cache now support OpenID Connect (OIDC)](https://vercel.com/changelog/turborepo-and-remote-cache-now-support-openid-connect-oidc)
 - [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
-- [GitLab CI](https://turborepo.dev/docs/guides/ci-vendors/gitlab-ci) — Configure GitLab CI pipelines to run Turborepo tasks with Remote Caching.
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [GitLab CI](https://turborepo.dev/docs/guides/ci-vendors/gitlab-ci) — Configure GitLab CI pipelines to run Turborepo tasks with Remote Caching.
 - [Travis CI](https://turborepo.dev/docs/guides/ci-vendors/travis-ci) — Configure Travis CI to run Turborepo tasks with Remote Caching.
-- [Visualize time saved using Turborepo with Remote Caching](https://vercel.com/changelog/visualize-time-saved-using-turborepo-with-remote-caching)
+- [Caching](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching) — Vercel MCP tools for caching.
 
 Full cross-link map for this page: [/docs/monorepos/remote-caching/external-ci-cd.graph.md](/docs/monorepos/remote-caching/external-ci-cd.graph.md)
 <!-- /docsgraph:related -->
@@ -189,3 +189,6 @@ Then add the following environment variables to your workflow to make them avail
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

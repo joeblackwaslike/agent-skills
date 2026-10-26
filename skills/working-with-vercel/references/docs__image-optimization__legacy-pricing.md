@@ -16,8 +16,8 @@ related:
 summary: This page outlines information on the pricing and limits for the source images-based legacy option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/legacy-pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "22a59b5f9628257363a57cb3e668ff572da0562fb3f6db981a0381600aa61738"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7b1ce94d6fa1f9a51b6a43449966532e0c9c48fcc1ea2e275176c895eea11d4f"
 ---
 
 # Legacy Pricing for Image Optimization
@@ -43,11 +43,10 @@ Image Optimization pricing is dependent on your plan and how many unique [source
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization)
-- [Increased Hobby usage limits for Image Optimization](https://vercel.com/changelog/increased-hobby-usage-limits-for-image-optimization)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing) — Learn about the pricing for Vercel Blob.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
+- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing) — Learn about the pricing for Vercel Blob.
 
 Full cross-link map for this page: [/docs/image-optimization/legacy-pricing.graph.md](/docs/image-optimization/legacy-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -120,3 +119,6 @@ See the [Fair Usage Policy](/docs/limits/fair-use-guidelines#typical-monthly-usa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

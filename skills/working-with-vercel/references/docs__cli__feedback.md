@@ -14,8 +14,8 @@ related:
 summary: Send bugs, friction, and feature requests to the Vercel team using the vercel feedback CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/feedback.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "290515b244e85227b9df775edf203792eab7daac64b00f776d36811043733ae5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "236f21ea5beb512950f4f2457a786dd1d1885c7b95d1d588cefda57e39011045"
 ---
 
 # vercel feedback
@@ -28,12 +28,13 @@ Use `vercel feedback` to report bugs, friction, and feature requests to the Verc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Where can I submit Vercel feature requests?](https://vercel.com/kb/guide/where-to-submit-feature-requests) — Information on how to make feature requests for the Vercel platform.
+- [Send feedback from the Vercel CLI](https://vercel.com/changelog/send-feedback-from-vercel-cli)
+- [Send feedback from the Vercel MCP](https://vercel.com/changelog/send-feedback-from-vercel-mcp)
+- [submit_feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/submit_feedback) — Send feedback about Vercel or its MCP tools.
+- [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
-- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 
 Full cross-link map for this page: [/docs/cli/feedback.graph.md](/docs/cli/feedback.graph.md)
 <!-- /docsgraph:related -->
@@ -149,3 +150,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

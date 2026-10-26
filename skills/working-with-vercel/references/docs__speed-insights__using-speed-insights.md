@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Speed Insights to analyze your application's performance data."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/using-speed-insights.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "43783d632257ccfdc3cd1cd58fe6a0b0b66a74dbd53c4f4fd95ebd38781e8706"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "225c4c2feb78ba772e5405585dd2e1b62a71399a5dbea91a66439944a62cad9b"
 ---
 
 # Using Speed Insights
@@ -39,9 +39,9 @@ To access Speed Insights:
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [Speed Insights usage can now be viewed by Project](https://vercel.com/changelog/speed-insights-usage-can-now-be-viewed-by-project)
-- [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Speed Insights Configuration with @vercel/speed-insights](https://vercel.com/docs/speed-insights/package) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
@@ -119,3 +119,6 @@ After that, events will count toward your team's [allocation](/docs/speed-insigh
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

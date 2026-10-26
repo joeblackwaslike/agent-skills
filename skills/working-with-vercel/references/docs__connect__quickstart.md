@@ -8,21 +8,21 @@ type: tutorial
 prerequisites:
   - /docs/connect
 related:
+  - /docs/connect/legal
   - /docs/cli
   - /docs/connect/concepts/authentication
   - /docs/deployments/environments
   - /docs/cli/connect
-  - /docs/connect/concepts/tokens
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "509279ab0126fe13cf3450f1760921828c70c3f2149cd1767f82962a214ad60a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "189ea0bb01e47bcbbb0526504b2e343a268896d994f561764ae6f3d811074255"
 ---
 
 # Quickstart
 
-> **Availability**: Vercel Connect is available on all plans
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
 
 This guide shows you how to create your first connector in Vercel Connect and request a runtime provider token from your code.
 
@@ -33,11 +33,11 @@ This guide shows you how to create your first connector in Vercel Connect and re
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [MCP Events support in Vercel Connect is now in public beta](https://vercel.com/changelog/mcp-events-support-in-vercel-connect-is-now-in-public-beta)
+- [Vercel Connect adds managed Stripe API keys](https://vercel.com/changelog/vercel-connect-adds-managed-stripe-api-keys)
 - [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments)
 - [Vercel Connect adds 100+ preset connectors](https://vercel.com/changelog/vercel-connect-preset-connectors)
 - [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
 - [Build a GitHub agent with Vercel Connect](https://vercel.com/kb/guide/github-agent-vercel-connect) — Build a GitHub agent that helps your team work through issues and PRs. Chat SDK handles the interactivity and AI SDK run
-- [Build a Linear agent with Vercel Connect](https://vercel.com/kb/guide/linear-agent-vercel-connect) — Build a native Linear Agent that helps your team manage issues. Mention it on any issue and it responds in real time, po
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
@@ -282,3 +282,6 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

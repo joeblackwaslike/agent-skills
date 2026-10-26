@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6acee6a314a32b4a7834282fe6cc493f94f82fc4ecfe08eca9c150fe44e7db5b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a4721edf3760fa5900a05433b842c855a8b9028211f7989b8cd4389dd2d719c6"
 ---
 
 # Vercel Primitives
@@ -34,11 +34,12 @@ These primitives are the "building blocks" that make up a Vercel Deployment.
 - [Optimized CDN caching and deploying of immutable static assets](https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets)
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
 - [Build your own web framework](https://vercel.com/blog/build-your-own-web-framework)
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
+- [Environment variables](https://vercel.com/docs/environment-variables) — Learn more about environment variables on Vercel.
 
 Full cross-link map for this page: [/docs/build-output-api/primitives.graph.md](/docs/build-output-api/primitives.graph.md)
 <!-- /docsgraph:related -->
@@ -403,3 +404,6 @@ The following example shows a directory structure where the Prerender will be ac
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

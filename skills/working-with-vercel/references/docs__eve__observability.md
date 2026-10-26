@@ -14,8 +14,8 @@ related:
 summary: Configure process-wide OpenTelemetry settings, third-party destinations, filtering, and built-in exports for eve agents.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/observability.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4ad02733022105a853dfd1dcde8846f212f811e4dbb351dffb4f7fd9b3cdf948"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a4b948bdfcbbaf726897cb5c7ff0298d4c1965f6bfd64aecabecad7ce8fc7282"
 ---
 
 # Observability
@@ -37,12 +37,12 @@ third-party destinations, and export policies.
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Migrate Instrumentation](https://eve.dev/docs/observability/instrumentation-migration) — Move a single instrumentation.ts configuration into lifecycle instrumentation and OpenTelemetry destinations.
 - [Instrumentation](https://eve.dev/docs/observability/instrumentation) — Configure lifecycle instrumentation, handle runtime events, and control the content each destination receives.
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Terminal UI](https://eve.dev/docs/guides/dev-tui) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
-- [How to set up instrumentation with OpenTelemetry](https://nextjs.org/docs/app/guides/open-telemetry) — Learn how to instrument your Next.js app with OpenTelemetry.
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Instrumentation](https://vercel.com/docs/tracing/instrumentation) — Learn how to instrument your application to understand performance and infrastructure details.
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Tracing](https://vercel.com/docs/tracing) — Learn how to trace your application to understand performance and infrastructure details.
+- [Using eve with Chat SDK](https://vercel.com/docs/chat-sdk/eve) — Send Chat SDK messages to an eve agent with a channel, persistent state, and Vercel Connect.
 
 Full cross-link map for this page: [/docs/eve/observability.graph.md](/docs/eve/observability.graph.md)
 <!-- /docsgraph:related -->
@@ -200,3 +200,6 @@ Instrumentation has two environment-specific defaults:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

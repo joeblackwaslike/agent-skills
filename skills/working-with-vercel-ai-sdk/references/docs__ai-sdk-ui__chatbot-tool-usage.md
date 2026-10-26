@@ -4,8 +4,8 @@ description: Learn how to use tools with the useChat hook.
 url: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "cc554ba06214eb69c3bbac5c509fed721bdc241c9180a6f9fd9ab40ba501612c"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "fe94304fe1812900802d0f1a3baf0fab8a4e04e27af708ec7c87b7df5c381eb0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,12 +21,12 @@ The flow is as follows:
 
 1. The user enters a message in the chat UI.
 2. The message is sent to the API route.
-3. In your server side route, the language model generates tool calls during the `streamText` call.
+3. In your server-side route, the language model generates tool calls during the `streamText` call.
 4. All tool calls are forwarded to the client.
 5. Server-side tools are executed using their `execute` method and their results are forwarded to the client.
 6. Client-side tools that should be automatically executed are handled with the `onToolCall` callback.
    You must call `addToolOutput` to provide the tool result.
-7. Client-side tool that require user interactions can be displayed in the UI.
+7. Client-side tools that require user interactions can be displayed in the UI.
    The tool calls and results are available as tool invocation parts in the `parts` property of the last assistant message.
 8. When the user interaction is done, `addToolOutput` can be used to add the tool result to the chat.
 9. The chat can be configured to automatically submit when all tool results are available using `sendAutomaticallyWhen`.

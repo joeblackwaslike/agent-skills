@@ -13,8 +13,8 @@ related:
 summary: Use restore_redirects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/restore_redirects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "746394e566698e2acfc4e88f7dc6721cdd956aa63dd2052381ef4e28cddb2721"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "db562ea5214007f549e6a141986ea5dc792970134b2d7a9739fa224b7aa5d0ac"
 ---
 
 # restore_redirects
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

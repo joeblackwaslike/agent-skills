@@ -16,8 +16,8 @@ related:
 summary: Answer a typed boolean question about application state using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/decision.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "edaa35644fedfeec5f33bb646a9c0b638f03fcecac6d556782a74c38c67d3204"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1570c0aa054eea7d48f3ea6e2a6fce34f8460a3b8616fd279d49ef8785e8132e"
 ---
 
 # AI Gateway Decision Quickstart
@@ -33,9 +33,9 @@ Ask a typed question about application state through AI Gateway and get a boolea
 - [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
 - [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
-- [Automatic Model Selection](https://eve.dev/docs/guides/decide) — Choose agent models automatically or ask typed questions in your tools and application code.
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/decision.graph.md](/docs/ai-gateway/getting-started/decision.graph.md)
@@ -119,3 +119,6 @@ This quickstart logs only `result.answers`. The probability can vary, but you sh
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

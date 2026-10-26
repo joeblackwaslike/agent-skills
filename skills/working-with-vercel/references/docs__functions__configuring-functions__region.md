@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "51fa377d7af6e470486cf0d9e604b3450a1db1e791b1832fc64b232b0c309200"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2ae0ad6ce24c2ab329cc577c67880a86f3dd8d5b89793f002440dbeb740e147c"
 ---
 
 # Configuring regions for Vercel Functions
@@ -146,7 +146,7 @@ Vercel Functions have multiple availability zone redundancy by default. Multi-re
 
 ### Node.js runtime failover
 
-> **Availability**: Setting failover regions are available on Enterprise plans
+> Setting failover regions are available on Enterprise plans
 
 Enterprise teams can enable multi-region redundancy for Vercel Functions using Node.js.
 
@@ -183,3 +183,6 @@ Region failover is supported with Secure Compute. See [Region Failover](/docs/ne
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

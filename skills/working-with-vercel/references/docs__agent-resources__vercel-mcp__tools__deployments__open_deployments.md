@@ -13,8 +13,8 @@ related:
 summary: Use open_deployments with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "32615e9e4d2e0b2bdd913d2f825d5b222746b77f0f56b715d300d5cb709202de"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dd75948307daaa8545b8b86565ec8ce8f1a8e740dddb8dfd66584396ffe48861"
 ---
 
 # open_deployments
@@ -30,8 +30,8 @@ Show deployments in a live card with expandable build logs. In clients without a
 - [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 - [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
-- [create_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment) — Use create_deployment with Vercel MCP.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [create_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment) — Use create_deployment with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -58,3 +58,6 @@ The `view` parameter only accepts `"preview"`. `target` filters production or pr
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/commits/statuses"
-fetched_at: "2026-06-15T19:08:53.463Z"
-sha256: "198d59f034b709626606f2a3495e3282b79f6212134fef5d0eae31dbd5bac9ed"
+fetched_at: "2026-10-26T09:52:24.329Z"
+sha256: "616e476d2d152f6d8ec848c3ae2ce70e2d1153db231dee4fd2e5f3f7f0c165b6"
 ---
 
 # REST API endpoints for commit statuses
@@ -20,7 +20,7 @@ Note that the `repo:status` [OAuth scope](/en/apps/oauth-apps/building-oauth-app
 
 If you are developing a GitHub App  and want to provide more detailed information about an external service, you may want to use the REST API to manage checks. For more information, see [REST API endpoints for checks](/en/rest/checks).
 
-> \[!NOTE]
+> [!NOTE]
 > Most endpoints use `Authorization: Bearer <YOUR-TOKEN>` and `Accept: application/vnd.github+json` headers, plus `X-GitHub-Api-Version: 2026-03-10`. Curl examples below omit these standard headers for brevity.
 
 ## Get the combined status for a specific reference

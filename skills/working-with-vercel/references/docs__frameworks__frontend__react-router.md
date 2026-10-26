@@ -17,8 +17,8 @@ related:
 summary: Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "44652262eabb92bc3202653058854c5eb253af6daefbc55a470d785dd2e9d8eb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e93aefebc78cc59d6e9b358d6bce768aa3c8d9850b149921d264ffe0dcd0c436"
 ---
 
 # React Router on Vercel
@@ -32,13 +32,13 @@ React Router is a multi-strategy router for React. When used [as a framework](ht
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
-- [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
-- [Support for React Router v7](https://vercel.com/changelog/support-for-react-router-v7)
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
-- [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 
 Full cross-link map for this page: [/docs/frameworks/frontend/react-router.graph.md](/docs/frameworks/frontend/react-router.graph.md)
 <!-- /docsgraph:related -->
@@ -59,28 +59,29 @@ The optional `@vercel/react-router` package contains Vercel specific utilities f
 
 To get started, navigate to the root directory of your React Router project with your terminal and install `@vercel/react-router` with your preferred package manager:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/react-router
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/react-router
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/react-router
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/react-router
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/react-router
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/react-router
+```
+
+**npm**
+
+```bash
+npm i @vercel/react-router
+```
+
+**bun**
+
+```bash
+bun add @vercel/react-router
+```
 
 ## Vercel React Router Preset
 
@@ -236,28 +237,29 @@ To use Analytics, navigate to the Analytics section in your project dashboard si
 
 To track visitors and page views, we recommend first installing our `@vercel/analytics` package by running the terminal command below in the root directory of your React Router project:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/analytics
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/analytics
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/analytics
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/analytics
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/analytics
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/analytics
+```
+
+**npm**
+
+```bash
+npm i @vercel/analytics
+```
+
+**bun**
+
+```bash
+bun add @vercel/analytics
+```
 
 Then, follow the instructions below to add the `Analytics` component to your app. The `Analytics` component is a wrapper around Vercel's tracking script, offering a seamless integration with React Router.
 
@@ -487,3 +489,6 @@ Learn more about deploying React Router projects on Vercel with the following re
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -15,8 +15,8 @@ related:
 summary: The Routing Middleware invocation timed out. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/middleware_invocation_timeout.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "b9fc3d4839dd1a73d314f700b8b4892e8ab13668d02c42be00f36ef478e86538"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e8e2b6fcb9ed091d9b01c9a1bf86616266392718850e36908dbacc8e2d71f315"
 ---
 
 # MIDDLEWARE_INVOCATION_TIMEOUT
@@ -44,3 +44,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

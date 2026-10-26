@@ -16,8 +16,8 @@ related:
 summary: Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "691b343be4538a38eabe03399b69a6c3c727c67bb01ba9e2acdd084833a44fcb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "251daf928aa98af7d3f7b2359d1663af373c145afc45a8dbeed543fa5cd1d124"
 ---
 
 # Vercel KMS Quickstart
@@ -100,3 +100,6 @@ Full cross-link map for this page: [/docs/kms/quickstart.graph.md](/docs/kms/qui
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

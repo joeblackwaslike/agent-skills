@@ -13,13 +13,13 @@ related:
 summary: Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/ruby.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c3d0fb09dee5305410c40c02eb369482c5b162afd7fb9b6b79c68edb0c86eba5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6363720506b027c001dbdb20ddf904d70e4e981306979adde99ecfbc70e6b5c2"
 ---
 
 # Using the Ruby Runtime with Vercel Functions
 
-> **Availability**: The Ruby runtime (Beta) is available on all plans
+> The Ruby runtime is available in Beta on all plans
 
 The Ruby runtime is used by Vercel to compile Ruby Vercel functions that define a singular HTTP handler from `.rb` files within an `/api` directory at your project's root.
 
@@ -31,12 +31,13 @@ The Ruby runtime is used by Vercel to compile Ruby Vercel functions that define 
 
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications) — Learn how to deploy a Ruby on Rails application on Vercel — either as a container image on Vercel Functions or as a head
-- [Rust runtime now in public beta for Vercel Functions](https://vercel.com/changelog/rust-runtime-now-in-public-beta-for-vercel-functions)
+- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime) — Learn how to configure the runtime for Vercel Functions.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
-- [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go) — Learn how to use the Go runtime to run Go APIs on Vercel.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
+- [Secure Compute](https://vercel.com/docs/networking/secure-compute) — Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 
 Full cross-link map for this page: [/docs/functions/runtimes/ruby.graph.md](/docs/functions/runtimes/ruby.graph.md)
 <!-- /docsgraph:related -->
@@ -97,3 +98,6 @@ This runtime supports installing dependencies defined in the `Gemfile`. Alternat
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

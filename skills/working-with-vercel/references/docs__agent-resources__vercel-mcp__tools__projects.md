@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1505758cbad836488af5be1b49040f595cae7485c7b88668eca892dec22e40e4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2ad21ac1a6f1c8f2c3e06f9ffe915483ff38f4493ba9df1c63a75a66ab4449b7"
 ---
 
 # Projects
@@ -30,8 +30,8 @@ Create projects from scratch or connect an existing Git repository to Vercel. Yo
 - [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
-- [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
 - [Teams and Users](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams) — Vercel MCP tools for teams and users.
+- [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects.graph.md](/docs/agent-resources/vercel-mcp/tools/projects.graph.md)
 <!-- /docsgraph:related -->
@@ -316,3 +316,6 @@ Attempts to verify a project domain with `verified = false` by checking the corr
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

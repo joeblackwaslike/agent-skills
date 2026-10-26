@@ -14,8 +14,8 @@ related:
 summary: A popover interface for deploying files to Vercel with real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/deploy-popover.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e3480727a1330e5fd7c68be8108fd5b5cb1fc10700b629bd49c41ef32d740d7f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "467a433a096643522b1a0ca7f84163097bd3178bf89b18c51bbec4c187c7f502"
 ---
 
 # Deploy Popover
@@ -33,9 +33,9 @@ The Deploy Popover component provides a popover interface for publishing a deplo
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Deployments](https://v0.app/docs/deployments) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Deploying with Vercel Drop](https://vercel.com/docs/drop) — Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Deploying with Vercel Drop](https://vercel.com/docs/drop) — Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required. It also work
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/deploy-popover.graph.md](/docs/platforms/platform-elements/blocks/deploy-popover.graph.md)
@@ -185,3 +185,6 @@ useSWR(
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

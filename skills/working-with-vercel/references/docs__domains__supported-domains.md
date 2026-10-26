@@ -12,8 +12,8 @@ related:
 summary: Find which top-level domains you can buy or transfer to Vercel and whether each TLD supports WHOIS privacy.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/supported-domains.md"
-fetched_at: "2026-10-12T11:51:15.124Z"
-sha256: "d6be8a642418b4c4e715e03e5e9b9aa617a03a3e02a93c2d1bb7a7dd8dc0a5d5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fd1846131bca7d9a2ced784efde72a0d3432ccd5b0ec1a7a9ff67832a85f7965"
 ---
 
 # Supported domains
@@ -584,3 +584,6 @@ Vercel supports the following top-level domains (TLDs) for [purchase](/docs/doma
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

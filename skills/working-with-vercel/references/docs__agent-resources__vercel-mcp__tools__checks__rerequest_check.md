@@ -13,8 +13,8 @@ related:
 summary: Use rerequest_check with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks/rerequest_check.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a9badc2fdd9134c7a174061192a7d1604a00f2bd42aad3c3ca2e813cf0ff1a88"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c9d6da9034eed1b6ec42c3b60d8c76fc2a8771b1ff194d3ccf022631a7428464"
 ---
 
 # rerequest_check
@@ -29,9 +29,9 @@ Rerequest a check.
 
 - [Update a check](https://vercel.com/docs/rest-api/checks-v2/update-a-check) — PATCH /v2/projects/{projectIdOrName}/checks/{checkId} — Update an existing check.
 - [Checks API Reference](https://vercel.com/docs/checks/checks-api) — The Vercel Checks API let you create tests and assertions that run after each deployment has been built, and are powered
-- [List check runs for a deployment](https://vercel.com/docs/rest-api/checks-v2/list-check-runs-for-a-deployment) — GET /v2/deployments/{deploymentId}/check-runs — List all check runs for a deployment.
 - [Delete a check](https://vercel.com/docs/rest-api/checks-v2/delete-a-check) — DELETE /v2/projects/{projectIdOrName}/checks/{checkId} — Delete an existing check and all of its runs.
 - [Update a check run](https://vercel.com/docs/rest-api/checks-v2/update-a-check-run) — PATCH /v2/deployments/{deploymentId}/check-runs/{checkRunId} — Update an existing check run for a deployment.
+- [List check runs for a deployment](https://vercel.com/docs/rest-api/checks-v2/list-check-runs-for-a-deployment) — GET /v2/deployments/{deploymentId}/check-runs — List all check runs for a deployment.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/checks/rerequest_check.graph.md](/docs/agent-resources/vercel-mcp/tools/checks/rerequest_check.graph.md)
 <!-- /docsgraph:related -->
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/check
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

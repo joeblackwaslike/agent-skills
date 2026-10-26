@@ -13,8 +13,8 @@ related:
 summary: View activity events for your Vercel project or team, filtered by type, date range, and project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/activity.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1c9a7ac3eba2eb5fc3f57fc259606143848ca3ae263f1612ca062c5651da8507"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "839afda61cc8bc9e67eabd653bd3a5bafde6eef443be087ed16e6650eb70212c"
 ---
 
 # vercel activity
@@ -27,8 +27,8 @@ The `vercel activity` command displays [activity events](/docs/activity-log) for
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
@@ -205,3 +205,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

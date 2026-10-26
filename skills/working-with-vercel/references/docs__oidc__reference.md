@@ -12,13 +12,13 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "42b86af0c222a0d96b3fdcbeb869b5cd6ed96e259e3ff3b59d6183a2d8a3626c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cd2e735ef1c929e890f6118154c7bfcc99869c7e9ddb8bde56d87ee922d4f6b2"
 ---
 
 # OIDC Federation Reference
 
-> **Availability**: Secure backend access with OIDC federation is available on all plans
+> Secure backend access with OIDC federation is available on all plans
 
 ## Helper libraries
 
@@ -32,12 +32,13 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection)
+- [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available)
-- [Passport token claims](https://vercel.com/docs/passport/token-claims) — Review the standard, deployment, and visitor identity claims in a Passport token.
+- [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Passport token claims](https://vercel.com/docs/passport/token-claims) — Review the standard, deployment, and visitor identity claims in a Passport token.
 - [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/oidc/reference.graph.md](/docs/oidc/reference.graph.md)
@@ -256,3 +257,6 @@ These headers are standard to the JWT tokens:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

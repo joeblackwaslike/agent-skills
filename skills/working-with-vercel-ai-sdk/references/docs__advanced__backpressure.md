@@ -4,8 +4,8 @@ description: How to handle backpressure and cancellation when working with the A
 url: "https://ai-sdk.dev/docs/advanced/backpressure"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/backpressure.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "cc81fc276d55e1a6c25ece5cb8b7580d8b301605baeaf2c4b615e658aa0c2934"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "49a59bd86a24b4c8b250240eeb86718ada1e08eb937a14634d542aa4eca4c2d3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -125,7 +125,7 @@ function createStream(iterator) {
 }
 // Collect data from stream
 async function run() {
-  // Set up a stream that of integers
+  // Set up a stream of integers
   const stream = createStream(integers());
 
   // Read values from our stream

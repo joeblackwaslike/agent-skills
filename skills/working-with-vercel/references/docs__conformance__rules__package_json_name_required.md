@@ -15,13 +15,13 @@ related:
 summary: Requires that every package.json file has the name field set to ensure each workspace has a unique identifier.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_name_required.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ae75fb5f0b35642ef71cb60e0b77472b915ac4e53c916bbf521fa0ffd77969da"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "26978c4291bd3bf97f1742067749eae0db3cdc0e8084c7e9233e818db642b2ea"
 ---
 
 # PACKAGE_JSON_NAME_REQUIRED
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 This check ensures that every `package.json` has a `name` field. This field is important because
 it used to identify the workspace in the monorepo.
@@ -45,3 +45,6 @@ package as to what it does.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

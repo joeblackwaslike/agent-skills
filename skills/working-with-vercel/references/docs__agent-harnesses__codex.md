@@ -16,8 +16,8 @@ related:
 summary: Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes on a new function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/codex.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "13bca3a966090847f6ab3cbcc2eafd961a9dc757acf6c4478a2df351fee3196c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ac9743386241324f146de0da2f3542df594ceb3137b63ea4ba2ad77392791763"
 ---
 
 # Running Codex Durably on Vercel
@@ -36,15 +36,14 @@ Each session of [Codex](https://github.com/openai/codex) gets its own [Vercel Sa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Running Claude Code Durably on Vercel](https://vercel.com/docs/agent-harnesses/claude-code) — Run Claude Code in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn r
 - [Codex](https://ai-sdk.dev/providers/ai-sdk-harnesses/codex) — Learn how to use the Codex harness adapter.
-- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
+- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [OpenAI Codex with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openai-codex) — Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
-- [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
 
 Full cross-link map for this page: [/docs/agent-harnesses/codex.graph.md](/docs/agent-harnesses/codex.graph.md)
 <!-- /docsgraph:related -->
@@ -200,6 +199,8 @@ source.onmessage = (event) => {
 source.addEventListener('end', () => source.close());
 ```
 
+If a crash cut off the turn, the turn resumes and the model starts its reply over. Before the new reply, the stream sends a `{ type: 'restart', text }` event: show its `text` in place of the turn's text so far, then append what streams after it.
+
 ## Run more than one agent
 
 An app can make several agents, each with its own chat route. The queue route serves them all. Two agents of the same harness need a `name` each:
@@ -320,3 +321,6 @@ export const agent = codex({
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

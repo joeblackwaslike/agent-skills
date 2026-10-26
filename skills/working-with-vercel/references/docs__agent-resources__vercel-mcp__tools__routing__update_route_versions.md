@@ -13,8 +13,8 @@ related:
 summary: Use update_route_versions with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "97adade718aec8926bc91f64e99e858be8bfdfc45f8b88d4bda5a13f96ba623b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "eadec17978403eb38ae4288f5ff94de7d471c9aaafa5e3c18399bc46b52a8c3e"
 ---
 
 # update_route_versions
@@ -31,7 +31,7 @@ Promote, restore, or discard a routing rule version.
 - [update_bulk_redirect_version](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version) — Use update_bulk_redirect_version with Vercel MCP.
 - [edit_route](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/edit_route) — Use edit_route with Vercel MCP.
 - [list_bulk_redirect_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirect_versions) — Use list_bulk_redirect_versions with Vercel MCP.
-- [update_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project) — Use update_project with Vercel MCP.
+- [add_route](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/add_route) — Use add_route with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

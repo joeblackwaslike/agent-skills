@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Montréal, Canada (yul1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/yul1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d12dd7e1c308aa0bf249aca8aec8b3cbeeb3c423d87fbeb555d8937014b1827e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "090dc106247f181408c00403199d7d51041cbb1be6d293de5c9e4615d2202452"
 ---
 
 # Montréal, Canada (yul1) pricing
@@ -34,8 +34,8 @@ The table below shows Managed Infrastructure products with pricing specific to t
 - [Introducing the Montréal, Canada region (yul1) ](https://vercel.com/changelog/introducing-the-montreal-canada-vercel-region-yul1)
 - [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
-- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 - [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/yul1.graph.md](/docs/pricing/regional-pricing/yul1.graph.md)
@@ -83,3 +83,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

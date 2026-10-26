@@ -15,13 +15,13 @@ related:
 summary: Learn how to tag your page views and custom events with feature flags
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability/web-analytics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "25dc152ad05d84e5a0c16e0a224908872d6603950e0052a6fdbdb2948d62aefa"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d29ac59168b7bf82492882e18e98e048910f043ea2ebfb0b0f4c84091201f253"
 ---
 
 # Integrate flags with Vercel Web Analytics
 
-> **Availability**: Web Analytics integration (Beta) is available on all plans
+> Web Analytics integration is available in Beta on all plans
 
 ![Feature Flags section in Vercel Web Analytics](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-in-web-analytics-light.png)
 
@@ -37,7 +37,6 @@ sha256: "25dc152ad05d84e5a0c16e0a224908872d6603950e0052a6fdbdb2948d62aefa"
 - [Observe your feature flags with the Vercel DX platform](https://vercel.com/changelog/observe-your-feature-flags-with-the-vercel-dx-platform)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
-- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Shipping safer and smarter: Integrating feature flags deeper in the Vercel workflow](https://vercel.com/blog/feature-flags)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
@@ -102,3 +101,6 @@ To track feature flags in server-side events:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

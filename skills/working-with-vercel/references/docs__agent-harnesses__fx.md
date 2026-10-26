@@ -16,8 +16,8 @@ related:
 summary: Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/fx.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6ceda629afe9611e3675296cc8867eccd9c13e23b744f4b57f7a9c74a6a1748c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6e550f597ee56426e1f4a4b15af21493693a10a2aa7833e2346efff95b2e2980"
 ---
 
 # Running fx Durably on Vercel
@@ -30,16 +30,14 @@ sha256: "6ceda629afe9611e3675296cc8867eccd9c13e23b744f4b57f7a9c74a6a1748c"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [What is WorkflowAgent?](https://vercel.com/kb/guide/what-is-workflowagent) — Build durable AI agents with WorkflowAgent: tool calls that retry as workflow steps, suspend for human approval, and res
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running Claude Code Durably on Vercel](https://vercel.com/docs/agent-harnesses/claude-code) — Run Claude Code in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn r
-- [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
+- [Running Codex Durably on Vercel](https://vercel.com/docs/agent-harnesses/codex) — Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes
 - [Running Pi Durably on Vercel](https://vercel.com/docs/agent-harnesses/pi) — Make a Pi agent durable on Vercel so a crashed turn resumes in a new function instead of starting over.
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
-- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 
 Full cross-link map for this page: [/docs/agent-harnesses/fx.graph.md](/docs/agent-harnesses/fx.graph.md)
 <!-- /docsgraph:related -->
@@ -339,6 +337,10 @@ export const agent = createFxAgent({
 
 libfx never starts or closes a World you pass in, so start it before the agent's first prompt, and close it after `agent.close()`. The Postgres World delivers to the agent in its process. For a World that delivers over HTTP, mount `agent.wakeHandler()` where it delivers. For the Postgres tables and connection string, see [Self-hosting durable agent harnesses](/docs/agent-harnesses/self-hosting).
 
+## See sessions in Agent Runs
+
+To see each session in Agent Runs, pass `hooks: agentRunsHooks()` from `durable-harness/fx` to `createFxAgent`, and set up Agent Runs as [Observability](/docs/agent-harnesses/observability#set-up-agent-runs) shows.
+
 ## Limitations
 
 - While a turn can run for much longer, a single model request or tool call can't run longer than the [maximum duration](/docs/functions/limitations#max-duration) of the function running it, the chat route or the queue route.
@@ -354,3 +356,6 @@ libfx never starts or closes a World you pass in, so start it before the agent's
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

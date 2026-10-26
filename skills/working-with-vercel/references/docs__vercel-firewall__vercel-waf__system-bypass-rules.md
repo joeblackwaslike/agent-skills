@@ -17,13 +17,13 @@ related:
 summary: Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "44f50bfb6167b8d9d08cfc4bd9b4141e62ecc6bd8509dfda945938232aeff4f6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "81f88d8a899336aaaefc26af378c6112fc77267160ef595c19210be6828c5979"
 ---
 
 # WAF System Bypass Rules
 
-> **Availability**: WAF System Bypass Rules are available on Enterprise and Pro plans
+> WAF System Bypass Rules are available on Enterprise and Pro plans
 
 While Vercel's system-level mitigations (such as [DDoS protection](/docs/vercel-firewall/ddos-mitigation)) safeguard your websites and applications, it can happen that they block traffic from legitimate sources like proxies or shared networks in situations where traffic from these sources was identified as malicious.
 
@@ -72,9 +72,12 @@ System Bypass Rules have limits based on your [account plan](/docs/plans).
 
 | Resource                                  | [Hobby](/docs/plans/hobby) | [Pro](/docs/plans/pro-plan) | [Enterprise](/docs/plans/enterprise) |
 | ----------------------------------------- | -------------------------- | ---------------------- | ------------------------------------ |
-| Number of system bypass rules per project | N/A                        | 25                     | 100                                  |
+| Number of system bypass rules per project | N/A                        | 10 | 75 |
 
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

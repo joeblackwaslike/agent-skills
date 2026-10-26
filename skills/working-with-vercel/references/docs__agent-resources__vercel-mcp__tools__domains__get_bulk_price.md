@@ -13,8 +13,8 @@ related:
 summary: Use get_bulk_price with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_price.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "644856af9db2f676aee6f1b04cef5e0423c8e5fd52818f068faf1f5b0ba49f95"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c8787c72a0c238bc94dc7d65cd9c42bee3783757235300d57dd4e2fc9122df3e"
 ---
 
 # get_bulk_price
@@ -47,3 +47,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

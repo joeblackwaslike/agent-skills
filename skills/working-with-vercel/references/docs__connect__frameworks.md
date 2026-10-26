@@ -8,21 +8,21 @@ type: conceptual
 prerequisites:
   - /docs/connect
 related:
+  - /docs/connect/legal
   - /docs/connect/frameworks/ai-sdk-and-mcp
   - /docs/connect/frameworks/tanstack-ai
   - /docs/connect/frameworks/eve
   - /docs/connect/frameworks/chat-sdk
-  - /docs/connect/frameworks/better-auth
 summary: Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9dae49d31ea92930c5883c1f971374723ac52ee6430399579a4dadd951ce97fa"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6acf74aa29397644356bce1ad1ac6b13ef6c0d1ce2f713bc6d7f84dc7d55a69c"
 ---
 
 # Frameworks and Adapters for Vercel Connect
 
-> **Availability**: Vercel Connect is available on all plans
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
 
 Vercel Connect integrations adapt connector tokens, consent, and webhook
 verification to the frameworks you already use. Choose an integration based on
@@ -37,10 +37,11 @@ the task your application needs to perform.
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
 
 Full cross-link map for this page: [/docs/connect/frameworks.graph.md](/docs/connect/frameworks.graph.md)
 <!-- /docsgraph:related -->
@@ -95,3 +96,6 @@ for each environment that requests credentials.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

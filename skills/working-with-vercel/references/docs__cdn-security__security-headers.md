@@ -12,8 +12,8 @@ related:
 summary: Learn how the Content Security Policy (CSP) offers defense against web vulnerabilities, its key features, and best practices.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/security-headers.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4d5672a915be9d0648ebdef47116342339de3a0b8bb375472f015d3ef6f1fbdc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3e1ba992d3ed6a7eac72ddf45c79f6f619331830562f61aeeacf57bd11d3ed50"
 ---
 
 # Content Security Policy
@@ -28,15 +28,14 @@ Content Security Policy is a browser feature designed to prevent cross-site scri
 
 - [How to set a Content Security Policy (CSP) for your Next.js application](https://nextjs.org/docs/pages/guides/content-security-policy) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
 - [How to set a Content Security Policy (CSP) for your Next.js application](https://nextjs.org/docs/app/guides/content-security-policy) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
-- [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
-- [Understanding CSRF attacks](https://vercel.com/kb/guide/understanding-csrf-attacks) — Understand the mechanics and risks of Cross-Site Request Forgery \\(CSRF\\) attacks, and discover crucial development prac
-- [Enhancing Security for Redirects and Rewrites](https://vercel.com/kb/guide/enhancing-security-for-redirects-and-rewrites) — Learn how security measures in URI handling can prevent semantic attacks, where malicious hosts exploit redirects and re
+- [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
-- [Understanding the SameSite cookie attribute](https://vercel.com/kb/guide/understanding-the-samesite-cookie-attribute) — Explore the SameSite cookie attribute's significance in ensuring web security and user privacy to strike the right balan
+- [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel) — Learn how to perform pentesting on Vercel.
+- [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 
 Full cross-link map for this page: [/docs/cdn-security/security-headers.graph.md](/docs/cdn-security/security-headers.graph.md)
 <!-- /docsgraph:related -->
@@ -87,3 +86,6 @@ Additionally, while CSP is supported by modern browsers, nuances exist in their 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

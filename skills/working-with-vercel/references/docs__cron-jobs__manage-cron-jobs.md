@@ -9,20 +9,20 @@ prerequisites:
   - /docs/cron-jobs
 related:
   - /docs/cron-jobs
+  - /docs/instant-rollback
   - /docs/cron-jobs/usage-and-pricing
   - /docs/functions
   - /docs/functions/runtimes
-  - /docs/logs/runtime
 summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency control, local execution,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fbdb58648e1bd9671aaafe600d294399c2a7022c3abd0cab9d8b8b0404a08755"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7bbb14b8a1ec3d488eeeab08b803f6f3988ef9edc0c45cf5ed0e1a1fd056f219"
 ---
 
 # Managing Cron Jobs
 
-> **Availability**: Cron Jobs are available on all plans
+> Cron Jobs are available on all plans
 
 ## Viewing cron jobs
 
@@ -36,14 +36,14 @@ To view your active cron jobs:
 
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs)
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available)
+- [ Sitemap lastmod should track content, not deployments](https://vercel.com/kb/guide/correct-lastmod-nextjs-sitemap) — Set accurate sitemap lastmod dates in Next.js using stored content timestamps, targeted revalidation, and checks that di
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
-- [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
+- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Run scheduled jobs with Vercel Cron Jobs and Vercel Functions](https://vercel.com/changelog/run-scheduled-jobs-with-vercel-cron-jobs-and-vercel-functions)
-- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
-- [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan)
 - [vercel crons](https://vercel.com/docs/cli/crons) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 
 Full cross-link map for this page: [/docs/cron-jobs/manage-cron-jobs.graph.md](/docs/cron-jobs/manage-cron-jobs.graph.md)
 <!-- /docsgraph:related -->
@@ -56,6 +56,8 @@ Full cross-link map for this page: [/docs/cron-jobs/manage-cron-jobs.graph.md](/
 - **Updating Cron Jobs**: Change the [expression](/docs/cron-jobs#cron-expressions) in `vercel.json` file or the function's configuration, and then redeploy
 - **Deleting Cron Jobs**: Remove the configuration from the `vercel.json` file or the function's configuration, and then redeploy
 - **Disabling Cron Jobs**: Click the **Disable Cron Jobs** button
+
+The **Disable Cron Jobs** setting applies to the project and persists across deployment promotions and [Instant Rollbacks](/docs/instant-rollback). If you disable cron jobs, they remain disabled until you explicitly re-enable them in the project's **Cron Jobs** settings.
 
 > **💡 Note:** Disabled cron jobs will still be listed and will count towards your [cron jobs
 > limits](/docs/cron-jobs/usage-and-pricing)
@@ -387,9 +389,14 @@ For all other teams, cron jobs will be invoked within the minute specified. For 
 
 ## Rollbacks with cron jobs
 
-If you [Instant Rollback](/docs/instant-rollback) to a previous deployment, your cron jobs are reverted to the state of the rolled-back deployment. From the next scheduled invocation onward, Vercel invokes the cron jobs defined in that deployment.
+When you [Instant Rollback](/docs/instant-rollback) to a previous deployment, Vercel restores the cron job definitions associated with that deployment. If cron jobs are enabled for the project, Vercel invokes those jobs from the next scheduled invocation onward.
+
+Instant Rollback preserves the project's **Disable Cron Jobs** setting.
 
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

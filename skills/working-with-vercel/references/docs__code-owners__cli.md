@@ -14,13 +14,13 @@ related:
 summary: Learn how to use Code Owners with the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners/cli.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "1a37759c0f4a9aba9c3a8a3c244f5de3e9f23aad71c51b644bc3f6468e5cf4bf"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "96e382e816869a7cf520bedb34b50b0adcdc44926cd1106c08b73003818c0fcb"
 ---
 
 # vercel-code-owners
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 The `vercel-code-owners` command provides functionality to initialize and validate
 Code Owners in your repository.
@@ -47,30 +47,34 @@ using this command.
 The `validate` command checks the syntax for all Code Owners files in the
 repository for errors.
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm dlx vercel-code-owners validate
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn dlx vercel-code-owners validate
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npx vercel-code-owners validate
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bunx vercel-code-owners validate
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm dlx vercel-code-owners validate
+```
+
+**yarn**
+
+```bash
+yarn dlx vercel-code-owners validate
+```
+
+**npm**
+
+```bash
+npx vercel-code-owners validate
+```
+
+**bun**
+
+```bash
+bunx vercel-code-owners validate
+```
 
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

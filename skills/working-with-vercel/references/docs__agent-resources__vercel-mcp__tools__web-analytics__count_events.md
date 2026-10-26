@@ -13,8 +13,8 @@ related:
 summary: Use count_events with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_events.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8fae7eaba5593b14271f47c488eb836e7f990d43497c85427010589112a56aa9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "55f6f97a730d000ce4ccada2620d2bbe4307732b34be6c6be5e66971d429b6cf"
 ---
 
 # count_events
@@ -29,8 +29,8 @@ Counts custom events.
 
 - [count_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_pageviews) — Use count_pageviews with Vercel MCP.
 - [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
-- [aggregate_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews) — Use aggregate_pageviews with Vercel MCP.
 - [Counts custom events](https://vercel.com/docs/rest-api/web-analytics/counts-custom-events) — GET /v1/query/web-analytics/events/count — Counts the number of custom events on a project \\(production only\\), since We
+- [aggregate_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews) — Use aggregate_pageviews with Vercel MCP.
 - [list_user_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_user_events) — Use list_user_events with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/web-analytics/count_events.graph.md](/docs/agent-resources/vercel-mcp/tools/web-analytics/count_events.graph.md)
@@ -53,3 +53,6 @@ Enable [Web Analytics](/docs/analytics) for your project before querying its dat
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

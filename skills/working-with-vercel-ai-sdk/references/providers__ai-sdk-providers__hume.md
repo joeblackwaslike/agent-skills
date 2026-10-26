@@ -1,24 +1,66 @@
 ---
 title: Hume
-description: Learn how to use the Hume provider for the AI SDK.
+description: Learn how to set up the Hume provider and check AI Gateway availability.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/hume"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "9ef1a96f1d8487ef8ffc43c7e94153617fb8615530aeeb1f3d187534f4a6a535"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "6ebc77419e5a03391505ede1b32925c73d1a6e0e90e3cb5ee896328fc9d3e433"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Hume](https://hume.ai/) provider contains support for the Hume text-to-speech (TTS) API.
+Hume models are not currently available through [AI Gateway](https://vercel.com/ai-gateway/models), so the opening example uses `@ai-sdk/hume` directly. See [Using AI Gateway](#using-ai-gateway) below for supported alternatives.
 
-## Setup
+```ts
+import { generateSpeech } from 'ai';
+import { hume } from '@ai-sdk/hume';
+import { writeFile } from 'node:fs/promises';
 
-The Hume provider is available in the `@ai-sdk/hume` module. You can install it with
+const { audio } = await generateSpeech({
+  model: hume.speech(),
+  text: 'Hello, world!',
+  outputFormat: 'mp3',
+});
+
+await writeFile('speech.mp3', audio.uint8Array);
+```
+
+## Using AI Gateway
+
+The current [AI Gateway model catalog](https://vercel.com/ai-gateway/models) does not list Hume models. Use `@ai-sdk/hume` for the APIs on this page. To use other speech models through Gateway, install `ai` and configure a Gateway API key:
 
 ```bash
-pnpm add @ai-sdk/hume
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [Gateway documentation](/providers/ai-sdk-providers/ai-gateway) for supported models and APIs.
+
+## Using `@ai-sdk/hume`
+
+For direct access to Hume, install `ai` and `@ai-sdk/hume`:
+
+```bash
+pnpm add ai @ai-sdk/hume
+```
+
+Set your Hume API credential in the `HUME_API_KEY` environment variable:
+
+```bash
+export HUME_API_KEY=your_api_key_here
+```
+
+The following sections document the direct `@ai-sdk/hume` provider, including
+its model factories and settings. Gateway model and feature availability can
+differ.
 
 ## Provider Instance
 

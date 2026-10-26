@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Sydney, Australia (syd1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/syd1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "baf43060cb4c8af6a6d8dd87a700a45c69b7371316af224815eb4c9b414ffc45"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a5d604f496bb79f21b6a061623fd73f3220dc1318db2673b9433489e7b444980"
 ---
 
 # Sydney, Australia (syd1) pricing
@@ -33,9 +33,9 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1) — Vercel pricing for the Singapore \\(sin1\\) region.
-- [Cape Town, South Africa \\(cpt1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cpt1) — Vercel pricing for the Cape Town, South Africa \\(cpt1\\) region.
 - [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
+- [Cape Town, South Africa \\(cpt1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cpt1) — Vercel pricing for the Cape Town, South Africa \\(cpt1\\) region.
+- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1) — Vercel pricing for the Singapore \\(sin1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/syd1.graph.md](/docs/pricing/regional-pricing/syd1.graph.md)
 <!-- /docsgraph:related -->
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

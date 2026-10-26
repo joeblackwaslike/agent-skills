@@ -13,8 +13,8 @@ related:
 summary: The deployment is not ready and is redirecting to another location. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_not_ready_redirecting.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "e90cc7ec2060609ec70687aa1d9a386a1c921349de8d220d83a655e08fd233ef"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "89812e5e452cf90f4e7167261e2eb9b7a46eb86cc3dfee6b8f7574221bd6a41e"
 ---
 
 # DEPLOYMENT_NOT_READY_REDIRECTING
@@ -38,3 +38,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

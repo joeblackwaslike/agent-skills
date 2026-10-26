@@ -15,8 +15,8 @@ related:
 summary: Installations let one connector serve many tenants. One Slack connector, for example, can serve many Slack workspaces, each with its own grant.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/installations.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bbbb206fce1645a53d7d99cd93e807be7b0824b24e7aecd70aee70efec4a3cfd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ccbc40c5133af2a1feccadf2b9dc1d0ca86f1d1785321251c0aca3822db7b06d"
 ---
 
 # Connector installations in Vercel Connect
@@ -33,8 +33,8 @@ A single connector represents your **integration** with a provider. An **install
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
@@ -87,3 +87,6 @@ If your code calls `getToken` for a connector type that requires an installation
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

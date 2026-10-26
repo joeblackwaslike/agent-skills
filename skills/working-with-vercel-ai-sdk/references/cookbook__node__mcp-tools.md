@@ -9,8 +9,8 @@ tags:
   - agent
   - mcp
 source: "https://ai-sdk.dev/cookbook/node/mcp-tools.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "1c400538df8d48ef9afd2ec59befe19c16f2530db198634a45d683a851ff9f20"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "e80f8c7e30123f5f4e7f5719f1746a0a4e6f073eb7fe035dd09b19c3f88b15e8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -29,9 +29,9 @@ import { generateText, isStepCount } from 'ai';
 import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
 import { openai } from '@ai-sdk/openai';
 // Optional: Official transports if you prefer them
-// import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio';
-// import { SSEClientTransport } from '@modelcontextprotocol/sdk/client/sse';
-// import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp';
+// import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
+// import { SSEClientTransport } from '@modelcontextprotocol/sdk/client/sse.js';
+// import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 
 let clientOne;
 let clientTwo;

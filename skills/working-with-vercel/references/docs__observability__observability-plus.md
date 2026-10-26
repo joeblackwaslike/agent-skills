@@ -16,15 +16,17 @@ related:
 summary: Learn about using Observability Plus and its limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/observability-plus.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2a40d185f851e614dc3557d1294ae5b0d8fb157bfaf22a00e44640862bf25545"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "07c146997733cd40997c33d287fe3ef077b1d947dfd3d65aa52e619f52221f1a"
 ---
 
 # Observability Plus
 
-> **Availability**: Observability Plus is available on Enterprise and Pro plans
+> Observability Plus is available on Enterprise and Pro plans
+>
+> Those with the owner role can access this feature
 
-Every Vercel team has access to [Observability](/docs/observability). **Observability Plus** is available on Paid Pro and Enterprise teams and unlocks more granular data exploration, helping you pinpoint when and why issues occurred.
+Every Vercel team has access to [Observability](/docs/observability). **Observability Plus** is available on Pro and Enterprise teams and unlocks more granular data exploration, helping you pinpoint when and why issues occurred.
 
 
 <!-- docsgraph:related -->
@@ -48,7 +50,7 @@ Every Vercel team has access to [Observability](/docs/observability). **Observab
 Full cross-link map for this page: [/docs/observability/observability-plus.graph.md](/docs/observability/observability-plus.graph.md)
 <!-- /docsgraph:related -->
 
-For teams created or upgraded to Paid Pro on or after April 3, 2026, Observability Plus is enabled by default. Existing Paid Pro and Enterprise teams can [enable it separately](#enabling-observability-plus). Pro Trial plans require conversion to Paid Pro to access Observability Plus.
+For teams created or upgraded to Pro on or after April 3, 2026, Observability Plus is enabled by default. Existing Pro and Enterprise teams can [enable it separately](#enabling-observability-plus).&#x20;
 
 To learn more about Observability Plus, see [Limitations](#limitations) or [pricing](#pricing).
 
@@ -56,7 +58,7 @@ To learn more about Observability Plus, see [Limitations](#limitations) or [pric
 
 ### Enabling Observability Plus
 
-Enable Observability Plus on an existing Paid Pro or Enterprise team from the dashboard or the Vercel CLI.
+Enable Observability Plus on an existing Pro or Enterprise team from the dashboard or the Vercel CLI.
 
 #### Dashboard
 
@@ -80,12 +82,10 @@ Then confirm the purchase.
 
 Observability Plus access depends on your plan:
 
-- **Paid Pro**: For teams created or upgraded to Paid Pro on or after April 3, 2026, Observability Plus is enabled by default. Existing Paid Pro teams can enable it using the steps above.
-- **Hobby**: Upgrade to a Paid [Pro plan](/docs/plans/pro-plan) to access Observability Plus.
+- **Pro**: For teams created or upgraded to Pro on or after April 3, 2026, Observability Plus is enabled by default. Existing Pro teams can enable it using the steps above.
+- **Hobby**: Upgrade to a [Pro plan](/docs/plans/pro-plan) to access Observability Plus.
 
-* **Pro Trial**: Observability Plus is not available during trial. Convert to a Paid Pro plan to access it.
-
-- **Enterprise**: Enable Observability Plus using the steps above.
+* **Enterprise**: Enable Observability Plus using the steps above.
 
 ### Managing projects
 
@@ -126,7 +126,7 @@ The project immediately regains access to Observability Plus features.
 
 ### Disabling Observability Plus
 
-Paid Pro teams can disable Observability Plus at any time. After you disable it, Vercel stops collecting Observability Plus events. To regain access to extended retention data, re-enable it.
+Pro teams can disable Observability Plus at any time. After you disable it, Vercel stops collecting Observability Plus events. To regain access to extended retention data, re-enable it.
 
 Alerts for the team or project stop while Observability Plus is disabled. After you re-enable it, alerts restart after an [activation period](/docs/alerts#observability-plus-activation-period).
 
@@ -138,7 +138,7 @@ Alerts for the team or project stop while Observability Plus is disabled. After 
 
 Users on all plans can use Observability at no additional cost, with some [limitations](#limitations). Observability is available for all projects in the team.
 
-Paid Pro and Enterprise teams can use **Observability Plus** for additional features, higher limits, and increased retention. Vercel bills you based on usage at a per-event rate. See the table below for pricing details:
+Pro and Enterprise teams can use **Observability Plus** for additional features, higher limits, and increased retention. Vercel bills you based on usage at a per-event rate. See the table below for pricing details:
 
 | Resource | Usage-based pricing |
 | --- | --- |
@@ -160,7 +160,7 @@ Paid Pro and Enterprise teams can use **Observability Plus** for additional feat
 | In-function Concurrency               | Full access when enabled                                                                 | Full access when enabled                                                                                                            |
 | Runtime logs                          | Hobby: 1 hour <br /> Pro: 1 day <br /> Enterprise: 3 days                                  | 30 days, max selection window of 14 consecutive days                                                                                |
 
-To access Observability Plus features, upgrade to a Paid [Pro plan](/docs/plans/pro-plan) or [enable Observability Plus](#enabling-observability-plus) on an existing Paid Pro or Enterprise team.
+To access Observability Plus features, upgrade to a [Pro plan](/docs/plans/pro-plan) or [enable Observability Plus](#enabling-observability-plus) on an existing Pro or Enterprise team.
 
 ## Prorating
 
@@ -173,3 +173,6 @@ Observability Plus uses usage-based pricing. You're only charged for events your
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,8 +12,8 @@ related:
 summary: Forward a Passport visitor identity to another backend that you operate.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/forward-identity.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "aab235e0e81b9f6511eea420ef7f3976b719652457606a57995666db06efed91"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2a9654acc4c8d6f6b351144f4dd7de217307a74031328f3cc2787005d788de51"
 ---
 
 # Forward Passport identity to another backend
@@ -71,3 +71,6 @@ Only forward Passport tokens over HTTPS to backends that you operate. A Passport
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

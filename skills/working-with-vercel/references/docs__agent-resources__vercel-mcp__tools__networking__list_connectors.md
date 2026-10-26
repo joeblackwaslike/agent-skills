@@ -13,8 +13,8 @@ related:
 summary: Use list_connectors with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connectors.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8f9bfa4e87838342ee9a274f72cffc27c6c72652f04d1b5fc29eee0ac85fcd84"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "84a5955fa9b596c26bfe50cc3bdfa21e3c4c938207c30cc2ea387a5d4bbd8f0f"
 ---
 
 # list_connectors
@@ -29,9 +29,9 @@ List connectors that belong to a team.
 
 - [list_project_connector_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_project_connector_connections) — Use list_project_connector_connections with Vercel MCP.
 - [list_connector_project_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connector_project_connections) — Use list_connector_project_connections with Vercel MCP.
-- [get_connector](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector) — Use get_connector with Vercel MCP.
-- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 - [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
+- [get_connector](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector) — Use get_connector with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/networking/list_connectors.graph.md](/docs/agent-resources/vercel-mcp/tools/networking/list_connectors.graph.md)
 <!-- /docsgraph:related -->
@@ -54,3 +54,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/netwo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

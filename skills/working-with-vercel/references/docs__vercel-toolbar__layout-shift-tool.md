@@ -16,13 +16,13 @@ related:
 summary: The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/layout-shift-tool.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "83ffab829facad18ce006b5380712a10edd54633cefa8188bccef3f4f724ab02"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1c36a1cc34b64da8735660462fd3a4d8f0416a3ce80fe3e4da17744731d305fe"
 ---
 
 # Layout Shift Tool
 
-> **Availability**: Layout Shift Tool is available on all plans
+> Layout Shift Tool is available on all plans
 
 The layout shift tool gives you insight into any elements that may cause layout shifts on the page. The cause for a layout shift could be many things:
 
@@ -37,8 +37,6 @@ The layout shift tool gives you insight into any elements that may cause layout 
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
-- [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
-- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 - [Comments Overview](https://vercel.com/docs/comments) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
@@ -95,3 +93,6 @@ To disable the layout shift tool completely:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -17,8 +17,8 @@ related:
 summary: Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/python.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "17dd66964cfd4efdeb8322e7d3db295d5354f4ce503b25266ee6d05c50df84d1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "37f5f4b8e636a987d30d78afc4806a148b45de69d8140874f942bfd2d1b35118"
 ---
 
 # Python with AI Gateway: OpenAI and Anthropic SDKs
@@ -34,11 +34,10 @@ which are covered below.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses) — Get started with the OpenAI Responses API using the AI SDK.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
-- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
-- [OpenAI Chat Completions Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
+- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
 - [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/python.graph.md](/docs/ai-gateway/sdks-and-apis/python.graph.md)
@@ -695,3 +694,6 @@ For complete API documentation, see:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-10-19
+last_updated: 2026-10-26
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "36d3d5e4b6bd4d3ad4caa1af02becd2720ca5171a752d875b4ea5d9827918628"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "79fe3a32128e861ea2660e58e7bd358ece6118664327dda94dabc28b2ca75e4a"
 ---
 
 # Vercel Marketplace REST API
@@ -963,7 +963,6 @@ One of the provided values in the request query is invalid.
 - **404**: Success
 - **409**: Success
 - **410**: Success
-- **422**: Success
 
 ---
 
@@ -1003,7 +1002,6 @@ One of the provided values in the request query is invalid.
 - **404**: Success
 - **409**: Success
 - **410**: Success
-- **422**: Success
 
 ---
 
@@ -1228,7 +1226,6 @@ One of the provided values in the request query is invalid.
 - **404**: Success
 - **409**: Success
 - **410**: Success
-- **422**: Success
 
 ---
 
@@ -1456,3 +1453,6 @@ For the latest changes to the Marketplace API, refer to the main documentation p
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "61a3e95caf143a9062e98ca4c56e373f7669733a2dfb492ef9a5ffd08918e0d9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6ab6a77754b02d108d48554220986e1b246517a442a1c5f69a713505c829308e"
 ---
 
 # Access Roles
@@ -64,7 +64,7 @@ The two groups are further divided into specific roles, each with its own set of
 
 ## Team level roles
 
-> **Availability**: Team level roles are available on Enterprise and Pro plans
+> Team level roles are available on Enterprise and Pro plans
 
 Team level roles are designed to provide a broad level of control and access to the team as a whole. These roles are assigned to individuals and apply to all projects within the team, ensuring centralized control and access while upholding the team's security and integrity.
 
@@ -83,7 +83,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Owner role
 
-> **Availability**: The owner role is available on Enterprise and Pro plans
+> The owner role is available on Enterprise and Pro plans
 
 | About                      | Details                                                                                                                                                                                                                                                                                                                                  |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -97,7 +97,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Member role
 
-> **Availability**: The member role is available on Enterprise and Pro plans
+> The member role is available on Enterprise and Pro plans
 
 Members play a pivotal role in team operations and project management.
 
@@ -124,7 +124,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Developer role
 
-> **Availability**: The developer role is available on Enterprise and Pro plans
+> The developer role is available on Enterprise and Pro plans
 
 | About                      | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -155,7 +155,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Contributor role
 
-> **Availability**: The contributor role is available on Enterprise plans
+> The contributor role is available on Enterprise plans
 
 Contributors offer flexibility in access control at the project level. To limit team members' access at the project level, they must first be assigned the contributor role. Only after being assigned the contributor role can they receive project-level roles. **Contributors have no access to projects unless explicitly assigned**.
 
@@ -186,7 +186,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Security role
 
-> **Availability**: The security role is available on Enterprise plans
+> The security role is available on Enterprise plans
 
 | About                      | Details                                                                                                                                                               |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -200,7 +200,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Billing role
 
-> **Availability**: The billing role is available on Enterprise and Pro plans
+> The billing role is available on Enterprise and Pro plans
 
 | About                      | Details                                                                                                                                                                                                                   |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -218,7 +218,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Pro Viewer role
 
-> **Availability**: The Pro Viewer role is available on Pro plans
+> The Pro Viewer role is available on Pro plans
 
 An observational role designed for Pro teams, Pro Viewer members can monitor team activities and collaborate on projects with limited administrative visibility.
 
@@ -248,7 +248,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ### Enterprise Viewer role
 
-> **Availability**: The Enterprise Viewer role is available on Enterprise plans
+> The Enterprise Viewer role is available on Enterprise plans
 
 An observational role with enhanced visibility for Enterprise teams, Enterprise Viewer members have comprehensive read-only access to team activities and operational data.
 
@@ -279,7 +279,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 ## Project level roles
 
-> **Availability**: Project level roles are available on Enterprise plans
+> Project level roles are available on Enterprise plans
 
 Project level roles provide fine-grained control and access to specific projects within a team. These roles are assigned to individuals and are restricted to the projects they're assigned to, allowing for precise access control while preserving the overarching security and integrity of the team.
 
@@ -293,7 +293,7 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 
 ### Project administrators
 
-> **Availability**: The project administrator role is available on Enterprise plans
+> The project administrator role is available on Enterprise plans
 
 | About                      | Details                                                                                                                                                                                                                                                 |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -307,7 +307,7 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 
 ### Project developer
 
-> **Availability**: The project developer role is available on Enterprise plans
+> The project developer role is available on Enterprise plans
 
 | About                      | Details                                                                                                                                                                                                                                                                       |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -321,7 +321,7 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 
 ### Project viewer
 
-> **Availability**: The project viewer role is available on Enterprise plans
+> The project viewer role is available on Enterprise plans
 
 | About                      | Details                                                                                                                                                                                                                                                                    |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -352,3 +352,6 @@ See [project level roles](/docs/rbac/access-roles/project-level-roles) and [team
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

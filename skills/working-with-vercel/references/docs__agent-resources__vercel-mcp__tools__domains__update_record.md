@@ -13,8 +13,8 @@ related:
 summary: Use update_record with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/update_record.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f76f2bbde13a5b63bb5bcb5d1da3a7158a453ce32761ac5afd2cf81341c27229"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "eb0b9dded2371cb107476b1b30455c0b06944899df5af22a8a07edcfb8c9bb89"
 ---
 
 # update_record
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

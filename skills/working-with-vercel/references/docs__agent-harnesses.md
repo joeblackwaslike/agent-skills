@@ -16,8 +16,8 @@ related:
 summary: Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash, a function timeout, or a redeploy resumes the agent instead of losing its...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5d70f30a9a5246900f9d7615f30cf60e703ee6738cea09cf81ade3776478053c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d3cda2cb3cc54984d685c9bd687ea51f50dc2012353d9fc044d4dcf532542374"
 ---
 
 # Running Agent Harnesses Durably on Vercel
@@ -30,9 +30,9 @@ An agent harness is the loop around a model: its prompts, its tools, and how it 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Default Harness](https://eve.dev/docs/concepts/default-harness) — How eve manages model context and compaction during an agent turn.
-- [Overview](https://ai-sdk.dev/docs/ai-sdk-harnesses/overview) — Learn what AI SDK harnesses are and how they fit into the AI SDK.
 - [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 - [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 
@@ -93,3 +93,6 @@ If the function running a turn fails with an error, another function resumes the
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

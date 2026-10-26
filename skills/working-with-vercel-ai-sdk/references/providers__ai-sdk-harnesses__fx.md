@@ -4,8 +4,8 @@ description: Learn how to use the fx harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/fx"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/fx.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "e6acfbd327f74d02f133ea4a5212e17b6281edbb48951f5a07adbf562b298a71"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "6802ba37ca08222ffda25f961001ce1be1743071c3740ca9f8c27fd92ea6f778"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -91,7 +91,8 @@ Settings:
 
 - `auth`: selects `auto`, `direct`, or `ai-gateway` authentication, or accepts
   an authentication environment for programmatically resolved credentials.
-  All three modes use the same AI Gateway credentials on the host.
+  `auto` prefers Gateway credentials, `direct` prefers subscription credentials
+  with Gateway fallback, and `ai-gateway` uses Gateway only.
 - `mcpServers`: MCP server definitions keyed by server name. Supports HTTP and
   SSE servers, with `url`, optional `type`, `headers`, and `disabled` fields.
   Connections run on the host; command/stdio servers are unsupported.
@@ -106,16 +107,30 @@ Settings:
 
 ## Authentication
 
-fx uses [Vercel AI Gateway authentication](https://fx.sh/docs/getting-started/authentication).
-Set one of these environment variables:
+fx supports [Vercel AI Gateway authentication](https://fx.sh/docs/getting-started/authentication)
+and Codex or Grok subscriptions. For Gateway authentication, set one of these
+environment variables:
 
 - `VERCEL_OIDC_TOKEN`
 - `AI_GATEWAY_API_KEY`
 
 The adapter prefers `AI_GATEWAY_API_KEY` when both are available.
 `AI_GATEWAY_BASE_URL` optionally overrides the Gateway endpoint. Credentials
-are used on the host, not forwarded into the sandbox. Native subscription
-credentials, including those stored in `~/.fx`, are not discovered or used.
+are used on the host, not forwarded into the sandbox.
+
+When Gateway credentials are absent, `auto` discovers subscription credentials
+in this order:
+
+1. fx Codex: `~/.fx/chatgpt-auth.json`.
+2. fx Grok: `~/.fx/grok-auth.json`.
+3. Native Codex: the credential store under `CODEX_HOME` or `~/.codex`,
+   respecting `cli_auth_credentials_store` and the native keyring settings.
+4. Native Grok: the xAI OAuth record in `GROK_HOME/auth.json` or `~/.grok/auth.json`.
+
+libfx refreshes subscription tokens near expiry and after an authentication
+rejection. The adapter saves rotated credentials back to the selected store.
+Failures after selection do not silently switch subscriptions or fall back to
+Gateway. Credentials are never included in persisted lifecycle state.
 
 Pass an authentication environment when the host resolves credentials at
 runtime instead of exposing them through `process.env`:
@@ -133,12 +148,17 @@ The supplied record replaces the host environment for authentication
 discovery. The adapter does not add its credentials to `process.env` or include
 their values in persisted lifecycle state.
 
-Both authentication configurations reach AI Gateway:
+Use `direct` to try subscriptions before Gateway, or `ai-gateway` to disable
+subscription discovery:
 
 ```ts
 const directHarness = createFx({ auth: 'direct' });
 const gatewayHarness = createFx({ auth: 'ai-gateway' });
 ```
+
+An explicit authentication environment does not inspect ambient subscription
+stores. Resumed sessions keep their original provider and require compatible
+credentials for that provider.
 
 ## Sandbox
 
@@ -168,6 +188,14 @@ Built-in tool filtering is supported through `activeTools` and `inactiveTools`.
 With `permissionMode: 'allow-reads'`, file edits and shell commands require
 approval. With `allow-edits`, only shell commands require approval.
 `allow-all` runs these tools without approval requests.
+
+## Session Lifecycle
+
+The adapter stores its libfx checkpoint and unfinished-turn replay records in
+`$HOME/.ai-sdk-harness/.agent-runs/<encoded-sessionId>/fx/state.json`.
+Here, `$HOME` belongs to the sandbox, and the file is outside `sessionWorkDir`.
+A future process restores this state after the caller reattaches the sandbox
+and supplies the saved lifecycle state.
 
 ## Known Limitations
 

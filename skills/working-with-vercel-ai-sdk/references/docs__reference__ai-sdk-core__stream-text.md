@@ -4,8 +4,8 @@ description: API Reference for streamText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "694512da834e6188640ef7d6cc0a7122dbb94ba9185eaf310558ed38750eb4b6"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "b7846a3494220e8a097b7e9e597f082762c21d941cb9ae0ad00bc906ebeedc02"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -270,7 +270,7 @@ import { streamText } from "ai"
 - `onStepEnd?` (`(result: StepResult<TOOLS>) => Promise<void> | void`): Callback that is called when a step ends.
   - `StepResult`
     - `stepType` (`"initial" | "continue" | "tool-result"`): The type of step. The first step is always an "initial" step, and subsequent steps are either "continue" steps or "tool-result" steps.
-    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "other"`): The unified finish reason why the generation finished.
+    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "interrupted" | "other"`): The unified finish reason why the generation finished.
     - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
     - `usage` (`LanguageModelUsage`): The token usage of the step.
       - `LanguageModelUsage`
@@ -326,7 +326,7 @@ import { streamText } from "ai"
 - `onStepFinish?` (`GenerateTextOnStepFinishCallback<TOOLS>`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
 - `onEnd?` (`(result: OnEndResult) => Promise<void> | void`): Callback that is called when the LLM response and all request tool executions (for tools that have an \`execute\` function) are finished.
   - `OnEndResult`
-    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "other"`): The unified finish reason why the generation finished.
+    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "interrupted" | "other"`): The unified finish reason why the generation finished.
     - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
     - `output?` (`COMPLETE_OUTPUT | undefined`): The parsed output when an output setting was provided and parsing succeeded.
     - `usage` (`LanguageModelUsage`): The token usage of last step.
@@ -490,7 +490,7 @@ import { streamText } from "ai"
 ### Returns
 
 - `content` (`Promise<Array<ContentPart<TOOLS>>>`): The content that was generated in all steps. Text parts can include an optional citations array of references supporting that text. Automatically consumes the stream.
-- `finishReason` (`PromiseLike<'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'>`): The reason why the generation finished. Automatically consumes the stream.
+- `finishReason` (`PromiseLike<'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'interrupted' | 'other'>`): The reason why the generation finished. A stream that ends cleanly without its provider completion signal can report "interrupted". Partial output is preserved; interruption alone does not emit an error. Streams that produce no output and no finish chunk still reject with NoOutputGeneratedError. OpenAI-compatible retains its existing error behavior. Automatically consumes the stream.
 - `rawFinishReason` (`PromiseLike<string | undefined>`): The raw reason why the generation finished (from the provider).
 - `usage` (`Promise<LanguageModelUsage>`): The total token usage of the generated response. When there are multiple steps, the usage is the sum of all step usages. Automatically consumes the stream.
   - `LanguageModelUsage`
@@ -575,7 +575,7 @@ import { streamText } from "ai"
         - `mediaType` (`string`): The IANA media type of the file.
     - `toolCalls` (`array`): A list of tool calls made by the model.
     - `toolResults` (`array`): A list of tool results returned as responses to earlier tool calls.
-    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason the model finished generating the text.
+    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'interrupted' | 'other'`): The reason the model finished generating the text.
     - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
     - `usage` (`LanguageModelUsage`): The token usage of the generated text.
       - `LanguageModelUsage`
@@ -700,14 +700,14 @@ import { streamText } from "ai"
         - `toolExecutionMs` (`Readonly<Record<string, number>>`): Time spent executing each client-side tool call in the step in milliseconds, keyed by tool call ID.
         - `timeToFirstOutputMs` (`number | undefined`): Time until the first generated output chunk was received in milliseconds. Only available for streaming steps.
         - `timeBetweenOutputChunksMs` (`OutputChunkTimingStats | undefined`): Timing statistics for the gaps between generated output chunks in milliseconds. Only available for streaming steps with at least two output chunks.
-    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason the model finished generating the text.
+    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'interrupted' | 'other'`): The reason the model finished generating the text.
     - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
     - `providerMetadata?` (`ProviderMetadata | undefined`): Optional metadata from the provider. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.
   - `TextStreamPart`
     - `type` (`'start'`): Indicates the start of the stream.
   - `TextStreamPart`
     - `type` (`'finish'`): The type to identify the object as finish.
-    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason the model finished generating the text.
+    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'interrupted' | 'other'`): The reason the model finished generating the text.
     - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
     - `totalUsage` (`LanguageModelUsage`): The total token usage of the generated text.
       - `LanguageModelUsage`

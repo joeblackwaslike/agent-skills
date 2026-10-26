@@ -17,13 +17,13 @@ related:
 summary: "Learn how to set up the Flags Explorer so you can see and override your application's feature flags"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/getting-started.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d2e001e1b43602e1b9fa1efb634aa574eb33f14e09bce652626b3a1153ab5c8a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e10516a63d8611f4d4b5d8df68fd7a10cf380fdf7bf9f2ba93afdfa13b036623"
 ---
 
 # Getting started with Flags Explorer
 
-> **Availability**: Flags Explorer is available on all plans
+> Flags Explorer is available on all plans
 
 This guide walks you through connecting your application to the Flags Explorer, so you can use it to view and override your application's feature flags. This works with any framework, any feature flag provider and even custom setups.
 
@@ -33,8 +33,8 @@ This guide walks you through connecting your application to the Flags Explorer, 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
@@ -55,28 +55,23 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
 
 - Set up the [Vercel Toolbar](/docs/vercel-toolbar) for development by following [adding the Vercel Toolbar to local and production environments](/docs/vercel-toolbar/in-production-and-localhost#)
 - You should have the latest version of Vercel CLI installed. To check your version, use `vercel --version`. To [install](/docs/cli#installing-vercel-cli) or update Vercel CLI, use:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn global add vercel@latest
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add -g vercel@latest
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i -g vercel@latest
+  ```
+  **yarn**
+  ```bash
+  yarn global add vercel@latest
+  ```
+  **npm**
+  ```bash
+  npm i -g vercel@latest
+  ```
+  **bun**
+  ```bash
+  bun add -g vercel@latest
+  ```
 - Ensure your local directory [links](/docs/cli/link) to a Vercel project. You can use `vercel link` from root of your project to link it to your Vercel account or use:
   ```bash filename="Terminal"
   vercel link [path-to-directory]
@@ -86,28 +81,23 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
 
 - ### Add the Flags SDK to your project
   Install the `flags` package. This package provides convenience methods, components, and types that allow your application to communicate with the Flags Explorer.
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i flags
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add flags
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i flags
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add flags
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i flags
+  ```
+  **yarn**
+  ```bash
+  yarn add flags
+  ```
+  **npm**
+  ```bash
+  npm i flags
+  ```
+  **bun**
+  ```bash
+  bun add flags
+  ```
 
 - ### Adding a `FLAGS_SECRET`
   This secret is used to encrypt and sign overrides, and so Flags Explorer can make authenticated requests to the `/.well-known/vercel/flags` Discovery Endpoint we'll create in the next step.
@@ -281,3 +271,6 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

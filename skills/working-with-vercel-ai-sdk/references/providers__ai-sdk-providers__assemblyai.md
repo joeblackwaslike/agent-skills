@@ -1,24 +1,67 @@
 ---
 title: AssemblyAI
-description: Learn how to use the AssemblyAI provider for the AI SDK.
+description: Learn how to set up the AssemblyAI provider and check AI Gateway availability.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "91c5e34f5fe2af113703a9df5a3ff09d3b2df5145fed5f345672f876f688e27c"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "7ebd5f8f131a945acaaf5e97a23e1840da6e0bda48f2111065c2a9c603e95cb7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [AssemblyAI](https://assemblyai.com/) provider contains transcription model support for the AssemblyAI transcription API.
+AssemblyAI models are not currently available through [AI Gateway](https://vercel.com/ai-gateway/models), so the opening example uses `@ai-sdk/assemblyai` directly. See [Using AI Gateway](#using-ai-gateway) below for supported alternatives.
 
-## Setup
+```ts
+import { transcribe } from 'ai';
+import { assemblyai } from '@ai-sdk/assemblyai';
+import { readFile } from 'node:fs/promises';
 
-The AssemblyAI provider is available in the `@ai-sdk/assemblyai` module. You can install it with
+const { text } = await transcribe({
+  model: assemblyai.transcription('universal-3-5-pro'),
+  audio: await readFile('audio.mp3'),
+});
+
+console.log(text);
+```
+
+The example transcribes an `audio.mp3` file from your project.
+
+## Using AI Gateway
+
+The current [AI Gateway model catalog](https://vercel.com/ai-gateway/models) does not list AssemblyAI models. Use `@ai-sdk/assemblyai` for the APIs on this page. To use other transcription models through Gateway, install `ai` and configure a Gateway API key:
 
 ```bash
-pnpm add @ai-sdk/assemblyai
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [Gateway documentation](/providers/ai-sdk-providers/ai-gateway) for supported models and APIs.
+
+## Using `@ai-sdk/assemblyai`
+
+For direct access to AssemblyAI, install `ai` and `@ai-sdk/assemblyai`:
+
+```bash
+pnpm add ai @ai-sdk/assemblyai
+```
+
+Set your AssemblyAI API credential in the `ASSEMBLYAI_API_KEY` environment variable:
+
+```bash
+export ASSEMBLYAI_API_KEY=your_api_key_here
+```
+
+The following sections document the direct `@ai-sdk/assemblyai` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

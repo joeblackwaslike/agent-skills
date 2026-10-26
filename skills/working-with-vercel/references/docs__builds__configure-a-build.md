@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "94ce8cf0c6675e7ba1537cce635c9bfd0f21d8d294a276fd7b9213586159bd0e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "261f125d37e15db99763ae47fb638d71a592bbdd98ad049384df7e7238197af2"
 ---
 
 # Configuring a Build
@@ -36,7 +36,7 @@ When you make a [deployment](/docs/deployments), Vercel **builds** your project.
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How to pin a specific Bun version for Vercel builds?](https://vercel.com/kb/guide/how-to-pin-a-specific-bun-version-for-vercel-builds) — Learn how to use a specific Bun version for Vercel builds.
-- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [Migrate Fly.io worker processes to Vercel Daemons](https://vercel.com/kb/guide/migrate-fly-io-workers-to-vercel-daemons) — Migrate Fly.io workers to Vercel Daemons with your existing Dockerfile. Map process settings, preserve queue state, and
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
 - [Advanced Project Settings](https://vercel.com/blog/advanced-project-settings)
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
@@ -333,3 +333,6 @@ In a monorepo, you can [skip deployments](/docs/monorepos#skipping-unaffected-pr
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

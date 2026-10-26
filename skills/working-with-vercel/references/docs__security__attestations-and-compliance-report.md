@@ -13,8 +13,8 @@ related:
 summary: Learn how to preview and download Vercel compliance documents from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/attestations-and-compliance-report.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "68978d9fad716bb12ce203e8e76db8efddcab55f3ada3de9463db1c2e4d33298"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7ddd5b799b1cc85c83e2288320744026505e83a902877eb5bbef8b0c940eec81"
 ---
 
 # Attestations and Compliance Report
@@ -31,9 +31,9 @@ Team members on Pro and Enterprise plans can preview and download Vercel's compl
 - [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings)
 - [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available)
 - [Security Dashboard](https://vercel.com/docs/security/security-dashboard) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration
-- [Get certs](https://vercel.com/docs/rest-api/certs/get-certs) — GET /v8/certs — Get certs
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Get certs](https://vercel.com/docs/rest-api/certs/get-certs) — GET /v8/certs — Get certs
 - [Upload a cert](https://vercel.com/docs/rest-api/certs/upload-a-cert) — PUT /v8/certs — Upload a cert
 
 Full cross-link map for this page: [/docs/security/attestations-and-compliance-report.graph.md](/docs/security/attestations-and-compliance-report.graph.md)
@@ -57,3 +57,6 @@ For public reports and more information about Vercel's security and compliance p
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

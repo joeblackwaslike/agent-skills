@@ -13,8 +13,8 @@ related:
 summary: Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/custom-metrics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ff95d4e301a22ced309001dac2880ac76264ecef511a3cbf8472b0bfb3c25701"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2082b8d7b3ddbdd134601933b18b4a144cb6cda6e7d8d9f68bf7dc9784ee92ae"
 ---
 
 # Emit Custom Metrics from Vercel Functions
@@ -29,8 +29,6 @@ Custom metrics let you record application-specific numeric values from your Verc
 
 - [Custom metrics are now supported in Vercel Observability](https://vercel.com/changelog/custom-metrics-are-now-supported-in-vercel-observability)
 - [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli)
-- [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests)
-- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Legacy Metrics](https://vercel.com/docs/pricing/legacy) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
@@ -46,28 +44,29 @@ For example, you could emit metrics to measure database queries latency, record 
 
 1. Install the `@vercel/functions` package:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/functions
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/functions
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/functions
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/functions
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/functions
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/functions
+```
+
+**npm**
+
+```bash
+npm i @vercel/functions
+```
+
+**bun**
+
+```bash
+bun add @vercel/functions
+```
 
 2. Import `metric` and call it from a Vercel Function with a metric name, numeric value, and optional attributes:
 
@@ -146,3 +145,6 @@ For example, emitting one custom metric during each of 1 million function invoca
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

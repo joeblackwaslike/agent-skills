@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/mcp-server.md"
-fetched_at: "2026-10-12T11:44:59.166Z"
-sha256: "5c7bf14a4415c00e7ce08e3a1cafcd1a5f17b8a9758488af3b7dd53a0543526b"
+fetched_at: "2026-10-26T09:50:01.171Z"
+sha256: "9e4608980e3adf50d39c6b336536829257f45f48a83f5e7e677a622929693b46"
 ---
 
 # MCP servers with Gemini CLI
@@ -439,6 +439,12 @@ Use the `/mcp auth` command to manage OAuth authentication:
   random port, e.g., `http://localhost:<random-port>/oauth/callback`)
 - **`tokenParamName`** (string): Query parameter name for tokens in SSE URLs
 - **`audiences`** (string[]): Audiences the token is valid for
+- **`allowPrivateNetwork`** (boolean): Allow OAuth discovery, registration,
+  authorization, and token endpoints that resolve to private enterprise network
+  addresses (RFC 1918, RFC 6598 Carrier-Grade NAT, RFC 4193 IPv6 Unique Local,
+  and `.internal` or `.local` domains). Defaults to `false`. HTTPS is still
+  required for non-loopback endpoints, and link-local (`169.254.0.0/16`,
+  `fe80::/10`) and loopback (`127.0.0.0/8`, `::1`) addresses remain restricted.
 
 #### Token management
 

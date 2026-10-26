@@ -16,13 +16,15 @@ related:
 summary: Learn how to upload files to Vercel Blob from server routes and Server Actions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "319242cfad00fef2c8e915c31975c7cd66a01b3984f813bc315223c8edfede91"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "af04895ed92548b1efebd4ce7059fec86ffd94cd96f5e7fe8469b1b1e0d3e12e"
 ---
 
 # Server Uploads with Vercel Blob
 
-> **Availability**: Vercel Blob is available on all plans
+> Vercel Blob is available on all plans
+>
+> Those with the owner, member, developer role can access this feature
 
 In this guide, you'll learn how to do the following:
 
@@ -40,6 +42,9 @@ In this guide, you'll learn how to do the following:
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload) — POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ — POST /v2/:teamSlug/:projectSlug/:repositoryName/blob
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
+- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
 
 Full cross-link map for this page: [/docs/vercel-blob/server-upload.graph.md](/docs/vercel-blob/server-upload.graph.md)
 <!-- /docsgraph:related -->
@@ -529,3 +534,6 @@ You have successfully uploaded an object to your Vercel Blob store and are able 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

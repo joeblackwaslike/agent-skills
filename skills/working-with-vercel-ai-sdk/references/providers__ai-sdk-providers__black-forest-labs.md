@@ -1,24 +1,67 @@
 ---
 title: Black Forest Labs
-description: Learn how to use Black Forest Labs models with the AI SDK.
+description: Learn how to use Black Forest Labs with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "5643846d323007dd8f59f22b45c2e4e5a8178c13cdfb712267aa287799307e16"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "8caf741e0cb589af00e0f2223de2c5cc7108918f9979858c012563d9bbf0db1e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Black Forest Labs](https://bfl.ai/) provides a generative media platform for developers with FLUX-based models. Their platform offers fast, high quality, and in-context image generation and editing, plus video generation with FLUX 3.
+You can use Black Forest Labs models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/black-forest-labs`.
 
-## Setup
+```ts provider="bfl" model="bfl/flux-2-pro"
+import { generateImage } from 'ai';
 
-The Black Forest Labs provider is available via the `@ai-sdk/black-forest-labs` module. You can install it with
+const { image } = await generateImage({
+  model: "bfl/flux-2-pro",
+  prompt: 'A sunlit mountain village in watercolor.',
+});
+
+console.log(image.base64);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/black-forest-labs
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/black-forest-labs`
+
+For direct access to Black Forest Labs, install `ai` and `@ai-sdk/black-forest-labs`:
+
+```bash
+pnpm add ai @ai-sdk/black-forest-labs
+```
+
+Set your Black Forest Labs API credential in the `BFL_API_KEY` environment variable:
+
+```bash
+export BFL_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/black-forest-labs`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/black-forest-labs`
+provider, including its model factories and settings. Gateway model and
+feature availability can differ.
 
 ## Provider Instance
 

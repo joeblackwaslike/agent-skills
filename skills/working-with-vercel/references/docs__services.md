@@ -12,17 +12,17 @@ related:
   - /docs/daemons
   - /docs/services/routing
   - /docs/services/bindings
-  - /docs/functions/container-images
+  - /docs/frameworks/backend/fastapi
 summary: Deploy multiple backends and frontends within a single Vercel project using services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a57c9c7d1994faaf1895b4ceeefe4b5c6cc37ad359fb97b482a64f1046648a7b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fc5d9dc874404dc4e614f3fe3d7c4a1c046bb9367cf88537c38b22d5d0c626ac"
 ---
 
 # Services
 
-> **Availability**: Services (Beta) are available on all plans
+> Services are available in Beta on all plans
 
 Services let you deploy multiple backends and frontends within a single Vercel project. For example, a Next.js frontend and a FastAPI backend in the same repository deploy together with shared routing, environment variables, and a unique domain,
 replacing the need to split monorepos into separate Vercel projects.
@@ -33,7 +33,7 @@ replacing the need to split monorepos into separate Vercel projects.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
+- [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
 - [Nuxt](https://eve.dev/docs/guides/frontend/nuxt) — Run an eve agent and a Nuxt app as one project with the eve/nuxt module.
 - [SvelteKit](https://eve.dev/docs/guides/frontend/sveltekit) — Run an eve agent and a SvelteKit app as one project with the eveSvelteKit Vite plugin.
 - [TanStack Start](https://eve.dev/docs/guides/frontend/tanstack) — Run an eve agent and a TanStack Start app as one project with the eveTanStack Vite plugin.
@@ -42,9 +42,9 @@ replacing the need to split monorepos into separate Vercel projects.
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
-- [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 
 Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md)
 <!-- /docsgraph:related -->
@@ -118,7 +118,7 @@ are configured once at the top level and apply across all services, instead of
 being redefined per service.
 
 Read [Service Routing](/docs/services/routing) to learn more about service
-public routing configuration.
+public routing configuration. For a walkthrough that connects a frontend and backend with public routing, private bindings, and local development, follow the [Vercel Services guide](/kb/guide/vercel-services).
 
 ## Calling another service
 
@@ -126,7 +126,17 @@ A service can call another service directly over an internal [binding](/docs/ser
 
 Bindings are how services communicate privately. The target stays unreachable from the internet unless a separate top-level rewrite exposes it, so a binding grants internal access without creating a public route. See [Service bindings](/docs/services/bindings) to declare and use them.
 
+### Connect an eve agent to a Python backend
+
+The [eve Agent with Python template](/templates/eve/eve-agent-with-python) deploys an eve agent, a Next.js frontend, and a [FastAPI backend](/docs/frameworks/backend/fastapi) together in one project. The frontend and agent use service bindings to call the same private backend for shared tasks and Python tools.
+
+The template's `vercel.ts` configures the services and injects the backend URL as `BACKEND_URL` into the frontend and agent. The backend has no public route. See the [template repository](https://github.com/vercel-labs/eve-agent-python-template) for the configuration and setup instructions.
+
 ## Using custom container images with services
+
+A project with one root `Dockerfile` and no other detected framework deploys
+with the [Container runtime](/docs/functions/runtimes/container). Use the
+configuration below when a project defines more than one service.
 
 Vercel builds each service according to the specified (or
 auto-detected) `runtime` and `framework` settings. If you prefer or require
@@ -150,6 +160,8 @@ the `runtime` setting for the service to `container`.
 
 See [Container Images](/docs/functions/container-images) for more information
 about using container images with Vercel.
+
+To move an existing Docker app to Vercel Services, follow the migration guide for [Railway](/kb/guide/migrate-railway-to-vercel), [Fly.io](/kb/guide/migrate-fly-io-to-vercel), or [Render](/kb/guide/migrate-render-to-vercel). These guides cover adapting your deployment configuration, routing, and stored data.
 
 ## Top-level configuration in services mode
 
@@ -189,3 +201,6 @@ In both cases, generated binding environment variables are injected automaticall
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

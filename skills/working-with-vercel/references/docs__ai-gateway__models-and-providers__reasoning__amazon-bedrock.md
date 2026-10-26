@@ -14,8 +14,8 @@ related:
 summary: Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e1fe6f6924d76da7656168f50df7a5a2d383edc80461ff0b84b446cee329414c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e5c18dcb7a1b8861799047523b21fd5e48e71e7e48f1ebd2800ac7c509614c74"
 ---
 
 # AI Gateway Amazon Bedrock Reasoning
@@ -30,10 +30,10 @@ Amazon Bedrock exposes Anthropic Claude reasoning through model-creator-specific
 
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning) — Learn how to control reasoning across providers with the top-level reasoning parameter.
 - [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
 - [OpenAI Responses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning) — Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
 - [OpenAI Chat Completions Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning) — Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
 - [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
+- [Anthropic Messages Extended Thinking with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gatewa
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.graph.md](/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock.graph.md)
 <!-- /docsgraph:related -->
@@ -234,3 +234,6 @@ curl https://ai-gateway.vercel.sh/v1/chat/completions \
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

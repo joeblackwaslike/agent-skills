@@ -15,8 +15,8 @@ related:
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f9706c9033dce17b6961afea7e9efcb6cea18cad2e58720728f64729dbeace20"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6ea28e00d231d7221aeb7a4ec06930771be8ffde510b337c497434e84494fda5"
 ---
 
 # Cache-Control headers
@@ -30,13 +30,15 @@ You can control how Vercel's CDN caches your Function responses by setting a [Ca
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel CDN now respects Cache-Control headers from external origins by default](https://vercel.com/changelog/vercels-cdn-now-respects-cache-control-headers-from-external-origins-by-default)
+- [ Sitemap lastmod should track content, not deployments](https://vercel.com/kb/guide/correct-lastmod-nextjs-sitemap) — Set accurate sitemap lastmod dates in Next.js using stored content timestamps, targeted revalidation, and checks that di
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
 - [Proxied responses now cacheable via CDN-Cache-Control headers](https://vercel.com/changelog/proxied-responses-now-cacheable-via-cdn-cache-control-headers)
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
-- [System Headers](https://vercel.com/docs/headers) — This reference covers the list of request, response, cache-control, and custom response headers included with deployment
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [System Headers](https://vercel.com/docs/headers) — This reference covers the list of request, response, cache-control, and custom response headers included with deployment
+- [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
 - [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package) — Learn about available APIs when working with Vercel Functions.
 
 Full cross-link map for this page: [/docs/caching/cache-control-headers.graph.md](/docs/caching/cache-control-headers.graph.md)
@@ -326,3 +328,6 @@ Alternatively, a [Vercel Function](/docs/functions) can assign headers to the [R
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

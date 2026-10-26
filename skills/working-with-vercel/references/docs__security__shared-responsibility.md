@@ -16,8 +16,8 @@ related:
 summary: Discover the essentials of our Shared Responsibility Model, outlining the key roles and responsibilities for customers, Vercel, and shared aspects in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/shared-responsibility.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "829d31d4861b057d5a4ddaece952486d6207b2a86fdb15bea73196d745fd2106"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ccf3b2b56ba8da3cea179d63d130322c9d8b3c4ac489c68f9e6490760a3189b7"
 ---
 
 # Shared Responsibility Model
@@ -39,9 +39,9 @@ A shared responsibility model is a framework designed to split tasks and obligat
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [Vercel supports HIPAA compliance](https://vercel.com/blog/vercel-supports-hipaa-compliance)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 
 Full cross-link map for this page: [/docs/security/shared-responsibility.graph.md](/docs/security/shared-responsibility.graph.md)
 <!-- /docsgraph:related -->
@@ -90,3 +90,6 @@ Vercel manages infrastructure components, such as compute, storage, and networki
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

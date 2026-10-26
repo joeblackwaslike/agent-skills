@@ -13,8 +13,8 @@ related:
 summary: Reserved environment variables are reserved by Vercel Vercel Function runtimes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/reserved-environment-variables.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b62ccd75c6f380bd1951db8793df8b44d093972ae6321da99af6c282a6d5804c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f7506c44aad317bf0a02af85f96b6417d3b7673c437b2aca3a2acd310eda7cbc"
 ---
 
 # Reserved environment variables
@@ -31,8 +31,8 @@ The following [environment variable](/docs/environment-variables) names are [res
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 - [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
-- [Vercel Functions Limits](https://vercel.com/docs/functions/limitations) — Learn about the limits and restrictions of using Vercel Functions.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
+- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
 
 Full cross-link map for this page: [/docs/environment-variables/reserved-environment-variables.graph.md](/docs/environment-variables/reserved-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -65,3 +65,6 @@ The following [environment variable](/docs/environment-variables) names are [all
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

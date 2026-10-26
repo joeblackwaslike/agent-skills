@@ -10,11 +10,14 @@ prerequisites:
 related:
   - /docs/eve
   - /docs/agent-harnesses
+  - /docs/eve/getting-started
+  - /docs/eve/authentication
+  - /docs/eve/deploying
 summary: eve agents are durable out of the box on Vercel, with no extra configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/eve.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b43afa4956cafc5ea8b74f6585a78222b441f83e43c3e3d4efeee7182b5071e2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b668d6867f608f1a09892b0be0209c035c9efbab8aba502a7d13af4f1e314df0"
 ---
 
 # Running eve Agents Durably on Vercel
@@ -32,13 +35,13 @@ sha256: "b43afa4956cafc5ea8b74f6585a78222b441f83e43c3e3d4efeee7182b5071e2"
 - [Self-Host eve](https://eve.dev/docs/guides/deployment/self-hosting) — Run an eve agent as a Node service with your own workflow storage, sandbox provider, and routing.
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
 - [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
-- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework)
 - [Deployment](https://eve.dev/docs/guides/deployment/overview) — Choose a deployment strategy and prepare an eve agent for production.
+- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework)
+- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
 - [Build and deploy eve agents from the Vercel dashboard](https://vercel.com/changelog/build-and-deploy-eve-agents-from-the-vercel-dashboard)
-- [Give your eve agent an email inbox with Resend](https://vercel.com/kb/guide/eve-agent-with-resend) — Connect an eve agent to email using the Chat SDK channel and the Resend adapter. Handle inbound email, threaded replies,
-- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
+- [How to add skills to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-skills) — Add skills to an eve agent by creating a file under agent/skills/ or installing a published skill with the npx skills ad
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 
 Full cross-link map for this page: [/docs/agent-harnesses/eve.graph.md](/docs/agent-harnesses/eve.graph.md)
 <!-- /docsgraph:related -->
@@ -48,18 +51,19 @@ There's nothing to add: you don't install `durable-harness`, write a flow route,
 ## Get started
 
 - ### Create an agent
-  The eve CLI scaffolds a new agent project, installs its dependencies, and starts the development server:
+  The eve CLI scaffolds a new agent project, installs its dependencies, and opens the terminal UI:
   ```bash
   npx eve@latest init my-agent
   ```
-  To add eve to an existing app, follow the [eve quickstart](https://eve.dev/docs/getting-started#install-manually).
+  To add eve to an existing app, follow the [eve quickstart](/docs/eve/getting-started#initialize-the-project).
 
 - ### Deploy
-  From the new project:
+  Configure [authentication](/docs/eve/authentication) for your callers, then deploy to Production from the new project:
   ```bash
   cd my-agent
-  vercel deploy
+  npx eve deploy
   ```
+  See [Deploying eve to Vercel](/docs/eve/deploying) for project linking, credentials, and deployment checks.
 
 For agents, tools, channels, and everything else, see the [eve documentation](https://eve.dev/docs) and [eve on Vercel](/docs/eve).
 
@@ -67,3 +71,6 @@ For agents, tools, channels, and everything else, see the [eve documentation](ht
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

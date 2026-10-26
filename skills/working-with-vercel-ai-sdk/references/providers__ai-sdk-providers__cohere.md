@@ -1,24 +1,67 @@
 ---
 title: Cohere
-description: Learn how to use the Cohere provider for the AI SDK.
+description: Learn how to use Cohere with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "d6715081555e84876f4587cc334709d649471d4457bc90051f18b8cb66ecfb51"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "8c67728704e9137d6f4355df28edab1b1a9de3390715debfb871762bc363c7f8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Cohere](https://cohere.com/) provider contains language and embedding model support for the Cohere chat API.
+You can use Cohere models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/cohere`.
 
-## Setup
+```ts provider="cohere" model="cohere/command-a"
+import { generateText } from 'ai';
 
-The Cohere provider is available in the `@ai-sdk/cohere` module. You can install it with
+const { text } = await generateText({
+  model: "cohere/command-a",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/cohere
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/cohere`
+
+For direct access to Cohere, install `ai` and `@ai-sdk/cohere`:
+
+```bash
+pnpm add ai @ai-sdk/cohere
+```
+
+Set your Cohere API credential in the `COHERE_API_KEY` environment variable:
+
+```bash
+export COHERE_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/cohere`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/cohere` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

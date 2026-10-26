@@ -12,17 +12,17 @@ related:
   - /docs/pricing/regional-pricing
   - /docs/networking/static-ips/getting-started
   - /docs/routing-middleware
-  - /docs/glossary
+  - /docs/deployments/environments
 summary: Access IP-restricted backend services through shared static egress IPs for Pro and Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1ddf84b43235a25566ba95c4af8065db9207895ac9516c0679b950567361f84b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "33c591cb6bad19134c73f16db1b21e8dea3d2e342624daef07db7a360422fbd1"
 ---
 
 # Static IPs
 
-> **Availability**: Static IPs are available on Enterprise and Pro plans
+> Static IPs are available on Enterprise and Pro plans
 
 With Static IPs (shared pool), you can access backend services that require IP allowlisting through static egress IPs. It's designed for Pro and Enterprise teams who need static IP functionality without the dedicated network or security features of [Secure Compute](/docs/networking/secure-compute).
 
@@ -42,8 +42,8 @@ With Static IPs (shared pool), you can access backend services that require IP a
 - [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 - [Flat Rate CDN](https://vercel.com/docs/pricing/flat-rate-cdn) — Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
+- [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
 
 Full cross-link map for this page: [/docs/networking/static-ips.graph.md](/docs/networking/static-ips.graph.md)
 <!-- /docsgraph:related -->
@@ -69,7 +69,7 @@ Therefore, Static IPs should not be used if you need your app to be reachable th
 | **IP type**           | Static in shared Virtual Private Cloud (VPC)                                                           | Static in dedicated VPC                      |
 | **Network isolation** | Shared VPC for a small group of customers with subnet-level isolation                                  | Dedicated VPC and subnet per customer        |
 | **Use cases**         | IP allowlisting, database access                                                                       | IP allowlisting, VPC Peering, full isolation |
-| **Pricing**           | $100.00/month per project, plus [Private Data Transfer](/docs/pricing/regional-pricing) at regional rates | Custom pricing                               |
+| **Pricing**           | $100/month per project, plus [Private Data Transfer](/docs/pricing/regional-pricing) at regional rates | Custom pricing                               |
 
 ### Static IPs with Secure Compute
 
@@ -105,7 +105,7 @@ This setting is disabled by default. When enabled, both your project's build and
 
 ### Routing Middleware support
 
-Static IPs (region-specific) don't apply to [middleware](/docs/routing-middleware) (which are deployed at the [edge](/docs/glossary#edge)).
+Static IPs (region-specific) don't apply to [middleware](/docs/routing-middleware) (which are deployed at the edge).
 
 ### Checking usage
 
@@ -138,3 +138,6 @@ Static IPs are priced at $100/month per project for Pro plus Private Data Transf
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

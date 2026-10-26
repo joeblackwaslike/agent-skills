@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for rolling releases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0d316882a7a80b5f0da622f97565c0aa0da90ad79e6778bbf98963aba41a8986"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "73ae3a0f06992538b59ef65f7345f8419fa8679953ce9f9f5bd66ac3d2b7714b"
 ---
 
 # Rolling Releases
@@ -174,3 +174,6 @@ Update the rolling release settings for the project.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

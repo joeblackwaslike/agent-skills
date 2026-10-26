@@ -16,13 +16,15 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2dd50f9bf2c17e31350e6ee8831f39f6a6fa7ac846ef22648ad0556087c930ed"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "33da36487fcefab1d0064b820ca5e0f81f98521bb6a6a5edec9a38cc2f34503b"
 ---
 
 # Private Storage
 
-> **Availability**: Vercel Blob is available on all plans
+> Vercel Blob is available on all plans
+>
+> Those with the owner, member, developer role can access this feature
 
 > **💡 Note:** Private storage requires a private Blob store and is available starting with:* `@vercel/blob` [JS SDK](/docs/vercel-blob/using-blob-sdk) >= 2.3
 > * `vercel-blob` [Python SDK](/docs/vercel-blob/python-sdk-reference) >= 0.5.0
@@ -726,3 +728,6 @@ See [pricing documentation](/docs/vercel-blob/usage-and-pricing) for full detail
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

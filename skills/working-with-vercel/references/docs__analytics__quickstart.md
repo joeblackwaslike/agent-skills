@@ -16,8 +16,8 @@ related:
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ccca73d9005ae2c00612b1763e679d394bf7be2fd0d6316a4969dbd82c21c889"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bdd97165ad85c81e887864cdfb166c999facf4e1bf9048591d12e124ae54892d"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -33,14 +33,11 @@ This guide will help you get started with using Vercel Web Analytics on your pro
 - [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
 - [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
-- [Nuxt Analytics on Vercel](https://vercel.com/blog/nuxt-analytics-on-vercel)
-- [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
-- [Ship It](https://eve.dev/docs/tutorial/ship-it) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/analytics/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -59,28 +56,29 @@ Help me add Vercel Web Analytics to this project. First, make sure the Vercel CL
 - A Vercel project. If you don't have one, you can [create a new project](https://vercel.com/new).
 - The Vercel CLI installed. If you don't have it, you can install it using the following command:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i -g vercel
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn global add vercel
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i -g vercel
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add -g vercel
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i -g vercel
+```
+
+**yarn**
+
+```bash
+yarn global add vercel
+```
+
+**npm**
+
+```bash
+npm i -g vercel
+```
+
+**bun**
+
+```bash
+bun add -g vercel
+```
 
 > **💡 Note:** Version 2 package updates are available. For details, see [What's new in
 > version 2](/docs/analytics/package#what's-new-in-version-2.x).
@@ -91,7 +89,7 @@ Help me add Vercel Web Analytics to this project. First, make sure the Vercel CL
   On the Vercel dashboard, navigate to **Analytics** in the sidebar and select a project.
   Or select the button below to go there.
 
-  [Go to Web Analytics](<getDeepLink({&#xA;    to: '/[team]/[project]/analytics',&#xA;    title: 'Open Web Analytics',&#xA;  })>)
+  [Go to Web Analytics](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fanalytics\&title=Open+Web+Analytics)
 
   Then click the **Enable** button in the header.
   > **💡 Note:** Enabling Web Analytics will add new routes (scoped at `/_vercel/insights/*` and `/<unique-path>/*`)
@@ -100,28 +98,23 @@ Help me add Vercel Web Analytics to this project. First, make sure the Vercel CL
 - ### Add `@vercel/analytics` to your project
   > For \['nextjs', 'nextjs-app', 'sveltekit', 'remix',  'create-react-app', 'nuxt', 'vue', 'other', 'astro']:
   Using the package manager of your choice, add the `@vercel/analytics` package to your project:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @vercel/analytics
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @vercel/analytics
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @vercel/analytics
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @vercel/analytics
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @vercel/analytics
+  ```
+  **yarn**
+  ```bash
+  yarn add @vercel/analytics
+  ```
+  **npm**
+  ```bash
+  npm i @vercel/analytics
+  ```
+  **bun**
+  ```bash
+  bun add @vercel/analytics
+  ```
   > For \['html']:
   > **💡 Note:** When using the HTML implementation, there is no need to install the
   > `@vercel/analytics` package.
@@ -509,3 +502,6 @@ Now that you have Vercel Web Analytics set up, you can explore the following top
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

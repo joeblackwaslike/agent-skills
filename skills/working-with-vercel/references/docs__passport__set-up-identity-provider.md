@@ -12,13 +12,15 @@ related:
 summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ddae913b61d6a1e3b049b52645655de27b784c5a6ad3ba464ab3e37e2c8f4fe5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fd18560b0fe1d0111149fbe9f2d48c1289664cb6af02fc96d11dbf5549a693d1"
 ---
 
 # Set up Passport with an identity provider
 
-> **Availability**: Passport is available on Enterprise plans
+> Passport is available on Enterprise plans
+>
+> Those with the owner role can manage Passport
 
 This guide covers the common Passport setup flow for OpenID Connect providers, including Okta and Microsoft Entra ID.
 
@@ -36,7 +38,9 @@ This guide covers the common Passport setup flow for OpenID Connect providers, i
 - [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
+- [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
 
 Full cross-link map for this page: [/docs/passport/set-up-identity-provider.graph.md](/docs/passport/set-up-identity-provider.graph.md)
 <!-- /docsgraph:related -->
@@ -192,3 +196,6 @@ Check the following settings in your identity provider:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

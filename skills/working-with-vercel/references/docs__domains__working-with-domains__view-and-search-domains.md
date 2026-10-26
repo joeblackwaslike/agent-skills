@@ -13,8 +13,8 @@ related:
 summary: Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/view-and-search-domains.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c76cc3aad56f6ff068ddf061046925f29b168d9fa933752552eda317657c5ddc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f7b2c6d3c7b83ea2e75e3a59c3265291d224908392ec85d27e9bbe650579debb"
 ---
 
 # Viewing & Searching Domains
@@ -30,7 +30,6 @@ To view all your registered domains, open [**Domains**](https://vercel.com/d?to=
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Search domains on the Vercel dashboard](https://vercel.com/changelog/search-domains-on-the-vercel-dashboard)
-- [Search and buy domains in the dashboard](https://vercel.com/changelog/search-and-buy-domains-in-the-dashboard)
 - [search_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains) — Use search_domains with Vercel MCP.
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
@@ -58,3 +57,6 @@ It is not possible to search a multi-level wildcard subdomain. It is only possib
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

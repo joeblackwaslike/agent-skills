@@ -12,8 +12,8 @@ related:
 summary: Learn how to configure Vercel CLI under your system user.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/global-configuration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "af2284f2cc5984d2c3bcdaf771f911d8a762bc4e573963fc33512368ddb24fce"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "23896bfacbe84de731106d93b6f49a7e43f70b6593934743ea44044c0e94913e"
 ---
 
 # Global Vercel CLI Configuration
@@ -28,9 +28,9 @@ Using the following files and configuration options, you can configure [Vercel C
 
 - [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Using Global Config](https://vercel.com/docs/global-config/using-global-config) — Learn how to use Global Configs in your projects.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
-- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 
 Full cross-link map for this page: [/docs/project-configuration/global-configuration.graph.md](/docs/project-configuration/global-configuration.graph.md)
 <!-- /docsgraph:related -->
@@ -90,3 +90,6 @@ In the case that you are uploading your global configuration setup to a potentia
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

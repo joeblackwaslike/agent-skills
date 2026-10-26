@@ -4,8 +4,8 @@ description: Learn how to build AI applications with the AI SDK
 url: "https://ai-sdk.dev/cookbook/guides"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/cookbook/guides.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "1b830f42d87e57c29cb6af185a7c3ddc04ab2f1b450fb1024706021b281fe232"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "1d9fe82ea27c6969f5e63fa49d4a0c44ca25a800c49d13f8ad33af896c2d5da0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -22,7 +22,7 @@ Learn how to build a multi-modal agent that can process images and PDFs with the
 
 #### [Slackbot Agent](/cookbook/guides/slackbot)
 
-Learn how to use the AI SDK to build an AI Agent in Slack.
+Learn how to build an AI Agent in Slack with the AI SDK and Chat SDK.
 
 #### [Natural Language Postgres (SQL Agent)](/cookbook/guides/natural-language-postgres)
 

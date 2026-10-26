@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Cape Town, South Africa (cpt1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/cpt1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a80766037b649edc2b175d808c38f2363ca909885ea7d453e0e62cbb65cf4326"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c4818dde81d7759d45f281ca1549deb3b115ff88697bee7a7d349a243e81b191"
 ---
 
 # Cape Town, South Africa (cpt1) pricing
@@ -35,7 +35,7 @@ The table below shows Managed Infrastructure products with pricing specific to t
 - [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
 - [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
-- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/cpt1.graph.md](/docs/pricing/regional-pricing/cpt1.graph.md)
 <!-- /docsgraph:related -->
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

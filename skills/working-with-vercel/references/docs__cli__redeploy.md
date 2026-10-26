@@ -14,8 +14,8 @@ related:
 summary: Learn how to redeploy your project using the vercel redeploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/redeploy.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "aaf984d9de58c5d21ccae2f47e871e38d446bc69287c48ba3626fc14549bd3da"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ed2358a3e8eeb9460800c8df7f2a075a93304959a994dec2ead3f325adf66de4"
 ---
 
 # vercel redeploy
@@ -29,9 +29,9 @@ The `vercel redeploy` command is used to rebuild and [redeploy an existing deplo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel remove](https://vercel.com/docs/cli/remove) — Learn how to remove a deployment using the vercel remove CLI command.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel remove](https://vercel.com/docs/cli/remove) — Learn how to remove a deployment using the vercel remove CLI command.
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 
 Full cross-link map for this page: [/docs/cli/redeploy.graph.md](/docs/cli/redeploy.graph.md)
@@ -126,3 +126,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

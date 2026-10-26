@@ -17,8 +17,8 @@ related:
 summary: Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ccb040b9c33f60232bec86b8791ea518f89810d7fb339d966c7e429f297bf87e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c43dcbee8631cc26984e66ada69a32155351d8d149345e8879340eaf1dcb0c1f"
 ---
 
 # AI Gateway Tool Use and Function Calling
@@ -34,9 +34,9 @@ Connect a model to functions in your application, such as a weather lookup or a 
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Tools](https://ai-sdk.dev/docs/foundations/tools) — Learn about tools with the AI SDK.
 - [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool) — Learn what tools are, how tool calling works, and how you can use them to build agents.
-- [Run your AI SDK agent in the terminal](https://vercel.com/kb/guide/ai-sdk-terminal-ui) — Use the @ai-sdk/tui package and runAgentTUI to run a ToolLoopAgent in an interactive terminal, with tool cards, reasonin
-- [Node.js](https://ai-sdk.dev/docs/getting-started/nodejs) — Learn how to build your first agent with the AI SDK and Node.js.
 - [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
+- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools/tool-use.graph.md](/docs/ai-gateway/inputs-and-tools/tool-use.graph.md)
 <!-- /docsgraph:related -->
@@ -444,3 +444,6 @@ See [coding agents](/docs/ai-gateway/coding-agents) for supported clients and se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

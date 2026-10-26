@@ -15,13 +15,13 @@ related:
 summary: Requires that every package.json file has the private field set to prevent accidental publishing to npm.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_private_required.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c4134071631872476a34160177d513c9651e1840e7eb6035f322d108b055b0e1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f50c00e39daba8eefdaf447681ba9f118f37ea7f2275d6aa06a180e8c5ad4145"
 ---
 
 # PACKAGE_JSON_PRIVATE_REQUIRED
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 This check ensures that every `package.json` has the `private` field set to true or false.
 This field ensures that the workspace is not accidentally published to npm. In a monorepo,
@@ -44,3 +44,6 @@ intended to be published in which case it can be explicitly set to `false`.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

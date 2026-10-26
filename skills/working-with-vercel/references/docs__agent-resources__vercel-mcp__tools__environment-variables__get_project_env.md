@@ -13,8 +13,8 @@ related:
 summary: Use get_project_env with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "afe68fae93b76967f75a17e74ba3e40169589ed58fc4b23bfb101c3b3148f984"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fdd7a4e904bbbd36bf28fdfece192a47db3dc41b060731d6309fb3236385e85a"
 ---
 
 # get_project_env
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/envir
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

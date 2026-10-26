@@ -4,8 +4,8 @@ description: Use AI SDK harnesses with useChat.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/ui"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/ui.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "b1a1541fb17992ea2872c22eda9270a82b7c41c735fe7de074bcbec8b6c951f0"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "7c47cc2e5d5b31c0571c6c7408e0beb33653fd30b6aff3ff19b3a731cc123852"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -98,7 +98,7 @@ export const agent = new HarnessAgent({
 
 Persist the opaque resume state returned by `session.detach()`. If the
 turn paused for approval or was otherwise interrupted, that resume state carries
-the continuation state internally. The chat id can also be the harness
+the continuation state internally. The chat ID can also be the harness
 `sessionId`. Here we derive a stable `sandboxId` from that known chat id. If
 you do not derive one, persist the returned `sandboxSession.id` separately.
 
@@ -175,7 +175,7 @@ export async function POST(request: Request) {
   } = await request.json();
 
   if (!body.id) {
-    throw new Error('Missing chat id');
+    return new Response('Missing chat ID', { status: 400 });
   }
 
   const chatId = body.id;

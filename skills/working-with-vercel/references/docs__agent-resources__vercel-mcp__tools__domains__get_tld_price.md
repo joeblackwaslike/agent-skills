@@ -13,8 +13,8 @@ related:
 summary: Use get_tld_price with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_tld_price.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "77abf3b07532645aad1b383a5d71dfecb415b4d7e07957af88ce9f2986315ba0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "758a987f51074f81d82aa76225da86a5cb370f0ad4b2e9a5ecd8536913566866"
 ---
 
 # get_tld_price
@@ -30,8 +30,8 @@ Get TLD price data.
 - [get_tld](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_tld) — Use get_tld with Vercel MCP.
 - [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 - [Get TLD price data](https://vercel.com/docs/rest-api/domains-registrar/get-tld-price-data) — GET /v1/registrar/tlds/{tld}/price — Get price data for a specific TLD. This only reflects base prices for the given TLD
-- [list_supported_tlds](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_supported_tlds) — Use list_supported_tlds with Vercel MCP.
 - [Get TLD](https://vercel.com/docs/rest-api/domains-registrar/get-tld) — GET /v1/registrar/tlds/{tld} — Get the metadata for a specific TLD.
+- [Get price data for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-price-data-for-a-domain) — GET /v1/registrar/domains/{domain}/price — Get price data for a specific domain
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_tld_price.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_tld_price.graph.md)
 <!-- /docsgraph:related -->
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

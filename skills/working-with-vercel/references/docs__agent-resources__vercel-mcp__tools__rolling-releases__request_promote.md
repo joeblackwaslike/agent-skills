@@ -13,8 +13,8 @@ related:
 summary: Use request_promote with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_promote.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "03814359383baaa55b7dd3904798f4ea7a4bd6b48ca93dd7190afdd2bea6e474"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a40513d140fe3690dd04d08703a554cc66b8230ea866f47f67db94e6b5645abf"
 ---
 
 # request_promote
@@ -50,3 +50,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use list_access_groups with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "302f363cce2f1a20cb09c94eb924a3839672e6a35fdf4626b72d583e6a2a2d4a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7626de113894db0752046f6c7c26319d726d7a93cec6f5c8e2f6de186eb32f84"
 ---
 
 # list_access_groups
@@ -30,8 +30,8 @@ List access groups
 - [list_access_group_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects) — Use list_access_group_projects with Vercel MCP.
 - [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members) — Use list_access_group_members with Vercel MCP.
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
-- [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
 - [List members of an access group](https://vercel.com/docs/rest-api/access-groups/list-members-of-an-access-group) — GET /v1/access-groups/{idOrName}/members — List members of an access group
+- [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups.graph.md](/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups.graph.md)
 <!-- /docsgraph:related -->
@@ -53,3 +53,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

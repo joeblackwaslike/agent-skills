@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for drains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "42da390992ea10b022a852098098afc13d561cab1f997e4b39c417af694b5b13"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3469f42ef4eb3937900d61caa9af4f7e987b5eb8772c5161f58045e88fcb9fa4"
 ---
 
 # Drains
@@ -27,8 +27,8 @@ Configure Drains to send your Vercel observability data to an external destinati
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using Drains](https://vercel.com/docs/drains/using-drains) — Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations,
 - [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
+- [Using Drains](https://vercel.com/docs/drains/using-drains) — Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations,
 - [Delete a drain](https://vercel.com/docs/rest-api/drains/delete-a-drain) — DELETE /v1/drains/{id} — Delete a specific Drain by passing the drain id in the URL.
 - [Working with Drains](https://vercel.com/docs/drains) — Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
@@ -102,3 +102,6 @@ Update an existing Drain.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

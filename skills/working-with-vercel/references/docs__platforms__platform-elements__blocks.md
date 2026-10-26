@@ -17,8 +17,8 @@ related:
 summary: Prebuilt UI components for common platform flows like claiming deployments and managing domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "32f9f7dc572700c10f0ff5a22f60a37b994be9076654ee98cdbd9396c6626263"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "29ce5363b8b098fd4af77c8d6030d1955e7bb8253e9f74c26cf7e6c7bcfd1800"
 ---
 
 # Blocks
@@ -35,8 +35,8 @@ Blocks are ready-to-use UI components for platform flows. Install a block and co
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Add Custom Domain](https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain) — Server action for programmatically adding custom domains to Vercel projects.
 - [Actions](https://vercel.com/docs/platforms/platform-elements/actions) — Server actions you can install to run common platform tasks against the Vercel API.
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
-- [Examples](https://vercel.com/docs/platforms/examples) — Clone working multi-tenant and multi-project starters to begin your platform build.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks.graph.md](/docs/platforms/platform-elements/blocks.graph.md)
 <!-- /docsgraph:related -->
@@ -55,3 +55,6 @@ Full cross-link map for this page: [/docs/platforms/platform-elements/blocks.gra
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

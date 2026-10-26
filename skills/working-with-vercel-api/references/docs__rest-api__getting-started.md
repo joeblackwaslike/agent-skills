@@ -16,8 +16,8 @@ related:
 summary: Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/getting-started.md"
-fetched_at: "2026-10-19T09:46:49.617Z"
-sha256: "4a96be80c5d518857cd06dfdd33bc5be7a0ced528754c334f0a9a392ce61646b"
+fetched_at: "2026-10-26T09:55:26.604Z"
+sha256: "d3cfeed5231430493de12a7591ede7003774425120fa83ade3742c65ecb5a02e"
 ---
 
 # Make Your First Vercel API Request
@@ -32,10 +32,10 @@ Use a Vercel access token to call the Vercel REST API with `curl`, then make the
 
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
 - [List project members](https://vercel.com/docs/rest-api/projectmembers/list-project-members) — GET /v1/projects/{idOrName}/members — Lists all members of a project.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
+- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
 
 Full cross-link map for this page: [/docs/rest-api/getting-started.graph.md](/docs/rest-api/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -187,3 +187,6 @@ You authenticated with a Bearer token, called the read-only `GET /v10/projects` 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

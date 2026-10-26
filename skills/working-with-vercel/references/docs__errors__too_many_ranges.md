@@ -12,8 +12,8 @@ related:
 summary: Too many ranges have been specified in the Range header of the request. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/too_many_ranges.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "cd0ad492ed4e66ccb6260965c31961bcb726ab13a27786d8349512ddf62082e8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "29144ec3618e5cbacdde044e78a5fd5b52a742ce8ca82c14c2f37c2a75cedd00"
 ---
 
 # TOO_MANY_RANGES
@@ -39,3 +39,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

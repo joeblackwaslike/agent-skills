@@ -16,8 +16,8 @@ related:
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d0ca62597125f9855ac8f52eaa55aba0df6d82162b45a322ec2b4b2cb83faa6f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "14862fb06559372ca8095478019f7873e9d0fa9bf60cbea97162a750834842a2"
 ---
 
 # Supported Frameworks on Vercel
@@ -32,8 +32,8 @@ The following table shows which features are supported by each framework on Verc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Migrate from Cloud Run to Vercel by copying your Dockerfile to Dockerfile.vercel, aligning the PORT contract, moving sec
-- [How to migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
+- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
+- [Migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
 - [Accelerating developer velocity and creating high-impact web teams](https://vercel.com/blog/accelerating-developer-velocity-and-creating-high-impact-web-teams)
 - [How to build scalable AI applications](https://vercel.com/blog/how-to-build-scalable-ai-applications)
 - [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient)
@@ -217,3 +217,6 @@ Learn more about deploying your preferred framework on Vercel with the following
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -4,8 +4,8 @@ description: API Reference for createUIMessageStream.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/create-ui-message-stream.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "42433f5779cc44a069e5eaf0ae3c2b7e3f398226d6ceffb1676b783ffe70acc0"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "c723177f98bca45491f1f02f530172812089aec988040c2b6cc531cc088dbf6e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -106,7 +106,7 @@ outcomes and call `setOutcome` once.
     - `isCancelled` (`true | undefined`): Present and true when the consumer cancelled the stream before an outcome was declared, for example because the client disconnected.
     - `outcome` (`UIMessageStreamOutcome = { status: 'completed' } | { status: 'failed'; error?: unknown } | { status: 'aborted' } | { status: 'unknown' }`): The operation-level outcome of the stream. It reflects the stream owner declaration unless a fatal stream-processing failure occurs, and is separate from model finish reasons and individual error chunks. It remains 'unknown' when the consumer cancels before an outcome is declared; check isCancelled to distinguish that case from normal closure without a declared outcome.
     - `responseMessage` (`UIMessage`): The message that was sent to the client as a response (including the original message if it was extended).
-    - `finishReason` (`FinishReason | undefined`): The reason why the generation finished. One of: 'stop', 'length', 'content-filter', 'tool-calls', 'error', or 'other'.
+    - `finishReason` (`FinishReason | undefined`): The reason why the generation finished. One of: 'stop', 'length', 'content-filter', 'tool-calls', 'error', 'interrupted', or 'other'.
 - `onFinish` (`(options: { messages: UIMessage[]; isContinuation: boolean; isAborted: boolean; isCancelled?: true; outcome: UIMessageStreamOutcome; responseMessage: UIMessage; finishReason?: FinishReason }) => PromiseLike<void> | void`): Deprecated alias for \`onEnd\`.
 - `generateId` (`IdGenerator | undefined`): A function to generate unique IDs for messages. Uses the default ID generator if not provided.
 

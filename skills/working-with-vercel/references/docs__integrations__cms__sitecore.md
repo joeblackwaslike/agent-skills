@@ -13,8 +13,8 @@ related:
 summary: Integrate Vercel with Sitecore XM Cloud to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/sitecore.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "db09225041f922996dc1808a6dc552651a47467908364d879ce7dc2c30435e12"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c130d4e5e3d37089d51fa7c2ca8f37879a15af48d37a93b4007dae9f01212351"
 ---
 
 # Vercel and Sitecore XM Cloud Integration
@@ -28,11 +28,12 @@ sha256: "db09225041f922996dc1808a6dc552651a47467908364d879ce7dc2c30435e12"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
 - [Integrating Next.js and Contentful for your Headless CMS](https://vercel.com/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms) — Next.js with Contentful gives you the power to quickly build scalable dynamic static websites with improved search engin
 - [How to Integrate Next.js with Prismic's Headless CMS](https://vercel.com/kb/guide/how-to-integrate-nextjs-with-prismic) — Learn how to connect Next.js with Prismic's CMS and deploy the integrated website to Vercel
-- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
 - [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
 - [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
+- [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart) — Programmatically host code for user-generated or AI-generated applications on Vercel.
 
 Full cross-link map for this page: [/docs/integrations/cms/sitecore.graph.md](/docs/integrations/cms/sitecore.graph.md)
 <!-- /docsgraph:related -->
@@ -123,28 +124,23 @@ You can either deploy the template above to Vercel with one-click, or use the st
 
 - ### Clone the repository
   You can clone the repo using the following command:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm create next-app --example cms-sitecore-xmcloud
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn create next-app --example cms-sitecore-xmcloud
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx create-next-app --example cms-sitecore-xmcloud
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx create-next-app --example cms-sitecore-xmcloud
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm create next-app --example cms-sitecore-xmcloud
+  ```
+  **yarn**
+  ```bash
+  yarn create next-app --example cms-sitecore-xmcloud
+  ```
+  **npm**
+  ```bash
+  npx create-next-app --example cms-sitecore-xmcloud
+  ```
+  **bun**
+  ```bash
+  bunx create-next-app --example cms-sitecore-xmcloud
+  ```
 
 - ### Retrieve your API key, GraphQL endpoint, and JSS app name
   Next, navigate to your newly created XM Cloud site under **Sites** and select **Settings**.
@@ -168,28 +164,23 @@ You can either deploy the template above to Vercel with one-click, or use the st
 
 - ### Start your application
   You can now start your application with the following command:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm install && pnpm build && pnpm dev
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn && yarn build && yarn dev
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm install && npm run build && npm run dev
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun install && bun run build && bun run dev
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm install && pnpm build && pnpm dev
+  ```
+  **yarn**
+  ```bash
+  yarn && yarn build && yarn dev
+  ```
+  **npm**
+  ```bash
+  npm install && npm run build && npm run dev
+  ```
+  **bun**
+  ```bash
+  bun install && bun run build && bun run dev
+  ```
 
 ## How it works
 
@@ -243,3 +234,6 @@ With these components in place, developers can seamlessly integrate content from
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

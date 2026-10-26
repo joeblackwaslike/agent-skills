@@ -16,13 +16,13 @@ related:
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3ca72e703c60ff640e6e42727da3c49d28a69c80f9c18e4e7960bccff6d46fd9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "15769280805bfc43195cb4ad1972b7e1b390cfe321c7f5c459ec03865502ec1d"
 ---
 
 # Deployment Retention
 
-> **Availability**: Deployment Retention is available on all plans
+> Deployment Retention is available on all plans
 
 Deployment retention refers to the configured policies that determine how long different types of deployments are kept before they are automatically deleted.
 
@@ -38,11 +38,11 @@ Deployment retention refers to the configured policies that determine how long d
 - [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams)
 - [Hobby projects now default to 30-day deployment retention](https://vercel.com/changelog/hobby-projects-now-default-to-30-day-deployment-retention)
 - [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage)
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize) — Set retention periods, review remaining usage, and reduce deployment output size.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deployment Policies](https://vercel.com/docs/deployments/deployment-policy) — Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
+- [Operating BYOC Deployments](https://vercel.com/docs/networking/bring-your-own-cloud/operations) — Retry failed Bring Your Own Cloud \\(BYOC\\) deployments, clean up AWS resources, monitor logs, and rotate credentials.
 
 Full cross-link map for this page: [/docs/deployment-retention.graph.md](/docs/deployment-retention.graph.md)
 <!-- /docsgraph:related -->
@@ -131,3 +131,6 @@ To restore a deleted deployment, open **Settings** in the sidebar of your projec
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

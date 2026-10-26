@@ -16,13 +16,13 @@ related:
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "335f3f848042e020201805a2c31940451a7e58defe71441542cc186104e51780"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8139ff55100ee67d69dbbe58d3950ae0a924b2086092db072eaa98fad75ae6ea"
 ---
 
 # Remote Caching
 
-> **Availability**: Remote Cache is available on all plans
+> Remote Cache is available on all plans
 
 Remote Caching saves you time by ensuring you never repeat the same task twice, by automatically sharing a cache across your entire Vercel team.
 
@@ -84,76 +84,61 @@ For this guide, your monorepo should be using [Turborepo](/docs/monorepos/turbor
 
 - ### Authenticate with Vercel
   Once your Vercel project is using Turborepo, authenticate the Turborepo CLI with your Vercel account:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx turbo login
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx turbo login
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx turbo login
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx turbo login
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx turbo login
+  ```
+  **yarn**
+  ```bash
+  yarn dlx turbo login
+  ```
+  **npm**
+  ```bash
+  npx turbo login
+  ```
+  **bun**
+  ```bash
+  bunx turbo login
+  ```
   If you are connecting to an SSO-enabled Vercel team, you should provide your Team slug as an argument:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx turbo login --sso-team=team-slug
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx turbo login --sso-team=team-slug
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx turbo login --sso-team=team-slug
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx turbo login --sso-team=team-slug
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx turbo login --sso-team=team-slug
+  ```
+  **yarn**
+  ```bash
+  yarn dlx turbo login --sso-team=team-slug
+  ```
+  **npm**
+  ```bash
+  npx turbo login --sso-team=team-slug
+  ```
+  **bun**
+  ```bash
+  bunx turbo login --sso-team=team-slug
+  ```
 
 - ### Link to the remote cache
   **To enable Remote Caching and connect to the Vercel Remote Cache**, every member of that team that wants to use Remote Caching should run the following in the root of the monorepo:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx turbo link
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx turbo link
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx turbo link
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx turbo link
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx turbo link
+  ```
+  **yarn**
+  ```bash
+  yarn dlx turbo link
+  ```
+  **npm**
+  ```bash
+  npx turbo link
+  ```
+  **bun**
+  ```bash
+  bunx turbo link
+  ```
   You will be prompted to enable Remote Caching for the current repo. Enter `Y` for yes to enable Remote Caching.
 
   Next, select the team scope you'd like to connect to. Selecting the scope tells Vercel who the cache should be shared with and allows for ease of [billing](#billing-information). Once completed, Turborepo will use Vercel Remote Caching to store your team's cache artifacts.
@@ -164,28 +149,23 @@ For this guide, your monorepo should be using [Turborepo](/docs/monorepos/turbor
 
 - ### Unlink the remote cache
   To disable Remote Caching and unlink the current directory from the Vercel Remote Cache, run:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx turbo unlink
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx turbo unlink
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx turbo unlink
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx turbo unlink
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx turbo unlink
+  ```
+  **yarn**
+  ```bash
+  yarn dlx turbo unlink
+  ```
+  **npm**
+  ```bash
+  npx turbo unlink
+  ```
+  **bun**
+  ```bash
+  bunx turbo unlink
+  ```
   This is run on a per-developer basis, so each developer that wants to unlink the remote cache must run this command locally.
 
 - ### Test the cache
@@ -265,3 +245,6 @@ Remote Caching can only be enabled by [team owners](/docs/rbac/access-roles#owne
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

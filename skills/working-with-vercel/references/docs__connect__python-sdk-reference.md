@@ -16,8 +16,8 @@ related:
 summary: API reference for vercel-connect, the Python SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/python-sdk-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c95203c0f0a106bdafe370fe85408e6096aa82cf29a53411ba463ae7ac13645d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0aa346cdc99df09149734f41a828eb3aa3bf6c37393ef861b3f8456be74960d6"
 ---
 
 # Python SDK Reference
@@ -38,7 +38,6 @@ sha256: "c95203c0f0a106bdafe370fe85408e6096aa82cf29a53411ba463ae7ac13645d"
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/connect/python-sdk-reference.graph.md](/docs/connect/python-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -653,3 +652,6 @@ Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

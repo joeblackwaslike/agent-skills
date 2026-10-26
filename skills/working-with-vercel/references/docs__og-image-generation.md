@@ -16,8 +16,8 @@ related:
 summary: Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4e3a6d8e0afb0b09f6bee272ebeb6aedc003cf0107b469d59f5c30eb354f8380"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4a6eb0725ab0e69cd7ebf0906163d9fe370fe3d54a29b2edd7c4894bd7ad1390"
 ---
 
 # Open Graph (OG) Image Generation
@@ -39,8 +39,8 @@ To assist with generating dynamic [Open Graph (OG)](https://ogp.me/ "Open Graph 
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Building a fast, animated image gallery with Next.js](https://vercel.com/blog/building-a-fast-animated-image-gallery-with-next-js)
 - [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart) — Learn how you can leverage Vercel Image Optimization in your projects.
-- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 - [AI Gateway Image Generation via Chat Completions](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
+- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/og-image-generation.graph.md](/docs/og-image-generation.graph.md)
@@ -93,28 +93,29 @@ There are limitations when using `vercel/og` with the **Next.js Pages Router** a
 - Install Node.js 22 or newer by visiting [nodejs.org](https://nodejs.org)
 - Install `@vercel/og` by running the following command inside your project directory. **This isn't required for Next.js App Router projects**, as the package is already included:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/og
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/og
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/og
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/og
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/og
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/og
+```
+
+**npm**
+
+```bash
+npm i @vercel/og
+```
+
+**bun**
+
+```bash
+bun add @vercel/og
+```
 
 - For Next.js implementations, make sure you are using Next.js v12.2.3 or newer
 - Create API endpoints that you can call from your front-end to generate the images. Since the HTML code for generating the image is included as one of the parameters of the `ImageResponse` function, the use of `.jsx` or `.tsx` files is recommended as they are designed to handle this kind of syntax
@@ -128,28 +129,29 @@ There are limitations when using `vercel/og` with the **Next.js Pages Router** a
 
 Get started with an example that generates an image from static text using Next.js by setting up a new app with the following command:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm create next-app@latest
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn create next-app@latest
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npx create-next-app@latest
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bunx create-next-app@latest
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm create next-app@latest
+```
+
+**yarn**
+
+```bash
+yarn create next-app@latest
+```
+
+**npm**
+
+```bash
+npx create-next-app@latest
+```
+
+**bun**
+
+```bash
+bunx create-next-app@latest
+```
 
 > For \["nextjs"]:
 
@@ -357,28 +359,29 @@ export default async function handler() {
 
 Run the following command:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm dev
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn dev
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm run dev
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun run dev
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm dev
+```
+
+**yarn**
+
+```bash
+yarn dev
+```
+
+**npm**
+
+```bash
+npm run dev
+```
+
+**bun**
+
+```bash
+bun run dev
+```
 
 Then, browse to `http://localhost:3000/api/og`. You will see the following image:
 
@@ -437,3 +440,6 @@ In the examples below, we explore using parameters and including other types of 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

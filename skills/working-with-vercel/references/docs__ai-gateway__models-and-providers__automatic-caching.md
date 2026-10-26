@@ -17,8 +17,8 @@ related:
 summary: Enable automatic prompt caching and session affinity with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9d359fb698f36667d5cd4fcb7d90c3b56445150c95c0b34c5787202760a7427f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9100d0f6b78e60a23f9dcb0e1b20b4e5cd6a92bd9c6571756a3b2a646654833e"
 ---
 
 # AI Gateway Automatic Prompt Caching
@@ -36,7 +36,6 @@ Some providers like Anthropic and MiniMax require explicit cache control markers
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
 - [Caching](https://ai-sdk.dev/docs/advanced/caching) — How to handle caching when working with the AI SDK
-- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock) — Learn how to use the Amazon Bedrock provider.
 - [Local Caching Middleware](https://ai-sdk.dev/cookbook/node/local-caching-middleware) — Learn how to create a caching middleware for local development.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md)
@@ -576,7 +575,14 @@ For fine-grained control over what gets cached, you can manually add cache marke
 | MiniMax                 | Explicit     | Adds [`cache_control` breakpoints](#how-it-works)  |
 | Alibaba | Explicit | Adds [cache markers](#how-it-works) |
 
+## Caching in virtual models
+
+Pin `caching: 'auto'` on a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) to cache repeated prompt prefixes for its traffic, or set it to `@default` to drop the request's choice and apply the system default.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

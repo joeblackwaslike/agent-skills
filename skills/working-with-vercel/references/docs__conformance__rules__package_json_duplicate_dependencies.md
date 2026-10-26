@@ -12,13 +12,13 @@ related:
 summary: Found duplicate dependencies between the list of dependencies and devDependencies or peerDependencies in a package.json file..
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_duplicate_dependencies.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "ff8146879b824568cbd538328327bae9fd41e84ee5c7070879f595d2d3153b2e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f3d4c3403bea41d8b6c670790530d1c5efba91897a0a087ee7d819ac107000ae"
 ---
 
 # PACKAGE_JSON_DUPLICATE_DEPENDENCIES
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 Packages that are listed in the `dependencies` section of `package.json` should
 not be listed in `devDependencies` or `peerDependencies`. A package in the
@@ -56,3 +56,6 @@ can be left in `devDependencies` or `peerDependencies` and be removed from
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

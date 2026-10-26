@@ -4,8 +4,8 @@ description: Helper function for creating dynamic tools with unknown types
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/dynamic-tool"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/dynamic-tool.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "000837246420964f533df7560ef700076219358eb970eb13680ed36666f68a34"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "12d59956c059ea8929680d93b6cd06fa9aaa52f9d4b3a9493c2e7646f70fb0ef"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -119,7 +119,7 @@ When used with useChat (`UIMessage` format), dynamic tools appear as `dynamic-to
     switch (part.type) {
       case 'dynamic-tool':
         return (
-          <div>
+          <div key={part.toolCallId}>
             <h4>Tool: {part.toolName}</h4>
             <pre>{JSON.stringify(part.input, null, 2)}</pre>
           </div>

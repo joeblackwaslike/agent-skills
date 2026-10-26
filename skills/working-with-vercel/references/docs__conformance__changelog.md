@@ -16,38 +16,39 @@ related:
 summary: "Find out what's new in each release of Conformance."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/changelog.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "283f230ba50d88299c0f22462e899c1c4564d58acd354e108f282c9b4cbaff91"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "27e5ca4c6b50408f865d9eea42d659e23297ab623816cafd34d12f994388c51e"
 ---
 
 # Conformance changelog
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 ## Upgrade instructions
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm update --latest --recursive @vercel-private/conformance
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn up @vercel-private/conformance
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm update --save @vercel-private/conformance
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun update @vercel-private/conformance
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm update --latest --recursive @vercel-private/conformance
+```
+
+**yarn**
+
+```bash
+yarn up @vercel-private/conformance
+```
+
+**npm**
+
+```bash
+npm update --save @vercel-private/conformance
+```
+
+**bun**
+
+```bash
+bun update @vercel-private/conformance
+```
 
 ## Releases
 
@@ -269,3 +270,6 @@ Initial release of Conformance.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

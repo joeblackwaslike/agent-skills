@@ -15,8 +15,8 @@ related:
 summary: The Edge Function invocation timed out. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/edge_function_invocation_timeout.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "14786cd95383474f3a4b588768519a063fbd4fa2fe1f7f003817943d96677eac"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "51ce649ae93a1c118764e1f22c89343be38a590d9c81393f3858d8b741d419b4"
 ---
 
 # EDGE_FUNCTION_INVOCATION_TIMEOUT
@@ -44,3 +44,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

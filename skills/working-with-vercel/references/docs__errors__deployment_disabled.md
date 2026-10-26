@@ -12,8 +12,8 @@ related:
 summary: The deployment is disabled. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_disabled.md"
-fetched_at: "2026-08-31T10:45:09.572Z"
-sha256: "e06f2682a179565ffad4ed6e128b13b496692eb632fea44dc8bb172b610f189c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "03a4e04a46d75af8649e0a9530e9731b6ed60b61d18e1dedb2aef1187d4f927f"
 ---
 
 # DEPLOYMENT_DISABLED
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/README.md"
-fetched_at: "2026-09-14T09:50:30.563Z"
-sha256: "4a1d5d5e17c5777b71d1c2e540e8924c5ff5d37a290b994837c8795e3d5b50db"
+fetched_at: "2026-10-26T10:03:28.553Z"
+sha256: "ee80ea7dcf7aa96a4b2ff9269a1b097a7638db918c3c407d59e5adedcb6b9c28"
 ---
 
 <!-- markdownlint-disable -->
@@ -55,7 +55,14 @@ on oh-my-posh, a modern and more efficient tool was needed to suit my personal n
 
 ## :heart: Support :heart:
 
-[![Swag][swag-badge]][swag] - Show your love with a t-shirt!
+<!-- markdownlint-disable no-inline-html line-length -->
+<a href="https://commitgoods.com/collections/oh-my-posh?utm_source=github&amp;utm_medium=referral">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.shopify.com/s/files/1/0101/8752/files/commitgoods-badge-stacked-navy-dark.svg">
+    <img src="https://cdn.shopify.com/s/files/1/0101/8752/files/commitgoods-badge-stacked-navy.svg" height="28" alt="Official merch on commitgoods.com">
+  </picture>
+</a> - Show your love with a t-shirt!
+<!-- markdownlint-enable no-inline-html line-length -->
 
 [![GitHub][github-badge]][github-sponsors] - One time support, or a recurring donation?
 
@@ -90,8 +97,6 @@ using Go (and the amazing [README](https://github.com/justjanne/powerline-go))
 
 [kraken]: https://img.shields.io/badge/GitKraken-Legendary%20Git%20Tools-teal?style=plastic&logo=gitkraken
 [kraken-ref]: https://www.gitkraken.com/invite/nQmDPR9D
-[swag-badge]: https://img.shields.io/badge/Swag-Get%20some!-blue
-[swag]: https://swag.ohmyposh.dev
 [github-badge]: https://img.shields.io/badge/-Sponsor-fafbfc?logo=GitHub%20Sponsors
 [github-sponsors]: https://github.com/sponsors/JanDeDobbeleer
 [kofi-badge]: https://img.shields.io/badge/Ko--fi-Buy%20me%20a%20coffee!-%2346b798.svg

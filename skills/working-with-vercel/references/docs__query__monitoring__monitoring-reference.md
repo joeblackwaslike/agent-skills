@@ -17,8 +17,8 @@ related:
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ffd2adda1adc0f0bd5553a3bfe4c6b48371b331077e58528c38510901d5371c5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "713c3f752f4fb571b4bca3b1b87f4e6cef9482096547197e26a649e3aa849fe6"
 ---
 
 # Monitoring Reference
@@ -198,3 +198,6 @@ On the left navigation bar, you will find a list of example queries to get start
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

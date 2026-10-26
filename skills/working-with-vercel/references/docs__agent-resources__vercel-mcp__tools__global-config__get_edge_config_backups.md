@@ -13,8 +13,8 @@ related:
 summary: Use get_edge_config_backups with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backups.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "20f529724101f0ec9171c32f5069b97119d71e658090c2276e286ebeb45ccb8d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3aad21c497b0b9477769c4f9cc896d7be0a794686a62f39cf3ee94cb21ccad83"
 ---
 
 # get_edge_config_backups
@@ -29,9 +29,9 @@ Returns backups of a Global Config.
 
 - [get_edge_config_backup](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backup) — Use get_edge_config_backup with Vercel MCP.
 - [restore_edge_config_backup](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup) — Use restore_edge_config_backup with Vercel MCP.
-- [get_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config) — Use get_edge_config with Vercel MCP.
-- [get_edge_configs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_configs) — Use get_edge_configs with Vercel MCP.
 - [Get Global Config backups](https://vercel.com/docs/rest-api/global-config/get-global-config-backups) — GET /v1/global-config/{edgeConfigId}/backups — Returns backups of a Global Config.
+- [get_edge_configs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_configs) — Use get_edge_configs with Vercel MCP.
+- [get_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config) — Use get_edge_config with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backups.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backups.graph.md)
 <!-- /docsgraph:related -->
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

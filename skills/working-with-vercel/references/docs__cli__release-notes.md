@@ -13,8 +13,8 @@ related:
 summary: Browse release notes for Vercel CLI versions, including major, minor, and patch changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/release-notes.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "743889b24aa4381f019b3da7a7bdd50ace3ffebcacc7df3b1ee9511b8c13081f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f8730ce7d73a9046b72b0ac194bea22e81e66a5045b298a4535e723a155658b9"
 ---
 
 # Vercel CLI Release Notes
@@ -27,7 +27,47 @@ Release notes for [Vercel CLI](/docs/cli) and its related packages. Each release
 
 To update to the latest version, see [updating Vercel CLI](/docs/cli#updating-vercel-cli) or run [`vercel upgrade`](/docs/cli/upgrade).
 
-vercel@64.5.0Published 2026-10-17 Minor changes- b4904ae:  vercel@64.4.0Published 2026-10-16 Minor changes- b6d7c15:  Patch changes- c2945e5:  
+vercel@65.2.0Published 2026-10-23 Minor changes- 94eaf2c:  
+- ecada19:  
+- 1e6d0db:  Patch changes- 2cb5bac:  
+- 1a379a3:  
+- 2aec519:  
+- 999573c:  
+- b9de4a9:  vercel@65.1.0Published 2026-10-22 Minor changes- c1579a8:  
+- 67438f1:  
+- a6182b7:  
+- 03844e4:  
+- b0e01f5:  
+- e02d737:  
+- beae7c1:  
+- 0720042:  Patch changes- 9e445b9:  
+- acd9a67:  
+- 14d9fb4:  
+- d5c2ae9:  
+- f350caf:  
+- a8113fa:  
+- dbc5cae:  
+- 950a437:  
+- 42369e5:  
+- cdfdc2b:  
+- cd34e25:  
+- 9b1b587:  
+- 5753ef4:  
+- d123652:  
+- f85d9a8:  vercel@65.0.0Published 2026-10-20 Major changes- 3a8c88a:  Minor changes- 5b9a8cb:  
+- 6975f97:  
+- 010a5ff:  
+- 787f498:  
+- 5aa1b58:  
+- 637c7b9:  Patch changes- 43af97f:  
+- 9abaa6d:  
+- 3a0d7e9:  
+- 7b1cae3:  
+- c3923b7:  
+- 6604f77:  
+- 324d732:  
+- a4d7467:  
+- d39dd61:  vercel@64.7.0Published 2026-10-19 Minor changes- be33b30:  vercel@64.5.0Published 2026-10-17 Minor changes- b4904ae:  vercel@64.4.0Published 2026-10-16 Minor changes- b6d7c15:  Patch changes- c2945e5:  
 - 7543135:  vercel@64.1.0Published 2026-10-14 Minor changes- b9a830c:  
 - 52b9649:  
 - 3556f75:  Patch changes- 017979a:  
@@ -441,3 +481,6 @@ vercel@64.5.0Published 2026-10-17 Minor changes- b4904ae:  vercel@64.4.0Publishe
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

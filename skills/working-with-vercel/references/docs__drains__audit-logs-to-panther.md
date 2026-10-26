@@ -13,13 +13,13 @@ related:
 summary: "Learn how to forward Vercel Audit Log Drain events to Panther using Panther's built-in Vercel source."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-panther.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "289ae0c02cd6f3674d6f67ae4639f03bc8f381c9623101936b124e351e544f1b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ce218d77b80c5b496bd13fe088ae78b5f5e890a31cff4d6400bf7fa4c6f1ef10"
 ---
 
 # Drain Audit Logs to Panther
 
-> **Availability**: Audit Log Drains are available on Enterprise plans
+> Audit Log Drains are available on Enterprise plans
 
 Audit Log Drains can forward team activity events to [Panther](https://panther.com/) using [Panther's built-in Vercel source](https://docs.panther.com/data-onboarding/supported-logs/vercel). Use this setup to ingest audit logs into Panther for security monitoring, compliance review, and threat detection.
 
@@ -89,3 +89,6 @@ See the [Audit Log Drains reference](/docs/drains/reference/audit-logs#panther) 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

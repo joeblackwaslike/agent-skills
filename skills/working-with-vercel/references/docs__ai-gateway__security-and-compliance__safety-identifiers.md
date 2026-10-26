@@ -13,8 +13,8 @@ related:
 summary: Learn how to send a unique safety identifier per end user through AI Gateway so provider-side abuse action isolates individual users instead of your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/safety-identifiers.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d55557f6623c6f1cd65b1ad075c1c4a943c1c71e290f768e1fa10bf1da31953c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fa7d2217b8c5aeed5eb562fcef6f1ca527a8d459fa6c5cf6b082684d42c5f5b9"
 ---
 
 # AI Gateway Safety Identifiers
@@ -27,12 +27,11 @@ A safety identifier tells providers like OpenAI, Anthropic, and Meta which of yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management) — Learn how to work with multiple providers and models
 - [AI Gateway App Attribution](https://vercel.com/docs/ai-gateway/ecosystem/app-attribution) — Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
 - [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
-- [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [TypeSafe API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe) — Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One decision requests through i
+- [OpenAI-Compatible Decisions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-decisions) — Ask predicate, choice, and score questions with the OpenAI-compatible /decisions endpoint through Vercel AI Gateway, usi
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/safety-identifiers.graph.md](/docs/ai-gateway/security-and-compliance/safety-identifiers.graph.md)
 <!-- /docsgraph:related -->
@@ -388,3 +387,6 @@ On the Chat Completions API, `providerOptions.gateway.safetyIdentifier` takes pr
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

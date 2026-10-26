@@ -13,8 +13,8 @@ related:
 summary: Use aggregate_pageviews with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ec67369f5e2a6a7a390cfa60781375ba2a186e72de17af16e760e86af6073a7d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a9db681904757e53b97119dba2ad7166ca9df94a17d9b01e1c11920b052acc21"
 ---
 
 # aggregate_pageviews
@@ -55,3 +55,6 @@ Enable [Web Analytics](/docs/analytics) for your project before querying its dat
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

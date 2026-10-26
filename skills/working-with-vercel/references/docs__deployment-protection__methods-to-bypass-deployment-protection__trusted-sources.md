@@ -17,13 +17,15 @@ related:
 summary: Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "e02d6dbfc4ab5cf7652bd45871f39e3e77091fb2360eaa1edc508bea34917078"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4b132930b120a5eddf96fc177ce8bbd43695bb87409cc58bdfa3b88c3604d855"
 ---
 
 # Trusted Sources
 
-> **Availability**: Trusted Sources are available on all plans
+> Trusted Sources are available on all plans
+>
+> Those with the owner, member and admin roles can manage Trusted Sources
 
 Trusted Sources control which workloads can reach this project's protected deployments: this project itself, other Vercel projects in the same team, and external services like GitHub Actions or GitLab CI. Every authorized caller authenticates with a short-lived OIDC token signed by its own identity provider, so you don't share a static secret or open the deployment to the public internet.
 
@@ -288,3 +290,6 @@ The external service can no longer reach this project's protected deployments.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

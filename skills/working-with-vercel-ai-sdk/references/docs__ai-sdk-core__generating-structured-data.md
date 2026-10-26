@@ -4,8 +4,8 @@ description: Learn how to generate structured data with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "4014be911286dca6335c0c186aff0f41397465318277d98a14603386bdb8cd72"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "3e9fa8961144318701ecfbf73b15e0247aa6f91c01580d99774802ef4de9ac11"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,7 @@ For example, you might want to extract information from text, classify data, or 
 Many language models are capable of generating structured data, often defined as using "JSON modes" or "tools".
 However, you need to manually provide schemas and then validate the generated data as LLMs can produce incorrect or incomplete structured data.
 
-The AI SDK standardises structured object generation across model providers
+The AI SDK standardizes structured object generation across model providers
 using the `output` property on [`generateText`](/docs/reference/ai-sdk-core/generate-text)
 and [`streamText`](/docs/reference/ai-sdk-core/stream-text).
 You can use [Zod schemas](/docs/reference/ai-sdk-core/zod-schema), [Valibot](/docs/reference/ai-sdk-core/valibot-schema), or [JSON schemas](/docs/reference/ai-sdk-core/json-schema) to specify the shape of the data that you want,

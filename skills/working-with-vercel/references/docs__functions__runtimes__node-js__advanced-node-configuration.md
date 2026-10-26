@@ -16,8 +16,8 @@ related:
 summary: Learn about advanced configurations for Vercel functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "522dfd7010a983fabc4288d398ffb600a81d94370f30b8bcec0a93dbc7bd80c8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1a28ec7717a1075b1ce33921d41aa62faf740258201d642f2ddb6371dec0d5f9"
 ---
 
 # Advanced Node.js Usage
@@ -35,7 +35,7 @@ To use Node.js, create a file inside your project's `api` directory. No addition
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
-- [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions) — Learn about the supported Node.js versions on Vercel.
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md](/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md)
@@ -118,3 +118,6 @@ By default, we disable experimental support for [requiring ES Modules](https://n
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -1,26 +1,80 @@
 ---
 title: Claude Platform on AWS
-description: Learn how to use the Claude Platform on AWS provider.
+description: Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "f67ed205d32f75361fb724c174d5c4543050942a09a16125156f5616d7268b2e"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "370f9b4d1cb624c899c57aff9762560eb98752062894d413db4304de11a8f880"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Claude Platform on AWS provider for the [AI SDK](/docs) gives you access to the Anthropic Messages API hosted inside your AWS environment. Anthropic operates the stack, so you get the same API surface and feature set as the first-party [Anthropic provider](/providers/ai-sdk-providers/anthropic) — including streaming, prompt caching, tool use, computer use, Agent Skills, and `anthropic-beta` headers — with AWS-native authentication and AWS Marketplace billing.
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/anthropic-aws` to connect directly to Claude Platform on AWS.
 
-This differs from [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock) in two important ways: Claude Platform on AWS uses Anthropic's Messages API directly (not Bedrock's `Converse`/`InvokeModel`), and new features are available the same day they launch on the first-party Claude API (no AWS integration delay).
+```ts provider="anthropic-aws" model="anthropic/claude-sonnet-5.5"
+import { generateText } from 'ai';
 
-## Setup
+const { text } = await generateText({
+  model: "anthropic/claude-sonnet-5.5",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['claudeaws'],
+    },
+  },
+});
 
-The Claude Platform on AWS provider is available in the `@ai-sdk/anthropic-aws` module. You can install it with:
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/anthropic-aws
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['claudeaws']`. This sends the request to Claude Platform on AWS first, then falls back to other available providers of the same model if Claude Platform on AWS is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to Claude Platform on AWS. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by Claude Platform on AWS through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+Gateway uses the `claudeaws` route for Claude Platform on AWS. Enable `claudeaws` in your team's Gateway Provider Allowlist if it is disabled; otherwise `order` allows Gateway to fall back to another provider. It authenticates the upstream request using Gateway-managed credentials; your AWS workspace and AWS Marketplace billing are configured separately when using the direct provider.
+
+## Using `@ai-sdk/anthropic-aws`
+
+For direct access to Claude Platform on AWS, install `ai` and `@ai-sdk/anthropic-aws`:
+
+```bash
+pnpm add ai @ai-sdk/anthropic-aws
+```
+
+Set your Claude Platform on AWS API credential in the `ANTHROPIC_AWS_API_KEY` environment variable:
+
+```bash
+export ANTHROPIC_AWS_API_KEY=your_api_key_here
+export AWS_REGION=us-west-2
+export ANTHROPIC_AWS_WORKSPACE_ID=your_workspace_id
+```
+
+Use the direct provider when you need AWS-native authentication, AWS Marketplace billing, or access to your Claude Platform workspace. Gateway requests do not use your workspace configuration.
+
+The following sections document the direct `@ai-sdk/anthropic-aws` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
+
+This differs from [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock) in two important ways: Claude Platform on AWS uses Anthropic's Messages API directly (not Bedrock's `Converse`/`InvokeModel`), and new features are available the same day they launch on the first-party Claude API (no AWS integration delay).
 
 ### Prerequisites
 

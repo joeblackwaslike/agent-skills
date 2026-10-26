@@ -16,13 +16,15 @@ related:
 summary: Reference for the Vercel Blob Python SDK, including uploads, streaming and multipart uploads, downloads, metadata, listing, copying, deletion,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/python-sdk-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c42540e70ee54ade69cba9b3644706f8b85b209a4910cd0fd69527163df56cf7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d0c83995ab55b6464c4131538292cb2a9441265e0a865ee05006946b55e2bc1f"
 ---
 
 # Python SDK Reference
 
-> **Availability**: Vercel Blob is available on all plans
+> Vercel Blob is available on all plans
+>
+> Those with the owner, member, developer role can access this feature
 
 Use the Vercel Blob Python SDK to upload, download, inspect, list, copy, and delete blobs from Python applications. The SDK provides an asynchronous API in `vercel.blob` and a matching synchronous API in `vercel.blob.sync`.
 
@@ -35,8 +37,8 @@ Use the Vercel Blob Python SDK to upload, download, inspect, list, copy, and del
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
@@ -618,3 +620,6 @@ For sync calls, use `SyncBlobServiceOptions` from `vercel.blob.sync` with a sync
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

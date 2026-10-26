@@ -17,13 +17,13 @@ related:
 summary: Learn how to bypass Vercel Deployment Protection for automated tooling (e.g. E2E testing).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8c62c6c805e0a05fa1c5561d5be3ad8fd5efe688e470bb2308d35810388ab2cc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9b4fcbca5685e1ae634629b81e2f204c7f6b34fdde526446c165f919dd19aec6"
 ---
 
 # Protection Bypass for Automation
 
-> **Availability**: Protection Bypass for Automation is available on all plans
+> Protection Bypass for Automation is available on all plans
 
 Protection Bypass for Automation enables you to run automated tests, CI/CD pipelines, and monitoring tools against your protected deployments without triggering authentication challenges or security blocks.
 
@@ -192,3 +192,6 @@ https://your-app.vercel.app/api/github-webhook?x-vercel-protection-bypass=your-g
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

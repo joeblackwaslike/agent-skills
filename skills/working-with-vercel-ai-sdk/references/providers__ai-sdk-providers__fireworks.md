@@ -1,24 +1,74 @@
 ---
 title: Fireworks
-description: Learn how to use Fireworks models with the AI SDK.
+description: Learn how to use Fireworks with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "2c856ef9aad6d521479d096d37ddca02a5a8321e796ba60222e2ce54fb7275cc"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "6847db198ad6b75ba4bd272b61416298d63a300abe8afcb37219c0914f080ec4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Fireworks](https://fireworks.ai/) is a platform for running and testing LLMs through their [API](https://readme.fireworks.ai/).
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/fireworks` to connect directly to Fireworks.
 
-## Setup
+```ts provider="fireworks" model="openai/gpt-oss-120b"
+import { generateText } from 'ai';
 
-The Fireworks provider is available via the `@ai-sdk/fireworks` module. You can install it with
+const { text } = await generateText({
+  model: "openai/gpt-oss-120b",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['fireworks'],
+    },
+  },
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/fireworks
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['fireworks']`. This sends the request to Fireworks first, then falls back to other available providers of the same model if Fireworks is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to Fireworks. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by Fireworks through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Using `@ai-sdk/fireworks`
+
+For direct access to Fireworks, install `ai` and `@ai-sdk/fireworks`:
+
+```bash
+pnpm add ai @ai-sdk/fireworks
+```
+
+Set your Fireworks API credential in the `FIREWORKS_API_KEY` environment variable:
+
+```bash
+export FIREWORKS_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/fireworks`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/fireworks` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

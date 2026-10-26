@@ -13,12 +13,12 @@ related:
   - /docs/fluid-compute
   - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
   - /docs/sandbox/ecosystem/tanstack-ai
-  - /docs/integrations/lovable
+  - /docs/eve
 summary: Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "10b327f53b736a02c23ff4e5af10c015f5516509448513ebecbcb0208dd8bcf1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e029346c756ebfe7af858f285ef5eebe5aa08ca2f47b8ce6977975f57cf11a67"
 ---
 
 # TanStack Start on Vercel
@@ -38,10 +38,9 @@ TanStack Start is a fullstack framework powered by TanStack Router for React and
 - [Adding keyboard shortcuts to React apps with TanStack Hotkeys](https://vercel.com/kb/guide/adding-keyboard-shortcuts-to-react-apps-with-tanstack-hotkeys) — Add cross-platform keyboard shortcuts to your React app with TanStack Hotkeys. Install, register, scope, and display sho
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
-- [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
-- [TanStack Start](https://eve.dev/docs/guides/frontend/tanstack) — Run an eve agent and a TanStack Start app as one project with the eveTanStack Vite plugin.
+- [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
-- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
+- [Chat SDK with TanStack Start](https://vercel.com/docs/chat-sdk/frameworks/tanstack-start) — Add a Chat SDK bot to TanStack Start, receive Slack events through Vercel Connect, and deploy on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/tanstack-start.graph.md](/docs/frameworks/full-stack/tanstack-start.graph.md)
 <!-- /docsgraph:related -->
@@ -56,28 +55,29 @@ The [Nitro Vite plugin](https://v3.nitro.build/) allows deploying TanStack Start
 
 To set up Nitro in your TanStack app, navigate to the root directory of your TanStack Start project with your terminal and install `nitro` with your preferred package manager:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i nitro
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add nitro
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i nitro
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add nitro
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i nitro
+```
+
+**yarn**
+
+```bash
+yarn add nitro
+```
+
+**npm**
+
+```bash
+npm i nitro
+```
+
+**bun**
+
+```bash
+bun add nitro
+```
 
 To configure Nitro with TanStack Start, add the following lines to your `vite.config` file:
 
@@ -110,6 +110,20 @@ To add content moderation, follow [Moderate product reviews with Jev and TanStac
 The guide uses a TanStack Start server route to evaluate reviews through AI Gateway
 and hold flagged or uncertain reviews for a moderator.
 
+### Build an agent chat with eve
+
+Deploy the [eve TanStack Agent template](/templates/eve/eve-tanstack-agent) to connect a TanStack Start React frontend to an [eve agent](/docs/eve). The chat streams responses and displays tool activity, while json-render turns structured agent responses into interactive cards and tables. Each conversation has a URL you can revisit after reloading the page.
+
+The template deploys the frontend and agent together through [Vercel Services](/docs/services). During setup, set `EVE_ACCESS_PASSWORD` to control access to the chat. See the [template repository](https://github.com/vercel-labs/eve-tanstack-start-template) for setup instructions and options for customizing tools, components, and authentication.
+
+To integrate eve into an existing React-based TanStack Start app, follow the [eve TanStack Start guide](https://eve.dev/docs/guides/frontend/tanstack). It covers Web Chat setup, the `useEveAgent` React hook, and browser authentication.
+
+## Protect an internal app with Passport
+
+Use [Vercel Passport](/docs/passport) to require sign-in through your company's identity provider before requests reach your TanStack Start app. Passport requires an Enterprise plan. Your server functions and server routes can use the verified visitor identity to personalize pages and authorize access.
+
+Follow [Build user-aware TanStack Start apps with Vercel Passport](/kb/guide/vercel-passport-tanstack-start) to read identity with `getIdentity()` from `@vercel/passport`, protect server functions with middleware, and restrict routes by identity provider group. The guide uses TanStack Start with React and the Nitro Vite plugin, and includes local development and identity forwarding to other backends.
+
 ## Lovable
 
 [Lovable](https://lovable.dev) projects use TanStack Start as their underlying framework, so they deploy to Vercel with zero configuration. Lovable uses [Nitro](https://v3.nitro.build/), the same universal server toolkit that powers TanStack Start on Vercel, so no manual build configuration is required.
@@ -134,3 +148,6 @@ Learn more about deploying TanStack Start projects on Vercel with the following 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

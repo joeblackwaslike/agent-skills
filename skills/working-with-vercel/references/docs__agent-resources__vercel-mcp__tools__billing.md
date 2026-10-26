@@ -15,8 +15,8 @@ related:
 summary: Vercel MCP tools for billing and purchases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7caa1555f339c928a21a90bba6544d373bcb2c2f675e4b55f4d1f27b7eaa429d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e7edc5a8fab324fe8321ff5f4dc73c46e3ab4de088d10029e08bf48e859ebd81"
 ---
 
 # Billing and Purchases
@@ -30,10 +30,10 @@ Review your team's billing charges and contract commitments. Get a domain regist
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
-- [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 - [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains) — Use buy_domains with Vercel MCP.
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
-- [List FOCUS billing charges](https://vercel.com/docs/rest-api/billing/list-focus-billing-charges) — GET /v1/billing/charges — Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within
+- [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
+- [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits) — POST /v1/billing/buy — Purchases credits for a Vercel team using the default payment method on file. The purchase is cha
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billing.graph.md](/docs/agent-resources/vercel-mcp/tools/billing.graph.md)
 <!-- /docsgraph:related -->
@@ -136,3 +136,6 @@ List FOCUS contract commitments.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

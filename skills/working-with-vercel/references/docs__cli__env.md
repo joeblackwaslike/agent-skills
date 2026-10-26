@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/env.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8f3fccd0835f9570898d9059854268e244bdc92cdb03090c4fa4522c959c0977"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f48f813a0a9f7232bacc9381bc1b52cd60b373b4b380a5782d87a9a159d31263"
 ---
 
 # vercel env
@@ -34,8 +34,8 @@ The `vercel env` command is used to manage [Environment Variables](/docs/environ
 - [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel) — Information on how to use private dependencies with a Vercel deployment.
-- [vercel pull](https://vercel.com/docs/cli/pull) — Learn how to update your local project with remote environment variables using the vercel pull CLI command.
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [vercel pull](https://vercel.com/docs/cli/pull) — Learn how to update your local project with remote environment variables using the vercel pull CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
@@ -377,3 +377,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

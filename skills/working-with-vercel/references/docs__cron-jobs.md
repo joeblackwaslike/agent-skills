@@ -16,13 +16,13 @@ related:
 summary: Learn about cron jobs, how they work, and how to use them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a63e7c2d701780bc99ee0f267627cc267b89f7bcaaf1ea4678518b3eaa98ef75"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f9a5834714217e6c4bcd5595f91402c882ed71cca2954caea40794f01a6b0762"
 ---
 
 # Cron Jobs
 
-> **Availability**: Cron Jobs are available on all plans
+> Cron Jobs are available on all plans
 
 Cron jobs are time-based scheduling tools used to automate repetitive tasks. By using a specific syntax called a [cron expression](#cron-expressions), you can define the frequency and timing of each task. This helps improve efficiency and ensures that important processes are performed consistently.
 
@@ -101,3 +101,6 @@ You can also use [crontab guru](https://crontab.guru/) to validate your cron exp
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

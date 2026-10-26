@@ -12,12 +12,12 @@ related:
   - /docs/workflows
   - /docs/functions
   - /docs/fluid-compute
-  - /docs/environment-variables
+  - /docs/chat-sdk/eve
 summary: Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/concepts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "53d846d4c7808010c7b6b6a53dc45d4fe520b8f6bc2ef02e000116d579c65685"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b425435f31f4e578e799a6dafdbd2faad1a0a9f03c104bd051a90f7a7bfe60e8"
 ---
 
 # Concepts
@@ -32,16 +32,16 @@ the runtime as a deployable app.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
-- [Terminal UI](https://eve.dev/docs/guides/dev-tui) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
-- [How to add skills to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-skills) — Add skills to an eve agent by creating a file under agent/skills/ or installing a published skill with the npx skills ad
-- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
-- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework)
-- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started) — Create an eve project, configure model credentials, and run your first agent.
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [Terminal UI](https://eve.dev/docs/guides/dev-tui) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [How to add skills to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-skills) — Add skills to an eve agent by creating a file under agent/skills/ or installing a published skill with the npx skills ad
 - [Ship It](https://eve.dev/docs/tutorial/ship-it) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
-- [Security Model](https://eve.dev/docs/concepts/security-model) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
+- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started) — Create an eve project, configure model credentials, and run your first agent.
+- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework)
 - [The Agent Stack](https://vercel.com/blog/agent-stack)
 - [How Software Factories Work](https://vercel.com/docs/eve/software-factory) — Understand what software factories are, when to use them, and how eve coordinates agents from work item to reviewed chan
 
@@ -115,6 +115,9 @@ Channels are entry points into the same agent runtime. A channel can start sessi
 events into turns, and apply platform-specific authentication or formatting. eve agents can expose
 HTTP routes and can add channel files for platforms such as Slack.
 
+To reuse Chat SDK adapters and event handlers, [add eve's Chat SDK channel](/docs/chat-sdk/eve).
+The channel passes messages into agent sessions and delivers responses to their originating threads.
+
 Route-auth secrets, preview-protection bypass secrets, and other channel-specific configuration live
 in project [environment variables](/docs/environment-variables).
 
@@ -187,3 +190,6 @@ exports, and third-party destinations.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

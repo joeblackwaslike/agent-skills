@@ -15,8 +15,8 @@ related:
 summary: Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execution.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/legacy.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6e38f040a2109cb1c0efd157e9e7008c0cf8ada42977ba2fba08383dce85c48a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a91eb419bc5ebf745a9c8e059de801b24d9c7bfa97657df669895d6b33c4c979"
 ---
 
 # Legacy Metrics
@@ -38,7 +38,7 @@ This chart includes traffic for both [preview](/docs/deployments/environments#pr
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 
 Full cross-link map for this page: [/docs/pricing/legacy.graph.md](/docs/pricing/legacy.graph.md)
 <!-- /docsgraph:related -->
@@ -88,3 +88,6 @@ Vercel Function Execution can be filtered by:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

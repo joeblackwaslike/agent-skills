@@ -4,8 +4,8 @@ description: Learn how to use the Cline harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "40f7ad9ee048c42eafb5547559d4991752d448ad46fc450936420323d51365ca"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "d2b997ee8ef49c2a845f34d527fde081adf77fe2ce8c7c3218212fee17bf3781"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -202,9 +202,11 @@ tool when the task calls for it.
 ## Session Lifecycle
 
 Conversation state lives in the host-process runtime. On `detach`/`stop` the
-adapter persists the conversation history into the sandbox workspace
-(`.cline-harness/history.json` in the session working directory), so a future
-process can resume the session after the caller reattaches the sandbox. Because
+adapter persists the conversation history to
+`$HOME/.ai-sdk-harness/.agent-runs/<encoded-sessionId>/cline/history.json`,
+where `$HOME` belongs to the sandbox. This file is outside `sessionWorkDir`,
+and a future process can resume the session after the caller reattaches the
+sandbox and supplies the saved lifecycle state. Because
 the runtime is host-resident, suspended turns are rerun-continued from the
 persisted history rather than losslessly attached (same trade-off as the
 [Pi adapter](/providers/ai-sdk-harnesses/pi)).

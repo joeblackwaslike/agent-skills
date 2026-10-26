@@ -16,8 +16,8 @@ related:
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "600bfee3bfb48e9e39b52b0a0efe64078b1c77ae3a6f3255dd992dc5fd682333"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5c3074bea759240df28745853c3338b03285d5eae48a17929fcf5bc4479857a5"
 ---
 
 # Environment variables
@@ -30,7 +30,6 @@ Environment variables are key-value pairs configured outside your source code so
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
 - [Deployments](https://v0.app/docs/deployments) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [External APIs](https://v0.app/docs/external-apis) — Build full-stack applications by calling external APIs with environment variables.
@@ -42,6 +41,7 @@ Environment variables are key-value pairs configured outside your source code so
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
+- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 
 Full cross-link map for this page: [/docs/environment-variables.graph.md](/docs/environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -70,7 +70,6 @@ Deployments using the following runtimes can support environment variables up to
 - Python
 - Ruby
 - Go
-- [PHP Community Runtime](https://github.com/vercel-community/php)
 
 Vercel also provides support for custom runtimes, through the Build Output API. For information on creating custom runtime support, see the following guides:
 
@@ -137,3 +136,6 @@ For Native Marketplace resources, the variable scope matches the environments on
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

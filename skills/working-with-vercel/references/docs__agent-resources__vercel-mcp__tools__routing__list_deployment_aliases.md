@@ -13,8 +13,8 @@ related:
 summary: Use list_deployment_aliases with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_deployment_aliases.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "82257b6cfc0373ac018b59942bb6d3ff8762e7532e5729ea209ee9de84239d4e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "41f6f76f5b12f7274b5d1eb05bef854365b68faa6e77efcedbae99fcbde82386"
 ---
 
 # list_deployment_aliases
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

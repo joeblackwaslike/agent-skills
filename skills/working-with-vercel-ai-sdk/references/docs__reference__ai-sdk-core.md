@@ -4,8 +4,8 @@ description: Reference documentation for the AI SDK Core
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "29847bfa9f0c5b3d9310d92e1ae9d8d97387da4c7e0fdcc7d276d46f49e71751"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "ea4ef94879f1ed73a495ee5915aea8a964e86342ac3a51c677224c0cdfa25bb4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -79,6 +79,10 @@ Stream a speech-to-speech translation from live raw audio.
 #### [generateSpeech()](/docs/reference/ai-sdk-core/generate-speech)
 
 Generate speech audio from text.
+
+#### [experimental\_streamSpeech()](/docs/reference/ai-sdk-core/stream-speech)
+
+Stream speech audio from text or a text stream.
 
 #### [uploadFile()](/docs/reference/ai-sdk-core/upload-file)
 

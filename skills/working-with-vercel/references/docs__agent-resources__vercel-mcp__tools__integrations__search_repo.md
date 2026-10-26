@@ -13,8 +13,8 @@ related:
 summary: Use search_repo with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/search_repo.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "13d5f78b9b5b992c3400e9719a460b8feb296e3bb75ce8b81c6fa768edf13a15"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "caab089ff152edf9c578dd0e64169a2e47de00f49827b86d1ec4dde9b8667c72"
 ---
 
 # search_repo
@@ -29,9 +29,9 @@ List git repositories linked to namespace by provider.
 
 - [List git repositories linked to namespace by provider](https://vercel.com/docs/rest-api/integrations/list-git-repositories-linked-to-namespace-by-provider) — GET /v1/integrations/search-repo — Lists git repositories linked to a namespace \\`id\\` for a supported provider. A speci
 - [list_vercel_ci_invocations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_invocations) — Use list_vercel_ci_invocations with Vercel MCP.
-- [artifact_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query) — Use artifact_query with Vercel MCP.
-- [git_namespaces](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces) — Use git_namespaces with Vercel MCP.
 - [List git namespaces by provider](https://vercel.com/docs/rest-api/integrations/list-git-namespaces-by-provider) — GET /v1/integrations/git-namespaces — Lists git namespaces for a supported provider. Supported providers are \\`github\\`,
+- [git_namespaces](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces) — Use git_namespaces with Vercel MCP.
+- [artifact_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query) — Use artifact_query with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations/search_repo.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations/search_repo.graph.md)
 <!-- /docsgraph:related -->
@@ -52,3 +52,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integ
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

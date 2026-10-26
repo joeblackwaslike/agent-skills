@@ -9,21 +9,21 @@ prerequisites:
   - /docs/connect/frameworks
   - /docs/connect
 related:
+  - /docs/connect/legal
   - /docs/connect/quickstart
   - /docs/connect/concepts/project-links
   - /docs/passport
   - /docs/connect/concepts/tokens
-  - /docs/connect/concepts/authentication
 summary: Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/authjs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a0814ae3997cc2fc9ac06f131c3dccbb5dad1a682fe6727afc96086ce347ba61"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a8f044b2a2c30f4cc25098e48259802a2358b1fb805d57d6b20cfbfe7471d708"
 ---
 
 # Auth.js with Vercel Connect
 
-> **Availability**: Vercel Connect is available on all plans
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
 
 [Auth.js](https://authjs.dev/) can use Vercel Connect as an OAuth provider for
 signing users into your Next.js application. The `@vercel/connect/authjs`
@@ -39,8 +39,7 @@ and maps the Connect user profile into an Auth.js user.
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Using Vercel Passport with Microsoft Entra ID](https://vercel.com/kb/guide/vercel-passport-microsoft-entra-id) — Configure Microsoft Entra ID and Vercel Passport to protect a Next.js app, limit access to assigned users, and read veri
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
@@ -75,28 +74,23 @@ connector and link it to your project.
 
 - ### Install the packages
   Install Auth.js, its core types, and Vercel Connect:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i next-auth@beta @auth/core @vercel/connect
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add next-auth@beta @auth/core @vercel/connect
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i next-auth@beta @auth/core @vercel/connect
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add next-auth@beta @auth/core @vercel/connect
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i next-auth@beta @auth/core @vercel/connect
+  ```
+  **yarn**
+  ```bash
+  yarn add next-auth@beta @auth/core @vercel/connect
+  ```
+  **npm**
+  ```bash
+  npm i next-auth@beta @auth/core @vercel/connect
+  ```
+  **bun**
+  ```bash
+  bun add next-auth@beta @auth/core @vercel/connect
+  ```
   The Auth.js adapter requires `@auth/core` version `0.37.0` or later.
 
 - ### Configure local authentication
@@ -349,3 +343,6 @@ needs its own sign-in flow, session callbacks, and user records.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

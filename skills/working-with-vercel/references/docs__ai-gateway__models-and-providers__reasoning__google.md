@@ -14,8 +14,8 @@ related:
 summary: Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b5df957ef86861418c4c57977e1fedc0cec2cf7701cb5d9afc07e07929ca45c2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8e1969acd4431d8110f7c495d3d930cc68bb1ee39c497f72629b245f7b66fa02"
 ---
 
 # AI Gateway Google and Vertex Reasoning
@@ -29,10 +29,10 @@ Gemini 2.5 and later models use an internal "thinking process" that improves the
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning) — Learn how to control reasoning across providers with the top-level reasoning parameter.
-- [Gemini 3.5 Flash on AI Gateway](https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway)
 - [Gemini 3.8 Live models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-live-models-now-available-on-ai-gateway)
-- [Gemini CLI](https://ai-sdk.dev/providers/community-providers/gemini-cli) — Learn how to use the Gemini CLI provider to access Google's Gemini models.
+- [Gemini 3.5 Flash on AI Gateway](https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway)
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
+- [Gemini CLI](https://ai-sdk.dev/providers/community-providers/gemini-cli) — Learn how to use the Gemini CLI provider to access Google's Gemini models.
 - [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/google.graph.md](/docs/ai-gateway/models-and-providers/reasoning/google.graph.md)
@@ -316,3 +316,6 @@ For more details, see the [Google AI thinking docs](https://ai.google.dev/gemini
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

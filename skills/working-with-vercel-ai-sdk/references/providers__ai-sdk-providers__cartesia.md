@@ -1,11 +1,11 @@
 ---
 title: Cartesia
-description: Learn how to use the Cartesia provider for the AI SDK.
+description: Learn how to set up the Cartesia provider and check AI Gateway availability.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "6210df74e7b1b3c1fb232dd41751312d90a9fe7b4a43a57c450648d690b791e8"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "3eb46d277fa35b213761004eeea9d3e1fa61ccf45d56c76669c41368d15eab12"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -13,34 +13,57 @@ sha256: "6210df74e7b1b3c1fb232dd41751312d90a9fe7b4a43a57c450648d690b791e8"
 The [Cartesia](https://cartesia.ai/) provider contains Sonic speech generation,
 Ink-Whisper batch transcription, and Ink 2 realtime and streaming transcription
 support.
+Cartesia models are not currently available through [AI Gateway](https://vercel.com/ai-gateway/models), so the opening example uses `@ai-sdk/cartesia` directly. See [Using AI Gateway](#using-ai-gateway) below for supported alternatives.
 
-## Setup
+```ts
+import { generateSpeech } from 'ai';
+import { cartesia } from '@ai-sdk/cartesia';
+import { writeFile } from 'node:fs/promises';
 
-The Cartesia provider is available in the `@ai-sdk/cartesia` module. You can install it with
+const { audio } = await generateSpeech({
+  model: cartesia.speech('sonic-3.5'),
+  text: 'Hello, world!',
+  outputFormat: 'mp3',
+  voice: '694f9389-aac1-45b6-b726-9d9369183238',
+});
 
-#### pnpm
-
-```
-pnpm add @ai-sdk/cartesia
-```
-
-#### npm
-
-```
-npm install @ai-sdk/cartesia
-```
-
-#### yarn
-
-```
-yarn add @ai-sdk/cartesia
+await writeFile('speech.mp3', audio.uint8Array);
 ```
 
-#### bun
+## Using AI Gateway
 
+The current [AI Gateway model catalog](https://vercel.com/ai-gateway/models) does not list Cartesia models. Use `@ai-sdk/cartesia` for the APIs on this page. To use other speech models through Gateway, install `ai` and configure a Gateway API key:
+
+```bash
+pnpm add ai
 ```
-bun add @ai-sdk/cartesia
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
 ```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [Gateway documentation](/providers/ai-sdk-providers/ai-gateway) for supported models and APIs.
+
+## Using `@ai-sdk/cartesia`
+
+For direct access to Cartesia, install `ai` and `@ai-sdk/cartesia`:
+
+```bash
+pnpm add ai @ai-sdk/cartesia
+```
+
+Set your Cartesia API credential in the `CARTESIA_API_KEY` environment variable:
+
+```bash
+export CARTESIA_API_KEY=your_api_key_here
+```
+
+The following sections document the direct `@ai-sdk/cartesia` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

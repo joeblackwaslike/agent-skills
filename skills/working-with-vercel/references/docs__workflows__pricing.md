@@ -11,13 +11,13 @@ related:
   - /docs/functions/usage-and-pricing
   - /docs/fluid-compute
   - /docs/queues/pricing
+  - /docs/workflows/retention
   - /docs/functions/limitations
-  - /docs/observability
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "57d0972c5b6a3c9fe8f74e62b36ac22f8877c9b7bef45c50c9e44d780422ae69"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b0b63ffc537e588e1db0eb14843c341d83af9f8e64ea47ddbb3c940dde84ecaa"
 ---
 
 # Workflow Pricing and Limits
@@ -36,10 +36,10 @@ Vercel bills Workflows usage across three resources:
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Workflow SDK vs AWS Bedrock AgentCore](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-agentcore) — AgentCore hosts and operates AI agents in isolated microVMs but is not a durable-execution engine. The Workflow SDK prov
 - [Workflow SDK vs AWS Step Functions](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-step-functions) — AWS Step Functions is a managed state-machine orchestrator authored in declarative ASL JSON. The Workflow SDK expresses
-- [Runtime tuning](https://workflow-sdk.dev/docs/configuration/runtime-tuning) — Tune Workflow runtime behavior where workflows execute.
 - [max-events-exceeded](https://workflow-sdk.dev/docs/errors/max-events-exceeded) — Run long-running workflows on the QuickJS VM with snapshotting, which is exempt from the default event limit, or split t
 - [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries) — Control how steps handle failures and customize retry behavior.
-- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Worlds](https://workflow-sdk.dev/docs/configuration/worlds) — Select and configure Local, Postgres, Vercel, or custom Worlds.
+- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Limits](https://vercel.com/docs/limits) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 
@@ -73,25 +73,17 @@ As an example, a normal step function execution produces three events: `step_cre
 
 ## Storage retention
 
-Storage for managed persistence is retained based on your team plan:
-
-| Plan       | Retention after run completion |
-| ---------- | ------------------------------ |
-| Hobby      | 1 day                          |
-| Pro        | 7 days                         |
-| Enterprise | 30 days                        |
-
-Storage retention is not configurable by default. You can request a custom retention period by contacting support.
+Vercel bills Workflow Data Retained for the retention period of each run, which depends on your team plan. For retention periods, how long Vercel keeps run data, run metadata retention, and how to delete run data sooner, see [Data Retention](/docs/workflows/retention).
 
 ## Workflow run limits
 
-The following limits apply to all Workflow runs.
+The following limits apply to all Workflow runs. **Events per run** and **Steps per run** are the defaults for the Node.js runtime, and the [QuickJS runtime](#quickjs-runtime) lifts both.
 
 | Limit                                   | Value                                                      | Details                                                                                                                                                                                                              |
 | --------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Run creations per second                          | 1,000 |                                                                                                                                                         |
-| Events per run                          | 25,000 limit                                               | (Reach out if you need a higher limit.)                                                                                                                                                        |
-| Steps per run                           | 10,000                                                     | (Reach out if you need a higher limit.)                                                                                                                                                        |
+| Events per run                          | 25,000 limit                                               | Applies to the default Node.js runtime. [QuickJS](#quickjs-runtime) runs with snapshotting enabled are exempt from this cap.                                                                                        |
+| Steps per run                           | 10,000                                                     | Applies to the default Node.js runtime. Steps write events, so [QuickJS](#quickjs-runtime) runs that are exempt from the event cap can execute more steps.                                                          |
 | Event creations per run per second      | 200                                                        | (Throttled and re-tried when exceeded)                                                                                                                                                         |
 | Hook creations per second               | 200                                                        | (Throttled and re-tried when exceeded)                                                                                                                                                         |
 | Max payload size                        | 50 MB                                                      | (Maximum size of any run/step/hook input/output. Streams passed into a run or step do not count towards this limit and have their own limits.)                                                 |
@@ -110,7 +102,21 @@ The following limits apply to all Workflow runs.
 | Step name                               | 255 bytes                                                  | (Step names are derived from the file path and function name.)                                                                                                                                 |
 | Dynamic workflow source size            | 128 KiB                                                    | Dynamic workflows only. Experimental. (Maximum size of the source passed to start(). Its step aliases must also fit the 2,048-byte run execution context, which allows roughly 30 aliases.)    |
 
-> **💡 Note:** Runs that exceed 2,000 events or 1 GB of total entity storage have slower replay times. To maintain high performance, we recommend splitting long-running workflows into [child workflows](https://workflow-sdk.dev/cookbook/advanced/child-workflows), or [bundling several items into each step](https://workflow-sdk.dev/cookbook/common-patterns/batching) so a run writes fewer events.
+> **💡 Note:** On the default runtime, runs that exceed 2,000 events or 1 GB of total entity storage can have slower replay times. To keep replay fast, split independent work into [child workflows](https://workflow-sdk.dev/cookbook/advanced/child-workflows), [bundle several items into each step](https://workflow-sdk.dev/cookbook/common-patterns/batching) so a run writes fewer events, or switch to the [QuickJS runtime](#quickjs-runtime), which replays only the events recorded since its last snapshot. Snapshots don't speed up the work inside individual steps.
+
+### QuickJS runtime
+
+Workflow runs your workflow function on the Node.js runtime by default, which caps each run at 25,000 events. Runs that start on the experimental QuickJS runtime with snapshotting enabled are exempt from that cap, so a run can record more events and execute more steps than the table above lists. Every other limit on this page still applies, including payload size, entity storage, replay duration, and the rate limits below.
+
+To opt in:
+
+1. Set the `WORKFLOW_VM` [environment variable](/docs/environment-variables) to `quickjs` for your project.
+2. Leave `WORKFLOW_SNAPSHOT_THRESHOLD` unset, or set it to a positive integer. QuickJS snapshots workflow state every 1,000 events by default. A value of `0` turns snapshotting off, and those runs keep the 25,000 event cap.
+3. Redeploy your project.
+
+A run records its runtime and snapshot policy when it starts, so the exemption covers only runs that start after you redeploy. Runs already in progress keep the limits they started with, and runs that already failed with `MAX_EVENTS_EXCEEDED` don't resume on their own. Start those runs again.
+
+QuickJS is experimental, and your workflow function sees a different set of globals: `Intl`, `WebAssembly`, and `Atomics` are unavailable, and `crypto.subtle` methods throw. Your step functions are unaffected and keep full Node.js access. For the complete list of differences, see the [QuickJS runtime documentation](https://workflow-sdk.dev/docs/configuration/runtime-tuning#workflow_vm).
 
 ### Vercel platform limits
 
@@ -121,7 +127,7 @@ The following limits apply to all Workflow runs.
 | Schedules/cron            | No limit                                                            |                                                                                                                                               |
 | Projects                  | Unlimited                                                           |                                                                                                                                               |
 | Real-time connections     | No limit                                                            |                                                                                                                                               |
-| Observability retention   | See [Observability](/docs/observability)                            | (Plan-based retention applies. See the Storage Retention section for retention of managed persistence and stream data.) |
+| Observability retention   | See [Data Retention](/docs/workflows/retention#how-long-vercel-keeps-run-metadata)        | (Run metadata retention. Run payloads and streams follow the payload retention periods on the same page.) |
 | Compute resources         | See [Vercel Functions limits](/docs/functions/limitations)          |                                                                                                                                               |
 | Maximum total bundle size | 250MB, see [Vercel Functions limits](/docs/functions/limitations)   |                                                                                                                                               |
 
@@ -142,3 +148,6 @@ A rate-limited write that records a step's result is retried for as long as the 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

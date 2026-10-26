@@ -1,25 +1,24 @@
 ---
-title: Low-memory streaming with streamText
+title: experimental_streamTextLowMemory
 description: Stream with the streamText execution engine without a replay buffer or unused final results.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text-low-memory"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text-low-memory.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "9cecc924b771d1d43a723e069e1e95d2e30fb8b49ab2a2e26db2d7b3c47f99c8"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "b8fff68b2acf56afed930e3e6406f4bba57ed2f2c47d3b76658219db946f3aa0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 This API is experimental and may change in future versions.
 
-Set `experimental_lowMemory: true` on [`streamText`](/docs/reference/ai-sdk-core/stream-text)
+Use `experimental_streamTextLowMemory`
 when you consume the output once and do not need to read the complete result later.
 
 ```ts
-import { streamText } from 'ai';
+import { experimental_streamTextLowMemory } from 'ai';
 
-const result = streamText({
-  experimental_lowMemory: true,
+const result = experimental_streamTextLowMemory({
   model: "anthropic/claude-sonnet-5.5",
   prompt: 'Describe the history of astronomy.',
 });
@@ -45,11 +44,10 @@ not silently skipped. The existing error semantics also apply: use `onError` or
 `stream` to observe provider errors; `textStream` contains only text deltas.
 
 ```ts
-import { isStepCount, streamText, tool } from 'ai';
+import { experimental_streamTextLowMemory, isStepCount, tool } from 'ai';
 import { z } from 'zod/v4';
 
-const result = streamText({
-  experimental_lowMemory: true,
+const result = experimental_streamTextLowMemory({
   model: "anthropic/claude-sonnet-5.5",
   prompt: 'How many characters are in astronomy?',
   tools: {
@@ -70,7 +68,7 @@ for await (const part of result.stream) {
 
 ## Memory usage
 
-`experimental_lowMemory: true` tells `streamText` not to save a copy of the
+`experimental_streamTextLowMemory` does not save a copy of the
 stream for replay. For plain text streaming, it also avoids keeping the complete
 generated text for later access.
 
@@ -80,7 +78,7 @@ appending every chunk to a string in your application still builds the full answ
 
 ## Return value
 
-When `experimental_lowMemory` is enabled, the result exposes these members:
+The result exposes these members:
 
 | Member                                                                                    | Behavior                                                                                                  |
 | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |

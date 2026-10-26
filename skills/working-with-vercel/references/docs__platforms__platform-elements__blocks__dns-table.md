@@ -15,8 +15,8 @@ related:
 summary: A DNS record display component with one-click copying for guiding users through domain configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/dns-table.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1d0b6a8f74d82819a1cfe284ebea7555aefdeec229c355a472335569c56c705f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "48fbc3ff62d6d8a53997da5c12ae2e6ec499b3b4cd3aadfc2282997907e7e61f"
 ---
 
 # DNS Table
@@ -33,10 +33,10 @@ The DNS Table block provides a clean, user-friendly interface for displaying DNS
 
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
-- [List existing DNS records](https://vercel.com/docs/rest-api/dns/list-existing-dns-records) — GET /v5/domains/{domain}/records — Retrieves a list of DNS records created for a domain name. By default it returns 20 r
-- [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+- [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
+- [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/dns-table.graph.md](/docs/platforms/platform-elements/blocks/dns-table.graph.md)
 <!-- /docsgraph:related -->
@@ -298,3 +298,6 @@ const DNSInstructions = ({ provider, records }) => {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

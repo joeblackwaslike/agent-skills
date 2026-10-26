@@ -13,8 +13,8 @@ related:
 summary: Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0470dacd200e2906d867bc2c06ad87b79ae4fbe6f1e635506a61ab28ceb3722b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a0ff6a0b0269243cfa595045a15df125e1d80e689a38aec6b55f31bca850d6d7"
 ---
 
 # Limits and Pricing for Vercel Flags
@@ -32,12 +32,11 @@ A flag request is an application request that reads a source project's flag conf
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Pricing for Flags Explorer](https://vercel.com/docs/flags/flags-explorer/limits-and-pricing) — Compare monthly Flags Explorer override limits and the price of unlimited overrides across Vercel plans.
 - [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 - [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag) — Learn how to configure individual feature flags in the Vercel Dashboard.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
+- [Get a flag](https://vercel.com/docs/rest-api/feature-flags/get-a-flag) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Retrieve a specific feature flag by its ID or sl
+- [Get project flag settings](https://vercel.com/docs/rest-api/feature-flags/get-project-flag-settings) — GET /v1/projects/{projectIdOrName}/feature-flags/settings — Retrieve feature flag settings for a project.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/limits-and-pricing.graph.md](/docs/flags/vercel-flags/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -123,3 +122,6 @@ All variant IDs referenced in rules must exist in the flag's variants array. Seg
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

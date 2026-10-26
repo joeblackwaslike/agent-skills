@@ -12,8 +12,8 @@ related:
 summary: The following is the Public Beta Agreement for Vercel products in the Public Beta release phase, including any services or functionality that may be...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/release-phases/public-beta-agreement.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "b93b6a195bf41a9b20786fc51964f8423e342ce6fd924cce67ecbef9a0d5e152"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fa5187f722d2ac0945e040be97d3b0a52fc715748c627fba62566b22631dae86"
 ---
 
 # Public Beta Agreement
@@ -124,3 +124,6 @@ This Agreement may not be assigned, sublicensed or otherwise transferred by eith
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

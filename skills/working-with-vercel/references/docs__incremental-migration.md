@@ -16,8 +16,8 @@ related:
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "004338dbc939a6080a6e2b4d24791e46c1bdc64f35c8fb76dad5b03be544c207"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bb3d787c51d2ce0264e99fa4d51b331c0ee9ebf34b4eb1ae18b253a488ea26f9"
 ---
 
 # Incremental Migration to Vercel
@@ -32,11 +32,11 @@ When migrating to Vercel you should use an incremental migration strategy. This 
 
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
-- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
 - [Why all application migrations should be incremental ](https://vercel.com/blog/incremental-migrations)
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 
@@ -44,6 +44,8 @@ Full cross-link map for this page: [/docs/incremental-migration.graph.md](/docs/
 <!-- /docsgraph:related -->
 
 In this guide, we'll explore incremental migration benefits, strategies, and implementation approaches for a zero-downtime migration to Vercel.
+
+For platform-specific steps to move a Docker app or Python API, see the [migration guides](/kb/migrations). Use them alongside the traffic-routing and cutover strategies below.
 
 ## Why opt for incremental migration?
 
@@ -325,3 +327,6 @@ Prevent the loss of indexed pages, links, and duplicate content when creating re
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

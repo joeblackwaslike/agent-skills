@@ -17,8 +17,8 @@ related:
 summary: Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bc3de0257483fe76c5a1957446dd10b9c75475c23ec852ffd537d958aa05f0d2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "29d3757d851fbadd104786b3bf936ee7f85414a608cce9f7c980fba85f03aa3b"
 ---
 
 # AI Gateway Video Input
@@ -35,7 +35,7 @@ Send a video clip and a question to a video-capable model to summarize events or
 - [AI Gateway File and PDF Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/file-input) — Send PDFs and documents to AI Gateway models with examples for each supported SDK and API format.
 - [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 - [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
-- [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
+- [AI Gateway Model Modalities](https://vercel.com/docs/ai-gateway/modalities) — The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, r
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools/video-input.graph.md](/docs/ai-gateway/inputs-and-tools/video-input.graph.md)
 <!-- /docsgraph:related -->
@@ -345,3 +345,6 @@ For request details and failures, inspect [AI Gateway logs](/docs/ai-gateway/obs
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

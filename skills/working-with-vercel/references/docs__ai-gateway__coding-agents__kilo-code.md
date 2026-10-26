@@ -14,8 +14,8 @@ related:
 summary: Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and choose models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/kilo-code.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3e5a5a4b69a4cf6d59177686c2f67b0ee8b76cad6c8d7a2c52819621b1a42bda"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e46039281754cddea774e6635bc83b3bab80ee927da35a8dd6dd054b07cd5159"
 ---
 
 # Kilo Code with AI Gateway
@@ -32,8 +32,8 @@ sha256: "3e5a5a4b69a4cf6d59177686c2f67b0ee8b76cad6c8d7a2c52819621b1a42bda"
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
-- [Qwen Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/qwen) — Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Qwen Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/qwen) — Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/kilo-code.graph.md](/docs/ai-gateway/coding-agents/kilo-code.graph.md)
 <!-- /docsgraph:related -->
@@ -96,3 +96,6 @@ If you can't use the Vercel CLI, configure Kilo Code manually:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Request group membership and other provider-specific identity claims when using Passport.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/additional-identity-scopes.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8afb496a7d83cdf390814d2e61c8ee1fbdd4cd6e8ea1c7480a6108c73fb99ba6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4cc3a33debe3d1c52e24443bb70af1da1e1076adea13df71e56cc09132071616"
 ---
 
 # Configure additional identity scopes
@@ -120,3 +120,6 @@ Do not assume a claim is always present or has the same shape for every provider
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

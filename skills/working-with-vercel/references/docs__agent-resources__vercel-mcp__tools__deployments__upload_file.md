@@ -13,8 +13,8 @@ related:
 summary: Use upload_file with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/upload_file.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "02a73f2ddb3f359025fbb6f4178f9e87c3a03c395fa246bafad77cf063550775"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "46d51b8c1e18a3f931361e93c991b8b853e81644a0a77795e3baed3aa254fd04"
 ---
 
 # upload_file
@@ -31,7 +31,7 @@ Upload Deployment Files.
 - [upload_artifact](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/upload_artifact) — Use upload_artifact with Vercel MCP.
 - [Get Deployment File Contents](https://vercel.com/docs/rest-api/deployments/get-deployment-file-contents) — GET /v8/deployments/{id}/files/{fileId} — Allows to retrieve the content of a file by supplying the file identifier and
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
-- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
+- [Upload a blob chunk](https://vercel.com/docs/rest-api/vcr/upload-a-blob-chunk) — PATCH /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PATCH /v2/:teamSlug/:projectSlug/:repositoryN
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/upload_file.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/upload_file.graph.md)
 <!-- /docsgraph:related -->
@@ -52,3 +52,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -10,28 +10,20 @@ prerequisites:
   - /docs/sandbox
 related:
   - /docs/sandbox
-  - /docs/sandbox/mount-remote-storage
-  - /docs/sandbox/pricing
-  - /docs/sandbox/concepts/images
-  - /docs/sandbox/concepts/multi-agent
-summary: Sync a Box folder into a Vercel Sandbox as a POSIX filesystem, so an agent reads and writes Box content through standard file operations.
+  - /docs/ai-gateway
+summary: Run a contract review in Vercel Sandbox with Box files and sync the review back to Box.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/box-mount.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "51dc6af23a70824a27094934e07609c192bf8772450765a3ad68f29e6e07b9a4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b4b9707783418c902cfb9e0634e3ce8905d7a97504742175dc3946d20f811eae"
 ---
 
 # Box Mount
 
-[Box](https://www.box.com) is a cloud content platform companies use to store
-and govern documents. [Box Mount](https://developer.box.com/guides/box-mount)
-maps a Box folder to a directory inside a [Vercel Sandbox](/docs/sandbox) and
-keeps the two in sync while the sandbox runs. An agent works at that path with
-standard filesystem calls: reading a file, creating one, listing a directory,
-and editing one all behave normally. It signs in to Box the way a person
-would, so it gets the same view that account gets: the same limits on what it
-can open, and the same record of what it changed. Because the content lives in
-Box, the output the agent writes remains after the sandbox is deleted.
+[Box Mount](https://developer.box.com/guides/box-mount) syncs a Box folder with
+a directory in a [Vercel Sandbox](/docs/sandbox). Your agent reads and writes
+files at that directory. Box Mount syncs those changes to Box while the sandbox
+runs.
 
 
 <!-- docsgraph:related -->
@@ -39,205 +31,88 @@ Box, the output the agent writes remains after the sandbox is deleted.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
-- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create snapshot-backed persistent sandboxes on Vercel.
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [Using private GitHub repositories with Vercel Sandbox](https://vercel.com/kb/guide/sandbox-private-github-repositories) — Learn how to use Vercel Sandbox with private GitHub repositories using fine-grained tokens, classic tokens, or GitHub Ap
+- [Mount remote storage](https://vercel.com/docs/sandbox/mount-remote-storage) — Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remo
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/box-mount.graph.md](/docs/sandbox/ecosystem/box-mount.graph.md)
 <!-- /docsgraph:related -->
 
-> **💡 Note:** Box Mount is in private preview with Box. It is not publicly available, it is
-> not covered by a production SLA, and its features can change before general
-> availability. Box provides the binary and setup guidance to preview
-> participants. To request access, complete Box's [private preview
-> form](https://bit.ly/box-mount-preview).
+> **💡 Note:** Box Mount is in private preview. [Request access from Box](https://bit.ly/box-mount-preview)
+> to get the Linux binary.
 
-## How it works
+## Run the contract review example
 
-Box Mount runs a background sync process inside the sandbox. When it starts,
-it fills the mounted directory with the Box folder's contents. From then on,
-files the agent writes go up to Box, and changes people make in Box are
-available in the directory.
+The [Vercel Box Mount example](https://github.com/vercel-labs/vercel-box-mount)
+reviews a synthetic contract with [AI Gateway](/docs/ai-gateway) inside a
+sandbox. It writes `Reviewed/Acme-MSA-review.md` to the Box folder and checks
+that the file is still there after the sandbox is deleted.
 
-This is not the same as the S3 mounts on
-[Mount remote storage](/docs/sandbox/mount-remote-storage). Those use a FUSE
-driver, which passes each read straight through to the remote store, so
-nothing is kept in the sandbox. Box Mount keeps real files in the sandbox and
-syncs them, so reads are local and the mounted content takes up sandbox
-[disk](/docs/sandbox/pricing#resource-limits).
+Before you start, get a Box developer token with file read and write access,
+create an empty Box folder, and note its folder ID. You also need the Box Mount
+0.5.0 Linux x86\_64 archive, an AI Gateway API key, and a Vercel project with
+Sandbox access. The example requires Node.js 20 or later.
 
-## Getting started
+Clone the example and copy its Vercel configuration template:
 
-The [vercel-labs/vercel-box-mount](https://github.com/vercel-labs/vercel-box-mount)
-example runs this setup end to end. It reviews a synthetic contract in a
-sandbox and checks that the review is still in Box after the sandbox is
-deleted.
-
-Work through these steps in order.
-
-### Prerequisites
-
-Before you start, you need:
-
-- Access to the Box Mount private preview, including the binary. Box Mount
-  runs on Linux for x86\_64 and ARM64, which covers the
-  [managed Sandbox images](/docs/sandbox/concepts/images).
-- A Box app in the Developer Console configured for OAuth 2.0 or JWT, and its
-  credentials saved as a `box-config.json` file. See
-  [Configure credentials](https://developer.box.com/guides/box-mount/#configure-credentials).
-- The ID of the Box folder to mount, which is the number at the end of the
-  folder's URL in Box.
-- A Vercel project with Sandbox access, and the JS SDK. The user isolation
-  below is not available in the Python SDK.
-
-### Install Box Mount
-
-Upload the preview archive and put the binary on `PATH`:
-
-```ts filename="index.ts"
-import { Sandbox } from '@vercel/sandbox';
-import { readFile } from 'node:fs/promises';
-
-const sandbox = await Sandbox.create();
-const root = sandbox.asUser('root');
-
-await sandbox.writeFiles([
-  {
-    path: '/vercel/sandbox/box-mount.tar.gz',
-    content: await readFile(process.env.BOX_MOUNT_ARCHIVE),
-    mode: 0o600,
-  },
-]);
-
-await root.runCommand({
-  cmd: 'bash',
-  args: [
-    '-c',
-    `tar -xzf /vercel/sandbox/box-mount.tar.gz -C /usr/local/bin &&
-     chmod 755 /usr/local/bin/box-mount`,
-  ],
-});
+```bash
+git clone https://github.com/vercel-labs/vercel-box-mount.git
+cd vercel-box-mount
+npm ci
+cp .env.vercel.example .env
 ```
 
-### Run the sync and the agent as separate users
+Set `AI_GATEWAY_API_KEY`, `BOX_ACCESS_TOKEN`, `BOX_FOLDER_ID`, and
+`BOX_MOUNT_ARCHIVE` in `.env`. The archive value is the absolute path to the
+downloaded Box Mount file. Set `VERCEL_TOKEN`, `VERCEL_TEAM_ID`, and
+`VERCEL_PROJECT_ID` for your Vercel project, or use `VERCEL_OIDC_TOKEN`.
+The template already selects Vercel Sandbox. Keep `.env` and the archive out
+of git. The [example setup guide](https://github.com/vercel-labs/vercel-box-mount/blob/main/docs/vercel-setup.md)
+has the full configuration and recovery steps.
 
-The Box credentials are a Box API identity, and that identity is usually
-broader than the folder you mount, so anything that can read them can act as
-that app or user against all of Box. Box recommends splitting the work across
-two Unix users, and Sandbox
-[multi-user support](/docs/sandbox/concepts/multi-agent) provides them. The
-`boxmount` user holds the credentials and runs the sync. The `boxagent` user
-gets the mounted folder and nothing else.
+Run the example:
 
-Set the share permissions while the directory is still empty, before the first
-mount fills it. `setfacl` comes from the `acl` package, which the managed
-images do not preinstall:
-
-```ts filename="index.ts"
-const boxmount = await sandbox.createUser('boxmount');
-const agent = await sandbox.createUser('boxagent');
-const workspace = await sandbox.createGroup('boxworkspace');
-await sandbox.addUserToGroup('boxmount', 'boxworkspace');
-await sandbox.addUserToGroup('boxagent', 'boxworkspace');
-
-const dataPath = '/home/boxmount/.box-mount';
-
-await sandbox.writeFiles([
-  {
-    path: '/vercel/sandbox/box-config.json',
-    content: await readFile(process.env.BOX_CONFIG_PATH),
-    mode: 0o600,
-  },
-]);
-
-await root.runCommand({
-  cmd: 'bash',
-  args: [
-    '-c',
-    `mkdir -p ${dataPath} && chown boxmount:boxmount ${dataPath} && chmod 700 ${dataPath} &&
-     install -o boxmount -g boxmount -m 600 /vercel/sandbox/box-config.json ${dataPath}/box-config.json &&
-     rm /vercel/sandbox/box-config.json &&
-     (command -v setfacl >/dev/null || (apt-get update -qq && apt-get install -y -qq acl)) &&
-     chown boxmount:boxworkspace ${workspace.sharedDir} &&
-     chmod 2770 ${workspace.sharedDir} &&
-     setfacl -m g:boxworkspace:rwx -m d:g:boxworkspace:rwx ${workspace.sharedDir}`,
-  ],
-});
+```bash
+npm run doctor
+npm run seed
+npm run demo
+npm run status
+npm run teardown
 ```
 
-Check the split before you mount. Running
-`test ! -r /home/boxmount/.box-mount/box-config.json` as `boxagent` should
-exit `0`, and
-never start the agent with the `BOX_*` variables in its environment.
+`doctor` checks the setup and verifies that the agent user cannot read the
+Box credentials. `seed` uploads the synthetic contract and playbook to the
+empty Box folder. `demo` creates the review in the sandbox and syncs it to
+Box. `status` shows the running sandbox. Check the review in Box, then run
+`teardown` before the example's 30-minute session ends. Teardown unmounts
+the folder, verifies the review in Box, and removes the sandbox.
 
-### Mount the folder
+If sync or unmount fails, follow the [recovery steps](https://github.com/vercel-labs/vercel-box-mount/blob/main/docs/vercel-setup.md#lifecycle-and-credentials)
+before stopping the sandbox. Stopping it first can discard files that have
+not reached Box.
 
-Run the mount as the `boxmount` user:
+## Before using Box Mount in your own agent
 
-```ts filename="index.ts"
-await boxmount.runCommand({
-  cmd: 'box-mount',
-  args: [
-    '--data-path',
-    dataPath,
-    'mount',
-    workspace.sharedDir,
-    process.env.BOX_FOLDER_ID,
-  ],
-});
+The example runs Box Mount and the agent as separate sandbox users. Box Mount
+holds the Box credentials; the agent can access the shared folder. Read the
+[implementation](https://github.com/vercel-labs/vercel-box-mount/blob/main/src/vercel.ts)
+and [Box's setup guide](https://developer.box.com/guides/box-mount) before
+adapting the mount to another workload.
 
-const status = await boxmount.runCommand({
-  cmd: 'box-mount',
-  args: ['--data-path', dataPath, 'status'],
-});
-console.log(await status.stdout());
-```
-
-The agent now works against `workspace.sharedDir` with normal file operations,
-and Box Mount syncs its writes back to the folder.
-
-### Unmount before the sandbox stops
-
-Stopping a sandbox kills the sync process, and deleting it discards the
-filesystem along with anything that never reached Box. Unmount first, and
-check the status before you do: `box-mount status` reporting `No mount found.`
-means the sync is already gone and local edits have not reached Box.
-
-```ts filename="index.ts"
-await boxmount.runCommand({
-  cmd: 'box-mount',
-  args: ['--data-path', dataPath, 'unmount', workspace.sharedDir],
-});
-
-await sandbox.stop();
-```
-
-To check that the sync landed, read the file back through the
-[Box API](https://developer.box.com/reference/get-files-id-content/) and
-compare its hash after the sandbox is gone.
-
-## Limits
-
-- Box asks you to keep preview mounts off production workloads, and sets a
-  size and file count per mount. See
-  [Box's workload limits](https://developer.box.com/guides/box-mount/#workload-limits)
-  for the current values.
-- Box Mount does not support atomic save, where an application writes a
-  temporary file and renames it over the original. Files saved that way sync
-  as a new file instead of a new version, and lose their Box version history.
-- Developer tokens expire after 60 minutes and cannot be refreshed. Use OAuth
-  2.0 or JWT for a mount that outlives one token.
-- A session ends at its
-  [timeout](/docs/sandbox/pricing#runtime-limits), which defaults to 5 minutes,
-  whether or not a mount is still running. Size the timeout to cover the work
-  and the unmount.
+Box developer tokens expire after 60 minutes and cannot be refreshed. Box
+Mount also has [preview workload and file-save limits](https://developer.box.com/guides/box-mount/#known-limitations).
+Check those limits before using tools that replace files through an atomic
+rename.
 
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

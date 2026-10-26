@@ -11,13 +11,13 @@ related:
   - /docs/frameworks
   - /docs/cli
   - /docs/git
+  - /docs/git/vercel-for-origin
   - /docs/deployments/generated-urls
-  - /docs/domains/working-with-domains/add-a-domain-to-environment
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c7ac1c8da6fd9eda0263c2a4bb3bdf88bcc8dc900d7f9b7c77686d1997b96000"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f3e6d4dc3caf37db1c27523e722601fcdd0b77c1f4b6ddeb7c60456ca1e050c5"
 ---
 
 # Environments
@@ -30,7 +30,6 @@ Vercel provides three default environments (**Local**, **Preview**, and **Produc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Additional custom environments can now be purchased](https://vercel.com/changelog/additional-custom-environments-can-now-be-purchased)
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
 - [Prioritize production builds available on all plans](https://vercel.com/changelog/prioritize-production-deployments-to-build-before-queued-preview)
@@ -40,8 +39,9 @@ Vercel provides three default environments (**Local**, **Preview**, and **Produc
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
-- [The developer experience of the Frontend Cloud](https://vercel.com/blog/the-developer-experience-of-the-frontend-cloud)
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 
 Full cross-link map for this page: [/docs/deployments/environments.graph.md](/docs/deployments/environments.graph.md)
 <!-- /docsgraph:related -->
@@ -101,12 +101,13 @@ This will populate the `.env.local` file in your application directory.
 **Preview** environments allow you to deploy and test changes in a live setting, without affecting your production site. By default, Vercel creates a preview deployment when you:
 
 - Push a commit to a branch that is **not** your production branch (commonly `main`)
-- Create a pull request (PR) on [GitHub, GitLab](/docs/git), or Bitbucket
+- Create a pull request (PR) on [GitHub, GitLab](/docs/git), Bitbucket, or [Origin](/docs/git/vercel-for-origin)
 - Deploy using the CLI without the `--prod` flag, for example just `vercel`
 
 > **💡 Note:** The [first deployment](#first-deployment) of a new project is always a
-> production deployment. The preview rules above apply only after that first
-> production deployment exists.
+> production deployment. The preview rules above apply to every deployment
+> after that, even if the [first deployment
+> failed](#what-counts-as-the-first-deployment).
 
 Each deployment gets an automatically generated URL, and you'll typically see links appear in your Git provider's PR comments or in the Vercel Dashboard.
 
@@ -173,6 +174,7 @@ The first deployment of a new project is always a **production** deployment. Thi
 
 - Import a Git repository in the dashboard
 - Run `vercel` or `vercel deploy` from the CLI without `--prod`
+- Run `vercel deploy --target=preview`
 - Deploy from a branch that is not your [production branch](/docs/git#production-branch)
 
 Vercel does this so every new project has a production deployment and can receive [production domains](/docs/domains/working-with-domains/deploying-and-redirecting) right away.
@@ -182,9 +184,25 @@ After that first production deployment, later deployments follow the usual rules
 - Commits to the production branch, or `vercel --prod`, create production deployments
 - Other branches, pull requests, and `vercel` without `--prod` create [preview deployments](#preview-environment-pre-production)
 
+These rules apply even if the first deployment fails. See [What counts as the first deployment](#what-counts-as-the-first-deployment).
+
+#### What counts as the first deployment
+
+When you create a deployment, Vercel checks whether the project already has any deployments. If it has none, the new deployment is the first deployment. Vercel doesn't check whether earlier deployments succeeded:
+
+- A failed, errored, or canceled first deployment still counts.
+- Deleted deployments don't count. If you delete every deployment in a project, Vercel treats the next deployment as the first deployment again.
+- Requests that Vercel rejects before it creates a deployment, such as validation or permission errors, don't count.
+
+If your first deployment fails, you don't need a successful production deployment before you can create previews. Your next `vercel deploy --target=preview` creates a preview deployment that uses your Preview environment variables. Your production domains don't serve a deployment until a production deployment succeeds, for example with `vercel --prod`.
+
+#### Environment variables on the first deployment
+
+The first deployment builds with your **Production** [environment variables](/docs/environment-variables). Variables scoped only to Preview aren't available to it. If your build needs those values, add them to the Production environment as well.
+
 ## Custom Environments
 
-> **Availability**: Custom environments are available on Enterprise and Pro plans
+> Custom environments are available on Enterprise and Pro plans
 
 Custom environments are useful for longer-running pre-production environments like `staging`, `QA`, or any other specialized workflow you require.
 
@@ -286,10 +304,41 @@ See [setup and verification steps](/docs/marketplace-storage#use-a-marketplace-r
 
 ### Pricing and limits
 
-Custom environments are available at no additional cost on the Pro and Enterprise plans. The number of custom environments you can create is based on your plan:
+Each plan includes a number of custom environments per project at no additional cost. You can purchase more for any project in packs of five environments:
 
-- **Pro**: 1 custom environment per project
-- **Enterprise**: 12 custom environments per project
+Plan
+
+Included per project
+
+Additional environments
+
+Maximum per project
+
+Pro
+
+1
+
+$50 per month for each pack of five
+
+16
+
+Enterprise
+
+12
+
+$50 per month for each pack of five
+
+22
+
+To purchase additional custom environments:
+
+1. Go to your project's [**Environments**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fenvironments\&title=Go+to+Environments+settings) settings in the Vercel Dashboard
+2. In the **Custom Environments** section, use the stepper to set the number of environments for the project
+3. Click **Save**, then confirm the updated monthly cost
+
+To stop the monthly charge, reduce the number back to your plan's included amount in the same section. If the project uses more environments than the reduced amount allows, delete custom environments first: reductions below current usage are not accepted.
+
+Purchased packs apply to a single project. Members with permission to update the team's billing plan can change pack quantities.
 
 ## More resources
 
@@ -299,3 +348,6 @@ Custom environments are available at no additional cost on the Pro and Enterpris
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the vercel dev CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dev.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6db09959fb66fe8394a1455ee373186884e3af87ef009de3348e437849ccddbf"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3f28347260e63a112432cc31ebbdb1febb1e0e585a92952e889cc359e768b32d"
 ---
 
 # vercel dev
@@ -36,7 +36,7 @@ The `vercel dev` command is used to replicate the Vercel deployment environment 
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
-- [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 
 Full cross-link map for this page: [/docs/cli/dev.graph.md](/docs/cli/dev.graph.md)
 <!-- /docsgraph:related -->
@@ -110,3 +110,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

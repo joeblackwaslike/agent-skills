@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d497a2e6f16bfdda312ac29ab418a285cebb8c621f33ff013ee85594a3076d90"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4848fbca340a646d59026b8777c0d5686bf17d1ba5931ca11dc831aad0146688"
 ---
 
 # Feature Flags
@@ -282,3 +282,6 @@ Update project flag settings.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

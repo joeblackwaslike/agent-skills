@@ -16,13 +16,13 @@ related:
 summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "78f00a24217528be67e27179f2f8f8d946705566266c9c99e19edc3b873b43ff"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "558faaab684bc495ac26694ed5143aaf969f92952ae5c4b216f9b152f116f6a9"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
 
-> **Availability**: Audit Log Drains are available on Enterprise plans
+> Audit Log Drains are available on Enterprise plans
 
 Vercel is replacing Custom SIEM Log Streaming with [Audit Log Drains](/docs/drains/reference/audit-logs). Audit Log Drains forward the events from your [Activity Log](/docs/activity-log) including audit metadata, which covers more team activity than the legacy integration. If you stream audit logs to a Security Information and Event Management (SIEM) system today, migrate your integration to keep receiving events.
 
@@ -38,7 +38,6 @@ Vercel is replacing Custom SIEM Log Streaming with [Audit Log Drains](/docs/drai
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
 
 Full cross-link map for this page: [/docs/audit-log/migrating-to-drains.graph.md](/docs/audit-log/migrating-to-drains.graph.md)
@@ -134,3 +133,6 @@ A migrated event looks like this:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

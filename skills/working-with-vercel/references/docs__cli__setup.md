@@ -14,8 +14,8 @@ related:
 summary: "Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your agents to AI Gateway."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/setup.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e9febde445108aeafd649f15ec7e010f41ada74f2eccb1a9ca10a115ae571c47"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9d9615f2d23aa73f4f4ede30d7c92c88d46cbaa306989540e494ff26a92982f9"
 ---
 
 # vercel setup
@@ -29,10 +29,10 @@ The `vercel setup` command prepares your machine for coding agents in two steps:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel agent](https://vercel.com/docs/cli/agent) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel upgrade](https://vercel.com/docs/cli/upgrade) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 - [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
+- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 
 Full cross-link map for this page: [/docs/cli/setup.graph.md](/docs/cli/setup.graph.md)
 <!-- /docsgraph:related -->
@@ -156,3 +156,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -12,8 +12,8 @@ related:
 summary: An unexpected internal error occurred. This is a general internal error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_unexpected_error.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "adb32e11e920ce509042a1f8b9e8e332392bef2c36ed9dbd14b228cf178e3bb5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a452f834882fb73f539c1368501ca111ff2da26274676f544e28a8663d1dcfa2"
 ---
 
 # INTERNAL_UNEXPECTED_ERROR
@@ -34,3 +34,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use invalidate_by_src_images with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/invalidate_by_src_images.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4048ae96123c5050ed5b7ed68387e3eb911707960bd427823d4f569516327be6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "10274731c4f6e0b5f52b2b989143b04000638ae753208453edd9471b5781baf6"
 ---
 
 # invalidate_by_src_images
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/cachi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

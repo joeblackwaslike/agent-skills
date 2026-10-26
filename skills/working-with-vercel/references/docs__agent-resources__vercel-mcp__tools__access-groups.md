@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for access groups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0865f39d1b90bc2b7dae6363ce5e3a8cf59ffe1fa28bc324fd8e11f454d9c987"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "38f1a60e2897bc274b921cbbc4f41e6e6fcae838b2d7436dd2b4cc187a264a90"
 ---
 
 # Access Groups
@@ -30,8 +30,8 @@ Inspect access groups in your team to understand which members and projects belo
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
 - [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
 - [Reads an access group project](https://vercel.com/docs/rest-api/access-groups/reads-an-access-group-project) — GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} — Allows reading an access group project
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 - [List members of an access group](https://vercel.com/docs/rest-api/access-groups/list-members-of-an-access-group) — GET /v1/access-groups/{idOrName}/members — List members of an access group
-- [Reads an access group](https://vercel.com/docs/rest-api/access-groups/reads-an-access-group) — GET /v1/access-groups/{idOrName} — Allows to read an access group
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/access-groups.graph.md](/docs/agent-resources/vercel-mcp/tools/access-groups.graph.md)
 <!-- /docsgraph:related -->
@@ -111,3 +111,6 @@ Reads an access group project.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

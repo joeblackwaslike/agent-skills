@@ -17,8 +17,8 @@ related:
 summary: Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ce4bbe61292077e1ab0a8be328c4883f328593b94cc21faaec1bce0950319f6c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "796e0fa600c961f41370420b46a07fbbcd42bf562bf9033fd4bff31b2baff008"
 ---
 
 # AI Gateway Routing Rules
@@ -41,7 +41,7 @@ Routing rules let you control how AI Gateway handles your team's requests at the
 - [Create rule](https://vercel.com/docs/rest-api/ai-gateway/create-rule) — POST /ai-gateway/rules — Create a routing rule
 - [Update rule](https://vercel.com/docs/rest-api/ai-gateway/update-rule) — PATCH /ai-gateway/rules — Update a routing rule \\(enabled, action, or description\\)
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [Delete rule](https://vercel.com/docs/rest-api/ai-gateway/delete-rule) — DELETE /ai-gateway/rules — Delete a routing rule \\(soft delete\\)
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/routing-rules.graph.md](/docs/ai-gateway/models-and-providers/routing-rules.graph.md)
 <!-- /docsgraph:related -->
@@ -167,3 +167,6 @@ Routing rules are managed per team, so your access depends on your role in the t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

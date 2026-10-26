@@ -15,8 +15,8 @@ related:
 summary: Learn how to secure your Drains endpoints with authentication and signature verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/security.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "80f33140fb6c0583d06eb8b1770b9050680abeef349324778d135e9ebbf8d199"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "09d3b7a02d031c21fa961c6105ad78636dd240d911d077ce332374591b51c011"
 ---
 
 # Drains Security
@@ -34,7 +34,7 @@ All Drains support transport-level encryption using HTTPS protocol.
 - [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
 - [Validate Drain delivery configuration](https://vercel.com/docs/rest-api/drains/validate-drain-delivery-configuration) — POST /v1/drains/test — Validate the delivery configuration of a Drain using sample events.
-- [Delete a drain](https://vercel.com/docs/rest-api/drains/delete-a-drain) — DELETE /v1/drains/{id} — Delete a specific Drain by passing the drain id in the URL.
+- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 
 Full cross-link map for this page: [/docs/drains/security.graph.md](/docs/drains/security.graph.md)
 <!-- /docsgraph:related -->
@@ -281,7 +281,9 @@ For additional authentication or identification purposes, you can also add custo
 
 ## IP Address Visibility
 
-> **Availability**: Managing IP address visibility is available on Enterprise and Pro plans
+> Managing IP address visibility is available on Enterprise and Pro plans
+>
+> Those with the owner, admin role can access this feature
 
 Drains can include public IP addresses in the data, which may be considered personal information under certain data protection laws. To hide IP addresses in your drains:
 
@@ -307,3 +309,6 @@ For more information on Drains security and how to use them, check out the follo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e5461b9c4e0b5277ced60d34318d18381b50139f0f61d626eba294da4d8f1c38"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a7a0003a1aaaa7e82c6e90165f7f5023b1069d448a8bbc0b7e5b068df8edc14e"
 ---
 
 # Vercel Hobby Plan
@@ -35,12 +35,11 @@ The Hobby plan is **free** and aimed at developers with personal projects, and s
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
-- [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/plans/hobby.graph.md](/docs/plans/hobby.graph.md)
 <!-- /docsgraph:related -->
@@ -105,7 +104,7 @@ The Pro plan offers more resources and advanced features compared to the Hobby p
 | [Activity Logs](/docs/activity-log) | Available | Available |
 | [Runtime Logs](/docs/logs/runtime) | 1 hour of logs | 1 day of logs |
 | [DDoS Mitigation](/docs/vercel-firewall/ddos-mitigation) | On by default. Optional [Attack Mode](/docs/vercel-firewall/attack-mode). | On by default. Optional [Attack Mode](/docs/vercel-firewall/attack-mode). |
-| [Vercel WAF IP Blocking](/docs/vercel-firewall/vercel-waf/ip-blocking) | Up to 3 | Up to 100 |
+| [Vercel WAF IP Blocking](/docs/vercel-firewall/vercel-waf/ip-blocking) | Up to 10 | Up to 40 |
 | [Vercel WAF Custom Rules](/docs/vercel-firewall/vercel-waf/custom-rules) | Up to 3 | Up to 40 |
 | [Deployment Protection](/docs/deployment-protection/usage-and-pricing) | [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) for preview and production deployments, [Deployment Protection Exceptions](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions), and [Shareable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) | The Hobby features, plus [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection) for $20 per month per protected project |
 | [Connect Token Requests](/docs/connect/pricing#token-requests) | 500 included | Unlimited (on-demand) |
@@ -132,3 +131,6 @@ If you would like to end your paid plan, you can [downgrade to Hobby](/docs/plan
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

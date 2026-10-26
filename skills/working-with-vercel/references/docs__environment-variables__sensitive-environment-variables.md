@@ -16,8 +16,8 @@ related:
 summary: Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/sensitive-environment-variables.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b060890ea0e77cfa680d157f15601f142fd2ac446e794ca4350a8bdc00877d24"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "42d51de00938a6f29d28d6de6200ffe22527bd601d46c14f5138b94b67fa81c1"
 ---
 
 # Config and Secret environment variables
@@ -37,11 +37,11 @@ When you add or edit [environment variables](/docs/environment-variables "Enviro
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
-- [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
+- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types)
 - [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
 - [Sensitive environment variables are now available](https://vercel.com/changelog/sensitive-environment-variables-are-now-available)
-- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
+- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 
 Full cross-link map for this page: [/docs/environment-variables/sensitive-environment-variables.graph.md](/docs/environment-variables/sensitive-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -173,3 +173,6 @@ Environment variables created by [integrations](/docs/integrations) can't be cha
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

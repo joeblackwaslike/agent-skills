@@ -15,8 +15,8 @@ related:
 summary: Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "213117db093286807c16156aff2e4beb1f7070722a8811fe83c91481910f3a04"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c595b1d49627b456473fa9b0532e5b8a55c43eab606f807adea8404fe9447f0e"
 ---
 
 # OpenResponses Images and PDFs with AI Gateway
@@ -33,7 +33,7 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) accepts im
 - [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 - [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
 - [AI Gateway File and PDF Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/file-input) — Send PDFs and documents to AI Gateway models with examples for each supported SDK and API format.
-- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
+- [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/images.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/images.graph.md)
 <!-- /docsgraph:related -->
@@ -284,3 +284,6 @@ curl https://ai-gateway.vercel.sh/v1/responses \
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applications, and executing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "38052af1c7b3be361bccac00e6b73efba252f3762ca51c4b599d5260fad6ad02"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "84fbc51f6731105588ef7e012ae0f93e72d71f032fabe5374c75ed937d41ad8b"
 ---
 
 # Understanding Sandboxes
@@ -32,10 +32,11 @@ Vercel Sandboxes provide on-demand, isolated compute environments for running un
 
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/sandbox/concepts.graph.md](/docs/sandbox/concepts.graph.md)
@@ -293,6 +294,10 @@ Internet access from the sandbox can be restricted through network policies defi
 
 To send a sandbox's public-internet traffic through a Secure Compute network's static IPs, and to reach your own AWS VPC over VPC peering, see [Using Secure Compute with Sandbox](/docs/sandbox/concepts/secure-compute).
 
+#### Long-running WebSocket connections
+
+WebSocket connections to a sandbox's public URL can close while the sandbox continues running. For long-running sessions, reconnect clients automatically and resume application state after an interruption. You can also host the WebSocket server outside the sandbox and have the sandbox initiate the connection.
+
 #### Proxy CA certificates
 
 Vercel Sandbox mounts a unique, per-sandbox certificate authority (CA) certificate for the sandbox proxy in these locations:
@@ -358,3 +363,6 @@ Sandboxes run on Vercel's secure infrastructure, which maintains SOC 2 Type II c
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

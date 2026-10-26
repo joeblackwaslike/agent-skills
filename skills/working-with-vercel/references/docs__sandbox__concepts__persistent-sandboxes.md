@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fa33dfc0cfb5ff09624a49373a75bc67cdc551fd15707a7911c9505564da16d0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "58457f060cd5a62cf22fca8aff8fbd8182c7097fff97623e3cdfbc5b0b0d767e"
 ---
 
 # Persistence
@@ -534,3 +534,6 @@ From the dashboard you can stop the current session or permanently remove the sa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

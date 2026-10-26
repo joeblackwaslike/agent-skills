@@ -16,8 +16,8 @@ related:
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a13926ce5dd231a633512eab27d4aa41430dcda90df7b152a192dd895e5f5e21"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "01b843047a37c33de9cf0722b838e301bea058f0477bfa9f5f11a5d484649c6b"
 ---
 
 # Managing Builds
@@ -36,12 +36,12 @@ When you build your application code, Vercel runs compute to install dependencie
 - [Configure build machine settings across all projects](https://vercel.com/changelog/configure-build-machine-settings-across-all-projects)
 - [Deployments now show billable duration and CPU minutes](https://vercel.com/changelog/deployments-now-show-billable-duration-and-cpu-minutes)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/builds/managing-builds.graph.md](/docs/builds/managing-builds.graph.md)
 <!-- /docsgraph:related -->
@@ -60,7 +60,9 @@ By default, we enable [elastic builds](/docs/builds/managing-builds#elastic-buil
 
 ## Build machines
 
-> **Availability**: Elastic, Enhanced, and Turbo build machines are available on Enterprise and Pro plans
+> Elastic, Enhanced, and Turbo build machines are available on Enterprise and Pro plans
+>
+> Those with the owner role can access this feature
 
 Hobby teams always use the Basic build machine. Basic has 2 vCPUs and 8 GB of memory.
 
@@ -90,7 +92,9 @@ Enterprise customers who have Enhanced build machines enabled via contract will 
 
 ## On-demand concurrent builds
 
-> **Availability**: On-demand concurrent builds is available on Enterprise and Pro plans
+> On-demand concurrent builds is available on Enterprise and Pro plans
+>
+> Those with the owner role can access this feature
 
 On-demand concurrent builds allow your builds to skip the queue and run immediately. By default, projects have on-demand concurrent builds enabled with full concurrency. Learn more about [concurrency modes](/docs/builds/build-queues#with-on-demand-concurrent-builds).
 
@@ -193,7 +197,9 @@ For individual deployments, you can force build execution using the **Start Buil
 
 ## Elastic build machines
 
-> **Availability**: Elastic builds is available on Enterprise and Pro plans
+> Elastic builds is available on Enterprise and Pro plans
+>
+> Those with the owner role can access this feature
 
 With Elastic, Vercel evaluates each project individually and assigns the build machine that best fits its actual workload. The goal is a balance between speed and price: builds that genuinely benefit from more vCPUs and memory get larger machines automatically, while builds that don't get, smaller machines so you aren't paying for compute you won't use.
 
@@ -231,7 +237,7 @@ Some other considerations to take into account when optimizing your builds inclu
 
 ## Prioritize production builds
 
-> **Availability**: Prioritize production builds is available on all plans
+> Prioritize production builds is available on all plans
 
 If a build has to wait for queued preview deployments to finish, it can delay the production release process. When Vercel queues builds, we'll processes them in chronological order ([FIFO Order](# "FIFO - First In First Out")).
 
@@ -245,3 +251,6 @@ To ensure that changes to the [production environment](/docs/deployments/environ
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

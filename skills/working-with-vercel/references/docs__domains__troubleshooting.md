@@ -16,8 +16,8 @@ related:
 summary: Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/troubleshooting.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7e6bdb6fb7bcca451ddaef3959f6db80b6f94f0e0ada9763664c8482971e66af"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a8faf5037f22644c21cf2d8a26ad59125f4e857338a06a23114a5c30e62f21a9"
 ---
 
 # Troubleshooting domains
@@ -38,8 +38,8 @@ There are many common reasons why your domain configuration may not be working. 
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers) — Learn about nameservers and the benefits Vercel nameservers provide.
+- [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 
 Full cross-link map for this page: [/docs/domains/troubleshooting.graph.md](/docs/domains/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -256,3 +256,6 @@ The [/.well-known](# "The /.well-known directory") path is reserved and cannot b
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

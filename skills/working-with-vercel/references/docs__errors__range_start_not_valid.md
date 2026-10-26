@@ -12,8 +12,8 @@ related:
 summary: The start value of the Range header in the request is invalid. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/range_start_not_valid.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "f320e59021174317001b7d53ede9d08a2682e788f5b193e67841712189215b23"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d51c84cb317b26cebf30d2a1a838f41cb18e33370e1a42b83dc5cd8d19b7d206"
 ---
 
 # RANGE_START_NOT_VALID
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

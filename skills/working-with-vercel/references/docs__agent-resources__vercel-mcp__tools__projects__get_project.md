@@ -13,8 +13,8 @@ related:
 summary: Use get_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b09be8ff3858ee9d42b50a16253367519181b14e613fd1f9dd429b7b074c230b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3fb771a9054570a3c511718c1c99fc4fd5fe8eb994eb55da6cd8b5b0005721db"
 ---
 
 # get_project
@@ -29,9 +29,9 @@ Get a [project](/docs/projects) by ID or name, including its configuration.
 
 - [get_microfrontends_config_for_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project) — Use get_microfrontends_config_for_project with Vercel MCP.
 - [get_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env) — Use get_project_env with Vercel MCP.
-- [get_connector_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection) — Use get_connector_project_connection with Vercel MCP.
 - [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [get_connector_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection) — Use get_connector_project_connection with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/get_project.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/get_project.graph.md)
 <!-- /docsgraph:related -->
@@ -57,3 +57,6 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

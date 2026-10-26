@@ -12,13 +12,13 @@ related:
 summary: Prevent Turborepo from caching the Next.js .next/cache folder to prevent an oversized cache.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_turbo_cache.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c2fd068af9143e537424ecd54a4dbda80f69e3027a06a7da878c988983257f7c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "75c2f4d1378016db9058a3f7c97420a6ec793b7af630818a151cc533f1fe948a"
 ---
 
 # NEXTJS_NO_TURBO_CACHE
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 This rule prevents the `.next/cache` folder from being added to the Turborepo cache.
 This is important because including the `.next/cache` folder in the Turborepo cache can cause
@@ -59,3 +59,6 @@ To fix, add `"!.next/cache/**"` to the list of outputs for the task.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

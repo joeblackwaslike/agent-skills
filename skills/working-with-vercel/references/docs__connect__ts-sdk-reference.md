@@ -16,8 +16,8 @@ related:
 summary: API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "29cc310ebebcda5cf9d19b6f864e15af84cb657793f096261c562546c5f86348"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b0a695119a37ebf93b6a878a5a83ef6c93829ea341887248d01a14d5c3bd8d79"
 ---
 
 # TypeScript SDK Reference
@@ -39,9 +39,9 @@ sha256: "29cc310ebebcda5cf9d19b6f864e15af84cb657793f096261c562546c5f86348"
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [MCP Events](https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-events) — Reference for experimental MCP event methods, the webhook handler, and subscription and storage types.
-- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime) — API reference for the experimental_useRealtime hook.
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
-- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
+- [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime) — API reference for the experimental_useRealtime hook.
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/connect/ts-sdk-reference.graph.md](/docs/connect/ts-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -553,3 +553,6 @@ Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

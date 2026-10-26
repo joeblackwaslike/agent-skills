@@ -16,8 +16,8 @@ related:
 summary: Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7eeffa84e493aa62ec4719c2fb11de22b722bc653a20d9487d940be884e63a16"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3ec1f59d484920cd945455ff8b4b206f176f3b572afd783b95a43746d14ff317"
 ---
 
 # Deploying GitHub Projects with Vercel
@@ -34,12 +34,12 @@ Vercel for GitHub automatically deploys your GitHub projects with [Vercel](/), p
 - [Optionally disable deployment_status webhook events for GitHub Actions](https://vercel.com/changelog/optionally-disable-deployment_status-webhook-events-for-github-actions)
 - [Trigger GitHub Actions with enriched deployment data from Vercel](https://vercel.com/changelog/trigger-github-actions-with-enriched-deployment-data-from-vercel)
 - [New GitHub App permissions for Actions and Workflows](https://vercel.com/changelog/vercel-github-app-updated-permissions)
-- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Introducing `vercel dev`: Serverless, on localhost](https://vercel.com/blog/vercel-dev)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 
@@ -213,6 +213,8 @@ Repository permissions allow us to interact with repositories belonging to or as
 | `Metadata`        | Y    | N     | Allows us to read basic repository metadata to provide a detailed dashboard.                                              |
 | `Web Hooks`       | Y    | Y     | Allows us to react to various GitHub events.                                                                              |
 | `Commit Statuses` | Y    | Y     | Allows us to synchronize commit status between GitHub and Vercel.                                                         |
+| `Actions`         | Y    | N     | Allows agents to read workflow run logs to help diagnose CI failures.                                                     |
+| `Workflows`       | Y    | Y     | Allows agents to configure and update CI workflow files on your behalf.                                                   |
 
 ### Organization Permissions
 
@@ -379,3 +381,6 @@ jobs:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

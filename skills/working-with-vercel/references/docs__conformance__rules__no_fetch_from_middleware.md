@@ -12,13 +12,13 @@ related:
 summary: Requires that any fetch call that is depended on transitively by Next.js middleware be reviewed and approved before use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_fetch_from_middleware.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7c1c57d858ba315d30a2d7c1fe53468a0cb26c851ec9b0853d3a9790c15a0671"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "78cf204c7a882bfd90fa090cda92d9d26d12d48499ff85761faef486a5f2263f"
 ---
 
 # NO_FETCH_FROM_MIDDLEWARE
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 [Next.js middleware](https://nextjs.org/docs/advanced-features/middleware) runs
 code at the Edge. This means that the code is globally distributed. When
@@ -68,3 +68,6 @@ making a request that would add latency to middleware.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

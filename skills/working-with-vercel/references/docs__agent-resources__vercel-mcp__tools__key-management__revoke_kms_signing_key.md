@@ -13,8 +13,8 @@ related:
 summary: Use revoke_kms_signing_key with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/revoke_kms_signing_key.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b079884eb70ef723cec4b170b4d481764b4b08795465f89710c4969d0a09788d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b6d55cf348d3387f58984b3f9213e4905b072de607d18d377f7f1d51f9090711"
 ---
 
 # revoke_kms_signing_key
@@ -50,3 +50,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-m
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

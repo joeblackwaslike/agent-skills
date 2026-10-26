@@ -9,17 +9,17 @@ prerequisites:
   - /docs/agent-resources/vercel-mcp/tools/agent-runs
   - /docs/agent-resources/vercel-mcp/tools
 related:
-  []
+  - /docs/eve/agent-runs
 summary: Use list_agent_run_projects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "13c5c6f2002d8048376f96c4e1a967eb989fc33a1c54cc358490f71232bf9d21"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0fe36c7cc688f99a30a6e1408383dfb53d113f1fba439fad1eded5fce076bc1e"
 ---
 
 # list_agent_run_projects
 
-Use this tool with agents built with [eve](https://eve.dev/docs/guides/deployment/vercel#inspect-agent-runs).
+Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
 
 
 <!-- docsgraph:related -->
@@ -32,7 +32,7 @@ Use this tool with agents built with [eve](https://eve.dev/docs/guides/deploymen
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
 - [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
 - [get_observability_configuration_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_configuration_projects) — Use get_observability_configuration_projects with Vercel MCP.
-- [list_access_group_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects) — Use list_access_group_projects with Vercel MCP.
+- [get_agent_run_trace](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace) — Use get_agent_run_trace with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects.graph.md](/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects.graph.md)
 <!-- /docsgraph:related -->
@@ -53,3 +53,6 @@ List projects in a Vercel team that have Agent Runs observability data for eve a
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

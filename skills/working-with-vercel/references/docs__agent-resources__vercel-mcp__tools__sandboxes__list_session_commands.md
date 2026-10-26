@@ -13,8 +13,8 @@ related:
 summary: Use list_session_commands with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4fd229b6fb77ced93326893af165160ad9727e1278c52d0caaa3e30ca26d4891"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6061e420773c15608342f90b98b9a3b0aeafc08fb269c094586f88a598701a36"
 ---
 
 # list_session_commands
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

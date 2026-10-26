@@ -17,8 +17,8 @@ related:
 summary: Generate a video from a text prompt using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "cd485dc306a7acf5c2ec3c302e5839e769086052816bf90285182cbf6214406e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "451257864fa4539e14632154817d8d6a33d6cbf6a53a61f3ad8e8f19256f485a"
 ---
 
 # Video Generation Quickstart
@@ -104,3 +104,6 @@ node index.mts
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -14,8 +14,8 @@ related:
 summary: Archive unused feature flags and restore them when needed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/archive.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4dcbc152d31cd9f6f6595f96de7c69154210be13064dd297e2faf346b5f8abdc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "33990a85261cabdd7f3ea30673703267ace2ecc8b4596ca88faeca5227ba20dd"
 ---
 
 # Archive
@@ -30,11 +30,10 @@ The Archive is where you find feature flags that are no longer active. Archiving
 
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
-- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Cleaning up after a full rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 - [Delete a flag](https://vercel.com/docs/rest-api/feature-flags/delete-a-flag) — DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Permanently delete a feature flag from the pr
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
-- [Integrate flags with Vercel Web Analytics](https://vercel.com/docs/flags/observability/web-analytics) — Learn how to tag your page views and custom events with feature flags
+- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts) — Learn how draft flags work and how to promote them to Vercel Flags.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/archive.graph.md](/docs/flags/vercel-flags/dashboard/archive.graph.md)
@@ -111,3 +110,6 @@ The flag returns to your active flags list with all its previous configuration i
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

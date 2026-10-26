@@ -4,8 +4,8 @@ description: Using OpenTelemetry with AI SDK Core
 url: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "033b5143b505826238fd4a376cb2c529566a34735dd8f5a462798ee8b3e76e4b"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "3d198775869868b28ce29410ae8721e2713ae2e7459e7b32a27dfb25317bc490"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -217,6 +217,29 @@ results still receive the full tool context. See [Runtime and Tool
 Context](/docs/ai-sdk-core/runtime-and-tool-context) for the difference
 between tool execution context and telemetry event context.
 
+## Agent span names
+
+`agentSpanName` controls root text/object generation span names. The strings
+`'modelId'` (default) and `'functionId'` select a naming strategy, producing
+`invoke_agent {modelId}` or `invoke_agent {telemetry.functionId}`:
+
+```ts
+registerTelemetry(new OpenTelemetry({ agentSpanName: 'functionId' }));
+// With telemetry: { functionId: 'travel-planner' }, the span is:
+// invoke_agent travel-planner
+```
+
+For a literal custom name, use a callback returning the complete span name:
+
+```ts
+registerTelemetry(new OpenTelemetry({ agentSpanName: () => 'my-custom-span' }));
+```
+
+The callback receives `{ modelId, functionId }` for dynamic names. If it returns
+`undefined` or throws, the default name is used. The `'functionId'` strategy also
+falls back to `modelId` when `functionId` is absent. Child span names and
+attributes are unchanged.
+
 ## Custom Tracer
 
 If you want your traces to use a `TracerProvider` other than the one provided by the `@opentelemetry/api` singleton, pass a custom `Tracer` to the `OpenTelemetry` constructor:
@@ -407,7 +430,7 @@ By default, attributes use the `gen_ai.*` prefix. Provider names are mapped to w
 
 For `generateText` and `streamText`, the integration records 3 types of spans:
 
-- **`invoke_agent {modelId}`** (root span, `INTERNAL`): covers the full operation including all steps and tool calls.
+- **`invoke_agent {modelId}`** (default root span name, `INTERNAL`): covers the full operation including all steps and tool calls. Use [`agentSpanName`](#agent-span-names) to customize the name.
 
   Initial attributes:
 
@@ -672,7 +695,7 @@ registerTelemetry(
 );
 ```
 
-This does not create additional AI SDK-specific spans such as `ai.generateText`, `ai.generateText.doGenerate`, or `ai.toolCall`. Instead, it adds only the selected supplemental attributes to the spans emitted by `OpenTelemetry`, such as `invoke_agent {modelId}`, `step {n}`, `chat {modelId}`, and `execute_tool {toolName}`.
+This does not create additional AI SDK-specific spans such as `ai.generateText`, `ai.generateText.doGenerate`, or `ai.toolCall`. Instead, it adds only the selected supplemental attributes to the spans emitted by `OpenTelemetry`, such as the default root span `invoke_agent {modelId}`, `step {n}`, `chat {modelId}`, and `execute_tool {toolName}`.
 
 All supplemental attributes are disabled by default. Enable only the data you want to collect:
 

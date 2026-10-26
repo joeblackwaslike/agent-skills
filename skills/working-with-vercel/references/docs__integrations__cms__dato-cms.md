@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content seamlessly using DatoCMS API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/dato-cms.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "35c0aed1b09bb64940108e01de8be2c1229f79ca3f814b68bf507054bce6acd4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8167f53465b7e43514904d9066200750219251779cd5211648de18f5d5d28588"
 ---
 
 # Vercel DatoCMS Integration
@@ -32,10 +32,9 @@ DatoCMS is a headless content management system designed for creating and managi
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
-- [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
-- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
-- [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
 - [Edit Mode](https://vercel.com/docs/edit-mode) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
+- [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
+- [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
 
 Full cross-link map for this page: [/docs/integrations/cms/dato-cms.graph.md](/docs/integrations/cms/dato-cms.graph.md)
 <!-- /docsgraph:related -->
@@ -46,31 +45,26 @@ To get started with DatoCMS on Vercel, follow the steps below to install the int
 
 - ### Install the Vercel CLI
   To pull in environment variables from DatoCMS to your Vercel project, you need to install the [Vercel CLI](/docs/cli). Run the following command in your terminal:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn global add vercel@latest
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add -g vercel@latest
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i -g vercel@latest
+  ```
+  **yarn**
+  ```bash
+  yarn global add vercel@latest
+  ```
+  **npm**
+  ```bash
+  npm i -g vercel@latest
+  ```
+  **bun**
+  ```bash
+  bun add -g vercel@latest
+  ```
 
 - ### Install your CMS integration
-  Navigate to the [ integration](`/integrations/${props.cms.toLowerCase\(\).split\(/[.\s]+/\).join\('-'\)}`) and follow the steps to install the integration.
+  Navigate to the  integration and follow the steps to install the integration.
 
 - ### Pull in environment variables
   Once you've installed the DatoCMS integration, you can pull in environment variables from DatoCMS to your Vercel project. In your terminal, run:
@@ -82,7 +76,7 @@ See your installed CMSs documentation for next steps on how to use the integrati
 
 ### Content Link
 
-> **Availability**: Content Link is available on Enterprise and Pro plans
+> Content Link is available on Enterprise and Pro plans
 
 Content Link enables you to edit content on websites using headless CMSs by providing links on elements that match a content model in the CMS. This real-time content visualization allows collaborators to make changes without needing a developer's assistance.
 
@@ -96,3 +90,6 @@ You don't need any additional configuration or code changes on the page to use t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

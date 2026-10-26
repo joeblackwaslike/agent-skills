@@ -14,13 +14,13 @@ related:
 summary: "Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "cd0b492915d4af5ac0923bc67fbcfaa161e038bb402e265dcd670908d973891a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "97ef2aae7be9cb133497585a27c588249d4ee854c981221f6649041719a73703"
 ---
 
 # Connect to Microsoft Azure
 
-> **Availability**: Secure backend access with OIDC federation is available on all plans
+> Secure backend access with OIDC federation is available on all plans
 
 Connect your Vercel deployments to Microsoft Azure without storing long-lived credentials. Microsoft Entra ID trusts Vercel's OIDC Identity Provider (IdP) and exchanges the token Vercel issues for a short-lived Entra ID access token.
 
@@ -30,8 +30,8 @@ Connect your Vercel deployments to Microsoft Azure without storing long-lived cr
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
-- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
 - [Using Vercel Passport with Microsoft Entra ID](https://vercel.com/kb/guide/vercel-passport-microsoft-entra-id) — Configure Microsoft Entra ID and Vercel Passport to protect a Next.js app, limit access to assigned users, and read veri
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
@@ -114,28 +114,29 @@ In the following example, you create a [Vercel function](/docs/functions/quickst
 
 Install the following packages:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @azure/identity @azure/cosmos @vercel/oidc
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @azure/identity @azure/cosmos @vercel/oidc
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @azure/identity @azure/cosmos @vercel/oidc
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @azure/identity @azure/cosmos @vercel/oidc
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @azure/identity @azure/cosmos @vercel/oidc
+```
+
+**yarn**
+
+```bash
+yarn add @azure/identity @azure/cosmos @vercel/oidc
+```
+
+**npm**
+
+```bash
+npm i @azure/identity @azure/cosmos @vercel/oidc
+```
+
+**bun**
+
+```bash
+bun add @azure/identity @azure/cosmos @vercel/oidc
+```
 
 In the API route for this function, use the following code to perform a database `SELECT` query from an Azure Cosmos DB instance:
 
@@ -226,28 +227,29 @@ export async function GET() {
 
 Install the following packages:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @azure/identity @azure/keyvault-secrets @vercel/oidc
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @azure/identity @azure/keyvault-secrets @vercel/oidc
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @azure/identity @azure/keyvault-secrets @vercel/oidc
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @azure/identity @azure/keyvault-secrets @vercel/oidc
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @azure/identity @azure/keyvault-secrets @vercel/oidc
+```
+
+**yarn**
+
+```bash
+yarn add @azure/identity @azure/keyvault-secrets @vercel/oidc
+```
+
+**npm**
+
+```bash
+npm i @azure/identity @azure/keyvault-secrets @vercel/oidc
+```
+
+**bun**
+
+```bash
+bun add @azure/identity @azure/keyvault-secrets @vercel/oidc
+```
 
 ```ts filename="/api/azure-key-vault/route.ts"
 import { ClientAssertionCredential } from '@azure/identity';
@@ -281,28 +283,29 @@ Before your code can request the token, expose an app role on the API's own app 
 
 Install the following packages:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @azure/identity @vercel/oidc
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @azure/identity @vercel/oidc
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @azure/identity @vercel/oidc
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @azure/identity @vercel/oidc
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @azure/identity @vercel/oidc
+```
+
+**yarn**
+
+```bash
+yarn add @azure/identity @vercel/oidc
+```
+
+**npm**
+
+```bash
+npm i @azure/identity @vercel/oidc
+```
+
+**bun**
+
+```bash
+bun add @azure/identity @vercel/oidc
+```
 
 ```ts filename="/api/azure-backend/route.ts"
 import { ClientAssertionCredential } from '@azure/identity';
@@ -352,3 +355,6 @@ The credential caches the access token and refreshes it before expiry, so callin
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

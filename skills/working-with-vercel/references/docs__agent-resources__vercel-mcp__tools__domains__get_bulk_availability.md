@@ -13,8 +13,8 @@ related:
 summary: Use get_bulk_availability with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_availability.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "16845d908b951dbf7834e61abb35421c45e05a942643fe3a0353a72dad7bf429"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f214e9f7425de98074e93a997a11c036025ac18de99892c230cade910c0e8c1c"
 ---
 
 # get_bulk_availability
@@ -29,8 +29,8 @@ Get availability for multiple domains.
 
 - [get_bulk_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_price) — Use get_bulk_price with Vercel MCP.
 - [get_domain_availability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_availability) — Use get_domain_availability with Vercel MCP.
-- [search_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains) — Use search_domains with Vercel MCP.
 - [Get availability for multiple domains](https://vercel.com/docs/rest-api/domains-registrar/get-availability-for-multiple-domains) — POST /v1/registrar/domains/availability — Get availability for multiple domains. If the domains are available, they can
+- [search_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains) — Use search_domains with Vercel MCP.
 - [check_domain_availability_and_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price) — Use check_domain_availability_and_price with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_availability.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_availability.graph.md)
@@ -47,3 +47,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

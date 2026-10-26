@@ -13,8 +13,8 @@ related:
 summary: Use create_kms_issuer_policy with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer_policy.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "753f3d5e9c8ef69a43fe1170a64cb0c4712a79aab53c68fcdb87e468131530c8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "91593ccb7bb7745f4ebb10d6470aa753b1996394eb5452a011dfe3eb3227914e"
 ---
 
 # create_kms_issuer_policy
@@ -31,7 +31,7 @@ Create an issuer policy.
 - [create_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer) — Use create_kms_issuer with Vercel MCP.
 - [create_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_signing_key) — Use create_kms_signing_key with Vercel MCP.
 - [update_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer) — Use update_kms_issuer with Vercel MCP.
-- [get_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/get_kms_issuer) — Use get_kms_issuer with Vercel MCP.
+- [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer_policy.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer_policy.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-m
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

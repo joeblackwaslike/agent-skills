@@ -16,13 +16,13 @@ related:
 summary: A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1744c1c7789c21a35d506c52f3256a677b526ece01ad6fc265f2a3f7d0adeec6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "eec3f589031e281ab1090aa0a6887cca6ae08888dfa7ad5fe3d5c296e0f911ec"
 ---
 
 # Vercel Global Config
 
-> **Availability**: Global Config is available on all plans
+> Global Config is available on all plans
 
 A [Global Config](/docs/global-config) is a global data store that [enables experimentation with feature flags, A/B testing, critical redirects, and IP blocking](#use-cases). It enables you to read data in the region closest to the user without querying an external database or hitting upstream servers.
 
@@ -43,7 +43,7 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
-- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta)
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 
 Full cross-link map for this page: [/docs/global-config.graph.md](/docs/global-config.graph.md)
 <!-- /docsgraph:related -->
@@ -152,3 +152,6 @@ To learn about Global Config limits and pricing, see [our Global Config limits d
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

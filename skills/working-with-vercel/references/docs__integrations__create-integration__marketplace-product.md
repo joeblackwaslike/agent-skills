@@ -17,8 +17,8 @@ related:
 summary: Learn how to create a product for your Vercel native integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-product.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8192f97bf0b591a41f4878b720b21c3ef496c14a8c48114be45f1585cfaf16a6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ab0206870d65600586157e280ace69f93437397fb0abe07dd628351155234eae"
 ---
 
 # Create a Native Integration
@@ -155,3 +155,6 @@ You can add it to your editor configuration as follows:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

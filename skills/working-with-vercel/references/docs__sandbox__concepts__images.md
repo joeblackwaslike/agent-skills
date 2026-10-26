@@ -15,8 +15,8 @@ related:
 summary: "Start sandboxes from Vercel's Managed Images, or custom OCI images stored in Vercel Container Registry to ship your own system packages, tooling, and..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/images.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7a89231308e44a8411f3e93ba73354b5d83257b05ba31ec8fe87e8aee923bd05"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2f3a637baa09700f7bfd8a70d98ac356ac485ea4a3ac921196d8543eecd8894d"
 ---
 
 # Images
@@ -37,7 +37,7 @@ Custom images give you full control over the sandbox environment. Define the Lin
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/images.graph.md](/docs/sandbox/concepts/images.graph.md)
@@ -186,3 +186,6 @@ A team-scoped reference resolves against the referenced team and project. It wor
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

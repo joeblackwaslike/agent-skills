@@ -12,13 +12,13 @@ related:
 summary: Disallows dependency on client libraries inside of middleware to improve performance of middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_client_deps_in_middleware.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "7e462d7666ca5aae0aa760b8b13936da88ab4353d63790debcecc1074f6393a5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "586cbaa320554462f8b4c9b8c81428283539524cdb03ac29427269c571e75028"
 ---
 
 # NEXTJS_NO_CLIENT_DEPS_IN_MIDDLEWARE
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 This check disallows dependencies on client libraries, such as `react` and
 `next/router` in Next.js middleware. Since middleware runs on the server and
@@ -76,3 +76,6 @@ separate file from the code that provides the React functionality.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -4,8 +4,8 @@ description: Learn how to use Google models through AI Gateway or the direct Goo
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "d0a3771f6b79389c565741bcf6a7eb13a151782021ca51de091dd2ddb3f80a6c"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "1f67fe07a6dbbd8860a4fc8e77c0405d344be1182bbd6439ac1fa9abc500ec0a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -405,6 +405,14 @@ and long coding or agentic tasks.
   thinks. `thinkingBudget` is not supported by these models.
 - Complex requests can run for several minutes. Make sure your HTTP client
   allows read timeouts of at least 15 to 20 minutes.
+
+**Grounding across requests.** When a response is continued automatically,
+`providerMetadata.google.groundingMetadataPerRequest` contains the grounding
+metadata from each request, in order. An entry is `null` if that request did
+not return grounding metadata. This preserves earlier Search results even if
+the final request returns none, and keeps citation indices scoped to their
+original request. The existing `groundingMetadata` field keeps its current
+behavior; use the per-request array when inspecting a continued response.
 
 **Usage across requests.** Each continued request re-sends the prompt plus all
 output so far as input, so its prompt token count includes everything
@@ -878,7 +886,7 @@ import { generateText } from 'ai';
 const { text, sources, providerMetadata } = await generateText({
   model: google('gemini-4-argon'),
   prompt: `Based on the document: https://ai.google.dev/gemini-api/docs/url-context.
-          Answer this question: How many links we can consume in one request?`,
+          Answer this question: How many links can we consume in one request?`,
   tools: {
     url_context: google.tools.urlContext({}),
   },

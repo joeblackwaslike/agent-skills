@@ -9,16 +9,16 @@ prerequisites:
   - /docs/ai-gateway/token-pass
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/token-pass
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/pricing
   - /docs/ai-gateway/authentication-and-byok/api-keys
   - /docs/ai-gateway/observability-and-spend/budgets
-  - /docs/ai-gateway/security-and-compliance/zdr
 summary: Which requests Token Pass covers, how Token Pass API keys route requests, what happens when credit runs out, and the errors you can get.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/token-pass/models-and-routing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ea77d100f479dcc18252b33444332aea8459481a1f1b7b9ad8876d423bb71d99"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5ece8c378c704cd8357952a2ad97aa3cbb9d30c14fdfa72082cd4eec25b2890b"
 ---
 
 # Token Pass Models and Routing
@@ -34,12 +34,13 @@ All other requests follow normal AI Gateway routing and billing.
 
 ## Featured models
 
-| Model   | Model ID             | Provider                         |
-| ------- | -------------------- | -------------------------------- |
-| Kimi K3 | `moonshotai/kimi-k3` | Vercel Token Pass (`token-pass`) |
-| GLM 5.3 | `zai/glm-5.3`        | Vercel Token Pass (`token-pass`) |
+| Model               | Model ID                       | Provider                         |
+| ------------------- | ------------------------------ | -------------------------------- |
+| Kimi K3             | `moonshotai/kimi-k3`           | Vercel Token Pass (`token-pass`) |
+| GLM 5.3             | `zai/glm-5.3`                  | Vercel Token Pass (`token-pass`) |
+| DeepSeek V4.1 Flash | `deepseek/deepseek-v4.1-flash` | Vercel Token Pass (`token-pass`) |
 
-Token Pass currently serves these models through Wafer. AI Gateway deducts usage from your credit at the Token Pass provider's per-token prices, shown on each [model page](/ai-gateway/models).
+Token Pass currently serves these models through Wafer. AI Gateway deducts usage from your credit at each model's [list price](/docs/ai-gateway/token-pass#list-price).
 
 ## Token Pass API keys
 
@@ -155,7 +156,7 @@ If a featured model request failed, or another provider served it, check these i
 
 1. The request uses a Token Pass API key, not an OIDC token or a Vercel sign-in.
 2. The key belongs to the team that has Token Pass.
-3. The model ID is exactly `zai/glm-5.3` or `moonshotai/kimi-k3`, with fast mode off.
+3. The model ID is exactly `zai/glm-5.3`, `moonshotai/kimi-k3`, or `deepseek/deepseek-v4.1-flash`, with fast mode off.
 4. Your agent config doesn't set an `order` or `only` that leaves out `token-pass`.
 5. Your provider allowlist and model allowlist include Token Pass and the featured models.
 6. You still have credit this billing period. Check the Token Pass tab.
@@ -164,3 +165,6 @@ If a featured model request failed, or another provider served it, check these i
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

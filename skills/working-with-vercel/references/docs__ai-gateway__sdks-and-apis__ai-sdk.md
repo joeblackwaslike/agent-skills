@@ -9,16 +9,16 @@ prerequisites:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway
 related:
+  - /docs/chat-sdk/integrations/ai-gateway
   - /docs/ai-gateway/models-and-providers/reasoning
   - /docs/ai-gateway/inputs-and-tools
   - /docs/ai-gateway/sdks-and-apis/ai-sdk-python
   - /docs/ai-gateway/authentication-and-byok/oidc
-  - /docs/ai-gateway/authentication-and-byok
 summary: Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d242e41e07bd3561dd1971b8d0ddb5248a9b42af2a05fd96b9f4f8a4fc624a85"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "aea6183bfd1750719deec2f63286264c5ed3befb862bf28ab7d40b0b7daeae32"
 ---
 
 # AI SDK with AI Gateway
@@ -38,7 +38,7 @@ The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered Typ
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5) — Get started with GPT-5 using the AI SDK.
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -108,6 +108,8 @@ for await (const textPart of result.textStream) {
   process.stdout.write(textPart);
 }
 ```
+
+To stream responses into Slack or another chat platform, follow [Chat SDK with AI Gateway](/docs/chat-sdk/integrations/ai-gateway). The example reads conversation history and sends the model's response back to the thread.
 
 ## Structured outputs
 
@@ -305,3 +307,6 @@ Start with an AI SDK template to build a chatbot or route form submissions with 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

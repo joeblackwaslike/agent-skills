@@ -14,8 +14,8 @@ related:
 summary: This error signifies that a specified resource could not be located.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/resource_not_found.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "b1b23d1407ef7104628188081f78411657b6f3aa9327e48ec054a02bcfec39ee"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "113b8d7fc6fa8d4dda27271d2fd0bd98b27e8f4e1c3bb8c4b2ab6e03576d314f"
 ---
 
 # RESOURCE_NOT_FOUND
@@ -42,3 +42,6 @@ Additionally, the error can also occur in the context of the [Vercel REST API](/
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

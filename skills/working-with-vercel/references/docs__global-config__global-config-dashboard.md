@@ -16,8 +16,8 @@ related:
 summary: Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c74c8c44f69507a437e9ff6e95d352c1b389483685944b2e728d4cd561c2fe22"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b66a2a0e126eb8408b396bf2290bc158c39992e1bd1e81fcb90e9c739a95eaae"
 ---
 
 # Managing Global Configs with the Dashboard
@@ -32,10 +32,10 @@ You can create, view and update your [Global Configs](/docs/global-config), and 
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config)
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
-- [@vercel/global-config](https://vercel.com/docs/global-config/global-config-sdk) — The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [@vercel/global-config](https://vercel.com/docs/global-config/global-config-sdk) — The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 
 Full cross-link map for this page: [/docs/global-config/global-config-dashboard.graph.md](/docs/global-config/global-config-dashboard.graph.md)
 <!-- /docsgraph:related -->
@@ -196,3 +196,6 @@ Using the Vercel REST API, you can create and update Global Configs
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

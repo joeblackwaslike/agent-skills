@@ -4,8 +4,8 @@ description: "How to fix the \"ToolInvocation must have a result\" error when us
 url: "https://ai-sdk.dev/docs/troubleshooting/tool-invocation-missing-result"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/troubleshooting/tool-invocation-missing-result.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "dfed14e470d9d3589473c72311a84b5c3d652b6c8d35df5013bbf3337e6516c8"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "0bdcdaff14105aefc621f2b864ce184ac521fdc6869e778201244f67a7726d2e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -43,7 +43,7 @@ const tools = {
 };
 ```
 
-2. Client-side execution with `useChat` (omitting the `execute` function), you must provide results using `addToolOutput`:
+2. For client-side execution with `useChat` (omitting the `execute` function), you must provide results using `addToolOutput`:
 
 ```tsx
 import { useChat } from '@ai-sdk/react';

@@ -12,8 +12,8 @@ related:
 summary: The fallback body is too large for the cache. This is a cache error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/fallback_body_too_large.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "2645254ca3519c1d2a3e5fa7fc646517f07989b925aa92910e62561d1cc25abf"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "588e3a667224e95726f2be79cd5f1072e63dd2514bd830bff76877d35263a6c7"
 ---
 
 # FALLBACK_BODY_TOO_LARGE
@@ -39,3 +39,6 @@ To prevent this error, ensure that the size of the fallback page is less than 10
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1fdc639f57ecb5dd79a783ce420ea835cfb2f4783c4c26c4de0148457937544a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7d0f9ceb2829d9ad1f7fea05a3ae15eaba4093229e77e9429a36c24c409f571c"
 ---
 
 # Webhooks API Reference
@@ -1525,3 +1525,6 @@ If your HTTP endpoint does not respond with a `2XX` HTTP status code, we attempt
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

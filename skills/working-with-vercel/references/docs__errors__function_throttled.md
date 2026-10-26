@@ -16,8 +16,8 @@ related:
 summary: The function you are trying to call has exceeded the rate limit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/function_throttled.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "6ce5c187bb308970a04f93d8e7c482a47498d32899609c35e18d594676470970"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "795c858d36088e2a236d5c8adea7f6e1d45cc698b95e316b2153030159cbfdfe"
 ---
 
 # FUNCTION_THROTTLED
@@ -38,3 +38,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

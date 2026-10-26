@@ -17,8 +17,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "57c878bd67befb1066ed52380d83fd6ee97c2c6fcfb3ec7088abaa545883c198"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7f0bde48ea997025d6e0b4cef86ce363499c07d27cf6bc82603f8b8057c4d2b4"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -27,28 +27,7 @@ sha256: "57c878bd67befb1066ed52380d83fd6ee97c2c6fcfb3ec7088abaa545883c198"
 
 1. Install the `@vercel/functions` package:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/functions
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/functions
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/functions
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/functions
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
 
 
 <!-- docsgraph:related -->
@@ -71,6 +50,28 @@ sha256: "57c878bd67befb1066ed52380d83fd6ee97c2c6fcfb3ec7088abaa545883c198"
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-functions-package.graph.md](/docs/functions/functions-api-reference/vercel-functions-package.graph.md)
 <!-- /docsgraph:related -->
+
+```bash
+pnpm i @vercel/functions
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/functions
+```
+
+**npm**
+
+```bash
+npm i @vercel/functions
+```
+
+**bun**
+
+```bash
+bun add @vercel/functions
+```
 
 2. Import the `@vercel/functions` package (non-Next.js frameworks or Next.js versions below 15.1):
 
@@ -503,28 +504,29 @@ Usage of the Vercel Runtime Cache is charged, learn more about pricing in the [r
 
 `upgradeWebSocket()` requires `@vercel/functions` version 3.10.0 or later and the `ws` package in your project. Install `ws` and import the API from `@vercel/functions`.
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i ws
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add ws
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i ws
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add ws
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i ws
+```
+
+**yarn**
+
+```bash
+yarn add ws
+```
+
+**npm**
+
+```bash
+npm i ws
+```
+
+**bun**
+
+```bash
+bun add ws
+```
 
 | Name      | Type                                                            | Description                                      |
 | :-------- | :-------------------------------------------------------------- | :----------------------------------------------- |
@@ -694,3 +696,6 @@ export const GET = async () => {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

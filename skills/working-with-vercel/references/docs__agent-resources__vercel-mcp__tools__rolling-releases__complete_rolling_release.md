@@ -13,8 +13,8 @@ related:
 summary: Use complete_rolling_release with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/complete_rolling_release.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "51f1837647d377b1398c8f2b7bd23113f4a480b55994f76fff6a1e48480b2436"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "754a90254ea3ea5c1e21b68530dd3bed3ce43ad3126cad14529034c045db6f79"
 ---
 
 # complete_rolling_release
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

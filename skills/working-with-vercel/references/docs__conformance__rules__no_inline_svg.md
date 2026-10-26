@@ -12,13 +12,13 @@ related:
 summary: Prevent the use of `svg` tags inline.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_inline_svg.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "475c2a17ecec131e9b37375a4da53563793a2832ba77e83c69ae1852bee17d80"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c11849db04b6f6e60a1c3eb2c646c4c8fb4fb5151ff3e1348f3c63c0d219a918"
 ---
 
 # NO_INLINE_SVG
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 > **💡 Note:** This rule is available from version 1.3.0.
 
@@ -55,3 +55,6 @@ export default function Page() {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

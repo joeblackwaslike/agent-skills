@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/comments"
-fetched_at: "2026-07-06T05:37:45.074Z"
-sha256: "b73ff127c831c55cf12595d0b82221781cbfaa6282a29d25456c735079f20123"
+fetched_at: "2026-10-26T09:52:24.329Z"
+sha256: "0973729e3d03625b819ad7749d33a8f6d3a89b27af9eee9f561a4fee77c30477"
 ---
 
 # REST API endpoints for issue comments
@@ -12,7 +12,7 @@ Use the REST API to manage comments on issues and pull requests.
 
 You can use the REST API to create and manage comments on issues and pull requests. Every pull request is an issue, but not every issue is a pull request. For this reason, "shared" actions for both features, like managing assignees, labels, and milestones, are provided within the Issues endpoints. To manage pull request review comments, see [REST API endpoints for pull request review comments](/en/rest/pulls/comments).
 
-> \[!NOTE]
+> [!NOTE]
 > Most endpoints use `Authorization: Bearer <YOUR-TOKEN>` and `Accept: application/vnd.github+json` headers, plus `X-GitHub-Api-Version: 2026-03-10`. Curl examples below omit these standard headers for brevity.
 
 ## List issue comments for a repository

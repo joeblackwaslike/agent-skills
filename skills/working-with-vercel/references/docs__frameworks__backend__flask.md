@@ -10,15 +10,15 @@ prerequisites:
   - /docs/frameworks
 related:
   - /docs/cli/init
+  - /docs/functions/runtimes/python/python-version
+  - /docs/functions/runtimes/python
   - /docs/cli/deploy
   - /docs/cdn
-  - /docs/headers
-  - /docs/functions
 summary: Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/flask.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "cec51c6069ab1872e7fd755bf792fa76fc19ced17399f564886191ab91fd7215"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "008cac21b93a3492d04c6754ca35ca7cd854f30985386dd92f57d2c9df1b60a1"
 ---
 
 # Deploy a Flask app on Vercel
@@ -34,19 +34,20 @@ your repository.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Zero-configuration Flask backends](https://vercel.com/changelog/zero-configuration-flask-backends)
-- [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
-- [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
-- [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
+- [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Routing Middleware: Python Reference](https://vercel.com/docs/routing-middleware/python-reference) — Reference for writing Routing Middleware in Python with the vercel-proxy package, including setup, routes, requests, and
 
 Full cross-link map for this page: [/docs/frameworks/backend/flask.graph.md](/docs/frameworks/backend/flask.graph.md)
 <!-- /docsgraph:related -->
 
 ## Create or import your app
+
+To move an existing Flask app from another platform, follow the Python API migration guide for [Heroku](/kb/guide/migrate-a-python-api-from-heroku-to-vercel), [Render](/kb/guide/migrate-a-python-api-from-render-to-vercel), or [Railway](/kb/guide/migrate-a-python-api-from-railway-to-vercel).
 
 Create a Flask app or use an existing one:
 
@@ -87,6 +88,10 @@ entrypoint = "backend.server:app"
 ```
 
 The `tool.vercel.entrypoint` value tells Vercel to look for a `Flask` instance named `app` in `./backend/server.py`.
+
+### Configure Python and dependencies
+
+[Set the Python version](/docs/functions/runtimes/python/python-version) to match your application's dependencies. Vercel supports `pyproject.toml`, `requirements.txt`, and Pipenv manifests; see the [Python dependency configuration](/docs/functions/runtimes/python#dependencies) for supported lockfiles.
 
 ### Build command
 
@@ -183,6 +188,24 @@ For more options, see [Configuring
 functions](/docs/functions/configuring-functions) and the [`functions`
 property](/docs/project-configuration/vercel-json#functions).
 
+## Run background and scheduled tasks
+
+To process work independently of an API response, enqueue tasks with [Celery](/docs/frameworks/backend/celery) or [Dramatiq](/docs/frameworks/backend/dramatiq). Both integrations use Vercel Queues to invoke worker functions, and their guides show how to enqueue work from a Python web application.
+
+For scheduled work, configure Cron Jobs to call a Flask route that runs the task or enqueues it. The [Flask cron job example](/kb/guide/ship-a-flask-app-on-vercel#run-scheduled-tasks-with-cron-jobs) includes the schedule and `CRON_SECRET` authorization check.
+
+## Stream responses
+
+Return a Flask `Response` backed by a generator to send response chunks as they become available. See the [Flask streaming example](/kb/guide/ship-a-flask-app-on-vercel#stream-responses), which uses `stream_with_context` to preserve the request context while the generator runs.
+
+## Use WebSockets
+
+Use Flask-Sock to add WebSocket routes to a Flask application on Vercel. Follow the [Flask-Sock setup](/docs/functions/websockets#flask-sock-with-wsgi) and handle client reconnects when connections reach the function duration limit.
+
+## Monitor and debug requests
+
+Use [Runtime Logs](/docs/functions/logs) to inspect application output and errors, and [Observability](/docs/observability) to investigate request duration and failures. See [monitoring Flask with Observability](/kb/guide/ship-a-flask-app-on-vercel#monitor-performance-with-observability) for details.
+
 ## Limitations
 
 All [Vercel Functions limitations](/docs/functions/limitations) apply to Flask applications, including:
@@ -203,3 +226,6 @@ For more about deploying Flask on Vercel, see:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

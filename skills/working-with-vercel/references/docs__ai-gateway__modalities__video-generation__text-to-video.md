@@ -13,8 +13,8 @@ related:
 summary: Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6d484f91297f20109afd2973e8b6c5e25c181a454d85f1a9f6c32c386ff455e4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c78f7035f15f37947b2f6e96f42d73cba78171cc1d09d44b9b3fc419ac6d36e9"
 ---
 
 # AI Gateway Text-to-Video Generation
@@ -27,11 +27,11 @@ Generate videos from text prompts. Describe what you want to see and the model c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance Seedance video and Seedream image models with the AI SDK.
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba Cloud Model Studio (Qwen) models with the AI SDK.
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
 - [Seedance 2.0 Video Generation on AI Gateway](https://vercel.com/changelog/seedance-2.0-video-now-available-on-ai-gateway)
@@ -431,3 +431,6 @@ const result = await generateVideo({
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

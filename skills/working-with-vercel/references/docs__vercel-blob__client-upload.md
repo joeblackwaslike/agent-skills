@@ -15,13 +15,15 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "dee31cd71a11345b7af736099f1f73a8b3acf8c5f7f03fe8fe170c82528466d6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1f807dbf3eb4fdfdbf9059722155fee03e4c6d06ed1be57ead11777bc685a432"
 ---
 
 # Client Uploads with Vercel Blob
 
-> **Availability**: Vercel Blob is available on all plans
+> Vercel Blob is available on all plans
+>
+> Those with the owner, member, developer role can access this feature
 
 In this guide, you'll learn how to do the following:
 
@@ -41,7 +43,7 @@ In this guide, you'll learn how to do the following:
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
 - [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
 - [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
 
 Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md)
 <!-- /docsgraph:related -->
@@ -53,28 +55,29 @@ Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/d
 
 Vercel Blob works with any frontend framework. First, install the package:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/blob
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/blob
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/blob
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/blob
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/blob
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/blob
+```
+
+**npm**
+
+```bash
+npm i @vercel/blob
+```
+
+**bun**
+
+```bash
+bun add @vercel/blob
+```
 
 - ### Create a Blob store
   Create a Blob store from the dashboard or the Vercel CLI.
@@ -718,3 +721,6 @@ VERCEL_BLOB_CALLBACK_URL=https://abc123.ngrok-free.app
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

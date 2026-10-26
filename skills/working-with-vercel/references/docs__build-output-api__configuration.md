@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2e804b0048272eea7c1912bbd7fa7648ebaf9fa377cca43074bf5f2623995884"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "17992bfe8f7c68a0ff00d5e612c21021d92aaa74421d3ee5661208d218b8bd54"
 ---
 
 # Build Output Configuration
@@ -33,13 +33,14 @@ sha256: "2e804b0048272eea7c1912bbd7fa7648ebaf9fa377cca43074bf5f2623995884"
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
 - [Image](https://nextjs.org/docs/pages/api-reference/components/image) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
 - [Image Component](https://nextjs.org/docs/app/api-reference/components/image) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy) — Backwards compatible Image Optimization with the Legacy Image component.
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/build-output-api/configuration.graph.md](/docs/build-output-api/configuration.graph.md)
 <!-- /docsgraph:related -->
@@ -729,3 +730,6 @@ type DaemonsConfig = Record<string, Record<string, never>>;
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

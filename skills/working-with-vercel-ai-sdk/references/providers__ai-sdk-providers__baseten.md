@@ -1,24 +1,74 @@
 ---
 title: Baseten
-description: Learn how to use Baseten models with the AI SDK.
+description: Learn how to use Baseten with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "c492140eb333739c21046d00ebbd55192e56ee938ff3205dd30c5197f97eed74"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "7d827c67ac9e04cf563316661265acd414b10052e206a46c3f8ecc13dbba0168"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Baseten](https://baseten.co/) is an inference platform for serving frontier, enterprise-grade opensource AI models via their [API](https://docs.baseten.co/overview).
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/baseten` to connect directly to Baseten.
 
-## Setup
+```ts provider="baseten" model="openai/gpt-oss-120b"
+import { generateText } from 'ai';
 
-The Baseten provider is available via the `@ai-sdk/baseten` module. You can install it with
+const { text } = await generateText({
+  model: "openai/gpt-oss-120b",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['baseten'],
+    },
+  },
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/baseten
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['baseten']`. This sends the request to Baseten first, then falls back to other available providers of the same model if Baseten is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to Baseten. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by Baseten through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Using `@ai-sdk/baseten`
+
+For direct access to Baseten, install `ai` and `@ai-sdk/baseten`:
+
+```bash
+pnpm add ai @ai-sdk/baseten
+```
+
+Set your Baseten API credential in the `BASETEN_API_KEY` environment variable:
+
+```bash
+export BASETEN_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/baseten`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/baseten` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

@@ -13,8 +13,8 @@ related:
 summary: Use restore_edge_config_backup with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "82ce7ae3201bfac20fcbbc78ef5ac9c6e4ad4d9c37570940e79c75ecadc321f9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cc44502e5a3d7377dcc8c3ad44d6178f70d4977790b6db37bc2c15e21ed4a05f"
 ---
 
 # restore_edge_config_backup
@@ -50,3 +50,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

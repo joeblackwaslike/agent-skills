@@ -12,8 +12,8 @@ related:
 summary: Learn about usage and pricing for fluid compute on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "210d28ef180a5935bdc5785896ca9bb6260574c934bea13bd8b4e6601fb07aeb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "11128667a63d390e8e3e4c4d7fa83745705ad8fd2795d76bf440ba02c86da83b"
 ---
 
 # Fluid compute pricing
@@ -30,10 +30,10 @@ Vercel prices Functions on fluid compute based on your plan and resource usage. 
 - [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions)
 - [Function invocations now billed per unit](https://vercel.com/changelog/function-invocations-now-billed-per-unit)
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
-- [WebSocket support is now in Public Beta](https://vercel.com/changelog/websocket-support-is-now-in-public-beta)
+- [WebSocket support is now generally available](https://vercel.com/changelog/websocket-support-is-now-generally-available)
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
-- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
@@ -133,3 +133,6 @@ Suppose you deploy a function with 4 GB of memory in the São Paulo, Brazil regi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

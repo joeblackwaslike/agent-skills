@@ -16,8 +16,8 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "af9c897e7677d5d538095178f819e0b8995c6ad9e22c7a5831b8ca010d3359aa"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c24530f0a7843acec3efbf30a76309e84adc811aa9f2b569172370baf9be75bd"
 ---
 
 # AI Gateway Image-to-Video Generation
@@ -32,10 +32,10 @@ Animate a static image into a video. The image you provide becomes the video con
 
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba Cloud Model Studio (Qwen) models with the AI SDK.
-- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use the Kling AI provider for the AI SDK.
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
 - [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 
@@ -688,3 +688,6 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your image a
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

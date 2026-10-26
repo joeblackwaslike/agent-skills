@@ -16,8 +16,8 @@ related:
 summary: Learn how draft flags work and how to promote them to Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/drafts.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "cc7f2e4e9b97e7d6746375a1a6799568a76c349c04cadb38bbb9a4b239e9463e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "91a7730cc088022532310086c3529ae3049d8c23a450cad738b44c47a373af5c"
 ---
 
 # Draft Flags
@@ -34,7 +34,6 @@ Drafts are flags that Vercel detects in your code but haven't been created in th
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
@@ -132,3 +131,6 @@ export const GET = createFlagsDiscoveryEndpoint(async () => {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

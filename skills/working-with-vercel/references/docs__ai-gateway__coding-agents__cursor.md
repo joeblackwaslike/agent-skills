@@ -14,8 +14,8 @@ related:
 summary: Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, and model IDs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cursor.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f952f861d6800448aa3b7f2a9bf876ead61f69407548589f6df4168e507e05c8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7c90553b2894bf0ee81deeda2f9220a61b6801ecde152248e9679a1f8f4b409f"
 ---
 
 # Cursor with AI Gateway
@@ -31,9 +31,10 @@ sha256: "f952f861d6800448aa3b7f2a9bf876ead61f69407548589f6df4168e507e05c8"
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor) — Learn how to use the Cursor harness adapter.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Cursor Cloud Agents](https://vercel.com/docs/sandbox/ecosystem/cursor) — Run Cursor Cloud Agents on Vercel Sandbox by backing a Cursor Self-Hosted Machines Team Pool with one isolated microVM p
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/cursor.graph.md](/docs/ai-gateway/coding-agents/cursor.graph.md)
 <!-- /docsgraph:related -->
@@ -94,3 +95,6 @@ Cursor's bring-your-own-key support has constraints that come from Cursor itself
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

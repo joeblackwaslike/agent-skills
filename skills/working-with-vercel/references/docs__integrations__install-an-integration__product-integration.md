@@ -17,13 +17,13 @@ related:
 summary: Learn how you can add a product to your Vercel project through a native integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/product-integration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "dbf2d0e5b207398a8747bf4706814e72bf86ec11da6ae97354c7066daba626d1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fbe2675e8eea559c37b4258246eff367776587d407df80e6b79ee34cede92960"
 ---
 
 # Add a Native Integration
 
-> **Availability**: Native Integrations are available on all plans
+> Native Integrations are available on all plans All plans, including Enterprise, can install the integrations through a self-service workflow.
 
 ## Add a product
 
@@ -45,7 +45,6 @@ You can install integrations and provision resources directly from the command l
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product) — Learn how to create a product for your Vercel native integration
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
@@ -199,3 +198,6 @@ If available in the integration you want to install, [deployment integration act
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

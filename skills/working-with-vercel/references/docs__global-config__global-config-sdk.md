@@ -16,8 +16,8 @@ related:
 summary: The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so you can start reading Global...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-sdk.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fe7866fe4b60bb8e315b74b77d51091e5ada256b55313f008d308656fe85c5f7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2ba1a944f1b8afea4832e5b1938fb2c06e19572cd411e7ad9450299115e93af7"
 ---
 
 # @vercel/global-config
@@ -33,9 +33,8 @@ The [Global Config](/docs/global-config) client SDK is the most ergonomic way to
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config)
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Global Config Limits and pricing](https://vercel.com/docs/global-config/global-config-limits) — Learn about the Global Configs limits and pricing based on account plans.
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config/global-config-sdk.graph.md](/docs/global-config/global-config-sdk.graph.md)
@@ -57,28 +56,29 @@ Before you can start using the SDK, you need to have done the following:
 
 To get started, install the SDK:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/global-config
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/global-config
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/global-config
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/global-config
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/global-config
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/global-config
+```
+
+**npm**
+
+```bash
+npm i @vercel/global-config
+```
+
+**bun**
+
+```bash
+bun add @vercel/global-config
+```
 
 ## Use connection strings
 
@@ -559,3 +559,6 @@ Manage your Global Configs at different levels in your Vercel Dashboard
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

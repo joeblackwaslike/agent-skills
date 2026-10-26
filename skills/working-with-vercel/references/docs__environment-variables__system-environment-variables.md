@@ -12,8 +12,8 @@ related:
 summary: System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the Git branch deployed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/system-environment-variables.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7a215b62e21634ca4ec6c7c6001e347a372feb807673eb526504db5fa73f5bc6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dc201d35d20aea28394fc730cae53aab964ae7110b48013ac1d4c3fe37ae289b"
 ---
 
 # System environment variables
@@ -36,7 +36,7 @@ Vercel provides a set of environment variables that are automatically populated 
 - [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
 Full cross-link map for this page: [/docs/environment-variables/system-environment-variables.graph.md](/docs/environment-variables/system-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -319,3 +319,6 @@ VERCEL_GIT_PULL_REQUEST_ID=23
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -4,8 +4,8 @@ description: Learn how to build agents with the AI SDK.
 url: "https://ai-sdk.dev/docs/agents/overview"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/overview.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "6305b12db169052f8a746948f0e4ea32eb7ec8b5160caa0646210d11cf3a39f6"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "8b6a98757dd1f3238464bee8d7f5800248062c55566b3e32ed11ca3245769d9d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -143,6 +143,7 @@ Agents are flexible and powerful, but non-deterministic. When you need reliable,
 - **[Runtime and Tool Context](/docs/ai-sdk-core/runtime-and-tool-context)** - How to pass shared agent state and per-tool context
 - **[Workflow Patterns](/docs/agents/workflows)** - Structured patterns using core functions for complex workflows
 - **[Loop Control](/docs/agents/loop-control)** - Execution control with stopWhen and prepareStep
+- **[Chat Platforms](/docs/agents/chat-platforms)** - Run agents in Slack, Microsoft Teams, Discord, and more with Chat SDK
 
 ---
 

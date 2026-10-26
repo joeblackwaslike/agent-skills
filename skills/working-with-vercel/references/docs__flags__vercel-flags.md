@@ -16,13 +16,13 @@ related:
 summary: Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directly from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2402dec2804fcd95c30a79cbe5c57d310315ae66c51795c488282ef3fbc6bd44"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ddc87c53038b892087392e390b6bdd6efffd5beb752da2caec86e70b4c881995"
 ---
 
 # Vercel Flags
 
-> **Availability**: Vercel Flags are available on all plans
+> Vercel Flags are available on all plans
 
 Vercel Flags is a feature flag provider built into the Vercel platform. Create flags, define targeting rules, run progressive rollouts, and run A/B tests, all from the Vercel Dashboard without adding another service to your stack.
 
@@ -133,3 +133,6 @@ Understand the limits and pricing model of Vercel Flags.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

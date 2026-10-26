@@ -1,17 +1,17 @@
 ---
 source: "https://docs.github.com/en/rest/checks/runs"
-fetched_at: "2026-10-05T11:18:57.736Z"
-sha256: "a7475f947ccb3b1932adabbcd723056cc331cb11134c76fb70112753446c0d34"
+fetched_at: "2026-10-26T09:52:24.329Z"
+sha256: "cfea5e549fa0d9f63040fdb9fb4eedbd324fe0c55c211c089e902cfbe1d789c8"
 ---
 
 # REST API endpoints for check runs
 
 Use the REST API to manage check runs.
 
-> \[!NOTE]
+> [!NOTE]
 > Write permission for the REST API to interact with checks is only available to GitHub Apps. OAuth apps and authenticated users can view check runs and check suites, but they are not able to create them. If you aren't building a GitHub App, you might be interested in using the REST API to interact with [commit statuses](/en/rest/commits#commit-statuses).
 
-> \[!NOTE]
+> [!NOTE]
 > Most endpoints use `Authorization: Bearer <YOUR-TOKEN>` and `Accept: application/vnd.github+json` headers, plus `X-GitHub-Api-Version: 2026-03-10`. Curl examples below omit these standard headers for brevity.
 
 ## Create a check run
@@ -44,8 +44,80 @@ The Checks API only looks for pushes in the repository where the check suite or 
 
 #### Body parameters
 
-* **`status`** (string) (required)
-  Can be one of: `completed`
+* **`name`** (string) (required)
+  The name of the check. For example, "code-coverage".
+
+* **`head_sha`** (string) (required)
+  The SHA of the commit.
+
+* **`details_url`** (string)
+  The URL of the integrator's site that has the full details of the check. If the integrator does not provide this, then the homepage of the GitHub app is used.
+
+* **`external_id`** (string)
+  A reference for the run on the integrator's system.
+
+* **`status`** (string)
+  The current status of the check run. Only GitHub Actions can set a status of waiting, pending, or requested.
+  Default: `queued`
+  Can be one of: `queued`, `in_progress`, `completed`, `waiting`, `requested`, `pending`
+
+* **`started_at`** (string)
+  The time that the check run began. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.
+
+* **`conclusion`** (string)
+  Required if you provide completed\_at or a status of completed. The final conclusion of the check.
+  Note: Providing conclusion will automatically set the status parameter to completed. You cannot change a check run conclusion to stale, only GitHub can set this.
+  Can be one of: `action_required`, `cancelled`, `failure`, `neutral`, `success`, `skipped`, `stale`, `timed_out`
+
+* **`completed_at`** (string)
+  The time the check completed. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.
+
+* **`output`** (object)
+  Check runs can accept a variety of data in the output object, including a title and summary and can optionally provide descriptive details about the run.
+  * **`title`** (string) (required)
+    The title of the check run.
+  * **`summary`** (string) (required)
+    The summary of the check run. This parameter supports Markdown. Maximum length: 65535 characters.
+  * **`text`** (string)
+    The details of the check run. This parameter supports Markdown. Maximum length: 65535 characters.
+  * **`annotations`** (array of objects)
+    Adds information from your analysis to specific lines of code. Annotations are visible on GitHub in the Checks and Files changed tab of the pull request. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the Update a check run endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. GitHub Actions are limited to 10 warning annotations and 10 error annotations per step. For details about how you can view annotations on GitHub, see "About status checks".
+    * **`path`** (string) (required)
+      The path of the file to add an annotation to. For example, assets/css/main.css.
+    * **`start_line`** (integer) (required)
+      The start line of the annotation. Line numbers start at 1.
+    * **`end_line`** (integer) (required)
+      The end line of the annotation.
+    * **`start_column`** (integer)
+      The start column of the annotation. Annotations only support start\_column and end\_column on the same line. Omit this parameter if start\_line and end\_line have different values. Column numbers start at 1.
+    * **`end_column`** (integer)
+      The end column of the annotation. Annotations only support start\_column and end\_column on the same line. Omit this parameter if start\_line and end\_line have different values.
+    * **`annotation_level`** (string) (required)
+      The level of the annotation.
+      Can be one of: `notice`, `warning`, `failure`
+    * **`message`** (string) (required)
+      A short description of the feedback for these lines of code. The maximum size is 64 KB.
+    * **`title`** (string)
+      The title that represents the annotation. The maximum size is 255 characters.
+    * **`raw_details`** (string)
+      Details about this annotation. The maximum size is 64 KB.
+  * **`images`** (array of objects)
+    Adds images to the output displayed in the GitHub pull request UI.
+    * **`alt`** (string) (required)
+      The alternative text for the image.
+    * **`image_url`** (string) (required)
+      The full URL of the image.
+    * **`caption`** (string)
+      A short image description.
+
+* **`actions`** (array of objects)
+  Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the check\_run.requested\_action webhook to your app. Each action includes a label, identifier and description. A maximum of three actions are accepted. To learn more about check runs and requested actions, see "Check runs and requested actions."
+  * **`label`** (string) (required)
+    The text to be displayed on a button in the web UI. The maximum size is 20 characters.
+  * **`description`** (string) (required)
+    A short explanation of what this action would do. The maximum size is 40 characters.
+  * **`identifier`** (string) (required)
+    A reference for the action on the integrator's system. The maximum size is 20 characters.
 
 ### HTTP response status codes
 

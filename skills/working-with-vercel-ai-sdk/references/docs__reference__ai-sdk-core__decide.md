@@ -4,8 +4,8 @@ description: Decide answers to typed questions against shared state with a decis
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/decide"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/decide.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "69b4d1a7c9e04dcb222fd9b6a9a21e3e921038d7ae9a85063ff98790f5df3163"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "a6898e943157a9515611768260cdfd978cc82625b511ded91ef447c5d167622f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -19,19 +19,24 @@ state. See [Decisions](/docs/ai-sdk-core/decisions) for examples and semantics.
 
 ## Parameters
 
-| Parameter         | Type                                             | Description                                                                                                                               |
-| ----------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `model`           | `Experimental_DecisionModel`                     | Required experimental v4 model instance or a string ID resolved by Gateway or an explicitly configured decision-capable default provider. |
-| `state`           | `Experimental_DecisionState`                     | Required string, JSON object, or ordered array of text, file, and JSON parts.                                                             |
-| `questions`       | `Record<string, Experimental_DecisionQuestion>`  | Required nonempty question map.                                                                                                           |
-| `maxRetries`      | `number`                                         | Nonnegative integer; defaults to 2.                                                                                                       |
-| `abortSignal`     | `AbortSignal`                                    | Cancels the decisions request.                                                                                                            |
-| `headers`         | `Record<string, string>`                         | Additional HTTP headers.                                                                                                                  |
-| `providerOptions` | `ProviderOptions`                                | Provider-specific options.                                                                                                                |
-| `telemetry`       | `TelemetryOptions`                               | Telemetry configuration, including per-call integrations, input/output recording, and a function ID.                                      |
-| `runtimeContext`  | `Record<string, unknown>`                        | Context available to lifecycle callbacks and selectively included in telemetry with `telemetry.includeRuntimeContext`.                    |
-| `onStart`         | `(event: Experimental_DecideStartEvent) => void` | Called when the decision operation begins.                                                                                                |
-| `onEnd`           | `(event: Experimental_DecideEndEvent) => void`   | Called when the decision operation completes successfully.                                                                                |
+| Parameter         | Type                                                                                           | Description                                                                                                                               |
+| ----------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `model`           | `Experimental_DecisionModel`                                                                   | Required experimental v4 model instance or a string ID resolved by Gateway or an explicitly configured decision-capable default provider. |
+| `state`           | `Experimental_DecisionState`                                                                   | Required string, JSON object, or ordered array of text, file, and JSON parts.                                                             |
+| `questions`       | `Record<string, Experimental_DecisionQuestion>`                                                | Required nonempty question map.                                                                                                           |
+| `maxOutputTokens` | `number`                                                                                       | Optional maximum output tokens, an integer >= 1.                                                                                          |
+| `reasoning`       | `'provider-default' \| 'none' \| 'minimal' \| 'low' \| 'medium' \| 'high' \| 'xhigh' \| 'max'` | Optional reasoning effort. Language-model adapters default to `'none'`. Native decision providers return an unsupported-setting warning.  |
+| `maxRetries`      | `number`                                                                                       | Nonnegative integer; defaults to 2.                                                                                                       |
+| `abortSignal`     | `AbortSignal`                                                                                  | Cancels the decisions request.                                                                                                            |
+| `headers`         | `Record<string, string>`                                                                       | Additional HTTP headers.                                                                                                                  |
+| `providerOptions` | `ProviderOptions`                                                                              | Provider-specific options.                                                                                                                |
+| `telemetry`       | `TelemetryOptions`                                                                             | Telemetry configuration, including per-call integrations, input/output recording, and a function ID.                                      |
+| `runtimeContext`  | `Record<string, unknown>`                                                                      | Context available to lifecycle callbacks and selectively included in telemetry with `telemetry.includeRuntimeContext`.                    |
+| `onStart`         | `(event: Experimental_DecideStartEvent) => void`                                               | Called when the decision operation begins.                                                                                                |
+| `onEnd`           | `(event: Experimental_DecideEndEvent) => void`                                                 | Called when the decision operation completes successfully.                                                                                |
+
+Set `reasoning: 'provider-default'` to use the underlying language model's default
+reasoning effort instead of the adapter's `'none'` default.
 
 See [Lifecycle Callbacks](/docs/ai-sdk-core/lifecycle-callbacks#experimental_decide)
 for the complete `onStart` and `onEnd` event fields.

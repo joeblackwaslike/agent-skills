@@ -13,8 +13,8 @@ related:
 summary: Use filter_project_envs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/filter_project_envs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "81d441775b418dcd220cb26c424aaf93b6a22dc63c59412ee1391b1aba695650"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "075dbb6ada9920abf383091ed66fc724a3cc6d93d4f1fcb977c5684fe7463fce"
 ---
 
 # filter_project_envs
@@ -53,3 +53,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/envir
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

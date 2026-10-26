@@ -16,8 +16,8 @@ related:
 summary: Generate an image from a text prompt using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/image.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "22514c2fc97d4c9e3a9618c86d7ba8591b36b085f7bac270890f2228a397dab2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "93c700414d95e7077bdd7d6b586640e96ec1691b300199c342a4a10325bf3e20"
 ---
 
 # AI Gateway Image Generation Quickstart
@@ -32,10 +32,10 @@ Generate an image through AI Gateway and save it to a file.
 
 - [Generate Text with Image Prompt](https://ai-sdk.dev/cookbook/node/generate-text-with-image-prompt) — Learn how to generate text with image prompt using the AI SDK and Node
 - [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video) — Generate a video from a text prompt using AI Gateway.
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text) — Generate and stream text responses using AI Gateway.
 - [AI Gateway Speech Quickstart: Transcription and TTS](https://vercel.com/docs/ai-gateway/getting-started/speech) — Generate speech and transcribe it using AI Gateway.
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
+- [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/image.graph.md](/docs/ai-gateway/getting-started/image.graph.md)
 <!-- /docsgraph:related -->
@@ -98,3 +98,6 @@ node index.mts
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

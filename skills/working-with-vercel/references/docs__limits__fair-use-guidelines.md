@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits/fair-use-guidelines.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "817c1425f0629d869bbf94c65092d0ef567f5550f5072e377d64c3ebb5c4d8bb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "57004266f1c18ae141c2ec77e2a647c18ff27f123a8e1df4c4a481e3a9313025"
 ---
 
 # Fair Use Guidelines
@@ -37,10 +37,10 @@ Vercel usage is subject to these fair use guidelines across plans and usage-base
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
 - [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel) — Learn how to perform pentesting on Vercel.
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
-- [Legacy Pricing for Image Optimization](https://vercel.com/docs/image-optimization/legacy-pricing) — This page outlines information on the pricing and limits for the source images-based legacy option.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/limits/fair-use-guidelines.graph.md](/docs/limits/fair-use-guidelines.graph.md)
@@ -124,3 +124,6 @@ For further information regarding these guidelines and acceptable use of our ser
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

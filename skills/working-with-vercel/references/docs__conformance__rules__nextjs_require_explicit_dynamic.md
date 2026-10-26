@@ -12,13 +12,13 @@ related:
 summary: Requires explicitly setting the `dynamic` route segment option for Next.js pages and routes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_require_explicit_dynamic.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "cf2ac85ac71eb75de8cf45b2db71e74e706d47627384db4fb5a38ae7fbd89e0b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d43f21655b63bedef50588384d7be53a618b66eb75a2a40d4b8a30c66e882256"
 ---
 
 # NEXTJS_REQUIRE_EXPLICIT_DYNAMIC
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 > **💡 Note:** This rule is available from version 1.3.0.
 
@@ -97,3 +97,6 @@ export default function Page() {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

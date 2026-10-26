@@ -11,13 +11,13 @@ related:
   - /docs/tracing/always-on-tracing
   - /docs/cli/traces
   - /docs/eve/observability
-  - /docs/eve/concepts
-  - /docs/observability
+  - /docs/agent-resources/vercel-mcp
+  - /docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects
 summary: Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/eve/agent-runs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c926445d22e1dffe1dc317c207b45093034590a4a511eee443a5092717c20f2c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "03aefec249f45d7dda64f8048697c77533fb01479cf8b16b4020ad3ec282bca4"
 ---
 
 # Agent Runs
@@ -41,11 +41,12 @@ Vercel dashboard. It appears automatically for eve projects, with no instrumenta
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [How Software Factories Work](https://vercel.com/docs/eve/software-factory) — Understand what software factories are, when to use them, and how eve coordinates agents from work item to reviewed chan
+- [Workflow Data Retention](https://vercel.com/docs/workflows/retention) — Learn how long Vercel Workflows keeps run data, when Vercel deletes it, where Vercel stores it, and how to delete it soo
 
 Full cross-link map for this page: [/docs/eve/agent-runs.graph.md](/docs/eve/agent-runs.graph.md)
 <!-- /docsgraph:related -->
 
-> **Availability**: Agent Runs (Beta) are available on Enterprise and Pro and Hobby plans
+> Agent Runs are available in Beta on Enterprise, Pro, and Hobby plans
 
 Agent Runs usage is billed at
 [Always-on Tracing rates](/docs/tracing/always-on-tracing#usage-and-pricing) during beta. All plans
@@ -74,6 +75,8 @@ Select a run to see its model, trigger, and deployment, followed by a per-turn b
 Agent Runs is eve's built-in OpenTelemetry integration for Vercel. Configure it with `agentRuns()`.
 New eve deployments automatically configure tracing to sample at 100%. Existing deployments must
 configure sampling.
+
+To investigate an agent's actions, connect its tool calls with the initiating identity, approval records, and changes recorded by downstream systems. Agent Runs captures execution traces; your application and connected systems must supply the approval and outcome records. Read [How do you audit what an AI agent did?](/i/how-to-audit-ai-agents) for guidance on reconstructing a run and handling gaps in the evidence.
 
 ## Configure tracing for existing deployments
 
@@ -124,6 +127,21 @@ Input redaction removes eve's known prompt, instruction, document, and tool-argu
 Output redaction removes response, reasoning, tool-result, exception, and status attributes.
 Redaction affects only Agent Runs and does not mutate spans sent to another destination.
 
+## Inspect runs with Vercel MCP
+
+Connect a supported client to [Vercel MCP](/docs/agent-resources/vercel-mcp) to investigate agent activity from your coding assistant. The Agent Runs tools let you find projects, select a run, and inspect its metadata and trace:
+
+| Tool                                                                                                 | Use it to                                                          |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [list\_agent\_run\_projects](/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) | Find projects in a team that have Agent Runs data.                 |
+| [list\_agent\_runs](/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs)                 | Find runs for a project and time window.                           |
+| [get\_agent\_run](/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run)                     | Inspect a run's metadata, events, usage, and subagent information. |
+| [get\_agent\_run\_trace](/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace)         | Read the conversation trace, including messages and tool calls.    |
+
+For example, ask your client: "Find recent Agent Runs for my project, then inspect the tool calls in the latest run." Specify the team, project, environment, and time window when you need to narrow the results.
+
+Trace results can be paginated or unavailable. Follow the [trace response and pagination guidance](/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace#response-and-pagination) before treating an empty result as evidence that a run had no activity.
+
 ## Next steps
 
 - [Observability](/docs/eve/observability): configure process-wide OpenTelemetry settings and
@@ -135,3 +153,6 @@ Redaction affects only Agent Runs and does not mutate spans sent to another dest
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

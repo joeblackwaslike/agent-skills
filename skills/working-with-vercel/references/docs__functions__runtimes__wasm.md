@@ -17,8 +17,8 @@ related:
 summary: Learn how to use WebAssembly (Wasm) to enable low-level languages to run on Vercel Functions and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/wasm.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7010a4fc59dae113bb363c51b9e21c78da512debc3e355bccc65b473c3cf2e08"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c77c5ab1dba08f54e92195372f04bb82641ea8fdf853f17f57cb82c88dcb20ee"
 ---
 
 # Using WebAssembly (Wasm)
@@ -36,7 +36,7 @@ sha256: "7010a4fc59dae113bb363c51b9e21c78da512debc3e355bccc65b473c3cf2e08"
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
-- [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
+- [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go) — Learn how to use the Go runtime to run Go APIs on Vercel.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 
@@ -88,3 +88,6 @@ You can use Wasm in your production deployment or locally, using [`vercel dev`](
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

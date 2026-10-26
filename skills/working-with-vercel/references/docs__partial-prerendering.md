@@ -16,13 +16,13 @@ related:
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "130b9a8fde6e3f8dd160caa6de1efb5e492b572cb377809a54da7d7bd0f6a042"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bd250efad9604f4f8ee75e8c837295602fd58233bda05d629a73c3393a946e6c"
 ---
 
 # Partial Prerendering (PPR)
 
-> **Availability**: Partial Prerendering is available on all plans
+> Partial Prerendering is available on all plans
 
 Partial Prerendering (PPR) is a rendering strategy that combines fast cached static content with the ability to render fresh dynamic content, all in one response. This strategy allows you to personalize pages while still having a performant site.
 
@@ -40,10 +40,10 @@ Partial Prerendering (PPR) is a rendering strategy that combines fast cached sta
 - [Implementing Partial Prerendering on your platform](https://nextjs.org/docs/app/guides/ppr-platform-guide) — A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
 - [Introducing Serverless Pre-Rendering (SPR)](https://vercel.com/blog/serverless-pre-rendering)
 - [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
-- [Implementing PPR in an Adapter](https://nextjs.org/docs/app/api-reference/adapters/implementing-ppr-in-an-adapter) — Implement Partial Prerendering support in an adapter using fallback output and cache hooks.
-- [How can I prerender my application on Vercel?](https://vercel.com/kb/guide/how-can-i-prerender-my-application-on-vercel) — Learn how to enable prerendering with your frontend framework on Vercel for better performance and SEO.
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/partial-prerendering.graph.md](/docs/partial-prerendering.graph.md)
 <!-- /docsgraph:related -->
@@ -272,3 +272,6 @@ When you use PPR with a framework on Vercel, you incur usage for:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

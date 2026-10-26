@@ -16,8 +16,8 @@ related:
 summary: Find guides and reference documentation for building, deploying, and managing applications with Vercel, including the CLI, SDKs, and APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d5ce00464dac398f97bc9f903e6a57b613f262c1017bf7de331297c6d4f053ca"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d6674ae6e3b7592b9b7335816fcb4d7a3200a4288533521029383e7ccff10d0a"
 ---
 
 # Vercel Documentation
@@ -96,10 +96,10 @@ Set up Vercel for me. Fetch https://vercel.com/get-started.md and follow it.
 
 The latest changes across the Vercel platform. Browse the full [changelog](https://vercel.com/changelog) for everything that shipped.
 
-- Oct 18, 2026: [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity). Vercel AI Gateway logs now group requests into sessions, with cache hit rate, cost, turns, and the coding agent behind each conversation.
-- Oct 17, 2026: [DeepSeek V4.1 Flash 1017 now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-now-available-on-ai-gateway). Call DeepSeek V4.1 Flash 1017 through Vercel AI Gateway with one API key, image input, spend tracking, and traces on every request.
-- Oct 16, 2026: [Elorian AI's Glimpse now available on AI Gateway](https://vercel.com/changelog/elorian-ai-glimpse-now-available-on-ai-gateway). Call Elorian's Glimpse through Vercel AI Gateway with one API key, no provider account, spend tracking, and request traces.
-- Oct 16, 2026: [Perplexity's Decider V1.2 models now available on AI Gateway](https://vercel.com/changelog/perplexity-decider-v1-2-models-now-available-on-ai-gateway). Call Perplexity Decider V1.2 and Decider Flash V1.2 through Vercel AI Gateway with one API key, shared budgets, and usage tracking.
+- Oct 26, 2026: [Faster pnpm installs](https://vercel.com/changelog/faster-pnpm-installs). pnpm installs on Vercel are now faster, with 14% lower average install times observed on Pro deployments with restored build cache.
+- Oct 23, 2026: [Vercel CLI adds Spend Management](https://vercel.com/changelog/vercel-cli-adds-spend-management). Manage your team's Spend Management budget from the Vercel CLI. Run \`vercel budgets\` to view spend, set an On-Demand Budget, pause at 100%, and list alert history.
+- Oct 23, 2026: [Send feedback from the Vercel MCP](https://vercel.com/changelog/send-feedback-from-vercel-mcp). The Vercel MCP now includes the submit\_feedback tool to sends bugs, friction reports, and feature requests directly to the Vercel team,
+- Oct 23, 2026: [Deployments now show build cache size](https://vercel.com/changelog/deployments-now-show-build-cache-size). Deployments on Vercel use an internal build cache to make deployments faster. You and your agents can now see the size and file count of that cache
 
 ## Build with AI
 
@@ -173,3 +173,6 @@ Go deeper with guides, videos, and tutorials from the [Vercel Knowledge Base](/k
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

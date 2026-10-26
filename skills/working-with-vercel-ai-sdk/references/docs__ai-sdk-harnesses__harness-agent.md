@@ -4,8 +4,8 @@ description: Create and run AI SDK HarnessAgent sessions.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "f91694d6fb793ecb624ab2115588ee06620f380d59b3c9c2c5d2ca22b9f28198"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "80aeebb16ee3567317227669ec0c522cb8556bfa7a7a8683ae7b484b2056e12e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -22,7 +22,7 @@ Install the core harness package, a harness adapter, and a sandbox adapter:
 pnpm add @ai-sdk/harness @ai-sdk/harness-claude-code @ai-sdk/sandbox-vercel
 ```
 
-Bridge-backed harnesses such as Claude Code and Codex require using real network sandbox
+Bridge-backed harnesses such as Claude Code and Codex require using a real network sandbox
 like `@ai-sdk/sandbox-vercel`. Host-runtime harnesses such as Pi can also run with
 `@ai-sdk/sandbox-just-bash` because they do not need a sandbox-exposed port.
 
@@ -112,6 +112,38 @@ try {
   process.exit(exitCode);
 }
 ```
+
+### Image Inputs
+
+For harness adapters that support images, you can include an image as a file part
+in the latest user message. Set `mediaType` to the image's MIME type:
+
+```ts
+import { readFileSync } from 'node:fs';
+
+const result = await agent.generate({
+  session,
+  messages: [
+    {
+      role: 'user',
+      content: [
+        {
+          type: 'text',
+          text: 'Describe the image in one sentence.',
+        },
+        {
+          type: 'file',
+          mediaType: 'image/png',
+          data: readFileSync('image.png'),
+        },
+      ],
+    },
+  ],
+});
+```
+
+For image input support, see the
+[adapter capability table](/docs/ai-sdk-harnesses/harness-adapters#adapter-capabilities).
 
 ## Lifecycle Callbacks
 

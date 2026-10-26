@@ -12,13 +12,13 @@ related:
 summary: Every workspace is required to have a README.md file in the root of the workspace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_management_required_readme.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "c0218a24fc7fef0fe16ddc6a02337e20c12576007c6cd342c33d02e285601783"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "626ec9982bac9eb1200f390c0d9d2768ac37d3ab83fc3d72e1ad3886a8edff7f"
 ---
 
 # PACKAGE_MANAGEMENT_REQUIRED_README
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 A `README.md` file helps orient readers to the purpose of a workspace and
 instructions how to use it, which makes it straightforward for people browsing the code
@@ -35,3 +35,6 @@ build or use the package.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -14,8 +14,8 @@ related:
 summary: Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/list.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "828f5961d3837dfce99ff21ac4aed41dbde00f2b7ab8347a9ae188b2d370d46f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "925dd96f4ee0868c0f1fe755fcc72377833111aa523b66d437857d5bdfb6b3e4"
 ---
 
 # vercel list
@@ -30,9 +30,9 @@ The `vercel list` command, which can be shortened to `vercel ls`, provides a lis
 
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 - [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 
 Full cross-link map for this page: [/docs/cli/list.graph.md](/docs/cli/list.graph.md)
 <!-- /docsgraph:related -->
@@ -207,3 +207,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

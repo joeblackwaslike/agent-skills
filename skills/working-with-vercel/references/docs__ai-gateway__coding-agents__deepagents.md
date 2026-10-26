@@ -16,8 +16,8 @@ related:
 summary: Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/deepagents.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "31c0a8eb46e679087477e88fb18a7182d6a5889146c5cca9624e6119d583ace0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0320291614865056ebac292e2610287d1f73fdf216a63f98f460cf71ce9813ab"
 ---
 
 # Deep Agents CLI with AI Gateway
@@ -35,7 +35,7 @@ sha256: "31c0a8eb46e679087477e88fb18a7182d6a5889146c5cca9624e6119d583ace0"
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [DeepSeek Harness with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepseek) — Connect DeepSeek Harness to AI Gateway with the Vercel CLI or a YAML provider and model shortlist.
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
-- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
+- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/deepagents.graph.md](/docs/ai-gateway/coding-agents/deepagents.graph.md)
 <!-- /docsgraph:related -->
@@ -113,3 +113,6 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

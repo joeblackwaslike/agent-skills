@@ -13,11 +13,12 @@ related:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/observability-and-spend/logs
+  - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and combine it with provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "25d4d7cb4c4e084f052bab97d704a7dc49e73d57e6495799149feb9655e31f6a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3464341c77ec3368345b962f58d8d5f29048be4eea3e8ddebc4ae78c00aadae9"
 ---
 
 # AI Gateway Model Fallbacks
@@ -38,8 +39,8 @@ You can configure model failover to specify backups that are tried in order if t
 - [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway)
 - [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks)
-- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management) — Learn how to work with multiple providers and models
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
+- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/model-fallbacks.graph.md)
 <!-- /docsgraph:related -->
@@ -428,7 +429,14 @@ When model fallbacks occur, the `modelAttempts` array in the provider metadata s
 > request, check the [provider
 > metadata](/docs/ai-gateway/models-and-providers/provider-options#example-provider-metadata-output).
 
+## Fallbacks in virtual models
+
+A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) carries its own fallback chain, which replaces the request's `models` list when set. A decision virtual model can store one [conditional decision fallback](/docs/ai-gateway/models-and-providers/decision-fallbacks#store-the-fallback-policy-in-a-virtual-model). A `vmc/<slug>` can also be a string or conditional destination in a request's fallback list, and each entry resolves independently.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/marketplace.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0d746a51ec535401c65462f159e2367ffe419da96aaac8ed66b29c379b978dd1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a5bee59a3cee7fe4dd2881ea5f494b6e8319103c0b8a0251dd754a35b6b162bd"
 ---
 
 # Marketplace
@@ -31,12 +31,11 @@ When you connect a feature flag provider through the [Vercel Marketplace](https:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
-- [Statsig joins the Vercel Marketplace](https://vercel.com/changelog/statsig-joins-the-vercel-marketplace)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Statsig joins the Vercel Marketplace](https://vercel.com/changelog/statsig-joins-the-vercel-marketplace)
 - [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace)
-- [Providers](https://flags-sdk.dev/docs/providers) — Combine your feature flag provider with the Flags SDK using an adapter.
-- [Shipping safer and smarter: Integrating feature flags deeper in the Vercel workflow](https://vercel.com/blog/feature-flags)
+- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer) — View and override your application's feature flags from the Vercel Toolbar
 
@@ -113,3 +112,6 @@ To integrate a marketplace provider with your Vercel project:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

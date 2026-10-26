@@ -13,8 +13,8 @@ related:
 summary: Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4753400b62d47d1a791e5c53ca216b4eb85fe171a66cb760b2ce9657e53c7eca"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e205df530344d5d0b4383165c11d8b3aabc500657fc76e74ae31b5d6732f5b6d"
 ---
 
 # Anthropic Messages Tool Calling with AI Gateway
@@ -28,12 +28,11 @@ The Anthropic Messages API supports function calling, allowing models to call to
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool) — Learn what tools are, how tool calling works, and how you can use them to build agents.
-- [Tools](https://ai-sdk.dev/docs/foundations/tools) — Learn about tools with the AI SDK.
+- [OpenAI Responses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling) — Define tools the model can call with the OpenAI Responses API through AI Gateway.
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [OpenAI Chat Completions Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling) — Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
-- [OpenAI Responses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling) — Define tools the model can call with the OpenAI Responses API through AI Gateway.
 - [OpenResponses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling) — Define tools the model can call using the OpenResponses API through AI Gateway.
-- [Anthropic SDK](https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk) — Use Anthropic tool use with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
+- [Anthropic Messages Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) — Create messages using the Anthropic Messages API format with support for streaming through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling.graph.md)
 <!-- /docsgraph:related -->
@@ -212,3 +211,6 @@ When the model makes tool calls, the response includes tool use blocks:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use retry_vercel_ci_invocation with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/retry_vercel_ci_invocation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "afcce9d12f4e37b21c114a8351db27ec80b8666f68fcf52632ad34f64761c794"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0cc7754427e7810be41e0991cbfb93b33735d3f0cdb69fa53263d974627ad7f2"
 ---
 
 # retry_vercel_ci_invocation
@@ -52,3 +52,6 @@ Retry support depends on the invocation source and terminal state. Native-check 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

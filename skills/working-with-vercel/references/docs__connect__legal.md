@@ -12,8 +12,8 @@ related:
 summary: Product terms governing your use of Vercel Connect, including Customer Managed Connectors, Vercel Managed Connectors, and Vercel Assisted Setup.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/legal.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d89d5f13b9c841e80e647e6508d10cf7241253c8e77198aafad0a42fcf03bdfb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8508b6809e0c1ebf0ea753ec1944c7eba90f69beaaa4de24432206ecfb13b265"
 ---
 
 # Vercel Connect product terms
@@ -27,12 +27,11 @@ These product terms apply to your use of Vercel Connect.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel Connect](https://v0.app/docs/vercel-connect) — Connect your v0 apps and agents to third-party services – no API keys required.
 - [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Vercel Connect Limits](https://vercel.com/docs/connect/limits) — Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
-- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
+- [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token) — POST /v1/connect/token/{connector} — Get an access token for a connector identified by the path parameter and scoped to
 
 Full cross-link map for this page: [/docs/connect/legal.graph.md](/docs/connect/legal.graph.md)
 <!-- /docsgraph:related -->
@@ -93,3 +92,6 @@ Customer represents and warrants that:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

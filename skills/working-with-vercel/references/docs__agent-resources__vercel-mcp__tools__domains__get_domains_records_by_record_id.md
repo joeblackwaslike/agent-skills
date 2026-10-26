@@ -13,8 +13,8 @@ related:
 summary: Use get_domains_records_by_record_id with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domains_records_by_record_id.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "14a11e6f37570cd360c13dcde502cdc73cb6ce5852d3e44ddf1d1256ec44f953"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "491bcc839fae80311be1828a8569c0d32fdcb8d4f3ac2ec4979206a02e5df1aa"
 ---
 
 # get_domains_records_by_record_id
@@ -47,3 +47,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

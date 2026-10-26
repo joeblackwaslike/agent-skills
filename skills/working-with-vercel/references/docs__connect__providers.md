@@ -15,8 +15,8 @@ related:
 summary: What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAuth.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/providers.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d46dbd8e7beeb3e1db502ff5f544de5e22ab43187de6aadf74a7d8ea0fb41d73"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c285bcd744ed2e94ab679f8935a3c07cd46d1fb1c49ba41eb8504ace7b16d7a5"
 ---
 
 # For Service Providers
@@ -34,9 +34,10 @@ If you are a service owner, this page covers what your service needs to support 
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
-- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
-- [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
+- [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/connect/providers.graph.md](/docs/connect/providers.graph.md)
 <!-- /docsgraph:related -->
@@ -315,3 +316,6 @@ A token test only counts for the exact configuration it tested. Create a new tes
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

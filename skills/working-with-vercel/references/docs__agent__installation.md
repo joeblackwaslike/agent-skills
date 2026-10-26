@@ -16,13 +16,15 @@ related:
 summary: Let AI automatically install Web Analytics and Speed Insights in your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/installation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0dc3f1e0d64192f608ebd52ffac149c41c7179251f9f19cfd5411d4570fd32f9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bb57f69dec2176414dc39c836ccd0f3adef871f5313fa7a83c4cdafc221104dd"
 ---
 
 # Installation
 
-> **Availability**: Vercel Agent Installation (Public Beta) is available on all plans
+> Vercel Agent Installation is available in Public Beta on all plans
+>
+> Those with the owner, member and developer roles can use this feature
 
 Vercel Agent Installation helps add [Web Analytics](/docs/analytics) and [Speed Insights](/docs/speed-insights) to your project with AI. After you start the installation, Vercel Agent automatically:
 
@@ -40,8 +42,8 @@ Vercel Agent Installation helps add [Web Analytics](/docs/analytics) and [Speed 
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 
 Full cross-link map for this page: [/docs/agent/installation.graph.md](/docs/agent/installation.graph.md)
 <!-- /docsgraph:related -->
@@ -79,3 +81,6 @@ To install private npm packages, [configure your team's shared registry credenti
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

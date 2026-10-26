@@ -12,13 +12,13 @@ related:
 summary: Requires using next/font to load local fonts and fonts from supported CDNs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_next_font.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "62e2747b13c7563e49ffdb65b91545163ecd9015ca85c4fe7cb8959323ca8306"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "333ff64868e7dd25313bb9558880f2b4ada20dd791f7115d82ec332d525a240d"
 ---
 
 # NEXTJS_USE_NEXT_FONT
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 > **💡 Note:** This rule is available from version 1.1.0.
 
@@ -75,3 +75,6 @@ rule with [`next/font`](https://nextjs.org/docs/api-reference/next/font).
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -14,8 +14,8 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4a00ea2c3c3ff8401b7fbfd6663a901d2d41768c28568d4c3aad55c6cccdc9da"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9bb4806a13e55438997d39bb8c2fa554b34a6a378494731ae46dac706eaff37e"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -34,11 +34,11 @@ To get started with analytics, follow our [Quickstart](/docs/analytics/quickstar
 - [layout.js](https://nextjs.org/docs/app/api-reference/file-conventions/layout) — API reference for the layout.js file.
 - [How to prevent flash before hydration](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration) — Learn how to correct server-rendered content before the browser paints, avoiding visible flash when the page hydrates.
 - [How to build single-page applications with Next.js](https://nextjs.org/docs/app/guides/single-page-applications) — Next.js fully supports building Single-Page Applications (SPAs).
-- [Link Component](https://nextjs.org/docs/app/api-reference/components/link) — Enable fast client-side navigation with the built-in `next/link` component.
 - [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
+- [Streaming](https://nextjs.org/docs/app/guides/streaming) — Learn how streaming works in Next.js and how to use it to progressively render UI as data becomes available.
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
+- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
-- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md)
@@ -1177,3 +1177,6 @@ To change configured values, you can:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

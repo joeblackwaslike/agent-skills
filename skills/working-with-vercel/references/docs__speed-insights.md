@@ -16,13 +16,13 @@ related:
 summary: "This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "34d898a12aa5bf48510a6ac2f3b35d9d1eebadc032ac4db4297c14f698828c32"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7dcdd40fc1e8e11f461ef4ad8870764c06127f0db27089b391550d72a163a787"
 ---
 
 # Speed Insights Overview
 
-> **Availability**: Speed Insights is available on all plans
+> Speed Insights is available on all plans
 
 - To set up Speed Insights for your project, see the [Quickstart](/docs/speed-insights/quickstart).
 - To understand who is visiting your site, use [Web Analytics](/docs/analytics).
@@ -43,8 +43,8 @@ Vercel **Speed Insights** provides you with a detailed view of your website's pe
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
-- [First Input Delay \\(FID\\) vs. Interaction to Next Paint \\(INP\\)](https://vercel.com/kb/guide/first-input-delay-vs-interaction-to-next-paint) — Learn about the differences between FID and INP and how to optimize your website's INP score.
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [First Input Delay (FID) vs. Interaction to Next Paint (INP)](https://vercel.com/blog/first-input-delay-vs-interaction-to-next-paint)
 - [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
 
@@ -94,3 +94,6 @@ map view indicate the P75 score.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

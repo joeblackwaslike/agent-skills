@@ -12,13 +12,13 @@ related:
   - /docs/git
   - /docs/deployments/environments
   - /docs/cli/init
-  - /docs/routing-middleware
-  - /docs/cdn
+  - /docs/services
+  - /docs/services/routing
 summary: Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/hono.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e621f68a53eec6d942e64c53677f9ca55894ecfcf4e59da4d3642c04534bd060"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cf3db52ef5e3c5b3e3ffe689a4a136373db9a792ec0ff724a102aecb904ac8ec"
 ---
 
 # Hono on Vercel
@@ -35,14 +35,13 @@ Hono is a fast and lightweight web application framework built on Web Standards.
 - [Experimental build mode for Hono and Express projects](https://vercel.com/changelog/experimental-build-mode-hono-express)
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
-- [Use Vercel Passport with Node.js and Python backends](https://vercel.com/kb/guide/vercel-passport-backend-frameworks) — Secure internal apps and verify a visitor's identity with Vercel Passport in your backend, with examples for Express, Ho
 - [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
 - [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
+- [Chat SDK with Hono](https://vercel.com/docs/chat-sdk/frameworks/hono) — Add a Chat SDK bot to Hono, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Koa on Vercel](https://vercel.com/docs/frameworks/backend/koa) — Deploy Koa applications to Vercel with zero configuration.
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 
 Full cross-link map for this page: [/docs/frameworks/backend/hono.graph.md](/docs/frameworks/backend/hono.graph.md)
 <!-- /docsgraph:related -->
@@ -94,6 +93,10 @@ vc dev
 
 This ensures that the application will use the default export to run the same as when deployed to Vercel. The application will be available on your `localhost`.
 
+## Deploy with a frontend
+
+Use [Vercel Services](/docs/services) to deploy a Hono backend and a frontend in one project. Configure [service routing](/docs/services/routing) to expose the backend at a public path, or use [service bindings](/docs/services/bindings) for private calls from the frontend's server code.
+
 ## Middleware
 
 Hono has the concept of "Middleware" as a part of the framework. This is different from [Vercel Routing Middleware](/docs/routing-middleware), though they can be used together.
@@ -113,6 +116,10 @@ More examples of Hono Middleware can be found in [the Hono documentation](https:
 ### Vercel Routing Middleware
 
 In Vercel, [Routing Middleware](/docs/routing-middleware) executes code before a request is processed by the application. This gives you a way to handle rewrites, redirects, headers, and more, before returning a response. See [the Routing Middleware documentation](/docs/routing-middleware) for examples.
+
+## Protect an internal API
+
+Use Vercel Passport to require sign-in through your company's identity provider before requests reach your Hono app. Passport requires an Enterprise plan. Follow the [Hono Passport guide](/kb/guide/vercel-passport-backend-frameworks#hono) to verify visitor identity and authorize access within your app.
 
 ## Serving static assets
 
@@ -143,6 +150,14 @@ app.get('/stream', (c) => {
 });
 ```
 
+## Run scheduled tasks
+
+Use [Cron Jobs](/docs/cron-jobs) to call a Hono route on a schedule. Configure the route and schedule, then check the request's `Authorization` header against your `CRON_SECRET` environment variable before running the task. See the [Hono cron job example](/kb/guide/ship-a-hono-app-on-vercel#run-scheduled-tasks-with-cron-jobs).
+
+## Monitor and debug requests
+
+Use [Runtime Logs](/docs/functions/logs) to inspect application output and errors, and [Observability](/docs/observability) to investigate request duration and failures. See [monitoring Hono with Observability](/kb/guide/ship-a-hono-app-on-vercel#monitor-performance-with-observability) for details.
+
 ## More resources
 
 Learn more about deploying Hono projects on Vercel with the following resources:
@@ -156,3 +171,6 @@ Learn more about deploying Hono projects on Vercel with the following resources:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

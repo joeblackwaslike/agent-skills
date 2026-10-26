@@ -16,8 +16,8 @@ related:
 summary: Learn about the Global Configs limits and pricing based on account plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-limits.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b6a4faa5e2a0cd5193ad965849a8f7d8d547ed3f472e97c0922160839399e499"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2d091a8e2532ad015a43e6fdca918dec4d131ac9df5b5a9e99e4d178ee8deca6"
 ---
 
 # Global Config Limits and pricing
@@ -34,8 +34,8 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
 - [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config)
+- [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
-- [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
@@ -177,3 +177,6 @@ If you are developing locally or self-hosting, your Global Config is loaded thro
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

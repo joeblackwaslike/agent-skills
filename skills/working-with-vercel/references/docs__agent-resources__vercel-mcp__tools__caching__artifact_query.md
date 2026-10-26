@@ -13,8 +13,8 @@ related:
 summary: Use artifact_query with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "44ac0b6a0ff49f965236cdd310673d4341acd8ddad7763a0141ddf150fc87195"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "42fc51486660f8a2e01ca76847579324b682384c9cd2e9d79655862d954fc3cb"
 ---
 
 # artifact_query
@@ -27,8 +27,8 @@ Query information about an artifact.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Query artifact information](https://turborepo.dev/docs/openapi/artifacts/artifact-query) — Query information about multiple artifacts by their hashes. Returns metadata about each artifact including size, task du
 - [Query information about an artifact](https://vercel.com/docs/rest-api/artifacts/query-information-about-an-artifact) — POST /v8/artifacts — Query information about an array of artifacts.
+- [Query artifact information](https://turborepo.dev/docs/openapi/artifacts/artifact-query) — Query information about multiple artifacts by their hashes. Returns metadata about each artifact including size, task du
 - [create_observability_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query) — Use create_observability_query with Vercel MCP.
 - [upload_artifact](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/upload_artifact) — Use upload_artifact with Vercel MCP.
 - [record_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/record_events) — Use record_events with Vercel MCP.
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/cachi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

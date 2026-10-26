@@ -12,8 +12,8 @@ related:
 summary: Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/skills.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3c80a230abb8f1db138f9eec89e738112f0a0f6e30c4c064982848617f19450b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "820314874c0099a83c78fc0619eccf5c25c13b5a32f07a78edc6f02688607787"
 ---
 
 # Agent Skills
@@ -27,12 +27,12 @@ An agent skill is a packaged capability that extends an AI agent with a specific
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
-- [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
 - [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
 - [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
-- [How Next.js supports AI coding agents](https://nextjs.org/docs/app/guides/ai-agents) — Learn how Next.js helps AI coding agents use current framework guidance, inspect applications, verify changes, and repor
-- [Skills](https://eve.dev/docs/skills) — Author load-on-demand procedures the model pulls into context with eve__skill.
+- [Adding keyboard shortcuts to React apps with TanStack Hotkeys](https://vercel.com/kb/guide/adding-keyboard-shortcuts-to-react-apps-with-tanstack-hotkeys) — Add cross-platform keyboard shortcuts to your React app with TanStack Hotkeys. Install, register, scope, and display sho
+- [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
 - [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem)
+- [Skills](https://eve.dev/docs/skills) — Author load-on-demand procedures the model pulls into context with eve__skill.
 - [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support)
 - [Vercel Plugin for AI Coding Agents](https://vercel.com/docs/agent-resources/vercel-plugin) — Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, a
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
@@ -82,14 +82,16 @@ Learn more about [adding skills to your eve agent](/kb/guide/how-to-add-eve-skil
 
 Skills for building performant React and Next.js applications.
 
+On Next.js 16.3 and later, `next dev` sets up version-matched framework guidance for agents through the bundled docs and `AGENTS.md`. The skills below add specific workflows on top of it. Learn more in [How Next.js supports AI coding agents](https://nextjs.org/docs/app/guides/ai-agents).
+
 | Skill | Description | Install |
 | --- | --- | --- |
 | [vercel-react-best-practices](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) | React and Next.js performance optimization guidelines with 40+ rules across 8 categories | `npx skills add vercel-labs/agent-skills --skill vercel-react-best-practices` |
 | [vercel-composition-patterns](https://skills.sh/vercel-labs/agent-skills/vercel-composition-patterns) | React composition patterns that scale, helping avoid boolean prop proliferation | `npx skills add vercel-labs/agent-skills --skill vercel-composition-patterns` |
 | [vercel-react-native-skills](https://skills.sh/vercel-labs/agent-skills/vercel-react-native-skills) | React Native best practices with 16 rules covering performance, architecture, and platform-specific patterns | `npx skills add vercel-labs/agent-skills --skill vercel-react-native-skills` |
-| [next-best-practices](https://skills.sh/vercel-labs/openreview/next-best-practices) | Next.js best practices covering file conventions, RSC boundaries, data patterns, and more | `npx skills add vercel-labs/openreview --skill next-best-practices` |
-| [next-cache-components](https://skills.sh/vercel-labs/openreview/next-cache-components) | Next.js 16 Cache Components and PPR for mixing static, cached, and dynamic content | `npx skills add vercel-labs/openreview --skill next-cache-components` |
-| [next-upgrade](https://skills.sh/vercel-labs/openreview/next-upgrade) | Upgrade Next.js to the latest version using official migration guides and codemods | `npx skills add vercel-labs/openreview --skill next-upgrade` |
+| [next-dev-loop](https://skills.sh/vercel/next.js/next-dev-loop) | Verify that Next.js code changes work in a running dev server, using Next.js MCP and browser checks | `npx skills add vercel/next.js --skill next-dev-loop` |
+| [next-cache-components-adoption](https://skills.sh/vercel/next.js/next-cache-components-adoption) | Turn on Cache Components in a Next.js app and resolve the blocking routes it surfaces | `npx skills add vercel/next.js --skill next-cache-components-adoption` |
+| [next-cache-components-optimizer](https://skills.sh/vercel/next.js/next-cache-components-optimizer) | Grow the static shell of Next.js routes so pages and navigations render instantly | `npx skills add vercel/next.js --skill next-cache-components-optimizer` |
 | [cra-to-next-migration](https://skills.sh/vercel-labs/migration-skills/cra-to-next-migration) | Comprehensive guide for converting Create React App projects to Next.js | `npx skills add vercel-labs/migration-skills --skill cra-to-next-migration` |
 | [turborepo](https://skills.sh/vercel/turborepo/turborepo) | Build system guide for JavaScript and TypeScript monorepos with task caching and parallel execution | `npx skills add vercel/turborepo` |
 
@@ -215,3 +217,6 @@ Continue with these guides:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

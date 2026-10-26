@@ -13,8 +13,8 @@ related:
 summary: Use kill_session_command with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/kill_session_command.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "51c1c1f4cc40aefbd2eb017527e15dedc15aa4cfbae4932a101abf23b6a65ea0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3640e0edfb6c647d5edbf4168c019927a06fb68a64a90b6519cc8b10a5a3c943"
 ---
 
 # kill_session_command
@@ -50,3 +50,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

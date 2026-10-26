@@ -12,8 +12,8 @@ related:
 summary: Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/inspect.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d2d7bddfcfb4d431736e708cdd2fee9bd76a1787e18ff525d95a59c8b8710a3f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e222b5268feff563f7136fd70b24a9ebb64c281ae15bab195b558c4a3dac1bfc"
 ---
 
 # vercel inspect
@@ -30,8 +30,8 @@ The `vercel inspect` command is used to retrieve information about a deployment 
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel bisect](https://vercel.com/docs/cli/bisect) — Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 
 Full cross-link map for this page: [/docs/cli/inspect.graph.md](/docs/cli/inspect.graph.md)
 <!-- /docsgraph:related -->
@@ -122,3 +122,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

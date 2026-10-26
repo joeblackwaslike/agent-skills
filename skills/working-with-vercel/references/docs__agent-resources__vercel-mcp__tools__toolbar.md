@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for toolbar.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5c8d281cf2e886bf7027a8ff5d1e0c27a720fc3cc984b105e8f548231c87edf3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c041af485b356b562780dd325ac0e09389babd2f851cc6153e9f10044bfbcede"
 ---
 
 # Toolbar
@@ -29,10 +29,10 @@ Review feedback on your deployments through Vercel Toolbar comment threads. You 
 
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
-- [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost) — Learn how to use the Vercel Toolbar in production and local environments.
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolbar.graph.md](/docs/agent-resources/vercel-mcp/tools/toolbar.graph.md)
@@ -120,3 +120,6 @@ Add a reply message to an existing toolbar thread.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

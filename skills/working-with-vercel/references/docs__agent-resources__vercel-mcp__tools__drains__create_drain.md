@@ -13,8 +13,8 @@ related:
 summary: Use create_drain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/create_drain.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a0eba1e716bb03b12e8ccc1862d1a40fe4c19cd78d0d28e3044bdbcccab52ece"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d65603b847227a6117e1980efb8652028857c23b49d61a881c8b6f96aba09a4a"
 ---
 
 # create_drain
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/drain
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

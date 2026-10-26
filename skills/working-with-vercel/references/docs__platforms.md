@@ -16,8 +16,8 @@ related:
 summary: Build platforms where agents and users deploy apps with isolated projects or shared multi-tenant deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "320ffa9a76bf5edd72642b91e23b25a8c56cf993ce681533e3f3ff0dfcca85ff"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3fcbcdfaa88d3563a51701cb16ee99cc22e202ea3cd3ca3f0e5c3b0c07494df3"
 ---
 
 # Vercel for Platforms
@@ -35,9 +35,10 @@ Vercel for Platforms gives generated apps isolated projects and deployments. Mul
 - [Vercel for Platforms can now deploy from your users' GitHub repositories](https://vercel.com/changelog/vercel-for-platforms-can-now-deploy-from-your-users-github-repositories)
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
-- [Build a multi-tenant app with Next.js and Vercel](https://vercel.com/kb/guide/nextjs-multi-tenant-application) — Create a Next.js application with multi-tenancy and custom domain support on Vercel.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/platforms.graph.md](/docs/platforms.graph.md)
 <!-- /docsgraph:related -->
@@ -117,3 +118,6 @@ A typical setup gives you a root domain for your platform (`acme.com`), subdomai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

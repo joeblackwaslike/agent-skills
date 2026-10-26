@@ -16,8 +16,8 @@ related:
 summary: Connect Goose to AI Gateway with the Vercel CLI or a custom OpenAI-compatible provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/goose.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "15789363e78b85d9f2f681e78c5af30b940807cf07c30ed34a70cf7eee957f62"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "837b7b3e01cc707ec45a119c73113fbf92f2389e96811f98b0f4b0e1a7b8ebda"
 ---
 
 # Goose with AI Gateway
@@ -31,9 +31,9 @@ sha256: "15789363e78b85d9f2f681e78c5af30b940807cf07c30ed34a70cf7eee957f62"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/goose.graph.md](/docs/ai-gateway/coding-agents/goose.graph.md)
@@ -117,3 +117,6 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

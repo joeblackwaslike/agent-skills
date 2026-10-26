@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for key management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bd3a5b9090a227e8f9e283c808815a14d9c1933bc4bdae8e2cb92e0541aec171"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4c15a60bdc918a86615540c43f53ed93ba1e6d1e06fbee74aba4eda5964a93cf"
 ---
 
 # Key Management
@@ -29,9 +29,9 @@ Create and list issuers with server-generated signing keys. Manage issuer polici
 
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [Key Management Service \\(KMS\\)](https://vercel.com/docs/kms) — Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from V
-- [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
 - [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys th
-- [Update an issuer policy](https://vercel.com/docs/rest-api/kms/update-an-issuer-policy) — PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} — Update an existing KMS issuer policy's environments or to
+- [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
+- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management.graph.md)
 <!-- /docsgraph:related -->
@@ -163,3 +163,6 @@ Update an issuer policy.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

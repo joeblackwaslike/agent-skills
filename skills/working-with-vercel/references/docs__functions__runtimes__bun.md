@@ -17,13 +17,13 @@ related:
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "450d838be070d8b828277f124e01c8aeee5baa8bfb493406b261a2aec2187607"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e9d5c7b9373d463d1b87364f33dc87f42659a5e5cdac84c98886d08bf06958fa"
 ---
 
 # Using the Bun Runtime with Vercel Functions
 
-> **Availability**: The Bun runtime (Beta) is available on all plans
+> The Bun runtime is available in Beta on all plans
 
 Bun is a fast, all-in-one JavaScript runtime that serves as an alternative to Node.js.
 
@@ -191,3 +191,6 @@ Both runtimes run on [Fluid compute](/docs/fluid-compute) and support the same c
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

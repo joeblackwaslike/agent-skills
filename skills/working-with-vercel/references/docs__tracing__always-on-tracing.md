@@ -16,8 +16,8 @@ related:
 summary: Continuously collect traces from your production and preview traffic using sampling rules, so you can debug real requests without reproducing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/always-on-tracing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2ed68aca3fe1c42ca78cc28070a72d8275ed8baa8b1662136e085fa9ea219a59"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c3b8283f4279858923a91c16f2cd1a205cc242d62e68513bd75a42d30de688fd"
 ---
 
 # Always-on Tracing
@@ -32,18 +32,19 @@ With always-on tracing, Vercel continuously collects traces from your production
 
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
-- [Agent Runs](https://vercel.com/docs/eve/agent-runs) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Agent Runs](https://vercel.com/docs/eve/agent-runs) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
 - [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
-- [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 
 Full cross-link map for this page: [/docs/tracing/always-on-tracing.graph.md](/docs/tracing/always-on-tracing.graph.md)
 <!-- /docsgraph:related -->
 
-> **Availability**: Always-on tracing (Beta) is available on Enterprise and Pro and Hobby plans
+> Always-on tracing is available in Beta on Enterprise, Pro, and Hobby plans
 
 ## When to use always-on tracing
 
@@ -158,3 +159,6 @@ Always-on tracing follows the shared [Tracing limitations](/docs/tracing#limitat
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

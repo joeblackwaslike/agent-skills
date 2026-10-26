@@ -17,8 +17,8 @@ related:
 summary: Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by cost, latency, or throughput.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b9a456e71d29a956bd32bfd9e68d0e560daf6bd73c2c0c7473ded34ab8a5d2e3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ac4b99dd1ef4c5c522a32a7b380fcea2e86f87e642aad957e913e96072b39405"
 ---
 
 # AI Gateway Provider Filtering, Ordering, and Sorting
@@ -31,13 +31,15 @@ By default, AI Gateway dynamically chooses providers based on recent uptime and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock) — Learn how to use Amazon Bedrock with AI Gateway and the direct provider.
+- [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
+- [Baseten](https://ai-sdk.dev/providers/ai-sdk-providers/baseten) — Learn how to use Baseten with AI Gateway and the direct provider.
+- [Cerebras](https://ai-sdk.dev/providers/ai-sdk-providers/cerebras) — Learn how to use Cerebras with AI Gateway and the direct provider.
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Sort providers by cost, latency, or throughput on AI Gateway](https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway)
-- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
-- [AI Gateway Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers) — Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service t
-- [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.graph.md](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.graph.md)
 <!-- /docsgraph:related -->
@@ -1134,7 +1136,14 @@ All options are set under `providerOptions.gateway` in the AI SDK, or under `pro
 
 To filter by a capability of the model itself (rather than by provider), see [Model Filtering](/docs/ai-gateway/models-and-providers/model-filtering).
 
+## Provider selection in virtual models
+
+A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can pin provider order and provider-only lists for all of its traffic. The virtual model's values override the request's `order` and `only`.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

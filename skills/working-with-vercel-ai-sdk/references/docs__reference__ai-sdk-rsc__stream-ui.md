@@ -4,8 +4,8 @@ description: Reference for the streamUI function from the AI SDK RSC
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-rsc/stream-ui.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "57816c08ca3b5bd77626b998c3f450bdb61f84565a041a899a51b7cfb23c7b6e"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "2ed234f03f033dbaca0f4746d90528b351ffe7fa7310216a100facb6c0c41e36"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -136,7 +136,7 @@ import { streamUI } from "@ai-sdk/rsc"
     - `error` (`Error`): Describes the error that may have occurred during execution.
   - `StreamPart`
     - `type` (`'finish'`): The type to identify the object as finish.
-    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason the model finished generating the text.
+    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'interrupted' | 'other'`): The reason the model finished generating the text.
     - `usage` (`LanguageModelUsage`): The token usage of the generated text.
       - `LanguageModelUsage`
         - `inputTokens` (`number | undefined`): The total number of input (prompt) tokens used.

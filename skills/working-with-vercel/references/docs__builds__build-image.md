@@ -16,8 +16,8 @@ related:
 summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8d9e70f46060c8a9ccd44a930ff55fd0b507f58a685a3c6620129b8c8188c74e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "df2215b333a0e3779f5741b4e2c616f0647ec962de5504f42cb5f4c1aac1246d"
 ---
 
 # Build image overview
@@ -35,12 +35,11 @@ Vercel supports [multiple runtimes](/docs/functions/runtimes).
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
-- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Container Runtime](https://vercel.com/docs/functions/runtimes/container) — Run any code and library on Vercel Functions with an OCI container image built from a Dockerfile or Containerfile at the
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Vercel Container Registry](https://vercel.com/docs/container-registry) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
 - [Build Output API](https://vercel.com/docs/build-output-api) — The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/builds/build-image.graph.md](/docs/builds/build-image.graph.md)
 <!-- /docsgraph:related -->
@@ -52,7 +51,7 @@ Full cross-link map for this page: [/docs/builds/build-image.graph.md](/docs/bui
 | [Ruby](/docs/functions/runtimes/ruby)                             | `3.3.x`                                                 |
 | [Go](/docs/functions/runtimes/go)                                                 | (Supported) |
 | [Edge](/docs/functions/runtimes/edge)                     | (Supported) |
-| [Community Runtimes](/docs/functions/runtimes#community-runtimes) | (Supported) |
+| [Community Runtimes](/docs/functions/configuring-functions/runtime#other-runtimes) | (Supported) |
 
 The build image uses [Amazon Linux 2023](https://aws.amazon.com/linux/amazon-linux-2023/) as its base image.
 
@@ -65,7 +64,7 @@ The following packages are pre-installed in the build image with `dnf`, the defa
 Vercel does not provide the build image itself, but you can use the Amazon Linux 2023 base image to test things locally:
 
 ```bash filename="terminal"
-docker run --rm -it amazonlinux:2023.2.20231011.0 sh
+docker run --rm -it public.ecr.aws/amazonlinux/amazonlinux:2023.11.20260509.0 sh
 ```
 
 When you are done, run `exit` to return.
@@ -96,3 +95,6 @@ dnf install -y my-package-here
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

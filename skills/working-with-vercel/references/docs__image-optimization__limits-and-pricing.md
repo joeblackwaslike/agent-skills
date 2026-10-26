@@ -16,8 +16,8 @@ related:
 summary: This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can incur.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/limits-and-pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2ce6665198f2622dbbdce345b221a6e132d2f1a392887457f59c62f215cc97f1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f35e5b114412a4ef1abff72a2910a6abe5248c23954003579a70e83af1177c61"
 ---
 
 # Limits and Pricing for Image Optimization
@@ -118,3 +118,6 @@ See the [Fair Usage Policy](/docs/limits/fair-use-guidelines#typical-monthly-usa
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

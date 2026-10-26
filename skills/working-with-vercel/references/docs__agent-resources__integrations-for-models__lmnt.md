@@ -15,8 +15,8 @@ related:
 summary: Learn how to add LMNT connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/lmnt.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7aab0d83bf05873d0334d912a3b8a69952de55e378fce2fcab86aa1b42dabe91"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "85dc09045ff667614dc7a58e01ba5a2639c6ef81e5f30379b60aa6870bd0de5e"
 ---
 
 # Vercel LMNT Integration
@@ -34,8 +34,8 @@ insights and forecasts, particularly useful in finance and healthcare sectors.
 
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
-- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
+- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Vercel Perplexity Integration](https://vercel.com/docs/agent-resources/integrations-for-models/perplexity) — Learn how to add Perplexity connectable account integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/lmnt.graph.md](/docs/agent-resources/integrations-for-models/lmnt.graph.md)
@@ -59,28 +59,23 @@ To follow this guide, you'll need the following:
 
 - An existing [Vercel project](/docs/projects/overview#creating-a-project)
 - The latest version of [Vercel CLI](/docs/cli#installing-vercel-cli)
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn global add vercel@latest
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i -g vercel@latest
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add -g vercel@latest
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i -g vercel@latest
+  ```
+  **yarn**
+  ```bash
+  yarn global add vercel@latest
+  ```
+  **npm**
+  ```bash
+  npm i -g vercel@latest
+  ```
+  **bun**
+  ```bash
+  bun add -g vercel@latest
+  ```
 
 ### Add the provider to your project
 
@@ -109,3 +104,6 @@ To follow this guide, you'll need the following:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

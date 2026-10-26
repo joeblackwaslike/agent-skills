@@ -3,7 +3,7 @@ title: get-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/get-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource"
-last_updated: 2026-10-19
+last_updated: 2026-10-26
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "61982d65df236c75667727d7b5b827483b94bb18582b2fbf08da67409c566b08"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "58ace167f8d835da2509037a58dcce5ddae0f1ec649a875d4ea7c9ec28ddabd7"
 ---
 
 # Get Resource
@@ -203,3 +203,6 @@ Operation failed because the authentication is not allowed to perform this opera
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

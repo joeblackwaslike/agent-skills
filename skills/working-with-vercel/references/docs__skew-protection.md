@@ -16,13 +16,15 @@ related:
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b01642b353bf970822aa36e4f4a3ed70a093db4fb256090fb8ce1a6b04d67da5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d67de35c5effd98302bc237be8724f31971eec02fb5df83ce2f378cf0f59e35a"
 ---
 
 # Skew Protection
 
-> **Availability**: Skew Protection is available on Enterprise and Pro plans
+> Skew Protection is available on Enterprise and Pro plans
+>
+> Those with the owner, admin, member role can access this feature
 
 [Version skew](https://www.industrialempathy.com/posts/version-skew/) occurs when different versions of your application run on client and server, causing application errors and other unexpected behavior. For example, imagine your newest deployment modifies the data structure by adding a required field to a user's profile. Older clients wouldn't expect this new field, leading to errors when they submit it.
 
@@ -162,6 +164,48 @@ You can view CDN Requests that are successfully fulfilled without the need for s
 
 ![A screenshot of a query of requests filtered by active skew protection.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/projects/skew-protection-monitoring-query-light-colinUpdate.png)
 
+## Custom Deployment ID
+
+When using prebuilt deployments (via `vercel deploy --prebuilt`), you can configure a custom deployment ID to ensure Skew Protection works correctly. This is necessary when building your application outside of Vercel's build environment (via `vercel build`) to ensure the ID matches once deployed to Vercel.
+
+### Next.js
+
+For Next.js applications, configure the `deploymentId` in your `next.config.js`:
+
+```typescript filename="next.config.js"
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Use a string value for the deployment ID
+  deploymentId: process.env.GIT_HASH || Date.now().toString(),
+};
+
+module.exports = nextConfig;
+```
+
+User-configured deployment IDs have the following requirements:
+
+- Cannot start with the `dpl_` prefix
+- Must be unique per project
+- Have a maximum length of 32 characters
+- Can only contain alphanumeric characters (a-z, A-Z, 0-9), hyphens (-), and underscores (\_)
+
+If you attempt to use a deployment ID that already exists, the deployment will fail.
+
+> **💡 Note:** Skew Protection for prebuilt deployments with a custom deployment ID requires Next.js version greater than [v16.2.0-canary.15](https://github.com/vercel/next.js/releases/tag/v16.2.0-canary.15) and Vercel CLI version greater than `vercel@50.3.3`. Custom deployment ID configuration is currently only available for Next.js and Build Output API. Other frameworks (SvelteKit, Qwik, Astro) do not support custom deployment IDs at this time.
+
+### Build Output API
+
+For projects using the [Build Output API](/docs/build-output-api), you can configure the `deploymentId` in your `config.json` file:
+
+Generate your `config.json` file programmatically to include a unique `deploymentId`:
+
+```json filename=".vercel/output/config.json"
+{
+  "version": 3,
+  "deploymentId": "<generated-at-build-time>"
+}
+```
+
 ## Supported frameworks
 
 Skew Protection is available with zero configuration when Vercel runs your build. The following frameworks are supported:
@@ -217,7 +261,7 @@ and then appending the value of `VERCEL_DEPLOYMENT_ID` to each request using **o
 
 > **💡 Note:** If you're building outside of Vercel using `vercel build` and then deploying with `vercel
 >   deploy --prebuilt`, Skew Protection requires a custom deployment ID so the
-> build-time ID matches the one Vercel assigns at deploy time.Skew Protection is not available for prebuilt deployments at this time. For more information on prebuilt workflows, see [When not to use --prebuilt](/docs/cli/deploy#when-not-to-use---prebuilt).
+> build-time ID matches the one Vercel assigns at deploy time.See [Custom Deployment ID](#custom-deployment-id) for setup instructions.For more information on prebuilt workflows, see [When not to use --prebuilt](/docs/cli/deploy#when-not-to-use---prebuilt).
 
 If you are using Next.js 14.1.4 or newer and building on Vercel, there is no additional configuration needed to [enable Skew Protection](#enable-skew-protection).
 
@@ -317,7 +361,7 @@ With this middleware, the first request to your application sets the `__vdpl` co
 
 ### Scoping the pin to specific routes
 
-If you only need to pin certain parts of your application, add a [matcher](/docs/routing-middleware/api#match-paths-based-on-custom-matcher-config) to the middleware so it only sets the cookie for matching paths:
+If you only need to pin certain parts of your application, add a [matcher](/docs/routing-middleware#path-matching) to the middleware so it only sets the cookie for matching paths:
 
 ```ts filename="middleware.ts"
 // ... same middleware function as above
@@ -381,3 +425,6 @@ Deployments that have been deleted either manually or automatically using a [ret
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

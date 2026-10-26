@@ -13,11 +13,12 @@ related:
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/models-and-providers/automatic-caching
+  - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e8558e2ce207a89abb2a4612f08ea5ca595cdcc9ed8711d18fe5d21940aedbf8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "835590397b764a6804a2ed228b8c12ee017b93171a80d7286491351a07620d82"
 ---
 
 # AI Gateway Zero Data Retention (ZDR)
@@ -30,12 +31,12 @@ Zero data retention (ZDR) is available for Pro and Enterprise users on AI Gatewa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Vercel Ship 2026 recap](https://vercel.com/blog/vercel-ship-2026-recap)
 - [GPT-Live](https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live) — Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
@@ -612,14 +613,6 @@ Parasail
 
 Terms of service
 
-Pareto Inference
-
-✓
-
-✓
-
-ZDR policy
-
 Particle.AI
 
 ✓
@@ -678,7 +671,16 @@ ZDR policy
 
 \* `anthropic/claude-fable-5` does not support ZDR on any provider, including Anthropic, Google Vertex, and Amazon Bedrock. Anthropic has determined this is required because some misuse patterns only become visible across cumulative requests. Prompts and completions are retained for 30 days and are not used to train Claude.
 
+Vercel Token Pass models are served through the `token-pass` provider. Token Pass currently serves its models through Wafer and follows Wafer's zero data retention policy and terms.
+
+## Zero data retention in virtual models
+
+A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can restrict its traffic to zero-data-retention providers. The setting only tightens: either side can turn it on, and neither side can turn it off.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

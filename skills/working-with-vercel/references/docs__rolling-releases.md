@@ -16,13 +16,13 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a4c8c0e71b9ae9eb69e217a74fa2e63301a5b36e85e1df1b11360e8fce7563fc"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8128a405643cd76fc0e223cd9634f4d18fe0186f90d2359e1835bb4898578c11"
 ---
 
 # Rolling Releases
 
-> **Availability**: Rolling Releases are available on Enterprise and Pro plans
+> Rolling Releases are available on Enterprise and Pro plans
 
 Rolling Releases allow you to roll out new deployments to a small fraction of your users before promoting them to everyone.
 
@@ -279,3 +279,6 @@ For detailed API specifications, request/response schemas, and code examples:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

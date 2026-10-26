@@ -1,45 +1,70 @@
 ---
 title: Fish Audio
-description: Learn how to use the Fish Audio provider for the AI SDK.
+description: Learn how to use Fish Audio with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "237c78f593315fafc14b20a20abf595e3fc8adb30063a9cf03dbd28698c65b7b"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "66a441f7a2cfd0a525d4cbcbab9d762f0738957579972039b135a0d406fe909e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Fish Audio](https://fish.audio/) provider contains speech generation (S1 and
 S2 models) and speech-to-text transcription support.
+You can use Fish Audio models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/fish-audio`.
 
-## Setup
+```ts provider="fish-audio" model="fish-audio/s2.1-pro"
+import { generateSpeech } from 'ai';
+import { writeFile } from 'node:fs/promises';
 
-The Fish Audio provider is available in the `@ai-sdk/fish-audio` module. You can install it with
+const { audio } = await generateSpeech({
+  model: "fish-audio/s2.1-pro",
+  text: 'Hello, world!',
+  outputFormat: 'mp3',
+});
 
-#### pnpm
-
-```
-pnpm add @ai-sdk/fish-audio
-```
-
-#### npm
-
-```
-npm install @ai-sdk/fish-audio
+await writeFile('speech.mp3', audio.uint8Array);
 ```
 
-#### yarn
+## Using AI Gateway
 
-```
-yarn add @ai-sdk/fish-audio
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
+
+```bash
+pnpm add ai
 ```
 
-#### bun
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
 
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
 ```
-bun add @ai-sdk/fish-audio
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/fish-audio`
+
+For direct access to Fish Audio, install `ai` and `@ai-sdk/fish-audio`:
+
+```bash
+pnpm add ai @ai-sdk/fish-audio
 ```
+
+Set your Fish Audio API credential in the `FISH_AUDIO_API_KEY` environment variable:
+
+```bash
+export FISH_AUDIO_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/fish-audio`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/fish-audio` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

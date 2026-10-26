@@ -4,8 +4,8 @@ description: Run HarnessAgent turns as durable Workflow DevKit workflows.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "fe26cc51d207b1498b95c42a00ea16f45d09d2c99319470a37e81a6eda1be31a"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "781dd20b6e827d3e6d276f63b32d1fd0abda99f9e44af41d3a0f96cdd9aa0022"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -308,6 +308,18 @@ export async function POST(request: Request) {
     stream: run.readable as ReadableStream<UIMessageChunk>,
   });
 }
+```
+
+If you use Next.js, wrap your config with `withWorkflow()` so the Workflow SDK
+transforms `'use workflow'` and `'use step'` modules. Other frameworks have
+their own Workflow SDK setup.
+
+```js title='next.config.js'
+import { withWorkflow } from 'workflow/next';
+
+const nextConfig = {};
+
+export default withWorkflow(nextConfig);
 ```
 
 The workflow state `sessionId` identifies the harness session. The step derives

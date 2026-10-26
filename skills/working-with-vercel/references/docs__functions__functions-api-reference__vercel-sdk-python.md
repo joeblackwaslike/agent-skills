@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions in Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fe7fc935987ff53c26910efeb5238f3ee02445294b5991b0dc5bdc167bc7c30c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "dd9f7b3555c3cb59ee800c340003261756d764b378f76fb71fb6d6ca9838cf40"
 ---
 
 # vercel.functions API Reference (Python)
@@ -50,10 +50,10 @@ sha256: "fe7fc935987ff53c26910efeb5238f3ee02445294b5991b0dc5bdc167bc7c30c"
 
 - [Vercel Python SDK is now available in beta](https://vercel.com/changelog/vercel-python-sdk-in-beta)
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api)
+- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
 - [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
-- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package) — Learn about available APIs when working with Vercel Functions.
-- [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python) — Learn how to use the Python runtime to run Python applications on Vercel.
+- [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-sdk-python.graph.md](/docs/functions/functions-api-reference/vercel-sdk-python.graph.md)
@@ -215,3 +215,6 @@ Usage of the Vercel Runtime Cache is charged, learn more about pricing in the [r
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

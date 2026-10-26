@@ -13,8 +13,8 @@ related:
 summary: Use list_integration_configuration_products with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4fe6908de2270ad9633df0635e72986c87c1e4d6d61d2e0ad028ca9a3a9421bf"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2319e5fff4fe5162acdc932ee4d0a53fb593811dcb622d46e0c647b2bf927981"
 ---
 
 # list_integration_configuration_products
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integ
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

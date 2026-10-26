@@ -9,17 +9,17 @@ prerequisites:
   - /docs/agent-resources/vercel-mcp/tools/agent-runs
   - /docs/agent-resources/vercel-mcp/tools
 related:
-  []
+  - /docs/eve/agent-runs
 summary: Use get_agent_run with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e70c1aabcbefddb25377206b3bb7911067ab893a2a8d818a1ceb5bf41ee1f622"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ed6a2dc52d7ad896e55a2598f2a7008a2e371aebdd3bdf4d08ab97867cb7e47c"
 ---
 
 # get_agent_run
 
-Use this tool with agents built with [eve](https://eve.dev/docs/guides/deployment/vercel#inspect-agent-runs).
+Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
 
 
 <!-- docsgraph:related -->
@@ -57,3 +57,6 @@ Get detailed metadata for a single eve Agent Run, including events, workflow met
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

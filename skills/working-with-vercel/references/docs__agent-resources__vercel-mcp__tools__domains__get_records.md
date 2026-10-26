@@ -13,8 +13,8 @@ related:
 summary: Use get_records with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_records.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e5f42ea9e2ec4a9ff9a5a0ea951b197028cd0de1a86b27b069f9a7631c4c22b3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6b55f19c870b7b8605fbd3f64e2ccd7bcd3a9b614c64baedb9bdd420ee1c861a"
 ---
 
 # get_records
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

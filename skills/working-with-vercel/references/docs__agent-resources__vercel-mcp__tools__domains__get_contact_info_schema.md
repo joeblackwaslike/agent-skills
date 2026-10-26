@@ -13,8 +13,8 @@ related:
 summary: Use get_contact_info_schema with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_contact_info_schema.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2c0f9fa02adf7910bf778fe3d1634b662ecd7e2003bd947275dc5a2f88cef7dd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d958763391b1641f5aecaf826da72f9798129bba8ed1335031c3cdb28f133514"
 ---
 
 # get_contact_info_schema
@@ -30,7 +30,7 @@ Get contact info schema.
 - [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
 - [Get contact info schema](https://vercel.com/docs/rest-api/domains-registrar/get-contact-info-schema) — GET /v1/registrar/domains/{domain}/contact-info/schema — Some TLDs require additional contact information. Use this endp
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
-- [get_domain_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_config) — Use get_domain_config with Vercel MCP.
+- [get_observability_schema](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema) — Use get_observability_schema with Vercel MCP.
 - [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_contact_info_schema.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_contact_info_schema.graph.md)
@@ -47,3 +47,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

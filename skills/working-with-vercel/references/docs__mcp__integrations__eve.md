@@ -17,8 +17,8 @@ related:
 summary: Give eve agents access to MCP tools through filesystem connections and authorize requests with Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations/eve.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8b4a251626d064ccef19ca1d202e424f4bd5455f2748bfe4419f6cefbf1dc21d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "617ee312055251773a41dbd385250dcc60dd44b733d8e9002fe1fd49bf0050d0"
 ---
 
 # eve with MCP
@@ -31,13 +31,14 @@ Connect an [eve](/docs/eve) agent to a [Model Context Protocol (MCP)](/docs/mcp)
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
+- [How to perform large-scale data analysis with Vercel Sandbox and MCP](https://vercel.com/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) — Use Vercel Sandbox and an MCP server built with \\`mcp-handler\\` to let AI agents run DuckDB SQL and Python on large data
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [Connect a Warehouse (Optional)](https://eve.dev/docs/tutorial/connect-a-warehouse) — Optional follow-up to the Build an Agent tutorial. Let each user connect their own warehouse over an OAuth MCP via Verce
+- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [Connect a Warehouse (Optional)](https://eve.dev/docs/tutorial/connect-a-warehouse) — Optional follow-up to the Build an Agent tutorial. Let each user connect their own warehouse over an OAuth MCP via Verce
 - [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
@@ -59,28 +60,29 @@ Before you begin, you need:
 
 Install Vercel Connect in your existing eve project:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @vercel/connect eve
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @vercel/connect eve
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @vercel/connect eve
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @vercel/connect eve
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @vercel/connect eve
+```
+
+**yarn**
+
+```bash
+yarn add @vercel/connect eve
+```
+
+**npm**
+
+```bash
+npm i @vercel/connect eve
+```
+
+**bun**
+
+```bash
+bun add @vercel/connect eve
+```
 
 Link the directory to a Vercel project, then pull its environment variables:
 
@@ -185,3 +187,6 @@ For an example that uses app authorization to investigate deployment failures, f
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

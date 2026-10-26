@@ -15,8 +15,8 @@ related:
 summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e873318f419ccdf126433a2ee068428560a5930c22fd0bfc11242146b5c268ab"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3034f1070ddc5cb53c3190e2ac338b51381141246a451ac17e98a694f7dcc540"
 ---
 
 # AI Gateway Text to Speech
@@ -395,3 +395,6 @@ The response is a JSON object with the base64-encoded audio:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

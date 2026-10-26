@@ -16,8 +16,8 @@ related:
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "1b7ffc4f6c6e6bb413d15de4aaad86fe502dcad7211f49fd4d503e92ffba8b48"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4dbc16dbe3cca7781f4d73188ca8b0031e11ece679af52318530fae8f1803c9e"
 ---
 
 # Observability Insights
@@ -33,13 +33,12 @@ Vercel organizes Observability through sections that correspond to different fea
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Anyone can build agents, but it takes a platform to run them](https://vercel.com/blog/anyone-can-build-agents-but-it-takes-a-platform-to-run-them)
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
-- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md)
 <!-- /docsgraph:related -->
@@ -193,7 +192,7 @@ Additionally, Observability Plus users can view:
 - External rewrite connection latency
 - External rewrites by source/destination paths
 
-To learn more, see [External Rewrites](/docs/routing/rewrites#external-rewrites).
+To learn more, see [External Rewrites](/docs/routing/rewrites#rewrites-to-external-origins).
 
 ## Microfrontends
 
@@ -225,3 +224,6 @@ For more information, see [Queues Observability](/docs/queues/observability).
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

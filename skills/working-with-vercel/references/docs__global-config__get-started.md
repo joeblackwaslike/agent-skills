@@ -16,8 +16,8 @@ related:
 summary: Learn how to create a Global Config store and read from it in your project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/get-started.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2bae7fa99a4533028fe1ed871f2794d82b79c030a93ae29bdccfa6aeaa03e8b7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6f6ba342a2b3615b687295aef7dd9b2ade3e5a156a00685ba77f0d8317cb9a86"
 ---
 
 # Getting started with Global Config
@@ -36,7 +36,7 @@ Global Config is a distributed key-value store that allows you to store and retr
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config) — Learn how to use Global Config with Vercel's Statsig integration.
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config/get-started.graph.md](/docs/global-config/get-started.graph.md)
 <!-- /docsgraph:related -->
@@ -52,53 +52,49 @@ Help me set up Global Config in this project. First, make sure the Vercel CLI is
 ## Prerequisites
 
 - Install the Global Config SDK:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @vercel/global-config
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @vercel/global-config
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @vercel/global-config
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @vercel/global-config
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @vercel/global-config
+  ```
+  **yarn**
+  ```bash
+  yarn add @vercel/global-config
+  ```
+  **npm**
+  ```bash
+  npm i @vercel/global-config
+  ```
+  **bun**
+  ```bash
+  bun add @vercel/global-config
+  ```
 - An existing project. This quickstart uses Next.js, but you can use any supported framework with Global Config storage
 - [Install](/docs/cli#installing-vercel-cli) or [update](/docs/cli#updating-vercel-cli) to the latest version of Vercel CLI
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i -g vercel@latest
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn global add vercel@latest
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i -g vercel@latest
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add -g vercel@latest
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i -g vercel@latest
+```
+
+**yarn**
+
+```bash
+yarn global add vercel@latest
+```
+
+**npm**
+
+```bash
+npm i -g vercel@latest
+```
+
+**bun**
+
+```bash
+bun add -g vercel@latest
+```
 
 - ### Create a Global Config store
   Navigate to the [Project](/docs/projects) you'd like to add a Global Config store to. Click on [**Storage**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fstores\&title=Go+to+Storage), then click the **Create Storage** button. Select **Global Config** and click **Continue**.
@@ -186,3 +182,6 @@ Now that you've created a Global Config store and read from it, you can explore 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -1,24 +1,67 @@
 ---
 title: Gladia
-description: Learn how to use the Gladia provider for the AI SDK.
+description: Learn how to set up the Gladia provider and check AI Gateway availability.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "4acf4552281fdef8cc03db8c4d0596b177be0008dfff919d265899db45b5386a"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "05206e120f9cbc369701e6c0764f74039127849313f62035ac01e8a2bed22c9f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Gladia](https://gladia.io/) provider contains language model support for the Gladia transcription API.
+Gladia models are not currently available through [AI Gateway](https://vercel.com/ai-gateway/models), so the opening example uses `@ai-sdk/gladia` directly. See [Using AI Gateway](#using-ai-gateway) below for supported alternatives.
 
-## Setup
+```ts
+import { transcribe } from 'ai';
+import { gladia } from '@ai-sdk/gladia';
+import { readFile } from 'node:fs/promises';
 
-The Gladia provider is available in the `@ai-sdk/gladia` module. You can install it with
+const { text } = await transcribe({
+  model: gladia.transcription(),
+  audio: await readFile('audio.mp3'),
+});
+
+console.log(text);
+```
+
+The example transcribes an `audio.mp3` file from your project.
+
+## Using AI Gateway
+
+The current [AI Gateway model catalog](https://vercel.com/ai-gateway/models) does not list Gladia models. Use `@ai-sdk/gladia` for the APIs on this page. To use other transcription models through Gateway, install `ai` and configure a Gateway API key:
 
 ```bash
-pnpm add @ai-sdk/gladia
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [Gateway documentation](/providers/ai-sdk-providers/ai-gateway) for supported models and APIs.
+
+## Using `@ai-sdk/gladia`
+
+For direct access to Gladia, install `ai` and `@ai-sdk/gladia`:
+
+```bash
+pnpm add ai @ai-sdk/gladia
+```
+
+Set your Gladia API credential in the `GLADIA_API_KEY` environment variable:
+
+```bash
+export GLADIA_API_KEY=your_api_key_here
+```
+
+The following sections document the direct `@ai-sdk/gladia` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 ## Provider Instance
 

@@ -15,8 +15,8 @@ related:
 summary: Connect Junie CLI to AI Gateway with the Vercel CLI or custom model profiles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/junie.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3316e5abc7b3aafb97a0f39d4606476f7cafbcfb970e2b4e438927be4ea49097"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b34a54491aaa8dabdb3d03411554dfe3d901115c3ca2bba4dfffc42346d25f49"
 ---
 
 # Junie CLI with AI Gateway
@@ -34,7 +34,7 @@ sha256: "3316e5abc7b3aafb97a0f39d4606476f7cafbcfb970e2b4e438927be4ea49097"
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
-- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/junie.graph.md](/docs/ai-gateway/coding-agents/junie.graph.md)
 <!-- /docsgraph:related -->
@@ -109,3 +109,6 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

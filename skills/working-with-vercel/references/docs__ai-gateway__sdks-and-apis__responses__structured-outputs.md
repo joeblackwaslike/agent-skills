@@ -13,8 +13,8 @@ related:
 summary: Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4857356259d72bc0564d7f287890ef5e0890d9283217708caaa0b80f44615c1e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f7fe36f429d024dc5fd87804c6d094b85138ad15815af05542796e587a28c5be"
 ---
 
 # OpenAI Responses Structured Outputs with AI Gateway
@@ -31,7 +31,7 @@ Use `text.format` to constrain the model's output to a JSON schema:
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 - [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation) — Generate text responses with the OpenAI Responses API through AI Gateway.
-- [OpenResponses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation) — Generate text responses using the OpenResponses API through AI Gateway.
+- [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/responses/structured-outputs.graph.md)
 <!-- /docsgraph:related -->
@@ -179,3 +179,6 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use list_project_route_versions with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_project_route_versions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b32bd231b00052b8f8d255f6e097db06f547b45a1f1d967c75a7f0921b92d4e3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3352cece7dbb3846dcf39091d634ac724e6e3d8a768ff390d6c997bc32b99f20"
 ---
 
 # list_project_route_versions
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

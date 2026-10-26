@@ -13,8 +13,8 @@ related:
 summary: Learn how to use Redis stores through the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/redis.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "2083cd37240e480e17cf311999b1a6d895cd2e17ae07e9f757c14f51a22afd7e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "e96af06d7ee365608c75fabb34ba8a41f2e46b605f81f10a093796e2e0fee496"
 ---
 
 # Redis on Vercel
@@ -38,3 +38,6 @@ Vercel enables you to use Redis by integrating with external database providers.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

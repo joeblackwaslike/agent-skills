@@ -13,8 +13,8 @@ related:
 summary: Use update_connector with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/update_connector.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "07dd5e1440e100dd040ac01843e38797d0e968d63bbf4623fe5da45facad34f7"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1134577137b4acf9d3956f74ec4b50510cbfc1da541bf7f51cb09a26d899c645"
 ---
 
 # update_connector
@@ -31,7 +31,7 @@ Update a connector and return the connector with any service-side update signals
 - [get_connector](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector) — Use get_connector with Vercel MCP.
 - [get_connector_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection) — Use get_connector_project_connection with Vercel MCP.
 - [list_connectors](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connectors) — Use list_connectors with Vercel MCP.
-- [update_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config) — Use update_rolling_release_config with Vercel MCP.
+- [list_connector_project_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connector_project_connections) — Use list_connector_project_connections with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/networking/update_connector.graph.md](/docs/agent-resources/vercel-mcp/tools/networking/update_connector.graph.md)
 <!-- /docsgraph:related -->
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/netwo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

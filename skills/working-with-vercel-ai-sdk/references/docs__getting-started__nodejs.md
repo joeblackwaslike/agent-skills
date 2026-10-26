@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Node.js.
 url: "https://ai-sdk.dev/docs/getting-started/nodejs"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nodejs.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "b599b350ab36fabc14e03834590f16092b27ede1753c591f9d44288083fb6220"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "58e55fe63618be8805fe24ed34e3fe7069f43b4c961259f52058ffa8d37181fe"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,7 +21,7 @@ If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/p
 To follow this quickstart, you'll need:
 
 - Node.js 22+ and pnpm installed on your local development machine.
-- A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
+- A [Vercel AI Gateway](https://vercel.com/ai-gateway) API key.
 
 If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
@@ -137,7 +137,7 @@ You should see a prompt in your terminal. Test it out by entering a message and 
 
 ## Choosing a Provider
 
-The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [ community ](/providers/community-providers) packages.
+The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) packages.
 
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 

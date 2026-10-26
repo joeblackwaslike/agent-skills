@@ -14,8 +14,8 @@ related:
 summary: Learn how to troubleshoot common errors with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/troubleshooting.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f4d81228b3c04ab9d161f0d08d17dcf30141da730285974a7fc2f134f48c7804"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "17d10b712ba5d250c00565939c042a4210603c47c53031c015f7fb46a93737b2"
 ---
 
 # Troubleshooting Sign in with Vercel
@@ -33,7 +33,7 @@ When users try to authorize your app, several errors can occur. Common troublesh
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
+- [Vercel KMS SDK Reference](https://vercel.com/docs/kms/ts-sdk-reference) — API reference for @vercel/kms, including signJWT, signMessage, region resolution, and signing the KMS API directly witho
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/troubleshooting.graph.md](/docs/sign-in-with-vercel/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -218,3 +218,6 @@ The token's `exp` must be in the future, the token must include `iss`, `sub`, `a
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

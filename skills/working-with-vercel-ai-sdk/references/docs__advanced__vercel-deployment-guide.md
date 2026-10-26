@@ -4,8 +4,8 @@ description: Learn how to deploy an AI application to production on Vercel
 url: "https://ai-sdk.dev/docs/advanced/vercel-deployment-guide"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/vercel-deployment-guide.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c5032ffcd5f692a0bc1d29d61c047035601254175f1548bfa0896b7f617ef938"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "ce0c955008877206b4ab58fafa4a99da4f88c4eccb6bb5e52da84480ac0f5fbb"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,7 +21,7 @@ Vercel allows for automatic deployments on every branch push and merges onto the
 To follow along with this guide, you will need:
 
 - a Vercel account
-- an account with a Git provider (this tutorial will use [Github](https://github.com))
+- an account with a Git provider (this tutorial will use [GitHub](https://github.com))
 - an OpenAI API key
 
 This guide will teach you how to deploy the application you built in the Next.js (App Router) quickstart tutorial to Vercel. If you haven’t completed the quickstart guide, you can start with [this repo](https://github.com/vercel-labs/ai-sdk-deployment-guide).

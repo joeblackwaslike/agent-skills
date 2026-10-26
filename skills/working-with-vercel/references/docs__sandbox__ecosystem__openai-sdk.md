@@ -17,8 +17,8 @@ related:
 summary: Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/openai-sdk.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e5fde362beb7baa82adbc541390c38e73d692bdf21fd08c2c8de65c3af7ef753"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "33f9407f1f4e69ad2a5df1edeaa5b470fbbb011cd2400cab45c19413b457a052"
 ---
 
 # OpenAI SDK
@@ -63,28 +63,23 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md]
 
 - ### Install dependencies
   Install the OpenAI SDK and the Sandbox SDK:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i openai @vercel/sandbox
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add openai @vercel/sandbox
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i openai @vercel/sandbox
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add openai @vercel/sandbox
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i openai @vercel/sandbox
+  ```
+  **yarn**
+  ```bash
+  yarn add openai @vercel/sandbox
+  ```
+  **npm**
+  ```bash
+  npm i openai @vercel/sandbox
+  ```
+  **bun**
+  ```bash
+  bun add openai @vercel/sandbox
+  ```
 
 - ### Configure authentication
   Link the project to Vercel and pull your development environment. This
@@ -203,3 +198,6 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md]
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "b45a4000283cb52c86e526fee9d4a4c6ab046dcb04863944c13042751d8d772f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "f13e33b30f035da340207b863ef365acc4af88a2e952d7b237fc3d5766cc4322"
 ---
 
 # Vercel Agent Pricing
@@ -40,8 +40,8 @@ Vercel Agent charges the underlying provider inference rate with no markup, plus
 - [Pricing and Limits](https://vercel.com/docs/eve/pricing) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
-- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 
 Full cross-link map for this page: [/docs/agent/pricing.graph.md](/docs/agent/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -117,3 +117,6 @@ Manual investigations and investigation reruns remain available and can create p
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

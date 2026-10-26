@@ -13,8 +13,8 @@ related:
 summary: An empty DNS record was received as part of the DNS response. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/dns_hostname_empty.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "865c65204dfd63659d0361e82be10e4e92846c639d649a98ad30382e45bb7abb"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "52c1e0fd6946291c857d25f8281fb8a9d5df320a27e888862ff937c91611e364"
 ---
 
 # DNS_HOSTNAME_EMPTY
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

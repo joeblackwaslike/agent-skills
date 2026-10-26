@@ -4,8 +4,8 @@ description: Learn how to build your first agent with the AI SDK and Vue.js (Nux
 url: "https://ai-sdk.dev/docs/getting-started/nuxt"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/getting-started/nuxt.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "9282e076d55b8ab8d0a817527dddd29ce3273db1c6e2e8737842b2c799a7248e"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "fdea2419ab2d70e4e534615d2b479345891b22c19db5b34b01818fa4369116b0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -21,7 +21,7 @@ If you are unfamiliar with the concepts of [Prompt Engineering](/docs/advanced/p
 To follow this quickstart, you'll need:
 
 - Node.js 22+ and pnpm installed on your local development machine.
-- A [ Vercel AI Gateway ](https://vercel.com/ai-gateway) API key.
+- A [Vercel AI Gateway](https://vercel.com/ai-gateway) API key.
 
 If you haven't obtained your Vercel AI Gateway API key, you can do so by [signing up](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai\&title=Go+to+AI+Gateway) on the Vercel website.
 
@@ -130,7 +130,7 @@ Let's take a look at what is happening in this code:
 
 ## Choosing a Provider
 
-The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [ community ](/providers/community-providers) packages.
+The AI SDK supports dozens of model providers through [first-party](/providers/ai-sdk-providers), [OpenAI-compatible](/providers/openai-compatible-providers), and [community](/providers/community-providers) packages.
 
 This quickstart uses the [Vercel AI Gateway](https://vercel.com/ai-gateway) provider, which is the default [global provider](/docs/ai-sdk-core/provider-management#global-provider-configuration). This means you can access models using a simple string in the model configuration:
 
@@ -166,7 +166,7 @@ model: openai('gpt-6-astra');
 
 ## Wire up the UI
 
-Now that you have an API route that can query an LLM, it's time to set up your frontend. The AI SDK's [ UI ](/docs/ai-sdk-ui/overview) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
+Now that you have an API route that can query an LLM, it's time to set up your frontend. The AI SDK's [UI](/docs/ai-sdk-ui/overview) package abstracts the complexity of a chat interface into one hook, [`useChat`](/docs/reference/ai-sdk-ui/use-chat).
 
 Update your root page (`pages/index.vue`) with the following code to show a list of chat messages and provide a user message input:
 

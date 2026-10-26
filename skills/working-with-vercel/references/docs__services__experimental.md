@@ -13,13 +13,13 @@ related:
 summary: The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/experimental.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0a346087c03cc739ef2bf25a19147234077acdb20712971efb44518dabd407f4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2b54b48a94b4c6f6678fe6afe2ca6a94f20f0afad21c793338d498c157405edc"
 ---
 
 # Experimental Services
 
-> **Availability**: Services (Beta) are available on all plans
+> Services are available in Beta on all plans
 
 > **💡 Note:** This page documents the earlier `experimentalServices` configuration model. New
 > projects should use the [`services`](/docs/services) model. The
@@ -39,10 +39,11 @@ Services let you deploy multiple backends and frontends within a single Vercel p
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
 
 Full cross-link map for this page: [/docs/services/experimental.graph.md](/docs/services/experimental.graph.md)
 <!-- /docsgraph:related -->
@@ -158,3 +159,6 @@ vercel dev -L
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

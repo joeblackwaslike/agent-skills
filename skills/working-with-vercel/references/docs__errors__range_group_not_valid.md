@@ -12,8 +12,8 @@ related:
 summary: The group value of the Range header in the request is invalid. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/range_group_not_valid.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "3ba52e43ca5f01124ebc38167ed42b90f6bad8836250f3c8db300e168618ef8c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "639bcc3de09eade8db58582097509904e7449ecbffe6dd3af2ccde6f1e6a8e8f"
 ---
 
 # RANGE_GROUP_NOT_VALID
@@ -37,3 +37,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

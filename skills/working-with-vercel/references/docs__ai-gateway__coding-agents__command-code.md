@@ -17,8 +17,8 @@ related:
 summary: Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, and monitor usage and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/command-code.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "50d2c3f48a151cfabc4b7bf1670c223b1f0be63c65bd1c1868c173d5cfd4d502"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c65928643c6b60cacba69df77dab5b98fea0ff8d0a10431ae0d9396db75cf441"
 ---
 
 # Command Code with AI Gateway
@@ -34,8 +34,8 @@ Use [Command Code](https://commandcode.ai/) with AI Gateway for model access and
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 - [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
+- [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/command-code.graph.md](/docs/ai-gateway/coding-agents/command-code.graph.md)
@@ -106,3 +106,6 @@ Command Code requires manual configuration. The [Vercel CLI setup command](/docs
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

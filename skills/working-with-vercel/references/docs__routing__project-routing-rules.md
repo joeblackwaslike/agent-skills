@@ -15,8 +15,8 @@ related:
 summary: Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/project-routing-rules.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ab410f20e829f41680ee05a00836997a8bf19281cd0e2fe067067ea9a55fc69c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7f9a8acc6a9760ae90dbc39f984fc813abefd7369828e97bc11e44421ff2cee0"
 ---
 
 # Project-Level Routing Rules
@@ -31,11 +31,12 @@ Project-level routing rules let you add redirects, rewrites, response headers, a
 
 - [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules)
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment)
 - [Stage routing rules](https://vercel.com/docs/rest-api/project-routes/stage-routing-rules) — PUT /v1/projects/{projectId}/routes — Stage routing rules for a project. Set \\`overwrite\\` to true to replace all existi
 - [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
+- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 - [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
-- [Delete routing rules](https://vercel.com/docs/rest-api/project-routes/delete-routing-rules) — DELETE /v1/projects/{projectId}/routes — Delete one or more routing rules from a project by ID. Stages a new version wit
 - [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 
 Full cross-link map for this page: [/docs/routing/project-routing-rules.graph.md](/docs/routing/project-routing-rules.graph.md)
@@ -68,6 +69,19 @@ Every rule matches against the request path. You can choose from three syntax mo
 | **Exact match**  | Matches a specific path                      | `/blog`                      |
 | **Path pattern** | Express-style `:param` syntax with wildcards | `/blog/:slug`, `/api/:path*` |
 | **Regex**        | Full regular expression                      | `^/posts/[0-9]+$`            |
+
+### Case sensitivity
+
+By default, a rule matches paths with the same case sensitivity as the deployment that serves the request:
+
+| Deployment configuration                                    | How rules match  | Example with the path `^/about(.*)`                  |
+| ----------------------------------------------------------- | ---------------- | ---------------------------------------------------- |
+| `vercel.json` defines `rewrites`, `redirects`, or `headers` | Case-sensitive   | Matches `/about` and `/about/team`, but not `/About` |
+| None of those properties                                    | Case-insensitive | Also matches `/About` and `/ABOUT/team`              |
+
+To make a rule always match case-sensitively, turn on **Case Sensitive** under the path condition. With the API, set `caseSensitive: true` on the rule's `route`.
+
+Turn on **Case Sensitive** for any redirect that only changes the letter case of a path, such as `/About` to `/about`. If the rule matches case-insensitively, the destination matches the rule again, and the redirect loops.
 
 ### Additional conditions
 
@@ -143,3 +157,6 @@ A few other `vercel.json` fields are also deployment-only: `locale` for i18n rou
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

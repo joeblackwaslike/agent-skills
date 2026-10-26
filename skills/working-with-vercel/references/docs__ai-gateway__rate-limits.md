@@ -15,8 +15,8 @@ related:
 summary: Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a rate-limited request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/rate-limits.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0918be6181510e036a03699e41ee4573f04c0adf3a3ec57aabbb17bef7734a0b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "46b6eec546ec034d29c72d5d55a5f42064f5bdeacdaa78bc29e4e46950d998b0"
 ---
 
 # AI Gateway Rate Limits
@@ -31,12 +31,12 @@ AI Gateway does not rate limit paid-tier requests. The free tier applies lower p
 
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 - [Securing your AI applications with Rate Limiting](https://vercel.com/kb/guide/securing-ai-app-rate-limiting) — Learn how to secure your AI applications with rate limiting using Vercel WAF and Vercel AI SDK
 - [AI Gateway Discounts](https://vercel.com/docs/ai-gateway/pricing/discounts) — Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with
+- [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Vercel Connect Limits](https://vercel.com/docs/connect/limits) — Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
+- [Pricing and Limits](https://vercel.com/docs/eve/pricing) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 
 Full cross-link map for this page: [/docs/ai-gateway/rate-limits.graph.md](/docs/ai-gateway/rate-limits.graph.md)
 <!-- /docsgraph:related -->
@@ -160,3 +160,6 @@ Purchase [AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-cr
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

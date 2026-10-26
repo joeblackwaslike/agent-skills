@@ -1,11 +1,11 @@
 ---
 title: Perplexity
-description: "Learn how to use Perplexity's Agent API with the AI SDK."
+description: Learn how to use Perplexity with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "96c1579ac5fa47a23f0fcc957843d30d62addc80bc70a1ce96099389c67fc6a6"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "d6404d743d8851b10b86dac332e785c475fb9ea2893ad3bc82d4ca6ec436975e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,15 +16,59 @@ can route across models, search the web, call tools, and return cited answers.
 The provider also supports embeddings and experimental decision models for
 classification, scoring, and Boolean judgments.
 
-API keys can be obtained from the [Perplexity Platform](https://docs.perplexity.ai).
+You can use Perplexity models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/perplexity`.
 
-## Setup
+```ts provider="perplexity" model="perplexity/sonar"
+import { generateText } from 'ai';
 
-The Perplexity provider is available via the `@ai-sdk/perplexity` module. You can install it with:
+const { text } = await generateText({
+  model: "perplexity/sonar",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/perplexity
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/perplexity`
+
+For direct access to Perplexity, install `ai` and `@ai-sdk/perplexity`:
+
+```bash
+pnpm add ai @ai-sdk/perplexity
+```
+
+Set your Perplexity API credential in the `PERPLEXITY_API_KEY` environment variable:
+
+```bash
+export PERPLEXITY_API_KEY=your_api_key_here
+```
+
+AI Gateway offers Sonar models. Use the direct provider for Perplexity Agent API presets, native tools, and model routing, which are documented below.
+
+The following sections document the direct `@ai-sdk/perplexity` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
+
+API keys can be obtained from the [Perplexity Platform](https://docs.perplexity.ai).
 
 ## Provider Instance
 

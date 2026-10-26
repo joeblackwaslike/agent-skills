@@ -12,8 +12,8 @@ related:
 summary: Learn how to use Speed Insights in Vercel with any frontend framework or project through the Speed Insights intake API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/api.md"
-fetched_at: "2026-06-15T20:38:13.599Z"
-sha256: "817bbeeb8f1a83d5f584fe27da57aeef2b9d485434c445f316c0762d87e9e7c0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fd658bc1a42e83b7579a40b0d6c1afc968f8915566441aade31307e7e83e68d8"
 ---
 
 # Speed Insights Intake API
@@ -104,3 +104,6 @@ export function webVitals(options) {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

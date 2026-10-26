@@ -16,8 +16,8 @@ related:
 summary: Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "24da0a25df2e21a889f737731306e1054ad78dd92e83be49014d557e667ac0ca"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8e7d23b84a71f363daf2171cf19b973bb51cecd55527a15e83bf01d01bf00f71"
 ---
 
 # Deploying to Vercel
@@ -40,10 +40,10 @@ Create preview and production deployments from Git, Vercel CLI, or the REST API.
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
-- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/deployments.graph.md](/docs/deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -97,13 +97,13 @@ You can also [create deployments from a Git reference](/docs/git#creating-a-depl
 
 ### Vercel Drop
 
-[Vercel Drop](/docs/drop) lets you deploy a file or folder by dragging it into your browser. You don't need Git, the CLI, or any local setup.
+[Vercel Drop](/docs/drop) lets you deploy a file or folder by dragging it into your browser. You don't need Git, the CLI, or any local setup, and it also works without an account.
 
 1. Go to [vercel.com/drop](/drop).
 2. Drag a project folder onto the page.
-3. Choose a team and project name, then select **Deploy**.
+3. If you're signed in, choose a team and project name, then select **Deploy**. Without an account, Vercel deploys right away.
 
-Vercel detects your framework and builds it, or deploys your files as-is when there's no framework. Vercel Drop is useful for static sites, build output, and prototypes. For the full walkthrough, see [Deploying with Vercel Drop](/docs/drop).
+Without an account, you can deploy a static site and claim it with a free account to keep it live. When you're signed in, Vercel also detects your framework and builds it. Vercel Drop is useful for static sites, build output, and prototypes. For the full walkthrough, see [Deploying with Vercel Drop](/docs/drop).
 
 ### Vercel CLI
 
@@ -145,6 +145,8 @@ vercel --prod
 
 This links your local directory to your Vercel Project and creates a [Production Deployment](/docs/deployments/environments#production-environment). A `.vercel` directory is added to store Project and Organization IDs.
 
+To deploy without an account, run [`vercel deploy --temporary`](/docs/cli/deploy#temporary). You get a temporary production deployment that you can claim to keep.
+
 Vercel CLI can also integrate with custom CI/CD workflows or third-party pipelines. Learn more about the different [environments on Vercel](/docs/deployments/environments).
 
 ### Deploy Hooks
@@ -185,7 +187,7 @@ Vercel’s dashboard provides a centralized way to view, manage, and gain insigh
 
 When you select a deployment from your **Project → Deployments** page, you can Open **Resources** in the sidebar to view and search:
 
-- **Middleware**: Any configured [matchers](/docs/routing-middleware/api#match-paths-based-on-custom-matcher-config).
+- **Middleware**: Any configured [matchers](/docs/routing-middleware#path-matching).
 - **Static Assets**: Files (HTML, CSS, JS) and their sizes.
 - **Functions**: The type, runtime, size, and regions.
 
@@ -245,3 +247,6 @@ For step-by-step workflows using the Vercel CLI to manage deployments, see:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

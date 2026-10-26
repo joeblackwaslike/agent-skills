@@ -14,8 +14,8 @@ related:
 summary: Learn how to secure native integration resources by choosing where they can connect and using Production-only mode to protect credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "21a0ba2916aee0d892bc5eb1a7ae713872df30c81844ea9d0b0b96998f3c45f6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "fa9b95e6cb8d5116e7d839c5eaf6dc882e6d082e8849d755e95cc3fbec84cbc3"
 ---
 
 # Secure Your Resource
@@ -98,3 +98,6 @@ If save is blocked:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

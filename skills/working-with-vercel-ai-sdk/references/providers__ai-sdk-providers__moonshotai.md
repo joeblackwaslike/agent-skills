@@ -1,26 +1,69 @@
 ---
 title: Moonshot AI
-description: Learn how to use Moonshot AI models with the AI SDK.
+description: Learn how to use Moonshot AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "b6443d9491d17cc448359aa18e6e9d2549ccb55499c5f245ce990900ad2f2271"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "40b0b430cff23034c6ab61e4c5f917b4b4989b7a2a4dbaed2dd7cb93cc981e11"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Moonshot AI](https://www.moonshot.ai) provider offers access to powerful language models through the Moonshot API, including the Kimi series of models with reasoning capabilities.
+You can use Moonshot AI models through [AI Gateway](/providers/ai-sdk-providers/ai-gateway) (recommended) or connect directly with `@ai-sdk/moonshotai`.
 
-API keys can be obtained from the [Kimi API Platform](https://platform.kimi.ai/console/api-keys).
+```ts provider="moonshotai" model="moonshotai/kimi-k3"
+import { generateText } from 'ai';
 
-## Setup
+const { text } = await generateText({
+  model: "moonshotai/kimi-k3",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
 
-The Moonshot AI provider is available via the `@ai-sdk/moonshotai` module. You can install it with:
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/moonshotai
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+Gateway feature and provider-option support depends on the model and the provider serving the request. See [Gateway provider options](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options).
+
+## Using `@ai-sdk/moonshotai`
+
+For direct access to Moonshot AI, install `ai` and `@ai-sdk/moonshotai`:
+
+```bash
+pnpm add ai @ai-sdk/moonshotai
+```
+
+Set your Moonshot AI API credential in the `MOONSHOT_API_KEY` environment variable:
+
+```bash
+export MOONSHOT_API_KEY=your_api_key_here
+```
+
+AI Gateway does not expose every API in `@ai-sdk/moonshotai`. Use the direct provider for provider-specific APIs or custom connection settings.
+
+The following sections document the direct `@ai-sdk/moonshotai` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
+
+API keys can be obtained from the [Kimi API Platform](https://platform.kimi.ai/console/api-keys).
 
 ## Provider Instance
 
@@ -247,7 +290,8 @@ preserves prompt-cache prefixes better than rewriting earlier declarations.
 
 ### Reasoning Models
 
-Kimi K3 always reasons and supports `low`, `high`, and `max` reasoning effort.
+Kimi K3 and Kimi K3.1 Pro always reason and support `low`, `high`, and `max`
+reasoning effort.
 The default is `max`. You can configure the effort through provider options or
 the generic `reasoning` setting:
 
@@ -510,7 +554,7 @@ The following optional provider options are available for Moonshot AI language m
 
 - **reasoningEffort** *'low' | 'high' | 'max'*
 
-  Reasoning effort for Kimi K3. Defaults to `'max'`. You can also use the
+  Reasoning effort for Kimi K3 and Kimi K3.1 Pro. Defaults to `'max'`. You can also use the
   generic `reasoning` setting. Portable `reasoning: 'max'` is sent directly;
   `minimal` maps to `low`, while `medium` and `high` map to `high`.
 
@@ -522,7 +566,8 @@ The following optional provider options are available for Moonshot AI language m
 - **thinking** *object*
 
   Configuration for Kimi K2.5 and K2.6. Kimi K2.7 accepts only `enabled`
-  because its thinking cannot be disabled. Kimi K3 does not accept this field.
+  because its thinking cannot be disabled. Kimi K3 and Kimi K3.1 Pro do not
+  accept this field.
 
   - **type** *'enabled' | 'disabled'*
 
@@ -544,6 +589,41 @@ The following optional provider options are available for Moonshot AI language m
   - `'preserved'` maps to `thinking.keep: 'all'` for Kimi K2.6. Kimi K2.7 and
     K3 preserve reasoning by default.
 
+- **promptCacheKey** *string*
+
+  Groups similar requests to improve cache hit rates. Typically a session or
+  task id.
+
+- **promptCacheOptions** *\{ mode?: 'implicit'; ttl?: '5m' | '1h' }*
+
+  Context caching options for Kimi K3 models, sent as `prompt_cache_options`.
+  `ttl` selects the cache write tier, and Moonshot uses `'5m'` when it is
+  omitted. A cached prefix keeps the TTL it was first written with, so a `'1h'`
+  request that extends a `'5m'` prefix still writes at `'5m'`. See
+  [Context Caching](https://platform.kimi.ai/docs/guide/context-caching).
+
+```ts
+import {
+  moonshotai,
+  type MoonshotAILanguageModelOptions,
+} from '@ai-sdk/moonshotai';
+import { generateText } from 'ai';
+
+const { usage, providerMetadata } = await generateText({
+  model: moonshotai('kimi-k3.1-pro'),
+  system: longReferenceDocument,
+  prompt: 'Summarize the key conclusions.',
+  providerOptions: {
+    moonshotai: {
+      promptCacheOptions: { ttl: '1h' },
+    } satisfies MoonshotAILanguageModelOptions,
+  },
+});
+
+console.log(usage.inputTokenDetails.cacheWriteTokens);
+console.log(providerMetadata?.moonshotai?.cacheWriteTokens); // { ttl5m, ttl1h }
+```
+
 ### Chat Response Metadata
 
 Moonshot AI preserves provider-specific response fields in
@@ -553,6 +633,8 @@ Moonshot AI preserves provider-specific response fields in
 - `choiceIndex`: the selected response choice index
 - `messageRole`: the response message role, when supplied
 - `toolCallTypes`: the tool-call type for each returned call
+- `cacheWriteTokens`: cache write tokens split by TTL (`ttl5m` and `ttl1h`),
+  from Moonshot's usage response headers, when supplied
 
 These fields remain in provider metadata because they are specific to
 Moonshot's Chat Completions response rather than shared AI SDK result fields.
@@ -578,6 +660,8 @@ but new applications should use Kimi K3, Kimi K2.7 Code, or Kimi K2.6.
 | `kimi-k2.7-code`                  | ✓           | ✓           | ✓                 | ✓          | ✓              |
 | `kimi-k2.7-code-highspeed`        | ✓           | ✓           | ✓                 | ✓          | ✓              |
 | `kimi-k3`                         | ✓           | ✓           | ✓                 | ✓          | ✓              |
+| `kimi-k3.1-pro`                   | ✓           | ✓           | ✓                 | ✓          | ✓              |
+| `kimi-k3.1-pro-highspeed`         | ✓           | ✓           | ✓                 | ✓          | ✓              |
 
 See the [Kimi model list](https://platform.kimi.ai/docs/models) and [model
 parameter reference](https://platform.kimi.ai/docs/api/models-overview) for

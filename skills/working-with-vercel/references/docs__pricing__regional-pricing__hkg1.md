@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Hong Kong (hkg1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/hkg1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "358d6a8d24b93a0c48dbe10b930a83aaf068945602404d19a3b78c1c28566102"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d100aa9ebc3d9044a746988ecc4948be58cc94e2701b7542a56060f7d03e51c9"
 ---
 
 # Hong Kong (hkg1) pricing
@@ -33,9 +33,9 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1) — Vercel pricing for the Singapore \\(sin1\\) region.
-- [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
+- [Tokyo, Japan \\(hnd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hnd1) — Vercel pricing for the Tokyo, Japan \\(hnd1\\) region.
 - [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
+- [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/hkg1.graph.md](/docs/pricing/regional-pricing/hkg1.graph.md)
 <!-- /docsgraph:related -->
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

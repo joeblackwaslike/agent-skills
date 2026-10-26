@@ -1,26 +1,69 @@
 ---
 title: Hugging Face
-description: Learn how to use Hugging Face Provider.
+description: Learn how to use Hugging Face with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "ecc7d24a5470982554d9b2956a0bfddd2bf47ce21a639e3fd46c6d55d1b64276"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "87bf3b72f18c985b4bfb20aa71a6e99370ff94831307651eb313a867e3e34b5d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The [Hugging Face](https://huggingface.co/) provider offers access to thousands of language models through [Hugging Face Inference Providers](https://huggingface.co/docs/inference-providers/index), including models from Meta, DeepSeek, Qwen, and more.
+Use [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for the shared models shown below, served by Gateway's supported providers, or use `@ai-sdk/huggingface` to send requests directly to Hugging Face. Gateway does not currently route requests to Hugging Face.
 
-API keys can be obtained from [Hugging Face Settings](https://huggingface.co/settings/tokens).
+```ts provider="huggingface" model="meta/llama-3.3-70b"
+import { generateText } from 'ai';
 
-## Setup
+const { text } = await generateText({
+  model: "meta/llama-3.3-70b",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+});
 
-The Hugging Face provider is available via the `@ai-sdk/huggingface` module. You can install it with:
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
 
 ```bash
-pnpm add @ai-sdk/huggingface
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The current [Gateway provider list](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options#available-providers) does not include Hugging Face as an inference provider. The Gateway tab calls models also available from Hugging Face, but Gateway routes them through its supported inference providers. It does not send the request to Hugging Face. Use the direct tab to call Hugging Face; do not set `providerOptions.gateway.order` to an unsupported provider slug.
+
+## Using `@ai-sdk/huggingface`
+
+For direct access to Hugging Face, install `ai` and `@ai-sdk/huggingface`:
+
+```bash
+pnpm add ai @ai-sdk/huggingface
+```
+
+Set your Hugging Face API credential in the `HUGGINGFACE_API_KEY` environment variable:
+
+```bash
+export HUGGINGFACE_API_KEY=your_api_key_here
+```
+
+Use `@ai-sdk/huggingface` to authenticate with your Hugging Face account and call its platform APIs directly. The Gateway alternative above uses a supported inference provider instead.
+
+The following sections document the direct `@ai-sdk/huggingface` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
+
+API keys can be obtained from [Hugging Face Settings](https://huggingface.co/settings/tokens).
 
 ## Provider Instance
 

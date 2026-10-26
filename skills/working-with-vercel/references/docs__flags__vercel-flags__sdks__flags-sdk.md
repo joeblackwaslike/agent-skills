@@ -17,8 +17,8 @@ related:
 summary: Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5d8f61d087c6fd6a2f43cdff58c3226bbbc25843b41ac34863a9e88e1f5ef7dd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a194b7272da57a8098186640cf2b6016e446f3cbdf660f841e58d6563b1d7fc5"
 ---
 
 # Using the Flags SDK with Vercel Flags
@@ -48,7 +48,7 @@ The [Getting Started guide](/docs/flags/vercel-flags/quickstart) covers installi
 
 The `@flags-sdk/vercel` package provides the adapter that connects the Flags SDK to your Vercel Flags project. The [Getting Started guide](/docs/flags/vercel-flags/quickstart) uses `vercelAdapter()`, which authenticates with Vercel OIDC by default and initializes lazily on first evaluation.
 
-If you need to connect with a specific [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys), for example when working with multiple Vercel Flags projects, use `createVercelAdapter` instead. See [SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys#with-the-flags-sdk) for details.
+If you need to connect with a specific [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys), pass it to `createVercelAdapter` instead. See [SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys#with-the-flags-sdk) for details.
 
 ## Declaring options
 
@@ -155,3 +155,6 @@ See the [Flags SDK SvelteKit guide](https://flags-sdk.dev/docs/getting-started/s
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

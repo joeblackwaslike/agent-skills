@@ -16,13 +16,13 @@ related:
 summary: Run long-running background workers, such as queue consumers and workflow workers, next to your app with Vercel Daemons.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/daemons.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "82badb1090308f34c4f23eb5669d3ef10317d2158b90a774deafddb0a247aab0"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "95d704e4108c2c03c803e699d293ba0929c814263a58b568de323fe7f50165bb"
 ---
 
 # Daemons
 
-> **Availability**: Daemons (Public Beta) are available on all plans
+> Daemons are available in Public Beta on all plans
 
 Vercel Daemons run long-running background processes from container images, such as queue consumers, workflow workers, and job runners. Each daemon pulls work from a queue, workflow engine, or external API and processes it continuously.
 
@@ -32,15 +32,15 @@ Vercel Daemons run long-running background processes from container images, such
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
+- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
+- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
+- [Migrate from Fly.io to Vercel](https://vercel.com/kb/guide/migrate-fly-io-to-vercel) — Move an app from Fly.io to Vercel. Map configuration, choose Functions or Daemons, plan persistent storage, and verify t
+- [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
+- [Migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
 - [Backends on Vercel: Python, containers, and Daemons](https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons)
-- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
-- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Container Runtime](https://vercel.com/docs/functions/runtimes/container) — Run any code and library on Vercel Functions with an OCI container image built from a Dockerfile or Containerfile at the
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
@@ -185,7 +185,7 @@ See the [Daemon configuration reference](/docs/daemons/config-reference) for eve
 
 ## Graceful shutdown
 
-As a new version of your daemon rolls out, Vercel stops instances from the previous version. To let your process finish current tasks and clean up resources, Vercel sends a `SIGTERM` signal. Stop accepting new work immediately and start draining resources. By default, Vercel waits 10 seconds after sending `SIGTERM`, then terminates the process if it's still running. The same shutdown sequence applies when you reduce instance counts or remove a daemon.
+As a new version of your daemon rolls out, Vercel stops instances from the previous version. To let your process finish current tasks and clean up resources, Vercel sends a `SIGTERM` signal. Stop accepting new work immediately and start draining resources. By default, Vercel waits 30 seconds after sending `SIGTERM`, then terminates the process if it's still running. The same shutdown sequence applies when you reduce instance counts or remove a daemon.
 
 To change how long Vercel waits, set [`terminationGracePeriodSeconds`](/docs/daemons/config-reference#terminationgraceperiodseconds) on the daemon. The value is an integer number of seconds from `0` to `3600`:
 
@@ -269,7 +269,14 @@ while not shutdown.is_set():
 
 Each instance receives your deployment's [environment variables](/docs/environment-variables). Vercel passes the same variables to the image build as build arguments.
 
-Each instance receives an [OIDC token](/docs/oidc) to authenticate with other services. Vercel writes the token to a file, sets `VERCEL_OIDC_TOKEN_FILE` to its path, and refreshes the token periodically. To read the token, use [`@vercel/oidc`](/docs/oidc/reference) 4.0.0 or later for Node.js, or `vercel-oidc` 0.10.0 or later for Python.
+Vercel also sets the following environment variables on each instance:
+
+| Variable | Description | Example |
+| --- | --- | --- |
+| `VERCEL_REGION` | The region the instance runs in. Vercel ignores a `VERCEL_REGION` that you define. | `iad1` |
+| `VERCEL_OIDC_TOKEN_FILE` | The path of the file that holds the instance's [OIDC token](/docs/oidc). | `/var/run/secrets/vercel.com/token` |
+
+Use the OIDC token to authenticate with other services. The token is valid for 30 minutes, and Vercel refreshes the file about every 5 minutes, so read the file each time you need a token. To read the token, use [`@vercel/oidc`](/docs/oidc/reference) 4.0.0 or later for Node.js, or `vercel-oidc` 0.10.0 or later for Python.
 
 ## Local development
 
@@ -286,7 +293,7 @@ Use `vercel env pull` to download your project's development environment variabl
 
 ### What does the Daemons beta support?
 
-During the beta, daemons run in production deployments with manually configured instance counts and ephemeral storage. You can scale daemons from the Vercel dashboard.
+During the beta, daemons run in production deployments with manually configured instance counts and ephemeral storage. You can scale daemons from the Vercel dashboard or the Vercel CLI.
 
 Preview deployments, autoscaling, and persistent storage aren't supported. See [Daemons limits](/docs/daemons/limits) for all limits and available alternatives.
 
@@ -302,6 +309,19 @@ Deploy new `instances` counts or set a scaling override without a new deployment
 
 The Hobby quota counts Active CPU, the CPU time your code spends executing, not uptime. Time spent waiting, such as long polling an empty queue, doesn't count, so a daemon that is mostly waiting for work will use less of your monthly quota. Some work that looks like waiting still uses CPU: for example, HTTPS requests require cipher operations such as encryption, decryption, and signing, which consume Active CPU. See [Default quotas](/docs/daemons/limits#default-quotas) for each plan's quota and what happens when you reach it.
 
+### Can I build daemons with `vercel build` on my machine?
+
+Yes. During the beta, set `VERCEL_ENABLE_DAEMONS_BOA=1` when you run `vercel build` locally.
+
+## Guides and migrations
+
+Follow these guides to deploy background workers or migrate them from another platform:
+
+- [The complete guide to Vercel Daemons](/kb/guide/vercel-daemons)
+- [Migrate Railway workers to Vercel Daemons](/kb/guide/migrate-railway-workers-to-vercel-daemons)
+- [Migrate Render background workers to Vercel Daemons](/kb/guide/migrate-render-workers-to-vercel-daemons)
+- [Migrate Fly.io worker processes to Vercel Daemons](/kb/guide/migrate-fly-io-workers-to-vercel-daemons)
+
 ## Learn more
 
 - [Managing daemons](/docs/daemons/managing-daemons): Scale, stop, and monitor daemons.
@@ -314,3 +334,6 @@ The Hobby quota counts Active CPU, the CPU time your code spends executing, not 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

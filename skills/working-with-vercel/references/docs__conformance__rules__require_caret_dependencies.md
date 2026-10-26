@@ -12,13 +12,13 @@ related:
 summary: "Prevent the use of dependencies without a caret (\"^\") as a prefix."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/require_caret_dependencies.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "f02be7cacbd3f92b5a31151d5e77bed30a79859bf1c437979bd0998023473b82"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6948c1b7e70504f24fa0d787a34c8a0c6b4803f2e7e1760f24608872cecd795d"
 ---
 
 # REQUIRE_CARET_DEPENDENCIES
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 > **💡 Note:** This rule is available from version 1.4.0.
 
@@ -62,3 +62,6 @@ If you hit this issue, you can resolve it by adding a `"^"` to the version of yo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

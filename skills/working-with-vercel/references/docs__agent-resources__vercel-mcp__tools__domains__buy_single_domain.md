@@ -14,8 +14,8 @@ related:
 summary: Use buy_single_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3bd3f5c8d37c107be6b834279eff79a165cf06c4a543aa109cf06ed76c19baf5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9ee7cb8a03c4ba6330b771531968fe9786a3cdc63634cf50a2216b44d4b66172"
 ---
 
 # buy_single_domain
@@ -31,7 +31,7 @@ To register a domain, use [`get_purchase_quote`](/docs/agent-resources/vercel-mc
 - [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 - [check_domain_availability_and_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price) — Use check_domain_availability_and_price with Vercel MCP.
 - [get_domain_order](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_domain_order) — Use get_domain_order with Vercel MCP.
-- [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
+- [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing) — Vercel MCP tools for billing and purchases.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain.graph.md)
 <!-- /docsgraph:related -->
@@ -41,3 +41,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

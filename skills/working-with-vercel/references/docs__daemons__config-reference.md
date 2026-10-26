@@ -15,8 +15,8 @@ related:
 summary: Every field you can set on a daemon in the daemons key of vercel.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/daemons/config-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ecaf6bd66d4692dc543135f914322ee4cdc4d8a973973097af5e413e8c5dba69"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6fb2e177196ed84cabe591f1c3a303ec35db8e9210e1fa96590ba35f28ae181b"
 ---
 
 # Daemon Configuration Reference
@@ -29,14 +29,17 @@ You declare daemons with the top-level `daemons` key in `vercel.json`. The key i
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
+- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
+- [Migrate Fly.io worker processes to Vercel Daemons](https://vercel.com/kb/guide/migrate-fly-io-workers-to-vercel-daemons) — Migrate Fly.io workers to Vercel Daemons with your existing Dockerfile. Map process settings, preserve queue state, and
+- [Migrate Railway workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-railway-workers-to-vercel-daemons) — Move Railway workers to Vercel Daemons with Docker configuration, broker migration, shutdown testing, a gradual queue ha
+- [Migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
+- [Migrate Render background workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-render-workers-to-vercel-daemons) — Migrate Render workers to Vercel Daemons. Translate render.yaml, package Celery in Docker, prepare the broker, and verif
 - [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [Daemons Limits](https://vercel.com/docs/daemons/limits) — Limits on the configuration, size, and capabilities of Vercel Daemons during the beta.
+- [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
-- [Project Configuration](https://vercel.com/docs/project-configuration) — Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control build
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Override a project daemon's instance counts](https://vercel.com/docs/rest-api/daemons/override-a-project-daemon-s-instance-counts) — PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances — Override the instance counts of a daemon in the given regio
+- [Force restart a project daemon instance](https://vercel.com/docs/rest-api/daemons/force-restart-a-project-daemon-instance) — POST /v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart — Force restart a running production da
 
 Full cross-link map for this page: [/docs/daemons/config-reference.graph.md](/docs/daemons/config-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -92,7 +95,7 @@ Vercel doesn't publish files under a daemon's `root` as static assets of your de
 
 **Type:** `string`
 
-Required. The path to the `Dockerfile` or `Containerfile` to build, relative to `root`. Name the file `Dockerfile` or `Containerfile`. The directory that contains the file is the build context.
+Required. The path to the `Dockerfile` or `Containerfile` to build, relative to `root`. Name the file `Dockerfile` or `Containerfile`, optionally with a suffix, such as `Dockerfile.worker`. The name is case-insensitive. The directory that contains the file is the build context.
 
 Vercel passes your deployment's environment variables to the build as build arguments, and builds the image for the Linux `amd64` architecture.
 
@@ -169,7 +172,7 @@ When you set `resources`, `requests` and `memory` are required.
 
 **Type:** `number`
 
-The number of seconds Vercel waits after sending `SIGTERM` before it terminates the instance. The value is an integer from `0` to `3600`. The default is `10`.
+The number of seconds Vercel waits after sending `SIGTERM` before it terminates the instance. The value is an integer from `0` to `3600`. The default is `30`. A changed value applies to instances started after it deploys; already-running instances keep the grace period they started with.
 
 ```json filename="vercel.json"
 {
@@ -190,3 +193,6 @@ Raise the value when your process needs more time to finish work after `SIGTERM`
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

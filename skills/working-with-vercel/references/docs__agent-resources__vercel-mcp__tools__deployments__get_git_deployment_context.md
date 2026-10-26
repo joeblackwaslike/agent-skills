@@ -13,8 +13,8 @@ related:
 summary: Use get_git_deployment_context with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "04d93e30b9f110a03f5605028d87bc0baf9823be2f69222c9af257d01a834720"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9a15828f9446ffa0854cec3c8b85776f424eda26b02352b651673a399b62a05b"
 ---
 
 # get_git_deployment_context
@@ -31,7 +31,7 @@ List your teams, their plans, linked Git projects, and connected Cursor Origin w
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
 - [create_git_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_git_project) — Use create_git_project with Vercel MCP.
 - [open_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments) — Use open_deployments with Vercel MCP.
-- [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
+- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.graph.md)
 <!-- /docsgraph:related -->
@@ -44,3 +44,6 @@ This tool is available on the root connection. Project-scoped connections alread
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

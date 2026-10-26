@@ -15,8 +15,8 @@ related:
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "73e64fae34d853808ffaee082610a872b1e0f5145b107015feef4a6c26784d8f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "66c607e704262efa8b5c9814a014f8488b1ad4735f4671a31cda2608cb763a46"
 ---
 
 # Using OpenFeature with Vercel Flags
@@ -32,12 +32,12 @@ sha256: "73e64fae34d853808ffaee082610a872b1e0f5145b107015feef4a6c26784d8f"
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [OpenFeature](https://flags-sdk.dev/docs/providers/openfeature)
-- [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js)
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js)
 - [Flags SDK now supports OpenFeature](https://vercel.com/changelog/flags-sdk-now-supports-openfeature)
-- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/openfeature.graph.md](/docs/flags/vercel-flags/sdks/openfeature.graph.md)
 <!-- /docsgraph:related -->
@@ -202,3 +202,6 @@ export async function GET(request: Request) {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

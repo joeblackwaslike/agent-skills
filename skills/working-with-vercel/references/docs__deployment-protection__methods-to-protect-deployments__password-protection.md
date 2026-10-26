@@ -17,13 +17,15 @@ related:
 summary: Require visitors to enter a password before they can view your deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d1d6da482e5de5ce2908787c07507c3a2ed0e11cee1f137219877a8ab962f8db"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3e6c363cc0010acbc0074d30253672657803ef186bddb502b1ca9cbe468d5f1d"
 ---
 
 # Password Protection
 
-> **Availability**: Password Protection is available on Enterprise and Pro plans
+> Password Protection is available on Enterprise and Pro plans
+>
+> Those with the owner, member and admin roles can manage Password Protection
 
 Password Protection requires visitors to enter a pre-defined password before they can access your deployment. You can set the desired password from your project settings when enabling the feature, and update it any time.
 
@@ -41,10 +43,10 @@ Password Protection requires visitors to enter a pre-defined password before the
 - [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker and container image support, background
 - [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
-- [Deployment Protection is now enabled by default for new projects](https://vercel.com/changelog/deployment-protection-is-now-enabled-by-default-for-new-projects)
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [update_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_deployment_protection) — Use update_project_deployment_protection with Vercel MCP.
 - [Tracking custom events](https://vercel.com/docs/analytics/custom-events) — Learn how to send custom analytics events from your application.
+- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md](/docs/deployment-protection/methods-to-protect-deployments/password-protection.graph.md)
 <!-- /docsgraph:related -->
@@ -74,7 +76,7 @@ The table below outlines key considerations and security implications when using
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Environment Configuration** | Can be enabled for different environments. See [Understanding Deployment Protection by environment](/docs/deployment-protection#choose-which-urls-to-protect)                                                                                           |
 | **Compatibility**             | Compatible with [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) and [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips)                                                  |
-| **Bypass Methods**            | Can be bypassed using [Shareable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) |
+| **Bypass Methods**            | Can be bypassed using [Shareable Links](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links) and [Protection bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation), or by callers listed in [Trusted Sources](/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources) |
 | **Password Persistence**      | Users only need to enter the password once per deployment, or when the password changes, due to cookie set by the feature being invalidated on password change                                                                                                                         |
 | **Password Changes**          | Users must re-enter a new password if you change the existing one                                                                                                                                                                                                                      |
 | **Disabling Protection**      | All existing deployments become unprotected if you disable the feature                                                                                                                                                                                                                 |
@@ -135,3 +137,6 @@ You can configure Password Protection using `password_protection` in the `vercel
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

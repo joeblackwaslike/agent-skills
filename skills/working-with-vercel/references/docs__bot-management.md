@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "75946c1981e7879bca20fb6ab3e46252c9b746976d56670467104974320549e9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "320c19f1c21d7f7dcb79fb60bd18cb53f81d4ca819eab6ab572669ca3afa6d87"
 ---
 
 # Bot Management
@@ -37,8 +37,8 @@ Bots generate nearly half of all internet traffic. While many bots serve legitim
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
-- [Should I use Cloudflare in front of Vercel?](https://vercel.com/kb/guide/cloudflare-with-vercel) — Information on using Cloudflare together with Vercel.
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
 - [Bot Protection: One-click managed ruleset now in public beta](https://vercel.com/blog/one-click-bot-protection-now-in-public-beta)
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
@@ -73,7 +73,7 @@ With Vercel, you can use:
 
 ## Bot protection managed ruleset
 
-> **Availability**: Bot protection managed ruleset is available on all plans
+> Bot protection managed ruleset is available on all plans
 
 With Vercel, you can use the bot protection managed ruleset to [challenge](/docs/vercel-firewall/firewall-concepts#challenge) non-browser traffic from accessing your applications. It filters out automated threats while allowing legitimate traffic.
 
@@ -105,7 +105,7 @@ Bot Protection doesn't work when a reverse proxy (e.g. Cloudflare, Azure, or oth
 
 ## AI bots managed ruleset
 
-> **Availability**: AI bots managed ruleset is available on all plans
+> AI bots managed ruleset is available on all plans
 
 Vercel's AI bots managed ruleset allows you to control traffic from AI bots that crawl your site for training data, search purposes, or user-generated fetches.
 
@@ -929,6 +929,14 @@ Runs browser automation on behalf of Kernel customers for web agents, automation
 
 View
 
+line-yahoo-ads
+
+advertising
+
+LINE Yahoo! Ads is a bot that crawls web pages for the LY (LINE Yahoo!) Ads product to verify websites for advertising.
+
+View
+
 linkedinbot
 
 preview
@@ -1509,3 +1517,6 @@ View
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

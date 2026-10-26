@@ -13,8 +13,8 @@ related:
 summary: Use get_connector with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3f203abb19c750423e24c0670b8bc59f9201924a6ffc2dac8f165d643d761917"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "bee02cf1bb28b7fc94e5e9dd021400283265c20c53ffdefe05de969d5e86f207"
 ---
 
 # get_connector
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/netwo
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

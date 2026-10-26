@@ -16,8 +16,8 @@ related:
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e83a8a3e7180f4d381517dd99ecbaa84fbb8f98fa2d6d5e5fd3cb91d8b9bb9fe"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "78d14535d2e6e8f4eb33555da930f16e7811b01a7d0d77e4a195f82964d810f3"
 ---
 
 # Log Drains Reference
@@ -34,6 +34,7 @@ Log Drains forward logs from your deployments to external endpoints for storage 
 - [Log drains now support log source selection](https://vercel.com/changelog/log-drains-now-support-log-source-selection)
 - [Log Drains](https://vercel.com/blog/log-drains)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
@@ -88,9 +89,9 @@ The following table describes the possible fields that are sent via Log Drains:
 | `proxy.path`             | string | Yes\*    | Request path with query parameters                                     | `/dynamic/some-value.json?route=some-value`                                                                                                                            |
 | `proxy.userAgent`        | array  | Yes\*    | User agent strings of the request                                      | `["Mozilla/5.0..."]`                                                                                                                                                   |
 | `proxy.region`           | string | Yes\*    | Region where the request is processed                                  | `sfo1`                                                                                                                                                                 |
-| `proxy.referer`          | string | No       | Referer of the request                                                 | `*.vercel.app`                                                                                                                                                         |
+| `proxy.referer`          | string | No       | Referer of the request                                                 | `*.vercel.app`                                                                                                                                                        |
 | `proxy.statusCode`       | number | No       | HTTP status code of the proxy request                                  | 200 (`-1` means revalidation occurred in the background)                                                                                                               |
-| `proxy.clientIp`         | string | No       | Client IP address                                                      | `120.75.16.101`                                                                                                                                                        |
+| `proxy.clientIp`         | string | No       | Client IP address                                                      | `120.75.16.101`                                                                                                                                                       |
 | `proxy.scheme`           | string | No       | Protocol of the request                                                | `https`                                                                                                                                                                |
 | `proxy.responseByteSize` | number | No       | Size of the response in bytes                                          | 1024                                                                                                                                                                   |
 | `proxy.cacheId`          | string | No       | Original request ID when request is served from cache                  | `pdx1::v8g4b-1744143786684-93dafbc0f70d`                                                                                                                               |
@@ -167,6 +168,41 @@ Example workflows:
 
 Rules run from top to bottom. Requests that match a rule use that rule’s sampling rate, and any other requests are dropped. If you do not add rules, the drain forwards **100%** of data to the destination.
 
+## OData filter fields
+
+Log drain filters use an [OData](https://www.odata.org/) filter expression to select which logs reach your drain. Filters support the fields below. The **Maps to** column shows which part of the [Logs Schema](#logs-schema) each field reads.
+
+| Field                    | Type    | Maps to                  | Notes                                     |
+| ------------------------ | ------- | ------------------------ | ----------------------------------------- |
+| `schema`                 | string  | Record type              | `log` for log drains.                     |
+| `project/id`             | string  | `projectId`              |                                           |
+| `deployment/environment` | string  | `environment`            |                                           |
+| `log/source`             | string  | `source`                 |                                           |
+| `log/host`               | string  | `host`                   |                                           |
+| `log/timestamp`          | number  | `timestamp`              |                                           |
+| `log/method`             | string  | `proxy.method`           |                                           |
+| `log/path`               | string  | `proxy.path`             | Includes the query string.                |
+| `log/statusCode`         | number  | `proxy.statusCode`       |                                           |
+| `log/clientIp`           | string  | `proxy.clientIp`         |                                           |
+| `log/responseSize`       | number  | `proxy.responseByteSize` |                                           |
+| `log/userAgent`          | string  | `proxy.userAgent[0]`     | The first user agent value.               |
+
+> **💡 Note:** Fields that map to the `proxy` object are undefined on logs without one, such as build logs, and comparisons against undefined fields do not match. Streaming function runtime logs include a `proxy` object without `statusCode` or `responseByteSize`, and edge logs have no status code. Logs from background ISR regeneration have a `proxy.statusCode` of `-1`.
+
+### Example filters
+
+```text
+log/source eq 'edge'
+log/statusCode ge 400
+contains(log/userAgent, 'Googlebot')
+endswith(log/path, '.xml')
+startswith(log/clientIp, '66.249.')
+```
+
+`log/path` includes the query string, so `endswith(log/path, '.xml')` does not match `/sitemap.xml?v=2`.
+
+Patterns passed to the `matchesPattern` function must be valid RE2-compatible regular expressions: lookarounds such as `(?=...)` are not supported, and patterns prone to catastrophic backtracking, such as nested quantifiers like `(a+){10}`, make the filter invalid.
+
 ## More resources
 
 For more information on Log Drains and how to use them, check out the following resources:
@@ -178,3 +214,6 @@ For more information on Log Drains and how to use them, check out the following 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

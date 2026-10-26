@@ -8,21 +8,21 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/release-phases/public-beta-agreement
+  - /docs/connect/legal
   - /docs/kms/quickstart
   - /docs/kms/concepts/key-rotation
   - /docs/kms/concepts/authentication
-  - /docs/kms/ts-sdk-reference
-  - /docs/oidc
 summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from Vercel Functions with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c8ea3395d474587722ad42a815fc4c2bd7018f268b079c840ec1c732531470cf"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cec6fc2ad2c31846efa0514bd86e3cf492bfa8e7d70d0d06b15acb44d45243a5"
 ---
 
 # Key Management Service (KMS)
 
-> **Availability**: Key Management Service (Beta) is available on all plans
+> Key Management Service is available in Beta on all plans , and is subject to the [Beta Agreement](/docs/release-phases/public-beta-agreement) and [Vercel Connect terms](/docs/connect/legal)
 
 Vercel Key Management Service (KMS) gives you managed signing keys that live on Vercel. You sign JWTs and messages by calling the KMS signing API from your Vercel Functions, and Vercel publishes the matching public keys so any relying party can verify the result. Your private keys never leave Vercel, so you avoid storing signing material in environment variables.
 
@@ -34,10 +34,10 @@ Vercel Key Management Service (KMS) gives you managed signing keys that live on 
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
-- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 - [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 
 Full cross-link map for this page: [/docs/kms.graph.md](/docs/kms.graph.md)
 <!-- /docsgraph:related -->
@@ -109,3 +109,6 @@ KMS is billed per signing operation, with no per-key or per-issuer charge. For t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

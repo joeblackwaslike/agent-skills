@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e5aebc00d702ff1bb3ed3ff611da6810cb068519231d3fdd9153e73e97dbb3f8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0b660c153d3b78b6238ec551a3a69fdd3857e7019ceaea2f859fb8307ff7c371"
 ---
 
 # Using Monorepos
@@ -34,7 +34,7 @@ Monorepos allow you to manage multiple projects in a single directory. They are 
 - [Lockfile-aware deployment skipping for monorepos](https://vercel.com/changelog/lockfile-aware-deployment-skipping-for-monorepos)
 - [New monorepo projects now skip builds with unchanged code by default](https://vercel.com/changelog/new-monorepo-projects-now-skip-builds-with-unchanged-code-by-default)
 - [Skip unaffected builds for projects in Bun monorepos](https://vercel.com/changelog/skip-unaffected-builds-for-projects-in-bun-monorepos)
-- [Sync projects with @vercel/related-projects](https://vercel.com/changelog/sync-projects-with-vercel-related-projects)
+- [Skipped monorepo deployments no longer count against limits](https://vercel.com/changelog/skipped-monorepo-deployments-no-longer-count-against-limits)
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
@@ -252,3 +252,6 @@ changes that span both projects.
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -15,8 +15,8 @@ related:
 summary: Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting other users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e49286c1f516a6d26d8e9643922eb1e202e166786369491baa4663ee62582150"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "cc893f2671f38d195e13a2b5923f9ccf5d693072f04a590753644785e514687c"
 ---
 
 # Setting up Flags Explorer
@@ -32,9 +32,10 @@ The [Flags Explorer](/docs/flags/flags-explorer) adds a panel to the [Vercel Too
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
-- [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+- [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/set-up-flags-explorer.graph.md](/docs/flags/vercel-flags/cli/set-up-flags-explorer.graph.md)
@@ -71,3 +72,6 @@ See [Flags Explorer](/docs/flags/flags-explorer/getting-started) for the full se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -15,8 +15,8 @@ related:
 summary: How a project grant authorizes a Vercel deployment to sign with a KMS issuer using its OIDC token, scoped to a team, project, and environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/project-grants.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "c2589be1da06b25b71d0e9bf94fd93813dc4b9ae1ba35d1e9c7529fee1cf94f3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a8d8d562105a6142f486596c49aa1d2f482754e51c5291195a2e18170fc90d62"
 ---
 
 # Vercel KMS Project Grants
@@ -75,3 +75,6 @@ Create a separate issuer, each with its own project grant, for every project and
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

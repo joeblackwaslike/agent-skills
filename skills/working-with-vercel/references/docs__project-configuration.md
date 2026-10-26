@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control builds, routing, functions, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "044c0ec2e10ae8a57d43a26242adcca3307df90aa1072898cb0fd77e44958054"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "67a264b0c3c875890722eacbc7abe43c290ec25553f329d63c3c3d267c116906"
 ---
 
 # Project Configuration
@@ -103,3 +103,6 @@ For detailed information about specific configuration areas, see:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

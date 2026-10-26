@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/getting-started-with-vercel
   - /docs/domains/working-with-domains/renew-a-domain
+  - /docs/domains/free-domain-with-pro
   - /docs/plans/pro-plan/trials
-  - /docs/plans/pro-plan
   - /docs/rbac/access-roles
 summary: Learn how domains work and the options Vercel provides for managing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "7ad63d89a52928574da25ad1e2eb1547cc2435f22b7f58aa9a0f7c208747af0a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "599ec1d59168c29028edf27b7ced1a232c664ca5715c64f5877983b297a26c74"
 ---
 
 # Working with domains
@@ -34,12 +34,10 @@ You can [buy a domain through Vercel](#buying-a-domain-through-vercel) by going 
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases)
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
-- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
-- [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
+- [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 - [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
 
 Full cross-link map for this page: [/docs/domains/working-with-domains.graph.md](/docs/domains/working-with-domains.graph.md)
@@ -55,12 +53,13 @@ More often than not, you will want to assign a domain to a project that reflects
 
 When you buy a domain through Vercel, we configure and set the nameservers, which means you do not need to set any DNS records or make any configurations. It just works. In addition, if you choose to make configurations, such as setting up email, it's all maintained from the [**Domains** section in your team dashboard sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page). Finally, all renewals, including domain and SSL certificate renewals are automatically handled by Vercel. To review renewal dates or renew a domain manually, see [Managing domain renewals](/docs/domains/working-with-domains/renew-a-domain).
 
-> **💡 Note:** Paid Pro teams include one free first-year domain on an eligible TLD
-> (`.app`, `.dev`, `.online`, `.site`, `.space`, `.store`, `.tech`, or
-> `.website`). The offer covers one domain per team and excludes teams on a
+> **💡 Note:** Paid Pro teams include one free first-year domain on an eligible TLD, such as
+> `.app`, `.dev`, or `.co` (see the
+> [full list](/docs/domains/free-domain-with-pro#which-domains-tlds-are-eligible)).
+> The offer covers one domain per team and excludes teams on a
 > [Pro trial](/docs/plans/pro-plan/trials). After the first year, the domain
 > renews at the standard rate. See
-> [eligibility details](/docs/plans/pro-plan#free-first-year-domain-with-pro).
+> [eligibility details](/docs/domains/free-domain-with-pro).
 
 > **💡 Note:** For the ICANN registrant information:If you enter the same email address you use for your Vercel user account
 > (or an email your [team owner](/docs/rbac/access-roles#owner-role) uses),
@@ -132,3 +131,6 @@ Because many domain providers do not offer a mail service, several third-party s
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

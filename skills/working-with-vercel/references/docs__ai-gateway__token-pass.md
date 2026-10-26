@@ -16,13 +16,13 @@ related:
 summary: Get $80 of monthly credit for featured open-weight models for $30 per month, and use it in the coding agent or app of your choice through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/token-pass.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a5fbec6ed454240a35f8579fbd467f01d09a0e7f8c7803d21991540972891502"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "87517a613f5be9d807ad9c30d63168d9cafa13b874c9dd399c55b54446f74424"
 ---
 
 # Token Pass
 
-> **Availability**: Token Pass is available on Pro plans
+> Token Pass is available on Pro plans
 
 Token Pass is a monthly token subscription from Vercel. For $30 per team each month, you get $80 of credit for featured open-weight models, served by a featured Token Pass Provider through [AI Gateway](/docs/ai-gateway). You can use it in any coding agent or app that connects to AI Gateway. Token Pass includes **zero data retention (ZDR)**, so AI Gateway and the featured provider don't retain your prompts or outputs.
 
@@ -35,7 +35,7 @@ Token Pass is a monthly token subscription from Vercel. For $30 per team each mo
 | -------------------- | --------------------------------------------------------------------------------- |
 | Price                | $30 per team per month, added to your Pro subscription                            |
 | Credit               | $80 per billing period                                                            |
-| Featured models      | Kimi K3 (`moonshotai/kimi-k3`) and GLM 5.3 (`zai/glm-5.3`)                         |
+| Featured models      | Kimi K3 (`moonshotai/kimi-k3`), GLM 5.3 (`zai/glm-5.3`), and DeepSeek V4.1 Flash (`deepseek/deepseek-v4.1-flash`) |
 | Provider             | Vercel Token Pass (`token-pass`), currently served by Wafer                       |
 | API key              | A Token Pass API key, which only works with featured models                       |
 | Data handling        | Zero data retention. Prompts aren't used for training                             |
@@ -69,14 +69,29 @@ Token Pass credit only pays for featured models served by the Token Pass provide
 
 Token Pass credit covers these models:
 
-| Model   | Model ID             |
-| ------- | -------------------- |
-| Kimi K3 | `moonshotai/kimi-k3` |
-| GLM 5.3 | `zai/glm-5.3`        |
+| Model               | Model ID                       |
+| ------------------- | ------------------------------ |
+| Kimi K3             | `moonshotai/kimi-k3`           |
+| GLM 5.3             | `zai/glm-5.3`                  |
+| DeepSeek V4.1 Flash | `deepseek/deepseek-v4.1-flash` |
+
+> **💡 Note:** `deepseek/deepseek-v4.1-flash` routes to DeepSeek's latest V4.1 Flash
+> weights, currently `deepseek/deepseek-v4.1-flash-1017` (the 10/17 snapshot),
+> following DeepSeek's own naming convention.
 
 In AI Gateway, these requests show **Vercel Token Pass** (`token-pass`) as the provider. Token Pass currently serves its models through Wafer, a Non-Vercel Service, and follows Wafer's terms and conditions listed in the [Notices and License Information](/legal/notices-and-license-information).
 
 See [Models and routing](/docs/ai-gateway/token-pass/models-and-routing) for what is and isn't covered.
+
+### List price
+
+AI Gateway deducts each Token Pass request from your credit at the model's list price, the model provider's own API rate. Your $80 of monthly credit covers usage at these rates, in USD per 1 million tokens:
+
+| Model               | Input | Cached input | Output |
+| ------------------- | ----- | ------------ | ------ |
+| Kimi K3             | $3.00 | $0.30        | $15.00 |
+| GLM 5.3             | $1.40 | $0.26        | $4.40  |
+| DeepSeek V4.1 Flash | $0.15 | $0.003       | $0.60  |
 
 ## Data handling
 
@@ -146,3 +161,6 @@ These Token Pass Terms supplement the [AI Product Terms](/legal/ai-product-terms
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

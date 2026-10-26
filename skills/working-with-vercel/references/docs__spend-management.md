@@ -16,13 +16,15 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "cde91ffc440a5bbf68221cd4491546db799b09e6df62f49cc15296c5ff06517c"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "06dacdf505642c30bb09791682fb4d5843de7e31ae50086da5e764656149d12e"
 ---
 
 # Spend Management
 
-> **Availability**: Spend Management is available on Enterprise and Pro plans (Enterprise teams require the Flexible Commitment plan)
+> Spend Management is available on Enterprise and Pro plans (Enterprise teams require the Flexible Commitment plan)
+>
+> Those with the owner and billing roles can access this feature
 
 Spend management is a way for you to notify or to automatically take action on your account when your team hits a [set spend amount](#what-does-spend-management-include). The actions you can take are:
 
@@ -33,17 +35,17 @@ Spend management is a way for you to notify or to automatically take action on y
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Spend Management expands to Enterprise Flexible Commitment plans](https://vercel.com/changelog/spend-management-enterprise-flex)
-- [Pause your project](https://vercel.com/kb/guide/pause-your-project) — Use a webhook to pause your project based on spend management.
+- [Vercel CLI adds Spend Management](https://vercel.com/changelog/vercel-cli-adds-spend-management)
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications)
 - [Spend Management now available for Pro users](https://vercel.com/changelog/spend-management-now-available-for-pro-users)
 - [Spend Management now pauses production deployments by default](https://vercel.com/changelog/spend-management-now-pauses-production-deployments-by-default)
 - [Improved hard caps for Spend Management](https://vercel.com/changelog/improved-hard-caps-for-spend-management)
-- [Spend Management now enabled by default on Pro](https://vercel.com/changelog/spend-management-now-enabled-by-default-on-pro)
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/spend-management.graph.md](/docs/spend-management.graph.md)
 <!-- /docsgraph:related -->
@@ -89,6 +91,18 @@ Because these checks are not continuous, notifications, webhooks, and project pa
 
 5. Set the **On-Demand Budget** amount in USD at which you would like to receive a notification or trigger an action
 6. Select the action(s) to happen when your spend amount is reached: [pause all your projects](#pausing-projects), [send notifications](#managing-alert-threshold-notifications), or [trigger a webhook URL](#configuring-a-webhook)
+
+## Managing your budget from the CLI
+
+You can view and manage your team's On-Demand Budget from the Vercel CLI with the `vercel budgets` command, available in `vercel@59.23.0` and later. The same [Owner](/docs/rbac/access-roles#owner-role) or [Billing](/docs/rbac/access-roles#billing-role) role requirement applies.
+
+```bash filename="terminal"
+vercel budgets
+vercel budgets set --amount 200 --pause --webhook https://example.com/spend
+vercel budgets remove --yes
+```
+
+`set` creates or updates the budget. `--pause` pauses all projects' production deployments when the budget is reached, and `--webhook` triggers an HTTPS POST at spend thresholds. For the full reference, see [`vercel budgets`](/docs/cli/budgets).
 
 ## Managing alert threshold notifications
 
@@ -163,7 +177,7 @@ The webhook URL receives an HTTP POST request with the following JSON payload fo
 Sent when the team hits 50%, 75%, and 100% of their spend amount. For budgets created before September 2025, this is only sent at 100%.
 
 | Parameters         | Type                              | Description                                                                                                                                                                                    |
-| ------------------ | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------ | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `budgetAmount`     | int    | The [spend amount](/docs/spend-management#managing-your-spend-amount) that you have set                                                                                                        |
 | `currentSpend`     | int    | The [total cost](/docs/spend-management#managing-your-spend-amount) that your team [has accrued](/docs/spend-management#what-does-spend-management-include) during the current billing cycle. |
 | `teamId`           | string | Your Vercel Team ID                                                                                                                                                                            |
@@ -195,3 +209,6 @@ For more information on Vercel's pricing, guidance on optimizing consumption, an
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

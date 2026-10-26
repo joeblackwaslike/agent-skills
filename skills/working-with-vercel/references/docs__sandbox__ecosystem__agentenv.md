@@ -14,8 +14,8 @@ related:
 summary: Run evaluations with AgentEnv by Scale AI using separate Vercel sandboxes for the environment and agent.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/agentenv.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "77f1ed491163e47f0148206afd843d6ef510a207d2896ac6ca6963f38aa1abed"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4a61ac8855090d99d66f297b8c3dbab0ec7d2c4ae21bfc8dec9aaf0b8e392b7c"
 ---
 
 # AgentEnv by Scale AI
@@ -33,10 +33,10 @@ scores the result. With the Vercel provider, the environment and agent run in se
 
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
-- [An Introduction to Evals](https://vercel.com/kb/guide/an-introduction-to-evals) — Evaluations test model and agent outputs to ensure they meet the standards and requirements you specify.
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
+- [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
 - [Ship It](https://eve.dev/docs/tutorial/ship-it) — Part 8 of the Build an Agent tutorial. Put a web dashboard on the agent with useEveAgent, replace placeholderAuth, and d
+- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 - [OpenAI Agents API](https://vercel.com/docs/sandbox/ecosystem/openai-agents-api) — Connect OpenAI Agents API sessions to Vercel Sandbox for isolated code execution and persistent workspace files.
@@ -52,8 +52,9 @@ item, then the harness checks the result. You don't need a model API key.
 The example verifies the integration; it doesn't measure model quality.
 
 > **💡 Note:** [AgentEnv 0.9.1334](https://pypi.org/project/agentenv-framework/0.9.1334/)
-> includes the Vercel provider. This guide uses the Vercel Labs demo branch for
-> its example environment and deterministic agent.
+> includes the Vercel provider. This guide installs the source checkout on the
+> Vercel Labs demo branch, which includes the example environment and
+> deterministic agent.
 
 ## Prerequisites
 
@@ -77,37 +78,36 @@ registries used by the example.
   git clone --branch vercel-demo https://github.com/vercel-labs/agentenv-framework.git
   cd agentenv-framework
   uv sync --frozen --extra vercel
-  export AGENT_ENV_CONFIG="$PWD/examples/vercel-sandbox/config.toml"
   ```
-  The dedicated configuration selects Vercel for both the environment and
-  agent:
+  The launcher automatically loads `examples/vercel-sandbox/config.toml`,
+  which selects Vercel for both the environment and agent:
   ```toml filename="examples/vercel-sandbox/config.toml"
   [sandbox]
   default = "vercel"
   agent_default = "vercel"
   ```
-  Keep `AGENT_ENV_CONFIG` set in the terminal where you run the example.
 
 - ### Sign in to Vercel
   If you haven't signed in through the CLI, run:
   ```bash filename="Terminal"
   vercel login
   ```
-  The example's wrapper uses your CLI login to request a project-scoped
+  The example's launcher uses your CLI login to request a project-scoped
   OpenID Connect (OIDC) token. It passes the token to the evaluation process
   without printing it or saving it to disk. You don't need to create an
   access token manually.
 
 - ### Run the demo
-  Replace `YOUR_TEAM` with your team slug and `YOUR_PROJECT` with an existing
-  project name. Choose a new output directory for each run; the example
-  refuses to overwrite an existing directory:
+  From the cloned repository, run the example. Replace `YOUR_TEAM` with your
+  team slug and `YOUR_PROJECT` with an existing project name:
   ```bash filename="Terminal"
-  .venv/bin/python examples/vercel-sandbox/with_vercel_login.py \
-    --scope YOUR_TEAM --project YOUR_PROJECT -- \
-    .venv/bin/python examples/vercel-sandbox/run_e2e.py \
-    --repo . --output /tmp/agentenv-vercel-e2e-run-1
+  ./vercel-eval --scope YOUR_TEAM --project YOUR_PROJECT
   ```
+  The launcher prints a new temporary output directory for each run. It uses
+  the repository's Python environment and selects the example configuration
+  automatically. The terminal shows progress through image preparation, evaluation,
+  and cleanup. The first image build can take several minutes.
+
   The example creates a builder sandbox, an environment sandbox, and an
   agent sandbox. It loads an initial item, asks the agent to add
   `vercel-review-complete` through MCP, and grades the result.
@@ -117,24 +117,33 @@ registries used by the example.
   ```text filename="Terminal"
   END-TO-END EVALUATION PASSED: score 1
   ```
-  Open the output directory to inspect the results:
+  Open the output directory printed by the launcher to inspect the results:
   - **`success.json`**: The score and cleanup checks.
   - **`environment-state.json`**: The initial item and the item the agent added.
-  - **`objects/`**: Task artifacts, including the agent's recorded actions.
+  - **`trajectory.json`**: The agent's tool calls and results.
+  - **`run.log`**: Detailed logs for the evaluation.
   - **`resources.json`**: The sandbox identifiers for the run.
   Successful runs remove all three sandboxes. Failed runs stop and retain
   sandboxes tracked by the runner for diagnosis. See the
   [example's lifecycle notes](https://github.com/vercel-labs/agentenv-framework/tree/vercel-demo#run-with-an-existing-vercel-login)
-  for setup failures and retained resources.
+  for setup failures and retained resources. If a run fails, check the error and
+  logs in the printed output directory. Resolve the issue and rerun the same
+  command; each attempt keeps its own results.
 
 ## Next steps
 
 The example stores run records in local SQLite and artifacts on your
 filesystem. See the
 [example's validation scope](https://github.com/vercel-labs/agentenv-framework/blob/vercel-demo/examples/vercel-sandbox/RESULTS.md)
-for what the demo verifies before adapting it to your own tasks.
+for what the demo verifies. To adapt it, follow the example's
+[agent and task guide](https://github.com/vercel-labs/agentenv-framework/tree/vercel-demo#use-your-own-agent-and-task).
+For the provider configuration in your own AgentEnv project, see
+[Scale's sandbox guide](https://www.agentenvframework.com/docs/sandboxes#vercel).
 
 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

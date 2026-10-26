@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f7d6aad19c6e5b5789894818b8ee70bd5ce7e815c6741b4bcb26c06a2c87059e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "d404b92945a752d04501edc919c9ac89ed611070cc0c5edf11183ee93cdd0e6b"
 ---
 
 # Redirects
@@ -30,16 +30,17 @@ Redirects are rules that instruct Vercel to send users to a different URL than t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [Emergency Redirect](https://vercel.com/kb/guide/emergency-redirect) — Learn how to implement an emergency redirect without re-deploying your site.
+- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 - [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
-- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
-- [Reverse Proxy Servers and Vercel](https://vercel.com/docs/security/reverse-proxy) — Learn why reverse proxy servers are not recommended with Vercel's firewall.
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/routing/redirects.graph.md](/docs/routing/redirects.graph.md)
 <!-- /docsgraph:related -->
@@ -268,6 +269,8 @@ The CDN does **not** normalize URL paths to lowercase. URLs are case-sensitive, 
 
 For example, `/About` and `/about` are treated as different paths. If no content exists at the requested path with the given case, the CDN returns a `404` response.
 
+[Project-level routing rules](/docs/routing/project-routing-rules#case-sensitivity) are the exception. They match paths case-insensitively by default. To make a rule case-sensitive, turn on **Case Sensitive**. A deployment whose `vercel.json` defines `rewrites`, `redirects`, or `headers` also makes them case-sensitive.
+
 ## Best practices for implementing redirects
 
 There are some best practices to keep in mind when implementing redirects in your application:
@@ -282,3 +285,6 @@ There are some best practices to keep in mind when implementing redirects in you
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

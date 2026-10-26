@@ -12,13 +12,13 @@ related:
 summary: Prevent blocking serial async await calls in your applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_serial_async_calls.md"
-fetched_at: "2026-10-05T11:22:20.527Z"
-sha256: "2c57d8c6f16753da8aa44172f58ca41efd265c241568cc9372a72add37dbf9e6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "02d6fd7636fbca59c0e10d31c258873b0eb2a43473333c647e786d548064f559"
 ---
 
 # NO_SERIAL_ASYNC_CALLS
 
-> **Availability**: Conformance is available on Enterprise plans
+> Conformance is available on Enterprise plans
 
 Sequential execution of async/await calls can significantly impact performance because
 each await call prevents further execution until resolving its Promise. This rule aims to
@@ -89,3 +89,6 @@ export async function getStaticProps() {
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

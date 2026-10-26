@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d2d7f0d1e0302b8a113b7a2dca24aeac1ff0246eeec241241ffa590433fe887f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "23bf93053c5938260f17a4fadc6b1c404485d7740bac04317d2c54e695e1929c"
 ---
 
 # Runtimes
@@ -39,9 +39,9 @@ Vercel supports multiple runtimes for your functions. Each runtime has its own s
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Billions of dollars, billions of requests: Black Friday-Cyber Monday 2024](https://vercel.com/blog/black-friday-cyber-monday-2024-recap)
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 
 Full cross-link map for this page: [/docs/functions/runtimes.graph.md](/docs/functions/runtimes.graph.md)
 <!-- /docsgraph:related -->
@@ -62,21 +62,7 @@ Vercel Functions support the following official runtimes:
 | [Ruby](/docs/functions/runtimes/ruby)           | The Ruby runtime takes in a Ruby program that defines a singular HTTP handler and outputs it as a Vercel Function.                                          |
 | [Wasm](/docs/functions/runtimes/wasm)           | The Wasm runtime takes in a pre-compiled WebAssembly program and outputs it as a Vercel Function.                                                           |
 | [Edge](/docs/functions/runtimes/edge)           | The Edge runtime is built on top of the V8 engine, allowing it to run in isolated execution environments that don't require a container or virtual machine. |
-| [Container](/docs/functions/runtimes/container) | The Container runtime runs any code and library from an OCI container image built from a `Dockerfile.vercel` file.                                          |
-
-## Community runtimes
-
-If you would like to use a language that Vercel does not support by default, you can use a community runtime by setting the [`functions` property](/docs/project-configuration/vercel-json#functions) in `vercel.json`. For more information on configuring other runtimes, see [Configuring your function runtime](/docs/functions/configuring-functions/runtime#other-runtimes).
-
-The following community runtimes are recommended by Vercel:
-
-| Runtime | Runtime Module | Docs                                     |
-| ------- | -------------- | ---------------------------------------- |
-| Bash    | `vercel-bash`  | https://github.com/importpw/vercel-bash  |
-| Deno    | `vercel-deno`  | https://github.com/vercel-community/deno |
-| PHP     | `vercel-php`   | https://github.com/vercel-community/php  |
-
-You can create a community runtime by using the [Runtime API](https://github.com/vercel/vercel/blob/main/DEVELOPING_A_RUNTIME.md). Alternatively, you can use the [Build Output API](/docs/build-output-api).
+| [Container](/docs/functions/runtimes/container) | The Container runtime runs any code and library from an OCI container image built from a `Dockerfile` or `Containerfile`. A root `Dockerfile` is enough when no other framework is detected. |
 
 ## Features
 
@@ -178,3 +164,6 @@ Vercel supports [Tracing](/docs/tracing) that allows you to send OpenTelemetry t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

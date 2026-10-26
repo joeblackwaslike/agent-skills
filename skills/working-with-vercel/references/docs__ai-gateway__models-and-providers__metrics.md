@@ -15,8 +15,8 @@ related:
 summary: Understand how AI Gateway measures throughput and latency per provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "64ca99675f01746aa476cdc7e33422858cf8b18d57cba069221a1dc7e70854c6"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "225e7928bae875a339b375b501145130d97b479418f0bbfdd3d471b4656be1d6"
 ---
 
 # AI Gateway Provider Latency and Throughput Metrics
@@ -32,8 +32,8 @@ AI Gateway tracks **throughput** and **latency** for each model and provider, me
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
+- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
 - [Observability added to AI Gateway alpha](https://vercel.com/changelog/observability-added-to-ai-gateway-alpha)
-- [Sort providers by cost, latency, or throughput on AI Gateway](https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway)
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
@@ -114,3 +114,6 @@ These numbers reflect what AI Gateway observes when serving live traffic. They m
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

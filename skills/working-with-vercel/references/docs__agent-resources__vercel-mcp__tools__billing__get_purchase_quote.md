@@ -14,8 +14,8 @@ related:
 summary: Use get_purchase_quote with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_purchase_quote.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ab7c228671f9f182fad83517e42de7e1041e12888ffa62f314419e2141ab7ab9"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8630717152dcea62ac53d8279296f25f2b18acd3df92db7881c9594bfd696fe9"
 ---
 
 # get_purchase_quote
@@ -32,7 +32,7 @@ Get a read-only domain registration quote for the selected team. Checks availabi
 - [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains) — Use buy_domains with Vercel MCP.
 - [buy_single_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain) — Use buy_single_domain with Vercel MCP.
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
-- [get_bulk_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_price) — Use get_bulk_price with Vercel MCP.
+- [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billing/get_purchase_quote.graph.md](/docs/agent-resources/vercel-mcp/tools/billing/get_purchase_quote.graph.md)
 <!-- /docsgraph:related -->
@@ -60,3 +60,6 @@ This workflow quotes and purchases domains only. MCP does not quote or purchase 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

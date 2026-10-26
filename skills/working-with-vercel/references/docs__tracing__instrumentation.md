@@ -14,8 +14,8 @@ related:
 summary: Learn how to instrument your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/instrumentation.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "975178f4e7934e09c62aa7f05172204baa144965229f97c51b28f87c5a154600"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3910667e69b205b3a27041893f3f79a8afebb0e2ed5b62c26d5185c77012ef4d"
 ---
 
 # Instrumentation
@@ -33,12 +33,12 @@ Observability is crucial for understanding and optimizing the behavior and perfo
 - [How to set up instrumentation](https://nextjs.org/docs/pages/guides/instrumentation) — Learn how to use instrumentation to run code at server startup in your Next.js app
 - [How to instrument your Next.js app with OpenTelemetry](https://nextjs.org/docs/pages/guides/open-telemetry) — Learn how to instrument your Next.js app with OpenTelemetry.
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate containers from AWS to Vercel: deploy with Dockerfile.vercel, keep RDS, S3, and SQS in AWS over OIDC, and cut ov
-- [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
+- [Tracing](https://workflow-sdk.dev/docs/observability/tracing) — Trace workflow execution end to end with OpenTelemetry.
 - [Instrument and trace applications with the OpenTelemetry collector](https://vercel.com/changelog/instrument-and-trace-applications-with-the-opentelemetry-collector)
+- [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
-- [Native support for SvelteKit's new OpenTelemetry spans](https://vercel.com/changelog/native-support-for-sveltekits-new-opentelemetry-spans)
 - [@vercel/otel 1.3.0](https://vercel.com/changelog/vercel-otel-1-3-0)
+- [Native support for SvelteKit's new OpenTelemetry spans](https://vercel.com/changelog/native-support-for-sveltekits-new-opentelemetry-spans)
 - [instrumentation.js](https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation) — API reference for the instrumentation.js file.
 
 Full cross-link map for this page: [/docs/tracing/instrumentation.graph.md](/docs/tracing/instrumentation.graph.md)
@@ -48,28 +48,29 @@ Full cross-link map for this page: [/docs/tracing/instrumentation.graph.md](/doc
 
 To get started, install the following packages:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i @opentelemetry/api @vercel/otel
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn add @opentelemetry/api @vercel/otel
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i @opentelemetry/api @vercel/otel
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add @opentelemetry/api @vercel/otel
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i @opentelemetry/api @vercel/otel
+```
+
+**yarn**
+
+```bash
+yarn add @opentelemetry/api @vercel/otel
+```
+
+**npm**
+
+```bash
+npm i @opentelemetry/api @vercel/otel
+```
+
+**bun**
+
+```bash
+bun add @opentelemetry/api @vercel/otel
+```
 
 Next, create a `instrumentation.ts` (or `.js`) file in the root directory of the project, or, on Next.js [it must be placed](https://nextjs.org/docs/app/guides/open-telemetry#using-vercelotel) in the `src` directory if you are using one. Add the following code to initialize and configure OTel using `@vercel/otel`:
 
@@ -375,3 +376,6 @@ For the full list of configuration options, see the [@vercel/otel documentation]
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

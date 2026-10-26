@@ -13,8 +13,8 @@ related:
 summary: Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/public-and-shared-repositories.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d03444c554f7f4de282b06db79c75498f1317be3cf52f9915eb05a69016ee589"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "02c81a6a7d7ba7813fca72dc17f9fe4ffd68c29d9e34fecc4539c00dd4ef5ef8"
 ---
 
 # Public and Shared Repositories
@@ -30,9 +30,10 @@ Vercel Container Registry (VCR) repositories are private by default. Share a rep
 - [Vercel Container Registry repositories can now be made public](https://vercel.com/changelog/vercel-container-registry-repositories-can-now-be-made-public)
 - [Share Vercel Container Registry repositories across teams](https://vercel.com/changelog/share-vercel-container-registry-repositories-across-teams)
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
-- [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli)
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [List repositories](https://vercel.com/docs/rest-api/vcr/list-repositories) — GET /v1/vcr/repository — List container registry repositories for a project.
+- [Create a repository](https://vercel.com/docs/rest-api/vcr/create-a-repository) — POST /v1/vcr/repository — Create a container registry repository for a project.
+- [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
 - [Enable or disable Vercel CI for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository) — PATCH /v1/vercel-ci/repository-settings — Update Repository Settings
 
 Full cross-link map for this page: [/docs/container-registry/public-and-shared-repositories.graph.md](/docs/container-registry/public-and-shared-repositories.graph.md)
@@ -97,3 +98,6 @@ vercel vcr config my-repository --public false
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -13,8 +13,8 @@ related:
 summary: Use pause_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/pause_project.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "383aeb22535c14100061039c9096a14a6634c0594c13780566995db6024a2c7d"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "7ad1eb408430b6af95b71432182790e058eadf8157fd87afd00a0b0bf208f719"
 ---
 
 # pause_project
@@ -28,7 +28,6 @@ Pause a project.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [unpause_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/unpause_project) — Use unpause_project with Vercel MCP.
-- [Pause your project](https://vercel.com/kb/guide/pause-your-project) — Use a webhook to pause your project based on spend management.
 - [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
 - [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
@@ -59,3 +58,6 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

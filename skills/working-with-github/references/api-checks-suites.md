@@ -1,20 +1,20 @@
 ---
 source: "https://docs.github.com/en/rest/checks/suites"
-fetched_at: "2026-07-13T06:58:22.643Z"
-sha256: "ce74aeb60d5e384b2c05308785e251596b77918ab98f1900e1cfd78c4a0723f8"
+fetched_at: "2026-10-26T09:52:24.329Z"
+sha256: "3ebd1e7cecaaa7befee291ad3449a2c222bba5d4aba3dd91047a03cb52d36655"
 ---
 
 # REST API endpoints for check suites
 
 Use the REST API to manage check suites.
 
-> \[!NOTE]
+> [!NOTE]
 > Write permission for the REST API to interact with checks is only available to GitHub Apps. OAuth apps and authenticated users can view check runs and check suites, but they are not able to create them. If you aren't building a GitHub App, you might be interested in using the REST API to interact with [commit statuses](/en/rest/commits#commit-statuses).
 
-> \[!NOTE]
+> [!NOTE]
 > A GitHub App usually only receives one [`check_suite`](/en/webhooks/webhook-events-and-payloads#check_suite) event per commit SHA, even if you push the commit SHA to more than one branch. To find out when a commit SHA is pushed to a branch, you can subscribe to branch [`create`](/en/webhooks/webhook-events-and-payloads#create) events.
 
-> \[!NOTE]
+> [!NOTE]
 > Most endpoints use `Authorization: Bearer <YOUR-TOKEN>` and `Accept: application/vnd.github+json` headers, plus `X-GitHub-Api-Version: 2026-03-10`. Curl examples below omit these standard headers for brevity.
 
 ## Create a check suite

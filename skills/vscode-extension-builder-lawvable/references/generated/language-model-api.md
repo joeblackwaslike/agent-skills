@@ -1,8 +1,8 @@
 ---
 title: "Language Model API"
 source: "https://code.visualstudio.com/api/extension-guides/language-model"
-fetched_at: "2026-10-19T09:38:05.422Z"
-sha256: "d26976f003f36c77f2adb5fbc6b7e73a18fddaa2f7efeacd86742625c41abd52"
+fetched_at: "2026-10-26T09:46:27.214Z"
+sha256: "ea1132bcd2125861499e7a9416e9f1d1ac547ba13a1abe24275b5fe53b58ab41"
 ---
 
 # Language Model API
@@ -45,7 +45,7 @@ Copy as Markdown
 
 The Language Model API enables you to [use the Language Model](https://code.visualstudio.com/api/references/vscode-api#lm) and integrate AI-powered features and natural language processing in your Visual Studio Code extension.
 
-You can use the Language Model API in different types of extensions. A typical use for this API is in [chat extensions](https://code.visualstudio.com/api/extension-guides/ai/chat), where you use a language model to interpret the user's request and help provide an answer. However, the use of the Language Model API is not limited to this scenario. You might use a language model in a [language](https://code.visualstudio.com/api/language-extensions/overview) or [debugger](https://code.visualstudio.com/api/extension-guides/debugger-extension) extension, or as part of a [command](https://code.visualstudio.com/api/extension-guides/command) or [task](https://code.visualstudio.com/api/extension-guides/task-provider) in a custom extension. For example, the Rust extension might use the Language Model to offer default names to improve its rename experience.
+Use the Language Model API to add model-powered behavior to a [language](https://code.visualstudio.com/api/language-extensions/overview) or [debugger](https://code.visualstudio.com/api/extension-guides/debugger-extension) extension, or to an extension [command](https://code.visualstudio.com/api/extension-guides/command) or [task](https://code.visualstudio.com/api/extension-guides/task-provider). For example, a language extension might suggest names during a rename operation. To extend Copilot chat workflows, start with [agent plugins or tools](https://code.visualstudio.com/api/extension-guides/ai/ai-extensibility-overview#extend-the-chat-experience) instead of implementing a chat participant.
 
 The process for using the Language Model API consists of the following steps:
 
@@ -57,7 +57,7 @@ The process for using the Language Model API consists of the following steps:
 
 The following sections provide more details on how to implement these steps in your extension.
 
-To get started, you can explore the [chat extension sample](https://github.com/microsoft/vscode-extension-samples/tree/main/chat-sample).
+To get started, follow the [editor annotations tutorial](https://code.visualstudio.com/api/extension-guides/ai/language-model-tutorial).
 
 ## Build the language model prompt
 
@@ -108,7 +108,7 @@ const craftedPrompt = [
 
 ## Send the language model request
 
-Once you've built the prompt for the language model, you first select the language model you want to use with the [selectChatModels](https://code.visualstudio.com/api/references/vscode-api#lm.selectChatModels) method. This method returns an array of language models that match the specified criteria. If you are implementing a chat participant, we recommend that you instead use the model that is passed as part of the `request` object in your chat request handler. This ensures that your extension respects the model that the user chose in the chat model dropdown. Then, you send the request to the language model by using the [sendRequest](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChat) method.
+Once you've built the prompt, select the language model by using the [selectChatModels](https://code.visualstudio.com/api/references/vscode-api#lm.selectChatModels) method. This method returns an array of language models that match the specified criteria. Then, send the request to the language model by using the [sendRequest](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChat) method.
 
 To select the language model, you can specify the following properties: `vendor`, `id`, `family`, or `version`. Use these properties to either broadly match all models of a given vendor or family, or select one specific model by its ID. Learn more about these properties in the [API reference](https://code.visualstudio.com/api/references/vscode-api#LanguageModelChat).
 
@@ -298,4 +298,4 @@ Once you have created your AI extension, you can publish your extension to the V
 - [Build a VS Code chat extension](https://code.visualstudio.com/api/extension-guides/ai/chat)
 
  
- 10/14/2026
+ 10/21/2026

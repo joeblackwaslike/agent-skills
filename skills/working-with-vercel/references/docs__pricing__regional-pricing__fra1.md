@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Frankfurt, Germany (fra1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/fra1.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "4e4d501108e3ea3f1122f869f1bdc70ca29154d68854954ebd07099c8b66f615"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "b8b9d6417afd649858361a301c5a98692f34bc38a70326c1714512e218c8c205"
 ---
 
 # Frankfurt, Germany (fra1) pricing
@@ -82,3 +82,6 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

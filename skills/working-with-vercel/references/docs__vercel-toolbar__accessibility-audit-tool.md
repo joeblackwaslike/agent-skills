@@ -15,13 +15,13 @@ related:
 summary: Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level A and AA rules.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "6f3fe620e8766b0db552c07c24eb2ccf31e769de9a2e894583c59726d6b80d2a"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3eb471cb388eb61bcc9961d6e5c04e7b31fa90d42d6272a03f0ceb0e933976e5"
 ---
 
 # Accessibility Audit Tool
 
-> **Availability**: Accessibility Audit Tool is available on all plans
+> Accessibility Audit Tool is available on all plans
 
 The accessibility audit tool automatically checks the [Web Content Accessibility Guidelines 2.0](https://www.w3.org/TR/WCAG20/) level A and AA rules, grouping them by impact as defined by [deque axe](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md#wcag-21-level-a--aa-rules), and runs in the background on [all environments the toolbar and added to](/docs/vercel-toolbar/in-production-and-localhost).
 
@@ -35,8 +35,8 @@ The accessibility audit tool automatically checks the [Web Content Accessibility
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
-- [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/accessibility-audit-tool.graph.md](/docs/vercel-toolbar/accessibility-audit-tool.graph.md)
@@ -76,3 +76,6 @@ By default the accessibility audit tool will log issues on page load. To test ep
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

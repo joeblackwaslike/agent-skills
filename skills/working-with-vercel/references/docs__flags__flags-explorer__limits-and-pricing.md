@@ -13,13 +13,13 @@ related:
 summary: Compare monthly Flags Explorer override limits and the price of unlimited overrides across Vercel plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/limits-and-pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e4c2b11c7f21e291ed0b493f7c373eb74df309ca8d311ca89f4c76f9f1c49a57"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1b66226d2ada633f092548ae07d4b533c106bc040f5673f380805a2c4c3cc4cf"
 ---
 
 # Pricing for Flags Explorer
 
-> **Availability**: Flags Explorer is available on all plans
+> Flags Explorer is available on all plans
 
 ## Pricing
 
@@ -35,8 +35,8 @@ The following table outlines the price for each resource according to the plan y
 - [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 - [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
-- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/limits-and-pricing.graph.md](/docs/flags/flags-explorer/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -63,3 +63,6 @@ Explorer, which means that multiple flags can be overriden in one go.*
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

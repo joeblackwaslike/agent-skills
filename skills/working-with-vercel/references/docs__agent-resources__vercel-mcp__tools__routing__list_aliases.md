@@ -13,8 +13,8 @@ related:
 summary: Use list_aliases with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_aliases.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8048710b9faac017817d9d7699232ec7a1ba3e98205cfb7f9443ed11091bdd2e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "90e2748e9aaa930d78206642421f1c31646059c1837bdf3b1e40170c377f1057"
 ---
 
 # list_aliases
@@ -54,3 +54,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

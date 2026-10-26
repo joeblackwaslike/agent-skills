@@ -15,13 +15,13 @@ related:
 summary: Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/flat-rate-cdn.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f9f9517acd48638e86da06e8d2852be7451f0ea9e1db274044a08505dec43f5e"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c4fa6b09575420c8fa8e3a645d810b2ec6af34feb2a2c9e0d9676d024758057d"
 ---
 
 # Flat Rate CDN
 
-> **Availability**: Flat Rate CDN is available on Pro plans
+> Flat Rate CDN is available on Pro plans
 
 Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes. You pay for a capacity tier instead of per unit of usage, so a one-day traffic spike doesn't change your bill.
 
@@ -36,10 +36,10 @@ Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage s
 - [Flat Rate CDN in Limited Beta](https://vercel.com/changelog/flat-rate-cdn-in-limited-beta)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [How Vercel CDN works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Networking](https://vercel.com/docs/networking) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/pricing/flat-rate-cdn.graph.md](/docs/pricing/flat-rate-cdn.graph.md)
 <!-- /docsgraph:related -->
@@ -147,3 +147,6 @@ If your usage patterns fall within any of the above categories, as determined by
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

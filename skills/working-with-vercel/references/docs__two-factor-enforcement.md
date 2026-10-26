@@ -13,8 +13,8 @@ related:
 summary: Learn how to enforce two-factor authentication (2FA) for your Vercel team members to enhance security.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-enforcement.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "0640630d4cdcec82cb2f47a848cf262a7c34fe41714dabd747a288720d6f80c4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "3d08c45f49e231399b65f1a81429c91eab9ebdd756720116efc8895861d571d4"
 ---
 
 # Two-factor enforcement
@@ -30,10 +30,10 @@ To enhance the security of your Vercel team, you can enforce two-factor authenti
 - [Two-factor authentication (2FA) team enforcement](https://vercel.com/changelog/2fa-team-enforcement)
 - [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available)
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 
 Full cross-link map for this page: [/docs/two-factor-enforcement.graph.md](/docs/two-factor-enforcement.graph.md)
 <!-- /docsgraph:related -->
@@ -72,3 +72,6 @@ Steps to follow:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

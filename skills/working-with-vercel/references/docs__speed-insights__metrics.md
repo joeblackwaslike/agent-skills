@@ -14,8 +14,8 @@ related:
 summary: Learn what each performance metric on Speed Insights means and how the scores are calculated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/metrics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "dfea8c3e9bc8465bded028efa0f1ed2f412bdc37fb24ac6f5de55d40095c9741"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "187523eb801067fc21c2dfddadce1c7babf9710ff877f0a33405e0edf6c851d7"
 ---
 
 # Speed Insights Metrics
@@ -45,7 +45,7 @@ While many performance measurement tools, like [Lighthouse](https://web.dev/meas
 - [Why site performance matters](https://vercel.com/kb/guide/why-site-performance-matters) — How site speed, Core Web Vitals, and SEO combine to drive user retention, conversion rates, and revenue growth.
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
-- [Improving INP with React 18 and Suspense](https://vercel.com/blog/improving-interaction-to-next-paint-with-react-18-and-suspense)
+- [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
 
 Full cross-link map for this page: [/docs/speed-insights/metrics.graph.md](/docs/speed-insights/metrics.graph.md)
 <!-- /docsgraph:related -->
@@ -211,3 +211,6 @@ Speed Insights offers a variety of views to help you analyze your application's 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

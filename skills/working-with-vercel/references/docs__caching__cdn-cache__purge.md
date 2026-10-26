@@ -17,13 +17,15 @@ related:
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a7707bc0c36e245f262611be76fd2955f9181f9813242bbb07132521ef816c66"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "c32ee9075373eecc8212ccb604d2aa7c970e9a3fc8252c35313544ea18d6deee"
 ---
 
 # Purging Vercel CDN Cache
 
-> **Availability**: Cache purging is available on all plans
+> Cache purging is available on all plans
+>
+> Those with the owner and member roles can access this feature
 
 Learn how to [invalidate and delete](#programmatically-purging-vercel-cache) cached content on Vercel's CDN, including cache keys and manual purging options.
 
@@ -41,10 +43,10 @@ Learn how to [invalidate and delete](#programmatically-purging-vercel-cache) cac
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Invalidate the CDN cache by tag](https://vercel.com/changelog/invalidate-the-cdn-cache-by-tag)
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
-- [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image)
 - [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
+- [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 
 Full cross-link map for this page: [/docs/caching/cdn-cache/purge.graph.md](/docs/caching/cdn-cache/purge.graph.md)
 <!-- /docsgraph:related -->
@@ -87,7 +89,7 @@ For example, you may have a product with id `123` that is displayed on multiple 
 
 There are several ways to add cache tags to a response:
 
-- **`Vercel-Cache-Tag` response header**: Set the `Vercel-Cache-Tag` header on responses from [Vercel Functions](/docs/functions) or [external rewrites](/docs/routing/rewrites#external-rewrites). The value is a comma-separated list of tags.
+- **`Vercel-Cache-Tag` response header**: Set the `Vercel-Cache-Tag` header on responses from [Vercel Functions](/docs/functions) or [external rewrites](/docs/routing/rewrites#rewrites-to-external-origins). The value is a comma-separated list of tags.
 - **`addCacheTag()` function**: Import [addCacheTag](/docs/functions/functions-api-reference/vercel-functions-package#addcachetag) from `@vercel/functions` and pass in your tag.
 - **`cacheTag()` function (Next.js only)**: Import [cacheTag](https://nextjs.org/docs/app/api-reference/functions/cacheTag) from `next/cache` and pass in your tag.
 
@@ -109,7 +111,7 @@ export default {
 };
 ```
 
-Vercel's CDN can also cache and purge responses originating outside of Vercel by using [external rewrites](/docs/routing/rewrites#external-rewrites) with the same headers.
+Vercel's CDN can also cache and purge responses originating outside of Vercel by using [external rewrites](/docs/routing/rewrites#rewrites-to-external-origins) with the same headers.
 
 Functions using [ISR](/docs/incremental-static-regeneration) don't have access to the raw Response headers. You can add cache tags by importing [addCacheTag](/docs/functions/functions-api-reference/vercel-functions-package#addcachetag) from `@vercel/functions` to add tags at runtime.
 
@@ -208,3 +210,6 @@ Purges made with the [Vercel CLI](/docs/cli/cache), the [REST API](/docs/rest-ap
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

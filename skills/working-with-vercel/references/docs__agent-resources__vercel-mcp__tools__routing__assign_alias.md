@@ -13,8 +13,8 @@ related:
 summary: Use assign_alias with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/assign_alias.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f02bab1f6f48cb634a66fec916807c96b8f1f070686e6e89a8bb7cc441bfb675"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "8debccf2e69e6952d5340c7eea75109f307fa15b39ba9722364b9ce91e80f6cc"
 ---
 
 # assign_alias
@@ -49,3 +49,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

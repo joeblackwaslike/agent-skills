@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-10-19T09:37:30.763Z"
-sha256: "41d3f715bc9901e48f9d69a4733bafd3e8d13b096ce6c8f27a86398581af7602"
+fetched_at: "2026-10-26T09:46:05.169Z"
+sha256: "54bf561447203203889c3770d26f152980ad8e92c65c973996999cd983392a6d"
 ---
 
 # Available templates index
@@ -253,10 +253,10 @@ Templates
 | SAP BTP CAP Dev Stack | Navin Krishnan | `ghcr.io/navinkrishnan/devcontainer-templates-btp/btp-cap-dev-stack:1.0.2` | `1.0.2` |
 | EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.5` | `0.0.5` |
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
-| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:8.4.0` | `8.4.0` |
-| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:8.4.0` | `8.4.0` |
-| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:8.4.0` | `8.4.0` |
-| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:8.4.0` | `8.4.0` |
+| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:8.4.1` | `8.4.1` |
+| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:8.4.1` | `8.4.1` |
+| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:8.4.1` | `8.4.1` |
+| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:8.4.1` | `8.4.1` |
 | Pretalx | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx:0.0.1` | `0.0.1` |
 | Pretalx Plugin | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx-plugin:0.0.1` | `0.0.1` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |
@@ -281,7 +281,7 @@ Templates
 | Java (Temurin) | nozaq | `ghcr.io/bare-devcontainer/templates/temurin:1.1.0` | `1.1.0` |
 | Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.3.0` | `1.3.0` |
 | Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.1.1` | `1.1.1` |
-| Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.4.0` | `1.4.0` |
+| Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.5.0` | `1.5.0` |
 | mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
 | mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
 | mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |

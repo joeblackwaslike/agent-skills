@@ -14,8 +14,8 @@ related:
 summary: API reference for the Flags SDK for Next.js and SvelteKit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-sdk-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e0c95069f0c335d0b3d68cceb32fd2ff8b85522f13ef447a1e92657aabcef6c2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "30a4ef1dcd6ec633ed0fe71c532d2c5de2174b08d655e39a77c1ad366b932d3e"
 ---
 
 # Flags SDK Reference
@@ -30,10 +30,10 @@ The Flags SDK is a free, open-source library that gives you the tools you need t
 
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
-- [Flags as Code](https://flags-sdk.dev/docs/principles/flags-as-code)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Statsig](https://flags-sdk.dev/docs/providers/statsig)
+- [Flags as Code](https://flags-sdk.dev/docs/principles/flags-as-code)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+- [SDKs](https://vercel.com/docs/flags/vercel-flags/sdks) — Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer) — View and override your application's feature flags from the Vercel Toolbar
 - [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 - [Integrate flags with Vercel Web Analytics](https://vercel.com/docs/flags/observability/web-analytics) — Learn how to tag your page views and custom events with feature flags
@@ -201,3 +201,6 @@ For the full API documentation, including all functions, types, and advanced pat
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -1,16 +1,80 @@
 ---
 title: Google Vertex AI
-description: Learn how to use the Google Vertex AI provider.
+description: Learn how to use Google Vertex AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "c449bd5c297dd13bc0516b754a585935e21aff05b11abaae932810bd2cd7826c"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "744fabafda48ac4d43ae6df9cdfed8b48e95b12ccafa9355eee1bfc30047863a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The Google Vertex provider for the [AI SDK](/docs) contains language model support for the [Google Vertex AI](https://cloud.google.com/vertex-ai) APIs. This includes support for [Google's Gemini models](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models), [Anthropic's Claude partner models](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude), [xAI's Grok partner models](https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/grok), and [MaaS (Model as a Service) open models](https://cloud.google.com/vertex-ai/generative-ai/docs/maas/use-open-models).
+Start with [AI Gateway](/providers/ai-sdk-providers/ai-gateway) for models in its catalog (recommended), or use `@ai-sdk/google-vertex` to connect directly to Google Vertex AI.
+
+```ts provider="google-vertex" model="google/gemini-4-argon"
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: "google/gemini-4-argon",
+  prompt: 'Write a vegetarian lasagna recipe for 4 people.',
+  providerOptions: {
+    gateway: {
+      order: ['vertex'],
+    },
+  },
+});
+
+console.log(text);
+```
+
+## Using AI Gateway
+
+The AI SDK uses AI Gateway by default for model strings. Gateway provides access to models across providers through a single API key, with usage and cost tracking. Install `ai`:
+
+```bash
+pnpm add ai
+```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [AI Gateway provider documentation](/providers/ai-sdk-providers/ai-gateway) for configuration and the [model catalog](https://vercel.com/ai-gateway/models) for available models.
+
+The example sets `providerOptions.gateway.order` to `['vertex']`. This sends the request to Google Vertex AI first, then falls back to other available providers of the same model if Google Vertex AI is unavailable or the request fails. `order` sets a preference; it does not restrict fallback to Google Vertex AI. See [provider ordering](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+The dropdown lists models served by Google Vertex AI through Gateway with a corresponding direct-provider example. Provider availability depends on the model and your team's [Provider Allowlist](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+Gateway uses the `vertex` route for Gemini on Google Vertex AI and handles Google Cloud authentication. The example does not use your `GOOGLE_VERTEX_PROJECT`, location, or service-account credentials; use the direct provider to connect to your own project.
+
+## Using `@ai-sdk/google-vertex`
+
+For direct access to Google Vertex AI, install `ai` and `@ai-sdk/google-vertex`:
+
+```bash
+pnpm add ai @ai-sdk/google-vertex
+```
+
+Set your Google Cloud project, location, and the path to your service-account credentials file:
+
+```bash
+export GOOGLE_VERTEX_PROJECT=your_project_id
+export GOOGLE_VERTEX_LOCATION=us-central1
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/credentials.json
+```
+
+The Node.js provider uses Google Application Default Credentials. You can also authenticate locally with `gcloud auth application-default login`. See the runtime sections below for Edge and Express Mode authentication.
+
+Use the direct provider for Google Cloud authentication, Vertex deployments, partner models, or Vertex-specific APIs. Gateway requests do not use your project configuration.
+
+The following sections document the direct `@ai-sdk/google-vertex` provider,
+including its model factories and settings. Gateway model and feature
+availability can differ.
 
 The Google Vertex provider is compatible with both Node.js and Edge runtimes.
 The Edge runtime is supported through the `@ai-sdk/google-vertex/edge`
@@ -18,14 +82,6 @@ sub-module. More details can be found in the [Google Vertex Edge
 Runtime](#google-vertex-edge-runtime), [Google Vertex Anthropic Edge
 Runtime](#google-vertex-anthropic-edge-runtime), and [Google Vertex MaaS Edge
 Runtime](#google-vertex-maas-edge-runtime) sections below.
-
-## Setup
-
-The Google Vertex, Google Vertex Anthropic, Google Vertex xAI, and Google Vertex MaaS providers are available in the `@ai-sdk/google-vertex` module. You can install it with
-
-```bash
-pnpm add @ai-sdk/google-vertex
-```
 
 ## Google Vertex Provider Usage
 

@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-10-19
+last_updated: 2026-10-26
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-10-19T09:46:49.617Z"
-sha256: "55a5392157e2186b84218305d43d6dce08eb6a99a25c6a7a102f3969cbfd93ff"
+fetched_at: "2026-10-26T09:55:26.604Z"
+sha256: "269fab8cc58564b3314659d8ac6a1bd4acf7d37d28a1c8a85c59e8ba4add7e05"
 ---
 
 # Vercel REST API Reference
@@ -63,6 +63,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/ai-gateway/budgets/defaults/list`](/docs/rest-api/ai-gateway/list-ai-gateway-budget-defaults.md) | List AI Gateway budget defaults |
 | **PUT** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/ai-gateway/upsert-ai-gateway-budget-default.md) | Upsert AI Gateway budget default |
 | **DELETE** | [`/ai-gateway/budgets/defaults`](/docs/rest-api/ai-gateway/archive-ai-gateway-budget-default.md) | Archive AI Gateway budget default |
+| **PATCH** | [`/api-keys/{apiKeyID}/quota`](/docs/rest-api/ai-gateway/update-an-ai-gateway-api-key-budget.md) | Update an AI Gateway API key budget |
 
 ## Artifacts
 
@@ -145,6 +146,14 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v2/connect/projects/{projectId}/connectors`](/docs/rest-api/connect/list-connectors-for-a-project.md) | List connectors for a project |
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/connect/get-a-connect-token.md) | Get a Connect token |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
+
+## Daemons
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/projects/{idOrName}/daemons`](/docs/rest-api/daemons/get-project-daemons.md) | Get project daemons |
+| **PUT** | [`/v1/projects/{idOrName}/daemons/{daemonName}/instances`](/docs/rest-api/daemons/override-a-project-daemon-s-instance-counts.md) | Override a project daemon's instance counts |
+| **POST** | [`/v1/projects/{idOrName}/daemons/{daemonName}/instances/{instanceId}/restart`](/docs/rest-api/daemons/force-restart-a-project-daemon-instance.md) | Force restart a project daemon instance |
 
 ## Deployments
 
@@ -302,6 +311,9 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions`](/docs/rest-api/feature-flags/list-flag-versions.md) | List flag versions |
 | **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/settings`](/docs/rest-api/feature-flags/get-project-flag-settings.md) | Get project flag settings |
 | **PATCH** | [`/v1/projects/{projectIdOrName}/feature-flags/settings`](/docs/rest-api/feature-flags/update-project-flag-settings.md) | Update project flag settings |
+| **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/labels`](/docs/rest-api/feature-flags/list-attribute-labels.md) | List attribute labels |
+| **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/labels/counts`](/docs/rest-api/feature-flags/list-attribute-label-counts.md) | List attribute label counts |
+| **POST** | [`/v1/projects/{projectIdOrName}/feature-flags/labels/lookup`](/docs/rest-api/feature-flags/look-up-attribute-labels.md) | Look up attribute labels |
 | **GET** | [`/v1/teams/{teamId}/feature-flags/settings`](/docs/rest-api/feature-flags/list-team-project-flag-settings.md) | List team project flag settings |
 | **GET** | [`/v2/teams/{teamId}/feature-flags/flags`](/docs/rest-api/feature-flags/list-all-flags-for-a-team.md) | List all flags for a team |
 | **GET** | [`/v1/teams/{teamId}/feature-flags/flags`](/docs/rest-api/feature-flags/list-all-flags-for-a-team-1.md) | List all flags for a team |
@@ -694,3 +706,6 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar in your local environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "2f1425897b4049970af6515ff8fc96456f5a4e3fdcd72cee64839921ecd307f8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "a5e5fab1c5c5089f3d9419b191413d355fe77b23657b6128aef18491665ba8f9"
 ---
 
 # Add the Vercel Toolbar to your local environment
@@ -31,9 +31,8 @@ To enable the toolbar in your local environment, add it to your project using th
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
-- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
-- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
@@ -43,28 +42,23 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
 
 - ### Install the `@vercel/toolbar` package and link your project
   Install the package using the following command:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @vercel/toolbar
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @vercel/toolbar
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @vercel/toolbar
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @vercel/toolbar
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @vercel/toolbar
+  ```
+  **yarn**
+  ```bash
+  yarn add @vercel/toolbar
+  ```
+  **npm**
+  ```bash
+  npm i @vercel/toolbar
+  ```
+  **bun**
+  ```bash
+  bun add @vercel/toolbar
+  ```
   Then link your local project to your Vercel project with the [`vercel link`](/docs/cli/link) command using [Vercel CLI](/docs/cli).
   ```bash filename="terminal"
   vercel link [path-to-directory]
@@ -77,28 +71,23 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
   To use the Vercel Toolbar locally in a SvelteKit project, add the `vercelToolbar` plugin to your `vite.config.js` file, as shown below:
   > For \['nuxt']:
   To use the Vercel Toolbar locally in a Nuxt project, install the Nuxt module:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm dlx nuxt module add @vercel/toolbar
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn dlx nuxt module add @vercel/toolbar
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npx nuxt module add @vercel/toolbar
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bunx nuxt module add @vercel/toolbar
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm dlx nuxt module add @vercel/toolbar
+  ```
+  **yarn**
+  ```bash
+  yarn dlx nuxt module add @vercel/toolbar
+  ```
+  **npm**
+  ```bash
+  npx nuxt module add @vercel/toolbar
+  ```
+  **bun**
+  ```bash
+  bunx nuxt module add @vercel/toolbar
+  ```
   > For \['other']:
   The toolbar works locally out of the box with Next.js. To use it with a framework other than Next.js, you can add the following script tag, filling in the relevant info where required:
   ```js filename="next.config.js" framework=nextjs-app
@@ -297,3 +286,6 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -17,8 +17,8 @@ related:
 summary: Deploy Fastify applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastify.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "8b7bb941dd9b3e80e8d6b2f76d1be8d16cc74c02e5f30e81871670c047faf323"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "9886ec0454ff7e9ec0918926ba0f7d6dcfbbb8d4c333b3c8e00149148236fd9b"
 ---
 
 # Fastify on Vercel
@@ -103,6 +103,18 @@ vc deploy
 
 When you deploy a Fastify app to Vercel, your Fastify application becomes a single [Vercel Function](/docs/functions) and uses [Fluid compute](/docs/fluid-compute) by default. This means your Fastify app will automatically scale up and down based on traffic.
 
+## Stream responses
+
+Return a Node.js readable stream from a Fastify handler to send data as it becomes available. See the [Fastify streaming example](/kb/guide/ship-a-fastify-app-on-vercel#stream-responses) for a route running on Vercel.
+
+## Run scheduled tasks
+
+Use [Cron Jobs](/docs/cron-jobs) to call a Fastify route on a schedule. Configure the route and schedule, then check the request's `Authorization` header against your `CRON_SECRET` environment variable before running the task. See the [Fastify cron job example](/kb/guide/ship-a-fastify-app-on-vercel#run-scheduled-tasks-with-cron-jobs).
+
+## Monitor and debug requests
+
+Use [Runtime Logs](/docs/functions/logs) to inspect application output and errors, and [Observability](/docs/observability) to investigate request duration and failures. See [monitoring Fastify with Observability](/kb/guide/ship-a-fastify-app-on-vercel#monitor-performance-with-observability) for details.
+
 ## Limitations
 
 All [Vercel Functions limitations](/docs/functions/limitations) apply to the Fastify application, including the standard bundle size limit of 250MB for Node.js applications. [Large Functions](/docs/functions/limitations#large-functions-beta) support Node.js bundles up to 5GB on Fluid compute when enabled (public beta).
@@ -120,3 +132,6 @@ Learn more about deploying Fastify projects on Vercel with the following resourc
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

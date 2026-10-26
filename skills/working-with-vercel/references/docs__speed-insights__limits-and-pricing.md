@@ -16,13 +16,13 @@ related:
 summary: Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/limits-and-pricing.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "e03d427f55aed16045c32066a4707f6dd06bef35cf49047c10fb6d10b9f3dcc8"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "2fd1ea48e55ff513889d3b2baf4088a0746d70add8558948f48f0c166e64d391"
 ---
 
 # Limits and Pricing for Speed Insights
 
-> **Availability**: Speed Insights is available on all plans
+> Speed Insights is available on all plans
 
 Speed Insights has two tiers:
 
@@ -35,13 +35,14 @@ Speed Insights has two tiers:
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
-- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 
 Full cross-link map for this page: [/docs/speed-insights/limits-and-pricing.graph.md](/docs/speed-insights/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -53,7 +54,7 @@ Events from the free tier have no usage charges and do not count toward Plus usa
 
 |                 | Speed Insights                                                                                                                       | Speed Insights Plus                                                                                                   |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| Price           | Free on all plans                                                                                                                   | $10.00 per project, per month on Pro. Included on Enterprise. Plus on-demand events |
+| Price           | Free on all plans                                                                                                                   | $10 per project, per month on Pro. Included on Enterprise. Plus on-demand events |
 | Included events | 10,000 events over the last 30 days, shared across the team                                                                                                  | None on Pro. Enterprise terms follow your contract. |
 | Event usage | Free within the included limit                                                                                                                   | $0.65 per 10,000 events on Pro. Enterprise pricing follows your contract. |
 | Metrics         | [Real Experience Score (RES)](/docs/speed-insights/metrics#real-experience-score-res) only | Insights to all Core Web Vitals (FCP, LCP, INP, CLS, TTFB)                                                      |
@@ -108,3 +109,6 @@ See the [manage and optimize Observability usage](/docs/manage-and-optimize-obse
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

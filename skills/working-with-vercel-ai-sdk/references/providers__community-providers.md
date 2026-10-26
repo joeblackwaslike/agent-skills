@@ -4,14 +4,14 @@ description: Learn how to use Language Model Specification.
 url: "https://ai-sdk.dev/providers/community-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "37ccfdda1b2adb1a278fc2f4ad323f89c1def7f983c59abd957cbedb2e2a6352"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "5b22893110c4bc5cc50eb5b0ec3866ad646ef0387da1e84d999653b7d44d5796"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
-The AI SDK provides a [Language Model Specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v2).
-You can [write your own provider](./community-providers/custom-providers) that adheres to the specification and it will be compatible with the AI SDK.
+The AI SDK provides a [Language Model Specification](https://github.com/vercel/ai/tree/main/packages/provider/src/language-model/v4).
+You can [write your own provider](/providers/community-providers/custom-providers) that adheres to the specification and it will be compatible with the AI SDK.
 
 Here are the community providers that implement the Language Model Specification:
 

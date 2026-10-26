@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for web analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "17b197ecd181759e02a2dadef5bdc124ce65695aa3ff1c9d872c2d31f62400f4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "0b4826f6c6b0deb81eea226ac6181fb88da361af779710f932ddfc72e823a157"
 ---
 
 # Web Analytics
@@ -27,11 +27,11 @@ Explore traffic and custom events for projects with Web Analytics enabled. You c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Counts custom events](https://vercel.com/docs/rest-api/web-analytics/counts-custom-events) — GET /v1/query/web-analytics/events/count — Counts the number of custom events on a project \\(production only\\), since We
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
-- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Counts custom events](https://vercel.com/docs/rest-api/web-analytics/counts-custom-events) — GET /v1/query/web-analytics/events/count — Counts the number of custom events on a project \\(production only\\), since We
 - [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/web-analytics.graph.md](/docs/agent-resources/vercel-mcp/tools/web-analytics.graph.md)
 <!-- /docsgraph:related -->
@@ -130,3 +130,6 @@ Query Web Analytics for a Vercel project. Count mode returns total visitors and 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

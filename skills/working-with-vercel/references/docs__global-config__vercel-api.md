@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/vercel-api.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "27849429f45237cc1b07c612a7580c1ab756d2241a3b6fa6b757447112c947cd"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "1f8f6e36285ae1c4cd05651fed8ebe120dafcf4118d0a99502b6b1dc38887dc4"
 ---
 
 # Managing Global Configs with Vercel REST API
@@ -563,3 +563,6 @@ Data size and request limits based on account plans
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

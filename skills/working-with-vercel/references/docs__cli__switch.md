@@ -12,8 +12,8 @@ related:
 summary: Learn how to switch between different team scopes using the vercel switch CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/switch.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "5f44ebb6a035835de42e08408364c481a2b37a3b4c4025d4ddc6f1099aa70e88"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "66bb9d6ec5f061d82fff3899e89a93d0fdc0fd853e21eff039f5bb9c7e521f86"
 ---
 
 # vercel switch
@@ -73,3 +73,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

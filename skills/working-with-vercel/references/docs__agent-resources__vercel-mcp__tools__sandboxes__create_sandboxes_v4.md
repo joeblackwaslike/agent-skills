@@ -13,8 +13,8 @@ related:
 summary: Use create_sandboxes_v4 with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_v4.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "50a52b86da79db85a1ffe4bd5514ad9b5f911fb5865cd4ab4aae425ecb287c39"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "838f0f004e62445d7cf2d8da47f70ef00c1144069123c42590d58e01e1c3be38"
 ---
 
 # create_sandboxes_v4
@@ -48,3 +48,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

@@ -17,13 +17,13 @@ related:
 summary: Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud (BYOC) deployments on every push.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "fa88e8bca8d83d299bdb6b772cd70fdecf746ba107000bd3d85ce549f0eb27b2"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "422049149c612598b80eae74f1436b42093f64b99e1841061f279634a17cc31c"
 ---
 
 # Deploying with BYOC from GitHub Actions
 
-> **Availability**: Bring Your Own Cloud is available on Enterprise plans and is set up through your Vercel account team. Contact your account team to request access.
+> Bring Your Own Cloud is available on Enterprise plans and is set up through your Vercel account team. Contact your account team to request access.
 
 Keep the [Vercel Git integration](/docs/git) for a [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud) project, so every push creates a preview or production deployment that GitHub Actions builds, provisions in your AWS account, and completes.
 
@@ -34,10 +34,10 @@ Keep the [Vercel Git integration](/docs/git) for a [Bring Your Own Cloud (BYOC)]
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
-- [How can I use GitHub Actions with Vercel?](https://vercel.com/kb/guide/how-can-i-use-github-actions-with-vercel) — GitHub Actions with Vercel works best when you skip duplicate builds. Learn the 4-command CLI pattern, --prebuilt flag,
+- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
+- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/deploy-with-github-actions.graph.md](/docs/networking/bring-your-own-cloud/deploy-with-github-actions.graph.md)
@@ -138,3 +138,6 @@ The 15-minute provisioning window starts when Vercel creates the deployment, so 
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

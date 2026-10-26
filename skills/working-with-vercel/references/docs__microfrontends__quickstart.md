@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "ed5006eb34b07da10f66bce376e5cec4bdce83b212949514d64272605ad0b282"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "5c6b2bd6b19cd9921fdba37630ee2ba2b86cfa008d1ee49b9e106bdc6fa99762"
 ---
 
 # Getting started with microfrontends
@@ -35,6 +35,7 @@ This quickstart guide will help you set up microfrontends on Vercel. Microfronte
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
+- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 
@@ -118,28 +119,23 @@ Before diving into implementation, it's helpful to understand these core concept
 
 - ### Install the `@vercel/microfrontends` package
   In the directory of the microfrontend application, install the package using the following command:
-  <CodeBlock>
-    <Code tab="pnpm">
-      ```bash
-      pnpm i @vercel/microfrontends
-      ```
-    </Code>
-    <Code tab="yarn">
-      ```bash
-      yarn add @vercel/microfrontends
-      ```
-    </Code>
-    <Code tab="npm">
-      ```bash
-      npm i @vercel/microfrontends
-      ```
-    </Code>
-    <Code tab="bun">
-      ```bash
-      bun add @vercel/microfrontends
-      ```
-    </Code>
-  </CodeBlock>
+
+  **pnpm**
+  ```bash
+  pnpm i @vercel/microfrontends
+  ```
+  **yarn**
+  ```bash
+  yarn add @vercel/microfrontends
+  ```
+  **npm**
+  ```bash
+  npm i @vercel/microfrontends
+  ```
+  **bun**
+  ```bash
+  bun add @vercel/microfrontends
+  ```
   You need to perform this step for every microfrontend application.
 
 - ### Set up microfrontends with your framework
@@ -374,3 +370,6 @@ Microfrontends changes how paths are routed to your projects. If you encounter a
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

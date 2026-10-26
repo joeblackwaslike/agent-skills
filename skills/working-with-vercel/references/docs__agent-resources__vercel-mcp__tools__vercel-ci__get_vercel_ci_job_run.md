@@ -13,8 +13,8 @@ related:
 summary: Use get_vercel_ci_job_run with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_job_run.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "500c15e36dca358e3eef1cc7c1de6c90dc6b12bb0f0f6efe9715ec91303627e5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "6c4362ea2cef21b2410a03aa34d45c670346a6ea2f2f53b3361e52deaad80b6d"
 ---
 
 # get_vercel_ci_job_run
@@ -51,3 +51,6 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

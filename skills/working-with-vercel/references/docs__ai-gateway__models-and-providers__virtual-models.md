@@ -17,8 +17,8 @@ related:
 summary: Save a model with its provider routing, fallbacks, regional inference, zero data retention, and provider options under one vmc/ model ID. Your code,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/virtual-models.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "bf41dd15fbf2f1ce703f357e886e60a479219cc07e652409f8e412546c96fc77"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "366c4a0cec6bb9f7f93e1583f0761345e16bfeab3ed13a9e0c5ba0cfe1e26ea7"
 ---
 
 # AI Gateway Virtual Models for Reusable Model Configurations
@@ -604,3 +604,6 @@ Any member of your team can use a virtual model in their application. Team **Own
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

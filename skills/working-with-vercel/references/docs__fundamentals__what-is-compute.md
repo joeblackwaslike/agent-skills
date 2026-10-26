@@ -16,8 +16,8 @@ related:
 summary: Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/what-is-compute.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "d48ae85306cc4f15987aa51f5098121f663f041c4bc4826c719aebccac01faa1"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "091013d602d77f47e615b576b3c5fdc30c70ae5e74da2dc4dd59134ebb4ae3ca"
 ---
 
 # What is Compute?
@@ -33,11 +33,11 @@ Compute is the work a server performs to respond to a request, such as rendering
 - [Introducing Fluid compute](https://vercel.com/blog/introducing-fluid-compute)
 - [How Fluid compute works on Vercel](https://vercel.com/blog/how-fluid-compute-works-on-vercel)
 - [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute) — How to create high-performance database connection pools without leaking connections
-- [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers)
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers)
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [How AI Gateway runs on Fluid compute](https://vercel.com/blog/how-ai-gateway-runs-on-fluid-compute)
 - [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape)
 - [Vercel Functions](https://vercel.com/docs/functions) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
@@ -186,3 +186,6 @@ Fluid compute addresses each of these drawbacks with [optimized concurrency](#op
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

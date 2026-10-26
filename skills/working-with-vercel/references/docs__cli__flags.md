@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "9a8a103dc982d89e08449ab97210499e338ef0491a89c3cd1df6c7bab451cdb3"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "ba922c613df7f75e1343f0b3ce3403d3d269526f3f2ff81b65f6a865c72ba6f2"
 ---
 
 # vercel flags
@@ -37,10 +37,8 @@ The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for 
 - [Vercel Flags are now optimized for agents](https://vercel.com/changelog/vercel-flags-are-now-optimized-for-agents)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [List flag versions](https://vercel.com/docs/rest-api/feature-flags/list-flag-versions) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions — Lists flag versions for a given flag.
+- [Feature Flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags) — Vercel MCP tools for feature flags.
 - [vercel traces](https://vercel.com/docs/cli/traces) — Search spans across a team, inspect request traces, capture session traces, or manage project trace sampling rules from
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 
 Full cross-link map for this page: [/docs/cli/flags.graph.md](/docs/cli/flags.graph.md)
 <!-- /docsgraph:related -->
@@ -142,6 +140,13 @@ vercel flags disable [flag]
 
 *Using the \`vercel flags\` command to disable a boolean feature flag in an
 environment.*
+
+```bash filename="terminal"
+vercel flags targeting enable [flag]
+```
+
+*Using the \`vercel flags targeting enable\` command to activate targeting for a
+feature flag in an environment.*
 
 ```bash filename="terminal"
 vercel flags archive [flag]
@@ -806,7 +811,7 @@ Your application must pass timestamp values as epoch milliseconds in the evaluat
 
 Use `vercel flags targets` to assign a fixed variant to specific entity values in a flag environment. With targeting active, [targets evaluate before conditional rules](/docs/flags/vercel-flags/dashboard/feature-flag#targets-and-rules). Define the [entity and attribute](#entities) first.
 
-Saving targets doesn't activate targeting. If the environment serves a static value or reuses another environment, the CLI warns that the saved targets don't affect evaluation. Run `vercel flags use-targeting <flag> --environment <environment>` to activate targeting while keeping the current fallthrough outcome.
+Saving targets doesn't activate targeting. If the environment serves a static value or reuses another environment, the CLI warns that the saved targets don't affect evaluation. Run `vercel flags targeting enable <flag> --environment <environment>` to activate targeting while keeping the current fallthrough outcome.
 
 List the direct targets for a flag:
 
@@ -1633,3 +1638,6 @@ For more information on global options and their usage, refer to the [options se
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

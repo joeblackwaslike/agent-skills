@@ -12,8 +12,8 @@ related:
 summary: An infinite loop was detected within the application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/infinite_loop_detected.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "771060783a403779649f318895718cd6bd0affd62ef6e6f8f79a428bfa73b853"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "89d77789e811dc8e35d8ad04741e3e3b4a05102fefe02e6dae9639e152341e6c"
 ---
 
 # INFINITE_LOOP_DETECTED
@@ -38,3 +38,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

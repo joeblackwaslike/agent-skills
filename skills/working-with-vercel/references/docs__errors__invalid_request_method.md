@@ -12,8 +12,8 @@ related:
 summary: The request method used is invalid or not supported. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/invalid_request_method.md"
-fetched_at: "2026-07-20T06:54:28.409Z"
-sha256: "b47b47204e7b38bf3427f168c70197e556da0bd96cc36998f4dd3bb7dcae916b"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "948e2fa585b021c08153268de3cc1ce51ffbdebbb7c65fbd3c49648c5eacd49c"
 ---
 
 # INVALID_REQUEST_METHOD
@@ -36,3 +36,6 @@ To troubleshoot this error, follow these steps:
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

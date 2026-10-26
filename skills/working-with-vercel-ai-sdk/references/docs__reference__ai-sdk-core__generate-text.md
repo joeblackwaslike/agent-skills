@@ -4,15 +4,15 @@ description: API Reference for generateText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "75b9f15643c2d8c9a835b110aabb472295652baf36f3ceed81b4c282549e0e49"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "b062904faed397e1663eae840326b01e5db48ae5bc04281653b19bc991b99d04"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Generates text and calls tools for a given prompt using a language model.
 
-It is ideal for non-interactive use cases such as automation tasks where you need to write text (e.g. drafting email or summarizing web pages) and for agents that use tools.
+It is ideal for non-interactive use cases such as automation tasks where you need to write text (e.g. drafting emails or summarizing web pages) and for agents that use tools.
 
 ```ts
 import { generateText } from 'ai';
@@ -320,7 +320,7 @@ import { generateText } from "ai"
     - `toolResults` (`Array<TypedToolResult<TOOLS>>`): The results of the tool calls.
     - `staticToolResults` (`Array<StaticToolResult<TOOLS>>`): The static tool results that were made in this step.
     - `dynamicToolResults` (`Array<DynamicToolResult>`): The dynamic tool results that were made in this step.
-    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "other"`): The unified reason why the generation finished.
+    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "interrupted" | "other"`): The unified reason why the generation finished.
     - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
     - `usage` (`LanguageModelUsage`): The token usage of the generated text.
       - `LanguageModelUsage`
@@ -368,7 +368,7 @@ import { generateText } from "ai"
   - `GenerateTextEndEvent`
     - `stepNumber` (`number`): Zero-based index of the final step.
     - `model` (`{ provider: string; modelId: string }`): Information about the model that produced the final step.
-    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "other"`): The unified reason why the generation finished.
+    - `finishReason` (`"stop" | "length" | "content-filter" | "tool-calls" | "error" | "interrupted" | "other"`): The unified reason why the generation finished.
     - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
     - `usage` (`LanguageModelUsage`): The token usage from the final step only (not aggregated).
       - `LanguageModelUsage`
@@ -472,7 +472,7 @@ import { generateText } from "ai"
 - `dynamicToolCalls` (`Array<DynamicToolCall>`): The dynamic tool calls that have been executed in all steps.
 - `staticToolResults` (`Array<StaticToolResult<TOOLS>>`): The static tool results that have been generated in all steps.
 - `dynamicToolResults` (`Array<DynamicToolResult>`): The dynamic tool results that have been generated in all steps.
-- `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason the model finished generating the text.
+- `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'interrupted' | 'other'`): The reason the model finished generating the text.
 - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
 - `usage` (`LanguageModelUsage`): The total token usage of all steps. When there are multiple steps, the usage is the sum of all step usages.
   - `LanguageModelUsage`
@@ -541,7 +541,7 @@ import { generateText } from "ai"
         - `providerMetadata?` (`SharedV2ProviderMetadata`): Additional provider metadata for the source.
     - `toolCalls` (`ToolCallArray<TOOLS>`): The tool calls that were made during the generation.
     - `toolResults` (`ToolResultArray<TOOLS>`): The results of the tool calls.
-    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'other'`): The reason why the generation finished.
+    - `finishReason` (`'stop' | 'length' | 'content-filter' | 'tool-calls' | 'error' | 'interrupted' | 'other'`): The reason why the generation finished.
     - `rawFinishReason` (`string | undefined`): The raw reason why the generation finished (from the provider).
     - `usage` (`LanguageModelUsage`): The token usage of the generated text.
       - `LanguageModelUsage`

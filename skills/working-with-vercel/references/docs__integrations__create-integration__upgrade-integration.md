@@ -17,8 +17,8 @@ related:
 summary: Lean more about when you may need to upgrade your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/upgrade-integration.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "f35d98b5af2c2b4727ca3a309126bf8c89a8c816148c1aacf19df60bb603eac5"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "4edda2513e937787ad14b3b30371b0915bc1ade6f2680cdd1f2c9f7085285ba8"
 ---
 
 # Upgrade an Integration
@@ -34,10 +34,10 @@ You should upgrade your integration if you are using any of the following scenar
 - [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure)
 - [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently)
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/upgrade-integration.graph.md](/docs/integrations/create-integration/upgrade-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -143,3 +143,6 @@ If your Integration is setting Environment Variables, please make sure to use `t
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

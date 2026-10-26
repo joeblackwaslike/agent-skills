@@ -16,8 +16,8 @@ related:
 summary: Use the Sandbox CLI to run coding agents, manage sandboxes, execute commands, and copy files from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "a908425bc47dbed1af701693454ddbe54de24212e69f0d48e82ea69df8a44ef4"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "826308f334a384d27162554881a831737c44a60d360d75142513faaa238a5248"
 ---
 
 # Sandbox CLI Reference
@@ -37,8 +37,9 @@ Use the Sandbox CLI to [run coding agents](#run-a-coding-agent), manage sandboxe
 - [How to use Vercel Drives with an eve agent](https://vercel.com/kb/guide/vercel-drives-eve-agent) — Mount Vercel Drives in an eve agent's sandbox to give each user a persistent workspace and share read-only reference dat
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking)
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
+- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes) — Vercel MCP tools for sandboxes.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md)
@@ -52,28 +53,29 @@ Sandboxes are identified by **name** (unique within your project) and are **pers
 
 Install the Sandbox CLI globally to run `sandbox` or `sbx` from any directory:
 
-<CodeBlock>
-  <Code tab="pnpm">
-    ```bash
-    pnpm i -g sandbox
-    ```
-  </Code>
-  <Code tab="yarn">
-    ```bash
-    yarn global add sandbox
-    ```
-  </Code>
-  <Code tab="npm">
-    ```bash
-    npm i -g sandbox
-    ```
-  </Code>
-  <Code tab="bun">
-    ```bash
-    bun add -g sandbox
-    ```
-  </Code>
-</CodeBlock>
+**pnpm**
+
+```bash
+pnpm i -g sandbox
+```
+
+**yarn**
+
+```bash
+yarn global add sandbox
+```
+
+**npm**
+
+```bash
+npm i -g sandbox
+```
+
+**bun**
+
+```bash
+bun add -g sandbox
+```
 
 You can also run the CLI without a global installation:
 
@@ -113,6 +115,7 @@ sandbox <subcommand>
 - [`connect`](#sandbox-connect): Start an interactive shell in an existing sandbox. \[aliases: `ssh`, `shell`]
 - [`copy`](#sandbox-copy): Copy files between your local filesystem and a remote sandbox. \[alias: `cp`]
 - [`stop`](#sandbox-stop): Stop the current session of one or more sandboxes.
+- [`extend`](#sandbox-extend): Add time to a running session without changing its default timeout.
 - [`remove`](#sandbox-remove): Permanently delete one or more sandboxes and all their sessions.
 - [`config`](#sandbox-config): View and update sandbox configuration (resources, timeout, persistence, snapshot retention, network policy, drive mounts, tags).
 - [`sessions`](#sandbox-sessions): Inspect VM sessions for a sandbox.
@@ -571,6 +574,9 @@ sandbox exec --interactive --sudo my-sandbox -- sh
 # Run command in specific working directory
 sandbox exec --workdir /app my-sandbox -- python script.py
 
+# Kill the command if it runs longer than 30 seconds
+sandbox exec --timeout 30s my-sandbox -- npm test
+
 # Stop the current session after the command exits
 sandbox exec --stop my-sandbox -- npm build
 ```
@@ -584,6 +590,7 @@ sandbox exec --stop my-sandbox -- npm build
 | `--scope <team>`        | `--team` | The team you want to use with this command.                                                                                                                      |
 | `--workdir <directory>` | `-w`     | Set the directory where you want the command to run.                                                                                                             |
 | `--env <key=value>`     | `-e`     | Set environment variables for your command.                                                                                                                      |
+| `--timeout <duration>`  | -        | Maximum duration to wait for the command (e.g. `30s`, `5m`). On expiry, the process is killed with `SIGKILL`. Cannot be combined with `--interactive`.           |
 
 ### Sandbox exec flags
 
@@ -690,14 +697,53 @@ sandbox stop --project my-project my-sandbox
 | `<name>`    | The name of the sandbox you want to stop. |
 | `[...name]` | Additional sandbox names to stop.         |
 
+## `sandbox extend`
+
+Add time to the current running session of a sandbox without changing its default timeout. The sandbox must have a running session. To change the timeout for future sessions, use [`sandbox config timeout`](#sandbox-config).
+
+```bash filename="terminal"
+sandbox extend [OPTIONS] <name> <duration>
+```
+
+### Sandbox extend example
+
+```bash filename="terminal"
+# Add 30 minutes to the running session
+sandbox extend my-sandbox 30m
+
+# Add one hour
+sandbox extend my-sandbox 1h
+```
+
+### Sandbox extend options
+
+| Option                | Alias    | Description                                                                                                                                                      |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
+
+### Sandbox extend flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### Sandbox extend arguments
+
+| Argument     | Description                                     |
+| ------------ | ----------------------------------------------- |
+| `<name>`     | The name of the sandbox with a running session. |
+| `<duration>` | Time to add, for example `5m` or `1h`.          |
+
 ## `sandbox remove`
 
 Permanently delete one or more sandboxes, along with all of their sessions. Once removed, a sandbox cannot be recovered. Use this instead of `sandbox stop` when you no longer need the sandbox at all.
 
-Removing a sandbox keeps its snapshots, because several sandboxes can start from the same snapshot. Delete those separately with [`sandbox snapshots delete`](#sandbox-snapshots-delete).
+Removing a sandbox keeps its snapshots by default, because several sandboxes can start from the same snapshot. Pass `--delete-orphan-snapshots` to also delete the sandbox's snapshots that no other sandbox uses, or delete them separately with [`sandbox snapshots delete`](#sandbox-snapshots-delete).
 
 ```bash filename="terminal"
-sandbox remove <name> [...name]
+sandbox remove [OPTIONS] <name> [...name]
 ```
 
 ### Sandbox remove example
@@ -708,7 +754,17 @@ sandbox remove my-sandbox
 
 # Delete multiple sandboxes
 sandbox remove my-sandbox another-sandbox
+
+# Delete a sandbox and its snapshots that no other sandbox uses
+sandbox remove my-sandbox --delete-orphan-snapshots
 ```
+
+### Sandbox remove flags
+
+| Flag                        | Short | Description                                                                      |
+| --------------------------- | ----- | -------------------------------------------------------------------------------- |
+| `--delete-orphan-snapshots` | -     | Also delete the snapshots of the sandbox that are not used by any other sandbox. |
+| `--help`                    | `-h`  | Display help information.                                                        |
 
 ### Sandbox remove arguments
 
@@ -1419,3 +1475,6 @@ sandbox exec --workdir /app dev -- npm run dev
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

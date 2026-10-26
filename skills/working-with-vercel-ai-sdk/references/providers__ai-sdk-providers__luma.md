@@ -1,24 +1,64 @@
 ---
 title: Luma
-description: Learn how to use Luma AI models with the AI SDK.
+description: Learn how to set up the Luma provider and check AI Gateway availability.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/luma"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "0bfaf3687c61100f7bbb8fde855592d2f5572547b12a35131fd73b737be26426"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "dd74a6e712389305fbc8baaf06efad4af471749f3321a53024a5044553dc5e1d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Luma AI](https://lumalabs.ai/) provides state-of-the-art image generation models through their Dream Machine platform. Their models offer ultra-high quality image generation with superior prompt understanding and unique capabilities like character consistency and multi-image reference support.
+Luma models are not currently available through [AI Gateway](https://vercel.com/ai-gateway/models), so the opening example uses `@ai-sdk/luma` directly. See [Using AI Gateway](#using-ai-gateway) below for supported alternatives.
 
-## Setup
+```ts
+import { generateImage } from 'ai';
+import { luma } from '@ai-sdk/luma';
 
-The Luma provider is available via the `@ai-sdk/luma` module. You can install it with
+const { image } = await generateImage({
+  model: luma.image('photon-1'),
+  prompt: 'A sunlit mountain village in watercolor.',
+});
+
+console.log(image.base64);
+```
+
+## Using AI Gateway
+
+The current [AI Gateway model catalog](https://vercel.com/ai-gateway/models) does not list Luma models. Use `@ai-sdk/luma` for the APIs on this page. To use other image models through Gateway, install `ai` and configure a Gateway API key:
 
 ```bash
-pnpm add @ai-sdk/luma
+pnpm add ai
 ```
+
+Set an [AI Gateway API key](https://vercel.com/docs/ai-gateway/getting-started) in your environment:
+
+```bash
+export AI_GATEWAY_API_KEY=your_api_key_here
+```
+
+Vercel deployments can also use [OIDC authentication](/providers/ai-sdk-providers/ai-gateway#oidc-authentication-vercel-deployments).
+See the [Gateway documentation](/providers/ai-sdk-providers/ai-gateway) for supported models and APIs.
+
+## Using `@ai-sdk/luma`
+
+For direct access to Luma, install `ai` and `@ai-sdk/luma`:
+
+```bash
+pnpm add ai @ai-sdk/luma
+```
+
+Set your Luma API credential in the `LUMA_API_KEY` environment variable:
+
+```bash
+export LUMA_API_KEY=your_api_key_here
+```
+
+The following sections document the direct `@ai-sdk/luma` provider, including
+its model factories and settings. Gateway model and feature availability can
+differ.
 
 ## Provider Instance
 

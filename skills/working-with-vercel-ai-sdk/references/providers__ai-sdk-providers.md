@@ -4,15 +4,15 @@ description: Learn how to use AI SDK providers.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "cf2b6ea55731ab6ca315456bc0b47a2bf4259f9b595a692bd4a812d54daa63a9"
+fetched_at: "2026-10-26T09:52:56.075Z"
+sha256: "281814210038120776fac01bd1c397052d17fcf87bc48c5cf704193ea8a35d20"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The AI SDK comes with several providers that you can use to interact with different language models:
 
-There are also [community providers](./community-providers) that have been created using the [Language Model Specification](./community-providers/custom-providers).
+There are also [community providers](/providers/community-providers) that have been created using the [Language Model Specification](/providers/community-providers/custom-providers).
 
 ## Provider support
 
@@ -85,6 +85,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [DeepSeek](/providers/ai-sdk-providers/deepseek)           | `deepseek-v4-flash-vision-exp`                      | ✓           | ✓                 | ✓          | ✓              |
 | [DeepSeek](/providers/ai-sdk-providers/deepseek)           | `deepseek-v4-flash`                                 | ✗           | ✓                 | ✓          | ✓              |
 | [DeepSeek](/providers/ai-sdk-providers/deepseek)           | `deepseek-v4-pro`                                   | ✗           | ✓                 | ✓          | ✓              |
+| [Moonshot AI](/providers/ai-sdk-providers/moonshotai)      | `kimi-k3.1-pro`                                     | ✓           | ✓                 | ✓          | ✓              |
 | [Moonshot AI](/providers/ai-sdk-providers/moonshotai)      | `kimi-k3`                                           | ✓           | ✓                 | ✓          | ✓              |
 | [Moonshot AI](/providers/ai-sdk-providers/moonshotai)      | `kimi-k2.7-code`                                    | ✓           | ✓                 | ✓          | ✓              |
 | [Moonshot AI](/providers/ai-sdk-providers/moonshotai)      | `kimi-k2.6`                                         | ✓           | ✓                 | ✓          | ✓              |

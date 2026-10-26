@@ -16,13 +16,13 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-10-19T09:46:53.451Z"
-sha256: "3da128f789b369205d258945346ad32f2cb3cf7e202ee08f6c18434b7ec1022f"
+fetched_at: "2026-10-26T09:55:32.834Z"
+sha256: "16e6e7a1916cb08e4ad30f3de81f5d21716ff5956e9dbf5aea891bc3da71e97a"
 ---
 
 # Using Drains
 
-> **Availability**: Drains are available on Enterprise and Pro plans
+> Drains are available on Enterprise and Pro plans
 
 You can add drains to your project by following the configuration steps below. When you configure the destination, choose whether to send data to a [custom HTTP endpoint](#custom-endpoint), write Audit Log data to an [S3 bucket](#s3-bucket), or use a [native integration](#native-integrations) or [external integration](#external-integrations) to send your data to popular services.
 
@@ -34,11 +34,12 @@ You can add drains to your project by following the configuration steps below. W
 
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Correlate logs and traces with OpenTelemetry in Vercel Log Drains](https://vercel.com/changelog/correlate-logs-and-traces-with-opentelemetry-in-vercel-log-drains)
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
 - [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/drains/using-drains.graph.md](/docs/drains/using-drains.graph.md)
 <!-- /docsgraph:related -->
@@ -216,3 +217,6 @@ For more information on Drains and how to use them, check out the following reso
 ---
 
 [View full sitemap](/docs/sitemap)
+
+
+If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.

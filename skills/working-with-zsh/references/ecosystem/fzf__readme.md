@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/junegunn/fzf/master/README.md"
-fetched_at: "2026-10-19T09:54:08.603Z"
-sha256: "d1f195c7133d3b358a25e400c2ae1605573edd2e0c7ed6b06a619868d390b4ec"
+fetched_at: "2026-10-26T10:03:28.553Z"
+sha256: "92f9ae224752ca3ff286fd53be56d258d4a7b49b6dadaa49d69209068de7b56e"
 ---
 
 <div align="center">
@@ -18,13 +18,13 @@ sha256: "d1f195c7133d3b358a25e400c2ae1605573edd2e0c7ed6b06a619868d390b4ec"
 
 <kbd align="center">
   <br/>
-  <a href="https://commitgoods.com/collections/fzf"><img src="https://junegunn.github.io/fzf/images/fzf-mugs.jpg" width="80%" alt="fzf merch"></a>
+  <a href="https://commitgoods.com/collections/fzf?utm_source=github&amp;utm_medium=referral"><img src="https://junegunn.github.io/fzf/images/fzf-mugs.jpg" width="80%" alt="fzf merch"></a>
   <br/>
   <br/>
   Show your love for fzf -- T-shirts, mugs, and stickers now available!
   <br/>
   <br/>
-  <a href="https://commitgoods.com/collections/fzf">commitgoods.com/collections/fzf</a>
+  <a href="https://commitgoods.com/collections/fzf?utm_source=github&amp;utm_medium=referral"><picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.shopify.com/s/files/1/0101/8752/files/commitgoods-badge-stacked-navy-dark.svg"><img src="https://cdn.shopify.com/s/files/1/0101/8752/files/commitgoods-badge-stacked-navy.svg" height="28" alt="Official merch on commitgoods.com"></picture></a>
   <br/>
   <br/>
 </kbd>
@@ -1156,7 +1156,7 @@ Copyright (c) 2013-2026 Junegunn Choi
 Goods
 -----
 
-Grab fzf T-shirts, mugs, and stickers here: https://commitgoods.com/collections/fzf
+Grab fzf T-shirts, mugs, and stickers here: [commitgoods.com/collections/fzf](https://commitgoods.com/collections/fzf?utm_source=github&utm_medium=referral)
 
 Sponsors :heart:
 ----------------
