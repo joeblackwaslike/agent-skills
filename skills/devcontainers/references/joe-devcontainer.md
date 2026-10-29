@@ -7,7 +7,7 @@ Templates: `ghcr.io/joeblackwaslike/claude-code`, `ghcr.io/joeblackwaslike/claud
 ## What's Included
 
 ### Language Runtimes (via asdf)
-Python 3, Node.js LTS, Ruby 4, Go, Rust, Bun, Deno, AWS CLI v2, gcloud, Supabase CLI, pnpm, yarn, jq, yq, just
+Python 3, Node.js LTS, Ruby 4, Go, Rust, Bun, Deno, AWS CLI v2, gcloud, Supabase CLI, jq, yq, just. pnpm 11 and the JS CLIs are installed with `bun add -g` (no npm, yarn or tsx)
 
 ### AI / Agent Tools
 - Claude Code (`@anthropic-ai/claude-code`) — with `--dangerously-skip-permissions` alias
@@ -17,7 +17,7 @@ Python 3, Node.js LTS, Ruby 4, Go, Rust, Bun, Deno, AWS CLI v2, gcloud, Supabase
 - gastown multi-agent workspace (`gt`)
 
 ### Package Managers
-uv, pipx, pnpm, bun, yarn, volta, cargo
+uv, pipx, pnpm, bun, volta, cargo. JS tooling is pnpm + Bun only
 
 ### Modern CLI Tools (Rust)
 eza (ls), du-dust, diskus, hyperfine, procs, sad, git-delta
@@ -55,7 +55,7 @@ Best for: most projects; no custom tooling needed beyond what's in the base imag
 FROM ghcr.io/joeblackwaslike/devcontainer:latest
 
 # Add project-specific tools:
-# RUN npm install -g @myorg/internal-cli
+# RUN bun add -g @myorg/internal-cli
 # RUN pipx install mypackage
 # RUN GOPATH=/usr/local go install some/tool@latest
 ```
@@ -76,6 +76,8 @@ The devcontainer.json mounts host dotfiles/credentials into the container so the
   "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly",
   "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,readonly",
   "source=${localEnv:HOME}/.config/gh,target=/home/vscode/.config/gh,type=bind,readonly",
+  "source=${localEnv:HOME}/.bun/install/cache,target=/home/vscode/.bun/install/cache,type=bind",
+  "source=${localEnv:HOME}/Library/pnpm/store,target=/home/vscode/.local/share/pnpm/store,type=bind",
   "source=${localEnv:HOME}/.orbstack/run/docker.sock,target=/var/run/docker.sock,type=bind"
 ]
 ```
@@ -103,7 +105,7 @@ All API keys are forwarded from the host shell environment (not baked into the i
 
 **`postAttachCommand`** → `/usr/local/share/devcontainer/scripts/discover-deps.sh`
 - Auto-detects and installs project dependencies on every attach
-- Detection order: `pnpm-lock.yaml` → `bun.lockb` → `yarn.lock` → `package-lock.json` → `package.json`, then `pyproject.toml` (uv), `requirements.txt`, `Cargo.toml`, `go.mod`, `Gemfile`, `.devcontainer/custom-setup.sh`
+- JS/TS: any `package.json` gets `pnpm install` (with a hint to run `bunx spinup-ts update . --yes` when there is no `pnpm-lock.yaml`), then `pyproject.toml` (uv), `requirements.txt`, `Cargo.toml`, `go.mod`, `Gemfile`, `.devcontainer/custom-setup.sh`
 
 Set `DISCOVER_DEPS_SKIP=1` to bypass auto-discovery.
 
