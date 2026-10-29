@@ -82,6 +82,8 @@ The devcontainer.json mounts host dotfiles/credentials into the container so the
 ]
 ```
 
+Bind-mount sources must exist on the host or the container will not start, so the cache mounts are paired with `"initializeCommand": "mkdir -p \"$HOME/.bun/install/cache\" \"$HOME/Library/pnpm/store\""`.
+
 Skills symlink: `~/.claude/skills → ~/.agents/skills` is recreated in `setup.sh` because the bind mount creates the directory but not the symlink inside it.
 
 ### API Keys via remoteEnv
