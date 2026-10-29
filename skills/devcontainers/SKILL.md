@@ -70,8 +70,8 @@ Any non-zero exit skips all subsequent scripts. Scripts can be a string, array, 
 
 ```json
 "postCreateCommand": {
-  "deps": "npm install",
-  "types": "npm run typecheck"
+  "deps": "pnpm install",
+  "types": "pnpm typecheck"
 }
 ```
 
