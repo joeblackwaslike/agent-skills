@@ -165,7 +165,7 @@ conflicting instructions.
 
 | Level | Claude Code | Codex | Gemini CLI | OpenCode |
 | --- | --- | --- | --- | --- |
-| User-global | `~/.claude/CLAUDE.md` | `~/.codex/AGENTS.md` | `~/.gemini/GEMINI.md` | `~/.opencode/config` |
+| User-global | `~/.claude/CLAUDE.md` | `~/.codex/AGENTS.md` | `~/.gemini/GEMINI.md` | `~/.config/opencode/AGENTS.md` |
 | Project root | `CLAUDE.md` | `AGENTS.md` | `GEMINI.md` | `AGENTS.md` or `CLAUDE.md` |
 | Local/personal | `CLAUDE.local.md` | — | — | — |
 | Subdirectory | Nested `CLAUDE.md` or `.claude/rules/*.md` | Nested `AGENTS.md` | — | — |

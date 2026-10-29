@@ -7,7 +7,7 @@ some things should never appear. This reference maps content types to their appr
 
 ## The Core Question
 
-For any piece of information, ask: **Would this confuse or help Claude in a session six months
+For any piece of information, ask: **Would this confuse or help the agent in a session six months
 from now, on a different machine, by a different contributor?**
 
 If yes → it belongs in the instruction file at the right scope.
@@ -17,7 +17,20 @@ If no → it belongs in a skill, a doc, a commit message, or nowhere.
 
 ## Content Type → Scope Level
 
-### User / Global (`~/.claude/CLAUDE.md`)
+### User / Global (canonical `AGENTS.md`, one entry point per tool)
+
+Write universal content once, in a canonical `AGENTS.md`. Each tool reaches it through its own
+file (Codex has no `codex.md`; it reads `AGENTS.md`):
+
+| Tool | Global file | Holds |
+| --- | --- | --- |
+| Claude Code | `~/.claude/CLAUDE.md` | `@AGENTS.md` plus Claude-only wiring (skills, hooks) |
+| Codex CLI | `~/.codex/AGENTS.md` | the canonical file (symlink) |
+| Gemini CLI | `~/.gemini/GEMINI.md` | the canonical file (symlink) |
+| OpenCode | `~/.config/opencode/AGENTS.md` | the canonical file (symlink) |
+
+Rows below are universal unless marked Claude-only. Symlink and `@import` mechanics are in
+`multi-tool-compat.md` and `cookbook/user-global.md`.
 
 | Content type | Example |
 | --- | --- |
@@ -27,7 +40,7 @@ If no → it belongs in a skill, a doc, a commit message, or nowhere.
 | Async/sync preference | "All new code is async-first" |
 | Package manager preference | "Use `uv` for Python, `pnpm` for Node" |
 | IDE and OS notes | "VS Code Insiders on macOS, OrbStack for containers" |
-| Global skill activation rules | "Always invoke `serena` for code navigation" |
+| Global skill activation rules (Claude-only: goes in `CLAUDE.md`) | "Always invoke `serena` for code navigation" |
 | Cross-project tool conventions | "`jq` for JSON in shell scripts, never inline Python" |
 | Hardware notes | "M1 MacBook, 64GB RAM; avoid building x86 images" |
 
@@ -92,7 +105,7 @@ shared file.
 | Code examples longer than ~10 lines | Hard to maintain; not actionable | `references/examples/` in a skill |
 | Debugging recipes | Specific to a moment in time | Commit messages, issue trackers |
 | "Nice to know" facts that don't shape work | Context waste | Cut entirely |
-| Opinions the user already has globally | Redundant; may conflict | Keep only in user-global file |
+| Opinions the user already has globally | Redundant; may conflict | Keep only in the global `AGENTS.md` |
 | Anything for a hypothetical future state | Not active constraints | Cut until needed |
 
 ---
@@ -123,7 +136,7 @@ signal it should become a skill with `references/` instead.
 
 | File | Comfortable size | Warning sign |
 | --- | --- | --- |
-| `~/.claude/CLAUDE.md` | 100–200 lines | > 300 lines |
+| Global `AGENTS.md` (plus `~/.claude/CLAUDE.md` extras) | 100–200 lines | > 300 lines |
 | Project `CLAUDE.md` | 20–80 lines | > 150 lines |
 | `.claude/rules/*.md` | 5–20 lines | > 50 lines |
 | Nested package `CLAUDE.md` | 10–40 lines | > 80 lines |
