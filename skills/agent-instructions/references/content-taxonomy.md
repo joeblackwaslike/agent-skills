@@ -20,7 +20,7 @@ If no → it belongs in a skill, a doc, a commit message, or nowhere.
 ### User / Global (canonical `AGENTS.md`, one entry point per tool)
 
 Write universal content once, in a canonical `AGENTS.md`. Each tool reaches it through its own
-file (Codex has no `codex.md`; it reads `AGENTS.md`):
+file:
 
 | Tool | Global file | Holds |
 | --- | --- | --- |
@@ -40,7 +40,7 @@ Rows below are universal unless marked Claude-only. Symlink and `@import` mechan
 | Async/sync preference | "All new code is async-first" |
 | Package manager preference | "Use `uv` for Python, `pnpm` for Node" |
 | IDE and OS notes | "VS Code Insiders on macOS, OrbStack for containers" |
-| Global skill activation rules (Claude-only: goes in `CLAUDE.md`) | "Always invoke `serena` for code navigation" |
+| Global skill activation rules (shared rules in `AGENTS.md`; Claude-only calls and hooks in `CLAUDE.md`) | "Always invoke `serena` for code navigation" |
 | Cross-project tool conventions | "`jq` for JSON in shell scripts, never inline Python" |
 | Hardware notes | "M1 MacBook, 64GB RAM; avoid building x86 images" |
 
