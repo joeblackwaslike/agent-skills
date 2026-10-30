@@ -23,15 +23,17 @@ agents are tested by the consuming agent's behavior; prose for humans earns no t
 all." Its gate function rejects `"The source text changed"` as a failure reason
 outright.
 
-## Anchor every rule to an incident
+## Anchor every rule to a concrete failure, not a dated citation
 
-A runbook line with a real failure attached survives review and gets followed; an
-abstract best-practice does not. Cite the PR, thread, or transcript in the text.
+A rule with a real wrong-vs-right example attached gets followed; an abstract
+best-practice does not. Write the example itself ("linked `bd` IDs to the repo URL;
+state them plain"), because that is what an LLM pattern-matches on.
 
-**One citation per rule.** Keep only the most recent incident citation inline — it
-provides the concrete example an LLM needs to pattern-match. When a new failure
-supersedes an older one, replace the old citation, don't append. The goal is
-specificity, not a changelog — one good example beats four.
+**Provenance stays out of the file.** Date, project, PR number, and "Confirmed on…"
+tags change no agent behavior, and every instruction file is billed on every session
+and subagent. Put them in the commit message. If the rule is self-explanatory, drop
+the example too. One example per rule; when a new failure supersedes an older one,
+replace it, don't append.
 
 ## When a correction is also a process failure, fix the process too
 
