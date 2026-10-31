@@ -352,6 +352,22 @@ gh pr edit "$PR" --add-reviewer alice,@copilot      # re-request; re-adding re-t
 
 Re-adding a reviewer that already reviewed re-requests their review — for bot reviewers this is what triggers the next pass against the new head SHA. Pushing new commits to the PR branch automatically re-runs CI.
 
+### Pushing through no-mistakes
+
+When pushes go through the no-mistakes gate (`no-mistakes axi run`), pass `--skip ci` on every run after the PR exists.
+
+After a push, no-mistakes keeps its CI step alive to watch the PR's checks and starts an auto-fix agent, up to three rounds, for any check that fails. A review bot's verdict is a check too. Greptile, cubic, Sourcery and the `ai-review` bots all post check runs, and a bot that requests changes shows as failing. The agent cannot tell a verdict from a broken test, so it hunts for a flaky test to fix, holds the branch so your next push is refused, and can push commits nobody asked for. No-mistakes has no setting to exclude individual checks.
+
+If a run is already in the CI step's `fixing` state and its log says `repairing: ai-review`, run `no-mistakes axi abort` and re-run with `--skip ci`. Every step through push has already completed, so nothing is lost. Leave the CI step on for a PR's first push, before any bot has reviewed, but expect that run's monitor to stay alive and wake when a bot turns red.
+
+`--skip ci` skips only no-mistakes' own watching. The repository's CI workflows still run on GitHub and appear as checks on the PR. Watch them with `gh pr checks "$PR" --watch`, read a failure with `gh run view <run-id> --log-failed`, and fix and push it yourself. To make real CI gate the merge, use branch protection that requires only the repo's own jobs (lint, unit, end-to-end), so a bot's red verdict cannot hold the PR. A run with the CI step skipped ends as `passed`, not `checks-passed`.
+
+### The title and description are rewritten on every push
+
+On an existing PR, the no-mistakes PR step drafts a new title and body from the branch diff and the `--intent` text, then overwrites both. An intent that describes only the latest fix pulls the title toward it: "pushing the fix for review round 1" produced a title about that fix, while an intent describing the whole PR produced a title that matched the PR. Reuse one intent that describes the whole PR on every push, and check the title afterward with `gh pr view "$PR" --json title`.
+
+The setting that stops the rewrite is `pr.update_text: keep`, set per repository under `repository_overrides` in the machine's no-mistakes config. It exists only on no-mistakes main and is in no release as of v1.104.0. It refuses to update a PR whose body an older version wrote, until its generated sections are moved out of the narrative by hand. Until a release includes the setting, expect the title and body to be rewritten. Once a release includes it, enable it before opening a PR.
+
 ## 11. Loop until done
 
 Re-poll from step 5. Continue the convergence loop until **all** exit conditions hold:
