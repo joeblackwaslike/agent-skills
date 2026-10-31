@@ -366,7 +366,7 @@ If a run is already in the CI step's `fixing` state and its log says `repairing:
 
 On an existing PR, the no-mistakes PR step drafts a new title and body from the branch diff and the `--intent` text, then overwrites both. An intent that describes only the latest fix pulls the title toward it: "pushing the fix for review round 1" produced a title about that fix, while an intent describing the whole PR produced a title that matched the PR. Reuse one intent that describes the whole PR on every push, and check the title afterward with `gh pr view "$PR" --json title`.
 
-The setting that stops the rewrite is `pr.update_text: keep`, set per repository under `repository_overrides` in the machine's no-mistakes config. It exists only on no-mistakes main and is in no release as of v1.104.0. It refuses to update a PR whose body an older version wrote, until its generated sections are moved out of the narrative by hand, so enable it before opening a PR.
+The setting that stops the rewrite is `pr.update_text: keep`, set per repository under `repository_overrides` in the machine's no-mistakes config. It exists only on no-mistakes main and is in no release as of v1.104.0. It refuses to update a PR whose body an older version wrote, until its generated sections are moved out of the narrative by hand. Until a release includes the setting, expect the title and body to be rewritten. Once your install has it, enable it before opening a PR.
 
 ## 11. Loop until done
 
