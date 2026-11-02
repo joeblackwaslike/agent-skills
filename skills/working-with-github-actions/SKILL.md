@@ -123,7 +123,13 @@ concurrency:
 ```
 
 Use `cancel-in-progress: false` for release/deploy jobs where partial runs are dangerous.
-On PR workflows, `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` cancels stale PR runs but never `main`. GitHub keeps only one pending run per concurrency group, so with several quick pushes to `main` the middle runs are still dropped; use a per-SHA group for `main` if every commit must run.
+On PR workflows, `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` cancels stale PR runs but never `main`. GitHub keeps only one pending run per concurrency group, so with several quick pushes to `main` the middle runs are still dropped; if every commit on `main` must run, give `main` its own group per SHA so pushes stop sharing a group instead of relying on `cancel-in-progress`:
+
+```yaml
+concurrency:
+  group: ${{ github.ref == 'refs/heads/main' && format('{0}-{1}', github.workflow, github.sha) || format('{0}-{1}', github.workflow, github.ref) }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+```
 
 ### Speed
 

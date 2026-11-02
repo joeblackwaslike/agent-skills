@@ -38,12 +38,14 @@ audit_repo() {
 
   echo "== $repo  (runs: $(jq length <<<"$run_list"), wall-clock median: $(jq "$MED"'[.[] | (.updatedAt|fromdate) - (.createdAt|fromdate)] | med' <<<"$run_list")s)"
 
-  local id wf
+  local id wf jobs_json
   while IFS=$'\t' read -r id wf; do
-    gh api --paginate "repos/$repo/actions/runs/$id/jobs" --jq '.jobs[]' \
-      | jq -c --arg wf "$wf" '. + {wf: $wf}' \
-      || { echo "warning: could not fetch jobs for run $id of $repo; excluded from medians" >&2; }
-  done < <(jq -r '.[] | [.databaseId, .workflowName] | @tsv' <<<"$run_list") \
+    if jobs_json=$(gh api --paginate "repos/$repo/actions/runs/$id/jobs" --jq '.jobs[]'); then
+      jq -c --arg wf "$wf" '. + {wf: $wf}' <<<"$jobs_json"
+    else
+      echo "warning: could not fetch jobs for run $id of $repo; excluded from medians" >&2
+    fi
+  done < <(jq -r '.[] | [.databaseId, (.workflowName // "unknown")] | @tsv' <<<"$run_list") \
     | jq -rs --arg re "$SETUP_RE" "$MED"'
     def secs(a; b): (b|fromdate) - (a|fromdate);
     map(select(.started_at and .completed_at and .conclusion != "skipped")
