@@ -1,6 +1,9 @@
 ---
 name: developing-codex-plugins
-description: Use when working on Codex plugins (creating, modifying, testing, releasing, or maintaining) - provides streamlined workflows, patterns, and reference for the complete Codex plugin lifecycle
+description: >-
+  Use when building a Codex CLI plugin: .codex-plugin/plugin.json, marketplace.json, skills,
+  hooks, MCP servers, local testing, or releasing. Not for Codex CLI usage docs
+  (working-with-codex) or sharing one plugin across tools (multi-provider-plugins).
 metadata:
   last_updated: "2026-06-04"
 ---

@@ -1,6 +1,10 @@
 ---
 name: developing-gemini-plugins
-description: Use when creating, modifying, testing, or releasing Gemini CLI extensions or Antigravity CLI plugins — provides workflows, patterns, and reference for the complete plugin lifecycle on both platforms
+description: >-
+  Use when building a Gemini CLI extension or Antigravity CLI plugin: gemini-extension.json,
+  GEMINI.md context, skills, commands, hooks, MCP servers, `gemini extensions link`, or releasing.
+  Not for Gemini CLI usage docs (working-with-gemini) or sharing one plugin across tools
+  (multi-provider-plugins).
 metadata:
   last_updated: "2026-06-04"
 ---

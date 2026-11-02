@@ -1,6 +1,8 @@
 ---
 name: working-with-codex
-description: Use when working with Codex CLI, plugins, skills, hooks, configuration, or any Codex feature - provides comprehensive official documentation for all aspects of the OpenAI Codex CLI
+description: >-
+  Use when you need the official OpenAI Codex CLI docs: configuration, AGENTS.md, skills, hooks,
+  plugins, MCP. Not for building a Codex plugin (developing-codex-plugins).
 metadata:
   last_updated: "2026-06-04"
 ---

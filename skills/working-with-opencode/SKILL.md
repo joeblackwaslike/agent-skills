@@ -1,6 +1,8 @@
 ---
 name: working-with-opencode
-description: Use when working with OpenCode CLI, plugins, skills, hooks, configuration, or any OpenCode feature - provides comprehensive official documentation for all aspects of the OpenCode AI coding assistant
+description: >-
+  Use when you need the official OpenCode docs: CLI, opencode.json configuration, plugins, skills,
+  hooks, agents. Not for building an OpenCode plugin (developing-opencode-plugins).
 metadata:
   last_updated: "2026-06-04"
 ---

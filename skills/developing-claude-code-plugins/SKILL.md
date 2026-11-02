@@ -1,6 +1,10 @@
 ---
 name: developing-claude-code-plugins
-description: Use when working on Claude Code plugins (creating, modifying, testing, releasing, or maintaining) - provides streamlined workflows, patterns, and examples for the complete plugin lifecycle
+description: >-
+  Use when building a Claude Code plugin: plugin.json, hooks.json, skills/, commands/, agents/,
+  .mcp.json, userConfig, ${CLAUDE_PLUGIN_ROOT}, local testing with /reload-plugins, or releasing.
+  Hook, command, agent, MCP, and settings authoring references included. Not for official CLI docs
+  (working-with-claude-code) or porting to other tools (multi-provider-plugins).
 metadata:
   last_updated: "2026-05-17"
 ---

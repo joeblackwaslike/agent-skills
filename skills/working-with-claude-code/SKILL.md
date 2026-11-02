@@ -1,6 +1,10 @@
 ---
 name: working-with-claude-code
-description: Use when working with Claude Code CLI, plugins, hooks, MCP servers, skills, configuration, or any Claude Code feature - provides comprehensive official documentation for all aspects of Claude Code
+description: >-
+  Use when you need the official Claude Code docs: CLI flags, settings.json, hooks reference, MCP
+  config, skills, subagents, slash commands, plugin and marketplace reference, permissions, or the
+  weekly changelog. Not for building a plugin step by step (developing-claude-code-plugins) or
+  editing CLAUDE.md (agent-instructions).
 metadata:
   last_updated: "2026-08-12"
 ---

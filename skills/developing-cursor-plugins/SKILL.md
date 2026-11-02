@@ -1,6 +1,9 @@
 ---
 name: developing-cursor-plugins
-description: Use when working on Cursor plugins (creating, modifying, testing, releasing, or maintaining) - provides streamlined workflows, patterns, and examples for the complete Cursor plugin lifecycle
+description: >-
+  Use when building a Cursor plugin: manifest, rules (.cursor/rules/*.mdc), skills, commands,
+  hooks, MCP servers, local testing, or releasing. Not for Cursor IDE usage docs
+  (working-with-cursor) or sharing one plugin across tools (multi-provider-plugins).
 metadata:
   last_updated: "2026-06-05"
 ---
