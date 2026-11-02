@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/managing-team-members.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b00c9dca89fe464822d2a9a67b3fcec976f85b7a62de978c28ccc5cf91a999f0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b01f4e42c17c458255a8037ad0ba2a621225c76a9b55323b3cc339bb1daab5c9"
 ---
 
 # Managing Team Members
@@ -30,10 +30,10 @@ As the team owner, you have the ability to manage your team's composition and th
 - [Set per-user budgets on AI Gateway](https://vercel.com/changelog/set-per-user-budgets-on-ai-gateway)
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
-- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 - [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
-- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Directory Sync \\(SCIM\\)](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 
 Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/docs/rbac/managing-team-members.graph.md)
 <!-- /docsgraph:related -->
@@ -106,4 +106,4 @@ Vercel is also [SCIM](# "System for Cross-domain Identity Management") compliant
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

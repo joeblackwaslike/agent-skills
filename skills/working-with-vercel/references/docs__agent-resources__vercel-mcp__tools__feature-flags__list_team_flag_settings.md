@@ -13,8 +13,8 @@ related:
 summary: Use list_team_flag_settings with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5d66634e2270e9f06cc540bb2f7eaec976b244255fe9c0fcc26459fdfe55cd85"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7fbc3b64935de85547b44a0eb234c114d9e6b81437ee5c8212da78769b66e71f"
 ---
 
 # list_team_flag_settings
@@ -29,8 +29,8 @@ Retrieve feature flag settings for projects in a team.
 
 - [list_team_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags) — Use list_team_flags with Vercel MCP.
 - [list_team_flags_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags_v2) — Use list_team_flags_v2 with Vercel MCP.
-- [get_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings) — Use get_flag_settings with Vercel MCP.
 - [List team project flag settings](https://vercel.com/docs/rest-api/feature-flags/list-team-project-flag-settings) — GET /v1/teams/{teamId}/feature-flags/settings — Retrieve feature flag settings for projects in a team.
+- [get_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings) — Use get_flag_settings with Vercel MCP.
 - [list_flag_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_versions) — Use list_flag_versions with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings.graph.md)
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

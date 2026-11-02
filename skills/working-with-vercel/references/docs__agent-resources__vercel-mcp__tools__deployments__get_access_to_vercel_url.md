@@ -13,8 +13,8 @@ related:
 summary: Use get_access_to_vercel_url with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "96efe70fd4236879cd717f03ec770c56df3c72ede595cf47350708d5f419f84b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4a95ee0743caa0e541b2308a71d0a362da0cd5ebd6bf2658dee9a867ecbacbd7"
 ---
 
 # get_access_to_vercel_url
@@ -28,10 +28,10 @@ Create a temporary [shareable link](/docs/deployment-protection/methods-to-bypas
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [web_fetch_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url) — Use web_fetch_vercel_url with Vercel MCP.
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
+- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.
-- [get_project_deletion_link](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deletion_link) — Use get_project_deletion_link with Vercel MCP.
+- [patch_url_protection_bypass](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/patch_url_protection_bypass) — Use patch_url_protection_bypass with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url.graph.md)
 <!-- /docsgraph:related -->
@@ -49,4 +49,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

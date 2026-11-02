@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/agent-resources
 related:
-  - /docs/eve
+  - /docs/frameworks/agents/eve
 summary: Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/skills.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "820314874c0099a83c78fc0619eccf5c25c13b5a32f07a78edc6f02688607787"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "922a07f594431aa537468b0e5f7ef7f7aade586efc6b3cb797ade230eca8c808"
 ---
 
 # Agent Skills
@@ -26,14 +26,14 @@ An agent skill is a packaged capability that extends an AI agent with a specific
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
 - [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
-- [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
-- [Adding keyboard shortcuts to React apps with TanStack Hotkeys](https://vercel.com/kb/guide/adding-keyboard-shortcuts-to-react-apps-with-tanstack-hotkeys) — Add cross-platform keyboard shortcuts to your React app with TanStack Hotkeys. Install, register, scope, and display sho
-- [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
+- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
 - [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem)
-- [Skills](https://eve.dev/docs/skills) — Author load-on-demand procedures the model pulls into context with eve__skill.
+- [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
 - [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support)
+- [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
+- [Skills Night: 69,000+ ways agents are getting smarter](https://vercel.com/blog/skills-night-69000-ways-agents-are-getting-smarter)
+- [Skills](https://eve.dev/docs/skills) — Author load-on-demand procedures the model pulls into context with eve__skill.
 - [Vercel Plugin for AI Coding Agents](https://vercel.com/docs/agent-resources/vercel-plugin) — Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, a
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
@@ -61,7 +61,7 @@ Skills work with 18+ AI agents including Claude Code, GitHub Copilot, Cursor, Cl
 
 ## eve
 
-When you run the skills CLI from an [eve](/docs/eve) project directory, it auto-detects the project and prompts you to install the skills for your eve building agent:
+When you run the skills CLI from an [eve](/docs/frameworks/agents/eve) project directory, it auto-detects the project and prompts you to install the skills for your eve building agent:
 
 ```bash filename="Terminal"
 npx skills add <owner/repo>
@@ -132,7 +132,7 @@ Skills for deploying applications to Vercel.
 
 | Skill | Description | Install |
 | --- | --- | --- |
-| [vercel-deploy](https://skills.sh/vercel-labs/agent-skills/vercel-deploy) | Deploy applications and websites to Vercel instantly with framework auto-detection for 40+ frameworks | `npx skills add vercel-labs/agent-skills --skill vercel-deploy` |
+| [deploy-to-vercel](https://skills.sh/vercel-labs/agent-skills/deploy-to-vercel) | Deploy applications to Vercel with git push or the CLI, or as a temporary deployment when not logged in | `npx skills add vercel-labs/agent-skills --skill deploy-to-vercel` |
 | [vercel-cli](https://skills.sh/vercel/vercel/vercel-cli) | Deploy, manage, and develop projects on Vercel from the command line | `npx skills add vercel/vercel --skill vercel-cli` |
 | [autoship](https://skills.sh/vercel-labs/autoship/autoship) | Automated releases with repository cloning, AI-powered changeset generation, and npm publishing | `npx skills add vercel-labs/autoship --skill autoship` |
 
@@ -219,4 +219,4 @@ Continue with these guides:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

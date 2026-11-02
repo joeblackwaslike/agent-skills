@@ -17,8 +17,8 @@ related:
 summary: Connect fx to AI Gateway with the Vercel CLI or the AI_GATEWAY_API_KEY environment variable.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/fx.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "98423d5956ca4721455b994f875b2386625ee7220e8760a90a24961234fe4c69"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b1dd5aea5626af4ea96f9ec974c6e4f58627da08fdc60a82a4ac49236f348cb3"
 ---
 
 # fx with AI Gateway
@@ -106,4 +106,4 @@ To deploy an fx agent as a service, use `libfx`, which has durability built in a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

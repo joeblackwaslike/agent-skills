@@ -15,8 +15,8 @@ related:
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4949ff7d4ca33ff39019bf5d56716a2c57d49c100f1ceddaea8b2898c783723e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "82646312c9b35051e3a581f26966c74e599d8bd3356ad522178c3dc3690ae939"
 ---
 
 # Reference
@@ -607,7 +607,7 @@ When you create an override, Vercel Toolbar will set a cookie called `vercel-fla
 The `overrideEncryptionMode` setting controls the value of the cookie:
 
 - `plaintext`: The cookie will contain the overrides as plain JSON. Be careful not to trust those overrides as users can manipulate the value easily.
-- `encrypted`: Vercel Toolbar will encrypt overrides using the `FLAGS_SECRET` before storing them in the cookie. This prevents manipulation, but requries decrypting them on your end before usage.
+- `encrypted`: Vercel Toolbar will encrypt overrides using the `FLAGS_SECRET` before storing them in the cookie. This prevents manipulation, but requires decrypting them on your end before usage.
 
 We highly recommend using `encrypted` mode as it protects against manipulation.
 
@@ -705,4 +705,4 @@ For more information, see the following sections:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

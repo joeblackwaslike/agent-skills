@@ -12,8 +12,8 @@ related:
 summary: The Blob Store you are trying to access has been paused.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/blocked-store.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "da63d2375dc64787d55baf1208eac7687a4ff117ece2297f7cabc348bfe33372"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1edbf1b40bf7ea6c1a35c552b3a8dfdaa5096a7194e15677e9cfd104eeffe120"
 ---
 
 # Blocked Blob Store
@@ -34,4 +34,4 @@ If you think Vercel wrongly paused your store, reach out to our support team at 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

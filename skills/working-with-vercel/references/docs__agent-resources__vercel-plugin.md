@@ -12,8 +12,8 @@ related:
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a89c7f27fdf6af1ca08dda37ebb54ba96377b734b007e58de164a0a7f4168931"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e84b686a964e1851df6b6b1604c42eec31d5164d74eddb069b043e9df63a2684"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -26,18 +26,18 @@ The Vercel plugin gives [supported AI coding tools](#supported-tools) Vercel-spe
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Plugin is now available in Antigravity](https://vercel.com/changelog/vercel-plugin-is-now-available-in-antigravity)
 - [Vercel plugin is now available in Grok Build](https://vercel.com/changelog/vercel-plugin-is-now-available-in-grok-build)
 - [Vercel Plugin now available in Kimi Code CLI](https://vercel.com/changelog/vercel-plugin-now-available-in-kimi-code-cli)
+- [Vercel Plugin now available in OpenCode](https://vercel.com/changelog/vercel-plugin-now-available-in-opencode)
 - [Vercel Plugin now available in VS Code and GitHub Copilot CLI](https://vercel.com/changelog/vercel-plugin-now-available-in-vs-code-and-github-copilot-cli)
-- [Vercel plugin now supported on OpenAI Codex and Codex CLI](https://vercel.com/changelog/vercel-plugin-openai-codex-and-codex-cli-support)
 - [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
 - [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents)
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Agent Skills](https://vercel.com/docs/agent-resources/skills) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
+- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
+- [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md](/docs/agent-resources/vercel-plugin.graph.md)
 <!-- /docsgraph:related -->
@@ -243,4 +243,4 @@ If a skill gives incorrect advice or injection does not fire when expected, file
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

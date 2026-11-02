@@ -17,8 +17,8 @@ related:
 summary: API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4a51fc41de6ea307cab33fb55a8d72726568cbdb3027a90cbd06189fa466c9ef"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4e34c3a31a3f4c476d1018aa0bf7f3ccb146a0771af3e2e263cf487d0641f2d0"
 ---
 
 # Multi-Project Platforms Reference
@@ -38,7 +38,7 @@ Start with our Custom [Blocks](/docs/platforms/platform-elements/blocks/deploy-p
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
-- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-project-platforms/reference.graph.md](/docs/platforms/multi-project-platforms/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -176,7 +176,13 @@ run();
 | `rate_limit_exceeded`    | Too many requests          | Implement exponential backoff              |
 | `build_failed`           | Deployment build failed    | Check build logs for errors                |
 
+If a project with the same name exists already, the API returns HTTP status `409`. In that case, you can call `getProject` with the name to reuse the project, or choose another name.
+
 ## Troubleshooting
+
+### Visitors see a Vercel login page
+
+Depending on your team's default setting, new projects can protect their `*.vercel.app` URLs with a Vercel login page. To make tenant sites public, create tenant projects with `ssoProtection: null`. For a project that you created already, you can update it with `vercel.projects.updateProject({ idOrName, teamId, requestBody: { ssoProtection: null } })`. Note that under Standard Protection, production custom domains stay public, so this only affects the `*.vercel.app` URLs.
 
 ### Deployment Failures
 
@@ -352,4 +358,4 @@ Instead, build your own interface for tenants to:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

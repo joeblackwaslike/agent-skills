@@ -3,7 +3,7 @@ title: errors
 product: vercel
 url: /docs/rest-api/errors
 canonical_url: "https://vercel.com/docs/rest-api/errors"
-last_updated: 2026-10-26
+last_updated: 2026-11-02
 type: reference
 prerequisites:
   []
@@ -12,8 +12,8 @@ related:
 summary: Learn about errors on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/errors.md"
-fetched_at: "2026-10-26T09:55:26.604Z"
-sha256: "4aa1c421cd8522da01d6bf3e8a1dc80ef6749513705c2b87742e1e8617c20e71"
+fetched_at: "2026-11-02T12:08:33.177Z"
+sha256: "f7f0a1a8e5ae7dac167342dc4b01b234ee838f8068fbfe389ba04baa886b248d"
 ---
 
 # Errors
@@ -537,4 +537,4 @@ The OAuth2 client ID could not be found or doesn't exist.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

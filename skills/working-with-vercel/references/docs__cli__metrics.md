@@ -14,8 +14,8 @@ related:
 summary: Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d3f21484b0b7bcef607f3281bbe325d03d7e42630b8a85c0ff72887d9c7b6340"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e4786bb285cf9fd8d665d4d113dc685cda60815fb240a1dd45ede0f2245a1dbc"
 ---
 
 # vercel metrics
@@ -28,8 +28,11 @@ The `vercel metrics` command, also available as `vc metrics`, lets you discover 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI traffic insights now available in Vercel Observability](https://vercel.com/changelog/ai-traffic-insights-now-available-in-vercel-observability)
 - [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
@@ -590,4 +593,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

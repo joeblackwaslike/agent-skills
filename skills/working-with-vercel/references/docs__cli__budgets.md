@@ -14,8 +14,8 @@ related:
 summary: "View and manage your team's on-demand spend budget from the Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/budgets.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c673ea829a32c47a7b1e70542eb1b868398a508d8348008d5299da65693222ef"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "73f4b08318029ec2aec9ef6b82a7ebf9a80e5916fa313199c9ef9339fcb8427f"
 ---
 
 # vercel budgets
@@ -31,9 +31,9 @@ Use the `vercel budgets` command to view and manage your team's on-demand spend 
 - [Vercel CLI adds Spend Management](https://vercel.com/changelog/vercel-cli-adds-spend-management)
 - [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
 - [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [List AI Gateway budgets](https://vercel.com/docs/rest-api/ai-gateway/list-ai-gateway-budgets) — GET /ai-gateway/budgets/list — List the team's AI Gateway budgets \\(team/project/user scopes, plus default-covered api-k
-- [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 
 Full cross-link map for this page: [/docs/cli/budgets.graph.md](/docs/cli/budgets.graph.md)
 <!-- /docsgraph:related -->
@@ -172,4 +172,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

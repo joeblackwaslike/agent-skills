@@ -15,8 +15,8 @@ related:
 summary: Learn how to secure your Drains endpoints with authentication and signature verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/security.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "09d3b7a02d031c21fa961c6105ad78636dd240d911d077ce332374591b51c011"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "097bc8781084631a669c53ee5e21e7258802f0993c656b76e06b4004463639e7"
 ---
 
 # Drains Security
@@ -277,7 +277,7 @@ export const config = {
 
 > **💡 Note:** For enhanced security against timing attacks, use constant-time comparison when verifying the `x-vercel-signature` header. See [x-vercel-signature in Request Headers](/docs/headers/request-headers#x-vercel-signature).
 
-For additional authentication or identification purposes, you can also add custom headers when [configuring the Drain destination](/docs/drains/using-drains#custom-headers-optional)
+For additional authentication or identification purposes, you can also add custom headers when [configuring the Drain destination](/docs/drains/using-drains#custom-endpoint)
 
 ## IP Address Visibility
 
@@ -311,4 +311,4 @@ For more information on Drains security and how to use them, check out the follo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

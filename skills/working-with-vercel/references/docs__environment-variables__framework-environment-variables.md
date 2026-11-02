@@ -13,8 +13,8 @@ related:
 summary: "Framework environment variables are automatically populated by the Vercel, based on your project's framework."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/framework-environment-variables.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "361af9326355a33598e20d1ff0c4d4b6618a00190a69189f2aa70e2edd8c9656"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ac07df86fa3c16c99b5e4cf60dfa4305f2f6863dfdc8ab93ca4fe4e792defeb3"
 ---
 
 # Framework environment variables
@@ -30,6 +30,7 @@ Frameworks typically use a prefix to expose environment variables to the browser
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
@@ -2521,4 +2522,4 @@ SANITY_STUDIO_VERCEL_GIT_PULL_REQUEST_ID=23
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

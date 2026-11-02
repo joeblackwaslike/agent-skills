@@ -16,8 +16,8 @@ related:
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ca2b181b7c7d123b4d40e070cc7bb9b38801c5bfc0c325e7af9f67317e488aaa"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b076e73a904f551e39d886c0c074ef7fc60a17758f78a0321d8a76e4ef7af9c3"
 ---
 
 # Storage on Vercel Marketplace
@@ -48,7 +48,7 @@ The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provid
 Full cross-link map for this page: [/docs/marketplace-storage.graph.md](/docs/marketplace-storage.graph.md)
 <!-- /docsgraph:related -->
 
-- For Postgres, you can use providers like Neon, Supabase, or AWS Aurora Postgres.
+- For Postgres, you can use providers like Neon, Prisma Postgres, Supabase, or AWS Aurora Postgres.
 - For KV (key-value stores), you can use Redis or Upstash Redis.
 
 The integration automatically injects credentials into your projects as environment variables.
@@ -254,4 +254,4 @@ Consider these factors when selecting a storage provider:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

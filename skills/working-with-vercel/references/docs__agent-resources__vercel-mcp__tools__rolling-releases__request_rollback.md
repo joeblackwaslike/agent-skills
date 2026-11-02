@@ -13,8 +13,8 @@ related:
 summary: Use request_rollback with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_rollback.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9788cd1b8117bc8d9bf24d8389af1f5ae14e9e8a245e88b3a1aece4c50b34726"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "78f0874506d653d331d006dd5bdbc27cdf200495bb34c63bd78c692902f6d05a"
 ---
 
 # request_rollback
@@ -27,11 +27,11 @@ Point production traffic to a previous production deployment by ID.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Point production traffic to a previous production deployment by ID](https://vercel.com/docs/rest-api/projects/point-production-traffic-to-a-previous-production-deployment-by-id) — POST /v1/projects/{projectId}/rollback/{deploymentId} — Allows users to rollback to a deployment.
 - [vercel rollback](https://vercel.com/docs/cli/rollback) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
+- [Point production traffic to a previous production deployment by ID](https://vercel.com/docs/rest-api/projects/point-production-traffic-to-a-previous-production-deployment-by-id) — POST /v1/projects/{projectId}/rollback/{deploymentId} — Allows users to rollback to a deployment.
 - [cancel_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment) — Use cancel_deployment with Vercel MCP.
-- [start_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/start_rolling_release) — Use start_rolling_release with Vercel MCP.
 - [Updates the description for a rollback](https://vercel.com/docs/rest-api/projects/updates-the-description-for-a-rollback) — PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description — Updates the reason for a rollback, without c
+- [start_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/start_rolling_release) — Use start_rolling_release with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_rollback.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_rollback.graph.md)
 <!-- /docsgraph:related -->
@@ -53,4 +53,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

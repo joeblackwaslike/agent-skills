@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway/ecosystem
 related:
   - /docs/ai-gateway
+  - /docs/ai-gateway/authentication-and-byok
 summary: Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "87196cb2cc71b92551ed5f2a39cadfb2a1e6d845bff88e67cf74dcb3634dab2e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "da52ea2fc8808d465704ab6c3827fa6b809ab61c4cf99d80decce52e83aa234a"
 ---
 
 # Pydantic AI with AI Gateway
@@ -30,8 +31,8 @@ Build Python agents with [Pydantic AI](https://ai.pydantic.dev/) and connect the
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
-- [Pi with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/pi) — Connect Pi to AI Gateway with one CLI command, or configure it manually.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Pi with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/pi) — Connect Pi to AI Gateway with one CLI command, or configure it manually.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.graph.md)
 <!-- /docsgraph:related -->
@@ -52,12 +53,12 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
 
 - ### Configure environment variables
-  Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway#using-the-ai-gateway-with-an-api-key):
+  Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys):
   ```bash filename=".env"
   VERCEL_AI_GATEWAY_API_KEY=your-api-key-here
   ```
   > **💡 Note:** If you're using the [AI Gateway from within a Vercel
-  > deployment](/docs/ai-gateway#using-the-ai-gateway-with-a-vercel-oidc-token),
+  > deployment](/docs/ai-gateway/authentication-and-byok#oidc-tokens),
   > you can also use the `VERCEL_OIDC_TOKEN` environment variable which will be
   > automatically provided.
 
@@ -115,4 +116,4 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

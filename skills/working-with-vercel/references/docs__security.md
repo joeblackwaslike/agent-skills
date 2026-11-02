@@ -16,8 +16,8 @@ related:
 summary: Vercel provides built-in and customizable features to ensure that your site is secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e000ab64b0a943756ca8aae86704a09b2135dfef90938f16ad9b10b7454e514d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "de2133559baa11aa6596ebced37444ce4f3e7933a87657ec2f73fdd0c6140e47"
 ---
 
 # Vercel security overview
@@ -34,8 +34,8 @@ Cloud-deployed web applications face constant security threats, with attackers l
 - [PCI compliance for ecommerce](https://vercel.com/blog/pci-compliance-for-ecommerce-teams)
 - [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
-- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps)
 - [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
+- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps)
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel) — Learn how to perform pentesting on Vercel.
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
@@ -83,4 +83,4 @@ The Vercel firewall helps to protect your applications and websites from malicio
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

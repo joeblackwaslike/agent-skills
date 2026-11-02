@@ -16,8 +16,8 @@ related:
 summary: Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/migration-guide.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7b1423e6e6f2401cff76a7d217a0742da8d7c7ef3cf88f8784a5c1e329ec136f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "72a71a5cb4e7bc4f44cbf0f46858278ec1591debd2b0739531b0ae4d4372db73"
 ---
 
 # Migrating from Edge Config to Global Config
@@ -37,6 +37,7 @@ Edge Config is now **Global Config**. This rename better reflects that it is a g
 - [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta)
 - [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available)
 - [Edge Config: Ultra-low latency data at the edge](https://vercel.com/blog/edge-config-ultra-low-latency-data-at-the-edge)
+- [Vercel Edge Config is now generally available](https://vercel.com/blog/vercel-edge-config-is-now-generally-available)
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 
 Full cross-link map for this page: [/docs/global-config/migration-guide.graph.md](/docs/global-config/migration-guide.graph.md)
@@ -134,4 +135,4 @@ Pricing is unchanged, see [Limits and Pricing](/docs/global-config/global-config
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

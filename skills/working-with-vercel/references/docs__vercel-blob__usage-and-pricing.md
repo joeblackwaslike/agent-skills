@@ -16,8 +16,8 @@ related:
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "309be6133cfb87636dbfb200320d80a2bd699d5c7b171f7a866f6c4f20f00a92"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c7c2c7a61049ebdeefdb8259d939174e7ba4fb3322b076fdc5623593b3f7d073"
 ---
 
 # Vercel Blob Pricing
@@ -39,6 +39,7 @@ Vercel Blob usage is measured based on the following:
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Increased Blob store limit for Hobby users](https://vercel.com/changelog/increased-blob-store-limit-for-hobby-users)
 - [Unlimited Vercel Blob stores on every plan](https://vercel.com/changelog/unlimited-vercel-blob-stores-on-every-plan)
+- [Store and serve files from Python with Vercel Blob](https://vercel.com/kb/guide/python-and-vercel-blob) — Upload, list, stream, and protect files from a Python app with Vercel Blob, including private per-user storage in FastAP
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
 - [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
@@ -47,7 +48,6 @@ Vercel Blob usage is measured based on the following:
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/vercel-blob/usage-and-pricing.graph.md](/docs/vercel-blob/usage-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -188,4 +188,4 @@ You can monitor and analyze your Vercel Blob usage with the [Observability secti
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

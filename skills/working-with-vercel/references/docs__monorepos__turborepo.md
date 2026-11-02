@@ -16,8 +16,8 @@ related:
 summary: Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware hashing, and Remote Caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7661e26423780bc408d47eb9781339519d7cb4db6c8602f027f2b28379c30a95"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "65f7faf413939728a601e31c987a9d83486f2bc67ac3a56cd42653ac327ac990"
 ---
 
 # Deploying Turborepo to Vercel
@@ -30,18 +30,18 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
 - [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/app/guides/ci-build-caching) — Learn how to configure CI to cache Next.js builds
 - [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/pages/guides/ci-build-caching) — Learn how to configure CI to cache Next.js builds
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
 - [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
-- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
 - [Caching](https://turborepo.dev/docs/crafting-your-repository/caching) — Configure task caching to avoid repeating work, using fingerprinting for inputs and restoring outputs from cache.
-- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
+- [Monorepos](https://vercel.com/blog/monorepos-are-changing-how-teams-build-software)
+- [Monorepos are changing how teams build software](https://vercel.com/blog/monorepos)
+- [Turborepo Open-Source CLI and Remote Caching on Vercel](https://vercel.com/changelog/turborepo-open-source-cli-and-remote-caching-on-vercel)
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
-- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
-- [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 
 Full cross-link map for this page: [/docs/monorepos/turborepo.graph.md](/docs/monorepos/turborepo.graph.md)
 <!-- /docsgraph:related -->
@@ -292,4 +292,4 @@ If you are using a version of Turborepo below 2.4.1, you may encounter issues wi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

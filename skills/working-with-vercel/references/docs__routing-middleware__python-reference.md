@@ -16,8 +16,8 @@ related:
 summary: Reference for writing Routing Middleware in Python with the vercel-proxy package, including setup, routes, requests, and responses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/python-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "99abe6a2d3f0c112714d0313e77d8ae7c1e44dd3fda56badb2db483ad026f31d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e7fc6b25c5c77a23a71e10082648a35d82f97c3525c04201bfa9f4c19d04ae76"
 ---
 
 # Routing Middleware: Python Reference
@@ -33,9 +33,9 @@ Use the [`vercel-proxy`](https://pypi.org/project/vercel-proxy/) package to writ
 - [Routing Middleware now supports Python](https://vercel.com/changelog/routing-middleware-now-supports-python)
 - [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Services routing](https://vercel.com/docs/services/routing) — Learn how Vercel routes public requests to services and how each service handles its own routes.
-- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 
 Full cross-link map for this page: [/docs/routing-middleware/python-reference.graph.md](/docs/routing-middleware/python-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -290,4 +290,4 @@ Set duration, memory, and other options with the [`functions`](/docs/project-con
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, use Draft Mode for previewing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4cd594c2fa6e54bf5f68454ba9b9f90698c8783ca3e3b12e6a18f3d5a091578c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "be9137eda2c596ce53448f12c7fd82e67d0a08120217efdc755792241b94530f"
 ---
 
 # Vercel Toolbar
@@ -150,4 +150,4 @@ When logged into the Vercel Toolbar, you'll find a **Preferences** button in the
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

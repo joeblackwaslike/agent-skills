@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/hipaa-setup.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "168e965bcca4d986fce6eb6aba66f27d6e329872c6d9a665988d6e7ef7086145"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "60c4ce4cc2f5a0d20df411d0e99c67109bb78915047a251f217f7914a1de5f9b"
 ---
 
 > ## Documentation Index
@@ -32,7 +32,7 @@ The table shows when to do each part of the setup:
 
 | When | What to do |
 | :- | :- |
-| Before the configuration is applied | [Prepare computers](#prepare-computers-before-the-hipaa-configuration-is-applied): check how developers connect, update the apps, allow network access, and deploy managed settings |
+| Before the configuration is applied | [Prepare computers](#prepare-computers-before-the-hipaa-configuration-is-applied): check how developers connect, update the apps, allow network access, deploy managed settings, and restrict Claude Desktop sign-in |
 | After it's applied | The Code tab is off until an Owner turns it back on. [Confirm the configuration on a computer](#confirm-the-configuration-on-a-computer) |
 | Ongoing | [Manage local session data](#manage-local-session-data) |
 
@@ -166,6 +166,10 @@ Even with these keys deployed, some sessions can still run without the HIPAA con
 * **Versions older than v2.1.285**: these versions ignore `allowedProviders`, so they can still start on a cloud provider or a gateway. To make v2.1.163 through v2.1.284 refuse to start, you can add [`requiredMinimumVersion`](https://code.claude.com/docs/en/settings-reference#requiredminimumversion) set to `"2.1.285"` to the same managed settings as the [sample keys](#deploy-managed-settings). Versions before v2.1.163 ignore `requiredMinimumVersion` as well as `allowedProviders`, so [update those computers](#update-claude-code-and-claude-desktop).
 
 To find out whether your BAA covers a session that runs without the HIPAA configuration, see [Use Claude Code (local mode) and Cowork (local mode) on a HIPAA-ready Enterprise plan](https://support.claude.com/en/articles/17318731).
+
+### Restrict Claude Desktop sign-in
+
+If developers use the Code tab of Claude Desktop, also set `forceLoginOrgUUID` in the Claude Desktop policy, as [Restrict sign-in to your organization](https://code.claude.com/docs/en/desktop.md#restrict-sign-in-to-your-organization) describes. Deploying `forceLoginMethod` and `forceLoginOrgUUID` in managed settings doesn't change the Claude Desktop sign-in screen.
 
 ## Confirm the configuration on a computer
 

@@ -14,8 +14,8 @@ related:
 summary: Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a3b157a5e45a865367971a77d64502ea9d9d575c5e7cba4b93dfadd039f71aad"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "19b5df1473dd10fc733b6d262fad4350864b373dd5f88906d3a8556f87f962f1"
 ---
 
 # AI Gateway Motion Control Video Generation
@@ -28,9 +28,9 @@ Transfer motion from a reference video to a character in an image. The model ana
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
@@ -170,7 +170,7 @@ Pass a `webhook` factory and the SDK registers your URL with the job instead of 
 
 ```typescript filename="async-motion-control.ts"
 const result = await generateVideo({
-  model: gateway.videoModel('klingai/kling-v3.0-motion-control'),
+  model: 'klingai/kling-v3.0-motion-control',
   prompt: {
     // Hosted URL rather than `fs.readFileSync`: the start request is capped at
     // 300 KiB, which inline image bytes pass immediately.
@@ -203,4 +203,4 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your charact
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

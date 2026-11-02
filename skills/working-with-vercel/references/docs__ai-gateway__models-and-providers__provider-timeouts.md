@@ -12,12 +12,13 @@ related:
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/models-and-providers/provider-options
+  - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "14d988859fd70487f7512e43527845cb4fdc213614f0196cb0d99c67e1639b00"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fd58b203ef8df8dadc0e32feb5d489eceeb7dd2aa2121510a28d9e2b4d9d5d2f"
 ---
 
 # AI Gateway Provider Timeouts
@@ -449,7 +450,7 @@ When a provider times out, the attempt metadata includes `providerTimeout` and `
 ]
 ```
 
-For more details on reading provider metadata, see [Provider Options](/docs/ai-gateway/models-and-providers/provider-options#example-provider-metadata-output).
+For more details on reading provider metadata, see [Provider Options](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#provider-metadata-output).
 
 ## Timeouts in virtual models
 
@@ -461,4 +462,4 @@ A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can pin 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

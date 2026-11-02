@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "13dedc19d5755e7adca6f37505932d776ff867b7885814b2d28c64149f2c54d5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3641f786b19afb7923915e9246bd6b282b4ce8505634405073c95790ae86612a"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -248,4 +248,4 @@ Express.js is a popular framework used with Node.js. For information on how to u
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

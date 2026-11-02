@@ -17,8 +17,8 @@ related:
 summary: Review this checklist before submitting your native or connectable account integration for approval on the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/approval-checklist.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d7420175b452eb7df4f23fef753d363addaf1d0b7e7a8d7945304bfe1fbcdb7b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a5f73d3e9d30f09b07101861cef69fd092cd0a79ae31d84ea298f61fbda45876"
 ---
 
 # Integration Approval Checklist
@@ -58,7 +58,7 @@ Use this checklist if you're building a [native integration](/docs/integrations/
 ### Product listing
 
 - Validate your product's listing details: name, description, and [logo](/docs/integrations/create-integration/submit-integration#logo). Confirm the logo is properly centered and looks good in both light and dark mode.
-- Confirm pricing details and plans (free and paid tiers) are accurate. Your [billing plans endpoint](/docs/integrations/create-integration/marketplace-api#billing) returns the correct plans for each product.
+- Confirm pricing details and plans (free and paid tiers) are accurate. Your [billing plans endpoint](/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-product) returns the correct plans for each product.
 - Include documentation links (setup guides, FAQs) in your listing. Set the **Documentation URL** in the integration console.
 - Verify category placement in the Marketplace (for example, AI, Observability, Database) matches your product.
 - Confirm feature parity with your direct offering, including any features tailored for the Marketplace.
@@ -175,4 +175,4 @@ After a user installs your integration through the Marketplace, they should see 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

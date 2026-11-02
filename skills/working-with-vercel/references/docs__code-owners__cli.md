@@ -14,8 +14,8 @@ related:
 summary: Learn how to use Code Owners with the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners/cli.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "96e382e816869a7cf520bedb34b50b0adcdc44926cd1106c08b73003818c0fcb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "afbebe96fc69a6f13aa44904d72ef1318c32c70ff44c6bf0270235534867e71d"
 ---
 
 # vercel-code-owners
@@ -39,7 +39,7 @@ The following sub-commands are available for this CLI.
 ### `init`
 
 The `init` command sets up code owners files in the repository. See
-[Getting Started](/docs/code-owners/getting-started#initalizing-code-owners) for more information on
+[Getting Started](/docs/code-owners/getting-started#initializing-code-owners) for more information on
 using this command.
 
 ### `validate`
@@ -77,4 +77,4 @@ bunx vercel-code-owners validate
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

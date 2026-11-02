@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7ecf3f91d24f4f3096f898d2f5602606b7bd7617f50ea29186270ae59e7dabb8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0cd0713db2ad35f9791aba348640b69ccbf0c9c56e6bfc93440bbb8eff64ca41"
 ---
 
 # Routing Middleware
@@ -290,4 +290,4 @@ Learn more about Routing Middleware by exploring the following resources:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

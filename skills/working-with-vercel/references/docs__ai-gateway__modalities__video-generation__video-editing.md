@@ -13,8 +13,8 @@ related:
 summary: Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "43b7da93666e650549aa6df31b2e3c37a4a0dc9e336a969c527a058744588c46"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ceacc8fdd1c29e0cd0926af76937ec3d0911e8951592e3ef297e3fadd16140ad"
 ---
 
 # AI Gateway Video Editing
@@ -33,6 +33,7 @@ Edit existing videos using text prompts. Describe the changes you want and the m
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Grok Imagine Video 1.5 on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway)
+- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/video-editing.graph.md](/docs/ai-gateway/modalities/video-generation/video-editing.graph.md)
 <!-- /docsgraph:related -->
@@ -88,7 +89,7 @@ Pass a `webhook` factory and the SDK registers your URL with the job instead of 
 
 ```typescript filename="async-video-editing.ts"
 const result = await generateVideo({
-  model: gateway.videoModel('spacexai/grok-imagine-video'),
+  model: 'spacexai/grok-imagine-video',
   prompt: 'Give the person sunglasses and a hat',
   providerOptions: {
     spacexai: {
@@ -116,4 +117,4 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your source 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

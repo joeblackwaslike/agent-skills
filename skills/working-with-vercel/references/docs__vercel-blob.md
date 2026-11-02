@@ -16,8 +16,8 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "00e100bee3e6fc01950aa497c3f0eb62e80414b42b1149f4267953af4ba78139"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4556dfa862dc16053fba5d617fd82b7ff3ad43d22062aa3db19effe146d3612a"
 ---
 
 # Vercel Blob
@@ -107,9 +107,11 @@ You can create and manage your Vercel Blob stores from your [account dashboard](
 
 To get started, see the [server-side](/docs/vercel-blob/server-upload), or [client-side](/docs/vercel-blob/client-upload) quickstart guides. Or visit the full API reference for the [JS SDK](/docs/vercel-blob/using-blob-sdk) or the [Python SDK](/docs/vercel-blob/python-sdk-reference).
 
+Follow [Store and serve files from Python with Vercel Blob](/kb/guide/python-and-vercel-blob) to build a FastAPI app that uploads and serves private receipts with per-user access checks.
+
 ## Store eve agent memory
 
-Use [eve](/docs/eve)'s built-in `fileMemory()` provider to persist short user preferences and stable facts across conversations in a [private Vercel Blob store](/docs/vercel-blob/private-storage). Each memory scope has its own document, which eve recalls before each turn. The model updates memory with `save_memory` and `remove_memory` tools.
+Use [eve](/docs/frameworks/agents/eve)'s built-in `fileMemory()` provider to persist short user preferences and stable facts across conversations in a [private Vercel Blob store](/docs/vercel-blob/private-storage). Each memory scope has its own document, which eve recalls before each turn. The model updates memory with `save_memory` and `remove_memory` tools.
 
 To add file memory to an existing eve project, run:
 
@@ -572,4 +574,4 @@ For complex sorting, sort results client-side using the upload time or other pro
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

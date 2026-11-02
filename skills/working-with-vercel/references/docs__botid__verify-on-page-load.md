@@ -15,8 +15,8 @@ related:
 summary: Run BotID on page load and reuse the result with a short-lived, server-signed verification cookie.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/verify-on-page-load.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "663a87df369492086dd390d3eb2f31edbbb5a98803a8bd89a5b9204b43f3d7e3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "05ebbec054dc3f59317857888ee0eefca893ea537d3100285e508eda30229d46"
 ---
 
 # Verify Visitors on Page Load
@@ -34,7 +34,8 @@ Verify a browser with BotID on page load, then issue a signed **verification coo
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Handling Verified Bots](https://vercel.com/docs/botid/verified-bots) — Information about verified bots and their handling in BotID
+- [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
+- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 
@@ -501,4 +502,4 @@ Default [local development behavior](/docs/botid/local-development-behavior) byp
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

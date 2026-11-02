@@ -16,8 +16,8 @@ related:
 summary: "Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/quickstart.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c4f9ed23b313546fa69e66b98b3f164b372e8e9e6f13967f51551c244bca8a90"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ce88b17bc62a9f9e929822ab2794c111f6fd79f1362de8ae641da1a99da7d93f"
 ---
 
 # Getting started with Speed Insights
@@ -535,4 +535,4 @@ Now that you have Vercel Speed Insights set up, you can explore the following to
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

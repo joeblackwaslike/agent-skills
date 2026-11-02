@@ -13,8 +13,8 @@ related:
 summary: Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "928617b9443ee052219bdc6ce7686a22ac2d44a4d10ff83b5d0b3941140009d7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c12e9e4193b95af27f381d5fb1eabc91ae26e5005be2c9881f9e15099927220d"
 ---
 
 # Claiming Domain Ownership
@@ -34,7 +34,7 @@ If a domain is registered with another Vercel account and you need to take owner
 - [Get Domain Verification Record](https://vercel.com/docs/rest-api/domains/get-domain-verification-record) — GET /v9/domains/{domain}/verification — Get the TXT verification record needed to claim ownership of a domain for the au
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/claim-domain-ownership.graph.md](/docs/domains/working-with-domains/claim-domain-ownership.graph.md)
 <!-- /docsgraph:related -->
@@ -120,4 +120,4 @@ dig TXT _vercel.example.com
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

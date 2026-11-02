@@ -17,8 +17,8 @@ related:
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8ea8d18af3ef7d0bb8b295b14f6db5d4bdc731aabfe2f2c75ea592dd86a9b2c6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ad7fbb0afccba802852efc8dc49630e8c37edb742f72aa620608e54fe1c638ba"
 ---
 
 # WAF Custom Rules
@@ -238,4 +238,4 @@ For complete documentation on route configuration options, including `has`, `mis
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

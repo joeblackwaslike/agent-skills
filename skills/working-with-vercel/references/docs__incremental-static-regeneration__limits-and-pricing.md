@@ -16,8 +16,8 @@ related:
 summary: Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ab231299a18abc227ff8ac45fc073eb068622c0ff6b054ce7c087487fe5eec20"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "20f9f987522d11337c09d2d5ad9a7ccb4a941bcbec9490794308783b65af1936"
 ---
 
 # ISR Usage and Pricing
@@ -31,6 +31,7 @@ This page covers ISR costs, usage metrics, and optimization strategies. To decid
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
+- [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [How to revalidate Sitecore pages on publish with Next.js](https://vercel.com/kb/guide/update-sitecore-content-manually) — Learn how to use a Sitecore Experience Edge webhook and Next.js revalidatePath to refresh cached Sitecore Content SDK pa
 - [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing)
 - [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient)
@@ -39,9 +40,8 @@ This page covers ISR costs, usage metrics, and optimization strategies. To decid
 - [Incremental Static Regeneration (ISR) is now faster and more cost-efficient](https://vercel.com/changelog/incremental-static-regeneration-is-now-faster-and-cheaper)
 - [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
-- [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
+- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration/limits-and-pricing.graph.md](/docs/incremental-static-regeneration/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -135,4 +135,4 @@ When viewing your ISR writes chart, you can group by sum of units to see a total
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

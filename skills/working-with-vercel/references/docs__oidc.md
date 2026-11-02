@@ -16,8 +16,8 @@ related:
 summary: Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "767bc86696ebd64704d7431678299f26c5f9e6f505882ab8c31f98d88b7d773e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b7d209760caf00b3d9f0a81422fb6e5c9b986e497dfb2020d611b3323bb6a5d0"
 ---
 
 # OpenID Connect (OIDC) Federation
@@ -138,4 +138,4 @@ Understand the structure of an OIDC token.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

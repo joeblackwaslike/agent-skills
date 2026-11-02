@@ -9,12 +9,12 @@ prerequisites:
   - /docs/agent-resources/vercel-mcp/tools
   - /docs/agent-resources/vercel-mcp
 related:
-  - /docs/eve/agent-runs
+  - /docs/agent-runs
 summary: Vercel MCP tools for agent runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d3baeeb053c8c72514e17f391e4d7cabf1fc23debba9b70329f2d11304d73c16"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0f31968f8f098bc275cc9b0033c4f00dbc2de0bb594e097adb4c1af0e7a805d8"
 ---
 
 # Agent Runs
@@ -31,18 +31,17 @@ Inspect runs from agents built with eve in your Vercel projects. You can review 
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects)
-- [Agent Runs](https://vercel.com/docs/eve/agent-runs) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
+- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
-- [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/agent-runs.graph.md](/docs/agent-resources/vercel-mcp/tools/agent-runs.graph.md)
 <!-- /docsgraph:related -->
 
 ## `get_agent_run`
 
-Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
+Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-vercel-mcp).
 
 Get detailed metadata for a single eve Agent Run, including events, workflow metadata, usage, and subagent breakout data. Use `list_agent_runs` first if you need to find a run ID.
 
@@ -60,7 +59,7 @@ Get detailed metadata for a single eve Agent Run, including events, workflow met
 
 ## `get_agent_run_trace`
 
-Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
+Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-vercel-mcp).
 
 Read one page of an eve Agent Run trace, including turns, messages, reasoning, tool calls, token usage, and tool input or output when available.
 
@@ -110,7 +109,7 @@ Pages can overlap. Deduplicate turns by ID and keep the more complete turn. Stri
 
 ## `list_agent_run_projects`
 
-Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
+Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-vercel-mcp).
 
 List projects in a Vercel team that have Agent Runs observability data for eve agents. The response includes run counts and average duration rollups for each project.
 
@@ -126,7 +125,7 @@ List projects in a Vercel team that have Agent Runs observability data for eve a
 
 ## `list_agent_runs`
 
-Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
+Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-vercel-mcp).
 
 List Agent Runs for a Vercel project. The response includes summaries, status, model, trigger, token usage, time series, and pagination metadata for eve agent activity.
 
@@ -150,4 +149,4 @@ List Agent Runs for a Vercel project. The response includes summaries, status, m
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

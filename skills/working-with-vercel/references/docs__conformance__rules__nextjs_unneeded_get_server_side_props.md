@@ -12,8 +12,8 @@ related:
 summary: Catches usages of getServerSideProps that could use static rendering instead, improving the performance of those pages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_unneeded_get_server_side_props.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "135bc60e14f4230d36436ed6a6218bf44454f0b28862d9e4b866cda6dc582be2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2b6d031a54acc3831464519adffb4b1269ac1a3859fb01119197cc246a9616bf"
 ---
 
 # NEXTJS_UNNEEDED_GET_SERVER_SIDE_PROPS
@@ -117,4 +117,4 @@ export default Home;
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

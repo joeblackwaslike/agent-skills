@@ -13,8 +13,8 @@ related:
 summary: Use the Vercel CLI to query Web Analytics metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e48f58c452591f345c6ee8d21384030527d4f76af30b215c2148117ccd5497aa"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6bcaede059b47059f27d97348dccdd3b050d0563452b9f2020e6e385e5375269"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -32,8 +32,8 @@ Use `vercel metrics` to query Web Analytics data from your terminal. You can rep
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
-- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/analytics/accessing-metrics-with-vercel-cli.graph.md](/docs/analytics/accessing-metrics-with-vercel-cli.graph.md)
 <!-- /docsgraph:related -->
@@ -124,4 +124,4 @@ For all options, see the [`vercel metrics` reference](/docs/cli/metrics).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

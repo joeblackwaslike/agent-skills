@@ -17,8 +17,8 @@ related:
 summary: Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2fc1473cc6ff19b9a77fc4b2e4fa66ee7165b0643b901e5975187acef27371b0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8a7ee7c751a08c9a2eaa487c377ddeb396f670d2123faf88684f4d0e93546d4f"
 ---
 
 # SvelteKit on Vercel
@@ -33,11 +33,10 @@ SvelteKit is a frontend framework that enables you to build Svelte applications 
 
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
 - [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel)
-- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
-- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5)
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
@@ -175,7 +174,7 @@ Splitting your Functions is not typically better than bundling them. You may wan
 
 Choosing a region allows you to reduce latency for requests to functions. If you choose a Function region geographically near dependencies, or nearest to your visitor, you can reduce your Functions' latency.
 
-By default, your Vercel Functions will be deployed in *Washington, D.C., USA*, or `iad1`. Adding a region ID to the `regions` array will deploy your Vercel functions there. [See our Vercel Function regions docs to learn how to override this settings](/docs/functions/configuring-functions/region#select-a-default-serverless-region).
+By default, your Vercel Functions will be deployed in *Washington, D.C., USA*, or `iad1`. Adding a region ID to the `regions` array will deploy your Vercel functions there. [See our Vercel Function regions docs to learn how to override this settings](/docs/functions/configuring-functions/region#setting-your-default-region).
 
 ## Streaming
 
@@ -669,7 +668,7 @@ Deployments on Vercel automatically secure Draft Mode behind the same authentica
 
 ### Enabling Draft Mode in Preview Deployments
 
-You and your team members can toggle Draft Mode in the Vercel Toolbar in [production](/docs/vercel-toolbar/in-production-and-localhost/add-to-production), [localhost](/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost), and [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production#comments). When you do so, the toolbar will become purple to indicate Draft Mode is active.
+You and your team members can toggle Draft Mode in the Vercel Toolbar in [production](/docs/vercel-toolbar/in-production-and-localhost/add-to-production), [localhost](/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost), and [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production). When you do so, the toolbar will become purple to indicate Draft Mode is active.
 
 ![The Vercel toolbar when Draft Mode is enabled.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/draft-mode/draft-toolbar1-light.png)
 
@@ -713,4 +712,4 @@ Learn more about deploying SvelteKit projects on Vercel with the following resou
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

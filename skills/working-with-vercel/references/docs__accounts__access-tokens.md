@@ -16,8 +16,8 @@ related:
 summary: Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate API and CLI requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts/access-tokens.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fd7f30c185e77ce218f28298dca69d1fe33aef69482ce525c0401068f2f6acc7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b15feaa7535ded0a57a89f1341afe8c64549a49c54ea134e01880586c3434aee"
 ---
 
 # Access tokens
@@ -178,4 +178,4 @@ You can create tokens without the dashboard through two paths.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

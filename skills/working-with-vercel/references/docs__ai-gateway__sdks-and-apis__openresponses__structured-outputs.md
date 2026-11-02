@@ -16,8 +16,8 @@ related:
 summary: Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d9d32f2fcf40501bd87a1afe4d7bfc70a646a3226e7c72eaaa676dcecc9fa245"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3596c8ef46a58db10cf47d7c255b6e05e6712ce7cc48e98066468a32ade3eb96"
 ---
 
 # OpenResponses Structured Outputs with AI Gateway
@@ -213,4 +213,4 @@ Set `additionalProperties` to `false` and list every property in `required` for 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

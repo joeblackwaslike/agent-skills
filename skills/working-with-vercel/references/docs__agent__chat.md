@@ -15,8 +15,8 @@ related:
 summary: Use Vercel Agent from your dashboard or Slack
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c878ec37e35c65f171a910429b3b7041a4a2f824777f8fc0fc8948dea9e24a8a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b05c1c393e455b559160cbb8a5408df10e16c32c57216a2be13a6dc50cd7449d"
 ---
 
 # Chat
@@ -55,4 +55,4 @@ For information about stored content, staff review, product improvement, retenti
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

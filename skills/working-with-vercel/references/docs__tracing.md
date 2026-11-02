@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "51575a601b1ef96a8323f91e8a08e2dbd84ac7b210a840109ff94cf069d7671d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ebb012e81208efba51c01ae91139cd8493da10e405c240635e2d06b09dc9c197"
 ---
 
 # Tracing
@@ -37,11 +37,11 @@ In observability, tracing is the process of collecting and analyzing how a reque
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
-- [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
-- [How to instrument your Next.js app with OpenTelemetry](https://nextjs.org/docs/pages/guides/open-telemetry) — Learn how to instrument your Next.js app with OpenTelemetry.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
+- [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains)
+- [How to instrument your Next.js app with OpenTelemetry](https://nextjs.org/docs/pages/guides/open-telemetry) — Learn how to instrument your Next.js app with OpenTelemetry.
+- [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/tracing.graph.md](/docs/tracing.graph.md)
 <!-- /docsgraph:related -->
@@ -128,7 +128,7 @@ Your traces display the following types of spans:
 
 To view details of a span, click on the span in the trace. The sidebar will display the span's details. For infrastructure spans, a "what is this?" explanation will be provided.
 
-To view trace spans in more detail, click and drag to zoom in on a specific area of the trace. You can also use the zoom controls in the bottom right corner of the trace.
+To view trace spans in more detail, hold Shift and drag to zoom in on a specific area of the trace. You can also use the zoom controls in the bottom right corner of the trace. To move around the trace, click and drag it.
 
 ### Switching between trace views
 
@@ -204,4 +204,4 @@ attribute.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

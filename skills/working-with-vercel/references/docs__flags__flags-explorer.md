@@ -16,8 +16,8 @@ related:
 summary: "View and override your application's feature flags from the Vercel Toolbar"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "afad1c19980564070b0eccb4026ac7ee7a9c745d4f1d65102fd3573ff9c77d07"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fb8a6681ca10a3daeecfe06e0bfa4412507f55c78cd7c9328a3f6f0b89b85a55"
 ---
 
 # Flags Explorer
@@ -104,4 +104,4 @@ You can send this link to team members. When they visit the link they will get a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

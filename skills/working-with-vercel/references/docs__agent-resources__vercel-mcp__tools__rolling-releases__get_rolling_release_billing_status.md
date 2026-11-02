@@ -13,8 +13,8 @@ related:
 summary: Use get_rolling_release_billing_status with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_billing_status.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "87cc13705c0ced7467c9349f234840b4e923c725c56b5fe4b77b974be4c79065"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ac9de7657e68b76ebe7a56f3c5ba172ff475370e6c48523647d5e0f253d63c63"
 ---
 
 # get_rolling_release_billing_status
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use get_remote_cache_status with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/get_remote_cache_status.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c5dc1bfc0ae511b8f0a2c69a3911a224d6395d5e25d3852957b74b4cafcd94ba"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fa43c9237810956a523dd1f1005089762286658c4279dd60efe9181ad70771d5"
 ---
 
 # get_remote_cache_status
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/cachi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

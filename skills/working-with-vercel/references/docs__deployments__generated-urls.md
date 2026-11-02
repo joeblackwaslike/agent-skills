@@ -16,8 +16,8 @@ related:
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/generated-urls.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b64fed3c1aa66f7beeff80f406b7c45dba5b755cea796d47907dee73e5944d4d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2a0ff14faea29f56a05a7e8d952b5325370274cff40469cb9ef692eab8f3853a"
 ---
 
 # Accessing Deployments through Generated URLs
@@ -36,8 +36,8 @@ When you create a new [deployment](/docs/deployments) in either a preview or pro
 - [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
@@ -143,4 +143,4 @@ To learn more, see the [Preview Deployment Suffix](/docs/deployments/preview-dep
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

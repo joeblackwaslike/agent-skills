@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/functions
   - /docs/caching/cdn-cache
-  - /docs/headers/response-headers
+  - /docs/caching/cache-status
   - /docs/caching/cache-control-headers
   - /docs/incremental-static-regeneration
 summary: "Learn how Vercel's CDN shields your origin during traffic surges for uncached routes."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/request-collapsing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "202716eb0ad32c98146423f19bec93430cca529436c4ea2e82b0a0ac0b60ee3b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "00f0be55ae686747d7f9df079effc04ae93d383860d05a7314d7f5a13c723521"
 ---
 
 # Request Collapsing
@@ -35,13 +35,13 @@ Vercel uses **request collapsing** to protect uncached routes during high traffi
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Rendering strategies for retail: ISR vs SSR vs static](https://vercel.com/kb/guide/ssr-vs-ssg-vs-isr-vs-csr-for-ecommerce) — Choose between SSR, SSG, ISR, and CSR for each ecommerce surface. Compare rendering modes on freshness, personalization,
 - [Request collapsing for ISR cache misses](https://vercel.com/changelog/request-collapsing-for-isr-cache-misses)
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network)
 - [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration/request-collapsing.graph.md](/docs/incremental-static-regeneration/request-collapsing.graph.md)
 <!-- /docsgraph:related -->
@@ -54,7 +54,7 @@ However, if multiple requests arrive while the initial function is still process
 
 This prevents overwhelming the origin with duplicate work during traffic spikes and helps ensure faster, more stable performance.
 
-Vercel also applies request collapsing when serving [STALE](/docs/headers/response-headers#stale) responses (with [stale-while-revalidate](/docs/caching/cache-control-headers#stale-while-revalidate) semantics), ensuring that concurrent background revalidation of multiple requests is collapsed into a single invocation.
+Vercel also applies request collapsing when serving [STALE](/docs/caching/cache-status#stale) responses (with [stale-while-revalidate](/docs/caching/cache-control-headers#stale-while-revalidate) semantics), ensuring that concurrent background revalidation of multiple requests is collapsed into a single invocation.
 
 ### Example
 
@@ -75,4 +75,4 @@ Request collapsing is supported for:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/rotating-secrets.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7ecb8529e6f399a82335c6495347b6ce4dc641741e2b5baf193fb433307e87e6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ed1386942e35478693e5dc78bf09be83874afaffa6c0e89df2d99371dab29476"
 ---
 
 # Rotating environment variables
@@ -151,4 +151,4 @@ If you rotated a team-level environment variable and multiple projects broke, yo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

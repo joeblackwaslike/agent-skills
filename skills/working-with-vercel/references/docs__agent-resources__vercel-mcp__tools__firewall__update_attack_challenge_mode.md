@@ -13,8 +13,8 @@ related:
 summary: Use update_attack_challenge_mode with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/update_attack_challenge_mode.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e7571b0729cf620f7d18f49f6dd37196cef9ff30b21920ae15096f710adcb9e5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f95ecc59502d37658235ad5932e8f009425e3eb7fbcd48715910b05b1e1b7993"
 ---
 
 # update_attack_challenge_mode
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firew
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

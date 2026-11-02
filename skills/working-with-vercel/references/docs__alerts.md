@@ -8,16 +8,16 @@ type: how-to
 prerequisites:
   []
 related:
+  - /docs/alerts/configure-alerts
+  - /docs/observability/observability-plus
   - /docs/functions/usage-and-pricing
   - /docs/routing-middleware
   - /docs/manage-cdn-usage
-  - /docs/observability/observability-plus
-  - /docs/alerts/configure-alerts
 summary: "Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you can fix issues quickly."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6eac04178421b4f7c52fe3c6a3d79f00de13acde6d5bda2c46e288ee08921765"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9fea18fd2867d6c89037872d587c80a558bf6a610caf1b2c93f514f38d1e5d82"
 ---
 
 # Alerts
@@ -32,7 +32,6 @@ Alerts let you know when something's wrong with your Vercel projects, like a spi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Anomaly alert configuration now available](https://vercel.com/changelog/anomaly-alert-configuration-now-available)
 - [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga)
 - [Anomaly alerts now available via email](https://vercel.com/changelog/anomaly-alerts-now-available-via-email)
@@ -40,10 +39,11 @@ Alerts let you know when something's wrong with your Vercel projects, like a spi
 - [Anomaly alerts now in public beta](https://vercel.com/changelog/anomaly-alerts-now-in-public-beta)
 - [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
 - [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations)
+- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [Notifications](https://vercel.com/docs/notifications) — Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, accoun
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
 
 Full cross-link map for this page: [/docs/alerts.graph.md](/docs/alerts.graph.md)
 <!-- /docsgraph:related -->
@@ -55,12 +55,14 @@ By default, you'll be notified about:
 
 ## Alert types
 
-Vercel-defined minimum activity thresholds reduce low-volume noise and are not configured in alert rules. For details, see [How error anomaly alerts trigger](#how-error-anomaly-alerts-trigger).
+Vercel-defined minimum activity thresholds reduce low-volume noise and are not configured in monitors. For details, see [How error anomaly alerts trigger](#how-error-anomaly-alerts-trigger).
 
 | Alert Type        | Triggered when                                                                                                                                                                                                                                                                             | Grouping                 |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
-| **Error Anomaly** | Fires when a route's five-minute error count is unusually high compared to its recent baseline and passes Vercel's minimum activity checks. By default, error anomalies track **5xx** status codes, but alert rules can be configured for **4xx** detections.                              | Route, HTTP status group |
+| **Error Anomaly** | Fires when a route's five-minute error count is unusually high compared to its recent baseline and passes Vercel's minimum activity checks. By default, error anomalies track **5xx** status codes, but monitors can be configured for **4xx** detections.                              | Route, HTTP status group |
 | **Usage Anomaly** | Fires when your 5-minute usage is more than 4 standard deviations above your 24-hour average and crosses Vercel's minimum activity threshold. For Function invocations, Function duration, and Function CPU duration, usage combines metrics from Vercel Functions and Routing Middleware. | Metric                   |
+
+Beyond these built-in alert types, [custom monitors](/docs/alerts/configure-alerts#configure-custom-rules) let you define project-scoped detection logic with Observability metric or ratio queries, triggering when a value crosses a threshold or becomes anomalous for the selected alert window. Custom monitors are available only with [Observability Plus](/docs/observability/observability-plus).
 
 ### Usage anomaly metrics
 
@@ -89,7 +91,11 @@ If you disable Observability Plus for your team or for a project, alerts stop fo
 
 ## Configure alerts
 
-Use [Configure alerts](/docs/alerts/configure-alerts) to create built-in alert rules, set notification destinations, and configure Slack or webhooks.
+Use [Configure alerts](/docs/alerts/configure-alerts) to create built-in monitors, set notification destinations, and configure Slack or webhooks.
+
+You can also configure [custom
+monitors](/docs/alerts/configure-alerts#configure-custom-rules) with
+project-scoped Observability metric or ratio queries.
 
 ## Investigate alerts with AI
 
@@ -117,4 +123,4 @@ Actual results depend on baseline traffic, error rate, variance, and statistical
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

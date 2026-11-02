@@ -14,8 +14,8 @@ related:
 summary: Send bugs, friction, and feature requests to the Vercel team using the vercel feedback CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/feedback.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "236f21ea5beb512950f4f2457a786dd1d1885c7b95d1d588cefda57e39011045"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "da7fddb67ec39e4b41e1cc21a5a96eb77c43f2562c496a21a5f90f2205d5a58b"
 ---
 
 # vercel feedback
@@ -152,4 +152,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "badd8b4d51c5bdaf2bef60ab2bc50a1184f60a48b168b0e709141619f0ed241c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "497f541a60741e79410f35ac279f44eaf1f4200633e7186d45bfa3d5ed29ef61"
 ---
 
 # Vercel KMS Concepts
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/kms/concepts.graph.md](/docs/kms/conce
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

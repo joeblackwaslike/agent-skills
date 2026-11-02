@@ -16,8 +16,8 @@ related:
 summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "17a5fa2c5f98a3a90504b8fd9a563fbe07d66e1454b14718749bd79a04bd42ef"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c108012bd2abb091dd0cc4b18a404f46b1fabf914902adedebe77292ccda171d"
 ---
 
 # vercel ai-gateway
@@ -34,8 +34,8 @@ The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources
 - [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway)
 - [Pixel Canary is now available in stealth for free on AI Gateway](https://vercel.com/changelog/pixel-canary-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [Virtual models now available on AI Gateway](https://vercel.com/changelog/virtual-models-now-available-on-ai-gateway)
+- [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
 - [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
@@ -1015,4 +1015,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

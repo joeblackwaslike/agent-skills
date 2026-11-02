@@ -13,8 +13,8 @@ related:
 summary: A content moderation interface for reporting abuse with categorization, validation, and privacy-focused design.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/report-abuse.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "774f32efa02a3e7daf888235b32e2760d3a7369103e5d7e322639e1917559819"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d69845289eb0b64112a7d9ed9935f8cd04c713276b3d51378c35968384af6008"
 ---
 
 # Report Abuse
@@ -367,4 +367,4 @@ const ModerationWorkflow = {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

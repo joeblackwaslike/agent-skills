@@ -13,8 +13,8 @@ related:
 summary: Use get_microfrontends_config_for_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e25bfc5857d4d0f68efdae3ee566361251f8ca2b1e6e72d1d3166490f3bee12f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b1925d2a64d8f7f6f85ecc4ffbc5c248999af89db4d1d37f23864c5d4b3bde66"
 ---
 
 # get_microfrontends_config_for_project
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/micro
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

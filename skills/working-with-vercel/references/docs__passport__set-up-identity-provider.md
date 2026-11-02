@@ -12,8 +12,8 @@ related:
 summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fd18560b0fe1d0111149fbe9f2d48c1289664cb6af02fc96d11dbf5549a693d1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3c0faff2b047bde0a4a70dbbf279f68c60a0fc9a3d158b1770a1e71e894edcab"
 ---
 
 # Set up Passport with an identity provider
@@ -38,9 +38,10 @@ This guide covers the common Passport setup flow for OpenID Connect providers, i
 - [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
-- [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
+- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
 Full cross-link map for this page: [/docs/passport/set-up-identity-provider.graph.md](/docs/passport/set-up-identity-provider.graph.md)
 <!-- /docsgraph:related -->
@@ -198,4 +199,4 @@ Check the following settings in your identity provider:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

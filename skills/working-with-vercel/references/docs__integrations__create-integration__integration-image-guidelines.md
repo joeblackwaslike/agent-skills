@@ -13,8 +13,8 @@ related:
 summary: Guidelines for creating images for integrations, including layout, content, visual assets, descriptions, and design standards.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/integration-image-guidelines.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b47882c714f01fcaef8dee6c8a2acdc90477879cb31434cf34ad6a425de724c0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3d7c55cff7cab889f3fb10c0d8681db79d944c5261b3316d7c81340746af2477"
 ---
 
 # Integration Image Guidelines
@@ -31,7 +31,7 @@ These guidelines help ensure consistent, high-quality previews for integrations 
 - [Vercel CMS Integrations](https://vercel.com/docs/integrations/cms) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [List products for integration configuration](https://vercel.com/docs/rest-api/integrations/list-products-for-integration-configuration) — GET /v1/integrations/configuration/{id}/products — Returns products available for an integration configuration. Each pro
-- [Image Optimization with Vercel](https://vercel.com/docs/image-optimization) — Transform and optimize images to improve page load performance.
+- [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product) — Learn how to create a product for your Vercel native integration
 
 Full cross-link map for this page: [/docs/integrations/create-integration/integration-image-guidelines.graph.md](/docs/integrations/create-integration/integration-image-guidelines.graph.md)
 <!-- /docsgraph:related -->
@@ -82,4 +82,4 @@ e. Images should clearly highlight the most compelling parts of the UI and showc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

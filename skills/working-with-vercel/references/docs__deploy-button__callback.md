@@ -15,8 +15,8 @@ related:
 summary: "Learn how to use the Deploy Button's callback parameters to redirect users to your application after a successful deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-button/callback.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "975688c5de21281ba1c14dd1e439ebbf028577de7507d3bd507660d6643ddf33"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "17eaa0bffb71a9c56ea716931c7fc2716f8b67860e59d13c213b150f4323dc2d"
 ---
 
 # Using Callbacks with the Deploy Button
@@ -117,4 +117,4 @@ https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2F
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

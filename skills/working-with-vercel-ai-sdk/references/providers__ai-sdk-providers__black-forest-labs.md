@@ -4,8 +4,8 @@ description: Learn how to use Black Forest Labs with AI Gateway and the direct p
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "8caf741e0cb589af00e0f2223de2c5cc7108918f9979858c012563d9bbf0db1e"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "7f6bc900309e1909cc32c6abdc4586d7ecd946e98eb14577a0ae35b2f195fc33"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -92,7 +92,11 @@ You can use the following optional settings to customize the Black Forest Labs p
   Use a different URL prefix for API calls, e.g. to use a regional endpoint.
   The default prefix is `https://api.bfl.ai/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `x-key` header.
   It defaults to the `BFL_API_KEY` environment variable.

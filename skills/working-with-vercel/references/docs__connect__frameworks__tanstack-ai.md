@@ -9,21 +9,21 @@ prerequisites:
   - /docs/connect/frameworks
   - /docs/connect
 related:
-  - /docs/connect/legal
   - /docs/ai-gateway
   - /docs/connect/quickstart
   - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
   - /docs/connect/concepts/authentication
+  - /docs/connect/concepts/tokens
 summary: Connect a TanStack AI app to OAuth-protected MCP servers with Vercel Connect, handle user consent, and manage MCP clients.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/tanstack-ai.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "45ff7a3b73caf1940068f6b2d19469d1b2a732cf267bcd7cd6f9fbb452766a07"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6abc8b8651c3f3261bd8100cf49d9859f5065bfaaeebc5ab933308b5bae19318"
 ---
 
 # TanStack AI with Vercel Connect
 
-> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/legal/service-terms#connect)
 
 Connect a TanStack AI chat route to Linear's Model Context Protocol (MCP) server. Vercel Connect supplies OAuth tokens and handles account consent, while TanStack AI discovers and calls the server's tools using a model served through [AI Gateway](/docs/ai-gateway).
 
@@ -299,4 +299,4 @@ See [Chat SDK's TanStack AI integration](https://chat-sdk.dev/docs/ai/tanstack-a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

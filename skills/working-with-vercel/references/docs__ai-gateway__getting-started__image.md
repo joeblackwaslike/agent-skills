@@ -16,8 +16,8 @@ related:
 summary: Generate an image from a text prompt using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/image.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "93c700414d95e7077bdd7d6b586640e96ec1691b300199c342a4a10325bf3e20"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "30a35bfdf2e2f0ae33d3e0aa24bfb6891b1760c21e6ee73dd9e2170b272f4067"
 ---
 
 # AI Gateway Image Generation Quickstart
@@ -100,4 +100,4 @@ node index.mts
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure two-factor authentication for your Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-authentication.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c79c45ddad93ce632429b1e147e4a5a5209b00716030b501b1e3f3a47177455f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1e661583ba2f2836da30c63a8007603bdce69aa64e3c4a9f7301a3d776cfee80"
 ---
 
 # Two-factor Authentication
@@ -32,8 +32,8 @@ methods available for 2FA on Vercel:
 - [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available)
 - [Two-factor authentication (2FA) team enforcement](https://vercel.com/changelog/2fa-team-enforcement)
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel) — Learn how to Sign in with Vercel
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Authentication](https://vercel.com/docs/rest-api/authentication) — Endpoints in the authentication group of the Vercel REST API Reference.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 
@@ -84,4 +84,4 @@ Visit the [Two-Factor Enforcement](/docs/two-factor-enforcement) documentation f
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use get_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3fb771a9054570a3c511718c1c99fc4fd5fe8eb994eb55da6cd8b5b0005721db"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5701a2da9817ddfe5deb0d3e30368577b1890ed99e7f667b595a7cd7f5916baf"
 ---
 
 # get_project
@@ -59,4 +59,4 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

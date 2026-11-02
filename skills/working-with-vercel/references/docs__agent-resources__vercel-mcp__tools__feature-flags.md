@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4848fbca340a646d59026b8777c0d5686bf17d1ba5931ca11dc831aad0146688"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "226adbc05e80d316596a6d7612f1b257deebdfec425bab197d636995f0ad88ec"
 ---
 
 # Feature Flags
@@ -29,8 +29,8 @@ Read and update feature flags and their settings. Create SDK keys and list the k
 
 - [List all flags for a team](https://vercel.com/docs/rest-api/feature-flags/list-all-flags-for-a-team) — GET /v2/teams/{teamId}/feature-flags/flags — Retrieve all feature flags for a team across all projects. Returns an opaqu
 - [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags) — GET /v2/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. Returns an opaque cursor
-- [Update a flag](https://vercel.com/docs/rest-api/feature-flags/update-a-flag) — PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Update an existing feature flag. This endpoint
 - [List team project flag settings](https://vercel.com/docs/rest-api/feature-flags/list-team-project-flag-settings) — GET /v1/teams/{teamId}/feature-flags/settings — Retrieve feature flag settings for projects in a team.
+- [Update a flag](https://vercel.com/docs/rest-api/feature-flags/update-a-flag) — PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Update an existing feature flag. This endpoint
 - [List flag versions](https://vercel.com/docs/rest-api/feature-flags/list-flag-versions) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions — Lists flag versions for a given flag.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md)
@@ -284,4 +284,4 @@ Update project flag settings.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

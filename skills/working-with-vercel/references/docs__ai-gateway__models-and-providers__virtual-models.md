@@ -17,8 +17,8 @@ related:
 summary: Save a model with its provider routing, fallbacks, regional inference, zero data retention, and provider options under one vmc/ model ID. Your code,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/virtual-models.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "366c4a0cec6bb9f7f93e1583f0761345e16bfeab3ed13a9e0c5ba0cfe1e26ea7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6c102d5a5b0f731adad59e85c22855c5b7ae83816ba4e1db0fccc7a5b270d8e2"
 ---
 
 # AI Gateway Virtual Models for Reusable Model Configurations
@@ -68,7 +68,7 @@ Create a virtual model from the dashboard or the [Vercel CLI](/docs/cli/ai-gatew
 
   Use **Sort By**, **Service Tier**, and **Prompt Caching** to control how AI Gateway ranks providers, which provider service tier requests run on, and whether repeated prompt prefixes are cached. Each of these also accepts **System Default**, explained in **Unset, `@default`, and cleared settings** below.
 
-  Under **Required Capabilities**, require providers to support implicit caching or vision. Those are the only two capabilities today. Under **Compliance**, restrict routing to zero-data-retention providers or providers that don't train on request data.
+  Under **Required Capabilities**, require providers to support implicit caching, reasoning, structured output, tool use, or vision. Under **Compliance**, restrict routing to zero-data-retention providers or providers that don't train on request data.
 
   Under **Provider Options**, attach arbitrary per-provider AI SDK options as JSON, for example `{ "anthropic": { "effort": "high" } }`. Keys must be known provider slugs.
 
@@ -365,11 +365,10 @@ const { embedding } = await embed({
 #### Image
 
 ```typescript filename="generate-image.ts"
-import { gateway } from '@ai-sdk/gateway';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
-  model: gateway.imageModel('vmc/product-images'),
+  model: 'vmc/product-images',
   prompt: 'A red lighthouse on a rocky coast, flat illustration',
 });
 ```
@@ -393,11 +392,10 @@ fs.writeFileSync('output.mp4', videos[0].uint8Array);
 
 ```typescript filename="generate-speech.ts"
 import { generateSpeech } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { writeFile } from 'node:fs/promises';
 
 const result = await generateSpeech({
-  model: gateway.speechModel('vmc/narrator'),
+  model: 'vmc/narrator',
   text: 'Hello from AI Gateway.',
   voice: 'alloy',
 });
@@ -409,11 +407,10 @@ await writeFile('greeting.mp3', result.audio.uint8Array);
 
 ```typescript filename="transcribe.ts"
 import { transcribe } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { readFile } from 'node:fs/promises';
 
 const result = await transcribe({
-  model: gateway.transcriptionModel('vmc/meeting-notes'),
+  model: 'vmc/meeting-notes',
   audio: await readFile('meeting.mp3'),
 });
 
@@ -606,4 +603,4 @@ Any member of your team can use a virtual model in their application. Team **Own
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

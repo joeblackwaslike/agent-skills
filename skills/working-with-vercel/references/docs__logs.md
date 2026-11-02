@@ -16,8 +16,8 @@ related:
 summary: Use logs to find information on deployment builds, function executions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "49109a03c35490091691d6cce100734d203153b3ff8ceaee6ae72cbf84c19130"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "deabe5253ee749120ba463509ca526a5126c0ed310ec7afbe4f84d88e47d397a"
 ---
 
 # Logs
@@ -41,8 +41,8 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
-- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
 - [Retrieves a list of all the Log Drains \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-list-of-all-the-log-drains-deprecated) — GET /v1/log-drains — Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an a
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/logs.graph.md](/docs/logs.graph.md)
 <!-- /docsgraph:related -->
@@ -99,4 +99,4 @@ Learn more about [Log Drains](/docs/drains).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

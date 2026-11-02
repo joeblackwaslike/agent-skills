@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/billing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "edd152f33a9df45507b98261262b94ab98c543dcdc379c70cf4c76268e31cc5c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a9900c36a8ab1dbfaa3ce51c1a6fc5dc42af29c2adb62f8c4d28589ec124fa70"
 ---
 
 # Billing FAQ for Pro Plan
@@ -34,8 +34,8 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
 
 Full cross-link map for this page: [/docs/plans/pro-plan/billing.graph.md](/docs/plans/pro-plan/billing.graph.md)
@@ -224,4 +224,4 @@ The monthly credit gives teams flexibility to allocate usage based on their actu
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

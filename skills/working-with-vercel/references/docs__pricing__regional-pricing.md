@@ -16,8 +16,8 @@ related:
 summary: Vercel pricing for Managed Infrastructure resources in different regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "467423c8a3a2e56d453b4cb1422c427ac944ee9bd33dae6a945f47405294a1a7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "395ea2486b5dd37eebd1c5752293cb80cc9599d45f65c4dcae0773dbcc014020"
 ---
 
 # Regional Pricing
@@ -30,18 +30,18 @@ When using Managed Infrastructure resources on Vercel, some, but not all, are pr
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Data Cache is moving to Runtime Cache](https://vercel.com/changelog/data-cache-is-moving-to-runtime-cache)
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips)
 - [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
+- [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
-- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
+- [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
 - [Runtime Cache](https://vercel.com/docs/caching/runtime-cache) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
+- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 - [ISR Usage and Pricing](https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing) — Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
-- [Networking](https://vercel.com/docs/networking) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing.graph.md](/docs/pricing/regional-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -114,4 +114,4 @@ For more information on Managed Infrastructure pricing, see the [pricing documen
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

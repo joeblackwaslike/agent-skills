@@ -13,8 +13,8 @@ related:
 summary: Use list_session_commands with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6061e420773c15608342f90b98b9a3b0aeafc08fb269c094586f88a598701a36"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "14727b8675fbd715033e7bec988a5ec8a086904d6ac09af625204c7a27bf8058"
 ---
 
 # list_session_commands
@@ -30,8 +30,8 @@ List commands.
 - [get_session_command_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command_logs) — Use get_session_command_logs with Vercel MCP.
 - [get_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command) — Use get_session_command with Vercel MCP.
 - [get_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session) — Use get_session with Vercel MCP.
-- [run_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command) — Use run_session_command with Vercel MCP.
 - [list_sessions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_sessions) — Use list_sessions with Vercel MCP.
+- [run_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command) — Use run_session_command with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands.graph.md)
 <!-- /docsgraph:related -->
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use get_git_deployment_context with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9a15828f9446ffa0854cec3c8b85776f424eda26b02352b651673a399b62a05b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "89fa61f6bbd4cdb0e48aa94690118b5b2e0fead0fabda6323eabe5c0feb75f52"
 ---
 
 # get_git_deployment_context
@@ -46,4 +46,4 @@ This tool is available on the root connection. Project-scoped connections alread
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

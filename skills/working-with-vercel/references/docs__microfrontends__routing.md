@@ -16,8 +16,8 @@ related:
 summary: Configure which microfrontend handles each path and understand how Vercel selects deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/routing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0726f61adbcb21815bdadb0a7636e7189a8d05623e01ce29991ce537e39d91bb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "135371689d9251e85b4870b05d69abb0363a84ca79a462552f7d748f1a63ae43"
 ---
 
 # Microfrontends Routing
@@ -33,7 +33,7 @@ Microfrontends routing determines which application handles a path and which dep
 - [Microfrontends previews now link across repositories](https://vercel.com/changelog/microfrontends-previews-now-link-across-repositories)
 - [Microfrontends Routing is now free for Firewall-mitigated traffic](https://vercel.com/changelog/microfrontends-routing-is-now-free-for-firewall-mitigated-traffic)
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
@@ -286,4 +286,4 @@ To identify which microfrontend is responsible for serving a specific path, you 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

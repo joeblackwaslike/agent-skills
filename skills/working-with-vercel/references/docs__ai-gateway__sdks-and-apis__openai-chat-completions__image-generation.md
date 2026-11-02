@@ -14,8 +14,8 @@ related:
 summary: Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cea9a56af138751cb9e4b31097b666c46465b791c43c71e441bb8e55760599ce"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2b992d01bad965d6d33480afa8ee06c968ba8518edc47b41000478bd61676e4c"
 ---
 
 # AI Gateway Chat Completions Image Generation Reference
@@ -32,8 +32,8 @@ Generate images using AI models that support multimodal output through the Chat 
 - [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
 - [OpenAI Chat Completions Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents
 - [AI Gateway Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
-- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 - [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
+- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -328,4 +328,4 @@ To edit an existing image with these models, use the `/v1/images/edits` endpoint
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

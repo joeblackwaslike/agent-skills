@@ -4,8 +4,8 @@ description: Learn how to use Moonshot AI with AI Gateway and the direct provide
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "40b0b430cff23034c6ab61e4c5f917b4b4989b7a2a4dbaed2dd7cb93cc981e11"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "aaa1a93b79a7051b0408507ea12128e876a0684fe839286fe9dbdc0916b5d4b9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -90,10 +90,13 @@ You can use the following optional settings to customize the Moonshot AI provide
   Use a different URL prefix for API calls.
   The default prefix is `https://api.moonshot.ai/v1`
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `MOONSHOT_API_KEY` environment variable
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 
@@ -555,8 +558,7 @@ The following optional provider options are available for Moonshot AI language m
 - **reasoningEffort** *'low' | 'high' | 'max'*
 
   Reasoning effort for Kimi K3 and Kimi K3.1 Pro. Defaults to `'max'`. You can also use the
-  generic `reasoning` setting. Portable `reasoning: 'max'` is sent directly;
-  `minimal` maps to `low`, while `medium` and `high` map to `high`.
+  generic `reasoning` setting. Kimi K3 reasoning cannot be disabled.
 
 - **prediction** *\{ type: 'content'; content: string | Array\<\{ type: 'text'; text: string }> }*
 

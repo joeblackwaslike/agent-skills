@@ -11,13 +11,13 @@ related:
   - /docs/frameworks
   - /docs/cdn
   - /docs/workflows
-  - /docs/eve
+  - /docs/frameworks/agents/eve
   - /docs/functions/functions-api-reference
 summary: Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cebe2f89011659abef0c6f3c092188f7f84aee06b49c0aa52a6f0d040a022629"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bd770f78eba45c2e540c9ff16fee943045cf7e163da28dffa86b8b2195684990"
 ---
 
 # Vercel Functions
@@ -33,8 +33,7 @@ Build API routes, webhooks, and agent request handlers that scale with traffic. 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Evolving Vercel Functions](https://vercel.com/blog/evolving-vercel-functions)
 - [30-day runtime log retention, now available in Observability Plus](https://vercel.com/changelog/30-day-runtime-log-retention-now-available-in-observability-plus)
 - [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support)
 - [Agents can now access runtime logs with Vercel's MCP server](https://vercel.com/changelog/agents-can-now-access-runtime-logs-with-vercels-mcp-server)
@@ -43,7 +42,8 @@ Build API routes, webhooks, and agent request handlers that scale with traffic. 
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 
 Full cross-link map for this page: [/docs/functions.graph.md](/docs/functions.graph.md)
 <!-- /docsgraph:related -->
@@ -98,7 +98,7 @@ When you deploy your application, Vercel automatically sets up the tools and opt
 
 ## Build APIs and agent request handlers
 
-Vercel Functions run request-driven API routes, webhooks, streamed model responses, and agent turns. Use [Vercel Workflows](/docs/workflows) or [eve](/docs/eve) when an agent must preserve progress across pauses or deployments.
+Vercel Functions run request-driven API routes, webhooks, streamed model responses, and agent turns. Use [Vercel Workflows](/docs/workflows) or [eve](/docs/frameworks/agents/eve) when an agent must preserve progress across pauses or deployments.
 
 - **Zero server management.** Deploy code that scales automatically with traffic
 - **Fluid compute.** Reduced cold starts, lower latency, and lower costs via optimized concurrency
@@ -106,6 +106,10 @@ Vercel Functions run request-driven API routes, webhooks, streamed model respons
 - **Regional control.** Pin functions to a region close to your data source
 - **Framework-aware.** Vercel detects and optimizes for your framework automatically
 - **Built-in observability.** View invocations, errors, and cost metrics in the dashboard
+
+### Run work after a response
+
+Use `waitUntil` for short tasks that continue after you send a response, within the function's maximum duration. For work that needs retries, durable waits, or a continuous worker, see [Running background workers on Vercel](/kb/guide/background-workers-on-vercel) to compare the options.
 
 ## Create your first Vercel Function
 
@@ -244,4 +248,4 @@ If your project is not using fluid compute, see the [legacy pricing documentatio
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

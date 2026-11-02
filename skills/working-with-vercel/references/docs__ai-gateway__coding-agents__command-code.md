@@ -17,8 +17,8 @@ related:
 summary: Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, and monitor usage and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/command-code.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c65928643c6b60cacba69df77dab5b98fea0ff8d0a10431ae0d9396db75cf441"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "43db41b72d9a33d9be16cfe9d2e749c01ff8bd7142efb961558409e3996c2ef0"
 ---
 
 # Command Code with AI Gateway
@@ -31,7 +31,6 @@ Use [Command Code](https://commandcode.ai/) with AI Gateway for model access and
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
@@ -108,4 +107,4 @@ Command Code requires manual configuration. The [Vercel CLI setup command](/docs
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

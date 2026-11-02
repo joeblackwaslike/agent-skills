@@ -13,8 +13,8 @@ related:
 summary: Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f8995b1e215365ce05c64aad8bad46a05f73ae90d53491ff139bb61884a8feac"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "dd8589648f2bb3adb7ea720730220e61b699ea4ef543a892324bb84ef31b1831"
 ---
 
 # Anthropic Messages Structured Outputs with AI Gateway
@@ -29,8 +29,8 @@ Structured outputs constrain completed model responses to a JSON Schema. Check f
 
 - [Generating Structured Data](https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data) — Learn how to generate structured data with the AI SDK.
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
-- [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
 - [Output](https://ai-sdk.dev/docs/reference/ai-sdk-core/output) — API Reference for Output.
+- [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
 - [OpenAI Responses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs) — Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
 - [AI Gateway Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation) — Generate and stream text from 300+ models through AI Gateway, with tool calling and structured output.
 
@@ -598,4 +598,4 @@ A completed structured response contains JSON in a `text` content block:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

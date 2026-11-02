@@ -16,8 +16,8 @@ related:
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a7a0003a1aaaa7e82c6e90165f7f5023b1069d448a8bbc0b7e5b068df8edc14e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1ea676a53eedabc051d1258d180d0f3369dc93a18ec00bd91b14e707d3e0a02e"
 ---
 
 # Vercel Hobby Plan
@@ -35,6 +35,7 @@ The Hobby plan is **free** and aimed at developers with personal projects, and s
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
+- [Included Pro usage is now credit-based](https://vercel.com/changelog/included-pro-usage-is-now-credit-based)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
@@ -133,4 +134,4 @@ If you would like to end your paid plan, you can [downgrade to Hobby](/docs/plan
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

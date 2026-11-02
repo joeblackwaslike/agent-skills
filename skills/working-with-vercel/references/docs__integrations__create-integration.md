@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bf134f50ac06f8402d6b0a61783472005b6b76d9ed4cc3182e984b3059f27c47"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "260100b5b9462864647b7cf80f64e9e453d46a1684577cebb13a03262d7c1f49"
 ---
 
 # Create an Integration
@@ -199,4 +199,4 @@ Vercel does not perform OFAC checks on behalf of its customers or their end user
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

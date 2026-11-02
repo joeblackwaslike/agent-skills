@@ -16,8 +16,8 @@ related:
 summary: Track Vercel Flags evaluations and see which variant each evaluation returns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c044ba2b4907b1b6d186121d7a583f0eab25e267ac81dcafe8d2ea7c5ac6a88a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "df118260a4c9426faacd0b84a6b4c8bb712060e6eb295cce97da3020d457efa6"
 ---
 
 # Flag Evaluation Metrics
@@ -33,9 +33,9 @@ Evaluation metrics show how often a feature flag is evaluated and which variants
 - [Evaluation metrics for Vercel Flags](https://vercel.com/changelog/evaluation-metrics-for-vercel-flags)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Observability](https://vercel.com/docs/flags/observability) — Track feature flag evaluations and analyze their impact with Web Analytics.
 - [Using the Core Library](https://vercel.com/docs/flags/vercel-flags/sdks/core) — Use the Vercel Flags core evaluation library directly for custom setups.
+- [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
@@ -95,4 +95,4 @@ Clients that report evaluations also report their SDK version. The warning clear
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

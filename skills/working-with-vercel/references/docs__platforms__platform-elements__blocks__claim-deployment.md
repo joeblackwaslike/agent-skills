@@ -14,8 +14,8 @@ related:
 summary: A component for users to claim ownership of Vercel deployments created on their behalf.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "86412ff2d5c0c044838600ca9dcc6d17ac7a35a0c35c0c927a9b17b0af08efc8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9f509d1478ae0d762e3c245ed6be1affdc09563d0e80f458c207f9daf3f77ba3"
 ---
 
 # Claim Deployment
@@ -112,4 +112,4 @@ The component uses shadcn/ui components internally, allowing you to customize th
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

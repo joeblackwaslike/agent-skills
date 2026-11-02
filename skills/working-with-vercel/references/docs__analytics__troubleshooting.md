@@ -13,8 +13,8 @@ related:
 summary: Learn how to troubleshoot common issues with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/troubleshooting.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dcb02b29b41c40f21b9dcab4cd3118c7453773bc41c22fac80e0a39e1634e178"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8ea89b56c27e95513bb989c818b5cd63d3a5dc3a5c4c5b21a829f1c3215da183"
 ---
 
 # Vercel Web Analytics Troubleshooting
@@ -30,9 +30,10 @@ sha256: "dcb02b29b41c40f21b9dcab4cd3118c7453773bc41c22fac80e0a39e1634e178"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
+- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 - [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
 
@@ -76,4 +77,4 @@ import { Analytics } from '@vercel/analytics/react'; // Generic React import
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

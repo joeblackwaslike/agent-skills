@@ -4,8 +4,8 @@ description: Learn how to use Cerebras with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "513b43bf5120012b762f17a2f2b6d41ee270e926628dbaa30afbb4ffb7b3f043"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "d1f08b58c32b06cb62580b937f3f15124f52824c3be52cda84b5217cfd71fc97"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -97,10 +97,13 @@ You can use the following optional settings to customize the Cerebras provider i
   Use a different URL prefix for API calls.
   The default prefix is `https://api.cerebras.ai/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `CEREBRAS_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 

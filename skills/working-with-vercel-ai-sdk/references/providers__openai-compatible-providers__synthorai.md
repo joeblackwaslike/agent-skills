@@ -1,10 +1,14 @@
 ---
+title: Synthorai
+description: Use the Synthorai OpenAI compatible API with the AI SDK.
+url: "https://ai-sdk.dev/providers/openai-compatible-providers/synthorai"
+docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/synthorai.md"
-fetched_at: "2026-09-07T09:04:32.364Z"
-sha256: "d1cb9c3ee34160571e48583216d798f43e6d289a62dc8052d139dd213bcc76ba"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "a3d418a7d454125b51faba3611b799a7e5f26cf2a704c46ad6d6087f54012542"
 ---
 
-# Synthorai Provider
+> For an index of all documentation, see [/llms.txt](/llms.txt).
 
 [Synthorai](https://synthorai.io) is an AI gateway that provides access to models from multiple providers through an OpenAI-compatible API. You can use its Chat Completions endpoint with the AI SDK through the `@ai-sdk/openai-compatible` module.
 
@@ -12,7 +16,9 @@ sha256: "d1cb9c3ee34160571e48583216d798f43e6d289a62dc8052d139dd213bcc76ba"
 
 The Synthorai provider is available via the `@ai-sdk/openai-compatible` module as it is compatible with the OpenAI API. You can install it with:
 
-<InstallPackages packages="@ai-sdk/openai-compatible" />
+```bash
+pnpm add @ai-sdk/openai-compatible
+```
 
 ## Provider Instance
 
@@ -28,18 +34,16 @@ const synthorai = createOpenAICompatible({
 });
 ```
 
-<Note>
-  Follow the [Synthorai quickstart](https://synthorai.io/docs/quickstart/) to
-  create an API key. Make sure to set the `SYNTHORAI_API_KEY` environment
-  variable with your API key.
-</Note>
+Follow the [Synthorai quickstart](https://synthorai.io/docs/quickstart/) to
+create an API key. Make sure to set the `SYNTHORAI_API_KEY` environment
+variable with your API key.
 
 ## Language Models
 
-You can create Synthorai models using the provider instance. The first argument is a model ID from the [model catalog](https://synthorai.io/models/), for example `claude-fable-5`.
+You can create Synthorai models using the provider instance. The first argument is a model ID from the [model catalog](https://synthorai.io/models/), for example `claude-sonnet-5-5`.
 
 ```ts
-const model = synthorai('claude-fable-5');
+const model = synthorai('claude-sonnet-5-5');
 ```
 
 ### Example
@@ -57,7 +61,7 @@ const synthorai = createOpenAICompatible({
 });
 
 const { text } = await generateText({
-  model: synthorai('claude-fable-5'),
+  model: synthorai('claude-sonnet-5-5'),
   prompt: 'Tell me about yourself in one sentence.',
 });
 
@@ -77,7 +81,7 @@ const synthorai = createOpenAICompatible({
 });
 
 const result = streamText({
-  model: synthorai('claude-fable-5'),
+  model: synthorai('claude-sonnet-5-5'),
   prompt: 'Write a short haiku about routing.',
 });
 
@@ -86,18 +90,12 @@ for await (const textPart of result.textStream) {
 }
 ```
 
-See the [Synthorai documentation](https://synthorai.io/docs/) for endpoint details and model-specific capabilities.
+See the [Synthorai AI SDK integration guide](https://synthorai.io/docs/integrations/ai-sdk/) for more examples and troubleshooting.
 
+---
 
-## Navigation
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
 
-- [Writing a Custom Provider](/providers/openai-compatible-providers/custom-providers)
-- [LM Studio](/providers/openai-compatible-providers/lmstudio)
-- [NVIDIA NIM](/providers/openai-compatible-providers/nim)
-- [Clarifai](/providers/openai-compatible-providers/clarifai)
-- [Heroku](/providers/openai-compatible-providers/heroku)
-- [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
-- [Synthorai](/providers/openai-compatible-providers/synthorai)
+For an index of all available documentation, see [/llms.txt](/llms.txt)
 
-
-[Full Sitemap](/sitemap.md)
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

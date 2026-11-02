@@ -13,8 +13,8 @@ related:
 summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "217536d0b2bb85f7b4b8adb926e98985758ee43b9383b0205378c3ad9f274015"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c88108e14f0728b8dff8626820f7da781efebdbb08057ad31580c72adaeba3e3"
 ---
 
 # vercel domains
@@ -31,10 +31,10 @@ The `vercel domains` command manages domains under the current scope. With it, y
 - [Search domains without authentication](https://vercel.com/changelog/search-domains-without-authentication)
 - [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration)
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 
 Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md)
 <!-- /docsgraph:related -->
@@ -410,4 +410,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

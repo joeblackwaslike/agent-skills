@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "998a3aa25ad6fb40c0589e85a3a666977b9fd7fafa0f395222018366b99b0daa"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "562d95bf15bf02467a5a40d6951ee84f0475bda8f4e6740c80d5689dac8e5707"
 ---
 
 # Ecosystem
@@ -33,15 +33,16 @@ agent you build. Choose an [agent](#agents), a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Run Paseo agents on Vercel Sandbox](https://vercel.com/changelog/run-paseo-agents-on-vercel-sandbox)
+- [Run Scale AI’s AgentEnv evals on Vercel Sandbox](https://vercel.com/changelog/run-scale-ais-agentenv-evals-on-vercel-sandbox)
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
-- [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
+- [The Agent Stack](https://vercel.com/blog/agent-stack)
+- [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
+- [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
-- [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
+- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem.graph.md](/docs/sandbox/ecosystem.graph.md)
 <!-- /docsgraph:related -->
@@ -116,7 +117,9 @@ through AI Gateway.
 | ------------------------------------------------------ | --------------- | ------------------------------------------- |
 | [AI SDK](/docs/sandbox/working-with-sandbox)           | AI SDK          | Tool calling with the AI SDK                |
 | [Chat SDK](/docs/chat-sdk/integrations/sandbox) | Chat SDK | Analyze CSV attachments with the AI SDK Bash tool |
+| [Flue](/docs/sandbox/ecosystem/flue) | Agent framework | Agents with sandbox-backed file and command tools |
 | [LangChain](/docs/sandbox/ecosystem/langchain)         | Agent framework | Agents with a sandboxed code execution tool |
+| [Mastra](/docs/sandbox/ecosystem/mastra) | Agent framework | Agents with sandbox-backed workspace tools |
 | [OpenAI SDK](/docs/sandbox/ecosystem/openai-sdk)       | Model SDK       | Function calling through the Responses API  |
 | [Anthropic SDK](/docs/sandbox/ecosystem/anthropic-sdk) | Model SDK       | Tool use through the Messages API           |
 | [TanStack AI](/docs/sandbox/ecosystem/tanstack-ai)     | Agent framework | Coding agents with sandboxed workspaces     |
@@ -152,4 +155,4 @@ sandbox. The provider's permissions control what the agent can access.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

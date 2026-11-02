@@ -16,8 +16,8 @@ related:
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the quotas that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dd8661376afe2be63fc7fff64211b66c7d65161f5f77a760cb03b5862a5dbd86"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "13d0f169eda82a94ed751731c9b91965a5b8b8d6c03e81d92077c94fd71cfeb0"
 ---
 
 # Vercel Sandbox pricing and quotas
@@ -35,7 +35,7 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox)
 - [More granular observability for Vercel Sandbox](https://vercel.com/changelog/more-granular-observability-for-vercel-sandbox)
 - [Vercel Sandbox can now run for up to 24 hours](https://vercel.com/changelog/vercel-sandbox-can-now-run-for-up-to-24-hours)
-- [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
@@ -102,6 +102,8 @@ Vercel tracks Sandbox usage across eight metrics. Select a metric in the pricing
 ### Active CPU
 
 The amount of time your code actively uses the CPU, measured in hours. Time spent waiting for I/O (such as network requests, database queries, or AI model calls) does not count toward Active CPU.
+
+Active CPU adds up CPU time across the sandbox's vCPUs. For example, assume an idle sandbox with 2 vCPUs averages 1% CPU utilization over 1 hour. It uses 0.02 vCPU-hours (2 vCPUs × 1 hour × 1%). Its 4 GB of provisioned memory counts as 4 GB-hours, including idle time.
 
 You can provision 1 or an even number of vCPUs between 2 and 32 [depending on your plan](/docs/sandbox/pricing#resource-limits). The default is 2 vCPUs.
 
@@ -246,4 +248,4 @@ For more details on sandbox lifecycle management, see [Working with Sandbox](/do
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

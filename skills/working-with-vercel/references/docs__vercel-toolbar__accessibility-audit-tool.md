@@ -15,8 +15,8 @@ related:
 summary: Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level A and AA rules.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3eb471cb388eb61bcc9961d6e5c04e7b31fa90d42d6272a03f0ceb0e933976e5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "254a7de9d79ada896fdd2a9b0378f9e8f55c9bead84e6583210e322589579364"
 ---
 
 # Accessibility Audit Tool
@@ -59,7 +59,7 @@ The accessibility audit tool is enabled by default. To disable it:
 
 ## Inspecting accessibility issues
 
-To inspect an accessibility issue select the filter option you want to inspect. A list of issues will are displayed as dropdowns. You can select each dropdown to view the issue details, including an explanation of the issue and a link to the relevant WCAG guideline. Hovering over the failing elements markup will highlight the element on the page, while clicking on the element will log it to the devtools console.
+To inspect an accessibility issue, select the filter option you want to inspect. A list of issues is displayed as dropdowns. You can select each dropdown to view the issue details, including an explanation of the issue and a link to the relevant WCAG guideline. Hovering over the markup of the failing elements will highlight the element on the page, while clicking on the element will log it to the devtools console.
 
 ![Using the Accessibility Audit Tool](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/vercel-toolbar/accessibility-audit-panel-light.png)
 
@@ -78,4 +78,4 @@ By default the accessibility audit tool will log issues on page load. To test ep
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

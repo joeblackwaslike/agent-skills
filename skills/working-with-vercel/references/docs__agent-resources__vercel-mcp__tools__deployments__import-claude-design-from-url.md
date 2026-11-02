@@ -13,8 +13,8 @@ related:
 summary: Use import-claude-design-from-url with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/import-claude-design-from-url.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e76f16261b93261fee80f50fee846cbe527c596bab3cfe11d7bf5b8725537404"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "861c878cad83f2657cc4089c397cf8d4ead4e2b82fbda84c2344e7eaf6700512"
 ---
 
 # import-claude-design-from-url
@@ -33,8 +33,8 @@ Import a self-contained HTML bundle from Claude Design and deploy it to Vercel. 
 - [web_fetch_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url) — Use web_fetch_vercel_url with Vercel MCP.
 - [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
-- [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [vercel agent](https://vercel.com/docs/cli/agent) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
+- [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking) — Learn how to link existing Vercel Projects with Vercel CLI.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/import-claude-design-from-url.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/import-claude-design-from-url.graph.md)
 <!-- /docsgraph:related -->
@@ -53,4 +53,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

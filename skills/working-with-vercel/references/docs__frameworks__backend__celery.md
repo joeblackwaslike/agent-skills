@@ -17,8 +17,8 @@ related:
 summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without a long-lived worker process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "66ffa157c50503ffc9e904a9a5cdf23aaa99533c67df3b9127bdec620d3adb8f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f2a136d148949949901fd1077461d1b27fc1ed2a95a60d1e4476b73200357fae"
 ---
 
 # Run background tasks with Celery on Vercel
@@ -35,12 +35,12 @@ Vercel Function, so you don't need to run a long-lived worker process.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel)
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
-- [Migrate Railway workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-railway-workers-to-vercel-daemons) — Move Railway workers to Vercel Daemons with Docker configuration, broker migration, shutdown testing, a gradual queue ha
-- [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel)
 
 Full cross-link map for this page: [/docs/frameworks/backend/celery.graph.md](/docs/frameworks/backend/celery.graph.md)
 <!-- /docsgraph:related -->
@@ -394,4 +394,4 @@ For more about deploying Celery on Vercel, see:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

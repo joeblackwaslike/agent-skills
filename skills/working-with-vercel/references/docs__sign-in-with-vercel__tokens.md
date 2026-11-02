@@ -13,8 +13,8 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/tokens.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c5278fa68454b847b79706a17c74fb0fba1f50c70b7a5f94a0248c2dcb738f49"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3ac66374da1a31ac8d2e4d8a775d5f06c7eb46936add379693c70ab0b670acd2"
 ---
 
 # Tokens
@@ -32,9 +32,9 @@ There are three tokens your application will work with when using Sign in with V
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
-- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
+- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/tokens.graph.md](/docs/sign-in-with-vercel/tokens.graph.md)
 <!-- /docsgraph:related -->
@@ -156,4 +156,4 @@ Access and Refresh Tokens are sensitive credentials and should be stored securel
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

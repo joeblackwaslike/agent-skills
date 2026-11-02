@@ -8,14 +8,15 @@ type: conceptual
 prerequisites:
   - /docs/services
 related:
+  - /docs/daemons
   - /docs/services
   - /docs/services/pricing
   - /docs/routing-middleware
 summary: Call one service from another using caller-declared service bindings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/bindings.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "45945f390b91f67e968f312f7ed81d60be72c050b731f6a0008216b3c2143453"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "008966281ad84cef452017a52860076c66a18dcec1e893f4a337a0ddaaa92dfc"
 ---
 
 # Service bindings
@@ -29,17 +30,17 @@ A service binding lets server-side code in one service call another service dire
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Secure internal communication between services (beta)](https://vercel.com/changelog/secure-internal-communication-between-services)
+- [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
-- [Migrate from Fly.io to Vercel](https://vercel.com/kb/guide/migrate-fly-io-to-vercel) — Move an app from Fly.io to Vercel. Map configuration, choose Functions or Daemons, plan persistent storage, and verify t
-- [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
+- [Daemon Configuration Reference](https://vercel.com/docs/daemons/config-reference) — Every field you can set on a daemon in the daemons key of vercel.json.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
-- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
-- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 
 Full cross-link map for this page: [/docs/services/bindings.graph.md](/docs/services/bindings.graph.md)
 <!-- /docsgraph:related -->
@@ -48,7 +49,7 @@ Bindings are how services find each other internally. The binding simultaneously
 
 ## Declare a binding
 
-You declare a binding on the caller service. The caller names the target service and the environment variable that receives the generated URL.
+You declare a binding on the caller, which can be a service or a [daemon](/docs/daemons#service-bindings). The caller names the target service and the environment variable that receives the generated URL.
 
 ```json filename="vercel.json"
 {
@@ -123,4 +124,4 @@ Bindings are available to a service's functions at runtime only. They do not res
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

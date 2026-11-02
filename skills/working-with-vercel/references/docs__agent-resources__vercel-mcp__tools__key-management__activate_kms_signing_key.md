@@ -13,8 +13,8 @@ related:
 summary: Use activate_kms_signing_key with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/activate_kms_signing_key.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "433ed1aabc80fd161bdc2da246cb394a8b37d05c8dca0eb2972849a795191aa7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fa2fed1958dba2b618ec910594656063da6b029ff7f6801cb5edab0edaf68bbf"
 ---
 
 # activate_kms_signing_key
@@ -52,4 +52,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-m
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

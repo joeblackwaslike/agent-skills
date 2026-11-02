@@ -4,8 +4,8 @@ description: Learn how to set up the Deepgram provider and check AI Gateway avai
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "c6f1dabeb7f608046a7bbacd7a144a74275d213bddfdbae553c48a1912966f14"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "878c182179cdcd7d3fd927bc09595df3e44ab296e38f5c606d0be334208a948b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -85,7 +85,10 @@ const deepgram = createDeepgram({
 
 You can use the following optional settings to customize the Deepgram provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a synchronous or asynchronous callback to resolve the key before each
+  request. The callback is responsible for caching and refreshing credentials.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `DEEPGRAM_API_KEY` environment variable.

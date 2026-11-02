@@ -16,8 +16,8 @@ related:
 summary: Learn about the Global Configs limits and pricing based on account plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-limits.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2d091a8e2532ad015a43e6fdca918dec4d131ac9df5b5a9e99e4d178ee8deca6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f1666d15b863223126b25c0e787a6f9391f75915f6e822640ae724fa614cd0ba"
 ---
 
 # Global Config Limits and pricing
@@ -35,10 +35,10 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 - [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
 - [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config)
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
+- [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 
 Full cross-link map for this page: [/docs/global-config/global-config-limits.graph.md](/docs/global-config/global-config-limits.graph.md)
 <!-- /docsgraph:related -->
@@ -179,4 +179,4 @@ If you are developing locally or self-hosting, your Global Config is loaded thro
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

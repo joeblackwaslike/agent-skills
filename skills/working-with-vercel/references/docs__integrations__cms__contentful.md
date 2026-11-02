@@ -13,8 +13,8 @@ related:
 summary: Integrate Vercel with Contentful to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/contentful.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c61c6216777029a220b4ebcfed0cfb0b22b9f5ab40824879a685f5fa25d25225"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "896f49d0ac2d7e8a68beca31f873ea5e477e84f8145dd159f88830619cddd967"
 ---
 
 # Vercel and Contentful Integration
@@ -30,13 +30,12 @@ sha256: "c61c6216777029a220b4ebcfed0cfb0b22b9f5ab40824879a685f5fa25d25225"
 - [Content Link can now be used with Contentful ](https://vercel.com/changelog/content-link-can-now-be-used-with-contentful)
 - [Integrating Next.js and Contentful for your Headless CMS](https://vercel.com/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms) — Next.js with Contentful gives you the power to quickly build scalable dynamic static websites with improved search engin
 - [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
-- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [How to deploy a Next.js online store with Stripe](https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe) — Learn how to build and deploy a Next.js e-commerce store with Stripe payments on Vercel. This step-by-step guide covers
-- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [How to Integrate Next.js with Prismic's Headless CMS](https://vercel.com/kb/guide/how-to-integrate-nextjs-with-prismic) — Learn how to connect Next.js with Prismic's CMS and deploy the integrated website to Vercel
 - [Vercel and Sitecore XM Cloud Integration](https://vercel.com/docs/integrations/cms/sitecore) — Integrate Vercel with Sitecore XM Cloud to deploy your content.
-- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
+- [Getting Started with Chat SDK](https://vercel.com/docs/chat-sdk/quickstart) — Create a Slack bot with the Chat SDK CLI, connect it to Slack through Vercel Connect, and deploy it on Vercel.
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
 
 Full cross-link map for this page: [/docs/integrations/cms/contentful.graph.md](/docs/integrations/cms/contentful.graph.md)
@@ -236,4 +235,4 @@ See the [template repository](https://github.com/vercel-labs/eve-contentful-agen
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/plans/enterprise
   - /docs/cli
-  - /docs/projects
+  - /docs/projects/managing-projects
   - /docs/global-config/get-started
   - /docs/environment-variables
 summary: "Learn how to use Global Config with Vercel's LaunchDarkly integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f52bdfb976f77ff2f18bfd08efc9123d5b89c4d01cb7e81a9bd17973950ccc17"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a891ea98e93c0d5b4b6f9fdbd60c1eb75c8b2488f96c1080a61bdd9848736efc"
 ---
 
 # Using Global Config with LaunchDarkly
@@ -31,6 +31,7 @@ This guide will help you get started with using Vercel's LaunchDarkly integratio
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Expanding the experimentation ecosystem with Edge Config and LaunchDarkly](https://vercel.com/blog/edge-config-and-launch-darkly)
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config) — Learn how to use Global Config with Vercel's Statsig integration.
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config) — Learn how to use Global Configs in your projects.
@@ -94,7 +95,7 @@ npx create-next-app@latest
 bunx create-next-app@latest
 ```
 
-1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects#creating-a-project)
+1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects/managing-projects#creating-a-project)
 2. A Global Config. If you don't have one, follow [the Global Config quickstart](/docs/global-config/get-started)
 3. The Global Config SDK:
 
@@ -240,4 +241,4 @@ Now that you have set up the LaunchDarkly Global Config integration, you can exp
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

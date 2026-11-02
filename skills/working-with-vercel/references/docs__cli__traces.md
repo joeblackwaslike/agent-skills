@@ -15,8 +15,8 @@ related:
 summary: Search spans across a team, inspect request traces, capture session traces, or manage project trace sampling rules from the terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "37677e6e64ac58bbd5fffc4525ea134023feeb23f7521733f89473e1fc703097"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6e419120e10b77d9af65af24554d387a07fb567d854ebda3cf8e5e5ed67038cb"
 ---
 
 # vercel traces
@@ -31,12 +31,11 @@ The `vercel traces` command lets you search spans across a team, inspect request
 
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
-- [run](https://turborepo.dev/docs/reference/run) — All flags and options for the `turbo run` command used to execute tasks.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel project](https://vercel.com/docs/cli/project) — Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, renam
-- [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel firewall](https://vercel.com/docs/cli/firewall) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
+- [vercel project](https://vercel.com/docs/cli/project) — Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, renam
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
+- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 
 Full cross-link map for this page: [/docs/cli/traces.graph.md](/docs/cli/traces.graph.md)
 <!-- /docsgraph:related -->
@@ -334,6 +333,11 @@ The `vercel traces config` command supports the following operations:
 - [`config set`](#config-set) - Add a rule or change the rate of an existing rule
 - [`config rm`](#config-rm) - Remove one rule or every rule for an environment
 
+> **💡 Note:** `config set` and `config rm` take the environment as `--environment` in Vercel
+> CLI 64.7.0 and later. Earlier versions take it as the first argument, such as
+> `vercel traces config set production 25`. Newer versions still accept that
+> form, but print a deprecation warning.
+
 ### How the CLI describes a sampling rule
 
 | Part          | Values                            | Meaning                                                                                      |
@@ -384,7 +388,7 @@ A project with no rules collects no traces. In that case, `ls` says so, names th
 Add a trace sampling rule or change the rate of an existing rule.
 
 ```bash filename="terminal"
-vercel traces config set <environment> <rate> [requestPath]
+vercel traces config set <rate> [requestPath] --environment <environment>
 ```
 
 *Using the \`vercel traces config set\` command to add or update a trace sampling rule.*
@@ -403,19 +407,20 @@ Set a rate for every path in an environment by leaving the path prefix off:
 
 ```bash filename="terminal"
 # Trace a quarter of production traffic
-vercel traces config set production 25
+vercel traces config set 25 --environment production
 
 # Trace every preview request to one path prefix
-vercel traces config set preview 100 /api
+vercel traces config set 100 /api --environment preview
 
 # Trace 1% of traffic in every environment
-vercel traces config set any 1
+vercel traces config set 1 --environment any
 ```
 
 When the project already holds 10 rules, `set` refuses the write before it changes anything and names the command that removes a rule.
 
 **Options:**
 
+- `--environment <environment>`, `-e`: Required. The environment the rule applies to: `production`, `preview`, or `any`
 - `--json`: Output the new rule as JSON
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
 
@@ -426,22 +431,22 @@ Aliases: `config remove`, `config delete`.
 Remove one trace sampling rule or every rule for an environment.
 
 ```bash filename="terminal"
-vercel traces config rm <environment> [requestPath]
+vercel traces config rm [requestPath] --environment <environment>
 ```
 
 *Using the \`vercel traces config rm\` command to remove trace sampling rules.*
 
 The path prefix decides how many rules the command removes:
 
-| Command                                        | Removes                                              |
-| ---------------------------------------------- | ---------------------------------------------------- |
-| `vercel traces config rm production /api`      | The one production rule with the `/api` prefix        |
-| `vercel traces config rm production --default` | Only the production rule that covers all paths        |
-| `vercel traces config rm production`           | Every production rule                                 |
+| Command                                                      | Removes                                        |
+| ------------------------------------------------------------ | ---------------------------------------------- |
+| `vercel traces config rm /api --environment production`      | The one production rule with the `/api` prefix |
+| `vercel traces config rm --environment production --default` | Only the production rule that covers all paths |
+| `vercel traces config rm --environment production`           | Every production rule                          |
 
 Combining `--default` with a path prefix is an error, because the two select different rules.
 
-`rm any` removes the rules that match every environment, not every rule on the project. To clear a project and turn always-on tracing off, run `rm` once for each of `any`, `preview`, and `production`.
+`rm --environment any` removes the rules that match every environment, not every rule on the project. To clear a project and turn always-on tracing off, run `rm` once for each of `any`, `preview`, and `production`.
 
 `rm` always asks you to confirm. One command can remove up to 10 rules, and nothing records what those rules held afterwards, so the command lists every rule it matched with its path and rate before it asks:
 
@@ -458,6 +463,7 @@ When nothing matches the environment and path prefix you passed, `rm` reports th
 
 **Options:**
 
+- `--environment <environment>`, `-e`: Required. The environment whose rules to remove: `production`, `preview`, or `any`
 - `--default`: Remove only the rule without a path prefix, keeping the per-path rules
 - `--json`: Output the removed rules as JSON
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
@@ -480,10 +486,10 @@ vercel traces config ls --json
 ]
 ```
 
-Each field maps onto a `set` argument, so a rule from `ls --json` can go straight back in:
+Each field maps onto a `set` argument or option, so a rule from `ls --json` can go straight back in:
 
 ```bash filename="terminal"
-vercel traces config set production 25 /api
+vercel traces config set 25 /api --environment production
 ```
 
 With [`--non-interactive`](/docs/cli/global-options#non-interactive), the subcommands print JSON whether or not you pass `--json`, and the object carries the project, a status, a message, and the commands to run next.
@@ -518,4 +524,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/ddos-mitigation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "83f9b0dadf327d645c1d640201edf902a7a432663d79d45284ca4910732252ae"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "eddb7467729e0e974af19e456b27151e97269e3913cb969f6b50237bdfc0b517"
 ---
 
 # DDoS Mitigation
@@ -37,13 +37,13 @@ Vercel provides automatic DDoS mitigation for all deployments, regardless of you
 - [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Bot Protection: One-click managed ruleset now in public beta](https://vercel.com/blog/one-click-bot-protection-now-in-public-beta)
-- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
 - [Temporarily disable Vercel Firewall system DDoS mitigations](https://vercel.com/changelog/temporarily-disable-vercel-firewall-system-ddos-mitigations)
+- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
+- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
 - [Protectd: Evolving Vercel’s always-on denial-of-service mitigations](https://vercel.com/blog/protectd-evolving-vercels-always-on-denial-of-service-mitigations)
 - [Mitigating Denial of Wallet risks with Vercel](https://vercel.com/blog/mitigating-denial-of-wallet-risks-with-vercel)
-- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
+- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
-- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 
 Full cross-link map for this page: [/docs/vercel-firewall/ddos-mitigation.graph.md](/docs/vercel-firewall/ddos-mitigation.graph.md)
 <!-- /docsgraph:related -->
@@ -121,4 +121,4 @@ You can monitor usage in the [Vercel Dashboard](/dashboard) under the **Usage** 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

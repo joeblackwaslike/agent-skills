@@ -4,8 +4,8 @@ description: Learn how to use Open Responses with AI Gateway and the direct prov
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "c3b6c362d73e1c0a9e0bed3b04358e636c620ead72e284bb607d650ccafbe84f"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "1d57a93a0995022e6cccf9529c14ec9e15c89ae8bf1bf00fc22691fc5c129f73"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -126,11 +126,14 @@ The `name` and `url` options are required:
 
 You can use the following optional settings to customize the Open Responses provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is sent as a bearer token in the `Authorization` header.
 
-- **headers** *Record\<string,string> | () => Record\<string,string>*
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
+
+- **headers** *Record\<string,string> | PromiseLike\<Record\<string,string>> | (() => Record\<string,string> | PromiseLike\<Record\<string,string>>)*
 
   Custom headers to include in requests. Pass a function when headers must be
   resolved lazily for each request.

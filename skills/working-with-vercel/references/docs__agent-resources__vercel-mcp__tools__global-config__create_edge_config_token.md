@@ -13,8 +13,8 @@ related:
 summary: Use create_edge_config_token with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config_token.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fee715f03f07dec15a0ba8747f1c7bc2cbce9bed7646a2abb63dcac62fa90497"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4cf89367379a7c1165e74341353da9ba6aa837953f9af4b710d4d8e88635654f"
 ---
 
 # create_edge_config_token
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

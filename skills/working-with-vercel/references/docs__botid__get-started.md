@@ -14,8 +14,8 @@ related:
 summary: Step-by-step guide to setting up BotID protection in your Vercel project
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/get-started.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "62554f0e2259f37fcf32a973c998366360282a590b79d78f986945e112ad2ea4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b2e3bce2ad1e4acfe9f8fa2bbd67cb07cd36bf8dea3e0829f8672f833d5f2972"
 ---
 
 # Get Started with BotID
@@ -34,7 +34,6 @@ This guide shows you how to add BotID protection to your Vercel project. BotID b
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
 - [The AI Cloud: A unified platform for AI workloads](https://vercel.com/blog/the-ai-cloud-a-unified-platform-for-ai-workloads)
-- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data) — Learn how to redact sensitive data from your Web Analytics events.
@@ -649,4 +648,4 @@ To verify a browser before a later interaction, review [verify visitors on page 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

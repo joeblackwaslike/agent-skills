@@ -15,8 +15,8 @@ related:
 summary: "The internal invocation of a function timed out. This is Vercel's error."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_function_invocation_timeout.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7dcad6d218b18e85f6035d737ce5ea019dee4f512ca780c5f3ba97b31acb4ef2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8e1c8113aa7945bd94eae33f98253be3ae4350564fe4d39cc0a2de7cf1832942"
 ---
 
 # INTERNAL_FUNCTION_INVOCATION_TIMEOUT
@@ -49,4 +49,4 @@ For more information on Vercel Functions timeouts, see [What can I do about Verc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

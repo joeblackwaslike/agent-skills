@@ -16,8 +16,8 @@ related:
 summary: Use runtime logs to debug and monitor your Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/logs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "67b86a11a51a42edc6e854fd759c6efda74dc75867524dd9f845d0e5177e802c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "89d06f0d1b22f26ee4c7b85b47bd970bfb06c06bcfc07ccdb0dfe0e47df796a4"
 ---
 
 # Vercel Function Logs
@@ -32,8 +32,8 @@ Vercel Functions allow you to debug and monitor your functions using runtime log
 
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
-- [Evolving Vercel Functions](https://vercel.com/blog/evolving-vercel-functions)
 - [Enhanced Logs to search, inspect, and share runtime logs](https://vercel.com/changelog/enhanced-logs-ui-to-search-inspect-and-share-application-logs)
+- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
 - [Logs](https://vercel.com/docs/logs) — Use logs to find information on deployment builds, function executions, and more.
 - [Accessing Build Logs](https://vercel.com/docs/deployments/logs) — Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possi
 - [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
@@ -86,4 +86,4 @@ Pages that use SSR, such as those that call `getServerSideProps` or export [`rev
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

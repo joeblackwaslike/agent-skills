@@ -9,8 +9,8 @@ tags:
   - agent
   - mcp
 source: "https://ai-sdk.dev/cookbook/node/mcp-tools.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "e80f8c7e30123f5f4e7f5719f1746a0a4e6f073eb7fe035dd09b19c3f88b15e8"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "93024c99c19be6b94741ff012e282947c4d30d333636ade59157c0982362ec08"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -26,7 +26,7 @@ pnpm install @modelcontextprotocol/sdk
 ```ts
 import { createMCPClient } from '@ai-sdk/mcp';
 import { generateText, isStepCount } from 'ai';
-import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
+import { StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
 import { openai } from '@ai-sdk/openai';
 // Optional: Official transports if you prefer them
 // import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
@@ -39,7 +39,7 @@ let clientThree;
 
 try {
   // Initialize an MCP client to connect to a `stdio` MCP server (local only):
-  const transport = new Experimental_StdioMCPTransport({
+  const transport = new StdioMCPTransport({
     command: 'node',
     args: ['src/stdio/dist/server.js'],
   });

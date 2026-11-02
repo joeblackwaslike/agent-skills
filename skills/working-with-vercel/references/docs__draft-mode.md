@@ -16,8 +16,8 @@ related:
 summary: "Vercel's Draft Mode enables you to view your unpublished headless CMS content on your site before publishing it."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/draft-mode.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "59048e8e6ce77a4805c20f63bab7df2785065d2a455bcfbf308a4d4a4ae5049e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9d229223995c1d009f302b2c629c5a10c3672076f34c823f171fa38877ebeb73"
 ---
 
 # Draft Mode
@@ -34,14 +34,14 @@ Draft Mode lets you view your unpublished headless CMS content on your website r
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
-- [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images via Dockerfile.vercel, frame
+- [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images from a Dockerfile, framework
 - [draftMode](https://nextjs.org/docs/app/api-reference/functions/draft-mode) — API Reference for the draftMode function.
 - [Enhanced content management for your headless CMS](https://vercel.com/blog/enhanced-content-management-for-headless-cmses)
 - [How to preview content with Preview Mode in Next.js](https://nextjs.org/docs/pages/guides/preview-mode) — Next.js has the preview mode for statically generated pages. You can learn how it works here.
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
-- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts) — Learn how draft flags work and how to promote them to Vercel Flags.
+- [Partial prerendering: Building towards a new default rendering model for web applications](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Edit Mode](https://vercel.com/docs/edit-mode) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
+- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts) — Learn how draft flags work and how to promote them to Vercel Flags.
 
 Full cross-link map for this page: [/docs/draft-mode.graph.md](/docs/draft-mode.graph.md)
 <!-- /docsgraph:related -->
@@ -235,4 +235,4 @@ Viewers outside your Vercel team cannot enable Draft Mode or see your draft cont
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

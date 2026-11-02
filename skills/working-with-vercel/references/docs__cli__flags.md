@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ba922c613df7f75e1343f0b3ce3403d3d269526f3f2ff81b65f6a865c72ba6f2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "35372ad6388262100e0a028b68e89b44865216f49bf10e10d4f2ead34b354787"
 ---
 
 # vercel flags
@@ -36,9 +36,11 @@ The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for 
 - [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli)
 - [Vercel Flags are now optimized for agents](https://vercel.com/changelog/vercel-flags-are-now-optimized-for-agents)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [vercel metrics](https://vercel.com/docs/cli/metrics) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [List flag versions](https://vercel.com/docs/rest-api/feature-flags/list-flag-versions) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions — Lists flag versions for a given flag.
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
-- [Feature Flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags) — Vercel MCP tools for feature flags.
-- [vercel traces](https://vercel.com/docs/cli/traces) — Search spans across a team, inspect request traces, capture session traces, or manage project trace sampling rules from
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [Update a flag](https://vercel.com/docs/rest-api/feature-flags/update-a-flag) — PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Update an existing feature flag. This endpoint
 
 Full cross-link map for this page: [/docs/cli/flags.graph.md](/docs/cli/flags.graph.md)
 <!-- /docsgraph:related -->
@@ -64,6 +66,12 @@ vercel flags inspect [flag]
 
 *Using the \`vercel flags\` command to display information
 about a feature flag.*
+
+```bash filename="terminal"
+vercel flags datafile --environment production --json
+```
+
+*Reading the flag configuration that Vercel Flags currently serves in production.*
 
 ```bash filename="terminal"
 vercel flags versions [flag]
@@ -185,6 +193,12 @@ vercel flags labels ls [entity.attribute]
 
 *Using the \`vercel flags labels\` command to list value labels for an entity
 attribute.*
+
+```bash filename="terminal"
+vercel flags connections list
+```
+
+*Listing projects that can read the current project's flags.*
 
 ## Extended usage
 
@@ -402,8 +416,8 @@ vercel flags evaluations --group-by sdk-key --since 24h
 | `--project <NAME_OR_ID>` | string | No | Linked project | Project name or ID. |
 | `-s, --since <TIME>` | string | No | `1h` | Start time as a relative duration or ISO 8601 timestamp. |
 | `-u, --until <TIME>` | string | No | Current time | End time as a relative duration or ISO 8601 timestamp. |
-| `-g, --granularity <SIZE>` | string | No | Automatic | Time bucket size. Supports `1m`, `5m`, `15m`, `1h`, `4h`, and `1d`. |
-| `--group-by <DIM>` | string\[] | No | `variant` with a flag, `flag` without one | Dimension to group evaluations by. Supports `variant`, `flag`, `sdk-key`, `client`, `environment`, and `reason`. Repeat the option to group by several dimensions. Deleted SDK keys appear as their hash. |
+| `--granularity <SIZE>` | string | No | Automatic | Time bucket size. Supports `1m`, `5m`, `15m`, `1h`, `4h`, and `1d`. |
+| `--group-by <DIM>` | string\[] | No | `variant` with a flag, `flag` without one | Dimension to group evaluations by. Supports `variant`, `flag`, `sdk-key`, `client`, `environment`, `reason`, and `datafile-revision`. Repeat the option to group by several dimensions. Deleted SDK keys appear as their hash. |
 | `--json` | boolean | No | `false` | Outputs exact bucket data as JSON instead of a human-readable summary. |
 
 When you run the command outside the linked project directory, use the global `--cwd` option to select it:
@@ -1104,6 +1118,120 @@ vercel flags labels apply user.plan \
 
 Removing a label never changes targeting. Rules that reference the raw value keep working.
 
+### Project connections
+
+Use `vercel flags connections` with Vercel CLI version 63.0.0 or later to manage [Project Connections](/docs/flags/vercel-flags/project-connections) within a team. The **source project** owns the flags, and the **consumer project** reads them with its own OpenID Connect (OIDC) token.
+
+To add or remove connections, you need the team **Member** or **Owner** role, or **Project Admin** access on the source project. Adding a connection also requires permission to view the consumer project. See [required permissions](/docs/flags/vercel-flags/project-connections#required-permissions) for project-role availability and assignment rules.
+
+| Command | Alias | Description |
+| ------- | ----- | ----------- |
+| `vercel flags connections list` | `ls` | List projects connected to the selected project. |
+| `vercel flags connections add <consumer-project>` | None | Let the consumer project read the source project's flags. |
+| `vercel flags connections remove <consumer-project>` | `rm` | Revoke the consumer project's access to the source project's flags. |
+
+For `add` and `remove`, pass the consumer project's name or ID as the argument. Use `--project` to select the source project. If you omit `--project`, the command uses your linked project.
+
+Let `storefront` read flags from `checkout`:
+
+```bash filename="terminal"
+vercel flags connections add storefront --project checkout
+```
+
+The CLI confirms access and prints the source project's ID for your adapter.
+
+List projects that can read `checkout`'s flags:
+
+```bash filename="terminal"
+vercel flags connections list --project checkout
+```
+
+List projects whose flags `storefront` can read:
+
+```bash filename="terminal"
+vercel flags connections list --project storefront --role consumer
+```
+
+The list shows the connected projects, who created each connection, and when they created it.
+
+Remove `storefront`'s access to `checkout`'s flags:
+
+```bash filename="terminal"
+vercel flags connections remove storefront --project checkout
+```
+
+Connections grant read and evaluate access across all environments. The consumer's OIDC token selects the source flag environment.
+
+#### Connection options
+
+| Option | Applies to | Description |
+| ------ | ---------- | ----------- |
+| `--project <project>` | `list`, `add`, `remove` | Select a project by name or ID. Defaults to the linked project. For `list`, `--role` determines which side of the connection this project represents. |
+| `--role <role>` | `list` | `source` lists projects that can read the selected project's flags. `consumer` lists projects whose flags it can read. Defaults to `source`. |
+| `--json` | `list` | Return JSON with `role` and a `connections` array. |
+| `--yes`, `-y` | `remove` | Skip the confirmation prompt. Required for non-interactive removal. |
+
+### Reading the current flag configuration
+
+Use `vercel flags datafile` to read the flag configuration that Vercel Flags currently serves for a project and environment. The datafile contains the definitions and targeting configuration that SDKs use to evaluate flags.
+
+By default, the command reads the linked project's `development` environment and prints a summary table. The table shows the variants each flag can serve, rule and target counts, and any environment it reuses. Rule and target counts are blank when targeting is off.
+
+For agents and scripts, use `vc flags datafile --environment production --json` to inspect the current production configuration:
+
+```bash filename="terminal"
+vercel flags datafile --environment production --json
+```
+
+With `--json`, the command writes the full datafile to standard output inside a `datafile` property. For example, a project with one boolean flag can return:
+
+```json filename="stdout"
+{
+  "datafile": {
+    "projectId": "prj_example",
+    "environment": "production",
+    "revision": 3,
+    "segments": {},
+    "definitions": {
+      "new-checkout": {
+        "environments": { "production": 1 },
+        "variantIds": ["off", "on"],
+        "variants": [false, true]
+      }
+    }
+  }
+}
+```
+
+The example flag serves `true`: the number `1` selects the second entry in `variants`. Flags with targeting rules can return different values for different evaluation contexts. The datafile shows the configuration; use [evaluation metrics](#viewing-flag-evaluations) to check which variants your app evaluates.
+
+To read another project without changing your local link, pass `--project` and `--scope`:
+
+```bash filename="terminal"
+vercel flags datafile --project my-project --scope my-team --environment production --json
+```
+
+#### Datafile authentication
+
+Sign in with [`vercel login`](/docs/cli/login), or supply a Vercel token with the global [`--token` option](/docs/cli/global-options#token). Your account or token must have permission to read the project's flags. The CLI selects the authentication method for the requested environment:
+
+| Environment               | Authentication                                                                                                 |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `development` (default)   | The CLI requests a project OpenID Connect (OIDC) token. If OIDC is unavailable, it uses your Vercel CLI token. |
+| `preview` or `production` | The CLI uses your Vercel CLI token.                                                                            |
+
+You don't need to run `vercel env pull`, set up an SDK, or create an SDK key to use this command.
+
+To inspect a datafile with an existing SDK key, use `--sdk-key`. This mode doesn't require a CLI login or a linked project. The key selects the project and environment, so you can't combine `--sdk-key` with `--project` or `--environment`.
+
+Pass the key through standard input:
+
+```bash filename="terminal"
+vercel flags datafile --sdk-key --json < sdk-key.txt
+```
+
+The file must contain the full SDK key. `--sdk-key` takes no value on the command line. In an interactive terminal without `--json`, the CLI can read the key from a masked prompt. With `--json` or in non-interactive mode, supply the key through standard input.
+
 ### SDK keys
 
 The `vercel flags sdk-keys` subcommand manages SDK keys for your project. SDK keys authenticate your application when evaluating flags. You can create keys for different environments and key types.
@@ -1186,6 +1314,8 @@ Most users won't invoke `prepare` directly; the build pipeline runs it automatic
 
 A `flags:` connection string alone does not trigger the automatic gate, but it is recognized by the preparer once invoked. Run `vercel flags prepare` directly when you want the build artifact from a connection-string-only setup.
 
+With the consumer project's OIDC token, `prepare` also discovers [connected source projects](/docs/flags/vercel-flags/project-connections) and fetches their definitions. Create connections before running the build to include them in its fallback definitions. If a connected project's definitions can't be fetched, the build continues and the SDK fetches them at runtime.
+
 ```bash filename="terminal"
 vercel flags prepare
 ```
@@ -1199,7 +1329,7 @@ These are options that only apply to the `vercel flags` command.
 
 ### State
 
-The `--state` option, shorthand `-s`, filters the list of flags by state when using `vercel flags list`. Valid values are `active` and `archived`. Defaults to `active`.
+The `--state` option filters the list of flags by state when using `vercel flags list`. Valid values are `active` and `archived`. Defaults to `active`.
 
 ```bash filename="terminal"
 vercel flags ls --state archived
@@ -1230,7 +1360,7 @@ vercel flags evaluations new-checkout --since 24h --until 1h
 
 ### Group by
 
-The `--group-by` option selects dimensions for `vercel flags evaluations`: `variant`, `flag`, `sdk-key`, `client`, `environment`, or `reason`. Repeat it to combine dimensions. Grouping by `variant` requires a flag argument. Deleted SDK keys appear as their hash.
+The `--group-by` option sets the dimensions `vercel flags evaluations` groups results by. Supported values are `variant`, `flag`, `sdk-key`, `client`, `environment`, `reason`, and `datafile-revision`. Repeat the option to group by several dimensions. If you omit it, the command groups by `variant` when you pass a flag, and by `flag` when you query the whole project. Grouping by `variant` requires a flag argument. Deleted SDK keys appear as their hash.
 
 To find SDK keys still evaluating flags after a key rotation, query the whole project:
 
@@ -1241,9 +1371,17 @@ vercel flags evaluations new-checkout --group-by sdk-key --group-by client
 
 *Find SDK key usage across project flags, or group one flag by SDK key and client.*
 
+Group by `datafile-revision` to see which project datafile revision each client used:
+
+```bash filename="terminal"
+vercel flags evaluations my-feature --group-by datafile-revision --group-by client
+```
+
+*Checking that every client picked up the latest flag change.*
+
 ### Granularity
 
-The `--granularity` option, shorthand `-g`, sets the time bucket size for `vercel flags evaluations`. Supported values are `1m`, `5m`, `15m`, `1h`, `4h`, and `1d`.
+The `--granularity` option sets the time bucket size for `vercel flags evaluations`. Supported values are `1m`, `5m`, `15m`, `1h`, `4h`, and `1d`.
 
 If you omit `--granularity`, the CLI selects a bucket size based on the time range. The minimum bucket size prevents overly detailed queries over long periods:
 
@@ -1264,19 +1402,11 @@ vercel flags evaluations new-checkout --since 7d --granularity 4h
 
 *Viewing seven days of evaluations in four-hour buckets.*
 
-### Group by
-
-The `--group-by` option sets the dimensions `vercel flags evaluations` groups results by. Supported values are `variant`, `flag`, `sdk-key`, `client`, `environment`, and `reason`. Repeat the option to group by several dimensions. If you omit it, the command groups by `variant` when you pass a flag, and by `flag` when you query the whole project. Grouping by `variant` requires a flag.
-
-```bash filename="terminal"
-vercel flags evaluations new-checkout --group-by environment --group-by reason
-```
-
-*Viewing \`new-checkout\` evaluations by environment and evaluation reason.*
-
 ### JSON
 
-The `--json` option prints machine-readable output for commands that support JSON output, including `vercel flags list`, `vercel flags versions`, `vercel flags versions diff`, `vercel flags evaluations`, `vercel flags rules ls`, `vercel flags segments ls`, `vercel flags segments inspect`, `vercel flags segments create`, `vercel flags segments update`, `vercel flags entities ls`, `vercel flags entities create`, `vercel flags entities update`, every `vercel flags labels` subcommand, and `vercel flags sdk-keys ls`.
+The `--json` option prints machine-readable output for commands that support JSON output, including `vercel flags list`, `vercel flags datafile`, `vercel flags versions`, `vercel flags versions diff`, `vercel flags evaluations`, `vercel flags rules ls`, `vercel flags segments ls`, `vercel flags segments inspect`, `vercel flags segments create`, `vercel flags segments update`, `vercel flags entities ls`, `vercel flags entities create`, `vercel flags entities update`, every `vercel flags labels` subcommand, and `vercel flags sdk-keys ls`.
+
+`vercel flags connections list --json` also supports JSON output. Use `--role consumer` to list the source projects your selected project can read.
 
 ```bash filename="terminal"
 vercel flags segments inspect beta-users --json
@@ -1326,7 +1456,7 @@ vercel flags versions diff welcome-message --revision 4
 
 ### Kind
 
-The `--kind` option, shorthand `-k`, specifies the type of a new flag when using `vercel flags create`. Valid values are `boolean`, `string`, `number`, and `json`. Defaults to `boolean`.
+The `--kind` option specifies the type of a new flag when using `vercel flags create`. Valid values are `boolean`, `string`, `number`, and `json`. Defaults to `boolean`.
 
 ```bash filename="terminal"
 vercel flags create layout-config --kind json \
@@ -1339,7 +1469,7 @@ vercel flags create layout-config --kind json \
 
 ### Description
 
-The `--description` option, shorthand `-d`, sets a description for a new flag when using `vercel flags create`, or a segment description when using `vercel flags segments create` or `vercel flags segments update`.
+The `--description` option sets a description for a new flag when using `vercel flags create`, or a segment description when using `vercel flags segments create` or `vercel flags segments update`.
 
 ```bash filename="terminal"
 vercel flags create my-feature --description "Controls the new onboarding flow"
@@ -1374,7 +1504,7 @@ When updating a segment, if you combine `--data` with `--add` or `--remove`, the
 
 ### Add and remove
 
-The `--add` option, shorthand `-a`, adds segment criteria when using `vercel flags segments create` or `vercel flags segments update`. The `--remove` option removes segment criteria when using `vercel flags segments update`.
+The `--add` option adds segment criteria when using `vercel flags segments create` or `vercel flags segments update`. The `--remove` option removes segment criteria when using `vercel flags segments update`.
 
 ```bash filename="terminal"
 vercel flags segments update beta-users --add include:user.id=user_789 \
@@ -1389,7 +1519,7 @@ When using `vercel flags labels apply`, `--remove` takes a raw attribute value a
 
 ### Attribute
 
-The `--attribute` option, shorthand `-a`, adds an attribute as `KEY:TYPE` when using `vercel flags entities create`. Repeat the option to add multiple attributes. See [entities](#entities) for the list of types.
+The `--attribute` option adds an attribute as `KEY:TYPE` when using `vercel flags entities create`. Repeat the option to add multiple attributes. See [entities](#entities) for the list of types.
 
 ```bash filename="terminal"
 vercel flags entities create team --attribute id:string --attribute features:stringArray
@@ -1423,7 +1553,7 @@ vercel flags labels apply user.plan --set "pro=Pro Plan" --set "enterprise=Enter
 
 ### Condition
 
-The `--condition` option, shorthand `-c`, defines a condition when using `vercel flags rules add` or replaces all conditions when using `vercel flags rules update`. Use `ENTITY.ATTRIBUTE:OPERATOR:VALUE` for entity attributes or `segment:OPERATOR:SEGMENT` for reusable segments. See [available rule operators](#available-rule-operators) for `OPERATOR` values. Repeat `--condition` or separate conditions with semicolons to add multiple conditions.
+The `--condition` option defines a condition when using `vercel flags rules add` or replaces all conditions when using `vercel flags rules update`. Use `ENTITY.ATTRIBUTE:OPERATOR:VALUE` for entity attributes or `segment:OPERATOR:SEGMENT` for reusable segments. See [available rule operators](#available-rule-operators) for `OPERATOR` values. Repeat `--condition` or separate conditions with semicolons to add multiple conditions.
 
 ```bash filename="terminal"
 vercel flags rules add my-feature --environment production \
@@ -1435,7 +1565,9 @@ vercel flags rules add my-feature --environment production \
 
 ### Environment
 
-The `--environment` option, shorthand `-e`, specifies the target environment for `vercel flags set`, `vercel flags split`, `vercel flags rollout`, `vercel flags enable`, `vercel flags disable`, `vercel flags rules`, and `vercel flags sdk-keys create`. When using `vercel flags versions` or `vercel flags versions list`, it filters versions by the environment that changed. Valid values are `production`, `preview`, and `development`.
+The `--environment` option, shorthand `-e`, specifies the target environment for `vercel flags datafile`, `vercel flags set`, `vercel flags split`, `vercel flags rollout`, `vercel flags enable`, `vercel flags disable`, `vercel flags rules`, and `vercel flags sdk-keys create`. When using `vercel flags versions` or `vercel flags versions list`, it filters versions by the environment that changed. Valid values are `production`, `preview`, and `development`.
+
+`vercel flags datafile` defaults to `development`. Its `--environment` option cannot be combined with `--sdk-key`, because an SDK key already selects an environment.
 
 ```bash filename="terminal"
 vercel flags set welcome-message --environment production --variant control
@@ -1444,9 +1576,13 @@ vercel flags set welcome-message --environment production --variant control
 *Using the \`vercel flags set\` command with the
 \`--environment\` option.*
 
+### SDK key
+
+The `--sdk-key` option lets `vercel flags datafile` read configuration with an existing SDK key. It takes no command-line value and cannot be combined with `--project` or `--environment`. See [Datafile authentication](#datafile-authentication) for input methods and examples.
+
 ### Variant
 
-The `--variant` option, shorthand `-v`, defines variants on `vercel flags create`, and selects a variant by ID or value on `vercel flags update`, `vercel flags set`, `vercel flags disable`, `vercel flags rules add`, and `vercel flags rules update`.
+The `--variant` option defines variants on `vercel flags create`, and selects a variant by ID or value on `vercel flags update`, `vercel flags set`, `vercel flags disable`, `vercel flags rules add`, and `vercel flags rules update`.
 
 For JSON flags, create variants with `--variant '<JSON>'` or `--variant '<JSON>'=Label`. When you update a JSON flag, the selector can be a variant ID or the current JSON value, but not the label.
 
@@ -1471,7 +1607,7 @@ vercel flags rollout redesigned-checkout --environment production --by user.id \
 
 ### Weight
 
-The `--weight` option, shorthand `-w`, adds a variant weight when using `vercel flags split`, `vercel flags rules add`, or `vercel flags rules update`. Use the format `VARIANT=WEIGHT`, and repeat the option for every variant. `VARIANT` can be a variant ID or value. Vercel Flags normalizes weights into percentages, and a weight of `0` excludes a variant from receiving traffic.
+The `--weight` option adds a variant weight when using `vercel flags split`, `vercel flags rules add`, or `vercel flags rules update`. Use the format `VARIANT=WEIGHT`, and repeat the option for every variant. `VARIANT` can be a variant ID or value. Vercel Flags normalizes weights into percentages, and a weight of `0` excludes a variant from receiving traffic.
 
 ```bash filename="terminal"
 vercel flags split ai-summary-model --environment production --by user.id \
@@ -1509,7 +1645,7 @@ vercel flags update welcome-message --variant control --value welcome-back
 
 ### Label
 
-The `--label` option, shorthand `-l`, sets a variant label when using `vercel flags update`, a segment label when using `vercel flags segments create` or `vercel flags segments update`, an entity label when using `vercel flags entities create` or `vercel flags entities update`, or an SDK key label when using `vercel flags sdk-keys create`.
+The `--label` option sets a variant label when using `vercel flags update`, a segment label when using `vercel flags segments create` or `vercel flags segments update`, an entity label when using `vercel flags entities create` or `vercel flags entities update`, or an SDK key label when using `vercel flags sdk-keys create`.
 
 ```bash filename="terminal"
 vercel flags update welcome-message --variant control --label "Welcome back"
@@ -1530,7 +1666,7 @@ vercel flags set welcome-message -e preview --variant control \
 
 ### Stage
 
-The `--stage` option, shorthand `-s`, adds a rollout stage when using `vercel flags rollout`, `vercel flags rules add`, or `vercel flags rules update`. Each stage uses the format `PERCENTAGE,DURATION`, for example `5,6h`. Repeat `--stage` to build a longer schedule.
+The `--stage` option adds a rollout stage when using `vercel flags rollout`, `vercel flags rules add`, or `vercel flags rules update`. Each stage uses the format `PERCENTAGE,DURATION`, for example `5,6h`. Repeat `--stage` to build a longer schedule.
 
 ```bash filename="terminal"
 vercel flags rollout redesigned-checkout --environment production --by user.id \
@@ -1566,7 +1702,7 @@ vercel flags rollout welcome-message --environment production --by user.id \
 
 ### Position
 
-The `--position` option, shorthand `-p`, sets the 1-based position for a conditional rule when using `vercel flags rules add` or `vercel flags rules move`. If you omit `--position` when adding a rule, the CLI adds the rule at the end.
+The `--position` option sets the 1-based position for a conditional rule when using `vercel flags rules add` or `vercel flags rules move`. If you omit `--position` when adding a rule, the CLI adds the rule at the end.
 
 ```bash filename="terminal"
 vercel flags rules move my-feature rule_123 --environment production \
@@ -1588,6 +1724,8 @@ vercel flags sdk-keys create --type server --environment production
 ### Yes
 
 The `--yes` option, shorthand `-y`, skips the confirmation prompt when archiving, unarchiving, or deleting a flag, deleting a segment, deleting an entity, or deleting an SDK key.
+
+It also skips confirmation for `vercel flags connections remove`.
 
 ```bash filename="terminal"
 vercel flags archive my-feature --yes
@@ -1640,4 +1778,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

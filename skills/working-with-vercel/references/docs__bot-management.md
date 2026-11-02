@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "320c19f1c21d7f7dcb79fb60bd18cb53f81d4ca819eab6ab572669ca3afa6d87"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2b4b04c607957bf809e93ac309e361b195524f5292d5e05781878d3e8d0c6546"
 ---
 
 # Bot Management
@@ -585,11 +585,27 @@ Crawls public web pages to build Exa's search index, enabling users and applicat
 
 View
 
+exauser
+
+ai\_assistant
+
+Fetches public web pages on demand for Exa users and applications built on the Exa API, including AI agents.
+
+View
+
 facebook-webhooks
 
 webhook
 
 Facebook's webhook service that delivers real-time event notifications for Meta platform events and changes.
+
+View
+
+facebookbot
+
+ai\_crawler
+
+FacebookBot is operated by Meta to crawl public web pages to improve language models for its speech recognition technology.
 
 View
 
@@ -1249,6 +1265,46 @@ Powers automated checkout on behalf of shoppers with explicit consent.
 
 View
 
+salesforce-callout
+
+web\_service
+
+Makes synchronous and asynchronous HTTP requests from Salesforce Apex to external services.
+
+View
+
+salesforce-commerce-cloud
+
+web\_service
+
+Makes HTTP requests from Salesforce B2C Commerce scripts to external services.
+
+View
+
+salesforce-journey-builder
+
+web\_service
+
+Invokes customer-hosted custom activities from Salesforce Marketing Cloud Engagement journeys.
+
+View
+
+salesforce-personalization
+
+web\_service
+
+Generates item images for Salesforce Marketing Cloud Personalization Open Time Email campaigns.
+
+View
+
+salesforce-renderer
+
+web\_service
+
+Fetches web pages from Salesforce infrastructure using the SFDC-Renderer user agent.
+
+View
+
 sanity-webhooks
 
 webhook
@@ -1342,6 +1398,14 @@ siteimprove
 accessibility
 
 The Siteimprove crawler is a cloud-based bot that scans websites to monitor quality, SEO, accessibility, and policy compliance. It identifies itself through specific user agent strings (such as SiteCheck-sitecrawl) and respects robots.txt rules while crawling domains configured within customer accounts.
+
+View
+
+skypeuripreview
+
+preview
+
+Fetches pages to generate link previews in Microsoft Teams chats.
 
 View
 
@@ -1519,4 +1583,4 @@ View
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

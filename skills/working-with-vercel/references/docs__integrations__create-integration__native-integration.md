@@ -10,15 +10,15 @@ prerequisites:
   - /docs/integrations
 related:
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/get-account-info
-  - /docs/integrations/create-integration/marketplace-api
   - /docs/integrations
   - /docs/integrations/create-integration
   - /docs/webhooks/webhooks-api
+  - /docs/integrations/create-integration/marketplace-flows
 summary: "As an integration provider, understanding how your service interacts with Vercel's platform will help you create and optimize your integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/native-integration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "41812358ca34bb1e3559489743bce1a1317eb527d601784dda6bf129ed9b7ef9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "68490b0adb13fda7f87e04576e64079125333b9dd86e84a9c74bb9fb90a77e65"
 ---
 
 # Native integration concepts
@@ -34,7 +34,7 @@ Native integrations allow a two-way connection between Vercel and third-party pr
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner) — Learn how to implement Partner API endpoints for your Vercel integration
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/integrations/create-integration/native-integration.graph.md](/docs/integrations/create-integration/native-integration.graph.md)
@@ -57,7 +57,7 @@ Because installations are tied to teams and not individual users, use the [Get A
 | Concept                                                              | Definition                                                               |
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | Team installation                                                    | The primary connection between a user's team and a specific integration. |
-| [`installationId`](/docs/integrations/create-integration/marketplace-api#installations) | The main partition key connecting the user's team to the integration.    |
+| [`installationId`](/docs/integrations/create-integration/native-integration#team-installations) | The main partition key connecting the user's team to the integration.    |
 
 ### Reinstallation behavior
 
@@ -223,4 +223,4 @@ To successfully implement your native integration, you'll need to handle several
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

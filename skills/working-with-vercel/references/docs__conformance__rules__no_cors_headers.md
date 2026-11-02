@@ -12,8 +12,8 @@ related:
 summary: Warns when CORS header (or header-like) configuration is detected, requiring that configuration to be allowlisted.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_cors_headers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "69ec958cef34045afeafcb8c4a87472284f5ebcf61fb089a38dfbb503d0c0993"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bb43be77e29b06226126a95174eb1758d8211e791e52e38441052da0f299d6f8"
 ---
 
 # NO_CORS_HEADERS
@@ -89,4 +89,4 @@ added to the allowlists.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use create_or_transfer_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_or_transfer_domain.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ea4864d98c5ae6a188205ab6e7578977c28e667bc9f372d27659daa515ba5b4e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6d59460e4420b9f64b3cc5c6c412535d4901c379b0bdb88921d672c85f204a06"
 ---
 
 # create_or_transfer_domain
@@ -29,9 +29,9 @@ Add an existing domain to the Vercel platform.
 
 - [add_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/add_project_domain) — Use add_project_domain with Vercel MCP.
 - [create_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record) — Use create_record with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
-- [verify_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/verify_project_domain) — Use verify_project_domain with Vercel MCP.
+- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [replace_domain_dns_records](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/replace_domain_dns_records) — Use replace_domain_dns_records with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/create_or_transfer_domain.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/create_or_transfer_domain.graph.md)
 <!-- /docsgraph:related -->
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

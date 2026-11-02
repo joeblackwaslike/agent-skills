@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d10f06979fd541d106882b02c8fa814b8da3a4bb6240eb219c0956b9813ee683"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "13a96bf04957d2632eb3b15df76d9921e8144a6d48680df92e3d8b0e84f4da54"
 ---
 
 # Sandboxes
@@ -28,8 +28,8 @@ Create sandboxes to run commands and work with files in isolated environments. Y
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 - [Python SDK Reference](https://vercel.com/docs/sandbox/python-sdk-reference) — Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persisten
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 - [JS SDK Reference](https://vercel.com/docs/sandbox/sdk-reference) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
 - [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox) — Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
 
@@ -353,4 +353,4 @@ Write files.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "df2215b333a0e3779f5741b4e2c616f0647ec962de5504f42cb5f4c1aac1246d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "01edc50873a6397d02699ad601aca52ac976aaf971b8da6463167f1bbf963991"
 ---
 
 # Build image overview
@@ -33,20 +33,20 @@ Vercel supports [multiple runtimes](/docs/functions/runtimes).
 
 - [vlt is now available in builds via zero configuration](https://vercel.com/changelog/vlt-is-now-available-in-builds-via-zero-configuration)
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
-- [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
+- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Container Runtime](https://vercel.com/docs/functions/runtimes/container) — Run any code and library on Vercel Functions with an OCI container image built from a Dockerfile or Containerfile at the
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Vercel Container Registry](https://vercel.com/docs/container-registry) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
 - [Build Output API](https://vercel.com/docs/build-output-api) — The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 
 Full cross-link map for this page: [/docs/builds/build-image.graph.md](/docs/builds/build-image.graph.md)
 <!-- /docsgraph:related -->
 
 | Runtime                                                           | [Build image](/docs/builds/build-image)                 |
 | ----------------------------------------------------------------- | ------------------------------------------------------- |
-| [Node.js](/docs/functions/runtimes/node-js)                       | `24.x` `22.x`                                           |
+| [Node.js](/docs/functions/runtimes/node-js)                       | `26.x` `24.x` `22.x`                                           |
 | [Python](/docs/functions/runtimes/python)                         | `3.14`, `3.13`, `3.12`                                  |
 | [Ruby](/docs/functions/runtimes/ruby)                             | `3.3.x`                                                 |
 | [Go](/docs/functions/runtimes/go)                                                 | (Supported) |
@@ -97,4 +97,4 @@ dnf install -y my-package-here
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -4,8 +4,8 @@ description: Learn how to use Kling AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "158e8c3a672c2b0a2b89752e579e07c194fa995c7ffd501eb210fdf38aebfec1"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "55dc4025b33c99a7b73cdc50dea8bfa4df83cfafa5f256ab37ffcaf06ea80de4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -88,7 +88,11 @@ const klingai = createKlingAI({
 
 You can use the following optional settings to customize the Kling AI provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   Kling AI API key. Defaults to the `KLINGAI_API_KEY` environment variable.
   Create one in the [Kling AI developer console](https://kling.ai/dev/api-key).

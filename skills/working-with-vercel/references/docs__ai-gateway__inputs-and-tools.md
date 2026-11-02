@@ -16,8 +16,8 @@ related:
 summary: Send images, PDFs, audio, and video to AI Gateway models, and connect models to application functions with tool use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "232d339add3c8109746fd894113070b0d438026e703293a99e986cbd59cf29ac"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5cdf181360d1116f9113d723eb1141c7a4a8372c265c76a594df36ca74b9966f"
 ---
 
 # AI Gateway Inputs and Tools
@@ -34,7 +34,7 @@ Choose a guide for the input you have or the function you want a model to call. 
 - [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
-- [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools.graph.md](/docs/ai-gateway/inputs-and-tools.graph.md)
 <!-- /docsgraph:related -->
@@ -74,4 +74,4 @@ These guides focus on understanding existing input. For other tasks, see:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

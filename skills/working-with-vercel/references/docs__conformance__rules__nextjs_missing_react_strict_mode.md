@@ -12,8 +12,8 @@ related:
 summary: Applications using Next.js should enable React Strict Mode
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_react_strict_mode.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c2650d7856859439d46ff483a2fffbda96545e6b0813c90528811a044798dfdb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "42e1c9eaa11169cd23c0b7342b3985f769fe8fb5ca4d7573c6478b15f2056e25"
 ---
 
 # NEXTJS_MISSING_REACT_STRICT_MODE
@@ -40,4 +40,4 @@ module.exports = {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

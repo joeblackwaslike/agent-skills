@@ -13,8 +13,8 @@ related:
 summary: Test tenant-specific experiences in preview deployments using dynamic URL prefixes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "610ac6e2b4bf10a485ca7efc2381b864aaf2ea008adc278997831d95b6b4a802"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cfe943f433aa49d19759975c2f153b989dac4e3a2d790c414569248daa425437"
 ---
 
 # Multi-tenant Preview URLs
@@ -31,9 +31,9 @@ Multi-tenant preview URLs let you test tenant-specific experiences in preview de
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/proxy-and-routing) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
-- [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/preview-url-prefixes.graph.md](/docs/platforms/multi-tenant-platforms/preview-url-prefixes.graph.md)
 <!-- /docsgraph:related -->
@@ -127,4 +127,4 @@ export const config = {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

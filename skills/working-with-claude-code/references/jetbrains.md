@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/jetbrains.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "1d749d341482275601c6f24f6f2e91298285ed5d59268251931f83391be47507"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "1af2bb66618140841118e0cff7149bcf6223d1c003a6fbc1f934ff1377f9a1da"
 ---
 
 > ## Documentation Index
@@ -47,7 +47,7 @@ Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-clau
 
 If `claude` is installed somewhere your IDE can't find, set the full path in the plugin's [Claude command setting](#general-settings).
 
-Claude Code works with any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account, and no API key is required. You'll be prompted to [log in](https://code.claude.com/docs/en/authentication.md#log-in-to-claude-code) the first time you run `claude`.
+Claude Code works with any paid Claude subscription (Pro, Max, Ultra, Team, or Enterprise) or a Claude Console account, and no API key is required. You'll be prompted to [log in](https://code.claude.com/docs/en/authentication.md#log-in-to-claude-code) the first time you run `claude`.
 
 ## Usage
 

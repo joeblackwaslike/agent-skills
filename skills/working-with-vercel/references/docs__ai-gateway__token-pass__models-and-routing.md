@@ -17,8 +17,8 @@ related:
 summary: Which requests Token Pass covers, how Token Pass API keys route requests, what happens when credit runs out, and the errors you can get.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/token-pass/models-and-routing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5ece8c378c704cd8357952a2ad97aa3cbb9d30c14fdfa72082cd4eec25b2890b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bb3a585ad18be80327d92df5ef933aed3e48668d4d56978ec384615505423975"
 ---
 
 # Token Pass Models and Routing
@@ -167,4 +167,4 @@ If a featured model request failed, or another provider served it, check these i
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

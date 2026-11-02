@@ -14,8 +14,8 @@ related:
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c3f9b0069067632c9d16ed3b5292c5ab4c15dcfb930b319fe1c5fa6fea759fd4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e26761713a3c87514bf9e1745fb6681bd0780fb051e69202d4b1b8fcb296e1f8"
 ---
 
 # Getting started with ISR
@@ -28,17 +28,18 @@ This guide helps you set up Incremental Static Regeneration (ISR) with your Verc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
+- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Updating large-scale site navigation with minimal revalidation](https://vercel.com/kb/guide/update-mega-nav-min-reval) — When working with a large number of pages that share a common multi-level navigation, making a navigation update require
 - [How to implement Incremental Static Regeneration (ISR)](https://nextjs.org/docs/app/guides/incremental-static-regeneration) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
+- [How HashiCorp developers iterate faster with Incremental Static Regeneration](https://vercel.com/blog/how-hashicorp-developers-iterate-faster-with-isr)
 - [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
 - [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
-- [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration/quickstart.graph.md](/docs/incremental-static-regeneration/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -665,7 +666,7 @@ The **ISR** section provides graphs to help you understand cache behavior and sp
 - **ISR Usage**: The read and write units you're billed for. Correlate data here with the revalidation graphs to find what drives your spend.
 - **Request Caching**: The amount of hits vs misses and the share of requests that Vercel serves from which cache layer.
 - **Time-based Revalidations**: How often pages are regenerated based on a timer. Use time-based revalidations when content needs to update but you don't have a webhook. Otherwise, use tag-based invalidation to only regenerate when you know the content has changed.
-- **Tag Revalidations**: How often a page is regenerated due to an on-demand tag revalidation. Tag content with unique keys and invalidate only the pages that need to update when the content change.
+- **Tag Revalidations**: How often a page is regenerated due to an on-demand tag revalidation. Tag content with unique keys and invalidate only the pages that need to update when the content changes.
 
 ## Templates
 
@@ -682,4 +683,4 @@ The **ISR** section provides graphs to help you understand cache behavior and sp
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

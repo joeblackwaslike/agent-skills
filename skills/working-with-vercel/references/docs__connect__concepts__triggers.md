@@ -17,8 +17,8 @@ related:
 summary: Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "18f9f2140f655071700da2a757c59d66b4db246270b64e0f1c9cd3fbe3994e83"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ef9525b31b02b8192546cdb7c573b4882d50e630786c60ddead0afb2afdc9de3"
 ---
 
 # Webhook triggers for Vercel Connect
@@ -33,13 +33,13 @@ A **trigger** is an incoming webhook from a third-party service that Vercel Conn
 
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect)
+- [Vercel Connect adds webhook triggers for more providers](https://vercel.com/changelog/vercel-connect-adds-webhook-triggers-for-more-providers)
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
+- [Call third-party APIs from Python with Vercel Connect](https://vercel.com/kb/guide/python-and-vercel-connect) — Call Slack and Linear APIs from Python with Vercel Connect. Request app and user tokens, handle consent, and verify prov
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks) — Learn how to set up webhooks and use them with Vercel Integrations.
 - [Creating & Triggering Deploy Hooks](https://vercel.com/docs/deploy-hooks) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 
@@ -181,4 +181,4 @@ If the target does not resolve to a deployment, or the receiving handler returns
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

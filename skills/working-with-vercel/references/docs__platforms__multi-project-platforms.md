@@ -14,8 +14,8 @@ related:
 summary: Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5f15d4775c85e7b76b39ce70ae2e9c95af965ee39580fc0d9bb29e10db1e4d19"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0cf5465222720691106e7efa8fa5b2321274db784730d0f59b0e8866a51297c8"
 ---
 
 # Multi-Project Platforms
@@ -33,7 +33,7 @@ A multi-project platform gives each customer its own Vercel project and deployme
 - [Examples](https://vercel.com/docs/platforms/examples) — Clone working multi-tenant and multi-project starters to begin your platform build.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 
 Full cross-link map for this page: [/docs/platforms/multi-project-platforms.graph.md](/docs/platforms/multi-project-platforms.graph.md)
 <!-- /docsgraph:related -->
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/platforms/multi-project-platforms.grap
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

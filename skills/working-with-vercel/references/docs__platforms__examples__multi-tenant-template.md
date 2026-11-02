@@ -13,8 +13,8 @@ related:
 summary: Build SaaS applications that serve multiple domains from a single Next.js codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/multi-tenant-template.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7cfae701abfda12373261021b45aa86ba8fd756b1e87c33e71ab09527304ebe4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2470c8aa10e41a8bc43df83c864e60a57aa4e91e4dc757cff7cbbfda211c215d"
 ---
 
 # Multi-Tenant Template
@@ -30,9 +30,9 @@ Multi-tenant applications allow you to serve different customers with unique dom
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 - [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/proxy-and-routing) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
-- [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 
 Full cross-link map for this page: [/docs/platforms/examples/multi-tenant-template.graph.md](/docs/platforms/examples/multi-tenant-template.graph.md)
 <!-- /docsgraph:related -->
@@ -82,7 +82,7 @@ The template includes:
 
 ### Step 2: Set Up Local Development
 
-For local development, you'll need to map custom domains to localhost. Add these entries to your hosts file:
+If you use Chrome or Firefox, you can skip this step, since those browsers send every `*.localhost` name to your computer. In other browsers, add these entries to your hosts file:
 
 ```text filename="/etc/hosts"
 127.0.0.1 tenant1.localhost
@@ -98,13 +98,13 @@ pnpm dev
 
 Visit different domains to see tenant-specific content:
 
-- <http://localhost:3002> - Default home page
-- <http://tenant1.localhost:3002> - Tenant 1's site
-- <http://tenant2.localhost:3002> - Tenant 2's site
+- <http://localhost:3000> - Default home page
+- <http://tenant1.localhost:3000> - Tenant 1's site
+- <http://tenant2.localhost:3000> - Tenant 2's site
 
 ### Step 3: Configure the Proxy
 
-The proxy is the heart of the multi-tenant system. It intercepts all requests and routes them appropriately. The snippet below is a simplified version. See [`proxy.ts` in the template](https://github.com/vercel/platforms/blob/main/proxy.ts) for the full implementation:
+The proxy is the heart of the multi-tenant system. It intercepts all requests and routes them appropriately. The template reads your root domain from the `NEXT_PUBLIC_ROOT_DOMAIN` environment variable (the quickstart calls it `ROOT_DOMAIN`). Note that the snippet below uses different route names than the template, which rewrites tenants to `/s/[subdomain]`, so that the idea is easier to follow. See [`proxy.ts` in the template](https://github.com/vercel/platforms/blob/main/proxy.ts) for the full implementation:
 
 > **💡 Note:** Next.js renamed the `middleware` file convention to `proxy` in Next.js 16.
 > The template uses `proxy.ts`. On Next.js 15 and earlier, use `middleware.ts`
@@ -119,6 +119,14 @@ export async function proxy(request: NextRequest) {
 
   // if it starts with /domains, pass through
   if (pathname.startsWith('/domains')) {
+    return NextResponse.next();
+  }
+
+  // Requests to your root domain, or to localhost:3000 in local development,
+  // go to the default home page instead of a tenant's page.
+  const rootDomain = process.env.NEXT_PUBLIC_ROOT_DOMAIN || 'localhost:3000';
+
+  if (hostname === rootDomain) {
     return NextResponse.next();
   }
 
@@ -255,4 +263,4 @@ Whether you're building a white-label solution, a marketplace platform, or a con
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

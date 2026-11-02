@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/cli
   - /docs/functions
-  - /docs/eve
+  - /docs/frameworks/agents/eve
   - /docs/services
   - /docs/passport
 summary: Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nuxt.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cee9ff24c73098d0f3e5799ca884032f41952146c43325e1bbe0a3ecac5e37fc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3c987a469741054043c75d41ba7d83fc9274a9bebe668775f7d94b8fc46feb06"
 ---
 
 # Nuxt on Vercel
@@ -36,13 +36,12 @@ Nuxt is an open-source framework that streamlines the process of creating modern
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
 - [Rendering strategies for retail: ISR vs SSR vs static](https://vercel.com/kb/guide/ssr-vs-ssg-vs-isr-vs-csr-for-ecommerce) — Choose between SSR, SSG, ISR, and CSR for each ecommerce surface. Compare rendering modes on freshness, personalization,
-- [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
-- [Vercel Integration Guide for SAP Composable Storefront](https://vercel.com/kb/guide/integration-guide-for-sap-composable-storefront) — Integrate Vercel and SAP Composable Storefront with advanced rendering methods by leveraging the Vercel Build Output API
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Chat SDK with Nuxt](https://vercel.com/docs/chat-sdk/frameworks/nuxt) — Add a Chat SDK bot to Nuxt, receive Slack events through Vercel Connect, and deploy on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nuxt.graph.md](/docs/frameworks/full-stack/nuxt.graph.md)
 <!-- /docsgraph:related -->
@@ -141,7 +140,7 @@ export default defineNuxtConfig({
 To learn more about `routeRules`:
 
 - [Read Nuxt's reference docs to learn more about the available route options](https://nuxt.com/docs/guide/concepts/rendering#route-rules)
-- [Read the Nitro Engine's Cache API docs to learn about cacheing individual routes](https://nitro.unjs.io/guide/cache)
+- [Read the Nitro Engine's Cache API docs to learn about caching individual routes](https://nitro.unjs.io/guide/cache)
 
 ## Vercel Functions
 
@@ -163,7 +162,7 @@ You can test your API Routes with `nuxt dev`.
 
 ## Build an agent app with eve
 
-Use the `eve/nuxt` module to connect your Nuxt frontend to an [eve agent](/docs/eve). The module starts the agent alongside Nuxt during development and auto-imports the `useEveAgent` composable for sending messages and streaming responses.
+Use the `eve/nuxt` module to connect your Nuxt frontend to an [eve agent](/docs/frameworks/agents/eve). The module starts the agent alongside Nuxt during development and auto-imports the `useEveAgent` composable for sending messages and streaming responses.
 
 On Vercel, the module deploys the agent through [Vercel Services](/docs/services) alongside your Nuxt app in one project. Follow the [eve Nuxt integration guide](https://eve.dev/docs/guides/frontend/nuxt) to register the module, connect your Vue components, and configure authentication for browser requests.
 
@@ -698,4 +697,4 @@ Learn more about deploying Nuxt projects on Vercel with the following resources:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

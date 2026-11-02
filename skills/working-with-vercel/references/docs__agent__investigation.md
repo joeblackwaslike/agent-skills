@@ -13,8 +13,8 @@ related:
 summary: Let AI investigate your error alerts to help you debug faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/investigation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dce15a48553a55b0a90f653b78d4450268eed6ffba2a5919e684c2474d842b60"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9aa9a333cc3382cb8783eb0870b38467e4e8e5eb212a4704ddd27cde7e2344f9"
 ---
 
 # Investigation
@@ -29,25 +29,25 @@ When you get an anomaly alert, Vercel Agent can investigate your logs and metric
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations)
 - [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga)
 - [Vercel Agent investigations now available in Slack](https://vercel.com/changelog/vercel-agent-investigations-now-available-in-slack)
 - [Vercel Agent Investigations now in Public Beta](https://vercel.com/changelog/vercel-agent-investigations-now-in-public-beta)
 - [Vercel Agent investigations now included in Observability Plus](https://vercel.com/changelog/vercel-agent-investigations-now-included-in-observability-plus)
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Installation](https://vercel.com/docs/agent/installation) — Let AI automatically install Web Analytics and Speed Insights in your app
 
 Full cross-link map for this page: [/docs/agent/investigation.graph.md](/docs/agent/investigation.graph.md)
 <!-- /docsgraph:related -->
 
 ## Eligible alerts for automatic investigation
 
-Vercel Agent automatically investigates Medium and High anomaly alerts. Low-severity alerts do not start automatic investigations. Alert Rule severity settings control notifications and do not affect investigation eligibility.
+Vercel Agent automatically investigates Medium and High anomaly alerts. Low-severity alerts do not start automatic investigations. Monitor severity settings control notifications and do not affect investigation eligibility.
 
 ## Getting started with Vercel Agent Investigation
 
@@ -60,7 +60,7 @@ To run investigations automatically for [eligible](#eligible-alerts-for-automati
 
 You can [run an investigation manually](#run-an-investigation-manually) if you want to investigate an alert that has already fired.
 
-> **💡 Note:** Code Review and Vercel Agent Investigations are enabled separately. [Enable Vercel Agent Investigations separately](#enable-vercel-agent-investigations).
+> **💡 Note:** Code Review and Vercel Agent Investigations are anabled separately.
 
 ### Enable Vercel Agent Investigations
 
@@ -115,4 +115,4 @@ Once disabled, Vercel Agent Investigation won't run automatically on any new ale
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Prevent video files from being added to Next.js applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_self_hosted_videos.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "56c524008f512af1d3bcb89c349565577b0e3df014835f68fc61eb810caddafb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0a65278d16cd0f0e8a9de106d58b0b0fd9087dc20ddf179b516c6b0f1c844a06"
 ---
 
 # NEXTJS_NO_SELF_HOSTED_VIDEOS
@@ -41,4 +41,4 @@ See the [best practices for hosting videos on Vercel](/kb/guide/best-practices-f
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

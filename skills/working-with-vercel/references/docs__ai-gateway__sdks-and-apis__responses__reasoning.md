@@ -15,8 +15,8 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3aaf889de4ef46c87a52a5420fb5ae2031e88d182c367b987a034cb0f2a6c8ce"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7eb9237496fa63f57f1d8b3488e735cd391e241d07211649bd5cb05460d09443"
 ---
 
 # OpenAI Responses Reasoning with AI Gateway
@@ -111,4 +111,4 @@ To inspect reasoning, check returned usage and reasoning items where available. 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

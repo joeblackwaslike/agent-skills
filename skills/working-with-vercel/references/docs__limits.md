@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "556446a802096117b8678aff835601f8a3f95948e23f5380bbf2429cb1a5daac"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a29627da03f2fda0103894ea69e690cc1e6efac7a3999548ddc361f01499b3db"
 ---
 
 # Limits
@@ -669,4 +669,4 @@ The **dynamic quotas** table consists of the following five columns:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

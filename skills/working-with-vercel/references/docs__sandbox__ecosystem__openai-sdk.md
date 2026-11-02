@@ -17,8 +17,8 @@ related:
 summary: Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/openai-sdk.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "33f9407f1f4e69ad2a5df1edeaa5b470fbbb011cd2400cab45c19413b457a052"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f887f39e3bab85fae72c6cb78026528bd38f590a52524903d3a876e0997477cf"
 ---
 
 # OpenAI SDK
@@ -200,4 +200,4 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md]
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -17,8 +17,8 @@ related:
 summary: Prebuilt UI components for common platform flows like claiming deployments and managing domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "29ce5363b8b098fd4af77c8d6030d1955e7bb8253e9f74c26cf7e6c7bcfd1800"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7ead8549427c1f827ecb21a63fa8e85187ec52e6c8068d8fd7b338250935a18a"
 ---
 
 # Blocks
@@ -57,4 +57,4 @@ Full cross-link map for this page: [/docs/platforms/platform-elements/blocks.gra
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

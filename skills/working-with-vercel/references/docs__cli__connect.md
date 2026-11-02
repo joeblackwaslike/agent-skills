@@ -15,8 +15,8 @@ related:
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6123f4536070b16edf13329f0bc0c5af645f0dd345261bb73d1e9008343dd907"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9bc8c4921d5918bfac7d863829cccf70bc99ee293aa2a518df8c2d783c7403bb"
 ---
 
 # vercel connect
@@ -30,6 +30,7 @@ The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Discover 1000+ services on Vercel Connect from the CLI](https://vercel.com/changelog/discover-1000-services-on-vercel-connect-from-the-cli)
 - [Vercel Connect now supports CLI setup for 100+ connectors](https://vercel.com/changelog/vercel-cli-100-services)
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
 - [Vercel Connect now supports Linq](https://vercel.com/changelog/vercel-connect-now-supports-linq)
@@ -39,7 +40,6 @@ The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors.
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
 - [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 
 Full cross-link map for this page: [/docs/cli/connect.graph.md](/docs/cli/connect.graph.md)
@@ -527,4 +527,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

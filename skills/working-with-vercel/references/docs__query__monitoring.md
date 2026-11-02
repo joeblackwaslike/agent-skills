@@ -16,8 +16,8 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more with Monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "812b9b9f7a2423137744e3a191e911d4061b7418fe6c6f5b32151f59907bcbe3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9670617858c368dfb6aa164c52a06ac281d5611c73c5006bfce5f0aae8df9dac"
 ---
 
 # Monitoring
@@ -30,15 +30,16 @@ Monitoring is now
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring)
 - [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
 - [Monitoring is now available to view traffic and performance data for improved observability ](https://vercel.com/changelog/monitoring-is-now-available-to-view-traffic-and-performance-data-for)
+- [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring)
+- [Create custom monitors in Vercel Observability](https://vercel.com/changelog/create-custom-monitors-in-vercel-observability)
 - [Monitoring is in public beta for Enterprise Teams](https://vercel.com/changelog/monitoring-is-in-public-beta-for-enterprise-teams)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Incremental Static Regeneration \\(ISR\\)](https://vercel.com/docs/incremental-static-regeneration) — ISR serves cached static pages while regenerating content in the background. Vercel\\\\
 
 Full cross-link map for this page: [/docs/query/monitoring.graph.md](/docs/query/monitoring.graph.md)
 <!-- /docsgraph:related -->
@@ -124,7 +125,7 @@ Vercel sunset Monitoring for Pro plans at the end of the November 2025 billing c
 If you want to continue using the full Monitoring capabilities or purchase a product similar to Monitoring, consider moving to [Query](/docs/query).
 
 - Enable [Observability Plus](/docs/observability/observability-plus) to continue using query features.
-- Save queries in **Observability** [Notebooks](/docs/query#save-query).
+- Save queries in **Observability** [Notebooks](/docs/query#save-and-share-query).
 
 ## More resources
 
@@ -141,4 +142,4 @@ For more information on what to do next, we recommend the following articles:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

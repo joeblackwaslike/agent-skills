@@ -4,8 +4,8 @@ description: Use OpenAI compatible providers with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "36b87ae5c946a21edc7e31533d272fb1db4f3bd3f52c604b8e8d3e3429a00c51"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "274f2b28ae59717eba3224de14a74154b5ec934265721f28b575a9250091114d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -24,6 +24,7 @@ We provide detailed documentation for the following OpenAI compatible providers:
 - [Clarifai](/providers/openai-compatible-providers/clarifai)
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
 - [TopxAI](/providers/openai-compatible-providers/topxai)
+- [Synthorai](/providers/openai-compatible-providers/synthorai)
 
 The general setup and provider instance creation is the same for all of these providers.
 
@@ -56,11 +57,14 @@ You can use the following optional settings to customize the provider instance:
 
   Set the URL prefix for API calls.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key for authenticating requests. If specified, adds an `Authorization`
   header to request headers with the value `Bearer <apiKey>`. This will be added
   before any headers potentially specified in the `headers` option.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 

@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's features with Gatsby."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/gatsby.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9000772ce1bf7b338331415d72395f3add151c789f107109f3923a00d3366619"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "18053db1d35a0c6548c55bf44d0a618ff4b783c49e58b7b400a76b82ececa47d"
 ---
 
 # Gatsby on Vercel
@@ -427,4 +427,4 @@ See [our Frameworks documentation page](/docs/frameworks) to learn about the ben
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

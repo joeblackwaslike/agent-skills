@@ -17,8 +17,8 @@ related:
 summary: Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/integrations/sandbox.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "05415bb5946152aa8c2b5f3fe766f24248fb964de21b026ee83ed5282bc849a4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e73f76568a045bfb3d86489eff8c140478def7395eb73333df21fceb2eef1ddc"
 ---
 
 # Chat SDK with Vercel Sandbox
@@ -34,10 +34,11 @@ Let a chat agent analyze an attached CSV by running commands in [Vercel Sandbox]
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [Ship a GitHub code review bot with Hono and Redis](https://vercel.com/kb/guide/ship-a-github-code-review-bot-with-hono-and-redis) — This guide walks through building a GitHub bot that reviews pull requests on demand. When a user @mentions the bot on a
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
-- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
+- [How to build an agent for Liveblocks with Chat SDK and AI SDK](https://vercel.com/kb/guide/liveblocks-chat-sdk-ai-sdk) — Build an AI agent that replies to @-mentions in Liveblocks comment threads with streamed responses and tool calling, usi
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 
 Full cross-link map for this page: [/docs/chat-sdk/integrations/sandbox.graph.md](/docs/chat-sdk/integrations/sandbox.graph.md)
 <!-- /docsgraph:related -->
@@ -278,4 +279,4 @@ Each follow-up needs its own attachment because the sandbox is stopped after the
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

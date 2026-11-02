@@ -15,8 +15,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1f807dbf3eb4fdfdbf9059722155fee03e4c6d06ed1be57ead11777bc685a432"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ed02c3730fafacee3178fdf12759153c80e7b8c76a17e8065017a2992bdeb1d1"
 ---
 
 # Client Uploads with Vercel Blob
@@ -38,7 +38,7 @@ In this guide, you'll learn how to do the following:
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
-- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
+- [Store and serve files from Python with Vercel Blob](https://vercel.com/kb/guide/python-and-vercel-blob) — Upload, list, stream, and protect files from a Python app with Vercel Blob, including private per-user storage in FastAP
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
 - [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
@@ -723,4 +723,4 @@ VERCEL_BLOB_CALLBACK_URL=https://abc123.ngrok-free.app
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation (RAG) through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/embeddings.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fa9a44ba1bb42a857ae597e8a3302cef69488d2c2d948a7e164545e6def23972"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "208896aba770c8c692779d97d03253053a9cf8a871f5a21dd73a242c288c4ea9"
 ---
 
 # AI Gateway Embeddings
@@ -250,4 +250,4 @@ Follow the [TanStack AI setup guide](/docs/ai-gateway/ecosystem/framework-integr
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

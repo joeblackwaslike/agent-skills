@@ -15,8 +15,8 @@ related:
 summary: Run terminal-based coding agents in persistent Vercel Sandbox microVMs from Herdr. Review and apply their changes locally as Git patches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/herdr.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "27dff8dbca48feb142878cf9acfd3a0dd512c61ca87c1cc9361b8932c94efca8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0a3cce8ceaa40caba9058da6c8e83e82c1a0aae84c1b7e39ad1d3a771533ee97"
 ---
 
 # Herdr
@@ -37,9 +37,9 @@ back as a Git patch you review and apply locally.
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox)
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 - [Paseo](https://vercel.com/docs/sandbox/ecosystem/paseo) — Run Codex, Claude Code, OpenCode, and Pi in persistent Vercel Sandbox microVMs from Paseo, and reach the same session fr
+- [Harbor and Terminal-Bench](https://vercel.com/docs/sandbox/ecosystem/harbor) — Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker m
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/herdr.graph.md](/docs/sandbox/ecosystem/herdr.graph.md)
@@ -271,4 +271,4 @@ For a guide-form walkthrough with FAQs, see
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

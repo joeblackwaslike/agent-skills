@@ -15,8 +15,8 @@ related:
 summary: What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAuth.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/providers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c285bcd744ed2e94ab679f8935a3c07cd46d1fb1c49ba41eb8504ace7b16d7a5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "35ed2e7729da2ddf071e0aa16571f8f18db19a308624fe66ba047a1b07d2a3aa"
 ---
 
 # For Service Providers
@@ -35,8 +35,8 @@ If you are a service owner, this page covers what your service needs to support 
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/connect/providers.graph.md](/docs/connect/providers.graph.md)
@@ -318,4 +318,4 @@ A token test only counts for the exact configuration it tested. Create a new tes
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

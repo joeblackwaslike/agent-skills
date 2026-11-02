@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway/ecosystem
 related:
   - /docs/ai-gateway
+  - /docs/ai-gateway/authentication-and-byok
 summary: Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9b42b3fd40f4cb4fe02f0bf9e2c879551a93e97b205dc99a4829ec59a6ac8bce"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5191b394b188643ac206eedcc23ffd9926efc8822909bbde38ac59df36338b2f"
 ---
 
 # LlamaIndex with AI Gateway
@@ -27,8 +28,8 @@ sha256: "9b42b3fd40f4cb4fe02f0bf9e2c879551a93e97b205dc99a4829ec59a6ac8bce"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [LlamaIndex](https://ai-sdk.dev/providers/adapters/llamaindex) — Learn how to use LlamaIndex with the AI SDK.
 - [LlamaGate](https://ai-sdk.dev/providers/community-providers/llamagate) — LlamaGate Provider for the AI SDK
+- [LlamaIndex](https://ai-sdk.dev/providers/adapters/llamaindex) — Learn how to use LlamaIndex with the AI SDK.
 - [What is a Large Language Model \\(LLM\\)?](https://vercel.com/kb/guide/what-is-a-large-language-model) — Learn what Large Language Models \\(LLMs\\) are, how they work, and how you can use them to generate UI, debug code, and i
 - [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
@@ -55,12 +56,12 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
 
 - ### Configure environment variables
-  Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway#using-the-ai-gateway-with-an-api-key):
+  Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys):
   ```bash filename=".env"
   AI_GATEWAY_API_KEY=your-api-key-here
   ```
   > **💡 Note:** If you're using the [AI Gateway from within a Vercel
-  > deployment](/docs/ai-gateway#using-the-ai-gateway-with-a-vercel-oidc-token),
+  > deployment](/docs/ai-gateway/authentication-and-byok#oidc-tokens),
   > you can also use the `VERCEL_OIDC_TOKEN` environment variable which will be
   > automatically provided.
 
@@ -104,4 +105,4 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

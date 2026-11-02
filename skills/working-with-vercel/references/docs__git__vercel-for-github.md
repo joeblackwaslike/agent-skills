@@ -8,21 +8,21 @@ type: conceptual
 prerequisites:
   - /docs/git
 related:
-  - /docs/deployments/environments
+  - /docs/deployments/generated-urls
   - /docs/domains/working-with-domains
   - /docs/git
-  - /docs/projects
+  - /docs/project-configuration/project-settings
   - /docs/project-configuration/git-configuration
 summary: Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3ec1f59d484920cd945455ff8b4b206f176f3b572afd783b95a43746d14ff317"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9c4df4187f4f052e5b498fa88d439e1398337d28637d28d4a500ad20a7cda1fa"
 ---
 
 # Deploying GitHub Projects with Vercel
 
-Vercel for GitHub automatically deploys your GitHub projects with [Vercel](/), providing [Preview Deployment URLs](/docs/deployments/environments#preview-environment-pre-production#preview-urls), and automatic [Custom Domain](/docs/domains/working-with-domains) updates.
+Vercel for GitHub automatically deploys your GitHub projects with [Vercel](/), providing [Preview Deployment URLs](/docs/deployments/generated-urls#viewing-generated-urls), and automatic [Custom Domain](/docs/domains/working-with-domains) updates.
 
 
 <!-- docsgraph:related -->
@@ -37,8 +37,8 @@ Vercel for GitHub automatically deploys your GitHub projects with [Vercel](/), p
 - [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Introducing `vercel dev`: Serverless, on localhost](https://vercel.com/blog/vercel-dev)
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
@@ -61,7 +61,7 @@ The [Deploying a Git repository](/docs/git#deploying-a-git-repository) guide out
 
 ## Changing the GitHub Repository of a Project
 
-If you'd like to connect your Vercel Project to a different GitHub repository or disconnect it, you can do so from the [Git section](/docs/projects#git) in the Project Settings.
+If you'd like to connect your Vercel Project to a different GitHub repository or disconnect it, you can do so from the [Git section](/docs/project-configuration/project-settings#git) in the Project Settings.
 
 ### A Deployment for Each Push
 
@@ -94,7 +94,7 @@ If you decide to revert a commit that has already been deployed to production, t
 
 ### Preview URLs for the Latest Changes for Each Pull Request
 
-The latest push to any pull request will automatically be made available at a unique [preview URL](/docs/deployments/environments#preview-environment-pre-production#preview-urls) based on the project name, branch, and team or username. These URLs will be provided through a comment on each pull request. Vercel also supports Comments on preview deployments made from PRs on GitHub. [Learn more about Comments on preview deployments in GitHub here](/docs/deployments/environments#preview-environment-pre-production#github-integration).
+The latest push to any pull request will automatically be made available at a unique [preview URL](/docs/deployments/generated-urls#viewing-generated-urls) based on the project name, branch, and team or username. These URLs will be provided through a comment on each pull request. Vercel also supports Comments on preview deployments made from PRs on GitHub. [Learn more about Comments on preview deployments in GitHub here](/docs/comments/integrations#git-provider-integration).
 
 ### Deployment Authorizations for Forks
 
@@ -102,7 +102,7 @@ If you receive a pull request from a fork of your repository, Vercel will requir
 
 This behavior protects you from leaking sensitive project information such as environment variables and the [OIDC Token](/docs/oidc).
 
-You can disable [Git Fork Protection](/docs/projects#git-fork-protection) in the Security section of your Project Settings.
+You can disable [Git Fork Protection](/docs/project-configuration/security-settings#git-fork-protection) in the Security section of your Project Settings.
 
 Vercel for GitHub uses the deployment API to bring you an extended user interface both in GitHub, when showing deployments, and Slack, if you have notifications setup using the [Slack GitHub app](https://slack.github.com).
 
@@ -383,4 +383,4 @@ jobs:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

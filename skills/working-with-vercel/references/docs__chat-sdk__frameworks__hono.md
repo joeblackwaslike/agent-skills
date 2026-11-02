@@ -17,8 +17,8 @@ related:
 summary: Add a Chat SDK bot to Hono, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks/hono.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5acfae53cc60d8010de07cde6259247a6bb7f5bd1098bbbf0ef707abf0ffb0e1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "710cb699da08dced20cf6aa69afd266c6c7e8a380bbb69e4e9ea7e3f9ff9229a"
 ---
 
 # Chat SDK with Hono
@@ -36,7 +36,8 @@ Use a Hono POST handler to receive Slack events and Vercel Functions to keep you
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
+- [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 
 Full cross-link map for this page: [/docs/chat-sdk/frameworks/hono.graph.md](/docs/chat-sdk/frameworks/hono.graph.md)
 <!-- /docsgraph:related -->
@@ -195,4 +196,4 @@ Connect forwards inbound events to deployed URLs, not `localhost`. To test inbou
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

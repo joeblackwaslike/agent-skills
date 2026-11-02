@@ -16,8 +16,8 @@ related:
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b6d608023fcad763dd71043dfe6126e8b916e72434225044ba6c79f21b15f2cc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "09a2f976b62dc7d97c50937410147e2175f5be3276529e143cfdb29b064c2f53"
 ---
 
 # Audit Logs
@@ -45,7 +45,7 @@ Audit logs help you track and analyze your [team members'](/docs/rbac/managing-t
 - [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption) — Understand how workflow and step data is encrypted at rest.
 - [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
+- [July 2020](https://vercel.com/blog/changelog-july-2020)
 
 Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md)
 <!-- /docsgraph:related -->
@@ -368,4 +368,4 @@ Refers to actions performed by any [team member](/docs/rbac).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,12 +13,12 @@ related:
   - /docs/fluid-compute
   - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
   - /docs/sandbox/ecosystem/tanstack-ai
-  - /docs/eve
+  - /docs/frameworks/agents/eve
 summary: Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e029346c756ebfe7af858f285ef5eebe5aa08ca2f47b8ce6977975f57cf11a67"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d35866564efbe907090ed3cb3770cbc3152afb60d4238b605a2c47135701ffed"
 ---
 
 # TanStack Start on Vercel
@@ -112,7 +112,7 @@ and hold flagged or uncertain reviews for a moderator.
 
 ### Build an agent chat with eve
 
-Deploy the [eve TanStack Agent template](/templates/eve/eve-tanstack-agent) to connect a TanStack Start React frontend to an [eve agent](/docs/eve). The chat streams responses and displays tool activity, while json-render turns structured agent responses into interactive cards and tables. Each conversation has a URL you can revisit after reloading the page.
+Deploy the [eve TanStack Agent template](/templates/eve/eve-tanstack-agent) to connect a TanStack Start React frontend to an [eve agent](/docs/frameworks/agents/eve). The chat streams responses and displays tool activity, while json-render turns structured agent responses into interactive cards and tables. Each conversation has a URL you can revisit after reloading the page.
 
 The template deploys the frontend and agent together through [Vercel Services](/docs/services). During setup, set `EVE_ACCESS_PASSWORD` to control access to the chat. See the [template repository](https://github.com/vercel-labs/eve-tanstack-start-template) for setup instructions and options for customizing tools, components, and authentication.
 
@@ -150,4 +150,4 @@ Learn more about deploying TanStack Start projects on Vercel with the following 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

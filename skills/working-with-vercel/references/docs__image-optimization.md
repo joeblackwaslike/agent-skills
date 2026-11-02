@@ -16,8 +16,8 @@ related:
 summary: Transform and optimize images to improve page load performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8eb0fd5f3e2ac4c4febcec18f61b80ad90b53461b97962b76f756483025dc104"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1da6bc56eae5e8f84c23d2af564288a3e9772f56626abbdb97e822722bd92209"
 ---
 
 # Image Optimization with Vercel
@@ -42,8 +42,8 @@ Vercel supports dynamically transforming unoptimized images to reduce the file s
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network)
 - [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud)
-- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
-- [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
+- [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization)
+- [Images on the web](https://vercel.com/blog/images-on-the-web)
 
 Full cross-link map for this page: [/docs/image-optimization.graph.md](/docs/image-optimization.graph.md)
 <!-- /docsgraph:related -->
@@ -155,7 +155,7 @@ The cache key for local images is based on the query string parameters, the `Acc
 - **Local image cache invalidation**:
   - Redeploying your app doesn't invalidate the image cache.
   - To invalidate, replace the image of the same name with different content, then [redeploy](/docs/deployments/managing-deployments#redeploy-a-project).
-  - You can also [manually purge](/docs/caching/cdn-cache/purge#manually-purging-vercel-cdn-cache) or [programatically purge](/docs/caching/cdn-cache/purge#programmatically-purging-vercel-cache) to invalidate all cached transformations of a source image without redeploying.
+  - You can also [manually purge](/docs/caching/cdn-cache/purge#manually-purging-vercel-cdn-cache) or [programmatically purge](/docs/caching/cdn-cache/purge#programmatically-purging-cdn-cache) to invalidate all cached transformations of a source image without redeploying.
 - **Local image cache expiration**:
   - [Cached](/docs/caching/cdn-cache#static-files-caching) **for up to 31 days** on the Vercel CDN.
 
@@ -204,7 +204,7 @@ The cache key for remote images is based on the query string parameters, the `Ac
   - `Accept` HTTP header (normalized).
 - **Remote image cache invalidation**:
   - Redeploying your app doesn't invalidate the image cache
-  - You can [manually purge](/docs/caching/cdn-cache/purge#manually-purging-vercel-cdn-cache) or [programatically purge](/docs/caching/cdn-cache/purge#programmatically-purging-vercel-cache) to invalidate all cached transformations of a source image without redeploying.
+  - You can [manually purge](/docs/caching/cdn-cache/purge#manually-purging-vercel-cdn-cache) or [programmatically purge](/docs/caching/cdn-cache/purge#programmatically-purging-cdn-cache) to invalidate all cached transformations of a source image without redeploying.
   - Alternatively, you can configure the cache to expire more frequently by adjusting the TTL.
 - **Remote image cache expiration**:
   - TTL is determined by the [`Cache-Control`](/docs/headers#cache-control-header) `max-age` header from the upstream image or [`minimumCacheTTL`](https://nextjs.org/docs/app/api-reference/components/image#minimum-cache-ttl) config (default: `3600` seconds), whichever is larger.
@@ -268,4 +268,4 @@ For more information on what to do next, we recommend the following articles:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

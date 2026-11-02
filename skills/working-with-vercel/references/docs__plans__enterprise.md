@@ -16,8 +16,8 @@ related:
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "293409dd5985b6c3de1155ff091f64db72262ff4de32867b45cb55c3b7504a9a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9fa6245a4fac329cc200246f9c4fd025c15d90accff621a4bab4e7563fb2678e"
 ---
 
 # Vercel Enterprise Plan
@@ -36,6 +36,7 @@ Vercel offers an Enterprise plan for organizations and enterprises that need hig
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
 - [Using Vercel Passport with Microsoft Entra ID](https://vercel.com/kb/guide/vercel-passport-microsoft-entra-id) — Configure Microsoft Entra ID and Vercel Passport to protect a Next.js app, limit access to assigned users, and read veri
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan) — Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
@@ -57,7 +58,7 @@ The Enterprise plan uses isolated build infrastructure on high-grade hardware wi
 - [Custom SSL Certificates](/docs/domains/custom-ssl-certificate)
 - Automatic concurrency scaling up to 100,000 for [Vercel Functions](/docs/functions/concurrency-scaling#automatic-concurrency-scaling)
 - [Isolated
-  build infrastructure](/docs/security#do-enterprise-accounts-run-on-a-different-infrastructure),
+  build infrastructure](/docs/plans/enterprise#performance-and-reliability),
   with the ability to have [larger memory and storage](/docs/deployments/troubleshoot-a-build#build-container-resources)
 - [Trusted Proxy](/docs/headers/request-headers#x-forwarded-for)
 
@@ -118,4 +119,4 @@ When employees outside IT build internal applications, define who owns each app 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

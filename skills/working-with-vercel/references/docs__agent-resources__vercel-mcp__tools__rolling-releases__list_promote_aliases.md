@@ -13,8 +13,8 @@ related:
 summary: Use list_promote_aliases with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/list_promote_aliases.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8ccc1036e555ac4a76208fb25540aca1daf4d881990df076cea7613c6956f34e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "86c7b21a8a1ae29ae900444a6c5ceaca17506c12e223c86cbadb854dfaa6ed3a"
 ---
 
 # list_promote_aliases
@@ -54,4 +54,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

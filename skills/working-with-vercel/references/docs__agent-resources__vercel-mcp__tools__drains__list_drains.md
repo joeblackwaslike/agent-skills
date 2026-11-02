@@ -13,8 +13,8 @@ related:
 summary: Use list_drains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/list_drains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1ba2e4bdc67941fb52384de3d32f42e1ccbdbb43120aac2b334e021a2da6f757"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d3d1325624e6d57f9839b9cbac77d0921feec9530776a2a22d72a1d3ff2db469"
 ---
 
 # list_drains
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/drain
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

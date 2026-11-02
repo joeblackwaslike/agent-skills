@@ -14,8 +14,8 @@ related:
 summary: Learn how to instrument your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/instrumentation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3910667e69b205b3a27041893f3f79a8afebb0e2ed5b62c26d5185c77012ef4d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6f1be3a8c43cda939d3b5f29533e16c14d670d1c446a0fc810d640d4d681ea90"
 ---
 
 # Instrumentation
@@ -36,9 +36,9 @@ Observability is crucial for understanding and optimizing the behavior and perfo
 - [Tracing](https://workflow-sdk.dev/docs/observability/tracing) — Trace workflow execution end to end with OpenTelemetry.
 - [Instrument and trace applications with the OpenTelemetry collector](https://vercel.com/changelog/instrument-and-trace-applications-with-the-opentelemetry-collector)
 - [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
-- [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [@vercel/otel 1.3.0](https://vercel.com/changelog/vercel-otel-1-3-0)
 - [Native support for SvelteKit's new OpenTelemetry spans](https://vercel.com/changelog/native-support-for-sveltekits-new-opentelemetry-spans)
+- [Instrumentation](https://eve.dev/docs/observability/instrumentation) — Configure lifecycle instrumentation, handle runtime events, and control the content each destination receives.
 - [instrumentation.js](https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation) — API reference for the instrumentation.js file.
 
 Full cross-link map for this page: [/docs/tracing/instrumentation.graph.md](/docs/tracing/instrumentation.graph.md)
@@ -136,6 +136,8 @@ For more details on how context propagation works, see the [OpenTelemetry contex
 
 You can configure context propagation by configuring the `fetch` option in the `instrumentationConfig` option.
 
+Each entry in `propagateContextUrls`, `dontPropagateContextUrls`, and `ignoreUrls` is either a string or a regular expression. A string matches when the full request URL starts with it, so include the protocol, as in `'https://api.example.com/'`. A bare hostname such as `'api.example.com'` never matches. Use a regular expression, such as `/^https:\/\/[a-z0-9-]+\.example\.com\//`, to match several subdomains.
+
 ```ts filename="instrumentation.ts" framework=nextjs-app
 import { registerOTel } from '@vercel/otel';
 
@@ -144,17 +146,17 @@ export function register() {
     serviceName: `your-project-name`,
     instrumentationConfig: {
       fetch: {
-        // This URLs will have the tracing context propagated to them.
+        // These URLs will have the tracing context propagated to them.
         propagateContextUrls: [
-          'your-service-domain.com',
-          'your-database-domain.com',
+          'https://your-service-domain.com/',
+          'https://your-database-domain.com/',
         ],
-        // This URLs will not have the tracing context propagated to them.
+        // These URLs will not have the tracing context propagated to them.
         dontPropagateContextUrls: [
-          'some-third-party-service-domain.com',
+          'https://some-third-party-service-domain.com/',
         ],
-        // This URLs will be ignored and will not be traced.
-        ignoreUrls: ['my-internal-private-tool.com'],
+        // These URLs will be ignored and will not be traced.
+        ignoreUrls: ['https://my-internal-private-tool.com/'],
       },
     },
   });
@@ -170,17 +172,17 @@ export function register() {
     serviceName: `your-project-name`,
     instrumentationConfig: {
       fetch: {
-        // This URLs will have the tracing context propagated to them.
+        // These URLs will have the tracing context propagated to them.
         propagateContextUrls: [
-          'your-service-domain.com',
-          'your-database-domain.com',
+          'https://your-service-domain.com/',
+          'https://your-database-domain.com/',
         ],
-        // This URLs will not have the tracing context propagated to them.
+        // These URLs will not have the tracing context propagated to them.
         dontPropagateContextUrls: [
-          'some-third-party-service-domain.com',
+          'https://some-third-party-service-domain.com/',
         ],
-        // This URLs will be ignored and will not be traced.
-        ignoreUrls: ['my-internal-private-tool.com'],
+        // These URLs will be ignored and will not be traced.
+        ignoreUrls: ['https://my-internal-private-tool.com/'],
       },
     },
   });
@@ -196,17 +198,17 @@ export function register() {
     serviceName: `your-project-name`,
     instrumentationConfig: {
       fetch: {
-        // This URLs will have the tracing context propagated to them.
+        // These URLs will have the tracing context propagated to them.
         propagateContextUrls: [
-          'your-service-domain.com',
-          'your-database-domain.com',
+          'https://your-service-domain.com/',
+          'https://your-database-domain.com/',
         ],
-        // This URLs will not have the tracing context propagated to them.
+        // These URLs will not have the tracing context propagated to them.
         dontPropagateContextUrls: [
-          'some-third-party-service-domain.com',
+          'https://some-third-party-service-domain.com/',
         ],
-        // This URLs will be ignored and will not be traced.
-        ignoreUrls: ['my-internal-private-tool.com'],
+        // These URLs will be ignored and will not be traced.
+        ignoreUrls: ['https://my-internal-private-tool.com/'],
       },
     },
   });
@@ -222,17 +224,17 @@ export function register() {
     serviceName: `your-project-name`,
     instrumentationConfig: {
       fetch: {
-        // This URLs will have the tracing context propagated to them.
+        // These URLs will have the tracing context propagated to them.
         propagateContextUrls: [
-          'your-service-domain.com',
-          'your-database-domain.com',
+          'https://your-service-domain.com/',
+          'https://your-database-domain.com/',
         ],
-        // This URLs will not have the tracing context propagated to them.
+        // These URLs will not have the tracing context propagated to them.
         dontPropagateContextUrls: [
-          'some-third-party-service-domain.com',
+          'https://some-third-party-service-domain.com/',
         ],
-        // This URLs will be ignored and will not be traced.
-        ignoreUrls: ['my-internal-private-tool.com'],
+        // These URLs will be ignored and will not be traced.
+        ignoreUrls: ['https://my-internal-private-tool.com/'],
       },
     },
   });
@@ -247,17 +249,17 @@ registerOTel({
   serviceName: `your-project-name`,
   instrumentationConfig: {
     fetch: {
-      // This URLs will have the tracing context propagated to them.
+      // These URLs will have the tracing context propagated to them.
       propagateContextUrls: [
-        'your-service-domain.com',
-        'your-database-domain.com',
+        'https://your-service-domain.com/',
+        'https://your-database-domain.com/',
       ],
-      // This URLs will not have the tracing context propagated to them.
+      // These URLs will not have the tracing context propagated to them.
       dontPropagateContextUrls: [
-        'some-third-party-service-domain.com',
+        'https://some-third-party-service-domain.com/',
       ],
-      // This URLs will be ignored and will not be traced.
-      ignoreUrls: ['my-internal-private-tool.com'],
+      // These URLs will be ignored and will not be traced.
+      ignoreUrls: ['https://my-internal-private-tool.com/'],
     },
   },
 });
@@ -271,17 +273,17 @@ registerOTel({
   serviceName: `your-project-name`,
   instrumentationConfig: {
     fetch: {
-      // This URLs will have the tracing context propagated to them.
+      // These URLs will have the tracing context propagated to them.
       propagateContextUrls: [
-        'your-service-domain.com',
-        'your-database-domain.com',
+        'https://your-service-domain.com/',
+        'https://your-database-domain.com/',
       ],
-      // This URLs will not have the tracing context propagated to them.
+      // These URLs will not have the tracing context propagated to them.
       dontPropagateContextUrls: [
-        'some-third-party-service-domain.com',
+        'https://some-third-party-service-domain.com/',
       ],
-      // This URLs will be ignored and will not be traced.
-      ignoreUrls: ['my-internal-private-tool.com'],
+      // These URLs will be ignored and will not be traced.
+      ignoreUrls: ['https://my-internal-private-tool.com/'],
     },
   },
 });
@@ -378,4 +380,4 @@ For the full list of configuration options, see the [@vercel/otel documentation]
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

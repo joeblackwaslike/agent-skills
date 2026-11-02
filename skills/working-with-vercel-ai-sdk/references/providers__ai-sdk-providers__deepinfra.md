@@ -4,8 +4,8 @@ description: Learn how to use DeepInfra with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "c59ba8a9ed3eaa87e061ceda3620886a95af80addd69d23dd2960d567c889b2c"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "b0693b3bbedb29a7d05b16fb284e647f42c4cdcb9ff3f98c76fda2d5b9d987f0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -98,10 +98,13 @@ You can use the following optional settings to customize the DeepInfra provider 
   Note: Language models and embeddings use OpenAI-compatible endpoints at `{baseURL}/openai`,
   while image models use `{baseURL}/inference`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `DEEPINFRA_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 

@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dns.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a83c20fe16b5e484ee06bfa0263118a794358045c33d7dfec19e24ebf051d370"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3f7b2f8d55b81d62218dc0b1997e1dd9ab4eedab9c59f8a2c498ff91b8af42cd"
 ---
 
 # vercel dns
@@ -29,9 +29,9 @@ The `vercel dns` command manages DNS records for domains: list, inspect, add, up
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Vercel CLI expands commands for DNS, domains, and projects](https://vercel.com/changelog/vercel-cli-expands-commands-for-dns-domains-and-projects)
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
-- [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.
+- [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 
 Full cross-link map for this page: [/docs/cli/dns.graph.md](/docs/cli/dns.graph.md)
@@ -257,4 +257,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

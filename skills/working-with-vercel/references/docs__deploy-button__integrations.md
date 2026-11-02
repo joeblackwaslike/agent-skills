@@ -12,8 +12,8 @@ related:
 summary: Learn how to use Integrations with the Vercel Deploy Button.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-button/integrations.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b9a07969926f913eeda6d6672656ffdde641f11e15fb9435a60fd8a987f0501d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6be28eb89616e6eb135ba634d7a586d12a3132ca80875db7465662d523d68efc"
 ---
 
 # Using Integrations with the Deploy Button
@@ -58,4 +58,4 @@ https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2F
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

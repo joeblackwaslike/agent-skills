@@ -12,8 +12,8 @@ related:
 summary: "Applications using Next.js should not enable production source maps so that they don't publicly share source code."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_production_source_maps.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1673ee7340850e2d9cb73f79b2e1e6b2cc3372ad098f588035b70c8a53e4b559"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "004ab03ae08ac02f8f5e0e92953c993a5387728052463f9f2eadc98e3b6a544f"
 ---
 
 # NEXTJS_NO_PRODUCTION_SOURCE_MAPS
@@ -83,4 +83,4 @@ await Promise.all(
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

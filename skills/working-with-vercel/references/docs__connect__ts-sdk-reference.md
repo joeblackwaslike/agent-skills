@@ -16,8 +16,8 @@ related:
 summary: API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b0a695119a37ebf93b6a878a5a83ef6c93829ea341887248d01a14d5c3bd8d79"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0f1459ddf7224bf5838abf5e3f365a45f22e5bc5062f1296e4d3a89b1db31f42"
 ---
 
 # TypeScript SDK Reference
@@ -41,7 +41,7 @@ sha256: "b0a695119a37ebf93b6a878a5a83ef6c93829ea341887248d01a14d5c3bd8d79"
 - [MCP Events](https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-events) — Reference for experimental MCP event methods, the webhook handler, and subscription and storage types.
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime) — API reference for the experimental_useRealtime hook.
-- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Eject a managed connector](https://vercel.com/docs/rest-api/connect/eject-a-managed-connector) — POST /v1/connect/connectors/{connector}/managed/eject — Disconnect a managed connector from its provider-side manager.
 
 Full cross-link map for this page: [/docs/connect/ts-sdk-reference.graph.md](/docs/connect/ts-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -555,4 +555,4 @@ Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

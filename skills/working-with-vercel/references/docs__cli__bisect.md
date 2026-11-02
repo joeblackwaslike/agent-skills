@@ -12,8 +12,8 @@ related:
 summary: Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/bisect.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7117e56320b677f1b5dac501e469db5c81e896652dd1dadfa1c9f69fe41c1858"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "20fde73cf047294ccfade41aeaf7b27f5d846414aac98e6da3507decf7db9a8e"
 ---
 
 # vercel bisect
@@ -26,6 +26,7 @@ The `vercel bisect` command can be used to perform a [binary search](https://wik
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel CLI v24 is now available](https://vercel.com/changelog/vercel-cli-v24)
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
@@ -35,7 +36,7 @@ The `vercel bisect` command can be used to perform a [binary search](https://wik
 Full cross-link map for this page: [/docs/cli/bisect.graph.md](/docs/cli/bisect.graph.md)
 <!-- /docsgraph:related -->
 
-This is similar to [git bisect](https://git-scm.com/docs/git-bisect "What is a git bisect?") but faster because you don't need to wait to rebuild each commit, as long as there is a corresponding Deployment. The command works by specifing both a *bad* Deployment and a *good* Deployment. Then, `vercel bisect` will retrieve all the deployments in between, and step by them one by one. At each step, you will perform your check and specify whether or not the issue you are investigating is present in the Deployment for that step.
+This is similar to [git bisect](https://git-scm.com/docs/git-bisect "What is a git bisect?") but faster because you don't need to wait to rebuild each commit, as long as there is a corresponding Deployment. The command works by specifying both a *bad* Deployment and a *good* Deployment. Then, `vercel bisect` will retrieve all the deployments in between, and step by them one by one. At each step, you will perform your check and specify whether or not the issue you are investigating is present in the Deployment for that step.
 
 Note that if an alias URL is used for either the *good* or *bad* deployment, then the URL will be resolved to the current target of the alias URL. So if your Project is currently in promote/rollback state, then the alias URL may not be the newest chronological Deployment.
 
@@ -140,4 +141,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

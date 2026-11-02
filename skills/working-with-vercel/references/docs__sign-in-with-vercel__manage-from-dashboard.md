@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "03cc9401ba0928b5848911f23e5e0cd20cccdc3d191cbad133b59823f315e52f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ada9c89318a4da4cc854b193090a55371b3fa62f93d5c55476ae6ca0d612b77b"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
@@ -174,4 +174,4 @@ Learn more about scopes and permissions in the [scopes and permissions](/docs/si
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

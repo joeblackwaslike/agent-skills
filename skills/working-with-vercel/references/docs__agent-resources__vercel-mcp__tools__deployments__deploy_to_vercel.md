@@ -13,8 +13,8 @@ related:
 summary: Use deploy_to_vercel with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9d5c3c2196192c824c5d813b25fc3102f0897d622884d27ac18b5b6b37a0c042"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3f5f60c884785d56b59c72b72f1358e2ea192ad6a6f407a80b5eee74bde26952"
 ---
 
 # deploy_to_vercel
@@ -54,4 +54,4 @@ This workflow is available on root connections that expose `deploy_to_vercel`. P
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

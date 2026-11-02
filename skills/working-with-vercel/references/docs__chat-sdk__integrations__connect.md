@@ -17,8 +17,8 @@ related:
 summary: Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/integrations/connect.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "99f69c89ac3dc2f62c594e11a02c574cca6de16cc513dd8c253ea49fd567930d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "598ee8f06f66fadb4de29684531e8a180b61c5f13a2d977af12b8ba0840bd92c"
 ---
 
 # Chat SDK with Vercel Connect
@@ -31,12 +31,13 @@ Use [Vercel Connect](/docs/connect) to manage a Chat SDK bot's platform credenti
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect)
-- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Chat SDK with Hono](https://vercel.com/docs/chat-sdk/frameworks/hono) — Add a Chat SDK bot to Hono, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 
 Full cross-link map for this page: [/docs/chat-sdk/integrations/connect.graph.md](/docs/chat-sdk/integrations/connect.graph.md)
@@ -154,4 +155,4 @@ Create MCP clients per user and handle OAuth consent before starting the model s
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

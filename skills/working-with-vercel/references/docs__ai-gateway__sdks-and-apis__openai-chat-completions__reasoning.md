@@ -17,8 +17,8 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "76200c19971831026189d1ade800ea6773623ee94e9a8eaf78a4df9b76bffdc6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a4c63048fe0390674b60de51de8c6ab028c9ffc7285b71bb8bea22b610fd3924"
 ---
 
 # OpenAI Chat Completions Reasoning with AI Gateway
@@ -549,4 +549,4 @@ The AI Gateway automatically maps reasoning parameters to each provider's native
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

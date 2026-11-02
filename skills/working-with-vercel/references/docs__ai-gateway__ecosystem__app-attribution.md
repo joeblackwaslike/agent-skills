@@ -13,8 +13,8 @@ related:
 summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ae8796124ea1bfdf7b36891c947ae7ef4704dd18c9ac20c8ebc56a93b6fef228"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4683a64280127282f71cf8dd745e24010f4f3e4c77332525a18697aae86b52be"
 ---
 
 # AI Gateway App Attribution
@@ -29,11 +29,11 @@ driving awareness.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/app-attribution.graph.md](/docs/ai-gateway/ecosystem/app-attribution.graph.md)
 <!-- /docsgraph:related -->
@@ -384,4 +384,4 @@ for await (const part of result.textStream) {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

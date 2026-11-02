@@ -4,8 +4,8 @@ description: Learn how to use Amazon Bedrock with AI Gateway and the direct prov
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "98e7878599191cc53944f6f0daaeea470e526473f07c1a87d857072d9576684c"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "c53ee2dbf3d34704641a01d799a47c239bde6641743cd011021de109ff5ecdcf"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -221,7 +221,12 @@ You can use the following optional settings to customize the Amazon Bedrock prov
   Optional. The AWS credential provider chain that you want to use for the API calls.
   It uses the specified credentials by default.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a callback to resolve the API key before each request. The callback can
+  return a string or a promise; token caching and renewal are handled by the caller.
+  A callback or promise selects API key authentication and must resolve to a
+  non-empty string; lookup failures do not switch authentication methods.
 
   Optional. API key for authenticating requests using Bearer token authentication.
   When provided, this will be used instead of AWS SigV4 authentication.
@@ -683,7 +688,7 @@ Amazon Bedrock supports model creator-specific reasoning features:
 - Anthropic (e.g. `claude-sonnet-4-5-20250929`): enable via the `reasoningConfig` provider option and specifying a thinking budget in tokens (minimum: `1024`, maximum: `64000`).
 - Amazon (e.g. `us.amazon.nova-2-lite-v1:0`): enable via the `reasoningConfig` provider option and specifying a maximum reasoning effort level (`'low' | 'medium' | 'high'`).
 
-You can also use the top-level `reasoning` parameter. For Amazon Nova 2, `'xhigh'` and `'max'` are mapped to `'high'` with a compatibility warning. Anthropic and OpenAI effort mappings preserve `'max'`.
+You can also use the top-level `reasoning` parameter.
 
 Bedrock combines partial `providerOptions.amazonBedrock.reasoningConfig` with
 portable reasoning, preserving explicit values and deriving missing fields for
@@ -695,11 +700,23 @@ display-only, and empty configurations also retain portable reasoning.
 
 Effort-based Anthropic models can combine portable effort with an explicit
 thinking configuration. A disabled type prevents effort/budget derivation;
-portable `reasoning: 'none'` disables thinking on Anthropic models even when an
-enabled type or budget is supplied. Omitting portable reasoning or using
-`'provider-default'` leaves the provider configuration unchanged. The legacy
+portable `reasoning: 'none'` requests disabled thinking on Anthropic models even
+when an enabled type or budget is supplied. Omitting portable reasoning or using
+`'provider-default'` uses the provider configuration. The legacy
 `bedrock` provider options key follows the same rules. See the
 [reasoning guide](/docs/ai-sdk-core/reasoning#precedence-rules) for precedence details.
+
+Both `reasoning: 'none'` and `reasoningConfig: { type: 'disabled' }` explicitly
+send `thinking: { type: 'disabled' }` for Anthropic models that support it.
+For Claude 3.5 and earlier, the provider omits `thinking` because these models
+do not support the field.
+Models that require thinking use `between_tools` when supported, or adaptive
+thinking otherwise. For the adaptive fallback, portable `reasoning: 'none'`
+uses explicit `maxReasoningEffort`, then raw `output_config.effort`, and defaults
+to low effort when neither is supplied. Unsupported disabled settings produce warnings.
+If a model rejects disabled or `between_tools`
+thinking at `xhigh` or `max` effort, the provider lowers the effort to `high`
+with a warning.
 
 ```ts
 import {
@@ -1614,7 +1631,12 @@ You can use the following optional settings to customize the Bedrock Anthropic p
   used. If either key is taken from the environment, omitting `sessionToken`
   allows `AWS_SESSION_TOKEN`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a callback to resolve the API key before each request. The callback can
+  return a string or a promise; token caching and renewal are handled by the caller.
+  A callback or promise selects API key authentication and must resolve to a
+  non-empty string; lookup failures do not switch authentication methods.
 
   API key for authenticating requests using Bearer token authentication.
   When provided, this will be used instead of AWS SigV4 authentication.
@@ -1926,7 +1948,12 @@ You can use the following optional settings to customize the Bedrock Mantle prov
   Optional. The AWS session token that you want to use for the API calls.
   It uses the `AWS_SESSION_TOKEN` environment variable by default.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a callback to resolve the API key before each request. The callback can
+  return a string or a promise; token caching and renewal are handled by the caller.
+  A callback or promise selects API key authentication and must resolve to a
+  non-empty string; lookup failures do not switch authentication methods.
 
   API key for authenticating requests using Bearer token authentication.
   When provided, this will be used instead of AWS SigV4 authentication.

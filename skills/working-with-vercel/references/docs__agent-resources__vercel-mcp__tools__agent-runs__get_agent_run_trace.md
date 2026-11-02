@@ -9,17 +9,17 @@ prerequisites:
   - /docs/agent-resources/vercel-mcp/tools/agent-runs
   - /docs/agent-resources/vercel-mcp/tools
 related:
-  - /docs/eve/agent-runs
+  - /docs/agent-runs
 summary: Use get_agent_run_trace with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "516ac5a58eb9c2e44d16351641b9083d7470cab8154f84384e543e443f895e9f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "977bdba60977951d2bf0d6be088eb9c1ea85db0fcc3b836d320e4344a1b5dc2d"
 ---
 
 # get_agent_run_trace
 
-Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
+Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-vercel-mcp).
 
 
 <!-- docsgraph:related -->
@@ -31,9 +31,8 @@ Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-wit
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
 - [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
-- [Agent Runs](https://vercel.com/docs/eve/agent-runs) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
-- [get_agent_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run) — Use get_agent_run with Vercel MCP.
-- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
+- [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
 - [Tracing](https://vercel.com/docs/tracing) — Learn how to trace your application to understand performance and infrastructure details.
 - [Session tracing](https://vercel.com/docs/tracing/session-tracing) — Learn how to trace your sessions to understand performance and infrastructure details.
 
@@ -92,4 +91,4 @@ Pages can overlap. Deduplicate turns by ID and keep the more complete turn. Stri
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -15,8 +15,8 @@ related:
 summary: Work with custom environments using the --target flag in Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/target.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "92969085131b6d2401ba1a3e4ae51e15e79000bd5a57152b7b976e4644c88c12"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cd063f880dba77bd616b9fb92e80f1ef1b83a9e8da73fb2556285d4eeecc6576"
 ---
 
 # vercel target
@@ -31,8 +31,8 @@ The `vercel target` command (alias: `vercel targets`) manages your Vercel projec
 
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/target.graph.md](/docs/cli/target.graph.md)
@@ -129,4 +129,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/install.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e8f8e41806cbe099759012adf11aa50b4dfb0aef8507f42df42dc7e35ca1511a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "10e64040f10827c3e93c23d6ab0e6b81c36cf8aaee87aa586650fc286b1dcd68"
 ---
 
 # vercel install
@@ -31,9 +31,9 @@ sha256: "e8f8e41806cbe099759012adf11aa50b4dfb0aef8507f42df42dc7e35ca1511a"
 - [Install Marketplace Integrations from the Vercel CLI](https://vercel.com/changelog/install-marketplace-integrations-from-the-vercel-cli)
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
-- [vercel init](https://vercel.com/docs/cli/init) — Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
+- [vercel upgrade](https://vercel.com/docs/cli/upgrade) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
+- [vercel init](https://vercel.com/docs/cli/init) — Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
 
 Full cross-link map for this page: [/docs/cli/install.graph.md](/docs/cli/install.graph.md)
 <!-- /docsgraph:related -->
@@ -81,4 +81,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

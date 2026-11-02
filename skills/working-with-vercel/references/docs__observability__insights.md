@@ -16,8 +16,8 @@ related:
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4dbc16dbe3cca7781f4d73188ca8b0031e11ece679af52318530fae8f1803c9e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c9c83e0a69bfc04e606e169af9ac772b904038975cedb34dccedb1260f200eb3"
 ---
 
 # Observability Insights
@@ -30,15 +30,18 @@ Vercel organizes Observability through sections that correspond to different fea
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI traffic insights now available in Vercel Observability](https://vercel.com/changelog/ai-traffic-insights-now-available-in-vercel-observability)
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Anyone can build agents, but it takes a platform to run them](https://vercel.com/blog/anyone-can-build-agents-but-it-takes-a-platform-to-run-them)
 - [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md)
 <!-- /docsgraph:related -->
@@ -226,4 +229,4 @@ For more information, see [Queues Observability](/docs/queues/observability).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

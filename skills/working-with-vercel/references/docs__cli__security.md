@@ -15,8 +15,8 @@ related:
 summary: "Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope the report to a project."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/security.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2f7f20733383ea9365c1b5b111d29d786d6e30638c0507691e30716499f0e9cd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e4460e23e33d3e9cdb144b1f7a979d5032a14f59ac4e8e289ae87b95dca87dec"
 ---
 
 # vercel security
@@ -32,9 +32,9 @@ The `vercel security` command runs your team's security checks and prints them i
 - [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available)
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel doctor](https://vercel.com/docs/cli/doctor) — Learn how to check your Vercel CLI setup and fix problems with the vercel doctor CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 
 Full cross-link map for this page: [/docs/cli/security.graph.md](/docs/cli/security.graph.md)
 <!-- /docsgraph:related -->
@@ -207,4 +207,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

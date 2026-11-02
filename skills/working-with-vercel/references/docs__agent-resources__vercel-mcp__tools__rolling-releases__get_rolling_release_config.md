@@ -13,8 +13,8 @@ related:
 summary: Use get_rolling_release_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c55d5f0c9d594684bbe5964dd8368f3350f2514a8dda18b99e5733ecaf9880a7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5180450320c5ca8ec5d62c78d2c0c55de34a5176b67a0ecf6783b14cfbfee322"
 ---
 
 # get_rolling_release_config
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

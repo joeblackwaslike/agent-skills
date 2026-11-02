@@ -13,8 +13,8 @@ related:
 summary: Use get_observability_schema with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0590047d3899e42f87bcd772942281cba0fe86209f040821f7ec243fce4ab44a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "de530c09382352c9c3c3a7d08244106bd74cbe348d73f22bf563286dc454b601"
 ---
 
 # get_observability_schema
@@ -46,4 +46,4 @@ This tool takes no parameters.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

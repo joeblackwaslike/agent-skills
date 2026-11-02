@@ -12,8 +12,8 @@ related:
 summary: Disallows @import at-rules that import from URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_external_css_at_imports.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b61cf37dfae8cae2593e1b80a52aa69cf1d251cd1982a82134d4629feba788dd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9ac3fbdac2292213df4b76a883a095b122975507998bbbb2bd163e2080e5c8e4"
 ---
 
 # NO_EXTERNAL_CSS_AT_IMPORTS
@@ -79,4 +79,4 @@ export default function RootLayout({ children }: RootLayoutProps) {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

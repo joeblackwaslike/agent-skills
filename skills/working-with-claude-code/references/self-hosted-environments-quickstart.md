@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/self-hosted-environments-quickstart.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "4961f704e7fc6206c6c69fa71289603b7ccaa7caa482897d33c4983e3e79cdbc"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "8cdc437c78aa23fee55d2472c4dcb9b3c3f4b215de33ef1c61fd393e2d45b94c"
 ---
 
 > ## Documentation Index
@@ -35,7 +35,7 @@ The runner host needs:
 
 * A Linux or macOS host or container with outbound HTTPS to `api.anthropic.com`, to `claude.ai` and the download hosts it redirects to for the install step below, and to your git host for the clone; the [network requirements table](https://code.claude.com/docs/en/self-hosted-environments-deploy.md#network-requirements) has the full list. Windows isn't supported as a runner host; run the runner in a Linux container instead. Developer workstations aren't affected, since sessions start from claude.ai in a browser.
 * A repository for the test session: a public one, or one this host can already clone by its HTTPS URL without being asked for credentials. An SSH key alone isn't enough, because the runner clones the repository's `https://` URL. To clone over SSH instead, see [Rewrite git URLs for private networks](https://code.claude.com/docs/en/self-hosted-environments-deploy.md#rewrite-git-urls-for-private-networks).
-* A clock synchronized to real time, for example with NTP. Authentication fails when the clock is more than five minutes off; see [Troubleshooting](https://code.claude.com/docs/en/self-hosted-environments-deploy.md#troubleshooting).
+* A clock synchronized to real time, for example with NTP.
 
 ### Software on the runner host
 

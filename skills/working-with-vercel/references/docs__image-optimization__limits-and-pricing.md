@@ -16,8 +16,8 @@ related:
 summary: This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can incur.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/limits-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f35e5b114412a4ef1abff72a2910a6abe5248c23954003579a70e83af1177c61"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b42230173756b1937f6c3f3edab88bc5402035b41f2595257a0f1cb727ca3303"
 ---
 
 # Limits and Pricing for Image Optimization
@@ -44,8 +44,8 @@ Image optimization pricing is dependent on your plan and on specific parameters 
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Legacy Pricing for Image Optimization](https://vercel.com/docs/image-optimization/legacy-pricing) — This page outlines information on the pricing and limits for the source images-based legacy option.
 - [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations)
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing) — Learn about the pricing for Vercel Blob.
 - [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 
@@ -91,7 +91,7 @@ Vercel will send you emails as you are nearing your [usage](#pricing) limits, bu
 
 Once you exceed the limits:
 
-- New images will fail to optimize and instead return a runtime error response with [402 status code](/docs/errors#402:-deployment_disabled). This will trigger the [`onError`](https://nextjs.org/docs/app/api-reference/components/image#onerror) callback and show the [`alt`](https://nextjs.org/docs/app/api-reference/components/image#alt) text instead of the image
+- New images will fail to optimize and instead return a runtime error response with [402 status code](/docs/errors/deployment_disabled). This will trigger the [`onError`](https://nextjs.org/docs/app/api-reference/components/image#onerror) callback and show the [`alt`](https://nextjs.org/docs/app/api-reference/components/image#alt) text instead of the image
 - Previously optimized images have already been cached and will continue to work as expected, without error
 
 You will **not** be charged for exceeding the usage limits, but this usually means your application is ready to upgrade to a [Pro plan](/docs/plans/pro-plan).
@@ -120,4 +120,4 @@ See the [Fair Usage Policy](/docs/limits/fair-use-guidelines#typical-monthly-usa
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

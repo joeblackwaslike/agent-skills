@@ -4,8 +4,8 @@ description: Using OpenTelemetry with AI SDK Core
 url: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "3d198775869868b28ce29410ae8721e2713ae2e7459e7b32a27dfb25317bc490"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "48cdd882ba96799638d997ea51c81c8dabbe25b5b2673624e29581d401ce2439"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -322,14 +322,21 @@ context across provider calls and tool executions.
 import { tracingChannel } from 'node:diagnostics_channel';
 import {
   AI_SDK_TELEMETRY_TRACING_CHANNEL,
+  type InferTelemetryEvent,
   type TelemetryTracingChannelMessage,
 } from 'ai';
 
 tracingChannel(AI_SDK_TELEMETRY_TRACING_CHANNEL).subscribe({
   start(message) {
-    const telemetryMessage = message as TelemetryTracingChannelMessage;
+    const telemetryMessage = message as TelemetryTracingChannelMessage<
+      InferTelemetryEvent<unknown>
+    >;
 
-    if (telemetryMessage.type === 'onStart') {
+    if (
+      telemetryMessage.type === 'generateText' ||
+      telemetryMessage.type === 'streamText'
+    ) {
+      console.log('AI SDK version:', telemetryMessage.event.aiVersion);
       // Inspect telemetryMessage.event and forward it to your provider.
     }
   },
@@ -400,6 +407,7 @@ export function myIntegration(): Telemetry {
 - `onToolExecutionStart` (`(event: ToolExecutionStartEvent) => void | PromiseLike<void>`): Called when a tool's execute function is about to run.
 - `onToolExecutionEnd` (`(event: ToolExecutionEndEvent) => void | PromiseLike<void>`): Called when a tool's execute function completes or errors.
 - `onStepEnd` (`(event: GenerateTextStepEndEvent) => void | PromiseLike<void>`): Called when a step (LLM call) completes.
+- `onStepError` (`(event: GenerateTextStepErrorEvent) => void | PromiseLike<void>`): Called when a step that started fails before it produces a step result. Use it to close step-level spans. The call then ends with \`onError\`.
 - `onEmbedEnd` (`(event: EmbeddingModelCallEndEvent) => void | PromiseLike<void>`): Called when an individual embedding model call completes.
 - `onRerankEnd` (`(event: RerankingModelCallEndEvent) => void | PromiseLike<void>`): Called when an individual reranking model call completes.
 - `experimental_onDecideStart` (`(event: Experimental_DecideStartEvent) => void | PromiseLike<void>`): Called when an experimental decision operation begins.

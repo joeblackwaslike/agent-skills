@@ -16,8 +16,8 @@ related:
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "01b843047a37c33de9cf0722b838e301bea058f0477bfa9f5f11a5d484649c6b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9f6feb164d83d2ed6a80ee06ebe714a46d9828ef6a72ce783e417dbfdc09feb7"
 ---
 
 # Managing Builds
@@ -38,10 +38,10 @@ When you build your application code, Vercel runs compute to install dependencie
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
-- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
+- [Limits](https://vercel.com/docs/limits) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 
 Full cross-link map for this page: [/docs/builds/managing-builds.graph.md](/docs/builds/managing-builds.graph.md)
 <!-- /docsgraph:related -->
@@ -115,7 +115,7 @@ You can configure this on the project's [**Build and Deployment Settings**](http
 #### Dashboard
 
 1. From your Vercel dashboard, select the project you wish to enable it for.
-2. Open **Settings** in the sidebar, and go to the **Build and Deployment** section of your [Project Settings](/docs/projects#project-settings).
+2. Open **Settings** in the sidebar, and go to the **Build and Deployment** section of your [Project Settings](/docs/project-configuration/project-settings#build-and-deployment-settings).
 3. Under **On-Demand Concurrent Builds**, select one of the following:
    - **Run all builds immediately**: Skip the queue for all builds
    - **Run up to one build per branch**: Limit to one active build per branch
@@ -233,7 +233,7 @@ Some other considerations to take into account when optimizing your builds inclu
 
 - [Understand](/docs/deployments/troubleshoot-a-build#understanding-build-cache) and [manage](/docs/deployments/troubleshoot-a-build#managing-build-cache) the build cache. By default, Vercel caches the dependencies of your project, based on your framework, to speed up the build process
 - You may choose to [Ignore the Build Step](/docs/project-configuration/project-settings#ignored-build-step) on redeployments if you know that the build step is not necessary under certain conditions
-- Use the most recent version of your runtime, particularly Node.js, to take advantage of the latest performance improvements. To learn more, see [Node.js](/docs/functions/runtimes/node-js#default-and-available-versions)
+- Use the most recent version of your runtime, particularly Node.js, to take advantage of the latest performance improvements. To learn more, see [Node.js](/docs/functions/runtimes/node-js#node.js-version)
 
 ## Prioritize production builds
 
@@ -244,7 +244,7 @@ If a build has to wait for queued preview deployments to finish, it can delay th
 To ensure that changes to the [production environment](/docs/deployments/environments#production-environment) are prioritized over [preview deployments](/docs/deployments/environments#preview-environment-pre-production) in the queue, you can enable **Prioritize Production Builds**:
 
 1. From your Vercel dashboard, select the project you wish to enable it for
-2. Open **Settings** in the sidebar, and go to the [**Build and Deployment** section](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment\&title=Prioritize+Production+Builds+Setting) of your [Project Settings](/docs/projects#project-settings)
+2. Open **Settings** in the sidebar, and go to the [**Build and Deployment** section](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment\&title=Prioritize+Production+Builds+Setting) of your [Project Settings](/docs/project-configuration/project-settings#build-and-deployment-settings)
 3. Under **Prioritize Production Builds**, toggle the switch to **Enabled**
 
 
@@ -253,4 +253,4 @@ To ensure that changes to the [production environment](/docs/deployments/environ
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

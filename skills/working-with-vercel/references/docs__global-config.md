@@ -16,8 +16,8 @@ related:
 summary: A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "eec3f589031e281ab1090aa0a6887cca6ae08888dfa7ad5fe3d5c296e0f911ec"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c5d6078562293acd2f92b63ea31ecbfe1abd7e7bb3a064b31e0b97823aa2bb23"
 ---
 
 # Vercel Global Config
@@ -132,7 +132,7 @@ There are alternative solutions to Global Config for handling A/B testing, featu
 | **Global Config vs alternatives** | **Read latency**                                                                                                           | **Write latency**                                                                                                           | **Redeployment required**                                                                                                       | **Added risk of downtime**                                                                                                                    |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Global Config**                 | **Ultra-low** (Reads typically complete in less than a millisecond. Latency depends on function count, read frequency, geographic distribution, and configuration updates.) | **Varies** (Global Config is optimized for frequent, high-speed reads and infrequent, variable writes.) | **No** (Global Config updates propagate globally with no redeployment required.)                            | **No** (Global Config is hosted by Vercel, and has nearly identical uptime characteristics to your deployment)            |
-| Remote JSON files               | Varies (Potentially hundreds of milliseconds slower tha Global Config.)                               | Varies                                                                                                                      | No (Latency for propagation of changes varies based on host, but no redeployment would be required.)      | Yes (Relying on an external provider means your data has different uptime characteristics from your Vercel deployment.) |
+| Remote JSON files               | Varies (Potentially hundreds of milliseconds slower than Global Config.)                               | Varies                                                                                                                      | No (Latency for propagation of changes varies based on host, but no redeployment would be required.)      | Yes (Relying on an external provider means your data has different uptime characteristics from your Vercel deployment.) |
 | Embedded JSON files             | Lowest                                                                                                                     | Highest (Changes to this data can't propagate globally without merging and redeploying.)              | Yes (Embedded files are part of your build, so redeployments are required to incorporate changes.)        | No                                                                                                                                            |
 | Environment Variables           | Lowest                                                                                                                     | Highest (Changes to this data can't propagate globally without redeploying.)                          | Yes (Environment Variables are part of your build, so redeployments are required to incorporate changes.) | No                                                                                                                                            |
 
@@ -154,4 +154,4 @@ To learn about Global Config limits and pricing, see [our Global Config limits d
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

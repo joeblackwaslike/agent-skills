@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/common-workflows.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "5a5584f7189b674ac06146376ed0534b1325d7068e7eb41d912c3998c6d4e5cc"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "fcd7053b20f22e66dbd7b08c3661f0b678a9fe499e5a24e3acf0be1d7f9f54dc"
 ---
 
 > ## Documentation Index
@@ -506,18 +506,18 @@ See [Non-interactive mode](https://code.claude.com/docs/en/headless.md) for outp
 
 ## Next steps
 
-> **[Best practices](https://code.claude.com/docs/en/best-practices.md)**
+> [card] [Best practices](https://code.claude.com/docs/en/best-practices.md)
 >
 > Patterns for getting the most out of Claude Code
 
-> **[Manage sessions](https://code.claude.com/docs/en/sessions.md)**
+> [card] [Manage sessions](https://code.claude.com/docs/en/sessions.md)
 >
 > Resume, name, and branch conversations
 
-> **[Worktrees](https://code.claude.com/docs/en/worktrees.md)**
+> [card] [Worktrees](https://code.claude.com/docs/en/worktrees.md)
 >
 > Run isolated parallel sessions
 
-> **[Extend Claude Code](https://code.claude.com/docs/en/features-overview.md)**
+> [card] [Extend Claude Code](https://code.claude.com/docs/en/features-overview.md)
 >
 > Add skills, hooks, MCP, subagents, and plugins

@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for microfrontends.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4ace9c98eeffc46e57357788edd5992a70a758dadbf4206471a9f6c020cb99cf"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c5ea1e46f4a14ab4061ba7630962102f12aa3d36b78df0b0bdf7b0f99b29c3b9"
 ---
 
 # Microfrontends
@@ -27,8 +27,8 @@ Inspect how your projects and deployments are configured for microfrontends. You
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Microfrontends](https://vercel.com/docs/microfrontends) — Learn how to use microfrontends on Vercel to split apart large applications, improve developer experience and make incre
 - [Get microfrontends config for a project](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project) — GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config — Get the microfrontends config for a project by
+- [Microfrontends](https://vercel.com/docs/microfrontends) — Learn how to use microfrontends on Vercel to split apart large applications, improve developer experience and make incre
 - [Get microfrontends config for a deployment](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-deployment) — GET /v1/microfrontends/{deploymentId}/config — Get the microfrontends config for a deployment.
 - [List microfrontends groups](https://vercel.com/docs/rest-api/microfrontends/list-microfrontends-groups) — GET /v1/microfrontends/groups — Get the microfrontends group IDs for a team.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
@@ -66,4 +66,4 @@ Get microfrontends config for a project.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

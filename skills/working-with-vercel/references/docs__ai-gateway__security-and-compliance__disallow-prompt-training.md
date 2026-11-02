@@ -16,8 +16,8 @@ related:
 summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "94adad89c651997a6c9095805c12d38530f906bcc96a0592057dd087f2742d27"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a1aa7edc497b4ccde5593bf00eed87e7a455299a6f08321eceeb3ba618c243c5"
 ---
 
 # AI Gateway Disallow Prompt Training
@@ -37,6 +37,7 @@ No training on prompt data is available to all AI Gateway users at no extra char
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway)
+- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md](/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md)
 <!-- /docsgraph:related -->
@@ -613,4 +614,4 @@ A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can rest
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

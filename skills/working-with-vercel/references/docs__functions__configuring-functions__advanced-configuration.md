@@ -17,8 +17,8 @@ related:
 summary: Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/advanced-configuration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "902c6da32d093f921ab313d3d1f48ef16ca8375f27700a5b1a0d3d3d320baaa3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3c1ce7270e124846107e9b6baf9cb5e38499d462b1414069c51d7701322e8ebd"
 ---
 
 # Advanced Configuration
@@ -32,13 +32,12 @@ For an advanced configuration, you can create a `vercel.json` file to use [Runti
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
-- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
 - [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
-- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
+- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
+- [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime) — Learn how to configure the runtime for Vercel Functions.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/advanced-configuration.graph.md](/docs/functions/configuring-functions/advanced-configuration.graph.md)
 <!-- /docsgraph:related -->
@@ -172,4 +171,4 @@ In the following example, `app/api/hello/route.ts` will be bundled separately fr
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -4,8 +4,8 @@ description: Learn how to set up the Gladia provider and check AI Gateway availa
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gladia.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "05206e120f9cbc369701e6c0764f74039127849313f62035ac01e8a2bed22c9f"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "5f0c5122018a2bb311e47abab448058dd5f674102fdd7281af32e68a2953d8e2"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -84,7 +84,10 @@ const gladia = createGladia({
 
 You can use the following optional settings to customize the Gladia provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a synchronous or asynchronous callback to resolve the key before each
+  request. The callback is responsible for caching and refreshing credentials.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `GLADIA_API_KEY` environment variable.

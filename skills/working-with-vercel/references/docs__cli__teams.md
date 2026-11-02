@@ -14,8 +14,8 @@ related:
 summary: Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f5bfea73e350378478abc896d347d219d8db9f8ef3b84ce0bbae5ffc10507fa8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "91a56a9736efb85107919849024bc5f1bd655e9edc62fc38eaae8ecb7b9a5664"
 ---
 
 # vercel teams
@@ -28,11 +28,11 @@ The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
 - [vercel switch](https://vercel.com/docs/cli/switch) — Learn how to switch between different team scopes using the vercel switch CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
-- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md)
 <!-- /docsgraph:related -->
@@ -268,4 +268,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

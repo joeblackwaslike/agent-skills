@@ -13,8 +13,8 @@ related:
 summary: Use list_project_custom_environments with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/list_project_custom_environments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f2e2c1e9177ed5a5ba507c103872a26a64f555ca15eeaae0be410e0d8c81c486"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "747d22de8ecbf8b16c38084ec3b9a7fb00c9b18bf819ee5f3bed97ed79428338"
 ---
 
 # list_project_custom_environments
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/envir
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

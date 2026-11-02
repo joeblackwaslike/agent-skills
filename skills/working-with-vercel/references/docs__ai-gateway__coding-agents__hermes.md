@@ -17,8 +17,8 @@ related:
 summary: Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, and monitor usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/hermes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "697da02700de31ad43bb38f683e82e7513684266d282eea59dbac0638c3c0295"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "50f557831cd468560145da486632f813597c1cb56ddfc2d79dc32ba6124af78b"
 ---
 
 # Hermes with AI Gateway
@@ -112,4 +112,4 @@ Hermes identifies itself to the gateway, so its requests are attributable in you
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

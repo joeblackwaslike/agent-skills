@@ -4,8 +4,8 @@ description: Learn how to use MiniMax with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "f93b6feda9b84b24d4fdc41af0afb09268dad9e74f3a3dc866405523d0d9acb9"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "5ded1478ca628735b3627de53e613b1b7f2af26bb94c0995ab5e4d0346dcf75a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -100,12 +100,15 @@ You can use the following optional settings to customize the MiniMax provider in
   the MiniMax V2 native endpoint (not the Anthropic-compatible endpoint).
   The default prefix is `https://api.minimax.io`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key for the MiniMax API. It defaults to the `MINIMAX_API_KEY` environment
   variable. Language models send it in the `x-api-key` header (the
   Anthropic-compatible protocol); video models send it as
   `Authorization: Bearer`.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 

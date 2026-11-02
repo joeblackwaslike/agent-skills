@@ -16,8 +16,8 @@ related:
 summary: Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/external-platforms/kubernetes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3da8b58f15bc47dbe0bd15a9258212826935bb27b95bcb07e2208396c39f55de"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e2b5a0f402f02f330631aad57a99c2f9de013b838541f67935f91cb61ebb2cb0"
 ---
 
 # Integrating Vercel and Kubernetes
@@ -32,14 +32,14 @@ Kubernetes (K8s) is an open-source system for automating deployment, scaling, an
 
 - [Does Vercel support Kubernetes?](https://vercel.com/kb/guide/vercel-kubernetes-support) — Vercel doesn't run Kubernetes clusters. Learn how Kubernetes workloads like Deployments, Ingress, ConfigMaps, and CronJo
 - [Vercel vs Kubernetes](https://vercel.com/kb/guide/vercel-vs-kubernetes) — Compare Vercel and Kubernetes on operational ownership, deployment workflow, scaling, and cost model to decide which pla
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications) — Learn how to deploy a Ruby on Rails application on Vercel — either as a container image on Vercel Functions or as a head
-- [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
-- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
+- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
 - [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy)
+- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
 - [Accelerating developer velocity and creating high-impact web teams](https://vercel.com/blog/accelerating-developer-velocity-and-creating-high-impact-web-teams)
+- [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
 - [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/integrations/external-platforms/kubernetes.graph.md](/docs/integrations/external-platforms/kubernetes.graph.md)
@@ -134,7 +134,7 @@ To incrementally move your frontend applications to Vercel:
   Start by [creating a Vercel account](/signup) and [team](/docs/accounts#creating-a-team), if needed.
 
 - ### Create two versions of your frontend codebase
-  Keep your current frontend running in Kubernetes for now. Create a fork or a branch of your frontend codebase and connect it to a [new Vercel project](/docs/projects#creating-a-project).
+  Keep your current frontend running in Kubernetes for now. Create a fork or a branch of your frontend codebase and connect it to a [new Vercel project](/docs/projects/managing-projects#creating-a-project).
 
   Once connected, Vercel will automatically build and deploy your application. It’s okay if the first deployment fails. [View the build logs](/docs/deployments/logs) and [troubleshoot the build](/docs/deployments/troubleshoot-a-build) failures. Changes might include:
   - Adjustments to build scripts
@@ -185,4 +185,4 @@ To incrementally move your frontend applications to Vercel:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -15,8 +15,8 @@ related:
 summary: Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/git-settings.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5209ea0ad75793440aaada8245c9608ca4fc804568cb84752ffbd4fff0dd2d19"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bd5bae4cdc8092896865113745b35c4e77bbcd735e0f6067ed956513dc7e0911"
 ---
 
 # Git settings
@@ -31,6 +31,7 @@ Once you have [connected a Git repository](/docs/git#deploying-a-git-repository)
 
 - [Deployments can now require cryptographically-verified commits](https://vercel.com/changelog/deployments-can-now-require-cryptographically-verified-commits)
 - [Edit Git settings for all projects in a repo](https://vercel.com/changelog/edit-git-settings-for-all-projects-in-a-repo)
+- [Git LFS support](https://vercel.com/changelog/git-lfs-support)
 - [Repository checkout and Git LFS downloads are now faster](https://vercel.com/changelog/repository-checkout-and-git-lfs-downloads-are-now-faster)
 - [New Git Integration Settings](https://vercel.com/blog/new-git-integration-settings)
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
@@ -84,4 +85,4 @@ When enabled, Vercel will only create deployments for commits that have been ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

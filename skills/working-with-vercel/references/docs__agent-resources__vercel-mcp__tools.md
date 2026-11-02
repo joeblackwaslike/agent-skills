@@ -17,8 +17,8 @@ related:
 summary: Explore Vercel MCP tools for projects, deployments, domains, sandboxes, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "599c549474815fd1ace303802a6e45b1b5d1a4ded5be80e25056528829c20a0f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a096f53c73edc6cbe34b8eecca49070ba4b1da6bc91bff36c7725cfc2c9f8287"
 ---
 
 # Tools
@@ -34,8 +34,8 @@ Vercel MCP tools let your AI assistant work with your projects, deployments, log
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
 - [Tools](https://ai-sdk.dev/docs/foundations/tools) — Learn about tools with the AI SDK.
 - [@v0-sdk/ai-tools](https://v0.app/docs/api/v1/packages/ai-tools) — AI SDK tools for the v0 API
-- [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
@@ -123,4 +123,4 @@ Browse the categories below, or expand a category in the sidebar to find a tool.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

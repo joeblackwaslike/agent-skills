@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the xAI native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/xai.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "579bc46e925ba882ac79a8370e1d5a5ecb0f5b12b44ff1493a06e8ed15bcf433"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "60064b9b68b2ab0a58fb513aa227d54ffe21702618bb1b9818b18908d4094893"
 ---
 
 # Vercel xAI Integration
@@ -118,4 +118,4 @@ To follow this guide, you'll need the following:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

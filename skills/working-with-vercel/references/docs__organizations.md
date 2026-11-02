@@ -16,8 +16,8 @@ related:
 summary: Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/organizations.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "96aa04a46b560fd0130b71eefb54fb69cc54f18e56376a855a92c24efe1e3408"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5be804529a92323989a06acb52db95a7865e57376408584d0835e477edde7575"
 ---
 
 # Organizations
@@ -31,12 +31,11 @@ An organization groups multiple Vercel [teams](/docs/accounts) under a single en
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Organizations](https://v0.app/docs/api/v2/guides/organizations) — Learn how to use the v0 API with Vercel Organizations to offer v0-style chat experiences to your customers.
-- [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
 - [Create or Add Team to Organization](https://vercel.com/docs/rest-api/organizations/create-or-add-team-to-organization) — POST /v1/organizations/{organizationId}/teams — Create a new team under an organization, or add an existing team. \\`mode
 - [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
 - [List Organizations](https://vercel.com/docs/rest-api/organizations/list-organizations) — GET /v1/organizations — List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission o
 - [Create an Organization](https://vercel.com/docs/rest-api/organizations/create-an-organization) — POST /v1/organizations — Create a new Organization. This endpoint is in private beta. Contact your Vercel account team f
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Delete Team from Organization](https://vercel.com/docs/rest-api/organizations/delete-team-from-organization) — DELETE /v1/organizations/{organizationId}/teams/{targetTeamId} — Delete a team from an organization. This endpoint is in
 
 Full cross-link map for this page: [/docs/organizations.graph.md](/docs/organizations.graph.md)
 <!-- /docsgraph:related -->
@@ -130,6 +129,8 @@ The API supports these operations:
 | List an organization's teams  | `GET /v1/organizations/{organizationId}/teams`               |
 | Remove a team                 | `DELETE /v1/organizations/{organizationId}/teams/{teamId}`   |
 
+To create, inspect, and update organizations and their child teams from the terminal, use the [`vercel organizations`](/docs/cli/organizations) CLI command.
+
 ### Creating an organization
 
 Create an organization from an existing Enterprise team with Flexible Commitment (Flex) billing by passing that team's ID in the `teamId` query parameter. The team becomes the organization's root team, and you become the organization's owner. If you omit `name`, Vercel generates one from the slug.
@@ -164,7 +165,7 @@ Each child team has a `billingPlan` that sets its features and billing model. Ch
 - `platform`: For multi-tenant platforms that run a Pro team for each tenant, at any number of tenants. Vercel emits each team's usage to the organization at the end of the team's billing cycle under a consolidated `Platform Customer Usage` SKU.
 - `enterprise`: For internal teams that need Enterprise permissions, except the add-ons in [Current limitations](#current-limitations). Each team draws down the organization's Flex commit in real time. An organization can have up to 200 `enterprise` child teams.
 
-If you omit `billingPlan`, the team joins as `platform`.
+If you omit `billingPlan` when you create a team, the team joins as `platform`. When you add an existing team without `billingPlan`, Vercel derives the plan from the team's current plan.
 
 ### Creating a team in an organization
 
@@ -333,6 +334,7 @@ Organizations are in private beta, and some capabilities aren't available yet:
 - [Enterprise plan](/docs/plans/enterprise)
 - [Enterprise billing](/docs/plans/enterprise/billing)
 - [Account management](/docs/accounts)
+- [`vercel organizations` CLI command](/docs/cli/organizations)
 - [Roles and access control](/docs/rbac)
 - [Release phases](/docs/release-phases)
 
@@ -342,4 +344,4 @@ Organizations are in private beta, and some capabilities aren't available yet:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

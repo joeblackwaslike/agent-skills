@@ -12,8 +12,8 @@ related:
 summary: An unexpected internal error occurred in the microfrontend.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_microfrontends_unexpected_error.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8512dd1e4248885c67caee1ec3e9d22d1ef2a5055a73f4166b806e422a4a6662"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "02a2eeda635a9c2b7eccaad2d8db2d6e3dd9d959d2dca8e8927f0820f9cbd571"
 ---
 
 # INTERNAL_MICROFRONTENDS_UNEXPECTED_ERROR
@@ -32,4 +32,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the Git branch deployed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/system-environment-variables.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dc201d35d20aea28394fc730cae53aab964ae7110b48013ac1d4c3fe37ae289b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7d7985746cca993bf391e3e4417bfe95166ba7e4fc66ae09fbb4ba17d8ea1ce9"
 ---
 
 # System environment variables
@@ -31,12 +31,13 @@ Vercel provides a set of environment variables that are automatically populated 
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [July 2020](https://vercel.com/blog/changelog-july-2020)
 - [May 2020](https://vercel.com/blog/changelog-may-2020)
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
-- [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 
 Full cross-link map for this page: [/docs/environment-variables/system-environment-variables.graph.md](/docs/environment-variables/system-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -161,6 +162,18 @@ The unique identifier for the project.
 
 ```bash
 VERCEL_PROJECT_ID=prj_Rej9WaMNRbffVm34MfDqa4daCEvZzzE
+```
+
+### `VERCEL_PROJECT_NAME`
+
+**Available at:&#x20;**&#x42;oth build and runtime
+
+The name of the project.
+
+**Note:&#x20;**&#x56;ercel sets this variable for deployments only when the project has a name. Renaming the project changes the value for subsequent deployments. Vercel CLI does not automatically set it for local development or local builds.
+
+```bash
+VERCEL_PROJECT_NAME=my-site
 ```
 
 ### `VERCEL_SKEW_PROTECTION_ENABLED`
@@ -321,4 +334,4 @@ VERCEL_GIT_PULL_REQUEST_ID=23
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

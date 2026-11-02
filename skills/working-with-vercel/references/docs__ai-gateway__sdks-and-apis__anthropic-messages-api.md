@@ -17,8 +17,8 @@ related:
 summary: Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images, and extended thinking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7d9c9c13d606faef4744bf46f48d644c02858bf473e856699283bc7b8d31f0b2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cf7946c256e1c226c7fc1df970c59f345d78177b72ad7e7f1943ceb2765b3f53"
 ---
 
 # Anthropic Messages API with AI Gateway
@@ -36,13 +36,13 @@ AI Gateway provides Anthropic Messages API endpoints, so you can use the Anthrop
 - [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway)
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [Kimi K3.1 Pro and Kimi K3.1 Pro Highspeed are available now in AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-and-kimi-k3-1-pro-highspeed-are-available-now-in-ai-gateway)
-- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
-- [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk) — Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed brief
+- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
+- [Caching](https://ai-sdk.dev/docs/advanced/caching) — How to handle caching when working with the AI SDK
 - [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
-- [AI Gateway Anthropic Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic) — Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
-- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
+- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Conductor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/conductor) — Connect Conductor to AI Gateway through its Claude Code configuration. Route parallel coding agents through the Anthropi
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.graph.md)
 <!-- /docsgraph:related -->
@@ -79,6 +79,7 @@ The AI Gateway supports the following Anthropic Messages API endpoints:
 * [`GET /v1/messages/batches`](#message-batches) - List message batches
 * [`GET /v1/messages/batches/{batch_id}`](#message-batches) - Retrieve a message batch
 * [`GET /v1/messages/batches/{batch_id}/results`](#message-batches) - Read message batch results
+* [`POST /v1/messages/batches/{batch_id}/cancel`](#message-batches) - Cancel a message batch
 
 For advanced features, see:
 
@@ -143,7 +144,7 @@ For advanced features, see:
 
 ## Integration with Anthropic SDK
 
-You can use the AI Gateway's Anthropic Messages API with the official [Anthropic SDK](https://docs.anthropic.com/en/api/client-sdks). Point your client to the AI Gateway's base URL and use your AI Gateway [API key](/docs/ai-gateway/authentication-and-byok#api-key) or [OIDC token](/docs/ai-gateway/authentication-and-byok#oidc-token) for authentication.
+You can use the AI Gateway's Anthropic Messages API with the official [Anthropic SDK](https://docs.anthropic.com/en/api/client-sdks). Point your client to the AI Gateway's base URL and use your AI Gateway [API key](/docs/ai-gateway/authentication-and-byok#api-keys) or [OIDC token](/docs/ai-gateway/authentication-and-byok#oidc-tokens) for authentication.
 
 > **💡 Note:** The examples and content in this section are not comprehensive. For complete
 > documentation on available parameters, response formats, and advanced
@@ -208,6 +209,8 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
 ## Message batches
 
 Use the Anthropic SDK's `client.messages.batches` methods to submit requests for asynchronous processing, poll for completion, and read results.
+
+For pricing, supported models, and the other batch API formats, see [Batch processing](/docs/ai-gateway/models-and-providers/batch-processing).
 
 > **💡 Note:** Message batches are in early access. Your team must have access enabled before
 > you can submit a batch through AI Gateway.
@@ -372,7 +375,7 @@ Use `await client.messages.batches.list({ limit: 20 })` in TypeScript or JavaScr
 - Submit up to 1,000 requests per batch, all using the same model.
 - Give each request a unique `custom_id` of 1–64 characters using letters, numbers, underscores, or hyphens (`[A-Za-z0-9_-]`).
 - Batch requests don't support streaming, provider-executed tools, or Model Context Protocol (MCP) servers.
-- Batch cancellation and deletion aren't supported through AI Gateway.
+- Cancel a batch with `client.messages.batches.cancel`. Deleting batches isn't supported through AI Gateway.
 - You can use [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok) credentials saved to your team. Request-scoped raw provider keys aren't supported.
 - [Zero Data Retention (ZDR)](/docs/ai-gateway/security-and-compliance/zdr) isn't available for batches.
 
@@ -566,12 +569,14 @@ The Agent SDK respects any [environment variable the Claude Code CLI reads](http
 | `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS` | Strips Anthropic-specific `anthropic-beta` headers and beta tool-schema fields from requests. Set to `1` when routing through providers like Bedrock or Vertex AI that reject those fields.                                                                                                   |
 | `CLAUDE_CODE_EXTRA_BODY`                 | Merges a JSON object into the top level of every request body. Use it to pass [`providerOptions`](/docs/ai-gateway/models-and-providers/provider-options) like [`order`, `only`, and `sort`](/docs/ai-gateway/models-and-providers/provider-options#provider-filtering-ordering-and-sorting). |
 
-For example, to restrict requests to Amazon Bedrock only, set these alongside the `ANTHROPIC_*` variables in your environment:
+For example, to prefer Amazon Bedrock while keeping other providers available as fallbacks, set these alongside the `ANTHROPIC_*` variables in your environment:
 
 ```bash
 CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1
-CLAUDE_CODE_EXTRA_BODY='{"providerOptions":{"gateway":{"only":["bedrock"]}}}'
+CLAUDE_CODE_EXTRA_BODY='{"providerOptions":{"gateway":{"order":["bedrock"]}}}'
 ```
+
+The `only` option is available when a requirement allows only specific providers, but requests then fail instead of falling back when those providers are unavailable. Claude Code sends a session ID, so after a fallback [session affinity](/docs/ai-gateway/models-and-providers/session-affinity) can keep the session on the provider that holds its prompt cache, ahead of `order`. If every request must try Bedrock first, add `"sessionAffinity":false` to the `gateway` object. To manage routing settings like these centrally for your coding agents, you can also define them on a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models).
 
 ## Error handling
 
@@ -604,4 +609,4 @@ The API returns standard HTTP status codes and error responses:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

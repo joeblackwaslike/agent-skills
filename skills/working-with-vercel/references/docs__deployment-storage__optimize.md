@@ -16,8 +16,8 @@ related:
 summary: Set retention periods, review remaining usage, and reduce deployment output size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage/optimize.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0e7b2044ccec11f6cf03dde0c210e5fe6cdea2180d9b417ad55c4a7c1f1a8a8a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "265ef4e872aef5bd80084e58582135269824558d4d9743fa248bef6cc4d431fa"
 ---
 
 # Optimize Deployment Storage
@@ -35,13 +35,13 @@ Start with deployment retention. It controls how long Vercel keeps deployment ou
 - [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage)
 - [New Pro teams now default to 30-day deployment retention](https://vercel.com/changelog/new-pro-teams-now-default-to-30-day-deployment-retention)
 - [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment) — Information on deleting an individual deployment.
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/deployment-storage/optimize.graph.md](/docs/deployment-storage/optimize.graph.md)
 <!-- /docsgraph:related -->
@@ -173,4 +173,4 @@ For product details, see [Deployment Storage](/docs/deployment-storage).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

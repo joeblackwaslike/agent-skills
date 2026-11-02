@@ -17,8 +17,8 @@ related:
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dcd493605c7de0afdbbf1bf3732733b2f624fbc787ebade652713fb80519d2a7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d7e123b6b9fda2d1be38c443b39ee379a5ea3ed86428093161e1c3ddc30aa08b"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
@@ -37,10 +37,10 @@ The maximum duration configuration determines the longest time that a function c
 - [Vercel Functions can now run up to 30 minutes](https://vercel.com/changelog/vercel-functions-can-now-run-up-to-30-minutes)
 - [Vercel Functions for Hobby can now run up to 60 seconds](https://vercel.com/changelog/vercel-functions-for-hobby-can-now-run-up-to-60-seconds)
 - [Workflow steps now support extended function durations](https://vercel.com/changelog/workflow-steps-now-support-extended-function-durations)
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [How to build a Shopify MCP agent on Vercel](https://vercel.com/kb/guide/build-a-shopify-mcp-agent-on-vercel) — Build a Shopify MCP agent on Vercel with AI SDK 7. Connect to Shopify's UCP MCP servers, update carts safely, and hand t
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
 - [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
-- [How to perform large-scale data analysis with Vercel Sandbox and MCP](https://vercel.com/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) — Use Vercel Sandbox and an MCP server built with \\`mcp-handler\\` to let AI agents run DuckDB SQL and Python on large data
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications)
 
@@ -333,6 +333,7 @@ Extended max duration is supported for the following runtimes during the beta:
 
 - `nodejs22.x`
 - `nodejs24.x`
+- `nodejs26.x`
 - Bun `1.x` and `1.4.x`
 - `python3.12`
 - `python3.13`
@@ -453,4 +454,4 @@ The 800 second maximum is generally available for Pro and Enterprise teams. For 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

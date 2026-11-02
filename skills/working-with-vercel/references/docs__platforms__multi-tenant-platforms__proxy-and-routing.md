@@ -13,8 +13,8 @@ related:
 summary: Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/proxy-and-routing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cf7decb0109ae9c6a5f7d191b535112fa3e9bb33bf59dc5a8a3dcd06af36cdae"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6d5fcf7fa89e35081160ec086a2b1616cc70c14287a125b22fdf0e8ea632cd7f"
 ---
 
 # Proxy and Routing
@@ -30,10 +30,10 @@ Tenant headers must come from the proxy, never from the client. Any caller can a
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
-- [Serving Static Files](https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files) — Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 - [Configuring Custom Subpaths](https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths) — Host platform content on custom subpaths of customer domains while maintaining a single Next.js application.
+- [Serving Static Files](https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files) — Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/proxy-and-routing.graph.md](/docs/platforms/multi-tenant-platforms/proxy-and-routing.graph.md)
 <!-- /docsgraph:related -->
@@ -54,10 +54,20 @@ export async function proxy(request: NextRequest) {
   requestHeaders.delete('x-tenant-id');
   requestHeaders.delete('x-tenant-subdomain');
 
-  // Extract subdomain (tenant identifier)
-  const subdomain = hostname.split('.')[0];
+  // This is your platform's own domain, such as yourapp.com. We default to
+  // localhost:3000 so that the sample also works in local development.
+  const rootDomain = process.env.ROOT_DOMAIN ?? 'localhost:3000';
 
-  // Skip processing for main app domains
+  // Requests to the root domain go to your own app. Other hosts, such as
+  // custom domains, are handled by the custom domain sample below.
+  if (hostname === rootDomain || !hostname.endsWith(`.${rootDomain}`)) {
+    return NextResponse.next({ request: { headers: requestHeaders } });
+  }
+
+  // Now we take the subdomain off the front of the host to get the tenant.
+  // For example, tenant1.yourapp.com gives us tenant1.
+  const subdomain = hostname.slice(0, -(rootDomain.length + 1));
+
   if (subdomain === 'www' || subdomain === 'app' || subdomain === 'admin') {
     return NextResponse.next({ request: { headers: requestHeaders } });
   }
@@ -66,8 +76,12 @@ export async function proxy(request: NextRequest) {
   const tenant = await validateTenant(subdomain);
 
   if (!tenant) {
-    // Redirect to main app or show 404
-    return NextResponse.redirect(new URL('/not-found', request.url));
+    // Note that we use rewrite instead of redirect here, since a redirect to
+    // /not-found would send the browser back through the proxy, which would
+    // redirect it again in an endless loop.
+    return NextResponse.rewrite(new URL('/not-found', request.url), {
+      request: { headers: requestHeaders },
+    });
   }
 
   // Forward tenant context to your app on the request headers
@@ -88,7 +102,8 @@ This example:
 - Validates the tenant exists in your database
 - Strips inbound tenant headers so clients can't forge tenant context
 - Adds tenant context to request headers for your app to use
-- Redirects invalid tenants to a 404 page
+- Returns a 404 page for unknown subdomains. We use a rewrite here, since a redirect would send the request through the proxy again in a loop. The quickstart takes another approach and returns a plain 404 response from the proxy
+- Lets the root domain (`yourapp.com`, or `localhost:3000` locally) through to your own app
 
 ### Custom domain tenant resolution
 
@@ -99,44 +114,64 @@ Handle custom domains like `tenant.com` mapping to tenants:
 import { NextRequest, NextResponse } from 'next/server';
 import { get } from '@vercel/global-config';
 
+// Global Config keys can contain only letters, digits, _ and -, so we
+// replace the . and : in a host name before we use it in a key.
+const key = (value: string) => value.replaceAll('.', '_').replaceAll(':', '_');
+
 export async function proxy(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
-
+  const rootDomain = process.env.ROOT_DOMAIN ?? 'localhost:3000';
   // Strip inbound tenant headers; only the proxy sets them
   const requestHeaders = new Headers(request.headers);
   requestHeaders.delete('x-tenant-id');
   requestHeaders.delete('x-tenant-type');
 
   // Check if this is a custom domain
-  const customDomainTenant = await get<{ id: string }>(`domain_${hostname}`);
-
+  const customDomainTenant = await get<{ id: string }>(
+    `domain_${key(hostname)}`,
+  );
   if (customDomainTenant) {
-    // Custom domain found, forward tenant context on the request headers
     requestHeaders.set('x-tenant-id', customDomainTenant.id);
     requestHeaders.set('x-tenant-type', 'custom-domain');
     return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
-  // Fall back to subdomain resolution
-  const subdomain = hostname.split('.')[0];
-  const subdomainTenant = await get<{ id: string }>(`subdomain_${subdomain}`);
-
+  // If the host isn't a custom domain, we check whether it's a subdomain
+  // of your root domain, such as tenant1.yourapp.com.
+  const subdomain = hostname.endsWith(`.${rootDomain}`)
+    ? hostname.slice(0, -(rootDomain.length + 1))
+    : null;
+  const subdomainTenant = subdomain
+    ? await get<{ id: string }>(`subdomain_${key(subdomain)}`)
+    : undefined;
   if (subdomainTenant) {
     requestHeaders.set('x-tenant-id', subdomainTenant.id);
     requestHeaders.set('x-tenant-type', 'subdomain');
     return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
-  // No tenant found
-  return NextResponse.redirect(new URL('/not-found', request.url));
+  // Requests to the root domain go to your own app.
+  if (hostname === rootDomain) {
+    return NextResponse.next({ request: { headers: requestHeaders } });
+  }
+
+  // No tenant matched. As in the sample above, we rewrite instead of
+  // redirect, so that the request doesn't loop through the proxy.
+  return NextResponse.rewrite(new URL('/not-found', request.url), {
+    request: { headers: requestHeaders },
+  });
 }
+
+export const config = {
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+};
 ```
 
 This example:
 
 - First checks if the hostname is a registered custom domain
-- Falls back to subdomain parsing if not a custom domain
-- Uses Global Config for fast tenant lookups
+- Falls back to the subdomain of your root domain, and lets the root domain itself through
+- Uses Global Config for fast tenant lookups. Global Config keys allow only letters, digits, `_`, and `-`, so the sample replaces `.` and `:` in the hostname
 - Sets tenant type so your app knows how the tenant was resolved
 
 ### Path-based tenant resolution
@@ -167,12 +202,15 @@ export async function proxy(request: NextRequest) {
   const tenant = await validateTenant(tenantSlug);
 
   if (!tenant) {
-    return NextResponse.redirect(new URL('/not-found', request.url));
+    return NextResponse.rewrite(new URL('/not-found', request.url), {
+      request: { headers: requestHeaders },
+    });
   }
 
-  // Rewrite URL to remove tenant from path
-  const newPath = `/${pathSegments.slice(2).join('/')}`;
-  const rewriteUrl = new URL(newPath, request.url);
+  // Rewrite URL to remove tenant from path. We clone nextUrl instead of
+  // building a new URL, so that the query string stays on the request.
+  const rewriteUrl = request.nextUrl.clone();
+  rewriteUrl.pathname = `/${pathSegments.slice(2).join('/')}`;
 
   requestHeaders.set('x-tenant-id', tenant.id);
   requestHeaders.set('x-tenant-slug', tenantSlug);
@@ -181,6 +219,10 @@ export async function proxy(request: NextRequest) {
     request: { headers: requestHeaders },
   });
 }
+
+export const config = {
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+};
 ```
 
 This example:
@@ -205,12 +247,16 @@ export async function proxy(request: NextRequest) {
   const hostname = request.headers.get('host') || '';
   const tenantId = await resolveTenantId(hostname);
 
+  // Strip the inbound tenant header; only the proxy sets it
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.delete('x-tenant-id');
+
   if (!tenantId) {
-    return NextResponse.redirect(new URL('/not-found', request.url));
+    return NextResponse.rewrite(new URL('/not-found', request.url), {
+      request: { headers: requestHeaders },
+    });
   }
 
-  // Overwrite any inbound tenant header with the resolved tenant
-  const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-tenant-id', tenantId);
 
   // Route to tenant-specific pages
@@ -250,4 +296,4 @@ This example:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Requires that a workspace package is configured with required React plugins and rules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/eslint_react_rules_required.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "db44b5a11894332061728dc01fa0cf3fed9dcae4eb2e0f61465662795fa09400"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4ef3a7c5045589fd02b92b1bdc72af19cdf1ec2341c6d2dcab7980305eebee32"
 ---
 
 # ESLINT_REACT_RULES_REQUIRED
@@ -89,4 +89,4 @@ You should also add `"eslint-config-custom": "workspace:*"` to your
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for drains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3469f42ef4eb3937900d61caa9af4f7e987b5eb8772c5161f58045e88fcb9fa4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e1c179b94e2bd1f186d2816eb9ff5f1b7585c668d0f0927d34b9f98538773c90"
 ---
 
 # Drains
@@ -104,4 +104,4 @@ Update an existing Drain.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

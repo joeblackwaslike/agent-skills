@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the fal native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/fal.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e1e0b32aa48dfe82bcac816cb0be0a34989ebe8602da19303c4bb68eaf697ed6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9bbf99466c9f927d5f981f1d578dfb3c0618927a220dccbf3c31e4023806ab1e"
 ---
 
 # Vercel fal Integration
@@ -121,4 +121,4 @@ To follow this guide, you'll need the following:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

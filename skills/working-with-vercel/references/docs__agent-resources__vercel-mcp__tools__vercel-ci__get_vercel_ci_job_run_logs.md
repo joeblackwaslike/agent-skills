@@ -13,8 +13,8 @@ related:
 summary: Use get_vercel_ci_job_run_logs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_job_run_logs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "74059d61c9d936f0a7fcb85214344235d5c6ec137cd58aa0b3b08b3f136bac40"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bddb0525870d37e8a7bbb7da4d0e0162acd661eb5f6805d485599243b766cb2d"
 ---
 
 # get_vercel_ci_job_run_logs
@@ -56,4 +56,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

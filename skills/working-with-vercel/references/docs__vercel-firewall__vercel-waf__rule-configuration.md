@@ -13,8 +13,8 @@ related:
 summary: List of configurable options with the Vercel WAF
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "39099b65791172219fbdd4665ef1ac493e19f9a36d1dd05e7fe9490ae7a8fbf8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7619a1a7619bf1ea078e5b711b7a1d1e58d4dcdd300023953e14e93bf76be486"
 ---
 
 # Rule Configuration Reference
@@ -31,10 +31,10 @@ For each custom rule that you create, you can configure one or more conditions w
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [WAF Custom Rules](https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules) — Learn how to add and manage custom rules to configure the Vercel Web Application Firewall \\(WAF\\).
-- [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \\(WAF\\)
 - [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples) — Learn how to use Vercel WAF to protect your site in specific situations.
+- [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \\(WAF\\)
+- [Update conditional firewall bypass](https://vercel.com/docs/rest-api/security/update-conditional-firewall-bypass) — PUT /v1/security/firewall/bypass/rules — Update a conditional firewall bypass rule for a project domain. Replaces condit
 - [Get conditional firewall bypasses](https://vercel.com/docs/rest-api/security/get-conditional-firewall-bypasses) — GET /v1/security/firewall/bypass/rules — Retrieve conditional firewall bypass rules for a project.
-- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md](/docs/vercel-firewall/vercel-waf/rule-configuration.graph.md)
 <!-- /docsgraph:related -->
@@ -113,4 +113,4 @@ field.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

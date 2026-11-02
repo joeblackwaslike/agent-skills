@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-10-26
+last_updated: 2026-11-02
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-10-26T09:55:26.604Z"
-sha256: "269fab8cc58564b3314659d8ac6a1bd4acf7d37d28a1c8a85c59e8ba4add7e05"
+fetched_at: "2026-11-02T12:08:33.177Z"
+sha256: "3d62652823ef8f4ec5ab4694275719b8985c7e92b20bad8ab2fc64492b68bf45"
 ---
 
 # Vercel REST API Reference
@@ -44,6 +44,11 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 
 | Method | Endpoint | Description |
 |---|---|---|
+| **POST** | [`/ai-gateway/byok-credentials`](/docs/rest-api/ai-gateway/create-a-byok-credential.md) | Create a BYOK credential |
+| **GET** | [`/ai-gateway/byok-credentials/list`](/docs/rest-api/ai-gateway/list-byok-credentials.md) | List BYOK credentials |
+| **GET** | [`/ai-gateway/byok-credentials/{credentialId}`](/docs/rest-api/ai-gateway/get-a-byok-credential.md) | Get a BYOK credential |
+| **PATCH** | [`/ai-gateway/byok-credentials/{credentialId}`](/docs/rest-api/ai-gateway/update-a-byok-credential.md) | Update a BYOK credential |
+| **DELETE** | [`/ai-gateway/byok-credentials/{credentialId}`](/docs/rest-api/ai-gateway/delete-a-byok-credential.md) | Delete a BYOK credential |
 | **GET** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/ai-gateway/get-virtual-model-config.md) | Get virtual model config |
 | **POST** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/ai-gateway/create-virtual-model-config.md) | Create virtual model config |
 | **PATCH** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/ai-gateway/update-virtual-model-config.md) | Update virtual model config |
@@ -143,6 +148,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/connect/get-a-connector-project-connection.md) | Get a connector project connection |
 | **POST** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/connect/create-or-update-a-connector-project-connection.md) | Create or update a connector project connection |
 | **DELETE** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/connect/disconnect-a-connector-from-a-project.md) | Disconnect a connector from a project |
+| **DELETE** | [`/v1/connect/connectors/{connector}/projects/{projectId}/environments/{environment}`](/docs/rest-api/connect/disconnect-a-connector-from-a-project-environment.md) | Disconnect a connector from a project environment |
 | **GET** | [`/v2/connect/projects/{projectId}/connectors`](/docs/rest-api/connect/list-connectors-for-a-project.md) | List connectors for a project |
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/connect/get-a-connect-token.md) | Get a Connect token |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
@@ -326,6 +332,9 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/sdk-keys`](/docs/rest-api/feature-flags/get-all-sdk-keys.md) | Get all SDK keys |
 | **PUT** | [`/v1/projects/{projectIdOrName}/feature-flags/sdk-keys`](/docs/rest-api/feature-flags/create-an-sdk-key.md) | Create an SDK key |
 | **DELETE** | [`/v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey}`](/docs/rest-api/feature-flags/delete-an-sdk-key.md) | Delete an SDK key |
+| **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/connections`](/docs/rest-api/feature-flags/list-flags-project-connections.md) | List flags project connections |
+| **PUT** | [`/v1/projects/{projectIdOrName}/feature-flags/connections`](/docs/rest-api/feature-flags/connect-a-project-to-the-flags-of-this-project.md) | Connect a project to the flags of this project |
+| **DELETE** | [`/v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId}`](/docs/rest-api/feature-flags/disconnect-a-project-from-the-flags-of-this-project.md) | Disconnect a project from the flags of this project |
 
 ## Integrations
 
@@ -560,6 +569,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **DELETE** | [`/v1/security/firewall/bypass`](/docs/rest-api/security/remove-system-bypass-rule.md) | Remove System Bypass Rule |
 | **GET** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/security/get-conditional-firewall-bypasses.md) | Get conditional firewall bypasses |
 | **POST** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/security/create-conditional-firewall-bypass.md) | Create conditional firewall bypass |
+| **PUT** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/security/update-conditional-firewall-bypass.md) | Update conditional firewall bypass |
 | **DELETE** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/security/delete-conditional-firewall-bypass.md) | Delete conditional firewall bypass |
 | **GET** | [`/v1/security/firewall/events`](/docs/rest-api/security/read-firewall-actions-by-project.md) | Read Firewall Actions by Project |
 | **GET** | [`/v1/security/firewall/events/summary`](/docs/rest-api/security/read-firewall-actions-summary-by-project.md) | Read Firewall Actions Summary by Project |
@@ -708,4 +718,4 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

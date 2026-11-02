@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel Daemons are represented in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/daemons.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e5a446e0696071288f513fb9aef815070d7c4ca08cba9e3226fc3acdd13b4f29"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f0a03c89e3fbe4f158a7a3036be30e4cac18c9d6bd23ae353ee6fe1504c1510b"
 ---
 
 # Daemons
@@ -32,11 +32,12 @@ A deployment can declare [daemons](/docs/daemons), which are long-running contai
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
-- [Managing Daemons](https://vercel.com/docs/daemons/managing-daemons) — Deploy, scale, stop, and monitor Vercel Daemons with vercel.json and the dashboard.
-- [Daemons Limits](https://vercel.com/docs/daemons/limits) — Limits on the configuration, size, and capabilities of Vercel Daemons during the beta.
+- [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
+- [Migrate Render background workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-render-workers-to-vercel-daemons) — Migrate Render workers to Vercel Daemons. Translate render.yaml, package Celery in Docker, prepare the broker, and verif
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
-- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 
 Full cross-link map for this page: [/docs/build-output-api/daemons.graph.md](/docs/build-output-api/daemons.graph.md)
 <!-- /docsgraph:related -->
@@ -70,6 +71,13 @@ The `daemons` object is the complete set of daemons for the deployment. When the
 Every daemon listed in `config.json` needs a descriptor at `.vercel/output/daemons/<name>/.vc-config.json`. The descriptor references an image that's already pushed to [Vercel Container Registry](/docs/container-registry). Vercel doesn't build images from the Build Output API.
 
 ```ts
+type ServiceBinding = {
+  type: 'service';
+  service: string;
+  format: 'url';
+  env: string;
+};
+
 type DaemonDescriptor = {
   runtime: 'container';
   image: string;
@@ -81,6 +89,7 @@ type DaemonDescriptor = {
     };
   };
   terminationGracePeriodSeconds?: number;
+  bindings?: ServiceBinding[];
 };
 ```
 
@@ -92,6 +101,7 @@ type DaemonDescriptor = {
 | **instances** | `Record<string, number>` | Yes      | The number of instances to run in each region, keyed by region ID. Each count is an integer from `0` to `100`.                                    |
 | **resources** | `object`                 | No       | The memory for each instance. See [`resources`](/docs/daemons/config-reference#resources).                                                         |
 | **terminationGracePeriodSeconds** | `number` | No | The number of seconds Vercel waits after `SIGTERM` before terminating the instance. An integer from `0` to `3600`. Defaults to `30`. See [`terminationGracePeriodSeconds`](/docs/daemons/config-reference#terminationgraceperiodseconds). |
+| **bindings**  | `ServiceBinding[]`       | No       | Bindings to services in the same deployment. Each `service` must be a service in the build output. See [`bindings`](/docs/daemons/config-reference#bindings). |
 
 ```json filename=".vercel/output/daemons/worker/.vc-config.json"
 {
@@ -139,4 +149,4 @@ When you use `vercel build`, the CLI builds each daemon's `Dockerfile`, pushes t
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/context-window.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "bd0361d2013d6ff259bf127fd6b0c069ecbcb1c1331df0f23d10f658172ecb72"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "2450823ff3996b2596ef3d1c103fdb74ab9928efeb8bf64db043bd4a4ddc6bd0"
 ---
 
 > ## Documentation Index
@@ -76,6 +76,6 @@ For deeper coverage of the features shown in the timeline, see these pages:
 * [Extend Claude Code](https://code.claude.com/docs/en/features-overview.md): when to use CLAUDE.md vs skills vs rules vs hooks vs MCP
 * [Store instructions and memories](https://code.claude.com/docs/en/memory.md): CLAUDE.md hierarchy and auto memory
 * [Subagents](https://code.claude.com/docs/en/sub-agents.md): delegate research to a separate context window
-* [Best practices](https://code.claude.com/docs/en/best-practices.md): managing context as your primary constraint
+* [Best practices](https://code.claude.com/docs/en/best-practices.md#keep-cost-and-context-down): keep sessions focused and costs down
 * [Prompt caching](https://code.claude.com/docs/en/prompt-caching.md): which actions invalidate the cached prefix
 * [Reduce token usage](https://code.claude.com/docs/en/costs.md#reduce-token-usage): strategies for keeping context usage low

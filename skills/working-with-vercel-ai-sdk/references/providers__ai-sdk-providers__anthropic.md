@@ -4,8 +4,8 @@ description: Learn how to use Anthropic with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "284e5a1b3d35962c6a55e62a45486a18b3be923397bdb676de8d59abadb1bb89"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "84922332cb2640393de632aac39489db78aeb23fdc38bf96a2a4c0be177cba6d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -104,10 +104,12 @@ You can use the following optional settings to customize the Anthropic provider 
   It defaults to the `ANTHROPIC_API_KEY` environment variable.
   Only one of `apiKey` or `authToken` is required.
 
-- **authToken** *string*
+- **authToken** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   Auth token that is being sent using the `Authorization: Bearer` header.
-  It defaults to the `ANTHROPIC_AUTH_TOKEN` environment variable.
+  Pass a function to resolve a token for each request, including short-lived
+  tokens managed by an external credential provider. This setting does not
+  enable OAuth beta headers; configure any required headers explicitly.
   Only one of `apiKey` or `authToken` is required.
 
 - **headers** *Record\<string,string>*
@@ -120,6 +122,78 @@ You can use the following optional settings to customize the Anthropic provider 
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
+
+### Workload identity federation
+
+Use an `authToken` callback to connect the Anthropic SDK's token exchange and
+cache helpers to the AI SDK. Configure your service account and federation rule
+first, as described in [Anthropic's workload identity federation guide](https://platform.claude.com/docs/en/manage-claude/workload-identity-federation).
+
+The following example uses the credential helpers from `@anthropic-ai/sdk@0.129.0`:
+
+```bash
+pnpm add ai @ai-sdk/anthropic @anthropic-ai/sdk@0.129.0
+```
+
+```ts
+import { createAnthropic } from '@ai-sdk/anthropic';
+import { identityTokenFromFile } from '@anthropic-ai/sdk/lib/credentials/identity-token';
+import { oidcFederationProvider } from '@anthropic-ai/sdk/lib/credentials/oidc-federation';
+import { TokenCache } from '@anthropic-ai/sdk/lib/credentials/token-cache';
+import { generateText } from 'ai';
+
+// Create the cache and provider once, then reuse them across requests.
+const tokenCache = new TokenCache(
+  oidcFederationProvider({
+    identityTokenProvider: identityTokenFromFile(
+      '/var/run/secrets/anthropic.com/token',
+    ),
+    federationRuleId: process.env.ANTHROPIC_FEDERATION_RULE_ID!,
+    organizationId: process.env.ANTHROPIC_ORGANIZATION_ID!,
+    serviceAccountId: process.env.ANTHROPIC_SERVICE_ACCOUNT_ID!,
+    // Set this when your rule requires a workspace or to select a specific one.
+    workspaceId: process.env.ANTHROPIC_WORKSPACE_ID,
+    baseURL: 'https://api.anthropic.com',
+    fetch: globalThis.fetch,
+  }),
+);
+
+const anthropic = createAnthropic({
+  authToken: () => tokenCache.getToken(),
+  headers: { 'anthropic-beta': 'oauth-2025-04-20' },
+});
+
+const { text } = await generateText({
+  model: anthropic('claude-opus-5-5'),
+  prompt: 'Explain workload identity federation in one sentence.',
+});
+```
+
+The AI SDK resolves `authToken` before each request and sends the returned token
+as a bearer credential. The Anthropic SDK helpers perform the OIDC exchange,
+cache the access token, and renew it as needed.
+
+Set the `oauth-2025-04-20` beta explicitly for these federated OAuth tokens,
+matching Anthropic's SDK. A bearer token or token callback alone does not imply
+workload identity federation. The exchange helper supplies its own token-endpoint
+headers. This example covers Messages API inference; it does not add WIF support
+to the Files, Skills, or Batch APIs, which have separate beta-header handling.
+
+Refresh is demand-driven: in the helper version above, `getToken()` starts a
+background exchange when the cached token has at most two minutes remaining,
+and waits for an exchange when at most 30 seconds remain. Concurrent requests
+share the pending exchange. Federation renews access by exchanging another
+identity token; it does not use a refresh token.
+
+Your workload's identity provider must supply fresh identity tokens. The file
+helper rereads the file on each exchange but does not rotate its contents.
+Anthropic rejects reuse of assertions with a `jti` by default, so arrange for a
+fresh assertion for each exchange. See the [WIF reference](https://platform.claude.com/docs/en/manage-claude/wif-reference)
+for token lifetimes and replay protection.
+
+This setup explicitly configures credentials; it does not enable the Anthropic
+client's automatic credential discovery or its invalidate-and-retry behavior on
+HTTP 401. Keep the helper version pinned and verify the integration when upgrading.
 
 ## Language Models
 
@@ -288,9 +362,20 @@ default `"auto"` mode uses native structured outputs through
 `output_config.format`. These models reject forced tool use, so the
 `"jsonTool"` mode cannot be used with them. If you
 request `"jsonTool"` anyway, the provider falls back to `"outputFormat"` and
-emits a warning. Likewise, a `required` or named `toolChoice` is downgraded to
+emits a warning. The same fallback applies when these models are served through
+providers that otherwise default to the JSON tool, such as the Amazon Bedrock
+Anthropic and Google Vertex Anthropic providers. On those providers, schemas
+that native structured outputs cannot represent keep the JSON tool:
+self-referencing schemas, schemas with more than 10 optional properties, and
+schemas with open objects such as maps (`additionalProperties` set to a schema
+or `true`), which native structured outputs would return as `{}`.
+Likewise, a `required` or named `toolChoice` is downgraded to
 `auto` with a warning; instruct the model to use the tool in your prompt and
 verify that a tool call was made.
+
+When the JSON tool cannot be forced (for example with manual thinking) and the
+model answers in text without calling it, the text of its final answer is
+returned. Text before a tool call is still dropped.
 
 ### Effort
 
@@ -2326,13 +2411,13 @@ and the `mediaType` should be set to `'application/pdf'`.
 | `claude-opus-4-8`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
 | `claude-opus-4-7`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
 | `claude-opus-4-6`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
-| `claude-sonnet-4-6` | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           |            |
-| `claude-opus-4-5`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           |            |
-| `claude-haiku-4-5`  | ✓           | ✓                 | ✓          | ✓            | ✓          |             |            |
-| `claude-sonnet-4-5` | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           |            |
-| `claude-opus-4-1`   | ✓           | ✓                 | ✓          | ✓            | ✓          |             |            |
-| `claude-opus-4-0`   | ✓           | ✓                 | ✓          | ✓            | ✓          |             |            |
-| `claude-sonnet-4-0` | ✓           | ✓                 | ✓          | ✓            | ✓          |             |            |
+| `claude-sonnet-4-6` | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-4-5`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✗          |
+| `claude-haiku-4-5`  | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✗          |
+| `claude-sonnet-4-5` | ✓           | ✓                 | ✓          | ✓            | ✓          | ✓           | ✗          |
+| `claude-opus-4-1`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✗           | ✗          |
+| `claude-opus-4-0`   | ✓           | ✓                 | ✓          | ✓            | ✓          | ✗           | ✗          |
+| `claude-sonnet-4-0` | ✓           | ✓                 | ✓          | ✓            | ✓          | ✗           | ✗          |
 
 The table above lists popular models. Please see the [Anthropic
 docs](https://docs.anthropic.com/en/docs/about-claude/models) for a full list

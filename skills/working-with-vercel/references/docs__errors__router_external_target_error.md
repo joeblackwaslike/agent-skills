@@ -13,8 +13,8 @@ related:
 summary: Error occurred while routing to an external target. This is a routing error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/router_external_target_error.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "498ca8866890b4f38aa1e2e23b6310cf0aa0f33bd2565cb301405e9fb1466532"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6d81c64a653ad3cbf66b4b2e031c51aab87c87b83ddc09429b14b5003a711299"
 ---
 
 # ROUTER_EXTERNAL_TARGET_ERROR
@@ -41,4 +41,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Prevent unsafe assignment to window.location.href in your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_assign_window_location.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4dd2f4b5ad5981121ec5780394a500482ffaee2c26201e279375916022a403e8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1ec9325de2e959829d2394bcad7ebf47d0caed2ce7b24e5bd864be5a6c6c99d5"
 ---
 
 # NO_ASSIGN_WINDOW_LOCATION
@@ -47,4 +47,4 @@ router.push('/login');
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

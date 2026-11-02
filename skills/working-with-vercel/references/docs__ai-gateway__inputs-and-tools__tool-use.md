@@ -17,8 +17,8 @@ related:
 summary: Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c43dcbee8631cc26984e66ada69a32155351d8d149345e8879340eaf1dcb0c1f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "87aa79759fae3f49652e5361786975eb6c9faa7d1e8fa4f64a96cf2ff428c999"
 ---
 
 # AI Gateway Tool Use and Function Calling
@@ -446,4 +446,4 @@ See [coding agents](/docs/ai-gateway/coding-agents) for supported clients and se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

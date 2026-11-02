@@ -13,8 +13,8 @@ related:
 summary: Use list_feature_flag_sdk_keys with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_feature_flag_sdk_keys.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ce7c800d80cdcf42d981a3a440a90b02ff0781968c4d6c4edb098ad061d75736"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e78a78a9fc58455fd7b82430106de0bb125689f0495e464ed022e09d07b18bb8"
 ---
 
 # list_feature_flag_sdk_keys
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

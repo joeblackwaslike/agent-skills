@@ -14,8 +14,8 @@ related:
 summary: Learn about Speed Insights Drains - data formats and performance metrics configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/speed-insights.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6e9319dab7103c7a8353746a163a5269b1c954418f4221ca43a23d889ed951a6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "514f497a454487d8109e810ae0491a42fedb6b8ca4a973f6ea65223ae2901c9e"
 ---
 
 # Speed Insights Drains Reference
@@ -29,11 +29,12 @@ Speed Insights Drains send performance metrics and web vitals from your applicat
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
+- [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains)
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
-- [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
+- [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 
 Full cross-link map for this page: [/docs/drains/reference/speed-insights.graph.md](/docs/drains/reference/speed-insights.graph.md)
 <!-- /docsgraph:related -->
@@ -120,4 +121,4 @@ For more information on Speed Insights Drains and how to use them, check out the
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-scheduled-tasks.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "767737774bca5d317bded5b5363b718e6fa2f9022a54a93665571698b352aae0"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "c1339650f0087e6d55d4484ccaa9b9807d48c400d4046c4c3bdb42ff658ff3e2"
 ---
 
 > ## Documentation Index
@@ -141,7 +141,7 @@ You can also ask Claude in any Desktop session to set the schedule. Claude isn't
 
 Local scheduled tasks run on your machine. Desktop checks the schedule every minute while the app is open and starts a fresh session when a task is due, independent of any manual sessions you have open. Each task gets a small delay of a few minutes after the scheduled time to stagger API traffic. The delay is deterministic: the same task always starts at the same offset.
 
-Tasks only run while the desktop app is running and your computer is awake. If your computer sleeps through a scheduled time, the run is skipped. To prevent idle-sleep, turn on **Keep computer awake** in **Settings > This computer > System**. Closing the laptop lid still puts it to sleep.
+Tasks only run while the desktop app is running and your computer is awake. If your computer sleeps through a scheduled time, the run is skipped. To prevent idle-sleep, turn on **Keep computer awake** in **Settings > Desktop app** or **Settings > This computer > System**. Closing the laptop lid still puts it to sleep.
 
 > [!NOTE]
 >

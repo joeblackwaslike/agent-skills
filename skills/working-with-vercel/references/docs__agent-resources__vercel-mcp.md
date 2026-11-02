@@ -12,8 +12,8 @@ related:
 summary: Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "07061a32f2e12451bd1d2cff64c8f48d9ea11a250d82610e85386e92392c66e1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c2c1a9c1e78f80e7ea5f81132c4ba6bf948a77018074947da556c7016cc36391"
 ---
 
 # Use Vercel
@@ -34,13 +34,13 @@ an open standard that lets AI assistants interact with your Vercel projects.
 - [Vercel MCP can now deploy code](https://vercel.com/changelog/vercel-mcp-can-now-deploy-code)
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases)
 - [Vercel MCP now supports the 2026-07-28 MCP specification](https://vercel.com/changelog/vercel-mcp-now-supports-the-2026-07-28-mcp-specification)
-- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp)
+- [Vercel Plugin now available in OpenCode](https://vercel.com/changelog/vercel-plugin-now-available-in-opencode)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
+- [Migrate from GitHub Actions to Vercel CI](https://vercel.com/kb/guide/github-actions-to-vercel-ci) — Move Turborepo tasks from GitHub Actions workflows to Vercel CI, migrate secrets to CI environment variables, and switch
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
-- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
-- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
+- [Introducing Vercel CI](https://vercel.com/blog/introducing-vercel-ci)
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp.graph.md](/docs/agent-resources/vercel-mcp.graph.md)
 <!-- /docsgraph:related -->
@@ -152,22 +152,16 @@ claude
 
 ### ChatGPT
 
-> **💡 Note:** Custom connectors using MCP are available on ChatGPT for [Pro and Plus
-> accounts](https://platform.openai.com/docs/guides/developer-mode#how-to-use)
-> on the web.
+> **💡 Note:** You can connect custom MCP servers in ChatGPT on the web. Access depends on
+> your workspace permissions and security restrictions.
 
-Follow these steps to set up Vercel as a connector within ChatGPT:
+Follow OpenAI's [custom MCP server guide](https://developers.openai.com/api/docs/guides/custom-mcp-server#how-to-use) to add Vercel as a plugin:
 
-1. Enable [Developer mode](https://platform.openai.com/docs/guides/developer-mode):
-   - Go to [Settings → Connectors](https://chatgpt.com/#settings/Connectors) → Advanced settings → Developer mode
-2. Open [ChatGPT settings](https://chatgpt.com/#settings)
-3. In the Connectors tab, `Create` a new connector:
-   - Give it a name: `Vercel`
-   - MCP server URL: `https://mcp.vercel.com`
-   - Authentication: `OAuth`
-4. Click **Create**
-
-The Vercel connector will appear in the composer's ["Developer mode"](https://platform.openai.com/docs/guides/developer-mode) tool later during conversations.
+1. In ChatGPT, open **Plugins** and use the plus button to select **Add custom MCP server**
+2. Name the plugin `Vercel` and enter `https://mcp.vercel.com` as the server URL
+3. Select **OAuth** authentication
+4. Review the connection warning, select **I understand and want to continue**, then select **Create as a plugin**
+5. Install the plugin, then type `@` in a conversation to select Vercel
 
 ### Codex CLI
 
@@ -404,4 +398,4 @@ The MCP ecosystem and technology are evolving quickly. Here are our current best
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

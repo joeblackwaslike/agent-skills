@@ -12,8 +12,8 @@ related:
 summary: Requires that all exported functions have JSDoc comments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/require_docs_on_exported_functions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4cde7d4c1275f52b594d3eb5cea21f8362d93d90e3fe29691f09aaf13ebceea8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f8590131fdadb01ed5e75620a1729a50d172d9a0f569364cdf1dcbb5e65ab68d"
 ---
 
 # REQUIRE_DOCS_ON_EXPORTED_FUNCTIONS
@@ -110,4 +110,4 @@ export function appendWorld(str) {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

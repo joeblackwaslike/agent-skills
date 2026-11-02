@@ -17,8 +17,8 @@ related:
 summary: Enable automatic prompt caching and session affinity with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9100d0f6b78e60a23f9dcb0e1b20b4e5cd6a92bd9c6571756a3b2a646654833e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e499bdb0eb4e98579f7a3e63350b9ebd4c19bbd5796d3e4cd466f36e11d69416"
 ---
 
 # AI Gateway Automatic Prompt Caching
@@ -33,10 +33,12 @@ Some providers like Anthropic and MiniMax require explicit cache control markers
 
 - [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity)
 - [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway)
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
+- [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
+- [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
 - [Caching](https://ai-sdk.dev/docs/advanced/caching) — How to handle caching when working with the AI SDK
 - [Local Caching Middleware](https://ai-sdk.dev/cookbook/node/local-caching-middleware) — Learn how to create a caching middleware for local development.
+- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md)
 <!-- /docsgraph:related -->
@@ -585,4 +587,4 @@ Pin `caching: 'auto'` on a [virtual model](/docs/ai-gateway/models-and-providers
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

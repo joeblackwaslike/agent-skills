@@ -13,8 +13,8 @@ related:
 summary: Use upsert_connector_project_connection with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/upsert_connector_project_connection.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6d834c7bda9dcc08dce8b01c3f11ad9416cd7713619885895a7fe943682ba073"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "15c098bd9ed0abfb22bd7660a494fd78e8ad951fdcf4f3da2440972c45f20203"
 ---
 
 # upsert_connector_project_connection
@@ -29,8 +29,8 @@ Connect a connector to a project, or replace the environments on an existing pro
 
 - [get_connector_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection) — Use get_connector_project_connection with Vercel MCP.
 - [update_connector](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/update_connector) — Use update_connector with Vercel MCP.
-- [list_project_connector_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_project_connector_connections) — Use list_project_connector_connections with Vercel MCP.
 - [list_connector_project_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connector_project_connections) — Use list_connector_project_connections with Vercel MCP.
+- [list_project_connector_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_project_connector_connections) — Use list_project_connector_connections with Vercel MCP.
 - [get_connector](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector) — Use get_connector with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/networking/upsert_connector_project_connection.graph.md](/docs/agent-resources/vercel-mcp/tools/networking/upsert_connector_project_connection.graph.md)
@@ -52,4 +52,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/netwo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

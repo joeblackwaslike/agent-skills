@@ -13,8 +13,8 @@ related:
 summary: Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor chat spending in one place.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/chatbox.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f034582f6946f42fc8d97f3d052488e22d6f2fb22dabe040193042b13bb2112d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4a216495fba54311cacfca5097352ffcd61a123a5296ae97351a2e909d2ab1dd"
 ---
 
 # Chatbox with AI Gateway
@@ -30,8 +30,8 @@ sha256: "f034582f6946f42fc8d97f3d052488e22d6f2fb22dabe040193042b13bb2112d"
 - [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
-- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/chatbox.graph.md](/docs/ai-gateway/coding-agents/chatbox.graph.md)
 <!-- /docsgraph:related -->
@@ -66,4 +66,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

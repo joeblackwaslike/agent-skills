@@ -16,8 +16,8 @@ related:
 summary: How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8f02cc8d5fc7281829dcff3b89e8cd7801656872883b376c77f88fcf8eff5ad6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "398183c4ef9d5ac73579954b250cc5d32f05359fd58c73269a63b0386777371f"
 ---
 
 # Vercel Connect Pricing
@@ -91,4 +91,4 @@ For platform limits and API rate limits, see [Limits](/docs/connect/limits).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "14862fb06559372ca8095478019f7873e9d0fa9bf60cbea97162a750834842a2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5f8ef6b3b31635672138499307444aa92e8f2cfd08728ed92c9eb355f0f504e6"
 ---
 
 # Supported Frameworks on Vercel
@@ -39,11 +39,11 @@ The following table shows which features are supported by each framework on Verc
 - [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient)
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
-- [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
 - [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 
 Full cross-link map for this page: [/docs/frameworks/more-frameworks.graph.md](/docs/frameworks/more-frameworks.graph.md)
 <!-- /docsgraph:related -->
@@ -219,4 +219,4 @@ Learn more about deploying your preferred framework on Vercel with the following
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

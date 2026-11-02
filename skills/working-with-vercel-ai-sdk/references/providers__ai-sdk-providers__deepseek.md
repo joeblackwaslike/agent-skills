@@ -4,8 +4,8 @@ description: Learn how to use DeepSeek with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepseek.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "4c273606420536cdcd6fef82cf39bd18fe1249b2f96465ea60c301d3fa7111f6"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "f57413a61c564ddf14f9f76346b3f748bf41a26a96d3e4fe3f618ad9b10e221a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -90,10 +90,13 @@ You can use the following optional settings to customize the DeepSeek provider i
   Use a different URL prefix for API calls.
   The default prefix is `https://api.deepseek.com`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `DEEPSEEK_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 
@@ -160,11 +163,7 @@ The following optional provider options are available for DeepSeek models:
 
 - `reasoningEffort` *'low' | 'high' | 'max'*
 
-  Optional. Controls thinking strength for DeepSeek V4 reasoning models. When
-  using the top-level `reasoning` setting, `minimal` is sent as `low`,
-  `medium` is sent as `high`, `xhigh` is sent as `max`, and `max` is sent
-  directly. A compatibility warning is returned whenever the requested value
-  is mapped.
+  Optional. Controls thinking strength for DeepSeek V4 reasoning models.
 
 For backwards compatibility, legacy provider options supplied at runtime are
 also mapped to documented values: `thinking.type: 'adaptive'` becomes

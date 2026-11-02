@@ -10,14 +10,13 @@ prerequisites:
 related:
   - /docs/queues/python-sdk
   - /docs/queues/concepts
-  - /docs/queues
   - /docs/queues/api
   - /docs/queues/poll-mode
 summary: Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/sdk.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cff1ce00e2ede30a2f91d7b1f506d4fcdbd86e9985b1cf5f5fddb1b4574e9e13"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "09c89651d75fcea102efbe266c04e8b9d3c0d57f8d5b650451b1813ca04f791c"
 ---
 
 # Vercel Queues: JS SDK Reference
@@ -30,10 +29,11 @@ The `@vercel/queue` SDK lets JavaScript and TypeScript apps publish and consume 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
+- [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
-- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
@@ -265,7 +265,7 @@ export const POST = handleCallback(
 );
 ```
 
-> **💡 Note:** The SDK defaults `visibilityTimeoutSeconds` to 300 seconds (5 minutes) and automatically re-extends the lease while your handler is still running. The underlying [Queues API](/docs/queues#visibility-timeout) defaults to 60 seconds and does not auto-extend.
+> **💡 Note:** The SDK defaults `visibilityTimeoutSeconds` to 300 seconds (5 minutes) and automatically re-extends the lease while your handler is still running. The underlying [Queues API](/docs/queues/concepts#visibility-timeout) defaults to 60 seconds and does not auto-extend.
 
 ### Custom retry behavior
 
@@ -431,4 +431,4 @@ const streamQueue = new QueueClient({
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

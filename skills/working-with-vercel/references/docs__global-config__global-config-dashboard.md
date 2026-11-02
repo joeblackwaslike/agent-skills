@@ -16,8 +16,8 @@ related:
 summary: Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b66a2a0e126eb8408b396bf2290bc158c39992e1bd1e81fcb90e9c739a95eaae"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "674128582acee375222023566fb18de31d8cc101161e82e720a22ed8524e0e94"
 ---
 
 # Managing Global Configs with the Dashboard
@@ -34,8 +34,8 @@ You can create, view and update your [Global Configs](/docs/global-config), and 
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [@vercel/global-config](https://vercel.com/docs/global-config/global-config-sdk) — The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
 
 Full cross-link map for this page: [/docs/global-config/global-config-dashboard.graph.md](/docs/global-config/global-config-dashboard.graph.md)
 <!-- /docsgraph:related -->
@@ -198,4 +198,4 @@ Using the Vercel REST API, you can create and update Global Configs
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

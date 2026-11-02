@@ -15,8 +15,8 @@ related:
 summary: Requires that every package.json file has the private field set to prevent accidental publishing to npm.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_private_required.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f50c00e39daba8eefdaf447681ba9f118f37ea7f2275d6aa06a180e8c5ad4145"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "62e782424f8759a2c988b00fb52200a636b71a895c9b1c17288a43ece0dbd554"
 ---
 
 # PACKAGE_JSON_PRIVATE_REQUIRED
@@ -46,4 +46,4 @@ intended to be published in which case it can be explicitly set to `false`.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

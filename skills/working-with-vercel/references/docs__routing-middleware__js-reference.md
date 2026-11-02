@@ -16,8 +16,8 @@ related:
 summary: Reference for writing Routing Middleware in TypeScript and JavaScript, including entrypoints, the config object, the middleware signature, and helper...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/js-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1b4ba16d92708dd33b47332349a2d64ba2aebcf2adf02fb1c616274d33821b50"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5304a0058736e9223738a767fb5ea46c683153b16d7cc4d6164281c009f9d51a"
 ---
 
 # Routing Middleware: JS Reference
@@ -33,13 +33,11 @@ Use this reference to write [Routing Middleware](/docs/routing-middleware) in Ty
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route) — API reference for the route.js special file.
-- [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
-- [Proxy](https://nextjs.org/docs/pages/api-reference/file-conventions/proxy) — Learn how to use Proxy to run code before a request is completed.
 - [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Routing Middleware: Python Reference](https://vercel.com/docs/routing-middleware/python-reference) — Reference for writing Routing Middleware in Python with the vercel-proxy package, including setup, routes, requests, and
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
-- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 
 Full cross-link map for this page: [/docs/routing-middleware/js-reference.graph.md](/docs/routing-middleware/js-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -160,12 +158,12 @@ To use the Bun runtime with Routing Middleware, set the [`bunVersion`](/docs/pro
 
 ## Routing Middleware signature
 
-The Routing Middleware signature is made up of two parameters: `request` and `context`. The `request` parameter is an instance of the [Request](/docs/functions/functions-api-reference#request) object, and the `context` parameter is an object containing the [`waitUntil`](/docs/functions/functions-api-reference#waituntil) method. **Both parameters are optional**.
+The Routing Middleware signature is made up of two parameters: `request` and `context`. The `request` parameter is an instance of the [Request](/docs/functions/functions-api-reference#function-signature) object, and the `context` parameter is an object containing the [`waitUntil`](/docs/functions/functions-api-reference/vercel-functions-package#waituntil) method. **Both parameters are optional**.
 
 | Parameter | Description                                                                                         | Next.js (/app) or (/pages)                                                                                                                        | Other Frameworks                                                                     |
 | --------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `request` | An instance of the [Request](/docs/functions/functions-api-reference#request) object      | [`Request`](https://developer.mozilla.org/docs/Web/API/Request) or [`NextRequest`](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#nextrequest) | [`Request`](https://developer.mozilla.org/docs/Web/API/Request)                      |
-| `context` | An extension to the standard [`Request`](https://developer.mozilla.org/docs/Web/API/Request) object | [`NextFetchEvent`](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#nextfetchevent)                                                              | [`RequestContext`](/docs/functions/functions-api-reference#requestcontext) |
+| `request` | An instance of the [Request](/docs/functions/functions-api-reference#function-signature) object      | [`Request`](https://developer.mozilla.org/docs/Web/API/Request) or [`NextRequest`](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#nextrequest) | [`Request`](https://developer.mozilla.org/docs/Web/API/Request)                      |
+| `context` | An extension to the standard [`Request`](https://developer.mozilla.org/docs/Web/API/Request) object | [`NextFetchEvent`](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#nextfetchevent)                                                              | [`RequestContext`](/docs/routing-middleware/js-reference#requestcontext) |
 
 Routing Middleware comes with built in helpers that are based on the native [`FetchEvent`](https://developer.mozilla.org/docs/Web/API/FetchEvent), [`Response`](https://developer.mozilla.org/docs/Web/API/Response), and [`Request`](https://developer.mozilla.org/docs/Web/API/Request) objects.
 
@@ -906,4 +904,4 @@ export default function middleware() {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

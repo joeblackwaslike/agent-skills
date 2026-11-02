@@ -17,13 +17,13 @@ related:
 summary: Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/vite-with-nitro.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c9229f4dc15c36ea980ef258b826decc0adf45093487ac7ea0a3a29f05cbb6ea"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "28e1d09dae201ce70203440ac3ba167eff40b2c1801472a625f279dfcc69b970"
 ---
 
 # Vite + Nitro on Vercel
 
-[Nitro](https://nitro.build) is a universal server toolkit that adds server-side rendering (SSR), API routes, server middleware and other backend capabiltiies to any Vite application. It powers frameworks like [Nuxt](/docs/frameworks/full-stack/nuxt) and deploys to Vercel with zero configuration.
+[Nitro](https://nitro.build) is a universal server toolkit that adds server-side rendering (SSR), API routes, server middleware and other backend capabilities to any Vite application. It powers frameworks like [Nuxt](/docs/frameworks/full-stack/nuxt) and deploys to Vercel with zero configuration.
 
 
 <!-- docsgraph:related -->
@@ -34,7 +34,7 @@ sha256: "c9229f4dc15c36ea980ef258b826decc0adf45093487ac7ea0a3a29f05cbb6ea"
 - [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
+- [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
@@ -830,4 +830,4 @@ Learn more about deploying Vite + Nitro projects on Vercel:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

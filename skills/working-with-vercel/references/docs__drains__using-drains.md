@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "16e6e7a1916cb08e4ad30f3de81f5d21716ff5956e9dbf5aea891bc3da71e97a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ebfe21e698136b893fe5ada0f784904bfe0aa8960b5a92bf7f6c64949afaa531"
 ---
 
 # Using Drains
@@ -171,7 +171,7 @@ This correlation happens automatically without code changes. For example, this l
 console.log('User logged in', { userId: 123 });
 ```
 
-Will be automatically enriched with [trace and span identifiers](/docs/drains/reference/logs#json-format-fields).
+Will be automatically enriched with [trace and span identifiers](/docs/drains/reference/logs#logs-schema).
 
 **Limitations**: Only applies to user code logs during traced requests, not build-time logs.
 
@@ -219,4 +219,4 @@ For more information on Drains and how to use them, check out the following reso
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

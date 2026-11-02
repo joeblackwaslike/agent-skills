@@ -16,8 +16,8 @@ related:
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "724402718fb7a507ef47ad692525ac7221bb270080a37d22ea74fd5193ed2cef"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bad551486e42fef2394a236b555145a9f0e22830e62c44f0b69bda669c8d89fc"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -39,8 +39,8 @@ The `vercel.ts` file lets you configure and override the default behavior of Ver
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 - [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Static Configuration with vercel.toml](https://vercel.com/docs/project-configuration/vercel-toml) — Configure your Vercel project with a TOML file using the same properties as vercel.json.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md)
 <!-- /docsgraph:related -->
@@ -204,7 +204,7 @@ export const config: VercelConfig = {
 - [rewrites](#rewrites)
 - [skipMiddlewareRequestBody](#skipmiddlewarerequestbody)
 - [trailingSlash](#trailingslash)
-- [legacy](#legacy)
+- [legacy](/docs/project-configuration/vercel-ts#legacy-properties)
 
 ## schema autocomplete
 
@@ -871,7 +871,7 @@ export const config: VercelConfig = {
 };
 ```
 
-Learn more about [redirects on Vercel](/docs/routing/redirects) and see [limitations](/docs/routing/redirects#limits).
+Learn more about [redirects on Vercel](/docs/routing/redirects) and see [limitations](/docs/routing/redirects/configuration-redirects#limits).
 
 ## bulkRedirectsPath
 
@@ -893,7 +893,7 @@ export const config: VercelConfig = {
 
 ### CSV
 
-> **💡 Note:** CSV headers must match the field names below, can be specific in any order, and optional fields can be ommitted.
+> **💡 Note:** CSV headers must match the field names below and can appear in any order. Optional fields can be omitted.
 
 ```csv filename="redirects.csv"
 source,destination,permanent
@@ -1235,4 +1235,4 @@ For details on legacy properties, see the [legacy section of the static configur
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

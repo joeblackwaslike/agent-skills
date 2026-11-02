@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c97d7454178892701d2ea09052b876bfe0e026d1d37d7fd4d7b81af2b0148ef5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7ddf5c083a76a4ca78275b9b85599a74ba7b665bfe1d2864e6beb92925a08a04"
 ---
 
 # Managing Deployments
@@ -31,6 +31,7 @@ You can manage all current and previous deployments regardless of environment, s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to optimize memory usage](https://nextjs.org/docs/app/guides/memory-usage) — Optimize memory used by your application in development and production.
+- [Deleted deployments are permanently removed sooner](https://vercel.com/changelog/deleted-deployments-are-permanently-removed-sooner)
 - [New deployment promotion event](https://vercel.com/changelog/new-webhook-for-promotion-events)
 - [Revert and pin deployments with Instant Rollback](https://vercel.com/changelog/revert-and-pin-deployments-with-instant-rollback)
 - [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production)
@@ -41,7 +42,6 @@ You can manage all current and previous deployments regardless of environment, s
 - [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx) — How to solve the error \\`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\\` or \\`No Output
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [How we cut CDN metadata lookup latency by 91%](https://vercel.com/blog/how-we-cut-cdn-metadata-lookup-latency-by-91-percent)
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/deployments/managing-deployments.graph.md](/docs/deployments/managing-deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -159,4 +159,4 @@ Other than your custom needs to redeploy, it's always recommended to redeploy yo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

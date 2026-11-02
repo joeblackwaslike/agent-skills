@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b0b63ffc537e588e1db0eb14843c341d83af9f8e64ea47ddbb3c940dde84ecaa"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e6ecd7550b6a3bd5b28544bc75792edc8ab1ec62148b3ea767909244f58e8a84"
 ---
 
 # Workflow Pricing and Limits
@@ -31,17 +31,17 @@ Vercel bills Workflows usage across three resources:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Workflow SDK vs AWS Bedrock AgentCore](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-agentcore) — AgentCore hosts and operates AI agents in isolated microVMs but is not a durable-execution engine. The Workflow SDK prov
-- [Workflow SDK vs AWS Step Functions](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-step-functions) — AWS Step Functions is a managed state-machine orchestrator authored in declarative ASL JSON. The Workflow SDK expresses
 - [max-events-exceeded](https://workflow-sdk.dev/docs/errors/max-events-exceeded) — Run long-running workflows on the QuickJS VM with snapshotting, which is exempt from the default event limit, or split t
 - [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries) — Control how steps handle failures and customize retry behavior.
 - [Worlds](https://workflow-sdk.dev/docs/configuration/worlds) — Select and configure Local, Postgres, Vercel, or custom Worlds.
-- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
-- [Limits](https://vercel.com/docs/limits) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
-- [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 
 Full cross-link map for this page: [/docs/workflows/pricing.graph.md](/docs/workflows/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -150,4 +150,4 @@ A rate-limited write that records a step's result is retried for as long as the 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

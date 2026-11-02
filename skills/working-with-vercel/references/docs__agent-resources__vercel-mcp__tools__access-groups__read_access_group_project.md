@@ -13,8 +13,8 @@ related:
 summary: Use read_access_group_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/read_access_group_project.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dd17c759946ed139a1f75375e706ceb29fa6388c46a888cf9a84b6c93413abcf"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e1712e45608fce67dbccdf6e4f1680466f74fdea3a6a0decccfcc0a18df99060"
 ---
 
 # read_access_group_project
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

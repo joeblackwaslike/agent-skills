@@ -12,8 +12,8 @@ related:
 summary: Learn how to configure Vercel CLI under your system user.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/global-configuration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "23896bfacbe84de731106d93b6f49a7e43f70b6593934743ea44044c0e94913e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "afeee4dd7de972641296efd6889e05d03f8d4fb94002f29ea785fcea06357102"
 ---
 
 # Global Vercel CLI Configuration
@@ -92,4 +92,4 @@ In the case that you are uploading your global configuration setup to a potentia
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

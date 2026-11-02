@@ -15,8 +15,8 @@ related:
 summary: A complete domain management interface with DNS verification and real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e777a8b47f845827d1dcc1bfd940474d50d89902921c7f809f95812d427db78b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c573c2bfb6a7852dd191732d9fa7a2b8465bfaa89f913ccf1c441b63c7637376"
 ---
 
 # Custom Domain
@@ -31,11 +31,11 @@ The Custom Domain block provides a comprehensive solution for platforms that nee
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
+- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/custom-domain.graph.md](/docs/platforms/platform-elements/blocks/custom-domain.graph.md)
@@ -201,4 +201,4 @@ export default async function DomainsPage() {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

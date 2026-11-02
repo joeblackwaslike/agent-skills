@@ -13,8 +13,8 @@ related:
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fd9c5aadadc902857f8689e275c82cc83d3d070d5de8476cbbce45e9873a11d1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d6271729d800e8dbd4402a6c2e1833c390cbb896a366dad3743c8936af095c51"
 ---
 
 # Vercel Signed URLs
@@ -38,7 +38,6 @@ Vercel Signed URLs grant time-limited access to a Blob URL without exposing a re
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
-- [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available)
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 
 Full cross-link map for this page: [/docs/vercel-blob/vercel-signed-urls.graph.md](/docs/vercel-blob/vercel-signed-urls.graph.md)
@@ -425,4 +424,4 @@ On the client:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

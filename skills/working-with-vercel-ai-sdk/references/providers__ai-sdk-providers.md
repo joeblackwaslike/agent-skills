@@ -4,8 +4,8 @@ description: Learn how to use AI SDK providers.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "281814210038120776fac01bd1c397052d17fcf87bc48c5cf704193ea8a35d20"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "6371df00093097d56886b7b7fcb723b1afbf560df14b1698e705568d1b95dc6b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -28,6 +28,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-3-mini`                                       | ✗           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6-astra`                                       | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6.1-sol`                                       | ✓           | ✓                 | ✓          | ✓              |
+| [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6.1-terra`                                     | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6-luna`                                        | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6-sol`                                         | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-5.6`                                           | ✓           | ✓                 | ✓          | ✓              |

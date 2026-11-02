@@ -15,13 +15,13 @@ related:
 summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3034f1070ddc5cb53c3190e2ac338b51381141246a451ac17e98a694f7dcc540"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e266a600971fe6045af8f33ba7ee4c446b6b04b2138a666adb2fe3d30810ddc7"
 ---
 
 # AI Gateway Text to Speech
 
-Generate spoken audio from text with Google, Microsoft, and OpenAI speech models. Use this for voiceovers, audio versions of written content, or spoken responses in your app.
+Generate spoken audio from text with ElevenLabs, Google, Microsoft, and OpenAI speech models. Use this for voiceovers, audio versions of written content, or spoken responses in your app.
 
 
 <!-- docsgraph:related -->
@@ -29,12 +29,12 @@ Generate spoken audio from text with Google, Microsoft, and OpenAI speech models
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Drama 3 now available on AI Gateway](https://vercel.com/changelog/drama-3-now-available-on-ai-gateway)
 - [Gemini 3.8 text-to-speech models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-text-to-speech-models-now-available-on-ai-gateway)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
+- [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [generateSpeech](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech) — API Reference for generateSpeech.
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway)
-- [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-to-speech.graph.md](/docs/ai-gateway/modalities/text-to-speech.graph.md)
@@ -49,6 +49,16 @@ Use this to turn text into spoken audio. For live, two-way voice, see [Realtime]
 
 | Provider | Model ID |
 | --- | --- |
+| ElevenLabs | `elevenlabs/eleven-flash-v2` |
+| ElevenLabs | `elevenlabs/eleven-flash-v2.5` |
+| ElevenLabs | `elevenlabs/eleven-multilingual-v2` |
+| ElevenLabs | `elevenlabs/eleven-v3` |
+| ElevenLabs | `elevenlabs/eleven-v3-conversational` |
+| ElevenLabs | `elevenlabs/eleven-v4` |
+| ElevenLabs | `elevenlabs/eleven-v4-turbo` |
+| ElevenLabs | `elevenlabs/music-v2` |
+| ElevenLabs | `elevenlabs/music-v2.5` |
+| ElevenLabs | `elevenlabs/sound-effects-v2` |
 | Google | `google/gemini-3.8-flash-lite-tts` |
 | Google | `google/gemini-3.8-flash-tts` |
 | Microsoft | `microsoft/mai-voice-2` |
@@ -62,17 +72,16 @@ Use this to turn text into spoken audio. For live, two-way voice, see [Realtime]
 
 For SDK options and result types, see [AI SDK speech](https://ai-sdk.dev/docs/ai-sdk-core/speech) and [Python speech](https://ai-python.dev/docs/basics/model-operations#generate-speech).
 
-Use `generateSpeech` with a speech model from the AI Gateway provider:
+Pass a speech model ID directly to `generateSpeech`. The AI SDK uses AI Gateway by default:
 
 #### TypeScript
 
 ```typescript filename="generate-speech.ts"
 import { generateSpeech } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { writeFile } from 'node:fs/promises';
 
 const result = await generateSpeech({
-  model: gateway.speechModel('openai/tts-1'),
+  model: 'openai/tts-1',
   text: 'Hello! Thanks for trying out AI Gateway.',
   voice: 'alloy',
   outputFormat: 'mp3',
@@ -106,23 +115,134 @@ asyncio.run(main())
 ```
 
 > **💡 Note:** Speech support ships in the stable AI SDK releases. Install it with `pnpm add
->   ai @ai-sdk/gateway`.
+>   ai`.
 
 The Python examples use the [AI SDK for Python beta](/docs/ai-gateway/sdks-and-apis/ai-sdk-python). These audio operations use dedicated AI Gateway endpoints. They are separate from Chat Completions, Messages, and Responses. See the [Python SDK setup](/docs/ai-gateway/sdks-and-apis/ai-sdk-python#installation) for installation requirements.
 
+### Generate speech with ElevenLabs
+
+Pass an ElevenLabs model ID to `generateSpeech`. Set `voice` to an ElevenLabs voice ID, such as `hpp4J3VqNfWAUOO0d1Us` (Bella):
+
+```typescript filename="generate-elevenlabs-speech.ts"
+import { generateSpeech } from 'ai';
+import { writeFile } from 'node:fs/promises';
+
+const result = await generateSpeech({
+  model: 'elevenlabs/eleven-flash-v2.5',
+  text: 'Welcome to the audio edition.',
+  voice: 'hpp4J3VqNfWAUOO0d1Us',
+  outputFormat: 'mp3',
+});
+
+await writeFile('greeting.mp3', result.audio.uint8Array);
+```
+
+### Stream speech with ElevenLabs
+
+Use `experimental_streamSpeech` to receive audio chunks as the model generates them. `text` accepts a string or a stream of text deltas:
+
+```typescript filename="stream-elevenlabs-speech.ts"
+import { experimental_streamSpeech as streamSpeech } from 'ai';
+import { writeFile } from 'node:fs/promises';
+
+const result = streamSpeech({
+  model: 'elevenlabs/eleven-flash-v2.5',
+  text: 'Welcome to the audio edition.',
+  voice: 'hpp4J3VqNfWAUOO0d1Us',
+  outputFormat: { type: 'audio/mpeg' },
+});
+
+const chunks: Uint8Array[] = [];
+for await (const chunk of result.audioStream) {
+  chunks.push(chunk);
+}
+
+await writeFile('greeting.mp3', Buffer.concat(chunks));
+```
+
+Flash v2, Flash v2.5, and Multilingual v2 stream one voice per connection. To stream v3, v3 Conversational, v4, or v4 Turbo, set `providerOptions.elevenlabs.dialogue.voices`. For example, replace the `streamSpeech` call above with:
+
+```typescript filename="elevenlabs-dialogue.ts"
+const result = streamSpeech({
+  model: 'elevenlabs/eleven-v4',
+  text: [
+    { type: 'text', text: 'Welcome to the audio edition. ', voice: 'hpp4J3VqNfWAUOO0d1Us' },
+    { type: 'text', text: 'Thanks for listening.', voice: 'CwhRBWXzGAHq8TQ4Fs17' },
+  ],
+  outputFormat: { type: 'audio/mpeg' },
+  providerOptions: {
+    elevenlabs: {
+      dialogue: { voices: ['hpp4J3VqNfWAUOO0d1Us', 'CwhRBWXzGAHq8TQ4Fs17'] },
+    },
+  },
+});
+```
+
+Each text part's `voice` must appear in `dialogue.voices`. v3 Conversational accepts exactly one voice. For more options, see [AI SDK speech](https://ai-sdk.dev/docs/ai-sdk-core/speech#streaming-speech).
+
+### Direct delivery with audio tags
+
+Eleven v4 and v3 read audio tags in square brackets as delivery directions rather than words to say. Tags can set:
+
+- Emotion, such as `[whispers]` or `[excited]`
+- Reactions, such as `[laughs]` or `[sighs]`
+- Sound cues, such as `[footsteps]`
+
+For example, replace the `generateSpeech` call in the first ElevenLabs example with:
+
+```typescript filename="elevenlabs-audio-tags.ts"
+const result = await generateSpeech({
+  model: 'elevenlabs/eleven-v4',
+  text: '[whispers] The deploy is live. [laughs] On a Friday.',
+  voice: 'hpp4J3VqNfWAUOO0d1Us',
+});
+```
+
+### Generate music and sound effects with ElevenLabs
+
+Use `elevenlabs/music-v2.5` or `elevenlabs/music-v2` with `generateSpeech` to turn a description into music. Use AI SDK v7. Omit `voice`; these models do not support streaming:
+
+```typescript filename="generate-elevenlabs-music.ts"
+import { generateSpeech } from 'ai';
+import { writeFile } from 'node:fs/promises';
+
+const result = await generateSpeech({
+  model: 'elevenlabs/music-v2.5',
+  text: 'An upbeat synthwave intro with driving bass.',
+  providerOptions: {
+    elevenlabs: { musicLengthMs: 5000 },
+  },
+});
+
+await writeFile('audio.mp3', result.audio.uint8Array);
+```
+
+To generate sound effects, replace the `generateSpeech` call above with:
+
+```typescript filename="generate-elevenlabs-sound-effects.ts"
+const result = await generateSpeech({
+  model: 'elevenlabs/sound-effects-v2',
+  text: 'Glass shattering on a concrete floor.',
+  providerOptions: {
+    elevenlabs: { durationSeconds: 2 },
+  },
+});
+```
+
+Music also accepts `forceInstrumental` to leave out vocals, and `compositionPlan` to set the style and length of each section in place of the text prompt. Sound effects also accept `loop` for a clip that repeats without a gap, and `promptInfluence`, from 0 to 1, for how closely the result follows the description. For every option, see the [AI SDK ElevenLabs provider](https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs#music).
+
 ### Generate speech with Google
 
-Use either `google/gemini-3.8-flash-lite-tts` or `google/gemini-3.8-flash-tts` with `gateway.speechModel()`. Both support single-voice narration and two-speaker dialogue.
+Use either `google/gemini-3.8-flash-lite-tts` or `google/gemini-3.8-flash-tts` with `generateSpeech`. Both support single-voice narration and two-speaker dialogue.
 
 Choose a prebuilt voice such as `Kore`, `Puck`, `Zephyr`, or `Charon`. Voice names are case-sensitive, and the default is `Kore`. Set `instructions` to control delivery without changing the spoken text:
 
 ```typescript filename="generate-google-speech.ts"
 import { generateSpeech } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { writeFile } from 'node:fs/promises';
 
 const result = await generateSpeech({
-  model: gateway.speechModel('google/gemini-3.8-flash-lite-tts'),
+  model: 'google/gemini-3.8-flash-lite-tts',
   text: 'Welcome to the audio edition.',
   voice: 'Kore',
   instructions: 'Warm, relaxed, and speaking slowly',
@@ -136,11 +256,10 @@ console.log('Saved greeting.wav');
 
 ```javascript filename="generate-google-speech.js"
 import { generateSpeech } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { writeFile } from 'node:fs/promises';
 
 const result = await generateSpeech({
-  model: gateway.speechModel('google/gemini-3.8-flash-lite-tts'),
+  model: 'google/gemini-3.8-flash-lite-tts',
   text: 'Welcome to the audio edition.',
   voice: 'Kore',
   instructions: 'Warm, relaxed, and speaking slowly',
@@ -160,11 +279,10 @@ For two-speaker dialogue, configure voices and structured `turns` under `provide
 
 ```typescript filename="generate-google-dialogue.ts"
 import { generateSpeech } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { writeFile } from 'node:fs/promises';
 
 const result = await generateSpeech({
-  model: gateway.speechModel('google/gemini-3.8-flash-tts'),
+  model: 'google/gemini-3.8-flash-tts',
   text: '',
   outputFormat: 'wav',
   providerOptions: {
@@ -202,11 +320,10 @@ console.log('Saved dialogue.wav');
 
 ```javascript filename="generate-google-dialogue.js"
 import { generateSpeech } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { writeFile } from 'node:fs/promises';
 
 const result = await generateSpeech({
-  model: gateway.speechModel('google/gemini-3.8-flash-tts'),
+  model: 'google/gemini-3.8-flash-tts',
   text: '',
   outputFormat: 'wav',
   providerOptions: {
@@ -246,17 +363,16 @@ A turn's `speechMetadata.style` overrides `instructions`. Turns without a style 
 
 ### Generate speech with Microsoft
 
-Use `microsoft/mai-voice-2.1` or `microsoft/mai-voice-2` for high-fidelity, long-form narration, and `microsoft/mai-voice-2.1-flash` or `microsoft/mai-voice-2-flash` for low-latency voice agents. All four models use `gateway.speechModel()` and share the same voices and options.
+Use `microsoft/mai-voice-2.1` or `microsoft/mai-voice-2` for high-fidelity, long-form narration, and `microsoft/mai-voice-2.1-flash` or `microsoft/mai-voice-2-flash` for low-latency voice agents. All four models share the same voices and options.
 
 Choose a prebuilt voice such as `en-US-Harper`, `de-DE-Mia`, or `es-MX-Valeria`. Each voice name includes its locale, which sets the spoken language, and the default is `en-US-Harper`. Set `providerOptions.azure.style` to control delivery, and `styleDegree` to set its intensity:
 
 ```typescript filename="generate-microsoft-speech.ts"
 import { generateSpeech } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { writeFile } from 'node:fs/promises';
 
 const result = await generateSpeech({
-  model: gateway.speechModel('microsoft/mai-voice-2-flash'),
+  model: 'microsoft/mai-voice-2-flash',
   text: 'Thanks for calling! Your order shipped this morning.',
   voice: 'en-US-Ethan',
   outputFormat: 'mp3',
@@ -272,11 +388,10 @@ console.log('Saved order-update.mp3');
 
 ```javascript filename="generate-microsoft-speech.js"
 import { generateSpeech } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { writeFile } from 'node:fs/promises';
 
 const result = await generateSpeech({
-  model: gateway.speechModel('microsoft/mai-voice-2-flash'),
+  model: 'microsoft/mai-voice-2-flash',
   text: 'Thanks for calling! Your order shipped this morning.',
   voice: 'en-US-Ethan',
   outputFormat: 'mp3',
@@ -397,4 +512,4 @@ The response is a JSON object with the base64-encoded audio:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

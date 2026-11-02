@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure the runtime for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/runtime.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "be782bf6839acb2fc2e9a475c45048e2a53bf2799ab1e82d86a50b74e7e2de1c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "687f272205ab03072fe921bca6038e1bf091340919ef40eec4387b84581e11c2"
 ---
 
 # Configuring the Runtime for Vercel Functions
@@ -31,10 +31,10 @@ The runtime of your function determines the environment in which your function w
 
 - [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
 - [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
-- [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
-- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js) — Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/runtime.graph.md](/docs/functions/configuring-functions/runtime.graph.md)
 <!-- /docsgraph:related -->
@@ -198,4 +198,4 @@ In this case, the function at `api/test.php` would use the custom runtime specif
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

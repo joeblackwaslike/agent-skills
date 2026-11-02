@@ -14,8 +14,8 @@ related:
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/preview-deployment-suffix.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "805b1e6e4fca80311dcd7895a8fabaa5db7106daa243b15809c562f097d70f6e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "10595454b5118af7e6ac5e34a79f8b5f90cd41a33ca9e7a29aeec816fa8efd23"
 ---
 
 # Preview Deployment Suffix
@@ -32,11 +32,12 @@ Preview Deployment Suffixes allow you to customize the URL of a [preview deploym
 
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms)
 - [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [Project-level deployment suffixes](https://vercel.com/changelog/project-level-deployment-suffixes)
 - [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Multi-tenant Preview URLs](https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes) — Test tenant-specific experiences in preview deployments using dynamic URL prefixes.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
+- [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
 
 Full cross-link map for this page: [/docs/deployments/preview-deployment-suffix.graph.md](/docs/deployments/preview-deployment-suffix.graph.md)
 <!-- /docsgraph:related -->
@@ -109,4 +110,4 @@ The best way to satisfy all of these constraints is to ensure the domain is also
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

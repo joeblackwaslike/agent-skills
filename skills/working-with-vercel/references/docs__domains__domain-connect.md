@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS records for your users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/domain-connect.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3b70de51cbcea95514ab072b74d6b63c337222467312d970e2ea2bbe51859f59"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "03c14c88aad098669fa9e5cfc24d96aac5d2a37dcfabec1eebae59dbe15075f6"
 ---
 
 # Domain Connect
@@ -33,12 +33,11 @@ sha256: "3b70de51cbcea95514ab072b74d6b63c337222467312d970e2ea2bbe51859f59"
 - [Automated DNS configuration with Domain Connect](https://vercel.com/changelog/automated-dns-configuration-with-domain-connect)
 - [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
 - [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
+- [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers) — Learn about nameservers and the benefits Vercel nameservers provide.
 
 Full cross-link map for this page: [/docs/domains/domain-connect.graph.md](/docs/domains/domain-connect.graph.md)
 <!-- /docsgraph:related -->
@@ -351,4 +350,4 @@ Read the full Domain Connect protocol specification on GitHub.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "728827b7c589a9e776682df84f8d3838083bde9bd5b7b48c7378e988e75147bb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1dcc1952566f79b7684e15a453bd5ab1d8ceb6ad6857b991d287c29572a05e01"
 ---
 
 # AI Gateway Video Extension
@@ -31,10 +31,10 @@ Continue an existing video from its last frame. Describe what happens next and t
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Grok Imagine Video 1.5 Lite on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-lite-on-ai-gateway)
-- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
+- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Grok Imagine Video 1.5 on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway)
+- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/video-extension.graph.md](/docs/ai-gateway/modalities/video-generation/video-extension.graph.md)
 <!-- /docsgraph:related -->
@@ -139,7 +139,7 @@ Pass a `webhook` factory and the SDK registers your URL with the job instead of 
 
 ```typescript filename="async-video-extension.ts"
 const result = await generateVideo({
-  model: gateway.videoModel('spacexai/grok-imagine-video'),
+  model: 'spacexai/grok-imagine-video',
   prompt: 'The cat turns its head, notices a butterfly, and leaps off.',
   duration: 6,
   providerOptions: {
@@ -169,4 +169,4 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your source 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

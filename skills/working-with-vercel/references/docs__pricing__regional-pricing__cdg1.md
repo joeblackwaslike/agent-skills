@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Paris, France (cdg1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/cdg1.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6b425a58567f4edf861170e1c4396b0c0f06a9ef01cdf8f78ff04425c8e7e98d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e8aed54e3cf04a6b16fdbad1a31fe233746485e73123e80cd7d2f489eca062d9"
 ---
 
 # Paris, France (cdg1) pricing
@@ -55,8 +55,8 @@ The **On-demand (Billing Cycle)** column shows the rate for each resource in thi
 | [CDN Requests](/docs/manage-cdn-usage#cdn-requests) | $2.40 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $4.80 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.48 per 1,000,000 Read Units |
-| [Runtime Cache Writes](/docs/caching/runtime-cache) | $4.80 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/caching/runtime-cache) | $0.48 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/caching/runtime-cache#pricing) | $4.80 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/caching/runtime-cache#pricing) | $0.48 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.06 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.72 per 1,000,000 Operations |
 | [CDN Requests - Additional CPU Duration](/docs/manage-cdn-usage#cdn-request-cpu-duration) | $0.36 per 1 Hour |
@@ -84,4 +84,4 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

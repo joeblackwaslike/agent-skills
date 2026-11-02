@@ -16,8 +16,8 @@ related:
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b152fcd23d3300ca249e7542784a6dd5c2ea69360e103e53b5d9dc89c5054c89"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5bdf3349399cecbfcdee24809cf3577cf71d7d71f5469d3e9af510a4a990b44f"
 ---
 
 # Manage and optimize usage
@@ -37,13 +37,13 @@ There are three plans on Vercel: Hobby, Pro, and Enterprise. To see which plan y
 - [One-click linking from Usage to Vercel Observability dashboards](https://vercel.com/changelog/one-click-linking-from-usage-to-vercel-observability-dashboards)
 - [Speed Insights usage can now be viewed by Project](https://vercel.com/changelog/speed-insights-usage-can-now-be-viewed-by-project)
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
 - [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/pricing/manage-and-optimize-usage.graph.md](/docs/pricing/manage-and-optimize-usage.graph.md)
 <!-- /docsgraph:related -->
@@ -120,7 +120,9 @@ To view information on managing each resource, select the resource link in the *
 
 ## Data Cache
 
-The table below shows the metrics for the [**Data Cache**](/docs/caching/runtime-cache) section of the **Usage** dashboard.
+The table below shows the metrics for the [**Data Cache**](/docs/caching/runtime-cache/data-cache) section of the **Usage** dashboard.
+
+Vercel is unifying Data Cache with [Runtime Cache](/docs/caching/runtime-cache). Starting October 30, 2026, Runtime Cache serves `fetch` caching and `unstable_cache` for new teams, and Vercel bills that usage as Runtime Cache usage. Vercel will notify existing teams of their migration timeline. See [Data cache is unifying with Runtime Cache](/docs/caching/runtime-cache/data-cache#data-cache-is-unifying-with-runtime-cache).
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 
@@ -185,4 +187,4 @@ resources:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

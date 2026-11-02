@@ -16,8 +16,8 @@ related:
 summary: Get $80 of monthly credit for featured open-weight models for $30 per month, and use it in the coding agent or app of your choice through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/token-pass.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "87517a613f5be9d807ad9c30d63168d9cafa13b874c9dd399c55b54446f74424"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a515fd9298e13dfec487a63f3c205d9a266321609d376292f166282aa9e123cf"
 ---
 
 # Token Pass
@@ -163,4 +163,4 @@ These Token Pass Terms supplement the [AI Product Terms](/legal/ai-product-terms
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

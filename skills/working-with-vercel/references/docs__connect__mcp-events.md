@@ -16,8 +16,8 @@ related:
 summary: Use MCP events with Vercel Connect to react to changes, receive verified webhook deliveries, and manage subscription lifecycles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/mcp-events.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0ee767fe77db27e0242a78ef78cccaca463511ca7e33f323a1c9ad2ea9ed234e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7371303e678959440e5a84b0889541fc180557a9601e2c3122423dc14ca8bc89"
 ---
 
 # MCP Events
@@ -36,13 +36,13 @@ polling for updates.
 - [Receive MCP Webhook Events](https://ai-sdk.dev/cookbook/node/mcp-events) — Subscribe to MCP events and receive verified webhooks with AI SDK.
 - [MCP Events support in Vercel Connect is now in public beta](https://vercel.com/changelog/mcp-events-support-in-vercel-connect-is-now-in-public-beta)
 - [MCP Events](https://ai-sdk.dev/docs/ai-sdk-core/mcp-events) — Understand the MCP webhook events contract and the AI SDK APIs for subscribing, verifying, and receiving events.
-- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
-- [eve with Vercel Connect](https://vercel.com/docs/connect/frameworks/eve) — Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, an
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
-- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
+- [eve with Vercel Connect](https://vercel.com/docs/connect/frameworks/eve) — Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, an
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 
 Full cross-link map for this page: [/docs/connect/mcp-events.graph.md](/docs/connect/mcp-events.graph.md)
 <!-- /docsgraph:related -->
@@ -425,7 +425,22 @@ A stop operation can return `stopped` with `cleanupStatus: 'pending'` while remo
 cleanup remains unfinished. Retry unsubscribe to finish cleanup. The operation
 can also report `cleanupStatus: 'complete'` or `'exhausted'`.
 
+## Dashboard visibility
+
+Open your connector's **Settings** and choose when to show **MCP Events**:
+
+- **Auto** (default): Show event subscriptions after the first successful event delivery.
+- **Always show**: Show event subscriptions before the first delivery.
+- **Always hide**: Keep event subscriptions hidden, even after future deliveries.
+
+Select **Save changes** to apply your choice across all projects using this connector.
+Changing visibility doesn't start or stop subscriptions. Returning to **Auto** uses
+the connector's existing delivery history.
+
 ## Lifetime and delivery limits
+
+When creating a subscription in the dashboard, choose a lifetime from 10 minutes
+through one year, or **Until stopped** to monitor until you stop the subscription.
 
 Set `ttlMs` when subscribing. Use an integer from `120000` to `31536000000`
 milliseconds (two minutes to 365 days), or `ttlMs: null` to monitor until explicitly
@@ -460,4 +475,4 @@ billed, [stop the subscription](#inspect-and-stop-subscriptions).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

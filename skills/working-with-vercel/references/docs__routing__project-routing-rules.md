@@ -15,8 +15,8 @@ related:
 summary: Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/project-routing-rules.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7f9a8acc6a9760ae90dbc39f984fc813abefd7369828e97bc11e44421ff2cee0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a59c8caf2cbce5af058e28fda165c1df2a54d8e4911bacd3f6616418bc447fed"
 ---
 
 # Project-Level Routing Rules
@@ -35,9 +35,9 @@ Project-level routing rules let you add redirects, rewrites, response headers, a
 - [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment)
 - [Stage routing rules](https://vercel.com/docs/rest-api/project-routes/stage-routing-rules) — PUT /v1/projects/{projectId}/routes — Stage routing rules for a project. Set \\`overwrite\\` to true to replace all existi
 - [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
-- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 - [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
-- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Delete routing rules](https://vercel.com/docs/rest-api/project-routes/delete-routing-rules) — DELETE /v1/projects/{projectId}/routes — Delete one or more routing rules from a project by ID. Stages a new version wit
 
 Full cross-link map for this page: [/docs/routing/project-routing-rules.graph.md](/docs/routing/project-routing-rules.graph.md)
 <!-- /docsgraph:related -->
@@ -159,4 +159,4 @@ A few other `vercel.json` fields are also deployment-only: `locale` for i18n rou
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

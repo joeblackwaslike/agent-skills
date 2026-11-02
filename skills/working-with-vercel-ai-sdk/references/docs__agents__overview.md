@@ -4,8 +4,8 @@ description: Learn how to build agents with the AI SDK.
 url: "https://ai-sdk.dev/docs/agents/overview"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/overview.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "8b6a98757dd1f3238464bee8d7f5800248062c55566b3e32ed11ca3245769d9d"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "07980a5d42d12ce94918e9653ca336f2114a2fde2e1f71f7db6e9ed074ae2af5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -137,6 +137,12 @@ Agents are flexible and powerful, but non-deterministic. When you need reliable,
 
 [Explore workflow patterns](/docs/agents/workflows) to learn more about building structured, reliable systems.
 
+## Agent Frameworks
+
+The agent classes in this section are primitives you assemble inside your own application. When you want a production framework for durable, long-running agents — with channels, schedules, approvals, and testing included — [eve](https://eve.dev) is an open-source framework built on the AI SDK. It uses the same `tool()` shape and model settings, and runs agents durably on Vercel or self-hosted.
+
+Learn more in [eve](/docs/agents/eve).
+
 ## Next Steps
 
 - **[Building Agents](/docs/agents/building-agents)** - Guide to creating agents with the ToolLoopAgent
@@ -144,6 +150,7 @@ Agents are flexible and powerful, but non-deterministic. When you need reliable,
 - **[Workflow Patterns](/docs/agents/workflows)** - Structured patterns using core functions for complex workflows
 - **[Loop Control](/docs/agents/loop-control)** - Execution control with stopWhen and prepareStep
 - **[Chat Platforms](/docs/agents/chat-platforms)** - Run agents in Slack, Microsoft Teams, Discord, and more with Chat SDK
+- **[eve](/docs/agents/eve)** - Build production agents for durable, long-running work
 
 ---
 

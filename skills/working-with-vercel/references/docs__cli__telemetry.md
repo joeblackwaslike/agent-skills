@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage telemetry collection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/telemetry.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "db1816daaef619e2bdae4c4c8d360671e1de59e0ba9a401a3323f8f8be08fbb1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "29fc4241e5969a7afe59ff43bc7801aba686ab5703325e0c67200697fb55d93f"
 ---
 
 # vercel telemetry
@@ -31,8 +31,8 @@ The `vercel telemetry` command allows you to enable or disable telemetry collect
 - [CLI Telemetry](https://eve.dev/docs/reference/telemetry) — Learn what eve CLI telemetry collects and how to control it.
 - [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 
 Full cross-link map for this page: [/docs/cli/telemetry.graph.md](/docs/cli/telemetry.graph.md)
 <!-- /docsgraph:related -->
@@ -121,4 +121,4 @@ For more information about Vercel's privacy practices, please see our [**Privacy
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

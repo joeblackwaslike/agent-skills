@@ -16,8 +16,8 @@ related:
 summary: Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/observability.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9c594b92768dd73fcba8bbfc3097c427d4ca6f94ac7e1772707fcb03970bce03"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1c215e182133225bd9caeba0b858563896962466d791f2d9bdff945249f34e37"
 ---
 
 # Observability
@@ -33,12 +33,11 @@ Every connector has an **Observability** tab that shows runtime events for token
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Vercel Connect adds observability support](https://vercel.com/changelog/vercel-connect-adds-observability-support)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Webhook triggers for Vercel Connect](https://vercel.com/docs/connect/concepts/triggers) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Provider tokens in Vercel Connect](https://vercel.com/docs/connect/concepts/tokens) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/connect/observability.graph.md](/docs/connect/observability.graph.md)
 <!-- /docsgraph:related -->
@@ -212,4 +211,4 @@ Logged when Connect forwards an inbound trigger to a registered project destinat
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

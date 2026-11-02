@@ -15,8 +15,8 @@ related:
 summary: Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration for real-time collaboration...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/sanity.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "36ecf35710b8c99cfc48581d514923e423507a25cacf78e0dfe2477663f48164"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "061967c7780f85fa525382ac71a0a36c775f2686a84497ce39aaf1cb84405115"
 ---
 
 # Vercel Sanity Integration
@@ -31,9 +31,8 @@ Sanity is a headless content management system that provides real-time collabora
 
 - [Sanity is now available on the Vercel Marketplace](https://vercel.com/changelog/sanity-vercel-marketplace)
 - [Vercel + Sanity: Innovating on a faster, more collaborative Web](https://vercel.com/blog/vercel-sanity-innovating-on-a-faster-collaborative-web)
-- [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
 - [Visual Editing: Click-to-edit content for headless CMSes](https://vercel.com/blog/visual-editing)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
 - [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
@@ -106,4 +105,4 @@ The deployment flow sets up the connectors and a Vercel Blob store for files and
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

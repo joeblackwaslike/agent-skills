@@ -4,8 +4,8 @@ description: Learn how to use QuiverAI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/quiverai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "60d2d4195ab6cd19b2c7125e78fd27f008209b2f3615cb74b89e64e245393c79"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "f3e7388911f898d9c853d6c90d6e1249bdc2dafba590b025e4437e9705c4ca52"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -92,7 +92,11 @@ You can use the following optional settings to customize the QuiverAI provider i
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.quiver.ai/v1`. It also reads `QUIVERAI_BASE_URL` from the environment.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is sent as a `Bearer` token in the `Authorization` header.
   It defaults to the `QUIVERAI_API_KEY` environment variable.

@@ -13,8 +13,8 @@ related:
 summary: Use list_vercel_ci_task_runs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_runs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c240b57aae9b068d183c20deedafaba6fa44d83e3bed7637f2e990c632cda8ca"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2b732c870abf2c5b94a23e97d4265ca6e515c35cf6a74492743002a50d827c41"
 ---
 
 # list_vercel_ci_task_runs
@@ -54,4 +54,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

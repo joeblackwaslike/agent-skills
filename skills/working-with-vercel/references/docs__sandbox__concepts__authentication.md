@@ -15,8 +15,8 @@ related:
 summary: Learn how to authenticate with Vercel Sandbox using OIDC tokens or access tokens.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/authentication.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "de6f7bc386164a51ef55eb1e87e80d5c80477509ba19ce4e40bef39d0191df62"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fa2181f5338f6afbc88e3194ada54b1a7c747662c19604eee60516db22ad38a2"
 ---
 
 # Sandbox Authentication
@@ -36,10 +36,10 @@ The Sandbox SDK supports two authentication methods: Vercel OIDC tokens (recomme
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
 - [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [Using Secure Compute with Sandbox](https://vercel.com/docs/sandbox/concepts/secure-compute) — You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and r
 - [Authentication](https://vercel.com/docs/rest-api/authentication) — Endpoints in the authentication group of the Vercel REST API Reference.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/authentication.graph.md](/docs/sandbox/concepts/authentication.graph.md)
@@ -139,4 +139,4 @@ asyncio.run(main())
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

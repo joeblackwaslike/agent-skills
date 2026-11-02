@@ -13,8 +13,8 @@ related:
 summary: Use list_projects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "41faa6c2785c146d25593fc6a0e99b8386a14b45360e8947c579e734663f5720"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "de74d690341cda3c354a0437ee434b649b9c3e7a6746e499dce7d290fb801a4a"
 ---
 
 # list_projects
@@ -29,9 +29,9 @@ List [projects](/docs/projects) in your account or selected team. The tool also 
 
 - [list_access_group_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects) — Use list_access_group_projects with Vercel MCP.
 - [get_observability_configuration_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_configuration_projects) — Use get_observability_configuration_projects with Vercel MCP.
-- [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
 - [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
-- [Teams and Users](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams) — Vercel MCP tools for teams and users.
+- [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
+- [list_project_connector_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_project_connector_connections) — Use list_project_connector_connections with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/list_projects.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/list_projects.graph.md)
 <!-- /docsgraph:related -->
@@ -72,4 +72,4 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

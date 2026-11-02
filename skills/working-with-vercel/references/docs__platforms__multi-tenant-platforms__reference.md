@@ -17,8 +17,8 @@ related:
 summary: Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "220098508b299d055dea5b87c58ba67e46d8d6f875ec119496c05955fba4112a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "97a4cd81857f67ffff99ff02de2bde0d3fb47fe5ef38b5ab2495941b207c0b7c"
 ---
 
 # Multi-tenant Reference
@@ -35,7 +35,7 @@ Use the [Custom Domain block](/docs/platforms/platform-elements/blocks/custom-do
 
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits) — Understand the limits and features available for Vercel for Platforms.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
@@ -361,4 +361,4 @@ Set canonical URLs to indicate the primary domain for each page. This prevents d
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

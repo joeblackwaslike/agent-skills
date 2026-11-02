@@ -17,8 +17,8 @@ related:
 summary: Add a Chat SDK bot to TanStack Start, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks/tanstack-start.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "206ba56e01be7c22a2764a5f53194af31d9e1b0b083713742383b6bd8fec14f4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "39a85c5804d548bc1df24bf2306d6b893f982b5c3ccc52cda7577a288513d264"
 ---
 
 # Chat SDK with TanStack Start
@@ -411,4 +411,4 @@ For a fuller chat interface, see the [official TanStack Start example](https://g
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

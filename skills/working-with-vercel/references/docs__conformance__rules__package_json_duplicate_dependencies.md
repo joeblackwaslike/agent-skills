@@ -12,8 +12,8 @@ related:
 summary: Found duplicate dependencies between the list of dependencies and devDependencies or peerDependencies in a package.json file..
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_duplicate_dependencies.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f3d4c3403bea41d8b6c670790530d1c5efba91897a0a087ee7d819ac107000ae"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c9c8dc3663943a2e0c06a4ed0477b59ca4893c17d2835e5157657e36ef128c7d"
 ---
 
 # PACKAGE_JSON_DUPLICATE_DEPENDENCIES
@@ -58,4 +58,4 @@ can be left in `devDependencies` or `peerDependencies` and be removed from
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

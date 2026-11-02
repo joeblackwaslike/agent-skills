@@ -13,8 +13,8 @@ related:
 summary: Use edit_route with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/edit_route.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "496d22a6a4df089fb012ad50bdd96fc003383b74951a9b0b3899cfa2e47c3cef"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "db52a5b37bf51a9334dbaaec88e9b459fa8702eaee6af7c5ec51fb2cf96f833e"
 ---
 
 # edit_route
@@ -31,7 +31,7 @@ Edit a routing rule.
 - [generate_route](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/generate_route) — Use generate_route with Vercel MCP.
 - [update_route_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions) — Use update_route_versions with Vercel MCP.
 - [stage_routes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/stage_routes) — Use stage_routes with Vercel MCP.
-- [list_project_routes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_project_routes) — Use list_project_routes with Vercel MCP.
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/edit_route.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/edit_route.graph.md)
 <!-- /docsgraph:related -->
@@ -52,4 +52,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

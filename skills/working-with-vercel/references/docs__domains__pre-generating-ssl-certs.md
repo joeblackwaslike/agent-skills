@@ -14,8 +14,8 @@ related:
 summary: test
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/pre-generating-ssl-certs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9624a7c65190e1fc442bbe8f79cda69a5a8c3960224612e4bc907130be03e3e7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ca0172caa06bcfe6aca91adc6b15f4b3b2756039714837ac8ceb14f9cba80e02"
 ---
 
 # Pre-Generate SSL Certificates
@@ -45,7 +45,7 @@ DNS changes.
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 
 Full cross-link map for this page: [/docs/domains/pre-generating-ssl-certs.graph.md](/docs/domains/pre-generating-ssl-certs.graph.md)
 <!-- /docsgraph:related -->
@@ -123,4 +123,4 @@ For more details on performing a migration, see [this guide](/docs/domains/manag
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

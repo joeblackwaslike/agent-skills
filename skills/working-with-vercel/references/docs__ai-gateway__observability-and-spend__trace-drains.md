@@ -17,8 +17,8 @@ related:
 summary: Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain billing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "82b6d6e2e73e329554c2e1dca359abd987a2a83005153a2e13bac8afd0963de4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9fa0d39776ad981a7bf3614f1a2ce5739f4b064ef051e7134f8d458bec196370"
 ---
 
 # AI Gateway Trace Drains
@@ -38,7 +38,7 @@ AI Gateway produces an [OpenTelemetry](https://opentelemetry.io/docs/concepts/si
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
-- [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/trace-drains.graph.md](/docs/ai-gateway/observability-and-spend/trace-drains.graph.md)
 <!-- /docsgraph:related -->
@@ -231,4 +231,4 @@ Each provider attempt span records one upstream call:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

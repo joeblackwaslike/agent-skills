@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a new AI provider to your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f2353f26f303eb86f5acae8a995e37d9b035e00a6424fd0ae85ff721b682d585"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fd6b6d2777eaf0db53af096f5fd6b3d0a6291c450f1751c30d7ca5c9d1fc42e5"
 ---
 
 # Adding a Provider
@@ -31,8 +31,8 @@ When you Open **AI** in the sidebar, you'll see a list of installed AI integrati
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
+- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
@@ -95,4 +95,4 @@ Once you add a provider, the **AI** section in the sidebar will display a list o
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -15,8 +15,8 @@ related:
 summary: "The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions taking >200ms."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/interaction-timing-tool.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3722d5a5631424f39935eae8f654a95b03bbc9cd73ce24e327d3e6a169f009f3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d1f939bb9a21a980c84d2de0aafbc1797f6f002e43ec2cc8dee071934c480f83"
 ---
 
 # Interaction Timing Tool
@@ -33,7 +33,7 @@ As you navigate your site, the interaction timing tool allows you to inspect in 
 
 - [Understand Interaction to Next Paint (INP) with the Vercel Toolbar](https://vercel.com/changelog/interaction-timing-tool)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
-- [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
+- [Performance improvements and setting update for the Vercel Toolbar](https://vercel.com/changelog/performance-improvements-and-setting-update-for-the-vercel-toolbar)
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 - [Layout Shift Tool](https://vercel.com/docs/vercel-toolbar/layout-shift-tool) — The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
@@ -74,4 +74,4 @@ To change preferences for the interaction timing tool:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

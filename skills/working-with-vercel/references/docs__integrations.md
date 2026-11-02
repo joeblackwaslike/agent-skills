@@ -16,8 +16,8 @@ related:
 summary: "Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless content, commerce, and more."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "88ab626d56bb748647c30125aad64a136998baf61e23228b5a404d99c5043ac7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "796f3df9b659f92e10f2374f468aa91b0cd6b1ecf8fb6a354e160e8d60c7bba5"
 ---
 
 # Vercel Integrations
@@ -115,4 +115,4 @@ When you add a connectable account integration through the Vercel dashboard, you
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

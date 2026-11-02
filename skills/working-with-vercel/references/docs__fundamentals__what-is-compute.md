@@ -16,8 +16,8 @@ related:
 summary: Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/what-is-compute.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "091013d602d77f47e615b576b3c5fdc30c70ae5e74da2dc4dd59134ebb4ae3ca"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "88bca5c4b35dca97a41a7fa750c4c88700dac852dd0212863fb0d24befa47ec1"
 ---
 
 # What is Compute?
@@ -33,15 +33,15 @@ Compute is the work a server performs to respond to a request, such as rendering
 - [Introducing Fluid compute](https://vercel.com/blog/introducing-fluid-compute)
 - [How Fluid compute works on Vercel](https://vercel.com/blog/how-fluid-compute-works-on-vercel)
 - [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute) — How to create high-performance database connection pools without leaking connections
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers)
-- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape)
+- [Vercel Functions can now run on Fluid compute](https://vercel.com/changelog/vercel-functions-can-now-run-on-fluid-compute)
+- [How AI Gateway runs on Fluid compute](https://vercel.com/blog/how-ai-gateway-runs-on-fluid-compute)
 - [Vercel Functions](https://vercel.com/docs/functions) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 
 Full cross-link map for this page: [/docs/fundamentals/what-is-compute.graph.md](/docs/fundamentals/what-is-compute.graph.md)
 <!-- /docsgraph:related -->
@@ -62,7 +62,7 @@ Web applications involve two main locations:
 
 To demonstrate an example of what this looks like in practice, we'll use the example of a Next.js app deployed to Vercel.
 
-When you start a deployment of your Next.js app to Vercel, Vercel's [build process](/docs/builds#build-process) creates a build output that contains artifacts such as [bundled Vercel Functions](/docs/functions/configuring-functions/advanced-configuration#bundling-vercel-functions) or static assets. It will then deploy either to Vercel's CDN or, in the case of a function, to a [specified region](/docs/functions/configuring-functions/region).
+When you start a deployment of your Next.js app to Vercel, Vercel's [build process](/docs/builds#build-infrastructure) creates a build output that contains artifacts such as [bundled Vercel Functions](/docs/functions/configuring-functions/advanced-configuration#bundling-vercel-functions) or static assets. It will then deploy either to Vercel's CDN or, in the case of a function, to a [specified region](/docs/functions/configuring-functions/region).
 
 Now that the deployment is ready to serve traffic, a user can visit your site. When they do, the request is sent to the closest CDN region, which will then either serve the static assets or route the request to the region where the function is deployed. The function will then run, and the response will be sent back to the user. At a very high-level this looks like:
 
@@ -188,4 +188,4 @@ Fluid compute addresses each of these drawbacks with [optimized concurrency](#op
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

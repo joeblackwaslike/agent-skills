@@ -13,8 +13,8 @@ related:
 summary: Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-datadog.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a17ed1e6161e74786c85a296a5a504eb400d474e4488e7d9f5d99bfd01e3bea4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "eb6b2cf0b7ec5a240794581453ed0d6f1adf36d11241e8fea1095bfc05064b9e"
 ---
 
 # Drain Audit Logs to Datadog
@@ -97,4 +97,4 @@ See the [Audit Log Drains reference](/docs/drains/reference/audit-logs#datadog) 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c5e2999b85a091d033f4ea80efd364b88fefffe45e27ebcc2b9366d02e80d196"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d223540f5d947d810390b44f256f22116f503281a93bceb12fa330aadebf99c9"
 ---
 
 # Query Reference
@@ -36,8 +36,8 @@ In Query, you first select an event type, then a metric from that event type. Fo
 - [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 
 Full cross-link map for this page: [/docs/query/reference.graph.md](/docs/query/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -180,4 +180,4 @@ The available fields depend on the selected event type. The following fields are
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

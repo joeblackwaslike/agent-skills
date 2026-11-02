@@ -4,8 +4,8 @@ description: Learn how to use ByteDance with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/bytedance.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "c73b0c342d84109d3b615cd5efa1501f42c5908a7ee3a73f7db289930d83acc0"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "062e409bf66476e8cf672e50318dbeca827354fd4ae0532d41d4d9ecb3e139a0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -92,7 +92,11 @@ You can use the following optional settings to customize the ByteDance provider 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://ark.ap-southeast.bytepluses.com/api/v3`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `ARK_API_KEY` environment variable.

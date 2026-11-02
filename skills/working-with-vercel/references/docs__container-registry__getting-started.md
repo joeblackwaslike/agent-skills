@@ -16,8 +16,8 @@ related:
 summary: Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/getting-started.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "df9fa862d3c06de3dc75e6d8fcac9d92de39fc804f790302388aaaeaf68eb7cc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "996a976d336ce3cc074c7a1474b600cbcd5ee9e618767fcc3da9f8494ea32ddd"
 ---
 
 # Getting Started
@@ -30,14 +30,15 @@ Push your first image to Vercel Container Registry (VCR) with the Vercel CLI, th
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Container Registry now supports 2 GB compressed image layers](https://vercel.com/changelog/vercel-container-registry-now-supports-2-gb-compressed-image-layers-new)
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli)
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
-- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
 
 Full cross-link map for this page: [/docs/container-registry/getting-started.graph.md](/docs/container-registry/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -87,4 +88,4 @@ Full cross-link map for this page: [/docs/container-registry/getting-started.gra
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

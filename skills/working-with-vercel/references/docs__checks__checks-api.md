@@ -9,11 +9,11 @@ prerequisites:
   - /docs/checks
 related:
   []
-summary: The Vercel Checks API let you create tests and assertions that run after each deployment has been built, and are powered by Vercel Integrations.
+summary: The Vercel Checks API lets you create tests and assertions that run after each deployment has been built, and are powered by Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/checks/checks-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "32322d55f81aae5583500d61e705aabf02badfe094f1c8f26893ca4e1a0b491b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d8c79f894a5c459373f95f1da0103f130d3c4d52c86a08d7c5e7101e90c92934"
 ---
 
 # Checks API Reference
@@ -31,7 +31,7 @@ API endpoints allow integrations to interact with the Vercel platform. Integrati
 - [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check) — GET /v2/projects/{projectIdOrName}/checks/{checkId} — Return a detailed response for a single check.
 - [Update a check](https://vercel.com/docs/rest-api/checks-v2/update-a-check) — PATCH /v2/projects/{projectIdOrName}/checks/{checkId} — Update an existing check.
-- [Get a check run](https://vercel.com/docs/rest-api/checks-v2/get-a-check-run) — GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} — Return a detailed response for a single check run.
+- [Checks](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks) — Vercel MCP tools for checks.
 
 Full cross-link map for this page: [/docs/checks/checks-api.graph.md](/docs/checks/checks-api.graph.md)
 <!-- /docsgraph:related -->
@@ -48,4 +48,4 @@ Create a new checkAllows the integration to create and register checks. When the
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow one or more files from depending on one or more predefined module
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-dependencies.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6e2b9479afbd87a15169086b4a05b44132efb1f5e0cf67ba9943554a9631f257"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "dbf380498db0324266d2b48953c6f17981adc467a3c1e4610b4402567c672370"
 ---
 
 # forbidden-dependencies
@@ -160,4 +160,4 @@ files, and without workspace restrictions.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

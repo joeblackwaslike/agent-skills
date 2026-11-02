@@ -14,8 +14,8 @@ related:
 summary: "View the list of regions supported by Vercel's CDN and learn about our global infrastructure."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/regions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "caae98e163725b207f0abc4b9cd23e33a392ffbe11dcdae0b76b5391475dc1ff"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9569104e61dfab096b001438d921d712296b2efcdd94471764d0d14d74f5057c"
 ---
 
 # Global network and regions
@@ -39,7 +39,7 @@ sha256: "caae98e163725b207f0abc4b9cd23e33a392ffbe11dcdae0b76b5391475dc1ff"
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Update regarding Vercel service disruption on October 20, 2025](https://vercel.com/blog/update-regarding-vercel-service-disruption-on-october-20-2025)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 
 Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md)
 <!-- /docsgraph:related -->
@@ -157,4 +157,4 @@ This multi-layered approach to resiliency, combining our extensive PoP network w
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

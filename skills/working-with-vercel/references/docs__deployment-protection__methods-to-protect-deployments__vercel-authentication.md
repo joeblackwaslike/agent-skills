@@ -17,8 +17,8 @@ related:
 summary: Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7c70c4892a3205bf9f3b00b6ded1802e6e1c9acb419d3da439da7f79a2e32f1f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0677b430552618ff274a260dfc4b052242eb99db25e97b87fa83b9707e80430c"
 ---
 
 # Restrict access to deployments with Vercel Authentication
@@ -44,9 +44,9 @@ Vercel Authentication lets you restrict access to your public and non-public dep
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [\<script type="text/llms.txt"\>](https://vercel.com/blog/a-proposal-for-inline-llm-instructions-in-html)
+- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md)
 <!-- /docsgraph:related -->
@@ -167,4 +167,4 @@ You can configure Vercel Authentication using `vercel_authentication` in the `ve
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

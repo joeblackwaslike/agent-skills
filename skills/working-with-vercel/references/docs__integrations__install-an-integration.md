@@ -16,8 +16,8 @@ related:
 summary: "Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing tools, connect to your CMS,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2fa9fcbafc3ffcec5008552e34b8e69f0bf0bafdb3a406023d568591b7652c86"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c8ea7cebbdec1c78bb3889f6c8fc111e4ebcaa50f75edb32756c302ff8758a3b"
 ---
 
 # Install an Integration
@@ -34,10 +34,10 @@ Using Vercel doesn't stop at the products and features that we provide. Through 
 
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
-- [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
-- [Create an Integration](https://vercel.com/docs/integrations/create-integration) — Learn how to create and manage your own integration for internal or public use with Vercel.
+- [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 - [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product) — Learn how to create a product for your Vercel native integration
+- [Create an Integration](https://vercel.com/docs/integrations/create-integration) — Learn how to create and manage your own integration for internal or public use with Vercel.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration.graph.md](/docs/integrations/install-an-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -97,4 +97,4 @@ privacy practices.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

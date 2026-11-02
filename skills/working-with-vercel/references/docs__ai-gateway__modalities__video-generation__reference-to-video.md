@@ -17,8 +17,8 @@ related:
 summary: Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok Imagine Video through AI...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "38b723c336988520f8c33441c7c65a243c2d08a154585315395b642082e6740a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a559d95a0ab51f7e96c149dd1910ccfef6211bed2267b90c7b848e988c778fbc"
 ---
 
 # AI Gateway Reference-to-Video Generation
@@ -34,12 +34,11 @@ Generate a completely new video scene featuring characters from reference media.
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
-- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
-- [Seedance 2.5 now available on Vercel AI Gateway](https://vercel.com/changelog/seedance-2-5-now-available-on-vercel-ai-gateway)
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
+- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
+- [Seedance 2.5 now available on Vercel AI Gateway](https://vercel.com/changelog/seedance-2-5-now-available-on-vercel-ai-gateway)
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
-- [Seedance 2.0 Video Generation on AI Gateway](https://vercel.com/changelog/seedance-2.0-video-now-available-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md)
 <!-- /docsgraph:related -->
@@ -385,7 +384,7 @@ Pass a `webhook` factory and the SDK registers your URL with the job instead of 
 
 ```typescript filename="async-reference-to-video.ts"
 const result = await generateVideo({
-  model: gateway.videoModel('alibaba/wan-v2.6-r2v'),
+  model: 'alibaba/wan-v2.6-r2v',
   prompt: 'character1 and character2 have a friendly conversation in a cozy cafe',
   duration: 4,
   // Hosted URLs, not inline bytes: the start request is capped at 300 KiB.
@@ -413,4 +412,4 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your referen
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -9,17 +9,17 @@ prerequisites:
   - /docs/agent-resources/vercel-mcp/tools/agent-runs
   - /docs/agent-resources/vercel-mcp/tools
 related:
-  - /docs/eve/agent-runs
+  - /docs/agent-runs
 summary: Use list_agent_run_projects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0fe36c7cc688f99a30a6e1408383dfb53d113f1fba439fad1eded5fce076bc1e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b0b4b6cfcc1e5f7433d5f319dfac40553a0f5f76e2e9eb16f6c998d376095663"
 ---
 
 # list_agent_run_projects
 
-Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
+Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-vercel-mcp).
 
 
 <!-- docsgraph:related -->
@@ -30,9 +30,9 @@ Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-wit
 - [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
 - [get_agent_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run) — Use get_agent_run with Vercel MCP.
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
+- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 - [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
 - [get_observability_configuration_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_configuration_projects) — Use get_observability_configuration_projects with Vercel MCP.
-- [get_agent_run_trace](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace) — Use get_agent_run_trace with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects.graph.md](/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects.graph.md)
 <!-- /docsgraph:related -->
@@ -55,4 +55,4 @@ List projects in a Vercel team that have Agent Runs observability data for eve a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

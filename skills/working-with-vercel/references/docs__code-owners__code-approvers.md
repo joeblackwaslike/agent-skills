@@ -12,8 +12,8 @@ related:
 summary: Use Code Owners to define users or teams that are responsible for directories and files in your codebase
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners/code-approvers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "85115f2135bfc4f2e2b940a19ea430e0ff28e0134195d6794303c59d39c70519"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3c826057acdb777d1fe13ea1aecc2cef2a690ef03ff30f64b6246e39f6f2c331"
 ---
 
 # Code Approvers
@@ -165,7 +165,7 @@ This user or team is always notified (through a comment) and is a required appro
 > approvers are usually enough so that correct reviews are enforced.
 
 ```sh copy filename=".vercel.approvers"
-# Always notifed and are required reviewers.
+# Always notified and are required reviewers.
 # The check won't pass until both `owner1` and `owner2` approve.
 @owner1:required
 @owner2:required
@@ -174,7 +174,7 @@ This user or team is always notified (through a comment) and is a required appro
 When you specify a team as a required reviewer only one member of that team is required to approve.
 
 ```sh copy filename=".vercel.approvers"
-# The team is notifed and are required reviewers.
+# The team is notified, and one team member must approve.
 # The check won't pass until one member of the team approves.
 @vercel/my-team:required
 ```
@@ -269,4 +269,4 @@ pnpm-lock.yaml *
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

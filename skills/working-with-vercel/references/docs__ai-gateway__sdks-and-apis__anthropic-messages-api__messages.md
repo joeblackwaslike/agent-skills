@@ -13,8 +13,8 @@ related:
 summary: Create messages using the Anthropic Messages API format with support for streaming through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9f4e1812b1f3132eaa061fb6c499af7c8844250ed4c71b5bd5249df95452e124"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0453540f48d8ff050a51c3526293d16f00ce9fa58c5c80e4caa0161fe0e6827b"
 ---
 
 # Anthropic Messages Requests with AI Gateway
@@ -160,4 +160,4 @@ Set `stream: true` to receive tokens as they are generated. See [Streaming](/doc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

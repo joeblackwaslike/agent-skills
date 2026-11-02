@@ -17,8 +17,8 @@ related:
 summary: Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks/nextjs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1f13c16243e1166e67abe0eb7f8b5985448d0c52b7b27cb76145a72b0f46453b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8a40d51a9b8fbf317129021250801e6f4cda9a19f4eb8ce25652e6d98994a175"
 ---
 
 # Chat SDK with Next.js
@@ -35,9 +35,9 @@ Use an App Router Route Handler to receive Slack events and `after` to process t
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
-- [CLI](https://chat-sdk.dev/docs/create-chat-sdk) — Scaffold a Chat SDK bot app with a single command.
-- [How to build an agent for Liveblocks with Chat SDK and AI SDK](https://vercel.com/kb/guide/liveblocks-chat-sdk-ai-sdk) — Build an AI agent that replies to @-mentions in Liveblocks comment threads with streamed responses and tool calling, usi
+- [Chat SDK with TanStack Start](https://vercel.com/docs/chat-sdk/frameworks/tanstack-start) — Add a Chat SDK bot to TanStack Start, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Chat SDK with Nuxt](https://vercel.com/docs/chat-sdk/frameworks/nuxt) — Add a Chat SDK bot to Nuxt, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
 Full cross-link map for this page: [/docs/chat-sdk/frameworks/nextjs.graph.md](/docs/chat-sdk/frameworks/nextjs.graph.md)
@@ -191,7 +191,7 @@ Install the Web Adapter and its client dependencies:
 pnpm add @chat-adapter/web ai @ai-sdk/react
 ```
 
-Implement `getUserFromSession(request)` in `lib/auth.ts` using your application's authentication provider. This is an application-defined helper, not a Chat SDK export. It must validate the session and return a stable `{ id: string, name?: string }` for a signed-in user, or `null` to reject the request with HTTP 401. User IDs must not contain `:`. See [Web Adapter authentication](https://chat-sdk.dev/adapters/official/web#authentication).
+Implement `getUserFromSession(request)` in `lib/auth.ts` using your application's authentication provider. This is an application-defined helper, not a Chat SDK export. It must validate the session and return a stable `{ id: string, name?: string }` for a signed-in user, or `null` to reject the request with HTTP 401. User IDs must not contain `:`. See [Web Adapter authentication](https://chat-sdk.dev/adapters/official/web#authentication). For a Passport-protected app, follow [Chat SDK with Vercel Passport](/docs/chat-sdk/integrations/passport) to resolve a verified identity and use per-user history.
 
 Update `lib/bot.ts` with the Web Adapter and a direct-message handler, keeping the Slack adapter, Redis state, and existing handlers:
 
@@ -395,4 +395,4 @@ For a fuller chat interface, see the [official Next.js example](https://github.c
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

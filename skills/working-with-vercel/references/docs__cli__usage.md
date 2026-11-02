@@ -13,8 +13,8 @@ related:
 summary: Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/usage.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2545cdc24816f328e17550f0929903f77b7a38887f93b7198b1b4fc358e58769"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2a3e605e74ecffa4875adaa159c3b5342be5cbe2fb3722bb718987dae892ed54"
 ---
 
 # vercel usage
@@ -30,8 +30,8 @@ The `vercel usage` command displays billing usage for the current billing period
 - [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api)
 - [vercel pricing](https://vercel.com/docs/cli/pricing) — Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/usage.graph.md](/docs/cli/usage.graph.md)
@@ -164,4 +164,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

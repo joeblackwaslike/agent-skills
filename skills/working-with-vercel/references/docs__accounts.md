@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "01caf34ba47894683f3e8a9ae8046fb4b16c618844270e4b92e82559490f80a2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "90825a46744f3889ec185336dc071606a35b025798cb0e48e2cc107ab7ca34ab"
 ---
 
 # Account Management
@@ -363,4 +363,4 @@ If you wish to remove your primary email address, you will need to set a new pri
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

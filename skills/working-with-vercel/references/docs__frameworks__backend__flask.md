@@ -17,8 +17,8 @@ related:
 summary: Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/flask.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "008cac21b93a3492d04c6754ca35ca7cd854f30985386dd92f57d2c9df1b60a1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a762aedc18b2c608804fc0ff8ad85ac7a430495990d33159377fe96e2b2d2515"
 ---
 
 # Deploy a Flask app on Vercel
@@ -38,8 +38,9 @@ your repository.
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Routing Middleware: Python Reference](https://vercel.com/docs/routing-middleware/python-reference) — Reference for writing Routing Middleware in Python with the vercel-proxy package, including setup, routes, requests, and
 
 Full cross-link map for this page: [/docs/frameworks/backend/flask.graph.md](/docs/frameworks/backend/flask.graph.md)
@@ -228,4 +229,4 @@ For more about deploying Flask on Vercel, see:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

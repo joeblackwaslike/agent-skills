@@ -15,8 +15,8 @@ related:
 summary: Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c595b1d49627b456473fa9b0532e5b8a55c43eab606f807adea8404fe9447f0e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2625a6b8ac24ba755a12fbc93de5c54a194008396c42a90d6583b5dac98e80fd"
 ---
 
 # OpenResponses Images and PDFs with AI Gateway
@@ -286,4 +286,4 @@ curl https://ai-gateway.vercel.sh/v1/responses \
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

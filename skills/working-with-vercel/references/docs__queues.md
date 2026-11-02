@@ -16,8 +16,8 @@ related:
 summary: Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-once delivery.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b5c2b855e7d260a15dfcf07341d25228733bb2eea48f78edaf1e393fb229d001"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e62ac21d175db3497124167fac99b6879922fc8f88eb8069d342d430068ce914"
 ---
 
 # Vercel Queues
@@ -145,4 +145,4 @@ On Vercel, `durable-harness` also uses Queues to back agent turns. If a function
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

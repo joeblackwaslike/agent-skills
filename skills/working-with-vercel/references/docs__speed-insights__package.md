@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-insights npm package.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/package.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1ad10b730f43a065529a02e08e64f71a7bb2060607e172d4ed384e63e9f1f4fe"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "17f2d96709dbeefbe1cc669a1701d1b20dce0de109fef0f47c7d942d3a97f3e3"
 ---
 
 # Speed Insights Configuration with @vercel/speed-insights
@@ -30,11 +30,12 @@ With the `@vercel/speed-insights` npm package, you're able to configure your app
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
+- [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
-- [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/speed-insights/package.graph.md](/docs/speed-insights/package.graph.md)
 <!-- /docsgraph:related -->
@@ -141,4 +142,4 @@ To change configured values, you can:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

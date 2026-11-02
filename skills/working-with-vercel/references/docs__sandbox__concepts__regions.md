@@ -17,8 +17,8 @@ related:
 summary: Choose the regions where Vercel Sandbox runs your sandboxes, set a project default, and configure failover regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/regions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "15b4ec2dbed2caa00dee4f65760cc4d12dcb228091b3a5430882d3eef3fc860f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7835ac0296ee40ccf56d6df3dca7d9aa163dbb0fd5bc6273bd93827efef31b73"
 ---
 
 # Sandbox Regions
@@ -31,14 +31,13 @@ Sandboxes run in a region that you choose when you create them. Pick the region 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Sandbox is now globally available](https://vercel.com/changelog/vercel-sandbox-is-now-globally-available)
 - [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta)
 - [Vercel Sandbox is now available in all regions](https://vercel.com/changelog/vercel-sandbox-is-now-available-in-all-regions)
-- [Vercel Sandbox is now globally available](https://vercel.com/changelog/vercel-sandbox-is-now-globally-available)
 - [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [How to use Vercel Drives with an eve agent](https://vercel.com/kb/guide/vercel-drives-eve-agent) — Mount Vercel Drives in an eve agent's sandbox to give each user a persistent workspace and share read-only reference dat
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 
 Full cross-link map for this page: [/docs/sandbox/concepts/regions.graph.md](/docs/sandbox/concepts/regions.graph.md)
@@ -261,4 +260,4 @@ Active CPU, Provisioned Memory, Sandbox Data Transfer, and Drive rates vary by r
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

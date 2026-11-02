@@ -16,8 +16,8 @@ related:
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "20e221178424d64c2f74f78fbc366327714de477cc5ba7adc762ca4ee80bd843"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5d3e44c822614be11cd42ea5cdcc86497829ff1a02a8e72507622f66e4123cff"
 ---
 
 # Realtime Voice with AI Gateway
@@ -34,9 +34,10 @@ Build voice agents that listen and respond in real time. With the AI SDK, you st
 - [Grok Voice Think Fast 2.0 now available on AI Gateway](https://vercel.com/changelog/grok-voice-think-fast-2-0-now-available-on-ai-gateway)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
 - [WebSocket support is now generally available](https://vercel.com/changelog/websocket-support-is-now-generally-available)
+- [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
+- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md)
 <!-- /docsgraph:related -->
@@ -51,6 +52,8 @@ Realtime is for live conversation. To transcribe recorded audio, see [Speech to 
 >   add ai @ai-sdk/gateway @ai-sdk/react`.
 
 These examples use `openai/gpt-realtime-2`, which supports realtime connections over WebSocket. Other realtime models include `google/gemini-3.8-live` (latency-optimized) and `google/gemini-3.8-live-extended-thinking` (background reasoning while streaming audio; requires exactly one of `thinkingLevel` or `thinkingBudget` in `providerOptions.google.thinkingConfig`, for example `{ thinkingLevel: 'LOW' }`). Before switching models, check that the model supports the realtime WebSocket endpoint. A successful token request does not guarantee that a model accepts a WebSocket connection.
+
+For `elevenlabs/eleven-realtime-v1-mini` or `elevenlabs/eleven-realtime-v1-max`, use the same model ID in the token route and client. Set an ElevenLabs voice ID, such as `hpp4J3VqNfWAUOO0d1Us` (Bella), and `turnDetection: { type: 'semantic-vad' }` in `sessionConfig`. ElevenLabs does not support `server-vad`. To commit turns yourself instead, set `turnDetection: { type: 'disabled' }`. Mini suits open conversation, and Max handles multi-step requests and tool calls.
 
 ## Browser voice agent
 
@@ -155,7 +158,7 @@ The [Realtime quickstart](/docs/ai-gateway/getting-started/realtime) shows a com
 Pass a `sessionConfig` to set the voice, turn detection, and other session options. The AI SDK normalizes these and the Gateway maps them to the provider:
 
 - `voice`: the voice the model speaks with, such as `alloy`.
-- `turnDetection`: how the model decides you've finished speaking, such as `{ type: 'server-vad' }` for server-side voice activity detection.
+- `turnDetection`: how the model decides you've finished speaking, such as `{ type: 'server-vad' }` for server-side voice activity detection. ElevenLabs models use `{ type: 'semantic-vad' }` instead.
 - `instructions`: a system prompt for the session.
 - `tools`: realtime tool definitions the model can call.
 
@@ -183,4 +186,4 @@ Teams also have a limit on concurrent realtime sessions. Additional connection a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

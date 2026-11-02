@@ -12,8 +12,8 @@ related:
 summary: Prevent non-stable values from being used in React Context providers that could cause unnecessary re-renders.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/react_stable_context_provider_value.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ed7edb4079d7ed897e6f5a4803edca75cd674e9ca43dbc04b3e353ab50c2d57e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6b4af6655318a89b58751439a97f23a2ad456da13102ede63f20dd436df5ef97"
 ---
 
 # REACT_STABLE_CONTEXT_PROVIDER_VALUE
@@ -53,4 +53,4 @@ fix this by wrapping with `useMemo`.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

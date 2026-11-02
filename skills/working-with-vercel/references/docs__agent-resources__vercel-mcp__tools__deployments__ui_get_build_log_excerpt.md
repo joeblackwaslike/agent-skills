@@ -13,8 +13,8 @@ related:
 summary: Use ui_get_build_log_excerpt with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ccc792627e7c0862adfaf4366260040221744f2abb0e9d8642744de1d54e29ec"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "21a7eaf502dbac4b634523c6c3eda22cec8fb7468ccab7d1d987c1199eed8dee"
 ---
 
 # ui_get_build_log_excerpt
@@ -53,4 +53,4 @@ This tool appears with the deployments card. Its response includes log entries a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

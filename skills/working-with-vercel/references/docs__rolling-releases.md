@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8128a405643cd76fc0e223cd9634f4d18fe0186f90d2359e1835bb4898578c11"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9cb677b8df6ed3f16def1d8a7ecdd7dfab5eb519b149b36c1084402e71194938"
 ---
 
 # Rolling Releases
@@ -42,7 +42,7 @@ Rolling Releases allow you to roll out new deployments to a small fraction of yo
 - [Scale to one: How Fluid solves cold starts](https://vercel.com/blog/scale-to-one-how-fluid-solves-cold-starts)
 - [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved)
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
-- [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/rolling-releases.graph.md](/docs/rolling-releases.graph.md)
@@ -107,7 +107,7 @@ a new one. Promoting the current release candidate while its rolling release is 
 
 - Use [`vercel rolling-release start`](/docs/cli/rolling-release#start) and [`vercel rolling-release complete`](/docs/cli/rolling-release#complete), or the matching [REST API endpoints](#starting-and-completing-via-the-api), to control rollout lifecycle in automation.
 - Avoid the promote API and [`vercel promote`](/docs/cli/promote) for start and complete steps. See [Starting and completing via the API](#starting-and-completing-via-the-api).
-- Call start again when [auto-assign custom domains](/docs/project-configuration/project-settings#domains) already started a rollout on deploy ready. The start endpoint is idempotent.
+- Call start again when [auto-assign custom domains](/docs/project-configuration/project-settings#custom-domains) already started a rollout on deploy ready. The start endpoint is idempotent.
 
 ### Observability
 
@@ -281,4 +281,4 @@ For detailed API specifications, request/response schemas, and code examples:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

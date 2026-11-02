@@ -14,8 +14,8 @@ related:
 summary: Learn how to link existing Vercel Projects with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project-linking.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8d74302f7968b541adf678cda408773179e1689d9a91ce07793be9f8db539873"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "811a98e8860fdd6470d630c83eb5d42863ca75ad3e5212ce9545e601e38fb1dd"
 ---
 
 # Linking Projects with Vercel CLI
@@ -36,7 +36,7 @@ want to [deploy](/docs/cli/deploy) your directory to. You can choose to either [
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Project links in Vercel Connect](https://vercel.com/docs/connect/concepts/project-links) — A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a
 
 Full cross-link map for this page: [/docs/cli/project-linking.graph.md](/docs/cli/project-linking.graph.md)
 <!-- /docsgraph:related -->
@@ -105,4 +105,4 @@ The status line shows **Build Command** and **Output Directory** inline. If you 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

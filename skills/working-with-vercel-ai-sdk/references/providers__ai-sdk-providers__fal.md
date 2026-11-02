@@ -4,8 +4,8 @@ description: Learn how to use Fal with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fal"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "daa95df3895c501fbdab025f1f49bf51ed8b9ece6ed508741c9c0bdf66fd3fe2"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "2aae2b98e3771f0bca1bed6b08d444349b2efa683f0f9ee8cabb33918b94b5a9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -92,7 +92,11 @@ You can use the following optional settings to customize the Fal provider instan
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://fal.run`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `FAL_API_KEY` environment variable, falling back to `FAL_KEY`.

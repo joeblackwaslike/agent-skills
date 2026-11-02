@@ -9,18 +9,19 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/alerts
+  - /docs/cli/monitors
   - /docs/agent/investigation
   - /docs/cli/global-options
 summary: List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "acc29e1de119d86302b48fdaaad4c2a7707c29f1d11697a062a374874f0d7811"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "19320df4ab4cf670a359b14f78ac1198332853a0c35ca2a944d29f1b8630104c"
 ---
 
 # vercel alerts
 
-The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked project, a specific project, or an entire team. The `inspect` subcommand shows details for a single alert group, and the `rules` subcommand tree manages alert rules from the terminal.
+The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked project, a specific project, or an entire team. The `inspect` subcommand shows details for a single alert group, and the `rules` subcommand tree manages monitors from the terminal.
 
 
 <!-- docsgraph:related -->
@@ -29,11 +30,11 @@ The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked p
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Pull anomaly alert details using the Vercel CLI](https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli)
-- [Configure alerts](https://vercel.com/docs/alerts/configure-alerts) — Configure alert rules and notification destinations for Vercel Observability alerts.
-- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Configure alerts](https://vercel.com/docs/alerts/configure-alerts) — Configure alert rules and notification destinations for Vercel Observability alerts.
 
 Full cross-link map for this page: [/docs/cli/alerts.graph.md](/docs/cli/alerts.graph.md)
 <!-- /docsgraph:related -->
@@ -89,6 +90,12 @@ The `--type` option filters by alert type. You can repeat the flag or pass comma
 vercel alerts --type usage_anomaly
 vercel alerts --type usage_anomaly,error_anomaly
 vercel alerts --type usage_anomaly --type error_anomaly
+```
+
+Filter by custom alert type:
+
+```bash filename="terminal"
+vercel alerts --type custom_alert
 ```
 
 ### AI
@@ -213,283 +220,29 @@ vercel alerts inspect grp_abc123 --format json
 
 ### `rules`
 
-Use [rule schemas](#rules-schema) to inspect the fields available to your selected team, then create, list, inspect, update, or delete alert rules.
+> **💡 Note:** The `vercel alerts rules` commands are deprecated. Use
+> [`vercel monitors`](/docs/cli/monitors) to manage monitors from the terminal.
 
-Use `vercel alerts rules --help` to see the rules command tree.
+The `rules` subcommands keep working and map 1:1 to `vercel monitors`. They accept the same options and request bodies, but JSON output keys differ; see [Migrate from `vercel alerts rules`](/docs/cli/monitors#migrate-from-vercel-alerts-rules):
 
-Rule IDs are returned by `rules create` and shown by `rules ls`. Use those IDs with `rules inspect`, `rules update`, and `rules rm`.
-
-| Command | Aliases | Description |
-| --- | --- | --- |
-| `rules ls` | `list` | List alert rules for a project or team. |
-| `rules schema` | None | Show available rule types, request fields, constraints, and examples. |
-| `rules create` | `add` | Create an alert rule from a JSON body file. |
-| `rules inspect` | `get` | Show one alert rule by ID. |
-| `rules rm` | `remove`, `delete` | Delete an alert rule. |
-| `rules update` | `patch` | Patch an alert rule or change its project scope. |
-
-#### `rules ls`
-
-List alert rules that affect the linked project. Use `--project` to select another project or `--all` to list every accessible alert rule in the selected team.
-
-Aliases: `list`.
-
-```bash filename="terminal"
-vercel alerts rules ls
-```
-
-##### Options
-
-| Option | Description |
+| Deprecated command | Replacement |
 | --- | --- |
-| `-p, --project` | List rules that affect a project by name or ID, for example `my-app` or `prj_abc123`. |
-| `-a, --all` | List every accessible rule in the selected team. |
-| `--type` | Filter by rule type. The option is repeatable and accepts comma-separated values. |
-| `--format` | Output format. Supports `json`. |
-
-Use `built-in` to list built-in rules. For compatibility with previous CLI versions, `rules ls --type` also accepts supported built-in trigger types such as `usage_anomaly` and `error_anomaly`. Use `vercel alerts rules schema --type built-in` to inspect the trigger types available to your team.
-
-##### List rule examples
-
-```bash filename="terminal"
-# List rules for the linked project
-vercel alerts rules ls
-
-# List every rule in the selected team
-vercel alerts rules ls --all
-
-# JSON output
-vercel alerts rules ls --all --format json
-```
-
-`rules ls` retrieves every available page before printing results. JSON output contains a `rules` array with the matching rule objects.
-
-#### `rules schema`
-
-Fetch the API-owned authoring schema for the rule types available to the selected team. Run the command without `--type` to list the available types, or select a type to see its create and update fields, constraints, and examples.
-
-```bash filename="terminal"
-vercel alerts rules schema
-```
-
-##### Options
-
-| Option | Description |
-| --- | --- |
-| `--type` | Rule type to describe. |
-| `--format` | Output format. Supports `json`. |
-
-##### Alert rule schema examples
-
-```bash filename="terminal"
-# Show the fields and examples for built-in rules
-vercel alerts rules schema --type built-in
-```
-
-#### `rules create`
-
-Create an alert rule from a JSON body file. The create body must set `type`. For a built-in alert rule, set `type` to `built-in`.
-
-`add` is a supported alias.
-
-```bash filename="terminal"
-vercel alerts rules create --project my-app --body ./rule.json
-```
-
-##### Options
-
-| Option | Description |
-| --- | --- |
-| `--body` | Path to a JSON file containing the new rule. |
-| `-p, --project` | Apply a rule to one project. |
-| `-a, --all` | Apply a built-in rule to every project in the selected team. |
-| `--format` | Output format. Supports `json`. |
-
-##### Create rule body examples
-
-Create a JSON file for the rule body, then select the rule's project scope in one of these ways:
-
-- Add `ruleScope` to the body.
-- Pass `--project <name-or-id>`.
-- Pass `--all` for a built-in rule.
-
-Do not combine `ruleScope` with `--project` or `--all`. A linked project does not supply the scope automatically when you create a rule.
-
-Create a built-in error anomaly rule for one project:
-
-```json filename="rule.json"
-{
-  "type": "built-in",
-  "name": "Production server errors",
-  "triggers": {
-    "mode": "selected",
-    "items": [
-      {
-        "type": "error_anomaly",
-        "filter": "statusGroup:5xx AND route:/api/*"
-      }
-    ]
-  },
-  "matchMinimumSeverityLevel": "high"
-}
-```
-
-```bash filename="terminal"
-vercel alerts rules create --project my-app --body ./rule.json
-```
-
-Use `vercel alerts rules schema --type built-in` for additional validated examples, filter syntax, and current constraints.
-
-##### Migrate previous rule bodies
-
-The current command rejects request bodies that contain the previous `alertTypes` field. Rewrite saved bodies using the current schema:
-
-| Previous shape | Current shape |
-| --- | --- |
-| `alertTypes` | Top-level `type` and, for built-in rules, `triggers` |
-| `projectId` expression or raw project ID | `ruleScope`, `--project`, or `--all` |
-| `autosubscribeOwnersInKnock` | `notificationSettings.enableTeamOwnerNotifications` |
-
-Built-in filters use the syntax shown by the current schema. For example, an error anomaly filter uses `statusGroup:5xx` instead of the previous OData expression.
-
-#### `rules inspect`
-
-Show one alert rule by ID.
-
-Aliases: `get`.
-
-Rule IDs are unique within a team. Use the global `--scope <team>` option when the rule belongs to a team other than your current team. The `--project` and `--all` options are deprecated for this subcommand and do not narrow the request by project.
-
-```bash filename="terminal"
-vercel alerts rules inspect <ruleId>
-```
-
-##### Arguments
-
-| Name | Description |
-| --- | --- |
-| `ruleId` | Required. ID of the rule to inspect. |
-
-##### Options
-
-| Option | Description |
-| --- | --- |
-| `--format` | Output format. Supports `json`. |
-
-##### Inspect rule examples
-
-```bash filename="terminal"
-vercel alerts rules inspect ar_abc123
-vercel alerts rules inspect ar_abc123 --format json
-```
-
-#### `rules rm`
-
-Delete an alert rule. The selected team's default alert rule cannot be deleted.
-
-Aliases: `remove`, `delete`.
-
-Rule IDs are unique within a team. Use the global `--scope <team>` option when the rule belongs to a team other than your current team. The `--project` and `--all` options are deprecated for this subcommand and do not narrow the request by project.
-
-```bash filename="terminal"
-vercel alerts rules rm <ruleId>
-```
-
-##### Arguments
-
-| Name | Description |
-| --- | --- |
-| `ruleId` | Required. ID of the rule to delete. |
-
-##### Options
-
-| Option | Description |
-| --- | --- |
-| `--format` | Output format. Supports `json`. |
-| `-y, --yes` | Skip the confirmation prompt. |
-
-##### Delete rule examples
-
-```bash filename="terminal"
-# Delete with confirmation
-vercel alerts rules rm ar_abc123
-
-# Delete without prompt
-vercel alerts rules rm ar_abc123 --yes
-
-# Delete by using the delete alias
-vercel alerts rules delete ar_abc123 --yes
-```
-
-#### `rules update`
-
-Patch an alert rule from a JSON body file, change its project scope, or do both. Omitted body fields remain unchanged, and `type` is optional because the API infers it from the stored rule.
-
-Aliases: `patch`.
-
-```bash filename="terminal"
-vercel alerts rules update <ruleId> --body ./patch.json
-vercel alerts rules update <ruleId> --project my-app
-```
-
-##### Arguments
-
-| Name | Description |
-| --- | --- |
-| `ruleId` | Required. ID of the rule to update. |
-
-##### Options
-
-| Option | Description |
-| --- | --- |
-| `--body` | Path to a partial JSON file with fields to update. |
-| `-p, --project` | Apply a rule to one project. |
-| `-a, --all` | Apply a built-in rule to every project in the selected team. |
-| `--format` | Output format. Supports `json`. |
-
-You must provide `--body`, `--project`, or `--all`. Do not combine a `ruleScope` field in the body with `--project` or `--all`.
-
-##### Update rule examples
-
-Save the fields you want to change in a JSON file:
-
-```json filename="patch.json"
-{
-  "name": "Critical production errors",
-  "matchMinimumSeverityLevel": "critical"
-}
-```
-
-```bash filename="terminal"
-# Update fields from a file
-vercel alerts rules update ar_abc123 --body ./patch.json
-
-# Patch by using the patch alias
-vercel alerts rules patch ar_abc123 --body ./patch.json
-
-# Change scope without a body file
-vercel alerts rules update ar_abc123 --project my-app
-```
-
-The authoring schema includes restrictions based on the stored rule. For example, the default rule accepts notification updates only.
-
-#### JSON output for rule commands
-
-Use `--format json` for scripting and automation. Rule commands write only JSON to standard output:
-
-| Command | Output shape |
-| --- | --- |
-| `rules ls` | `{ "rules": [...] }` |
-| `rules schema` | `{ "schemaVersion": number, "ruleTypes": [...] }` |
-| `rules create`, `rules inspect`, `rules update` | `{ "rule": {...} }` |
-| `rules rm` | `{ "ok": true, "ruleId": "ar_...", "deleted": true }` |
-
-Validation failures return an `error` object with `code` and `message`. When the API identifies individual invalid fields, the object also includes an `issues` array with field paths and messages.
+| `vercel alerts rules ls` | [`vercel monitors ls`](/docs/cli/monitors#ls) |
+| `vercel alerts rules schema` | [`vercel monitors schema`](/docs/cli/monitors#schema) |
+| `vercel alerts rules create` | [`vercel monitors add`](/docs/cli/monitors#add) |
+| `vercel alerts rules inspect` | [`vercel monitors inspect`](/docs/cli/monitors#inspect) |
+| `vercel alerts rules rm` | [`vercel monitors rm`](/docs/cli/monitors#rm) |
+| `vercel alerts rules update` | [`vercel monitors update`](/docs/cli/monitors#update) |
+
+See [`vercel monitors`](/docs/cli/monitors) for the full subcommand reference.
 
 ## Related resources
 
 - To learn how to configure and receive alerts, see [Alerts](/docs/alerts).
 - If you want to automatically investigate alerts with AI, see [Agent Investigation](/docs/agent/investigation).
+
+To create and manage monitors from the terminal, see
+[`vercel monitors`](/docs/cli/monitors).
 
 ## Global Options
 
@@ -515,4 +268,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

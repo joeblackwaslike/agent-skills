@@ -16,8 +16,8 @@ related:
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "346bf14aa7acf97c813ec66fe18fb4ed9424086043bc725f843ce3ef6dde501a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1bb44ffb994383aa677fe7123fb0f4240867d57f10394cd7fdf169d8d77222b9"
 ---
 
 # vercel blob
@@ -32,10 +32,10 @@ The `vercel blob` command is used to interact with [Vercel Blob](/docs/vercel-bl
 
 - [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available)
 - [Vercel Blob now available in all Vercel Regions](https://vercel.com/changelog/vercel-blob-now-available-in-all-vercel-regions)
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage) — Create blob stores, upload files, list contents, and manage storage using the CLI.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
 
 Full cross-link map for this page: [/docs/cli/blob.graph.md](/docs/cli/blob.graph.md)
@@ -449,4 +449,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

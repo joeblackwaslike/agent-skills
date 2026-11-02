@@ -15,8 +15,8 @@ related:
 summary: Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/webhooks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c51cef618099e37284e5e5fb181ef51da99888afbe317e32ced6a151b14090bd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f915488af2bacda7b2148c9973af5f307e210541530a3e25f24deb20ea2b6244"
 ---
 
 # vercel webhooks
@@ -251,4 +251,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

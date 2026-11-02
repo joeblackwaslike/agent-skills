@@ -17,8 +17,8 @@ related:
 summary: Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4b132930b120a5eddf96fc177ce8bbd43695bb87409cc58bdfa3b88c3604d855"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7e47e055a2b4a67b3b71cc62e081b6e45acb18cf9e2b794518656d9e14e19f51"
 ---
 
 # Trusted Sources
@@ -81,7 +81,7 @@ Secure Backend Access with OIDC Federation must be on in the calling project so 
 
 ### Forward the OIDC token from your code
 
-In the calling project's function, read the OIDC token with [`getVercelOidcToken`](/docs/oidc/reference#getverceloidctoken) from `@vercel/oidc` and forward it on the request. The helper resolves the token from `VERCEL_OIDC_TOKEN` in builds and local development, and from the request context inside Vercel Functions, so you don't read the header yourself:
+In the calling project's function, read the OIDC token with [`getVercelOidcToken`](/docs/oidc/reference#helper-libraries) from `@vercel/oidc` and forward it on the request. The helper resolves the token from `VERCEL_OIDC_TOKEN` in builds and local development, and from the request context inside Vercel Functions, so you don't read the header yourself:
 
 ```ts filename="app/api/call-protected/route.ts"
 import { getVercelOidcToken } from '@vercel/oidc';
@@ -292,4 +292,4 @@ The external service can no longer reach this project's protected deployments.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

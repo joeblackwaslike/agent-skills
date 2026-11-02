@@ -15,8 +15,8 @@ related:
 summary: Learn how to set up Static IPs for your Vercel projects to connect to IP-restricted backend services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips/getting-started.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "84c01dc1ab6802cf5f85d0588199d3306fe7ae349d332335dec71aa30bd83706"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cbda1d8c3b8d0aa00c6e4e66319ca92bd7fe605d862ea219234de603aa0f526c"
 ---
 
 # Getting Started with Static IPs
@@ -39,8 +39,8 @@ This guide walks you through setting up Static IPs so you can access backend ser
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Serving Static Files](https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files) — Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
 - [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
-- [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
-- [Reverse Proxy Servers and Vercel](https://vercel.com/docs/security/reverse-proxy) — Learn why reverse proxy servers are not recommended with Vercel's firewall.
+- [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/networking/static-ips/getting-started.graph.md](/docs/networking/static-ips/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -88,4 +88,4 @@ Before you dive in, make sure you have:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Reference for the Vercel Blob JavaScript SDK, @vercel/blob, which lets you access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ae3f97e0eb6f84296aebc979b5cd391567a62b58551588a0dcc88e17bb1b0e7e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "84c7f7d91d01d902c28966071af52ca12ea7dd1ca9b76092f43219d8703cc75f"
 ---
 
 # JS SDK Reference
@@ -41,6 +41,7 @@ Use the `@vercel/blob` package to upload, download, list, copy, and delete blobs
 - [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Flue with Vercel](https://vercel.com/docs/frameworks/agents/flue) — Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.
 
 Full cross-link map for this page: [/docs/vercel-blob/using-blob-sdk.graph.md](/docs/vercel-blob/using-blob-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -1688,4 +1689,4 @@ try {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

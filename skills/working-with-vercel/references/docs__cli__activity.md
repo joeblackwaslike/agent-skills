@@ -13,8 +13,8 @@ related:
 summary: View activity events for your Vercel project or team, filtered by type, date range, and project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/activity.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "839afda61cc8bc9e67eabd653bd3a5bafde6eef443be087ed16e6650eb70212c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e6755338fe08afc75487d25b5b2ad4d18ba9798941c1b6c876e9d9f986f5d846"
 ---
 
 # vercel activity
@@ -31,7 +31,7 @@ The `vercel activity` command displays [activity events](/docs/activity-log) for
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 
 Full cross-link map for this page: [/docs/cli/activity.graph.md](/docs/cli/activity.graph.md)
 <!-- /docsgraph:related -->
@@ -207,4 +207,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

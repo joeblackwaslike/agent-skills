@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate Vercel AI Gateway with WordPress to let your plugins access multiple AI models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/wordpress.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "77427fa1d4069b99da017069fd28aeff71aebc26d0932508d89c4fa1f37bb1ea"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "22d4e97acbacde8f1eb4e5576317219dc218f674aeb5618018ade1080a6fdbe2"
 ---
 
 # WordPress with AI Gateway
@@ -36,8 +36,8 @@ built on top of the WordPress AI Client will then benefit from these capabilitie
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
-- [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/wordpress.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/wordpress.graph.md)
 <!-- /docsgraph:related -->
@@ -223,4 +223,4 @@ Composer package and register it with the SDK's default registry.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

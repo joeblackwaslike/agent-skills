@@ -9,16 +9,16 @@ prerequisites:
   - /docs/ai-gateway/models-and-providers
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/security-and-compliance/zdr
+  - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
+  - /docs/ai-gateway/security-and-compliance/regional-inference
+  - /docs/ai-gateway/security-and-compliance/provider-allowlist
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
-  - /docs/ai-gateway/models-and-providers/automatic-caching
-  - /docs/ai-gateway/sdks-and-apis/responses
-  - /docs/ai-gateway/models-and-providers/session-affinity
-  - /docs/ai-gateway/models-and-providers/provider-timeouts
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fac4668bed164083033fc9366af2805ea71d85d9eb3fdf373b7bb220d465320f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "337c906ac4b1e8b541d078d564917ecca100c8e33c7c77f1ecb95a7beb19aa06"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -56,16 +56,19 @@ Use `providerOptions.gateway` to control provider order and fallback behavior.
 
 ## Provider filtering, ordering, and sorting
 
-You can use `order`, `only`, and `sort` in `providerOptions.gateway` to control which providers handle your requests, in what order, and how they are ranked.
+Default routing needs no configuration. AI Gateway orders providers by each model's default priority, adjusted for recent provider health, and fails over to other providers serving the same model when one is unavailable.
+
+To prefer specific providers without giving up that failover, set `order` in `providerOptions.gateway`. AI Gateway tries the listed providers first and can still fall back to others:
 
 ```typescript
 providerOptions: {
   gateway: {
     order: ['bedrock', 'anthropic'], // Try Bedrock first, then Anthropic
-    only: ['bedrock', 'anthropic'],  // Only allow these two providers
   },
 },
 ```
+
+`only` is a hard filter: AI Gateway routes only to the listed providers and never fails over outside the list. If none of the listed providers serve the model, or they are all unavailable or rate limited, the request fails instead of falling back. If your requirement is compliance rather than a specific provider, [zero data retention](/docs/ai-gateway/security-and-compliance/zdr), [disallow prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training), and [regional inference](/docs/ai-gateway/security-and-compliance/regional-inference) express it directly while keeping every qualifying provider eligible. The team [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist) works like a team-wide `only`.
 
 You can also use `sort` to rank providers by a performance or cost metric. The gateway sorts providers by the chosen metric and tries them in that order:
 
@@ -527,12 +530,6 @@ Anthropic
 
 anthropic.com
 
-arcee-ai
-
-Arcee AI
-
-arcee.ai
-
 azure
 
 Azure
@@ -622,6 +619,12 @@ digitalocean
 DigitalOcean
 
 digitalocean.com
+
+elevenlabs
+
+ElevenLabs
+
+elevenlabs.io
 
 elorian
 
@@ -863,6 +866,12 @@ Runware
 
 runware.ai
 
+sail-research
+
+Sail Research
+
+sailresearch.com
+
 sakana
 
 Sakana AI
@@ -899,11 +908,23 @@ StreamLake
 
 streamlake.ai
 
+subconscious
+
+Subconscious
+
+subconscious.dev
+
 tako
 
 Tako
 
 tako.com
+
+telnyx
+
+Telnyx
+
+telnyx.com
 
 tencent
 
@@ -987,4 +1008,4 @@ A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can pin 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Authenticate AI Gateway requests with API keys or OIDC tokens, and configure bring your own key (BYOK) credentials for model providers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ccd1033d13079af12a116135d54024070a6c94552ccdae9af2ccefb09edebd8f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "aa9be94aa14114989bb963da34f897f3741d361bb9ff769a8de95e3c3587b098"
 ---
 
 # AI Gateway Authentication and BYOK
@@ -38,10 +38,10 @@ Every request to AI Gateway requires Vercel authentication. Use an AI Gateway AP
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Jev for Python engineers](https://vercel.com/blog/jev-for-python-engineers)
+- [Create a BYOK credential](https://vercel.com/docs/rest-api/ai-gateway/create-a-byok-credential) — POST /ai-gateway/byok-credentials — Create a new BYOK credential
+- [Get a BYOK credential](https://vercel.com/docs/rest-api/ai-gateway/get-a-byok-credential) — GET /ai-gateway/byok-credentials/{credentialId} — Get a BYOK credential by ID. The credential value is never returned.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
-- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
-- [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
+- [List BYOK credentials](https://vercel.com/docs/rest-api/ai-gateway/list-byok-credentials) — GET /ai-gateway/byok-credentials/list — List BYOK credentials for an owner, optionally filtered by provider
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok.graph.md](/docs/ai-gateway/authentication-and-byok.graph.md)
 <!-- /docsgraph:related -->
@@ -314,4 +314,4 @@ BYOK credentials are configured at the team level and work across all projects. 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

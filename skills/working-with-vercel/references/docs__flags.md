@@ -16,8 +16,8 @@ related:
 summary: "Control feature visibility, run experiments, and ship with confidence using Vercel's feature flags platform."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4568afb06125653a0ce1d4ad719f186b628167a3dbf9fafaaf889cbedc6bb64e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f32281fc2004c91ac40882fc01b48a64899b55579f6c655a116e537d06cdceae"
 ---
 
 # Flags
@@ -31,8 +31,8 @@ Vercel provides a complete feature flags platform. Use Vercel as your feature fl
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Vercel Flags no longer requires SDK Keys for Vercel deployments](https://vercel.com/changelog/authenticate-vercel-flags-with-openid-connect-by-default)
 - [Manage Vercel Flags segments with Vercel CLI](https://vercel.com/changelog/manage-vercel-flags-segments-with-vercel-cli)
 - [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli)
@@ -96,4 +96,4 @@ Track flag evaluations in Runtime Logs and analyze their impact on user behavior
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

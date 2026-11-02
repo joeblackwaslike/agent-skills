@@ -13,8 +13,8 @@ related:
 summary: Use create_trace_session with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c0b0ace66b4fd8ddf9ecb1761f9a902113d9d7f015ec91fc5c18e1d11a99570c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1fc3a5bb30afd50a3fc1b8c8097ce495cdef7e9e921e38c6220d6492fb155cc5"
 ---
 
 # create_trace_session
@@ -29,9 +29,9 @@ Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI pr
 
 - [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
 - [create_session_directory](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory) — Use create_session_directory with Vercel MCP.
-- [run_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command) — Use run_session_command with Vercel MCP.
-- [create_sandboxes_sessions_by_session_id_snapshot_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v2) — Use create_sandboxes_sessions_by_session_id_snapshot_v2 with Vercel MCP.
 - [get_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session) — Use get_session with Vercel MCP.
+- [create_sandboxes_sessions_by_session_id_snapshot_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v2) — Use create_sandboxes_sessions_by_session_id_snapshot_v2 with Vercel MCP.
+- [create_sandboxes_sessions_by_session_id_snapshot_v3](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v3) — Use create_sandboxes_sessions_by_session_id_snapshot_v3 with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session.graph.md)
 <!-- /docsgraph:related -->
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

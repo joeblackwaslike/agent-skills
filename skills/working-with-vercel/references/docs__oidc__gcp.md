@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your GCP project to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/gcp.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "33718ba2d595ff2c9b5b8ae0747726351dfa6ff658c23e629582b4ca6a08b62b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "13a31cd71ecf6945add38d2fbe3c82ae137cb4dccf70f324ff5aaa0d31a8e1df"
 ---
 
 # Connect to Google Cloud Platform (GCP)
@@ -30,6 +30,7 @@ To understand how GCP supports OIDC through Workload Identity Federation, consul
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
+- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
@@ -271,4 +272,4 @@ export const GET = async (req: Request) => {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

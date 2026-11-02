@@ -16,8 +16,8 @@ related:
 summary: This reference covers the list of request, response, cache-control, and custom response headers included with deployments with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "677bd24423d4fb781a6ce5f1882a3db09ad592f41a214a51c847014c510959bf"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bf8c4b094f820d9e547d2c82754ba5171235f3a21fc21be0a5efa7ca52312362"
 ---
 
 # System Headers
@@ -38,8 +38,8 @@ Headers are small pieces of information that are sent between the client (usuall
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 
@@ -51,7 +51,7 @@ Full cross-link map for this page: [/docs/headers.graph.md](/docs/headers.graph.
 By using headers effectively, you can optimize the performance and security of your application on Vercel's global network. Here are some tips for using headers on Vercel:
 
 1. [Use caching headers](#cache-control-header): Caching headers instruct the client and server to cache resources like images, CSS files, and JavaScript files, so they don't need to be reloaded every time a user visits your site. By using caching headers, you can significantly reduce the time it takes for your site to load.
-2. [Use compression headers](/docs/how-vercel-cdn-works/compression#compression-with-vercel-cdn): Use the `Accept-Encoding` header to tell the client and server to compress data before it's sent over the network. By using compression, you can reduce the amount of data that needs to be sent, resulting in faster load times.
+2. [Use compression headers](/docs/how-vercel-cdn-works/compression#compression-negotiation): Use the `Accept-Encoding` header to tell the client and server to compress data before it's sent over the network. By using compression, you can reduce the amount of data that needs to be sent, resulting in faster load times.
 3. Use custom headers: You can also use custom headers in your `vercel.json` file to add metadata specific to your application. For example, you could add a header that indicates the user's preferred language or the version of your application. See [Project Configuration](/docs/project-configuration/vercel-json#headers) docs for more information.
 
 ## Request headers
@@ -76,4 +76,4 @@ To learn about the cache-control headers sent to each Vercel deployment and how 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

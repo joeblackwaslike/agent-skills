@@ -13,8 +13,8 @@ related:
 summary: Use add_route with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/add_route.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3a18c61452ebc59f0efbb0e1d015a1949019b948bb7bcb7fcacf33433a5dc6a3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e88fec17b03dbc9ed043b0b03101ef9fa9dfd195f6df5a5e6759f4df716441a5"
 ---
 
 # add_route
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

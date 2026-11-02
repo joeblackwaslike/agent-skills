@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow packages from being listed as dependencies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-packages.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1393d071c719d93a31da52e7c2e42099b0b7896ed9be2c1d2701c67decc64ec4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5f64ce37613c0f0deeb913d9298fbba9d9d9c4062fc8625671227ca839b354b0"
 ---
 
 # forbidden-packages
@@ -122,4 +122,4 @@ workspaces, which is optional.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

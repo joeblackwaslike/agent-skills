@@ -16,8 +16,8 @@ related:
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ca439abc797b31928049dd764504b0a74bfcbdcc193f0fd6806e9fb44d87b61a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "eee9435cb0eba75695fffc03c26d81899062e283a6bb90c579b814de2cf0cd95"
 ---
 
 # JS SDK Reference
@@ -33,6 +33,7 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
 - [Port 8080 is now available in Vercel Sandboxes](https://vercel.com/changelog/port-8080-is-now-available-in-vercel-sandboxes)
 - [Vercel Sandbox creation now returns a ready sandbox](https://vercel.com/changelog/sandbox-create-waits-until-ready)
+- [Vercel Sandbox commands now support stdin](https://vercel.com/changelog/vercel-sandbox-commands-now-support-stdin)
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
@@ -41,7 +42,6 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 - [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 - [Fork a named sandbox](https://vercel.com/docs/rest-api/sandboxes/fork-a-named-sandbox) — POST /v2/sandboxes/{name}/fork — Forks a named sandbox, creating a new named sandbox from the source's configuration. Re
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -502,7 +502,7 @@ const customized = await Sandbox.fork({
 
 #### `sandbox.getCommand()`
 
-Call `sandbox.getCommand()` to retrieve a previously executed command by its ID, which is especially helpful after detached executions when you want to inspect logs later.
+Call `sandbox.getCommand()` to retrieve a command by its ID from the current session, for example, after a detached execution. This parent method can resume the sandbox. Command IDs belong to their original session and do not transfer to a new VM. Use [`session.getCommand()`](#session-class-instance-methods) to keep lookup on one session.
 
 **Returns:** `Promise<Command>`.
 
@@ -526,6 +526,7 @@ const command = await sandbox.getCommand(cmdId);
 | `command`         | `string`                 | Yes      | Command to execute (string overload).              |
 | `args`            | `string[]`               | No       | Arguments for the string overload.                 |
 | `opts.signal`     | `AbortSignal`            | No       | Cancel the command (string overload).              |
+| `opts.timeoutMs` | `number` | No | Maximum command runtime in milliseconds (string overload). |
 | `params.cmd`      | `string`                 | Yes      | Command to execute when using the object overload. |
 | `params.args`     | `string[]`               | No       | Arguments for the object overload.                 |
 | `params.cwd`      | `string`                 | No       | Working directory for execution.                   |
@@ -536,6 +537,22 @@ const command = await sandbox.getCommand(cmdId);
 | `params.stderr`   | `Writable`               | No       | Stream standard error to a writable.               |
 | `params.stdin`    | `boolean \| Readable`    | No       | Keep stdin open, or pipe a readable to it.         |
 | `params.signal`   | `AbortSignal`            | No       | Cancel the command when using the object overload. |
+| `params.timeoutMs` | `number` | No | Maximum command runtime in milliseconds, including detached commands. |
+| `params.onStart` | `(command: Command) => void \| Promise<void>` | No | Awaited start callback. Requires `detached` to be omitted or `false`. |
+
+`timeoutMs` is enforced by the sandbox when execution starts. Expiry sends `SIGKILL`, even with `detached: true`. `onStart` receives the command as soon as it starts and is awaited before `runCommand()` resolves; use it only for non-detached commands:
+
+```ts
+const command = await sandbox.runCommand({
+  cmd: 'sleep',
+  args: ['60'],
+  detached: true,
+  timeoutMs: 5_000,
+});
+await command.wait();
+```
+
+The detached command is killed after five seconds unless it exits earlier. To observe a non-detached command starting, pass `onStart: (command) => { console.log(command.cmdId); }` instead of `detached: true`. `SandboxUser` handles accept these same controls.
 
 Set `stdin: true` with `detached: true` to write to the command with [`writeStdin()`](#writestdin), or pass a `Readable` such as `process.stdin` to pipe it to the command, with or without `detached`. Without `stdin`, the command reads from an empty stdin.
 
@@ -543,9 +560,25 @@ Set `stdin: true` with `detached: true` to write to the command with [`writeStdi
 const result = await sandbox.runCommand('node', ['--version']);
 ```
 
+#### `sandbox.openInteractive()`
+
+`sandbox.openInteractive()` opens interactive access, resuming the sandbox if needed. It returns a WebSocket URL and token for connecting your WebSocket client to a controller-hosted PTY:
+
+```ts
+const { url, token } = await sandbox.openInteractive();
+```
+
+| Parameter | Type | Required | Details |
+| --------- | ---- | -------- | ------- |
+| `opts.signal` | `AbortSignal` | No | Cancel opening interactive access. |
+
+**Returns:** `Promise<{ url: string; token: string }>`.
+
+Treat the token as a credential and close your WebSocket connection when finished. Use [`session.openInteractive()`](#session-class-instance-methods) when access must stay on one exact VM.
+
 #### `sandbox.mkDir()`
 
-`sandbox.mkDir()` creates a directory in the sandbox filesystem before you write files or clone repositories. Paths are relative to `/vercel/sandbox` unless you provide an absolute path. Call this before `writeFiles()` when your target directory does not exist yet.
+`sandbox.mkDir()` creates a directory in the sandbox filesystem before you write files or clone repositories. Paths are relative to `sandbox.cwd` unless you provide an absolute path. Call this before `writeFiles()` when your target directory does not exist yet.
 
 ```ts
 await sandbox.mkDir('assets');
@@ -596,7 +629,7 @@ Use `sandbox.downloadFile()` to pull file contents from the sandbox to a local d
 
 ```ts
 const dstPath = await sandbox.downloadFile(
-  { path: 'package.json', cwd: '/vercel/sandbox' },
+  { path: 'package.json', cwd: sandbox.cwd },
   { path: 'local-package.json', cwd: '/tmp' }
 );
 ```
@@ -614,7 +647,7 @@ const dstPath = await sandbox.downloadFile(
 
 #### `sandbox.writeFiles()`
 
-`sandbox.writeFiles()` uploads one or more files into the sandbox filesystem. Paths default to `/vercel/sandbox`; use absolute paths for custom locations and bundle related files into a single call to reduce round trips.
+`sandbox.writeFiles()` uploads one or more files into the sandbox filesystem. Relative paths resolve from `sandbox.cwd`; use absolute paths for custom locations and bundle related files into a single call to reduce round trips.
 
 ```ts
 await sandbox.writeFiles([{ path: 'hello.txt', content: Buffer.from('hi') }]);
@@ -945,7 +978,7 @@ await sandbox.removeUserFromGroup('alice', 'devs');
 
 A `SandboxUser` runs commands and file operations as a specific Linux user. Commands execute as that user, and file methods resolve relative paths against the user's home directory. Get an instance from [`sandbox.createUser()`](#sandboxcreateuser) or [`sandbox.asUser()`](#sandboxasuser). See [Multi-agent sandboxes](/docs/sandbox/concepts/multi-agent) for a task-oriented guide.
 
-Multi-user support is available in the JS SDK (`@vercel/sandbox`) only, and the sandbox image must include `/bin/bash`.
+The sandbox image must include `/bin/bash` for user execution.
 
 ### SandboxUser class accessors
 
@@ -979,6 +1012,7 @@ console.log(alice.homeDir); // "/home/alice"
 | `command`         | `string`                 | Yes      | Command to execute (string overload).                          |
 | `args`            | `string[]`               | No       | Arguments for the string overload.                             |
 | `opts.signal`     | `AbortSignal`            | No       | Cancel the command (string overload).                          |
+| `opts.timeoutMs` | `number` | No | Maximum command runtime in milliseconds (string overload). |
 | `params.cmd`      | `string`                 | Yes      | Command to execute when using the object overload.             |
 | `params.args`     | `string[]`               | No       | Arguments for the object overload.                             |
 | `params.cwd`      | `string`                 | No       | Working directory. Defaults to the user's home directory.      |
@@ -989,6 +1023,8 @@ console.log(alice.homeDir); // "/home/alice"
 | `params.stderr`   | `Writable`               | No       | Stream standard error to a writable.                           |
 | `params.stdin`    | `boolean \| Readable`    | No       | Keep stdin open, or pipe a readable to it.                     |
 | `params.signal`   | `AbortSignal`            | No       | Cancel the command when using the object overload.             |
+| `params.timeoutMs` | `number` | No | Maximum command runtime in milliseconds, including detached commands. |
+| `params.onStart` | `(command: Command) => void \| Promise<void>` | No | Awaited start callback. Requires `detached` to be omitted or `false`. |
 
 ```ts
 const whoami = await alice.runCommand('whoami');
@@ -1119,6 +1155,39 @@ await alice.removeFromGroup('devs');
 
 A `Session` represents a single running VM instance inside a sandbox. Sessions are created and resumed for you whenever the sandbox transitions from `stopped` to `running`. Use `sandbox.currentSession()` to inspect the active one, or `sandbox.listSessions()` to enumerate every session the sandbox has run.
 
+### Session class instance methods
+
+A `Session` stays pinned to one VM. Its methods don't automatically resume a stopped sandbox or switch to a newer session. Use the parent `Sandbox` methods when automatic resume is intended. Historical handles can expose metadata, but stopping the VM ends its running processes and interactive connections.
+
+| Method | Parameters and behavior | Returns |
+| ------ | ----------------------- | ------- |
+| `getCommand(cmdId, opts?)` | Look up a command in this session. IDs from another session don't transfer. | `Promise<Command>` |
+| `runCommand(...)` | Same overloads and controls as [`sandbox.runCommand()`](#sandbox.runcommand), on this VM. | `Promise<CommandFinished>` or `Promise<Command>` |
+| `mkDir(path, opts?)` | Same arguments as [`sandbox.mkDir()`](#sandbox.mkdir). | `Promise<void>` |
+| `readFile(file, opts?)` | Same arguments as [`sandbox.readFile()`](#sandbox.readfile). | `Promise<NodeJS.ReadableStream \| null>` |
+| `readFileToBuffer(file, opts?)` | Same arguments as [`sandbox.readFileToBuffer()`](#sandbox.readfiletobuffer). | `Promise<Buffer \| null>` |
+| `downloadFile(src, dst, opts?)` | Same arguments as [`sandbox.downloadFile()`](#sandbox.downloadfile). | `Promise<string \| null>` |
+| `writeFiles(files, opts?)` | Same arguments as [`sandbox.writeFiles()`](#sandbox.writefiles). | `Promise<void>` |
+| `domain(port)` | Resolve this session's route for a port. | `string` |
+| `openInteractive(opts?)` | Same connection details as [`sandbox.openInteractive()`](#sandbox.openinteractive), on this VM. | `Promise<{ url: string; token: string }>` |
+| `stop(opts?)` | Stop this session. | `Promise<{ session: SandboxSnapshot; sandbox?: SandboxMetaData; snapshot?: SnapshotMetadata }>` |
+| `update({ networkPolicy }, opts?)` | Update this session's network policy. Accepts no parent sandbox settings such as `timeout`. | `Promise<void>` |
+| `extendTimeout(duration, opts?)` | Extend this running session by a duration in milliseconds. | `Promise<void>` |
+| `snapshot(opts?)` | Snapshot this session. Accepts `expiration` in milliseconds (`0` for no expiration) and `signal`. Stops this VM. | `Promise<Snapshot>` |
+
+`opts.signal` cancels operations that accept an options object. `domain()` is synchronous and takes only a port. `snapshot()` takes its options directly.
+
+Keep a session handle when command lookup must target the original VM:
+
+```ts
+const session = sandbox.currentSession();
+const command = await session.runCommand({ cmd: 'sleep', args: ['30'], detached: true });
+const sameCommand = await session.getCommand(command.cmdId);
+await sameCommand.wait();
+```
+
+A later parent resume creates a different session. It doesn't reactivate old process handles or move their command IDs to the new VM.
+
 ### Session class accessors
 
 Read-only accessors on a `Session` instance returned by `sandbox.currentSession()`. Iterating `sandbox.listSessions()` yields raw API objects with the same fields keyed as `id` instead of `sessionId`.
@@ -1130,6 +1199,18 @@ Read-only accessors on a `Session` instance returned by `sandbox.currentSession(
 | `createdAt`              | `Date`                                                        | When the session started.                     |
 | `activeCpuUsageMs`       | `number \| undefined`                                          | CPU used during the session, in milliseconds. Available once the session is stopped. |
 | `networkTransfer`        | `{ ingress: number; egress: number } \| undefined`            | Network traffic during the session. Available once the session is stopped. |
+| `routes` | `SandboxRouteData[]` | Routes associated with this session. |
+| `timeout` | `number` | This session's timeout in milliseconds, separate from the parent sandbox's saved default. |
+| `interactivePort` | `number \| undefined` | Interactive controller port when available. |
+| `networkPolicy` | `NetworkPolicy \| undefined` | Session network policy. |
+| `sourceSnapshotId` | `string \| undefined` | Snapshot used to start this VM. |
+| `memory`, `vcpus` | `number` | Memory in MB and vCPU count, respectively. |
+| `region` | `string` | VM region. |
+| `cwd` | `string` | Session working directory. |
+| `requestedAt`, `updatedAt` | `Date` | Request and metadata update times. |
+| `startedAt`, `requestedStopAt`, `stoppedAt`, `abortedAt`, `snapshottedAt` | `Date \| undefined` | Lifecycle timestamps when available. |
+| `duration` | `number \| undefined` | Wall-clock duration in milliseconds. |
+| `runtime` | `string \| undefined` | Deprecated runtime identifier. Use parent sandbox image metadata. |
 
 ```ts
 const session = sandbox.currentSession();
@@ -2071,7 +2152,8 @@ To learn more on each method, see [Authentication](/docs/sandbox/concepts/authen
 - **Image:** Ubuntu 26.04 with common languages, coding agents, and utilities. See [Vercel Managed Images](/docs/sandbox/concepts/images) to learn more.
 - **Resources:** Choose the number of virtual CPUs (`vcpus`) per sandbox. Pricing and plan limits appear in the [Sandbox pricing table](/docs/sandbox/pricing#resource-limits).
 - **Timeouts:** The default timeout is 5 minutes. You can extend it programmatically up to 45 minutes on the Hobby plan and up to 24 hours on Pro and Enterprise plans.
-- **Sudo:** `sudo` commands run as `vercel-sandbox` with the root home directory set to `/root`.
+- **Working directory:** Managed images use `/vercel`. Custom images use the Dockerfile `WORKDIR`, or `/` if none is set. Use `sandbox.cwd` to read the current directory.
+- **Sudo:** Set `sudo: true` to run a command as root with `HOME` set to `/root`. Commands otherwise use the image's default user. Elevation does not select a different working directory.
 
 > **💡 Note:** Sandboxes are persistent by default. The filesystem is automatically
 > snapshotted when a session stops and restored on the next resume. For one-off
@@ -2084,4 +2166,4 @@ To learn more on each method, see [Authentication](/docs/sandbox/concepts/authen
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

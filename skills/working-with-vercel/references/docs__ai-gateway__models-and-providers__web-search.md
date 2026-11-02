@@ -14,8 +14,8 @@ related:
 summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f19a2a8bbb3756da889088bab3bd7f8f54fbab469a518ea4496b2001b1d1f818"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4873876e7511f4630a093580f0791282d5034d2dece878f0476986bba29661c2"
 ---
 
 # AI Gateway Web Search
@@ -35,9 +35,9 @@ AI Gateway provides built-in search tools that let AI models access current web 
 - [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent) — Learn how to build an agent that has access to web with the AI SDK and Node
 - [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway)
 - [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model)
-- [Exa joins the Vercel AI Gateway and Agent Marketplace](https://vercel.com/changelog/exa-joins-vercel-ai-gateway-agent-marketplace)
-- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
 - [Tool Search](https://ai-sdk.dev/docs/ai-sdk-core/tool-search) — Let models discover tools on demand, with direct calling or cache-preserving code mode.
+- [Exa joins the Vercel AI Gateway and Agent Marketplace](https://vercel.com/changelog/exa-joins-vercel-ai-gateway-agent-marketplace)
+- [toolSearch](https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-search) — Search deferred tools and load their definitions on demand for direct calling or code mode.
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md)
@@ -1530,4 +1530,4 @@ export async function POST(request: Request) {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/build.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "67ab746227da6255a5c270bc04a390c4a69b5186ee58f93eb5ff4692a61effb4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "af9f289b825afb12e1dabf7d363f8c540c49701967d5453ed9d0bc04e122660e"
 ---
 
 # vercel build
@@ -36,9 +36,9 @@ Build artifacts are placed into the `.vercel/output` directory according to the
 - [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/build.graph.md](/docs/cli/build.graph.md)
 <!-- /docsgraph:related -->
@@ -152,4 +152,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

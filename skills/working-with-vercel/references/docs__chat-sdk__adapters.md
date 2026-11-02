@@ -8,16 +8,16 @@ type: reference
 prerequisites:
   - /docs/chat-sdk
 related:
+  - /docs/chat-sdk/integrations/daemons
   - /docs/environment-variables
   - /docs/chat-sdk/quickstart
   - /docs/workflows
   - /docs/chat-sdk/eve
-  - /docs/connect/frameworks/chat-sdk
 summary: Choose platform and state adapters for a Chat SDK bot on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/adapters.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "797f51b1eb8a12b3aeebfcfc8bf6d9090ec28fd108f61f88633adee1a503d079"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f528b9b77790fce9799f51d3dc81d6140040fdb1abd5f9d78e7e32db41dfc04d"
 ---
 
 # Chat SDK Adapters
@@ -31,12 +31,13 @@ Chat SDK uses **platform adapters** to receive events and deliver messages, and 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
+- [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
 - [State Adapters](https://chat-sdk.dev/docs/state-adapters) — State adapters store thread subscriptions, distributed locks, and cached data for your bot.
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
-- [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
+- [Chat SDK now has an adapter directory](https://vercel.com/changelog/chat-sdk-adapter-directory)
+- [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
-- [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Sandbox, and Vercel Workflows.
+- [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Dae
 
 Full cross-link map for this page: [/docs/chat-sdk/adapters.graph.md](/docs/chat-sdk/adapters.graph.md)
 <!-- /docsgraph:related -->
@@ -71,6 +72,8 @@ The [adapter directory](https://chat-sdk.dev/adapters) includes more platforms a
 A shared API doesn't give every platform the same capabilities. Check the [platform feature matrix](https://chat-sdk.dev/docs/platform-adapters) before depending on streaming, attachments, buttons, or message editing.
 
 Also check how the platform delivers events. For example, Discord interactions arrive through HTTP webhooks, while regular messages and reactions require its [Gateway connection](https://chat-sdk.dev/adapters/official/discord#http-interactions-vs-gateway). The Web adapter requires your application's authentication through `getUser`.
+
+To process background jobs from a conversation, keep the webhook in Vercel Functions and use [Vercel Daemons with Chat SDK](/docs/chat-sdk/integrations/daemons). The worker consumes queued jobs and replies with credentials from Vercel Connect.
 
 ## State adapters
 
@@ -116,4 +119,4 @@ Connect support varies by adapter. In particular, Notion and Telegram use Connec
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

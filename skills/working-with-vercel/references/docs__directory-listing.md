@@ -12,8 +12,8 @@ related:
 summary: The Directory Listing is served when a particular path is a directory and does not contain an index file. Learn how to toggle and disable it in this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-listing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9df01c521c39d41d114721026219da3f5c58aa969452bffc421d399634780072"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "062939c906d005be15e5b37f7ccdbaf380084954f92021f072bf25481a5e630b"
 ---
 
 # Using the Directory Listing
@@ -45,4 +45,4 @@ To prevent Directory Listing for a specific path, you can either:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

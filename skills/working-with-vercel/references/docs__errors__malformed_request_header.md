@@ -12,8 +12,8 @@ related:
 summary: The MALFORMED_REQUEST_HEADER error occurs when a request contains an improperly formatted or invalid header. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/malformed_request_header.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ea7a2062e53004ce4b0ba51e4501bfe37c55db00fc8035a4f6886f5470671c39"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5f94bafd72c5fcc7504d7942fce2751183c8e8e391b592f753bf7b2825801bdf"
 ---
 
 # MALFORMED_REQUEST_HEADER
@@ -38,4 +38,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

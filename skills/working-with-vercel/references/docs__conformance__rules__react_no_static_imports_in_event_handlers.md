@@ -13,8 +13,8 @@ related:
 summary: Prevent static imports that are referenced only in React event handlers from being eagerly loaded in React components.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/react_no_static_imports_in_event_handlers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "aefe2d6636edf7da80d57f077bd7f5d8ab36faa1f6119e7a971cf037563eac27"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "26b2bfb0b1d92b498a1074a4763697c0a3fe55b8fe5306ce8bba632b79f045bf"
 ---
 
 # REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS
@@ -65,4 +65,4 @@ Additionally, you can [configure](/docs/conformance/customize) the rule for only
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

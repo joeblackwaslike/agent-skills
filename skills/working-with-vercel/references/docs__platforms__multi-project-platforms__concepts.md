@@ -14,8 +14,8 @@ related:
 summary: Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/concepts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5ae26b81091d24a268405d36b06b222cc9a758e2b01c98db99f2590425461108"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "55d4ee20b1131b8db6718f27da7b90024616aa1f1df3f809f159a87e65a30c18"
 ---
 
 # Multi-Project Platforms Concepts
@@ -33,7 +33,7 @@ A Vercel project represents a single application with its own Git repository, en
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
+- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
@@ -61,7 +61,7 @@ const vercel = new Vercel({
   bearerToken: '<YOUR_BEARER_TOKEN_HERE>',
 });
 
-const { value: project } = await vercel.projects.createProject({
+const project = await vercel.projects.createProject({
   teamId: 'team_1234',
   requestBody: {
     name: `tenant-${tenantId}`,
@@ -81,7 +81,7 @@ const vercel = new Vercel({
   bearerToken: '<YOUR_BEARER_TOKEN_HERE>',
 });
 
-const { value: project } = await vercel.projects.createProject({
+const project = await vercel.projects.createProject({
   teamId: 'team_1234',
   requestBody: {
     name: `tenant-${tenantId}`,
@@ -141,6 +141,7 @@ const vercel = new Vercel({
 
 await vercel.projects.addProjectDomain({
   idOrName: project.id,
+  teamId: 'team_1234',
   requestBody: {
     name: 'tenant1.com',
   },
@@ -238,4 +239,4 @@ Well-suited for:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

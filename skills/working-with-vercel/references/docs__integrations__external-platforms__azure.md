@@ -16,8 +16,8 @@ related:
 summary: Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless authentication through Microsoft...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/external-platforms/azure.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4c58ed0722081c3db5e4474d01013dc2bf71ed01f1d1321c3be7c8226a084496"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "403a629596c1bc06b23c8224ac5cd77457866c374475fcc7e8992ffea753c473"
 ---
 
 # Using Vercel with Microsoft Azure
@@ -30,14 +30,14 @@ You can run your frontend on Vercel while your APIs, databases, and internal ser
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft)
-- [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
+- [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
+- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Bring Your Own Cloud](https://vercel.com/docs/networking/bring-your-own-cloud) — Bring Your Own Cloud \\(BYOC\\) lets you run Vercel Functions behind your project in your own AWS account while Vercel rou
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 
@@ -92,4 +92,4 @@ Vercel builds and deploys from wherever your code lives:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

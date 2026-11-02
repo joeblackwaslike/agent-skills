@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/issues"
-fetched_at: "2026-10-26T09:52:24.329Z"
-sha256: "9e0c2d88d605d4826bfb0772a4e3f0cec889c275acc7f8f73f133d5a3320d84b"
+fetched_at: "2026-11-02T12:05:56.062Z"
+sha256: "e76d026ebd9558928d5a094b7e89b231687bd9e7c45094cd2c6ab142135d0f2d"
 ---
 
 # REST API endpoints for issues
@@ -1179,7 +1179,7 @@ application/vnd.github.full+json: Returns raw, text, and HTML representations. R
   Can be one of: `completed`, `not_planned`, `duplicate`, `reopened`, `null`
 
 - **`duplicate_issue_id`** (integer)
-  The ID of the issue to mark as the canonical duplicate when state_reason is duplicate. The issue must exist and be accessible to the authenticated user. Ignored when state_reason is not duplicate.
+  The ID of the issue that this issue duplicates, used when marking this issue as a duplicate with status: Duplicate or state_reason: duplicate. The issue must exist and be accessible to the authenticated user.
 
 - **`milestone`** (null or string or integer)
   The number of the milestone to associate this issue with or use null to remove the current milestone. Only users with push access can set the milestone for issues. Without push access to the repository, milestone changes are silently dropped.

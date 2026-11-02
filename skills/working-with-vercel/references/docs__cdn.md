@@ -16,8 +16,8 @@ related:
 summary: "Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "99be58d27d359ba73619e2a836503d25b03d8c51621d4e3c2839203592880441"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "33153169ac637fdd18cb1f489e939bf3ad63b6fb4acb4922f15b158ebca243b1"
 ---
 
 # Vercel CDN overview
@@ -177,4 +177,4 @@ Flex CDN is available only to teams using Flat Rate CDN. To move a project onto 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

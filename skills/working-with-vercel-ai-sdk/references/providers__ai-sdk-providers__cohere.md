@@ -4,8 +4,8 @@ description: Learn how to use Cohere with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "8c67728704e9137d6f4355df28edab1b1a9de3390715debfb871762bc363c7f8"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "eecff3ee7526ca5a67f05ba523d1197c540fa86c790124f486191e75f9c03146"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -89,7 +89,11 @@ You can use the following optional settings to customize the Cohere provider ins
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.cohere.com/v2`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `COHERE_API_KEY` environment variable.

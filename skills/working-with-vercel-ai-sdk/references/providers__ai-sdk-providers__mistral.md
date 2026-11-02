@@ -4,8 +4,8 @@ description: Learn how to use Mistral AI with AI Gateway and the direct provider
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/mistral.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "b8fc9bf495461987870af7327173048caefd3f8f215ef8f3ba48cf84a52c8ef7"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "a828b1d294aa5f0b36ae6e1cd7c5af4e5eaa30423de006839ebf215a3331506f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -91,7 +91,11 @@ You can use the following optional settings to customize the Mistral provider in
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.mistral.ai/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `MISTRAL_API_KEY` environment variable.
@@ -291,7 +295,8 @@ console.log('REASONING:', result.reasoningText);
 console.log('ANSWER:', result.text);
 ```
 
-So far, Mistral only supports `'high'` and `'none'` as effort levels.
+Most Mistral reasoning models support `'high'` and `'none'` as effort levels.
+GLM-5.3 models (`zai-glm-5-3`, `zai-glm-5-3-flash`, `zai-glm-5`, `zai-glm-latest`) support `'low'`, `'high'`, and `'max'` and cannot disable reasoning.
 
 ### Example
 
@@ -752,9 +757,10 @@ models:
 
 ### Model Capabilities
 
-| Model           | Default Dimensions |
-| --------------- | ------------------ |
-| `mistral-embed` | 1024               |
+| Model             | Default Dimensions |
+| ----------------- | ------------------ |
+| `mistral-embed`   | 1024               |
+| `codestral-embed` | 1536               |
 
 ---
 

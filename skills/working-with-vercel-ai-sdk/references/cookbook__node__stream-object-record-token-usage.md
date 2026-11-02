@@ -9,8 +9,8 @@ tags:
   - structured data
   - observability
 source: "https://ai-sdk.dev/cookbook/node/stream-object-record-token-usage.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "006dcbb2378995b332c2646393df099ed2aa90c20f2515d5750ca4b5f04dd4e5"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "6864a598b757fc4c142a4a49f41c2884e4a110cd74abf83e1c9580642859ba97"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -43,7 +43,15 @@ const result = streamText({
     console.log('Token usage:', usage);
   },
 });
+
+// Consume the stream so onEnd can record usage.
+await result.consumeStream();
 ```
+
+The `onEnd` callback only fires once the stream is consumed — for example by
+iterating `partialOutputStream`, piping it, or calling `result.consumeStream()`.
+Without consuming the stream, the result is created but the callback is never
+called.
 
 ## `usage` Promise
 

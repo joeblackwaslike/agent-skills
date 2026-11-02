@@ -13,8 +13,8 @@ related:
 summary: Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/public-and-shared-repositories.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "02c81a6a7d7ba7813fca72dc17f9fe4ffd68c29d9e34fecc4539c00dd4ef5ef8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e08d4b3e9a1690dde376bb9326d4a5368556ee7ef7e6936ccfb374085f92ba9a"
 ---
 
 # Public and Shared Repositories
@@ -100,4 +100,4 @@ vercel vcr config my-repository --public false
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

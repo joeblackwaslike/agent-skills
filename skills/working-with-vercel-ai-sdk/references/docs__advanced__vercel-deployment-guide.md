@@ -4,8 +4,8 @@ description: Learn how to deploy an AI application to production on Vercel
 url: "https://ai-sdk.dev/docs/advanced/vercel-deployment-guide"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/vercel-deployment-guide.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "ce0c955008877206b4ab58fafa4a99da4f88c4eccb6bb5e52da84480ac0f5fbb"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "2648f3c9dd96193d920537959d1d583969d21c166b8497940cb336f2a3394951"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -15,6 +15,11 @@ In this guide, you will deploy an AI application to [Vercel](https://vercel.com)
 Vercel is a platform for developers that provides the tools, workflows, and infrastructure you need to build and deploy your web apps faster, without the need for additional configuration.
 
 Vercel allows for automatic deployments on every branch push and merges onto the production branch of your GitHub, GitLab, and Bitbucket projects. It is a great option for deploying your AI application.
+
+Deploying a durable backend agent instead of an application with a UI?
+[eve](https://eve.dev) is an open-source agent framework built on the AI SDK
+for durable, long-running work — channels, schedules, and approvals included.
+Learn more in the [eve guide](/docs/agents/eve).
 
 ## Before You Begin
 

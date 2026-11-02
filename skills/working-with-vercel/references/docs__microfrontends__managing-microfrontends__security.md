@@ -17,8 +17,8 @@ related:
 summary: Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/security.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bd2aa579bf32254ffb9607a7b894559c8ef0820c8051176b242c9cd4cd3e77aa"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b2df04814089eca4b68542ef97fac15c376aa602d8b924a888bb3fce9a82668b"
 ---
 
 # Managing microfrontends security
@@ -31,12 +31,13 @@ Understand how and where you manage [Deployment Protection](/docs/deployment-pro
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
-- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Microfrontends local development](https://vercel.com/docs/microfrontends/local-development) — Learn how to run and test your microfrontends locally.
+- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/security.graph.md](/docs/microfrontends/managing-microfrontends/security.graph.md)
 <!-- /docsgraph:related -->
@@ -111,4 +112,4 @@ This applies for the entire [Vercel WAF](/docs/vercel-firewall/vercel-waf), incl
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

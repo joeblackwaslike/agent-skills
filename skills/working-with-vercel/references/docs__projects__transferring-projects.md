@@ -12,12 +12,12 @@ related:
   - /docs/deployments
   - /docs/environment-variables
   - /docs/project-configuration/vercel-json
-  - /docs/project-configuration
+  - /docs/cron-jobs
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ba3ecd715458dcaae783b383893ae1a6c12631f9a5cd36d753d63c36904c00d0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b63e53bea3039641abf8b0396ffb977e3f1bfa2ab36afcf34f518087b78650e4"
 ---
 
 # Transferring a project
@@ -33,6 +33,7 @@ You can transfer projects between your Vercel teams with **zero downtime** and *
 - [Projects can now be transferred to Personal Accounts](https://vercel.com/changelog/projects-can-now-be-transferred-to-personal-accounts)
 - [Transfer Vercel projects with zero downtime](https://vercel.com/blog/transfer-vercel-projects-with-zero-downtime)
 - [Projects can now be transferred without downtime](https://vercel.com/changelog/projects-can-now-be-transferred-without-downtime)
+- [Enterprise customers can now transfer projects](https://vercel.com/changelog/enterprise-customers-can-now-transfer-projects)
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
@@ -78,7 +79,7 @@ Transferring a project may take between 10 seconds and 10 minutes, depending on 
 ## What is transferred?
 
 - [Deployments](/docs/deployments)
-- [Environment variables](/docs/environment-variables) are copied to the target team, except for those defined in the [`env`](/docs/project-configuration/vercel-json#env) and [`build.env`](/docs/project-configuration#project/build-env) configurations of `vercel.json`.
+- [Environment variables](/docs/environment-variables) are copied to the target team, except for those defined in the [`env`](/docs/project-configuration/vercel-json#env) and [`build.env`](/docs/project-configuration/vercel-json#build.env) configurations of `vercel.json`.
 - The project's configuration details
 - [Domains and Aliases](#transferring-domains)
 - Administrators
@@ -97,7 +98,7 @@ Once you transfer a project from a Hobby team to a Pro or Enterprise team, you m
 
 - [Concurrent Builds](/docs/builds/managing-builds)
 - [Preview Deployment Suffix](/docs/deployments/generated-urls#preview-deployment-suffix)
-- [Password Protection](/docs/deployment-protection#password-protection)
+- [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)
 
 ## What is not transferred?
 
@@ -105,7 +106,7 @@ Once you transfer a project from a Hobby team to a Pro or Enterprise team, you m
 - [Global Configs](/docs/global-config) have [a separate transfer mechanism](/docs/storage#transferring-your-store)
 - Usage is reset on transfer
 - The Active Branches section under **Project** will be empty
-- Environment variables defined in the [`env`](/docs/project-configuration/vercel-json#env) and [`build.env`](/docs/project-configuration#project/build-env) configurations of `vercel.json` must be [migrated to Environment Variables](/docs/environment-variables/managing-environment-variables#migrating-from-vercel.json-env-and-build.env) in the Project Settings or configured again on the target team after the transfer is complete
+- Environment variables defined in the [`env`](/docs/project-configuration/vercel-json#env) and [`build.env`](/docs/project-configuration/vercel-json#build.env) configurations of `vercel.json` must be [migrated to Environment Variables](/docs/environment-variables/managing-environment-variables#migrating-from-vercel.json-env-and-build.env) in the Project Settings or configured again on the target team after the transfer is complete
 - [Monitoring](/docs/query/monitoring) data is not transferred
 - Log data ([Runtime](/docs/logs/runtime) + [build](/docs/deployments/logs) time)
 - [Custom Log Drains](/docs/drains) are not transferred
@@ -117,7 +118,7 @@ Once you transfer a project from a Hobby team to a Pro or Enterprise team, you m
 
 Project [domains](/docs/domains) will automatically be transferred to the target team by delegating access to domains.
 
-For example, if your project uses the domain `example.com`, the domain will be [moved](/docs/domains/working-with-domains/add-a-domain#moving-domains) to the target team. The target team will be billed as the primary owner of the domain if it was purchased through Vercel.
+For example, if your project uses the domain `example.com`, the domain will be [moved](/docs/projects/transferring-projects#transferring-domains) to the target team. The target team will be billed as the primary owner of the domain if it was purchased through Vercel.
 
 If your project uses the domain `blog.example.com`, the domain `blog.example.com` will be **delegated** to the target team, but the root domain `example.com` will remain on the origin Vercel scope. The origin Vercel scope will remain the primary owner of the domain, and will be billed as usual if the domain was purchased through Vercel.
 
@@ -136,4 +137,4 @@ Adding these features is optional.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

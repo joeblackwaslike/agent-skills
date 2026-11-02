@@ -14,8 +14,8 @@ related:
 summary: Learn how to troubleshoot common errors with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/troubleshooting.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "17d10b712ba5d250c00565939c042a4210603c47c53031c015f7fb46a93737b2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "540ebb75fc3e21bd5b957dab8b85fe5d2a1f703f62b70e4311f68ca2667b287f"
 ---
 
 # Troubleshooting Sign in with Vercel
@@ -220,4 +220,4 @@ The token's `exp` must be in the future, the token must include `iss`, `sub`, `a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

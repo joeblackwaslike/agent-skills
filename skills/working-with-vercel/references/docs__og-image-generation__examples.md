@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the @vercel/og library with examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/examples.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "542361df5fdf31a9bb262bd8c7c14feea9b31535f4d5728a58f30367c77f08f8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7ab03c8197af34b06ae3b3ba4e4db27c9917eae5183899fe4b3f9445ed501d75"
 ---
 
 # OG Image Generation Examples
@@ -37,9 +37,9 @@ Create an api route with `route.tsx` in `/app/api/og/` and paste the following c
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Codemods](https://nextjs.org/docs/pages/guides/upgrading/codemods) — Use codemods to upgrade your Next.js codebase when new features are released.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
-- [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data) — Learn how to redact sensitive data from your Web Analytics events.
+- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
+- [Routing Middleware: JS Reference](https://vercel.com/docs/routing-middleware/js-reference) — Reference for writing Routing Middleware in TypeScript and JavaScript, including entrypoints, the config object, the mid
 - [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
-- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 
 Full cross-link map for this page: [/docs/og-image-generation/examples.graph.md](/docs/og-image-generation/examples.graph.md)
 <!-- /docsgraph:related -->
@@ -2718,4 +2718,4 @@ If you're not using Next.js, check your preferred framework's documentation to l
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

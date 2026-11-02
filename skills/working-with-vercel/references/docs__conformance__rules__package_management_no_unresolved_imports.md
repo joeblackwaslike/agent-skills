@@ -12,8 +12,8 @@ related:
 summary: Import statements that can not be resolved to a local file or a package from package.json dependencies are not allowed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_management_no_unresolved_imports.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4675cb6a21321c8ebf6a7c378dc73b371e9f1b4488296fe7890135951ca537c8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "806b1450ba872b0356744e493411ecbccaea3c7b1273e7123cee8bab8811e850"
 ---
 
 # PACKAGE_MANAGEMENT_NO_UNRESOLVED_IMPORTS
@@ -55,4 +55,4 @@ on the `next` package should be added.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

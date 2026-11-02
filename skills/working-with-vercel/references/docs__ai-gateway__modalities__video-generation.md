@@ -17,8 +17,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "419d8c084a8e1fd9675477b0cf9bc382626c969c4c83e83dfe7a8f215fff527e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8381afe2f58074b616b07dd3e4ad907f44afde862c73f00fa7232b1a10851b8c"
 ---
 
 # AI Gateway Video Generation
@@ -39,9 +39,8 @@ AI Gateway supports video generation, letting you create videos from text prompt
 - [MiniMax H3 and H3 Max are 50% off on AI Gateway](https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway)
 - [Wan 3.0 now available on AI Gateway](https://vercel.com/changelog/wan-3-0-now-available-on-ai-gateway)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
-- [generateVideo](https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video) — API Reference for durable video generation in workflows.
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [generateVideo](https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video) — API Reference for durable video generation in workflows.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation.graph.md](/docs/ai-gateway/modalities/video-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -635,4 +634,4 @@ export async function register() {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

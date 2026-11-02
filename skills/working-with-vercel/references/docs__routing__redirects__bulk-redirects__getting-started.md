@@ -16,8 +16,8 @@ related:
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7475eebcd69914cfec1e8a64c1c33e314c0d2b213eb59eab0a7cff612bd3a0e2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8bcd8363d61ace3939c10cccd0c50f2adbd32208178793d8708a468156757bde"
 ---
 
 # Getting Started
@@ -31,15 +31,15 @@ Bulk redirects can be specified either as part of a Vercel deployment or updated
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
-- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Bulk redirects UI, API, and CLI now generally available](https://vercel.com/changelog/bulk-redirects-ui-api-and-cli-now-generally-available)
+- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Bulk redirects are now generally available](https://vercel.com/changelog/bulk-redirects-are-now-generally-available)
+- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
+- [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel)
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
 - [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
 - [Stages new redirects for a project.](https://vercel.com/docs/rest-api/bulk-redirects/stages-new-redirects-for-a-project) — PUT /v1/bulk-redirects — Stages new redirects for a project and returns the new version.
-- [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 
 Full cross-link map for this page: [/docs/routing/redirects/bulk-redirects/getting-started.graph.md](/docs/routing/redirects/bulk-redirects/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -204,4 +204,4 @@ curl -X PUT "https://api.vercel.com/v1/bulk-redirects" \
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

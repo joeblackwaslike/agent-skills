@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/configuration.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "a458b10c67704d202d7dac1f9a280c71b576cba761f1d29a1468a55616108c4d"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "bc2e046b5f4129dae0aac5bb4987570eb21ece05edfadb99da0dc18b5de82c65"
 ---
 
 > ## Documentation Index
@@ -167,7 +167,7 @@ When you start a session with [streaming input](https://code.claude.com/docs/en/
 
 Both languages have the same setters:
 
-* **`setModel()` / `set_model()`**: switches the model. Call it with no model to switch to [Claude Code's default model](https://code.claude.com/docs/en/model-config.md#default-model-setting) rather than the `model` you passed in options.
+* **`setModel()` / `set_model()`**: switches the model. Call it with no model to switch to [Claude Code's default model](https://code.claude.com/docs/en/model-config.md#default-model-setting) rather than the `model` you passed in options. If the session is in auto mode and you switch to a model that auto mode doesn't support, the session changes to `default` mode. To return to auto mode, see [Auto mode (`auto`)](https://code.claude.com/docs/en/agent-sdk/permissions#auto-mode-auto).
 * **`setPermissionMode()` / `set_permission_mode()`**: switches the permission mode
 
 TypeScript also has `applyFlagSettings()` and `updateSettings()`:

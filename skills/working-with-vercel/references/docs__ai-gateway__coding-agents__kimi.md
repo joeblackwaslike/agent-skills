@@ -15,8 +15,8 @@ related:
 summary: Connect Kimi CLI to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/kimi.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d2e4488dea8f5b408b15bce1b385761759d9657f82e8db1a5b331c7ddbd25dca"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5ddc34bd35b41a218515b70ea261f14abf9315c1c56eb78f4ed068ae97f49451"
 ---
 
 # Kimi CLI with AI Gateway
@@ -32,7 +32,7 @@ sha256: "d2e4488dea8f5b408b15bce1b385761759d9657f82e8db1a5b331c7ddbd25dca"
 - [Kimi K3.1 Pro and Kimi K3.1 Pro Highspeed are available now in AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-and-kimi-k3-1-pro-highspeed-are-available-now-in-ai-gateway)
 - [Kimi K2.6 on AI Gateway](https://vercel.com/changelog/kimi-k2.6-on-ai-gateway)
 - [Moonshot AI's Kimi K2 0905 model is now supported in Vercel AI Gateway](https://vercel.com/changelog/moonshot-ais-kimi-k2-0905-model-is-now-supported-in-vercel-ai-gateway)
-- [Moonshot AI's Kimi K2 model is now supported in Vercel AI Gateway](https://vercel.com/changelog/moonshot-ai-kimi-k2-model-is-now-supported-in-vercel-ai-gateway)
+- [Kimi K3 is now available on AI Gateway](https://vercel.com/changelog/kimi-k3-is-now-available-on-ai-gateway)
 - [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway)
 - [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
 
@@ -117,4 +117,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

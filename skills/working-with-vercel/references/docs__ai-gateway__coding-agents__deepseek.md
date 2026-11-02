@@ -16,8 +16,8 @@ related:
 summary: Connect DeepSeek Harness to AI Gateway with the Vercel CLI or a YAML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/deepseek.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c0759ad428a8065a70fb26c39a6a0b5b4c93beb7d0f9a5d7b58f067c0dfd52d0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1eac8f0bb5447d9eef6cd9e33309cc08881eb19f3f72fc5a0d1017d008db0243"
 ---
 
 # DeepSeek Harness with AI Gateway
@@ -31,10 +31,10 @@ sha256: "c0759ad428a8065a70fb26c39a6a0b5b4c93beb7d0f9a5d7b58f067c0dfd52d0"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [OpenHands with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openhands) — Connect OpenHands to AI Gateway with the Vercel CLI or an OpenAI-compatible LLM configuration.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [OpenHands with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openhands) — Connect OpenHands to AI Gateway with the Vercel CLI or an OpenAI-compatible LLM configuration.
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [Harbor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/harbor) — Evaluate coding-agent harnesses with Harbor and AI Gateway. Choose a harness, configure its connection, and pass separat
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/deepseek.graph.md](/docs/ai-gateway/coding-agents/deepseek.graph.md)
 <!-- /docsgraph:related -->
@@ -115,4 +115,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

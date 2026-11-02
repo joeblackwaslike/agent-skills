@@ -9,15 +9,15 @@ prerequisites:
   []
 related:
   - /docs/builds/configure-a-build
-  - /docs/projects
+  - /docs/project-configuration/project-settings
   - /docs/project-configuration/git-configuration
   - /docs/deployments/troubleshoot-a-build
   - /docs/limits
 summary: Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-hooks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "64e2beea7dbb1db35cb9170701df40dd164729e8a47de5372fa4a6d3a6f0fb99"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5a4c7bc3d607b2648329e9fb197471731dcf7769552c6973a5d389c2378a1019"
 ---
 
 # Creating & Triggering Deploy Hooks
@@ -37,7 +37,7 @@ Deploy Hooks allow you to create URLs that accept HTTP `POST` requests to trigge
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Webhook triggers for Vercel Connect](https://vercel.com/docs/connect/concepts/triggers) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks) — Learn how to set up webhooks and use them with Vercel Integrations.
 
 Full cross-link map for this page: [/docs/deploy-hooks.graph.md](/docs/deploy-hooks.graph.md)
@@ -51,7 +51,7 @@ This feature allows you to integrate Vercel deployments with other systems. For 
 
 ## Creating a Deploy Hook
 
-To create a Deploy Hook for your project, make sure your project is [connected to a Git repository](/docs/projects#git).
+To create a Deploy Hook for your project, make sure your project is [connected to a Git repository](/docs/project-configuration/project-settings#git).
 
 Once your project is connected, navigate to its **Settings** page and then select the **Git** menu item.
 
@@ -150,4 +150,4 @@ If your deploy hook fails to create a deployment, check the status check on the 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

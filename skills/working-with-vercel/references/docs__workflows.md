@@ -16,8 +16,8 @@ related:
 summary: Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deployments with Vercel Workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e1efda34225521724e2d7adee1181e99977a0dfbbdc1c8a0148b7649de712b4d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f21849e79646a3ceb1e34b730c2fd7fe9bafcde93b032b8a8d73bd4d55bd0de7"
 ---
 
 # Vercel Workflows
@@ -32,8 +32,8 @@ Vercel Workflows runs multi-step logic as durable code that can retry failed ste
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Configure where run state lives in Vercel Workflows](https://vercel.com/changelog/configure-where-run-state-lives-in-vercel-workflows)
 - [Expanded search for workflow runs in Vercel Observability](https://vercel.com/changelog/expanded-search-for-workflow-runs-in-vercel-observability)
@@ -42,7 +42,7 @@ Vercel Workflows runs multi-step logic as durable code that can retry failed ste
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
 
 Full cross-link map for this page: [/docs/workflows.graph.md](/docs/workflows.graph.md)
@@ -78,7 +78,7 @@ Your workflows are:
 
 ## Getting started
 
-Install the Workflow SDK package:
+For JavaScript and TypeScript, install the Workflow SDK package:
 
 **pnpm**
 
@@ -107,6 +107,14 @@ bun add workflow
 Follow the [Workflow SDK getting started guide](https://workflow-sdk.dev/docs/getting-started) to create your first workflow.
 
 If you're using Pi, Claude Code, Codex, or OpenCode, [`durable-harness`](/docs/agent-harnesses) connects your agent to the Workflow SDK's persistence and execution infrastructure so sessions can resume after crashes and deployments. The [durable harness guides](/docs/agent-harnesses) cover setup for each, along with fx and eve, which already have durability built in.
+
+### Choose a durable agent approach
+
+`WorkflowAgent` runs an AI SDK agent loop inside a workflow. eve uses Workflows for durable sessions and adds built-in channels and approvals. See [Choosing between eve, AI SDK agents, and `WorkflowAgent`](/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) to compare these options with an agent that runs within one request.
+
+### Build workflows in Python
+
+Follow [Build durable workflows in Python on Vercel](/kb/guide/python-and-durable-workflows) to start an onboarding workflow from FastAPI, persist completed steps, retry failures, and send a follow-up after a three-day wait.
 
 ## Features
 
@@ -202,4 +210,4 @@ Follow [Chat SDK with Vercel Workflows](/docs/chat-sdk/integrations/workflows) t
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

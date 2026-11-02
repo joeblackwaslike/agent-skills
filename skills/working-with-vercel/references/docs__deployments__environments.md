@@ -16,8 +16,8 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f3e6d4dc3caf37db1c27523e722601fcdd0b77c1f4b6ddeb7c60456ca1e050c5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "23a83a5e542558186dbc141bb5944d9c4fb5657a14c5af117caabc47a6526e58"
 ---
 
 # Environments
@@ -350,4 +350,4 @@ Purchased packs apply to a single project. Members with permission to update the
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

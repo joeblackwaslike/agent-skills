@@ -17,8 +17,8 @@ related:
 summary: Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by cost, latency, or throughput.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ac4b99dd1ef4c5c522a32a7b380fcea2e86f87e642aad957e913e96072b39405"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ddef5d0e7fd565818c550f996990480455930f3ecf81d757ba00b100a1359d30"
 ---
 
 # AI Gateway Provider Filtering, Ordering, and Sorting
@@ -454,9 +454,27 @@ In cases where your request encounters issues with one or more providers or if y
 
 ## Provider filtering
 
+### Before you restrict providers
+
+The `only` filter removes every provider you don't list. If the providers you list are down, rate limited, or out of capacity, the request fails instead of falling back to another provider. See [how `only` limits fallback](/docs/ai-gateway/models-and-providers/uptime#how-success-is-defined).
+
+Most reasons to restrict providers are requirements you can express directly. These controls keep every qualifying provider eligible, so fallback keeps working:
+
+| Requirement                                  | Control                                                                                       |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Data must not be retained                    | [`zeroDataRetention`](/docs/ai-gateway/security-and-compliance/zdr)                            |
+| Data must not be used for training           | [`disallowPromptTraining`](/docs/ai-gateway/security-and-compliance/disallow-prompt-training)  |
+| Data must stay in a region                   | [`inferenceRegion`](/docs/ai-gateway/security-and-compliance/regional-inference)               |
+| The model must support a capability          | [`has`](/docs/ai-gateway/models-and-providers/model-filtering)                                 |
+| You prefer a provider but can accept others  | [`order`](#provider-ordering)                                                                  |
+
+The team [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist) works like a team-wide `only`: it removes failover to unapproved providers. Use `only` or the allowlist when a requirement names specific providers and none of these controls express it.
+
 ### Restrict providers with the `only` filter
 
 Use the `only` array to restrict routing to a specific subset of providers. Providers are specified by their slug and are matched against the model's available providers.
+
+To use provider API credits through [BYOK](/docs/ai-gateway/authentication-and-byok/byok#use-api-credits-from-a-chatgpt-or-claude-subscription), set `only: ['openai']` for OpenAI credits or `only: ['anthropic']` for Anthropic credits. Selecting a Claude model alone doesn't ensure Anthropic serves it; credits in a Claude Console organization don't pay for requests through Bedrock or Vertex AI. The `only` filter restricts providers, but it doesn't prevent fallback from your key to AI Gateway's system credentials.
 
 These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
@@ -1146,4 +1164,4 @@ A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can pin 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

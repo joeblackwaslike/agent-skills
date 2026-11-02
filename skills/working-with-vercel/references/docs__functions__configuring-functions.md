@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6654c44a50249c1a01c60b808f798437bdb4896a1257da160eba11e9f53332d3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "73cd275cd02b838c23b5c6b68d5ffb7e99c6abf70774b62d21d5dae9b5550480"
 ---
 
 # Configuring Functions
@@ -31,8 +31,8 @@ You can configure Vercel functions in many ways, including the runtime, region, 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
-- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python) — Learn about available APIs when working with Vercel Functions in Python.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
@@ -81,4 +81,4 @@ See [configuring a function's memory](/docs/functions/configuring-functions/memo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

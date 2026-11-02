@@ -4,8 +4,8 @@ description: Learn how to use Together.ai with AI Gateway and the direct provide
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "34e061f4a860ee2d11240af554ef99b763d93a98cade3994807b3f2aa114d61c"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "68f9643716d8ff2254d1ea0d12ca17cd46db6b45467219ed4c9ea18859db5cd4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -96,10 +96,13 @@ You can use the following optional settings to customize the Together.ai provide
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.together.xyz/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `TOGETHER_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 

@@ -17,8 +17,8 @@ related:
 summary: Discover model reasoning capabilities and configure effort across AI SDK, Chat Completions, Messages, and Responses with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "aa823cd33baf1f1d4f3ced6b4274860236ff9fe7e62fada48ddf34496c4a08a9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "58c86cecec4c1eba830a01fe9dc1cbde165a308dbc58a6e5956ba6ea54913413"
 ---
 
 # AI Gateway Reasoning
@@ -32,11 +32,11 @@ Control how much a model reasons before answering. Use the [model catalog](https
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai) — Learn how to use OpenAI with AI Gateway and the direct provider.
+- [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
-- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
-- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai) — Learn how to use xAI with AI Gateway and the direct provider.
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai) — Learn how to use OpenAI with AI Gateway and the direct provider.
 - [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
+- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai) — Learn how to use xAI with AI Gateway and the direct provider.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
@@ -803,4 +803,4 @@ For the full reasoning parameter reference for each API format, see:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

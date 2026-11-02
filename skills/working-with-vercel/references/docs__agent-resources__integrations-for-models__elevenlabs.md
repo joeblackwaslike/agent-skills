@@ -15,8 +15,8 @@ related:
 summary: Learn how to add the ElevenLabs connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "12c011da6f877e87cfb5aa5b163fd9e4fdb367bd4ff2deea5f7043faa01d9f03"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "307c9bef8399ce015058e939dbee5c05a95aed349b4970d28adbb7f01fed227e"
 ---
 
 # Vercel ElevenLabs Integration
@@ -111,4 +111,4 @@ To follow this guide, you'll need the following:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

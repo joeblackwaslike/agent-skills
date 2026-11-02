@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/issues/tracking-your-work-with-issues/learning-about-issues/about-issues.md"
-fetched_at: "2026-10-05T11:18:57.736Z"
-sha256: "900202faf57dbe0ee096cd6fe4a0c2a898a0785197d77d42c59ceb938ad55ee8"
+fetched_at: "2026-11-02T12:05:56.062Z"
+sha256: "1d756ede32ac1fa306cdc9e660d28039c4d40eb2f83558ffc96ee39591e3ddc9"
 ---
 
 You can create issues in your repository to plan, discuss, and track work. Issues are quick to create, flexible, and can be used in many ways. Issues can track bug reports, new features and ideas, and anything else you need to write down or discuss with your team, and you can use {% data variables.projects.projects_v2 %} to plan and track the work for your team. You can also break your work down further by adding sub-issues and easily browse the full hierarchy of work to be done.
@@ -11,6 +11,12 @@ Issues can be created in a variety of ways, so you can choose the most convenien
 ## About sub-issues
 
 {% data reusables.issues.about-sub-issues %} See [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/adding-sub-issues) and [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/browsing-sub-issues).
+
+{% ifversion fpt or ghec %}
+## About issue artifacts
+
+Issue artifacts keep plans, research, links, and other supporting content attached to an issue. Artifacts provide a durable place for people and agents to preserve context alongside the work. See [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/using-artifacts-with-issues).
+{% endif %}
 
 ## About issue dependencies
 

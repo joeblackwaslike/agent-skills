@@ -16,8 +16,8 @@ related:
 summary: Set up Vercel Queues with the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/quickstart.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "03abba2035aea1e58b25f815d64206cf9b02d9af0be099937b53239a9c6430c8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "04a6bd5f0682390bab7667d0ecb8e895ce4ce6575e1cb0389a75406d6c1b0555"
 ---
 
 # Quickstart
@@ -32,11 +32,11 @@ This guide shows how to send your first queue message and process it with the Ve
 
 - [Build a v0-style app builder with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/v0-clone-openai-agents-vercel-sandbox) — Build a chat-to-app workspace with live Next.js previews, follow-up edits, and saved projects using the OpenAI Agents AP
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
+- [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
 - [Getting Started with Chat SDK](https://vercel.com/docs/chat-sdk/quickstart) — Create a Slack bot with the Chat SDK CLI, connect it to Slack through Vercel Connect, and deploy it on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
@@ -213,4 +213,4 @@ This works locally with `vercel dev` so you can test without deploying. Next.js 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

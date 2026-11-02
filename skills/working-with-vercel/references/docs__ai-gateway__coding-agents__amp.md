@@ -17,8 +17,8 @@ related:
 summary: "Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes, and monitor requests."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/amp.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d586fff0b07f1fcd6b54c6bd167f123302a9793caf47fea5e6d7706708c68966"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c9de8811d52af2f9a5b93460f83fe1cf32379897ecfba475e158a7d3cc8e3140"
 ---
 
 # Amp with AI Gateway
@@ -35,8 +35,8 @@ sha256: "d586fff0b07f1fcd6b54c6bd167f123302a9793caf47fea5e6d7706708c68966"
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
+- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/amp.graph.md](/docs/ai-gateway/coding-agents/amp.graph.md)
 <!-- /docsgraph:related -->
@@ -85,4 +85,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

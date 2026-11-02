@@ -14,8 +14,8 @@ related:
 summary: Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/link.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "88acbcb2c9a0d1674c9ee8a093a8dd7d6aa16c5a5b96f9e2294b6e384f2fefa5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cb3bbf1f736449be7c19cfa7f4fd7a9ee3defac7abed7761c77a7d1e3beacd3e"
 ---
 
 # vercel link
@@ -123,4 +123,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

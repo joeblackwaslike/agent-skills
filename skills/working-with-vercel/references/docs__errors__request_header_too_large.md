@@ -12,8 +12,8 @@ related:
 summary: Request header size exceeds the permissible limit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/request_header_too_large.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4a556d7ffa1930dfef7eda9b5a012c6b26ba6b74b29097b3fe210d56e25e085e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "85aba9b84fa86b0cf38961b79d554c4f4bc8dffeb0de035d752be9ac1508b254"
 ---
 
 # REQUEST_HEADER_TOO_LARGE
@@ -36,4 +36,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

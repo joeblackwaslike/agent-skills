@@ -12,8 +12,8 @@ related:
 summary: Fine-grained control over BotID detection levels and backend domain configuration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/advanced-configuration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "23d403dee60fba59ca87466c85f4526b36c1dca736d53c8847f63a7907e81783"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "417d4c29b3dc45a709791cf72fc73bc9ea59ce4610c1f0d45e94591ae38e4e95"
 ---
 
 # Advanced BotID Configuration
@@ -173,4 +173,4 @@ export default async function handler(
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

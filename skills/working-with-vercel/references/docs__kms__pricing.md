@@ -13,8 +13,8 @@ related:
 summary: How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "afaba7182247e872d12d6f6acbf262d8a6a7a38beca600f60602ee95e379c55e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8ffb0e1672ee50c1ef280d5bdef2cf46f298fd6dced2d4901e892027c79409ba"
 ---
 
 # Vercel KMS Pricing and Limits
@@ -30,8 +30,8 @@ KMS is billed per signing operation. A signing operation is a single `signJWT` o
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 
 Full cross-link map for this page: [/docs/kms/pricing.graph.md](/docs/kms/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -71,4 +71,4 @@ You stop per-operation charges when you stop calling `signJWT` and `signMessage`
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Learn how to switch between different team scopes using the vercel switch CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/switch.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "66bb9d6ec5f061d82fff3899e89a93d0fdc0fd853e21eff039f5bb9c7e521f86"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5e15913d4f0292b58a63fe2c3ded2f6ba82c3fb2e38bee3d925ae81bb39341d8"
 ---
 
 # vercel switch
@@ -29,8 +29,8 @@ The `vercel switch` command is used to switch to a different team scope when log
 - [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [vercel upgrade](https://vercel.com/docs/cli/upgrade) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
-- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 - [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
+- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
 Full cross-link map for this page: [/docs/cli/switch.graph.md](/docs/cli/switch.graph.md)
 <!-- /docsgraph:related -->
@@ -75,4 +75,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

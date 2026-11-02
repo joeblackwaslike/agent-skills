@@ -16,8 +16,8 @@ related:
 summary: Test a preview deployment and promote it to production using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promote-preview-to-production.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0403fcdbf4071450f724ed2df2e54fbc96d4e13921cec79c21ad486bbf5e122d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8a641297d05a9902a72764ffa53e6fd81f7ed2f5690d545bd499b28eb3adc284"
 ---
 
 # Promoting a preview deployment to production
@@ -32,6 +32,7 @@ Use this guide to verify a preview deployment and promote it to production. You'
 
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment) — Learn how to promote deployments to production on Vercel.
 - [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
@@ -210,4 +211,4 @@ This restores the deployment you specify. See [Rolling back a production deploym
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

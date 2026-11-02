@@ -16,8 +16,8 @@ related:
 summary: Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "20c238a3558f06a5bbd14353914e8702e54138a24df76d9a2478963c462b27b7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "373c77493eb93c14a033cd32a32dd7024f138d7c82b684641e18df53a2eb31b3"
 ---
 
 # MCP Integrations
@@ -31,10 +31,11 @@ Connect your application or agent to a [Model Context Protocol (MCP)](/docs/mcp)
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to perform large-scale data analysis with Vercel Sandbox and MCP](https://vercel.com/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) — Use Vercel Sandbox and an MCP server built with \\`mcp-handler\\` to let AI agents run DuckDB SQL and Python on large data
-- [MCP Integrations](https://v0.app/docs/MCP) — Connect and use MCP servers directly in v0
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
+- [MCP Integrations](https://v0.app/docs/MCP) — Connect and use MCP servers directly in v0
 - [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
 - [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
+- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
 - [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
@@ -66,4 +67,4 @@ For OAuth-protected servers, see the Vercel Connect guides for [AI SDK](/docs/co
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

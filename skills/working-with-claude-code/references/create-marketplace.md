@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/create-marketplace.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "e8efdce4f1045fbeaec9c047dc30c95ef04292d7864110dd1b8761d5931312e1"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "09ca4f45324f12bfae726823b14c7b3c5bdd8f31261afe74c93691d2d21b4e1c"
 ---
 
 > ## Documentation Index
@@ -226,7 +226,7 @@ To remove everything and start over, run `claude plugin marketplace remove my-ma
 
 ## Host your marketplace
 
-Once you can install a plugin from the marketplace on your own machine, as in [Create a marketplace](#create-a-marketplace), push the marketplace directory to a git host.
+Once you can install a plugin from the marketplace on your own machine, as in [Create a marketplace](#create-a-marketplace), push the marketplace directory to a git host. Before you push, give the marketplace a top-level `name` that other authors are unlikely to pick, because a user [can't have two marketplaces with the same name](https://code.claude.com/docs/en/plugins/marketplace-reference.md#marketplace-file).
 
 Your teammates then run `claude plugin marketplace add <owner>/<repo>` in their shell for a GitHub repository, or the same command with the repository URL. They then install a plugin by name as in [the walkthrough](#create-a-marketplace).
 

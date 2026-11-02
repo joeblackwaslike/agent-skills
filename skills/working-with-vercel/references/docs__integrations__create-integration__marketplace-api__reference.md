@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-10-26
+last_updated: 2026-11-02
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "79fe3a32128e861ea2660e58e7bd358ece6118664327dda94dabc28b2ca75e4a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4ad5ad654afade3230fb794dc0ec5e8c90f55dfa0396760de37231bfd644b1cf"
 ---
 
 # Vercel Marketplace REST API
@@ -1042,8 +1042,8 @@ One of the provided values in the request query is invalid.
 Content-Type: `application/json`
 
 - `timestamp` (required): string - Server time of your integration, used to determine the most recent data for race conditions & updates. Only the latest usage data for a given day, week, and month will be kept.
-- `eod` (required): string - End of Day, the UTC datetime for when the end of the billing/usage day is in UTC time. This tells us which day the usage data is for, and also allows for your "end of day" to be different from UTC 00:00:00. eod must be within the period dates, and cannot be older than 24h earlier from our server's current time.
-- `period` (required): object - Period for the billing cycle. The period end date cannot be older than 24 hours earlier than our current server's time.
+- `eod` (required): string - End of Day, the UTC datetime for when the end of the billing/usage day is in UTC time. This tells us which day the usage data is for, and also allows for your "end of day" to be different from UTC 00:00:00. eod must be within the period dates, and cannot be older than 30 days earlier from our server's current time.
+- `period` (required): object - Period for the billing cycle. The period end date cannot be older than 30 days earlier than our current server's time.
 - `billing` (required) - Billing data (interim invoicing data).
 - `usage` (required): array
 
@@ -1455,4 +1455,4 @@ For the latest changes to the Marketplace API, refer to the main documentation p
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

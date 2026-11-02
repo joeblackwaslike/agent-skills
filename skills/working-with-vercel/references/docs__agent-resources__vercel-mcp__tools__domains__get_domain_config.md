@@ -13,8 +13,8 @@ related:
 summary: Use get_domain_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b329e162b795a96822892a179e96599f6c4ce9fde24fe3d024c9eb0c6ac9e490"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2cb42d82f3d7afea3aa3a485d722c1618806ddaa2056ec22398bb369305e5eda"
 ---
 
 # get_domain_config
@@ -30,7 +30,7 @@ Get a Domain's configuration.
 - [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
 - [Get a Domain's configuration](https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration) — GET /v6/domains/{domain}/config — Get a Domain's configuration.
-- [add_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/add_project_domain) — Use add_project_domain with Vercel MCP.
+- [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
 - [get_domain_project_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains) — Use get_domain_project_domains with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_domain_config.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_domain_config.graph.md)
@@ -52,4 +52,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

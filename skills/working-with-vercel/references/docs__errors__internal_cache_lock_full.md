@@ -12,8 +12,8 @@ related:
 summary: An unexpected error happened when CDN is accessing internal cache.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_cache_lock_full.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "175954aaf1e53c850c69e01a3bb2a908cf1993849cd1b5229a0ea687c2ba3226"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7fd1f1dffce86ed5f4bc2d90c4b3cc8b9be243413fc8aed26666c1311a4321d1"
 ---
 
 # INTERNAL_CACHE_LOCK_FULL
@@ -36,4 +36,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

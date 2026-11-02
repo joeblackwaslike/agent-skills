@@ -17,8 +17,8 @@ related:
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "713c3f752f4fb571b4bca3b1b87f4e6cef9482096547197e26a649e3aa849fe6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "13ac4c7ec659c7d74d132d7552c28bd19b7b14c6b2b96891e13a84b43019a16c"
 ---
 
 # Monitoring Reference
@@ -34,8 +34,8 @@ Monitoring is now
 - [Query Reference](https://vercel.com/docs/query/reference) — Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/query/monitoring/monitoring-reference.graph.md](/docs/query/monitoring/monitoring-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -200,4 +200,4 @@ On the left navigation bar, you will find a list of example queries to get start
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

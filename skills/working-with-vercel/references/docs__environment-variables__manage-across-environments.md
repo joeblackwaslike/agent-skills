@@ -16,8 +16,8 @@ related:
 summary: Add, sync, and verify environment variables across development, preview, production, and custom environments using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c376abbc4669c4329d32ada237bca71ccf6b0ce8262c9ceb1c9e8a627a755d21"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4f99956c339e08ba3bdfb1f8b6df3c0889f90d8e3fd57d0221a8ad6a367e1254"
 ---
 
 # Managing environment variables across environments
@@ -36,8 +36,8 @@ Use this guide to manage environment variables across multiple environments. You
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Environments](https://vercel.com/docs/deployments/environments) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
-- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 - [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
+- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 
 Full cross-link map for this page: [/docs/environment-variables/manage-across-environments.graph.md](/docs/environment-variables/manage-across-environments.graph.md)
 <!-- /docsgraph:related -->
@@ -240,4 +240,4 @@ vercel env rm DATABASE_URL production --yes
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

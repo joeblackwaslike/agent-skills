@@ -14,8 +14,8 @@ related:
 summary: Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/list.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "925dd96f4ee0868c0f1fe755fcc72377833111aa523b66d437857d5bdfb6b3e4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cfe7f606f08660d4ff45c6e9f15e3b6c1fc60565cbd0a99e60cd4f7627c989da"
 ---
 
 # vercel list
@@ -209,4 +209,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Use Vercel Workflows to pause Chat SDK tasks for human approval, resume after a decision, and inspect runs in the Vercel dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/integrations/workflows.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1f4e8243d1ba7b398dd5b60116b62c78f72033a6e88ba77f7f90295fbb1538f2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "620e39f947d1ef6be6849f463e75d6dd169f3459a78a0708bd873d8ff942bf16"
 ---
 
 # Chat SDK with Vercel Workflows
@@ -28,13 +28,14 @@ Use [Vercel Workflows](/docs/workflows) to pause a task from a chat message unti
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
-- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
 - [Pause workflows for approval with Chat SDK](https://vercel.com/changelog/chat-sdk-durable-approvals)
+- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Chat SDK with Vercel Sandbox](https://vercel.com/docs/chat-sdk/integrations/sandbox) — Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 
@@ -431,7 +432,7 @@ Open your project in the Vercel dashboard and use [Vercel Workflows observabilit
 
 - [Read the Chat SDK approval API](https://chat-sdk.dev/docs/approvals)
 - [Build multi-stage human approval flows](/kb/guide/human-in-the-loop-with-chat-sdk-and-workflow-sdk)
-- [Learn about workflow steps](https://workflow-sdk.dev/docs/foundations/steps)
+- [Learn about workflow steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps)
 
 
 ---
@@ -439,4 +440,4 @@ Open your project in the Vercel dashboard and use [Vercel Workflows observabilit
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

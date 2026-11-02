@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/claude-code-features.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "853607de24218eac839698efe2a3f29da889fb14b6760279dcc29e7ee0f66a70"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "22b811b894e989a1645a90d976c246662dea52e0d527fe21678148ce2b6bfaa2"
 ---
 
 > ## Documentation Index
@@ -81,11 +81,11 @@ Each source loads settings from a specific location, where `<cwd>` is the workin
 | :- | :- | :- |
 | `"project"` | Project `settings.json` and hooks; project CLAUDE.md and `.claude/rules/*.md`; project skills, commands, and subagents | `<cwd>/.claude/` for `settings.json` and hooks; `<cwd>` and every parent directory for CLAUDE.md and rules; `<cwd>` and every parent directory up to the repository root for skills, commands, and subagents, plus the `.claude/skills/`, `.claude/commands/`, and `.claude/agents/` folders of each directory you pass through the `additionalDirectories` or `add_dirs` option, which the SDK passes to Claude Code as [`--add-dir`](https://code.claude.com/docs/en/permissions#additional-directories-grant-file-access-not-configuration) |
 | `"user"` | User `settings.json`; user CLAUDE.md and `~/.claude/rules/*.md`; user skills, commands, and subagents | `~/.claude/` for `settings.json`, CLAUDE.md, and rules; `~/.claude/skills/`, `~/.claude/commands/`, and `~/.claude/agents/` for skills, commands, and subagents |
-| `"local"` | CLAUDE.local.md, `.claude/settings.local.json` | `<cwd>/.claude/` for `settings.local.json`; `<cwd>` and every parent directory for CLAUDE.local.md |
+| `"local"` | CLAUDE.local.md, `.claude/settings.local.json` | `<cwd>/.claude/` for `settings.local.json`, which [can also load from the repository's root](https://code.claude.com/docs/en/settings.md#where-claude-code-keeps-the-local-file-in-a-git-repository) when `<cwd>` is inside a git repository; `<cwd>` and every parent directory for CLAUDE.local.md |
 
 Omitting `settingSources` is equivalent to `["user", "project", "local"]`.
 
-The `cwd` option determines where the SDK looks for project-level inputs. Project `settings.json` and hooks load only from `<cwd>/.claude/` with no parent-directory fallback.
+The `cwd` option determines where the SDK looks for project-level inputs. Project `settings.json` loads from `<cwd>/.claude/` with no parent-directory fallback.
 
 ### What settingSources does not control
 

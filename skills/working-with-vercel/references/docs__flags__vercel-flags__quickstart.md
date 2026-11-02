@@ -17,8 +17,8 @@ related:
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d6b1483ecb7113ce5a54499d90912765e3cf28427f4e4db5c731d03c6c0828a0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0adc974f4db4b8f4eea2cbdc44d428afba7c2b9b4af3d94b7b9b9fc6593744be"
 ---
 
 # Getting Started with Vercel Flags
@@ -31,8 +31,8 @@ This guide walks you through creating a feature flag in the Vercel Dashboard and
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag) — Learn how to configure individual feature flags in the Vercel Dashboard.
@@ -355,4 +355,4 @@ Your flag is working. Here's what to explore next:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

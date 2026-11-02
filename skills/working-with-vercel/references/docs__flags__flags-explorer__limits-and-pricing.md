@@ -13,8 +13,8 @@ related:
 summary: Compare monthly Flags Explorer override limits and the price of unlimited overrides across Vercel plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/limits-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1b66226d2ada633f092548ae07d4b533c106bc040f5673f380805a2c4c3cc4cf"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "28821e2120407d45ae5a9c152d870b2ab0a80d378212b53295d37f5304b693ab"
 ---
 
 # Pricing for Flags Explorer
@@ -33,10 +33,10 @@ The following table outlines the price for each resource according to the plan y
 
 - [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available)
 - [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
-- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/limits-and-pricing.graph.md](/docs/flags/flags-explorer/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -57,7 +57,7 @@ When not subscribed to the unlimited option, Hobby, Pro and Enterprise have a li
 | Overrides | 150 per month | 150 per month | 150 per month |
 
 *One override directly translates to one click on the apply button of the Flags
-Explorer, which means that multiple flags can be overriden in one go.*
+Explorer, which means that multiple flags can be overridden in one go.*
 
 
 ---
@@ -65,4 +65,4 @@ Explorer, which means that multiple flags can be overriden in one go.*
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

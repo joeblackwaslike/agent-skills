@@ -16,8 +16,8 @@ related:
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "df53d3b39693e55b49186aab5a581d795c158ac517738b69ff4b4cb60bcdc3f7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5978a9e3d2fb3fa2cbfafd3037f19f0d476b76de0bd98c837e22633769705f48"
 ---
 
 # Queues concepts
@@ -30,14 +30,14 @@ Vercel Queues is a durable event streaming system for asynchronous workloads. Yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
-- [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
+- [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations) — Build a custom framework integration using the Workflow SDK compiler and combined runtime handler.
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
-- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
 
 Full cross-link map for this page: [/docs/queues/concepts.graph.md](/docs/queues/concepts.graph.md)
@@ -68,6 +68,8 @@ Vercel Queues and [Vercel Workflows](/docs/workflows) solve related but differen
 | **Use this when**       | You need low-level control over publish/consume behavior | You need high-level orchestration and durable business flows |
 
 Use Queues when you want direct control over event ingestion and delivery. Use Workflow when you want a higher-level programming model for long-running business processes.
+
+For a broader comparison that includes `waitUntil`, Cron Jobs, and continuously running Daemons, see [Running background workers on Vercel](/kb/guide/background-workers-on-vercel). The guide includes examples and guidance on retries, duplicate jobs, and worker shutdown.
 
 ## How Vercel Queues works
 
@@ -403,4 +405,4 @@ In push mode, triggers in different services have independent [consumer groups](
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

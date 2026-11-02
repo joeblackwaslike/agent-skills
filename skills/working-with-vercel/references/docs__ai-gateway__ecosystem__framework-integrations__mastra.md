@@ -9,18 +9,21 @@ prerequisites:
   - /docs/ai-gateway/ecosystem/framework-integrations
   - /docs/ai-gateway/ecosystem
 related:
+  - /docs/frameworks/agents/mastra
   - /docs/ai-sdk
-  - /docs/ai-gateway
+  - /docs/ai-gateway/authentication-and-byok
+  - /docs/sandbox/ecosystem/mastra
+  - /docs/chat-sdk
 summary: Learn how to integrate Vercel AI Gateway with Mastra to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/mastra.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b7ccd297b8112f372b1a0e42489403d561782f6f60a3cce8324279d92956dbc1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c2d6d19af61b81a98380a75afbc1329a17e3e8dd9a63fc653d306d904490b0f5"
 ---
 
 # Mastra with AI Gateway
 
-[Mastra](https://mastra.ai) is a framework for building and deploying AI-powered features
+[Mastra](/docs/frameworks/agents/mastra) is a framework for building and deploying AI-powered features
 using a modern JavaScript stack powered by the [Vercel AI SDK](/docs/ai-sdk).
 Integrating with AI Gateway provides unified model management and routing capabilities.
 
@@ -31,13 +34,15 @@ Integrating with AI Gateway provides unified model management and routing capabi
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Build a Software Factory with Mastra](https://vercel.com/docs/agent-resources/software-factory/mastra) — Combine Mastra workflow stages with AI Gateway, Vercel Sandbox, and GitHub Tools to prepare reviewed changes.
+- [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Pydantic AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface.
-- [Mistral Vibe with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/vibe) — Connect Mistral Vibe to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/mastra.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/mastra.graph.md)
 <!-- /docsgraph:related -->
+
+For project setup, deployment, and storage options, see [Mastra on Vercel](/docs/frameworks/agents/mastra).
 
 ## Getting started
 
@@ -71,7 +76,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 
 - ### Configure environment variables
   Create or update your `.env` file with
-  your [Vercel AI Gateway API key](/docs/ai-gateway#using-the-ai-gateway-with-an-api-key):
+  your [Vercel AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys):
   ```bash filename=".env"
   AI_GATEWAY_API_KEY=your-api-key-here
   ```
@@ -148,10 +153,20 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
   Open the [Mastra API](https://mastra.ai/reference) to test your agents, workflows, and tools.
 
+## Run agent commands in Vercel Sandbox
+
+To give your Mastra agent isolated command execution, add a workspace with the `VercelSandbox` adapter. Follow [Mastra with Vercel Sandbox](/docs/sandbox/ecosystem/mastra) to configure authentication, run an agent, and clean up its sandbox.
+
+## Connect your agent on Vercel to chat platforms
+
+Connect the Mastra agent you deploy on Vercel to Slack, Discord, or Microsoft Teams with [Chat SDK](/docs/chat-sdk). Users can send prompts in chat while AI Gateway routes the agent's model requests. Inspect those requests in [AI Gateway observability](/docs/ai-gateway/observability-and-spend/observability).
+
+Mastra's channels integration accepts Chat SDK adapters through `channels.adapters` and registers their webhook routes. Point the platform's webhook URL to your deployed Mastra server. See [Mastra's channels guide](https://mastra.ai/docs/channels) for adapter credentials, webhook configuration, and persistent storage.
+
 
 ---
 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, and model IDs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cursor.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7c90553b2894bf0ee81deeda2f9220a61b6801ecde152248e9679a1f8f4b409f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "580e653d356fa29472a08a4259c7f593f60d2b42e1e312861494110aa87cea37"
 ---
 
 # Cursor with AI Gateway
@@ -29,7 +29,7 @@ sha256: "7c90553b2894bf0ee81deeda2f9220a61b6801ecde152248e9679a1f8f4b409f"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor) — Learn how to use the Cursor harness adapter.
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
@@ -97,4 +97,4 @@ Cursor's bring-your-own-key support has constraints that come from Cursor itself
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

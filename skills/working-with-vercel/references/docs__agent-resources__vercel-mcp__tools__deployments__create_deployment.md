@@ -13,8 +13,8 @@ related:
 summary: Use create_deployment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e0bec06a21a0ab521c6dca243ce3e92ddca3fd17f8c003e86995e913883d6cbc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "198283f42f2592c6b96120fed16d8c8f9742e6f3d8d911dc76467a5b2f88e857"
 ---
 
 # create_deployment
@@ -27,11 +27,10 @@ Create a [deployment](/docs/deployments) from a Git source or files. Put `name`,
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Create Deployment](https://v0.app/docs/api/v1/reference/deployments/create) — Create a new deployment for a specific chat and version. This will trigger a deployment to Vercel.
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 - [cancel_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment) — Use cancel_deployment with Vercel MCP.
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [request_promote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_promote) — Use request_promote with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment.graph.md)
@@ -55,4 +54,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

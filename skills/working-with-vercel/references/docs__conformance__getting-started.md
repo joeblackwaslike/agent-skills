@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up Conformance for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/getting-started.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a4edeca61594594a594d9e83cb36758e3bb94d347caaaf27c24310f8105c91fc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "aae7b3eb00b2641e4d0836e7a377a60fa1dac74a4eed66620378457b48780a06"
 ---
 
 # Getting Started with Conformance
@@ -140,4 +140,4 @@ This section guides you through setting up Conformance for your repository.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

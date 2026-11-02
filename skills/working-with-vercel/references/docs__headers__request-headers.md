@@ -16,8 +16,8 @@ related:
 summary: Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/request-headers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4c8a8efc3071157e1c2bf1ba70e7eea033b68a785aac8bcafb9ea7b09749fddb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9b65d0d2ee1cd890d73d6870edfe64f7135624cafaa872d8c9acaf7152baedd4"
 ---
 
 # Request headers
@@ -30,6 +30,7 @@ The following headers are sent to each Vercel deployment and can be used to proc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [IP geolocation now covers more visitors at higher resolution](https://vercel.com/changelog/improved-ip-geolocation-data)
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Requester's public IP postal code now available in Vercel Functions](https://vercel.com/changelog/requesters-public-ip-postal-code-now-available-in-vercel-functions)
 - [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
@@ -37,9 +38,9 @@ The following headers are sent to each Vercel deployment and can be used to proc
 - [Enhanced geolocation information for Vercel Functions](https://vercel.com/changelog/enhanced-geolocation-information-available-for-vercel-functions)
 - [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
 - [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
-- [Routing Middleware: JS Reference](https://vercel.com/docs/routing-middleware/js-reference) — Reference for writing Routing Middleware in TypeScript and JavaScript, including entrypoints, the config object, the mid
 - [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
 
 Full cross-link map for this page: [/docs/headers/request-headers.graph.md](/docs/headers/request-headers.graph.md)
 <!-- /docsgraph:related -->
@@ -1204,4 +1205,4 @@ For complete examples with additional error handling, see [Securing webhooks](/d
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Connect omp (oh-my-pi) to AI Gateway with the Vercel CLI or an environment variable. Use the built-in provider to access the model catalog.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/omp.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6999ce965c1f30aa657fc831ca134c0575a5fa4806c6dea843d717a7bb522295"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "185f353fb5c6b5b6ed78b87bdf004555f9aef902ce934b3b0908719289795dd0"
 ---
 
 # omp with AI Gateway
@@ -94,4 +94,4 @@ If you can't use the Vercel CLI, configure omp manually:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

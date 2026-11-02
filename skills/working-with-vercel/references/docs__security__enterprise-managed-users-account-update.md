@@ -15,8 +15,8 @@ related:
 summary: Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/enterprise-managed-users-account-update.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e692ea7719f91366fba57d2a1c3468ff5743aae76fbd88d5c2975cb7b51cb847"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f32da9862f11efba795b9afb07479a589349024f3bc7a09d4de387bc557eb33b"
 ---
 
 # Transition your Hobby team after EMU enrollment
@@ -30,13 +30,13 @@ Enabling [Enterprise Managed Users](/docs/security/enterprise-managed-users) (EM
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Enterprise Managed Users is now generally available](https://vercel.com/changelog/enterprise-managed-users)
-- [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
+- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
-- [Transferring a project](https://vercel.com/docs/projects/transferring-projects) — Learn how to transfer a project between Vercel teams.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Transferring a project](https://vercel.com/docs/projects/transferring-projects) — Learn how to transfer a project between Vercel teams.
 - [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users-account-update.graph.md](/docs/security/enterprise-managed-users-account-update.graph.md)
@@ -179,4 +179,4 @@ If a partner returns an error because your old identity is still linked under th
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

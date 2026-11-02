@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f5104d6c64857093c889bfd2071d104a938007a16f18da440bea0bf3d6e2295f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b2f37f7d9e7cdc18ceb72f6ffe0888d9833058c78613b82c8e7191574c4c25bd"
 ---
 
 # Environment Variables
@@ -29,9 +29,9 @@ Read and update project environment variables, inspect custom environments, and 
 
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Retrieve a custom environment](https://vercel.com/docs/rest-api/environment/retrieve-a-custom-environment) — GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} — Retrieve a custom environment for the project. M
-- [Environment variables](https://vercel.com/docs/environment-variables) — Learn more about environment variables on Vercel.
 - [Retrieve the environment variables of a project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-the-environment-variables-of-a-project-by-id-or-name) — GET /v10/projects/{idOrName}/env — Retrieve the environment variables for a given project by passing either the project
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [Retrieve custom environments](https://vercel.com/docs/rest-api/environment/retrieve-custom-environments) — GET /v9/projects/{idOrName}/custom-environments — Retrieve custom environments for the project. Must not be named 'Produ
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md](/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -138,4 +138,4 @@ Retrieve custom environments.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

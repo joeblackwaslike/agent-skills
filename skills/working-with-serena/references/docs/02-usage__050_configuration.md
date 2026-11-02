@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/050_configuration.md"
-fetched_at: "2026-10-26T09:52:48.732Z"
-sha256: "601d07fb6992b4df175ae5abf8bbf9dfcddf3890ddb76ea5419a12f1310e40ca"
+fetched_at: "2026-11-02T12:06:22.105Z"
+sha256: "9de81ed05da60e469f070975a78921d16d81cc8015adf576b4f719faeeb3dbb4"
 ---
 
 # Configuration
@@ -526,6 +526,9 @@ Supported settings:
 | `ls_path` | managed download | Override the `clangd` executable path. |
 | `compile_commands_dir` | `.serena` | Directory where Serena writes a transformed `compile_commands.json` if the project's original database uses relative `directory` entries. |
 | `clangd_version` | `19.1.2` | Override the `clangd` version Serena downloads when `ls_path` is not set. |
+
+Serena starts `clangd` with `--limit-references=0` (all references) and `--log=error` (errors only; omitted when Serena itself logs at debug level).
+Setting either option in `ls_extra_args` replaces Serena's value, e.g. `ls_extra_args: ["--log=info"]`.
 
 #### C/C++ via `ccls`
 

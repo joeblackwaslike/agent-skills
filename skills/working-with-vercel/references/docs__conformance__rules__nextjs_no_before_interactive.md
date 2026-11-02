@@ -12,8 +12,8 @@ related:
 summary: Requires review of usage of the beforeInteractive strategy in Script (next/script) elements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_before_interactive.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "40f74deba9656daa7414045f2f25cb994b8a8cedbe4b42b416fe7d7ff107d08f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6264c8114fe7f4ff7568264cb3f838bf00f36aaf50d75b119a71884286193d2c"
 ---
 
 # NEXTJS_NO_BEFORE_INTERACTIVE
@@ -59,4 +59,4 @@ exception should be added to the allowlist.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

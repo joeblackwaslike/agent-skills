@@ -10,15 +10,15 @@ prerequisites:
   - /docs/global-config
 related:
   - /docs/cli
-  - /docs/projects
+  - /docs/projects/managing-projects
   - /docs/global-config/get-started
   - /docs/global-config/global-config-sdk
   - /docs/global-config/global-config-dashboard
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f53958a8ddcd2ec0096cfe1b41c90caf946428eb6dafee76453bd2bbadd35862"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "12d7c4078bdcf73d88140e6c0facdf85a3ad26cc9923ca10fdaffc588381fe51"
 ---
 
 # Using Global Config with Split
@@ -33,14 +33,13 @@ This guide will help you get started with using Vercel's Split integration with 
 
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
+- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
+- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route) — API reference for the route.js special file.
 - [TanStack Start](https://ai-sdk.dev/docs/getting-started/tanstack-start) — Learn how to build your first agent with the AI SDK and TanStack Start.
 - [Expo](https://ai-sdk.dev/docs/getting-started/expo) — Learn how to build your first agent with the AI SDK and Expo.
-- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
-- [Next.js App Router](https://ai-sdk.dev/docs/getting-started/nextjs-app-router) — Learn how to build your first agent with the AI SDK and Next.js App Router.
-- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route) — API reference for the route.js special file.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
-- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 - [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
+- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md)
 <!-- /docsgraph:related -->
@@ -49,7 +48,7 @@ Full cross-link map for this page: [/docs/global-config/global-config-integratio
 
 Split is a feature flag provider that tracks event data, enabling you to release features, target them to audiences, and measure their impact on customer experience metrics securely.
 
-The Split Global Config integration enables you to write your [Split rollout plan](https://help.split.io/hc/en-us/articles/9805284145549-Creating-a-rollout-plan "Rollout Plan") to a Global Config. Doing so will allow you to evaluate feature flags at ultra-low latency with Vercel's CDN while tracking events and impressions data with Split.
+The Split Global Config integration enables you to write your [Split rollout plan](https://developer.harness.io/feature-management-experimentation/use-fme/feature-management/setup/create-a-rollout-plan "Rollout Plan") to a Global Config. Doing so will allow you to evaluate feature flags at ultra-low latency with Vercel's CDN while tracking events and impressions data with Split.
 
 ## Prerequisites
 
@@ -99,7 +98,7 @@ npx create-next-app@latest
 bunx create-next-app@latest
 ```
 
-1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects#creating-a-project)
+1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects/managing-projects#creating-a-project)
 2. A Global Config. If you don't have one, follow [the Global Config quickstart](/docs/global-config/get-started)
 3. The Global Config SDK:
 
@@ -127,7 +126,7 @@ bunx create-next-app@latest
   Visit [the Split page in the Vercel Integration Marketplace](/marketplace/split) and select the **Add Integration** button. From the Integration dialog:
   1. Select a Vercel team and project to connect the integration to
   2. Log into Split
-  3. Select the **[Split Environment](https://developer.harness.io/docs/feature-management-experimentation/integrations/vercel/)** you want to use
+  3. Select the **[Split Environment](https://developer.harness.io/feature-management-experimentation/management-and-administration/integrations/vercel)** you want to use
   4. Select an existing Global Config or create a new one
   5. Copy the Global Config item key provided on this page. You'll need it to add it to your Environment Variables
   > **💡 Note:** You can also find your Global Config Split item key in [your dashboard on
@@ -190,7 +189,7 @@ bunx create-next-app@latest
   ```bash
   bun add @splitsoftware/splitio-browserjs @splitsoftware/vercel-integration-utils @vercel/global-config
   ```
-  2. Create an API route in your project. The following example fetches a treatement based on which user is visiting. You can specify the user by appending `?userKey=Joe` or `?userKey=Bobby` to the URL when visiting the route:
+  2. Create an API route in your project. The following example fetches a treatment based on which user is visiting. You can specify the user by appending `?userKey=Joe` or `?userKey=Bobby` to the URL when visiting the route:
   ```ts filename="app/api/marketing-example/route.ts" framework=nextjs-app
   import {
     SplitFactory,
@@ -599,4 +598,4 @@ Now that you have set up the Split Global Config integration, you can explore th
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -4,8 +4,8 @@ description: API Reference for streamText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "b7846a3494220e8a097b7e9e597f082762c21d941cb9ae0ad00bc906ebeedc02"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "96f0fa7ea697d6ec8d12e3ecbe65fda848db676833db9d955a78399995459754"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -161,6 +161,7 @@ import { streamText } from "ai"
         - `instructions` (`Instructions | undefined`): The instructions that will be sent to the model for the current step. If prepareStep returns an instructions override, those instructions carry forward to later steps.
         - `initialInstructions` (`Instructions | undefined`): The initial instructions that were passed into generateText or streamText.
         - `messages` (`Array<ModelMessage>`): The messages that will be sent to the model for the current step. If prepareStep returns a messages override, those messages carry forward to later steps.
+        - `experimental_steeringMessages?` (`Array<UserModelMessage> | undefined`): The user messages that were sent with \`experimental\_steering\` and added to \`messages\` for the current step. Undefined when the step received no steering messages. \`messages\` already contains them. If you return a \`messages\` override that is rebuilt from other fields, add them back together with the steering messages of previous steps from \`steps\`.
         - `runtimeContext?` (`CONTEXT`): The shared runtime context passed via the \`runtimeContext\` setting.
         - `toolsContext` (`InferToolSetContext<TOOLS>`): The per-tool context map passed via the \`toolsContext\` setting.
         - `experimental_sandbox?` (`Experimental_SandboxSession | undefined`): The experimental sandbox environment passed via the \`experimental\_sandbox\` setting.
@@ -187,6 +188,7 @@ import { streamText } from "ai"
 - `runtimeContext?` (`CONTEXT`): User-defined shared runtime context object passed to \`prepareStep\` and lifecycle callbacks.
 - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map keyed by tool name. Required when at least one tool defines \`contextSchema\`; not accepted when no tools need context.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
+- `experimental_steering?` (`Experimental_Steering`): Experimental steering object created with \`experimental\_createSteering()\`. Messages sent with \`steering.steer()\` are added as user messages at the next step boundary, after the current step and its tool calls are done. A waiting message keeps the loop going for another step unless a stop condition is met. \`steer()\` resolves with \`\{ type: 'delivered', id, message, stepNumber }\` or \`\{ type: 'not-delivered', id, message, reason }\`. See \[Steering]\(/docs/agents/loop-control#steering).
 - `experimental_download?` (`(requestedDownloads: Array<{ url: URL; isUrlSupportedByModel: boolean }>) => Promise<Array<null | { data: Uint8Array; mediaType?: string }>>`): Custom download function to control how URLs are fetched when they appear in prompts. By default, files are downloaded if the model does not support the URL for the given media type. Experimental feature. Return null to pass the URL directly to the model (when supported), or return downloaded content with data and media type.
 - `include?` (`{ requestBody?: boolean; requestMessages?: boolean; rawChunks?: boolean }`): Controls inclusion of request body and request messages in step results, and raw provider chunks in the stream. By default, request body, request messages, and raw chunks are excluded to reduce memory usage. Set requestBody or requestMessages to true when you need access to the data. Set rawChunks to true when you need access to raw provider chunks.
   - `Object`
@@ -323,6 +325,10 @@ import { streamText } from "ai"
         - `headers?` (`Record<string, string>`): Optional response headers.
     - `isContinued` (`boolean`): True when there will be a continuation step with a continuation text.
     - `providerMetadata?` (`Record<string,JSONObject> | undefined`): Optional metadata from the provider. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.
+- `onStepError?` (`(event: GenerateTextStepErrorEvent) => Promise<void> | void`): Callback that is called when a step that started fails before it produces a step result, i.e. when the provider call throws or rejects, or when the model stream ends without output. \`onStepEnd\` is not called for such a step. A provider \`error\` chunk does not fail the step: it still ends with \`onStepEnd\` and \`finishReason: 'error'\`. Aborts and timeouts end the step with \`onAbort\` instead.
+  - `GenerateTextStepErrorEvent`
+    - `...GenerateTextStepStartEvent` (`GenerateTextStepStartEvent`): All properties of the \`onStepStart\` event of the step that failed, such as \`callId\`, \`stepNumber\`, \`steps\`, \`messages\`, \`runtimeContext\`, and \`toolsContext\`.
+    - `error` (`unknown`): The error that ended the step.
 - `onStepFinish?` (`GenerateTextOnStepFinishCallback<TOOLS>`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
 - `onEnd?` (`(result: OnEndResult) => Promise<void> | void`): Callback that is called when the LLM response and all request tool executions (for tools that have an \`execute\` function) are finished.
   - `OnEndResult`
@@ -606,6 +612,7 @@ import { streamText } from "ai"
     - `warnings` (`Warning[] | undefined`): Warnings from the model provider (e.g. unsupported settings).
     - `isContinued` (`boolean`): True when there will be a continuation step with a continuation text.
     - `providerMetadata?` (`Record<string,JSONObject> | undefined`): Optional metadata from the provider. The outer key is the provider name. The inner values are the metadata. Details depend on the provider.
+    - `experimental_steeringMessages?` (`Array<UserModelMessage> | undefined`): The user messages that were sent with \`experimental\_steering\` and added to the input of this step. Undefined when the step received no steering messages.
 - `textStream` (`AsyncIterableStream<string>`): A text stream that returns only the generated text deltas. You can use it as either an AsyncIterable or a ReadableStream. Error parts are not surfaced in this stream. Use the \`onError\` callback or \`stream\` to observe them.
 - `finalStep` (`Promise<StepResult>`): The final step. This is a shortcut for \`steps.at(-1)\`. Automatically consumes the stream.
 - `stream` (`AsyncIterable<TextStreamPart<TOOLS>> & ReadableStream<TextStreamPart<TOOLS>>`): A stream with all events, including text deltas, tool calls, tool results, and errors. Well-formed mid-stream provider failures are emitted in error parts as StreamProviderError instances. You can use it as either an AsyncIterable or a ReadableStream. Only errors that stop the stream, such as network errors, are thrown.

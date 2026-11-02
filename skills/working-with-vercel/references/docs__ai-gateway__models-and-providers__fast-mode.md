@@ -15,8 +15,8 @@ related:
 summary: Request the faster serving path for supported models through AI Gateway using the `speed` option or the fast model slug, with automatic fallback to...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f6e5061741453d03e2eea0155121ec941f543f6cb9c920d4a2a3142b05e9a396"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7da280de0aad4200343cd3830da6c4388e3528de57d9976d8f0cb55c1a6073ea"
 ---
 
 # AI Gateway Fast Mode
@@ -31,10 +31,10 @@ Some models expose a faster serving path that trades a higher per-token cost for
 
 - [AI Gateway adds unified fast mode support](https://vercel.com/changelog/ai-gateway-adds-unified-fast-mode-support)
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
+- [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
 - [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway)
 - [Opus 4.6 Fast Mode available on AI Gateway](https://vercel.com/changelog/opus-4-6-fast-mode-available-on-ai-gateway)
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/fast-mode.graph.md](/docs/ai-gateway/models-and-providers/fast-mode.graph.md)
@@ -643,4 +643,4 @@ Pin fast mode on a [virtual model](/docs/ai-gateway/models-and-providers/virtual
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

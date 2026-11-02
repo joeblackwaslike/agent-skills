@@ -16,8 +16,8 @@ related:
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2b5b73c023f8f9ad44366147f9913c1e328ce2e4d2d23f62384badd8a6421a23"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f620cbd68d643d45c6c82f6fa899842bf71ba221d25ae3c68edca5dcf202ecb3"
 ---
 
 # Deployment Protection on Vercel
@@ -31,10 +31,10 @@ Deployment Protection lets you control who can access your preview and productio
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
+- [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Remote Agents](https://eve.dev/docs/guides/remote-agents) — Call another eve deployment as a subagent with defineRemoteAgent: the same tool call as a local subagent, with outbound
 - [More Secure Deployment Protection](https://vercel.com/changelog/more-secure-deployment-protection)
-- [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
 - [Protection bypass for automation now supports multiple secrets](https://vercel.com/changelog/protection-bypass-for-automation-multiple-secrets)
 - [Set team-wide defaults for Deployment Protection](https://vercel.com/changelog/set-team-wide-defaults-for-deployment-protection)
 - [Use native curl syntax with Vercel CLI](https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli)
@@ -205,4 +205,4 @@ See [Usage & Pricing for Deployment Protection](/docs/deployment-protection/usag
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

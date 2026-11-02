@@ -16,8 +16,8 @@ related:
 summary: Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ca29ea61317e3522b1e292de04cd92080eb7bff45b262e9910bcf1b6dd7bc475"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "88f32d239c6ab792902793a14d93f9998038c1e659f7140fb2d22b9ac5ddc642"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -188,7 +188,7 @@ See [debug routing](/docs/microfrontends/local-development#debug-routing) for ho
 To validate where requests are being routed to in production, follow these steps:
 
 1. [Verify](/docs/microfrontends/routing#identify-the-microfrontend-for-a-path) that the path is covered by the microfrontends routing configuration.
-2. Inspect the [debug headers](/docs/microfrontends/troubleshooting#debug-headers) or view a [page trace](/docs/microfrontends/troubleshooting#tracing) to verify the expected path was matched.
+2. Inspect the [debug headers](/docs/microfrontends/troubleshooting#debug-headers-when-deployed) or view a [page trace](/docs/microfrontends/troubleshooting#tracing) to verify the expected path was matched.
 
 ### Pages Router pages fail during client-side navigation
 
@@ -229,4 +229,4 @@ Next.js Pages Router routes:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

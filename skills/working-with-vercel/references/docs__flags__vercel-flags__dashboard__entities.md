@@ -16,8 +16,8 @@ related:
 summary: Define entities and their attributes for precise feature flag targeting.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d49ae68f5302e84f8dd212b7b04b85b85f8683709b612a6e905532253876cc71"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8b311b73aede490cc5d0ee736e6604b19a17cc3942595e2409df5b6519598613"
 ---
 
 # Entities
@@ -35,7 +35,7 @@ Entities represent the things your application knows about: users, teams, device
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
@@ -236,4 +236,4 @@ See [Segments](/docs/flags/vercel-flags/dashboard/segments) for creating reusabl
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -15,8 +15,8 @@ related:
 summary: Learn how to promote deployments to production on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promoting-a-deployment.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "666dd1a534d14cc5b3f2b9cd3d9bcf87254ec3c9b4429bd9c1c93b36f8b19a3d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2d022b3288fe117ee016af4523d6fa909aae8ffd95a4b11627509536a88bc848"
 ---
 
 # Promoting Deployments
@@ -37,9 +37,9 @@ By default, when you merge to or make commits to your production branch (often `
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [vercel promote](https://vercel.com/docs/cli/promote) — Learn how to promote an existing deployment using the vercel promote CLI command.
+- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
-- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 
 Full cross-link map for this page: [/docs/deployments/promoting-a-deployment.graph.md](/docs/deployments/promoting-a-deployment.graph.md)
@@ -111,4 +111,4 @@ Your production deployments could be in one of three states:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

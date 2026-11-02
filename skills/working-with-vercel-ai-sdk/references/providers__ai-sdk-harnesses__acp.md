@@ -4,8 +4,8 @@ description: Learn how to use Agent Client Protocol implementations through the 
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "e278d198c83a94201b27e8c14371bbc101450c9b661db2a6a669dc65e96661cb"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "8252668f35c41633581c6fe9d7a0d5fbb143f14e2bd76c3e0a0dd0f77d90fcd2"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -94,6 +94,13 @@ try {
 - `builtinTools`: optional native tool definitions for static typing and exact
   name matching.
 - `mcpServers`: MCP server definitions keyed by server name.
+- `resolveHostToolCall`: required function that resolves an ACP tool call to
+  the host tool it invokes, or `undefined` if it's not a host tool call.
+- `isMcpToolCall`: required function that receives an ACP tool call that was
+  classified by `resolveHostToolCall` to *not* be a host tool call, and
+  returns whether it invokes a tool from a configured MCP server. Matching
+  tool calls are reported as dynamic tool calls instead of provider-executed
+  built-in tool calls.
 - `hostToolMcpTransport`: transport used for the harness-owned MCP server that
   exposes host tools to the ACP implementation. It defaults to `'stdio'`. Set
   this to `'http'` for implementations that only accept HTTP or SSE MCP servers
@@ -175,16 +182,7 @@ implementations with a private prompt metadata extension can opt in explicitly:
 
 ```ts
 const harness = createACP({
-  harnessId: 'example-acp',
-  source: {
-    type: 'install-command',
-    command: 'curl -fsSL https://example.com/install.sh | bash',
-  },
-  executable: 'example-acp',
-  modelMapping: {
-    type: 'session-config-option',
-    path: 'model',
-  },
+  // ...implementation settings
   outputSchemaMapping: {
     type: 'session-prompt-meta',
     path: ['outputSchema'],
@@ -388,6 +386,8 @@ export const codexACPHarness = createACP({
     type: 'session-config-option',
     path: 'model',
   },
+  resolveHostToolCall: resolveCodexACPHostToolCall,
+  isMcpToolCall: toolCall => toolCall._meta?.is_mcp_tool_call === true,
   forwardEnv: ['CODEX_CONFIG'],
   credentialEnv: ['CODEX_API_KEY', 'OPENAI_API_KEY'],
   credentialBrokering: ({ env, sandboxEnv }) => {
@@ -498,6 +498,37 @@ export const cursorACPHarness = createACP({
   clientCapabilities: {
     _meta: { parameterizedModelPicker: true },
   },
+  // Cursor reports MCP tool calls with a
+  // `{ providerIdentifier, toolName, args }` raw input.
+  resolveHostToolCall: ({ toolCall, serverName, toolNames }) => {
+    const rawInput = toolCall.rawInput as
+      | { providerIdentifier?: unknown; toolName?: unknown; args?: unknown }
+      | undefined;
+    if (
+      rawInput?.providerIdentifier !== serverName ||
+      typeof rawInput.toolName !== 'string' ||
+      !toolNames.includes(rawInput.toolName) ||
+      rawInput.args == null ||
+      typeof rawInput.args !== 'object'
+    ) {
+      return undefined;
+    }
+    return {
+      toolName: rawInput.toolName,
+      input: rawInput.args as Record<string, unknown>,
+    };
+  },
+  isMcpToolCall: toolCall => {
+    const rawInput = toolCall.rawInput as
+      | { providerIdentifier?: unknown; toolName?: unknown; args?: unknown }
+      | undefined;
+    return (
+      typeof rawInput?.providerIdentifier === 'string' &&
+      typeof rawInput.toolName === 'string' &&
+      rawInput.args != null &&
+      typeof rawInput.args === 'object'
+    );
+  },
   credentialEnv: ['CURSOR_API_KEY'],
   credentialBrokering: ({ env, sandboxEnv }) => {
     if (!env.CURSOR_API_KEY || !sandboxEnv?.CURSOR_API_KEY) return [];
@@ -561,6 +592,34 @@ export const grokBuildACPHarness = createACP({
   modelMapping: {
     type: 'session-model',
     path: 'modelId',
+  },
+  // Grok Build calls MCP tools through its `use_tool` meta-tool, with a
+  // `{ tool_name, tool_input }` raw input where `tool_name` is
+  // `${serverName}__${toolName}`.
+  resolveHostToolCall: ({ toolCall, serverName, toolNames }) => {
+    const rawInput = toolCall.rawInput as
+      | { tool_name?: unknown; tool_input?: unknown }
+      | undefined;
+    const toolName = toolNames.find(
+      name => rawInput?.tool_name === `${serverName}__${name}`,
+    );
+    if (
+      toolName == null ||
+      rawInput?.tool_input == null ||
+      typeof rawInput.tool_input !== 'object'
+    ) {
+      return undefined;
+    }
+    return {
+      toolName,
+      input: rawInput.tool_input as Record<string, unknown>,
+    };
+  },
+  isMcpToolCall: toolCall => {
+    const metadata = toolCall._meta?.['x.ai/tool'] as
+      | { namespace?: unknown }
+      | undefined;
+    return metadata?.namespace === 'mcp';
   },
   credentialEnv: ['XAI_API_KEY'],
   credentialBrokering: ({ env, sandboxEnv }) => {

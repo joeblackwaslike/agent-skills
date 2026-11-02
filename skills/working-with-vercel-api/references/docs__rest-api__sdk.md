@@ -3,7 +3,7 @@ title: Vercel SDK Reference
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-10-26
+last_updated: 2026-11-02
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-10-26T09:55:26.604Z"
-sha256: "b640ee5fb260782cfccdfa5bf32869412376ccd101487d2cd2100dcd2a9357c8"
+fetched_at: "2026-11-02T12:08:33.177Z"
+sha256: "2316fd77e78e29674217909a8b31db76b8bf207a53c89dd357b8f8ee0c903e07"
 ---
 
 # Vercel SDK Reference
@@ -44,6 +44,11 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 
 | Method | Endpoint | Description |
 |---|---|---|
+| **POST** | [`/ai-gateway/byok-credentials`](/docs/rest-api/sdk/ai-gateway/create-a-byok-credential.md) | Create a BYOK credential |
+| **GET** | [`/ai-gateway/byok-credentials/list`](/docs/rest-api/sdk/ai-gateway/list-byok-credentials.md) | List BYOK credentials |
+| **GET** | [`/ai-gateway/byok-credentials/{credentialId}`](/docs/rest-api/sdk/ai-gateway/get-a-byok-credential.md) | Get a BYOK credential |
+| **PATCH** | [`/ai-gateway/byok-credentials/{credentialId}`](/docs/rest-api/sdk/ai-gateway/update-a-byok-credential.md) | Update a BYOK credential |
+| **DELETE** | [`/ai-gateway/byok-credentials/{credentialId}`](/docs/rest-api/sdk/ai-gateway/delete-a-byok-credential.md) | Delete a BYOK credential |
 | **GET** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/ai-gateway/get-virtual-model-config.md) | Get virtual model config |
 | **POST** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/ai-gateway/create-virtual-model-config.md) | Create virtual model config |
 | **PATCH** | [`/ai-gateway/virtual-model-configs`](/docs/rest-api/sdk/ai-gateway/update-virtual-model-config.md) | Update virtual model config |
@@ -708,4 +713,4 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

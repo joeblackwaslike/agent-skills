@@ -15,8 +15,8 @@ related:
 summary: Requires that every package.json file has the sideEffects field set to ensure tree-shaking works optimally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_side_effects_required.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1e1f9bfde3b82ff10e3d24cb7a5a1b9d611209c2a0bf175b3d6efe520244e0b3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3e779d1c8e00f4792efdd6a44f62043ab2997a96c6b60b7b4749d93c56eb0674"
 ---
 
 # PACKAGE_JSON_PRIVATE_REQUIREDPACKAGE_JSON_SIDE_EFFECTS_REQUIRED
@@ -49,4 +49,4 @@ patterns for files that do have side effects.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -15,8 +15,8 @@ related:
 summary: Learn how to add Replicate connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/replicate.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ad3dc85a3a8229be8535ba0ba98b2b1e79aa491715d4f2dd6bde7a46b5476624"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c57c1eeab3fd710c5fabcaaa3067c6274e2d15b8d29db56eeb44d43dec45fc7e"
 ---
 
 # Vercel Replicate Integration
@@ -35,10 +35,10 @@ applications, enabling advanced functionalities and enhancing user experiences.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
-- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
-- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
+- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
+- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/replicate.graph.md](/docs/agent-resources/integrations-for-models/replicate.graph.md)
 <!-- /docsgraph:related -->
@@ -116,4 +116,4 @@ You can deploy a template to Vercel that uses a pre-trained model from Replicate
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

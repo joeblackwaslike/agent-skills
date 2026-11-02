@@ -12,8 +12,8 @@ related:
 summary: "The internal function could not be found. This is a Vercel's error."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_function_not_found.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d2059d44978da23c8e18e57ddad4b020e6bc6367fa75add81556f01701537e36"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b581a15554daff9ee17a775c97ee7cca7670750c4655eded42f1f579339e880a"
 ---
 
 # INTERNAL_FUNCTION_NOT_FOUND
@@ -39,4 +39,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

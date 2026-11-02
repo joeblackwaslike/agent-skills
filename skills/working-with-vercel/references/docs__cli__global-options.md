@@ -14,8 +14,8 @@ related:
 summary: "Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options here."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-options.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "24f531e21327133e7fdc706de21e5b3f95ae0e5042506e359d0be9ef59981647"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ad9512490e6eb4556ea3ad230c2f6050211afe5c603debb329a07fa0e97a85ea"
 ---
 
 # Vercel CLI Global Options
@@ -28,8 +28,8 @@ Global options are commonly available to use with multiple Vercel CLI commands.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
@@ -237,4 +237,4 @@ Some commands define additional exit codes. For example, [`vercel inspect --wait
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

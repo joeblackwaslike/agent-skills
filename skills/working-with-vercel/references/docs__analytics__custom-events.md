@@ -16,8 +16,8 @@ related:
 summary: Learn how to send custom analytics events from your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/custom-events.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6dc89459386423e6c11165d906d6948c88abfc6a58a54c43946a5b4b0eb50346"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a5a70cec1e0e0d3c041295ec7952dd8147d305db8deb4ab9d6b708b8c3be1232"
 ---
 
 # Tracking custom events
@@ -41,7 +41,7 @@ This is useful for tracking user interactions, such as button clicks, form submi
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
 
 Full cross-link map for this page: [/docs/analytics/custom-events.graph.md](/docs/analytics/custom-events.graph.md)
@@ -508,4 +508,4 @@ Once you have tracked an event, you can view and filter for it in the dashboard.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

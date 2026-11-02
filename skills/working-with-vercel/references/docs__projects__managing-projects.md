@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your projects through the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/managing-projects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dfad7b2b7eb2e136d14cd89a2418403c9115adfd5f1fa10fe0b40ef1ef4e8fd2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "99f3816ed9d38fbc8c20420587e8a7cbf4396a6bffe0c5d1af12cc36cc202ea7"
 ---
 
 # Managing projects
@@ -33,8 +33,8 @@ You can manage your project on Vercel in your project's dashboard. To learn more
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
-- [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
@@ -51,7 +51,7 @@ Full cross-link map for this page: [/docs/projects/managing-projects.graph.md](/
 To create a [new](/new) project:
 
 1. On the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), ensure you have selected the correct team from the team switcher.
-2. Click the **Add New…** drop-down button and select **Project**:
+2. Click **Create New**, then select **Project**:
 
 ![ Creating a new project from the Vercel dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/add-new-project-light.png)
 
@@ -133,7 +133,7 @@ run();
 
 ## Pausing a project
 
-You can choose to temporarily pause a project to ensure that you do not incur usage from [metered resources](/docs/limits#additional-resources) on your production deployment.
+You can choose to temporarily pause a project to ensure that you do not incur usage from [metered resources](/docs/pricing#managed-infrastructure-billable-resources) on your production deployment.
 
 ### Pausing a project when you reach your spend amount
 
@@ -162,7 +162,7 @@ To pause a project manually or with a webhook you can use the [REST API](/docs/r
 
 1. Ensure you have [access token](/docs/rest-api#creating-an-access-token) scoped to your team to authenticate the API.
 2. Create a webhook that calls the pause project [endpoint](/docs/rest-api/projects/pause-a-project):
-   - You'll need to pass a path parameter of the [Project ID](/docs/projects#project-id) and query string of [Team ID](/docs/accounts#find-your-team-id):
+   - You'll need to pass a path parameter of the [Project ID](/docs/project-configuration/general-settings#project-id) and query string of [Team ID](/docs/accounts#find-your-team-id):
      ```bash filename="request"
      https://api.vercel.com/v1/projects/<prj_ID>/pause?teamId=<team_ID>
      ```
@@ -213,4 +213,4 @@ To delete a project:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

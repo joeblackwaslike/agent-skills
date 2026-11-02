@@ -16,8 +16,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5000e6b2b3e6501012bc7f85893ea7c33ae41ae72e6f61364d6a7be88929cc16"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b9b67cb9101a61959a59e68b5cb95d55231fe128b26d214878665f4f6f061741"
 ---
 
 # Security & Compliance Measures
@@ -209,4 +209,4 @@ Vercel conducts regular penetration testing through third-party penetration test
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

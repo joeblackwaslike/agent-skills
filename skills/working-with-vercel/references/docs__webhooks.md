@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up webhooks and use them with Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a9362fa6a83b8690129a05f0cd691a70faf66a85372229b073ea7b21c5186e04"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "85aa86baaa387cb95ca8d5a1525a6b7b882206ae98d3d1e2069272030c7b12b0"
 ---
 
 # Setting Up Webhooks
@@ -35,10 +35,10 @@ A webhook is a trigger-based HTTP endpoint configured to receive HTTP POST reque
 - [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure)
 - [Configurable webhooks ](https://vercel.com/changelog/configurable-webhooks)
 - [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook) — POST /v1/webhooks — Creates a webhook
-- [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook) — GET /v1/webhooks/{id} — Get a webhook
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
+- [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook) — GET /v1/webhooks/{id} — Get a webhook
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks) — GET /v1/webhooks — Get a list of webhooks
-- [Webhook triggers for Vercel Connect](https://vercel.com/docs/connect/concepts/triggers) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
+- [get_webhooks](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_webhooks) — Use get_webhooks with Vercel MCP.
 
 Full cross-link map for this page: [/docs/webhooks.graph.md](/docs/webhooks.graph.md)
 <!-- /docsgraph:related -->
@@ -143,4 +143,4 @@ Here's a [list of supported event types](/docs/webhooks/webhooks-api#supported-e
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -9,18 +9,19 @@ prerequisites:
   - /docs/flags/vercel-flags/dashboard
   - /docs/flags/vercel-flags
 related:
+  - /docs/flags/vercel-flags/project-connections
   - /docs/flags/vercel-flags/dashboard/feature-flag
   - /docs/flags/vercel-flags/sdks/flags-sdk
 summary: Manage SDK Keys for Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/sdk-keys.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2b4341697eeca028e1cb6f410d0ec495a062559ef1d311f676d7ae6ae119b800"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "465ec6841eda4352ee10ffa642d79741a632d8a31d3751d8e7f55b7afe3e8f17"
 ---
 
 # SDK Keys
 
-Vercel Flags supports OpenID Connect (OIDC) for applications in the same Vercel project. Use SDK Keys for manual authentication, including applications outside Vercel and projects that evaluate flags owned by another project.
+Vercel Flags supports OpenID Connect (OIDC) for a project's own flags and [connected projects' flags](/docs/flags/vercel-flags/project-connections). Use SDK Keys when you need manual authentication, such as for applications outside Vercel.
 
 
 <!-- docsgraph:related -->
@@ -33,8 +34,8 @@ Vercel Flags supports OpenID Connect (OIDC) for applications in the same Vercel 
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [SDKs](https://vercel.com/docs/flags/vercel-flags/sdks) — Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 - [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key) — PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Creates an SDK key.
-- [Get all SDK keys](https://vercel.com/docs/rest-api/feature-flags/get-all-sdk-keys) — GET /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Gets all SDK keys for a project.
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Get all SDK keys](https://vercel.com/docs/rest-api/feature-flags/get-all-sdk-keys) — GET /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Gets all SDK keys for a project.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/sdk-keys.graph.md](/docs/flags/vercel-flags/dashboard/sdk-keys.graph.md)
@@ -161,6 +162,10 @@ Create SDK Keys when your application needs manual credentials.
 
 ## How to use flags of another project
 
+For projects in the same Vercel team, use [Project Connections](/docs/flags/vercel-flags/project-connections) to authenticate with the consumer project's OIDC token.
+
+If you need SDK-key authentication, follow the steps below.
+
 To evaluate flags from a different project with an SDK Key, use a key from the project that owns the flags.
 
 This is useful when multiple applications share the same flags, for example in a microfrontend setup or when a shared feature flag controls behavior across several services.
@@ -211,4 +216,4 @@ After deletion, the old key stops working, so redeploy your application with the
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

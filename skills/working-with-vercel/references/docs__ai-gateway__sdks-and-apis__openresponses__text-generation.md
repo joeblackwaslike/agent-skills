@@ -13,8 +13,8 @@ related:
 summary: Generate text responses using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "030b6a66f6f1b3561018e9a191af5672dc70b0ff6f7d39b9e176038dd9f3b0e6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d5a165e950cb04bdfdf50035d0e06023aea92c8702eac33aa9662c1c15460f37"
 ---
 
 # OpenResponses Text Generation with AI Gateway
@@ -32,7 +32,7 @@ Use the [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) to gen
 - [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 - [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
-- [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text) — Generate and stream text responses using AI Gateway.
+- [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/text-generation.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/text-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -143,4 +143,4 @@ The response includes the generated text in the `output` array, along with token
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

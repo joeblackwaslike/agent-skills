@@ -13,8 +13,8 @@ related:
 summary: No error with the DNS resolution but no IP was returned. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/dns_hostname_resolve_failed.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8a643c88eede67683ff69be288a8aa4d576f35e9cbca491ac4da05ba515dd18a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "88cfeac0549153a0eeccd786b509cfd67c6a547a82eab9b7c7f9792b9a15dc9d"
 ---
 
 # DNS_HOSTNAME_RESOLVE_FAILED
@@ -40,4 +40,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

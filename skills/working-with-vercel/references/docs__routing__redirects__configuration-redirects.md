@@ -9,14 +9,14 @@ prerequisites:
   - /docs/routing/redirects
   - /docs/routing
 related:
-  - /docs/project-configuration
+  - /docs/project-configuration/vercel-json
   - /docs/regions
   - /docs/routing/redirects
 summary: Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern matching, and geolocation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/configuration-redirects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "abdcaefec7adbfaa36e577cfcdb3e62cd6daa0521a90c7e2ebc4d2d2da3b1fc0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "024089c40cd86fa03f9663b3aa90795f84f1498087686706594060ab490a7482"
 ---
 
 # Configuration Redirects
@@ -43,7 +43,7 @@ Configuration redirects define routing rules that Vercel evaluates at build time
 Full cross-link map for this page: [/docs/routing/redirects/configuration-redirects.graph.md](/docs/routing/redirects/configuration-redirects.graph.md)
 <!-- /docsgraph:related -->
 
-Define configuration redirects in your framework's config file or in the `vercel.json` file, which is located in the root of your application. The `vercel.json` should contain a `redirects` field, which is an array of redirect rules. For more information on all available properties, see the [project configuration](/docs/project-configuration#redirects) docs.
+Define configuration redirects in your framework's config file or in the `vercel.json` file, which is located in the root of your application. The `vercel.json` should contain a `redirects` field, which is an array of redirect rules. For more information on all available properties, see the [project configuration](/docs/project-configuration/vercel-json#redirects) docs.
 
 ```json filename="vercel.json"
 {
@@ -71,7 +71,7 @@ Define configuration redirects in your framework's config file or in the `vercel
 }
 ```
 
-View the full [API reference](/docs/project-configuration#redirects) for the `redirects` property.
+View the full [API reference](/docs/project-configuration/vercel-json#redirects) for the `redirects` property.
 
 > **💡 Note:** Using `has` does not yet work locally while using `vercel dev`, but does work
 > when deployed.
@@ -142,7 +142,7 @@ The [/.well-known](# "The /.well-known directory") path is reserved and cannot b
 Enterprise teams can configure custom SSL. [Contact sales](/contact/sales) to
 learn more.
 
-If you are exceeding the limits below, we recommend using Middleware and Global Config to [dynamically read redirect values](/docs/routing/redirects#edge-middleware).
+If you are exceeding the limits below, we recommend using Middleware and Global Config to [dynamically read redirect values](/docs/routing/redirects#middleware).
 
 | Limit                                        | Maximum |
 | -------------------------------------------- | ------- |
@@ -155,4 +155,4 @@ If you are exceeding the limits below, we recommend using Middleware and Global 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

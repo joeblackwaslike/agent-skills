@@ -12,8 +12,8 @@ related:
 summary: Information about verified bots and their handling in BotID
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/verified-bots.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "22f2eb275a70e402035dfcb3c25663b7d7f4439168c2da56b5eafc23c4ff7f36"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "229beb332a3c32871b6b101c82e287faf3f499793f7ec284bf9d9e803e5c9656"
 ---
 
 # Handling Verified Bots
@@ -33,9 +33,8 @@ BotID allows you to identify and handle [verified bots](/docs/bot-management#ver
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
-- [Vercel's bot verification now supports Web Bot Auth](https://vercel.com/changelog/vercels-bot-verification-now-supports-web-bot-auth)
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
+- [Vercel's bot verification now supports Web Bot Auth](https://vercel.com/changelog/vercels-bot-verification-now-supports-web-bot-auth)
 - [View & query bot verification data in Vercel Observability](https://vercel.com/changelog/view-and-query-bot-verification-data-in-vercel-observability)
 
 Full cross-link map for this page: [/docs/botid/verified-bots.graph.md](/docs/botid/verified-bots.graph.md)
@@ -93,4 +92,4 @@ Verified bots are useful when you want to:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

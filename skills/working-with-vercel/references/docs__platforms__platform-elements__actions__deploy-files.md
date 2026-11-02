@@ -15,8 +15,8 @@ related:
 summary: Server action for programmatically deploying files to Vercel on behalf of platform users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions/deploy-files.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5bd359bfc56933c05bec4dfa73a46c77a824edaa0c5af8de4761f99100a783ad"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f4c18ce2bd7e8b592755deb6461bc519654c0a2aab067ff086daa8aa55e2e970"
 ---
 
 # Deploy Files
@@ -31,12 +31,11 @@ The Deploy Files action is a server-side utility that allows platforms to progra
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Upload Deployment Files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files) — POST /v2/files — Before you create a deployment you need to upload the required files for that deployment. To do it, you
 - [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
-- [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action) — These actions allow integration providers to set up automated tasks with Vercel deployments.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action) — These actions allow integration providers to set up automated tasks with Vercel deployments.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/actions/deploy-files.graph.md](/docs/platforms/platform-elements/actions/deploy-files.graph.md)
 <!-- /docsgraph:related -->
@@ -104,10 +103,10 @@ export const vercel = new Vercel({
 
 Set these environment variables:
 
-| Variable                  | Required | Description                                                                                                    |
-| ------------------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| `VERCEL_TOKEN`            | Yes      | Vercel access token that the SDK client uses to create deployments and update projects                         |
-| `VERCEL_TEAM_ID`          | Yes      | ID of the Vercel team that owns the deployments                                                                |
+| Variable                  | Required | Description                                                                                                         |
+| ------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------- |
+| `VERCEL_TOKEN`            | Yes      | Vercel access token that the SDK client uses to create deployments and update projects                              |
+| `VERCEL_TEAM_ID`          | Yes      | ID of the Vercel team that owns the deployments                                                                     |
 | `DEPLOY_FILES_PROJECT_ID` | No       | Existing project to deploy to. If unset, the action deploys to a project named after the sanitized `deploymentName` |
 
 ## Usage
@@ -129,11 +128,11 @@ console.log(deployment.url);
 
 `deployFiles` takes one optional object argument. The installed action has no `files` or `projectId` parameter; it reads files from the `files` array inside the action and the project from `DEPLOY_FILES_PROJECT_ID`.
 
-| Option           | Type              | Required | Description                                                                                                                                                                                                        |
-| ---------------- | ----------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Option           | Type              | Required | Description                                                                                                                                                                                                      |
+| ---------------- | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `deploymentName` | `string`          | No       | Deployment name. Defaults to a UUID. The action lowercases it, replaces unsupported characters with `-`, and truncates it to 100 characters. It's also the project name when `DEPLOY_FILES_PROJECT_ID` isn't set |
-| `config`         | `ProjectSettings` | No       | Project settings for the deployment, such as `framework`, `buildCommand`, `installCommand`, and `outputDirectory`. When you omit it, Vercel detects the settings automatically                                     |
-| `domain`         | `string`          | No       | Domain to add to the deployment's project after the deployment is created                                                                                                                                          |
+| `config`         | `ProjectSettings` | No       | Project settings for the deployment, such as `framework`, `buildCommand`, `installCommand`, and `outputDirectory`. When you omit it, Vercel detects the settings automatically                                   |
+| `domain`         | `string`          | No       | Domain to add to the deployment's project after the deployment is created                                                                                                                                        |
 
 `getDeploymentStatus(id)` takes a deployment ID and returns an object with the deployment's `readyState`, `url`, and `id`.
 
@@ -159,7 +158,7 @@ export async function deployFiles(args: {
 }
 ```
 
-The action already imports the `InlinedFile` and `ProjectSettings` types from `@vercel/sdk/models/createdeploymentop.js`. To deploy each user's files to that user's own project, replace the `DEPLOY_FILES_PROJECT_ID` lookup, for example by loading the project ID from your database.
+Depending on your team's default setting, new projects can show a Vercel login page on their `*.vercel.app` URLs. To keep the URLs public, the action sets `ssoProtection` to `null` on the projects it creates. Note that when you pass a project ID, the action doesn't change that project's protection, so make sure that you create those projects with `ssoProtection: null`. To deploy each user's files to that user's own project, replace the `DEPLOY_FILES_PROJECT_ID` lookup, for example by loading the project ID from your database.
 
 After the change, pass files when you call the action:
 
@@ -218,4 +217,4 @@ const deployment = await deployFiles({ domain })
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

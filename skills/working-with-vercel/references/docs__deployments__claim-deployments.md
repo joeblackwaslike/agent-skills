@@ -16,8 +16,8 @@ related:
 summary: Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/claim-deployments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "36ef566433b7f7f4d613ea56493e6a29014bd1aa88770bf2923c14cb268ccbff"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a0241a219a3295b7ee32f9f6c5dfe82f09c8ee680e43e96d5ac64fb4764d0a9c"
 ---
 
 # Claim Deployments
@@ -32,8 +32,8 @@ The Claim Deployments feature enables users to take control of deployments by tr
 
 - [Claim Deployments now available for fast and secure deployment transfers](https://vercel.com/changelog/claim-deployments)
 - [Claimed deployments now include third-party resources](https://vercel.com/changelog/claimed-deployments-now-include-third-party-resources)
-- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment) — A component for users to claim ownership of Vercel deployments created on their behalf.
 - [Deploying to Vercel Without Logging In](https://vercel.com/docs/deployments/deploy-without-logging-in) — Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
+- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment) — A component for users to claim ownership of Vercel deployments created on their behalf.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
@@ -121,4 +121,4 @@ Freelancers or employees can move deployments from their personal accounts to a 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "296e0d4f1cb96c7f77c976a83b09c440cdad5f78c6dd414fa0bd49df08be5e54"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "02619d408388a7456f55cd6262ad0344f80a2678942a72cff803e2c449ab10f3"
 ---
 
 # Account Plans on Vercel
@@ -40,8 +40,8 @@ Vercel offers multiple account plans: Hobby, Pro, and Enterprise.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
 - [Usage & Pricing for Deployment Protection](https://vercel.com/docs/deployment-protection/usage-and-pricing) — Compare Deployment Protection feature availability and pricing across Hobby, Pro, and Enterprise plans.
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
 
 Full cross-link map for this page: [/docs/plans.graph.md](/docs/plans.graph.md)
 <!-- /docsgraph:related -->
@@ -103,4 +103,4 @@ See [Manage & optimize usage](/docs/pricing/manage-and-optimize-usage) for more 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

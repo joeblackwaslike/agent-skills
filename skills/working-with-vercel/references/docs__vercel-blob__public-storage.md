@@ -16,8 +16,8 @@ related:
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "01a716e7594e84602d8dd4881fa66ae5ecf91abeb9db6501c1fb03eb568829a5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ec9b057163059c35a31d60c46c12ab3d2b11eb2f0966a9efab854b52dc76a5a2"
 ---
 
 # Public Storage
@@ -35,12 +35,13 @@ Public Blob stores make files accessible to anyone with the URL. Use public stor
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Store and serve files from Python with Vercel Blob](https://vercel.com/kb/guide/python-and-vercel-blob) — Upload, list, stream, and protect files from a Python app with Vercel Blob, including private per-user storage in FastAP
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
-- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
+- [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available)
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 
@@ -288,4 +289,4 @@ See [pricing documentation](/docs/vercel-blob/usage-and-pricing) for full detail
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

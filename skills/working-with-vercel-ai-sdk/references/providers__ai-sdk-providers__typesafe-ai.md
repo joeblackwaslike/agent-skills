@@ -4,8 +4,8 @@ description: Learn how to use TypeSafe with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "a12f99c2d1ea6ba307a70c67479be427d7706d68d97c26ab29b22179e7913135"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "6046dacf67c41e46129819b61ceaa91284f434996dab9be7142806bc7b99cfab"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -83,12 +83,12 @@ const customTypeSafe = createTypeSafeAi({
 
 `createTypeSafeAi` accepts:
 
-| Setting   | Description                                                            |
-| --------- | ---------------------------------------------------------------------- |
-| `apiKey`  | API key; defaults to `TYPESAFE_AI_API_KEY`.                            |
-| `baseURL` | Defaults to `TYPESAFE_AI_BASE_URL`, then `https://api.typesafe.ai/v1`. |
-| `headers` | Additional request headers.                                            |
-| `fetch`   | Custom fetch implementation.                                           |
+| Setting   | Description                                                                                         |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| `apiKey`  | API key (string, promise, or synchronous/asynchronous callback); defaults to `TYPESAFE_AI_API_KEY`. |
+| `baseURL` | Defaults to `TYPESAFE_AI_BASE_URL`, then `https://api.typesafe.ai/v1`.                              |
+| `headers` | Additional request headers.                                                                         |
+| `fetch`   | Custom fetch implementation.                                                                        |
 
 Use `TYPESAFE_AI_BASE_URL` to route the default `typeSafeAi` instance through a
 trusted proxy or self-hosted TypeSafe-compatible server:
@@ -98,7 +98,7 @@ TYPESAFE_AI_BASE_URL=http://127.0.0.1:8766/v1
 ```
 
 An explicit `baseURL` passed to `createTypeSafeAi` takes precedence over the
-environment variable. The configured server receives the API key and decision
+environment variable. API key callbacks are called before each request and are responsible for caching and refreshing credentials. The configured server receives the API key and decision
 state and must implement the TypeSafe `POST /systemone` API.
 
 ## Decision

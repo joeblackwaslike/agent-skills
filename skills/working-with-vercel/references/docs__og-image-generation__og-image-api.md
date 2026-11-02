@@ -12,8 +12,8 @@ related:
 summary: This reference provides information on how the @vercel/og package works on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/og-image-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f0f1e4f49e2cd1d4d20787077cfb90a1fd7d9f26062cc1ad9026015ec2ced088"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6034486b3c4a60e5b07ce794976b35b9212afdbc0063f22bb098067fb3371ea2"
 ---
 
 # @vercel/og Reference
@@ -27,14 +27,14 @@ The package exposes an `ImageResponse` constructor, with the following parameter
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
-- [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
 - [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
+- [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Image Optimization with Vercel](https://vercel.com/docs/image-optimization) — Transform and optimize images to improve page load performance.
 - [Inspecting your Open Graph metadata](https://vercel.com/docs/deployments/og-preview) — Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Image Optimization with Vercel](https://vercel.com/docs/image-optimization) — Transform and optimize images to improve page load performance.
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
 - [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
-- [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 
 Full cross-link map for this page: [/docs/og-image-generation/og-image-api.graph.md](/docs/og-image-generation/og-image-api.graph.md)
 <!-- /docsgraph:related -->
@@ -119,4 +119,4 @@ By default, `@vercel/og` only has the Noto Sans font included. If you need to us
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

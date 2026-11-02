@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "94be5109d973c5b1d3b84e4a084813f04166488cc88d8b52662f92ca6fbb5d24"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d2a24fb393588ea90902bab6e4c5398ff345ddbd405d098d356e7b9bc907203f"
 ---
 
 # Vercel CMS Integrations
@@ -37,7 +37,6 @@ Vercel Content Management System (CMS) Integrations allow you to connect your pr
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Vercel Commerce and Payments Integrations](https://vercel.com/docs/integrations/ecommerce) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
 
 Full cross-link map for this page: [/docs/integrations/cms.graph.md](/docs/integrations/cms.graph.md)
 <!-- /docsgraph:related -->
@@ -132,4 +131,4 @@ This method is generally setup through webhooks or APIs that trigger a deploymen
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

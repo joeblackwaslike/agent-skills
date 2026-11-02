@@ -17,8 +17,8 @@ related:
 summary: Escalate uncertain AI Gateway decision results to another model with confidence, probability, and compound conditions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/decision-fallbacks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9b12891cc5342fc6e9a536f005f477f51a57c2b92b8a7e54f8b1f26233891f2f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8c853d2cd63d57ed80f3b475b3a9132876699d59d1f66fe2f6d0a8835c8e45a2"
 ---
 
 # Decision Fallbacks
@@ -33,10 +33,9 @@ Decision fallbacks rerun a successful decision with another model when an answer
 
 - [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks)
 - [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
-- [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
 - [Perplexity](https://ai-sdk.dev/providers/ai-sdk-providers/perplexity) — Learn how to use Perplexity with AI Gateway and the direct provider.
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
-- [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
+- [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
+- [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai) — Learn how to use TypeSafe with AI Gateway and the direct provider.
 - [experimental_decide](https://ai-sdk.dev/docs/reference/ai-sdk-core/decide) — Decide answers to typed questions against shared state with a decision model.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md)
@@ -91,7 +90,7 @@ The following example escalates an uncertain Choice answer to a language model:
 #### AI SDK
 
 ```typescript filename="decide-with-fallback.ts" {1,20-32}
-import { gateway, type GatewayProviderOptions } from '@ai-sdk/gateway';
+import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { experimental_decide as decide } from 'ai';
 
 const questions = {
@@ -107,7 +106,7 @@ const questions = {
 } as const;
 
 const result = await decide({
-  model: gateway.decisionModel('typesafe-ai/jev'),
+  model: 'typesafe-ai/jev',
   state: 'I was charged twice and cannot sign in to request a refund.',
   questions,
   providerOptions: {
@@ -260,7 +259,7 @@ A Boolean answer contains `P(true)`, the probability that the answer is true. It
 #### AI SDK
 
 ```typescript filename="decide-with-probability-fallback.ts" {16-26}
-import { gateway, type GatewayProviderOptions } from '@ai-sdk/gateway';
+import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { experimental_decide as decide } from 'ai';
 
 const questions = {
@@ -271,7 +270,7 @@ const questions = {
 } as const;
 
 const result = await decide({
-  model: gateway.decisionModel('typesafe-ai/jev'),
+  model: 'typesafe-ai/jev',
   state: 'I was charged twice and now the app will not load at all.',
   questions,
   providerOptions: {
@@ -354,7 +353,7 @@ For example, use `any` to escalate when either signal is uncertain:
 #### AI SDK
 
 ```typescript filename="decide-with-compound-fallback.ts" {24-37}
-import { gateway, type GatewayProviderOptions } from '@ai-sdk/gateway';
+import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { experimental_decide as decide } from 'ai';
 
 const questions = {
@@ -373,7 +372,7 @@ const questions = {
 } as const;
 
 const result = await decide({
-  model: gateway.decisionModel('typesafe-ai/jev'),
+  model: 'typesafe-ai/jev',
   state: 'I was charged twice and now the app will not load at all.',
   questions,
   providerOptions: {
@@ -527,7 +526,7 @@ Provider-specific options stay at the top level of `providerOptions`. They carry
 This direct language-model fallback requests high OpenAI reasoning effort:
 
 ```typescript filename="decide-with-reasoning-fallback.ts" {16-28}
-import { gateway, type GatewayProviderOptions } from '@ai-sdk/gateway';
+import type { GatewayProviderOptions } from '@ai-sdk/gateway';
 import { experimental_decide as decide } from 'ai';
 
 const questions = {
@@ -539,7 +538,7 @@ const questions = {
 } as const;
 
 const result = await decide({
-  model: gateway.decisionModel('typesafe-ai/jev'),
+  model: 'typesafe-ai/jev',
   state: 'The response to rate.',
   questions,
   providerOptions: {
@@ -792,4 +791,4 @@ Choose thresholds from your own results and risk tolerance. Start by recording t
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

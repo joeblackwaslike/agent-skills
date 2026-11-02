@@ -14,8 +14,8 @@ related:
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation, SOC 2 compliance and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/access-control.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f2536da9fb6c3e1d283698356a4336341e4a29eea388c41e61415b0eafc27327"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0b9a44c769b432fb3800ba55414066ce247ef827922ca2ab3b66eef3b4ba02ed"
 ---
 
 # Access Control
@@ -32,7 +32,7 @@ You can protect preview and production deployments with [Vercel Authentication](
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
-- [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
+- [Password Protection is now available per project on Pro](https://vercel.com/changelog/password-protection-now-costs-20-per-project-per-month-on-pro)
 - [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
@@ -59,4 +59,4 @@ You can enable Password protection and Vercel Authentication at the same time. W
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

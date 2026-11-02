@@ -13,8 +13,8 @@ related:
 summary: Learn how to remove a deployment using the vercel remove CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/remove.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8b1a27f013a432b7076bd4834f52497a0f28c81f0f5f7e19669cc36570a15ea4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0125054b9939db290600778b9b669a0c4ceec5e2855f6c6c1e895ec02d34b6af"
 ---
 
 # vercel remove
@@ -31,7 +31,7 @@ The `vercel remove` command, which can be shortened to `vercel rm`, is used to r
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
-- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
+- [vercel rollback](https://vercel.com/docs/cli/rollback) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 
 Full cross-link map for this page: [/docs/cli/remove.graph.md](/docs/cli/remove.graph.md)
 <!-- /docsgraph:related -->
@@ -118,4 +118,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

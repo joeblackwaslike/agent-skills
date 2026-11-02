@@ -15,8 +15,8 @@ related:
 summary: Learn how to share your deployments with external users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2a7487fb4d8d183862062f9a3e84db05c68b0c98b563aaa714eec6db5655c9bd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "48fd00c8d3caa6ad74239c4724c522968198eec943427f2cbad0e4ede4c5eeaa"
 ---
 
 # Sharable Links
@@ -35,13 +35,15 @@ Shareable links include the ability to leave [Comments](/docs/comments) on deplo
 - [Agents can now access protected deployments via Vercel’s MCP server](https://vercel.com/changelog/give-agents-access-to-protected-deployments-via-vercels-mcp-server)
 - [Additional options for sharing deployments externally](https://vercel.com/changelog/additional-options-for-sharing-deployments-externally)
 - [Protected Preview Deployments available on all plans](https://vercel.com/changelog/protected-preview-deployments-available-on-all-plans)
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
+- [Invite collaborators to view and comment on your deployments](https://vercel.com/changelog/invite-collaborators-to-view-and-comment-on-your-deployments)
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
+- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
-- [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Public and Shared Repositories](https://vercel.com/docs/container-registry/public-and-shared-repositories) — Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.graph.md)
 <!-- /docsgraph:related -->
@@ -98,4 +100,4 @@ You can view and manage all the existing Shareable Links for your team in the fo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

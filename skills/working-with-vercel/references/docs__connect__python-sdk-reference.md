@@ -16,8 +16,8 @@ related:
 summary: API reference for vercel-connect, the Python SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/python-sdk-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0aa346cdc99df09149734f41a828eb3aa3bf6c37393ef861b3f8456be74960d6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2016ae4d5d5459dd894792bec7f963a1f579442415db02057b4cac5ecefdb108"
 ---
 
 # Python SDK Reference
@@ -43,6 +43,8 @@ Full cross-link map for this page: [/docs/connect/python-sdk-reference.graph.md]
 <!-- /docsgraph:related -->
 
 For TypeScript, see the [TypeScript SDK Reference](/docs/connect/ts-sdk-reference).
+
+Follow [Call third-party APIs from Python with Vercel Connect](/kb/guide/python-and-vercel-connect) to post to Slack as your app, act on behalf of a user, handle consent, and receive verified provider events in FastAPI.
 
 ## Install
 
@@ -654,4 +656,4 @@ Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

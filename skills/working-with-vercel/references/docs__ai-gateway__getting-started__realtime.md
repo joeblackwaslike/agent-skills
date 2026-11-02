@@ -10,13 +10,13 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/modalities/realtime/gpt-live
-  - /docs/ai-gateway/pricing
   - /docs/ai-gateway/modalities/realtime
+  - /docs/ai-gateway/pricing
 summary: Start a realtime speech session using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "760d524adc939c0b8a9f01487003c2c3e19504d2affc74eccbd7b6319c5c3d3c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c811906b01412d67589d94f64003af6d156006197c36f7f04f9256c521397323"
 ---
 
 # AI Gateway Realtime Quickstart
@@ -34,14 +34,16 @@ Start a realtime speech session through AI Gateway.
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
+- [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
+- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/realtime.graph.md](/docs/ai-gateway/getting-started/realtime.graph.md)
 <!-- /docsgraph:related -->
 
 This quickstart uses `openai/gpt-realtime-2`. For `openai/gpt-live-1`, follow the [GPT-Live guide](/docs/ai-gateway/modalities/realtime/gpt-live) instead. GPT-Live requires its own endpoint and session events; changing the model slug in this example does not select the Live protocol.
+
+To use ElevenLabs, set `modelId` to `elevenlabs/eleven-realtime-v1-max` or `elevenlabs/eleven-realtime-v1-mini`. The rest of the script works unchanged. For a browser voice agent with ElevenLabs, set the voice and turn detection described in the [Realtime guide](/docs/ai-gateway/modalities/realtime).
 
 ## Start a realtime session
 
@@ -135,4 +137,4 @@ node realtime.mts
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

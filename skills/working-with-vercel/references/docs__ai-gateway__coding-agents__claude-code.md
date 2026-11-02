@@ -12,13 +12,13 @@ related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/cli/ai-gateway
   - /docs/ai-gateway/models-and-providers/fast-mode
-  - /docs/agent-harnesses/claude-code
-  - /docs/ai-gateway/models-and-providers/virtual-models
+  - /docs/ai-gateway/authentication-and-byok/byok
+  - /docs/ai-gateway/observability-and-spend/logs
 summary: Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7715dfbf20d04e269e6fb645ac6b0c0fd5c532a92f717e5ba4d73667f34083f0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c66ae517e12a9dd788176d922e81dfea405f4a463c34a081e427df2138430ff1"
 ---
 
 # Claude Code and Claude Agent SDK with AI Gateway
@@ -34,9 +34,9 @@ AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-a
 - [AI Gateway adds unified fast mode support](https://vercel.com/changelog/ai-gateway-adds-unified-fast-mode-support)
 - [Claude Code Max via AI Gateway, available now for Claude Code](https://vercel.com/changelog/claude-code-max-via-ai-gateway-available-now-for-claude-code)
 - [Claude Opus 5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-now-available-on-ai-gateway)
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
 - [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code)
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Collaborating with Anthropic on Claude Sonnet 4.5 to power intelligent coding agents](https://vercel.com/blog/collaborating-with-anthropic-on-claude-sonnet-4-5)
 - [Claude Code](https://ai-sdk.dev/providers/community-providers/claude-code) — Learn how to use the Claude Code provider to access Claude models through the Claude Agent SDK.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
@@ -142,6 +142,8 @@ security add-generic-password -U -a "$USER" -s "ANTHROPIC_AUTH_TOKEN" \
 
 If you have a [Claude subscription](https://claude.com/pricing), you can use your subscription through the AI Gateway. Requests made with your subscription appear in AI Gateway observability and use its routing features.
 
+Subscription sign-in uses your plan's usage limits. The separate API credit grant for eligible Max and Team plans doesn't cover interactive Claude Code. See [API credit eligibility](#api-credit-eligibility) for programmatic workflows.
+
 The Vercel CLI setup command configures API-key authentication only. The subscription flow requires `ANTHROPIC_CUSTOM_HEADERS`, which the setup command does not write, so configure it manually as shown below.
 
 - ### Set up environment variables
@@ -243,6 +245,12 @@ for await (const message of query({
 
 The Agent SDK spawns Claude Code as a subprocess, so the same environment variables apply. All requests, including messages and token counting, route through AI Gateway.
 
+### API credit eligibility
+
+Eligible Claude Max and Team subscribers can use claimed API credits for self-run Claude Agent SDK and `claude -p` requests billed through a key from the linked Claude Console organization. Add that organization's Anthropic key to [BYOK](/docs/ai-gateway/authentication-and-byok/byok), route requests to Anthropic, and verify the billing route in [AI Gateway Logs](/docs/ai-gateway/observability-and-spend/logs).
+
+Interactive Claude Code and runs started by the Claude Code GitHub Action, an IDE extension, or the desktop app are excluded, even with `-p`. Subscription sign-in draws from plan limits instead of the API grant. Follow [Use Claude API credits with Vercel AI Gateway](/i/claude-api-credits-ai-gateway) for eligibility, claiming steps, and billing checks.
+
 ## Run Claude Code durably
 
 To deploy Claude Code as a service that resumes after crashes, function timeouts, and deployments, use `durable-harness` with the Claude Agent SDK. Claude Code runs in a Vercel Sandbox, while your function routes model calls through AI Gateway and persists the session's progress. Follow the [durable Claude Code guide](/docs/agent-harnesses/claude-code) for agent, chat route, and queue setup.
@@ -281,4 +289,4 @@ Your team's [virtual models](/docs/ai-gateway/models-and-providers/virtual-model
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

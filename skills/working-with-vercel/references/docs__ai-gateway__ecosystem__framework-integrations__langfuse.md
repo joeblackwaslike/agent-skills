@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway/ecosystem
 related:
   - /docs/ai-gateway
+  - /docs/ai-gateway/authentication-and-byok
 summary: Trace and monitor AI Gateway requests with Langfuse. Configure an OpenAI client and wrap it with observeOpenAI to log model generations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "83c7050908d42ae957a043259af924da7bdca120422ac471bc4bbce37b351d31"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a21f7803bd36f62c514428820a1130fcb25150c517d3448b03753308e4077101"
 ---
 
 # Langfuse with AI Gateway
@@ -71,7 +72,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
 
 - ### Configure environment variables
-  Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway#using-the-ai-gateway-with-an-api-key)
+  Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys)
   and Langfuse API keys:
   ```bash filename=".env"
   AI_GATEWAY_API_KEY=your-api-key-here
@@ -81,7 +82,7 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   LANGFUSE_HOST=https://cloud.langfuse.com
   ```
   > **💡 Note:** If you're using the [AI Gateway from within a Vercel
-  > deployment](/docs/ai-gateway#using-the-ai-gateway-with-a-vercel-oidc-token),
+  > deployment](/docs/ai-gateway/authentication-and-byok#oidc-tokens),
   > you can also use the `VERCEL_OIDC_TOKEN` environment variable which will be
   > automatically provided.
 
@@ -143,4 +144,4 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

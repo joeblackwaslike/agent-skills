@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for Global Config.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "eb2b1be9abc44197638b9a14a866ded06876c657ffe8d18eea326918ed956dbf"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7b7a131380ab567a7c2c67781677ea666d2870641ab3f099df080ecb3f5e870c"
 ---
 
 # Global Config
@@ -29,9 +29,9 @@ Read and update Global Config items, manage read tokens, and restore backups.
 
 - [Update a Global Config](https://vercel.com/docs/rest-api/global-config/update-a-global-config) — PUT /v1/global-config/{edgeConfigId} — Updates a Global Config.
 - [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
+- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
 - [Get a Global Config item](https://vercel.com/docs/rest-api/global-config/get-a-global-config-item) — GET /v1/global-config/{edgeConfigId}/item/{edgeConfigItemKey} — Returns a specific Global Config Item.
 - [Get Global Config backup](https://vercel.com/docs/rest-api/global-config/get-global-config-backup) — GET /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId} — Retrieves a specific version of a Global Conf
-- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config.graph.md)
 <!-- /docsgraph:related -->
@@ -208,4 +208,4 @@ Updates a Global Config.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

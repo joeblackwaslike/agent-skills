@@ -13,8 +13,8 @@ related:
 summary: The Sandbox is creating a snapshot and is no longer accepting commands. This is a transient state.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/sandbox_snapshotting.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c589a9f89a5fa7609055211b2fbf23203d83904ada2312bda5679962723de154"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2bdcebe37b7540230641eb791057e010abec6c348e74c096f8788f6f4cde3e70"
 ---
 
 # SANDBOX_SNAPSHOTTING
@@ -39,4 +39,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

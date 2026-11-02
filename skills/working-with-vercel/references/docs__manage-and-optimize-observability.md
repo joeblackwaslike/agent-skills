@@ -16,8 +16,8 @@ related:
 summary: Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize your usage of Web Analytics...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-and-optimize-observability.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0fd1b9b13799217f88112c6272c33d41c4a744746088343398493e51ff390dc0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d0297465ca323df7b15a9fd8f2f0930801836ae4005e41e24afc45c2b9049b0c"
 ---
 
 # Manage and optimize usage for Observability
@@ -83,7 +83,7 @@ Vercel bills event usage only for projects that are on Speed Insights Plus. See 
 
 > **💡 Note:** Monitoring is now part of Observability, and Observability Plus includes it
 > at no additional cost. If you are currently paying for Monitoring,
-> [migrate](/docs/observability#enabling-observability-plus) to Observability
+> [migrate](/docs/observability/observability-plus#enabling-observability-plus) to Observability
 > Plus to get access to additional product features with a longer retention
 > period with no base fee.
 
@@ -124,4 +124,4 @@ You can manage project inclusions from your team's **Billing** settings or from 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/httpstat.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "338fa89a4765789e1916971996598bc19d34bc8b69e52b1340fa9bf6499c600d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f9dd924f49d03464af85666607c9375f8d36b573ef9617bf80c59954b4595294"
 ---
 
 # vercel httpstat
@@ -243,4 +243,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

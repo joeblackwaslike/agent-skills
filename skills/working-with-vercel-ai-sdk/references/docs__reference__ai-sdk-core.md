@@ -4,8 +4,8 @@ description: Reference documentation for the AI SDK Core
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "ea4ef94879f1ed73a495ee5915aea8a964e86342ac3a51c677224c0cdfa25bb4"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "acf75d32e52ed72c7118cb632cafe98891b13d7d9506e6dd13b4c35fe98ad76b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -110,7 +110,7 @@ Convert AI SDK tools into realtime tool definitions.
 
 Experimental execution environment interface passed to tool execution.
 
-#### [experimental\_filterActiveTools()](/docs/reference/ai-sdk-core/filter-active-tools)
+#### [filterActiveTools()](/docs/reference/ai-sdk-core/filter-active-tools)
 
 Filters a tool set to only the currently active tools.
 

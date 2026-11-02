@@ -16,8 +16,8 @@ related:
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "55f01bb575c49ce798a3e26a123bd950b4693cc62664a8ea4999237929adad51"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1a7f10c91c3c803ca4bc5d498178dedddf124a0cf69a6c3a1e7c9c8a8d29d49a"
 ---
 
 # Performing a rolling release deployment
@@ -31,12 +31,11 @@ Use this guide to gradually roll out a new production deployment using rolling r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend) — Incrementally release updates to your backend to minimize impact of mistakes.
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
-- [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment) — Learn how to promote deployments to production on Vercel.
+- [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 
 Full cross-link map for this page: [/docs/rolling-releases/rolling-release-deployment.graph.md](/docs/rolling-releases/rolling-release-deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -107,7 +106,7 @@ Begin the rolling release to start shifting traffic to the new deployment:
 vercel rolling-release start --dpl <deployment-url>
 ```
 
-This starts at the first stage (10% of traffic in the example configuration above). The start command is idempotent. If your project [auto-assigns custom domains](/docs/project-configuration/project-settings#domains), the production deployment already started the rolling release, and this command returns its current state. See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
+This starts at the first stage (10% of traffic in the example configuration above). The start command is idempotent. If your project [auto-assigns custom domains](/docs/project-configuration/project-settings#custom-domains), the production deployment already started the rolling release, and this command returns its current state. See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
 
 To send 100% of traffic to the canary, run [`vercel rolling-release complete`](/docs/cli/rolling-release#complete). See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
 
@@ -185,4 +184,4 @@ vercel logs --environment production --level error --since 30m --expand
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

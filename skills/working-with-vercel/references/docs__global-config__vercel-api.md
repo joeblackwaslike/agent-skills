@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/vercel-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1f8f6e36285ae1c4cd05651fed8ebe120dafcf4118d0a99502b6b1dc38887dc4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "522e27c1887ffc90f725b014d5daeb4bebfe5ddff4d3b91c8bc87d5987072a7d"
 ---
 
 # Managing Global Configs with Vercel REST API
@@ -35,7 +35,7 @@ We recommend you use the Vercel REST API only for creating and updating a [Globa
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 - [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
-- [Update a Global Config](https://vercel.com/docs/rest-api/global-config/update-a-global-config) — PUT /v1/global-config/{edgeConfigId} — Updates a Global Config.
+- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
 
 Full cross-link map for this page: [/docs/global-config/vercel-api.graph.md](/docs/global-config/vercel-api.graph.md)
 <!-- /docsgraph:related -->
@@ -565,4 +565,4 @@ Data size and request limits based on account plans
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

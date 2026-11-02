@@ -16,8 +16,8 @@ related:
 summary: "Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Trusted IPs."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "701e853f474e2788eac8ec6a105e0fbd09377c1ab006dd7bd9e790302933f1e0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9e9d20cecb90c666d6b83a715ce697bc4c496ebc0d764a051ab60f26a3b48637"
 ---
 
 # Methods to Protect Deployments
@@ -54,7 +54,7 @@ To see an overview of your projects' protections:
 
 > Vercel Authentication is available on all plans
 
-With Vercel Authentication you can restrict access to all deployments (including non-public deployments), meaning only team members with a Vercel account, or users you share a [Sharable Link](/docs/deployment-protection/methods-to-bypass-deployment-protection#sharable-links) with, can access non-public URLs, such as `my-project-1234-your-name.vercel.app`.
+With Vercel Authentication you can restrict access to all deployments (including non-public deployments), meaning only team members with a Vercel account, or users you share a [Sharable Link](/docs/deployment-protection/methods-to-bypass-deployment-protection#shareable-links) with, can access non-public URLs, such as `my-project-1234-your-name.vercel.app`.
 
 When a Vercel user visits your protected deployment but doesn't have permission to access it, they can [request access](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication#access-requests) for their Vercel account. This request triggers an email and Vercel notification to the branch authors.
 
@@ -98,4 +98,4 @@ Learn more about [Trusted IPs](/docs/deployment-protection/methods-to-protect-de
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

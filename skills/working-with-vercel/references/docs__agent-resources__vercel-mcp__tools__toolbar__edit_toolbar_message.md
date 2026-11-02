@@ -13,8 +13,8 @@ related:
 summary: Use edit_toolbar_message with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/edit_toolbar_message.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5bd9dfb620186c287caaa8eac8eb7b8fb5f91dc9248bff597380eeed5606117c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a419332a9ba292050b979330a276457f898574fb7ebc4b7a4c59e8ef25b8329d"
 ---
 
 # edit_toolbar_message
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolb
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

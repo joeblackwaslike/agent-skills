@@ -17,8 +17,8 @@ related:
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "636b3e83e01bb47edeb6ececb0b857c5a9017886cc3e679cadbf3488a4595369"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "497c8a205adc230f4dfb548a27873fa57e711457e8ac9e4ace96fdfd02ef78ef"
 ---
 
 # Using the Integrations REST API
@@ -35,8 +35,8 @@ Learn how to authenticate and use the Integrations REST API to build your native
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
-- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md)
 <!-- /docsgraph:related -->
@@ -837,4 +837,4 @@ async function handleInvoiceRefunded(webhook: WebhookPayload) {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

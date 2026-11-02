@@ -16,8 +16,8 @@ related:
 summary: Learn how DNS works to properly configure your domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-dns.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f17616a518a4ea5855e368dc3ffc5f21ec3760f196049ced9af0ba9f47f9d32d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c470a34279248a37afc5b7b4a24450a12f97fc78061b58c2a69e649080c35fcc"
 ---
 
 # Working with DNS
@@ -34,8 +34,8 @@ DNS is the system used to connect domain names to IP addresses. When you make a 
 - [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
 - [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 - [Domain Connect](https://vercel.com/docs/domains/domain-connect) — Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS rec
@@ -117,4 +117,4 @@ troubleshoot your domain on Vercel.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

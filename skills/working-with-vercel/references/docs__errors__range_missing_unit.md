@@ -12,8 +12,8 @@ related:
 summary: The unit identifier of the Range header in the request is missing. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/range_missing_unit.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0ab96fbd163f6c0145a7120cb8416516d5b48420eb684cca26ad7e7dd2863ad9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "412fc26f8fdfaf9110b5a7a7877590e5335fa5089a290a76dbe7ed5ef2145a97"
 ---
 
 # RANGE_MISSING_UNIT
@@ -39,4 +39,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

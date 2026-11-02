@@ -16,8 +16,8 @@ related:
 summary: Move your installation of a Native Integration from one Vercel team to another, including its resources and prepayment balances.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/transferring-an-integration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9f9f3c8ade0aa9eae133e2e1f037ccdd2b9a95b3d07573f860b0a8337b83b495"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "805ff49e71ba0cc0d269b8a8e6eb676de66ed267b4b988395a1bec2d14b1bc78"
 ---
 
 # Transferring an Integration
@@ -33,9 +33,9 @@ You can transfer your installation of a [Native Integration](/docs/integrations/
 - [Transfer Marketplace resources between teams](https://vercel.com/changelog/transfer-marketplace-resources-between-teams)
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Create an Integration](https://vercel.com/docs/integrations/create-integration) — Learn how to create and manage your own integration for internal or public use with Vercel.
 - [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
-- [Requirements for listing an Integration](https://vercel.com/docs/integrations/create-integration/submit-integration) — Learn about all the requirements and guidelines needed when creating your Integration.
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Create an Integration](https://vercel.com/docs/integrations/create-integration) — Learn how to create and manage your own integration for internal or public use with Vercel.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/transferring-an-integration.graph.md](/docs/integrations/install-an-integration/transferring-an-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -107,4 +107,4 @@ After the transfer, reconnect each project to the integration on the target team
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

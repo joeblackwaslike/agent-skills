@@ -13,8 +13,8 @@ related:
 summary: Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/managing-nameservers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2268cd82b3318707c705cb24a5564ec17de040a08b3f69a7b4f872928d97c1e1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "16c1261a45c79fa35dacee35ea6462fc9a29f11d638a9d529874ab64900a60a3"
 ---
 
 # Managing Nameservers
@@ -29,10 +29,9 @@ sha256: "2268cd82b3318707c705cb24a5564ec17de040a08b3f69a7b4f872928d97c1e1"
 
 - [Easily manage custom nameservers for domains](https://vercel.com/changelog/easily-manage-custom-nameservers-for-domains)
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
-- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Update nameservers for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-nameservers-for-a-domain) — PATCH /v1/registrar/domains/{domain}/nameservers — Update the nameservers for a domain. Pass an empty array to use Verce
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 
@@ -94,4 +93,4 @@ Vercel will present a message when you have successfully submitted the nameserve
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

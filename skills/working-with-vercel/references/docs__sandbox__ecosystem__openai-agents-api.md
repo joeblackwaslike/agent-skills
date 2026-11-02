@@ -17,8 +17,8 @@ related:
 summary: Connect OpenAI Agents API sessions to Vercel Sandbox for isolated code execution and persistent workspace files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/openai-agents-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "05de7a40abf5da085902fb385b5a4aab0686a6eea6185f711aef23d44f693db4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7a7e7099ea2fe9f40ab863c0767b8ac55e0e26c5d6ddf2d79283446c689c7748"
 ---
 
 # OpenAI Agents API
@@ -37,9 +37,10 @@ session an isolated workspace to run commands and read and write files.
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel)
 - [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
+- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Build an agent with OpenAI Agents API on Vercel](https://vercel.com/kb/guide/openai-agents-api-vercel) — Build and deploy an agent with OpenAI Agents API, Vercel Functions, Queues, and Sandbox for isolated code execution.
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
 - [AgentEnv by Scale AI](https://vercel.com/docs/sandbox/ecosystem/agentenv) — Run evaluations with AgentEnv by Scale AI using separate Vercel sandboxes for the environment and agent.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-agents-api.graph.md](/docs/sandbox/ecosystem/openai-agents-api.graph.md)
@@ -96,4 +97,4 @@ API, see the [OpenAI SDK integration](/docs/sandbox/ecosystem/openai-sdk).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

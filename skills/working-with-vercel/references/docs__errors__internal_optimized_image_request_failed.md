@@ -12,8 +12,8 @@ related:
 summary: The request for an internally optimized image failed. This is a server error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_optimized_image_request_failed.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e1039352f1e90156fa1efa4bac72df2367c3b9dae18f4ec530ab137c9b297419"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ee5f81c532fd7592ffa450c018d4b50f8d18cc06b997563cc02ad4635dcef37d"
 ---
 
 # INTERNAL_OPTIMIZED_IMAGE_REQUEST_FAILED
@@ -38,4 +38,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

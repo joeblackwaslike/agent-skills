@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage project access and added products for your integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "49db867fc883389cc4e5e56d4cae2428b57126e087189c4a427b762e0998a618"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e6e13da978c1305a517c3c8ef40d7a936fd90dce1481d2bc143b1de6b3390030"
 ---
 
 # Permissions and Access
@@ -111,4 +111,4 @@ Only users with **Owner** or **Billing** roles can view invoices for native inte
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

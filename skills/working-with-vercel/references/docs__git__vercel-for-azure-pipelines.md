@@ -12,12 +12,12 @@ related:
   - /docs/deployments
   - /docs/git
   - /docs/cli/project
-  - /docs/rest-api
+  - /docs/projects/managing-projects
 summary: ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-azure-pipelines.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a89a562d1f3aeb5934c8cd4408534e6870802c71454a0911590ec188062dcd76"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "00ed5cf94d29f9367bc20b3b16937afe38896e97fb04439d0fb374a299b018a4"
 ---
 
 # Deploying from Azure DevOps with Vercel
@@ -33,11 +33,10 @@ The [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?ite
 - [Vercel extension for Azure DevOps now available](https://vercel.com/changelog/vercel-extension-for-azure-devops-now-available)
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/git/vercel-for-azure-pipelines.graph.md](/docs/git/vercel-for-azure-pipelines.graph.md)
@@ -80,7 +79,7 @@ To create an empty Vercel project:
 vercel project add <project-name>
 ```
 
-2. Or through the [dashboard](/docs/projects#creating-a-project) and then disconnect the [Git integration](/docs/projects#git) that you would have set up
+2. Or through the [dashboard](/docs/projects/managing-projects#creating-a-project) and then disconnect the [Git integration](/docs/project-configuration/project-settings#git) that you would have set up
 
 ### Extension and Pipeline set up
 
@@ -275,4 +274,4 @@ Here, you can find a list of available properties for each of the available task
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0f85981919d21c7ba74bd4eca330ef7d9cf4bd864dba91fda1798b0bc6cffb03"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a5c3814de9105e094b7494382d2760893f4e898ce880ab6a2be855061e3758ae"
 ---
 
 # WAF Rate Limiting
@@ -110,4 +110,4 @@ The pricing is based on the region(s) from which the requests come from.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

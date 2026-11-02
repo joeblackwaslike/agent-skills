@@ -16,8 +16,8 @@ related:
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bd250efad9604f4f8ee75e8c837295602fd58233bda05d629a73c3393a946e6c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ae4411104690b1be9c80363de02e59d0008e6c2e6afe6072766bb24a1a7c33cf"
 ---
 
 # Partial Prerendering (PPR)
@@ -32,17 +32,17 @@ Partial Prerendering (PPR) is a rendering strategy that combines fast cached sta
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Partial prerendering: Building towards a new default rendering model for web applications](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
 - [Deploys are now up to 33% faster for apps with many ISR pages](https://vercel.com/changelog/deploys-are-now-up-to-33-faster-for-apps-with-many-isr-pages)
 - [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
 - [Rendering strategies for retail: ISR vs SSR vs static](https://vercel.com/kb/guide/ssr-vs-ssg-vs-isr-vs-csr-for-ecommerce) — Choose between SSR, SSG, ISR, and CSR for each ecommerce surface. Compare rendering modes on freshness, personalization,
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
-- [Partial prerendering: Building towards a new default rendering model for web applications](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
 - [Implementing Partial Prerendering on your platform](https://nextjs.org/docs/app/guides/ppr-platform-guide) — A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
 - [Introducing Serverless Pre-Rendering (SPR)](https://vercel.com/blog/serverless-pre-rendering)
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
 - [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
-- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/partial-prerendering.graph.md](/docs/partial-prerendering.graph.md)
@@ -274,4 +274,4 @@ When you use PPR with a framework on Vercel, you incur usage for:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

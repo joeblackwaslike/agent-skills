@@ -16,8 +16,8 @@ related:
 summary: Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service tiers through AI Gateway,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "157453de153dd5ae0ac6ea4bfd627c0a41eed50d4789e12b3c5f5c787f85211d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f0ac6bb5eb14b204393bc352fedd27fc3b5162e3d3028f83fae56525ea281427"
 ---
 
 # AI Gateway Service Tiers
@@ -32,10 +32,10 @@ OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI offer different process
 
 - [OpenAI Ultrafast mode now available on AI Gateway](https://vercel.com/changelog/openai-ultrafast-mode-now-available-on-ai-gateway)
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway)
-- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
+- [OpenAI Compatible Providers](https://ai-sdk.dev/providers/openai-compatible-providers) — Use OpenAI compatible providers with the AI SDK.
 - [AI SDK 7](https://vercel.com/blog/ai-sdk-7)
-- [Cost-aware model routing through AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Route easy requests to a cheap model and escalate only hard ones to a frontier model through one AI Gateway endpoint, wi
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/service-tiers.graph.md](/docs/ai-gateway/models-and-providers/service-tiers.graph.md)
 <!-- /docsgraph:related -->
@@ -579,6 +579,8 @@ console.log('Applied tier:', providerMetadata?.xai?.serviceTier);
 console.log('Usage:', usage);
 ```
 
+These examples use `gateway.only` so the provider-specific option applies to the provider that serves the request. In production, setting `gateway.order` with that provider first keeps fallback available; providers that don't read that option run at their default tier.
+
 ## Reading the applied service tier
 
 The AI SDK exposes the applied tier as `providerMetadata.gateway.serviceTier`. Chat Completions, Messages, and OpenResponses responses expose AI Gateway metadata under `provider_metadata.gateway.serviceTier`; OpenAI-compatible responses can also include `service_tier`. The Python beta may omit routing metadata, so inspect [request logs](/docs/ai-gateway/observability-and-spend/logs) when it is unavailable. AI Gateway only sets this field when the request was served at `flex`, `priority`, or `ultrafast`. If the provider reports the standard tier, AI Gateway omits this field. If your client omits provider metadata, use request logs to confirm the applied tier.
@@ -589,7 +591,6 @@ const { providerMetadata } = await generateText({
   prompt: 'Hello',
   providerOptions: {
     gateway: {
-      only: ['google'],
       serviceTier: 'priority',
     },
   },
@@ -911,4 +912,4 @@ Pin a service tier on a [virtual model](/docs/ai-gateway/models-and-providers/vi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

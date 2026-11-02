@@ -16,8 +16,8 @@ related:
 summary: Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/firewall-observability.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "426b0f9ac3d3858787b4d4cac179395a5e87930e889e684540624900080b3716"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "abed07663759d3a1ce3aa9c29df4ef5d9e5aea1819d55f3219535e57657c03db"
 ---
 
 # Firewall Observability
@@ -34,14 +34,14 @@ The project **Firewall** page of your Vercel dashboard provides a consolidated v
 - [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
 - [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview)
-- [Improved traffic visibility on Firewall overview page](https://vercel.com/changelog/improved-traffic-visibility-on-firewall-overview-page)
 - [Improved analytics experience now available on the Vercel Firewall](https://vercel.com/changelog/improved-analytics-experience-now-available-on-the-vercel-firewall)
+- [Improved traffic visibility on Firewall overview page](https://vercel.com/changelog/improved-traffic-visibility-on-firewall-overview-page)
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
-- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
 - [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
+- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
-- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
-- [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
+- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps)
+- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 
 Full cross-link map for this page: [/docs/vercel-firewall/firewall-observability.graph.md](/docs/vercel-firewall/firewall-observability.graph.md)
 <!-- /docsgraph:related -->
@@ -113,4 +113,4 @@ To receive notifications from these alerts, you can use one of the following met
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

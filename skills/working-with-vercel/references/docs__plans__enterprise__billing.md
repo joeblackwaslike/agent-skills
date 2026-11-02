@@ -17,8 +17,8 @@ related:
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/enterprise/billing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d17770482eee6a3f5c9fae93d7a89d5baa1fe3bc442474a18672726a22a4bed3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "78a98a72fadd1bfce62785dbd4385794a694eb00444f6f1c9ec9de555c4ee096"
 ---
 
 # Billing FAQ for Enterprise Plan
@@ -32,6 +32,7 @@ The Vercel Enterprise plan is perfect for [teams](/docs/accounts#creating-a-team
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
 - [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
@@ -151,4 +152,4 @@ The billing cycle refers to the period of time between invoices. The start date 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

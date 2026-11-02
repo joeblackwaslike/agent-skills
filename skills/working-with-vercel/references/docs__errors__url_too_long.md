@@ -12,8 +12,8 @@ related:
 summary: The URL of the request is too long. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/url_too_long.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "312c08fc339f324ca528cad3be90390c0ae3c67585a65ec98c27dfd31cb2579f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "28adade868543ff31bc9a2a5e25f0d4a6fa81ac434922da9b5ea813c2fae8990"
 ---
 
 # URL_TOO_LONG
@@ -39,4 +39,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

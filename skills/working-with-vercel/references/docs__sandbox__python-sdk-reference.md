@@ -16,8 +16,8 @@ related:
 summary: Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persistence, and network policies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/python-sdk-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "837a4fd83f2cc8c81de8b5c676f84243d2cd663a8db6894b87542ea6f4c62d0a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1975cad63e5632322dfaca64a056fc633c5b188f87c7faab0a31a19d82ec46e9"
 ---
 
 # Python SDK Reference
@@ -32,20 +32,22 @@ Use the Vercel Sandbox Python SDK to create isolated Linux microVMs, run process
 
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
+- [Build AI agents in Python with the AI SDK](https://vercel.com/kb/guide/python-and-ai-sdk) — Stream model responses, get typed output, and build tool-using agents in Python on Vercel.
+- [Call third-party APIs from Python with Vercel Connect](https://vercel.com/kb/guide/python-and-vercel-connect) — Call Slack and Linear APIs from Python with Vercel Connect. Request app and user tokens, handle consent, and verify prov
 - [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
-- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes) — Vercel MCP tools for sandboxes.
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
+- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes) — Vercel MCP tools for sandboxes.
 
 Full cross-link map for this page: [/docs/sandbox/python-sdk-reference.graph.md](/docs/sandbox/python-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
 
 For JavaScript and TypeScript, see the [JS SDK Reference](/docs/sandbox/sdk-reference).
+
+Follow [Run untrusted Python code safely with Vercel Sandbox](/kb/guide/python-and-vercel-sandbox) to execute code in an isolated microVM, manage files, restrict network access, and reuse prepared environments with snapshots.
 
 ## Install the SDK
 
@@ -523,7 +525,6 @@ Run a process and wait for it to exit:
 result = await box.run_process(
     "python",
     ["-m", "pytest"],
-    cwd="/vercel/sandbox",
     env={"PYTHONUNBUFFERED": "1"},
     kill_after=120,
     capture_output=True,
@@ -1140,4 +1141,4 @@ asyncio.run(main())
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

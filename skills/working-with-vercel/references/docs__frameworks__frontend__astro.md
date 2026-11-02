@@ -10,15 +10,15 @@ prerequisites:
   - /docs/frameworks
 related:
   - /docs/cli
-  - /docs/functions/runtimes
+  - /docs/functions/limitations
   - /docs/analytics
   - /docs/analytics/quickstart
   - /docs/build-output-api/configuration
 summary: Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/astro.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d43042905b5c4a7ccb64aa070c6eea96b429ec0b0733ca0194f11fb189e34199"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "80172012d9c41c6f9e96675450b48bcab6980e386428adb81ba8a033ca31b26c"
 ---
 
 # Astro on Vercel
@@ -34,14 +34,14 @@ Astro is an all-in-one web framework that enables you to build performant static
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
-- [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static)
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 
 Full cross-link map for this page: [/docs/frameworks/frontend/astro.graph.md](/docs/frameworks/frontend/astro.graph.md)
 <!-- /docsgraph:related -->
@@ -209,7 +209,7 @@ The following configuration options enable Vercel's features for Astro deploymen
 
 | Option                                                                                                                         | type                 | Rendering          | Purpose                                                                                                                                                                                                     |
 | ------------------------------------------------------------------------------------------------------------------------------ | -------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`maxDuration`](/docs/functions/runtimes#max-duration)                                                                         | `number`             | Serverless         | Extends or limits the maximum duration (in seconds) that Vercel functions can run before timing out.                                                                                                        |
+| [`maxDuration`](/docs/functions/limitations#max-duration)                                                                         | `number`             | Serverless         | Extends or limits the maximum duration (in seconds) that Vercel functions can run before timing out.                                                                                                        |
 | [`webAnalytics`](/docs/analytics)                                                                                              | `{enabled: boolean}` | Static, Serverless | Enables Vercel's [Web Analytics](/docs/analytics). See [the quickstart](/docs/analytics/quickstart) to set up analytics on your account.                                                                    |
 | [`imageService`](https://docs.astro.build/en/guides/integrations-guide/vercel/#imageservice)                                   | `boolean`            | Static, Serverless | For astro versions `3` and up. Enables an automatically [configured service](https://docs.astro.build/en/reference/image-service-reference/#what-is-an-image-service) to optimize your images.              |
 | [`devImageService`](https://docs.astro.build/en/guides/integrations-guide/vercel/#devimageservice)                             | `string`             | Static, Serverless | For astro versions `3` and up. Configure the [image service](https://docs.astro.build/en/reference/image-service-reference/#what-is-an-image-service) used to optimize your images in your dev environment. |
@@ -519,7 +519,7 @@ export default defineConfig({
 ```
 
 > **💡 Note:** If you're using [Vercel's Routing
-> Middleware](#using-vercel's-edge-middleware), you do not need to set
+> Middleware](/docs/frameworks/frontend/astro#using-vercel's-routing-middleware), you do not need to set
 > `edgeMiddleware: true` in your
 > `astro.config.ts` file.
 
@@ -746,4 +746,4 @@ Learn more about deploying Astro projects on Vercel with the following resources
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

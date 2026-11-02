@@ -17,8 +17,8 @@ related:
 summary: Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "09739fdab9e9ac11c47744f89836255f770a999dcafbfbf5cf4bbd93d93c1d8a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8d012063d3dbc6e6929a6a941587675f771037957628701a2eb323c836b23539"
 ---
 
 # Anthropic Messages Extended Thinking with AI Gateway
@@ -31,12 +31,12 @@ Anthropic calls reasoning **extended thinking**. Configure it with the `thinking
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
+- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning) — Learn how to control reasoning across providers with the top-level reasoning parameter.
-- [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4) — Get started with Claude 4 using the AI SDK.
-- [Get started with Claude 3.7 Sonnet](https://ai-sdk.dev/cookbook/guides/sonnet-3-7) — Get started with Claude 3.7 Sonnet using the AI SDK.
 - [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
 - [AI Gateway Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
-- [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning.graph.md)
 <!-- /docsgraph:related -->
@@ -294,4 +294,4 @@ When the provider returns thinking content, the response includes thinking block
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

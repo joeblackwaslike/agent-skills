@@ -16,8 +16,8 @@ related:
 summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0eea41ee2008ccf1cc7f75203740a54d5eb7a984fd016958f7c4777b9173c638"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d89cadd0973b9c76a6ef7c1d7e61bc47987f08db3e9e8d1231f52fac73b91c7d"
 ---
 
 # Vercel Functions Limits
@@ -39,7 +39,7 @@ The table below outlines the limits and restrictions of using Vercel Functions w
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
 - [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Running Agent Harnesses Durably on Vercel](https://vercel.com/docs/agent-harnesses) — Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash, a function timeout, or a redeploy resumes the ag
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 
@@ -221,4 +221,4 @@ If you have [fluid compute](/docs/fluid-compute) enabled, the following environm
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

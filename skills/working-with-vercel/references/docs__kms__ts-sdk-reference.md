@@ -14,8 +14,8 @@ related:
 summary: API reference for @vercel/kms, including signJWT, signMessage, region resolution, and signing the KMS API directly without the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/ts-sdk-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4fca8b86c98304f8bc72f7b1b047771b7ae0b388e2f3d6bfe0406f6613b973c3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5b58566525a582dbf77f58ed308f6e616dae3110743d26fbcca4ff764b4ba08f"
 ---
 
 # Vercel KMS SDK Reference
@@ -33,7 +33,7 @@ The `@vercel/kms` package wraps the KMS signing API and fetches the function's [
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
-- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team. An issuer owns the asymmetric signing keys th
+- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
 
 Full cross-link map for this page: [/docs/kms/ts-sdk-reference.graph.md](/docs/kms/ts-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -193,4 +193,4 @@ curl -X POST \
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

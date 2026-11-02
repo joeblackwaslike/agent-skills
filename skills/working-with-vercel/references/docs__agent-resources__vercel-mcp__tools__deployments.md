@@ -15,8 +15,8 @@ related:
 summary: Vercel MCP tools for deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b0b02dec627a28ade240dc9a34d54a26292c28e0e9704157cf420663a78c9d7b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d810da5517e2a100cdc0c5ff83499e03e208c3ce73285ae102ace6369b1648a8"
 ---
 
 # Deployments
@@ -317,4 +317,4 @@ Fetch content directly from a Vercel deployment URL (with [authentication](/docs
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

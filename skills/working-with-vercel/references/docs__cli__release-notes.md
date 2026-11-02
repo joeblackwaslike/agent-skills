@@ -13,8 +13,8 @@ related:
 summary: Browse release notes for Vercel CLI versions, including major, minor, and patch changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/release-notes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f8730ce7d73a9046b72b0ac194bea22e81e66a5045b298a4535e723a155658b9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1356a4b0cdf67cb9d0b3bbbb8e56dd56d2ecece33e3f9587cb9477da00ea9e30"
 ---
 
 # Vercel CLI Release Notes
@@ -27,7 +27,49 @@ Release notes for [Vercel CLI](/docs/cli) and its related packages. Each release
 
 To update to the latest version, see [updating Vercel CLI](/docs/cli#updating-vercel-cli) or run [`vercel upgrade`](/docs/cli/upgrade).
 
-vercel@65.2.0Published 2026-10-23 Minor changes- 94eaf2c:  
+vercel@65.9.0Published 2026-10-31 Minor changes- ece8d46:  
+- 0900c8f:  
+- c0fb918:  
+- 0d3d20d:  
+- 1c3e628:  Patch changes- 2c53a28:  
+- 0dd1b79:  
+- 8e49a01:  
+- f19aa88:  
+- 79fb27d:  
+- 6e7fd85:  
+- 7c8f9a5:  
+- cb61138:  vercel@65.8.0Published 2026-10-29 Minor changes- e563a6f:  
+- 56ac61d:  Patch changes- dc2c86d:  
+- dc2c86d:  
+- dc2c86d:  
+- dc2c86d:  
+- dc2c86d:  
+- dc2c86d:  
+- dc2c86d:  
+- 0b0e4f3:  
+- dc2c86d:  
+- 94f52dd:  
+- 15705a2:  
+- 169adc1:  
+- d0b6c14:  
+- e8e1f45:  
+- cd2647b:  
+- d743a7e:  
+- c23c6f9:  
+- c440d3c:  vercel@65.4.0Published 2026-10-27 Minor changes- 0210984:  
+- cae8a44:  
+- 73ef17e:  
+- bcdc735:  
+- d0629bd:  
+- 7ee1244:  Patch changes- 5038d29:  
+- 5952196:  
+- 5f55ccc:  
+- 2788841:  
+- 3407063:  
+- eb335f9:  
+- f4c2dbb:  
+- ad181fc:  
+- 4835094:  vercel@65.3.1Published 2026-10-26 Patch changes- 344f11e:  vercel@65.2.0Published 2026-10-23 Minor changes- 94eaf2c:  
 - ecada19:  
 - 1e6d0db:  Patch changes- 2cb5bac:  
 - 1a379a3:  
@@ -483,4 +525,4 @@ vercel@65.2.0Published 2026-10-23 Minor changes- 94eaf2c:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

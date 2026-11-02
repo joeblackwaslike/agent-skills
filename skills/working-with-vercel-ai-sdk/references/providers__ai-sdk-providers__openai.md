@@ -4,8 +4,8 @@ description: Learn how to use OpenAI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/openai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "273a794b3ae6c55f00ccad0c49daf1b538bacaf26e8bd1307c53236909215f02"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "6455b553c4c4b8a260dcf5f46baf8ecd96074a7900b05f2e5a278323b4e65fef"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -106,10 +106,13 @@ You can use the following optional settings to customize the OpenAI provider ins
   chat models with `openai.chat('model-id')` instead, or use the
   [OpenAI-compatible provider](/providers/openai-compatible-providers).
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `OPENAI_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **name** *string*
 
@@ -249,9 +252,9 @@ The following provider options are available:
 - **reasoningEffort** *'none' | 'minimal' | 'low' | 'medium' | 'high' | 'xhigh' | 'max'*
   Reasoning effort for reasoning models. Defaults to `medium`. If you use `providerOptions` to set the `reasoningEffort` option, this model setting will be ignored.
 
-Supported reasoning efforts vary by model. GPT-5.6, GPT-6 Sol, and GPT-6 Luna
-support `'none'`, `'low'`, `'medium'`, `'high'`, `'xhigh'`, and `'max'`. GPT-6
-Astra and GPT-6.1 Sol do not support `'none'`.
+Supported reasoning efforts vary by model. GPT-5.6, GPT-6 Sol, GPT-6 Luna, and
+GPT-6.1 Terra support `'none'`, `'low'`, `'medium'`, `'high'`, `'xhigh'`, and
+`'max'`. GPT-6 Astra and GPT-6.1 Sol do not support `'none'`.
 
 GPT-6 and later models do not support `temperature`, `topP`, `logprobs`, or
 the legacy `promptCacheRetention` option. The provider removes these settings
@@ -3024,6 +3027,7 @@ The following optional provider options are available for OpenAI completion mode
 | --------------------- | ----------- | ----------- | ----------------- | ---------- |
 | `gpt-6-astra`         | ✓           | ✗           | ✓                 | ✓          |
 | `gpt-6.1-sol`         | ✓           | ✗           | ✓                 | ✓          |
+| `gpt-6.1-terra`       | ✓           | ✗           | ✓                 | ✓          |
 | `gpt-6-luna`          | ✓           | ✗           | ✓                 | ✓          |
 | `gpt-6-sol`           | ✓           | ✗           | ✓                 | ✓          |
 | `gpt-5.6`             | ✓           | ✗           | ✓                 | ✓          |
@@ -3060,6 +3064,49 @@ docs](https://platform.openai.com/docs/models) for a full list of available
 models. The table above lists popular models. You can also pass any available
 provider model ID as a string if needed.
 
+#### Request Capabilities
+
+Reasoning and sampling support depend on the selected model and request options.
+Conditional cells describe when a parameter is supported. "Not declared" means
+the catalog does not enumerate reasoning efforts; it does not mean every effort
+is supported.
+
+| Model                 | Reasoning | Reasoning Efforts                               | Temperature                                      | Top P                                            |
+| --------------------- | --------- | ----------------------------------------------- | ------------------------------------------------ | ------------------------------------------------ |
+| `gpt-6-astra`         | ✓         | `low`, `medium`, `high`, `xhigh`, `max`         | ✗                                                | ✗                                                |
+| `gpt-6.1-sol`         | ✓         | `low`, `medium`, `high`, `xhigh`, `max`         | ✗                                                | ✗                                                |
+| `gpt-6.1-terra`       | ✓         | `none`, `low`, `medium`, `high`, `xhigh`, `max` | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-6-luna`          | ✓         | `none`, `low`, `medium`, `high`, `xhigh`, `max` | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-6-sol`           | ✓         | `none`, `low`, `medium`, `high`, `xhigh`, `max` | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.6`             | ✓         | `none`, `low`, `medium`, `high`, `xhigh`, `max` | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.6-luna`        | ✓         | `none`, `low`, `medium`, `high`, `xhigh`, `max` | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.6-sol`         | ✓         | `none`, `low`, `medium`, `high`, `xhigh`, `max` | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.6-terra`       | ✓         | `none`, `low`, `medium`, `high`, `xhigh`, `max` | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.5`             | ✓         | `none`, `low`, `medium`, `high`, `xhigh`        | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.4-pro`         | ✓         | Not declared                                    | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.4`             | ✓         | `none`, `low`, `medium`, `high`, `xhigh`        | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.4-mini`        | ✓         | `none`, `low`, `medium`, `high`, `xhigh`        | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.4-nano`        | ✓         | `none`, `low`, `medium`, `high`, `xhigh`        | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.3-chat-latest` | ✓         | Not declared                                    | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.2-pro`         | ✓         | Not declared                                    | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.2-chat-latest` | ✓         | Not declared                                    | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.2`             | ✓         | `none`, `low`, `medium`, `high`, `xhigh`        | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.1-codex-mini`  | ✓         | Not declared                                    | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.1-codex`       | ✓         | Not declared                                    | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.1-chat-latest` | ✓         | Not declared                                    | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5.1`             | ✓         | `none`, `low`, `medium`, `high`                 | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |
+| `gpt-5-pro`           | ✓         | Not declared                                    | ✗                                                | ✗                                                |
+| `gpt-5`               | ✓         | `minimal`, `low`, `medium`, `high`              | ✗                                                | ✗                                                |
+| `gpt-5-mini`          | ✓         | `minimal`, `low`, `medium`, `high`              | ✗                                                | ✗                                                |
+| `gpt-5-nano`          | ✓         | `minimal`, `low`, `medium`, `high`              | ✗                                                | ✗                                                |
+| `gpt-5-codex`         | ✓         | Not declared                                    | ✗                                                | ✗                                                |
+| `gpt-5-chat-latest`   | ✗         | Not declared                                    | ✓                                                | ✓                                                |
+| `gpt-4.1`             | ✗         | Not declared                                    | ✓                                                | ✓                                                |
+| `gpt-4.1-mini`        | ✗         | Not declared                                    | ✓                                                | ✓                                                |
+| `gpt-4.1-nano`        | ✗         | Not declared                                    | ✓                                                | ✓                                                |
+| `gpt-4o`              | ✗         | Not declared                                    | ✓                                                | ✓                                                |
+| `gpt-4o-mini`         | ✗         | Not declared                                    | ✓                                                | ✓                                                |
+
 ## Realtime Models
 
 Realtime is an experimental feature.
@@ -3088,8 +3135,9 @@ Live supports **browser WSS sessions through an application-owned relay with cli
 delegation**, using `experimental_useRealtime` for the browser runtime, and optional
 browser-direct WebRTC. Your application owns the agent and tool execution; Live
 delegations do not invoke `onToolCall`. For a low-level server adapter, obtain server-only connection
-settings with `liveModel.getServerWebSocketConfig()` and serialize commands with
-`liveModel.serializeClientEvent()`. Create one parser per connection with
+settings with `await liveModel.getServerWebSocketConfig()` and serialize commands with
+`liveModel.serializeClientEvent()`. Connection settings resolve asynchronously when
+using an asynchronous API key supplier. Create one parser per connection with
 `liveModel.createServerEventParser()` and pass incoming JSON to the returned
 function. It returns arrays of normalized events and retains each original event
 in `raw`.
@@ -3178,6 +3226,13 @@ application context, and `close()` for bounded finalization. Use `wss:` for prod
 relays. Continuous conversation semantics do not imply browser support for every
 provider codec or transport. The [Realtime guide](/docs/ai-sdk-core/realtime) covers
 legacy token-based, turn-based sessions.
+
+### Model Capabilities
+
+| Model          | Conversation | Transports        |
+| -------------- | ------------ | ----------------- |
+| `gpt-live-1`   | continuous   | websocket, webrtc |
+| `gpt-realtime` | turn-based   | websocket         |
 
 ## Embedding Models
 
@@ -3458,12 +3513,13 @@ The following provider options are available:
 
 - **timestampGranularities** *string\[]*
   The granularity of the timestamps in the transcription.
-  Defaults to `['segment']`.
+  Defaults to `['segment']` when `responseFormat` is `verbose_json`.
   Possible values are `['word']`, `['segment']`, and `['word', 'segment']`.
   Note: There is no additional latency for segment timestamps, but generating word timestamps incurs additional latency.
 
 - **language** *string*
   The language of the input audio. Supplying the input language in ISO-639-1 format (e.g. 'en') will improve accuracy and latency.
+  For streaming with `gpt-transcribe` and `gpt-live-transcribe`, it is sent as a single-entry `languages` list.
   Optional.
 
 - **prompt** *string*
@@ -3479,13 +3535,13 @@ The following provider options are available:
   Additional information to include in the transcription response.
 
 - **responseFormat** *'json' | 'verbose\_json' | 'diarized\_json'*
-  The format of the transcription response. `gpt-4o-transcribe-diarize` defaults to `diarized_json`.
+  The format of the transcription response. `whisper-1` defaults to `verbose_json` and `gpt-4o-transcribe-diarize` defaults to `diarized_json`. Other models use the service default unless this option is set.
 
 - **chunkingStrategy** *'auto' | object*
   Controls how the audio is split into chunks. `gpt-4o-transcribe-diarize` defaults to `'auto'`; provide this option to override the default. The object form configures OpenAI server-side VAD with `type: 'server_vad'` and optional `threshold`, `prefixPaddingMs`, and `silenceDurationMs` fields.
 
 - **streaming** *object*
-  Options for streaming transcription models such as `gpt-realtime-whisper`.
+  Options for streaming transcription models such as `gpt-live-transcribe`.
   Use with `experimental_streamTranscribe`.
   - **delay** *'minimal' | 'low' | 'medium' | 'high' | 'xhigh'*
     Latency/accuracy tradeoff for realtime transcription.
@@ -3501,6 +3557,8 @@ The following provider options are available:
 | `gpt-4o-mini-transcribe`    | ✓             | ✗         | ✗        | ✗        | ✗        |
 | `gpt-4o-transcribe`         | ✓             | ✗         | ✗        | ✗        | ✗        |
 | `gpt-4o-transcribe-diarize` | ✓             | ✗         | ✓        | ✓        | ✗        |
+| `gpt-transcribe`            | ✓             | ✓         | ✗        | ✗        | ✓        |
+| `gpt-live-transcribe`       | ✗             | ✓         | ✗        | ✗        | ✗        |
 | `gpt-realtime-whisper`      | ✗             | ✓         | ✗        | ✗        | ✗        |
 
 ## Translation Models
@@ -3604,8 +3662,8 @@ const result = await generateSpeech({
 
 | Model             | Instructions |
 | ----------------- | ------------ |
-| `tts-1`           | ✓            |
-| `tts-1-hd`        | ✓            |
+| `tts-1`           | ✗            |
+| `tts-1-hd`        | ✗            |
 | `gpt-4o-mini-tts` | ✓            |
 
 ## Decision Models
@@ -3641,8 +3699,10 @@ include probability distributions. Boolean questions use the API's predicate
 primitive and return P(true). Apply thresholds in application code, for example
 `answers.requestsRefund.probability >= 0.5`.
 
-Structured state, instructions, and criterion descriptions are serialized as JSON
-text. Score levels receive zero-based index labels. Non-null Boolean criteria are
+JSON state parts that hold an object or an array of objects are sent as native
+`input_json` parts when they fit its limits (32 container levels, 10,000 values, and
+256 KiB of compact UTF-8 JSON). Larger JSON state, other JSON state values, structured
+instructions, and criterion descriptions are serialized as JSON text. Score levels receive zero-based index labels. Non-null Boolean criteria are
 appended to predicate instructions under `Criteria for true:` and `Criteria for false:`.
 String criteria are passed through; structured criteria are serialized as JSON text.
 
@@ -3664,11 +3724,15 @@ state: [
 
 The factory respects `createOpenAI` settings, including custom fetch and base URL.
 Set `providerOptions.openai.safetyIdentifier` to an opaque end-user identifier for
-safety monitoring (up to 128 characters). For example:
+safety monitoring (up to 128 characters). Set `providerOptions.openai.promptCacheKey`
+to partition prompt cache reuse across requests that share `state`. For example:
 
 ```ts
 providerOptions: {
-  openai: { safetyIdentifier: 'user-123' } satisfies OpenAIDecisionModelOptions,
+  openai: {
+    safetyIdentifier: 'user-123',
+    promptCacheKey: 'tenant-42',
+  } satisfies OpenAIDecisionModelOptions,
 }
 ```
 

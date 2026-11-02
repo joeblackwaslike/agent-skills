@@ -14,8 +14,8 @@ related:
 summary: Learn how to secure native integration resources by choosing where they can connect and using Production-only mode to protect credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fa9b95e6cb8d5116e7d839c5eaf6dc882e6d082e8849d755e95cc3fbec84cbc3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "97b010d9f74651b49c67d3cc1c7ed04136b036dff72149394a128f951462997d"
 ---
 
 # Secure Your Resource
@@ -33,8 +33,8 @@ Secure a native integration resource by controlling where projects can connect t
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/secure-your-resource.graph.md](/docs/integrations/install-an-integration/secure-your-resource.graph.md)
 <!-- /docsgraph:related -->
@@ -100,4 +100,4 @@ If save is blocked:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

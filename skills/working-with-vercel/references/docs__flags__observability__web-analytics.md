@@ -15,8 +15,8 @@ related:
 summary: Learn how to tag your page views and custom events with feature flags
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability/web-analytics.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d29ac59168b7bf82492882e18e98e048910f043ea2ebfb0b0f4c84091201f253"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ea3d908313b24a1872c68297668502f672bdbef7acbd4a3e0c44a73d27767dcb"
 ---
 
 # Integrate flags with Vercel Web Analytics
@@ -35,9 +35,10 @@ sha256: "d29ac59168b7bf82492882e18e98e048910f043ea2ebfb0b0f4c84091201f253"
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Observe your feature flags with the Vercel DX platform](https://vercel.com/changelog/observe-your-feature-flags-with-the-vercel-dx-platform)
-- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Shipping safer and smarter: Integrating feature flags deeper in the Vercel workflow](https://vercel.com/blog/feature-flags)
+- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
 
@@ -103,4 +104,4 @@ To track feature flags in server-side events:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

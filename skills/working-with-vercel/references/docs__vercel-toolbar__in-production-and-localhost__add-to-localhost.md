@@ -11,13 +11,13 @@ prerequisites:
 related:
   - /docs/cli/link
   - /docs/cli
-  - /docs/projects
+  - /docs/project-configuration/general-settings
   - /docs/accounts
 summary: Learn how to use the Vercel Toolbar in your local environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a5e5fab1c5c5089f3d9419b191413d355fe77b23657b6128aef18491665ba8f9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ae8560a017527909da8e809d73d665ee82bd6935b00005ed802b0eed28df7aa6"
 ---
 
 # Add the Vercel Toolbar to your local environment
@@ -32,8 +32,8 @@ To enable the toolbar in your local environment, add it to your project using th
 
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
-- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
 
@@ -173,7 +173,7 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
   ></script>
   ```
   > For \['other']:
-  To find your project ID, see [project ID](/docs/projects#project-id). To find your user or team ID, see [Find your Team ID](/docs/accounts#find-your-team-id).
+  To find your project ID, see [project ID](/docs/project-configuration/general-settings#project-id). To find your user or team ID, see [Find your Team ID](/docs/accounts#find-your-team-id).
   > **💡 Note:** If there are changes to your branch, you must refresh the page to see the
   > latest comments in localhost.
   <br />
@@ -288,4 +288,4 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

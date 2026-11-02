@@ -12,8 +12,8 @@ related:
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7d5912d65bf961e9c5f6b0f3178544f740aac626ddd199101d9a959542c9f488"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d4bca11bf5c145ad1aff034be396bc8985f2748e662dd53c776ab0041c665985"
 ---
 
 # Support Center
@@ -30,14 +30,14 @@ The Vercel Support Center provides a secure and streamlined way for you to submi
 
 - [Create and view support cases on the Vercel dashboard](https://vercel.com/changelog/support-center)
 - [Support Center is now available for Pro customers](https://vercel.com/changelog/support-center-on-pro)
+- [Improvements to Support Center](https://vercel.com/changelog/improvements-to-support-center)
 - [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support) — Information on how to get help from Vercel Support through the available channels.
 - [Get support from the dashboard](https://vercel.com/blog/support-form)
-- [Improvements to Support Center](https://vercel.com/changelog/improvements-to-support-center)
 - [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md)
 <!-- /docsgraph:related -->
@@ -85,4 +85,4 @@ The support team may request additional logs or other information from you that 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

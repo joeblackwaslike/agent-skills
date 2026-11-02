@@ -14,8 +14,8 @@ related:
 summary: Learn about the core concepts of Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "13ca1c8a7f6f333893c6b5a5fbf5682ec177cb9161819b17d2cb76ae64b483da"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3c07ad10d4cf772c826e03caeec450d00b15d2dceb3ff3652c1a40ad593f776f"
 ---
 
 # Vercel fundamental concepts
@@ -30,8 +30,8 @@ The articles below explain core concepts that shape how Vercel works:
 
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundamentals.graph.md)
@@ -49,4 +49,4 @@ Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundament
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -15,8 +15,8 @@ related:
 summary: Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover available products using the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/integration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1dfc19a04bcf9522de1d8bea3b9d40d5577bc3eb0149ed0d7cfd3a73508c0676"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "198d953e1f7c60fb4febba0d0b224cb1aa8f922f0004155804ee6fb0ece66605"
 ---
 
 # vercel integration
@@ -841,4 +841,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

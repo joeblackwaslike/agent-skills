@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/reference/supply-chain-security/dependabot-options-reference.md"
-fetched_at: "2026-10-19T09:44:08.178Z"
-sha256: "1c945b690c9041ac24a590f3d25e1eefe13647d73cf3b3ade36a411ca2d099e4"
+fetched_at: "2026-11-02T12:05:56.062Z"
+sha256: "46f7c23924b0310f1ed62a179d3fa49c084261a8075b95006c52617095ba4ed0"
 ---
 
 This article provides reference information for the configuration options available in the `dependabot.yml` file. Use these options to customize how {% data variables.product.prodname_dependabot %} monitors package ecosystems, schedules updates, and creates pull requests. For an overview of the `dependabot.yml` file and how it works, see [AUTOTITLE](/code-security/concepts/supply-chain-security/about-the-dependabot-yml-file).
@@ -575,7 +575,7 @@ Package manager | YAML value      | Supported versions |
 | {% ifversion dependabot-nix-support %} |
 | Nix flakes | `nix`            | Not applicable   |
 | {% endif %} |
-| npm            | `npm`            |  v7, v8, v9, v10, v11   |
+| npm            | `npm`            | v7, v8, v9, v10, v11{% ifversion dependabot-npm12-pnpm11-pnpm12-bun14 %}, v12{% endif %} |
 | NuGet          | `nuget`          | <=6.12.0 |
 | {% ifversion dependabot-opentofu-support %} |
 | OpenTofu     | `opentofu`       | Not applicable     |
@@ -583,7 +583,7 @@ Package manager | YAML value      | Supported versions |
 | pip         | `pip`            | 26.1.1             |
 | pip-compile | `pip`            | 7.5.3            |
 | pipenv      | `pip`            | 2024.4.1      |
-| pnpm   | `npm`            | v7, v8, v9, v10   |
+| pnpm        | `npm` | v7, v8, v9, v10{% ifversion dependabot-npm12-pnpm11-pnpm12-bun14 %}, v11, v12{% endif %} |
 | poetry      | `pip`    | v2    |
 | {% ifversion dependabot-pre-commit-support %} |
 | pre-commit | `pre-commit` | Not applicable |

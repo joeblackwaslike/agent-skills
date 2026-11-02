@@ -17,8 +17,8 @@ related:
 summary: Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how to transfer domains with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/transfer-your-domain.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2e2d9c730ee98e27a8ee959a43f51e4c4792e82bf71cfe177516d08e839344e4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "193be71e2e4e400559bdfa32269f608dfc47a2b22fef4ca6814b247c613a5ac7"
 ---
 
 # Transferring Domains to Another Team or Project
@@ -36,11 +36,10 @@ If you are moving a website and its domains to another team, [transfer the proje
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
 - [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 - [Transfer-in a domain](https://vercel.com/docs/rest-api/domains-registrar/transfer-in-a-domain) — POST /v1/registrar/domains/{domain}/transfer — Transfer a domain in from another registrar
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/transfer-your-domain.graph.md](/docs/domains/working-with-domains/transfer-your-domain.graph.md)
@@ -198,4 +197,4 @@ Transferring your domain into Vercel moves its registration to Vercel. You can a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

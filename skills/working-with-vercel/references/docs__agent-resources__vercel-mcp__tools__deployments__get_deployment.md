@@ -13,8 +13,8 @@ related:
 summary: Use get_deployment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fe94b4c2768649388c75a84ff5639172f79d58cafa7c0cfafa85772fcff0a160"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5367ef2c974c664e53963fe4626a57cb9f69d329ef7421faff4437bb1d28758a"
 ---
 
 # get_deployment
@@ -27,6 +27,7 @@ Get a [deployment](/docs/deployments) by ID or hostname.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Get Deployment](https://v0.app/docs/api/v1/reference/deployments/get-by-id) — Get a deployment by ID. This will return the details of the deployment, including the inspector URL, chat ID, project ID
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
 - [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
 - [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
@@ -60,4 +61,4 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

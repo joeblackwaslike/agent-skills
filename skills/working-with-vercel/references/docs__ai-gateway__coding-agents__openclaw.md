@@ -14,8 +14,8 @@ related:
 summary: Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding agents and messaging channels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openclaw.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f63025345c06010e7d3a0e907f89cc745dd63cbd09926d8995846e6e1fbe272e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5ce339004092c9495d0037c3521246b1d790c6e3bfcc94f380c92cbe14e94d3d"
 ---
 
 # OpenClaw with AI Gateway
@@ -31,8 +31,8 @@ sha256: "f63025345c06010e7d3a0e907f89cc745dd63cbd09926d8995846e6e1fbe272e"
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Cline with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cline) — Connect Cline to AI Gateway through the Vercel CLI or VS Code settings. Configure model access and monitor usage and spe
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openclaw.graph.md](/docs/ai-gateway/coding-agents/openclaw.graph.md)
@@ -111,4 +111,4 @@ If you can't use the Vercel CLI, configure OpenClaw manually:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

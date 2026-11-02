@@ -16,8 +16,8 @@ related:
 summary: Generate speech and transcribe it using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0a2f865e90ddd9da180d31880e564b01026d55505de08ebf38f2442c98f236ce"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c6b5379f1e470f0f7fe10295949606f7e93bbf19ed7599c89d10831df3dbd1ed"
 ---
 
 # AI Gateway Speech Quickstart: Transcription and TTS
@@ -30,12 +30,12 @@ Generate speech from text through AI Gateway, save the audio, and transcribe it 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Drama 3 now available on AI Gateway](https://vercel.com/changelog/drama-3-now-available-on-ai-gateway)
 - [Fish Audio models now available on Vercel AI Gateway for free](https://vercel.com/changelog/fish-audio-models-now-available-on-ai-gateway-for-free)
 - [Gemini 3.5 Transcribe now available on AI Gateway](https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway)
 - [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway)
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text) — Generate and stream text responses using AI Gateway.
 - [Realtime Voice with AI Gateway](https://vercel.com/docs/ai-gateway/modalities/realtime) — Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/speech.graph.md](/docs/ai-gateway/getting-started/speech.graph.md)
@@ -112,4 +112,4 @@ node index.mts
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

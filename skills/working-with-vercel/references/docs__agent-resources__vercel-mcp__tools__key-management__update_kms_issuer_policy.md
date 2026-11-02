@@ -13,8 +13,8 @@ related:
 summary: Use update_kms_issuer_policy with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer_policy.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d85114a6bd1d8fdacf06570abe6187bf906e5e230695ecc1402ebca3f43f3f96"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8f3358dee9b69e7f97f75215417b253e319e3979fcfb388183e3aee1e87f3621"
 ---
 
 # update_kms_issuer_policy
@@ -31,7 +31,7 @@ Update an issuer policy.
 - [update_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer) — Use update_kms_issuer with Vercel MCP.
 - [create_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer) — Use create_kms_issuer with Vercel MCP.
 - [Update an issuer policy](https://vercel.com/docs/rest-api/kms/update-an-issuer-policy) — PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} — Update an existing KMS issuer policy's environments or to
-- [create_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_signing_key) — Use create_kms_signing_key with Vercel MCP.
+- [get_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/get_kms_issuer) — Use get_kms_issuer with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer_policy.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer_policy.graph.md)
 <!-- /docsgraph:related -->
@@ -53,4 +53,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-m
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

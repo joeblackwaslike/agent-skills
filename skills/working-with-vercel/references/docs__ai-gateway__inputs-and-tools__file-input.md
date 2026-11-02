@@ -17,8 +17,8 @@ related:
 summary: Send PDFs and documents to AI Gateway models with examples for each supported SDK and API format.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/file-input.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d437e0845dfc7e08b5bc94b1c5c7e055972174ab1489aaa6b95310709c009738"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9ef1f29eb559e460edf5de14cd52f0cf5cfcdb9a43a8cdad6a61b4386fe610bd"
 ---
 
 # AI Gateway File and PDF Input
@@ -459,4 +459,4 @@ For request details and failures, inspect [AI Gateway logs](/docs/ai-gateway/obs
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

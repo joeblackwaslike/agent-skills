@@ -13,8 +13,8 @@ related:
 summary: Use list_team_members with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "536350f84d5dc9737a1dae15bfd7bd3dad14a5cf139cb91d5d0262ea61e23480"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "10e85a66368ee2d73df2fb09891e71ac7d2130a5944b11131c019a3790e13df3"
 ---
 
 # list_team_members
@@ -31,7 +31,7 @@ List team members.
 - [list_teams](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams) — Use list_teams with Vercel MCP.
 - [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
 - [list_user_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_user_events) — Use list_user_events with Vercel MCP.
-- [List project members](https://vercel.com/docs/rest-api/projectmembers/list-project-members) — GET /v1/projects/{idOrName}/members — Lists all members of a project.
+- [list_access_groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups) — Use list_access_groups with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.graph.md)
 <!-- /docsgraph:related -->
@@ -56,4 +56,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

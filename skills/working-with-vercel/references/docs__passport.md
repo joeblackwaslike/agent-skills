@@ -9,15 +9,15 @@ prerequisites:
   []
 related:
   - /docs/passport/set-up-identity-provider
+  - /docs/chat-sdk/integrations/passport
   - /docs/microfrontends/routing
   - /docs/deployment-protection/methods-to-protect-deployments
   - /docs/microfrontends/managing-microfrontends/security
-  - /docs/passport/additional-identity-scopes
 summary: Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "faf65bbabedfcd072a61728ce132afd1d497ed834e0bd2255ec60dfb08e6b4fd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "434e0b6da63aa6c196b37b18e7962a9dfcccd4a6ed045b0d8714f9920e5c835e"
 ---
 
 # Restrict access to deployments with Passport
@@ -42,8 +42,8 @@ Passport lets you protect deployments with your own identity provider. Visitors 
 - [Bypass Deployment Protection for testing, sharing, and automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
-- [TanStack Start on Vercel](https://vercel.com/docs/frameworks/full-stack/tanstack-start) — Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
+- [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
+- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
 Full cross-link map for this page: [/docs/passport.graph.md](/docs/passport.graph.md)
 <!-- /docsgraph:related -->
@@ -68,6 +68,12 @@ Follow these guides to choose a protection method and connect your identity prov
 - [Protect internal apps with Passport](/kb/guide/vercel-passport): Configure your identity provider, enable Passport for projects or a team, and read visitor identity.
 - [Compare Passport with other Deployment Protection methods](/kb/guide/vercel-passport-vs-deployment-protection): Choose between Passport, Vercel Authentication, Password Protection, and Trusted IPs.
 - [Set up Passport with Microsoft Entra ID](/kb/guide/vercel-passport-microsoft-entra-id): Configure an Entra ID application, restrict access to assigned users, and read identity in a Next.js app.
+
+## Use Passport with Chat SDK
+
+Use a verified Passport identity to keep a browser chatbot's conversation history associated with the signed-in visitor. With Chat SDK's History API, the bot can use messages from that visitor's earlier conversations as context for a reply.
+
+Follow [Chat SDK with Vercel Passport](/docs/chat-sdk/integrations/passport) to authenticate Web Adapter requests and derive a per-user history key from the verified issuer and subject. Sharing that history with Slack, Teams, or Discord requires a separate verified account link.
 
 ## Use Passport with microfrontends
 
@@ -133,4 +139,4 @@ Passport is available as an Enterprise feature. Contact your Vercel account team
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

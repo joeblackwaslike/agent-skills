@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Speed Insights to analyze your application's performance data."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/using-speed-insights.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "225c4c2feb78ba772e5405585dd2e1b62a71399a5dbea91a66439944a62cad9b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e5cfc98544fd880967391b3259a469f21f882f1045c70a5ca0c67ff52908a26d"
 ---
 
 # Using Speed Insights
@@ -37,11 +37,11 @@ To access Speed Insights:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
-- [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [Speed Insights usage can now be viewed by Project](https://vercel.com/changelog/speed-insights-usage-can-now-be-viewed-by-project)
+- [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
+- [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Speed Insights Configuration with @vercel/speed-insights](https://vercel.com/docs/speed-insights/package) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
@@ -106,14 +106,18 @@ To view a geographical breakdown of your application's performance:
 
 ## Downgrading from Speed Insights Plus
 
-If a project is on [Speed Insights Plus](/docs/speed-insights/limits-and-pricing) you can downgrade it to Speed Insights:
+If a project is on [Speed Insights Plus](/docs/speed-insights/limits-and-pricing) you can downgrade it to the Speed Insights free tier:
 
 1. Select a project from your [dashboard](/dashboard).
 2. Open [**Speed Insights**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fspeed-insights\&title=Go+to+Speed+Insights) in the sidebar.
 3. Click on the ellipsis on the top-right of the Speed Insights page and select **Turn off Speed Insights Plus**.
 
-When you downgrade in the middle of your billing cycle, Speed Insights Plus stays available until the end of the cycle, and Vercel continues to show the events you already collected.
-After that, events will count toward your team's [allocation](/docs/speed-insights/limits-and-pricing#limitations).
+When you downgrade, you retain access to Speed Insights Plus reports until the end of your billing cycle.
+The switch to your team's free [allocation](/docs/speed-insights/limits-and-pricing#limitations) can take up to 10 minutes. During this time, new events may still count toward Plus usage.
+
+## Stopping data collection
+
+After downgrading, data collection continues under the Speed Insights free tier, subject to your team's [allocation limits](/docs/speed-insights/limits-and-pricing#limitations). To stop automatic collection from new visits to the updated deployment, remove the Speed Insights component or script from your application and redeploy.
 
 
 ---
@@ -121,4 +125,4 @@ After that, events will count toward your team's [allocation](/docs/speed-insigh
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

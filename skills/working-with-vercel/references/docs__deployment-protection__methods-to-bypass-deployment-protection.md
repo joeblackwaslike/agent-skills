@@ -16,8 +16,8 @@ related:
 summary: Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6eb788c663d6dd2fd79b4d7b96d984d78fd96fb6fe1859239b46907c29b5f284"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e8c51ca4052dc96d64fd548ee84283dd2dcc33dee250a60b4ad4e375b4fe7d24"
 ---
 
 # Bypass Deployment Protection for testing, sharing, and automation
@@ -35,7 +35,7 @@ Deployment Protection secures your deployments, but sometimes you need to grant 
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
-- [Restrict access to deployments with Passport](https://vercel.com/docs/passport) — Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
+- [Usage & Pricing for Deployment Protection](https://vercel.com/docs/deployment-protection/usage-and-pricing) — Compare Deployment Protection feature availability and pricing across Hobby, Pro, and Enterprise plans.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection.graph.md)
@@ -120,4 +120,4 @@ Learn more about [Shareable Links](/docs/deployment-protection/methods-to-bypass
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

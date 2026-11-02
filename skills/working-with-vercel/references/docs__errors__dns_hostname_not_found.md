@@ -14,8 +14,8 @@ related:
 summary: The domain does not exist, resulting in an NXDOMAIN error during DNS resolution. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/dns_hostname_not_found.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "870b466c4f62b2b237427fa1e738c4bf57d8baf731acd1525792ee06fad896bf"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fc1a0ac7e2fc0a7d81069ca790a427ce200f25956f7e6239883dab74a45a0752"
 ---
 
 # DNS_HOSTNAME_NOT_FOUND
@@ -41,4 +41,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

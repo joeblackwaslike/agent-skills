@@ -8,21 +8,21 @@ type: how-to
 prerequisites:
   - /docs/chat-sdk
 related:
-  - /docs/eve
+  - /docs/frameworks/agents/eve
   - /docs/chat-sdk/adapters
-  - /docs/eve/getting-started
   - /docs/cli
   - /docs/environment-variables
+  - /docs/logs/runtime
 summary: Send Chat SDK messages to an eve agent with a channel, persistent state, and Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/eve.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "32e3d6a2560e654fad2147a72b7549d65c47094bfedf8e7ac20b9c6c12dec004"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "adf69af88178cf5e3d2f54263ee4189a3adda9faa20d17d6e7fc5e4b6dc88226"
 ---
 
 # Using eve with Chat SDK
 
-Use [eve's Chat SDK channel](https://eve.dev/docs/channels/chat-sdk) to send platform messages into an [eve agent](/docs/eve). Your Chat SDK handlers choose which events start a turn; eve runs the agent and delivers its response back to the conversation.
+Use [eve's Chat SDK channel](https://eve.dev/docs/channels/chat-sdk) to send platform messages into an [eve agent](/docs/frameworks/agents/eve). Your Chat SDK handlers choose which events start a turn; eve runs the agent and delivers its response back to the conversation.
 
 
 <!-- docsgraph:related -->
@@ -32,20 +32,20 @@ Use [eve's Chat SDK channel](https://eve.dev/docs/channels/chat-sdk) to send pla
 
 - [Using Chat SDK and eve together](https://vercel.com/kb/guide/chat-sdk-and-eve) — Understand how eve and Chat SDK divide responsibilities, when to use eve's first-class channels versus the Chat SDK chan
 - [Give your eve agent an email inbox with Resend](https://vercel.com/kb/guide/eve-agent-with-resend) — Connect an eve agent to email using the Chat SDK channel and the Resend adapter. Handle inbound email, threaded replies,
+- [Chat SDK Reference](https://eve.dev/docs/channels/chat-sdk/reference) — Chat SDK channel options, webhook routes, send and respond, steering, delivery, human-in-the-loop, sign-ins, proactive s
 - [Use any Chat SDK adapter with eve](https://vercel.com/changelog/eve-chat-sdk-channel)
-- [Next.js](https://eve.dev/docs/guides/frontend/nextjs) — Run an eve agent and a Next.js app as one project with withEve.
-- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
-- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
-- [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Sandbox, and Vercel Workflows.
+- [Next.js](https://eve.dev/docs/guides/frontend/nextjs) — Add an eve chat to a Next.js app, from setup and authentication to saved conversations and deployment.
+- [Slack](https://eve.dev/docs/channels/slack) — Reach your agent from Slack mentions, DMs, threads, slash commands, and buttons.
+- [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Dae
 
 Full cross-link map for this page: [/docs/chat-sdk/eve.graph.md](/docs/chat-sdk/eve.graph.md)
 <!-- /docsgraph:related -->
 
-This is useful when you already have Chat SDK handlers or need an adapter from the [adapter directory](/docs/chat-sdk/adapters). For a new Slack-only eve agent, the [built-in Slack channel](https://eve.dev/docs/channels/slack) provides a guided setup with `eve add channel/slack` and Vercel Connect.
+This is useful when you already have Chat SDK handlers or need an adapter from the [adapter directory](/docs/chat-sdk/adapters). For a new Slack-only eve agent, the built-in Slack channel provides a guided setup with `eve add channel/slack` and Vercel Connect.
 
 ## Prerequisites
 
-- An [eve project](/docs/eve/getting-started) with instructions and model credentials configured for deployment
+- An [eve project](/docs/frameworks/agents/eve#create-an-agent) with instructions and model credentials configured for deployment
 - Node.js 24 or later and the [Vercel CLI](/docs/cli)
 - Permission to install an app in a Slack workspace
 
@@ -184,7 +184,7 @@ export default channel;
 
 The example subscribes to mentioned threads and passes the platform message ID as an `idempotencyKey`. This lets eve reject repeated input within its recent-key window; Chat SDK's separate event deduplication doesn't guarantee delivery to eve.
 
-Redis stores Chat SDK subscriptions and coordination data. eve manages the [agent session](/docs/eve/concepts) separately.
+Redis stores Chat SDK subscriptions and coordination data. eve manages the agent session separately.
 
 ## Deploy and test
 
@@ -196,7 +196,7 @@ pnpm exec eve deploy
 
 The channel mounts `GET` and `POST` handlers at `/eve/v1/slack`, matching the Connect trigger destination. eve owns the webhook lifecycle, so you don't need the Next.js Route Handler from a standalone Chat SDK app.
 
-Invite the installed app to a Slack channel and mention it with a question. The agent should answer in the thread. Reply in the thread to continue the session. Check [runtime logs](/docs/logs/runtime) and [eve observability](/docs/eve/observability) if events arrive but the agent doesn't respond.
+Invite the installed app to a Slack channel and mention it with a question. The agent should answer in the thread. Reply in the thread to continue the session. Check [runtime logs](/docs/logs/runtime) and [eve observability](https://eve.dev/docs/observability/otel) if events arrive but the agent doesn't respond.
 
 ## Adapt delivery to another platform
 
@@ -216,4 +216,4 @@ The channel streams replies by default. For email and other destinations that ca
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

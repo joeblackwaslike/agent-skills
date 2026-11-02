@@ -17,8 +17,8 @@ related:
 summary: How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel access token, and how relying...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/authentication.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "75ca96992c4f7e57fb0fc1fe72ad7cc18558f61128af5c0bf6c50976e3161889"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1cf5149a9d71622497ed3fbd9f77246bbdd7d94bf5ea75daaf49e7ccb4c7a8d9"
 ---
 
 # Vercel KMS Authentication
@@ -35,8 +35,8 @@ KMS authorizes requests differently depending on what you are doing. Signing is 
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 
 Full cross-link map for this page: [/docs/kms/concepts/authentication.graph.md](/docs/kms/concepts/authentication.graph.md)
 <!-- /docsgraph:related -->
@@ -98,4 +98,4 @@ const { payload } = await jwtVerify(token, jwks, { issuer });
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

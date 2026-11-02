@@ -16,8 +16,8 @@ related:
 summary: Deploy multiple backends and frontends within a single Vercel project using services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fc5d9dc874404dc4e614f3fe3d7c4a1c046bb9367cf88537c38b22d5d0c626ac"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7b6f7ee5adef90466bb17538f0d02606f3b0697ec6caa178ae9b4fd10eb76a28"
 ---
 
 # Services
@@ -39,12 +39,12 @@ replacing the need to split monorepos into separate Vercel projects.
 - [TanStack Start](https://eve.dev/docs/guides/frontend/tanstack) — Run an eve agent and a TanStack Start app as one project with the eveTanStack Vite plugin.
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
+- [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 
 Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md)
 <!-- /docsgraph:related -->
@@ -203,4 +203,4 @@ In both cases, generated binding environment variables are injected automaticall
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

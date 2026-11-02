@@ -13,8 +13,8 @@ related:
 summary: Use get_toolbar_thread with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/get_toolbar_thread.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a329022c67c975606f0e3469c52bd4ae3ff1ede1a25ffbca8a6dc50d54c7d6cf"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b2e934317a0bc31f53bd35bafdded83c993a2e221c27f0a83d3cb9c5d7aa4a46"
 ---
 
 # get_toolbar_thread
@@ -49,4 +49,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolb
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -17,8 +17,8 @@ related:
 summary: Understand the limits and features available for Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/limits.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2029640b9f6faca4c0195c367a6eb14178c908429e15ce93be945cbe97879dbc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3610b9d0447f61541f0325ac3a6f3017fa3adbd95b8dc1418b38854b6d3cd288"
 ---
 
 # Multi-tenant Limits
@@ -32,10 +32,10 @@ This page provides an overview of the limits and feature availability for Vercel
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/limits.graph.md](/docs/platforms/multi-tenant-platforms/limits.graph.md)
 <!-- /docsgraph:related -->
@@ -107,4 +107,4 @@ Each DNS label has a [63-character limit](/docs/deployments/generated-urls#trunc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

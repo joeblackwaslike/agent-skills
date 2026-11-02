@@ -16,8 +16,8 @@ related:
 summary: Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, routing, and provider failover.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9a38a7e7e096474cf2e8daa317782385df3e5e84c98c16fee60adac6a0dbbbb5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "978c7f5fbce3e2e9bea02bb9c515de57063965e3abd8fa75dd5e7a5575029259"
 ---
 
 # Vercel AI Gateway: Models, Routing, and Observability
@@ -32,12 +32,12 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai) — Feed thread history into TanStack AI's chat(), give it Chat SDK tools, and serve a TanStack AI browser chat from the sam
 - [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
-- [Deployment](https://eve.dev/docs/guides/deployment/overview) — Choose a deployment strategy and prepare an eve agent for production.
+- [Deployment](https://eve.dev/docs/guides/deployment) — How an eve agent runs in production, and the backends you choose on Vercel or your own infrastructure.
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [AI Gateway and one-click deploys now available on TRAE](https://vercel.com/changelog/ai-gateway-and-one-click-deploys-now-available-on-trae)
 - [AI Gateway is now in Beta](https://vercel.com/changelog/ai-gateway-is-now-in-beta)
@@ -137,4 +137,4 @@ Explore [chat platforms](/docs/ai-gateway/chat-platforms) and [ecosystem integra
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

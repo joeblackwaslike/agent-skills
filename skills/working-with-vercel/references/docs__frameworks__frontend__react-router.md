@@ -17,8 +17,8 @@ related:
 summary: Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e93aefebc78cc59d6e9b358d6bce768aa3c8d9850b149921d264ffe0dcd0c436"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "76fc88685209f5c34d5961c4ce5f80d4d3ad10d4fa75098f9872297280997a73"
 ---
 
 # React Router on Vercel
@@ -33,12 +33,12 @@ React Router is a multi-strategy router for React. When used [as a framework](ht
 
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
-- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [Understanding React Server Components](https://vercel.com/blog/understanding-react-server-components)
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
-- [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+- [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/frameworks/frontend/react-router.graph.md](/docs/frameworks/frontend/react-router.graph.md)
 <!-- /docsgraph:related -->
@@ -491,4 +491,4 @@ Learn more about deploying React Router projects on Vercel with the following re
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

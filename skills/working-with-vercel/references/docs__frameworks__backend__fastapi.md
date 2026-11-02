@@ -17,8 +17,8 @@ related:
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b8ea700d42cd88e3c71e6d4bc943aa82c58544ea842152ce6d527e8bd5e4fa20"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7299f9cfb4f869e83add55d229e2b532c90e9981576f5f83a075f7ab24c60993"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -359,6 +359,8 @@ property](/docs/project-configuration/vercel-json#functions).
 
 To process work independently of an API response, enqueue tasks with [Celery](/docs/frameworks/backend/celery) or [Dramatiq](/docs/frameworks/backend/dramatiq). Both integrations use Vercel Queues to invoke worker functions, and their guides show how to enqueue work from a Python web application.
 
+To use the Queues SDK directly, [process background jobs in Python with Vercel Queues](/kb/guide/python-and-vercel-queues). For a process that needs multiple steps, retries, or long waits, [build durable workflows in Python](/kb/guide/python-and-durable-workflows). Both guides start work from a FastAPI route.
+
 For scheduled work, configure Cron Jobs to call a FastAPI route that runs the task or enqueues it. The [FastAPI cron job example](/kb/guide/ship-a-fastapi-app-on-vercel#run-scheduled-tasks-with-cron-jobs) includes the schedule and `CRON_SECRET` authorization check.
 
 ## Stream responses
@@ -401,4 +403,4 @@ For more about deploying FastAPI on Vercel, see:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

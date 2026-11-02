@@ -12,8 +12,8 @@ related:
 summary: Requires that security headers are set correctly for Next.js apps and contain valid directives.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_security_headers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a985c428ff5d9e3f18c04fd44a4e96d181458c6e50f7a5a9c4567cfdfe444d78"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7a087b5916501c7afb14f07276a5bceb534b4a7136400647541e8fbd2983111c"
 ---
 
 # NEXTJS_MISSING_SECURITY_HEADERS
@@ -75,4 +75,4 @@ do and how to set the best values for your application.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

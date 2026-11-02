@@ -17,8 +17,8 @@ related:
 summary: Add a Chat SDK bot to Nuxt, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks/nuxt.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "432799c347d7132dc9828d92ec7df03e59500833296a04fc7b24ae0b44b8f87e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "439052364646b153a5231d324d92f25be58cbd1256365c618633d8e27b13bf64"
 ---
 
 # Chat SDK with Nuxt
@@ -352,4 +352,4 @@ For a fuller chat interface, see the [official Nuxt example](https://github.com/
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

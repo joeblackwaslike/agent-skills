@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/configuration.md"
-fetched_at: "2026-10-19T09:41:44.018Z"
-sha256: "4b86e73ee6da5b18ec0515c3fbf12b9b72fb07fbb545fa93362507596cbc64f4"
+fetched_at: "2026-11-02T12:04:46.311Z"
+sha256: "2aede57ecc85e7b448677a13ec71c6b9253e1c48478843b2319ccb268103c7e3"
 ---
 
 # Gemini CLI configuration
@@ -1062,7 +1062,7 @@ their corresponding top-level category object in your `settings.json` file.
       "auto": {
         "displayName": "Auto",
         "tier": "auto",
-        "isPreview": true,
+        "isPreview": false,
         "isVisible": true,
         "features": {
           "thinking": true,

@@ -16,8 +16,8 @@ related:
 summary: Compare Deployment Protection feature availability and pricing across Hobby, Pro, and Enterprise plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/usage-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f9db7411af56af810d8abe138ef4d884f54eda5f11b04a46002d4cc2800ab711"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e098efd09215bd768a35c369827a85b8bd305111d4f5dae6cfd6ad8f6f7e02e5"
 ---
 
 # Usage & Pricing for Deployment Protection
@@ -36,7 +36,6 @@ Most Deployment Protection features are available on all plans at no additional 
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
 - [How do I add password protection to my Vercel deployment?](https://vercel.com/kb/guide/how-do-i-add-password-protection-to-my-vercel-deployment) — Enable Password Protection on a Vercel deployment, configure automation and CORS bypasses, and verify the gate before yo
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
@@ -89,4 +88,4 @@ If you prefer to switch to project-level Password Protection, contact support.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

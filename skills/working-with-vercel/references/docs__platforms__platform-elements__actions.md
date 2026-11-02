@@ -14,8 +14,8 @@ related:
 summary: Server actions you can install to run common platform tasks against the Vercel API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "579f68690bb658dcfe8d9b8989c6923227fce6d2d864f0dc996667b9af6e34a4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "83d7ca776d799543775037cecd11fccf3aaa8eae12830cb2154d32daaf2e0c93"
 ---
 
 # Actions
@@ -47,4 +47,4 @@ Full cross-link map for this page: [/docs/platforms/platform-elements/actions.gr
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -17,8 +17,8 @@ related:
 summary: "Create, view, and delete AI Gateway API keys, and set each key's budget and spend attribution, from the dashboard, CLI, or API."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8d3e67f8bc441b1be34077e144c932e7190104f277a9c9a440f3f97bbcccfda4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7e6b324e2124821edd942c496ff6959e475c40f7df3a2befbc9bc4d903ffdf5a"
 ---
 
 # AI Gateway API Keys
@@ -215,4 +215,4 @@ curl -X POST "https://api.vercel.com/external/compromised_secret" \
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

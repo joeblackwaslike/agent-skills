@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for CI invocations, jobs, tasks, and logs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "efbf153945031cab39d31163467a4e7c2d3943bb7a40e7be1cc2d93c7f632a21"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1db9841760d04ad047edbeaf77964408d91d19a528aa11e172883ca558d4423a"
 ---
 
 # Vercel CI
@@ -28,8 +28,8 @@ Inspect Vercel CI invocations, attempts, jobs, tasks, and logs for your team. Us
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Get log lines for the tasks of an invocation attempt](https://vercel.com/docs/rest-api/vercel-ci/get-log-lines-for-the-tasks-of-an-invocation-attempt) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs — Returns log lines for the tasks of an invoca
-- [Get log lines for a specific task run attempt](https://vercel.com/docs/rest-api/vercel-ci/get-log-lines-for-a-specific-task-run-attempt) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
 - [Search the task logs of several invocation attempts](https://vercel.com/docs/rest-api/vercel-ci/search-the-task-logs-of-several-invocation-attempts) — GET /v1/vercel-ci/log-search — Searches the task logs of up to 50 invocation attempts at once, for example the most rece
+- [Get log lines for a specific task run attempt](https://vercel.com/docs/rest-api/vercel-ci/get-log-lines-for-a-specific-task-run-attempt) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
 - [Get an invocation with its jobs and tasks](https://vercel.com/docs/rest-api/vercel-ci/get-an-invocation-with-its-jobs-and-tasks) — GET /v1/vercel-ci/invocations/{invocationId}/tree — Returns an invocation attempt together with every job definition, it
 - [List task runs for a job run](https://vercel.com/docs/rest-api/vercel-ci/list-task-runs-for-a-job-run) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
 
@@ -277,4 +277,4 @@ Retry support depends on the invocation source and terminal state. Native-check 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

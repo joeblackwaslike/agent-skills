@@ -16,8 +16,8 @@ related:
 summary: Learn about using Observability Plus and its limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/observability-plus.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "07c146997733cd40997c33d287fe3ef077b1d947dfd3d65aa52e619f52221f1a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "70b0ea9cb01bd1e350e9f62961064f1f1ea1b3bee3c8370529aaf91707deae77"
 ---
 
 # Observability Plus
@@ -34,11 +34,11 @@ Every Vercel team has access to [Observability](/docs/observability). **Observab
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Agents can now enable Web Analytics and Observability Plus with Vercel CLI](https://vercel.com/changelog/agents-can-now-enable-web-analytics-and-observability-plus-with-vercel-cli)
 - [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga)
 - [Anomaly alerts now available via email](https://vercel.com/changelog/anomaly-alerts-now-available-via-email)
 - [Anomaly alerts now in limited beta for Enterprise customers](https://vercel.com/changelog/anomaly-alerts-now-in-limited-beta-for-enterprise-customers)
 - [Anomaly alerts now in public beta](https://vercel.com/changelog/anomaly-alerts-now-in-public-beta)
-- [Anomaly alerts now include error spikes](https://vercel.com/changelog/anomaly-alerts-now-include-error-spikes)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
@@ -175,4 +175,4 @@ Observability Plus uses usage-based pricing. You're only charged for events your
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

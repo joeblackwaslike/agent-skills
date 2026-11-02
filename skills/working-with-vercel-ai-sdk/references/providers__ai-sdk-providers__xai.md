@@ -4,8 +4,8 @@ description: Learn how to use xAI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/xai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "f3543d234633c0f17a28a613aba627de7b0a18dd431c85e75f59ae0c018288dc"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "49ad34f147324bf1097d37f225364581e044a026c474fa5b4d440567dfc68e95"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -89,10 +89,13 @@ You can use the following optional settings to customize the xAI provider instan
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.x.ai/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `XAI_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 
@@ -163,19 +166,21 @@ The AI SDK option accepts these values, but each xAI model supports a subset:
   challenging problems, complex math, multi-step logic, and competition-level
   tasks.
 - `'xhigh'` — Uses the most reasoning tokens for the most challenging tasks.
-  This level is only supported by `grok-4.6`.
+  This level is supported by `grok-4.6` and `grok-4.7`.
 
 Support and defaults are model-specific. `grok-4.3` supports `'none'`,
 `'low'`, `'medium'`, and `'high'`. `grok-4.5` supports `'low'`, `'medium'`,
 and `'high'`, defaults to `'high'`, and cannot disable reasoning. `grok-4.6`
-supports `'low'`, `'medium'`, `'high'`, and `'xhigh'`, and defaults to
-`'high'`. The `grok-4.20-reasoning` and `grok-4.20-non-reasoning` variants do
-not accept this option. For `grok-4.20-multi-agent`, `'low'`, `'medium'`, and
-`'high'` control the number of agents instead of reasoning depth. See xAI's
-[reasoning
+and `grok-4.7` support `'low'`, `'medium'`, `'high'`, and `'xhigh'`, and
+default to `'high'`. The `grok-4.20-reasoning` and `grok-4.20-non-reasoning`
+variants do not accept this option. For `grok-4.20-multi-agent`, `'low'`,
+`'medium'`, and `'high'` control the number of agents instead of reasoning
+depth. See xAI's [reasoning
 docs](https://docs.x.ai/developers/model-capabilities/text/reasoning) and
 [Grok 4.6 model page](https://docs.x.ai/developers/models/grok-4.6) for
-current details.
+current details. The SDK currently maps the portable `reasoning: 'xhigh'`
+setting directly only for `grok-4.6`; use
+`providerOptions.xai.reasoningEffort: 'xhigh'` to request it on `grok-4.7`.
 
 ### Priority Processing
 
@@ -333,6 +338,8 @@ const { text, sources } = await generateText({
 console.log(text);
 console.log('Citations:', sources);
 ```
+
+Each citation is returned as one `source`. With `streamText`, each citation is emitted once as a `source` stream part, as soon as it is added.
 
 #### Web Search Parameters
 
@@ -701,6 +708,7 @@ without a webhook.
 
 | Model                         | Image Input | Object Generation | Tool Usage | Tool Streaming | Reasoning |
 | ----------------------------- | ----------- | ----------------- | ---------- | -------------- | --------- |
+| `grok-4.7`                    | ✓           | ✓                 | ✓          | ✓              | ✓         |
 | `grok-4.6`                    | ✓           | ✓                 | ✓          | ✓              | ✓         |
 | `grok-4.5`                    | ✓           | ✓                 | ✓          | ✓              | ✓         |
 | `grok-4.20-reasoning`         | ✓           | ✓                 | ✓          | ✓              | ✓         |
@@ -711,6 +719,7 @@ without a webhook.
 | `grok-4-fast-reasoning`       | ✓           | ✓                 | ✓          | ✓              | ✓         |
 | `grok-4-fast-non-reasoning`   | ✓           | ✓                 | ✓          | ✓              | ✗         |
 | `grok-code-fast-1`            | ✗           | ✓                 | ✓          | ✓              | ✓         |
+| `grok-4`                      | ✗           | ✓                 | ✓          | ✓              | ✓         |
 | `grok-3`                      | ✗           | ✓                 | ✓          | ✓              | ✗         |
 | `grok-3-mini`                 | ✗           | ✓                 | ✓          | ✓              | ✓         |
 

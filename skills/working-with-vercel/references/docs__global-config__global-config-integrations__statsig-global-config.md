@@ -10,15 +10,15 @@ prerequisites:
   - /docs/global-config
 related:
   - /docs/cli
-  - /docs/projects
+  - /docs/projects/managing-projects
   - /docs/global-config/get-started
   - /docs/global-config/using-global-config
   - /docs/environment-variables
 summary: "Learn how to use Global Config with Vercel's Statsig integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "89e17b607b6e6db01c3a4ef77568ce6a257fe49fd3fa93207655b5ce02686009"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "26b6702385a3dd082bc52eac72e829d81e868c245648c8c74657c207a760de11"
 ---
 
 # Using Global Config with Statsig
@@ -31,8 +31,8 @@ This guide will help you get started with using Vercel's Statsig integration wit
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
+- [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
@@ -90,7 +90,7 @@ npx create-next-app@latest
 bunx create-next-app@latest
 ```
 
-1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects#creating-a-project)
+1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects/managing-projects#creating-a-project)
 2. A Global Config. If you don't have one, follow [the Global Config quickstart](/docs/global-config/get-started)
 3. The Global Config SDK:
 
@@ -309,4 +309,4 @@ Now that you have set up the Statsig Global Config integration, you can explore 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

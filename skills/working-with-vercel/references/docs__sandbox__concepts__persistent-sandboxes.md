@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "58457f060cd5a62cf22fca8aff8fbd8182c7097fff97623e3cdfbc5b0b0d767e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ed41cd3661bb1f4ea73ba7bb98446552e88451fc76776fc857506f49018d76f8"
 ---
 
 # Persistence
@@ -39,7 +39,6 @@ Persistent sandboxes automatically save their filesystem state when stopped and 
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Sandbox persistence is now GA](https://vercel.com/changelog/sandbox-persistence-is-now-ga)
 - [Automatic persistence now in beta on Vercel Sandbox](https://vercel.com/changelog/vercel-sandbox-persistent-sandboxes-beta)
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/persistent-sandboxes.graph.md](/docs/sandbox/concepts/persistent-sandboxes.graph.md)
@@ -536,4 +535,4 @@ From the dashboard you can stop the current session or permanently remove the sa
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

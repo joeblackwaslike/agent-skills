@@ -13,8 +13,8 @@ related:
 summary: Error in establishing a connection with an external target.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/router_external_target_handshake_error.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "392b67495002f22fa3198f2116342aea8587861f36acee025d37c4ee376ad40f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9de078cfe59006b66fb38b560a16d0ac45e3f97373de0953c78b8c09c4789329"
 ---
 
 # ROUTER_EXTERNAL_TARGET_HANDSHAKE_ERROR
@@ -42,4 +42,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

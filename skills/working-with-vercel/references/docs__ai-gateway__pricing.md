@@ -16,8 +16,8 @@ related:
 summary: Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit top-ups and spending budgets.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dd7bb6047c1c147374ba5ef371b232ab5ac29c697bfc731b1764e38d694cf3dc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "544f2d93834bc7676dbbbec69a785f1eccd4ae9068c9d9e01ec560c3d6a09a5e"
 ---
 
 # AI Gateway Pricing
@@ -33,13 +33,14 @@ sha256: "dd7bb6047c1c147374ba5ef371b232ab5ac29c697bfc731b1764e38d694cf3dc"
 - [GPT-5.6 Sol is now 50% off a lower price](https://vercel.com/changelog/gpt-5-6-sol-is-now-50-percent-off-a-lower-price)
 - [MiniMax H3 and H3 Max are 50% off on AI Gateway](https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing) — Understand Vercel Agent pricing and how to track costs
+- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing.graph.md](/docs/ai-gateway/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -83,6 +84,12 @@ AI Gateway also supports [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentica
 
 BYOK is available on the paid tier. When a request with your credentials fails, AI Gateway retries it with system credentials for reliability, and that fallback usage is charged against your credits balance. To use your own provider keys, you'll need purchased AI Gateway Credits.
 
+### API credits from provider subscriptions
+
+API credits claimed through eligible [ChatGPT subscriptions](/i/chatgpt-api-credits-ai-gateway) or [Claude subscriptions](/i/claude-api-credits-ai-gateway) stay in the linked provider organization. Use that organization's key with BYOK for eligible provider-billed requests. These grants don't top up your AI Gateway Credits balance or replace the purchased-credit requirement for BYOK.
+
+Exhausting a grant doesn't necessarily stop requests. A provider's purchased balance or automatic recharge can fund further usage, and AI Gateway can charge its own balance after a system-credential fallback. [AI Gateway budgets](/docs/ai-gateway/observability-and-spend/budgets) exclude BYOK spend, so configure provider-side spending controls as well.
+
 ## Add-on surcharges
 
 Some AI Gateway capabilities are off by default. When you enable one, it incurs additional charges beyond the per-token rates, deducted from your AI Gateway Credits balance. Disable the capability in your team's AI Gateway settings to stop the charges.
@@ -101,7 +108,7 @@ Some AI Gateway capabilities are off by default. When you enable one, it incurs 
 
 ### Provider Allowlist
 
-The [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist) is a team-wide setting that applies to every request. If you only need to restrict providers on individual requests, use the `only` parameter in `providerOptions` instead at no additional cost.
+The [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist) is a team-wide setting that applies to every request, and the `only` parameter in `providerOptions` applies the same kind of restriction per request at no additional cost. Both controls remove failover to providers outside the list, so reserve them for when you need to name the exact providers that can serve traffic. When the requirement is about data handling, [zero data retention](/docs/ai-gateway/security-and-compliance/zdr), [disallow prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training), and [regional inference](/docs/ai-gateway/security-and-compliance/regional-inference) filter by that requirement while keeping every qualifying provider eligible. Regional inference passes through the provider's [regional price](/docs/ai-gateway/security-and-compliance/regional-inference#regional-pricing), which can be higher.
 
 | Option                       | Cost                                | Availability       |
 | ---------------------------- | ----------------------------------- | ------------------ |
@@ -174,4 +181,4 @@ When your balance drops below the threshold, AI Gateway automatically charges yo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

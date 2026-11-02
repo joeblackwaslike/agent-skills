@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/session-storage.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "b2a5ad497f498a6f6f3fdb2e97ecc4bc13c6812f67403902ea14244736b86ecd"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "40c3c9815aa79fafa44dfaedd928fa3603c316c1af1003870969f1221a3a3606"
 ---
 
 > ## Documentation Index
@@ -269,9 +269,13 @@ The Claude Code subprocess always writes each batch of transcript entries to loc
 * **Fresh session, or a resume when the store has nothing for the session**: the local transcript under your config directory outlives the run, and the store receives a copy.
 * **Run [resumed from the store](#resume-from-the-store)**: the local copy is deleted at run end, so the store holds the only durable copy.
 
-If you don't want a fresh session to leave a transcript on local disk, set `CLAUDE_CONFIG_DIR` to a temp directory in `options.env`. A run resumed from the store already deletes its local copy, so it needs no such setting. In TypeScript, spread `process.env` into `env` as well, since the [`env` option](https://code.claude.com/docs/en/agent-sdk/typescript#options) replaces the subprocess environment.
+If you don't want a fresh session to leave a transcript on local disk, set `CLAUDE_CONFIG_DIR` to a new, private temp directory in `options.env`. A run resumed from the store already deletes its local copy, so it needs no such setting. In TypeScript, spread `process.env` into `env` as well, since the [`env` option](https://code.claude.com/docs/en/agent-sdk/typescript#options) replaces the subprocess environment.
 
-If your app signs in through files in the config directory, such as OAuth credentials or an `apiKeyHelper` in your user `settings.json`, copy those files into the temp directory first, or set `ANTHROPIC_API_KEY` in `env` instead. Otherwise the run fails with `Not logged in`.
+If you set `CLAUDE_CONFIG_DIR` to a temp directory and sign in with a [claude.ai login](https://code.claude.com/docs/en/authentication.md#credential-management) or an [`apiKeyHelper`](https://code.claude.com/docs/en/settings-reference#apikeyhelper) in your user `settings.json`, the run fails with `Not logged in`. To authenticate the run, set a long-lived token, set an API key, or copy your config files:
+
+* **Long-lived token**: if you run the agent yourself under your own Claude subscription, set `CLAUDE_CODE_OAUTH_TOKEN` in `env` to a token from [`claude setup-token`](https://code.claude.com/docs/en/authentication#generate-a-long-lived-token). You can only make model requests with that token, so your [claude.ai connectors](https://code.claude.com/docs/en/mcp.md#use-mcp-servers-from-claude-ai) aren't available in that run.
+* **API key**: set `ANTHROPIC_API_KEY` in `env`.
+* **Config files**: if you sign in through files in your usual config directory, such as OAuth credentials or an `apiKeyHelper` in your user `settings.json`, copy them into the temp directory.
 
 Two options conflict with the mirror, and the SDK throws at startup if you combine either with a store:
 

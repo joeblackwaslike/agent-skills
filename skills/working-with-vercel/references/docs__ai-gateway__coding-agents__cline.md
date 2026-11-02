@@ -14,8 +14,8 @@ related:
 summary: Connect Cline to AI Gateway through the Vercel CLI or VS Code settings. Configure model access and monitor usage and spending in one dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cline.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a160039f6a6dc8d231900e19d793f9539297f2dad40d0a5a8ce3a6e588e338ef"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e97f82e0be45b748711c324f244e9875297c110bdd928a79543f2903e1e317fe"
 ---
 
 # Cline with AI Gateway
@@ -28,7 +28,7 @@ sha256: "a160039f6a6dc8d231900e19d793f9539297f2dad40d0a5a8ce3a6e588e338ef"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Cline now runs on Vercel AI Gateway](https://vercel.com/blog/cline-on-ai-gateway)
 - [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
@@ -102,4 +102,4 @@ Common issues and solutions:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

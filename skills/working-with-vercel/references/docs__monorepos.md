@@ -16,8 +16,8 @@ related:
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0b660c153d3b78b6238ec551a3a69fdd3857e7019ceaea2f859fb8307ff7c371"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "41b434cd4b9b18060cf484b1df52ae05fdd2648cff766a7c585a076662203258"
 ---
 
 # Using Monorepos
@@ -53,7 +53,7 @@ Get started with monorepos on Vercel in a few minutes by using one of our monore
 ## Add a monorepo through the Vercel Dashboard
 
 1. Go to the [Vercel Dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and ensure your team is selected from the team switcher.
-2. Select the **Add New…** button, and then choose **Project** from the list. You'll create a new [project](/docs/projects) for each directory in your monorepo that you wish to import.
+2. Select **Create New**, then choose **Project** from the list. You'll create a new [project](/docs/projects) for each directory in your monorepo that you wish to import.
 3. From the **Import Git Repository** section, select the **Import** button next to the repository you want to import.
 4. Before you deploy, you'll need to specify the directory within your monorepo that you want to deploy. Click the **Edit** button next to the [Root Directory setting](/docs/builds/configure-a-build#root-directory) to select the directory, or project, you want to deploy. This will configure the root directory of each project to its relevant directory in the repository:
 
@@ -254,4 +254,4 @@ changes that span both projects.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

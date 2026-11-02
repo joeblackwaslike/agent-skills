@@ -4,8 +4,8 @@ description: Learn how to connect to MCP Apps and render interactive tool UIs wi
 url: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-apps"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-apps.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "863674fd1cb3a5e2736a756f69543ea37364dae5fc11ea3bfd188df256016aa1"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "874452438fa701e0d19da690ff5762e2d3cf7a1a0b247ebe1dc90552d9ee5352"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -158,16 +158,13 @@ In production, add any policy and user approval checks your app needs before for
 
 ## Render With React
 
-In your React chat UI, render normal message parts as usual and pass tool parts to `experimental_MCPAppRenderer`.
-
-`experimental_MCPAppRenderer` is experimental and may change in a future
-release.
+In your React chat UI, render normal message parts as usual and pass tool parts to `MCPAppRenderer`.
 
 ```tsx title="app/page.tsx"
 'use client';
 
 import {
-  experimental_MCPAppRenderer as MCPAppRenderer,
+  MCPAppRenderer,
   useChat,
   type MCPAppBridgeHandlers,
   type MCPAppMetadata,
@@ -245,7 +242,7 @@ export default function Chat() {
 }
 ```
 
-For ordinary tools, `experimental_MCPAppRenderer` renders the provided `fallback` (or nothing when no fallback is provided). For app-backed tools, it loads the resource, creates the sandbox bridge, sends tool input and result notifications to the iframe, and forwards supported app requests through your handlers.
+For ordinary tools, `MCPAppRenderer` renders the provided `fallback` (or nothing when no fallback is provided). For app-backed tools, it loads the resource, creates the sandbox bridge, sends tool input and result notifications to the iframe, and forwards supported app requests through your handlers.
 
 ## Best Practices
 

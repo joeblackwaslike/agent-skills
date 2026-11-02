@@ -17,8 +17,8 @@ related:
 summary: Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access the toolbar.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f98622a51d5ff06f9f353aeeec7cd0dbba9290e934102bb46a6e78474653b5c3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "67ee7630af590fdad132c44c5cc642f0d1015682a82b6c7f0b19fbf501e2671e"
 ---
 
 # Add the Vercel Toolbar to your production environment
@@ -311,7 +311,7 @@ If you have noticed that the toolbar is showing up for team members on your prod
 3. In the **General** section, find **Vercel Toolbar**.
 4. Under **Production** select **Off** from the dropdown.
 
-## Acessing the toolbar using the Vercel dashboard
+## Accessing the toolbar using the Vercel dashboard
 
 You can send team members and users a production deployment with the Vercel Toolbar included from the dashboard. To do so:
 
@@ -344,4 +344,4 @@ Provided [the Vercel toolbar is enabled](/docs/vercel-toolbar/managing-toolbar#e
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Requires any use of getInitialProps in Next.js pages be reviewed and approved, and encourages using getServerSideProps or getStaticProps instead.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_get_initial_props.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "be11628ae0476ee111ea5b306b1979a9f1626bae191b99c0a728f226fd6d7426"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d686854139639871b574ab1374af284d316de6d27a7f20115da8e535a2b37a08"
 ---
 
 # NEXTJS_NO_GET_INITIAL_PROPS
@@ -100,4 +100,4 @@ export default Home;
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

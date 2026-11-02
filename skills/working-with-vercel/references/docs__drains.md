@@ -16,8 +16,8 @@ related:
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "60b0f65d89406504fc8f1d36cd9c7c312412a67d67f6f857f813f638d0762926"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9e3941bb248a2a66f3e2c73646aff96bac1980481c9409bc33aedaa647d1d0f0"
 ---
 
 # Working with Drains
@@ -42,8 +42,8 @@ Drains let you forward observability data from your applications to external ser
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 
 Full cross-link map for this page: [/docs/drains.graph.md](/docs/drains.graph.md)
 <!-- /docsgraph:related -->
@@ -159,4 +159,4 @@ For more information on Drains, check out the following resources:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

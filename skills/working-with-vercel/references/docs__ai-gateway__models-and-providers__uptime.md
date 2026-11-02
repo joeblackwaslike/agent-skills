@@ -15,8 +15,8 @@ related:
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9837899efd81ca8c7e969ed15552d4f3b8c732ce442d1dd1ea427ac9ab62de7b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1edb9448c5080f75d7837728897c2ebbbfa1eb63853a0b00e60990e18b6215aa"
 ---
 
 # AI Gateway Uptime and Provider Status
@@ -29,12 +29,13 @@ When a provider has an outage, AI Gateway falls back to a healthy provider so yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
+- [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
 - [AI Gateway Provider Latency and Throughput Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics) — Understand how AI Gateway measures throughput and latency per provider.
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
-- [AI Gateway Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts) — Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start
+- [AI Gateway Leaderboards](https://vercel.com/docs/ai-gateway/leaderboards) — See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the
+- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/uptime.graph.md](/docs/ai-gateway/models-and-providers/uptime.graph.md)
 <!-- /docsgraph:related -->
@@ -181,4 +182,4 @@ A request that fails on its first provider but succeeds on a fallback counts as 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

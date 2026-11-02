@@ -16,8 +16,8 @@ related:
 summary: "Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, system bypass rules, attack..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ffac3e5cb9c0cd8f74b83988b9727326f850417772671a7a0b6682f36022715f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bc3415fbaa50a29029f9bd0f7f9ae967bc6b88821d7fd3b89396c85e36aebcb1"
 ---
 
 # vercel firewall
@@ -34,10 +34,10 @@ The `vercel firewall` command is used to inspect and configure the [Vercel Firew
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration) — Learn how to create scalable firewall configurations with Terraform
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel traces](https://vercel.com/docs/cli/traces) — Search spans across a team, inspect request traces, capture session traces, or manage project trace sampling rules from
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk) — Learn how to configure a custom rule with rate limit in your code.
 - [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration) — GET /v1/security/firewall/config/{configVersion} — Retrieve the specified firewall configuration for a project. The depl
+- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md)
@@ -748,7 +748,7 @@ vercel firewall bot-management
 vercel firewall bot-management --json
 
 # Change AI Bots to deny, then publish
-vercel firewall rules edit ai-bots --action deny --yes
+vercel firewall rules edit ai-bots --category ai-crawlers --action deny --yes
 vercel firewall publish --yes
 ```
 
@@ -1155,4 +1155,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

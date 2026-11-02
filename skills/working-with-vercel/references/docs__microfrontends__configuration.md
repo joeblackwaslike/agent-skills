@@ -14,8 +14,8 @@ related:
 summary: Configure your microfrontends.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/configuration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "973648c0a86222ea6b3ccc2ffed0afa758baeddaf07b082d2e6e80b4d107fc88"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "38fdc82cf9120e0740fd30cf646f86d59f688e43927f84a7941bb4560774c26e"
 ---
 
 # Microfrontends Configuration
@@ -31,8 +31,8 @@ The `microfrontends.json` file is used to configure your microfrontends. If this
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
-- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 - [Microfrontends local development](https://vercel.com/docs/microfrontends/local-development) — Learn how to run and test your microfrontends locally.
 
 Full cross-link map for this page: [/docs/microfrontends/configuration.graph.md](/docs/microfrontends/configuration.graph.md)
@@ -180,4 +180,4 @@ VC_MICROFRONTENDS_CONFIG_FILE_NAME="microfrontends-dev.json" turbo dev
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -17,8 +17,8 @@ related:
 summary: These actions allow integration providers to set up automated tasks with Vercel deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/deployment-integration-action.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "297b2314ef1fc7cf613f20c2848fed52643d1d873843c338a8a1ebf592de24e7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "54734b0ee3189e1028a7977c2ef61c9cf30c1241da4fd2407ccbc9eaf424d669"
 ---
 
 # Deployment integration actions
@@ -36,8 +36,8 @@ With deployment integration actions, integration providers can enable [integrati
 - [Actions](https://vercel.com/docs/platforms/platform-elements/actions) — Server actions you can install to run common platform tasks against the Vercel API.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deployment Checks](https://vercel.com/docs/deployment-checks) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
-- [Deploy Files](https://vercel.com/docs/platforms/platform-elements/actions/deploy-files) — Server action for programmatically deploying files to Vercel on behalf of platform users.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Deploy Files](https://vercel.com/docs/platforms/platform-elements/actions/deploy-files) — Server action for programmatically deploying files to Vercel on behalf of platform users.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/deployment-integration-action.graph.md](/docs/integrations/create-integration/deployment-integration-action.graph.md)
 <!-- /docsgraph:related -->
@@ -150,4 +150,4 @@ As an integration provider, to allow your integration users to add deployment ac
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

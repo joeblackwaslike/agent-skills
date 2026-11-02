@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel automatically scales your functions to handle traffic surges.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/concurrency-scaling.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "77f22b230cfdf142c84c3423b47d0d979a3b9f228c5b0d46c830596dd6769764"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0f7d8813695d0a96c6ad9d25a9cf2ff0e1f660a1397c2ec8a7928614fb17f7b1"
 ---
 
 # Concurrency scaling
@@ -37,10 +37,8 @@ Vercel automatically scales your functions to handle traffic surges, ensuring op
 - [Vercel Functions now scale 12x faster for high-volume requests](https://vercel.com/changelog/vercel-functions-now-scale-12x-faster-for-high-volume-requests)
 - [What should I do if I receive a 503 error on Vercel?](https://vercel.com/kb/guide/what-should-i-do-if-i-receive-a-503-error-on-vercel) — Learn about when Serverless Functions return a 503 status code and what can be done about them.
 - [What is Vercel's policy regarding load testing deployments?](https://vercel.com/kb/guide/what-s-vercel-s-policy-regarding-load-testing-deployments) — Learn about Vercel's policies regarding load tests.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Vercel Connect Limits](https://vercel.com/docs/connect/limits) — Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
-- [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits) — Understand the limits and features available for Vercel for Platforms.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/functions/concurrency-scaling.graph.md](/docs/functions/concurrency-scaling.graph.md)
@@ -74,4 +72,4 @@ If you exceed the limit, a [`503 FUNCTION_THROTTLED`](/docs/errors/function_thro
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: API reference for the Flags SDK for Next.js and SvelteKit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-sdk-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "30a4ef1dcd6ec633ed0fe71c532d2c5de2174b08d655e39a77c1ad366b932d3e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "44bce8110ed03866267c58977af844cbe5f2af8b775c32268e8156816174c738"
 ---
 
 # Flags SDK Reference
@@ -30,13 +30,14 @@ The Flags SDK is a free, open-source library that gives you the tools you need t
 
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
+- [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Flags as Code](https://flags-sdk.dev/docs/principles/flags-as-code)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
-- [SDKs](https://vercel.com/docs/flags/vercel-flags/sdks) — Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer) — View and override your application's feature flags from the Vercel Toolbar
 - [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 - [Integrate flags with Vercel Web Analytics](https://vercel.com/docs/flags/observability/web-analytics) — Learn how to tag your page views and custom events with feature flags
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/flags/flags-sdk-reference.graph.md](/docs/flags/flags-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -139,12 +140,40 @@ reportValue('my-flag', true);
 
 ### Overrides
 
-Handle flag overrides from Flags Explorer (automatic with SDK integrations):
+Flags Explorer stores overrides in the encrypted `vercel-flag-overrides` cookie. The `flag()` function reads this cookie and applies overrides automatically: when an override is present, the `decide` function is not called and the override value is returned instead. No extra code is needed.
 
-```ts
-import { getOverrides } from 'flags/next';
+To read overrides manually in Next.js App Router, use the following example. `decryptOverrides` uses `FLAGS_SECRET`, which must match the secret used by Flags Explorer:
 
-const overrides = await getOverrides();
+```ts filename="app/read-overrides.ts" framework=nextjs-app
+import { decryptOverrides } from 'flags';
+import { cookies } from 'next/headers';
+
+export async function readOverrides() {
+  const cookieStore = await cookies();
+  const cookieValue = cookieStore.get('vercel-flag-overrides')?.value;
+
+  if (!cookieValue) {
+    return {};
+  }
+
+  return (await decryptOverrides(cookieValue)) ?? {};
+}
+```
+
+```js filename="app/read-overrides.js" framework=nextjs-app
+import { decryptOverrides } from 'flags';
+import { cookies } from 'next/headers';
+
+export async function readOverrides() {
+  const cookieStore = await cookies();
+  const cookieValue = cookieStore.get('vercel-flag-overrides')?.value;
+
+  if (!cookieValue) {
+    return {};
+  }
+
+  return (await decryptOverrides(cookieValue)) ?? {};
+}
 ```
 
 ### Flags Explorer integration
@@ -203,4 +232,4 @@ For the full API documentation, including all functions, types, and advanced pat
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use git_namespaces with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "281bfe6122df09333bb4f866f11c768b35ce361c4704e762de188fd1f86955c3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "77fd681259d1630c0becf5cbc188852eb7e371827996f211346b05b4d3379c65"
 ---
 
 # git_namespaces
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

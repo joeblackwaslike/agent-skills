@@ -12,8 +12,8 @@ related:
 summary: Prevent unsafe usage of eval() in your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_eval.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5248e534f86cde335bae479c22644bd7b01ec0e10a253fb9e353eed98f60f1b9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9c56451fd122bbe42b01faee96ab09c930b3f4071c872e316222dc57ec59e25e"
 ---
 
 # NO_EVAL
@@ -84,4 +84,4 @@ setTimeout(() => {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

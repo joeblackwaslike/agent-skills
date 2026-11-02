@@ -4,8 +4,8 @@ description: Learn how to use the Claude Code harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "d06bd07f9d68a6db1b4ee8b65726a47dc8b487c276111c189d03cc5b8d09eaad"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "7edf3e9e1e523743586129f3621570a1a6d767f3931c2ca52dfd81dfce1c0b60"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -110,7 +110,25 @@ Settings:
   credentials the harness adapter can discover, read, or otherwise access in
   the host process.
 - `mcpServers`: MCP server definitions keyed by server name.
+- `strictMcpConfig`: only use the servers from `mcpServers` and ignore other
+  MCP configuration, such as a project `.mcp.json` or user settings.
+- `toolHints`: Claude Code hints for host tools, keyed by tool name.
+  `readOnly: true` marks a tool without side effects, so Claude Code can run
+  its calls in parallel and allows it in plan mode; calls to other host tools
+  run one at a time. `alwaysLoad: true` sends the tool's definition from the
+  first request when Claude Code's tool search is on, instead of deferring it
+  until the model looks it up.
 - `maxTurns`: maximum internal turns before yielding.
+- `skillOverrides`: per-skill visibility overrides. Values can be `on`,
+  `name-only`, `user-invocable-only`, or `off`.
+- `maxBudgetUsd`: maximum estimated spend in USD for each Claude query. When it
+  is exceeded, the query stops and the turn ends with an error.
+- `questionTimeoutMs`: maximum time in milliseconds Claude waits for an answer
+  to an `AskUserQuestion` question before the question fails. Defaults to the
+  Claude Code default.
+- `excludeDynamicSections`: moves per-session sections (working directory,
+  memory, git status) out of the Claude Code system prompt into the first user
+  message, so the system prompt can be cached across sessions.
 - `agentProgressSummaries`: enables periodic AI-generated summaries for running
   sub-agents. Summaries are available on raw `task_progress` stream parts.
 - `forwardSubagentText`: forwards sub-agent text and thinking messages as raw
@@ -130,10 +148,36 @@ Settings:
   2 seconds. These retries use exponential backoff and are separate from
   `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
   bridge endpoint is permanently unavailable.
+- `onDebug`: callback for bridge connection lifecycle events:
+  `reconnect-attempt`, `reconnected`, and `reconnect-failed`. `reconnect-failed`
+  means the connection is closed for good, so a host that caches idle sessions
+  can detach and reattach before sending the next prompt. The `cause` of a
+  failed reconnect can contain connection details, so avoid logging it as is.
 - `mintBridgeToken`: synchronous function that receives the sandbox id and
   returns the bridge authentication token. By default, the adapter generates a
   random 32-byte token. Custom implementations must return a suitably secret
   token.
+
+### Skill Overrides
+
+Use `skillOverrides` to control how named skills are exposed to Claude Code
+without changing shared user-level configuration. Values can be `'on'`,
+`'name-only'`, `'user-invocable-only'`, or `'off'`:
+
+```ts
+const harness = createClaudeCode({
+  skillOverrides: {
+    'update-config': 'off',
+    'fewer-permission-prompts': 'off',
+    'keybindings-help': 'off',
+    init: 'off',
+  },
+});
+```
+
+Skills without an override keep their Claude Code defaults, so other bundled
+skills such as `code-review`, `simplify`, and `claude-api` remain available
+when provided by the installed Claude Code runtime.
 
 ## Structured Output
 
@@ -217,7 +261,10 @@ Additional Claude Code built-ins may also appear in `agent.tools` when they do
 not fit a common tool shape.
 
 Claude Code supports built-in tool approval requests when `permissionMode` is
-`allow-reads` or `allow-edits`.
+`allow-reads` or `allow-edits`. A call waiting for approval is kept in the
+Claude Code session, so an approval answered after a resume runs that same
+call, even in a new sandbox. Claude Code waits for one approval at a time, so
+parallel calls that need approval run one after another.
 
 ## Related
 

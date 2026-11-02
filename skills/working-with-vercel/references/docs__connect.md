@@ -8,21 +8,21 @@ type: conceptual
 prerequisites:
   []
 related:
-  - /docs/connect/legal
   - /docs/connect/quickstart
   - /docs/connect/concepts
   - /docs/connect/concepts/connectors
   - /docs/connect/concepts/tokens
+  - /docs/connect/concepts/authentication
 summary: Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflake, without storing provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "84013893a0dfd225d2900543ebd6ee5cf393ee80bf8652fef47089465686f9c3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "32a24d846be975fd21764ea912cc79276b1a8a9645905b4b621b6fb0c164e259"
 ---
 
 # Vercel Connect
 
-> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/legal/service-terms#connect)
 
 With [Vercel Connect](/connect), your deployed apps can talk to other services. First, you set up a connection **once** to Slack, GitHub, Microsoft, Snowflake, Salesforce, or any OAuth or API-key service at the team level. Then, any project you allow can use this connection. Your code asks Connect for access at the moment it needs it, so no provider API key ever lives in your environment variables.
 
@@ -39,8 +39,8 @@ With [Vercel Connect](/connect), your deployed apps can talk to other services. 
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect)
+- [Discover 1000+ services on Vercel Connect from the CLI](https://vercel.com/changelog/discover-1000-services-on-vercel-connect-from-the-cli)
 - [Vercel Connect adds managed Stripe API keys](https://vercel.com/changelog/vercel-connect-adds-managed-stripe-api-keys)
-- [Vercel Connect adds observability support](https://vercel.com/changelog/vercel-connect-adds-observability-support)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
@@ -143,12 +143,12 @@ You can connect to these providers. Pick the connector that matches the service 
 
 ### Who registers the OAuth client
 
-The connectors above fall into two operating models, defined in the [Vercel Connect product terms](/docs/connect/legal#1.-definitions). The model determines who registers the OAuth client (or credential) with the Third Party Platform and what setup work falls to you.
+The connectors above fall into two operating models, defined in the [Vercel Connect product terms](/legal/service-terms#connect). The model determines who registers the OAuth client (or credential) with the Third Party Platform and what setup work falls to you.
 
-- **Vercel Managed Connector**: Vercel registers the OAuth client with the Third Party Platform, and you authorize Vercel's client to access your account or workspace. You do not register an OAuth client or manage client secrets. Slack, GitHub, Linear, Microsoft, Snowflake, and Salesforce use this model. See [Section 3](/docs/connect/legal#3.-vercel-managed-connector) of the Vercel Connect terms.
+- **Vercel Managed Connector**: Vercel registers the OAuth client with the Third Party Platform, and you authorize Vercel's client to access your account or workspace. You do not register an OAuth client or manage client secrets. Slack, GitHub, Linear, Microsoft, Snowflake, and Salesforce use this model. See [Section 3](/legal/service-terms#connect) of the Vercel Connect terms.
 - **Customer Managed Connector**: You register an OAuth client (or generate an API key) with the Third Party Platform yourself and supply the credentials at create time. Vercel stores them and exchanges tokens on your behalf at runtime. You manage those credentials on the provider side. Custom OAuth and API key use this model.
 
-For providers that support it, [Vercel Assisted Setup](/docs/connect/legal#4.-vercel-assisted-setup) is a one-off helper action that performs some or all of the OAuth-client registration steps on your behalf when you bootstrap a Customer Managed Connector.
+For providers that support it, [Vercel Assisted Setup](/legal/service-terms#connect) is a one-off helper action that performs some or all of the OAuth-client registration steps on your behalf when you bootstrap a Customer Managed Connector.
 
 Create either kind of connector from the dashboard or with [`vercel connect create`](/docs/cli/connect#vercel-connect-create). For a known service, the CLI prompts you for the [connection method](/docs/connect/concepts/connectors#connection-methods) and any credentials the provider needs, and opens your browser only when the provider requires you to sign in or install an app.
 
@@ -199,4 +199,4 @@ securely access third-party services and APIs:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

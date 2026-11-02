@@ -17,8 +17,8 @@ related:
 summary: Cap AI Gateway spend for your team, a project, an individual API key, or a team member with budgets, refresh periods, spend alerts, and defaults.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3e6ab1401f44ebac4e720e75aa3b384c9f6ad81bf65f36f2d823505786c4e9d0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ad932d4f64226b6d75e55fed63b06bac9d31979f1891c20a2c3fa00099650283"
 ---
 
 # AI Gateway Budgets and Spend Limits
@@ -36,6 +36,7 @@ A budget caps AI Gateway spend at one of four scopes:
 - [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
 - [Liquid AI's d1-ultra now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
+- [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
@@ -827,4 +828,4 @@ Budgets limit usage; they do not reserve or purchase capacity. Your team still n
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

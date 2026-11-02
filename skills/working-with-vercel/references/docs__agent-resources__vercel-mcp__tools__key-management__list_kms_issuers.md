@@ -13,8 +13,8 @@ related:
 summary: Use list_kms_issuers with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/list_kms_issuers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "85cc4b2dd6dfa5a3f2390a7c035dbe254713b42d0f417348e9f3ad1d0ca318c1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "dfb93795b01c255b21d1246e51401a9e246fc989feec2037d553a6f51c8465a3"
 ---
 
 # list_kms_issuers
@@ -27,9 +27,9 @@ Retrieve the list of KMS issuers that belong to the authenticated team. The resu
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [List issuers](https://vercel.com/docs/rest-api/kms/list-issuers) — GET /v1/kms/issuers — Retrieve the list of KMS issuers that belong to the authenticated team. The results are paginated.
+- [List issuers](https://vercel.com/docs/rest-api/kms/list-issuers) — GET /v1/kms/issuers — Retrieve the paginated KMS issuers that belong to the authenticated team or organization \\(\\`orgId
 - [get_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/get_kms_issuer) — Use get_kms_issuer with Vercel MCP.
-- [Get an issuer](https://vercel.com/docs/rest-api/kms/get-an-issuer) — GET /v1/kms/issuers/{issuerId} — Retrieve a single KMS issuer by its ID. Accepts either a team bearer token \\(existing p
+- [Get an issuer](https://vercel.com/docs/rest-api/kms/get-an-issuer) — GET /v1/kms/issuers/{issuerId} — Retrieve a single KMS issuer by its ID. Accepts a team or organization bearer token, or
 - [update_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer) — Use update_kms_issuer with Vercel MCP.
 - [create_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer) — Use create_kms_issuer with Vercel MCP.
 
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-m
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1b776bb6f294e2efcddfaa9e9cda4bec5af1901df1e9df6832f3c64fab8bab4d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d78e2ccd979542817214c5771d31d8c55a8003372e9db2fba70cb6d2f90a716b"
 ---
 
 # AI Gateway Reranking
@@ -29,9 +29,9 @@ Rerank documents by relevance to a search query. Reranking is useful for improvi
 
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
 - [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
-- [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank) — API Reference for rerank.
 - [Voyage Rerank 3 and Rerank 3 Lite are now available on AI Gateway](https://vercel.com/changelog/voyage-rerank-3-and-rerank-3-lite-are-now-available-on-ai-gateway)
 - [Cohere Rerank API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank) — Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP
+- [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank) — API Reference for rerank.
 - [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere) — Learn how to use Cohere with AI Gateway and the direct provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/reranking.graph.md](/docs/ai-gateway/modalities/reranking.graph.md)
@@ -202,4 +202,4 @@ export async function GET() {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

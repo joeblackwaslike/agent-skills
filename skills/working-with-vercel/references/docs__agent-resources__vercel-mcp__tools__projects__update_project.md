@@ -13,8 +13,8 @@ related:
 summary: Use update_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e6a9e1c21164487bb9e4daf59b9fe8785ae57f3145ea3a14c2e227409100ef94"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fbe3d9cf4aca9d672efb31a85b199bc4a1534d097900ff5b7f3aa9699c9adfa6"
 ---
 
 # update_project
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

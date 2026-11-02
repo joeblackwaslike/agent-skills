@@ -15,8 +15,8 @@ related:
 summary: Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-agents.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "128d90d5dd5dbee7ae8981af5b059ef3d23dc964dbc279ce418f2c1e7954c66c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "459730e9f08c39ab28fff9c172d53d50860be22ccc0ac78d6688967c023f5498"
 ---
 
 # Build with AI agents on Vercel
@@ -100,4 +100,4 @@ These services plug into your Vercel workflows so you can build agents specific 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use record_events with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/record_events.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5491541b92038ccfff4dd8b49adcaa22808e4f57f00c62f4d960e6b3e0631865"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1e22956f9c3f46769361492c75dc768927b151b9ea272af262207a5c9051904c"
 ---
 
 # record_events
@@ -32,7 +32,7 @@ Record an artifacts cache usage event.
 - [artifact_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query) — Use artifact_query with Vercel MCP.
 - [upload_artifact](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/upload_artifact) — Use upload_artifact with Vercel MCP.
 - [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
-- [create_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record) — Use create_record with Vercel MCP.
+- [Query information about an artifact](https://vercel.com/docs/rest-api/artifacts/query-information-about-an-artifact) — POST /v8/artifacts — Query information about an array of artifacts.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/caching/record_events.graph.md](/docs/agent-resources/vercel-mcp/tools/caching/record_events.graph.md)
 <!-- /docsgraph:related -->
@@ -53,4 +53,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/cachi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

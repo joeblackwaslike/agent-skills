@@ -13,8 +13,8 @@ related:
 summary: Use patch_url_protection_bypass with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/patch_url_protection_bypass.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "29c4abef3d0a8433c7c112b853cf85b7d5eacd638e95a434d7e8e70cf8480ff3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f43184ebcb7b9b97243112e76bb59cd71dd50da8ff0cfbc374ea2317968744be"
 ---
 
 # patch_url_protection_bypass
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

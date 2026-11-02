@@ -4,8 +4,8 @@ description: Learn how to use Claude Platform on AWS with AI Gateway and the dir
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "370f9b4d1cb624c899c57aff9762560eb98752062894d413db4304de11a8f880"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "8769cef5f2c81931ce0e1e2301ece2c66d002bd3c9385e38349a6c54f591eab3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -151,20 +151,23 @@ const anthropicAws = createAnthropicAws({
 });
 ```
 
+A callback or promise selects API key authentication and must resolve to a non-empty
+string. Lookup failures do not switch to SigV4. The caller handles key caching and renewal.
+
 ### Provider Settings
 
-| Setting              | Description                                                                                                                                                     |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `region`             | AWS region for the Claude Platform on AWS endpoint. Reads from `AWS_REGION` if omitted. Required — no fallback default.                                         |
-| `workspaceId`        | Anthropic workspace ID for this AWS account. Sent on every request via the `anthropic-workspace-id` header. Reads from `ANTHROPIC_AWS_WORKSPACE_ID` if omitted. |
-| `apiKey`             | API key for `x-api-key` authentication. When provided, used instead of SigV4. Reads from `ANTHROPIC_AWS_API_KEY` if omitted.                                    |
-| `accessKeyId`        | AWS access key ID for SigV4. Reads from `AWS_ACCESS_KEY_ID`.                                                                                                    |
-| `secretAccessKey`    | AWS secret access key for SigV4. Reads from `AWS_SECRET_ACCESS_KEY`.                                                                                            |
-| `sessionToken`       | AWS session token for SigV4 (temporary credentials only). Reads from `AWS_SESSION_TOKEN`.                                                                       |
-| `baseURL`            | Base URL override. Defaults to `https://aws-external-anthropic.{region}.api.aws/v1`.                                                                            |
-| `headers`            | Custom headers to include on every request.                                                                                                                     |
-| `fetch`              | Custom fetch implementation for testing or middleware.                                                                                                          |
-| `credentialProvider` | Function returning dynamic AWS credentials. Overrides `accessKeyId`, `secretAccessKey`, and `sessionToken`.                                                     |
+| Setting              | Description                                                                                                                                                                                                                          |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `region`             | AWS region for the Claude Platform on AWS endpoint. Reads from `AWS_REGION` if omitted. Required — no fallback default.                                                                                                              |
+| `workspaceId`        | Anthropic workspace ID for this AWS account. Sent on every request via the `anthropic-workspace-id` header. Reads from `ANTHROPIC_AWS_WORKSPACE_ID` if omitted.                                                                      |
+| `apiKey`             | API key for `x-api-key` authentication: `string`, `PromiseLike<string>`, or a callback returning either. Callbacks resolve before each request. When provided, used instead of SigV4. Reads from `ANTHROPIC_AWS_API_KEY` if omitted. |
+| `accessKeyId`        | AWS access key ID for SigV4. Reads from `AWS_ACCESS_KEY_ID`.                                                                                                                                                                         |
+| `secretAccessKey`    | AWS secret access key for SigV4. Reads from `AWS_SECRET_ACCESS_KEY`.                                                                                                                                                                 |
+| `sessionToken`       | AWS session token for SigV4 (temporary credentials only). Reads from `AWS_SESSION_TOKEN`.                                                                                                                                            |
+| `baseURL`            | Base URL override. Defaults to `https://aws-external-anthropic.{region}.api.aws/v1`.                                                                                                                                                 |
+| `headers`            | Custom headers to include on every request.                                                                                                                                                                                          |
+| `fetch`              | Custom fetch implementation for testing or middleware.                                                                                                                                                                               |
+| `credentialProvider` | Function returning dynamic AWS credentials. Overrides `accessKeyId`, `secretAccessKey`, and `sessionToken`.                                                                                                                          |
 
 ## Language Models
 

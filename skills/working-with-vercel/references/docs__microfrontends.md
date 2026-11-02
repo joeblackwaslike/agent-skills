@@ -16,8 +16,8 @@ related:
 summary: Learn how to use microfrontends on Vercel to split apart large applications, improve developer experience and make incremental migrations easier.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bf72a65e99c54c0eea5235aece62c62194675924a500eecb647cb7b755e3ee17"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "312a2c2eb2baba5001740050935d48d6b4b316728f54409140d152c9167cd2bb"
 ---
 
 # Microfrontends
@@ -30,8 +30,8 @@ Microfrontends allow you to split a single application into smaller, independent
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available)
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Microfrontends routing now applies to vc alias and branch domains](https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains)
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
 - [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths)
@@ -118,4 +118,4 @@ Microfrontends usage can be viewed in the **Vercel Delivery Network** section of
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

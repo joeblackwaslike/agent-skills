@@ -17,8 +17,8 @@ related:
 summary: Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "796e0fa600c961f41370420b46a07fbbcd42bf562bf9033fd4bff31b2baff008"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "65f0ee13bc9574dd1898e9f5455bd39dbdb51492fd87872baf446e16593ae1e6"
 ---
 
 # AI Gateway Routing Rules
@@ -35,13 +35,13 @@ Routing rules let you control how AI Gateway handles your team's requests at the
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [DeepSeek V4.1 Flash 1017 now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-now-available-on-ai-gateway)
 - [DeepSeek V4.1 Flash now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway)
-- [Drama 3 now available on AI Gateway](https://vercel.com/changelog/drama-3-now-available-on-ai-gateway)
+- [Elorian AI's Glimpse now available on AI Gateway](https://vercel.com/changelog/elorian-ai-glimpse-now-available-on-ai-gateway)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules) — GET /ai-gateway/rules — List the authenticated team's routing rules, oldest first. Without \\`limit\\` or \\`cursor\\`, retu
 - [Create rule](https://vercel.com/docs/rest-api/ai-gateway/create-rule) — POST /ai-gateway/rules — Create a routing rule
 - [Update rule](https://vercel.com/docs/rest-api/ai-gateway/update-rule) — PATCH /ai-gateway/rules — Update a routing rule \\(enabled, action, or description\\)
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Delete rule](https://vercel.com/docs/rest-api/ai-gateway/delete-rule) — DELETE /ai-gateway/rules — Delete a routing rule \\(soft delete\\)
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/routing-rules.graph.md](/docs/ai-gateway/models-and-providers/routing-rules.graph.md)
 <!-- /docsgraph:related -->
@@ -169,4 +169,4 @@ Routing rules are managed per team, so your access depends on your role in the t
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

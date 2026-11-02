@@ -17,8 +17,8 @@ related:
 summary: Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and how to run locally and in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/elysia.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cf9e8ef1bb463926f6dfc6b5dcaf236fb5399211079600bda5d03ff17acf1185"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f6c56c36dafe931e1c5f19dddade9b68cb53f3e4ad20e590be3df94681888636"
 ---
 
 # Elysia on Vercel
@@ -38,8 +38,8 @@ Elysia is an ergonomic web framework for building backend servers with Bun. Desi
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Hono on Vercel](https://vercel.com/docs/frameworks/backend/hono) — Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurati
 
 Full cross-link map for this page: [/docs/frameworks/backend/elysia.graph.md](/docs/frameworks/backend/elysia.graph.md)
 <!-- /docsgraph:related -->
@@ -216,4 +216,4 @@ Use [Runtime Logs](/docs/functions/logs) to inspect application output and error
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

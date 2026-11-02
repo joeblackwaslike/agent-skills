@@ -17,8 +17,8 @@ related:
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "09f0083ac622e1c8c557fa6eb6745a1ac295e158f2041b3f532454dd707d5bcc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4ad3bf4d275e53f8725175c70bee4a00f00fb19f50e08f26b635561cafdf5455"
 ---
 
 # Requirements for listing an Integration
@@ -476,4 +476,4 @@ When enabled, the integration can use the [Checks API](/docs/checks)
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

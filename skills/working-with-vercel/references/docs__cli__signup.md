@@ -14,8 +14,8 @@ related:
 summary: Learn how to create a new Vercel account using the vercel signup CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/signup.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5ea850ff445b393585ebc15908aac2387fa3d51a39e5bec280d6f87a9fb2163e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8bddae3ffc015728e24872b830989a83d579e16bfa3d5739614f25dd9e6eee19"
 ---
 
 # vercel signup
@@ -31,8 +31,8 @@ The `vercel signup` command allows you to create a new Vercel account through Ve
 - [vercel logout](https://vercel.com/docs/cli/logout) — Learn how to logout from your Vercel account using the vercel logout CLI command.
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel) — Learn how to Sign in with Vercel
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/signup.graph.md](/docs/cli/signup.graph.md)
 <!-- /docsgraph:related -->
@@ -72,4 +72,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

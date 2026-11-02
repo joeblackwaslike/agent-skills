@@ -13,8 +13,8 @@ related:
 summary: Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c78f7035f15f37947b2f6e96f42d73cba78171cc1d09d44b9b3fc419ac6d36e9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d535c60cf8dd8f20549dda9920d5d258e850c519880bff9a5c575e9758e12eec"
 ---
 
 # AI Gateway Text-to-Video Generation
@@ -27,11 +27,12 @@ Generate videos from text prompts. Describe what you want to see and the model c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
-- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
+- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
 - [Seedance 2.0 Video Generation on AI Gateway](https://vercel.com/changelog/seedance-2.0-video-now-available-on-ai-gateway)
@@ -411,7 +412,7 @@ Pass a `webhook` factory and the SDK registers your URL with the job instead of 
 
 ```typescript filename="async-text-to-video.ts"
 const result = await generateVideo({
-  model: gateway.videoModel('klingai/kling-v3.0-t2v'),
+  model: 'klingai/kling-v3.0-t2v',
   prompt: 'A chicken flying into the sunset in the style of 90s anime',
   aspectRatio: '16:9',
   duration: 5,
@@ -433,4 +434,4 @@ const result = await generateVideo({
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

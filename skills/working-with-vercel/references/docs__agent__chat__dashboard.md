@@ -16,8 +16,8 @@ related:
 summary: Use Vercel Agent from your Vercel dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/dashboard.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b875e59b72b697908488ccfc2cfc2b1f46bfdf259d93bf57ebb11b7e2eb2e093"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fd034f33a153f90dbca6800cd9639f5996df759138b5ccc929a70599d03944ef"
 ---
 
 # Dashboard
@@ -109,4 +109,4 @@ Only a team Owner or Billing member can change this setting. Other members can a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

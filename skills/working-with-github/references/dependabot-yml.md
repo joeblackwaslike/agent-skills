@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/concepts/supply-chain-security/about-the-dependabot-yml-file.md"
-fetched_at: "2026-07-20T06:52:02.847Z"
-sha256: "263610674c8b7fb142c67c0f3e5adcd231d8018a82dd9705e9759eeaa02646db"
+fetched_at: "2026-11-02T12:05:56.062Z"
+sha256: "e72a9b18d1ab8e75c916a7ca103cea56e82562acbcc1c7d7f2ab06a8a31b0b81"
 ---
 
 The `dependabot.yml` file is an optional configuration file that gives you fine-grained control over how {% data variables.product.prodname_dependabot %} monitors and updates dependencies (mainly _version updates_ but also _security updates_) in your repository.
@@ -29,7 +29,6 @@ The `dependabot.yml` file controls how {% data variables.product.prodname_depend
 ### For security updates
 
 * Customize security update pull requests with labels, assignees, and reviewers
-* Define target branches for security updates
 * Configure private registry authentication
 * Set limits on open pull requests
 

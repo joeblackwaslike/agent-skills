@@ -16,8 +16,8 @@ related:
 summary: Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/deploy-without-logging-in.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "30359e42493eca53bf11df6225d43387f8f8f9848aa11e8b653c6ecdb17884fa"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3026817570d75fd2b87e32975b44df83a89450e2a7a752f17716fd9159c3757f"
 ---
 
 # Deploying to Vercel Without Logging In
@@ -30,16 +30,17 @@ You can deploy to Vercel without an account and get a live URL in one step. Both
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Deploy without an account using Vercel CLI](https://vercel.com/changelog/deploy-without-an-account-using-vercel-cli)
 - [Deploy with Vercel Drop without an account](https://vercel.com/changelog/deploy-with-vercel-drop-without-an-account)
 - [Vercel Drop vs Netlify Drop](https://vercel.com/kb/guide/vercel-drop-vs-netlify-drop) — Compare Vercel Drop and Netlify Drop for drag-and-drop deployment: framework builds, static sites, updates, size limits,
-- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
-- [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Operating BYOC Deployments](https://vercel.com/docs/networking/bring-your-own-cloud/operations) — Retry failed Bring Your Own Cloud \\(BYOC\\) deployments, clean up AWS resources, monitor logs, and rotate credentials.
 
 Full cross-link map for this page: [/docs/deployments/deploy-without-logging-in.graph.md](/docs/deployments/deploy-without-logging-in.graph.md)
 <!-- /docsgraph:related -->
@@ -118,4 +119,4 @@ After claiming, log in to keep deploying the project. For CLI workflows, run [`v
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

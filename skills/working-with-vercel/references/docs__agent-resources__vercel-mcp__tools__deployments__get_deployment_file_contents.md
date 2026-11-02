@@ -13,8 +13,8 @@ related:
 summary: Use get_deployment_file_contents with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d4a9ee58c2ba52d61fdf1f4935326bd6a8017a96e734f03c42215eb12fe22621"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1ff03f4c96ebcf98e14d6eba356ca6a24671e7fee41ee730a7778e5535223709"
 ---
 
 # get_deployment_file_contents
@@ -52,4 +52,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

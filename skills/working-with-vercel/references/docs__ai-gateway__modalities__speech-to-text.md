@@ -15,13 +15,13 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "18c1907f2fe22a29beee470b6435dd1b19403fbe8b0d6aea1c055cc19410d9bb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "33535bf6c6757f4a2cf6c61a37bf3faefd972de85f5524e6cc3ddf907544b1b6"
 ---
 
 # AI Gateway Speech to Text
 
-Transcribe recorded audio into text with transcription models such as `openai/whisper-1`, `openai/gpt-4o-transcribe`, `google/gemini-3.5-transcribe`, and `microsoft/mai-transcribe-2`. Use this for voice notes, call recordings, podcast transcripts, or any audio file you already have. Browse available models on the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription).
+Transcribe recorded audio into text with transcription models such as `elevenlabs/scribe-v2`, `openai/whisper-1`, `openai/gpt-4o-transcribe`, `openai/gpt-transcribe`, `google/gemini-3.5-transcribe`, and `microsoft/mai-transcribe-2`. Use this for voice notes, call recordings, podcast transcripts, or any audio file you already have. Browse available models on the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription).
 
 
 <!-- docsgraph:related -->
@@ -31,11 +31,10 @@ Transcribe recorded audio into text with transcription models such as `openai/wh
 
 - [AI Gateway now supports streaming transcription](https://vercel.com/changelog/ai-gateway-now-supports-streaming-transcription)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
+- [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
+- [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [Gemini 3.5 Transcribe now available on AI Gateway](https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway)
 - [Rev.ai](https://ai-sdk.dev/providers/ai-sdk-providers/revai) — Learn how to set up the Rev.ai provider and check AI Gateway availability.
-- [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
-- [GPT-Live](https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live) — Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md)
@@ -50,17 +49,16 @@ For live audio, use [streaming transcription](#streaming-transcription) to get t
 
 For SDK options and result types, see [AI SDK transcription](https://ai-sdk.dev/docs/ai-sdk-core/transcription) and [Python transcription](https://ai-python.dev/docs/basics/model-operations#transcribe-audio).
 
-Use `transcribe` with a transcription model from the AI Gateway provider. The audio can be a `Buffer`, `Uint8Array`, base64 string, or `URL`:
+Pass a transcription model ID directly to `transcribe`. The AI SDK uses AI Gateway by default. The audio can be a `Buffer`, `Uint8Array`, base64 string, or `URL`:
 
 #### TypeScript
 
 ```typescript filename="transcribe.ts"
 import { transcribe } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { readFile } from 'node:fs/promises';
 
 const result = await transcribe({
-  model: gateway.transcriptionModel('openai/whisper-1'),
+  model: 'openai/whisper-1',
   audio: await readFile('meeting.mp3'),
 });
 
@@ -106,10 +104,9 @@ Pass raw audio as a `ReadableStream` and set `inputAudioFormat` to match the chu
 
 ```typescript filename="stream-transcribe.ts"
 import { experimental_streamTranscribe as streamTranscribe } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 
 const result = streamTranscribe({
-  model: gateway.transcriptionModel('openai/gpt-realtime-whisper'),
+  model: 'openai/gpt-realtime-whisper',
   audio: audioStream, // ReadableStream<Uint8Array | string>
   inputAudioFormat: { type: 'audio/pcm', rate: 24000 },
 });
@@ -127,7 +124,7 @@ for await (const part of result.fullStream) {
 console.log(await result.text);
 ```
 
-Streaming transcription is available for models such as `openai/gpt-realtime-whisper`, `spacexai/grok-stt`, `google/gemini-3.5-transcribe-live`, and `microsoft/mai-transcribe-2-streaming`. To find models that support it, filter the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription\&features=websockets) by WebSockets. See the AI SDK [streaming transcription docs](https://ai-sdk.dev/docs/ai-sdk-core/transcription#streaming-transcription) for the full API, including stream part types and provider options.
+Streaming transcription is available for models such as `elevenlabs/scribe-v2-realtime`, `openai/gpt-live-transcribe`, `openai/gpt-realtime-whisper`, `spacexai/grok-stt`, `google/gemini-3.5-transcribe-live`, and `microsoft/mai-transcribe-2-streaming`. To find models that support it, filter the [AI Gateway Models page](/ai-gateway/models?modality=audio:transcription\&features=websockets) by WebSockets. See the AI SDK [streaming transcription docs](https://ai-sdk.dev/docs/ai-sdk-core/transcription#streaming-transcription) for the full API, including stream part types and provider options.
 
 ### Stream from the browser
 
@@ -246,13 +243,12 @@ The response is a JSON object:
 
 Pass provider-specific options through `providerOptions`. For example, request word-level timestamps from OpenAI models:
 
-```typescript filename="transcribe-options.ts" {8-12}
+```typescript filename="transcribe-options.ts" {7-11}
 import { transcribe } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { readFile } from 'node:fs/promises';
 
 const result = await transcribe({
-  model: gateway.transcriptionModel('openai/whisper-1'),
+  model: 'openai/whisper-1',
   audio: await readFile('meeting.mp3'),
   providerOptions: {
     openai: {
@@ -266,13 +262,12 @@ console.log(result.text);
 
 AI Gateway serves Microsoft models through Azure, so their options go under `providerOptions.azure`. For example, request word timestamps, speaker labels, and a clean transcript from `microsoft/mai-transcribe-2`:
 
-```typescript filename="transcribe-microsoft.ts" {8-15}
+```typescript filename="transcribe-microsoft.ts" {7-14}
 import { transcribe } from 'ai';
-import { gateway } from '@ai-sdk/gateway';
 import { readFile } from 'node:fs/promises';
 
 const result = await transcribe({
-  model: gateway.transcriptionModel('microsoft/mai-transcribe-2'),
+  model: 'microsoft/mai-transcribe-2',
   audio: await readFile('meeting.mp3'),
   providerOptions: {
     azure: {
@@ -289,6 +284,27 @@ console.log(result.text);
 
 Speaker IDs and word timing are in `result.providerMetadata.azure.phrases`. `microsoft/mai-transcribe-1.5` supports only `locales` and `phraseList`. Both models accept WAV, MP3, FLAC, and Ogg/Opus audio, but not WebM or MP4. For more options, see the [AI SDK Azure transcription documentation](https://ai-sdk.dev/providers/ai-sdk-providers/azure#mai-transcribe).
 
+`elevenlabs/scribe-v2` labels speakers, timestamps each word, and tags audio events by default. Its options go under `providerOptions.elevenlabs`. For example, set the number of speakers:
+
+```typescript filename="transcribe-elevenlabs.ts" {7-11}
+import { transcribe } from 'ai';
+import { readFile } from 'node:fs/promises';
+
+const result = await transcribe({
+  model: 'elevenlabs/scribe-v2',
+  audio: await readFile('meeting.mp3'),
+  providerOptions: {
+    elevenlabs: {
+      numSpeakers: 2,
+    },
+  },
+});
+
+console.log(result.text);
+```
+
+The transcript includes audio events in brackets, such as `[laughs]`. Speaker IDs and word timing are in `result.providerMetadata.elevenlabs.words`, where each entry has `text`, `type` (`word`, `spacing`, or `audio_event`), `start`, `end`, and `speaker_id`. With AI Gateway credentials, `elevenlabs/scribe-v2-realtime` doesn't accept `keyterms`, because ElevenLabs bills keyterm prompting at a premium. For more options, see the [AI SDK ElevenLabs transcription documentation](https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs#transcription-models).
+
 ## Limitations
 
 - Audio for the REST API is sent base64-encoded in a JSON body. Multipart file uploads are not supported.
@@ -302,4 +318,4 @@ Speaker IDs and word timing are in `result.providerMetadata.azure.phrases`. `mic
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

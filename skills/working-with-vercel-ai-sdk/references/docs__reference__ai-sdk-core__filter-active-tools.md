@@ -4,15 +4,11 @@ description: Filter a tool set to the currently active tools (API Reference)
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/filter-active-tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/filter-active-tools.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "2415587733e5cf5e9d82bb48311d81296814eeb6157bd8bcfebb79051aca5d83"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "dd98d3c1c4eca28e258eb2419312a093d77abc8338e9ff6966ca7128144837cd"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
-
-`filterActiveTools`
-
-is an experimental feature.
 
 `filterActiveTools` filters a tool set to only the string tool names listed in `activeTools`.
 If `activeTools` is `undefined`, it returns the original tool set.
@@ -21,7 +17,7 @@ If `tools` is `undefined`, it returns `undefined`.
 `filterActiveTools` is useful for limiting which tools are sent to a model in a particular step.
 
 ```ts
-import { experimental_filterActiveTools as filterActiveTools, tool } from 'ai';
+import { filterActiveTools, tool } from 'ai';
 import { z } from 'zod';
 
 const tools = {
@@ -46,7 +42,7 @@ const filteredTools = filterActiveTools({
 ## Import
 
 ```
-import { experimental_filterActiveTools as filterActiveTools } from "ai"
+import { filterActiveTools } from "ai"
 ```
 
 ## API Signature

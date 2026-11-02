@@ -13,8 +13,8 @@ related:
 summary: Learn how to create and manage environment variables for Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/managing-environment-variables.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ddbb2e5e2f0d03170f1e81fb8ae900cbebf9f62712f47db59e172d7c40b46f8b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5584a15c9f7ababa2683e4fae60a443d63c4df763e0c42709975be9e2a49dbf1"
 ---
 
 # Managing environment variables
@@ -37,7 +37,7 @@ Environment variables are key-value pairs configured outside your source code so
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 - [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
-- [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [Rotating environment variables](https://vercel.com/docs/environment-variables/rotating-secrets) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 
 Full cross-link map for this page: [/docs/environment-variables/managing-environment-variables.graph.md](/docs/environment-variables/managing-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -146,4 +146,4 @@ To find and view all environment variables.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

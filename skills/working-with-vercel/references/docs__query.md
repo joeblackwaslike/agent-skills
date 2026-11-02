@@ -16,8 +16,8 @@ related:
 summary: Query and visualize your Vercel usage, traffic, and more in observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0f8b8b2102392a88f5ccf7be9674bb534b9afe68092b138df870e39b81a2f37a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "788d16015da684fcb0ab894e774bfca94701f6540b0c77f9ad504f011bdf52c0"
 ---
 
 # Query
@@ -32,6 +32,7 @@ You can use Query to get deeper visibility into your application when debugging 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Create custom monitors in Vercel Observability](https://vercel.com/changelog/create-custom-monitors-in-vercel-observability)
 - [Export Observability query results to CSV or JSON](https://vercel.com/changelog/export-observability-query-results-to-csv-or-json)
 - [More granular observability for Vercel Sandbox](https://vercel.com/changelog/more-granular-observability-for-vercel-sandbox)
 - [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
@@ -40,8 +41,8 @@ You can use Query to get deeper visibility into your application when debugging 
 - [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/query.graph.md](/docs/query.graph.md)
@@ -130,4 +131,4 @@ Certain events such as `public_ip` may be considered personal information under 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

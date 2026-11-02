@@ -13,8 +13,8 @@ related:
 summary: Use get_cert_by_id with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_cert_by_id.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4032a83f48d9eb0d413e7825d3174d97c8d631c5127c3f1f257e503ec9400934"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "64264bbf6b6f2253909ac50e0227d87e04d81593fd166273cd74195b480cca92"
 ---
 
 # get_cert_by_id
@@ -31,7 +31,7 @@ Read certificate metadata by its ID. The response does not include the private k
 - [issue_cert](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/issue_cert) — Use issue_cert with Vercel MCP.
 - [list_certs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_certs) — Use list_certs with Vercel MCP.
 - [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
-- [Remove cert](https://vercel.com/docs/rest-api/certs/remove-cert) — DELETE /v8/certs/{id} — Remove cert
+- [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_cert_by_id.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_cert_by_id.graph.md)
 <!-- /docsgraph:related -->
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

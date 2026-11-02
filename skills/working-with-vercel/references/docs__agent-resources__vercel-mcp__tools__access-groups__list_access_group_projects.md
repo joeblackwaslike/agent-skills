@@ -13,8 +13,8 @@ related:
 summary: Use list_access_group_projects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "15a56222977a42250748287fa7e79821a78cea67d826e3815b9c43ab34984253"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3fcd973e831e43b32522cec9e84daff8f1886fe453cd54e020cf214257ca5efe"
 ---
 
 # list_access_group_projects
@@ -52,4 +52,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

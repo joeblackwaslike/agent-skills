@@ -15,8 +15,8 @@ related:
 summary: Requires that every package.json file has the type field set to encourage using ES Modules since commonjs is the default.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/package_json_type_required.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d93b9175fa3b2ae3860aea97c4d39db50b6d34068f1158d62de24ca0891daad8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4077187cb573715ba2ba87d3f51cbed03a2d58758918cc8a11df33af69b3bb78"
 ---
 
 # PACKAGE_JSON_TYPE_REQUIRED
@@ -51,4 +51,4 @@ where `commonjs` has to be used.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

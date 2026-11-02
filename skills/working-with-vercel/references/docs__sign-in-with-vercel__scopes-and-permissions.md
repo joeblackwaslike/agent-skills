@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage scopes and permissions for Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bb5d6d9a5adb614f6c2b4662c589276e2a7c26016752a1d4425e0115b56863e4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "648c4659a41b8b14eedf70ef98c789db74383607aa529474d1fb4788aa12a3ef"
 ---
 
 # Scopes and Permissions
@@ -29,10 +29,10 @@ Scopes define what data is included in the [ID Token](/docs/sign-in-with-vercel/
 - [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel)
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
-- [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Add a repository permission](https://vercel.com/docs/rest-api/vcr/add-a-repository-permission) — POST /v1/vcr/repository/{idOrName}/permissions — Grant a team access to a VCR repository. Sharing applies to the whole r
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/scopes-and-permissions.graph.md](/docs/sign-in-with-vercel/scopes-and-permissions.graph.md)
 <!-- /docsgraph:related -->
@@ -76,6 +76,7 @@ The following permissions are available:
 | AI Gateway | Use | Use AI Gateway. |
 | AI Gateway API Keys | Read and Write | Read and make changes to AI Gateway API keys. |
 | AI Gateway Budgets | Read Only, Read and Write | Read and manage AI Gateway budgets and budget defaults. |
+| AI Gateway BYOK Credentials | Read Only, Read and Write | Read and manage the provider API keys a team brings to AI Gateway, including adding, replacing and deleting keys. |
 | AI Gateway Guardrails | Read Only, Read and Write | Read and manage AI Gateway guardrails. |
 | AI Gateway Private Models | Read Only, Read and Write | Read and manage AI Gateway private model configurations. |
 | AI Gateway Rules | Read Only, Read and Write | Read and manage AI Gateway routing rules. |
@@ -94,7 +95,6 @@ The following permissions are available:
 | Integration Configurations | Read Only, Read and Write | Read and make changes to integration configurations. |
 | Integration Resources | Read Only, Read and Write | Read and make changes to integration resources. |
 | KMS | Read Only, Read and Write | Read and manage KMS issuers and project grants. |
-| Messageboard | Read Only, Read and Write | Create, update, and delete team boards, spaces, and tasks. |
 | Monitoring | Read Only | Read Monitoring data. |
 | Remote Cache | Read Only, Read and Write | Manage Remote Cache. |
 | Team | Read Only | Read your Vercel team data. |
@@ -130,4 +130,4 @@ The following permissions are available:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

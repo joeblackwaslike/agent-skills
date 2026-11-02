@@ -16,8 +16,8 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c24530f0a7843acec3efbf30a76309e84adc811aa9f2b569172370baf9be75bd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "658e31d2bf2e0af924c7dddb192cf5694b40b36d95743f2d493438f7f3219de8"
 ---
 
 # AI Gateway Image-to-Video Generation
@@ -30,14 +30,13 @@ Animate a static image into a video. The image you provide becomes the video con
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
-- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
-- [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
+- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
-- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
-- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
+- [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs) — Learn how to use Black Forest Labs with AI Gateway and the direct provider.
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md)
 <!-- /docsgraph:related -->
@@ -143,15 +142,15 @@ KlingAI's image-to-video models animate images with standard or professional qua
 
 | Parameter                                | Type               | Required | Description                                                                                                                                          |
 | ---------------------------------------- | ------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `prompt.image`                           | `string \| Buffer` | Yes      | The image to animate. See [image requirements](#image-requirements) below.                                                                           |
+| `prompt.image`                           | `string \| Buffer` | Yes      | The image to animate. See [image requirements](/docs/ai-gateway/modalities/video-generation/image-to-video#klingai-image-requirements) below.                                                                           |
 | `prompt.text`                            | `string`           | No       | Description of the motion. Max 2500 characters.                                                                                                      |
 | `duration`                               | `number`           | No       | Video length in seconds. 5 or 10 for v2.x, 3-15 for v3.0. Defaults to `5`.                                                                           |
 | `providerOptions.klingai.mode`           | `'std'` \| `'pro'` | No       | `'std'` for standard quality. `'pro'` for professional quality. Defaults to `'std'`.                                                                 |
 | `providerOptions.klingai.negativePrompt` | `string`           | No       | What to avoid in the video. Max 2500 characters.                                                                                                     |
 | `providerOptions.klingai.cfgScale`       | `number`           | No       | Prompt adherence (0-1). Higher = stricter. Defaults to `0.5`. Not supported on v2.x.                                                                 |
 | `generateAudio`                          | `boolean`          | No       | Generate audio. Defaults to `false`. Requires v2.6+.                                                                                                 |
-| `providerOptions.klingai.voiceList`      | `array`            | No       | Voice IDs for speech. Max 2 voices. Requires v3.0+ with `generateAudio: true`. Cannot coexist with `elementList`. See [voice generation](#voice-generation). |
-| `providerOptions.klingai.multiShot`      | `boolean`          | No       | Enable multi-shot generation. Requires v3.0+. See [multi-shot](#multi-shot).                                                                         |
+| `providerOptions.klingai.voiceList`      | `array`            | No       | Voice IDs for speech. Max 2 voices. Requires v3.0+ with `generateAudio: true`. Cannot coexist with `elementList`. See [voice generation](/docs/ai-gateway/modalities/video-generation/image-to-video#klingai-voice-generation). |
+| `providerOptions.klingai.multiShot`      | `boolean`          | No       | Enable multi-shot generation. Requires v3.0+. See [multi-shot](/docs/ai-gateway/modalities/video-generation/image-to-video#klingai-multi-shot).                                                                         |
 | `providerOptions.klingai.elementList`    | `array`            | No       | Reference elements for element control. Up to 3 elements. Requires v3.0+. Cannot coexist with `voiceList`.                                           |
 | `providerOptions.klingai.watermarkInfo`  | `object`           | No       | Set `{ enabled: true }` to generate watermarked result.                                                                                              |
 | `providerOptions.klingai.pollIntervalMs` | `number`           | No       | How often to check task status. Defaults to `5000`.                                                                                                  |
@@ -663,7 +662,7 @@ Pass a `webhook` factory and the SDK registers your URL with the job instead of 
 
 ```typescript filename="async-image-to-video.ts"
 const result = await generateVideo({
-  model: gateway.videoModel('klingai/kling-v3.0-i2v'),
+  model: 'klingai/kling-v3.0-i2v',
   prompt: {
     // Hosted URL, not inline bytes: the start request is capped at 300 KiB.
     image: 'https://example.com/cat.png',
@@ -690,4 +689,4 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your image a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

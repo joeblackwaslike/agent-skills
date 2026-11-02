@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6f484c4eb081b7b5ac3dd2d8ea358acf287a2a5e20582b341155905778fb376b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1d57d28d0d884c7d6583a5476e07227f10448585c0cd9d07628760f965dba239"
 ---
 
 # Using Global Config with an integration
@@ -36,8 +36,8 @@ Vercel has partnered with A/B testing and feature flag services such as LaunchDa
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config) — Learn how to use Global Configs in your projects.
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
-- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [Get the data of a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config) — HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config — When the user
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations.graph.md](/docs/global-config/global-config-integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -65,4 +65,4 @@ You can get started with any of these Global Config integrations by following th
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

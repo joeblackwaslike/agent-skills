@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the Cape Town, South Africa (cpt1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/cpt1.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c4818dde81d7759d45f281ca1549deb3b115ff88697bee7a7d349a243e81b191"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fa8320e5c13dedba0624c0ab8338a0a9ac77a9e7546dddb3dabaa1b4a495f0be"
 ---
 
 # Cape Town, South Africa (cpt1) pricing
@@ -55,8 +55,8 @@ The **On-demand (Billing Cycle)** column shows the rate for each resource in thi
 | [CDN Requests](/docs/manage-cdn-usage#cdn-requests) | $2.80 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $5.60 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.56 per 1,000,000 Read Units |
-| [Runtime Cache Writes](/docs/caching/runtime-cache) | $5.60 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/caching/runtime-cache) | $0.56 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/caching/runtime-cache#pricing) | $5.60 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/caching/runtime-cache#pricing) | $0.56 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.43 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.84 per 1,000,000 Operations |
 | [CDN Requests - Additional CPU Duration](/docs/manage-cdn-usage#cdn-request-cpu-duration) | $0.42 per 1 Hour |
@@ -84,4 +84,4 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

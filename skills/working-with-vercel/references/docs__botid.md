@@ -16,8 +16,8 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bd57436e84969c5a00812a4154f31b357b6ac5d8a9766ec3908086bc64a65332"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "92acbc372bdb41de3b64333722c01d7a0d3ad1a8e5f15f95326b186932ef3709"
 ---
 
 # BotID
@@ -34,6 +34,7 @@ sha256: "bd57436e84969c5a00812a4154f31b357b6ac5d8a9766ec3908086bc64a65332"
 
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
+- [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
 - [Improved fake hardware detection with Vercel BotID](https://vercel.com/changelog/botid-deep-analysis-model-improved-for-fake-hardware-detection)
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
@@ -43,7 +44,6 @@ sha256: "bd57436e84969c5a00812a4154f31b357b6ac5d8a9766ec3908086bc64a65332"
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Introduction](https://vercel.shop/docs) — What Vercel Shop is, what you get out of the box, and how it fits Shopify's new Hydrogen.
 - [Shop Configuration](https://vercel.shop/docs/reference/shop-config) — Choose optional storefront features and set your store's identity and locale.
-- [Billions of requests: Black Friday-Cyber Monday 2025](https://vercel.com/blog/bfcm-2025)
 
 Full cross-link map for this page: [/docs/botid.graph.md](/docs/botid.graph.md)
 <!-- /docsgraph:related -->
@@ -130,4 +130,4 @@ Metrics are also available in [Observability Plus](/docs/observability/observabi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

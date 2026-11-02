@@ -14,8 +14,8 @@ related:
 summary: Authenticate GitHub Actions with Vercel Container Registry using OIDC, then build and push images with your container tool.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/github-actions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "886fdeacd04a05b796e19388ae797c76b4d823804c3be77ae942f1718fccc8a7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3a1e8b904b52157c269f4cc6bde5ef27a69843af7239a0fc0c7ecd2ebc9fcd5a"
 ---
 
 # Push Images from GitHub Actions
@@ -33,7 +33,7 @@ Push images to Vercel Container Registry (VCR) from GitHub Actions without stori
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli)
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
 - [Getting Started](https://vercel.com/docs/container-registry/getting-started) — Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI
 - [Deploying with BYOC from GitHub Actions](https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions) — Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud \\(BYOC\\) d
@@ -126,4 +126,4 @@ The `engines` input selects which container tools to authenticate. It accepts `d
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

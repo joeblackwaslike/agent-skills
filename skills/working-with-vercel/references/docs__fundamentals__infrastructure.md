@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel routes, secures, and serves requests from your users to your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/infrastructure.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a738b7293e84df8cb82fface96efc7f3e8dd7a84348325a5ab13b525a715bbb6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "50ea4594fd6dfc8498f0a107b041f924d9637518b094dac4c9bffc82c87dd3da"
 ---
 
 # How requests flow through Vercel
@@ -32,11 +32,11 @@ When you deploy to Vercel, your code runs on a global network of servers. This n
 
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
+- [The user experience of the Frontend Cloud](https://vercel.com/blog/the-user-experience-of-the-frontend-cloud)
+- [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
-- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
 Full cross-link map for this page: [/docs/fundamentals/infrastructure.graph.md](/docs/fundamentals/infrastructure.graph.md)
@@ -158,4 +158,4 @@ For more on what happens during deployment, see [Behind the Scenes of Vercel's I
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

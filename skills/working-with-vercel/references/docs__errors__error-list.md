@@ -16,8 +16,8 @@ related:
 summary: You may encounter a variety of errors when you interact with the Vercel platform. This section focuses on errors that can happen when you interact...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8f05656af0450b9ad456a5026db43c77a3a272a828be3f68658efb385732fdf9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2d920b6f35488f2aa3a7e9a9118a83cd571bd5b5dd927171dc7db2df881d0bcb"
 ---
 
 # Error List
@@ -455,4 +455,4 @@ To fix this error, add the packages to your `package.json` file as a dependency.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

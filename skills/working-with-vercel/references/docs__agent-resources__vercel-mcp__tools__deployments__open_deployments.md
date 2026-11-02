@@ -13,8 +13,8 @@ related:
 summary: Use open_deployments with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dd75948307daaa8545b8b86565ec8ce8f1a8e740dddb8dfd66584396ffe48861"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3c4f07b71e9db3aa6928585e4916668d08645aa73f525959fc0971dfc5faa0ef"
 ---
 
 # open_deployments
@@ -60,4 +60,4 @@ The `view` parameter only accepts `"preview"`. `target` filters production or pr
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

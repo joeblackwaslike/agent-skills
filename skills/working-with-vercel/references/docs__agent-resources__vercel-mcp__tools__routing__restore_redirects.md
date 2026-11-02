@@ -13,8 +13,8 @@ related:
 summary: Use restore_redirects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/restore_redirects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "db562ea5214007f549e6a141986ea5dc792970134b2d7a9739fa224b7aa5d0ac"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "315b9b7c97a66e9f552e309469885f917ab747429876077a41ddaa99a41d9c15"
 ---
 
 # restore_redirects
@@ -27,8 +27,8 @@ Restores the provided redirects in the staging version to the value in the produ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [stage_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/stage_redirects) — Use stage_redirects with Vercel MCP.
 - [Restore staged project-level redirects to their production version.](https://vercel.com/docs/rest-api/bulk-redirects/restore-staged-project-level-redirects-to-their-production-version) — POST /v1/bulk-redirects/restore — Restores the provided redirects in the staging version to the value in the production
+- [stage_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/stage_redirects) — Use stage_redirects with Vercel MCP.
 - [update_bulk_redirect_version](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version) — Use update_bulk_redirect_version with Vercel MCP.
 - [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
 - [list_bulk_redirect_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirect_versions) — Use list_bulk_redirect_versions with Vercel MCP.
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

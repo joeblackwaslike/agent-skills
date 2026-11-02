@@ -15,8 +15,8 @@ related:
 summary: Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session or interface levels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/how-comments-work.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "517dbb6244db8bfa904d68eb346b28cacde8e975dcde5d304de9be72c4ac508b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "15bed0b3bce52a53d66e89a867d5c13820aa7c5de6d8b8abe360e1cfc512349d"
 ---
 
 # Enabling and Disabling Comments
@@ -33,11 +33,11 @@ Comments are enabled by default for all preview deployments on all new projects.
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation)
 - [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments)
+- [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience)
 - [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
-- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 
 Full cross-link map for this page: [/docs/comments/how-comments-work.graph.md](/docs/comments/how-comments-work.graph.md)
 <!-- /docsgraph:related -->
@@ -96,4 +96,4 @@ To learn how to share deployments with comments enabled, see the [Sharing Deploy
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

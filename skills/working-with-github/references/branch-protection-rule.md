@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule.md"
-fetched_at: "2026-08-17T04:47:04.101Z"
-sha256: "6d596592e114bcab5d0cbd25a550a0c990a7135c1f97a1c54747d7979f83cd40"
+fetched_at: "2026-11-02T12:05:56.062Z"
+sha256: "67d9815ced8840cde1926c4c36145e651a823ba207d930f53e7f7dae073525b8"
 ---
 
 ## About branch protection rules
@@ -50,7 +50,11 @@ When you create a branch rule, the branch you specify doesn't have to exist yet 
 1. Optionally, select **Require conversation resolution before merging**.
 1. Optionally, select **Require signed commits**.
 1. Optionally, select **Require linear history**.
-1. Optionally, to merge pull requests using a merge queue, select **Require merge queue**. {% data reusables.pull_requests.merge-queue-references %}
+1. Optionally, to merge pull requests using a merge queue, select **Require merge queue**.
+
+   > [!NOTE]
+   > {% ifversion fpt or ghec %}Pull request merge queues are available in any public repository owned by an organization, or in private repositories owned by organizations using {% data variables.product.prodname_ghe_cloud %}. {% data reusables.gated-features.more-info %}{% elsif ghes %}Pull request merge queues are available in any organization-owned repository on {% data variables.product.prodname_ghe_server %}.{% endif %} {% data reusables.pull_requests.merge-queue-references %}
+
 1. Optionally, to choose which environments the changes must be successfully deployed to before merging, select **Require deployments to succeed before merging**, then select the environments.
 1. Optionally, make the branch read-only.
    * Select **Lock branch**.

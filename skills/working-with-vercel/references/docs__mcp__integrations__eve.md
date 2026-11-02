@@ -9,7 +9,7 @@ prerequisites:
   - /docs/mcp/integrations
   - /docs/mcp
 related:
-  - /docs/eve
+  - /docs/frameworks/agents/eve
   - /docs/mcp
   - /docs/connect
   - /docs/cli
@@ -17,13 +17,13 @@ related:
 summary: Give eve agents access to MCP tools through filesystem connections and authorize requests with Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations/eve.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "617ee312055251773a41dbd385250dcc60dd44b733d8e9002fe1fd49bf0050d0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fd3a8496326d656451c0315db573410420ae7d51971901e59dbc50968955121a"
 ---
 
 # eve with MCP
 
-Connect an [eve](/docs/eve) agent to a [Model Context Protocol (MCP)](/docs/mcp) server by adding a connection under `agent/connections/`. The example below connects to Linear so your agent can discover tools and read your assigned issues. [Vercel Connect](/docs/connect) handles authorization and provider tokens.
+Connect an [eve](/docs/frameworks/agents/eve) agent to a [Model Context Protocol (MCP)](/docs/mcp) server by adding a connection under `agent/connections/`. The example below connects to Linear so your agent can discover tools and read your assigned issues. [Vercel Connect](/docs/connect) handles authorization and provider tokens.
 
 
 <!-- docsgraph:related -->
@@ -33,16 +33,14 @@ Connect an [eve](/docs/eve) agent to a [Model Context Protocol (MCP)](/docs/mcp)
 
 - [How to perform large-scale data analysis with Vercel Sandbox and MCP](https://vercel.com/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) — Use Vercel Sandbox and an MCP server built with \\`mcp-handler\\` to let AI agents run DuckDB SQL and Python on large data
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
-- [Connect a Warehouse (Optional)](https://eve.dev/docs/tutorial/connect-a-warehouse) — Optional follow-up to the Build an Agent tutorial. Let each user connect their own warehouse over an OAuth MCP via Verce
-- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
+- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Using eve with Chat SDK](https://vercel.com/docs/chat-sdk/eve) — Send Chat SDK messages to an eve agent with a channel, persistent state, and Vercel Connect.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/mcp/integrations/eve.graph.md](/docs/mcp/integrations/eve.graph.md)
 <!-- /docsgraph:related -->
@@ -51,7 +49,7 @@ Full cross-link map for this page: [/docs/mcp/integrations/eve.graph.md](/docs/m
 
 Before you begin, you need:
 
-- An existing eve project. Start with the [eve overview](/docs/eve) if you don't have one.
+- An existing eve project. To create one, run `pnpm dlx eve@latest init my-agent`, then `cd my-agent`.
 - A Vercel account and [Vercel CLI](/docs/cli) installed.
 - A Linear workspace you can authorize.
 - An authenticated eve channel. Built-in platform channels identify the user from the sender. For a web channel, configure route authentication to return `principalType: 'user'` so eve can associate the connection with the current user.
@@ -189,4 +187,4 @@ For an example that uses app authorization to investigate deployment failures, f
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: How BotID behaves in local development environments and testing options
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid/local-development-behavior.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1c8c440d4e398e459aad8205ae2aafd1a45d1073f8a06620009ee1eea441e386"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8c28bec230276d41828c2d0427d4d3483fde98a28616860db61b06773345802a"
 ---
 
 # Local Development Behavior
@@ -28,12 +28,13 @@ During local development, BotID behaves differently than in production to facili
 
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
-- [Why does my Serverless Function work locally but not when deployed?](https://vercel.com/kb/guide/why-does-my-serverless-function-work-locally-but-not-when-deployed) — Learn how to troubleshoot your Serverless Functions.
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
+- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost) — Learn how to use the Vercel Toolbar in production and local environments.
+- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
 
 Full cross-link map for this page: [/docs/botid/local-development-behavior.graph.md](/docs/botid/local-development-behavior.graph.md)
 <!-- /docsgraph:related -->
@@ -76,4 +77,4 @@ This allows you to:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

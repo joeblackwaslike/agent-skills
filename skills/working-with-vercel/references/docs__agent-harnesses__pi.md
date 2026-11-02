@@ -16,8 +16,8 @@ related:
 summary: Make a Pi agent durable on Vercel so a crashed turn resumes in a new function instead of starting over.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/pi.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bc2459fee21066821ec13c2e5a830cd8427cda4c01412464cdcb0bde10cdec5f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "483ef91bc8281e2184c9b9535529f45cf31aec595f460f0326bf51a0b5e4b841"
 ---
 
 # Running Pi Durably on Vercel
@@ -31,16 +31,15 @@ sha256: "bc2459fee21066821ec13c2e5a830cd8427cda4c01412464cdcb0bde10cdec5f"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
-- [Build an AI agent chat UI with useEveAgent](https://eve.dev/docs/guides/frontend/overview) — Put an eve agent behind a browser chat UI with useEveAgent.
+- [useEveAgent Reference](https://eve.dev/docs/guides/frontend/use-eve-agent) — Every value, option, and behavior of useEveAgent, shared by the React, Vue, and Svelte bindings.
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
-- [Execution Model and Durability](https://eve.dev/docs/concepts/execution-model-and-durability) — How an eve session runs. Durable conversations, turns that checkpoint at steps, and parked work that resumes later.
-- [Build an agent with OpenAI Agents API on Vercel](https://vercel.com/kb/guide/openai-agents-api-vercel) — Build and deploy an agent with OpenAI Agents API, Vercel Functions, Queues, and Sandbox for isolated code execution.
+- [Build AI agents in Python with the AI SDK](https://vercel.com/kb/guide/python-and-ai-sdk) — Stream model responses, get typed output, and build tool-using agents in Python on Vercel.
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
-- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 
 Full cross-link map for this page: [/docs/agent-harnesses/pi.graph.md](/docs/agent-harnesses/pi.graph.md)
 <!-- /docsgraph:related -->
@@ -589,4 +588,4 @@ For the tables, the server, and recovery at startup, see [Self-hosting durable a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

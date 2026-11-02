@@ -17,8 +17,8 @@ related:
 summary: Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cd46b52e53072241d65d56e255ce5429996b15ca6e82ca85f50bcfb3e226138b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2daf56d62ef4bf2eb34228af5cdc9293396263b2c8a13bccff4dbe8a557d567c"
 ---
 
 # TanStack AI with AI Gateway
@@ -39,6 +39,7 @@ Connect [TanStack AI](https://tanstack.com/ai) to [AI Gateway](/docs/ai-gateway)
 - [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 - [TanStack AI with Vercel Sandbox](https://vercel.com/docs/sandbox/ecosystem/tanstack-ai) — Run TanStack AI coding agents in isolated Vercel Sandbox microVMs with the dedicated provider, workspace configuration,
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.graph.md)
 <!-- /docsgraph:related -->
@@ -263,4 +264,4 @@ holds flagged or uncertain reviews for a moderator.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

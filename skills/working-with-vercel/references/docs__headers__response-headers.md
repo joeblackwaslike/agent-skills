@@ -16,8 +16,8 @@ related:
 summary: Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/headers/response-headers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f2eaa0c84b20223ae048bd79b7fd6f0104242fe06dc9e9998f3dc5503a591cb9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "881ac39037d3d4ac2e324299c0464ebf35660c58743b669813ec3bacd0b48577"
 ---
 
 # Response headers
@@ -34,9 +34,10 @@ The following headers are included in Vercel deployment responses and indicate c
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 - [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
+- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 
@@ -110,4 +111,4 @@ It also allows Vercel to automatically prevent infinite loops.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

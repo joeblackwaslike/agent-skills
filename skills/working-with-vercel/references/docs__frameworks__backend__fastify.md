@@ -17,8 +17,8 @@ related:
 summary: Deploy Fastify applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/fastify.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9886ec0454ff7e9ec0918926ba0f7d6dcfbbb8d4c333b3c8e00149148236fd9b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4c72f1381ee113ea37dc7d8d65a850ba17e85a330ba1312f0af870835d813cfc"
 ---
 
 # Fastify on Vercel
@@ -134,4 +134,4 @@ Learn more about deploying Fastify projects on Vercel with the following resourc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

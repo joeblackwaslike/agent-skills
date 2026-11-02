@@ -12,8 +12,8 @@ related:
 summary: Vercel CLI collects telemetry data about general usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/about-telemetry.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6f86ae1e317f1d93a15f31157ff63efde047222edde1450db3222b932325b7eb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "81181cb39f6cb091c229a541dab4282b604ddc69d561d69a7e90da9fa228881e"
 ---
 
 # Telemetry
@@ -34,11 +34,10 @@ Vercel CLI Telemetry collects telemetry to improve Vercel's products and service
 
 - [Telemetry](https://turborepo.dev/docs/telemetry) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
 - [CLI Telemetry](https://eve.dev/docs/reference/telemetry) — Learn what eve CLI telemetry collects and how to control it.
-- [telemetry](https://turborepo.dev/docs/reference/telemetry) — Reference for the `turbo telemetry` command that manages anonymous usage data collection.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [vercel feedback](https://vercel.com/docs/cli/feedback) — Send bugs, friction, and feature requests to the Vercel team using the vercel feedback CLI command.
-- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/about-telemetry.graph.md](/docs/cli/about-telemetry.graph.md)
@@ -105,4 +104,4 @@ Alternatively, you may opt-out by setting an environment variable: `VERCEL_TELEM
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

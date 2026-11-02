@@ -15,8 +15,8 @@ related:
 summary: Keep a persistent connection open across turns with the OpenAI Responses API over WebSocket through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/websockets.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7b6a3fca7d00d96f6834ddf8d9a0b6f0009e6807d1f51ff38c9ca71ac8f42e5d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "79d7c2117374b7e821a30841517dfc6b977bf96645cc1e67113526a33d5e2532"
 ---
 
 # OpenAI Responses API WebSocket Mode with AI Gateway
@@ -185,4 +185,4 @@ For request parameters, tool calling, structured output, and reasoning configura
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use update_project_deployment_protection with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_deployment_protection.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "91dda23cce5a481a7b93849c439e7d64f4a9afc0b7abe6ebd45dd61fd988ac17"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9c80979f2dad470f9e059fc5e8e60484f48474036d413cb0f1699be218a8ad0a"
 ---
 
 # update_project_deployment_protection
@@ -28,6 +28,7 @@ Partially update password protection, Vercel Authentication, and Trusted IPs for
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.
+- [Password Protection is now available per project on Pro](https://vercel.com/changelog/password-protection-now-costs-20-per-project-per-month-on-pro)
 - [update_project_protection_bypass](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_protection_bypass) — Use update_project_protection_bypass with Vercel MCP.
 - [Password Protection](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection) — Require visitors to enter a password before they can view your deployments.
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
@@ -52,4 +53,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

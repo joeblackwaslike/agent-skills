@@ -16,8 +16,8 @@ related:
 summary: Learn the answer to common questions about deploying monorepos on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/monorepo-faq.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "df59ae307bdac0ff9b73726ebb7ba13fcbfca98008139bb1b83f464a7faccf3d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9d5a44408834a768ad73e6cde5bb4768a571a28e78d1e2c9e4f7cd25e93f23f2"
 ---
 
 # Monorepos FAQ
@@ -129,4 +129,4 @@ add the following to your `nx.json` configuration file:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

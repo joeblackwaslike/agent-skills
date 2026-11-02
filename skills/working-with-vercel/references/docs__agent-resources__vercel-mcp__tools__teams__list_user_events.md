@@ -13,8 +13,8 @@ related:
 summary: Use list_user_events with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_user_events.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "83adab8f64f4e2e3e2fc498156d4bf850ad53121caf689ad1ef0cd9d419d237f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "850c96a21118ce120de5c6eff9e793eadadc34d18bafcdfe412ecc54f4f66ef6"
 ---
 
 # list_user_events
@@ -58,4 +58,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

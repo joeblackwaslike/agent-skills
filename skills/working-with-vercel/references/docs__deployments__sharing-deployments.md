@@ -16,8 +16,8 @@ related:
 summary: Learn how to share a preview deployment with your team and external collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/sharing-deployments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dd51d784d342e64468176c673f307aa28cc413cf9611da437955465caff56f8d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3441bb8994b96715a52a4ac6aaa602ec90302eac17bbee0165d83ded8cfaf662"
 ---
 
 # Sharing a Preview Deployment
@@ -38,7 +38,6 @@ By default, members of your [Vercel team](/docs/accounts#creating-a-team) that h
 - [Protected Preview Deployments available on all plans](https://vercel.com/changelog/protected-preview-deployments-available-on-all-plans)
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/sharing-deployments.graph.md](/docs/deployments/sharing-deployments.graph.md)
@@ -121,4 +120,4 @@ Deployment protection allows you to secure your preview deployments, with [Authe
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

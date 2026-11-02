@@ -15,8 +15,8 @@ related:
 summary: Connect Junie CLI to AI Gateway with the Vercel CLI or custom model profiles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/junie.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b34a54491aaa8dabdb3d03411554dfe3d901115c3ca2bba4dfffc42346d25f49"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7525af65f222ae0acd19e4e5778b9391e9756cb2778c3c0fc282b37abd64e7da"
 ---
 
 # Junie CLI with AI Gateway
@@ -34,7 +34,7 @@ sha256: "b34a54491aaa8dabdb3d03411554dfe3d901115c3ca2bba4dfffc42346d25f49"
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/junie.graph.md](/docs/ai-gateway/coding-agents/junie.graph.md)
 <!-- /docsgraph:related -->
@@ -111,4 +111,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

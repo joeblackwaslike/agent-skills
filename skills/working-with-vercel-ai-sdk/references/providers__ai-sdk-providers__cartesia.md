@@ -4,8 +4,8 @@ description: Learn how to set up the Cartesia provider and check AI Gateway avai
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "3eb46d277fa35b213761004eeea9d3e1fa61ccf45d56c76669c41368d15eab12"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "49092dcafe3a9cbe31a56c2f906ec7b6a3524c9226e3ba562722e2771c15e652"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -86,7 +86,10 @@ const cartesia = createCartesia({
 
 You can use the following optional settings to customize the Cartesia provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a synchronous or asynchronous callback to resolve the key before each
+  request. The callback is responsible for caching and refreshing credentials.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `CARTESIA_API_KEY` environment variable.

@@ -4,8 +4,8 @@ description: Learn how to use Baseten with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "7d827c67ac9e04cf563316661265acd414b10052e206a46c3f8ecc13dbba0168"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "bd0b7e3a7628e7a962eebe2722155e04c7b79abd161dd8dbbef3e8df3745c0e4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -96,11 +96,14 @@ You can use the following optional settings to customize the Baseten provider in
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://inference.baseten.co/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `BASETEN_API_KEY` environment variable. It is recommended you set the environment variable using `export` so you do not need to include the field every time.
   You can grab your Baseten API Key [here](https://app.baseten.co/settings/api_keys)
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **modelURL** *string*
 

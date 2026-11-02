@@ -4,8 +4,8 @@ description: Create a client for connecting to MCP servers
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "02a1a790eb090af315f68f6200cd34d1fededbc2ae87dddcf5e051cbb00943f0"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "5722829929e8e893edced590ec4ddfce5ac69f8f3699a6c2920c428ffc717de3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -61,6 +61,7 @@ import { createMCPClient } from "@ai-sdk/mcp"
         - `onSessionExpired?` (`(sessionId: string) => void`): Callback invoked when a Streamable HTTP request returns 404 for an existing MCP session id. The transport clears the session id before reporting the underlying HTTP error. Only used by the HTTP transport.
         - `terminateSessionOnClose?` (`boolean`): Whether close() should send DELETE for the current MCP session id. Set to false when the application intends to reattach to the session later. Defaults to true. Only used by the HTTP transport.
         - `fetch?` (`FetchFunction`): Optional custom fetch implementation to use for HTTP requests. Useful for runtimes that need a request-local fetch.
+    - `protocolVersionDiscovery?` (`boolean`): Whether transports that support protocol discovery probe with server/discover before legacy initialization. Defaults to true. Set to false for a known legacy server to start with initialize. Recognized modern protocol errors do not trigger automatic legacy fallback.
     - `initializationOptions?` (`RequestOptions`): Optional signal and timeout settings that bound transport startup and protocol negotiation. A timeout or abort closes the transport and rejects createMCPClient.
     - `clientName?` (`string`): Client name. Defaults to "ai-sdk-mcp-client".
     - `name?` (`string`): Deprecated. Use \`clientName\` instead. Defaults to "ai-sdk-mcp-client".
@@ -137,18 +138,18 @@ Returns a Promise that resolves to an `MCPClient` with the following properties 
     - `argument` (`{ name: string; value: string }`): Argument name and current partial value to complete.
     - `context?` (`{ arguments: Record<string, string> }`): Previously resolved argument values used to provide context for multi-argument prompts or resource templates.
     - `options?` (`RequestOptions`): Optional request options including signal and timeout.
-- `experimental_listPrompts` (`async (options?: {
+- `listPrompts` (`async (options?: {
       params?: PaginatedRequest['params'];
       options?: RequestOptions;
-    }) => Promise<ListPromptsResult>`): Lists available prompts from the MCP server. This method is experimental and may change in the future.
+    }) => Promise<ListPromptsResult>`): Lists available prompts from the MCP server.
   - `options`
     - `params?` (`PaginatedRequest['params']`): Optional pagination parameters including cursor.
     - `options?` (`RequestOptions`): Optional request options including signal and timeout.
-- `experimental_getPrompt` (`async (args: {
+- `getPrompt` (`async (args: {
       name: string;
       arguments?: Record<string, unknown>;
       options?: RequestOptions;
-    }) => Promise<GetPromptResult>`): Retrieves a prompt by name, optionally passing arguments. This method is experimental and may change in the future.
+    }) => Promise<GetPromptResult>`): Retrieves a prompt by name, optionally passing arguments.
   - `args`
     - `name` (`string`): Prompt name to retrieve.
     - `arguments?` (`Record<string, unknown>`): Optional arguments to fill into the prompt.
@@ -167,13 +168,13 @@ Returns a Promise that resolves to an `MCPClient` with the following properties 
 ```typescript
 import { createMCPClient } from '@ai-sdk/mcp';
 import { generateText } from 'ai';
-import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
+import { StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
 
 let client;
 
 try {
   client = await createMCPClient({
-    transport: new Experimental_StdioMCPTransport({
+    transport: new StdioMCPTransport({
       command: 'node server.js',
     }),
   });

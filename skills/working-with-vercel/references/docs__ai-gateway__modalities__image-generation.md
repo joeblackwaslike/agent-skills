@@ -16,8 +16,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a5c91143d7e1ce33c6075c3ada2dc4e22c7cf2ba19797426c6e1f260d46d4b43"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "32d55fbb7307e464a74de6e8f86a94f5895d22c687095ea62866a00c541ed2b1"
 ---
 
 # AI Gateway Image Generation
@@ -32,10 +32,10 @@ The Vercel [AI Gateway](/docs/ai-gateway) supports image generation and editing 
 
 - [Nano Banana 2.1 now available on AI Gateway](https://vercel.com/changelog/nano-banana-2-1-now-available-on-ai-gateway)
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
+- [MAI-Image-2.6 and MAI-Image-2.6-Flash now available on AI Gateway](https://vercel.com/changelog/mai-image-2-6-and-mai-image-2-6-flash-now-available-on-ai-gateway)
 - [AI Gateway Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image) — Generate an image from a text prompt using AI Gateway.
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
 - [AI Gateway Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
-- [AI Gateway Inputs and Tools](https://vercel.com/docs/ai-gateway/inputs-and-tools) — Send images, PDFs, audio, and video to AI Gateway models, and connect models to application functions with tool use.
 - [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation.graph.md](/docs/ai-gateway/modalities/image-generation.graph.md)
@@ -58,4 +58,4 @@ To implement image generation with AI Gateway, use one of the following methods:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

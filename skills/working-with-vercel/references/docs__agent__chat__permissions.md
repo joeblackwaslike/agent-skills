@@ -13,8 +13,8 @@ related:
 summary: Understand how Vercel Agent scopes access, requests approval, and attributes changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/permissions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "abb49dc7123caf7cc3a280e05d4e132daccb18c81f97737b368c9d1cf6c49773"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "94d0e7c801d042833b96779b88fdb3266a6a03b7ee3fbcc6556332d7fc328cda"
 ---
 
 # Vercel Agent Permissions
@@ -81,4 +81,4 @@ Vercel Agent can refuse an operation when:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use get_named_sandbox with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_named_sandbox.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d5e36a60b6f3664eba3a027f9d0c749500028b79c4def7988f3c9531db8af14f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "32f9ad2081997af715de2b39c7f56301d107dc626f8962693a340fb0ae5e0496"
 ---
 
 # get_named_sandbox
@@ -53,4 +53,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

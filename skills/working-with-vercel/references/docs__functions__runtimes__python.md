@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Python runtime to run Python applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "86e634d14c31f3f619f00d298bb2f1b4b788a1af0cee2b1ecb828908ff9819ee"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9f49b7c3266df80705750022385f8bcb0f19cc8e93e2e94466abfe371163a02f"
 ---
 
 # Using the Python Runtime with Vercel Functions
@@ -80,6 +80,19 @@ To move an existing FastAPI, Flask, or Django API to Vercel, follow the migratio
 To run a Python backend and a frontend together in one project, you can use
 [Services](/docs/services). Each part builds independently and routes to a
 shared domain.
+
+## Build with Vercel services
+
+Use these guides to add storage, background processing, and AI capabilities to a Python application. Each guide includes a FastAPI example and deployment steps.
+
+| Task                         | Guide                                                                                        |
+| ---------------------------- | -------------------------------------------------------------------------------------------- |
+| Process background jobs      | [Process background jobs in Python with Vercel Queues](/kb/guide/python-and-vercel-queues)   |
+| Store and serve files        | [Store and serve files from Python with Vercel Blob](/kb/guide/python-and-vercel-blob)       |
+| Call third-party APIs        | [Call third-party APIs from Python with Vercel Connect](/kb/guide/python-and-vercel-connect) |
+| Coordinate durable processes | [Build durable workflows in Python on Vercel](/kb/guide/python-and-durable-workflows)        |
+| Execute untrusted code       | [Run untrusted Python code safely with Vercel Sandbox](/kb/guide/python-and-vercel-sandbox)  |
+| Build AI agents              | [Build AI agents in Python with the AI SDK](/kb/guide/python-and-ai-sdk)                     |
 
 ## Python entrypoints
 
@@ -244,4 +257,4 @@ and configuration.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

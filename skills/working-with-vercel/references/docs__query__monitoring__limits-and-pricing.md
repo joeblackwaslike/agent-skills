@@ -14,8 +14,8 @@ related:
 summary: Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/limits-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "db5ff06a41ce578a547f2ac5ac440d968d8ca30c2165926c3cc350a1a775de88"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f1f4a7726d2e2efdcd6ce1dddc8212e71fa49e3f697181a9970c09f23b5b98a0"
 ---
 
 # Limits and Pricing for Monitoring
@@ -75,4 +75,4 @@ Vercel creates an event each time a request is made to your website. These event
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

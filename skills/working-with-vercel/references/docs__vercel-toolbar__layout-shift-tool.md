@@ -16,8 +16,8 @@ related:
 summary: The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/layout-shift-tool.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1c36a1cc34b64da8735660462fd3a4d8f0416a3ce80fe3e4da17744731d305fe"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7dd92c2f7adc44985137368405f4098ed66b0b7894be9e1a6df167d7a0d8afa7"
 ---
 
 # Layout Shift Tool
@@ -95,4 +95,4 @@ To disable the layout shift tool completely:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

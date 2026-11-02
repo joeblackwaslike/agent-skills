@@ -4,8 +4,8 @@ description: API Reference for generateText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "b062904faed397e1663eae840326b01e5db48ae5bc04281653b19bc991b99d04"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "15fdf736b3b934ace200649e399fa2f27ff46717d58a46b51d4114bb2e18756d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -145,6 +145,7 @@ import { generateText } from "ai"
         - `instructions` (`Instructions | undefined`): The instructions that will be sent to the model for the current step. If prepareStep returns an instructions override, those instructions carry forward to later steps.
         - `initialInstructions` (`Instructions | undefined`): The initial instructions that were passed into generateText or streamText.
         - `messages` (`Array<ModelMessage>`): The messages that will be sent to the model for the current step. If prepareStep returns a messages override, those messages carry forward to later steps.
+        - `experimental_steeringMessages?` (`Array<UserModelMessage> | undefined`): The user messages that were sent with \`experimental\_steering\` and added to \`messages\` for the current step. Undefined when the step received no steering messages. \`messages\` already contains them. If you return a \`messages\` override that is rebuilt from other fields, add them back together with the steering messages of previous steps from \`steps\`.
         - `runtimeContext?` (`CONTEXT`): The shared runtime context passed via the \`runtimeContext\` setting.
         - `toolsContext` (`InferToolSetContext<TOOLS>`): The per-tool context map passed via the \`toolsContext\` setting.
         - `experimental_sandbox?` (`Experimental_SandboxSession | undefined`): The experimental sandbox environment passed via the \`experimental\_sandbox\` setting.
@@ -171,6 +172,7 @@ import { generateText } from "ai"
 - `runtimeContext?` (`CONTEXT`): User-defined shared runtime context object passed to \`prepareStep\` and lifecycle callbacks.
 - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map keyed by tool name. Required when at least one tool defines \`contextSchema\`; not accepted when no tools need context.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
+- `experimental_steering?` (`Experimental_Steering`): Experimental steering object created with \`experimental\_createSteering()\`. Messages sent with \`steering.steer()\` are added as user messages at the next step boundary, after the current step and its tool calls are done. A waiting message keeps the loop going for another step unless a stop condition is met. \`steer()\` resolves with \`\{ type: 'delivered', id, message, stepNumber }\` or \`\{ type: 'not-delivered', id, message, reason }\`. See \[Steering]\(/docs/agents/loop-control#steering).
 - `experimental_download?` (`(requestedDownloads: Array<{ url: URL; isUrlSupportedByModel: boolean }>) => Promise<Array<null | { data: Uint8Array; mediaType?: string }>>`): Custom download function to control how URLs are fetched when they appear in prompts. By default, files are downloaded if the model does not support the URL for the given media type. Experimental feature. Return null to pass the URL directly to the model (when supported), or return downloaded content with data and media type.
 - `include?` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean }`): Controls inclusion of request bodies, request messages, and response bodies in step results. By default, request bodies, request messages, and response bodies are excluded to reduce memory usage. Set requestBody, requestMessages, and/or responseBody to true when you need access to the data.
   - `Object`
@@ -363,6 +365,10 @@ import { generateText } from "ai"
         - `body?` (`unknown`): Response body (available only for providers that use HTTP requests).
     - `providerMetadata?` (`ProviderMetadata | undefined`): Additional provider-specific metadata. They are passed through from the provider to the AI SDK and enable provider-specific results that can be fully encapsulated in the provider.
     - `responseMessages` (`Array<ResponseMessage>`): The accumulated response messages that were generated during the call.
+- `onStepError?` (`(event: GenerateTextStepErrorEvent) => Promise<void> | void`): Callback that is called when a step that started fails before it produces a step result, i.e. when the provider call throws or rejects, or when the call is aborted or times out. \`onStepEnd\` is not called for such a step. For aborts and timeouts, \`error\` is the abort or timeout error, or a provider error that has it as its \`cause\`.
+  - `GenerateTextStepErrorEvent`
+    - `...GenerateTextStepStartEvent` (`GenerateTextStepStartEvent`): All properties of the \`onStepStart\` event of the step that failed, such as \`callId\`, \`stepNumber\`, \`steps\`, \`messages\`, \`runtimeContext\`, and \`toolsContext\`.
+    - `error` (`unknown`): The error that ended the step.
 - `onStepFinish?` (`GenerateTextOnStepFinishCallback<TOOLS>`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
 - `onEnd?` (`(event: GenerateTextEndEvent<TOOLS>) => PromiseLike<void> | void`): Callback that is called when the entire generation completes (all steps finished). The event includes the final step result properties, excluding direct \`performance\`, along with aggregated data from all steps. Use \`event.steps\` for per-step performance metrics.
   - `GenerateTextEndEvent`
@@ -572,6 +578,7 @@ import { generateText } from "ai"
         - `body?` (`unknown`): Response body (available only for providers that use HTTP requests).
         - `messages` (`Array<ResponseMessage>`): The response messages generated during this step. Response messages can be either assistant messages or tool messages. They contain a generated id.
     - `providerMetadata` (`ProviderMetadata | undefined`): Additional provider-specific metadata. They are passed through from the provider to the AI SDK and enable provider-specific results that can be fully encapsulated in the provider.
+    - `experimental_steeringMessages?` (`Array<UserModelMessage> | undefined`): The user messages that were sent with \`experimental\_steering\` and added to the input of this step. Undefined when the step received no steering messages.
 - `finalStep` (`StepResult<TOOLS>`): The final step. This is a shortcut for \`steps.at(-1)\`.
 
 ## Types

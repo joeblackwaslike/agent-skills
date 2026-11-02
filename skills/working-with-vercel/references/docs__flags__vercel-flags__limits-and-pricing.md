@@ -13,8 +13,8 @@ related:
 summary: Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a0ff6a0b0269243cfa595045a15df125e1d80e689a38aec6b55f31bca850d6d7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "014a7140e79c4bdc31775a8f6cbd59831ae19e7f1da7cf4e1f672907313f9047"
 ---
 
 # Limits and Pricing for Vercel Flags
@@ -33,10 +33,10 @@ A flag request is an application request that reads a source project's flag conf
 
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Pricing for Flags Explorer](https://vercel.com/docs/flags/flags-explorer/limits-and-pricing) — Compare monthly Flags Explorer override limits and the price of unlimited overrides across Vercel plans.
-- [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 - [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag) — Learn how to configure individual feature flags in the Vercel Dashboard.
-- [Get a flag](https://vercel.com/docs/rest-api/feature-flags/get-a-flag) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Retrieve a specific feature flag by its ID or sl
-- [Get project flag settings](https://vercel.com/docs/rest-api/feature-flags/get-project-flag-settings) — GET /v1/projects/{projectIdOrName}/feature-flags/settings — Retrieve feature flag settings for a project.
+- [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
+- [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
+- [Create a segment](https://vercel.com/docs/rest-api/feature-flags/create-a-segment) — PUT /v1/projects/{projectIdOrName}/feature-flags/segments — Create a new feature flag segment.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/limits-and-pricing.graph.md](/docs/flags/vercel-flags/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -124,4 +124,4 @@ All variant IDs referenced in rules must exist in the flag's variants array. Seg
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

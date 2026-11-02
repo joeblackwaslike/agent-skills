@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/env.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f48f813a0a9f7232bacc9381bc1b52cd60b373b4b380a5782d87a9a159d31263"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "624e10567ecf2e5ad9610b17ecd15cd7bd5fd70523dd9f124fe39ffe3200a59c"
 ---
 
 # vercel env
@@ -379,4 +379,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

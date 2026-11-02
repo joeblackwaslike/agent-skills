@@ -17,8 +17,8 @@ related:
 summary: Run any code and library on Vercel Functions with an OCI container image built from a Dockerfile or Containerfile at the project root.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/container.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "673746029d3135e2f36581b9b8b187a7badd7c01317a0797d8982186c8e8b4e1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "034bee5f349f0e07f6581a8d630adbb1cf303ca28dd792ca77eafd31774f50ad"
 ---
 
 # Container Runtime
@@ -34,12 +34,12 @@ Vercel Functions can run any code and library using Open Container Initiative (O
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
-- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
+- [Deploy a container from a plain Dockerfile](https://vercel.com/changelog/deploy-a-container-from-a-plain-dockerfile)
+- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel)
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions)
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Bring Your Own Cloud](https://vercel.com/docs/networking/bring-your-own-cloud) — Bring Your Own Cloud \\(BYOC\\) lets you run Vercel Functions behind your project in your own AWS account while Vercel rou
 
@@ -162,6 +162,8 @@ When a function instance is scaled down, the container receives a `SIGTERM` sign
 
 The same [limits](/docs/functions/limitations) and [Active CPU pricing model](/docs/functions/usage-and-pricing) of Vercel Functions apply to custom container images.
 
+Images must also stay within the [Container Registry limits](/docs/container-registry/limits-and-pricing), including the [optimization limits](/docs/container-registry/limits-and-pricing#optimization-limits) that cap how many entries an image can contain.
+
 [Secure Compute](/docs/networking/secure-compute) and [Static IPs](/docs/networking/static-ips) are not yet supported with custom container images.
 
 ## Related
@@ -177,4 +179,4 @@ The same [limits](/docs/functions/limitations) and [Active CPU pricing model](/d
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

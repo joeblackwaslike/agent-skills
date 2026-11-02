@@ -17,8 +17,8 @@ related:
 summary: "Learn how to set up the Flags Explorer so you can see and override your application's feature flags"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/getting-started.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e10516a63d8611f4d4b5d8df68fd7a10cf380fdf7bf9f2ba93afdfa13b036623"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5f9abba12b4f0460f67b515ce795f3823a9c9a6b89707a2c632c7cba13a25ddc"
 ---
 
 # Getting started with Flags Explorer
@@ -35,9 +35,9 @@ This guide walks you through connecting your application to the Flags Explorer, 
 
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 - [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
@@ -273,4 +273,4 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

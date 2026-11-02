@@ -13,8 +13,8 @@ related:
 summary: Requires that assertions are not conditional, or that expect.assertions is used.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/tests_no_conditional_assertions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2a6770007c23c938d5464b069d781fb8a51ac1a683ae6af33cda2afb7ebfa6f2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9f2b4379ae537f3132106bb7e3fc028b5c729e42931708c2586b6e699bcf3954"
 ---
 
 # TESTS_NO_CONDITIONAL_ASSERTIONS
@@ -115,4 +115,4 @@ The default configuration is:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

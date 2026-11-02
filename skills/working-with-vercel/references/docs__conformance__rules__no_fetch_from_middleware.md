@@ -12,8 +12,8 @@ related:
 summary: Requires that any fetch call that is depended on transitively by Next.js middleware be reviewed and approved before use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_fetch_from_middleware.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "78cf204c7a882bfd90fa090cda92d9d26d12d48499ff85761faef486a5f2263f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "411159f5e2902c546d351ca2c5885db112c85bed8d1b48bf6c8930338b2bfe68"
 ---
 
 # NO_FETCH_FROM_MIDDLEWARE
@@ -70,4 +70,4 @@ making a request that would add latency to middleware.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

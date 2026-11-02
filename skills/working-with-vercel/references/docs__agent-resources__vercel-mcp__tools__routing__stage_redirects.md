@@ -13,8 +13,8 @@ related:
 summary: Use stage_redirects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/stage_redirects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a18fa8e8e620c49b3737b3c7a64d7ee9f3b8172c31b597a3660bcf56f64ef2c8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "93dedeb9c77713b54f523424040870160f23da8e99a020fdb617b9a0b664f9fb"
 ---
 
 # stage_redirects
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

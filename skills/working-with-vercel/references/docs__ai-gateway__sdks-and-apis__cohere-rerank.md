@@ -15,8 +15,8 @@ related:
 summary: Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "34f694a7742d0a6feaccaa11c14539581451f552bbd53619a5802108bc6d2581"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0a8dd282199bdda0d5a89985cb469e98ea5da6bfadf288e173682fbde695a890"
 ---
 
 # Cohere Rerank API with AI Gateway
@@ -36,6 +36,7 @@ AI Gateway provides Cohere-compatible Rerank API endpoints, so you can use the [
 - [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage) — Learn how to use Voyage AI with AI Gateway and the direct provider.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [Get virtual model config](https://vercel.com/docs/rest-api/ai-gateway/get-virtual-model-config) — GET /ai-gateway/virtual-model-configs — Get a virtual model config
+- [Update virtual model config](https://vercel.com/docs/rest-api/ai-gateway/update-virtual-model-config) — PATCH /ai-gateway/virtual-model-configs — Update a virtual model config
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md](/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md)
 <!-- /docsgraph:related -->
@@ -202,7 +203,7 @@ curl https://ai-gateway.vercel.sh/v1/rerank \
 
 ## Provider routing
 
-You can control which provider serves the request with `providerOptions.gateway`, the same way as other AI Gateway APIs. For example, restrict the request to a specific provider:
+You can control which provider serves the request with `providerOptions.gateway`, the same way as other AI Gateway APIs. For example, list a preferred provider with `order`:
 
 ```json
 {
@@ -211,13 +212,13 @@ You can control which provider serves the request with `providerOptions.gateway`
   "documents": ["..."],
   "providerOptions": {
     "gateway": {
-      "only": ["bedrock"]
+      "order": ["bedrock"]
     }
   }
 }
 ```
 
-See [provider options](/docs/ai-gateway/models-and-providers/provider-options) for the full list, including provider filtering, ordering, and model fallbacks.
+AI Gateway tries the providers in `order` first and falls back to any other provider that serves the model. Each reranking model is currently served by a single provider (`cohere/rerank-v3.5` runs on Amazon Bedrock), so `order` sets a preference for when more providers are available rather than adding a fallback today. See [provider options](/docs/ai-gateway/models-and-providers/provider-options) for the full list, including provider filtering, ordering, and model fallbacks.
 
 > **💡 Note:** To rank with an Amazon Bedrock reranking model using your own credentials
 > (BYOK), use SigV4 credentials (`accessKeyId` and `secretAccessKey`). The
@@ -253,4 +254,4 @@ The API returns standard HTTP status codes. Errors follow the Cohere error forma
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

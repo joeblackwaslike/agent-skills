@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d67de35c5effd98302bc237be8724f31971eec02fb5df83ce2f378cf0f59e35a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0df57b20d4f2f840b23d4e035b0065857a4edb9b1235fdd423e9dea2b4afd391"
 ---
 
 # Skew Protection
@@ -126,7 +126,7 @@ Inputs are normalized automatically: full URLs are reduced to their hostname, po
 
 ## Configure Maximum Age
 
-The **Maximum Age** setting controls how long a deployment remains eligible for Skew Protection. If a client requests a deployment that no longer exists or is older than the configured maximum age (via the `?dpl=` query parameter, `x-deployment-id` header, or `__vdpl` cookie), the request returns a 404.
+The **Maximum Age** setting controls how long a deployment remains eligible for Skew Protection. If a client requests a deployment that no longer exists or is older than the configured maximum age (via the `?dpl=` query parameter, `x-deployment-id` header, or `__vdpl` cookie), Vercel ignores the requested deployment and serves the request from the deployment currently assigned to the domain.
 
 To configure the maximum age:
 
@@ -427,4 +427,4 @@ Deployments that have been deleted either manually or automatically using a [ret
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

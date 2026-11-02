@@ -13,8 +13,8 @@ related:
 summary: Generate text responses with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b21571fbf78df8442a5a4654ca50bd915b9e7f71fc3e858aee7901360b74c2ba"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9525d9626f6173c369a6e831a3a2c6724cd38f9b3e98a55d5a633f7d3f36ca88"
 ---
 
 # OpenAI Responses Text Generation with AI Gateway
@@ -33,7 +33,7 @@ Set your SDK's base URL to AI Gateway and use your API key for authentication:
 - [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 - [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
 - [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text) — Generate and stream text responses using AI Gateway.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/text-generation.graph.md](/docs/ai-gateway/sdks-and-apis/responses/text-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -93,4 +93,4 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

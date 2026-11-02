@@ -16,8 +16,8 @@ related:
 summary: You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and reach your own VPC over VPC...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/secure-compute.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "546bc4d87e66c8a907c74828503a14deec53f54628fcc1082d9d4589a344f202"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cbd3182c0d7cf055335f29b714c3545ff16e37b8c98ded4f269ceaacbdad9df4"
 ---
 
 # Using Secure Compute with Sandbox
@@ -33,11 +33,11 @@ Attaching a Vercel Sandbox to a [Secure Compute](/docs/networking/secure-compute
 - [Vercel Sandbox now supports Secure Compute](https://vercel.com/changelog/vercel-sandbox-now-supports-secure-compute)
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
 - [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Networking](https://vercel.com/docs/networking) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/secure-compute.graph.md](/docs/sandbox/concepts/secure-compute.graph.md)
 <!-- /docsgraph:related -->
@@ -238,4 +238,4 @@ See [Secure Compute pricing](/docs/networking/secure-compute#pricing) for curren
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

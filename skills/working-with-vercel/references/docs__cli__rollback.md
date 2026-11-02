@@ -14,8 +14,8 @@ related:
 summary: Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rollback.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9e7e2d42d26735fcb584ca02b455f232bbf07ed7adda5d05b4a39cb84775efb0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bd91a4f3ada26d1e856665c314a0b27082c8efaf18a90e8e30cde7e5cc088efb"
 ---
 
 # vercel rollback
@@ -130,4 +130,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

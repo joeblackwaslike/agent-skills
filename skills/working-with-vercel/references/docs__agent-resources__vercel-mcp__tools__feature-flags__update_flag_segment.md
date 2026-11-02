@@ -13,8 +13,8 @@ related:
 summary: Use update_flag_segment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_segment.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "170fa97b7415ae892831b7d143e6f2fc7e8da01312239b3792ee21e492fd7610"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "00e3727360085c8e427f75de4ba216ff69b09871ce01c710938285a3b17d6b7d"
 ---
 
 # update_flag_segment
@@ -53,4 +53,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -4,8 +4,8 @@ description: Learn how to use the Pi harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "cf71d53f40ede47ab38e8ecb5388727ce0b9a0f79a96866fde45d50ac7fb83d5"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "1e28698563bfde63f19b6845a39836e7f2b32811613c817f6080acbfd027f157"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -117,8 +117,37 @@ Settings:
 - `providers`: explicit Pi provider configurations for custom models.
 - `reattachInProcess`: whether a suspended turn can reuse its live Pi session
   in the current process. Defaults to `true`.
+- `resources`: skills in the sandbox that Pi lists to the model. See
+  [Project Resources](#project-resources).
 - `thinkingLevel`: Pi thinking level (`off`, `minimal`, `low`, `medium`,
   `high`, `xhigh`, or `max`).
+
+## Project Resources
+
+Pi does not discover `AGENTS.md`, `CLAUDE.md`, or project skills on the host or
+in the sandbox. Put project context in `instructions`, and list skills that
+already exist in the sandbox through `resources`:
+
+```ts
+const harness = createPi({
+  resources: {
+    skills: [
+      {
+        name: 'brand-voice',
+        description: 'Rules for writing in the brand voice.',
+        filePath: '/vercel/sandbox/skills/brand-voice/SKILL.md',
+      },
+    ],
+  },
+});
+```
+
+- `skills`: skills listed to the model by name and description. The file at
+  `filePath` must already exist in the sandbox, because the model reads it with
+  the `read` tool. Pi's read-only file tools can read the skill's directory.
+
+Skills passed to `HarnessAgent` are written into the sandbox on each turn and
+do not need an entry here.
 
 ## File Tool Paths
 
@@ -145,7 +174,8 @@ const harness = createPi({
   refuses, even inside the workspace or a readable root. Both requested paths
   and denied roots are resolved in the sandbox, so symlinks pointing to or from
   a denied root are refused. Configured roots are resolved again for each file
-  operation; canonical denied roots captured at session startup remain denied.
+  operation; canonical denied roots captured before the first native file tool
+  runs remain denied.
   `find` and `grep` prune exact denied paths without following directory symlinks,
   and `ls` hides directly denied entries. Other directories with the same name
   remain accessible.
@@ -211,16 +241,11 @@ Extension factories execute in the host Node.js process with access to the host
 environment, so only pass factories you trust. This setting enables only the
 factories you explicitly provide. Filesystem extension discovery remains
 disabled, including user, project, and settings-based extensions. Themes and
-prompt templates also remain disabled.
+prompt templates also remain disabled. The host has no copy of the sandbox
+workspace, so an extension reads project files through the `sandboxSession` it
+receives.
 
 ## Session Reattachment
-
-Pi keeps its live session journal in a host temporary directory. On detach,
-stop, or suspension, the adapter copies the journal to
-`$HOME/.ai-sdk-harness/.agent-runs/<encoded-sessionId>/pi/<session-file>.jsonl`.
-Here, `$HOME` belongs to the sandbox; the saved journal is outside
-`sessionWorkDir`. A future process restores that journal after the caller
-reattaches the sandbox and supplies the saved lifecycle state.
 
 By default, Pi keeps a suspended turn alive for an efficient continuation in
 the same process when the incoming request has compatible settings and runtime
@@ -239,6 +264,80 @@ const harness = createPi({
 
 An incoming completed `resume-session` state always takes precedence over an
 older live suspended turn in the process.
+
+The lifecycle state carries the Pi session itself, its header followed by its
+entries. Nothing about the session is stored in the sandbox, so restoring a
+session reads no sandbox files. A state recorded before this format restores as
+a fresh session.
+
+## Session Storage
+
+The lifecycle state holds the whole session, including image bytes from tool
+results, so it grows with every turn. To keep it small, pass a `sessionStorage`
+that keeps the session in an append-only log somewhere else, such as an object
+store, a database table or a stream. The harness appends each new Pi session
+entry to the log, and the lifecycle state holds only `leafId`, the id of the
+entry the session ends at. Restoring a session reads the log and continues from
+that entry. Each entry's `data` is a Pi session entry, a JSON value; the harness
+checks each entry when it reads it.
+
+```ts
+import { createPi, type PiSessionStorage } from '@ai-sdk/harness-pi';
+
+const storage: PiSessionStorage = {
+  append: async ({ sessionId, entry }) => {
+    await db
+      .insert(piSessionEntries)
+      .values({ sessionId, ...entry })
+      .onConflictDoNothing();
+  },
+  read: async ({ sessionId }) =>
+    db
+      .select()
+      .from(piSessionEntries)
+      .where(eq(piSessionEntries.sessionId, sessionId))
+      .orderBy(piSessionEntries.position),
+};
+
+const harness = createPi({ sessionStorage: storage });
+```
+
+Entries are never changed or deleted. Pi sessions are trees: every entry points
+to the entry before it, its `parentEntryId`. A regenerated turn, a workflow step
+retried after a crash or a second turn resumed from the same state appends a new
+branch, and each lifecycle state's `leafId` selects its own branch, so the
+others are left out.
+
+Each entry also comes with `version`, the Pi session version it was written
+under, and `read` returns it with the rest of the entry, so the harness can
+migrate entries written by an older Pi. An entry whose `entryId` the log already
+holds is a retried append, so the example keeps `(sessionId, entryId)` unique and
+ignores the conflict. `read` may return every entry of the log, as above. To
+read less, return only the entries that lead to `leafId`: the entry whose
+`entryId` is `leafId`, then its `parentEntryId`, and so on, in the order they
+were appended. A database can
+follow that chain in one query, such as a recursive common table expression.
+
+A turn usually adds several entries. The harness appends them one at a time,
+unless the storage also implements the optional `appendMany`, which receives a
+turn's entries in one call:
+
+```ts
+const storage: PiSessionStorage = {
+  // append and read as above
+  appendMany: async ({ sessionId, entries }) => {
+    await db
+      .insert(piSessionEntries)
+      .values(entries.map(entry => ({ sessionId, ...entry })))
+      .onConflictDoNothing();
+  },
+};
+```
+
+A tool batch waiting on host input stays in the lifecycle state. A state
+recorded without a session storage still restores, and its entries are appended
+on the next stop. A state with a `leafId` fails to restore when `createPi` has
+no `sessionStorage`.
 
 ## Authentication
 

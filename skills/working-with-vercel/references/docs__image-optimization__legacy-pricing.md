@@ -12,12 +12,12 @@ related:
   - /docs/manage-cdn-usage
   - /docs/cdn
   - /docs/limits/fair-use-guidelines
-  - /docs/errors
+  - /docs/errors/deployment_disabled
 summary: This page outlines information on the pricing and limits for the source images-based legacy option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/legacy-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7b1ce94d6fa1f9a51b6a43449966532e0c9c48fcc1ea2e275176c895eea11d4f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "03acbba7315171afd04fd6801772dc012bd0690ed2f21dc2a7e48d6dc4c3ea97"
 ---
 
 # Legacy Pricing for Image Optimization
@@ -39,10 +39,11 @@ Image Optimization pricing is dependent on your plan and how many unique [source
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations)
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
-- [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization)
+- [Increased Hobby usage limits for Image Optimization](https://vercel.com/changelog/increased-hobby-usage-limits-for-image-optimization)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
@@ -90,7 +91,7 @@ Vercel will send you emails as you are nearing your [usage](#pricing) limits, bu
 
 Once you exceed the limits:
 
-- New [source images](#source-images) will fail to optimize and instead return a runtime error response with [402 status code](/docs/errors#402:-deployment_disabled). This will trigger the [`onError`](https://nextjs.org/docs/app/api-reference/components/image#onerror) callback and show the [`alt`](https://nextjs.org/docs/app/api-reference/components/image#alt) text instead of the image
+- New [source images](#source-images) will fail to optimize and instead return a runtime error response with [402 status code](/docs/errors/deployment_disabled). This will trigger the [`onError`](https://nextjs.org/docs/app/api-reference/components/image#onerror) callback and show the [`alt`](https://nextjs.org/docs/app/api-reference/components/image#alt) text instead of the image
 - Previously optimized images have already been cached and will continue to work as expected, without error
 
 You will **not** be charged for exceeding the usage limits, but this usually means your application is ready to upgrade to a [Pro plan](/docs/plans/pro-plan).
@@ -121,4 +122,4 @@ See the [Fair Usage Policy](/docs/limits/fair-use-guidelines#typical-monthly-usa
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

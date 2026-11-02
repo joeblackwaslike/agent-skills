@@ -13,12 +13,12 @@ related:
   - /docs/integrations/create-integration/marketplace-api
   - /docs/integrations/create-integration
   - /docs/integrations/create-integration/marketplace-flows
-  - /docs/integrations/create-integration/approval-checklist
+  - /docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-product
 summary: Learn how to create a product for your Vercel native integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-product.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ab0206870d65600586157e280ace69f93437397fb0abe07dd628351155234eae"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a1edafe92f2c2e34b895e33d3abafd2984f50a15f48e1657992cefe43cbb63b2"
 ---
 
 # Create a Native Integration
@@ -83,7 +83,7 @@ In this tutorial, you create a storage product for your native integration throu
   4. Select **Apply Changes**
 
 - ### Update your integration server
-  Add or update the [Billing](/docs/integrations/create-integration/marketplace-api#billing) endpoints in your integration server so that the appropriate plans are pulled from your backend when Vercel calls these endpoints. Review the [marketplace integration example](https://github.com/vercel/example-marketplace-integration/blob/main/app/v1/products/%5BproductId%5D/plans/route.ts) for a sample billing plan route.
+  Add or update the [Billing](/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-product) endpoints in your integration server so that the appropriate plans are pulled from your backend when Vercel calls these endpoints. Review the [marketplace integration example](https://github.com/vercel/example-marketplace-integration/blob/main/app/v1/products/%5BproductId%5D/plans/route.ts) for a sample billing plan route.
 
   Your integration server needs to handle the [billing plan selection flow](/docs/integrations/create-integration/marketplace-flows#select-billing-plan) and [resource provisioning flow](/docs/integrations/create-integration/marketplace-flows#submit-store-creation).
 
@@ -112,7 +112,7 @@ As an example, use the following configuration to only show the name of the prod
 }
 ```
 
-See the endpoints for [Provision](/docs/integrations/create-integration/marketplace-api#provision-resource) or [Update](/docs/integrations/create-integration/marketplace-api#update-resource) Resource for specific examples.
+See the endpoints for [Provision](/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource) or [Update](/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource) Resource for specific examples.
 
 | Property `ui:control` | Property `type` | Notes                                                                                                                                                                                                              |
 | --------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -157,4 +157,4 @@ You can add it to your editor configuration as follows:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

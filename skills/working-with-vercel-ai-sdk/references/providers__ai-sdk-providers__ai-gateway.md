@@ -4,8 +4,8 @@ description: Learn how to use the AI Gateway provider with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "50699e0c659a5a83dda791073c4030d4d48d45cfffda923e25219ea62c5e3752"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "d1fa0d442b35c3cf591f532e3f99c970d0050e60dc4b06e8de3225cef456278a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -95,7 +95,12 @@ You can use the following optional settings to customize the AI Gateway provider
 
   Use a different URL prefix for API calls. The default prefix is `https://ai-gateway.vercel.sh/v4/ai`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a callback to resolve the API key before each request. The callback can
+  return a string or a promise; token caching and renewal are handled by the caller.
+  A callback or promise selects API key authentication and must resolve to a
+  non-empty string; lookup failures do not switch authentication methods.
 
   API key or Vercel access token that is being sent using the `Authorization`
   header. It defaults to the `AI_GATEWAY_API_KEY` environment variable.
@@ -1515,7 +1520,7 @@ The AI Gateway provider accepts provider options that control routing behavior a
 
 ### Gateway Provider Options
 
-You can use the `gateway` key in `providerOptions` to control how AI Gateway routes requests:
+You can use the `gateway` key in `providerOptions` to control how AI Gateway routes requests. Without any routing options, AI Gateway picks providers based on recent uptime and latency and falls back to other providers that serve the same model, so most applications don't need to set them.
 
 ```ts
 import type { GatewayProviderOptions } from '@ai-sdk/gateway';
@@ -1526,8 +1531,7 @@ const { text } = await generateText({
   prompt: 'Explain quantum computing',
   providerOptions: {
     gateway: {
-      order: ['vertex', 'anthropic'], // Try Vertex AI first, then Anthropic
-      only: ['vertex', 'anthropic'], // Only use these providers
+      order: ['vertex', 'anthropic'], // Try Vertex AI first, then Anthropic, then other providers
     } satisfies GatewayProviderOptions,
   },
 });
@@ -1544,6 +1548,8 @@ The following gateway provider options are available:
 - **only** *string\[]*
 
   Restricts routing to only the specified providers. When set, the gateway will never route to providers not in this list, even if they would otherwise be available.
+
+  Because unlisted providers are never tried, the request fails instead of falling back when the listed providers are unavailable. When the requirement is about data handling or a model capability, `zeroDataRetention`, `disallowPromptTraining`, or `has` filter by that requirement while keeping every qualifying provider eligible.
 
   Example: `only: ['anthropic', 'vertex']` will only allow routing to Anthropic or Vertex AI.
 
@@ -1660,7 +1666,7 @@ The following gateway provider options are available:
   });
   ```
 
-You can combine these options to have fine-grained control over routing and tracking:
+You can combine these options to have fine-grained control over routing and tracking. For example, prefer Vertex AI while keeping fallbacks, and require zero data retention:
 
 ```ts
 import type { GatewayProviderOptions } from '@ai-sdk/gateway';
@@ -1672,7 +1678,7 @@ const { text } = await generateText({
   providerOptions: {
     gateway: {
       order: ['vertex'], // Prefer Vertex AI
-      only: ['anthropic', 'vertex'], // Only allow these providers
+      zeroDataRetention: true, // Only route to providers with zero data retention agreements
     } satisfies GatewayProviderOptions,
   },
 });

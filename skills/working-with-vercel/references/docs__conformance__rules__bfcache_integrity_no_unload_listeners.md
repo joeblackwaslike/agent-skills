@@ -12,8 +12,8 @@ related:
 summary: "Disallows the use of the unload and beforeunload events to eliminate a source of eviction from the browser's Back-Forward Cache."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/bfcache_integrity_no_unload_listeners.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "88575f9efbb418be8a07743973eb51b3864f133a2c7f550213da1430d294d982"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d8d27a97463499dff7bd6d55f0eb56f79361b493d7d1ba27dbfa27827de6f00f"
 ---
 
 # BFCACHE_INTEGRITY_NO_UNLOAD_LISTENERS
@@ -101,4 +101,4 @@ export function handleUserNavigatingAway() {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

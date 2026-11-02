@@ -15,8 +15,8 @@ related:
 summary: Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/limits.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b1c554d05dd6ecb8df4fd44e7b64dd281854eb26fbf5ed0ac644be4e0195d8b8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ce30b1011426166caffbdf03489ad5b1c4db7edbd6796017a36b5e25cec3cbad"
 ---
 
 # Vercel Connect Limits
@@ -31,8 +31,8 @@ The following limits apply. Contact your account team if you need higher limits.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 - [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token) — POST /v1/connect/token/{connector} — Get an access token for a connector identified by the path parameter and scoped to
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
@@ -111,4 +111,4 @@ For the SDK methods `getToken` and `getTokenResponse`, a `429` response throws a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

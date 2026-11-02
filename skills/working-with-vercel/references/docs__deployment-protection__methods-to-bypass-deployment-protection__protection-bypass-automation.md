@@ -17,8 +17,8 @@ related:
 summary: Learn how to bypass Vercel Deployment Protection for automated tooling (e.g. E2E testing).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9b4fcbca5685e1ae634629b81e2f204c7f6b34fdde526446c165f919dd19aec6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9034bc6c43a4105119f0d0203baffdc76138caa44c97794ce1f9bf51f7f28891"
 ---
 
 # Protection Bypass for Automation
@@ -33,7 +33,7 @@ Protection Bypass for Automation enables you to run automated tests, CI/CD pipel
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Slack](https://eve.dev/docs/channels/slack) — Reach your agent from Slack app mentions, DMs, slash commands, and interactive callbacks.
+- [Slack Reference](https://eve.dev/docs/channels/slack/reference) — Slack channel options, credentials, inbound hooks, code channels, rendering, human-in-the-loop, proactive targets, and a
 - [Write end-to-end tests with flag overrides](https://flags-sdk.dev/docs/frameworks/next/guides/e2e-tests) — Test Next.js application behavior with the Flags SDK and Playwright.
 - [Write end-to-end tests with flag overrides](https://flags-sdk.dev/docs/frameworks/sveltekit/guides/e2e-tests) — Test SvelteKit application behavior with the Flags SDK and Playwright.
 - [Protection bypass for automation now supports multiple secrets](https://vercel.com/changelog/protection-bypass-for-automation-multiple-secrets)
@@ -194,4 +194,4 @@ https://your-app.vercel.app/api/github-webhook?x-vercel-protection-bypass=your-g
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

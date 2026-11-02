@@ -16,8 +16,8 @@ related:
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "33da36487fcefab1d0064b820ca5e0f81f98521bb6a6a5edec9a38cc2f34503b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e1c134a94d4b30f865d9750b21287c43fc8e082874c11fb0b71dba275e90d41c"
 ---
 
 # Private Storage
@@ -42,9 +42,11 @@ Private Blob stores require authentication for all read and write operations, en
 - [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available)
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
+- [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
+- [Flue with Vercel](https://vercel.com/docs/frameworks/agents/flue) — Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.
 
 Full cross-link map for this page: [/docs/vercel-blob/private-storage.graph.md](/docs/vercel-blob/private-storage.graph.md)
 <!-- /docsgraph:related -->
@@ -114,6 +116,8 @@ async def upload(file: UploadFile) -> blob.PutResult:
 See the [server uploads](/docs/vercel-blob/server-upload) and [client uploads](/docs/vercel-blob/client-upload) guides for detailed instructions on uploading files.
 
 ## Delivering private blobs
+
+For a Python example, follow [Store and serve files from Python with Vercel Blob](/kb/guide/python-and-vercel-blob). The guide uses FastAPI to authenticate users and check file ownership before uploading, downloading, listing, or deleting private receipts.
 
 Every file uploaded to a private Blob store gets a URL in the form of `https://<store-id>.private.blob.vercel-storage.com/<pathname>`. This URL is not publicly accessible. Fetch its content with the SDK, which supports OpenID Connect (OIDC) and `BLOB_READ_WRITE_TOKEN` authentication. When your code runs on Vercel, it defaults to OIDC, which is preferred because its short-lived tokens rotate automatically. See [accessing without the SDK](#accessing-without-the-sdk).
 
@@ -691,7 +695,7 @@ Learn more about [Vercel's CDN cache](/docs/caching/cdn-cache).
 Since private blobs are delivered through your own [Functions](/docs/functions), you can serve them from any custom domain. A common pattern is to create a dedicated Vercel project (e.g. "assets") for blob delivery:
 
 1. Create a new Vercel project with a route handler that serves private blobs (as shown in [delivering private blobs](#delivering-private-blobs))
-2. [Connect your private Blob store](/docs/storage#connect-a-store-to-a-project) to this project
+2. [Connect your private Blob store](/docs/vercel-blob#connecting-a-store-to-your-projects) to this project
 3. [Assign a custom domain](/docs/domains/working-with-domains) to the project (e.g. `content.mywebsite.com`)
 
 Requests to `content.mywebsite.com/api/file?pathname=documents/report.pdf` will then go through your auth logic and stream the blob to the user.
@@ -730,4 +734,4 @@ See [pricing documentation](/docs/vercel-blob/usage-and-pricing) for full detail
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

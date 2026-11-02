@@ -16,8 +16,8 @@ related:
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "288bedf8e5cf4db245ca212436a3011d338f4509674200687c53a2c9a2fb6506"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5f01f3e6ece9f9d9e4ed0619f342ab7fe21f3be686289b235e2b3b52d41bd1b3"
 ---
 
 # Runtime Logs
@@ -281,4 +281,4 @@ With [Observability Plus](/docs/observability/observability-plus), you can view 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

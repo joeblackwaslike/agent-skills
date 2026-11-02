@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "be4e75a560a617743b4b2bf697a510cab0ccc2dda2eaa6aaae799a8c0317db64"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "76baa50d568ad50ff235bc53ea7bff7209b2c5e354fad727639fa6e19b9e217d"
 ---
 
 # Notifications
@@ -35,12 +35,14 @@ Vercel sends configurable notifications to you through the [dashboard](https://v
 - [Push notifications support on desktop and mobile](https://vercel.com/changelog/push-notifications-support-on-desktop-and-mobile)
 - [Get notified on build failures and more with new notification controls](https://vercel.com/changelog/new-notification-controls-available-in-public-beta)
 - [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app)
+- [Improved web notifications are now generally available](https://vercel.com/changelog/improved-web-notifications-now-generally-available)
 - [September 2020](https://vercel.com/blog/changelog-september-2020)
+- [Usage notification settings is now generally available](https://vercel.com/changelog/usage-notification-settings-is-now-generally-available)
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts) — Configure alert rules and notification destinations for Vercel Observability alerts.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
-- [Alerts](https://vercel.com/docs/alerts) — Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you ca
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Alerts](https://vercel.com/docs/alerts) — Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you ca
 
 Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md)
 <!-- /docsgraph:related -->
@@ -156,4 +158,4 @@ It is *not* possible to disable all notifications for alerts that are critical t
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

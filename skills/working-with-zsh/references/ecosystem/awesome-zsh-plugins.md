@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/unixorn/awesome-zsh-plugins/main/README.md"
-fetched_at: "2026-10-26T10:03:28.553Z"
-sha256: "5c359b5f000946c8c24f149436e3f6ead5b920fd604828ce4da95eedaa641647"
+fetched_at: "2026-11-02T12:15:28.816Z"
+sha256: "8e340bbf5a5e5cf273e4d610913607eda7554ce199a290f514713e72600de198"
 ---
 
 # awesome-zsh-plugins
@@ -65,6 +65,7 @@ A collection of ZSH frameworks, plugins, tutorials & themes inspired by the vari
   - [zeesh](#zeesh)
   - [zef](#zef)
   - [zert](#zert)
+  - [zest](#zest)
   - [zflash](#zflash)
   - [zgem](#zgem)
   - [zgen](#zgen)
@@ -75,6 +76,7 @@ A collection of ZSH frameworks, plugins, tutorials & themes inspired by the vari
   - [Zinit](#zinit)
   - [zinit-4](#zinit-4)
   - [zit](#zit)
+  - [zload](#zload)
   - [zlugin](#zlugin)
   - [znap](#znap)
   - [zoppo](#zoppo)
@@ -490,6 +492,11 @@ Features
 * **Self-managing** — Zert updates itself with `zert update zert`, managed as a first-class plugin.
 * **Oh-My-Zsh / Prezto compatibility** — load OMZ libs and Prezto modules without installing either framework.*
 
+### [zest](https://github.com/reginaldosevero/zest)
+![GitHub last commit](https://img.shields.io/github/last-commit/reginaldosevero/zest) ![GitHub Repo stars](https://img.shields.io/github/stars/reginaldosevero/zest)
+
+**Zest** is a productivity framework for ZSH aimed at human-readable output: `sysinfo`, `topmem` and `topcpu` render color bars aggregated per program, notes and todos live in the terminal, Hacker News headlines are machine-translated to Portuguese, `git` gets a friendly wrapper, and `updateall` tries 12 package managers (apt, dnf, pacman, zypper, apk, flatpak, snap, npm, pipx, uv, pip, mise) and skips the missing ones. The installer runs without root — it fetches 16 CLI tools (fzf, ripgrep, bat, eza, delta, lazygit, zoxide, atuin, mise and friends) into `~/.local/bin`, auto-installs missing dependencies via sudo/su, and works with Oh My Zsh, plain ZSH or any other framework. Everything is guarded, idempotent and reversible, and the documentation is in Portuguese.
+
 ### [zflash](https://github.com/arastu/zflash)
 ![GitHub last commit](https://img.shields.io/github/last-commit/arastu/zflash)
  ![GitHub Repo stars](https://img.shields.io/github/stars/arastu/zflash)
@@ -577,6 +584,14 @@ These are the most visible changes, but there are more (like e.g.: support for c
  ![GitHub Repo stars](https://img.shields.io/github/stars/thiagokokada/zit)
 
 **zit** is a plugin manager for ZSH. It is minimal because it implements the bare minimum to be qualified as a plugin manager: it allows the user to install plugins from `git` repositories (and `git` repositories only, that's why the name), source plugins and update them. It does not implement fancy functions like cleanup of removed plugins, automatic compilation of installed plugins, alias for oh-my-zsh/prezto/other ZSH frameworks, building binaries, `$PATH` manipulation and others.
+
+### [zload](https://github.com/casonadams/zload)
+![GitHub last commit](https://img.shields.io/github/last-commit/casonadams/zload)
+ ![GitHub Repo stars](https://img.shields.io/github/stars/casonadams/zload)
+
+ **zload** is an ultra-fast, zero-friction, memory-mapped ZSH plugin manager and loader built with 100% pure ZSH.
+
+It delivers ~0.6 ms warm interactive startup overhead (10 plugins, Apple Silicon; measured by zsh benchmark/bench.zsh) by compiling plugins into a consolidated .zwc wordcode bundle, automatically resolving canonical execution order, and completely eliminating subprocess forks.
 
 ### [zlugin](https://github.com/DrgnFireYellow/zlugin)
 ![GitHub last commit](https://img.shields.io/github/last-commit/DrgnFireYellow/zlugin)
@@ -757,7 +772,7 @@ This section is for full setup dropins - they aren't frameworks, but they're not
 ### oh-my-zsh
 
 - [awesome-lazy-zsh](https://github.com/AmJaradat01/awesome-lazy-zsh) - automates your ZSH setup with 46 plugins, 5 themes, configuration profiles, and service installation. It installs dependencies, manages Oh My Zsh, and gives you a beautiful interactive CLI to build the terminal environment you want.
-- [master-oogway](https://github.com/tomershay100/master-oogway) - A complete zsh environment — dragon prompt theme, git aliases, fuzzy-finder functions, and 25 opt-in plugins — distributed as a standalone git repo
+- [master-oogway](https://github.com/tomershay100/master-oogway) - A complete ZSH environment — dragon prompt theme, `git` aliases, fuzzy-finder functions, and 25 opt-in plugins — distributed as a standalone `git` repo.
 
 ### Raw ZSH
 
@@ -968,13 +983,13 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [autovenv (linnnus)](https://github.com/linnnus/autovenv) - Automatically activates Python virtual environments when entering their parent directory.
 - [autovenv (snovra-dev)](https://github.com/snovra-dev/zsh-autovenv) - Automatically activates Python virtual environments when entering their parent directory.
 - [aws-cli-mfa](https://github.com/joepjoosten/aws-cli-mfa-oh-my-zsh) - AWS CLI MFA plugin based on sweharris' [aws-cli-mfa](https://github.com/sweharris/aws-cli-mfa). Supports specifying `mfa_device` in profile.
+- [aws-login](https://github.com/mithredate/zsh-aws-login) - Provides an `aws-login` command that starts an AWS session that only the current terminal and its child processes can use.
 - [aws-mfa](https://github.com/FreebirdRides/oh-my-zsh-aws-mfa) - Plugin for using AWS MFA.
 - [aws-plugin](https://github.com/pookey/zsh-aws-plugin) - Adds helper functions for `aws` command. Includes mfa and `assume-role` helpers.
 - [aws-upload](https://github.com/borracciaBlu/aws-upload-zsh) - Boost your productivity with `aws-upload`.
 - [aws-vault (blimmer)](https://github.com/blimmer/zsh-aws-vault) - Plugin for [aws-vault](https://github.com/99designs/aws-vault). Includes tab completions.
 - [aws-vault (zsh-contrib)](https://github.com/zsh-contrib/zsh-aws) - [aws-vault](https://github.com/99designs/aws-vault) integration with per-window AWS profile support in `tmux`.
 - [aws-vault-profiles](https://github.com/jonscheiding/zsh-plugin-aws-vault-profiles) - Plugin that integrates usage of [aws-vault](https://github.com/99designs/aws-vault) with the `$AWS_PROFILE` environment variable.
-- [aws](https://github.com/apachler/zsh-aws) - Forked from the original [oh-my-zsh](https://ohmyz.sh/) [aws](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws). Includes completions for `awscli` and a few utilities for managing AWS profiles and displaying them in your prompt.
 - [aws2](https://github.com/drgr33n/oh-my-zsh_aws2-plugin) - Provides completion support for version 2 of the [awscli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) and a few utilities to manage AWS profiles and display them in the prompt.
 - [awsmultiaccount](https://github.com/acidix/zsh-awsmultiaccount) - Manages AWS profiles and assuming roles in a multi-account organization. It provides helper functions to easily switch between AWS profiles and assume the OrganizationAccountAccessRole in different accounts. Requires the `aws` cli and [jq](https://stedolan.github.io/jq/)
 - [awsp](https://github.com/suonto/awsp-zsh-plugin) - AWS profile management for ZSH. Inspired by oh-my-zsh's [aws](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/aws/aws.plugin.zsh) plugin. Shows details of currently active AWS profile.
@@ -1033,7 +1048,6 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [cd-ssh](https://github.com/jeffwalter/zsh-plugin-cd-ssh) - `ssh` to a server when you accidentally `cd` to it.
 - [cdbk](https://github.com/MikeDacre/cdbk) - A ZSH plugin to allow easy named directory creation - shortcuts to any directory you want.
 - [cdc](https://github.com/evanthegrayt/cdc) - Makes it easier to change directories to directories that are subdirs of a user-defined list of directories. Includes tab-completion, session history and `pushd`, `popd` and `dirs` equivalents.
-- [cdh](https://github.com/johncassol/cdh) - Allows users to manage and navigate through a history of directories they have visited. It maintains a history file of directories and provides several commands to interact with this history.
 - [cdhist](https://github.com/joknarf/cdhist) - cd history/subdir/locatedir navigation. simple cd history, alias builtin `cd` to add `cd` history, rapidily swich to already visited directories, can use `locate`, `mlocate` or `plocate` to rapidly cd to any directory
 - [cdr](https://github.com/willghatch/zsh-cdr) - Easy setup of `cdr` for ZSH.
 - [certview](https://github.com/jnnrgd/certview) - Fast inspection and verification of X.509 certificates, CSRs, and cryptographic keys (RSA, ECC, Ed25519) in both PEM and DER formats.
@@ -1043,6 +1057,8 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [chgo](https://github.com/sbfaulkner/chgo-plugin-zsh) - Clone of `chruby` modified to make it easy to switch between multiple Go versions.
 - [chuchu](https://github.com/kiki-ki/chuchu) - Tints your terminal background by where you are. When you step into a pod, a container or a remote host, the pane's background turns a color derived from that name, and goes back once you return to the prompt. The same name always gets the same color, so you learn to recognise places at a glance.
 - [claude-code-shell](https://github.com/ArielTM/zsh-claude-code-shell) - Translates natural language comments into shell commands using [Claude Code](https://claude.ai/claude-code).
+- [claude-code](https://github.com/matheus-poli/zsh-claude-code) - Adds `ask` and `explain` commands plus Ctrl+X (rewrite a natural-language request into a command, in place) and Alt+E (explain the typed command) widgets, built on the Claude Code CLI with tools and MCP servers disabled.
+- [claude-sandbox](https://github.com/LordMauldascha/claude-sandbox) - Points `CLAUDE_CONFIG_DIR` at a throwaway directory, so everything Claude Code reads and writes (settings, plugins, skills, history, credentials) stays inside that sandbox. Leave it, delete it, and your real setup is exactly as you left it.
 - [claude-shell](https://github.com/myk-org/claude-shell) - Provides intelligent shell assistance using Claude AI. It offers seven powerful features to enhance your command-line experience: natural language command translation, command explanation, error fixing, intelligent history search, and Kitty terminal integration for advanced scrollback analysis.
 - [claude](https://github.com/HundredAcreStudio/zsh-claude) - AI-powered command suggestions and explanations for ZSH using Claude AI. Get intelligent shell command help with simple keybindings. Transform natural language into executable shell commands, or get detailed explanations of complex commands - all directly in your terminal with Claude AI integration.
 - [clean-history](https://github.com/Automaat/zsh-clean-history) - Smart ZSH history cleanup plugin that automatically removes typos and failed commands based on similarity analysis. Removes failed commands similar to successful ones, finds rare commands similar to common variants, automatically captures command success/failure, adjusts similarity thresholds and behavior & creates backups before cleaning.
@@ -1088,6 +1104,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [cros-auto-notify](https://github.com/D3STY/cros-auto-notify-zsh) - Automatically sends out a notification when a long running task has completed. Works with macOS and linux (if `hterm-notify` is installed).
 - [crystal](https://github.com/veelenga/crystal-zsh) - A plugin for [Crystal](https://github.com/crystal-lang/crystal).
 - [ctrl-z](https://github.com/Zile995/zsh-ctrl-z) - Enhances the default CTRL+Z behavior using [fzf](https://github.com/junegunn/fzf). It allows you to visually browse, resume, or terminate suspended background jobs directly from your terminal prompt.
+- [curl-edit](https://github.com/AndrewHany/zsh-curl-edit) - Automatically open pasted cURL commands in an editor before executing them.
 - [cvideo](https://github.com/aubreypwd/zsh-plugin-cvideo) - Quickly compress video with `ffmpeg`.
 - [cwebp](https://github.com/adi-li/zsh-cwebpb) - Converts common image formats (JPG, PNG, GIF, BMP, TIFF) to WebP format using Google's `cwebp` tool in batch mode.
 - [cycle-fav-dirs](https://github.com/cibinmathew/cycle-fav-dirs) - Cycles through your favourite directories.
@@ -1189,6 +1206,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [eza-ls](https://github.com/birdhackor/zsh-eza-ls-plugin) - Adds aliases allowing [eza](https://github.com/eza-community/eza), to act as a drop-in replacement for `ls` and `tree`.
 - [f-shortcuts](https://github.com/zpm-zsh/f-shortcuts) - Makes a shortcuts toolbar using `F1` to `F12` keys.
 - [fancy-ctrl-z](https://github.com/mdumitru/fancy-ctrl-z) - Broken out version of the version in [oh-my-zsh](http://ohmyz.sh/) so users of other frameworks don't have to import all of [oh-my-zsh](https://ohmyz.sh).
+- [fasd](https://github.com/whjvenyl/fasd) - A command-line productivity booster. Fasd offers quick access to files and directories for POSIX shells. It is inspired by tools like [autojump](https://github.com/joelthelion/autojump), [z](http://github.com/rupa/z) and [v](https://github.com/rupa/v). Fasd keeps track of files and directories you have accessed, so that you can quickly reference them in the command line.
 - [fast-alias-tips](https://github.com/decayofmind/zsh-fast-alias-tips) - Helps remember the aliases you defined and forgot about. Ported from [djui/alias-tips](https://github.com/djui/alias-tips). Active fork of [sei40kr/zsh-fast-alias-tips](https://github.com/sei40kr/zsh-fast-alias-tips).
 - [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting) - Optimized and improved `zsh-users/zsh-syntax-highlighting` – better response times, switchable highlight themes.
 - [fastcache](https://github.com/QuarticCat/zsh-fastcache) - Caches command output to improve shell startup time.
@@ -1488,7 +1506,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [mkarch](https://github.com/0xRZ/mkarch) - ZSH plugin that allows you to create archives using multiple different compression formats.
 - [mkcd](https://github.com/azizoid/zsh-mkcd) - Provides a `mkcd` command, the canonical `mkdir` && `cd` helper.
 - [mkcd](https://github.com/marvinroman/oh-my-zsh-mkcd-plugin) - Allows user to create a directory and if successful, `cd` into it afterward.
-- [mlir](https://github.com/oowekyala/mlir-zsh-plugin) - Adds goodies for [MLIR](https://mlir.llvm.org/) developers including tab completion of `mlir-opt` and colorizing its output.
+- [mlir](https://github.com/oowekyala/mlir-zsh-plugin) - Helpful for [MLIR](https://mlir.llvm.org/) developers. Includes accurate ZSH option completion for `mlir-opt` and other frontends using `MlirMain` (`iree-opt`, etc), syntax highlighting of `mlir-opt` output in your terminal (requires [pygments](https://pygments.org)).
 - [mode-switch.CLI](https://github.com/Gyumeijie/mode-switch.CLI) - A ZSH plugin for switching command line between normal mode and `vi` mode.
 - [monorepo-plugin](https://github.com/zilongqiu/monorepo-zsh-plugin) - ZSH plugin for monorepo management.
 - [monthrename](https://github.com/NotTheDr01ds/zsh-plugin-monthrename) - Renames month names to numbers in filenames.
@@ -1739,6 +1757,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [session-sauce](https://github.com/ChrisPenner/session-sauce) - An [fzf](https://github.com/junegunn/fzf) interface for tmux session creation and management for all your projects.
 - [setenv](https://github.com/kalpakrg/setenv) - Runs a script when you change directories.
 - [setpath](https://github.com/mys721tx/set_path) - Adds some local paths to your `fpath` and `$PATH`.
+- [sf-shortcuts](https://github.com/hggaguilera/sf-shortcuts) - Short, predictable commands for the Salesforce CLI (`sf`), with tab completion for Apex classes, components (aura/lightning) and orgs.
 - [shelf](https://github.com/ecmma/shelf) - Utility which can be used to bookmark and access directly any file using mnemonics.
 - [shell-fns](https://github.com/Hdoc1509/shell-fns) - Includes `git`, `neovim`, `npm`, `pip` extended functionality.
 - [shell-ng](https://github.com/joknarf/shell-ng) - Combines several of [joknarf](https://github.com/joknarf/)'s other plugins - [selector](https://github.com/joknarf/selector), [nerdp](https://github.com/joknarf/nerdp), [redo](https://github.com/joknarf/redo), [seedee](https://github.com/joknarf/seedee) and [complete-ng](https://github.com/joknarf/complete-ng).
@@ -1777,6 +1796,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [sops-crypt](https://github.com/chaosimpact/sops-crypt) - Plugin for Mozilla SOPS that provides one-click encryption and decryption of files in the current directory and subdirectories.
 - [spaceship-ocm](https://github.com/iamkirkbater/spaceship-ocm-plugin) - Queries your OpenShift Cluster Manager (ocm) configuration to show which environment you're connected to. Requires [NerdFont](https://www.nerdfonts.com/font-downloads) in your terminal.
 - [spack](https://github.com/Game4Move78/zsh-spack) - Includes some useful aliases and functions for loading/unloading [Spack](https://github.com/spack/spack)-generated modules. As it makes use of the `module` command it is much more efficient than `spack load`.
+- [SparkleBIOS](https://github.com/reactivepixels/sparklebios) - Draws a retro 1995 PC BIOS boot screen with real system facts and cached health checks when a new ZSH session starts.
 - [spotify-now](https://github.com/ericlikedis/spotify-now) - Shows the track Spotify is playing in your prompt, in a green box with animated equalizer bars. Works on macOS and Linux.
 - [ssh-agent](https://github.com/sdiebolt/zsh-ssh-agent) - Automatically launches `ssh-agent` if it isn't already running.
 - [ssh-connect](https://github.com/gko/ssh-connect) - A simple `ssh` manager.
@@ -1811,6 +1831,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [systemd](https://github.com/le0me55i/zsh-systemd) - Adds many aliases for `systemd`.
 - [t3-shortcuts](https://github.com/murat-yasar/zsh-t3-shortcuts) - Shortcuts for working with TYPO3 projects. Provides fast navigation commands to jump around TYPO3 project directories.
 - [t32](https://github.com/chrissicool/zsh-t32) - Plugin for the Lauterbach Trace32 toolset. It automatically registers fonts and sets all necessary environment variables to run the t32 toolset.
+- [tab-start](https://github.com/arnodirlam/tab-start) - adds starter entries to ZSH completion when you press `TAB` at a blank prompt. Uses [fzf-tab](https://github.com/Aloxaf/fzf-tab) to render those entries and provides grouping, fuzzy search, and selection.
 - [tab-title (p1r473)](https://github.com/p1r473/tab-title/) - Rename [tmux](https://tmux.app) and [screen](https://www.gnu.org/software/screen/manual/screen.html) panes and windows.
 - [tab-title (trystan2k)](https://github.com/trystan2k/zsh-tab-title) - Set the terminal tab title according to current directory or running process. Forked from [termsupport.zsh](https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/termsupport.zsh).
 - [tailf](https://github.com/rummik/zsh-tailf) - Adds `tailf` function with prefixed newlines instead of trailing newlines.
@@ -1851,6 +1872,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [tmux (zpm-zsh)](https://github.com/zpm-zsh/tmux) - Plugin for [tmux](https://tmux.app).
 - [tmux (zsh-contrib)](https://github.com/zsh-contrib/zsh-tmux) - Plugin for [tmux](https://tmux.app). Includes automatic window title updates based on running command, command name display during execution, job reference resolution (fg, %1) to actual command names and automatic title truncation (max 20 characters).
 - [tmux-auto-title](https://github.com/mbenford/zsh-tmux-auto-title) - Automatically sets the title of windows/panes as the current foreground command.
+- [tmux-inside](https://github.com/hgarfer/ohmyzsh-tmux-inside) - A drop-in replacement for the [oh-my-zsh](https://ohmyz.sh/) `tmux` plugin that makes the [tmux](https://tmux.app) aliases work from inside a `tmux` session: instead of trying to nest a session (which `tmux` refuses), they switch to the target session, creating it detached in the current directory if needed.
 - [tmux-rename](https://github.com/sei40kr/zsh-tmux-rename) - Rename [tmux](https://tmux.app) windows automatically.
 - [tmux-sessionizer](https://github.com/nikevsoft/tmux-sessionizer) - [tmux](https://tmux.app) sessionizer as seen on ThePrimeagen.
 - [tmux-simple](https://github.com/TBSliver/zsh-plugin-tmux-simple) - Simple plugin for using [tmux](https://tmux.app) with ZSH.
@@ -1884,6 +1906,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [update-zsh](https://github.com/AndrewHaluza/zsh-update-plugin) - Updates custom [oh-my-zsh](https://ohmyz.sh/) plugins. Only works with the oh-my-zsh framework.
 - [url-highlighter](https://github.com/ascii-soup/zsh-url-highlighter) - A plugin for the ZSH syntax highlighter that turns URLs green if they respond with a "good" status, and red otherwise. Useful for checking URL typos.
 - [usb](https://github.com/NiziL/usb.plugin.zsh) - A tiny plugin to quickly mount and unmount your USB drives.
+- [utm](https://github.com/zsh-contrib/zsh-utm) - Adds a single `utm` command on top of `utmctl`, the command line tool that ships with [UTM](https://mac.getutm.app/), with tab completion for subcommands, virtual machine names and snapshot names, and a --wait that utmctl does not have.
 - [uv-env](https://github.com/matthiasha/zsh-uv-env) - Automatically uses [uv](https://github.com/astral-sh/uv) to activate a virtual environment based on the current directory.
 - [uvenv](https://github.com/vincentto13/uvenv.plugin.zsh) - Extends the functionality of the original [oh-my-zsh](https://ohmyz.sh/) `venv` module.
 - [v](https://github.com/teaVeloper/v) - An editor wrapper around a fast file finder.
@@ -2651,7 +2674,7 @@ These plugins add tab completions without adding extra functions or aliases.
 - [gruvbox (hgaiser)](https://github.com/hgaiser/gruvbox-zsh) - Sets colors from the [gruvbox](https://github.com/morhetz/gruvbox) `vim` plugin.
 - [gruvbox (sbugzu)](https://github.com/sbugzu/gruvbox-zsh) - Based on [agnoster](https://gist.github.com/agnoster/3712874), uses the same colors from the [gruvbox](https://github.com/morhetz/gruvbox) `vim` plugin.
 - [guezwhoz](https://github.com/guesswhozzz/guezwhoz-zshell) - Minimalist, includes `git` status decorations.
-- [gugulenok](https://github.com/gugulen0k/gugulenok/) - Has both a dark and a light mode. Includes decorators for `git` status, time and current directory.
+- [gugulenok](https://github.com/gugulen0k/gugulenok/) - Minimal two-sided prompt that takes its colors from your terminal colorscheme. Shows the current directory on the left and the `git` branch with a dirty marker on the right.
 - [guri](https://github.com/victorfsf/guri) - A Simple and fast Oh-My-Zsh theme, based on [Pure](https://github.com/sindresorhus/pure)'s design.
 - [gus](https://github.com/gusye1234/Gus-zsh-theme/) - Hackable transient theme. Includes decorators for conda, `git` information and current directory.
 - [hackersaurus](https://github.com/bhilburn/hackersaurus) - A theme with `git` status and exit code of last command run decorators embedded in the prompt. Related to [powerlevel9k](https://github.com/bhilburn/powerlevel9k).
@@ -3193,7 +3216,7 @@ These plugins add tab completions without adding extra functions or aliases.
 - [staples](https://github.com/dersam/staples) - Based on [bureau](https://github.com/isqua/bureau), displays `user@host` if connected through SSH.
 - [starboy](https://github.com/prdpx7/Starboy) - A simple theme.
 - [starship (wintermi)](https://github.com/wintermi/zsh-starship) - A simple plugin to use the Starship prompt, along with a powerline theme.
-- [starship](https://starship.rs/) - Minimal, fast, extremely customizable.
+- [starship](https://starship.rs/) - Minimal, fast, extremely customizable. See [starship-studio](https://github.com/felipecm-br/starship-studio) for easier customization.
 - [starship2k](https://github.com/2KAbhishek/starship2k) - Includes powerline support, multiple languages and a multiline prompt. Includes a decorator for `git` status.
 - [statusline](https://github.com/el1t/statusline) - A responsive ZSH theme that provides informational segments when you need them.
 - [steef (danihodovic)](https://github.com/danihodovic/steeef) - Oh-my-zsh steeef theme as a standalone repository. The purpose behind this repo is avoid having a dependency on oh-my-zsh when using the steeef theme. ZSH plugin managers such as Antibody can use the theme without having to use oh-my-zsh.
@@ -3446,6 +3469,7 @@ There is also a more detailed [Zsh Plugin Standard](https://zdharma-continuum.gi
 - [oclif completion generator](https://github.com/MunifTanjim/oclif-plugin-completion) - Generates shell completions for commands lacking them.
 - [oh-plugin](https://github.com/mbergo/oh-plugin) - Helps you install plugins for [oh-my-zsh](https://ohmyz.sh) by typing `oh-plugin install repository_address`.
 - [ohmyzsh-gui](https://github.com/a1024053774/ohmyzsh-gui) - A desktop app for Oh My Zsh plugins, themes, and .zshrc. Every change is previewed, backed up, and syntax-checked with `zsh -n` before Apply. Supports macOS, Windows and Linux.
+- [oops](https://github.com/ysb3996-blip/oops) - Copies the last command and its output to the clipboard as a Markdown code block, with API keys and other secrets masked. Works in ZSH and `bash`. Installed as a Ruby gem (Ruby 3.3 or later).
 - [rust-zsh-plugin-cli](https://github.com/johnstonskj/rust-zsh-plugin-cli) - This tool scaffolds ZSH plugins with best practices built-in, including function tracking for clean unloading, optional alias support, autoloaded functions, and CI/CD workflows for shellcheck and shellspec. Choose from minimal, simple, or complete templates to match your plugin's complexity.
 - [shell-color-prompt-tool](https://github.com/kyletimmermans/shell-color-prompt-tool) - Helps you create a custom prompt for `ZSH` or `bash`.
 - [shellSpec](https://github.com/shellspec/shellspec) - A full-featured BDD unit testing framework for dash, bash, ksh, ZSH and all POSIX shells.

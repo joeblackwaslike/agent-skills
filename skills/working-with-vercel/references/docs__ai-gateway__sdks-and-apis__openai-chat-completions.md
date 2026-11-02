@@ -17,8 +17,8 @@ related:
 summary: Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming, tool calling, and embeddings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ec01cd3ac6173751a58af1432e79aec1c9f5669411384147b1355d79d0ae7125"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d5990692aa89546ac83b25051761c61fc6322325c1a65ebd720dc9e32039600e"
 ---
 
 # OpenAI Chat Completions API with AI Gateway
@@ -38,7 +38,7 @@ AI Gateway provides OpenAI Chat Completions API endpoints, letting you use multi
 - [GPT-6.1 Sol now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-sol-now-available-on-ai-gateway)
 - [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
-- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions.graph.md)
 <!-- /docsgraph:related -->
@@ -328,4 +328,4 @@ The API returns standard HTTP status codes and error responses:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

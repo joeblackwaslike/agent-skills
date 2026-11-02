@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "21f6a373a5d6b97c52aa26c1057f59f83be0fde18f8937fcd0039a7abd7aa575"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3cd09b4e783bab1ba06e500f6a0985434f9a37b8328460ff1018ca9583570e7a"
 ---
 
 # Observability
@@ -28,8 +28,8 @@ Investigate errors and request behavior in your projects with runtime logs and t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 
@@ -132,4 +132,4 @@ Get runtime logs for a project or deployment. Runtime logs include application o
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

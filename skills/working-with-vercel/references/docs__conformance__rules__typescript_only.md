@@ -12,8 +12,8 @@ related:
 summary: Requires that a workspace package may only contain TypeScript files and no JavaScript or JSX files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/typescript_only.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0bdb98305410689fb0543aac99814255cd3bebf19cd501c62c17ebe0fa35848b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c7bae665f55d05891d350ba963b87cb74c87a108770f87ad435a0f8f99c660af"
 ---
 
 # TYPESCRIPT_ONLY
@@ -120,4 +120,4 @@ The default configuration is:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

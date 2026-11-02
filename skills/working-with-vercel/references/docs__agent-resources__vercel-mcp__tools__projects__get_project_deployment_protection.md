@@ -13,8 +13,8 @@ related:
 summary: Use get_project_deployment_protection with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a0a3ea706a833f7ee17a73400ddd751c6b1d3ae475263717701acb4aceab2e0f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3dcfc4e9cb274d96c5e87146e9c9d77ee11a863d84b9b94a78742b17f615fc95"
 ---
 
 # get_project_deployment_protection
@@ -28,10 +28,10 @@ Get the effective password protection, Vercel Authentication, and Trusted IP set
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [update_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_deployment_protection) — Use update_project_deployment_protection with Vercel MCP.
-- [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
 - [update_project_protection_bypass](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_protection_bypass) — Use update_project_protection_bypass with Vercel MCP.
+- [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
 - [Password Protection](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection) — Require visitors to enter a password before they can view your deployments.
-- [get_microfrontends_config_for_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project) — Use get_microfrontends_config_for_project with Vercel MCP.
+- [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection.graph.md)
 <!-- /docsgraph:related -->
@@ -49,4 +49,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

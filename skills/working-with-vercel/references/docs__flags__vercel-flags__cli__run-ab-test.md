@@ -14,8 +14,8 @@ related:
 summary: Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "703695de1acd147d485aeb248757e6a97b6cae83ff301b9129b572227ee5fba1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5cbf88698bfdba94956c99977e221767bd5413947e32ce8bf08e8792772e4257"
 ---
 
 # Running an A/B test
@@ -161,4 +161,4 @@ vercel flags archive new-pricing-layout --yes
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

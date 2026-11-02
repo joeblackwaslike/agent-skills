@@ -14,8 +14,8 @@ related:
 summary: How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued tokens keep verifying.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/key-rotation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "edb248868dc993b1bfb6dd99ffa7ab0b23ce219b757535a7b13046890014435b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "375ff9e7693eeee2e4eb7d75e0f0101aef6784196093bcf110ee852d93bed237"
 ---
 
 # Vercel KMS Key Rotation
@@ -30,10 +30,10 @@ Rotation replaces an issuer's active signing key without changing the issuer ID 
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 - [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 - [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
+- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 
 Full cross-link map for this page: [/docs/kms/concepts/key-rotation.graph.md](/docs/kms/concepts/key-rotation.graph.md)
 <!-- /docsgraph:related -->
@@ -96,4 +96,4 @@ To rotate an external issuer, include the new key material as an `importKey` (a 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

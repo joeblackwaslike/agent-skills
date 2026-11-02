@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/getting-started.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "671fa05ee2947c06db2a8350b25a22ed7284e1b97b6c7e799dd47f4f82b9f720"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0ce9c16bd2309dd389ceaf1b5b7b34cd77c555b436fe9cf70c5b81d7ed201f70"
 ---
 
 # Getting started with Sign in with Vercel
@@ -36,10 +36,11 @@ This guide uses Next.js App Router. You'll create a Sign in with Vercel button t
 - [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
 - [How to implement authentication in Next.js](https://nextjs.org/docs/app/guides/authentication) — Learn how to implement authentication in your Next.js application.
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
-- [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
+- [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/getting-started.graph.md](/docs/sign-in-with-vercel/getting-started.graph.md)
@@ -711,4 +712,4 @@ Add Sign in with Vercel to this Next.js App Router project. First, make sure the
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

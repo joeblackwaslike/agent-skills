@@ -14,8 +14,8 @@ related:
 summary: Create isolated sandbox environments to run builds, tests, and commands safely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/run-commands-in-sandbox.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "aabf7f87980e1cb663fbda62f807d48299be44a01551d74db399586957311826"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "07f86b4618527a80b188d23c2bb0d211ba238606ecad7c92229ff5ca6a75e7cd"
 ---
 
 # Running commands in a Vercel Sandbox
@@ -31,8 +31,8 @@ Use this guide to create isolated sandbox environments for running commands, bui
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
 - [Vercel Sandbox CLI is now available](https://vercel.com/changelog/vercel-sandbox-cli-is-now-available)
+- [The Vercel Sandbox CLI is now more agent-friendly](https://vercel.com/changelog/the-vercel-sandbox-cli-is-now-more-agent-friendly)
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
@@ -57,24 +57,25 @@ sandbox create --name my-sandbox --image vercel/sandbox/node:24 --timeout 1h --p
 # 2. Copy project files into the sandbox (sandbox copy transfers one file at a time)
 tar -czf app.tgz -C ./my-app .
 sandbox copy ./app.tgz my-sandbox:/tmp/app.tgz
-sandbox exec my-sandbox -- sh -c "mkdir -p /app && tar -xzf /tmp/app.tgz -C /app"
+sandbox exec my-sandbox -- sh -c "mkdir -p /tmp/app && tar -xzf /tmp/app.tgz -C /tmp/app"
 
 # 3. Run commands inside the sandbox
-sandbox exec --workdir /app my-sandbox -- npm install
-sandbox exec --workdir /app my-sandbox -- npm run build
-sandbox exec --workdir /app --env NODE_ENV=test my-sandbox -- npm test
+sandbox exec --workdir /tmp/app my-sandbox -- npm install
+sandbox exec --workdir /tmp/app my-sandbox -- npm run build
+sandbox exec --workdir /tmp/app --env NODE_ENV=test my-sandbox -- npm test
 
 # 4. Save the state as a snapshot for reuse
 sandbox snapshot my-sandbox --stop
 
 # 5. Create a new sandbox from the snapshot
-sandbox create --snapshot <snapshot-id> --timeout 30m
+sandbox create --name restored-sandbox --snapshot <snapshot-id> --timeout 30m
 
-# 6. Stop the current session (persistent sandboxes will resume on the next exec)
-sandbox stop my-sandbox
+# 6. Use the restored sandbox, then stop its session
+sandbox exec --workdir /tmp/app restored-sandbox -- npm test
+sandbox stop restored-sandbox
 
-# 7. Or permanently delete it
-sandbox remove my-sandbox
+# 7. Permanently delete both sandboxes when no longer needed
+sandbox remove restored-sandbox my-sandbox
 ```
 
 ## 1. Create a sandbox
@@ -110,7 +111,8 @@ sandbox create --image vercel/sandbox/node:24 --timeout 1h --connect
 The `sandbox copy` command transfers one file at a time. To copy a single file into the sandbox:
 
 ```bash filename="terminal"
-sandbox copy ./my-app/package.json <name>:/app/package.json
+sandbox exec <name> -- mkdir -p /tmp/app
+sandbox copy ./my-app/package.json <name>:/tmp/app/package.json
 ```
 
 To move a whole directory, archive it first and extract it inside the sandbox:
@@ -118,13 +120,13 @@ To move a whole directory, archive it first and extract it inside the sandbox:
 ```bash filename="terminal"
 tar -czf app.tgz -C ./my-app .
 sandbox copy ./app.tgz <name>:/tmp/app.tgz
-sandbox exec <name> -- sh -c "mkdir -p /app && tar -xzf /tmp/app.tgz -C /app"
+sandbox exec <name> -- sh -c "mkdir -p /tmp/app && tar -xzf /tmp/app.tgz -C /tmp/app"
 ```
 
 You can also copy files out of the sandbox back to your local machine:
 
 ```bash filename="terminal"
-sandbox copy <name>:/app/output/results.json ./results.json
+sandbox copy <name>:/tmp/app/output/results.json ./results.json
 ```
 
 ## 3. Run commands
@@ -132,17 +134,17 @@ sandbox copy <name>:/app/output/results.json ./results.json
 Execute commands inside the sandbox. Use `--workdir` to set the working directory:
 
 ```bash filename="terminal"
-sandbox exec --workdir /app <name> -- npm install
+sandbox exec --workdir /tmp/app <name> -- npm install
 ```
 
 ```bash filename="terminal"
-sandbox exec --workdir /app <name> -- npm run build
+sandbox exec --workdir /tmp/app <name> -- npm run build
 ```
 
 To pass environment variables to the command:
 
 ```bash filename="terminal"
-sandbox exec --workdir /app --env NODE_ENV=test <name> -- npm test
+sandbox exec --workdir /tmp/app --env NODE_ENV=test <name> -- npm test
 ```
 
 For commands that need elevated permissions:
@@ -182,7 +184,7 @@ sandbox snapshots list
 Recreate an environment from a saved snapshot:
 
 ```bash filename="terminal"
-sandbox create --snapshot <snapshot-id> --timeout 30m
+sandbox create --name restored-sandbox --snapshot <snapshot-id> --timeout 30m
 ```
 
 This starts a new sandbox with all the files, dependencies, and configuration from the snapshot already in place.
@@ -257,4 +259,4 @@ sandbox snapshots delete <snapshot-id>
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

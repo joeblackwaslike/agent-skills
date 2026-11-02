@@ -8,6 +8,7 @@ type: integration
 prerequisites:
   []
 related:
+  - /docs/ai-gateway/sdks-and-apis/ai-sdk-python
   - /docs/chat-sdk
   - /docs/chat-sdk/quickstart
   - /docs/chat-sdk/integrations/ai-gateway
@@ -15,8 +16,8 @@ related:
 summary: Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bf7667fb556003c107bd5c67703191594f7d54ed6fd9abfed0dce5510d6c4bab"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "037d406be26bce100a1b0b44fe13c4c1acef6e55d536bcae15a20faada1fb696"
 ---
 
 # AI SDK
@@ -31,15 +32,14 @@ Build TypeScript agents and AI applications with one API for models, tools, stru
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Building AI-powered Article Embeddings with Chroma and GPT-4](https://vercel.com/kb/guide/ai-powered-article-embeddings-with-chroma-and-gpt-4) — This guide provides step-by-step instructions on using Chroma and GPT-4 to build AI-powered article embeddings for tasks
 - [Upload provider files with AI SDK](https://vercel.com/kb/guide/ai-sdk-file-uploads) — Use uploadFile in the AI SDK to upload an image, PDF, or document to a provider, get a ProviderReference, and reference
 - [Add MCP Apps to your AI SDK application](https://vercel.com/kb/guide/ai-sdk-mcp-apps) — Build an MCP Apps host with the AI SDK using @ai-sdk/mcp and @ai-sdk/react to filter model-visible tools, read ui:// res
-- [Pass state to AI SDK tools and agents with context](https://vercel.com/kb/guide/ai-sdk-runtime-and-tool-context) — Use runtimeContext, toolsContext, and contextSchema in the AI SDK to pass tenant data, credentials, and other server-sid
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
-- [AI SDK by Vercel](https://ai-sdk.dev/docs/introduction) — The AI SDK is the TypeScript toolkit for building AI applications and agents with React, Next.js, Vue, Svelte, Node.js,
-- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
-- [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
+- [Vercel Ship AI 2025 recap](https://vercel.com/blog/ship-ai-2025-recap)
+- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
@@ -220,6 +220,14 @@ See the [AI SDK Getting Started](https://ai-sdk.dev/docs/getting-started) guide 
 
 Follow [Build AI agents with AI Gateway and AI SDK](/kb/guide/ai-gateway-and-ai-sdk) to set up authentication, stream responses, and add tools and model fallbacks.
 
+### Build agents in Python
+
+Follow [Build AI agents in Python with the AI SDK](/kb/guide/python-and-ai-sdk) to stream model responses, validate structured output, and run tools in an agent loop. The guide builds a FastAPI support service and deploys it to Vercel. See [AI SDK for Python with AI Gateway](/docs/ai-gateway/sdks-and-apis/ai-sdk-python) for model routing and authentication.
+
+## Choose an agent implementation
+
+Use `ToolLoopAgent` for a model-and-tool loop in your app, `WorkflowAgent` for durable execution, or eve for a framework with built-in sessions and channels. See [Choosing between eve, AI SDK agents, and `WorkflowAgent`](/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) for the tradeoffs and how to move between them.
+
 ## Bring an agent to chat platforms
 
 Use [Chat SDK](/docs/chat-sdk) to handle messages and interactions in platforms such as Slack, and AI SDK to generate responses and call tools. Start with the [Chat SDK quickstart](/docs/chat-sdk/quickstart), then follow [Chat SDK with AI Gateway](/docs/chat-sdk/integrations/ai-gateway) to stream model responses using conversation history.
@@ -252,6 +260,10 @@ uncertain decisions.
 
 Start with an AI SDK template to build a chatbot or route form submissions with Jev:
 
+## Build a software factory
+
+Use the [AI SDK software factory guide](/docs/agent-resources/software-factory/ai-sdk) to connect GitHub investigation tools, Vercel Sandbox execution, and reviewed draft pull requests. Add Vercel Workflows when runs need to survive interruptions or wait for approval.
+
 ## More resources
 
 **AI SDK documentation**: Read the official AI SDK reference and guides. [Learn more →](https://ai-sdk.dev/docs)
@@ -268,4 +280,4 @@ Start with an AI SDK template to build a chatbot or route form submissions with 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

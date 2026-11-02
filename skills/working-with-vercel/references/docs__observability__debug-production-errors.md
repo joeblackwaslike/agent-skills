@@ -16,8 +16,8 @@ related:
 summary: Find, fix, and verify production 500 errors using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/debug-production-errors.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fa0b94bebea5a1504e2d025d09d565c88a35f79db4637802b26c35ba68e9d80e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f890998c2973360882f1cac5280485c18b2a28ce16a7ed3f502b1dd820ba3883"
 ---
 
 # Debugging production 500 errors
@@ -32,7 +32,6 @@ Use this guide to debug production 500 errors. You'll identify the problem, trac
 
 - [How to determine which Vercel Deployment introduced an issue?](https://vercel.com/kb/guide/how-to-determine-which-vercel-deployment-introduced-an-issue) — Process to quickly determine when a deployment issue was introduced using the Vercel CLI
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
@@ -262,4 +261,4 @@ vercel rollback status
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

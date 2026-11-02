@@ -16,8 +16,8 @@ related:
 summary: Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the agent instead of losing its...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/harnesses.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "523498fa5b971a70afeb975260143084c2de40eb6b36421fa18023ff3aada1ff"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c4b042762fb193cb97426ba60082e7840232629e7f4cbeb37740406a68abe68e"
 ---
 
 # Agent Harnesses You Can Run Durably on Vercel
@@ -31,9 +31,9 @@ Each guide gets one harness running durably on Vercel: the agent, a chat route, 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
-- [AI SDK Harnesses](https://ai-sdk.dev/providers/ai-sdk-harnesses) — Learn how to use AI SDK harness adapters.
+- [Program Claude Code, Codex, Pi and other agent harnesses with AI SDK](https://vercel.com/changelog/program-agent-harnesses-with-ai-sdk)
 - [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
-- [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
+- [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 
 Full cross-link map for this page: [/docs/agent-harnesses/harnesses.graph.md](/docs/agent-harnesses/harnesses.graph.md)
@@ -63,4 +63,4 @@ These pages apply to every `durable-harness` guide:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

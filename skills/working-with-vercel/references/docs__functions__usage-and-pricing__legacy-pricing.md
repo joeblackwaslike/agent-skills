@@ -17,8 +17,8 @@ related:
 summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f2fac39ac07b88b3aa6e00b9ce84643cc6a73ab7c56fa63a9fc6e0db419f2c40"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5de91c7f30fd92943ffc37a66f496dfe0665bfa8d3a3ee1b1505d41b6505fa18"
 ---
 
 # Legacy Usage & Pricing for Functions
@@ -29,7 +29,7 @@ sha256: "f2fac39ac07b88b3aa6e00b9ce84643cc6a73ab7c56fa63a9fc6e0db419f2c40"
 > for active CPU time and provisioned memory time for more cost-effective and
 > transparent pricing.
 
-Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/manage-and-optimize-usage#execution), which is the [memory allocated](/docs/functions/configuring-functions/memory) for each Function in GB, multiplied by the time in hours they were running. For example, a function [configured](/docs/functions/configuring-functions/memory) to use 3GB of memory that executes for 1 second, would be billed at 3 GB-s, requiring 1,200 executions to reach a full GB-Hr.
+Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/manage-and-optimize-usage#functions), which is the [memory allocated](/docs/functions/configuring-functions/memory) for each Function in GB, multiplied by the time in hours they were running. For example, a function [configured](/docs/functions/configuring-functions/memory) to use 3GB of memory that executes for 1 second, would be billed at 3 GB-s, requiring 1,200 executions to reach a full GB-Hr.
 
 
 <!-- docsgraph:related -->
@@ -38,13 +38,13 @@ Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/man
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
-- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
-- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
-- [What is Vercel's policy regarding load testing deployments?](https://vercel.com/kb/guide/what-s-vercel-s-policy-regarding-load-testing-deployments) — Learn about Vercel's policies regarding load tests.
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
+- [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
+- [What is Vercel's policy regarding load testing deployments?](https://vercel.com/kb/guide/what-s-vercel-s-policy-regarding-load-testing-deployments) — Learn about Vercel's policies regarding load tests.
+- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Legacy Metrics](https://vercel.com/docs/pricing/legacy) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
 Full cross-link map for this page: [/docs/functions/usage-and-pricing/legacy-pricing.graph.md](/docs/functions/usage-and-pricing/legacy-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -86,7 +86,7 @@ To unpause your account, you have two main options:
   1. [Create a Pro team account](/docs/accounts#creating-a-team)
   2. Add a valid credit card to this account. Open **Settings** in the sidebar, then select [**Billing**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling\&title=Go+to+Billing) and **Payment Method**
 
-Once set up, a transfer modal will appear, prompting you to [transfer your previous Hobby projects](/docs/projects#transferring-a-project) to this new team. After transferring, you can continue with your projects as usual.
+Once set up, a transfer modal will appear, prompting you to [transfer your previous Hobby projects](/docs/projects/transferring-projects) to this new team. After transferring, you can continue with your projects as usual.
 
 ### Pro
 
@@ -100,7 +100,7 @@ Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spe
 
 Enterprise agreements provide custom usage and pricing for Vercel Functions, including:
 
-- Custom [execution units](/docs/fluid-compute#pricing)
+- Custom [execution units](/docs/fluid-compute#pricing-and-usage)
 - Increased [maximum duration](/docs/functions/configuring-functions/duration) up to 800 seconds
 - Multi-region deployments
 - [Vercel Function failover](/docs/functions/configuring-functions/region#automatic-failover)
@@ -179,4 +179,4 @@ While this is not a chargeable metric, it will cause a `503: FUNCTION_THROTTLED`
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

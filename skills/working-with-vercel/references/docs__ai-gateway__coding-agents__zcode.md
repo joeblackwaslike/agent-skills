@@ -15,8 +15,8 @@ related:
 summary: Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/zcode.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7cee78b4eca1b6f9adc4ff59a706e3d6d3b88df5e6fdf6fbcd8796d8e9fb6d23"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0286490b63a481f7864beb77845687f0a271880016109ee9ce0e475ed0cc6f6b"
 ---
 
 # ZCode with AI Gateway
@@ -32,7 +32,7 @@ sha256: "7cee78b4eca1b6f9adc4ff59a706e3d6d3b88df5e6fdf6fbcd8796d8e9fb6d23"
 - [Zed with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zed) — Connect Zed to AI Gateway with the Vercel CLI or its built-in Vercel AI Gateway provider.
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Qwen Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/qwen) — Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
+- [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/zcode.graph.md](/docs/ai-gateway/coding-agents/zcode.graph.md)
@@ -111,4 +111,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

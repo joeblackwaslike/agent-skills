@@ -12,8 +12,8 @@ related:
 summary: Ensures that the exported Next.js page component and its transitive dependencies are not asynchronous, as that blocks the rendering of the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_async_page.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4cf8bd9442b135c966eec7452b0f453a2886b17a237efd3c0d13ddbe664af65e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7d396b8a19c3c71c329f505eb2f067d8a9713626a69265fdb51d93850142c85a"
 ---
 
 # NEXTJS_NO_ASYNC_PAGE
@@ -93,4 +93,4 @@ export default async function Page() {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

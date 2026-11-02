@@ -16,8 +16,8 @@ related:
 summary: Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the vercel dev CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dev.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3f28347260e63a112432cc31ebbdb1febb1e0e585a92952e889cc359e768b32d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1030353cdc08b0a62da2142349daacc904eb9a23ea1df49078206f81ff224506"
 ---
 
 # vercel dev
@@ -32,11 +32,12 @@ The `vercel dev` command is used to replicate the Vercel deployment environment 
 
 - [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
 - [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
+- [Introducing `vercel dev`: Serverless, on localhost](https://vercel.com/blog/vercel-dev)
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
+- [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 
 Full cross-link map for this page: [/docs/cli/dev.graph.md](/docs/cli/dev.graph.md)
 <!-- /docsgraph:related -->
@@ -50,7 +51,7 @@ If the [Development Command](/docs/builds/configure-a-build#development-command)
 
 If you're using a framework and your framework's [Development Command](/docs/builds/configure-a-build#development-command) already provides all the features you need, we do not recommend using `vercel dev`.
 
-For example, [Next.js](/docs/frameworks/full-stack/nextjs)'s Development Command (`next dev`) provides native support for Functions, [redirects](/docs/routing/redirects#configuration-redirects), rewrites, headers and more.
+For example, [Next.js](/docs/frameworks/full-stack/nextjs)'s Development Command (`next dev`) provides native support for Functions, [redirects](/docs/routing/redirects#implementing-redirects), rewrites, headers and more.
 
 ## Usage
 
@@ -112,4 +113,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

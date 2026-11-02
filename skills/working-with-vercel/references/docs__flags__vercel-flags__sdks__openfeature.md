@@ -15,8 +15,8 @@ related:
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "66c607e704262efa8b5c9814a014f8488b1ad4735f4671a31cda2608cb763a46"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "35b9431f00b9b7b29b57f0df527c66972038b05638cc8317a7ac63d029d05aa3"
 ---
 
 # Using OpenFeature with Vercel Flags
@@ -32,10 +32,9 @@ sha256: "66c607e704262efa8b5c9814a014f8488b1ad4735f4671a31cda2608cb763a46"
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [OpenFeature](https://flags-sdk.dev/docs/providers/openfeature)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js)
 - [Flags SDK now supports OpenFeature](https://vercel.com/changelog/flags-sdk-now-supports-openfeature)
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
@@ -204,4 +203,4 @@ export async function GET(request: Request) {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

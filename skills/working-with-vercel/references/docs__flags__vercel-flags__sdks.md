@@ -16,8 +16,8 @@ related:
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "63be98cbde0db7e100262e467694d7fac9f630ca7f71f6c6d0e1f7688c2af3fd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0d176947caa2fa1a9bf04e9da3d360529c07baade309228d06d05a087c6aff95"
 ---
 
 # SDKs
@@ -32,8 +32,8 @@ There are multiple ways to use Vercel Flags, depending on your framework and how
 
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
@@ -101,4 +101,4 @@ Set the separate `FLAGS_SECRET` environment variable when you use Flags Explorer
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel curl CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "687bbf7b447b989cb9f03c003648ac0bd310acb7d8385650cea5cc18d2814299"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "25fbc816a13c403b743b6374139cb5fc302d17b0505fac75d603d636f44ad478"
 ---
 
 # vercel curl
@@ -37,7 +37,7 @@ The `vercel curl` command works like `curl`, but automatically handles deploymen
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/cli/curl.graph.md](/docs/cli/curl.graph.md)
 <!-- /docsgraph:related -->
@@ -305,4 +305,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

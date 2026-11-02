@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2ae0ad6ce24c2ab329cc577c67880a86f3dd8d5b89793f002440dbeb740e147c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2024c5c3eab54dd6deb9ee26d9e551c18cf078584f1caaa6d360f97e7252a785"
 ---
 
 # Configuring regions for Vercel Functions
@@ -185,4 +185,4 @@ Region failover is supported with Secure Compute. See [Region Failover](/docs/ne
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

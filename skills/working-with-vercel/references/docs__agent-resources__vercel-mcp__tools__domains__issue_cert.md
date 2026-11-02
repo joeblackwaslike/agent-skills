@@ -13,8 +13,8 @@ related:
 summary: Use issue_cert with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/issue_cert.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "468946375f5c87e092ed85b1defef4cec1e4287619574e82d4b9f3a4b37bd076"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "89e1bf2e69dbd1c3ba62efc30c3c11b8dd2ad8076799c1d117818d4221cd1bfe"
 ---
 
 # issue_cert
@@ -30,8 +30,8 @@ Issue a new cert.
 - [Issue a new cert](https://vercel.com/docs/rest-api/certs/issue-a-new-cert) — POST /v8/certs — Issue a new cert
 - [get_cert_by_id](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_cert_by_id) — Use get_cert_by_id with Vercel MCP.
 - [list_certs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_certs) — Use list_certs with Vercel MCP.
-- [Upload a cert](https://vercel.com/docs/rest-api/certs/upload-a-cert) — PUT /v8/certs — Upload a cert
 - [Get cert by id](https://vercel.com/docs/rest-api/certs/get-cert-by-id) — GET /v8/certs/{id} — Get cert by id
+- [Upload a cert](https://vercel.com/docs/rest-api/certs/upload-a-cert) — PUT /v8/certs — Upload a cert
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/issue_cert.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/issue_cert.graph.md)
 <!-- /docsgraph:related -->
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

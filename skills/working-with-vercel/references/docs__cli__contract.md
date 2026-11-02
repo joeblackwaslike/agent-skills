@@ -12,8 +12,8 @@ related:
 summary: Learn how to view contract commitment information for your Vercel account using the vercel contract CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/contract.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "48c79a5b0c44c511c37c90353a1c9597c1ac4222e4ebea44af0ec1315a00cab2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6d33474fc265f65a0e92a92dd84fdde6656d7db4d5d61d30a819dc14db40a71a"
 ---
 
 # vercel contract
@@ -27,10 +27,10 @@ The `vercel contract` command displays contract commitment information for your 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [list_contract_commitments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/list_contract_commitments) — Use list_contract_commitments with Vercel MCP.
-- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 - [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [List FOCUS contract commitments](https://vercel.com/docs/rest-api/billing/list-focus-contract-commitments) — GET /v1/billing/contract-commitments — Returns commitment allocations per contract period in FOCUS v1.3 JSONL format for
 
 Full cross-link map for this page: [/docs/cli/contract.graph.md](/docs/cli/contract.graph.md)
 <!-- /docsgraph:related -->
@@ -101,4 +101,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

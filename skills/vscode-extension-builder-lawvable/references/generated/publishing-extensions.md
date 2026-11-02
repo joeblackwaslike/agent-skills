@@ -1,8 +1,8 @@
 ---
 title: "Publishing Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/publishing-extension"
-fetched_at: "2026-10-26T09:46:27.214Z"
-sha256: "887b7c9e1ead8fee6871b56d5eb57dc95c0584413572830283a7ce6621cb3d58"
+fetched_at: "2026-11-02T12:01:44.873Z"
+sha256: "df003f4f89c2b7e9633af846cca6ae94374477095b5530662d1c53767076368f"
 ---
 
 # Publishing Extensions
@@ -108,13 +108,101 @@ Visual Studio Code uses [Azure DevOps](https://azure.microsoft.com/services/devo
  
 
  Important
- On December 1, 2026, global Personal Access Tokens (PATs) in Azure DevOps are retired. To keep publishing extensions, use [secure automated publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#secure-automated-publishing-to-visual-studio-marketplace) with Microsoft Entra ID instead of PATs. For more information, see [Retirement of global Personal Access Tokens in Azure DevOps](https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/).
+ On December 1, 2026, global Personal Access Tokens (PATs) in Azure DevOps are retired. To keep publishing extensions, use [secure automated publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#secure-automated-publishing-to-visual-studio-marketplace) with federated identity instead of PATs. For more information, see [Retirement of global Personal Access Tokens in Azure DevOps](https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/).
 
 ### Secure automated publishing to Visual Studio Marketplace
 
-We recommend that extension publishing use [Microsoft Entra ID–based authentication](https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/entra?view=azure-devops) with **workload identity federation and managed identities**. This approach eliminates long-lived secrets such as Personal Access Tokens (PATs) and enables secure, automated publishing pipelines.
+We recommend that extension publishing use federated identity to publish
+extensions without storing long-lived secrets such as Personal Access Tokens
+(PATs).
 
-This approach strengthens the overall security posture by removing reliance on stored credentials, simplifies operations through native integration with Azure Pipelines and Entra ID, scales effectively across environments, and aligns with modern identity and access management standards required for enterprise compliance. For more information, see [Reduce PAT usage](https://devblogs.microsoft.com/devops/reducing-pat-usage-across-azure-devops/).
+CI/CD provider
+Secure publishing method
+
+GitHub Actions
+[Publish with GitHub Actions and Trusted Publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publish-with-github-actions-and-trusted-publishing).
+
+Azure Pipelines
+[Publish from Azure Pipelines with Microsoft Entra ID.](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publish-from-azure-pipelines-with-microsoft-entra-id)
+
+Other CI/CD providers
+Marketplace Trusted Publishing isn't supported.
+
+Marketplace Trusted Publishing doesn't currently support other OIDC providers.
+Support for additional providers might be added in the future.
+
+Both options remove stored publishing credentials and simplify credential
+management. For more information, see
+[Reduce PAT usage](https://devblogs.microsoft.com/devops/reducing-pat-usage-across-azure-devops/).
+
+#### Publish with GitHub Actions and Trusted Publishing
+
+Trusted Publishing uses OpenID Connect (OIDC) to publish from GitHub Actions
+without storing a PAT as a repository secret.
+
+First, create a Trusted Publishing policy for the workflow:
+
+- Sign in to the
+[Visual Studio Marketplace publisher management page](https://marketplace.visualstudio.com/manage).
+
+- Open the publisher that owns your extension.
+
+- Select **Trusted Publishing**.
+
+- Expand **Create**, and enter the policy details:
+
+**Policy name**: A descriptive name, such as `Release workflow`.
+
+- **Repository owner**: The exact GitHub organization or user login that
+owns the repository, such as `contoso`.
+
+- **Repository**: The repository name without the owner, such as
+`sample-extension`.
+
+- **Workflow**: The workflow filename under `.github/workflows`, such as
+`publish.yml`.
+
+- **Environment**: If the workflow uses a GitHub environment, enter its
+exact name, such as `production`. Otherwise, leave this field empty.
+
+- Select **Create**.
+
+ 
+
+ 
+
+ Note
+ For a private repository, run the configured workflow within 48 hours after
+creating the policy. The first successful token exchange permanently
+activates the policy.
+
+Next, grant the publishing job permission to request an OIDC token and publish
+with `vsce`:
+
+
+```
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx @vscode/vsce publish --oidc
+```
+
+
+The Marketplace credential expires after 15 minutes. Each GitHub OIDC token can
+be exchanged only once. For more information, see
+[Visual Studio Marketplace Trusted Publishing](https://aka.ms/vsm/trustedpublishing) and
+[Trusted Publishing in the vscode-vsce repository](https://github.com/microsoft/vscode-vsce#trusted-publishing).
+
+#### Publish from Azure Pipelines with Microsoft Entra ID
 
 - 
 Create a Service Connection (Azure DevOps)
@@ -221,51 +309,6 @@ Sample YAML tasks. Replace with the extension directory path.
       vsce publish --azure-credential
 ```
 
-
-`vsce` can also publish extensions using [Personal Access Tokens](https://learn.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
-
- 
-
- 
-
- Important
- Global PATs in Azure DevOps are retired on December 1, 2026. We recommend that you use [secure automated publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#secure-automated-publishing-to-visual-studio-marketplace) with Microsoft Entra ID instead of PATs. For more information, see [Retirement of global Personal Access Tokens in Azure DevOps](https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/).
-
-### Get a Personal Access Token
-
-You can create a Personal Access Token via the Azure DevOps portal. To create a Personal Access Token:
-
-- 
-If you don't have an Azure DevOps organization yet, follow the steps in the [Create an organization](https://learn.microsoft.com/azure/devops/organizations/accounts/create-organization) article.
-
-- 
-Go to the [Azure DevOps portal](https://go.microsoft.com/fwlink/?LinkId=307137), and select your organization.
-
-- 
-Open the User settings dropdown menu next to your profile image and select **Personal access tokens**:
-
-- 
-On the **Personal Access Tokens** page, select **New Token**:
-
-- 
-In the Create a new personal access token modal, select the following details for the token:
-
-Name: any name you want for the token
-
-- Organization: **All accessible organizations**
-
-- Expiration (optional): set the desired expiration date for the token
-
-- Scopes: **Custom defined**:
-
-click **Show all scopes** link below the **Scopes** section
-
-- in the Scopes list, scroll to **Marketplace** and select **Manage** scope
-
-- 
-Click **Create**.
-
-You'll be presented with your newly created Personal Access Token. **Copy** it to the safe location, you'll need it to [create a publisher](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher).
 
 ### Create a publisher
 
@@ -762,6 +805,53 @@ vsce publish --packagePath PATH_TO_WIN32X64_VSIX
 
 Managing multiple platform-specific VSIXs might get overwhelming, so we suggest automating your extension's build process with [continuous integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration) (CI) tooling. For example, you can use [GitHub Actions](https://github.com/features/actions) to build your extensions. Our [platform-specific extension sample](https://github.com/microsoft/vscode-platform-specific-sample) can be used as a starting point for learning: its [workflow](https://github.com/microsoft/vscode-platform-specific-sample/blob/main/.github/workflows/ci.yml) enables the common scenario of using platform-specific extension support to distribute native node modules as dependencies across all supported VS Code targets.
 
+### Publish an extension using Personal Access Tokens (Not Recommended)
+
+ 
+
+ 
+
+ Important
+ Global PATs in Azure DevOps are retired on December 1, 2026. We recommend that you use [secure automated publishing](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#secure-automated-publishing-to-visual-studio-marketplace) with Microsoft Entra ID instead of PATs. For more information, see [Retirement of global Personal Access Tokens in Azure DevOps](https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/).
+
+#### Get a Personal Access Token
+
+You can create a Personal Access Token (PAT) through the Azure DevOps portal. For more information, see [Use Personal Access Tokens](https://learn.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
+
+To create a PAT, follow these steps:
+
+- 
+If you don't have an Azure DevOps organization yet, follow the steps in the [Create an organization](https://learn.microsoft.com/azure/devops/organizations/accounts/create-organization) article.
+
+- 
+Go to the [Azure DevOps portal](https://go.microsoft.com/fwlink/?LinkId=307137), and select your organization.
+
+- 
+Open the User settings dropdown menu next to your profile image and select **Personal access tokens**:
+
+- 
+On the **Personal Access Tokens** page, select **New Token**:
+
+- 
+In the Create a new personal access token modal, select the following details for the token:
+
+Name: any name you want for the token
+
+- Organization: **All accessible organizations**
+
+- Expiration (optional): set the desired expiration date for the token
+
+- Scopes: **Custom defined**:
+
+click **Show all scopes** link below the **Scopes** section
+
+- in the Scopes list, scroll to **Marketplace** and select **Manage** scope
+
+- 
+Click **Create**.
+
+You'll be presented with your newly created Personal Access Token. **Copy** it to the safe location, you'll need it to [create a publisher](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#create-a-publisher).
+
 ## Next steps
 
 - [Extension Marketplace](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace) - Learn more about VS Code's public Extension Marketplace.
@@ -812,4 +902,4 @@ You can either use npm or yarn v1 to manage your extension's dependencies.
 You can reach out to the VS Marketplace support team by signing in at [Manage Publishers & Extensions](https://marketplace.visualstudio.com/manage) and clicking on the ‘Contact Microsoft’ link at the top right.
 
  
- 10/21/2026
+ 10/28/2026

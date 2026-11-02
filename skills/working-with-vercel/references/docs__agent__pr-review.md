@@ -16,8 +16,8 @@ related:
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5a90e2c6a5b5c71968fa9f384e949974be03502061e52cb8953baf65e41ffa5f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "dc299349afb6d1dccf92bbc38adc63df4ee95dca4ce7226d07d7e5cd15ee960d"
 ---
 
 # Code Review
@@ -42,7 +42,8 @@ Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validate
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
 - [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta)
-- [Installation](https://vercel.com/docs/agent/installation) — Let AI automatically install Web Analytics and Speed Insights in your app
+- [Introducing Vercel CI](https://vercel.com/blog/introducing-vercel-ci)
+- [Build a Software Factory with the AI SDK](https://vercel.com/docs/agent-resources/software-factory/ai-sdk) — Compose investigation, sandbox execution, review, and GitHub publication stages with the AI SDK on Vercel.
 
 Full cross-link map for this page: [/docs/agent/pr-review.graph.md](/docs/agent/pr-review.graph.md)
 <!-- /docsgraph:related -->
@@ -52,7 +53,7 @@ It generates patches and runs them in [secure sandboxes](/docs/sandbox) with you
 ## How to set up Code Review
 
 To enable code reviews for your [repositories](/docs/git#supported-git-providers), navigate to the
-[**Agent**](/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) of the dashboard.
+[**Agent**](/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) of the dashboard.
 
 1. Click **Enable** to turn on Vercel Agent.
 2. Under **Repositories**, choose which repositories to review:
@@ -163,4 +164,4 @@ Code Review never trains on customer code if your Vercel team's [data preference
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

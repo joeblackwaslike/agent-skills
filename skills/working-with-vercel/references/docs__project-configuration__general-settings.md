@@ -16,8 +16,8 @@ related:
 summary: Configure basic settings for your Vercel project, including the project name, build and development settings, root directory, Node.js version,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/general-settings.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4914935fd92d2c916d5a594da8b1013630f5e28226d95eb8fbb6adee39b77888"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6d4aad62e4f70df8fba38e4293b7cca49b968e8609f51cf0510f5cd97854368a"
 ---
 
 # General settings
@@ -38,8 +38,8 @@ Project names can be up to 100 characters long and must be lowercase. They can i
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
+- [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 
 Full cross-link map for this page: [/docs/project-configuration/general-settings.graph.md](/docs/project-configuration/general-settings.graph.md)
 <!-- /docsgraph:related -->
@@ -92,4 +92,4 @@ The Vercel Toolbar is a tool that assists you in iterating and developing your p
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

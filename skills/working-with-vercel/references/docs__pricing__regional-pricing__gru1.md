@@ -17,8 +17,8 @@ related:
 summary: Vercel pricing for the São Paulo, Brazil (gru1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/regional-pricing/gru1.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "aec52d3636a3265dfbf7a6a4fce0c5aad5fc5524d2ed421e0781c053878881e7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6ff11fc4d1d4d9eea73ae6c0ffc8d867216a78f73284123e69bdd2f4978d8065"
 ---
 
 # São Paulo, Brazil (gru1) pricing
@@ -33,9 +33,9 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 - [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
-- [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
-- [Stockholm, Sweden \\(arn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/arn1) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
+- [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
+- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1) — Vercel pricing for the Singapore \\(sin1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/gru1.graph.md](/docs/pricing/regional-pricing/gru1.graph.md)
 <!-- /docsgraph:related -->
@@ -55,8 +55,8 @@ The **On-demand (Billing Cycle)** column shows the rate for each resource in thi
 | [CDN Requests](/docs/manage-cdn-usage#cdn-requests) | $3.20 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $6.40 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.64 per 1,000,000 Read Units |
-| [Runtime Cache Writes](/docs/caching/runtime-cache) | $6.40 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/caching/runtime-cache) | $0.64 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/caching/runtime-cache#pricing) | $6.40 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/caching/runtime-cache#pricing) | $0.64 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.41 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.96 per 1,000,000 Operations |
 | [CDN Requests - Additional CPU Duration](/docs/manage-cdn-usage#cdn-request-cpu-duration) | $0.48 per 1 Hour |
@@ -84,4 +84,4 @@ Learn more about the different regions available on Vercel in the [regions](/doc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

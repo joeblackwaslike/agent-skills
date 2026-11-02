@@ -17,8 +17,8 @@ related:
 summary: Generate and stream text responses using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/text.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5a2682523eddff204c8f409f791104680de20206a4e5eb7110656391c7b9c006"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ff5dce53af54f47abd69bf8faf4d87b684ca32a20a79d012c566b7e47693dfc8"
 ---
 
 # AI Gateway Text Generation Quickstart
@@ -102,4 +102,4 @@ node index.mts
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

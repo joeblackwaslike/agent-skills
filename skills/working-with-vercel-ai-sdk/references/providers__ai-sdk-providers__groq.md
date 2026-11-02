@@ -4,8 +4,8 @@ description: Learn how to use Groq with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/groq"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "2584a89da014336687f3c4a597a3a3b9760f59cd2410fe2c602a006a8d04d4af"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "517faabed10d5f8271df1f42fc22f0782b0cf47892513d3c6579d5c3738a05dc"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -96,10 +96,13 @@ You can use the following optional settings to customize the Groq provider insta
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.groq.com/openai/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `GROQ_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 

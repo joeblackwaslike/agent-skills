@@ -17,8 +17,8 @@ related:
 summary: Ask typed questions about shared state and get back structured choices, scores, and boolean probabilities through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/decision.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "172096207862333adb61465d4a7e18e9a4b69b48f7ee742c60072518f05d4285"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "45bb983e38b0d8544bf5c38e01c21d9186cf4e64259e1c1c62404ba3aed8e8ec"
 ---
 
 # Decision
@@ -37,8 +37,9 @@ Ask typed questions about a piece of shared state and get structured answers bac
 - [Liquid AI's d1-ultra now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
 - [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
-- [Automatic Model Selection](https://eve.dev/docs/guides/decide) — Choose agent models automatically or ask typed questions in your tools and application code.
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
+- [Automatic Model Selection](https://eve.dev/docs/guides/decide) — Choose agent models automatically or ask typed questions in your tools and application code.
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/decision.graph.md](/docs/ai-gateway/modalities/decision.graph.md)
@@ -311,7 +312,7 @@ Decision requests work with [BYOK](/docs/ai-gateway/authentication-and-byok/byok
 
 ### Provider options
 
-`/v1/evaluate` accepts the same `providerOptions` as other AI Gateway endpoints, so you can require zero data retention or restrict which providers may serve the request:
+`/v1/evaluate` accepts the same [routing and compliance options](/docs/ai-gateway/models-and-providers/provider-options) as other AI Gateway endpoints. For example, you can require zero data retention for the request:
 
 ```json
 {
@@ -319,7 +320,7 @@ Decision requests work with [BYOK](/docs/ai-gateway/authentication-and-byok/byok
   "state": "...",
   "questions": { "refund": { "type": "boolean", "instructions": "..." } },
   "providerOptions": {
-    "gateway": { "zeroDataRetention": true, "only": ["typesafe-ai"] }
+    "gateway": { "zeroDataRetention": true }
   }
 }
 ```
@@ -374,4 +375,4 @@ Test both the model's answer and the action your application takes with it. Use 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use get_auth_user with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6e229eeb0d16f4ae18f0d4acf8a819803e7209d43c65e4ee058fc40554300e1d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d927af1878794b0d743c9621ae3d5ddd0e62896ce02e8e8242c230bde24562c0"
 ---
 
 # get_auth_user
@@ -28,8 +28,8 @@ Get the User.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
-- [Get the User](https://vercel.com/docs/rest-api/user/get-the-user) — GET /v2/user — Retrieves information related to the currently authenticated User.
 - [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
+- [Get the User](https://vercel.com/docs/rest-api/user/get-the-user) — GET /v2/user — Retrieves information related to the currently authenticated User.
 - [web_fetch_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url) — Use web_fetch_vercel_url with Vercel MCP.
 - [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
 
@@ -46,4 +46,4 @@ This tool takes no parameters.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

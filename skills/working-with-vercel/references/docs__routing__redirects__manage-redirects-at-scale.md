@@ -16,8 +16,8 @@ related:
 summary: Add, bulk upload, version, and roll back project-level redirects using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/manage-redirects-at-scale.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2fcc9b3f125f95fbb9e9bdd1ae5de91ed20a23c4f80be3dfe079ef391ef58109"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f1fd827e3ec3228d3a536387290fab8e249274e89b6dd6b73d3d40423e4273c5"
 ---
 
 # Managing redirects at scale
@@ -33,11 +33,11 @@ Use this guide to manage project-level redirects from the CLI. You'll add indivi
 - [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
-- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Getting Started](https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
+- [Bulk Redirects](https://vercel.com/docs/routing/redirects/bulk-redirects) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
-- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
+- [Routing](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing) — Vercel MCP tools for routing.
 
 Full cross-link map for this page: [/docs/routing/redirects/manage-redirects-at-scale.graph.md](/docs/routing/redirects/manage-redirects-at-scale.graph.md)
 <!-- /docsgraph:related -->
@@ -200,4 +200,4 @@ This immediately reverts the live redirects to the selected version.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

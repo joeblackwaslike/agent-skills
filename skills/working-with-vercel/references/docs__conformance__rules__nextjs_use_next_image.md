@@ -12,8 +12,8 @@ related:
 summary: Requires that next/image is used for all images.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_next_image.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "98f876c1ba6443062b8873bc19c3429ea01bf2cba4a817bec2c23d2057998d7d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3ed3d348a0362815635f97e8f2e41495b339ceea8e1960270401a2c4448edd9f"
 ---
 
 # NEXTJS_USE_NEXT_IMAGE
@@ -98,4 +98,4 @@ costs.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

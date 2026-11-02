@@ -4,8 +4,8 @@ description: Learn how to use Replicate with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/replicate.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "eb89bf9e28dbbecd8d22ae05e086bdc4364452490e4d9e45bda73e8710497a8f"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "d9a772ad26caf299651bceb6fd03e3ca33b0426c5a0cdc9dcefeb172090719f5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -90,7 +90,11 @@ You can use the following optional settings to customize the Replicate provider 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.replicate.com/v1`.
 
-- **apiToken** *string*
+- **apiToken** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API token that is being sent using the `Authorization` header. It defaults to
   the `REPLICATE_API_TOKEN` environment variable.

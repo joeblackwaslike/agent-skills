@@ -12,17 +12,17 @@ related:
   - /docs/chat-sdk/quickstart
   - /docs/chat-sdk/integrations/ai-gateway
   - /docs/chat-sdk/integrations/connect
-  - /docs/chat-sdk/integrations/sandbox
-summary: Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Sandbox, and Vercel Workflows.
+  - /docs/chat-sdk/integrations/passport
+summary: Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Daemons.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/integrations.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ee170088cf57b80e6af6507b30cbc511089a7c32eb9a487c8a6bc1c0b70b16bc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8fb73c305d5041ce00e5e15ef8126aa5ddffbdd5376a975feb3877f6c201189d"
 ---
 
 # Chat SDK Integrations
 
-Extend your [Chat SDK](/docs/chat-sdk) bot with model responses, managed credentials, isolated code execution, and durable tasks. Start with a working bot from the [quickstart](/docs/chat-sdk/quickstart), then choose the integration for your task.
+Extend your [Chat SDK](/docs/chat-sdk) bot with model responses, managed credentials, verified user identities, isolated code execution, durable tasks, and background workers. Start with a working bot from the [quickstart](/docs/chat-sdk/quickstart), then choose the integration for your task.
 
 
 <!-- docsgraph:related -->
@@ -46,8 +46,10 @@ Full cross-link map for this page: [/docs/chat-sdk/integrations.graph.md](/docs/
 | --- | --- | --- |
 | [AI Gateway](/docs/chat-sdk/integrations/ai-gateway) | Generate and stream model responses through one endpoint. | Answer questions using conversation history. |
 | [Vercel Connect](/docs/chat-sdk/integrations/connect) | Resolve platform credentials and receive verified events. | Connect a Slack bot without managing its token. |
+| [Vercel Passport](/docs/chat-sdk/integrations/passport) | Key per-user history by a verified Passport identity. | Recall a signed-in browser user's earlier conversations. |
 | [Vercel Sandbox](/docs/chat-sdk/integrations/sandbox) | Run model-generated commands in an isolated environment. | Analyze an attached CSV with the AI SDK Bash tool. |
 | [Vercel Workflows](/docs/chat-sdk/integrations/workflows) | Pause durable tasks until someone makes a decision. | Approve or deny an announcement from a Slack card. |
+| [Vercel Daemons](/docs/chat-sdk/integrations/daemons) | Continuously process queued chat jobs. | Process a request in a worker and reply to its Slack thread. |
 
 ## Combine integrations in one bot
 
@@ -67,4 +69,4 @@ Keep a persistent [state adapter](/docs/chat-sdk/adapters#state-adapters) for su
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

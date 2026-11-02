@@ -8,7 +8,7 @@ type: how-to
 prerequisites:
   - /docs/agent-harnesses
 related:
-  - /docs/eve/agent-runs
+  - /docs/agent-runs
   - /docs/agent-harnesses/pi
   - /docs/agent-harnesses/fx
   - /docs/agent-harnesses/opencode
@@ -16,15 +16,15 @@ related:
 summary: See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and control which content it...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/observability.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8926e55e20b0c592fbdfe74c7f17f5baecf790d7f447396d8a179005a18de96a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5a410b0f9507b2592aff31c3e80308e074ca6a8299c88f11540b03ebf7fb127d"
 ---
 
 # Observability for Durable Agent Harnesses
 
 > Agent Runs are available in Beta on all plans
 
-Agent Runs shows each session of a durable agent in the Vercel dashboard, with its turns, every model and tool call, timing, and token usage. `durable-harness` sends it a trace with `agentRuns()`, the same integration [eve uses](/docs/eve/agent-runs). This page applies to the guides for [Pi](/docs/agent-harnesses/pi), with either variant, [fx](/docs/agent-harnesses/fx), [OpenCode](/docs/agent-harnesses/opencode), [Claude Code](/docs/agent-harnesses/claude-code), and [Codex](/docs/agent-harnesses/codex).
+Agent Runs shows each session of a durable agent in the Vercel dashboard, with its turns, every model and tool call, timing, and token usage. `durable-harness` sends it a trace with `agentRuns()`, the same integration [eve uses](/docs/agent-runs). This page applies to the guides for [Pi](/docs/agent-harnesses/pi), with either variant, [fx](/docs/agent-harnesses/fx), [OpenCode](/docs/agent-harnesses/opencode), [Claude Code](/docs/agent-harnesses/claude-code), and [Codex](/docs/agent-harnesses/codex).
 
 
 <!-- docsgraph:related -->
@@ -35,12 +35,11 @@ Agent Runs shows each session of a durable agent in the Vercel dashboard, with i
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
-- [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [Tools, Files, and Documents in Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/tools) — What tools do when a durable agent harness resumes after a crash, where its files live, and how to keep typed state with
+- [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
 - [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
-- [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
-- [Observability](https://vercel.com/docs/eve/observability) — Configure process-wide OpenTelemetry settings, third-party destinations, filtering, and built-in exports for eve agents.
+- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
 Full cross-link map for this page: [/docs/agent-harnesses/observability.graph.md](/docs/agent-harnesses/observability.graph.md)
 <!-- /docsgraph:related -->
@@ -135,6 +134,23 @@ Each session is one trace, across every function that drives it:
 - Model calls carry token usage, including cached input when the provider reports it, and cost when the provider supplies it.
 - A turn that resumes after a crash reads its finished calls back from the log, so they don't appear twice. A function that finds nothing to do adds no spans.
 
+## Inspect runs with Vercel CLI
+
+Use [`vercel agent-runs`](/docs/cli/agent-runs) to investigate your durable agent's sessions from a terminal or coding agent with shell access. Find projects with activity, then list runs and inspect a session:
+
+```bash filename="terminal"
+vercel agent-runs projects --scope my-team
+vercel agent-runs list --scope my-team --project my-app
+vercel agent-runs inspect run_1234567890 --scope my-team --project my-app
+vercel agent-runs trace run_1234567890 --scope my-team --project my-app --json --max-field-length 0
+```
+
+Replace the example team and project with your own, and use a run ID from the list response. Commands query production by default; add `--environment preview` to inspect preview sessions.
+
+`inspect` shows metadata, lifecycle events, usage, and subagents. `trace` retrieves the recorded conversation. The example uses `--json --max-field-length 0` to preserve returned field values without CLI truncation. The default Markdown view shortens long content. See the [CLI reference](/docs/cli/agent-runs) for time filters and pagination.
+
+The CLI can only return content Agent Runs collected. [Tracing must be enabled](#turn-on-tracing), and your [capture settings](#control-what-agent-runs-receives) determine whether messages and tool inputs and outputs are available. The [Agent Runs limitations](#limitations) below also apply when investigating sessions through the CLI.
+
 ## Control what Agent Runs receives
 
 A session's audience decides what its trace records. A public session's trace records its title and its model and tool inputs and outputs. A private or unknown session's trace records only metadata, and the content it leaves out is never recorded, saved, or exported. A session's audience comes from:
@@ -182,7 +198,7 @@ To send the same traces to another OpenTelemetry destination, pass its span proc
 
 ## More resources
 
-- [Agent Runs for eve](/docs/eve/agent-runs)
+- [Agent Runs for eve](/docs/agent-runs)
 - [Tracing](/docs/tracing)
 - [Vercel Observability](/docs/observability)
 - [`durable-harness` on GitHub](https://github.com/vercel-labs/durable-harness)
@@ -193,4 +209,4 @@ To send the same traces to another OpenTelemetry destination, pass its span proc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Use update_bulk_redirect_version with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "877902682fb45fce248464b81dac2b548ff9855df2c9c25ec5096bbc2450b7b4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ebe781009fdd0e7312e41b929ba0b37fe201f0c6088626080d6be8e56dc0d9d7"
 ---
 
 # update_bulk_redirect_version
@@ -31,7 +31,7 @@ Promote a staging version to production or restore a previous production version
 - [update_route_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions) — Use update_route_versions with Vercel MCP.
 - [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
 - [restore_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/restore_redirects) — Use restore_redirects with Vercel MCP.
-- [update_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project) — Use update_project with Vercel MCP.
+- [Promote a staging version to production or restore a previous production version.](https://vercel.com/docs/rest-api/bulk-redirects/promote-a-staging-version-to-production-or-restore-a-previous-production-version) — POST /v1/bulk-redirects/versions — Update a version by promoting staging to production or restoring a previous productio
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version.graph.md)
 <!-- /docsgraph:related -->
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Add and configure a custom domain for your Vercel project using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/set-up-custom-domain.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "18cb4417bddb7b091f455f6e02436a5b7a2f12562a9015bf20cbde7e8e63b2cb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4295a061218b5f94ed293b2cc525f5eb095f2567a4315e28478479a1bf353b5d"
 ---
 
 # Setting up a custom domain
@@ -36,8 +36,8 @@ Use this guide to add a custom domain to your Vercel project from the CLI, confi
 - [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
 - [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
-- [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
 - [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 
 Full cross-link map for this page: [/docs/domains/set-up-custom-domain.graph.md](/docs/domains/set-up-custom-domain.graph.md)
@@ -211,4 +211,4 @@ For a subdomain, use its full hostname in both verification commands. Use the re
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

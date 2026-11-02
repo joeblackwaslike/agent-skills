@@ -13,8 +13,8 @@ related:
 summary: "Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger new deployments when called."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy-hooks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e49eda3534f041f8f06ab2cf240d824dec709d0b18f5ef83cce34f13002048db"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d88a8b40ba6d11c34d73a456debdd32c0ec9b2d326c1e3e66e1788eda8f16ce4"
 ---
 
 # vercel deploy-hooks
@@ -168,4 +168,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -4,8 +4,8 @@ description: Monitor your AI SDK applications with Laminar
 url: "https://ai-sdk.dev/providers/observability/laminar"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/observability/laminar.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "45b6e5852c5155c703be042daf58b22b0d044aa84f54d422be06bb8205044840"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "243a7ffa382e3875203ef76e0065d4bfd820018b8c18dbe1e4367d1ae777f00e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -354,24 +354,40 @@ const result = await observe(
 
 In Laminar, metadata is set on the trace level. Metadata contains key-value pairs and can be used to filter traces.
 
+Per-call context goes in `runtimeContext`. The AI SDK only sends a `runtimeContext` key to telemetry when you opt it in with `telemetry.includeRuntimeContext`, so list every key you want in Laminar there.
+
 ```javascript
 const { text } = await generateText({
   model: openai('gpt-6-luna'),
   prompt: `Write a poem about Laminar flow.`,
+  runtimeContext: {
+    'my-key': 'my-value',
+    'another-key': 'another-value',
+  },
   telemetry: {
-    metadata: {
-      'my-key': 'my-value',
-      'another-key': 'another-value',
+    includeRuntimeContext: {
+      'my-key': true,
+      'another-key': true,
     },
   },
 });
 ```
 
-This is converted to Laminar's [metadata](https://laminar.sh/docs/tracing/structure/metadata) and stored in the trace.
+Opted-in keys are converted to Laminar's [metadata](https://laminar.sh/docs/tracing/structure/metadata) and stored in the trace. Keys you leave out of `includeRuntimeContext` stay in your application and never reach Laminar.
+
+Reading
+
+`runtimeContext`
+
+requires
+
+`@lmnr-ai/lmnr`
+
+0.8.49 or later.
 
 ### Tags
 
-One of the reserved metadata keys is `tags`. It can be used to add [tags](https://laminar.sh/docs/tracing/structure/tags) to the span.
+One of the reserved `runtimeContext` keys is `tags`. It can be used to add [tags](https://laminar.sh/docs/tracing/structure/tags) to the span. It must be an array of strings.
 
 Tags can subsequently be used to filter traces in Laminar.
 
@@ -379,9 +395,12 @@ Tags can subsequently be used to filter traces in Laminar.
 const { text } = await generateText({
   model: openai('gpt-6-luna'),
   prompt: `Write a poem about Laminar flow.`,
+  runtimeContext: {
+    tags: ['fallback-model', 'api-handler'],
+  },
   telemetry: {
-    metadata: {
-      tags: ['fallback-model', 'api-handler'],
+    includeRuntimeContext: {
+      tags: true,
     },
   },
 });
@@ -390,16 +409,20 @@ const { text } = await generateText({
 ### Session ID and User ID
 
 Traces in Laminar can be grouped into [sessions](https://laminar.sh/docs/tracing/structure/sessions) or by [user ID](https://laminar.sh/docs/tracing/structure/user-id). These are also
-reserved metadata keys.
+reserved `runtimeContext` keys.
 
 ```javascript
 const { text } = await generateText({
   model: openai('gpt-6-luna'),
   prompt: `Write a poem about Laminar flow.`,
+  runtimeContext: {
+    sessionId: 'session-123',
+    userId: 'user-123',
+  },
   telemetry: {
-    metadata: {
-      sessionId: 'session-123',
-      userId: 'user-123',
+    includeRuntimeContext: {
+      sessionId: true,
+      userId: true,
     },
   },
 });

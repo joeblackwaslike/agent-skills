@@ -14,13 +14,13 @@ related:
 summary: Customize which repositories get reviewed and track your review metrics and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review/usage.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0e1387561d94f06644bdabb45ec0b028ce84a8c504148ad5760a679fb0a758a3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c29444486148d17bcc3ae4a3e2eaee17dda861e435e2e08779ff745c9d2c787a"
 ---
 
 # Managing Code Reviews
 
-Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review), you can customize settings and monitor performance on the [**Agent** page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) in the dashboard. This is your central hub for managing which repositories get reviewed, tracking costs, and analyzing how reviews are performing.
+Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review), you can customize settings and monitor performance on the [**Agent** page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the dashboard. This is your central hub for managing which repositories get reviewed, tracking costs, and analyzing how reviews are performing.
 
 
 <!-- docsgraph:related -->
@@ -31,14 +31,14 @@ Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
-- [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
 - [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
+- [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
 - [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
+- [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Installation](https://vercel.com/docs/agent/installation) — Let AI automatically install Web Analytics and Speed Insights in your app
-- [Integrations for Comments](https://vercel.com/docs/comments/integrations) — Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 
 Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/agent/pr-review/usage.graph.md)
 <!-- /docsgraph:related -->
@@ -49,7 +49,7 @@ You might want to control which repositories receive automatic reviews, especial
 
 To choose which repositories get reviewed:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
+1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
 2. Click the **…** button, and then select **Settings** to view the Vercel Agent settings.
 3. Under **Repositories**, choose which repositories to review:
    - **All repositories** (default): Reviews every repository connected to your Vercel projects
@@ -65,7 +65,7 @@ By default, Code Review skips draft pull requests since they're often work-in-pr
 
 To enable reviews on draft PRs:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
+1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
 2. Click the **…** button, and then select **Settings** to view the Vercel Agent settings.
 3. Under **Review Draft PRs**, select **Review draft PRs**.
 4. Click **Save** to apply your changes.
@@ -84,7 +84,7 @@ The **Agent** page also shows you the total number of suggestions over a given p
 
 To view suggestions:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
+1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
 2. Check the **Suggestions** column for each review.
 
 A high number of suggestions might indicate complex changes or code that needs more attention. A low number might mean your code is already following best practices, or the changes are straightforward.
@@ -115,7 +115,7 @@ You can export all your review data to CSV for deeper analysis, reporting, or tr
 
 To export your data:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
+1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
 2. Click the **Export** button.
 3. Save the CSV file to your computer.
 
@@ -132,7 +132,7 @@ You can stop automatic reviews from the **Agent** page. Manual reviews and expli
 
 To turn off automatic Code Reviews:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
+1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
 2. Click the **…** button, and then select **Turn off automatic Code Reviews…**.
 3. Confirm the action in the prompt that appears.
 
@@ -144,4 +144,4 @@ Once disabled, Code Review won't run automatically on new pull requests. You can
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

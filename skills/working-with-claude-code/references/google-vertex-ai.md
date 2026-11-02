@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/google-vertex-ai.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "11debaf216c0cc14e189f13829f07531338b69af438d2e358387609831ca1cd8"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "37fd6673fef06afbfd79de8b051bee766b78e8470c2f06e527483cbf65b3e92c"
 ---
 
 > ## Documentation Index
@@ -172,6 +172,8 @@ Claude Code uses these default models when no pinning variables are set:
 | Primary model | `claude-opus-5-5` |
 | Small/fast model | `claude-sonnet-4-5@20250929` |
 
+Before v2.1.280, the primary model on Google Cloud's Agent Platform defaulted to Opus 5 and the `opus` alias resolved to Opus 5 from v2.1.219.
+
 Background tasks such as session title generation use the small/fast model, normally a Haiku-class model. On Google Cloud's Agent Platform, Claude Code uses the default Sonnet model for background tasks because Haiku may not be enabled in every project or region. Two selections change which model carries them:
 
 * When you select a primary model with `--model`, `ANTHROPIC_MODEL`, or the `model` setting, background tasks use that model. When Claude Code starts the session on the model you set with [`ANTHROPIC_DEFAULT_MODEL`](https://code.claude.com/docs/en/model-config#set-a-default-model-for-new-sessions), background tasks use that model too. Setting `ANTHROPIC_DEFAULT_OPUS_MODEL` without `ANTHROPIC_DEFAULT_SONNET_MODEL` also counts as a selection, because the built-in Sonnet model may not be enabled in a project that steers its own Opus.
@@ -180,8 +182,6 @@ Background tasks such as session title generation use the small/fast model, norm
 > [!WARNING]
 >
 > Opus models have a higher per-token price than Sonnet models, so if you don't pin a primary model, you're billed at the Opus rate. To use Sonnet 4.5 as the primary model, set `ANTHROPIC_MODEL` to its full model ID. A deployment that steers the default with `ANTHROPIC_DEFAULT_SONNET_MODEL` and doesn't set `ANTHROPIC_DEFAULT_OPUS_MODEL` keeps its steered Sonnet model as the default.
-
-Before v2.1.280, the primary model on Google Cloud's Agent Platform defaulted to Opus 5 and the `opus` alias resolved to Opus 5 from v2.1.219. On v2.1.207 through v2.1.218, the primary model on Google Cloud's Agent Platform defaulted to Opus 4.8 and the `opus` alias resolved to Opus 4.8.
 
 To customize models further:
 

@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e5efed5dc01426fad27e51629fd44b9687d4181c652327a614ddc3528ceb1fbe"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e0d332f382214ce2acf78e6e4fabeee7c00599c0f0b45afc0be6e009c123fdc5"
 ---
 
 # AI Gateway Image Generation with AI SDK
@@ -32,8 +32,8 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 - [MAI-Image-2.6 and MAI-Image-2.6-Flash now available on AI Gateway](https://vercel.com/changelog/mai-image-2-6-and-mai-image-2-6-flash-now-available-on-ai-gateway)
 - [Nano Banana 2.1 now available on AI Gateway](https://vercel.com/changelog/nano-banana-2-1-now-available-on-ai-gateway)
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md](/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -489,4 +489,4 @@ For more information on generating images with the AI SDK, see the [AI SDK docum
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

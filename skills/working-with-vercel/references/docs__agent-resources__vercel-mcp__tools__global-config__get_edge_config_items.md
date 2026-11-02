@@ -13,8 +13,8 @@ related:
 summary: Use get_edge_config_items with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_items.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a50e4f0e9d47bf2f46069568e5cdf758e4cf32342bbde390b251c1d73e0306c4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "30d0582edcb7f254a8efa52c507b6aba9346251ffb7f287746407d7646707cc9"
 ---
 
 # get_edge_config_items
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

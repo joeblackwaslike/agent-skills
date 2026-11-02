@@ -13,8 +13,8 @@ related:
 summary: Use get_alias with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/get_alias.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e22307e5620fd55dea65aa1ba29c6533197bf15520594f7c454a88ae161087b6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9f79396ad59f088a2781f1eec942faad3fdaa87a7e50b683b63a95e104847d1b"
 ---
 
 # get_alias
@@ -31,7 +31,7 @@ Retrieves an Alias for the given host name or alias ID.
 - [assign_alias](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/assign_alias) — Use assign_alias with Vercel MCP.
 - [list_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_aliases) — Use list_aliases with Vercel MCP.
 - [Delete an Alias](https://vercel.com/docs/rest-api/aliases/delete-an-alias) — DELETE /v2/aliases/{aliasId} — Delete an Alias with the specified ID.
-- [list_deployment_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_deployment_aliases) — Use list_deployment_aliases with Vercel MCP.
+- [list_promote_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/list_promote_aliases) — Use list_promote_aliases with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/get_alias.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/get_alias.graph.md)
 <!-- /docsgraph:related -->
@@ -54,4 +54,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

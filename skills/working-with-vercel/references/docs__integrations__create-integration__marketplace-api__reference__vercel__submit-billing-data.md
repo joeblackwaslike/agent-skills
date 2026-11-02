@@ -3,7 +3,7 @@ title: submit-billing-data
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/submit-billing-data
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-billing-data"
-last_updated: 2026-10-26
+last_updated: 2026-11-02
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about submit-billing-data on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-billing-data.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d095317cf11f8a305c7acb07f6df9ea210eb7fb84895abb6ccd3369ee0f87b24"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c2d6526bdb5b0c7891bedd6d6c5ae2dc8f08826c7191f74ebc06efe5dcf58e71"
 ---
 
 # Submit Billing Data
@@ -42,7 +42,7 @@ Sends the billing and usage data. The partner should do this at least once a day
 ```json
 {
   "timestamp": "string" // required // Server time of your integration, used to determine the most recent data for race conditions & updates. Only the latest usage data for a given day, week, and month will be kept.,
-  "eod": "string" // required // End of Day, the UTC datetime for when the end of the billing/usage day is in UTC time. This tells us which day the usage data is for, and also allows for your "end of day" to be different from UTC 00:00:00. eod must be within the period dates, and cannot be older than 24h earlier from our server's current time.,
+  "eod": "string" // required // End of Day, the UTC datetime for when the end of the billing/usage day is in UTC time. This tells us which day the usage data is for, and also allows for your "end of day" to be different from UTC 00:00:00. eod must be within the period dates, and cannot be older than 30 days earlier from our server's current time.,
   "period": { // required
     "start": "string" // required,
     "end": "string" // required
@@ -106,4 +106,4 @@ Success
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content seamlessly using DatoCMS API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/dato-cms.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8167f53465b7e43514904d9066200750219251779cd5211648de18f5d5d28588"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0d57ad993779ce4263b41c9e5fb0d2de75df8e8388e51820d2a6d9166ad8f5fd"
 ---
 
 # Vercel DatoCMS Integration
@@ -33,8 +33,8 @@ DatoCMS is a headless content management system designed for creating and managi
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Edit Mode](https://vercel.com/docs/edit-mode) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
-- [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
 - [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
+- [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
 
 Full cross-link map for this page: [/docs/integrations/cms/dato-cms.graph.md](/docs/integrations/cms/dato-cms.graph.md)
 <!-- /docsgraph:related -->
@@ -92,4 +92,4 @@ You don't need any additional configuration or code changes on the page to use t
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

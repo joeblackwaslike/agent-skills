@@ -14,8 +14,8 @@ related:
 summary: Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-checks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "06387a25c1a6e8e5b6323ab7a978ac310827d50fc363f65afa9b06d2015e5569"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "00e2799c87f1622bb0b68715462ea2e841680763c956f98fa0e49a86a91b68ae"
 ---
 
 # Deployment Checks
@@ -179,4 +179,4 @@ GitHub and GitHub Actions have edge cases with status reporting. These behaviors
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

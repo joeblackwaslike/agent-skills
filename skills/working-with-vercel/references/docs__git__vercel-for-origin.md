@@ -15,8 +15,8 @@ related:
 summary: Connect Origin to Vercel to create automatic Preview and Production Deployments from your repositories.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-origin.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cf8ce74ae9e9934e652572a7eb24c79f4ffc2567559c3cab9bdaec6d1234709e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1400baad30fc65b0ed6bee5a14694a5f2060eafc086b949f0b44262d69f72390"
 ---
 
 # Deploying Origin Repositories with Vercel
@@ -65,4 +65,4 @@ To disconnect an Origin repository from a Vercel project, open the project's [**
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "74784860aa277c64dcc68acf6d8a701881b8e95fb5294600e5a0463fa79b046c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5649f914c572f40e6d6e06edc0a4c2effcd76741507fc87fd4b63157806c459f"
 ---
 
 # Segments
@@ -39,7 +39,7 @@ Segments are reusable groups of users for targeting feature flags. Instead of re
 - [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Get a segment](https://vercel.com/docs/rest-api/feature-flags/get-a-segment) — GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Retrieve a feature flag segment by ID or s
-- [Delete a segment](https://vercel.com/docs/rest-api/feature-flags/delete-a-segment) — DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Delete a feature flag segment.
+- [Update a segment](https://vercel.com/docs/rest-api/feature-flags/update-a-segment) — PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Update an existing feature flag segment.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/segments.graph.md](/docs/flags/vercel-flags/dashboard/segments.graph.md)
 <!-- /docsgraph:related -->
@@ -153,4 +153,4 @@ If a segment is referenced by a flag or segment:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

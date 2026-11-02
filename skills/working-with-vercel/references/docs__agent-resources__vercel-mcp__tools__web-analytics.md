@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for web analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0b4826f6c6b0deb81eea226ac6181fb88da361af779710f932ddfc72e823a157"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "abd2d88e821e060ce7c49e1fcc6cb3ec14545370ff08b16c221c7bcccf3bc6f5"
 ---
 
 # Web Analytics
@@ -132,4 +132,4 @@ Query Web Analytics for a Vercel project. Count mode returns total visitors and 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

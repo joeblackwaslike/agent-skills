@@ -16,8 +16,8 @@ related:
 summary: ISR serves cached static pages while regenerating content in the background. Vercel\
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5d9356edaba6e30072169daba1ee624546ad3b9b2480a0111a288f22820a9a1e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a078cea917f22da0adbdc3e415a2fd9626619f1be74f9c27834826cf8d9d13c1"
 ---
 
 # Incremental Static Regeneration (ISR)
@@ -232,4 +232,4 @@ For example, if you trigger on-demand revalidation for `example-domain.com/examp
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

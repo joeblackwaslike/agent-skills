@@ -16,8 +16,8 @@ related:
 summary: Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/getting-started.md"
-fetched_at: "2026-10-26T09:55:26.604Z"
-sha256: "d3cfeed5231430493de12a7591ede7003774425120fa83ade3742c65ecb5a02e"
+fetched_at: "2026-11-02T12:08:33.177Z"
+sha256: "da34d833924b8410c6f0432a05b4ceeaa359b390f8478344b0ea07fbb7d8e3d8"
 ---
 
 # Make Your First Vercel API Request
@@ -35,7 +35,7 @@ Use a Vercel access token to call the Vercel REST API with `curl`, then make the
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
 - [List project members](https://vercel.com/docs/rest-api/projectmembers/list-project-members) — GET /v1/projects/{idOrName}/members — Lists all members of a project.
-- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
+- [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
 
 Full cross-link map for this page: [/docs/rest-api/getting-started.graph.md](/docs/rest-api/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -189,4 +189,4 @@ You authenticated with a Bearer token, called the read-only `GET /v10/projects` 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -15,8 +15,8 @@ related:
 summary: An error occurred in the application when matching too many conditional routes. You cannot have more than 5 \
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/too_many_forks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cb493ac26f22ab8fe8ff62b028a5c23c6d985abb7b17853cd66339e19bde666b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "791b35aeb42644ce43a91ad4e54284394fb8a487941cd8b15d074a6a7863d0bf"
 ---
 
 # TOO_MANY_FORKS
@@ -43,4 +43,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

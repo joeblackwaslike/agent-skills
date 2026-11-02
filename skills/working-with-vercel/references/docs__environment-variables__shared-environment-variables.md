@@ -14,8 +14,8 @@ related:
 summary: Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can link to multiple projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/shared-environment-variables.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "131adffc70f209a1e1247079706e44822f52c2e9da69d0329a3ccbe27ff32b28"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f6b8b208b5662d56d5cfe383fea58edc26179e2b8f6d6eb89db900510d7457b8"
 ---
 
 # Shared environment variables
@@ -143,4 +143,4 @@ There are two ways to remove a Shared Environment Variable from a project:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

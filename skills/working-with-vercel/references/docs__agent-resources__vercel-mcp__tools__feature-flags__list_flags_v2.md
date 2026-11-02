@@ -13,8 +13,8 @@ related:
 summary: Use list_flags_v2 with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7b3d4eb9a303ab64f6b45900e58c8cf54b27a9a56857ad823c990e1aadcc019e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d0b8956381de58b40ee250021f9133299adf2ae609aef4c6cac363f27f612836"
 ---
 
 # list_flags_v2
@@ -58,4 +58,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

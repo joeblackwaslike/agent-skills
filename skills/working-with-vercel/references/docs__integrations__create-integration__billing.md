@@ -17,8 +17,8 @@ related:
 summary: Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/billing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "df9f36afdcf5cafc90bef8d6529634f21801804a0b9547bd4af7553862840556"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e3315bbedbd31bbc400917a7366353cd1c671096a87115d90d813a12588d73a7"
 ---
 
 # Manage Billing and Refunds for Integrations
@@ -35,7 +35,7 @@ When a Vercel user installs your native integration, you manage billing through 
 - [Submit Invoice](https://vercel.com/docs/rest-api/marketplace/submit-invoice) — POST /v1/installations/{integrationConfigurationId}/billing/invoices — This endpoint allows the partner to submit an inv
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Get Invoice](https://vercel.com/docs/rest-api/marketplace/get-invoice) — GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId} — Get Invoice details and status for a g
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 
 Full cross-link map for this page: [/docs/integrations/create-integration/billing.graph.md](/docs/integrations/create-integration/billing.graph.md)
 <!-- /docsgraph:related -->
@@ -341,4 +341,4 @@ Only Vercel users with **Owner** or **Billing** roles can view invoices for your
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: "Vercel couldn't complete OpenID Connect discovery for the token issuer configured as a Trusted Source."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/trusted_sources_oidc_discovery_failed.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d7495157ecf2e19df349e881d31ebcb8d8dd00297ec6bcc7ad3e8036468d3a59"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a17a80e549a40ce1b6f9d52c952191fa5f78fdaeed3b29383cd5fa552b3d6a3b"
 ---
 
 # TRUSTED_SOURCES_OIDC_DISCOVERY_FAILED
@@ -46,4 +46,4 @@ For more details on configuring custom issuers, see the [Trusted Sources documen
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

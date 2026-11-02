@@ -13,8 +13,8 @@ related:
 summary: Learn about the project level roles and their permissions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles/project-level-roles.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cad665294d1788712f4fa5bd46def1608775e8a3863044e47dd80612fbe1f9e4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1159eb56e88dc89ef22983390331daf8460d08471b1ab2f26b4a28a8abe681af"
 ---
 
 # Project Level Roles
@@ -33,6 +33,7 @@ Project level roles are assigned to a team member on a project level. This means
 - [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
 - [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers)
 - [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams)
+- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans)
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
@@ -61,4 +62,4 @@ See our [Access roles docs](/docs/rbac/access-roles) for a more comprehensive br
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

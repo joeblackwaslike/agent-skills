@@ -16,8 +16,8 @@ related:
 summary: "The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, realtime voice, embeddings,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1a7cb92d38deddc18371a3dae88d678cacbd9e15e8361f3351f63d034c1b40da"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "279fa226749f83246cf4ef778a0eb78a1a2dde8e11ab7121eb0a112ce13246c2"
 ---
 
 # AI Gateway Model Modalities
@@ -30,12 +30,13 @@ Modalities are the kinds of input and output models work with. Through AI Gatewa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
-- [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
+- [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities.graph.md](/docs/ai-gateway/modalities.graph.md)
 <!-- /docsgraph:related -->
@@ -88,11 +89,10 @@ See the [Text Generation docs](/docs/ai-gateway/modalities/text-generation) for 
 Generate images using AI models through a single API. Requests route to the best available provider, with authentication and response formatting handled automatically.
 
 ```typescript
-import { gateway } from '@ai-sdk/gateway';
 import { generateImage } from 'ai';
 
 const { image } = await generateImage({
-  model: gateway.imageModel('openai/gpt-image-2'),
+  model: 'openai/gpt-image-2',
   prompt: 'A serene mountain landscape at sunset',
 });
 ```
@@ -119,16 +119,17 @@ Supported providers include Google (Veo 3.1), KlingAI (motion control), and Wan.
 
 ## Audio: speech and voice
 
-AI Gateway supports audio understanding, transcription, speech generation, and realtime voice. Use this table to pick the one that matches what you have and what you want to produce:
+AI Gateway supports audio understanding, transcription, speech generation, music and sound effect generation, and realtime voice. Use this table to pick the one that matches what you have and what you want to produce:
 
 | Capability                                                   | Input and output            | Use it for                                                                              | Mode                           |
 | ------------------------------------------------------------ | --------------------------- | --------------------------------------------------------------------------------------- | ------------------------------ |
 | [Audio Input](/docs/ai-gateway/inputs-and-tools/audio-input) | Recorded audio and a question in, text out | Summarizing speech or asking questions about a recording | Single response or streamed text |
-| [Speech to Text](/docs/ai-gateway/modalities/speech-to-text) | Recorded audio in, text out | Transcribing files you already have, such as voice notes, call recordings, and podcasts | Batch, single response         |
-| [Text to Speech](/docs/ai-gateway/modalities/text-to-speech) | Text in, audio file out     | Voiceovers, audio versions of written content, and spoken responses                     | Batch, single response         |
+| [Speech to Text](/docs/ai-gateway/modalities/speech-to-text) | Recorded audio in, text out | Transcribing files you already have, such as voice notes, call recordings, and podcasts | Batch, single response, streaming |
+| [Text to Speech](/docs/ai-gateway/modalities/text-to-speech) | Text in, audio file out     | Voiceovers, audio versions of written content, and spoken responses                     | Batch, single response, streaming |
+| [Music and sound effects](/docs/ai-gateway/modalities/text-to-speech#generate-music-and-sound-effects-with-elevenlabs) | Text description in, audio file out | Soundtracks, jingles, and game or interface sounds | Batch, single response |
 | [Realtime](/docs/ai-gateway/modalities/realtime)             | Live audio in and out       | Two-way voice agents and live conversation                                              | Streaming, low-latency session |
 
-Speech to Text and Text to Speech process recorded or generated audio in a single request. Realtime handles live conversation, so reach for it when you need a back-and-forth voice session rather than a transcript or a finished audio file.
+Speech to Text and Text to Speech return a complete transcript or audio file, or stream results as they're produced. Realtime handles live conversation, so reach for it when you need a back-and-forth voice session rather than a transcript or a finished audio file.
 
 ## Embeddings and reranking
 
@@ -158,4 +159,4 @@ For cross-cutting abilities, see [Models & Providers](/docs/ai-gateway/models-an
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

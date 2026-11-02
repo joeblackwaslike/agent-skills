@@ -16,8 +16,8 @@ related:
 summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a4f6176b1f94873ecaf206ed528d754768cd163f7d14144d72a1ee61b653f5f6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5e92bc7afd3571594fa1a9efd85290a81ca874d6ac18be053eb3574f4c4e41a8"
 ---
 
 # Working with Sandbox
@@ -31,12 +31,12 @@ Use Vercel Sandbox to run code, stream command output, manage files, capture sna
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart) — Learn how to run your first code in a Vercel Sandbox.
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 
 Full cross-link map for this page: [/docs/sandbox/working-with-sandbox.graph.md](/docs/sandbox/working-with-sandbox.graph.md)
 <!-- /docsgraph:related -->
@@ -111,8 +111,8 @@ asyncio.run(main())
 ```bash filename="script.sh"
 echo "console.log('Hello from Vercel Sandbox!')" > hello.js
 
-sandbox create --name my-sandbox --timeout 1m
-sandbox copy ./hello.js my-sandbox:/vercel/sandbox/hello.js
+sandbox create --name my-sandbox --image vercel/sandbox/node:24 --timeout 1m
+sandbox copy ./hello.js my-sandbox:/vercel/hello.js
 sandbox exec my-sandbox -- node hello.js
 sandbox stop my-sandbox
 ```
@@ -448,15 +448,15 @@ asyncio.run(main())
 
 ```bash filename="script.sh"
 # ./build-artifact.js is a local copy of the script from the SDK example.
-sandbox create --name my-sandbox
+sandbox create --name my-sandbox --image vercel/sandbox/node:24
 
 # sandbox copy transfers one file and doesn't create parent directories.
 sandbox exec my-sandbox -- mkdir -p src
-sandbox copy ./build-artifact.js my-sandbox:/vercel/sandbox/src/build-artifact.js
+sandbox copy ./build-artifact.js my-sandbox:/vercel/src/build-artifact.js
 sandbox exec my-sandbox -- node src/build-artifact.js
 
 mkdir -p artifacts/dist
-sandbox copy my-sandbox:/vercel/sandbox/dist/output.txt ./artifacts/dist/output.txt
+sandbox copy my-sandbox:/vercel/dist/output.txt ./artifacts/dist/output.txt
 sandbox stop my-sandbox
 ```
 
@@ -553,7 +553,7 @@ asyncio.run(main())
 echo '{"env": "prod"}' > config.json
 
 sandbox create --name my-sandbox --image vercel/sandbox/node:24
-sandbox copy ./config.json my-sandbox:/vercel/sandbox/config.json
+sandbox copy ./config.json my-sandbox:/vercel/config.json
 
 # Snapshotting stops the sandbox and prints the snapshot ID.
 sandbox snapshot my-sandbox --stop --expiration 1d
@@ -717,4 +717,4 @@ sandbox remove my-sandbox
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

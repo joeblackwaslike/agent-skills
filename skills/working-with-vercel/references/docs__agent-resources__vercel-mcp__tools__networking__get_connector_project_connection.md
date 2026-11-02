@@ -13,8 +13,8 @@ related:
 summary: Use get_connector_project_connection with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3d03358c5705c710a7b7e219d563248a04cd80bac59a4e30f94a68cb1b417706"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "43505f25bb850e1b92a50e16a04814ca758f0aa6792767ed9eda024fcc72da5a"
 ---
 
 # get_connector_project_connection
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/netwo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

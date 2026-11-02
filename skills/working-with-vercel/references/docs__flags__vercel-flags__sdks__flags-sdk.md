@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/flags/flags-sdk-reference
   - /docs/flags/vercel-flags/quickstart
+  - /docs/flags/vercel-flags/project-connections
   - /docs/flags/vercel-flags/dashboard/sdk-keys
   - /docs/flags/flags-explorer/reference
-  - /docs/flags/vercel-flags/dashboard/drafts
 summary: Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a194b7272da57a8098186640cf2b6016e446f3cbdf660f841e58d6563b1d7fc5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a6c4ff58498e132308c1a61535e02ec7a0118f4d58b147621910b34cd6830f94"
 ---
 
 # Using the Flags SDK with Vercel Flags
@@ -33,6 +33,7 @@ The [Flags SDK](/docs/flags/flags-sdk-reference) is the recommended way to use V
 
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Flags SDK now evaluates flags 10x faster](https://vercel.com/changelog/flags-sdk-now-evaluates-flags-10x-faster)
+- [Vercel Flags starts 7x faster and no longer extends function duration](https://vercel.com/changelog/vercel-flags-starts-7x-faster-and-no-longer-extends-function-duration)
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
@@ -47,6 +48,8 @@ The [Getting Started guide](/docs/flags/vercel-flags/quickstart) covers installi
 ## The Vercel adapter
 
 The `@flags-sdk/vercel` package provides the adapter that connects the Flags SDK to your Vercel Flags project. The [Getting Started guide](/docs/flags/vercel-flags/quickstart) uses `vercelAdapter()`, which authenticates with Vercel OIDC by default and initializes lazily on first evaluation.
+
+To read another project's flags in the same team, use [Project Connections](/docs/flags/vercel-flags/project-connections) with `@flags-sdk/vercel` version 1.6.0 or later. Pass the source project's ID to `createVercelAdapter({ projectId: 'prj_source' })`. The adapter authenticates with your project's OIDC token.
 
 If you need to connect with a specific [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys), pass it to `createVercelAdapter` instead. See [SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys#with-the-flags-sdk) for details.
 
@@ -157,4 +160,4 @@ See the [Flags SDK SvelteKit guide](https://flags-sdk.dev/docs/getting-started/s
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

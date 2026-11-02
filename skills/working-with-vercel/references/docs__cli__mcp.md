@@ -12,8 +12,8 @@ related:
 summary: Set up Model Context Protocol (MCP) usage with a Vercel project using the vercel mcp CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/mcp.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "28cb88d779dd4eaaf1256584d984343d0d970e6d0243bd271082ddc41e3e692c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0203db2df6eb2eed9ab9f9eb8866f61e5e2712b4792abb5cd5b7201133761405"
 ---
 
 # vercel mcp
@@ -30,7 +30,7 @@ The `vercel mcp` command helps you set up MCP clients (Claude Code, Claude.ai an
 - [Model Context Protocol](https://vercel.com/docs/mcp) — Learn more about MCP and how you can use it on Vercel.
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
 - [use_vercel_cli](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli) — Use use_vercel_cli with Vercel MCP.
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
+- [MCP Integrations](https://vercel.com/docs/mcp/integrations) — Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 - [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
 
 Full cross-link map for this page: [/docs/cli/mcp.graph.md](/docs/cli/mcp.graph.md)
@@ -136,4 +136,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

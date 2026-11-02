@@ -16,8 +16,8 @@ related:
 summary: Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash, a function timeout, or a redeploy resumes the agent instead of losing its...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d3cda2cb3cc54984d685c9bd687ea51f50dc2012353d9fc044d4dcf532542374"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "39322404d118320dd44b14d0973425696af167faa58ec70a4b297aec3bb0c503"
 ---
 
 # Running Agent Harnesses Durably on Vercel
@@ -32,9 +32,9 @@ An agent harness is the loop around a model: its prompts, its tools, and how it 
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [Default Harness](https://eve.dev/docs/concepts/default-harness) — How eve manages model context and compaction during an agent turn.
+- [Program Claude Code, Codex, Pi and other agent harnesses with AI SDK](https://vercel.com/changelog/program-agent-harnesses-with-ai-sdk)
 - [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
-- [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
+- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/agent-harnesses.graph.md](/docs/agent-harnesses.graph.md)
 <!-- /docsgraph:related -->
@@ -95,4 +95,4 @@ If the function running a turn fails with an error, another function resumes the
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

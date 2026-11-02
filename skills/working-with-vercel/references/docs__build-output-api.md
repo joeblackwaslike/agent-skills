@@ -16,8 +16,8 @@ related:
 summary: The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "549d95faff3e49d38037e9eb9695bf72b3c47f42142f46c566cc837d91a7b0fe"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f5ed0e678d9cf6d2c000b2a250182c00318852becb85b397c545ce7b35b0cac6"
 ---
 
 # Build Output API
@@ -35,12 +35,12 @@ The Build Output API is a file-system-based specification for a directory struct
 - [How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters)
 - [NestJS](https://workflow-sdk.dev/docs/getting-started/nestjs) — Set up Workflow SDK in a NestJS app.
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
-- [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel) — Learn how to work with build output limits for Next.js on Vercel.
+- [New build and deploy capabilities in Vercel CLI](https://vercel.com/changelog/new-build-and-deploy-capabilities-in-vercel-cli)
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
-- [Configuring a Build](https://vercel.com/docs/builds/configure-a-build) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/build-output-api.graph.md](/docs/build-output-api.graph.md)
 <!-- /docsgraph:related -->
@@ -89,4 +89,4 @@ ideally the same as the platform [Build Image](/docs/builds/build-image).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -17,8 +17,8 @@ related:
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7abdc59294692741cfbb68d246600f62c13703130fd30a1555b4f2b7d4b36be2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "31c3d743c068ade795896a0f127fbda44a1776beffd98e11d49aad252a5752f1"
 ---
 
 # Next.js on Vercel
@@ -718,7 +718,7 @@ Deployments on Vercel automatically secure Draft Mode behind the same authentica
 
 ### Enabling Draft Mode in Preview Deployments
 
-You and your team members can toggle Draft Mode in the Vercel Toolbar in [production](/docs/vercel-toolbar/in-production-and-localhost/add-to-production), [localhost](/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost), and [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production#comments). When you do so, the toolbar will become purple to indicate Draft Mode is active.
+You and your team members can toggle Draft Mode in the Vercel Toolbar in [production](/docs/vercel-toolbar/in-production-and-localhost/add-to-production), [localhost](/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost), and [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production). When you do so, the toolbar will become purple to indicate Draft Mode is active.
 
 ![The Vercel toolbar when Draft Mode is enabled.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/draft-mode/draft-toolbar1-light.png)
 
@@ -1044,4 +1044,4 @@ Learn more about deploying Next.js projects on Vercel with the following resourc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

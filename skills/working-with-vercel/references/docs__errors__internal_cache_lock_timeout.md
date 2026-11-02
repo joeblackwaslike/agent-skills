@@ -12,8 +12,8 @@ related:
 summary: An unexpected error happened when CDN is accessing internal cache.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_cache_lock_timeout.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e77d13f120ab62aa3a3ebba532e2cf0a31f143efec80581066ea099b674954d8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0e5fcc656bf3bbe3cddd03ffa9b946d260cfd62ab75fbb9d6a135937fec5137e"
 ---
 
 # INTERNAL_CACHE_LOCK_TIMEOUT
@@ -36,4 +36,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

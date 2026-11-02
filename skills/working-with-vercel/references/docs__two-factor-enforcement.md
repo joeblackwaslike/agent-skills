@@ -13,8 +13,8 @@ related:
 summary: Learn how to enforce two-factor authentication (2FA) for your Vercel team members to enhance security.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-enforcement.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3d08c45f49e231399b65f1a81429c91eab9ebdd756720116efc8895861d571d4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7dc51e75921528cc215a5dbeee19e82756a9cdbb4a3044bfe129bb884f5984a4"
 ---
 
 # Two-factor enforcement
@@ -31,9 +31,9 @@ To enhance the security of your Vercel team, you can enforce two-factor authenti
 - [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available)
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Directory Sync \\(SCIM\\)](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/two-factor-enforcement.graph.md](/docs/two-factor-enforcement.graph.md)
 <!-- /docsgraph:related -->
@@ -74,4 +74,4 @@ Steps to follow:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

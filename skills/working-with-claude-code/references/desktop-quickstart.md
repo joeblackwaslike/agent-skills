@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-quickstart.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "6ca66807b60f40505bce01a26d683a59067898dc10aa7cd22f6acb672f0463eb"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "8373938bcf8d31537e66905a409e32f2a9da2891c3b33a071b1ab4ea65b1e10b"
 ---
 
 > ## Documentation Index
@@ -12,19 +12,19 @@ sha256: "6ca66807b60f40505bce01a26d683a59067898dc10aa7cd22f6acb672f0463eb"
 
 > Install the Claude desktop app, open the Code tab, and start your first Claude Code session on a project folder on your computer.
 
-The desktop app gives you Claude Code with a graphical interface. You can ask Claude to work on the code in a folder on your computer and review its changes without using a terminal.
+The desktop app gives you Claude Code with a graphical interface. You can ask Claude to work on the code in a folder on your computer, then review the changes yourself, without using a terminal.
 
-Claude Code is in the **Code** tab at the top of the app's sidebar. This page walks through installing the app and starting your first session there. Claude Code requires a [Pro, Max, Team, or Enterprise subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=desktop_quickstart_pricing).
+Claude Code is in the **Code** tab at the top of the app's sidebar. This page walks through installing the app and starting your first session there. Claude Code requires a [Pro, Max, Ultra, Team, or Enterprise subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=desktop_quickstart_pricing).
 
-> **[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code\&utm_medium=docs)**
+> [card] [Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code\&utm_medium=docs)
 >
 > Universal build for Intel and Apple Silicon
 
-> **[Download for Windows](https://claude.ai/api/desktop/win32/x64/setup/latest/redirect?utm_source=claude_code\&utm_medium=docs)**
+> [card] [Download for Windows](https://claude.ai/api/desktop/win32/x64/setup/latest/redirect?utm_source=claude_code\&utm_medium=docs)
 >
 > For x64 processors
 
-> **[Get Claude for Linux (beta)](https://code.claude.com/docs/en/desktop-linux.md)**
+> [card] [Get Claude for Linux (beta)](https://code.claude.com/docs/en/desktop-linux.md)
 >
 > apt or .deb for Ubuntu and Debian
 
@@ -63,7 +63,7 @@ With the Code tab open, choose a project and give Claude something to do.
 
 In the [row under the prompt box](https://code.claude.com/docs/en/desktop.md#start-a-session), click the first control, the environment selector, and select the top entry in the **Local** group. Then click the project folder control beside the environment selector, select **Open folder…**, and choose your project's directory.
 
-If no environment selector appears under your prompt box, you have the earlier layout. See [Check which layout you have](https://code.claude.com/docs/en/desktop.md#check-which-layout-you-have).
+If a new session shows no environment under your prompt box, you have the earlier layout. See [Check which layout you have](https://code.claude.com/docs/en/desktop.md#check-which-layout-you-have).
 
 > [!TIP]
 >

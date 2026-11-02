@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Configs in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/using-global-config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "74ba985db770df4995c776837c0fed140ce25f75554099504df1064bc5c30b66"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "04512a3b6a6fb8ac1ac66d5ea7c07dd5b4f2562035264613035f3958c6ec6105"
 ---
 
 # Using Global Config
@@ -32,8 +32,8 @@ sha256: "74ba985db770df4995c776837c0fed140ce25f75554099504df1064bc5c30b66"
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config)
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
-- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 - [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 
@@ -211,4 +211,4 @@ Backups are taken when you make any changes either through the dashboard or API.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

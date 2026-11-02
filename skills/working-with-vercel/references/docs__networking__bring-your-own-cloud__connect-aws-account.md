@@ -15,8 +15,8 @@ related:
 summary: Connect an AWS account to your Vercel team so Bring Your Own Cloud (BYOC) can invoke Lambda functions in your account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "204c64c67adfb4cc689eb71694f8d6de24d08e5f7e0bbf1818c388ae441c819e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "049987a6b0c23d065b8bbd1f95d79d3292e529d1f64bdb72330ef417161a20db"
 ---
 
 # Connecting an AWS Account for BYOC
@@ -175,4 +175,4 @@ Credentials that Vercel obtained before you disconnected stay valid until they e
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

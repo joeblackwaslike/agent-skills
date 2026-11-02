@@ -14,8 +14,8 @@ related:
 summary: "Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/crons.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e31c789ed1ec062867c87df8eea431eec15192f67f8dc0dd8c34131ea3da6526"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ebae32c4d9816c3b5440de746730ba3a1d60d0ecbb4c9e71a5346c0e4f7f64de"
 ---
 
 # vercel crons
@@ -37,8 +37,8 @@ The `vercel crons` command (alias `vercel cron`) manages [Cron Jobs](/docs/cron-
 - [Getting started with cron jobs](https://vercel.com/docs/cron-jobs/quickstart) — Learn how to schedule cron jobs to run at specific times or intervals.
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 
 Full cross-link map for this page: [/docs/cli/crons.graph.md](/docs/cli/crons.graph.md)
 <!-- /docsgraph:related -->
@@ -163,4 +163,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

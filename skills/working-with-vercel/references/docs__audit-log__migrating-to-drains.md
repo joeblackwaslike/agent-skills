@@ -16,8 +16,8 @@ related:
 summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "558faaab684bc495ac26694ed5143aaf969f92952ae5c4b216f9b152f116f6a9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a3f2ccf131162d3596cc09fe60a650d919b12b484d0170ecab93f03edb6cd33b"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
@@ -135,4 +135,4 @@ A migrated event looks like this:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

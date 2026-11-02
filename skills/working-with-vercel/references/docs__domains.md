@@ -16,8 +16,8 @@ related:
 summary: Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2d64c96dac036149b50f968e63f6b787b3277494ac4f5c270cbc3e6b5518e515"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4e185e8535ed78dd3e3d5fb06a440fc1d003add1b7643c3937499396abc034af"
 ---
 
 # Domains Overview
@@ -39,9 +39,9 @@ A **domain** is a user-friendly way of referring to the address access a website
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
+- [Get a Domain's configuration](https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration) — GET /v6/domains/{domain}/config — Get a Domain's configuration.
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 
 Full cross-link map for this page: [/docs/domains.graph.md](/docs/domains.graph.md)
 <!-- /docsgraph:related -->
@@ -99,4 +99,4 @@ This is where, as a developer, you may have to configure the DNS settings to tel
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Learn how to preview and download Vercel compliance documents from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/attestations-and-compliance-report.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7ddd5b799b1cc85c83e2288320744026505e83a902877eb5bbef8b0c940eec81"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8f019bb50689d19f8d060480e1fc641fda8041b266206a4e288f330db2d3a6a4"
 ---
 
 # Attestations and Compliance Report
@@ -34,7 +34,7 @@ Team members on Pro and Enterprise plans can preview and download Vercel's compl
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Get certs](https://vercel.com/docs/rest-api/certs/get-certs) — GET /v8/certs — Get certs
-- [Upload a cert](https://vercel.com/docs/rest-api/certs/upload-a-cert) — PUT /v8/certs — Upload a cert
+- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 
 Full cross-link map for this page: [/docs/security/attestations-and-compliance-report.graph.md](/docs/security/attestations-and-compliance-report.graph.md)
 <!-- /docsgraph:related -->
@@ -59,4 +59,4 @@ For public reports and more information about Vercel's security and compliance p
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

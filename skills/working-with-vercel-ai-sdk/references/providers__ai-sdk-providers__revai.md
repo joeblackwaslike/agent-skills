@@ -4,8 +4,8 @@ description: Learn how to set up the Rev.ai provider and check AI Gateway availa
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/revai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "1560b46177a812752adcfb73d80c22f2029f3d36bc23fcb6e5b161d7a87ad847"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "cadc27cfad213d7168166f915d3956053fd299f687a8667b56a40b9dbc652a40"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -84,7 +84,10 @@ const revai = createRevai({
 
 You can use the following optional settings to customize the Rev.ai provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a synchronous or asynchronous callback to resolve the key before each
+  request. The callback is responsible for caching and refreshing credentials.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `REVAI_API_KEY` environment variable.

@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your application."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "76eca0d0bbeef1cbbe08c7adc23f09f483f38167c126f278628ea2aeec5ec83c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "87ab5d3011d77374f9003cc0e7f05de37ec379b7e7d9f52088b97a7478d60caf"
 ---
 
 # Routing
@@ -37,7 +37,7 @@ Vercel's CDN evaluates routing rules on every request before checking any cache 
 - [Routing Middleware](https://vercel.com/docs/routing-middleware) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Get project routing rules](https://vercel.com/docs/rest-api/project-routes/get-project-routing-rules) — GET /v1/projects/{projectId}/routes — Get the routing rules for a project. Supports searching by name/ID/pattern, filter
-- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
 
 Full cross-link map for this page: [/docs/routing.graph.md](/docs/routing.graph.md)
 <!-- /docsgraph:related -->
@@ -115,4 +115,4 @@ Vercel can also [cache responses from external origins](/docs/caching/cdn-cache)
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

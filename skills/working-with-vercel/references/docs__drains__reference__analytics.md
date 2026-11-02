@@ -13,13 +13,13 @@ related:
 summary: Learn about Web Analytics Drains - data formats and custom events configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/analytics.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4396f37b47d751344a3731af2726b1e47b27dcdd48784bf9d834ee7009c608b9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7482cd952967e2a80eff0181b50886fbc06cf3c1b5844627a8ae288d3df445ee"
 ---
 
 # Web Analytics Drains Reference
 
-If a Web Analytics Drains has been configured, Vercel will send page views and custom events from your applications to external endpoints for storage and analysis over HTTPS when your application tracks events.
+If a Web Analytics Drain has been configured, Vercel will send page views and custom events from your applications to external endpoints for storage and analysis over HTTPS when your application tracks events.
 
 
 <!-- docsgraph:related -->
@@ -118,4 +118,4 @@ For more information on Web Analytics Drains and how to use them, refer to the f
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "53c7e51d6f2673b11cad7553fd27a0da147dc01bcce16b529af21a3af58a73b5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "92028114c15bf9186292c5b59706e8f4216e882cbc881e48ffae795e7efa7584"
 ---
 
 # Project settings
@@ -31,11 +31,11 @@ From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Das
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [July 2020](https://vercel.com/blog/changelog-july-2020)
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
-- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/project-configuration/project-settings.graph.md](/docs/project-configuration/project-settings.graph.md)
@@ -176,7 +176,7 @@ To learn more, see the [Drains documentation](/docs/drains/using-drains).
 
 ## Security settings
 
-From your project's security settings you can enable or disable [Attack Mode](/docs/vercel-firewall/attack-mode), [Logs and Source Protection](/docs/projects#logs-and-source-protection), [Vercel Support Code Visibility](/docs/project-configuration/security-settings#vercel-support-code-visibility) [Git Fork Protection](/docs/projects#git-fork-protection), and set a [retention policy for your deployments](/docs/deployment-retention).
+From your project's security settings you can enable or disable [Attack Mode](/docs/vercel-firewall/attack-mode), [Logs and Source Protection](/docs/project-configuration/security-settings#build-logs-and-source-protection), [Vercel Support Code Visibility](/docs/project-configuration/security-settings#vercel-support-code-visibility) [Git Fork Protection](/docs/project-configuration/security-settings#git-fork-protection), and set a [retention policy for your deployments](/docs/deployment-retention).
 
 To learn more, see [Security Settings](/docs/project-configuration/security-settings).
 
@@ -193,4 +193,4 @@ Vercel provides some additional features to configure your project in a more adv
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

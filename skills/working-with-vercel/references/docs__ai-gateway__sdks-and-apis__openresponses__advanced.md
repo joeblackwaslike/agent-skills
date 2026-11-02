@@ -10,13 +10,15 @@ prerequisites:
   - /docs/ai-gateway/sdks-and-apis
 related:
   - /docs/ai-gateway/sdks-and-apis/openresponses
+  - /docs/ai-gateway/models-and-providers/provider-options
+  - /docs/ai-gateway/security-and-compliance/zdr
+  - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
   - /docs/ai-gateway/models-and-providers/provider-timeouts
-  - /docs/ai-gateway/models-and-providers/automatic-caching
 summary: Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "15e368e62c7e669990881bc72ead7caecabe7f23c71968ed6cee859f1b50a769"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e9deb70fe5f48cb9e60996e7c5e3684a21fe49a5c41ec7419b578ad7ea8185a3"
 ---
 
 # OpenResponses Configuration with AI Gateway
@@ -29,12 +31,12 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) lets you c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway)
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
-- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+- [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/advanced.graph.md)
 <!-- /docsgraph:related -->
@@ -197,7 +199,7 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
 
 ## Provider restriction
 
-Restrict requests to specific providers using the `only` array. This ensures your requests only go to approved providers, which can be useful for compliance or cost control.
+Restrict requests to specific providers using the `only` array, which is useful when a compliance requirement limits which providers can handle your requests. `only` removes failover to unlisted providers: if none of the listed providers can serve the request, it fails rather than routing elsewhere. To optimize for cost, use [`sort: 'cost'`](/docs/ai-gateway/models-and-providers/provider-options) instead, which ranks providers by price while keeping every provider eligible for failover. For data-handling requirements, [zero data retention](/docs/ai-gateway/security-and-compliance/zdr) and [disallow prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training) restrict routing to providers that meet those policies without naming providers individually.
 
 #### TypeScript
 
@@ -299,4 +301,4 @@ Use `caching: 'auto'` in the request body to let AI Gateway automatically add ca
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

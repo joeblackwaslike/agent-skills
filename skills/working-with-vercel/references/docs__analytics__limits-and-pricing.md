@@ -16,8 +16,8 @@ related:
 summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4892332f86de9d5bb4c2443de046572f4ff2c8c6bd64a19835aae1dc6edfb4b7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2af249717ec99580070024afd02c7adf910200677a76c57aa795c47fbbff1df8"
 ---
 
 # Pricing for Web Analytics
@@ -43,7 +43,7 @@ After you enable Vercel Web Analytics, your plan determines which features you c
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 
 Full cross-link map for this page: [/docs/analytics/limits-and-pricing.graph.md](/docs/analytics/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -150,4 +150,4 @@ While only the reporting window is guaranteed to be stored, Vercel may store you
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -4,8 +4,8 @@ description: Control agent execution with built-in loop management using stopWhe
 url: "https://ai-sdk.dev/docs/agents/loop-control"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/loop-control.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "cf080df0ca2d3b1b381aa80b151ffd9296dfb180ac57554450e12ff143f97a34"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "3ed69c79a4f9942550cbd4e414e1c96a82fd3777c186c1e99c5ff360b3a0075b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,6 +16,8 @@ You can control both the execution flow and the settings at each step of the age
 - A tool that is invoked does not have an execute function, or
 - A tool call needs approval, or
 - A stop condition is met
+
+A [steering message](#steering) that is waiting when the model finishes its answer keeps the loop going for another step.
 
 The AI SDK provides built-in loop control through two parameters: `stopWhen` for defining stopping conditions and `prepareStep` for modifying settings (model, tools, messages, and more) between steps.
 
@@ -394,6 +396,119 @@ const result = await agent.generate({
 Unlike `runtimeContext` and `toolsContext`, an experimental sandbox returned from `prepareStep`
 only applies to tool execution in that step. Later steps use the top-level
 `experimental_sandbox` unless they return their own experimental sandbox override.
+
+## Steering
+
+Steering is an experimental feature.
+
+Steering adds a user message to a running loop. Use it when a user sends a correction or a follow-up while the agent is still working. The message is added at the next step boundary, after the current step and its tool calls are done, so running tools are never interrupted.
+
+Create a steering object with `experimental_createSteering()`, pass it with the `experimental_steering` option, and call `steer()` while the loop is running:
+
+```ts
+import { experimental_createSteering, isStepCount, streamText } from 'ai';
+
+const steering = experimental_createSteering();
+
+const result = streamText({
+  model: "anthropic/claude-sonnet-5.5",
+  tools: { weather },
+  stopWhen: isStepCount(10),
+  prompt: 'What is the weather in Paris?',
+  experimental_steering: steering,
+});
+
+// e.g. when the user sends another message while the agent is running:
+const outcome = await steering.steer('I meant Paris, Texas.');
+```
+
+Steering works the same way with `generateText` and `ToolLoopAgent`, because you create the steering object before the call starts:
+
+```ts
+const steering = experimental_createSteering();
+
+const run = agent.generate({
+  prompt: 'What is the weather in Paris?',
+  experimental_steering: steering,
+});
+
+await steering.steer('I meant Paris, Texas.');
+
+const result = await run;
+```
+
+### How Steering Messages Are Delivered
+
+- Messages are added in the order they are sent. Each message is its own user message.
+- If the model finishes its answer while a message is waiting, the loop continues for another step.
+- Stop conditions still apply. `generateText` and `streamText` stop after one step by default, so set `stopWhen` to steer them. Agents run up to 20 steps by default.
+- Messages that are sent before the loop starts are added to the first step.
+- `prepareStep` and `onStepStart` receive the steering messages as part of `messages`.
+- A steering object can only be used for one call. Create a new one with `experimental_createSteering()` for each call.
+- For agents, steering is supported by `ToolLoopAgent`. `createAgentUIStream` throws when it gets a steering object with another agent.
+
+`messages` already contains the steering messages in the right place. If
+`prepareStep` returns a `messages` override that is rebuilt from other fields,
+e.g. `initialMessages` and `responseMessages`, the steering messages are
+dropped and `steer()` reports them as not delivered with the reason
+`removed-by-prepare-step`. Build overrides from `messages`, or add the
+steering messages of every step back in order.
+
+```ts
+prepareStep: ({ initialMessages, steps, experimental_steeringMessages }) => ({
+  messages: [
+    ...initialMessages,
+    ...steps.flatMap(step => [
+      ...(step.experimental_steeringMessages ?? []),
+      ...step.response.messages,
+    ]),
+    // steering messages for the current step:
+    ...(experimental_steeringMessages ?? []),
+  ],
+}),
+```
+
+### Handling the Outcome
+
+`steer()` resolves with the outcome of the message and never rejects:
+
+```ts
+const outcome = await steering.steer('I meant Paris, Texas.', {
+  id: messageId,
+});
+
+if (outcome.type === 'delivered') {
+  console.log(`added to step ${outcome.stepNumber}`);
+} else {
+  // the message was not added, e.g. send it as a new message instead:
+  console.log(outcome.reason, outcome.message);
+}
+```
+
+A message is delivered when it is part of the messages that are sent to the model, after `prepareStep`. It is not delivered when the loop ends before the next step boundary, or when `prepareStep` removes it. The `reason` is one of:
+
+- `finished`: the loop ended before the message could be added.
+- `removed-by-prepare-step`: `prepareStep` returned messages without it.
+- `stop-condition`: a stop condition ended the loop.
+- `waiting-for-tool-results`: the loop ended to wait for tool results, e.g. a [tool approval](/docs/agents/tool-approvals).
+- `aborted`: the loop was aborted.
+- `error`: the loop failed.
+
+Pass an `id` to make retries safe. Sending a message again with the same `id` returns the outcome of the first message.
+
+### Saving Steering Messages
+
+Steering messages are not part of `responseMessages`. Each step lists the steering messages that were added to it in `experimental_steeringMessages`, so you can rebuild the full conversation in order:
+
+```ts
+const messages = [
+  ...initialMessages,
+  ...result.steps.flatMap(step => [
+    ...(step.experimental_steeringMessages ?? []),
+    ...step.response.messages,
+  ]),
+];
+```
 
 ## Access Step Information
 

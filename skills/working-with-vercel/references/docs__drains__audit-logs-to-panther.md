@@ -13,8 +13,8 @@ related:
 summary: "Learn how to forward Vercel Audit Log Drain events to Panther using Panther's built-in Vercel source."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-panther.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ce218d77b80c5b496bd13fe088ae78b5f5e890a31cff4d6400bf7fa4c6f1ef10"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f843a092f8e477d061ffa91d148f1e9d6f7c43a107eecbc7a7266d42a362d823"
 ---
 
 # Drain Audit Logs to Panther
@@ -31,12 +31,12 @@ Audit Log Drains can forward team activity events to [Panther](https://panther.c
 
 - [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
-- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
+- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+- [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \\(HEC\\).
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-panther.graph.md](/docs/drains/audit-logs-to-panther.graph.md)
 <!-- /docsgraph:related -->
@@ -91,4 +91,4 @@ See the [Audit Log Drains reference](/docs/drains/reference/audit-logs#panther) 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

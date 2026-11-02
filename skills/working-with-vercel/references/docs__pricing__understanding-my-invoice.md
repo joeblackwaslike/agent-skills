@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/understanding-my-invoice.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c1e4fe9a9f0af9f278d71968043d37f22b8c6c2ac077e58618ed60b33e5fec13"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "97f17acf6e8106b170d502d0c69a58d79c69e6df40784bc6aca31b0ca7c752b7"
 ---
 
 # Billing & Invoices
@@ -31,6 +31,7 @@ You can view your current invoice from the **Settings** section in your dashboar
 
 - [Threshold billing is now enabled for Pro teams](https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams)
 - [Updates to Legal Terms](https://vercel.com/changelog/updates-to-legal-terms-june-2026)
+- [Invoices are now available on a dedicated page](https://vercel.com/changelog/invoices-are-now-available-on-a-dedicated-page)
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
@@ -162,4 +163,4 @@ For more information on Vercel's pricing, and guidance on optimizing consumption
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

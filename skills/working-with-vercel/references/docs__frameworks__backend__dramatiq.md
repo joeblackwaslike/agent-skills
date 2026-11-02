@@ -17,8 +17,8 @@ related:
 summary: Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process background tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/dramatiq.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0cfd28fda6c7d3891cb6766449cf5cefbfdf4633e620d6fe03492ad8f00b09ed"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c3803205c8ee148c10677e96b8aab659f2449fd90944595a1c366dc78491e920"
 ---
 
 # Deploy Dramatiq workers on Vercel
@@ -35,13 +35,12 @@ them in the background.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
-- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
-- [Daemons](https://vercel.com/docs/daemons) — Run long-running background workers, such as queue consumers and workflow workers, next to your app with Vercel Daemons.
+- [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel)
 
 Full cross-link map for this page: [/docs/frameworks/backend/dramatiq.graph.md](/docs/frameworks/backend/dramatiq.graph.md)
 <!-- /docsgraph:related -->
@@ -348,4 +347,4 @@ For more about deploying Dramatiq on Vercel, see:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

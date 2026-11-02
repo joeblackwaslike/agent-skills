@@ -17,8 +17,8 @@ related:
 summary: Require visitors to enter a password before they can view your deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3e6c363cc0010acbc0074d30253672657803ef186bddb502b1ca9cbe468d5f1d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "91170f2e0961aae004d28fce05c33eb3898244bf13a698bcdd523eabc795c12e"
 ---
 
 # Password Protection
@@ -139,4 +139,4 @@ You can configure Password Protection using `password_protection` in the `vercel
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

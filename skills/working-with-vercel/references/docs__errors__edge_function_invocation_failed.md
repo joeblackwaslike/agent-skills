@@ -12,8 +12,8 @@ related:
 summary: The request for a Edge Function was not completed successfully. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/edge_function_invocation_failed.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "491070f77af5e30e64e751dac64f777bd3b6667831a4ae8138314ac5db377aa0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fbb6e904890250fbca514aac3cacd00203ee1be083d02989e4a96a9cb8278d1a"
 ---
 
 # EDGE_FUNCTION_INVOCATION_FAILED
@@ -40,4 +40,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

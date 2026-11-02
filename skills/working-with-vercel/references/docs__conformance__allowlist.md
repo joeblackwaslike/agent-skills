@@ -12,8 +12,8 @@ related:
 summary: Learn how to use allowlists to bypass your Conformance rules to merge changes into your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/allowlist.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "90d12aa28385f4e84474ae4d483b80b92cc79149597e15bf6cb195f788b2ffbf"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f6925868560eb684669836dee7a5489b9b9db103c1e936c9c8804666e1a135d1"
 ---
 
 # Conformance Allowlists
@@ -156,4 +156,4 @@ The `:required` check ensures any modifications need the specified owners' revie
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

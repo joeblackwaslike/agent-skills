@@ -15,8 +15,8 @@ related:
 summary: Configure your Vercel project with a TOML file using the same properties as vercel.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-toml.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3175155f2dafb09ae0f69ca75eee25d08b8fec0f68f01959dbb0f3aeadfb889a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b252c4e712a90796b302d5e922848f9f46f0d3bb0a9df9716b2d5b9d5b55a772"
 ---
 
 # Static Configuration with vercel.toml
@@ -30,12 +30,11 @@ The `vercel.toml` file lets you configure your Vercel project with [TOML](https:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts)
-- [Integrating AWS Secrets Manager with Vercel Using Terraform](https://vercel.com/kb/guide/integrating_aws_secrets_manager_with_vercel_using_terraform) — Learn how to seamlessly integrate AWS Secrets Manager with Vercel for enhanced security and efficiency in your web deplo
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
-- [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration) — Learn how to configure Vercel CLI under your system user.
 - [General settings](https://vercel.com/docs/project-configuration/general-settings) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
-- [Serving Static Files](https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files) — Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
+- [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration) — Learn how to configure Vercel CLI under your system user.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-toml.graph.md](/docs/project-configuration/vercel-toml.graph.md)
 <!-- /docsgraph:related -->
@@ -130,4 +129,4 @@ destination = { service = "frontend" }
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

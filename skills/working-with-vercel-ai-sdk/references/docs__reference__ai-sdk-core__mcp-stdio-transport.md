@@ -1,23 +1,23 @@
 ---
-title: Experimental_StdioMCPTransport
+title: StdioMCPTransport
 description: Create a transport for Model Context Protocol (MCP) clients to communicate with MCP servers using standard input and output streams
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-stdio-transport"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-stdio-transport.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "73b2d59758c98e1b4495b992e01d99aac9642228b1c2ab155f64dd84de3b19bb"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "829c0a6493751b743f42f05a64d62865636609c35c857e5b4e2a275618aebfdb"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Creates a transport for Model Context Protocol (MCP) clients to communicate with MCP servers using standard input and output streams. This transport is only supported in Node.js environments.
 
-This feature is experimental and may change or be removed in the future.
+`Experimental_StdioMCPTransport` is a deprecated alias of `StdioMCPTransport`.
 
 ## Import
 
 ```
-import { Experimental_StdioMCPTransport } from "@ai-sdk/mcp/mcp-stdio"
+import { StdioMCPTransport } from "@ai-sdk/mcp/mcp-stdio"
 ```
 
 ## API Signature

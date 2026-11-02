@@ -13,8 +13,8 @@ related:
 summary: Use count_pageviews with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_pageviews.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ab1098e3857e1461db9a9c347634492880fcd30deb29f126c8a9c470a3b0d60e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5fba1c6210afbba35d8519c4af95dc3b4728e42e7daedc277152431ed937e88c"
 ---
 
 # count_pageviews
@@ -55,4 +55,4 @@ Enable [Web Analytics](/docs/analytics) for your project before querying its dat
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

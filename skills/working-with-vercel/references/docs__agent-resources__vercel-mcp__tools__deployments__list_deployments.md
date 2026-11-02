@@ -13,8 +13,8 @@ related:
 summary: Use list_deployments with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "33a7cca9326fc6c8c0ad6166f4fda0bdd58f9c72c0194c2d82788e81fe389768"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "765159dacf0c24fd1038a89850f54b4981cf2f1898f5cb76a574849fc7f47b97"
 ---
 
 # list_deployments
@@ -74,4 +74,4 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

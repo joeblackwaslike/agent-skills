@@ -4,8 +4,8 @@ description: Learn how to fix AI_InvalidPromptError
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-prompt-error"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-prompt-error.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "e8327169e966af78986ec7d2aa228a50bae76be8281786d7f93cac6b444a21e3"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "bcae5bcbdd8005b984947301ba22db59eea256aa3df22c65306f2b6b617e7ef4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -14,24 +14,37 @@ This error occurs when the prompt provided is invalid.
 
 ## Potential Causes
 
-### UI Messages
+### System Messages in `prompt` or `messages`
 
-You are passing a `UIMessage[]` as messages into e.g. `streamText`.
-
-You need to first convert them to a `ModelMessage[]` using `convertToModelMessages()`.
+AI SDK functions reject system messages in the `prompt` or `messages` fields to reduce the risk of prompt injection.
+Pass system instructions with the `instructions` option instead:
 
 ```typescript
-import { type UIMessage, generateText, convertToModelMessages } from 'ai';
-
-const messages: UIMessage[] = [
-  /* ... */
-];
+import { generateText } from 'ai';
 
 const result = await generateText({
   // ...
-  messages: await convertToModelMessages(messages),
+  instructions: 'You are a helpful assistant.',
+  messages,
 });
 ```
+
+If the system messages come from a trusted source, you can allow them with `allowSystemInMessages: true`.
+
+### Empty Messages
+
+The `messages` array (or a `prompt` given as an array) must contain at least one message.
+
+### Provider-Specific Prompt Requirements
+
+Some providers throw this error when a prompt can't be expressed for their API,
+for example when an assistant prefix message isn't the final message, or when a part combines options the provider doesn't support.
+The error message describes the provider requirement that wasn't met.
+
+AI SDK functions do not validate the shape of `ModelMessage` objects at
+runtime. If your messages come from an untrusted source, validate them before
+passing them to an AI SDK function. See
+[`ModelMessage`](/docs/reference/ai-sdk-core/model-message).
 
 ## Properties
 

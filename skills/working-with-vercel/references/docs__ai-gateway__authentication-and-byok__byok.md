@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/ai-gateway/pricing
   - /docs/ai-gateway/observability-and-spend/budgets
-  - /docs/ai-gateway/sdks-and-apis
-  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
-  - /docs/ai-gateway/security-and-compliance/zdr
+  - /docs/ai-gateway/authentication-and-byok/api-keys
+  - /docs/ai-gateway/authentication-and-byok/oidc
+  - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 summary: Learn how to configure your own provider keys with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "369bf109167d3059a39ccb3abcfd1a0275bc718871aaca98cf066ca46153b486"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "04916340a26ea1dd9f6115b429ab29ee33ded510141b621660576e15d87aabd7"
 ---
 
 # Bring Your Own Key (BYOK) to AI Gateway
@@ -38,7 +38,8 @@ If a query using your credentials fails, AI Gateway will retry the query with it
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
 - [Claude Sonnet 5 now available on Vercel AI Gateway](https://vercel.com/changelog/claude-sonnet-5-ai-gateway)
-- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
+- [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
+- [Claude Code and Claude Agent SDK with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 - [AI Gateway Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 
@@ -64,13 +65,61 @@ Spend through your own credentials isn't counted in [budgets](/docs/ai-gateway/o
 
 - ### Add the credentials to your Vercel team
   1. Go to the [AI Gateway Bring Your Own Key (BYOK) page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbyok\&title=AI+Gateway+BYOK) in your Vercel dashboard.
-  2. Find your provider from the list and click **Add**.
+  2. Find your provider from the list and click **Add Key**.
   3. In the dialog that appears, enter the credentials you retrieved from the provider.
   4. Ensure that the **Enabled** toggle is turned on so that the credentials are active.
-  5. Click **Test Key** to validate and add your credentials.
+  5. Click **Test API Key** to validate and add your credentials.
 
 - ### Use the credentials in your AI Gateway requests
   Once you add credentials, AI Gateway automatically includes them in your requests. You can now use these credentials to authenticate your requests.
+
+## Use API credits from a ChatGPT or Claude subscription
+
+Eligible ChatGPT Pro and Business subscribers and Claude Max and Team subscribers can claim API credits in a linked provider organization. Use a key from that organization with BYOK so eligible requests can draw from the grant. The credits stay with OpenAI or Anthropic, separate from your AI Gateway Credits balance.
+
+Follow the walkthrough for your subscription to check eligibility, claim the grant, and connect the credited organization's key:
+
+- [Use ChatGPT API credits with Vercel AI Gateway](/i/chatgpt-api-credits-ai-gateway)
+- [Use Claude API credits with Vercel AI Gateway](/i/claude-api-credits-ai-gateway)
+
+After claiming the grant:
+
+1. Add the organization's OpenAI or Anthropic key using the steps above. For dashboard credentials, confirm that the key is enabled and marked **In Use**.
+2. Authenticate your application to AI Gateway with an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/api-keys) or [OIDC](/docs/ai-gateway/authentication-and-byok/oidc). These credentials authenticate to AI Gateway; the provider key authenticates to OpenAI or Anthropic.
+3. [Restrict the serving provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#restrict-providers-with-the-only-filter) to `openai` or `anthropic`, respectively. A provider restriction doesn't disable fallback to AI Gateway's system credentials if your key fails.
+4. Check the request's provider and credential source in [AI Gateway Logs](/docs/ai-gateway/observability-and-spend/logs), then confirm grant usage in the provider's billing dashboard. A successful response or key test doesn't establish that the grant funded the request.
+
+## Manage keys in the dashboard
+
+### Use more than one key per provider
+
+You can add up to 10 keys per provider. Each key has its own name, **Enabled** state, and ZDR setting, and the dashboard lists every key under its provider.
+
+AI Gateway uses the oldest enabled key for a provider, which the dashboard marks **In Use**. Requests that require [Zero Data Retention (ZDR)](#zero-data-retention-zdr) can use another enabled key that's marked ZDR-compliant.
+
+Other enabled keys are on standby. If the key in use fails, requests fall back to system credentials, not to your next key. To switch to a standby key, disable the key in use.
+
+### Replace a key
+
+Replace a key when you rotate it at the provider. Replacing a key changes only the stored credential, so the key keeps its name, **Enabled** state, ZDR setting, and [model mappings](#model-mappings). Your BYOK traffic keeps using your own credentials during the swap. If you delete a key and add a new one instead, requests use system credentials in between.
+
+1. In the [AI Gateway Bring Your Own Key (BYOK) page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbyok\&title=AI+Gateway+BYOK), click the menu for the key you want to replace.
+2. Select **Replace Key**.
+3. Enter the new credentials and click **Replace API Key**.
+
+AI Gateway tests the new credentials before saving them. If the test fails, the existing key stays in place. To see when a key was last replaced, hover its created date in the list.
+
+> **💡 Note:** Keep the old key valid at the provider for a few minutes after you replace
+> it. Requests already in progress can still use it, and an open realtime
+> WebSocket session keeps the key it started with until the session ends.
+
+### Who can manage keys
+
+| Role      | View keys | Add, replace, rename, enable, or delete keys | Mark a key as ZDR-compliant |
+| --------- | --------- | -------------------------------------------- | --------------------------- |
+| Owner     | Yes       | Yes                                          | Yes                         |
+| Member    | Yes       | Yes                                          | No                          |
+| Developer | Yes       | No                                           | No                          |
 
 ## Request-scoped BYOK
 
@@ -432,7 +481,7 @@ providerOptions: {
 
 > **💡 Note:** For Chat Completions API usage with request-scoped BYOK, see the
 > [OpenAI Chat Completions API
-> documentation](/docs/ai-gateway/sdks-and-apis/openai-chat-completions#request-scoped-byok-bring-your-own-key).
+> documentation](/docs/ai-gateway/authentication-and-byok/byok#request-scoped-byok).
 
 ### Model mappings
 
@@ -497,7 +546,7 @@ For the full behavior, including failure cases and how to confirm where a reques
 After successfully adding your credentials for a provider, you can verify that they're working directly from the **Bring Your Own Key (BYOK)** tab. To test your credentials:
 
 1. In the [AI Gateway](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2F\&title=) tab, navigate to the **Bring Your Own Key (BYOK)** section.
-2. Click the menu for your configured provider.
+2. Click the menu for the key you want to test.
 3. Select **Test Key** from the dropdown.
 
 This will execute a small test query using a cheap and fast model from the selected provider to verify the health of your credentials. The test is designed to be minimal and cost-effective while ensuring your authentication is working properly.
@@ -513,4 +562,4 @@ Once the test completes, you can click on the test result badge to open a detail
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

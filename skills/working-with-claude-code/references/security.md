@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/security.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "3d516a197892dc41847431f83ee8bb1357fd819fca3f0c1426c6e095d135586f"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "b9cbdaa3db416b1bdd759e48c367d4273947713151eebed423c95f59ff5a71db"
 ---
 
 > ## Documentation Index
@@ -59,7 +59,7 @@ We have implemented several safeguards to protect your data, including:
 * Restricted access to user session data
 * User control over data training preferences. Consumer users can change their [privacy settings](https://claude.ai/settings/privacy) at any time.
 
-For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, and Max users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
+For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, Max, and Ultra users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
 
 ### Additional safeguards
 

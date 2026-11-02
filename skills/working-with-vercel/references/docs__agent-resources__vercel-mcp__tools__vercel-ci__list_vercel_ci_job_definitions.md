@@ -13,8 +13,8 @@ related:
 summary: Use list_vercel_ci_job_definitions with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_job_definitions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "abafdec839d2dd0dc6c141c53380ac58cf6c016e2dd601991526236c1f1ffb18"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0e6ef24a97f92185d3500e899681b8e524ad1fa98de30b776401d360950a4004"
 ---
 
 # list_vercel_ci_job_definitions
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

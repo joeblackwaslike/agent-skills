@@ -12,8 +12,8 @@ related:
 summary: "Learn how to set custom rules to disallow reading from, writing to, and/or calling one or more properties"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-properties.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "773c2d78746db0183fd7bbd48d39e073c6b576521b56555c1c397ffc81555a85"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "faea1edf0a3886b6363026a020154ec5c8c5292ef442a5fe2fe4662a27a0f872"
 ---
 
 # forbidden-properties
@@ -129,4 +129,4 @@ example, the custom rule is also restricted to the `dashboard` and
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

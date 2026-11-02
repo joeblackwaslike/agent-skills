@@ -13,8 +13,8 @@ related:
 summary: Verify a Passport token forwarded to your backend as a signed JWT.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/verify-identity.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ec35aa5a08f68844c837e43fe7860b8dfeeba0e21f0f324dcc4ca227630ae3c4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d040f4de9f00448eb58956c24a08084c47ad7ee1e78050ec2582ea220629bb29"
 ---
 
 # Verify forwarded Passport tokens
@@ -119,4 +119,4 @@ Profile and additional claims are optional. Base the authorization decision on r
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

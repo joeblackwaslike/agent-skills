@@ -16,8 +16,8 @@ related:
 summary: "Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/registrar-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4015a508f3bc50dde61e081a2fd29f1f5a146c1def87543cd05e860515a1dc8a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3c6c471acba5f16689e57cef7ba9b716f65c2b46bc6fdd9c16d7e08255e38ef1"
 ---
 
 # Programmatic Domain Management
@@ -34,6 +34,7 @@ The domains registrar API enables you to programmatically manage your domain lif
 - [Get price data for multiple domains](https://vercel.com/docs/rest-api/domains-registrar/get-price-data-for-multiple-domains) — POST /v1/registrar/domains/price — Get price data for multiple domains in a single request.
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
 - [Get contact verification status for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain) — GET /v1/registrar/domains/{domain}/contact-verification — Get the registrant contact verification status for a domain. U
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 
 Full cross-link map for this page: [/docs/domains/registrar-api.graph.md](/docs/domains/registrar-api.graph.md)
 <!-- /docsgraph:related -->
@@ -127,4 +128,4 @@ If you are currently using the Vercel CLI for domain purchases, pricing, or avai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

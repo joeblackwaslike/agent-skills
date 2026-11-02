@@ -16,8 +16,8 @@ related:
 summary: A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "eeb86a4d453dfcb4da45927a26c995ecc9c086a48e105f91dcc847e99ef33404"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "48205b528a3f21dfb2a4ea915d1784bed97285c37c6aed3b750ff813ec41636f"
 ---
 
 # Projects overview
@@ -36,11 +36,11 @@ Everything you deploy on Vercel lives in a project: a frontend, backend APIs, ba
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
-- [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
-- [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart) — Programmatically host code for user-generated or AI-generated applications on Vercel.
+- [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 
 Full cross-link map for this page: [/docs/projects.graph.md](/docs/projects.graph.md)
 <!-- /docsgraph:related -->
@@ -86,7 +86,7 @@ Combine a project with the [AI SDK](/docs/ai-sdk), [AI Gateway](/docs/ai-gateway
 
 Use [Vercel Sandbox](/docs/sandbox) to run untrusted or agent-generated code in isolated Linux microVMs. Sandboxes support command execution, files, processes, exposed ports, snapshots, persistent environments, remote storage, and custom OCI images through the Vercel Container Registry.
 
-[Vercel Agent](/docs/agent), [eve](/docs/eve), [Vercel MCP](/docs/mcp), and [Vercel Connect](/docs/connect) provide additional building blocks for agents that investigate applications, call tools, access external services, and preserve progress across long-running tasks.
+[Vercel Agent](/docs/agent), [eve](/docs/frameworks/agents/eve), [Vercel MCP](/docs/mcp), and [Vercel Connect](/connect) provide additional building blocks for agents that investigate applications, call tools, access external services, and preserve progress across long-running tasks.
 
 ### Platforms and independently deployed applications
 
@@ -136,4 +136,4 @@ To learn more about limits on the number of projects you can have, see [Limits](
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

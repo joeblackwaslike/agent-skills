@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c6b1c282cf7d73b9004e2446f575aa0680068c11610b469b15e92817ca8f771b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1839ded89981fc9d7feb073591ace7af3e934dfb6cf3776560628e9208a35c1e"
 ---
 
 # Role-based access control (RBAC)
@@ -34,9 +34,10 @@ Teams consist of members, and each member of a team can get assigned a role. The
 - [How Vercel Agent accesses production safely](https://vercel.com/blog/how-vercel-agent-accesses-production-safely)
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams)
+- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans)
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
-- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Directory Sync \\(SCIM\\)](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 
@@ -67,4 +68,4 @@ For specific information on the different access roles available on each plan, s
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

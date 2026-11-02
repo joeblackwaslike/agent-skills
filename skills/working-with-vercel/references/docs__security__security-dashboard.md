@@ -16,8 +16,8 @@ related:
 summary: The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfigurations, and shows how to fix them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/security-dashboard.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d61cff08fa545e4e0e62a868d65214c0593ec127053293f794042755076e12e6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f9dc694305a5e689d3ed431d2eb61b99e2a974f9eec1055805341ca95bcefd14"
 ---
 
 # Security Dashboard
@@ -185,4 +185,4 @@ Access to the Security Dashboard depends on your team role. Some checks read dat
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

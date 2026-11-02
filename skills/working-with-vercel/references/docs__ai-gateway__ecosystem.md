@@ -8,16 +8,16 @@ type: conceptual
 prerequisites:
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/ecosystem/framework-integrations/flue
   - /docs/ai-gateway/ecosystem/framework-integrations/langchain
   - /docs/ai-gateway/ecosystem/framework-integrations/llamaindex
   - /docs/ai-gateway/ecosystem/framework-integrations/mastra
   - /docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai
-  - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
 summary: Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrations for your AI applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c2bbb3f80a8eac8ecf0934531e16ce39ab8619e9e37bb0fbc4fbaa113ff5ef5e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8e1a7040e82243b110c41e9a07cbea3264273888ec540500ef427ad9c225d35f"
 ---
 
 # AI Gateway Ecosystem and Integrations
@@ -35,7 +35,7 @@ AI Gateway integrates with the AI development ecosystem you use. Whether you're 
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
-- [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models) — Integrate powerful AI services and models seamlessly into your Vercel projects.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem.graph.md](/docs/ai-gateway/ecosystem.graph.md)
 <!-- /docsgraph:related -->
@@ -46,6 +46,7 @@ These popular frameworks work through Chat Completions endpoints or native integ
 
 | Framework                                                                    | Language   | Integration type | Use case                             |
 | ---------------------------------------------------------------------------- | ---------- | ---------------- | ------------------------------------ |
+| [Flue](/docs/ai-gateway/ecosystem/framework-integrations/flue) | TypeScript/JS | Native provider | Agents |
 | [LangChain](/docs/ai-gateway/ecosystem/framework-integrations/langchain)     | Python/JS  | Chat Completions | Chains, agents, RAG pipelines        |
 | [LlamaIndex](/docs/ai-gateway/ecosystem/framework-integrations/llamaindex)   | Python     | Native package   | Knowledge assistants, document Q\&A   |
 | [Mastra](/docs/ai-gateway/ecosystem/framework-integrations/mastra)           | TypeScript | Native           | AI workflows and agents              |
@@ -186,4 +187,4 @@ Attribution is optional. Your requests work normally without these headers.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

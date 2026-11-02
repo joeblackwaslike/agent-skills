@@ -16,8 +16,8 @@ related:
 summary: Learn about advanced configurations for Vercel functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1a28ec7717a1075b1ce33921d41aa62faf740258201d642f2ddb6371dec0d5f9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "01c9dcc8b6fa8778fc57a7960db2a3ac4f103af98a1db5feab8668e4525db9d6"
 ---
 
 # Advanced Node.js Usage
@@ -30,13 +30,14 @@ To use Node.js, create a file inside your project's `api` directory. No addition
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
+- [Node.js 26 LTS is now Generally Available on Vercel](https://vercel.com/changelog/node-js-26-lts-is-now-generally-available-on-vercel)
 - [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel) — Learn how to work with build output limits for Next.js on Vercel.
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
-- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions) — Learn about the supported Node.js versions on Vercel.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md](/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md)
 <!-- /docsgraph:related -->
@@ -108,6 +109,12 @@ module.exports = (request, response) => {
 };
 ```
 
+### HTTP/2 for `fetch` on Node.js 26
+
+On Node.js 26, the built-in `fetch` negotiates HTTP/2 with servers that support it. For HTTP/2 responses, `response.statusText` is empty. Use `response.status` to check the HTTP status code.
+
+To keep HTTP/1.1 for the built-in `fetch` in Vercel Functions, set the [environment variable](/docs/environment-variables/managing-environment-variables) `VERCEL_FETCH_DISABLE_H2` to `1` for the relevant environments and redeploy. This setting applies to Vercel Functions on Node.js 26. It doesn't change `fetch` during builds. A custom dispatcher set with `setGlobalDispatcher`, or a `dispatcher` passed to `fetch`, takes precedence.
+
 ### Experimental Node.js require() of ES Module
 
 By default, we disable experimental support for [requiring ES Modules](https://nodejs.org/docs/latest-v24.x/api/modules.html#loading-ecmascript-modules-using-require). You can enable it by setting the following [Environment Variable](/docs/environment-variables/managing-environment-variables) in your project settings:
@@ -120,4 +127,4 @@ By default, we disable experimental support for [requiring ES Modules](https://n
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

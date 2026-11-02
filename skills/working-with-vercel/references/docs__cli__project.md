@@ -16,8 +16,8 @@ related:
 summary: "Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, rename, remove, and configure..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "acdf4373d7316aeff27204d0949b88d5d65b819941f50cc3ab2a9274a0c14740"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b77be20dac98a08e76607b56d939ef59084cea6425c97a57a50bec3e5ff9aed8"
 ---
 
 # vercel project
@@ -30,12 +30,13 @@ The `vercel project` command manages your Vercel Projects from the terminal: lis
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Agents can now enable Web Analytics and Observability Plus with Vercel CLI](https://vercel.com/changelog/agents-can-now-enable-web-analytics-and-observability-plus-with-vercel-cli)
 - [Update Project Settings from the Vercel CLI](https://vercel.com/changelog/update-project-settings-from-the-vercel-cli)
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
-- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 - [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
+- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md)
@@ -419,13 +420,17 @@ vercel project web-analytics disable my-project --format json
 
 ### `speed-insights`
 
-Enable or disable [Speed Insights](/docs/speed-insights) for a project. The `action` can be `enable` or `disable`. When omitted, the command enables Speed Insights. When `name` is omitted, the command uses the linked project.
+Upgrade a project to [Speed Insights Plus](/docs/speed-insights/limits-and-pricing), or downgrade to the Speed Insights free tier. The `action` can be `enable` or `disable`. When omitted, the command upgrades the project to Speed Insights Plus. When `name` is omitted, the command uses the linked project.
 
 ```bash filename="terminal"
 vercel project speed-insights [action] [name] [options]
 ```
 
-Both `enable` and `disable` ask for confirmation and have no flag to skip it, so run the command in an interactive terminal. `enable` upgrades the project to [Speed Insights Plus](/docs/speed-insights/limits-and-pricing). Vercel bills Speed Insights Plus usage on Pro and Enterprise. Teams on Hobby must upgrade to Pro before continuing. `disable` downgrades the project back to Speed Insights. The `--format json` option only changes the output format and the confirmation will come first.
+Both `enable` and `disable` ask for confirmation and have no flag to skip it, so run the command in an interactive terminal. `enable` upgrades the project to Speed Insights Plus. Vercel bills Speed Insights Plus usage on Pro and Enterprise. Teams on Hobby must upgrade to Pro before continuing. `disable` downgrades the project to the Speed Insights free tier.
+
+Data collection continues under the free tier, subject to your team's [allocation limits](/docs/speed-insights/limits-and-pricing#limitations). To stop automatic collection from new visits to the updated deployment, [remove Speed Insights instrumentation and redeploy](/docs/speed-insights/using-speed-insights#stopping-data-collection).
+
+The `--format json` option only changes the output format, and the confirmation comes first. The JSON `enabled` field reports the project's Plus status. Data collection can continue when this field is `false`.
 
 #### Options
 
@@ -436,16 +441,16 @@ Both `enable` and `disable` ask for confirmation and have no flag to skip it, so
 #### Examples
 
 ```bash filename="terminal"
-# Enable for the linked project
+# Upgrade the linked project to Plus
 vercel project speed-insights
 
-# Enable for a named project
+# Upgrade a named project to Plus
 vercel project speed-insights enable my-project
 
-# Disable for a named project
+# Downgrade a named project to the free tier
 vercel project speed-insights disable my-project
 
-# Disable and print the result as JSON
+# Downgrade to the free tier and print the result as JSON
 vercel project speed-insights disable my-project --format json
 ```
 
@@ -588,4 +593,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

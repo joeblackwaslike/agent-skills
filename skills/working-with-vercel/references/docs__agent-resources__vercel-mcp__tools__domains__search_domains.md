@@ -13,8 +13,8 @@ related:
 summary: Use search_domains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "382aae395fc87b0f5c4ee5932c03b507891c3fd9436599c615080d358ed5e8e4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "910b341fbb7896982b37c6f8b520e0efe74b89629db1df84cb4be19eeca994ab"
 ---
 
 # search_domains
@@ -49,4 +49,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

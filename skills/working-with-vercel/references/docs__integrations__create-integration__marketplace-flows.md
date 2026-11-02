@@ -17,8 +17,8 @@ related:
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ff942b1eec39a0669a284e7752e5c4857ae4bbcca18b271f5cac5cdd143e9afc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "66b814decdce5b047eec8b30038f79d7d52e43e777d604d2cf40bf6bee9d72dd"
 ---
 
 # Native Integration Flows
@@ -31,6 +31,7 @@ As a Vercel integration provider, when you [create a native product integration]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to Integrate Optimizely Feature Experimentation with Next.js and Vercel](https://vercel.com/kb/guide/how-to-integrate-optimizely-feature-experimentation-next-vercel) — This guide covers setting up feature flags, implementing A/B tests, and optimizing performance using React Server Compon
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
@@ -356,11 +357,11 @@ sequenceDiagram
 
 Global Config Syncing is an optional feature that providers can enable for their integration. Users can opt in by enabling it for their installation in the Vercel Dashboard.
 
-Users can enable this setting either during the integration's installation or later through the installation's settings page. Providers must handle this setting in their [Provision Resource](/docs/integrations/create-integration/marketplace-api#provision-resource) and [Update Resource](/docs/integrations/create-integration/marketplace-api#update-resource) endpoints.
+Users can enable this setting either during the integration's installation or later through the installation's settings page. Providers must handle this setting in their [Provision Resource](/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource) and [Update Resource](/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource) endpoints.
 
 The presence of `protocolSettings.experimentation.edgeConfigId` in the payload indicates that the user has enabled the setting and expects their Global Config to be used.
 
-Afterward, providers can use the [Global Config Syncing](/docs/integrations/create-integration/marketplace-api#push-data-into-a-user-provided-edge-config) endpoint to push their data into the user's Global Config.
+Afterward, providers can use the [Global Config Syncing](/docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-global-config) endpoint to push their data into the user's Global Config.
 
 Once the data is available, users can connect the resource to a Vercel project. Doing so will add an `EXPERIMENTATION_CONFIG` environment variable containing the Global Config connection string along with the provider's secrets.
 
@@ -522,4 +523,4 @@ If transfers fail, check these common issues:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

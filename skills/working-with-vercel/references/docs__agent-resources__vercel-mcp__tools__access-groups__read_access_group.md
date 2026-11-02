@@ -13,8 +13,8 @@ related:
 summary: Use read_access_group with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/read_access_group.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "38c14e92042e9c39024a991c0a29cef4c502e52947439bd8fcc51ed9666c1000"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "869ddf00a48bfb54bd96a2e6b8b79e877a2e50c463c7a48808a84e3f86b665ea"
 ---
 
 # read_access_group
@@ -30,8 +30,8 @@ Reads an access group.
 - [read_access_group_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/read_access_group_project) — Use read_access_group_project with Vercel MCP.
 - [Reads an access group](https://vercel.com/docs/rest-api/access-groups/reads-an-access-group) — GET /v1/access-groups/{idOrName} — Allows to read an access group
 - [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members) — Use list_access_group_members with Vercel MCP.
-- [Reads an access group project](https://vercel.com/docs/rest-api/access-groups/reads-an-access-group-project) — GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} — Allows reading an access group project
 - [list_access_groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups) — Use list_access_groups with Vercel MCP.
+- [Reads an access group project](https://vercel.com/docs/rest-api/access-groups/reads-an-access-group-project) — GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} — Allows reading an access group project
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/access-groups/read_access_group.graph.md](/docs/agent-resources/vercel-mcp/tools/access-groups/read_access_group.graph.md)
 <!-- /docsgraph:related -->
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

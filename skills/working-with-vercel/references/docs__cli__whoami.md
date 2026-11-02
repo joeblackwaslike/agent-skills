@@ -12,8 +12,8 @@ related:
 summary: Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/whoami.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6219375538df447c39b4830cbaade481751cf62063eb22224f42a5fc934156ed"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fe7fb24a96755df4c4591250c2ca6358fe5b3d530dc92f178aa54a67b4bc7fe9"
 ---
 
 # vercel whoami
@@ -28,8 +28,8 @@ The `vercel whoami` command is used to show the username of the user currently l
 
 - [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
 - [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
-- [vercel logout](https://vercel.com/docs/cli/logout) — Learn how to logout from your Vercel account using the vercel logout CLI command.
 - [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [vercel logout](https://vercel.com/docs/cli/logout) — Learn how to logout from your Vercel account using the vercel logout CLI command.
 - [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 
 Full cross-link map for this page: [/docs/cli/whoami.graph.md](/docs/cli/whoami.graph.md)
@@ -68,4 +68,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

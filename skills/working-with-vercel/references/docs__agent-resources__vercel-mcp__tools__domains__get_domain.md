@@ -13,8 +13,8 @@ related:
 summary: Use get_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4be1f9195e88e096e11fd50d5569f511066eb7d77f084e772b4ef1b396e13fce"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4a6ac4c7e9c429922840a36a65245d62cfb4386af5b69bbb15f2aeda6c75c1b0"
 ---
 
 # get_domain
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

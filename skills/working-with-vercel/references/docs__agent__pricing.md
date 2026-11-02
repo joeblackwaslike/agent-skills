@@ -16,8 +16,8 @@ related:
 summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f13e33b30f035da340207b863ef365acc4af88a2e952d7b237fc3d5766cc4322"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d86c3bef98ce6b57cf7edb0c071f53bb00e1647154042a41d42cf50b4ea6d305"
 ---
 
 # Vercel Agent Pricing
@@ -31,13 +31,13 @@ Vercel Agent charges the underlying provider inference rate with no markup, plus
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Vercel Agent can now validate alerts before paging](https://vercel.com/changelog/vercel-agent-can-now-validate-alerts-before-paging-you)
 - [Vercel Agent investigations now included in Observability Plus](https://vercel.com/changelog/vercel-agent-investigations-now-included-in-observability-plus)
+- [Vercel Agent sessions now cost 67% less](https://vercel.com/changelog/vercel-agent-sessions-now-cost-67-percent-less)
 - [Vercel for Slack now in public beta](https://vercel.com/changelog/vercel-for-slack-now-in-public-beta)
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Vercel Agent has updated pricing](https://vercel.com/changelog/vercel-agent-has-updated-pricing)
-- [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta)
 - [Pricing](https://v0.app/docs/pricing) — Understand the v0 plans, pricing, and usage limits.
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing) — Understand how eve usage maps to Vercel resources and inherited platform limits.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
@@ -95,7 +95,7 @@ There is no charge for using Vercel Agent Installation. Standard usage charges f
 
 To view Vercel Agent usage and costs:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
+1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
 2. Open **Usage**.
 3. Select a time range and review the usage and cost information for Chat, Code Review, and investigations.
 
@@ -119,4 +119,4 @@ Manual investigations and investigation reruns remain available and can create p
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

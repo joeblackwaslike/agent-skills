@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "266e7bea8eb7d2b02a1ad31c86ef3a4b863e45976516f8c70adfc203f0538f91"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a40fa13e4131baca989d78f0540dec152f45a468d63bbb7f1e74b42b9989ef84"
 ---
 
 # Calculating usage of resources
@@ -30,12 +30,13 @@ Understanding how usage and accrual happen on Vercel helps you make the best cho
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Managing Usage & Costs](https://vercel.com/docs/image-optimization/managing-image-optimization-costs) — Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
-- [Pricing and Limits](https://vercel.com/docs/eve/pricing) — Understand how eve usage maps to Vercel resources and inherited platform limits.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md](/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md)
 <!-- /docsgraph:related -->
@@ -159,4 +160,4 @@ For more information on Vercel's pricing, guidance on optimizing consumption, an
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Learn how to redact sensitive data from your Web Analytics events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/redacting-sensitive-data.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "acc5b09f0ca0eee0e5153d485dff41c14c51f0dd88cf67545be08245354c2e9c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b66f95820e69ec904c4b8b47e1e63d616f783cb3ed3042899700c6f6ec72cae6"
 ---
 
 # Redacting Sensitive Data from Web Analytics Events
@@ -26,13 +26,12 @@ Sometimes, URLs and query parameters may contain sensitive data. This could be a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Tracking custom events](https://vercel.com/docs/analytics/custom-events) — Learn how to send custom analytics events from your application.
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost) — Learn how to use the Vercel Toolbar in your local environment.
 
 Full cross-link map for this page: [/docs/analytics/redacting-sensitive-data.graph.md](/docs/analytics/redacting-sensitive-data.graph.md)
 <!-- /docsgraph:related -->
@@ -815,4 +814,4 @@ inject({
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

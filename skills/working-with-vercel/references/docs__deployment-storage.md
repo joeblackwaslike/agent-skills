@@ -13,8 +13,8 @@ related:
 summary: Learn what Deployment Storage includes, how Vercel measures it, and how to control your usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3733f8ca398fd99b80b8c54d9216e337ba7d2720b3590fa86f50d378116a8391"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6037d2d99ee0563a773b30d1729c33b4fbe6e4aca9a6a80fe92113e570ebae95"
 ---
 
 # Deployment Storage
@@ -87,6 +87,8 @@ Vercel measures Deployment Storage and Functions Storage in GB-months. A GB-mont
 
 For each metric, Vercel records the maximum stored amount for each project on each billing day. It adds those daily project amounts across the billing period. Storing 1 GB every day in a 30-day month equals 1 GB-month.
 
+A deployment stops contributing to Deployment Storage and Functions Storage the moment it is first deleted, whether you delete it manually or a retention policy deletes it. You are not charged during the [recovery period](/docs/deployment-retention#restoring-a-deleted-deployment), the window after deletion when Vercel can still restore the deployment. A restored deployment counts toward Deployment Storage and Functions Storage again.
+
 Enterprise rates follow your contract. Your plan or contract may also include an allowance. Use **Usage** and your invoice to confirm your team's allowance, rate, and charge.
 
 ## Control retention
@@ -118,4 +120,4 @@ For help reducing Deployment Storage usage, see the [optimization guide](/docs/d
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

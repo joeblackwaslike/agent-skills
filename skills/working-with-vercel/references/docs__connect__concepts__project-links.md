@@ -17,8 +17,8 @@ related:
 summary: A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a runtime token request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/project-links.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c291b2d840f1e790a40818cc2fba2aeea898dea3457c7efac01879fb1855101f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "02820787840adb44b6a32179716ab7aaf3bad60d8115452f58b4e83a16ad7520"
 ---
 
 # Project links in Vercel Connect
@@ -33,11 +33,11 @@ A **project link** connects a team-owned connector to one Vercel project on the 
 
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments)
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
+- [Disconnect a connector from a project environment](https://vercel.com/docs/rest-api/connect/disconnect-a-connector-from-a-project-environment) — DELETE /v1/connect/connectors/{connector}/projects/{projectId}/environments/{environment} — Remove a connector's access
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
+- [Networking](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking) — Vercel MCP tools for networking.
 
 Full cross-link map for this page: [/docs/connect/concepts/project-links.graph.md](/docs/connect/concepts/project-links.graph.md)
 <!-- /docsgraph:related -->
@@ -99,4 +99,4 @@ Deleting a Custom Environment immediately prevents deployments that use its iden
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel serves documentation to AI agents as Markdown and helps them discover related pages through content negotiation, discovery indexes,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/markdown-access.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d274582dc2ef188b55f120a35ea4b1e1028704226bfb6b8007f8b1eaeeb62273"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f7c98f9334faa1f591db6103c5f924eb839357506ed4966e47d0282d4e52fdbb"
 ---
 
 # Markdown and Agent Discovery
@@ -30,18 +30,18 @@ Vercel documentation is available as HTML for humans and structured Markdown for
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to serve documentation for agents](https://vercel.com/kb/guide/how-to-serve-documentation-for-agents) — Learn how to serve markdown to agents and HTML for humans from the same URL
 - [Making agent-friendly pages with content negotiation](https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation)
+- [How to serve documentation for agents](https://vercel.com/kb/guide/how-to-serve-documentation-for-agents) — Learn how to serve markdown to agents and HTML for humans from the same URL
 - [Docs pages support Markdown responses](https://vercel.com/changelog/docs-pages-support-markdown-responses)
 - [AEO & GEO](https://vercel.shop/docs/anatomy/aeo-geo) — How the storefront makes itself legible to AI answer engines and generative search, with built-in content negotiation, s
-- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide) — Learn how to deploy an AI application to production on Vercel
-- [Docs Contribution Guide](https://nextjs.org/docs/community/contribution-guide) — Learn how to contribute to Next.js Documentation
 - [Open Vercel documentation pages in AI providers](https://vercel.com/changelog/open-vercel-documentation-pages-in-ai-providers)
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
+- [Docs Contribution Guide](https://nextjs.org/docs/community/contribution-guide) — Learn how to contribute to Next.js Documentation
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [vercel agent](https://vercel.com/docs/cli/agent) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
+- [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
 - [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
-- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 
 Full cross-link map for this page: [/docs/agent-resources/markdown-access.graph.md](/docs/agent-resources/markdown-access.graph.md)
 <!-- /docsgraph:related -->
@@ -184,4 +184,4 @@ In tools like Cursor, add `.md` documentation URLs to your [project rules](https
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

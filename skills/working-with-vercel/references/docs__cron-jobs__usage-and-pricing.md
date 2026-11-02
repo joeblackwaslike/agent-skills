@@ -15,8 +15,8 @@ related:
 summary: Learn about cron jobs usage and pricing details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs/usage-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "40f2294a32ba03d539d9ae7d7463952de77f828f3a2c54b2d30e841397e86899"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9e621a5dedbe5c99f86c618257051b4963697591723303528c86455db4c5180e"
 ---
 
 # Usage & Pricing for Cron Jobs
@@ -81,4 +81,4 @@ You use a function to invoke a cron job, and therefore [usage](/docs/limits) and
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Learn how to login into your Vercel account using the vercel login CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/login.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3a8264726cce0880a7c7ddc99723e2138cc98f79f2b5b38016ab60c9c2149d94"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9078d1e2bb6d1ca0d965d399d86c5145c001f858433d8487745b68c1abb82883"
 ---
 
 # vercel login
@@ -30,8 +30,8 @@ The `vercel login` command allows you to login to your Vercel account through Ve
 - [New Vercel CLI login flow](https://vercel.com/changelog/new-vercel-cli-login-flow)
 - [vercel logout](https://vercel.com/docs/cli/logout) — Learn how to logout from your Vercel account using the vercel logout CLI command.
 - [vercel whoami](https://vercel.com/docs/cli/whoami) — Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
-- [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 - [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/login.graph.md](/docs/cli/login.graph.md)
@@ -74,4 +74,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

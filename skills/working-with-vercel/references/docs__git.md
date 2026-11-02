@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production branch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1893cc7b01f765204a464e03e147528b963aa20ba6a90ace1bf772913dd9339f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b01f65e629d2675017c30dea185611c0738221ecd3463ceccf31acc9a04303eb"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -39,16 +39,16 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
+- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/git.graph.md](/docs/git.graph.md)
 <!-- /docsgraph:related -->
 
 Using Git with Vercel provides the following benefits:
 
-- [Preview deployments](/docs/deployments/environments#preview-environment-pre-production#) for every push.
+- [Preview deployments](/docs/deployments/environments#preview-environment-pre-production) for every push.
 - [Production deployments](/docs/deployments/environments#production-environment) for the most recent changes from the [production branch](#production-branch).
 - Instant rollbacks when reverting changes assigned to a custom domain.
 
@@ -242,4 +242,4 @@ Alternatively, teams on the Pro plan can use [custom environments](/docs/deploym
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

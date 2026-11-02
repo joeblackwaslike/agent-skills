@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/privacy-policy.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a0f3c495e34a20a943a877b5b834fcdfee2fd49943cf2789891cd8c6932fd0ea"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e50dcbbf50f553639cf68c3949ae35fcc85d75c7d2024da330ec5305db1a2596"
 ---
 
 # Privacy and Compliance
@@ -89,7 +89,7 @@ In version 2, Vercel generates a random seed at build time and passes it through
 
 The Resilient Intake does not depend on a single predictable URL path for data collection, enhancing reliability and increasing data collection efficiency.
 
-> **💡 Note:** Resilient Intake requires version 2 of the `@vercel/analytics` [package](/docs/analytics/package#whats-new-in-version-2).
+> **💡 Note:** Resilient Intake requires version 2 of the `@vercel/analytics` [package](/docs/analytics/package#what's-new-in-version-2.x).
 
 
 ---
@@ -97,4 +97,4 @@ The Resilient Intake does not depend on a single predictable URL path for data c
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

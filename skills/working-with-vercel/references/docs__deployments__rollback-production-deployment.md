@@ -16,8 +16,8 @@ related:
 summary: Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/rollback-production-deployment.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a2bef676f4de41f01a9a48439452a07b5a589d391508c8d7f27ca266349db38b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b1d568692d53fcfc56d378a7175d80ee1bdd44775b1ad1b5f30b98bdef7d0592"
 ---
 
 # Rolling back a production deployment
@@ -32,12 +32,11 @@ Use this guide to recover from a bad production deployment. You'll roll back to 
 
 - [How to determine which Vercel Deployment introduced an issue?](https://vercel.com/kb/guide/how-to-determine-which-vercel-deployment-introduced-an-issue) — Process to quickly determine when a deployment issue was introduced using the Vercel CLI
 - [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend) — Incrementally release updates to your backend to minimize impact of mistakes.
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/rollback-production-deployment.graph.md](/docs/deployments/rollback-production-deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -265,4 +264,4 @@ vercel promote status
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

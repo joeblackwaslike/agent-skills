@@ -13,8 +13,8 @@ related:
 summary: Learn how to use Vercel Firewall to allow requests from trusted IP addresses and deny requests from other networks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/trusted-ip-access.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "aeb87de3381143b39732c8d9a4627f5fde2869cc0ff909633cbcc7a6b7b0c50f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8ef05e3ac0ee7ab9ec09b22aa918466ceda71e296954d68573002065af9e7804"
 ---
 
 # Restrict access to trusted IP addresses
@@ -114,4 +114,4 @@ Test from both an allowed network and a network outside your allowed IP addresse
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

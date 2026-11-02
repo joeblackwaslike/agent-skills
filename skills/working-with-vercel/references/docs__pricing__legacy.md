@@ -15,8 +15,8 @@ related:
 summary: Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execution.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/legacy.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a91eb419bc5ebf745a9c8e059de801b24d9c7bfa97657df669895d6b33c4c979"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8ea448d9b80aeeb9ffaf48f219b43f43cab2fdbb556f166fa7a85a6ab6415bee"
 ---
 
 # Legacy Metrics
@@ -90,4 +90,4 @@ Vercel Function Execution can be filtered by:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

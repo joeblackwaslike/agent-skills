@@ -15,8 +15,8 @@ related:
 summary: Learn how to add Together AI connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/togetherai.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e3d35ab7e64f65497562608622091484434ea5924fa6bdacb89f83e6ec0bd11d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3686dcd06b80f7d0063cb4900421dc8a6f07dc7799a512255b57f8cc0090a452"
 ---
 
 # Vercel Together AI Integration
@@ -32,10 +32,11 @@ interaction and co-creative functionalities.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
-- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
+- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/togetherai.graph.md](/docs/agent-resources/integrations-for-models/togetherai.graph.md)
@@ -110,4 +111,4 @@ To follow this guide, you'll need the following:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

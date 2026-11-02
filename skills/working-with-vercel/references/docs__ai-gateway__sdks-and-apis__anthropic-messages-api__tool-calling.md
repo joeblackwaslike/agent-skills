@@ -13,8 +13,8 @@ related:
 summary: Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e205df530344d5d0b4383165c11d8b3aabc500657fc76e74ae31b5d6732f5b6d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c2c8db182a7d09235cd3172934bc09205d5530b0c8465360d98fdf6de7ee2782"
 ---
 
 # Anthropic Messages Tool Calling with AI Gateway
@@ -27,7 +27,6 @@ The Anthropic Messages API supports function calling, allowing models to call to
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool) — Learn what tools are, how tool calling works, and how you can use them to build agents.
 - [OpenAI Responses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling) — Define tools the model can call with the OpenAI Responses API through AI Gateway.
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [OpenAI Chat Completions Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling) — Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
@@ -213,4 +212,4 @@ When the model makes tool calls, the response includes tool use blocks:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

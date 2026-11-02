@@ -15,8 +15,8 @@ related:
 summary: Options available for service configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/config-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2a1fd56e40c86c2a373191107a5107845737a389633656b125dc6cde8f4dadad"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5f5b6d8e86dd3dcd8b3738c4e117173e932f2c11b810a7cc5785469ad9408afb"
 ---
 
 # Service configuration reference
@@ -36,9 +36,9 @@ A service is configured like any standalone Vercel project, using the same build
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Project Configuration](https://vercel.com/docs/project-configuration) — Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control build
-- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Daemon Configuration Reference](https://vercel.com/docs/daemons/config-reference) — Every field you can set on a daemon in the daemons key of vercel.json.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [General settings](https://vercel.com/docs/project-configuration/general-settings) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
 
 Full cross-link map for this page: [/docs/services/config-reference.graph.md](/docs/services/config-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -180,4 +180,4 @@ The routing and URL keys run only after a request enters the service. See [Routi
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

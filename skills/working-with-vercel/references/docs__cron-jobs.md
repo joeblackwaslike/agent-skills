@@ -16,8 +16,8 @@ related:
 summary: Learn about cron jobs, how they work, and how to use them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cron-jobs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f9a5834714217e6c4bcd5595f91402c882ed71cca2954caea40794f01a6b0762"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b5e2e0404906e771bab1a6476f25162d69d164971933ce2e8b339e14b9b9b580"
 ---
 
 # Cron Jobs
@@ -39,10 +39,10 @@ Cron jobs are time-based scheduling tools used to automate repetitive tasks. By 
 - [Run cron jobs from deployment summary](https://vercel.com/changelog/run-cron-jobs-from-deployment-summary)
 - [Run scheduled jobs with Vercel Cron Jobs and Vercel Functions](https://vercel.com/changelog/run-scheduled-jobs-with-vercel-cron-jobs-and-vercel-functions)
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
-- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
 
 Full cross-link map for this page: [/docs/cron-jobs.graph.md](/docs/cron-jobs.graph.md)
@@ -103,4 +103,4 @@ You can also use [crontab guru](https://crontab.guru/) to validate your cron exp
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

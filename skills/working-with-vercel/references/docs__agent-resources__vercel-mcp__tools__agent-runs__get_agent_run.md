@@ -9,17 +9,17 @@ prerequisites:
   - /docs/agent-resources/vercel-mcp/tools/agent-runs
   - /docs/agent-resources/vercel-mcp/tools
 related:
-  - /docs/eve/agent-runs
+  - /docs/agent-runs
 summary: Use get_agent_run with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ed6a2dc52d7ad896e55a2598f2a7008a2e371aebdd3bdf4d08ab97867cb7e47c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0e107e2d89d8a793d186f2cc2f84dfb9a08e9193fe6e09ef9bf089b3f6e70c56"
 ---
 
 # get_agent_run
 
-Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-with-vercel-mcp).
+Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-vercel-mcp).
 
 
 <!-- docsgraph:related -->
@@ -32,9 +32,8 @@ Use this tool with agents built with [eve](/docs/eve/agent-runs#inspect-runs-wit
 - [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects)
-- [get_agent_run_trace](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace) — Use get_agent_run_trace with Vercel MCP.
-- [Agent Runs](https://vercel.com/docs/eve/agent-runs) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
-- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
+- [AgentEnv by Scale AI](https://vercel.com/docs/sandbox/ecosystem/agentenv) — Run evaluations with AgentEnv by Scale AI using separate Vercel sandboxes for the environment and agent.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run.graph.md](/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run.graph.md)
 <!-- /docsgraph:related -->
@@ -59,4 +58,4 @@ Get detailed metadata for a single eve Agent Run, including events, workflow met
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

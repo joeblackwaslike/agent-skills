@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/themes.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "a9e0ea7b69f472039ac22f969f9bf646f8c3152b966fed40e902a15326066c0d"
+fetched_at: "2026-11-02T12:04:46.311Z"
+sha256: "fe8c5bda284d46c0721e49fadc6e8076bd370409fa19aafc4da57381f3adb441"
 ---
 
 # Themes
@@ -103,7 +103,6 @@ nested configuration objects. For example:
   - `diff.removed`: Background for removed lines in diffs.
 - **`border`**: Defines border colors.
   - `default`: The standard border color.
-  - `focused`: Border color when an element is focused.
 - **`status`**: Colors for status indicators.
   - `success`: Used for successful operations.
   - `warning`: Used for warnings.
@@ -111,6 +110,9 @@ nested configuration objects. For example:
 - **`ui`**: Other UI elements.
   - `comment`: Color for code comments.
   - `symbol`: Color for code symbols and operators.
+  - `active`: Border and text color for active or running elements.
+  - `focus`: Color for focused elements, such as selected menu items and focused
+    borders.
   - `gradient`: An array of colors used for gradient effects.
 
 **Required properties:**
@@ -172,8 +174,7 @@ custom theme defined in `settings.json`.
     "accent": "#d3869b"
   },
   "border": {
-    "default": "#3c3836",
-    "focused": "#458588"
+    "default": "#3c3836"
   },
   "status": {
     "success": "#b8bb26",
@@ -183,6 +184,8 @@ custom theme defined in `settings.json`.
   "ui": {
     "comment": "#928374",
     "symbol": "#8ec07c",
+    "active": "#83a598",
+    "focus": "#b8bb26",
     "gradient": ["#cc241d", "#d65d0e", "#d79921"]
   }
 }

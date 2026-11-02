@@ -14,8 +14,8 @@ related:
 summary: Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8b650f1fd53a253e02053cb02278cfc5f57632321ec37767ad886e2ae780a350"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3953d7e57a8640906429e94a7023e9d678ef23952c0c059ae1a73ce44a2549f9"
 ---
 
 # Assigning a custom domain to an environment
@@ -30,7 +30,7 @@ sha256: "8b650f1fd53a253e02053cb02278cfc5f57632321ec37767ad886e2ae780a350"
 - [Assigning a domain to a Git branch](https://vercel.com/docs/domains/working-with-domains/assign-domain-to-a-git-branch) — Learn how to assign a domain to a different Git branch with this guide.
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
 - [Add Custom Domain](https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain) — Server action for programmatically adding custom domains to Vercel projects.
-- [Managing Nameservers](https://vercel.com/docs/domains/managing-nameservers) — Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/add-a-domain-to-environment.graph.md](/docs/domains/working-with-domains/add-a-domain-to-environment.graph.md)
 <!-- /docsgraph:related -->
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/domains/working-with-domains/add-a-dom
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

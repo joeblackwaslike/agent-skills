@@ -9,15 +9,15 @@ prerequisites:
   []
 related:
   - /docs/frameworks/more-frameworks
+  - /docs/frameworks/agents
   - /docs/getting-started-with-vercel
   - /docs/git
   - /docs/deployments/environments
-  - /docs/functions
 summary: Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter what tool you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e732d8e3175b3a91514cdb28344823313107c67da008edde3b9b027b9fffa640"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5b98c69a444ba22714d68cfbaab942965b28c0418d332d4a26b9a44dc42ab819"
 ---
 
 # Frameworks on Vercel
@@ -45,6 +45,8 @@ Vercel has first-class support for [a wide range of the most popular frameworks]
 
 Full cross-link map for this page: [/docs/frameworks.graph.md](/docs/frameworks.graph.md)
 <!-- /docsgraph:related -->
+
+For AI applications, explore [agent frameworks](/docs/frameworks/agents) to build agents with eve, Mastra, Flue, and Vercel. Each guide covers the framework’s setup, hosting requirements, and Vercel integrations.
 
 Learn how to [get started with Vercel](/docs/getting-started-with-vercel) or clone one of our example repos to your favorite git provider and deploy it on Vercel using one of the templates below:
 
@@ -104,4 +106,4 @@ Learn more about deploying your preferred framework on Vercel with the following
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

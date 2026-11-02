@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure access groups for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "db333d7cc43426b85dffbe4b4640d30694358fa287d9b8ecf79f25e9736974d7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2d66fc3d673539aa9382bf23628049500a1bec3576e4c0647925863312991036"
 ---
 
 # Access Groups
@@ -35,8 +35,8 @@ Access Groups provide a way to manage groups of Vercel users across projects on 
 - [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [Access groups now generally available on Enterprise plans](https://vercel.com/changelog/access-groups-now-generally-available-on-enterprise-plans)
 - [Access Groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups) — Vercel MCP tools for access groups.
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
 - [Creates an access group](https://vercel.com/docs/rest-api/access-groups/creates-an-access-group) — POST /v1/access-groups — Allows to create an access group
 
@@ -123,4 +123,4 @@ Some things to note:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

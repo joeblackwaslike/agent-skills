@@ -9,20 +9,20 @@ prerequisites:
   []
 related:
   - /docs/release-phases/public-beta-agreement
-  - /docs/connect/legal
   - /docs/kms/quickstart
   - /docs/kms/concepts/key-rotation
   - /docs/kms/concepts/authentication
+  - /docs/kms/ts-sdk-reference
 summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from Vercel Functions with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cec6fc2ad2c31846efa0514bd86e3cf492bfa8e7d70d0d06b15acb44d45243a5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c7dfbff9341ede71d22755f292bd0396eae10a61658deffdf17644abe801dae8"
 ---
 
 # Key Management Service (KMS)
 
-> Key Management Service is available in Beta on all plans , and is subject to the [Beta Agreement](/docs/release-phases/public-beta-agreement) and [Vercel Connect terms](/docs/connect/legal)
+> Key Management Service is available in Beta on all plans , and is subject to the [Beta Agreement](/docs/release-phases/public-beta-agreement) and [Vercel Connect terms](/legal/service-terms#connect)
 
 Vercel Key Management Service (KMS) gives you managed signing keys that live on Vercel. You sign JWTs and messages by calling the KMS signing API from your Vercel Functions, and Vercel publishes the matching public keys so any relying party can verify the result. Your private keys never leave Vercel, so you avoid storing signing material in environment variables.
 
@@ -111,4 +111,4 @@ KMS is billed per signing operation, with no per-key or per-issuer charge. For t
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

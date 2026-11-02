@@ -8,7 +8,7 @@ type: tutorial
 prerequisites:
   - /docs/monorepos
 related:
-  - /docs/projects
+  - /docs/projects/managing-projects
   - /docs/getting-started-with-vercel
   - /docs/builds/configure-a-build
   - /docs/project-configuration/project-settings
@@ -16,8 +16,8 @@ related:
 summary: Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to deploy Nx to Vercel with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/nx.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "62857d4d0f74ab383c608daf6ac2a019112bb2843d114816be9acd9ad300304e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2755108b38bfe358215ce81a04ca05d0062dca62f2f994768ba1b1a28d03c751"
 ---
 
 # Deploying Nx to Vercel
@@ -31,15 +31,16 @@ Nx is an extensible build system with support for monorepos, integrations, and R
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx) — How to solve the error \\`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\\` or \\`No Output
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
-- [Deploying a Monorepo Using Yarn Workspaces to Vercel](https://vercel.com/kb/guide/deploying-yarn-monorepos-to-vercel) — In this guide, you will deploy a monorepo that includes two frontend applications and one shared library with Yarn works
+- [Import Turborepo, Nx, and Rush monorepos with zero configuration](https://vercel.com/changelog/import-turborepo-nx-and-rush-monorepos-with-zero-configuration)
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq) — Learn the answer to common questions about deploying monorepos on Vercel.
-- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
+- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
+- [Vercel and Sitecore XM Cloud Integration](https://vercel.com/docs/integrations/cms/sitecore) — Integrate Vercel with Sitecore XM Cloud to deploy your content.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/monorepos/nx.graph.md](/docs/monorepos/nx.graph.md)
 <!-- /docsgraph:related -->
@@ -57,7 +58,7 @@ Read the [Intro to Nx](https://nx.dev/docs/getting-started/intro) docs to learn 
   > **💡 Note:** All Nx starters and examples are preconfigured with these settings.
 
 - ### Import your project
-  [Create a new Project](/docs/projects#creating-a-project) on the Vercel dashboard and [import](/docs/getting-started-with-vercel) your monorepo project.
+  [Create a new Project](/docs/projects/managing-projects#creating-a-project) on the Vercel dashboard and [import](/docs/getting-started-with-vercel) your monorepo project.
 
   Vercel handles all aspects of configuring your monorepo, including setting [build commands](/docs/builds/configure-a-build#build-command), the [Root Directory](/docs/builds/configure-a-build#root-directory), the correct directory for npm workspaces, and the [ignored build step](/docs/project-configuration/project-settings#ignored-build-step).
 
@@ -172,4 +173,4 @@ For remote caching on Nx 20+, consider the following options:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

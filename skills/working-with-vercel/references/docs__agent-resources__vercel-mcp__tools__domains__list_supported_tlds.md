@@ -13,8 +13,8 @@ related:
 summary: Use list_supported_tlds with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_supported_tlds.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d248d58937d3f5e8015e038eea14b9b7ac452217c55f6e55654daf572f20511a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5176c6b8510906a71c4e4269ff7b852649d1f672dec9e96092bb5916bb3bc740"
 ---
 
 # list_supported_tlds
@@ -48,4 +48,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -4,8 +4,8 @@ description: Learn how to use Fish Audio with AI Gateway and the direct provider
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "66a441f7a2cfd0a525d4cbcbab9d762f0738957579972039b135a0d406fe909e"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "b8ff5100f52ca7071c7e8ac201dd8c03ff11e724966efb48cc1f92a3a436e605"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -87,7 +87,10 @@ const fishAudio = createFishAudio({
 
 You can use the following optional settings to customize the Fish Audio provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a synchronous or asynchronous callback to resolve the key before each
+  request. The callback is responsible for caching and refreshing credentials.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `FISH_AUDIO_API_KEY` environment variable.

@@ -4,8 +4,8 @@ description: Learn how to use Hugging Face with AI Gateway and the direct provid
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "87bf3b72f18c985b4bfb20aa71a6e99370ff94831307651eb313a867e3e34b5d"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "1f3fd7c0f00a36ec97aa2873280f94fa1de49e402097fc0956f0968bbb600757"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -90,7 +90,11 @@ You can use the following optional settings to customize the Hugging Face provid
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://router.huggingface.co/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `HUGGINGFACE_API_KEY` environment variable. You can get your API key

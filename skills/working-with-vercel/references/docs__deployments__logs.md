@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f066c81d13bee24b2e92e87f7b628aceff462eb7c8b7dd1efdb0a242637e4d0d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9c3e8e86bbb93079b8352b13e1c9ec7cfc7cc2c8905ce792b1a740566d96e011"
 ---
 
 # Accessing Build Logs
@@ -41,7 +41,7 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [How Vercel Agent accesses production safely](https://vercel.com/blog/how-vercel-agent-accesses-production-safely)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [Logs](https://vercel.com/docs/logs) — Use logs to find information on deployment builds, function executions, and more.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Link and share Build Logs](https://vercel.com/changelog/link-and-share-build-logs)
 
 Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md)
 <!-- /docsgraph:related -->
@@ -91,4 +91,4 @@ You can use [Drains](/docs/drains) to export, store, and analyze your build logs
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

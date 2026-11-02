@@ -16,8 +16,8 @@ related:
 summary: What tools do when a durable agent harness resumes after a crash, where its files live, and how to keep typed state with a session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/tools.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "412e8988c22f16c0ab4e836bb97b77fcc0e7447802391552bd8ca450308759b8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "19582da3ff4e581eb3ac392871b999b8ff809697ed105882f536714148679c3c"
 ---
 
 # Tools, Files, and Documents in Durable Agent Harnesses
@@ -32,12 +32,11 @@ A durable harness keeps each session in a log: the conversation and every model 
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Pi](https://ai-sdk.dev/providers/ai-sdk-harnesses/pi) — Learn how to use the Pi harness adapter.
-- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Self-Hosting Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/self-hosting) — Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx
-- [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
+- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
 Full cross-link map for this page: [/docs/agent-harnesses/tools.graph.md](/docs/agent-harnesses/tools.graph.md)
 <!-- /docsgraph:related -->
@@ -291,4 +290,4 @@ With `durable-harness/pi`, `promptDocs: [Todos]` also puts the listed documents 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

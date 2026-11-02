@@ -13,8 +13,8 @@ related:
 summary: Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/og-preview.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "393b3596bde6619750c963b58b27efb8779e3683df4eba7186c3d56da770ee09"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e122c52b272f8a669acb6bfea1601511f392099dd4fed5e9586904f1264fda37"
 ---
 
 # Inspecting your Open Graph metadata
@@ -30,7 +30,6 @@ You can use the **Open Graph** section in the sidebar on every deployment on Ver
 - [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [Inspect and validate Open Graph metadata for enhanced link sharing](https://vercel.com/changelog/open-graph-link-sharing-inspector)
 - [Inspect Open Graph data with the Vercel Toolbar](https://vercel.com/changelog/inspect-open-graph-data-with-the-vercel-toolbar)
-- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
@@ -121,4 +120,4 @@ These properties set by the [Open Graph protocol](https://ogp.me/#metadata).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/acp-mode.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "812af1001c110f474a624c3026c31e66519ca95c251d1f79679d8ebd56edd779"
+fetched_at: "2026-11-02T12:04:46.311Z"
+sha256: "37166e96d1ab6c43400b7c7acaf14604895ac725b85b6130de4af1edb839e535"
 ---
 
 # ACP Mode
@@ -75,6 +75,14 @@ use.
 This mechanism lets for a powerful, two-way integration where the agent can
 leverage the IDE's capabilities to perform tasks. The MCP client logic is in
 `packages/core/src/tools/mcp-client.ts`.
+
+When Gemini CLI asks the client for permission to run an MCP tool via
+`session/request_permission`, the request's `toolCall._meta['gemini-cli'].mcp`
+contains `server_name` (the configured name under which the MCP server was
+registered) and `tool_name` (the tool's own name as declared by that server).
+Clients can compare the server name with the servers they supplied instead of
+parsing the tool call title. These fields identify the server; they are not a
+trust grant.
 
 ## Capabilities and supported methods
 

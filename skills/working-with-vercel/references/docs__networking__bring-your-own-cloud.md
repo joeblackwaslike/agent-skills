@@ -16,8 +16,8 @@ related:
 summary: Bring Your Own Cloud (BYOC) lets you run Vercel Functions behind your project in your own AWS account while Vercel routes requests and serves your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "57f8463083b83d0509b27ffe0ee1af74b6758cd1f270bd69a7672acac2d24381"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8be8fb23d8b0189e38c5022574754a4b5574375cdb86ee62dcc3c252d5766e59"
 ---
 
 # Bring Your Own Cloud
@@ -34,11 +34,11 @@ Bring Your Own Cloud (BYOC) lets you run the [Vercel Functions](/docs/functions)
 
 - [Bring Your Own Cloud on AWS is now generally available](https://vercel.com/changelog/bring-your-own-cloud-on-aws-is-now-generally-available)
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
-- [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud.graph.md](/docs/networking/bring-your-own-cloud.graph.md)
@@ -182,4 +182,4 @@ To build your own provisioning tool, see the [BYOC provisioning reference](/docs
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "497551e9e4cc3953ae18a5b785198912653436ba735d5cc2c24ac51c8ab78160"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6b90da6a134e4505d568540e58d452b5abe160d7543a86b19cf6b8b1bf64dd1e"
 ---
 
 # Managing Domain Renewals and Redemptions
@@ -34,8 +34,8 @@ Custom domains purchased through or registered with Vercel are [automatically re
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions)
 - [Self-serve domain renewals and redemptions now available](https://vercel.com/changelog/self-serve-domain-renewals-and-redemptions-now-available)
 - [Lifecycle of a domain](https://vercel.com/kb/guide/lifecycle-of-a-domain) — Understand the states a .com domain passes through from registration to deletion, and how to renew or recover it at each
-- [Renew a domain](https://vercel.com/docs/rest-api/domains-registrar/renew-a-domain) — POST /v1/registrar/domains/{domain}/renew — Renew a domain
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
+- [Renew a domain](https://vercel.com/docs/rest-api/domains-registrar/renew-a-domain) — POST /v1/registrar/domains/{domain}/renew — Renew a domain
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
@@ -157,4 +157,4 @@ Third-Party Domains (ones not purchased with or transferred into Vercel) are not
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

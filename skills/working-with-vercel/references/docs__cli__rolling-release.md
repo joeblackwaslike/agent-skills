@@ -13,8 +13,8 @@ related:
 summary: "Learn how to manage your project's rolling releases using the vercel rolling-release CLI command."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "969c376586ecfd5ae5c43b2ece4c1f03c1c278fa3a776fdcb0734cbd2ce72e6d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "41046ad0621b95caa2fca2a163d4c5cb1fe0c3b3130c4ee6d9e1cf676efa966a"
 ---
 
 # vercel rolling-release
@@ -31,7 +31,7 @@ Use the `vercel rolling-release` command (also available as `vercel rr`) to mana
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel rollback](https://vercel.com/docs/cli/rollback) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Update the rolling release settings for the project](https://vercel.com/docs/rest-api/rolling-release/update-the-rolling-release-settings-for-the-project) — PATCH /v1/projects/{idOrName}/rolling-release/config — Update \\(or disable\\) Rolling Releases for a project. When disabl
 
 Full cross-link map for this page: [/docs/cli/rolling-release.graph.md](/docs/cli/rolling-release.graph.md)
 <!-- /docsgraph:related -->
@@ -276,4 +276,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

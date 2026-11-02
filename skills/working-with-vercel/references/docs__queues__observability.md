@@ -15,8 +15,8 @@ related:
 summary: Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/observability.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7f7765b39c4e101a56ae944889515d2fa4045818df41aaa5486bff6c7ed58aa1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d77825f16bc444a821d305ebd635113c0c259dbf8eb0f3f1cc6195b558e83bfa"
 ---
 
 # Queues Observability
@@ -29,12 +29,13 @@ The **Queues** observability tab provides visibility into your queue operations,
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
-- [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
+- [Build Queues](https://vercel.com/docs/builds/build-queues) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 
 Full cross-link map for this page: [/docs/queues/observability.graph.md](/docs/queues/observability.graph.md)
 <!-- /docsgraph:related -->
@@ -113,7 +114,7 @@ Both metrics are also available under **Queue Actions** on the Observability **Q
 
 A rising Retry Depth is the earliest sign that a consumer is failing every delivery. Because [messages stay pinned to the deployment that published them](/docs/queues/concepts#stopping-deliveries-to-a-deployment), a rolled-back deployment can keep failing and retrying for the full message retention period without showing up in production traffic.
 
-For projects with [Observability Plus](/docs/observability/observability-plus) enabled, teams can create a [custom alert rule](/docs/alerts/configure-alerts#configure-custom-rules) on Retry Depth. The **Queue Retry Depth** preset in the alert rule wizard sets this up: it triggers when the maximum Retry Depth in the project exceeds 5 within a 5-minute window, which a message reaches within minutes under the default retry delay when its consumer fails every time.
+For projects with [Observability Plus](/docs/observability/observability-plus) enabled, teams can create a [custom monitor](/docs/alerts/configure-alerts#configure-custom-rules) on Retry Depth. The **Queue Retry Depth** preset in the monitor wizard sets this up: it triggers when the maximum Retry Depth in the project exceeds 5 within a 5-minute window, which a message reaches within minutes under the default retry delay when its consumer fails every time.
 
 When the alert fires, open the queue's **Consumers** table to find the consumer group, then check [function duration grouped by deployment](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fquery%3Fmetric%3DserverlessFunctionInvocation.functionDurationGbhr%26aggregation%3Dsum%26by%3DdeploymentId\&title=Function+duration+by+deployment) on the **Query** tab to see which deployment the retries are running on and what they cost. See [Cost of failed deliveries](/docs/queues/concepts#cost-of-failed-deliveries) for what to do next.
 
@@ -123,4 +124,4 @@ When the alert fires, open the queue's **Consumers** table to find the consumer 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

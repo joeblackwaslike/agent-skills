@@ -4,8 +4,8 @@ description: Learn how to use Google models through AI Gateway or the direct Goo
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "1f67fe07a6dbbd8860a4fc8e77c0405d344be1182bbd6439ac1fa9abc500ec0a"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "2256e54f4ad1c57a108c3c3ac04ba74052fa4f7a71fba683de594f726af18d3f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -104,7 +104,11 @@ You can use the following optional settings to customize the Google provider ins
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://generativelanguage.googleapis.com/v1beta`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `x-goog-api-key` header.
   It defaults to the `GOOGLE_GENERATIVE_AI_API_KEY` environment variable.
@@ -493,12 +497,12 @@ Things to keep in mind:
 
 #### Long decode with the Interactions API
 
-With the [Interactions API](#interactions-api), long decode requires
-`background: true`. The server runs every request itself, so no client-side
-continuation is needed, and `usage` covers all requests. Set an explicit
-`maxOutputTokens` above 65,536 (without it, you get a single 64K request) and
-keep `store` enabled (the default). The provider polls the interaction (or
-streams it, reconnecting when the connection drops) until it finishes.
+With the [Interactions API](#interactions-api), the AI SDK currently requires
+`background: true` for long decode. The server runs every request itself, so no
+client-side continuation is needed, and `usage` covers all requests. Set an
+explicit `maxOutputTokens` above 65,536 and keep `store` enabled (the default).
+The provider polls the interaction (or streams it, reconnecting when the
+connection drops) until it finishes.
 
 ```ts
 import { google } from '@ai-sdk/google';
@@ -517,10 +521,14 @@ const result = await generateText({
 });
 ```
 
-Without `background: true`, an interaction generates at most 65,536 tokens.
-Requests with a higher `maxOutputTokens` are rejected by the API, and an
-interaction that reaches the cap finishes with `length`. Long decode is not
-available with the Vertex AI Interactions API.
+Foreground client-side continuation is not yet supported by the AI SDK.
+If you do not set `maxOutputTokens`, non-streaming calls (`generateText`)
+default to 32,768 tokens and streaming calls (`streamText`) to 65,536 tokens.
+An interaction that reaches its limit finishes with `length`. Long decode is
+not available with the Vertex AI Interactions API.
+
+The token budget includes both thinking and output tokens. To retain the previous
+64K budget for a non-streaming call, set `maxOutputTokens: 65_536` explicitly.
 
 ### File Inputs
 
@@ -551,7 +559,14 @@ const result = await generateText({
 });
 ```
 
-You can also use YouTube URLs directly:
+You can also use YouTube URLs directly. Pass `videoMetadata` through
+`providerOptions.google` on a video file part to clip a segment or control the
+frame rate. This also works with inline video data and uploaded file references.
+The metadata supports these optional fields:
+
+- `startOffset` (string): Start time as a duration in seconds, e.g. `'60s'` or `'3.5s'`.
+- `endOffset` (string): End time in the same duration format.
+- `fps` (number): Frames per second in the range `(0, 24]`. The default is `1`.
 
 ```ts
 import { google } from '@ai-sdk/google';
@@ -565,12 +580,21 @@ const result = await generateText({
       content: [
         {
           type: 'text',
-          text: 'Summarize this video',
+          text: 'Summarize this part of the video',
         },
         {
           type: 'file',
           data: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
           mediaType: 'video/mp4',
+          providerOptions: {
+            google: {
+              videoMetadata: {
+                startOffset: '60s',
+                endOffset: '600s',
+                fps: 1,
+              },
+            },
+          },
         },
       ],
     },

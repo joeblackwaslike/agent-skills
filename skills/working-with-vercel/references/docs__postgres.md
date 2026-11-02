@@ -13,8 +13,8 @@ related:
 summary: Learn how to use Postgres databases through the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/postgres.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3abea43f2af6a69f4199d11cb6b51d2df3bba0005b5207fc79fd23b6e344fdb2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0d80e3ca5d50530eaff268da84949669380c5b27d8218a35bf6adcb4aebe64a6"
 ---
 
 # Postgres on Vercel
@@ -30,7 +30,7 @@ Vercel lets you connect external Postgres databases through the [Marketplace](/m
 
 Vercel enables you to use Postgres by integrating with external database providers. By using the Marketplace, you can:
 
-- Select from a [range of Postgres providers](/marketplace?category=storage\&search=postgres)
+- Select from a [range of Postgres providers](/marketplace?category=storage\&search=postgres), including Neon, Prisma Postgres, Supabase, and AWS Aurora Postgres.
 - Provision and configure a Postgres database with minimal setup.
 - Have credentials and [environment variables](/docs/environment-variables) injected into your Vercel project.
 
@@ -40,4 +40,4 @@ Vercel enables you to use Postgres by integrating with external database provide
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

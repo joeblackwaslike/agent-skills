@@ -13,8 +13,8 @@ related:
 summary: Use create_session_directory with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4b25d29a7fe01a48918ef8e39d1d8174a2d2f6685ba664bad39656aec537e369"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e91e85dbbe6e87d3bc6643420ac75ff2b0a396670aff83e5fab5b266a3972e93"
 ---
 
 # create_session_directory
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

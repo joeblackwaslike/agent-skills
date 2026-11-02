@@ -16,8 +16,8 @@ related:
 summary: Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/opencode.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "54b3c4f179f835d0ac2936b0863d0d7d3e71d6d8bea5d94cd70527cb195ee3ef"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "eaeca08bfb994f9b7b4d1a363a84e4ee4151e9472604ed9f8e18c7e91c752970"
 ---
 
 # OpenCode with AI Gateway
@@ -127,4 +127,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

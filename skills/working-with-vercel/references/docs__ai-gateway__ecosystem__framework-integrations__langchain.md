@@ -10,11 +10,12 @@ prerequisites:
   - /docs/ai-gateway/ecosystem
 related:
   - /docs/ai-gateway
+  - /docs/ai-gateway/authentication-and-byok
 summary: Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c8a48ff8698e26711748ce3f0381bd68310e66a85f932ccbd5b9909059100fd3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e20c5d328eec2afa913ad1ee111c0f78f0eb3413d5444225ce65bb91f102ae9a"
 ---
 
 # LangChain with AI Gateway
@@ -70,12 +71,12 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
 
 - ### Configure environment variables
-  Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway#using-the-ai-gateway-with-an-api-key):
+  Create a `.env` file with your [Vercel AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys):
   ```bash filename=".env"
   AI_GATEWAY_API_KEY=your-api-key-here
   ```
   > **💡 Note:** If you're using the [AI Gateway from within a Vercel
-  > deployment](/docs/ai-gateway#using-the-ai-gateway-with-a-vercel-oidc-token),
+  > deployment](/docs/ai-gateway/authentication-and-byok#oidc-tokens),
   > you can also use the `VERCEL_OIDC_TOKEN` environment variable which will be
   > automatically provided.
 
@@ -145,4 +146,4 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "261f125d37e15db99763ae47fb638d71a592bbdd98ad049384df7e7238197af2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f8077b46212b360bc964c37a8d5d9dc8ab0df133bb03e3f00e8505d610bf25ad"
 ---
 
 # Configuring a Build
@@ -335,4 +335,4 @@ In a monorepo, you can [skip deployments](/docs/monorepos#skipping-unaffected-pr
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

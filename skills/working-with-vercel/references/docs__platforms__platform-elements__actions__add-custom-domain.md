@@ -15,8 +15,8 @@ related:
 summary: Server action for programmatically adding custom domains to Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f6c89a6858fee3019ae92a86d21298ec201ab1baeb10462c0a2d8e5f2f51ccbf"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "07e498e3aa73c2c0c770cd6ccb7b719f0ad49449eb292365c601dbe297927ea6"
 ---
 
 # Add Custom Domain
@@ -67,4 +67,4 @@ npx shadcn@latest add https://registry.platforms.guide/add-custom-domain.json
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

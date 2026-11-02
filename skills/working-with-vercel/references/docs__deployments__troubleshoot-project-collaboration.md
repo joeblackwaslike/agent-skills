@@ -16,8 +16,8 @@ related:
 summary: Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-project-collaboration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "159e0493d1447e7d39279283a3d5b66d53c698a897d87f835458a306fe3a58a2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "99520515bd637738d29512e8087db550cb090278cacbb1576fe6aff20249ca2d"
 ---
 
 # Troubleshoot project collaboration
@@ -33,12 +33,11 @@ This guide will help you troubleshoot deployment failures related to project col
 - [Auto-add Git committers now available for Enterprise teams](https://vercel.com/changelog/auto-add-git-committers-now-available-for-enterprise-teams)
 - [Auto-add Git committers to your team](https://vercel.com/changelog/auto-add-git-committers-to-your-team)
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Git settings](https://vercel.com/docs/project-configuration/git-settings) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Git settings](https://vercel.com/docs/project-configuration/git-settings) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-project-collaboration.graph.md](/docs/deployments/troubleshoot-project-collaboration.graph.md)
 <!-- /docsgraph:related -->
@@ -127,4 +126,4 @@ To add secondary email addresses to your Vercel account:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

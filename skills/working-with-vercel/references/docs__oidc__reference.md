@@ -12,8 +12,8 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cd2e735ef1c929e890f6118154c7bfcc99869c7e9ddb8bde56d87ee922d4f6b2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8bd9bdc5eaa7df7e20e069cc71201406e633be3bcf308db4de73f9d19e535143"
 ---
 
 # OIDC Federation Reference
@@ -36,10 +36,10 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available)
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
+- [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Passport token claims](https://vercel.com/docs/passport/token-claims) — Review the standard, deployment, and visitor identity claims in a Passport token.
-- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/oidc/reference.graph.md](/docs/oidc/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -259,4 +259,4 @@ These headers are standard to the JWT tokens:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

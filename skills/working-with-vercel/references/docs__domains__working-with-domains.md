@@ -16,8 +16,8 @@ related:
 summary: Learn how domains work and the options Vercel provides for managing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "599ec1d59168c29028edf27b7ced1a232c664ca5715c64f5877983b297a26c74"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "eec1f1c6e4d06749b3d0c0ce4fddc82c817d0b2c61e883ebe01fd9bb56bebd10"
 ---
 
 # Working with domains
@@ -133,4 +133,4 @@ Because many domain providers do not offer a mail service, several third-party s
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

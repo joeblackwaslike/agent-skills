@@ -13,8 +13,8 @@ related:
 summary: Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ef0908465bb049deca32a42387b61318522ecf844d0745e211dd7bdc4ca927e0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4936832109393f137843e8d861d290fce2932d4a534d35b0ad2dd4c8bf59d723"
 ---
 
 # OpenAI Chat Completions Tool Calling with AI Gateway
@@ -28,11 +28,11 @@ The Chat Completions API supports function calling, allowing models to call tool
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Call Tools](https://ai-sdk.dev/cookbook/next/call-tools) — Learn how to call tools using the AI SDK and Next.js
-- [How to use OpenAI Function Calling with Next.js and the Vercel AI SDK](https://vercel.com/kb/guide/openai-function-calling) — Learn how to use OpenAI Function Calling and Vercel AI SDK in a Next.js Application to build AI-powered user experiences
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [OpenAI Responses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling) — Define tools the model can call with the OpenAI Responses API through AI Gateway.
 - [Anthropic Messages Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling) — Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
 - [OpenAI Chat Completions Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents
+- [OpenResponses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling) — Define tools the model can call using the OpenResponses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling.graph.md)
 <!-- /docsgraph:related -->
@@ -235,4 +235,4 @@ When the model makes tool calls, the response includes tool call information:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

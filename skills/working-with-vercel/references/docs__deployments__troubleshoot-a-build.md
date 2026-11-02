@@ -16,8 +16,8 @@ related:
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "37046d43990f8207e2e17f150b2315618b2d23e196fccf2983907b294ff14bf9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "84377a4999ff52826e79dcd5179ea8a9570d7776c2fcd8a67b2e4e61d4d3c01b"
 ---
 
 # Troubleshooting Build Errors
@@ -40,8 +40,8 @@ You can troubleshoot build errors that occur during the Build step of your deplo
 - [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
 - [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
-- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md)
 <!-- /docsgraph:related -->
@@ -188,15 +188,15 @@ A successful build saves the following to the Build cache, with all paths relati
 
 Anything under `.vercel/output` is never cached. Restoring it would make the next deployment appear prebuilt.
 
-Vercel caches framework-preset files based on the [Framework Preset](/docs/builds/configure-a-build#framework-preset) selected in your [Project settings](/docs/projects#project-settings). The following files are cached in addition to the builder output above:
+Vercel caches framework-preset files based on the [Framework Preset](/docs/builds/configure-a-build#framework-preset) selected in your [Project settings](/docs/project-configuration/project-settings). The following files are cached in addition to the builder output above:
 
-Note that the framework detection is dependent on the preset selection made in the [Build settings](/docs/builds/configure-a-build#build-and-development-settings). You should make sure that the correct framework is set for your project for optimum build caching.
+Note that the framework detection is dependent on the preset selection made in the [Build settings](/docs/project-configuration/project-settings#build-and-deployment-settings). You should make sure that the correct framework is set for your project for optimum build caching.
 
 ### Caching process
 
 At the beginning of each build, the previous Build's cache is restored prior to the [Install Command](/docs/builds/configure-a-build#install-command) or [Build command](/docs/builds/configure-a-build#build-command) executing. Each deployment is associated with a unique Build cache key that is derived from the combination of the following data:
 
-- [Personal Account](/docs/accounts#creating-a-personal-account) or [Team](/docs/accounts)
+- [Personal Account](/docs/accounts) or [Team](/docs/accounts)
 - [Project](/docs/projects)
 - [Framework Preset](/docs/builds/configure-a-build#framework-preset)
 - [Root Directory](/docs/builds/configure-a-build#root-directory)
@@ -239,4 +239,4 @@ Sometimes, you may not want to use the Build cache for a specific deployment. Yo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

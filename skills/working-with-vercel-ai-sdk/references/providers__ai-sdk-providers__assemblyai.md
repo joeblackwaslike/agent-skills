@@ -4,8 +4,8 @@ description: Learn how to set up the AssemblyAI provider and check AI Gateway av
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "7ebd5f8f131a945acaaf5e97a23e1840da6e0bda48f2111065c2a9c603e95cb7"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "0d216f6c01275173c712a38eed4b4e7c20f370cb7c20e7d80e61d5f22e5ce479"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -84,7 +84,10 @@ const assemblyai = createAssemblyAI({
 
 You can use the following optional settings to customize the AssemblyAI provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a synchronous or asynchronous callback to resolve the key before each
+  request. The callback is responsible for caching and refreshing credentials.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `ASSEMBLYAI_API_KEY` environment variable.

@@ -4,8 +4,8 @@ description: Learn how to set up the Hume provider and check AI Gateway availabi
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/hume"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "6ebc77419e5a03391505ede1b32925c73d1a6e0e90e3cb5ee896328fc9d3e433"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "96499569385820498b169e9377b3ec5e17262efc4408c82776741a3490a652c4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -83,7 +83,10 @@ const hume = createHume({
 
 You can use the following optional settings to customize the Hume provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a synchronous or asynchronous callback to resolve the key before each
+  request. The callback is responsible for caching and refreshing credentials.
 
   API key that is being sent using the `X-Hume-Api-Key` header.
   It defaults to the `HUME_API_KEY` environment variable.

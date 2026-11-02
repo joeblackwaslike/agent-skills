@@ -16,8 +16,8 @@ related:
 summary: Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/sensitive-environment-variables.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "42d51de00938a6f29d28d6de6200ffe22527bd601d46c14f5138b94b67fa81c1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "44aaaadcf2dc30e2243faa2bc79d05895c8bc1c5ddb40a4bb5b10ef772f60163"
 ---
 
 # Config and Secret environment variables
@@ -39,8 +39,8 @@ When you add or edit [environment variables](/docs/environment-variables "Enviro
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types)
-- [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
 - [Sensitive environment variables are now available](https://vercel.com/changelog/sensitive-environment-variables-are-now-available)
+- [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 
 Full cross-link map for this page: [/docs/environment-variables/sensitive-environment-variables.graph.md](/docs/environment-variables/sensitive-environment-variables.graph.md)
@@ -175,4 +175,4 @@ Environment variables created by [integrations](/docs/integrations) can't be cha
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

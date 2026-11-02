@@ -14,8 +14,8 @@ related:
 summary: Learn what each performance metric on Speed Insights means and how the scores are calculated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/metrics.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "187523eb801067fc21c2dfddadce1c7babf9710ff877f0a33405e0edf6c851d7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cb5a398a9fd864e44f3e5a0b90d629cd7703984c593120d1959d0a893dd159c0"
 ---
 
 # Speed Insights Metrics
@@ -34,17 +34,17 @@ While many performance measurement tools, like [Lighthouse](https://web.dev/meas
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
 - [Speed Insights deprecates First Input Delay on November 1st](https://vercel.com/changelog/speed-insights-deprecates-first-input-delay-on-november-first)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Latency numbers every frontend developer should know](https://vercel.com/blog/latency-numbers-every-web-developer-should-know)
-- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
 - [How Core Web Vitals Will Impact Google Rankings in 2021](https://vercel.com/blog/core-web-vitals)
-- [Why site performance matters](https://vercel.com/kb/guide/why-site-performance-matters) — How site speed, Core Web Vitals, and SEO combine to drive user retention, conversion rates, and revenue growth.
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
+- [Why site performance matters](https://vercel.com/kb/guide/why-site-performance-matters) — How site speed, Core Web Vitals, and SEO combine to drive user retention, conversion rates, and revenue growth.
 - [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
 
 Full cross-link map for this page: [/docs/speed-insights/metrics.graph.md](/docs/speed-insights/metrics.graph.md)
@@ -213,4 +213,4 @@ Speed Insights offers a variety of views to help you analyze your application's 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

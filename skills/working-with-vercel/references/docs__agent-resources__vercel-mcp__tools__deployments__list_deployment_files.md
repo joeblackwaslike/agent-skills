@@ -13,8 +13,8 @@ related:
 summary: Use list_deployment_files with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e653585679d392612e00d97b54a9aa33d214009dc5b7c781dd38860ac351f25c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b97d4b421ffdfbe4b34075d921186260ba4bd4ad1a27e2c2d50bf182c17e401b"
 ---
 
 # list_deployment_files
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

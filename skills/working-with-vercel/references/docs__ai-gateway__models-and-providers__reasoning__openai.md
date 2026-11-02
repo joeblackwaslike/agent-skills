@@ -14,8 +14,8 @@ related:
 summary: Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1cea14bd8981a874b9df30337d3567b982e3ccd0c61df34fdcb9abfa49dc49a8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "09a89c367793dda60264cf3851e46bb98cd74e79ebfde29d02c77b3ea6092f3c"
 ---
 
 # AI Gateway OpenAI Reasoning
@@ -260,4 +260,4 @@ For more details, see the [OpenAI reasoning docs](https://developers.openai.com/
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e7e6b323f029b2f61372ffffff279f5b26815265c21f729f167bd1516c6a3528"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f5dbc4dc0d2782f90b7c85988cae4bba49faffa8b5cc50ed634507926f0a205a"
 ---
 
 # Session tracing
@@ -36,8 +36,8 @@ With session tracing, you can use the Vercel toolbar to trace **your** own brows
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [create_trace_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session) — Use create_trace_session with Vercel MCP.
-- [Instrumentation](https://vercel.com/docs/tracing/instrumentation) — Learn how to instrument your application to understand performance and infrastructure details.
 - [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
+- [Instrumentation](https://vercel.com/docs/tracing/instrumentation) — Learn how to instrument your application to understand performance and infrastructure details.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 
 Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md)
@@ -132,4 +132,4 @@ Session Tracing follows the shared [Tracing limitations](/docs/tracing#limitatio
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

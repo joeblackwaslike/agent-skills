@@ -15,8 +15,8 @@ related:
 summary: Learn more about MCP and how you can use it on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "46d3b07e7a03b0766d99056cb8a24d194190aa8e7d658da18a97366e7fd57ce9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cb89c420117366cfa0e3ae624ba62fa6af109a6d2563e564eae3881094315335"
 ---
 
 # Model Context Protocol
@@ -37,8 +37,8 @@ sha256: "46d3b07e7a03b0766d99056cb8a24d194190aa8e7d658da18a97366e7fd57ce9"
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
 - [The second wave of MCP: Building for LLMs, not developers](https://vercel.com/blog/the-second-wave-of-mcp-building-for-llms-not-developers)
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
-- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers)
+- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
@@ -91,4 +91,4 @@ Learn more about Model Context Protocol and explore available MCP servers.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

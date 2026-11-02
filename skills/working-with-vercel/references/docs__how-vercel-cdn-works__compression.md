@@ -12,8 +12,8 @@ related:
 summary: Vercel helps reduce data transfer and improve performance by supporting both Gzip and Brotli compression
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/how-vercel-cdn-works/compression.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "005b771d96dd8dd672d902128033a21cf613b2a60074c9fddd6de18d948dd00c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b5669327cace7c4c773d4fdaa0dfa62d5b0c2bc8dbb2977830cf6cb0bf1e9456"
 ---
 
 # Vercel CDN Compression
@@ -30,7 +30,7 @@ Vercel helps reduce data transfer and improve performance by supporting both Gzi
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
-- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
+- [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
@@ -127,4 +127,4 @@ For example, most image formats are already compressed such as JPEG, PNG, WebP, 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

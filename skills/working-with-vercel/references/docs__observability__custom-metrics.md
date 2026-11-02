@@ -13,8 +13,8 @@ related:
 summary: Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/custom-metrics.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2082b8d7b3ddbdd134601933b18b4a144cb6cda6e7d8d9f68bf7dc9784ee92ae"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "279ad3f6b135e80997a07715c8786b1b0a9c5ff0811f625ddfc936419f7c206a"
 ---
 
 # Emit Custom Metrics from Vercel Functions
@@ -32,8 +32,8 @@ Custom metrics let you record application-specific numeric values from your Verc
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Legacy Metrics](https://vercel.com/docs/pricing/legacy) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/observability/custom-metrics.graph.md](/docs/observability/custom-metrics.graph.md)
 <!-- /docsgraph:related -->
@@ -147,4 +147,4 @@ For example, emitting one custom metric during each of 1 million function invoca
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

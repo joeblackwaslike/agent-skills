@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure custom error pages for 5xx server errors on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/custom-error-pages.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "812d69439e95ae0569726cd1457cbd9eafc14af55a30762073277cce3d10af5e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cf1b0f33a933bae63e0b89818c8fc732e5f1dc401f939b0f016240ce0dfcfaaf"
 ---
 
 # Custom error pages
@@ -36,13 +36,13 @@ Custom error pages let you replace Vercel's platform error pages with your own b
 - [Custom Errors](https://nextjs.org/docs/pages/building-your-application/routing/custom-error) — Override and extend the built-in Error page to handle custom errors.
 - [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
-- [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel) — Learn how to work with build output limits for Next.js on Vercel.
 - [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
+- [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel) — Learn how to work with build output limits for Next.js on Vercel.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Debugging production 500 errors](https://vercel.com/docs/observability/debug-production-errors) — Find, fix, and verify production 500 errors using the Vercel CLI.
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 
 Full cross-link map for this page: [/docs/custom-error-pages.graph.md](/docs/custom-error-pages.graph.md)
 <!-- /docsgraph:related -->
@@ -121,4 +121,4 @@ For example, if you add only two custom error pages (`500.html` and `504.html`),
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

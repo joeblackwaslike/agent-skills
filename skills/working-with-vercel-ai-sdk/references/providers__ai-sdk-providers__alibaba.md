@@ -4,8 +4,8 @@ description: Learn how to use Alibaba with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "bf6f321ece2faced9d26e173ab33ac721053dc5e5b3437e71c983c43b5c3ddb1"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "52787fa121f8529d5ed19c08c536017d59aef215459636522573311f9c0b7b5d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -102,10 +102,13 @@ You can use the following optional settings to customize the Alibaba provider in
   native endpoint (not the OpenAI-compatible endpoint).
   The default prefix is `https://dashscope-intl.aliyuncs.com/api/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `ALIBABA_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 

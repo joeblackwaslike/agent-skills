@@ -14,8 +14,8 @@ related:
 summary: Clone working multi-tenant and multi-project starters to begin your platform build.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "efbbd57f971cf1f44a55ae46bf60669f558e0d960037db1ece83fbdae1d489b6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a224a7257c9f64c534bc54609f417b1149d8d7616f3d7eb03b52c0100ac634b1"
 ---
 
 # Examples
@@ -30,12 +30,11 @@ Start from a working example instead of a blank project. Each template covers a 
 
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms](https://vercel.com/docs/platforms/multi-project-platforms) — Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.
 - [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart) — Programmatically host code for user-generated or AI-generated applications on Vercel.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/examples.graph.md](/docs/platforms/examples.graph.md)
 <!-- /docsgraph:related -->
@@ -60,4 +59,4 @@ Try a deployed example in the browser before you clone anything.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

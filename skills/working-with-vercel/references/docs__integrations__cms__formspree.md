@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Formspree with Vercel. Follow our tutorial to set up Formspree and manage form submissions on your static website without...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/formspree.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3dc79a27b821e0013ac2c368b72dc3075b60e0b1edb49ace5435bcb5eac7bd84"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1ec9bbba90303a0ca7ce134e51f4a12e891fa89254bb8eaa7883291291062975"
 ---
 
 # Vercel Formspree Integration
@@ -32,7 +32,7 @@ Formspree is a form backend platform that handles form submissions on static web
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
-- [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 
 Full cross-link map for this page: [/docs/integrations/cms/formspree.graph.md](/docs/integrations/cms/formspree.graph.md)
 <!-- /docsgraph:related -->
@@ -78,4 +78,4 @@ See your installed CMSs documentation for next steps on how to use the integrati
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

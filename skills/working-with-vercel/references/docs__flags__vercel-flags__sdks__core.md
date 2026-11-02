@@ -10,15 +10,15 @@ prerequisites:
   - /docs/flags/vercel-flags
 related:
   - /docs/flags/vercel-flags/sdks/flags-sdk
+  - /docs/flags/vercel-flags/project-connections
   - /docs/flags/vercel-flags/dashboard/sdk-keys
   - /docs/flags/vercel-flags/dashboard/entities
   - /docs/functions/limitations
-  - /docs/flags/vercel-flags/sdks/openfeature
 summary: Use the Vercel Flags core evaluation library directly for custom setups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/core.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f2267f50173a493fe49bdf71c7538edac6fb00554bd891c4636876317805b904"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a637e580dd8d60c7585d69a2f086ea19db37e71c8766f04a35190c02582599ff"
 ---
 
 # Using the Core Library
@@ -35,7 +35,6 @@ The `@vercel/flags-core` library provides direct access to the Vercel Flags eval
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
@@ -101,6 +100,8 @@ import { createClient } from '@vercel/flags-core';
 
 const client = createClient();
 ```
+
+To read another project's flags in the same team, use [Project Connections](/docs/flags/vercel-flags/project-connections) with `@vercel/flags-core` version 1.11.0 or later. Pass the source project's ID to `createClient({ projectId: 'prj_source' })`. The client authenticates with your project's OIDC token.
 
 ### SDK keys
 
@@ -310,4 +311,4 @@ This outputs detailed information about the client's data source connections, fa
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

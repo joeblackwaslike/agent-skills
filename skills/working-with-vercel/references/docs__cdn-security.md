@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d96dc63f66500f188fe7934b5831fcf6652c23a1bbc9fd00f1a661e81bc8a6ca"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "dd4a621a593eee4300d90ac41d3316df09c29ffd31a9da17d85c69bc2ea1ddfa"
 ---
 
 # CDN security
@@ -116,4 +116,4 @@ The `.vercel.app` domain and all subdomains support HSTS by default and are prel
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

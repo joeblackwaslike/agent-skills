@@ -15,8 +15,8 @@ related:
 summary: "Learn how filters allow you to explore insights about your website's visitors."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5ac3a88595b00aef20eabcc8eec6b3e255216de78246b6b243ac92de0883610d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4ab1f27dc39a8dc48ab9409cdfe57ce2c556c5cbdf72214ded69d28b7707a944"
 ---
 
 # Filtering Analytics
@@ -37,8 +37,8 @@ to use it to answer specific questions.
 - [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support)
 - [Filter Analytics traffic data](https://vercel.com/changelog/filter-analytics-traffic-data)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
@@ -134,4 +134,4 @@ Twitter search might not always be able to resolve to the original post of that 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

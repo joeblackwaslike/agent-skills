@@ -16,8 +16,8 @@ related:
 summary: Connect Factory Droid to AI Gateway with the Vercel CLI or bring-your-own-key custom model entries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/droid.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b8b270500ae55abcf3283313a9a05725aa8700c2d08844bae0c6ef30dcae9b1d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9269b3026ea1987abac83b3fc59fcae65e7e9ce5515f62f378aac1e77a58363b"
 ---
 
 # Factory Droid with AI Gateway
@@ -35,7 +35,7 @@ sha256: "b8b270500ae55abcf3283313a9a05725aa8700c2d08844bae0c6ef30dcae9b1d"
 - [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/droid.graph.md](/docs/ai-gateway/coding-agents/droid.graph.md)
 <!-- /docsgraph:related -->
@@ -118,4 +118,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

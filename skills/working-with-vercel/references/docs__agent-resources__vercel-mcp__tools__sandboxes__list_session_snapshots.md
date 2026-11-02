@@ -13,8 +13,8 @@ related:
 summary: Use list_session_snapshots with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_snapshots.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "89bc207ac58b0e9ef22b76d868c0266060dfa04811d7bd63473c2d32dc401156"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d5355b1952b34dc8187095ed62f8b296146ef56fd83aa5df5016acf47907ff60"
 ---
 
 # list_session_snapshots
@@ -54,4 +54,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

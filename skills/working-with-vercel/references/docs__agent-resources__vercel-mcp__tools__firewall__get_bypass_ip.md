@@ -13,8 +13,8 @@ related:
 summary: Use get_bypass_ip with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/get_bypass_ip.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e47018f604b744111ca6707284db005dbaa36cdec99f95740f6c414a45e1bd28"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9bb93693b4424fe889412ec207601d5935e74c7b36b49fa40eb4dbd3d70f23d4"
 ---
 
 # get_bypass_ip
@@ -55,4 +55,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firew
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

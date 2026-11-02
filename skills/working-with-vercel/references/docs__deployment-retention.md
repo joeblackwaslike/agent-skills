@@ -16,8 +16,8 @@ related:
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "15769280805bfc43195cb4ad1972b7e1b390cfe321c7f5c459ec03865502ec1d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c93c39a2e8c656417140a85c579fcf4a54c901fd19402174bbdee97251dabb47"
 ---
 
 # Deployment Retention
@@ -33,11 +33,11 @@ Deployment retention refers to the configured policies that determine how long d
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment) — Information on deleting an individual deployment.
+- [Deleted deployments are permanently removed sooner](https://vercel.com/changelog/deleted-deployments-are-permanently-removed-sooner)
 - [Deployment retention policies now preserve active branch deployments](https://vercel.com/changelog/deployment-retention-policies-now-preserve-active-branch-deployments)
 - [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready)
 - [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams)
 - [Hobby projects now default to 30-day deployment retention](https://vercel.com/changelog/hobby-projects-now-default-to-30-day-deployment-retention)
-- [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage)
 - [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize) — Set retention periods, review remaining usage, and reduce deployment output size.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deployment Policies](https://vercel.com/docs/deployments/deployment-policy) — Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per
@@ -59,8 +59,8 @@ Unless a team or project uses a custom policy, the default retention periods are
 
 | Plan | Canceled | Errored | Pre-Production | Production |
 | --- | --- | --- | --- | --- |
-| Hobby | 30 days | 30 days | 30 days | 30 days |
-| Pro and Enterprise | 30 days | 90 days | 180 days | 1 year |
+| Hobby and Pro | 30 days | 30 days | 30 days | 30 days |
+| Enterprise | 30 days | 90 days | 180 days | 1 year |
 
 A team policy can replace these defaults for new projects or all existing projects. A project policy applies only to that project and replaces the team default.
 
@@ -77,9 +77,11 @@ After a deployment reaches its configured retention limit, a background job typi
 
 ## Setting a deployment retention policy
 
-To configure a retention policy, open **Settings** in the sidebar of your project and follow these steps:
+To set a team policy, open the team's Settings page, select Build and Deployment, and find Deployment Retention Policy. You can apply the policy to new projects or all existing projects.
 
-1. Select **Security** on the side panel of the project settings page
+To set a policy for one project, open Settings in the sidebar of your project and follow these steps:
+
+1. Select Build and Deployment on the side panel of the project settings page
 2. Scroll down to the **Deployment Retention Policy** section
 3. Select the drop down menu with the appropriate duration
 4. Save the new retention policy for your project
@@ -113,7 +115,16 @@ These exceptions apply on every plan:
 
 ## Restoring a deleted deployment
 
-When a deployment is marked for deletion either accidentally or as part of the retention policy, you can restore it within the recovery period. This period is 30 days for successfully built deployments, but unsuccessful deployments may be garbage collected sooner.
+When a deployment is deleted, either manually or as part of the retention policy, it enters a recovery period during which you can restore it. After the recovery period ends, Vercel garbage collects the deployment and permanently deletes it.
+
+The length of the recovery period depends on how old the deployment is when it is deleted:
+
+- **Deleted at 30 days of age or older:** The recovery period is 30 days from deletion. This includes any deployment under a retention policy of 30 days or more.
+- **Deleted before reaching 30 days of age:** The recovery period is shorter. For a deployment deleted by a retention policy set to less than 30 days, the recovery period matches the retention policy, so a 7-day retention policy results in a 7-day recovery period. For a deployment deleted manually, the recovery period is determined by the deployment's age at deletion, down to a minimum of 1 day.
+
+This matches the recovery period to the deployment's age, so short retention policies do not leave large numbers of old deployments on the **Recently Deleted** page.
+
+These recovery periods apply to successfully built deployments. Unsuccessful deployments may be garbage collected sooner.
 
 To restore a deleted deployment, open **Settings** in the sidebar of your project:
 
@@ -133,4 +144,4 @@ To restore a deleted deployment, open **Settings** in the sidebar of your projec
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

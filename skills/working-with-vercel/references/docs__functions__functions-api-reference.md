@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b022bc730bbcecf6bc3a2e533312661b92a121742e16f5a4f1848fb059969417"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3d71712045175376ef5de3b0d7ca4fa1b51bd4104f5dd1e515e1951fe4d52bac"
 ---
 
 # Functions API Reference
@@ -42,8 +42,8 @@ Functions are defined similar to a [Route Handler](https://nextjs.org/docs/app/a
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [How can I use geolocation IP headers?](https://vercel.com/kb/guide/geo-ip-headers-geolocation-vercel-functions) — Learn how to read geolocation headers on Vercel with Next.js or any frontend framework.
 - [Streaming](https://workflow-sdk.dev/docs/foundations/streaming) — Stream data to clients in real time without waiting for workflow completion.
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference.graph.md](/docs/functions/functions-api-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -418,4 +418,4 @@ See the [`@vercel/oidc-aws-credentials-provider`](/docs/functions/functions-api-
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

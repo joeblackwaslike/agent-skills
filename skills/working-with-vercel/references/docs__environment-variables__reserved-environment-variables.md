@@ -13,8 +13,8 @@ related:
 summary: Reserved environment variables are reserved by Vercel Vercel Function runtimes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/reserved-environment-variables.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f7506c44aad317bf0a02af85f96b6417d3b7673c437b2aca3a2acd310eda7cbc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a9499862c2902157cca1010bc1b23a40268052cba2f2f4c3880a25a72d2815cc"
 ---
 
 # Reserved environment variables
@@ -32,7 +32,7 @@ The following [environment variable](/docs/environment-variables) names are [res
 - [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
-- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
+- [Create one or more shared environment variables](https://vercel.com/docs/rest-api/environment/create-one-or-more-shared-environment-variables) — POST /v1/env — Creates shared environment variable\\(s\\) for a team.
 
 Full cross-link map for this page: [/docs/environment-variables/reserved-environment-variables.graph.md](/docs/environment-variables/reserved-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -67,4 +67,4 @@ The following [environment variable](/docs/environment-variables) names are [all
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

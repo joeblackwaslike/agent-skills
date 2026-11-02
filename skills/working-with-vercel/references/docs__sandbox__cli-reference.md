@@ -16,8 +16,8 @@ related:
 summary: Use the Sandbox CLI to run coding agents, manage sandboxes, execute commands, and copy files from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "826308f334a384d27162554881a831737c44a60d360d75142513faaa238a5248"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "11be105143e7aab85f8a5fc7157be56221bd72c0605f75f6209d51e40282cb0d"
 ---
 
 # Sandbox CLI Reference
@@ -37,9 +37,8 @@ Use the Sandbox CLI to [run coding agents](#run-a-coding-agent), manage sandboxe
 - [How to use Vercel Drives with an eve agent](https://vercel.com/kb/guide/vercel-drives-eve-agent) — Mount Vercel Drives in an eve agent's sandbox to give each user a persistent workspace and share read-only reference dat
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking)
 - [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
+- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes) — Vercel MCP tools for sandboxes.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md)
@@ -109,6 +108,7 @@ sandbox <subcommand>
 
 - [`list`](#sandbox-list): List all sandboxes for the specified account and project. \[alias: `ls`]
 - [`create`](#sandbox-create): Create a sandbox in the specified account and project.
+- [`sh`](#sandbox-sh): Create a sandbox and open an interactive shell.
 - [`fork`](#sandbox-fork): Fork an existing sandbox into a new one, inheriting its config and current snapshot.
 - [`run`](#sandbox-run): Create or resume a sandbox and run a command in it.
 - [`exec`](#sandbox-exec): Execute a command in an existing sandbox.
@@ -122,6 +122,7 @@ sandbox <subcommand>
 - [`snapshot`](#sandbox-snapshot): Take a snapshot of the filesystem of a sandbox.
 - [`snapshots`](#sandbox-snapshots): Manage sandbox snapshots.
 - [`drives`](#sandbox-drives): Manage sandbox drives.
+- [`telemetry`](#sandbox-telemetry): View or change CLI telemetry collection.
 - [`login`](#sandbox-login): Log in to the Sandbox CLI.
 - [`logout`](#sandbox-logout): Log out of the Sandbox CLI.
 
@@ -577,6 +578,15 @@ sandbox exec --workdir /app my-sandbox -- python script.py
 # Kill the command if it runs longer than 30 seconds
 sandbox exec --timeout 30s my-sandbox -- npm test
 
+# Start the command detached and print its command ID without waiting
+sandbox exec --detach my-sandbox -- npm run dev
+
+# Pipe local input into a foreground command
+cat data.csv | sandbox exec --stdin my-sandbox -- wc -l
+
+# Start detached with stdin kept open for later writes
+sandbox exec --detach --stdin my-sandbox -- cat
+
 # Stop the current session after the command exits
 sandbox exec --stop my-sandbox -- npm build
 ```
@@ -594,13 +604,15 @@ sandbox exec --stop my-sandbox -- npm build
 
 ### Sandbox exec flags
 
-| Flag            | Short | Description                                        |
-| --------------- | ----- | -------------------------------------------------- |
-| `--sudo`        | -     | Run the command with admin privileges.             |
-| `--interactive` | `-i`  | Run the command in an interactive shell.           |
-| `--tty`         | `-t`  | Enable terminal features for interactive commands. |
-| `--stop`        | -     | Stop the current session when the command exits.   |
-| `--help`        | `-h`  | Display help information.                          |
+| Flag            | Short | Description                                                                                                  |
+| --------------- | ----- | ------------------------------------------------------------------------------------------------------------ |
+| `--sudo`        | -     | Run the command with admin privileges.                                                                       |
+| `--interactive` | `-i`  | Run the command in an interactive shell.                                                                     |
+| `--detach`      | -     | Start the command and print its command ID without waiting for it to finish. Cannot be combined with `--interactive`. |
+| `--stdin`       | -     | Forward local stdin to the command, or keep a detached command's stdin open for later writes. Cannot be combined with `--interactive`. |
+| `--tty`         | `-t`  | Enable terminal features for interactive commands.                                                           |
+| `--stop`        | -     | Stop the current session when the command exits.                                                             |
+| `--help`        | `-h`  | Display help information.                                                                                    |
 
 ### Sandbox exec arguments
 
@@ -609,6 +621,39 @@ sandbox exec --stop my-sandbox -- npm build
 | `<name>`    | The name of the sandbox where you want to run the command. |
 | `<command>` | The command you want to run.                               |
 | `[...args]` | Additional arguments for your command.                     |
+
+## `sandbox sh`
+
+Create a sandbox and open an interactive shell:
+
+```bash filename="terminal"
+sandbox sh [OPTIONS]
+```
+
+By default, exiting the shell leaves the sandbox running. The sandbox is persistent unless you pass `--non-persistent`. Reconnect with [`sandbox connect`](#sandbox-connect), stop its session with [`sandbox stop`](#sandbox-stop), or delete it with [`sandbox remove`](#sandbox-remove).
+
+Create a named shell sandbox:
+
+```bash filename="terminal"
+sandbox sh --name my-shell --image vercel/sandbox/node:24
+```
+
+To create a temporary sandbox that the CLI deletes when you exit the shell, pass `--rm`:
+
+```bash filename="terminal"
+sandbox sh --rm --image vercel/sandbox/node:24
+```
+
+### Sandbox sh options
+
+`sandbox sh` accepts the [`sandbox create` options](#sandbox-create-options) and [flags](#sandbox-create-flags), except `--connect`. It opens the shell automatically and does not accept the `agent` argument.
+
+| Flag          | Description                                                      |
+| ------------- | ---------------------------------------------------------------- |
+| `--rm`        | Create a nonpersistent sandbox and delete it when the shell exits. |
+| `--help`, `-h` | Display help information.                                        |
+
+`--rm` deletes the sandbox, but does not request deletion of all retained snapshots. Manage snapshots separately with [`sandbox snapshots`](#sandbox-snapshots).
 
 ## `sandbox connect`
 
@@ -884,7 +929,7 @@ sandbox snapshot my-sandbox --stop --expiration 0
 | Flag       | Short | Description                                                 |
 | ---------- | ----- | ----------------------------------------------------------- |
 | `--stop`   | -     | Confirm that the sandbox will be stopped when snapshotting. |
-| `--silent` | -     | Don't write snapshot ID to stdout.                          |
+| `--silent` | -     | Suppress the progress spinner and its `Snapshot <id> created` confirmation, which are written to stderr. The snapshot ID is never written to stdout. |
 | `--help`   | `-h`  | Display help information.                                   |
 
 ### Sandbox snapshot arguments
@@ -1298,6 +1343,28 @@ sandbox drives delete cache build-artifacts
 | `<name>`    | The name of the drive to delete.   |
 | `[...name]` | Additional drive names to delete.  |
 
+## `sandbox telemetry`
+
+View or change whether the Sandbox CLI collects usage data:
+
+```bash filename="terminal"
+sandbox telemetry status
+sandbox telemetry enable
+sandbox telemetry disable
+```
+
+`status` prints whether telemetry is enabled. `enable` and `disable` save your preference locally and print the resulting status. Telemetry is enabled by default unless a saved preference or environment variable disables it.
+
+### Sandbox telemetry environment variables
+
+| Variable | Effect |
+| -------- | ------ |
+| `VERCEL_SANDBOX_TELEMETRY_DISABLED=1` | Disable Sandbox CLI telemetry. Overrides the saved preference. |
+| `VERCEL_TELEMETRY_DISABLED=1` | Disable telemetry, including when invoking Sandbox through the Vercel CLI. Overrides the saved preference. |
+| `VERCEL_TELEMETRY_DEBUG=1` | Print telemetry events to standard error instead of sending them. |
+
+When invoked as `vercel sandbox`, the Sandbox CLI also respects the Vercel CLI's saved telemetry preference. An environment override can keep telemetry disabled after `sandbox telemetry enable`.
+
 ## `sandbox login`
 
 Log in to the Sandbox CLI.
@@ -1477,4 +1544,4 @@ sandbox exec --workdir /app dev -- npm run dev
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

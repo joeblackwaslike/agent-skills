@@ -11,13 +11,13 @@ related:
   - /docs/plans/pro-plan
   - /docs/plans/enterprise
   - /docs/pricing/flex-commit
-  - /docs/limits
   - /docs/pricing
+  - /docs/rbac/access-roles
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "06dacdf505642c30bb09791682fb4d5843de7e31ae50086da5e764656149d12e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7ccc33013984469435f8c48813221777e79218993b83b2ead13b890a1767a26a"
 ---
 
 # Spend Management
@@ -38,9 +38,9 @@ Spend management is a way for you to notify or to automatically take action on y
 - [Vercel CLI adds Spend Management](https://vercel.com/changelog/vercel-cli-adds-spend-management)
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
+- [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications)
 - [Spend Management now available for Pro users](https://vercel.com/changelog/spend-management-now-available-for-pro-users)
 - [Spend Management now pauses production deployments by default](https://vercel.com/changelog/spend-management-now-pauses-production-deployments-by-default)
@@ -67,7 +67,7 @@ Setting the amount halfway through a billing cycle considers your current spend.
 
 ## What does Spend Management include?
 
-The spend amount applies to [metered resources](/docs/limits#additional-resources) used by all projects on your team. What counts toward it depends on your plan:
+The spend amount applies to [metered resources](/docs/pricing#managed-infrastructure-billable-resources) used by all projects on your team. What counts toward it depends on your plan:
 
 - **Pro**: metered usage that goes beyond your Pro plan [monthly credit](/docs/plans/pro-plan#monthly-credit)
 - **Enterprise on Flexible Commitment**: the metered usage that draws down from your prepaid balance
@@ -152,13 +152,13 @@ When visitors access your production deployment while it is paused, they will se
 
 ### Unpausing projects
 
-Projects need to be resumed on an individual basis, either [through the dashboard](/docs/projects#resuming-a-project) or the [Vercel REST API](/docs/rest-api/projects/unpause-a-project).
+Projects need to be resumed on an individual basis, either [through the dashboard](/docs/projects/managing-projects#resuming-a-project) or the [Vercel REST API](/docs/rest-api/projects/unpause-a-project).
 
 Projects won't automatically unpause if you increase the spend amount, you must resume each project manually.
 
 ## Configuring a webhook
 
-You can configure a webhook URL to trigger events such as serving a static version of your site, [pausing a project](/docs/projects#pausing-a-project), or sending a Slack notification.
+You can configure a webhook URL to trigger events such as serving a static version of your site, [pausing a project](/docs/projects/managing-projects#pausing-a-project), or sending a Slack notification.
 
 Vercel will send a [HTTPS POST request](#webhook-payload) to the URL that you provide [when a spend amount reaches a threshold](#spend-amount).
 
@@ -211,4 +211,4 @@ For more information on Vercel's pricing, guidance on optimizing consumption, an
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

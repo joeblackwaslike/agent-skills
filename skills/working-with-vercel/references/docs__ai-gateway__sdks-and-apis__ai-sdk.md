@@ -17,8 +17,8 @@ related:
 summary: Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "aea6183bfd1750719deec2f63286264c5ed3befb862bf28ab7d40b0b7daeae32"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2be83bec6c8c2346f3691616900e329865c3d26d43fbb3a8665c3150043b9d79"
 ---
 
 # AI SDK with AI Gateway
@@ -31,14 +31,14 @@ The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered Typ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway)
+- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5) — Get started with GPT-5 using the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -309,4 +309,4 @@ Start with an AI SDK template to build a chatbot or route form submissions with 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

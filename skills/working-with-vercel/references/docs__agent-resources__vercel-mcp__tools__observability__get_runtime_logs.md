@@ -13,8 +13,8 @@ related:
 summary: Use get_runtime_logs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f670880fa47f56bf493f176e48ee4d932a2ac044f97dbfada8d24606310e4f11"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "29598b6d5ff28343099a62be2fa231cbc33625d0b660a681c80151b807e87296"
 ---
 
 # get_runtime_logs
@@ -30,8 +30,8 @@ Get runtime logs for a project or deployment. Runtime logs include application o
 - [get_runtime_errors](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors) — Use get_runtime_errors with Vercel MCP.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
-- [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
+- [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs.graph.md)
 <!-- /docsgraph:related -->
@@ -59,4 +59,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -14,8 +14,8 @@ related:
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "622e40c479fc4256a2df081120c4c456041a2e8c72e28a41001c233ed5fd63f0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6bbaf1ee173cdc530dab7ec3dedde87bae3a3c8f7680500dd6732693e6278cb1"
 ---
 
 # Implementing secrets rotation
@@ -32,8 +32,8 @@ When your integration provisions resources with credentials (like API keys, data
 - [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration) — Rotate Hypertune API keys with zero-downtime.
 - [How to rotate the secrets of your Clerk integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-clerk-integration) — Rotate Clerk API keys
 - [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration) — This will guide you how to update the password for a Neon project.
-- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration) — This will guide you how to update the password for a Redis databse.
 - [Rotating environment variables](https://vercel.com/docs/environment-variables/rotating-secrets) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
+- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration) — This will guide you how to update the password for a Redis databse.
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
 - [Vercel KMS Key Rotation](https://vercel.com/docs/kms/concepts/key-rotation) — How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued to
@@ -265,4 +265,4 @@ When testing your implementation:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

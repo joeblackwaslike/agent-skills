@@ -13,8 +13,8 @@ related:
 summary: Use list_connector_project_connections with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connector_project_connections.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1b7ff7bcff8a31e67391cb2b700a0cb13b63d2e34b0db79cb67adca54ead9595"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a082df025f553b406d53f1e23bc49aeace1a5c9a5cde9733d1ebb60fd63e9419"
 ---
 
 # list_connector_project_connections
@@ -31,7 +31,7 @@ List the projects connected to a connector and the environments where each conne
 - [list_connectors](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connectors) — Use list_connectors with Vercel MCP.
 - [get_connector_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection) — Use get_connector_project_connection with Vercel MCP.
 - [get_connector](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector) — Use get_connector with Vercel MCP.
-- [List projects for a connector](https://vercel.com/docs/rest-api/connect/list-projects-for-a-connector) — GET /v2/connect/connectors/{connector}/projects — List the projects connected to a connector and the environments where
+- [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/networking/list_connector_project_connections.graph.md](/docs/agent-resources/vercel-mcp/tools/networking/list_connector_project_connections.graph.md)
 <!-- /docsgraph:related -->
@@ -52,4 +52,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/netwo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

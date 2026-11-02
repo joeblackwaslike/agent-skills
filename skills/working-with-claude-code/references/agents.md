@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agents.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "094a1d43e84392dc4953a6cf06484afcfcaaaed09bbce34a484cd3a17e64149e"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "de72ed10bf4598b409997457f9c8d3c8402751488eb1d5c897339ef0d51c1ea4"
 ---
 
 > ## Documentation Index
@@ -19,7 +19,7 @@ Claude Code has five ways to work on several tasks at once: [subagents](https://
 | [Subagents](https://code.claude.com/docs/en/sub-agents.md) | Delegated workers inside one session that do a side task in their own context and return a summary | A side task would flood your main conversation with search results, logs, or file contents you won't reference again |
 | [Agent view](https://code.claude.com/docs/en/agent-view.md) | One screen to dispatch and monitor sessions running in the background, opened with `claude agents`. Research preview | You have several independent tasks and want to hand them off, check status at a glance, and step in only when one needs you |
 | [Agent teams](https://code.claude.com/docs/en/agent-teams.md) | Multiple coordinated sessions with a shared task list and inter-agent messaging, managed by a lead. Experimental and disabled by default | You want Claude to split a project into pieces, assign them, and keep the workers in sync |
-| [Projects](https://code.claude.com/docs/en/claude-projects.md) | One ongoing conversation at claude.ai/code or in the desktop app. Claude starts parallel sessions called threads, in the cloud or, when you ask, on your computer through Remote Control, gives each one the project's instructions, and shows you which ones need you. Public beta on Pro and Max | The work spans many tasks over days or weeks, should keep running when your machine is off, and you'd rather describe it once than dispatch and track each session |
+| [Projects](https://code.claude.com/docs/en/claude-projects.md) | One ongoing conversation at claude.ai/code or in the desktop app. Claude starts parallel sessions called threads, in the cloud or, when you ask, on your computer through Remote Control. It gives each one the project's instructions and shows you which ones need you. Public beta on Pro, Max, and Ultra | The work spans many tasks over days or weeks, should keep running when your machine is off, and you'd rather describe it once than dispatch and track each session |
 | [Dynamic workflows](https://code.claude.com/docs/en/workflows.md) | A script that runs many subagents and cross-checks their results, for work too big to coordinate one turn at a time or that needs more than a single pass | A job outgrows a handful of subagents, or you want findings verified against each other: a codebase-wide audit, a 500-file migration, cross-checked research, or a plan drafted from several angles |
 
 In every approach the workers are Claude sessions. To involve a different tool, expose it to Claude as an [MCP server](https://code.claude.com/docs/en/mcp.md).
@@ -38,7 +38,7 @@ A few other features run Claude without you driving each step, but they solve a 
 
 > [!NOTE]
 >
-> Running several sessions or subagents at once multiplies token usage. See [Costs](https://code.claude.com/docs/en/costs.md) for usage and rate-limit details.
+> Running several sessions or subagents at once multiplies token usage. See [Costs](https://code.claude.com/docs/en/costs.md) for usage and rate limit details.
 
 ## Choose an approach
 

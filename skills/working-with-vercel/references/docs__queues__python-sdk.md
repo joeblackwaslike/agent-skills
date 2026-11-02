@@ -14,8 +14,8 @@ related:
 summary: Publish and consume messages with the Vercel Queues Python SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/python-sdk.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3905aefab076ad82a9ee9eb6248631ef005b8a70a6385c01cfecf92d71359cf1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "91dc0235c2a0558089075c42a4b7a10272a89b9cda985a80b5031595d2c435ac"
 ---
 
 # Vercel Queues: Python SDK Reference
@@ -30,19 +30,21 @@ The official Vercel Python SDK lets Python apps publish and consume Vercel Queue
 
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
+- [Store and serve files from Python with Vercel Blob](https://vercel.com/kb/guide/python-and-vercel-blob) — Upload, list, stream, and protect files from a Python app with Vercel Blob, including private per-user storage in FastAP
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
-- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
-- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
-- [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 
 Full cross-link map for this page: [/docs/queues/python-sdk.graph.md](/docs/queues/python-sdk.graph.md)
 <!-- /docsgraph:related -->
 
 For JavaScript and TypeScript, see the [JS SDK Reference](/docs/queues/sdk).
+
+Follow [Process background jobs in Python with Vercel Queues](/kb/guide/python-and-vercel-queues) to publish checkout events, process them with subscribers, and handle retries in a FastAPI application.
 
 ## Installation
 
@@ -685,4 +687,4 @@ The SDK reads these variables when you don't pass the matching option explicitly
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

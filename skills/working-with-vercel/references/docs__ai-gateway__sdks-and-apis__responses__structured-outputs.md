@@ -13,8 +13,8 @@ related:
 summary: Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f7fe36f429d024dc5fd87804c6d094b85138ad15815af05542796e587a28c5be"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ec98abb0ed772396e985f06f4cb2355f8f023bb73d3a6e49ed17b29c6fafc73e"
 ---
 
 # OpenAI Responses Structured Outputs with AI Gateway
@@ -181,4 +181,4 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monitor request usage and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/blackbox.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f06f3a559cab0b2a47c5496b3b9c74ddf570f79be4bea902f187a0da87f7ae5b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4cdc322722a6c664889c71d506f80eea5264d3ad697f0ec8640d4ce6a054a9d8"
 ---
 
 # Blackbox AI with AI Gateway
@@ -31,7 +31,7 @@ You can use the [Blackbox AI](https://blackbox.ai) CLI for AI-powered code gener
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/blackbox.graph.md](/docs/ai-gateway/coding-agents/blackbox.graph.md)
 <!-- /docsgraph:related -->
@@ -80,4 +80,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

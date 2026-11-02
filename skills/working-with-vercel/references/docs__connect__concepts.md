@@ -16,8 +16,8 @@ related:
 summary: "Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and authentication."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7c419398bd71851cb091bb4bfcfeee6fe7fd81653c73088763c4d4d303befb69"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f74703db70accc7fca834782379a19e8c5d669b3dcc80e9f947b87d986b73761"
 ---
 
 # Vercel Connect Concepts
@@ -35,8 +35,8 @@ Vercel Connect is built around six primitives. Read these in order if you want a
 - [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
-- [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
+- [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
 
 Full cross-link map for this page: [/docs/connect/concepts.graph.md](/docs/connect/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -64,4 +64,4 @@ A team creates a **connector** for a provider. That connector accepts **installa
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

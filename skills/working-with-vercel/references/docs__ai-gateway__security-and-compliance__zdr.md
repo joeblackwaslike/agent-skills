@@ -13,12 +13,12 @@ related:
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/models-and-providers/automatic-caching
-  - /docs/ai-gateway/models-and-providers/virtual-models
+  - /docs/ai-gateway/models-and-providers/web-search
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "835590397b764a6804a2ed228b8c12ee017b93171a80d7286491351a07620d82"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "de98eec625d489706c190249b26105187fc56e7bea8813cbedd6694f9660f493"
 ---
 
 # AI Gateway Zero Data Retention (ZDR)
@@ -447,6 +447,15 @@ The following providers currently offer ZDR on AI Gateway. Please review each pr
 
 All ZDR-compliant providers also disallow prompt training, since ZDR is a superset of [disallowing prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training). In some cases, certain models or functionalities may be excluded from a provider's ZDR policy. AI Gateway will not fail these requests if zero data retention is enabled, so review the provider's policy in the table below to understand the nuances of specific tools and how they affect data retention.
 
+> **💡 Note:** Tool calls may not be covered by a provider's ZDR policy. When a model invokes
+> a provider-executed tool, such as a provider-side [web
+> search](/docs/ai-gateway/models-and-providers/web-search) or grounding tool,
+> the data sent to that tool can be processed and retained by a separate service
+> under its own terms. AI Gateway does not block or fail these requests when ZDR
+> is enabled. It is your responsibility to review the provider's and the tool's
+> terms to confirm whether tool calls are in scope of the ZDR policy before
+> using provider-side tools with sensitive data.
+
 Provider
 
 No prompt training
@@ -506,14 +515,6 @@ Claude Platform on AWS
 ✓
 
 ZDR policy
-
-DeepInfra
-
-✓
-
-✓
-
-Data handling
 
 DigitalOcean
 
@@ -683,4 +684,4 @@ A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can rest
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -4,8 +4,8 @@ description: Learn how to use Topaz Labs with AI Gateway and the direct provider
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/topaz"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/topaz.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "5ef1375cba17d07b5eff4c6ffd3fb4ac87ebd9ce9bfbbcc6577613525a22256a"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "e28bae4dfe7d60ad473d32c377d73b630a9b5e0b91fe59c5f55086ff1fb38130"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -89,7 +89,11 @@ const topaz = createTopaz({
 
 You can use the following optional settings to customize the Topaz Labs provider instance:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent as the `X-API-Key` header.
   It defaults to the `TOPAZ_API_KEY` environment variable.

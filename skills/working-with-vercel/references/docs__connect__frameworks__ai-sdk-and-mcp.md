@@ -9,21 +9,21 @@ prerequisites:
   - /docs/connect/frameworks
   - /docs/connect
 related:
-  - /docs/connect/legal
   - /docs/connect/quickstart
   - /docs/connect/concepts/tokens
   - /docs/connect/mcp-events
   - /docs/connect/concepts/authentication
+  - /docs/connect/ts-sdk-reference
 summary: Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0917c138def468ea89dd6f982749d8e6dcb734810bd285ebbcc40351ded825e3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2adba92018af0bbd0f87f817a73f0a65f0ec8898e122d9fd9a779e1c09c9b60e"
 ---
 
 # AI SDK and MCP with Vercel Connect
 
-> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/legal/service-terms#connect)
 
 This tutorial connects an AI SDK route to Linear's Model Context Protocol (MCP) server. Vercel Connect supplies short-lived OAuth tokens, while AI SDK discovers and calls the server's tools.
 
@@ -33,11 +33,12 @@ This tutorial connects an AI SDK route to Linear's Model Context Protocol (MCP) 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [TanStack AI with Vercel Connect](https://vercel.com/docs/connect/frameworks/tanstack-ai) — Connect a TanStack AI app to OAuth-protected MCP servers with Vercel Connect, handle user consent, and manage MCP client
 - [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [eve with Vercel Connect](https://vercel.com/docs/connect/frameworks/eve) — Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, an
-- [TanStack AI with MCP](https://vercel.com/docs/mcp/integrations/tanstack-ai) — Connect TanStack AI to a Model Context Protocol server on Vercel and call its tools with models served through AI Gatewa
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
 Full cross-link map for this page: [/docs/connect/frameworks/ai-sdk-and-mcp.graph.md](/docs/connect/frameworks/ai-sdk-and-mcp.graph.md)
 <!-- /docsgraph:related -->
@@ -302,4 +303,4 @@ to create subscriptions and verify deliveries in your application.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

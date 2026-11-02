@@ -13,8 +13,8 @@ related:
 summary: Send feedback about Vercel or its MCP tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/submit_feedback.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f7d758e068a132d7ffe3c436c59f483294f916424210febf0a4b5d8fabe0c8d0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c163111ca3daf09913ce507607c6e493ea850e4097082447698bbb538a53d257"
 ---
 
 # submit_feedback
@@ -32,8 +32,8 @@ Send feedback to Vercel when you want to report a problem or suggest an improvem
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [Integrations for Comments](https://vercel.com/docs/comments/integrations) — Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Support Center](https://vercel.com/docs/support-center) — Learn how to communicate securely with the Vercel support team
 - [Form Submissions](https://vercel.com/docs/botid/form-submissions) — How to properly handle form submissions with BotID protection
+- [use_vercel_cli](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli) — Use use_vercel_cli with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/documentation/submit_feedback.graph.md](/docs/agent-resources/vercel-mcp/tools/documentation/submit_feedback.graph.md)
 <!-- /docsgraph:related -->
@@ -86,4 +86,4 @@ If a request times out or returns an uncertain outcome, it may already have reac
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

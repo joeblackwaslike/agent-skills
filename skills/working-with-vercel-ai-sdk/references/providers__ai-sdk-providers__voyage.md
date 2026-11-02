@@ -4,8 +4,8 @@ description: Learn how to use Voyage AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "0fc627c366eae63d448b642cb5ea42488627462833da5bbdf53395f8a4a1553b"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "951346e54373f81950cc3a64c0b87f6f4affb4e790f72804c22aca8027d7c35e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -89,7 +89,11 @@ You can use the following optional settings to customize the Voyage AI provider 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.voyageai.com/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `VOYAGE_API_KEY` environment variable.

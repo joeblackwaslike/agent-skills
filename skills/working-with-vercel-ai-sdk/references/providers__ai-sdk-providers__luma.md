@@ -4,8 +4,8 @@ description: Learn how to set up the Luma provider and check AI Gateway availabi
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/luma"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "dd74a6e712389305fbc8baaf06efad4af471749f3321a53024a5044553dc5e1d"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "dc46366138957c16fe8dd75797a4dc7f7c7eb8cfb6046d6bcee1d3005a9941fa"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -89,7 +89,11 @@ You can use the following optional settings to customize the Luma provider insta
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.lumalabs.ai`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `Authorization` header.
   It defaults to the `LUMA_API_KEY` environment variable.

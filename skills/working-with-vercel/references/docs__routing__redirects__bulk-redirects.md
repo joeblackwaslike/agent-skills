@@ -16,8 +16,8 @@ related:
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8686071c482eaaf3accd31cf56301fa07c1faeacd0388650deb8ec05459d831c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fd0cf1c8ac6ff291084d0fcfac917a5b73564a313c4cf4c81f1eb729cc11817f"
 ---
 
 # Bulk Redirects
@@ -36,12 +36,11 @@ With bulk redirects, you can handle thousands of simple path-to-path or path-to-
 - [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Bulk redirects UI, API, and CLI now generally available](https://vercel.com/changelog/bulk-redirects-ui-api-and-cli-now-generally-available)
 - [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel)
-- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
+- [Gets project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/gets-project-level-redirects) — GET /v1/bulk-redirects — Get the version history for a project's bulk redirects
 - [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
-- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 
 Full cross-link map for this page: [/docs/routing/redirects/bulk-redirects.graph.md](/docs/routing/redirects/bulk-redirects.graph.md)
 <!-- /docsgraph:related -->
@@ -103,4 +102,4 @@ Each project includes bulk redirect capacity based on your plan, shown in the ta
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -15,8 +15,8 @@ related:
 summary: Vercel MCP tools for billing and purchases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e7edc5a8fab324fe8321ff5f4dc73c46e3ab4de088d10029e08bf48e859ebd81"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c42aa24d7faa4f8e869c7417a736a9cebc11e197dc919309bf7ebb6e406f140a"
 ---
 
 # Billing and Purchases
@@ -138,4 +138,4 @@ List FOCUS contract commitments.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Build fast, memory-safe serverless functions with Rust on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/rust.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "610612b61daab3892eaa885b4d8e989d6288f4df1538ae5cc3031b44c33df565"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f46cef5c386ad288e697ef4741fed0bf93506a13722bffb3e48c4917dd747aee"
 ---
 
 # Using the Rust Runtime with Vercel functions
@@ -33,8 +33,9 @@ Use Rust to build high-performance, memory-safe serverless functions. The Rust r
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [Vercel Functions are now faster—and powered by Rust](https://vercel.com/blog/vercel-functions-are-now-faster-and-powered-by-rust)
 - [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
-- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 
 Full cross-link map for this page: [/docs/functions/runtimes/rust.graph.md](/docs/functions/runtimes/rust.graph.md)
 <!-- /docsgraph:related -->
@@ -138,4 +139,4 @@ target/**
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

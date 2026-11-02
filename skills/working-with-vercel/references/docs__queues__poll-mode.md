@@ -11,13 +11,13 @@ related:
   - /docs/queues/concepts
   - /docs/cron-jobs
   - /docs/daemons
+  - /docs/frameworks/agents/eve
   - /docs/queues/python-sdk
-  - /docs/fluid-compute
 summary: Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/poll-mode.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0a7a52927636531f6132a0c5b842fccb4b2693360df51b461610b24dd897ecc5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "31c50095d95d0fbb08ce59bbc611e394648c32d556524d4e285f9b13c29535d0"
 ---
 
 # Poll Mode
@@ -31,16 +31,16 @@ In poll mode, your application polls for messages from a queue on its own schedu
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Migrate Railway workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-railway-workers-to-vercel-daemons) — Move Railway workers to Vercel Daemons with Docker configuration, broker migration, shutdown testing, a gradual queue ha
-- [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
-- [Backends on Vercel: Python, containers, and Daemons](https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons)
-- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
+- [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 
 Full cross-link map for this page: [/docs/queues/poll-mode.graph.md](/docs/queues/poll-mode.graph.md)
 <!-- /docsgraph:related -->
@@ -66,6 +66,8 @@ Common patterns include:
 - **Long-running consumers**: Run a [daemon](/docs/daemons) that polls the queue continuously, with a fixed number of instances in each region.
 - **Rate-controlled consumption**: Poll for messages at a pace that matches a downstream dependency's rate limits.
 - **Mixed delivery**: Use push mode for latency-sensitive consumers and poll mode for batch workloads within the same application and even the same queue.
+
+For an agent workflow, a daemon can poll jobs, start an [eve](/docs/frameworks/agents/eve) session, and wait for its outcome before acknowledging the message. Follow [Use Vercel Daemons with eve agents](/kb/guide/vercel-daemons-eve-agents) for queue consumption, result handling, and safe retries.
 
 > **💡 Note:** Push and poll mode can be used together within the same queue. Each consumer group independently chooses its delivery mode, so a single topic can have some groups receiving pushes and others polling.
 
@@ -242,4 +244,4 @@ When consumers in different services poll the same topic, scope their consumer g
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

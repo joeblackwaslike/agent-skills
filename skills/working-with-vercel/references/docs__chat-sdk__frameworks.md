@@ -16,8 +16,8 @@ related:
 summary: Use Chat SDK with Next.js, Nuxt, Hono, Nitro, or TanStack Start on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "765f268fb8869fd22fef454201ac3ec2e5f554f5fb93ed5b48c7ec9b71458bf4"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "28decb5d9f42760451219786ea92aa65c0da12e6efc31787a0a8a7adbbf9806e"
 ---
 
 # Chat SDK Frameworks
@@ -33,9 +33,9 @@ Chat SDK works with frameworks that handle standard Web `Request` and `Response`
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
-- [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Sandbox, and Vercel Workflows.
+- [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Dae
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
-- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
+- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 
 Full cross-link map for this page: [/docs/chat-sdk/frameworks.graph.md](/docs/chat-sdk/frameworks.graph.md)
 <!-- /docsgraph:related -->
@@ -78,4 +78,4 @@ Background work is still subject to the function's [maximum duration](/docs/func
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

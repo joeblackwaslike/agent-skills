@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f7eae88f60da7c9bfd167ebe9a8bd6ceffab468a93ee78172eb3cfeef6fe022a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3c0d1de556d9a6b10273f2a5bc510ac77615a9dcb7eb180e177dbe0bb215601f"
 ---
 
 # Vercel CLI Overview
@@ -129,51 +129,6 @@ Vercel CLI requires you to log in and authenticate before accessing resources or
 
 Using the `VERCEL_TOKEN` environment variable is recommended for CI/CD because it avoids exposing the token in command-line arguments, which can be visible in process lists and logs. If both are provided, the `--token` flag takes precedence over the environment variable.
 
-## Experimental native CLI binaries
-
-The standard `vercel` package includes experimental native binaries as optional dependencies for supported platforms. This installation still requires Node.js to run its launcher, even when you use native execution. Install [Vercel CLI](#installing-vercel-cli) with your package manager, keeping optional dependencies enabled, then opt into native execution:
-
-```bash filename="terminal"
-vercel upgrade --enable-binary
-```
-
-*Enabling native execution for Vercel CLI.*
-
-If the native package is missing because you omitted optional dependencies, reinstall `vercel` with optional dependencies enabled. For an npm installation:
-
-```bash filename="terminal"
-npm install --global vercel@latest --include=optional
-vercel upgrade --enable-binary
-```
-
-*Restoring optional dependencies and enabling native execution.*
-
-Verify the installed version and runtime:
-
-```bash filename="terminal"
-vercel --version
-```
-
-*Checking the installed Vercel CLI version and execution mode.*
-
-The CLI banner includes `(native)` when it runs the native binary.
-
-On macOS, the package uses its installed native binary by default unless you opt out. To return to Node.js execution, run [`vercel upgrade --disable-binary`](/docs/cli/upgrade#disable-binary).
-
-Linux native packages target glibc. On musl hosts, such as Alpine, the launcher looks for a matching musl package and uses Node.js execution if that package isn't installed. A missing native package falls back to Node.js execution; a failure after native execution starts doesn't retry the command with Node.js execution.
-
-### Migrate from the legacy native package
-
-If you installed `@vercel/vc-native` directly, remove it and install `vercel` with the same package manager. For example, with pnpm:
-
-```bash filename="terminal"
-pnpm remove -g @vercel/vc-native
-pnpm add -g vercel@latest
-vercel upgrade --enable-binary
-```
-
-Package-manager upgrades update `vercel`, including when it runs through the native binary. They no longer upgrade the legacy `@vercel/vc-native` wrapper.
-
 ## Available Commands
 
 ### activity
@@ -198,6 +153,19 @@ vercel agent init --yes
 ```
 
 [Learn more about the agent command](/docs/cli/agent)
+
+### agent-runs
+
+Find projects with Agent Runs activity, list recent runs, and inspect run metadata and conversation traces.
+
+```bash
+vercel agent-runs projects
+vercel agent-runs list
+vercel agent-runs inspect run_1234567890
+vercel agent-runs trace run_1234567890 --json
+```
+
+[Learn more about the agent-runs command](/docs/cli/agent-runs)
 
 ### ai-gateway
 
@@ -332,9 +300,21 @@ vercel certs rm [certificate-id]
 
 [Learn more about the certs command](/docs/cli/certs)
 
+### ci
+
+Inspect and rerun [Vercel CI](/docs/ci) runs for your repository. Vercel CI is in Beta.
+
+```bash
+vercel ci ls
+vercel ci inspect --wait
+vercel ci logs --failed
+```
+
+[Learn more about the ci command](/docs/cli/ci)
+
 ### comments
 
-Review and manage existing [Vercel Toolbar comment threads](/docs/comments) from the terminal. This command is in beta.
+Review and manage existing [Vercel Toolbar comment threads](/docs/comments) from the terminal.
 
 ```bash
 vercel comments
@@ -444,6 +424,17 @@ vercel dns rm [record-id]
 ```
 
 [Learn more about the dns command](/docs/cli/dns)
+
+### doctor
+
+Check your CLI setup and get the command that fixes each problem, without logging in or linking a project.
+
+```bash
+vercel doctor
+vercel doctor --json
+```
+
+[Learn more about the doctor command](/docs/cli/doctor)
 
 ### domains
 
@@ -727,6 +718,18 @@ vercel microfrontends pull --dpl [deployment-id]
 
 [Learn more about the microfrontends command](/docs/cli/microfrontends)
 
+### monitors
+
+Create, list, inspect, update, and delete monitors for a project or team. Replaces the deprecated `vercel alerts rules` commands.
+
+```bash
+vercel monitors ls
+vercel monitors add --project my-app --body ./monitor.json
+vercel monitors rm [monitor-id]
+```
+
+[Learn more about the monitors command](/docs/cli/monitors)
+
 ### open
 
 Open your current project in the Vercel Dashboard.
@@ -736,6 +739,18 @@ vercel open
 ```
 
 [Learn more about the open command](/docs/cli/open)
+
+### organizations
+
+Create and manage [organizations](/docs/organizations) and their child teams: list and inspect organizations, create an organization from a team, and create or add child teams.
+
+```bash
+vercel organizations list
+vercel --scope acme organizations create --slug acme
+vercel organizations teams create acme --slug acme-web --name "Acme Web"
+```
+
+[Learn more about the organizations command](/docs/cli/organizations)
 
 ### pricing
 
@@ -981,8 +996,8 @@ vercel traces get [request-id]
 vercel traces [request-id]
 vercel traces get [request-id] --open
 vercel traces config ls
-vercel traces config set production 25
-vercel traces config rm production
+vercel traces config set 25 --environment production
+vercel traces config rm --environment production
 ```
 
 Open a trace directly in the tree or waterfall view:
@@ -1059,4 +1074,4 @@ vercel whoami
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

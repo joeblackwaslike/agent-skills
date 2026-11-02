@@ -9,15 +9,15 @@ prerequisites:
   - /docs/vercel-toolbar
 related:
   - /docs/vercel-toolbar/browser-extension
-  - /docs/deployments/environments
+  - /docs/deployments/generated-urls
   - /docs/environment-variables
   - /docs/domains/working-with-domains/add-a-domain
   - /docs/caching/cache-control-headers
 summary: Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-toolbar/managing-toolbar.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e6f579c2a3046fa9daf06348535ba902a0b290e7b4269325c395300182c04c9f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5baf446b8ea388d0cc9ce7321cf950f18e9cdb08ccf5992603295d932558a06d"
 ---
 
 # Managing the visibility of the Vercel Toolbar
@@ -37,9 +37,9 @@ When the toolbar is enabled, you'll be able to view it on any preview or enabled
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Use the Vercel Toolbar in Production with the Chrome Extension or the toolbar menu](https://vercel.com/changelog/use-the-vercel-toolbar-in-production)
-- [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
-- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
+- [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
+- [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
@@ -98,7 +98,7 @@ Users with the browser extension can set the toolbar to start hidden by toggling
 
 You can use the `x-vercel-skip-toolbar` header to prevent interference with automated end-to-end tests:
 
-1. Add the `x-vercel-skip-toolbar` header to the request sent to [the preview deployment URL](/docs/deployments/environments#preview-environment-pre-production#preview-urls)
+1. Add the `x-vercel-skip-toolbar` header to the request sent to [the preview deployment URL](/docs/deployments/generated-urls#viewing-generated-urls)
 2. Optionally, you can assign the value `1` to the header. However, presence of the header itself triggers Vercel to disable the toolbar
 
 ## Enable or disable the toolbar for a specific branch
@@ -158,4 +158,4 @@ You can make the following adjustments to the `Content-Security-Policy` [respons
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: "Understand how billing works for Vercel Services, what's charged, and which limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7a5cd6fbbaa5e65e0774e60e784475e89c5d25efdf8f67aa1b741626aee2cc55"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e0882c02132516d6cdb2a03d652bbbb2d09fede5f58712e8085963abf008dd62"
 ---
 
 # Services Pricing and Limits
@@ -32,11 +32,11 @@ Vercel bills Services across the compute each service runs on, the requests serv
 
 - [Secure internal communication between services (beta)](https://vercel.com/changelog/secure-internal-communication-between-services)
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
-- [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
-- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 
 Full cross-link map for this page: [/docs/services/pricing.graph.md](/docs/services/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -74,4 +74,4 @@ The same [function limits](/docs/functions/limitations) apply to each service, s
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -17,8 +17,8 @@ related:
 summary: Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compliance requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5822717045c757f69920a3c06a8fd0d36f1849369bfbde2f06b728bad766fa4f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9f012e71927e22be35a410ae8b92365dfd9da86fe017e610ca5f39f784f08689"
 ---
 
 # AI Gateway Regional Inference
@@ -42,7 +42,7 @@ running somewhere else.
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/regional-inference.graph.md](/docs/ai-gateway/security-and-compliance/regional-inference.graph.md)
 <!-- /docsgraph:related -->
@@ -586,4 +586,4 @@ Pin an inference region on a [virtual model](/docs/ai-gateway/models-and-provide
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

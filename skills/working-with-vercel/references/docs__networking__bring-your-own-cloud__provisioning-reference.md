@@ -17,8 +17,8 @@ related:
 summary: "Reference for Bring Your Own Cloud (BYOC) provisioning: the descriptor.json format, generated files, values to preserve, size limits, permissions,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/provisioning-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c147d2b082daa24381ccb94c0d158497ae35ce9a05aa6895314692247b8da91c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a12c864abd6a6c9c7b97905f355ff4ffa1115195340c30b7fa65e3e70a17e5d0"
 ---
 
 # BYOC Provisioning Reference
@@ -285,4 +285,4 @@ For webhook payloads, see the [webhooks API reference](/docs/webhooks/webhooks-a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

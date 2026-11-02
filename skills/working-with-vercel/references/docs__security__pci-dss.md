@@ -12,8 +12,8 @@ related:
 summary: Learn how to integrate an iframe into your application to support PCI DSS compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/pci-dss.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4c420a86dbaea71625f86d18303b648f05404488ef03ac37ca721680439a7a9c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a5b41b9289f9b827ae7ca1766f4b1e25ec83ca21130627a149d71a9cf1158883"
 ---
 
 # PCI DSS iframe Integration
@@ -114,4 +114,4 @@ In accordance with Vercel's [shared responsibility model](/docs/security/shared-
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

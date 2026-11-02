@@ -13,8 +13,8 @@ related:
 summary: Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "adea2126aebed9b7b867a24de3927f362b8c26ae67655ad0a5be00d3e9bf1ef6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0c0c0d58d8e3b64cfc8718e50549c6f1af3ad517aae8a91888875a102a9539ca"
 ---
 
 # Cleaning up after a full rollout
@@ -29,11 +29,12 @@ Once a feature is stable and the flag has been enabled in all environments for a
 
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Inspect feature flag history with Vercel CLI](https://vercel.com/changelog/inspect-feature-flag-history-with-vercel-cli)
 - [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags)
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
 - [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
-- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
+- [Delete a flag](https://vercel.com/docs/rest-api/feature-flags/delete-a-flag) — DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Permanently delete a feature flag from the pr
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/clean-up-after-rollout.graph.md](/docs/flags/vercel-flags/cli/clean-up-after-rollout.graph.md)
@@ -89,21 +90,25 @@ vercel deploy
 
 Visit the preview URL to confirm the feature still works without the flag.
 
-## 7. Archive the flag
-
-Once archived, the flag stops evaluating and your application falls back to the `decide` default defined in code.
-
-```bash filename="terminal"
-vercel flags archive old-onboarding-flow --yes
-```
-
-See [Archive](/docs/flags/vercel-flags/dashboard/archive) for details on what happens when you archive.
-
-## 8. Deploy to production
+## 7. Deploy to production
 
 ```bash filename="terminal"
 vercel deploy --prod
 ```
+
+Archived flags evaluate to the default value defined in code, so remove the flag from your code and deploy to every environment that uses it before archiving.
+
+## 8. Archive the flag
+
+Once the code removal is live in every environment, archive the flag:
+
+```bash filename="terminal"
+vercel flags archive old-onboarding-flow
+```
+
+The command reports evaluations from the last 3 days before asking for confirmation. If you need the flag back, `vercel flags unarchive old-onboarding-flow` restores it with its configuration and history.
+
+See [Archive](/docs/flags/vercel-flags/dashboard/archive) for details on what happens when you archive.
 
 
 ---
@@ -111,4 +116,4 @@ vercel deploy --prod
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

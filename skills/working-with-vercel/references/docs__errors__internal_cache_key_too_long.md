@@ -12,8 +12,8 @@ related:
 summary: The CDN is failing to fetch from the internal cache due to a cache key being too long. This error can be caused by a request URL that is too long.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_cache_key_too_long.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "cc61e64b7b57d34701ca95160f48b4209fe4b7c34f9d022b3173dd7e45f56bd7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c0b1a5f481a621cd0ff5d8b3bb40f1d425267e90cec2d504a09e9c743f3b247c"
 ---
 
 # INTERNAL_CACHE_KEY_TOO_LONG
@@ -36,4 +36,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

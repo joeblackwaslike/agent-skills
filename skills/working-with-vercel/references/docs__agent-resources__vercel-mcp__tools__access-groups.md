@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for access groups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "38f1a60e2897bc274b921cbbc4f41e6e6fcae838b2d7436dd2b4cc187a264a90"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d65b941c0efc276749c5a973b4b3e5e77c77a8dab5bf8d67a4f58e874e35390b"
 ---
 
 # Access Groups
@@ -113,4 +113,4 @@ Reads an access group project.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

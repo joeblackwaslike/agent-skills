@@ -13,8 +13,8 @@ related:
 summary: Use list_toolbar_threads with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/list_toolbar_threads.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3415aa3016f720e44d7eccf6ded5fdb2d583519a43a53520c1564ab8a9228c4a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c2d3dfb6ddd3ea3eda2bf4eba987293af32a5348206be68e0546225194dddecb"
 ---
 
 # list_toolbar_threads
@@ -55,4 +55,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolb
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

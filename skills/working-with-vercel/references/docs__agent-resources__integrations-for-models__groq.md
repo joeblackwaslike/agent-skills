@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the Groq native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/groq.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b610b5b6f44371394a056d53e036aec4b410571b9951e3b4aeb9e37347bd569e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "773c908241075e589e23813d6289944d88d5e62c97634ec9595c5eb336b7054d"
 ---
 
 # Vercel Groq Integration
@@ -36,8 +36,8 @@ applications requiring low latency.
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
-- [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/groq.graph.md](/docs/agent-resources/integrations-for-models/groq.graph.md)
 <!-- /docsgraph:related -->
@@ -120,4 +120,4 @@ To follow this guide, you'll need the following:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

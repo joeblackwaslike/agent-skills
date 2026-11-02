@@ -14,8 +14,8 @@ related:
 summary: "Learn how to set up Vercel's private registry for use locally, in Vercel, and in your CI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/private-registry.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "96b40dc25dff2efb10a3dca2717d8c8f300d4591f2845bdfba7597f63802e235"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "828e6e28444090e9a046c9e36054173c9a50a216d45ac82af447b650d2897e15"
 ---
 
 # Working with Vercel
@@ -107,7 +107,7 @@ This guide covers Vercel's private registry packages. For information on using y
   && yarn config set --home 'npmRegistries["https://vercel-private-registry.vercel.sh/registry"].npmAuthToken' $auth_token
   ```
   Note the `--home` flag, which ensures the token is saved in the global `.yarnrc.yml`
-  rather then in your project so that it isn't committed.
+  rather than in your project so that it isn't committed.
 
 - ### Verify your setup
   Verify your login status by executing:
@@ -291,4 +291,4 @@ By default, GitHub workflows are not required. To require the workflow in your r
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

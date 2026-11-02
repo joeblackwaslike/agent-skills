@@ -16,8 +16,8 @@ related:
 summary: Let AI automatically install Web Analytics and Speed Insights in your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/installation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bb57f69dec2176414dc39c836ccd0f3adef871f5313fa7a83c4cdafc221104dd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f057056cabb1d2b0c0a34480a2aebb1a30354e439d1797fd4244400e6e3908c4"
 ---
 
 # Installation
@@ -36,8 +36,8 @@ Vercel Agent Installation helps add [Web Analytics](/docs/analytics) and [Speed 
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel Agent can now install Web Analytics and Speed insights for you](https://vercel.com/changelog/vercel-agent-installation)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Introducing Vercel Agent: Your new Vercel teammate](https://vercel.com/blog/introducing-vercel-agent)
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
@@ -83,4 +83,4 @@ To install private npm packages, [configure your team's shared registry credenti
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Learn how the Content Security Policy (CSP) offers defense against web vulnerabilities, its key features, and best practices.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/security-headers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3e1ba992d3ed6a7eac72ddf45c79f6f619331830562f61aeeacf57bd11d3ed50"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e30689801298c103d7cedaf7daea7f2e94bfe32ab1e07170ee6f95e4a9961d77"
 ---
 
 # Content Security Policy
@@ -27,15 +27,13 @@ Content Security Policy is a browser feature designed to prevent cross-site scri
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to set a Content Security Policy (CSP) for your Next.js application](https://nextjs.org/docs/pages/guides/content-security-policy) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
-- [How to set a Content Security Policy (CSP) for your Next.js application](https://nextjs.org/docs/app/guides/content-security-policy) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
-- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel) — Learn how to perform pentesting on Vercel.
 - [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 
 Full cross-link map for this page: [/docs/cdn-security/security-headers.graph.md](/docs/cdn-security/security-headers.graph.md)
 <!-- /docsgraph:related -->
@@ -88,4 +86,4 @@ Additionally, while CSP is supported by modern browsers, nuances exist in their 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

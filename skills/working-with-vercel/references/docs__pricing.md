@@ -16,8 +16,8 @@ related:
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7012e7eaa9c1a4890035ebf8bd4422681b6f18b1b4630ef21242e1abf8461509"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d9a7ea0e09d20fc8fabb0b0eba66ce07fa00835166fe51bcf604b715c1b0c16e"
 ---
 
 # Pricing on Vercel
@@ -33,11 +33,11 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 - [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines)
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms)
 - [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Build Queues](https://vercel.com/docs/builds/build-queues) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
-- [vercel pricing](https://vercel.com/docs/cli/pricing) — Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 
 Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -82,6 +82,16 @@ For content delivery, you can pay on demand or through [Flat Rate CDN](/docs/pri
 | *On-demand Provisioned Memory* | - | Costs vary by region |
 | **Invocations** | 1 million included | N/A |
 | *On-demand Invocations* | - | N/A |
+
+
+#### [Runtime Cache](/docs/caching/runtime-cache#pricing)
+
+Runtime cache reads and writes are measured in 8 KB units. On Hobby, the included units are shared across all projects on the team, and runtime cache pauses for the rest of the billing period once they are used up. Pro teams draw on their [monthly credit](/docs/plans/pro-plan#monthly-credit), then pay the on-demand rate.
+
+| Resource | Hobby Included | On-demand Rates |
+| --- | --- | --- |
+| [Runtime Cache Reads](/docs/caching/runtime-cache#pricing) | 1M/month | $0.40 - $0.64 per 1M read units |
+| [Runtime Cache Writes](/docs/caching/runtime-cache#pricing) | 200K/month | $4.00 - $6.40 per 1M write units |
 
 
 #### [Image Optimization](/docs/image-optimization/limits-and-pricing)
@@ -256,4 +266,4 @@ For more information on Vercel's pricing, guidance on optimizing consumption, an
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

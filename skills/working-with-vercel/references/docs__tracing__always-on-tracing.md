@@ -16,8 +16,8 @@ related:
 summary: Continuously collect traces from your production and preview traffic using sampling rules, so you can debug real requests without reproducing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/always-on-tracing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c3b8283f4279858923a91c16f2cd1a205cc242d62e68513bd75a42d30de688fd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a6cf27b99798abcb35f7687d0b941506afeda870fd64cf880e37fb7831718309"
 ---
 
 # Always-on Tracing
@@ -36,10 +36,10 @@ With always-on tracing, Vercel continuously collects traces from your production
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Agent Runs](https://vercel.com/docs/eve/agent-runs) — Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
-- [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
+- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
 
 Full cross-link map for this page: [/docs/tracing/always-on-tracing.graph.md](/docs/tracing/always-on-tracing.graph.md)
 <!-- /docsgraph:related -->
@@ -161,4 +161,4 @@ Always-on tracing follows the shared [Tracing limitations](/docs/tracing#limitat
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

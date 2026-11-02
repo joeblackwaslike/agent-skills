@@ -13,8 +13,8 @@ related:
 summary: Integrate Vercel with Sitecore XM Cloud to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/sitecore.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c130d4e5e3d37089d51fa7c2ca8f37879a15af48d37a93b4007dae9f01212351"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bddf5a8f578dbabe889214fa136cf38f7d3d1faa3c31bceeac7a1108c1c09bdc"
 ---
 
 # Vercel and Sitecore XM Cloud Integration
@@ -28,12 +28,13 @@ sha256: "c130d4e5e3d37089d51fa7c2ca8f37879a15af48d37a93b4007dae9f01212351"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
-- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
 - [Integrating Next.js and Contentful for your Headless CMS](https://vercel.com/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms) — Next.js with Contentful gives you the power to quickly build scalable dynamic static websites with improved search engin
 - [How to Integrate Next.js with Prismic's Headless CMS](https://vercel.com/kb/guide/how-to-integrate-nextjs-with-prismic) — Learn how to connect Next.js with Prismic's CMS and deploy the integrated website to Vercel
-- [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
+- [How to Deploy a Jekyll Site with Vercel](https://vercel.com/kb/guide/deploying-jekyll-with-vercel) — Create a Jekyll website and deploy it live with Vercel.
+- [Vercel + Sitecore: Partnering on a composable future](https://vercel.com/blog/vercel-sitecore-partnership)
 - [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
-- [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart) — Programmatically host code for user-generated or AI-generated applications on Vercel.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/integrations/cms/sitecore.graph.md](/docs/integrations/cms/sitecore.graph.md)
 <!-- /docsgraph:related -->
@@ -236,4 +237,4 @@ With these components in place, developers can seamlessly integrate content from
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

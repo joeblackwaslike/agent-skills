@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage your Git provider connections using the vercel git CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/git.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "405cefe6b2676c21b8dc752a4b0ca0695c03d9d7990bc9bd1c36b77568faa9f2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f1e0903eaaa4cbf917ffc168a84547fb1680957f97268a7a243207d7c0513be8"
 ---
 
 # vercel git
@@ -31,8 +31,8 @@ enabling deployments to Vercel through Git.
 - [Git settings](https://vercel.com/docs/project-configuration/git-settings) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 - [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 
 Full cross-link map for this page: [/docs/cli/git.graph.md](/docs/cli/git.graph.md)
 <!-- /docsgraph:related -->
@@ -97,4 +97,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

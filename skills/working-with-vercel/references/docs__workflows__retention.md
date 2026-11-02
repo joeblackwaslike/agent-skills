@@ -12,12 +12,12 @@ related:
   - /docs/workflows/pricing
   - /docs/queues
   - /docs/logs/runtime
-  - /docs/eve/agent-runs
+  - /docs/agent-runs
 summary: Learn how long Vercel Workflows keeps run data, when Vercel deletes it, where Vercel stores it, and how to delete it sooner.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/retention.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5d85dbe2823ecbfd96d9595b9d18177f9344b0240862b454cf1835cb00ba1687"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a480003c5efaf2be2a7e5e2399e549b3555454834f5e0677077d5829656b570c"
 ---
 
 # Workflow Data Retention
@@ -30,15 +30,15 @@ Vercel Workflows stores the inputs, outputs, event log, and streams of every wor
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
-- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
-- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
+- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
-- [Worlds](https://workflow-sdk.dev/docs/configuration/worlds) — Select and configure Local, Postgres, Vercel, or custom Worlds.
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
+- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
+- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
+- [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize) — Set retention periods, review remaining usage, and reduce deployment output size.
 - [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 
 Full cross-link map for this page: [/docs/workflows/retention.graph.md](/docs/workflows/retention.graph.md)
@@ -197,7 +197,7 @@ Run records can include other lifecycle fields, such as byte counts and internal
 Run retention only applies to the data that Workflows stores for a run. Copies of the same data elsewhere follow their own rules:
 
 - **Logs**: Anything your workflow or step code logs follows [runtime logs retention](/docs/logs/runtime#limits).
-- **Traces**: Spans that your code or framework exports follow the retention of the destination, such as [Agent Runs](/docs/eve/agent-runs) for eve or your [tracing](/docs/tracing) provider.
+- **Traces**: Spans that your code or framework exports follow the retention of the destination, such as [Agent Runs](/docs/agent-runs) for eve or your [tracing](/docs/tracing) provider.
 - **Drains**: Data you forward with [Drains](/docs/drains) follows the retention of the receiving service.
 - **Your own systems**: Data that your steps write to databases, APIs, or other services isn't affected by run retention.
 
@@ -225,4 +225,4 @@ Run retention only applies to the data that Workflows stores for a run. Copies o
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

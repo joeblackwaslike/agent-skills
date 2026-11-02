@@ -14,8 +14,8 @@ related:
 summary: Understand how Vercel Agent reads linked GitHub repositories and creates pull requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/chat/github.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "28b0b7e5b65b238ccda582596ce15ca81995b70b917b550a5184e2bdad2fc4ec"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8acb346b86f9a1ca8991f45934b421a057111457121e2590dd0aba4c39c780f4"
 ---
 
 # GitHub Operations
@@ -108,4 +108,4 @@ For the full Chat approval model, see [Vercel Agent Permissions](/docs/agent/cha
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

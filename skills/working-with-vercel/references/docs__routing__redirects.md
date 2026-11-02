@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d404b92945a752d04501edc919c9ac89ed611070cc0c5edf11183ee93cdd0e6b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "81d708022cbafcab47db8ab536366bc8b4bb029deb8b9a077ae9103d821fff0b"
 ---
 
 # Redirects
@@ -35,7 +35,6 @@ Redirects are rules that instruct Vercel to send users to a different URL than t
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
-- [Emergency Redirect](https://vercel.com/kb/guide/emergency-redirect) — Learn how to implement an emergency redirect without re-deploying your site.
 - [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 - [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
@@ -177,7 +176,7 @@ You can redirect a `www` subdomain to an apex domain, or other domain redirects,
 
 ### Firewall Redirects
 
-In emergency situations, you can also define redirects using [Firewall rules](/docs/vercel-firewall/vercel-waf/examples#emergency-redirect) to redirect requests to a new page. Firewall redirects execute before CDN configuration redirects (e.g. `vercel.json` or `next.config.js`) are evaluated.
+In emergency situations, you can also define redirects using [Firewall rules](/kb/guide/emergency-redirect) to redirect requests to a new page. Firewall redirects execute before CDN configuration redirects (e.g. `vercel.json` or `next.config.js`) are evaluated.
 
 ## Choose a canonical production domain
 
@@ -287,4 +286,4 @@ There are some best practices to keep in mind when implementing redirects in you
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

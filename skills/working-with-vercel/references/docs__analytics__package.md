@@ -14,8 +14,8 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9bb4806a13e55438997d39bb8c2fa554b34a6a378494731ae46dac706eaff37e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e35faeda93e5fbb8ab7707810763bcf9389bf8380ced7b3fba312fbe14924395"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -39,6 +39,7 @@ To get started with analytics, follow our [Quickstart](/docs/analytics/quickstar
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
+- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md)
@@ -1179,4 +1180,4 @@ To change configured values, you can:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

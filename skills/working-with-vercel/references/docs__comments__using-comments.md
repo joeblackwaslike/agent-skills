@@ -13,8 +13,8 @@ related:
 summary: This guide will help you get started with using Comments with your Vercel Preview Deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/using-comments.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "75b30f096bd81bdeb428548b66e534accee63e3cb69313f0477937d3daca74bc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "71a6e8ee3b02c968ad3861cea3f547966b9317f2f5aecc23384010bb3497760e"
 ---
 
 # Using Comments with Preview Deployments
@@ -34,12 +34,12 @@ You must be logged in to create a comment. You can press `c` to enable the comme
 - [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation)
 - [Markdown support for comments on Preview Deployments ](https://vercel.com/changelog/markdown-support-for-comments-on-preview-deployments)
 - [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta)
-- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 - [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available)
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
+- [Layout Shift Tool](https://vercel.com/docs/vercel-toolbar/layout-shift-tool) — The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 
 Full cross-link map for this page: [/docs/comments/using-comments.graph.md](/docs/comments/using-comments.graph.md)
 <!-- /docsgraph:related -->
@@ -73,7 +73,7 @@ You can add screenshots to a comment in any of the following ways:
 - Click the camera icon to take a screenshot of the page you are on.
 - Click and drag while in commenting mode to automatically screenshot a portion of the page and start a comment with it attached.
 
-The latter two options are only available to users with the [browser extension](/docs/vercel-toolbar/in-production-and-localhost/add-to-production#accessing-the-toolbar-using-the-chrome-extension) installed.
+The latter two options are only available to users with the [browser extension](/docs/vercel-toolbar/in-production-and-localhost/add-to-production#accessing-the-toolbar-using-the-browser-extension) installed.
 
 ### Use Markdown in a comment
 
@@ -122,4 +122,4 @@ You can copy a link to a comment in two ways:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

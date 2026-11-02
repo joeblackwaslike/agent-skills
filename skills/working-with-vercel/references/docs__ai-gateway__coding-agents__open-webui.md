@@ -13,8 +13,8 @@ related:
 summary: Connect Open WebUI to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor chat spending in one place.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/open-webui.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fb96ac1a2a790c217ac810faca65792aea92d9b11828ebf53d9c42bd8c742e47"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "afe3938232cfd7690e2d4aa4c940f28dbf6a35b65cc638863ec0822f23c95405"
 ---
 
 # Open WebUI with AI Gateway
@@ -27,12 +27,11 @@ sha256: "fb96ac1a2a790c217ac810faca65792aea92d9b11828ebf53d9c42bd8c742e47"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
 - [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
-- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/open-webui.graph.md](/docs/ai-gateway/coding-agents/open-webui.graph.md)
 <!-- /docsgraph:related -->
@@ -376,4 +375,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

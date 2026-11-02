@@ -16,8 +16,8 @@ related:
 summary: Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed production deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/instant-rollback.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "168c6de0666dee6b7758a258d77d19cdf8ff25b7770efed5c36ecf39b7854d81"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a3abb514ac8cc0ee6c0b98fcf4df471df81a06a0346e585c0fe943d06f32497b"
 ---
 
 # Performing an Instant Rollback on a Deployment
@@ -153,4 +153,4 @@ To compare the manual promotion options, see [Manually promoting to Production](
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

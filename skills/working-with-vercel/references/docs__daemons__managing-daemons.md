@@ -16,8 +16,8 @@ related:
 summary: Deploy, scale, stop, and monitor Vercel Daemons with vercel.json and the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/daemons/managing-daemons.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a0e48ebec83db8b29638159b90d86a999741fc1575029fca353c9fc52806f6cd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b4b7e43943b8872d69feb8ba020ba088a576e207d8a746b8108563e1e6c8778d"
 ---
 
 # Managing Daemons
@@ -39,7 +39,7 @@ You declare daemons with the `daemons` key in `vercel.json`. Changes to daemon c
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Override a project daemon's instance counts](https://vercel.com/docs/rest-api/daemons/override-a-project-daemon-s-instance-counts) — PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances — Override the instance counts of a daemon in the given regio
 
 Full cross-link map for this page: [/docs/daemons/managing-daemons.graph.md](/docs/daemons/managing-daemons.graph.md)
 <!-- /docsgraph:related -->
@@ -160,4 +160,4 @@ The daemon's page in the dashboard charts CPU usage, memory usage, running insta
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

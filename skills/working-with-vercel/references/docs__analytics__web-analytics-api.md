@@ -16,8 +16,8 @@ related:
 summary: Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/web-analytics-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "65492c7b7a40b149454a0b6921f9619908e1690b651a368365912e696829ec3a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8b9b69932fae2ab0a01c807252576730975ef79ec5342c1acadfb1f5b3309b46"
 ---
 
 # Query Web Analytics with the API
@@ -31,11 +31,12 @@ Use the Web Analytics API to query page views, visitors, and custom events from 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Public Web Analytics API now available](https://vercel.com/changelog/web-analytics-api)
+- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
-- [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
+- [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
 
 Full cross-link map for this page: [/docs/analytics/web-analytics-api.graph.md](/docs/analytics/web-analytics-api.graph.md)
 <!-- /docsgraph:related -->
@@ -267,4 +268,4 @@ This pattern works for any custom data property that you send with the event, su
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

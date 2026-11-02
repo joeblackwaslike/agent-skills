@@ -15,8 +15,8 @@ related:
 summary: Learn how a deployment with multiple services is structured in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/services.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d45a07ba7af2906af2c69ef38684eb8214fbf903ba0e2d86df88a39332b887ea"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a924844889b0ed9135f2739dcbb5faadc24624644a6bdde8d1c7d04c7adb65f8"
 ---
 
 # Services
@@ -33,12 +33,11 @@ A deployment can contain multiple services. In the Build Output API, each servic
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
+- [Experimental Services](https://vercel.com/docs/services/experimental) — The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/build-output-api/services.graph.md](/docs/build-output-api/services.graph.md)
 <!-- /docsgraph:related -->
@@ -111,4 +110,4 @@ A service is internal by default. Public traffic reaches it only when the top-le
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

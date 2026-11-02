@@ -13,8 +13,8 @@ related:
 summary: Request group membership and other provider-specific identity claims when using Passport.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/additional-identity-scopes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4cc3a33debe3d1c52e24443bb70af1da1e1076adea13df71e56cc09132071616"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "390ba58d071cd24b47ef7abaa3fa9790bd76ca070e678794eb181bcaf715457f"
 ---
 
 # Configure additional identity scopes
@@ -36,6 +36,7 @@ Passport requests identity information through the Connect application assigned 
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 
 Full cross-link map for this page: [/docs/passport/additional-identity-scopes.graph.md](/docs/passport/additional-identity-scopes.graph.md)
 <!-- /docsgraph:related -->
@@ -122,4 +123,4 @@ Do not assume a claim is always present or has the same shape for every provider
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Review the standard, deployment, and visitor identity claims in a Passport token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/token-claims.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4f34597e01da2030a25aa17593767cf4896ead79ef3712342209d76fa71673bd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "741067c9985a80a7196cc3e62e25c92eeb372819eea6bb979f823688b0e0a676"
 ---
 
 # Passport token claims
@@ -34,9 +34,10 @@ Passport issues a signed JSON Web Token (JWT) after a visitor authenticates. The
 - [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
 - [Vercel KMS Claims](https://vercel.com/docs/kms/concepts/claims) — How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every
+- [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
 
 Full cross-link map for this page: [/docs/passport/token-claims.graph.md](/docs/passport/token-claims.graph.md)
 <!-- /docsgraph:related -->
@@ -99,4 +100,4 @@ Reading or decoding a JWT does not verify it. Before trusting these claims, veri
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

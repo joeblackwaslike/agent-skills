@@ -16,8 +16,8 @@ related:
 summary: Learn how to deploy Model Context Protocol (MCP) servers on Vercel with OAuth authentication and efficient scaling.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "afba0c4e0f0515d639e545d136a9a3f6c7b948d5085d40335d1998bab08b419e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2954559d19101dc9db59d960eff10ee6fd34899ba1f5dc7eda13554054096397"
 ---
 
 # Deploy MCP servers to Vercel
@@ -30,22 +30,23 @@ Deploy your Model Context Protocol (MCP) servers on Vercel to [take advantage of
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to perform large-scale data analysis with Vercel Sandbox and MCP](https://vercel.com/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) — Use Vercel Sandbox and an MCP server built with \\`mcp-handler\\` to let AI agents run DuckDB SQL and Python on large data
-- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
-- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
-- [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers)
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers)
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
+- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
 - [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel) — This is my wonderful
+- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
-- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [MCP Integrations](https://vercel.com/docs/mcp/integrations) — Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 
 Full cross-link map for this page: [/docs/mcp/deploy-mcp-servers-to-vercel.graph.md](/docs/mcp/deploy-mcp-servers-to-vercel.graph.md)
 <!-- /docsgraph:related -->
 
 - Get started with [deploying MCP servers on Vercel](#deploy-an-mcp-server-on-vercel)
 - Learn how to [enable authorization](#enabling-authorization) to secure your MCP server
+- [Add your MCP server to an agent](#add-your-mcp-server-to-an-agent) built with AI SDK, eve, or TanStack AI
 
 ## Deploy MCP servers efficiently
 
@@ -208,7 +209,19 @@ Using [Cursor](https://www.cursor.com/), add the URL of your MCP server to the [
 
 You can now use your MCP roll dice tool in [Cursor's AI chat](https://docs.cursor.com/context/model-context-protocol#using-mcp-in-chat) or any other MCP client.
 
-To call the same tool from your own application, follow the [AI SDK](/docs/mcp/integrations/ai-sdk) or [TanStack AI](/docs/mcp/integrations/tanstack-ai) example. Explore [MCP integrations](/docs/mcp/integrations) for connection and authentication options, including eve.
+## Add your MCP server to an agent
+
+Connect your deployed MCP server to an agent so the model can discover and call its tools. Use the full Streamable HTTP endpoint, such as `https://my-mcp-server.vercel.app/api/mcp`, when configuring the connection.
+
+Choose the integration for your agent framework:
+
+- **[AI SDK](/docs/mcp/integrations/ai-sdk):** Create a client with `createMCPClient` from `@ai-sdk/mcp`, retrieve the server's tools with `client.tools()`, and pass them to your model call. The guide includes a complete example that calls this page's `roll_dice` tool and closes the client when generation finishes.
+- **[eve](/docs/mcp/integrations/eve):** Define an MCP connection with `defineMcpClientConnection` under `agent/connections/`, using your server's endpoint and a description of its tools. eve discovers the connection from the filesystem. The guide demonstrates OAuth authentication through Vercel Connect using Linear; configure the connector and credentials for your own server when adapting it.
+- **[TanStack AI](/docs/mcp/integrations/tanstack-ai):** Create a client with `@tanstack/ai-mcp` and pass it to `chat()` through `mcp.clients`. TanStack AI discovers and executes the server's tools, and `connection: 'close'` closes the client when the run ends. The guide uses this page's `roll_dice` tool.
+
+If you [enable authorization](#enabling-authorization), configure the agent's MCP connection with credentials your server accepts. Model-provider credentials authenticate model requests separately. For OAuth consent and token management, use [Vercel Connect](/docs/connect).
+
+After connecting, ask the agent to use `roll_dice` to roll a six-sided die. A successful tool call returns a value between one and six.
 
 ## Enabling authorization
 
@@ -387,4 +400,4 @@ Learn how to deploy MCP servers on Vercel, connect to them using the AI SDK, and
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

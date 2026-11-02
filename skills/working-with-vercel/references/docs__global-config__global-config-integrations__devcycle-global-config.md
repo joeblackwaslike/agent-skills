@@ -10,15 +10,15 @@ prerequisites:
   - /docs/global-config
 related:
   - /docs/cli
-  - /docs/projects
+  - /docs/projects/managing-projects
   - /docs/global-config/get-started
   - /docs/global-config/global-config-sdk
   - /docs/global-config/global-config-dashboard
 summary: "Learn how to use Global Config with Vercel's DevCycle integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6d8d855ef956132a1e2a5dde13c8b3df6dd44dcdfa626827b9e3bb4257de2d27"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c172ef878ca930f4369b4735aea6bb5af39da35d55dbbad11b7cb02d712ff527"
 ---
 
 # Using Global Config with DevCycle
@@ -31,12 +31,11 @@ This guide will help you get started with using Vercel's DevCycle integration wi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config) — Learn how to use Global Config with Vercel's Statsig integration.
+- [Using Global Config](https://vercel.com/docs/global-config/using-global-config) — Learn how to use Global Configs in your projects.
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
-- [Using Global Config](https://vercel.com/docs/global-config/using-global-config) — Learn how to use Global Configs in your projects.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/devcycle-global-config.graph.md](/docs/global-config/global-config-integrations/devcycle-global-config.graph.md)
 <!-- /docsgraph:related -->
@@ -95,7 +94,7 @@ npx create-next-app@latest
 bunx create-next-app@latest
 ```
 
-1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects#creating-a-project)
+1. A Vercel project. If you don't have one, see [Creating a Project](/docs/projects/managing-projects#creating-a-project)
 2. A Global Config. If you don't have one, follow [the Global Config quickstart](/docs/global-config/get-started)
 3. The Global Config SDK:
 
@@ -254,7 +253,7 @@ bunx create-next-app@latest
 
   const devcycleClient = initializeDevCycle(
     process.env.DEVCYCLE_SERVER_SDK_KEY,
-    // pass the edgeConfigSource as the "configSource" option during SDK intialization to tell the SDK to use Global Config
+    // pass the edgeConfigSource as the "configSource" option during SDK initialization to tell the SDK to use Global Config
     // for retrieving its configuration
     { configSource: edgeConfigSource },
   );
@@ -271,7 +270,7 @@ bunx create-next-app@latest
 
   const devcycleClient = initializeDevCycle(
     process.env.DEVCYCLE_SERVER_SDK_KEY,
-    // pass the edgeConfigSource as the "configSource" option during SDK intialization to tell the SDK to use Global Config
+    // pass the edgeConfigSource as the "configSource" option during SDK initialization to tell the SDK to use Global Config
     // for retrieving its configuration
     { configSource: edgeConfigSource },
   );
@@ -292,4 +291,4 @@ Now that you have the DevCycle Global Config integration set up, you can explore
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

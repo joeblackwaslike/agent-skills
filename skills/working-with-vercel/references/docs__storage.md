@@ -16,8 +16,8 @@ related:
 summary: Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "90df4f3b3e51236759b035c16532a16b169d126a124f7f9112ebc3dac297d79b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "769177bb3eb7a2dc89d939b624348a482f864ce7b2e0da83f4b541f9206c730f"
 ---
 
 # Vercel Storage overview
@@ -41,9 +41,9 @@ Upload generated files with Vercel Blob, read low-latency configuration with Glo
 - [How to build scalable AI applications](https://vercel.com/blog/how-to-build-scalable-ai-applications)
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
+- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
-- [Storage](https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage) — Vercel MCP tools for storage.
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 
 Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md)
 <!-- /docsgraph:related -->
@@ -201,4 +201,4 @@ You can transfer [Marketplace](/docs/marketplace-storage) resources between team
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

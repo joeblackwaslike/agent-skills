@@ -17,8 +17,8 @@ related:
 summary: Learn how you can add a product to your Vercel project through a native integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/product-integration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "fbe2675e8eea559c37b4258246eff367776587d407df80e6b79ee34cede92960"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "de7ab965be99d23fb90053021263331e8c0dea844eb37ea6c2f189391773be2f"
 ---
 
 # Add a Native Integration
@@ -200,4 +200,4 @@ If available in the integration you want to install, [deployment integration act
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

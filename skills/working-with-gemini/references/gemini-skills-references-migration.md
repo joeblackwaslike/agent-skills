@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-live-api-dev/references/migration.md"
-fetched_at: "2026-09-21T09:41:39.746Z"
-sha256: "62b4c58c35d152f60bb9b548224a5ce3e4ce09cad07db0944e923a3d40ce4709"
+fetched_at: "2026-11-02T12:04:46.311Z"
+sha256: "407705de5aef62e3298929c7255cc42e733bd2b0d493b3df8f242a5011051bc4"
 ---
 
 # Gemini Live API Migration & Upgrading Reference
@@ -9,9 +9,9 @@ sha256: "62b4c58c35d152f60bb9b548224a5ce3e4ce09cad07db0944e923a3d40ce4709"
 Step-by-step checklists and protocol deltas for migrating legacy Live API models (Gemini 2.0, 2.5, and 3.1 Live) to **Gemini 3.8 Live** (`gemini-3.8-live`) and **Gemini 3.8 Live Extended Thinking** (`gemini-3.8-live-extended-thinking`).
 
 For full hosted documentation, fetch:
-- [Gemini 3.8 Live Model Card & Migration Guide](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live.md.txt) (`#migrating`)
-- [Gemini 3.8 Live Extended Thinking Model Card & Upgrading Guide](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-live-extended-thinking.md.txt) (`#upgrading`)
-- [Thinking in the Live API Guide](https://ai.google.dev/gemini-api/docs/live-api/thinking.md.txt)
+- [Gemini 3.8 Live Model Card & Migration Guide](https://aistudio.google.com/docs/models/gemini-3.8-live.md) (`#migrating`)
+- [Gemini 3.8 Live Extended Thinking Model Card & Upgrading Guide](https://aistudio.google.com/docs/models/gemini-3.8-live-extended-thinking.md) (`#upgrading`)
+- [Thinking in the Live API Guide](https://aistudio.google.com/docs/live-api/thinking.md)
 
 ---
 

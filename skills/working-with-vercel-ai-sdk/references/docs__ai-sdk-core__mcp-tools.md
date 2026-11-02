@@ -4,8 +4,8 @@ description: Learn how to connect to Model Context Protocol (MCP) servers and us
 url: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "7ff2fe22c72c22033a75ba085737ee4cab7702186557993ce0215529e7b18eb8"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "34b586b765c63ee625c5841c6c5b7700ffd666a01a77f6d847479fa79e0a0dd8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -33,6 +33,13 @@ versions and stateless MCP `2026-07-28`. The built-in stdio transport probes
 with `server/discover` and automatically falls back to the legacy
 `initialize` handshake for older servers. Custom transports can opt into this
 negotiation with `supportsProtocolVersionDiscovery: true`.
+
+Recognized modern protocol errors, including `-32022` (unsupported protocol
+version), do not trigger automatic fallback to `initialize`. If you know an
+endpoint requires legacy initialization, set `protocolVersionDiscovery: false`
+on `createMCPClient` to skip discovery and start with the legacy handshake.
+The server can then negotiate an older supported version in its `initialize`
+response.
 
 ### HTTP Transport (Recommended)
 
@@ -154,7 +161,7 @@ The Stdio transport can be imported from either the MCP SDK or the AI SDK:
 import { createMCPClient } from '@ai-sdk/mcp';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 // Or use the AI SDK's stdio transport:
-// import { Experimental_StdioMCPTransport as StdioClientTransport } from '@ai-sdk/mcp/mcp-stdio';
+// import { StdioMCPTransport as StdioClientTransport } from '@ai-sdk/mcp/mcp-stdio';
 
 const mcpClient = await createMCPClient({
   transport: new StdioClientTransport({
@@ -653,14 +660,12 @@ client throws an `MCPClientError`.
 
 ## Using MCP Prompts
 
-MCP Prompts is an experimental feature and may change in the future.
-
 According to the MCP specification, prompts are user-controlled templates that servers expose for clients to list and retrieve with optional arguments.
 
 ### Listing Prompts
 
 ```typescript
-const prompts = await mcpClient.experimental_listPrompts();
+const prompts = await mcpClient.listPrompts();
 ```
 
 ### Getting a Prompt
@@ -668,7 +673,7 @@ const prompts = await mcpClient.experimental_listPrompts();
 Retrieve prompt messages, optionally passing arguments defined by the server:
 
 ```typescript
-const prompt = await mcpClient.experimental_getPrompt({
+const prompt = await mcpClient.getPrompt({
   name: 'code_review',
   arguments: { code: 'function add(a, b) { return a + b; }' },
 });
@@ -724,6 +729,16 @@ mcpClient.onElicitationRequest(ElicitationRequestSchema, async request => {
 ```
 
 ### Elicitation Response Actions
+
+On MCP `2026-07-28` connections, the same handler processes form elicitation
+requests embedded in `input_required` results from tools, prompts, and resource
+reads. The client retries the original request with the handler's answers and
+the server's unchanged `requestState` until it receives a final result, with a
+limit of 10 retries. State-only retries are delayed by 250 ms. Each round respects
+`timeout`, including time spent awaiting the handler, while `maxTotalTimeout`
+bounds the entire exchange. Missing handlers and unsupported input requests
+reject the operation. Older connections continue to use `elicitation/create`
+server requests.
 
 Your handler must return an object with an `action` field that can be one of:
 

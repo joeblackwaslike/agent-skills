@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve enterprise features for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "19487a8acc97bc4499bfa4c4946d77105f4b6c9cfbe7d3ca4db97ca634941a22"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "20a8a21cd4f304a6d3dc5c034b26cbe181a4f94eb9883ffb7be4555e7f9b9222"
 ---
 
 # Vercel Pro Plan
@@ -37,10 +37,10 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases)
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
+- [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
-- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 
 Full cross-link map for this page: [/docs/plans/pro-plan.graph.md](/docs/plans/pro-plan.graph.md)
@@ -169,4 +169,4 @@ Due to restrictions in the downgrade flow, Pro teams will need to [manually tran
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

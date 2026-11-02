@@ -13,8 +13,8 @@ related:
 summary: "Integrate your Vercel project with OpenAI's powerful suite of models."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/openai.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "b72e01f7c0e50c4aaf5aa0c076cc86e07b74aaf08f046dde959b245b7ef63f53"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a4d45613013df0a1a19b87b20461a4f2e909be296b429236630fc5597143cdf1"
 ---
 
 # Vercel & OpenAI Integration
@@ -28,16 +28,17 @@ Vercel integrates with [OpenAI](https://platform.openai.com/overview) to enable 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
+- [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel)
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
-- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations) — Connect LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/openai.graph.md](/docs/agent-resources/integrations-for-models/openai.graph.md)
 <!-- /docsgraph:related -->
 
-You can integrate with [any OpenAI model](https://platform.openai.com/docs/models/overview) using the [AI SDK](https://ai-sdk.dev), including the following OpenAI models:
+You can integrate with [any OpenAI model](https://developers.openai.com/api/docs/models) using the [AI SDK](https://ai-sdk.dev), including the following OpenAI models:
 
 - **GPT-4o**: Understand and generate natural language or code
 - **GPT-4.5**: Latest language model with enhanced emotional intelligence
@@ -112,4 +113,4 @@ Learn more about using [tools with the AI SDK](https://ai-sdk.dev/docs/foundatio
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

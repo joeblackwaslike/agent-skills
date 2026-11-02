@@ -13,8 +13,8 @@ related:
 summary: Track feature flag evaluations and analyze their impact with Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/observability.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e9bbb6c0e19ae28aa953be3a616267c42c6d1e1d62364a7e6c18284c1ee39dc2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "454343ccb53671008894b07db96784d283d83b1c49b5680b23ce0473730d1102"
 ---
 
 # Observability
@@ -74,4 +74,4 @@ If you're using the Flags SDK, flag reporting happens automatically, with no man
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

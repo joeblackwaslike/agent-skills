@@ -13,8 +13,8 @@ related:
 summary: Use pause_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/pause_project.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7ad1eb408430b6af95b71432182790e058eadf8157fd87afd00a0b0bf208f719"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cede9ba2ef15bb127a30b853078583fae343e3b5314107b54af562ffb7b1070b"
 ---
 
 # pause_project
@@ -60,4 +60,4 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

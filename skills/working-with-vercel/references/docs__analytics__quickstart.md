@@ -16,8 +16,8 @@ related:
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bdd97165ad85c81e887864cdfb166c999facf4e1bf9048591d12e124ae54892d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "14728039883cda2701f720e30aa78c4d147642de8e76c7daa6d51b132512f50c"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -33,6 +33,7 @@ This guide will help you get started with using Vercel Web Analytics on your pro
 - [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
 - [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
+- [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
@@ -395,9 +396,7 @@ bun add -g vercel
   > `@vercel/analytics` package. However, there is no route support.
   > For \['other']:
   Import the `inject` function from the package, which will add the tracking script to your app. **This should only be called once in your app, and must run in the client**.
-
   > **💡 Note:** There is no route support with the `inject` function.
-
   Add the following code to your main app file:
   ```ts filename="main.ts" framework=other
   import { inject } from '@vercel/analytics';
@@ -504,4 +503,4 @@ Now that you have Vercel Web Analytics set up, you can explore the following top
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

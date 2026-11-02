@@ -12,8 +12,8 @@ related:
 summary: Requires that a workspace package that uses TypeScript files has configured TypeScript correctly for that workspace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/typescript_configuration.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dcc996bbb9eec0efac33d402a3ebfb5f96b5cf1a13785c0312c6c311e7af8894"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "29168956c59f36f0f7ba3ae55606d36cb9e98d5bdf8b14a0478d9b9724dd3903"
 ---
 
 # TYPESCRIPT_CONFIGURATION
@@ -116,4 +116,4 @@ The dependency on the repository's shared TypeScript must also exist:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

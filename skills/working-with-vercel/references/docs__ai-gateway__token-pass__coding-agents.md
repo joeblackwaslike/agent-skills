@@ -16,8 +16,8 @@ related:
 summary: Set up fx, Claude Code, Codex, Cline, and OpenCode to use Token Pass, and use Token Pass in agents you build yourself.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/token-pass/coding-agents.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d730d86b9491daafe2f394daacd4039cf9d6a9e150c770ab350a66a1f4150d0e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5641043d10cbf332b01ab36a01840364659d9ac779e05a9e99ccdd580480d548"
 ---
 
 # Using Token Pass with Coding and Personal Agents
@@ -229,4 +229,4 @@ See [When credit runs out](/docs/ai-gateway/token-pass/models-and-routing#when-c
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

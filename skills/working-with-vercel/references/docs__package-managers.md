@@ -12,16 +12,17 @@ related:
   - /docs/builds/configure-a-build
   - /docs/deployments/logs
   - /docs/project-configuration/vercel-json
+  - /docs/project-configuration/project-settings
 summary: Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn, pnpm, and Bun for optimal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/package-managers.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8d4e43c8f9263486cdffb2c3c1fca7ee48dda5923b2a54e8ad6840ad2ba21836"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "94090fa875b3dcd5cd5b49d438fe8a597fe14a14c70cb669801c771d986730e4"
 ---
 
 # Package Managers
 
-Vercel will automatically detect the package manager used in your project and install the dependencies when you [create a deployment](/docs/builds#build-process). It does this by looking at the lock file in your project and inferring the correct package manager to use.
+Vercel will automatically detect the package manager used in your project and install the dependencies when you [create a deployment](/docs/builds#build-infrastructure). It does this by looking at the lock file in your project and inferring the correct package manager to use.
 
 
 <!-- docsgraph:related -->
@@ -34,9 +35,10 @@ Vercel will automatically detect the package manager used in your project and in
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
 - [Projects using pnpm can now be deployed with zero configuration](https://vercel.com/changelog/projects-using-pnpm-can-now-be-deployed-with-zero-configuration)
 - [Customizing the Install Command while creating Projects](https://vercel.com/changelog/customizing-the-install-command-while-creating-projects)
+- [Automatic pnpm v10 support](https://vercel.com/changelog/automatic-pnpm-v10-support)
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 - [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions) — Learn about the supported Node.js versions on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
@@ -91,11 +93,11 @@ You can manually specify a package manager to use on a per-project, or per-deplo
 
 ### Project override
 
-To specify a package manager for all deployments in your project, use the **Override** setting in your project's [**Build & Development Settings**](/docs/builds/configure-a-build#build-and-development-settings):
+To specify a package manager for all deployments in your project, use the **Override** setting in your project's [**Build & Development Settings**](/docs/project-configuration/project-settings#build-and-deployment-settings):
 
 1. Navigate to your [dashboard](/dashboard) and select your project
 2. Open **Settings** in the sidebar and select [**General**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fgeneral\&title=Go+to+General+settings)
-3. Enable the **Override** toggle in the [**Build & Development Settings**](/docs/builds/configure-a-build#build-and-development-settings) section and add your install command. Once you save, it will be applied on your next deployment
+3. Enable the **Override** toggle in the [**Build & Development Settings**](/docs/project-configuration/project-settings#build-and-deployment-settings) section and add your install command. Once you save, it will be applied on your next deployment
 
 > **💡 Note:** When using an override install command like
 > `pnpm install`, Vercel will use the oldest version of
@@ -120,4 +122,4 @@ To specify a package manager for a deployment, use the [`installCommand`](/docs/
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

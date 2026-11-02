@@ -9,15 +9,15 @@ prerequisites:
   - /docs/vercel-blob
 related:
   - /docs/cli/blob
-  - /docs/functions/runtimes
+  - /docs/functions/limitations
   - /docs/vercel-blob/client-upload
   - /docs/vercel-blob/using-blob-sdk
   - /docs/vercel-blob/python-sdk-reference
 summary: Learn how to upload files to Vercel Blob from server routes and Server Actions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "af04895ed92548b1efebd4ce7059fec86ffd94cd96f5e7fe8469b1b1e0d3e12e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c793b5e33af9822625ce0c4c2033d55d6dde252e62075dc583cbe17b6ea42020"
 ---
 
 # Server Uploads with Vercel Blob
@@ -37,13 +37,13 @@ In this guide, you'll learn how to do the following:
 - [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos) — Recommendations and best practices for optimizing videos in your Next.js application.
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
-- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload) — POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ — POST /v2/:teamSlug/:projectSlug/:repositoryName/blob
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
+- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload) — POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ — POST /v2/:teamSlug/:projectSlug/:repositoryName/blob
 - [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
 
 Full cross-link map for this page: [/docs/vercel-blob/server-upload.graph.md](/docs/vercel-blob/server-upload.graph.md)
@@ -53,7 +53,7 @@ Full cross-link map for this page: [/docs/vercel-blob/server-upload.graph.md](/d
 - Upload a file using the Blob SDK from the server
 
 > **💡 Note:** Vercel has a [4.5 MB request body size
-> limit](/docs/functions/runtimes#request-body-size) on Vercel Functions. If you
+> limit](/docs/functions/limitations#request-body-size) on Vercel Functions. If you
 > need to upload larger files, use [client
 > uploads](/docs/vercel-blob/client-upload).
 
@@ -125,7 +125,7 @@ uv add vercel "fastapi[standard]" python-dotenv
   > **Projects** tab: open the context menu (⋯) next to your project, select
   > **Update Project Connection**, and include **Development**.
 
-Server uploads are perfectly fine as long as you do not need to upload files larger than [4.5 MB on Vercel](/docs/functions/runtimes#request-body-size). If you need to upload larger files, consider using [client uploads](/docs/vercel-blob/client-upload).
+Server uploads are perfectly fine as long as you do not need to upload files larger than [4.5 MB on Vercel](/docs/functions/limitations#request-body-size). If you need to upload larger files, consider using [client uploads](/docs/vercel-blob/client-upload).
 
 ## Upload a file using Server Actions
 
@@ -536,4 +536,4 @@ You have successfully uploaded an object to your Vercel Blob store and are able 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

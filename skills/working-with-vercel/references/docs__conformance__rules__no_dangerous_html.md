@@ -12,8 +12,8 @@ related:
 summary: Prevent the unsafe creation of DOM via HTML methods in your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/no_dangerous_html.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "323810b7bdaef90ce3e8ef33119aa9a59e6ce161ad57abd3c8045fabbd01ff1e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1870b5b5069aea99943abe20e0eb34f70b5174770522f6aaf2edcedcec999750"
 ---
 
 # NO_DANGEROUS_HTML
@@ -33,7 +33,7 @@ Usage of these methods is deemed an unsafe coding practice as the HTML might res
 
 ## How to fix
 
-It is recommended to instead use alternative approaches for HTML construction - such as `document.createElement()` or a HTML sanitizer.
+It is recommended to instead use alternative approaches for HTML construction - such as `document.createElement()` or an HTML sanitizer.
 
 
 ---
@@ -41,4 +41,4 @@ It is recommended to instead use alternative approaches for HTML construction - 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

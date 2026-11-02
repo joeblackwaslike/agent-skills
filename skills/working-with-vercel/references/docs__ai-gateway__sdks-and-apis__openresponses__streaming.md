@@ -13,8 +13,8 @@ related:
 summary: Stream responses token by token using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "20324f25829bef774443ff35f291454f35c08ba8d0662465fa75d21b5096675b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4bf525b6a801aace2c04b24ce1e6eb171ec2025f405f8ed9319684f124dd7ba7"
 ---
 
 # OpenResponses Streaming with AI Gateway
@@ -29,10 +29,11 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) supports s
 
 - [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
 - [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway)
+- [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 - [OpenAI Chat Completions Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming) — Stream OpenAI Chat Completions responses token by token as they are generated through AI Gateway.
 - [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
-- [OpenResponses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation) — Generate text responses using the OpenResponses API through AI Gateway.
+- [Streaming](https://vercel.com/docs/functions/streaming-functions) — Learn how to stream responses from Vercel Functions.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/streaming.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/streaming.graph.md)
 <!-- /docsgraph:related -->
@@ -150,4 +151,4 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

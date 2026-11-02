@@ -16,8 +16,8 @@ related:
 summary: "This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7dcdd40fc1e8e11f461ef4ad8870764c06127f0db27089b391550d72a163a787"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0fbd8723b933d3d0e8ced6db5d0212023837a22ae31c26c16ec99605f950ebb5"
 ---
 
 # Speed Insights Overview
@@ -96,4 +96,4 @@ map view indicate the P75 score.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector (HEC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/audit-logs-to-splunk.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "613330c0ad8214564d8b6ed05106f42db02535f5e5cf200ead71e8938ba1a858"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e2c25af4245da02d7fb5ab9f9cbd386d8d13c6ac3ad951ad484335cbc8b64010"
 ---
 
 # Drain Audit Logs to Splunk
@@ -34,9 +34,9 @@ Audit Log Drains can forward team activity events to [Splunk](https://www.splunk
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
+- [Drain Audit Logs to Panther](https://vercel.com/docs/drains/audit-logs-to-panther) — Learn how to forward Vercel Audit Log Drain events to Panther using Panther's built-in Vercel source.
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-splunk.graph.md](/docs/drains/audit-logs-to-splunk.graph.md)
 <!-- /docsgraph:related -->
@@ -107,4 +107,4 @@ See the [Audit Log Drains reference](/docs/drains/reference/audit-logs#splunk-he
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/inspect.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e222b5268feff563f7136fd70b24a9ebb64c281ae15bab195b558c4a3dac1bfc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "33e15f2a3a59b3e5cf04f972c5facfafb14f63101890819c98212d7bbd3b9691"
 ---
 
 # vercel inspect
@@ -98,7 +98,7 @@ vercel inspect https://example-app-6vd6bhoqt.vercel.app --logs --wait
 
 *Using the \`vercel inspect\` command with the
 \`--logs\` and \`--wait\` options,
-to view all build logs until the deployement is ready.*
+to view all build logs until the deployment is ready.*
 
 ## Global Options
 
@@ -124,4 +124,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/image-optimization/managing-image-optimization-costs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "07c594c787026600946d6f7955a4cee875cc3e6079211c7f942eabf5e8d1afda"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "78e56e0577510ba28640e57c346bb8898cdc93eae493394400b3378029e75e85"
 ---
 
 # Managing Usage & Costs
@@ -38,8 +38,9 @@ Your Image Optimization usage over time is displayed under the **Image Optimizat
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization)
-- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations)
+- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [New Observability dashboard for Image Optimization](https://vercel.com/changelog/new-observability-dashboard-for-image-optimization)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
@@ -72,4 +73,4 @@ To help you minimize Image Optimization usage costs, consider implementing the f
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

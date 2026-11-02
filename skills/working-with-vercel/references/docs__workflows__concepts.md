@@ -12,8 +12,8 @@ related:
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3587aab6fba21f2c676baf6772eb5613f8b61ee5b1efbf83708f1b1716c20fab"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b8efd9204d75a34c5f6eeaacd76c34c16a848c6405ae0d626873882397491493"
 ---
 
 # Workflow Concepts
@@ -27,15 +27,16 @@ You write async/await code as usual, and the framework handles queues, retry log
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 - [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
-- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Python](https://workflow-sdk.dev/docs/getting-started/python) — Set up the Workflow Python SDK in your Python application.
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps) — Understand the two function types that make up a workflow.
 - [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [The best workflow engine is a programming language](https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language)
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/workflows/concepts.graph.md](/docs/workflows/concepts.graph.md)
@@ -212,4 +213,4 @@ To stop runs on a deployment you no longer want executing, cancel them from the 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7d0f9ceb2829d9ad1f7fea05a3ae15eaba4093229e77e9429a36c24c409f571c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e932a224a49e67dbdec0318c29f8a9e4ee4c27e39aeac0e354041f461d349c1a"
 ---
 
 # Webhooks API Reference
@@ -252,7 +252,7 @@ Occurs whenever a deployment is successfully built and your integration has regi
 
 > **💡 Note:** This event gets fired after all blocking Checks have passed. See [
 > `deployment-prepared`
-> ](/docs/integrations#webhooks/events/deployment-prepared) if you registered
+> ](/docs/webhooks/webhooks-api#deployment-prepared) if you registered
 > Checks.
 
 | Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
@@ -1028,7 +1028,7 @@ Occurs whenever a deployment is ready.
 
 > **💡 Note:** This event gets fired after all blocking checks have passed. See [
 > `deployment-prepared`
-> ](/docs/integrations#webhooks/events-types/deployment-prepared) if you
+> ](/docs/webhooks/webhooks-api#deployment-prepared) if you
 > registered Checks.
 
 | Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
@@ -1527,4 +1527,4 @@ If your HTTP endpoint does not respond with a `2XX` HTTP status code, we attempt
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

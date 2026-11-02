@@ -13,8 +13,8 @@ related:
 summary: Use patch_edge_config_items with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/patch_edge_config_items.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "18ec5260a6f6f5cac594dd5746bbdc46673b7aa24629a64c73066e0315ca007a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3e4a457b814e6cd1e524288ec3af83fe3663f30c1d99db91bf4a58a121e0ebe1"
 ---
 
 # patch_edge_config_items
@@ -29,8 +29,8 @@ Update multiple Global Config Items in batch.
 
 - [update_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config) — Use update_edge_config with Vercel MCP.
 - [get_edge_config_items](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_items) — Use get_edge_config_items with Vercel MCP.
-- [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
 - [Update Global Config items in batch](https://vercel.com/docs/rest-api/global-config/update-global-config-items-in-batch) — PATCH /v1/global-config/{edgeConfigId}/items — Update multiple Global Config Items in batch.
+- [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
 - [get_edge_config_item](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_item) — Use get_edge_config_item with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config/patch_edge_config_items.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config/patch_edge_config_items.graph.md)
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

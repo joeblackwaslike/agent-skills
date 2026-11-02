@@ -13,8 +13,8 @@ related:
 summary: "Learn why reverse proxy servers are not recommended with Vercel's firewall."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/reverse-proxy.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1336b626b41f141e281afef8eaf9400117a068fe38928e20c0677228a18c2331"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8c008592b460dc91bfe0d31372a9b3d957a05fe3789edb75bdbeb637040ddf09"
 ---
 
 # Reverse Proxy Servers and Vercel
@@ -35,8 +35,8 @@ sha256: "1336b626b41f141e281afef8eaf9400117a068fe38928e20c0677228a18c2331"
 - [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
-- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 
 Full cross-link map for this page: [/docs/security/reverse-proxy.graph.md](/docs/security/reverse-proxy.graph.md)
@@ -109,4 +109,4 @@ If the origin certificate hasn't been issued, use [certificate diagnostics](/doc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -15,8 +15,8 @@ related:
 summary: Ask predicate, choice, and score questions with the OpenAI-compatible /decisions endpoint through Vercel AI Gateway, using any decision model.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-decisions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "87194d8b2d2bb62e2a3ed39ff625bf19b07ab89117f78f77a3a0e7a21adaf8b3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3e7a58ff2009a5d438c62c6311a9dcbe52e2178db44882b88751d612fcccb703"
 ---
 
 # OpenAI-Compatible Decisions API with AI Gateway
@@ -325,4 +325,4 @@ Errors from routing, billing, or the model provider use AI Gateway's error forma
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -12,8 +12,8 @@ related:
 summary: Learn how the consent page works when users authorize your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/consent-page.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e367366a7701db9fac2aa832071425b46e94ef3c39e5522d4773e75da8b222d9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "097d6e022ed76a0dafd6a481cf5a87ddbcc744ca7754917511b068cccb96efbf"
 ---
 
 # Consent Page
@@ -29,8 +29,8 @@ When users sign in to your application for the first time, Vercel shows them a c
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
-- [Vercel Connect product terms](https://vercel.com/docs/connect/legal) — Product terms governing your use of Vercel Connect, including Customer Managed Connectors, Vercel Managed Connectors, an
 - [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report) — Learn how to preview and download Vercel compliance documents from the dashboard.
+- [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/consent-page.graph.md](/docs/sign-in-with-vercel/consent-page.graph.md)
 <!-- /docsgraph:related -->
@@ -75,4 +75,4 @@ To force users to see the consent page again, include `prompt=consent` in your a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

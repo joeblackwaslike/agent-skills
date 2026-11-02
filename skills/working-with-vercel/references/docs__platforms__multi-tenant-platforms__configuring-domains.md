@@ -16,8 +16,8 @@ related:
 summary: Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "14813e352592aced6b0f32fdd343bf1e30c69222f628fc04f96aea04179a3459"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0b0d589b6b00736acd8c5eb2e4646c2df7f0c445eafdbc89b6cc34a3d3f49abe"
 ---
 
 # Configuring Custom Domains
@@ -37,11 +37,11 @@ If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to y
 - [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md](/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md)
 <!-- /docsgraph:related -->
@@ -250,4 +250,4 @@ A small typo can block domain verification or routing, so double-check your doma
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

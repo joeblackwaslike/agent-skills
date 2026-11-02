@@ -16,8 +16,8 @@ related:
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "818e1dc85e09829fe3a59db4755ddaf666e2c932b12450e9f9d63af4e2a144c1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "308980a4f0d46b942b6595424401d7f9f6455e24547249a8260392dc28845afd"
 ---
 
 # Static Configuration with vercel.json
@@ -39,8 +39,8 @@ The `vercel.json` file lets you configure, and override the default behavior of 
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers) — Add custom HTTP headers to your Next.js app.
-- [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-json.graph.md](/docs/project-configuration/vercel-json.graph.md)
@@ -848,7 +848,7 @@ This example uses the expressive `value` object to define a route that redirects
 }
 ```
 
-Learn more about [redirects on Vercel](/docs/routing/redirects) and see [limitations](/docs/routing/redirects#limits).
+Learn more about [redirects on Vercel](/docs/routing/redirects) and see [limitations](/docs/routing/redirects/configuration-redirects#limits).
 
 ## bulkRedirectsPath
 
@@ -862,7 +862,7 @@ CSV, JSON, and JSONL file formats are supported, and the redirect files can be g
 
 ### CSV
 
-> **💡 Note:** CSV headers must match the field names below, can be specific in any order, and optional fields can be ommitted.
+> **💡 Note:** CSV headers must match the field names below and can appear in any order. Optional fields can be omitted.
 
 ```csv filename="redirects.csv"
 source,destination,permanent
@@ -1858,7 +1858,7 @@ The `scope` property has been deprecated in favor of [Project Linking](/docs/cli
 
 **Valid values**: For teams, either an ID or slug. For users, either a email address, username, or ID.
 
-This property determines the scope ([Hobby team](/docs/accounts#creating-a-hobby-account) or [team](/docs/accounts#creating-a-team)) under which the project will be deployed by [Vercel CLI](/cli).
+This property determines the scope ([Hobby team](/docs/accounts) or [team](/docs/accounts#creating-a-team)) under which the project will be deployed by [Vercel CLI](/cli).
 
 It also affects any other actions that the user takes within the directory that contains this configuration (e.g. listing [environment variables](/docs/environment-variables) using `vercel secrets ls`).
 
@@ -1950,4 +1950,4 @@ When at least one `builds` item is specified, only the outputs of the build proc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -9,21 +9,21 @@ prerequisites:
   - /docs/platforms/multi-project-platforms
   - /docs/platforms
 related:
-  - /docs/rest-api/projects/create-a-new-project
-  - /docs/deployments/environments
-  - /docs/rest-api/deployments/create-a-new-deployment
-  - /docs/platforms/platform-elements/actions/deploy-files
+  - /docs/rest-api/sdk
   - /docs/platforms/multi-tenant-platforms/configuring-domains
+  - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
+  - /docs/platforms/platform-elements/blocks/claim-deployment
+  - /docs/platforms/platform-elements/actions/deploy-files
 summary: Programmatically host code for user-generated or AI-generated applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/quickstart.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7419654d5424639f4021763361a25e2bdd21be24592981afe12b88b0b47d69bb"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b21cdc2a991e1949354b3cd75956848350fc52a286fc0b736462b7d09763e048"
 ---
 
 # Multi-Project Platforms Quickstart
 
-Let's explore integrating user generated sites with Vercel, providing a system for creating preview environments for your customers. The integration involves project creation, deployment management, domain aliasing (with custom suffixes), and SSO protection to secure all deployments.
+In this quickstart, you'll create a Vercel project for one customer, deploy a folder of files to it, and get a public link that you can share with that customer. The guide uses the [Vercel SDK](/docs/rest-api/sdk) from a short TypeScript script and takes about 10 minutes.
 
 
 <!-- docsgraph:related -->
@@ -31,113 +31,193 @@ Let's explore integrating user generated sites with Vercel, providing a system f
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 
 Full cross-link map for this page: [/docs/platforms/multi-project-platforms/quickstart.graph.md](/docs/platforms/multi-project-platforms/quickstart.graph.md)
 <!-- /docsgraph:related -->
 
-Vercel's API endpoints handle project creation, deployment configuration, domain assignment, and security settings, enabling a seamless experience for your users to access and share their generated sites.
+## Before you start
 
-The integration would involve the following integrations:
+Before you write any code, make sure you have these three things:
 
-1. Creating a Project for each chat
-2. Deploying each version of the Artifact to the Project on demand when the user wants to "Publish"
-3. Auto-aliasing the `*.CUSTOM_SUFFIX.com` domain that you want, or a user provided domain.
-4. **Optional** Protecting all the deployments through a central proxy
-5. **Optional** Configuring the sites as subpaths on a single domain
+- A Vercel account and a **team**. A team owns projects. Find the team ID in your team's **Settings** page, under **General**
+- An **access token** for that team. Create one in [Account Settings > Tokens](https://vercel.com/account/settings/tokens) and choose your team as the scope
+- Node.js 22 or later
 
-## Project Creation
-
-- We recommend one project per user chat, the user can subsequently deploy multiple versions of the artifact to the same project (while still allowing all versions to stay active). The project becomes the organizational primitive for a single chat however
-- [Create a project for each chat](/docs/rest-api/projects/create-a-new-project)
-  - Configure the name of the project to help yourself come back to it and keep your Vercel account organized.
-- Most common options to customize the behaviour of each tenant project:
-  - `framework`: The framework the application is using (ie. Next.js, React ect.)
-  - `serverlessFunctionRegion`: The region any of your compute runs in. (It will default to iad1 if not)
-  - `passwordProtection`: Configure a password customers can use to protect their generations
-
-```jsx filename="create-project.ts"
-async function createProject() {
-  const result = await vercel.projects.createProject({
-    teamId: 'team_1a2b3c4d5e6f7g8h9i0j1k2l',
-    slug: 'my-team-url-slug',
-    requestBody: {
-      name: 'a-project-name',
-    },
-  });
-
-  console.log(result);
-}
-```
-
-## Deployment
-
-- [Every project has one "Production" domain that points to the most recent version (while keeping previous versions) and infinite "Preview" deployments](/docs/deployments/environments), for most applications it makes most sense to always deploy the version as a new "Production" deployment under the same project
-- [Create a new Deployment with this endpoint](/docs/rest-api/deployments/create-a-new-deployment)
-- Most common options to customize the behaviour of each tenant project:
-  - `files`: The set of AI Generated files you want to deploy
-  - `target`: preview or production. Both are the same underlying infrastructure but this is a semantic identifier you can add
-
-Leverage our pre-configured [file deploy action](/docs/platforms/platform-elements/actions/deploy-files):
+Next, create a folder for the script, install the SDK and `tsx` (a tool that runs TypeScript files directly), and export your token and team ID. Note that we set `"type": "module"` in `package.json`, because the script uses top-level `await`:
 
 ```bash
-npx @vercel/platforms@latest add deploy-files
+npm init -y
+npm pkg set type=module
+npm install @vercel/sdk tsx
+export VERCEL_TOKEN=<your token>
+export VERCEL_TEAM_ID=<your team ID>
 ```
 
-The command copies the action's source into your project so you can edit it. As installed, `deployFiles` takes an optional `{ deploymentName, config, domain }` object, deploys a hardcoded sample `index.html` file, and reads the target project from the `DEPLOY_FILES_PROJECT_ID` environment variable. It also imports a Vercel SDK client from `../lib/vercel`, which you create yourself. See [Set up the Vercel client](/docs/platforms/platform-elements/actions/deploy-files#set-up-the-vercel-client).
+## Terms
 
-To deploy your users' generated files, [edit the action to accept a `files` argument](/docs/platforms/platform-elements/actions/deploy-files#deploy-your-own-files), then call it:
+This guide uses these terms:
 
-```ts filename="deploy-files.ts"
-import { deployFiles } from '@/actions/deploy-files';
+- **Project**: one site or app on Vercel. In a multi-project platform, each customer or each generated app gets its own project
+- **Deployment**: one immutable version of a project's files. Each deployment has its own URL
+- **Production URL**: a stable `*.vercel.app` URL of a project, such as `<project-name>.vercel.app` or `<project-name>-<team>.vercel.app`. It always points at the latest production deployment
+- **Deployment protection**: depending on your team's default setting, a new project can show a Vercel login page on its `*.vercel.app` URLs. A platform that shares links usually turns protection off for tenant projects
 
-// Requires the files argument added in "Deploy your own files"
-await deployFiles({
-  files: [
-    {
-      file: 'index.html',
-      data: '<html><body><h1>Hello from my platform!</h1></body></html>',
-    },
-  ],
-  deploymentName: 'customer-deployment-1',
-  config: {
-    framework: null, // Static HTML, no build step
+## Step 1: Create a project and deploy files
+
+Next, write the script. It looks up the project for the customer `acme` and creates the project if it doesn't exist yet. Then it deploys every file in the `site` folder to production and waits until the production URL is ready. You can run the same script again each time the customer has a new version.
+
+```ts filename="deploy-tenant.ts"
+import { readdirSync, readFileSync } from 'node:fs';
+import { join, relative } from 'node:path';
+import { Vercel } from '@vercel/sdk';
+import { SDKError } from '@vercel/sdk/models/sdkerror.js';
+
+const vercel = new Vercel({ bearerToken: process.env.VERCEL_TOKEN });
+const teamId = process.env.VERCEL_TEAM_ID;
+const name = 'tenant-acme';
+const folder = 'site';
+
+// 1. First, we look up the tenant's project, and create it if it doesn't exist.
+//    We set ssoProtection to null so that visitors don't see a Vercel login page
+//    on the project's *.vercel.app URLs.
+async function getOrCreateProject() {
+  try {
+    return await vercel.projects.getProject({ idOrName: name, teamId });
+  } catch (error) {
+    if (!(error instanceof SDKError && error.statusCode === 404)) {
+      throw error;
+    }
+
+    return vercel.projects.createProject({
+      teamId,
+      requestBody: { name, ssoProtection: null },
+    });
+  }
+}
+
+// 2. Next, we read every file in the folder. We use base64 encoding here,
+//    since it works for both text files and binary files such as images.
+function readFolder(dir: string) {
+  return readdirSync(dir, { recursive: true, withFileTypes: true })
+    .filter((entry) => entry.isFile())
+    .map((entry) => {
+      const path = join(entry.parentPath, entry.name);
+
+      return {
+        file: relative(dir, path),
+        data: readFileSync(path).toString('base64'),
+        encoding: 'base64' as const,
+      };
+    });
+}
+
+const project = await getOrCreateProject();
+
+// 3. Then we deploy the files to production.
+const deployment = await vercel.deployments.createDeployment({
+  teamId,
+  requestBody: {
+    name: project.name,
+    project: project.id,
+    target: 'production',
+    files: readFolder(folder),
+    // We set framework to null, since these are static files that need no build step
+    projectSettings: { framework: null },
   },
-  domain: 'customer-site.com',
+});
+
+// 4. Now we wait until the deployment is ready. Note that we also wait for
+//    aliasAssigned, since Vercel assigns the production URL a moment after the
+//    build finishes. We give up after 5 minutes.
+let ready = await vercel.deployments.getDeployment({
+  idOrUrl: deployment.id,
+  teamId,
+});
+const deadline = Date.now() + 5 * 60 * 1000;
+
+while (!(ready.readyState === 'READY' && ready.aliasAssigned)) {
+  if (
+    ready.readyState === 'ERROR' ||
+    ready.readyState === 'CANCELED' ||
+    Date.now() > deadline
+  ) {
+    throw new Error(
+      `Deployment ${deployment.id} did not finish: ${ready.readyState}`,
+    );
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  ready = await vercel.deployments.getDeployment({
+    idOrUrl: deployment.id,
+    teamId,
+  });
+}
+
+// 5. Finally, we print the production URL. This URL always points at the
+//    latest production deployment, so it stays the same for every new version.
+const url = ready.alias?.find((alias) => alias.endsWith('.vercel.app'));
+
+if (!url) {
+  throw new Error(`Deployment ${deployment.id} has no vercel.app URL`);
+}
+
+console.log(ready.readyState, `https://${url}`);
+```
+
+To try it, create a `site` folder with one HTML file, then run the script. When the deployment is ready, the script prints the production URL:
+
+```bash
+mkdir -p site && echo '<h1>Hello from Acme</h1>' > site/index.html
+npx tsx deploy-tenant.ts
+# READY https://tenant-acme.vercel.app (or tenant-acme-<team>.vercel.app)
+```
+
+## Step 2: Give the customer a public link
+
+The URL that the script prints is the project's production URL, and this is the link that you give to the customer. The link stays the same when you deploy new versions. Note that we don't use `deployment.url` here, since that URL points at one version only.
+
+To make sure that the link is public, run `curl -I <link>`. You should see `HTTP/2 200`. If you see `HTTP/2 302` or `401` instead, the project still shows a login page.
+
+Anyone can open the link because the script creates the project with `ssoProtection: null`. Note that this setting also makes every preview and older deployment URL of the project public. Without it, the project follows your team's default protection, which can show a Vercel login page on `*.vercel.app` URLs. If you already have a project that shows a login page, you can turn protection off with `vercel.projects.updateProject({ idOrName, teamId, requestBody: { ssoProtection: null } })`.
+
+Note that we pass `framework: null` in the `projectSettings` of `createDeployment`, as the script does, since `createProject` doesn't accept `framework: null`.
+
+When `getProject` can't find the project, the SDK throws an `SDKError` with `statusCode` set to `404`. That's how the script knows when to create the project.
+
+## Step 3: Add a custom domain (optional)
+
+If the customer has their own domain, you can add it to their project. As with the other calls, remember to pass `teamId`:
+
+```ts
+await vercel.projects.addProjectDomain({
+  idOrName: project.id,
+  teamId,
+  requestBody: { name: 'acme-store.com' },
 });
 ```
 
-## Domain Aliasing
+If you'd rather give every tenant a subdomain of your own domain, such as `acme.yourplatform.app`, add the wildcard domain `*.yourplatform.app` to your team once, then call `addProjectDomain` with `acme.yourplatform.app` for each tenant project. See [using wildcard domains](/docs/platforms/multi-tenant-platforms/configuring-domains#using-wildcard-domains).
 
-- If you want deployments to have a custom suffix: `*.CUSTOM_SUFFIX.com`, you can:
-  - Setup a [wildcard domain for your domain](/docs/platforms/multi-tenant-platforms/configuring-domains#using-wildcard-domains)
-  - Use either of these to auto-assign the `*.CUSTOM_SUFFIX.com` domain:
-    - [Assign a single domain that maps to the most recent production domain of the Project](/docs/rest-api/projects/add-a-domain-to-a-project)
-    - [Alias a specific URL to only that one deployment in a project](/docs/rest-api/aliases/assign-an-alias)
-  - [Alternatively allow customers to bring in a domain they own elsewhere to assign to their sites](/docs/platforms/multi-tenant-platforms/configuring-domains)
-- If tenants run their own code on these subdomains, submit `CUSTOM_SUFFIX.com` to the Public Suffix List so browsers isolate cookies between tenants for improved security. Follow the steps for [protecting tenant subdomains with the Public Suffix List](/docs/platforms/multi-tenant-platforms/configuring-domains#protecting-tenant-subdomains-with-the-public-suffix-list).
+For a custom domain, the customer then needs to add DNS records with their domain provider, so show them which records to add. See [Configuring domains](/docs/platforms/multi-tenant-platforms/configuring-domains).
 
-## Protecting all deployments behind SSO or authentication, if you want central authentication (optional)
+## Secure tenant sites that run their own code
 
-1. Create a Proxy site hosted in Vercel that all traffic will flow through that:
-   1. Checks x.ai SSO and asks the user to log in if not
-   2. Proxies back to the actual deployed application once authenticated
-   3. Includes a [Deployment Bypass](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) header, that will lock down direct access to the Vercel applications
-2. Alias all domains to the proxy site instead so all traffic goes to it first
-3. Ensure `ssoProtection` is configured to `all` when creating the project to lock down access
-   1. Configuring a bypass option on the deployment so the Proxy can still access it: [/docs/rest-api/reference/endpoints/projects/update-protection-bypass-for-automation](/docs/rest-api/projects/update-protection-bypass-for-automation)
+If your tenants run their own code, there are two more things to set up:
 
-## Configuring the sites to be subpaths instead of custom domains (optional)
+- **Isolate cookies between tenants**: if tenants run their own code on subdomains of your domain, such as `*.yourplatform.app`, submit that domain to the Public Suffix List so browsers isolate cookies between tenants. See [protecting tenant subdomains with the Public Suffix List](/docs/platforms/multi-tenant-platforms/configuring-domains#protecting-tenant-subdomains-with-the-public-suffix-list)
+- **Use one sign-in for every tenant site**: keep `ssoProtection` on for tenant projects, and send traffic through one proxy project that checks your own sign-in and adds a [protection bypass header](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) when it forwards a request. Each tenant project has its own bypass secret, so the proxy stores one secret for each tenant project
 
-- To ensure all these deployments can only be accessed as subpaths `domain.com/customer_a` you would first configure the same Proxy setup as in 4. (with or without authentication, depending on your product requirements.)
-- This proxy would be [assigned the domain you want to share in it's Vercel project](/docs/domains/working-with-domains/add-a-domain)
-- You can then create a [routing middleware](/docs/routing-middleware) in the Proxy, to be able to rewrite the paths to the domains they are hosted in Vercel.
-  - It can dynamically pull the data from your backend or you can make it faster by caching it in [Global Config](/docs/global-config)
+## Next steps
+
+- Deploy each new version of the customer's app with Step 1. Each call creates a new production deployment, and the production URL moves to it
+- Let the customer take ownership of the project with the [Claim Deployment](/docs/platforms/platform-elements/blocks/claim-deployment) flow
+- Serve every project behind one domain, such as `platform.com/acme`, with a routing project in front. See [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain)
+- Use the prebuilt [deploy-files action](/docs/platforms/platform-elements/actions/deploy-files) if your platform is a Next.js app
 
 
 ---
@@ -145,4 +225,4 @@ await deployFiles({
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

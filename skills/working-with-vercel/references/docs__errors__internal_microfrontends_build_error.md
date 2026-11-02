@@ -12,8 +12,8 @@ related:
 summary: The microfrontend build did not include the required data as expected.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_microfrontends_build_error.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2154885efc7a13e406f7aad5804168eeb25f7eda67628f3e8b2f5999ac2388a1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e054d7e73a234a36cb7d2de5665490b9e2e1fbfcb98055cf14537036a063f9f1"
 ---
 
 # INTERNAL_MICROFRONTENDS_BUILD_ERROR
@@ -34,4 +34,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

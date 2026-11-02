@@ -13,8 +13,8 @@ related:
 summary: Use create_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f1b9cced49afe5f34e81fd8dba3f7c9277ca3c7a8075e14b6a0c8a28c8c50882"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "773ca6d06d079fc155e817d1f49b8c036ab94f1ec560a4a2296caa36e06d6353"
 ---
 
 # create_project
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

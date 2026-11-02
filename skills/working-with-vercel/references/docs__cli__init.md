@@ -13,8 +13,8 @@ related:
 summary: Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/init.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2dbf1f708505576511f7276b0064e039afa4dffbaef7c4da2157d292243cbea0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "80ff135f2cd27210c6cf801889b873db66b7fba55eaf983d50e32f3e5fc27557"
 ---
 
 # vercel init
@@ -35,8 +35,8 @@ The `vercel init` command is used to initialize [Vercel supported framework](/do
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
 - [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
-- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 
 Full cross-link map for this page: [/docs/cli/init.graph.md](/docs/cli/init.graph.md)
 <!-- /docsgraph:related -->
@@ -114,4 +114,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

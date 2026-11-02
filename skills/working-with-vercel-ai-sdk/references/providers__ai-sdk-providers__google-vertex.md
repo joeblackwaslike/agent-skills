@@ -4,8 +4,8 @@ description: Learn how to use Google Vertex AI with AI Gateway and the direct pr
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "744fabafda48ac4d43ae6df9cdfed8b48e95b12ccafa9355eee1bfc30047863a"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "fcc83c5d045393764103dfa23bf613834b83152e7ff112c2d210b47613d74c35"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -302,7 +302,12 @@ const googleVertex = createGoogleVertex({
 
 ##### Optional Provider Settings
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a callback to resolve the API key before each request. The callback can
+  return a string or a promise; token caching and renewal are handled by the caller.
+  A callback or promise selects API key authentication and must resolve to a
+  non-empty string; lookup failures do not switch authentication methods.
 
   The API key for Google Vertex AI. When provided, the provider uses express mode with API key authentication instead of OAuth.
   It uses the `GOOGLE_VERTEX_API_KEY` environment variable by default.
@@ -771,6 +776,33 @@ const { text } = await generateText({
 The AI SDK will automatically download URLs if you pass them as data, except
 for `gs://` URLs. You can use the Google Cloud Storage API to upload larger
 files to that location.
+
+For video file parts, pass `videoMetadata` through `providerOptions.googleVertex`
+to control clipping and frame rate. It works with Cloud Storage URLs and inline
+video data:
+
+```ts
+import type { FilePart } from 'ai';
+
+const videoPart = {
+  type: 'file',
+  data: new URL('gs://my-bucket/video.mp4'),
+  mediaType: 'video/mp4',
+  providerOptions: {
+    googleVertex: {
+      videoMetadata: {
+        startOffset: '60s',
+        endOffset: '120s',
+        fps: 1,
+      },
+    },
+  },
+} satisfies FilePart;
+```
+
+All three fields are optional. `startOffset` and `endOffset` are durations in
+seconds, such as `'60s'` or `'3.5s'`. `fps` must be in the range `(0, 24]` and
+defaults to `1`.
 
 See [File Parts](/docs/foundations/prompts#file-parts) for details on how to use files in prompts.
 

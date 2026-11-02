@@ -8,7 +8,7 @@ type: tutorial
 prerequisites:
   - /docs/microfrontends
 related:
-  - /docs/projects
+  - /docs/projects/managing-projects
   - /docs/deployments/environments
   - /docs/microfrontends/configuration
   - /docs/microfrontends/routing
@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5c6b2bd6b19cd9921fdba37630ee2ba2b86cfa008d1ee49b9e106bdc6fa99762"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4f6f1c13122476468d6c0f316ae7be0fbcb60779c7ed2dadec9eae0657206f7a"
 ---
 
 # Getting started with microfrontends
@@ -35,9 +35,9 @@ This quickstart guide will help you set up microfrontends on Vercel. Microfronte
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
+- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends/quickstart.graph.md](/docs/microfrontends/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -50,7 +50,7 @@ Help me set up microfrontends on Vercel. First, make sure the Vercel CLI is inst
 
 ## Prerequisites
 
-- Have at least two [Vercel projects](/docs/projects#creating-a-project) created on Vercel that will be part of the same microfrontends group.
+- Have at least two [Vercel projects](/docs/projects/managing-projects#creating-a-project) created on Vercel that will be part of the same microfrontends group.
 - If you're using a coding agent, install the microfrontends skill:
 
 ```bash filename="terminal"
@@ -372,4 +372,4 @@ Microfrontends changes how paths are routed to your projects. If you encounter a
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2bf82e968dc878c76b1e81d1f7929d94f0dbd02e901084d85e439ed82e5e07ca"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6f0c1b9f5b5f9680207592c26841ac5910659b43d865de1cd7125b085f4c9c62"
 ---
 
 # AI Gateway REST API Reference
@@ -36,7 +36,7 @@ For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-s
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [List AI Gateway budgets](https://vercel.com/docs/rest-api/ai-gateway/list-ai-gateway-budgets) — GET /ai-gateway/budgets/list — List the team's AI Gateway budgets \\(team/project/user scopes, plus default-covered api-k
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
-- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [AI Gateway Leaderboards](https://vercel.com/docs/ai-gateway/leaderboards) — See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md)
 <!-- /docsgraph:related -->
@@ -55,7 +55,7 @@ Most endpoints require authentication. The exceptions are noted on each endpoint
 
 ### API key (Bearer token)
 
-Pass an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-key) in the `Authorization` header. AI Gateway infers the team from the key.
+Pass an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys) in the `Authorization` header. AI Gateway infers the team from the key.
 
 ```http filename="HTTP header"
 Authorization: Bearer <api_key>
@@ -63,7 +63,7 @@ Authorization: Bearer <api_key>
 
 ### Vercel OIDC token
 
-On Vercel deployments, you can pass the [Vercel OIDC token](/docs/ai-gateway/authentication-and-byok#oidc-token) in the `Authorization` header instead. The token is generated automatically per project.
+On Vercel deployments, you can pass the [Vercel OIDC token](/docs/ai-gateway/authentication-and-byok#oidc-tokens) in the `Authorization` header instead. The token is generated automatically per project.
 
 ## Supported endpoints
 
@@ -605,4 +605,4 @@ Errors return a JSON body with an `error` field. Some endpoints additionally inc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/integrations.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "15da75ced410546df0516a803291eb1fb264c4bd3589069f63cf3318dfb6eb74"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f305f4b39d55f628436e2fbaa9139b0f0f8870aeddfe55ea60acc99b149563f8"
 ---
 
 # Integrations for Comments
@@ -34,12 +34,13 @@ Comments are available for projects using **any** Git provider. GitHub, Bitbucke
 
 - [Comments now available in Vercel's Slack integration](https://vercel.com/changelog/comments-now-available-in-vercels-slack-integration)
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
-- [Slack](https://v0.app/docs/slack) — Add v0 to your Slack workspace so your whole team can contribute to production.
+- [July 2020](https://vercel.com/blog/changelog-july-2020)
+- [Convert Comments on deployments to Jira issues](https://vercel.com/changelog/convert-comments-on-deployments-to-jira-issues)
+- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
-- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 
 Full cross-link map for this page: [/docs/comments/integrations.graph.md](/docs/comments/integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -244,4 +245,4 @@ Any member of your team can convert comments to an issue in Linear, Jira, or Git
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

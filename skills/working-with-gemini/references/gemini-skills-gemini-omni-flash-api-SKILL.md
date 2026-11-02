@@ -2,8 +2,8 @@
 name: gemini-omni-flash-api
 description: Use this skill for generative video editing, text-to-video, image-referenced video generation, first-frame-to-video, first-and-last-frame transitions, and video extensions using Gemini Omni 1.1 Flash (gemini-omni-1.1-flash) via the official google-genai SDK. Includes workflows for pre-processing/optimizing high-resolution or long source videos with ffmpeg, stripping audio for full sound regeneration, and handling turn-by-turn video editing and parallel execution.
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/skills/gemini-omni-flash-api/SKILL.md"
-fetched_at: "2026-09-07T09:02:18.333Z"
-sha256: "5ec057f58398c846e41210c6416341fc6a8052763c1b9feef55f3652defdd220"
+fetched_at: "2026-11-02T12:04:46.311Z"
+sha256: "2f490fcc3e547d1a377d56304ad7bf9d6013061a337980256b81d8974009ff13"
 ---
 
 # Gemini Omni Flash Skill
@@ -34,8 +34,8 @@ This skill uses the Gemini Omni 1.1 Flash model (`gemini-omni-1.1-flash`) to per
 
 ## Reference Documentation
 
-* **Interactions API**: All operations and state management for the Gemini Omni 1.1 Flash model (`gemini-omni-1.1-flash`) are handled via the [Interactions API](https://ai.google.dev/gemini-api/docs/interactions-overview).
-* **Files API**: Input media files (such as reference images and videos) must be uploaded via the [Files API](https://ai.google.dev/gemini-api/docs/files) first before being referenced in generations. The uploaded file URI and MIME type are then included in the `interactions.create` input parts array.
+* **Interactions API**: All operations and state management for the Gemini Omni 1.1 Flash model (`gemini-omni-1.1-flash`) are handled via the [Interactions API](https://aistudio.google.com/docs/interactions-overview).
+* **Files API**: Input media files (such as reference images and videos) must be uploaded via the [Files API](https://aistudio.google.com/docs/files) first before being referenced in generations. The uploaded file URI and MIME type are then included in the `interactions.create` input parts array.
 * **[Gemini API Skill Reference](https://github.com/google-gemini/gemini-skills/blob/main/skills/gemini-api-dev/SKILL.md)**: Platform-wide guidelines, current model specifications, and SDK usage rules for the Gemini API.
 
 ## Dependencies and Prerequisites

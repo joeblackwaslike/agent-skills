@@ -4,8 +4,8 @@ description: Reference documentation for the AI SDK UI
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "3e8607a807f98e07a3cadc8d6e6514f2db112e1d0ddf451f8947fa43df6e04ac"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "7f0f15ab6af293c53c9e33eed51e7e6ea6236d7068d06aa7c361ee123c3eae92"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -59,7 +59,7 @@ Transform a stream of UIMessageChunk objects into an AsyncIterableStream of UIMe
 
 Send correlated chat requests and UI message streams over a persistent WebSocket connection.
 
-#### [experimental\_MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
+#### [MCPAppRenderer](/docs/reference/ai-sdk-ui/mcp-app-renderer)
 
 Render interactive MCP App tool UIs in React.
 

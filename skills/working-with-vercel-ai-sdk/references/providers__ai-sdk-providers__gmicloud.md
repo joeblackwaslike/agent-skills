@@ -4,8 +4,8 @@ description: Learn how to use GMI Cloud with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "e39cf8fe3675e5b844311b7038c309b97c7748e8151bffbdc589596fd687ac44"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "98875b7a65fe8745f806c969e20f65a64c8ba4e758f676ccd12cd1b90bacd18a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -97,7 +97,11 @@ You can use the following optional settings to customize the GMI Cloud provider 
   Use a different URL prefix for API calls.
   The default prefix is `https://api.gmi-serving.com/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `GMI_CLOUD_APIKEY` environment variable.

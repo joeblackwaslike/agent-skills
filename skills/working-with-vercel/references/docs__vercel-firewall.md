@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9dc1c7865ee74ea47cde63fe2743c0c19fbcd4a212e860c417072f3751bb12d5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5586662d84dea009c5c60b705d63bfc5f3498456ab22fe1c3eaecf4f81e7ee8c"
 ---
 
 # Vercel Firewall
@@ -30,11 +30,11 @@ The Vercel Firewall is a robust, multi-layered security system designed to prote
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Control AI crawlers and assistants separately in Vercel Firewall](https://vercel.com/changelog/block-ai-crawlers-and-assistants-independently-with-managed-rules)
 - [Bot Protection is now generally available](https://vercel.com/changelog/bot-protection-is-now-generally-available)
 - [Bot Protection is now in public beta](https://vercel.com/changelog/bot-protection-is-now-in-public-beta)
 - [Create custom WAF rules directly from the Vercel Firewall tab](https://vercel.com/changelog/create-custom-waf-rules-directly-from-the-vercel-firewall-tab)
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
-- [Improved analytics experience now available on the Vercel Firewall](https://vercel.com/changelog/improved-analytics-experience-now-available-on-the-vercel-firewall)
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
@@ -105,4 +105,4 @@ You can use the following tools to [monitor the internet traffic](/docs/vercel-f
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

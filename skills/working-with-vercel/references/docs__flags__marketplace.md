@@ -16,8 +16,8 @@ related:
 summary: Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/marketplace.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a5bee59a3cee7fe4dd2881ea5f494b6e8319103c0b8a0251dd754a35b6b162bd"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9d6ade6178a990089d60d4db8650b2f33aa5b6ea16d89285dfa7eceb294590c8"
 ---
 
 # Marketplace
@@ -32,8 +32,8 @@ When you connect a feature flag provider through the [Vercel Marketplace](https:
 
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Statsig joins the Vercel Marketplace](https://vercel.com/changelog/statsig-joins-the-vercel-marketplace)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace)
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
@@ -114,4 +114,4 @@ To integrate a marketplace provider with your Vercel project:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

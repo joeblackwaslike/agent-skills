@@ -16,8 +16,8 @@ related:
 summary: Learn how Conformance improves collaboration, productivity, and software quality at scale.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "59db2880b2e8fe614dc7c1392fac304f77aad64461542db06f153022ce19f830"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2c00f751de5d42dbd014b771bf32c18fffebaae3735b9643a86f56a705b67386"
 ---
 
 # Conformance Rules
@@ -152,4 +152,4 @@ or code health.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

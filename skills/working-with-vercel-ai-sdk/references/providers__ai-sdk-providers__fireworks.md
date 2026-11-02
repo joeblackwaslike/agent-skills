@@ -4,8 +4,8 @@ description: Learn how to use Fireworks with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "6847db198ad6b75ba4bd272b61416298d63a300abe8afcb37219c0914f080ec4"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "6a90c0f4b987a72e870b0e6b4df35768f5d54dd76dc3c74780bd0bcaf24c638c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -96,10 +96,13 @@ You can use the following optional settings to customize the Fireworks provider 
   Use a different URL prefix for API calls, e.g. to use proxy servers.
   The default prefix is `https://api.fireworks.ai/inference/v1`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `FIREWORKS_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 
@@ -121,11 +124,9 @@ const model = fireworks('accounts/fireworks/models/firefunction-v1');
 ### Reasoning Models
 
 For models that support reasoning effort, use the top-level `reasoning` parameter.
-Fireworks maps `'minimal'` to `'low'` and `'xhigh'` or `'max'` to `'high'`, returning
-a compatibility warning whenever it coerces the effort. Streaming calls include
-the warning in the `stream-start` event. Explicit
-`providerOptions.fireworks.reasoningEffort` takes precedence over the top-level
-setting.
+Most Fireworks models accept every reasoning effort from `'none'` to `'max'`.
+GPT-OSS, GLM-5.3 and Muse Spark models cannot disable reasoning, and Nemotron
+and Inkling models do not support `'minimal'`.
 
 Fireworks exposes the thinking of `deepseek-r1` in the generated text using the `<think>` tag.
 You can use the `extractReasoningMiddleware` to extract this reasoning and expose it as a `reasoning` property on the result:

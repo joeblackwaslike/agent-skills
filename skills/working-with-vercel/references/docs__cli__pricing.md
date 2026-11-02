@@ -13,8 +13,8 @@ related:
 summary: Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9d8474343b1b839cdde3739736a132758de2b74934e754ba29ab2d00518619ba"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d5111bce2a06405a275854661a38153ddda6448ac5a579fff46fc59cdf22c89f"
 ---
 
 # vercel pricing
@@ -30,8 +30,8 @@ The `vercel pricing` command reads the public pricing table and lists features g
 - [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/pricing.graph.md](/docs/cli/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -89,4 +89,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

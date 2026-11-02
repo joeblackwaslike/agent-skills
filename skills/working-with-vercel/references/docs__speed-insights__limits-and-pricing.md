@@ -16,8 +16,8 @@ related:
 summary: Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/limits-and-pricing.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2fd1ea48e55ff513889d3b2baf4088a0746d70add8558948f48f0c166e64d391"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7794000764afd734679dc0bd05f576f94b35f81fdb45a8470c9f6fb062a21363"
 ---
 
 # Limits and Pricing for Speed Insights
@@ -111,4 +111,4 @@ See the [manage and optimize Observability usage](/docs/manage-and-optimize-obse
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -8,13 +8,13 @@ type: reference
 prerequisites:
   []
 related:
-  - /docs/functions/runtimes
+  - /docs/functions/limitations
   - /docs/storage/vercel-blob
 summary: The payload sent to the function is too large. This is a function error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/function_payload_too_large.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "21f72b8ac1f1f52481a10b7126a94707514b3e64fcc73027066230924ce0c96c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2d77703de2733adcbb8979b11ff829b2402eed4299ff8df2184a8bd45e0a04aa"
 ---
 
 # FUNCTION_PAYLOAD_TOO_LARGE
@@ -29,7 +29,7 @@ The `FUNCTION_PAYLOAD_TOO_LARGE` error occurs when the payload sent to a functio
 
 To troubleshoot this error, follow these steps:
 
-1. **Review payload size:** Check the size of the payload being sent to the function to ensure it's within the allowed limits, and does not exceed the [limit of 4.5MB](/docs/functions/runtimes#size-limits)
+1. **Review payload size:** Check the size of the payload being sent to the function to ensure it's within the allowed limits, and does not exceed the [limit of 4.5MB](/docs/functions/limitations#request-body-size)
 2. **Reduce payload size:** If possible, reduce the size of the payload being sent to the function. This might include sending less data or compressing the data before sending it
 3. **Client-side uploads**: For large file uploads, consider using client-side uploads directly to [Vercel Blob](/docs/storage/vercel-blob#server-and-client-uploads), where the file is sent securely from the client to Vercel Blob without going through the server
 4. **Split into multiple requests:** If the payload data is too large to be sent in a single request, consider splitting the data into smaller chunks and sending multiple requests
@@ -41,4 +41,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

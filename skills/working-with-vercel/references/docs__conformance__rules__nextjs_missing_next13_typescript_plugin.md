@@ -12,8 +12,8 @@ related:
 summary: "Applications using Next 13 should use the \"next\" TypeScript plugin."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_next13_typescript_plugin.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bb96585c5f83a74b4e5d18872fb2f22cf2166c0fc3c65cd726da92c309b2448d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "80ec45617bf91a8b8383e1ecd41604305702a4c1d55089a032c6404660de5202"
 ---
 
 # NEXTJS_MISSING_NEXT13_TYPESCRIPT_PLUGIN
@@ -40,4 +40,4 @@ file.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -1,8 +1,8 @@
 ---
 title: "Webviews"
 source: "https://code.visualstudio.com/api/extension-guides/webview"
-fetched_at: "2026-10-26T09:46:27.214Z"
-sha256: "5fdc9aec47d44fbaebb782ba9bb05130e06edee88da92a9ae3fb775978a2cac0"
+fetched_at: "2026-11-02T12:01:44.873Z"
+sha256: "d517915716a1dfa28b98ee2e4b47414ba14b3c1334e634f24ecc9263cf111558"
 ---
 
 # Webviews
@@ -1204,4 +1204,4 @@ If you'd like to learn more about VS Code extensibility, try these topics:
 - [Extension Capabilities](https://code.visualstudio.com/api/extension-capabilities/overview) - Take a look at other ways to extend VS Code.
 
  
- 10/21/2026
+ 10/28/2026

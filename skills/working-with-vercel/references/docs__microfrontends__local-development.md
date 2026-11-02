@@ -15,8 +15,8 @@ related:
 summary: Learn how to run and test your microfrontends locally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "80793bc7de1d4d4187b4addadc8728d5859f97677816d6d68d27e4f61d26bd7c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7515324e1265da462e190a66416b2071a438277e2bc6c50b1255fd0e573f8153"
 ---
 
 # Microfrontends local development
@@ -338,4 +338,4 @@ Set this variable to the value of the protected project's [Protection Bypass for
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

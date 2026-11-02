@@ -13,8 +13,8 @@ related:
 summary: The Sandbox cannot resume because the snapshot it references no longer exists.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/snapshot_not_found.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "67b25a4bd9f3f661dc4212c6abd09297be508841d6d67abe23167577c828c78d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a6b4be23a8065e1e2f08632e753a671b99439b77bb34bb70a548bb7f9cc9ebf3"
 ---
 
 # SNAPSHOT_NOT_FOUND
@@ -40,4 +40,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

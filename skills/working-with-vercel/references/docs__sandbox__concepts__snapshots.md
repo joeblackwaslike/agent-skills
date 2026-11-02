@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7d62ff484051b24c0ee0479b835fa61eaf7f84a0742c9e0a7b87f18677806579"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a56f600bc3556faee9c98a0693eb3f0d66be73f1de46c2ad8c1635eb2db594f4"
 ---
 
 # Snapshots
@@ -40,9 +40,9 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 - [Filesystem snapshots supported on Vercel Sandboxes](https://vercel.com/changelog/filesystem-snapshots-supported-on-vercel-sandboxes)
 - [Vercel Sandbox snapshots now allow custom retention periods](https://vercel.com/changelog/vercel-sandbox-snapshots-now-allow-custom-retention-periods)
 - [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot) — POST /v2/sandboxes/sessions/{sessionId}/snapshot — Creates a point-in-time snapshot of a running session's filesystem. S
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Get a snapshot](https://vercel.com/docs/rest-api/sandboxes/get-a-snapshot) — GET /v2/sandboxes/snapshots/{snapshotId} — Retrieves detailed information about a specific snapshot, including its creat
 - [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots) — GET /v2/sandboxes/snapshots — Retrieves a paginated list of snapshots for a specific project.
+- [Delete a snapshot](https://vercel.com/docs/rest-api/sandboxes/delete-a-snapshot) — DELETE /v2/sandboxes/snapshots/{snapshotId} — Permanently deletes a snapshot and frees its associated storage. This acti
 
 Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md)
 <!-- /docsgraph:related -->
@@ -353,4 +353,4 @@ await sandbox.update({
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

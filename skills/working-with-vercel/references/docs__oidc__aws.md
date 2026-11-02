@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "35402af7ec6d24ee50d94cf79315d33b70ce8a7479497fc7413fe5e801894865"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0272fddacafa624d79856af52eca87855f1ff4d7b6e31ca17f680123047b6717"
 ---
 
 # Connect to Amazon Web Services (AWS)
@@ -32,8 +32,8 @@ To understand how AWS supports OIDC, and for a detailed user guide on creating a
 - [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [Connect Next.js to Amazon Aurora PostgreSQL using Vercel Marketplace](https://vercel.com/kb/guide/connect-next-js-to-amazon-aurora-postgresql-using-vercel-marketplace) — Learn how to connect your Next.js application to Amazon Aurora PostgreSQL securely using the Vercel Marketplace AWS inte
-- [How can I use AWS SDK Environment Variables on Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-sdk-environment-variables-on-vercel) — How to use AWS SDK Environment Variables on Vercel
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
+- [AWS databases are now live on the Vercel Marketplace and v0](https://vercel.com/blog/aws-databases-are-now-live-on-the-vercel-marketplace-and-v0)
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
@@ -298,4 +298,4 @@ export async function GET() {
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

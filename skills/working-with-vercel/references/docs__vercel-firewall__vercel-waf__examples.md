@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Vercel WAF to protect your site in specific situations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/examples.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e0024d9b21eab30c1e79736d879c58b09790bceab71374cf61fb686016ce470f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a34fcdbc0e5e12dfda781793b5ec87d41226ff5be81aa48409e26f7caf2bd4d9"
 ---
 
 # WAF Examples
@@ -40,15 +40,14 @@ sha256: "e0024d9b21eab30c1e79736d879c58b09790bceab71374cf61fb686016ce470f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 - [How to block bots from OpenAI GPTBot](https://vercel.com/kb/guide/how-to-block-bots-openai-gptbot) — Learn how to use the Vercel WAF to block, rate limit, or challenge traffic from OpenAI GPTBot.
 - [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 - [Usage & Pricing for Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing) — Learn how the Vercel WAF can affect your usage and how specific features are priced.
+- [Rule Configuration Reference](https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration) — List of configurable options with the Vercel WAF
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
-- [Bot Management](https://vercel.com/docs/bot-management) — Learn how to manage bot traffic to your site.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/examples.graph.md](/docs/vercel-firewall/vercel-waf/examples.graph.md)
 <!-- /docsgraph:related -->
@@ -60,4 +59,4 @@ Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/examples.gr
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

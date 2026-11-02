@@ -13,8 +13,8 @@ related:
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e4bab87044bcc7be8af8364febe85e4d23ec9913789323ec5612c1d086b2f595"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f7943e328642d9e0f57b368bf75b53d2fb61e61c2fbe735089c93a7b8680a902"
 ---
 
 # Build Queues
@@ -31,13 +31,12 @@ Build queueing is when a build must wait for resources to become available befor
 - [Pro customers can now deploy faster without build queues](https://vercel.com/changelog/pro-customers-can-now-deploy-faster-with-on-demand-concurrency-builds)
 - [No build queues: On-demand concurrent builds now on by default](https://vercel.com/changelog/no-build-queues-on-demand-concurrent-builds-now-on-by-default)
 - [Limit on-demand concurrent builds to one build per branch](https://vercel.com/changelog/limit-on-demand-concurrent-builds-to-one-build-per-branch)
-- [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting)
 - [Enterprise teams can now ship faster without build queues](https://vercel.com/changelog/enterprise-teams-can-now-ship-faster-without-build-queues)
+- [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting)
 - [Vercel Queues](https://vercel.com/docs/queues) — Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-o
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 
 Full cross-link map for this page: [/docs/builds/build-queues.graph.md](/docs/builds/build-queues.graph.md)
 <!-- /docsgraph:related -->
@@ -67,7 +66,7 @@ When multiple deployments are started concurrently from code changes, Vercel's b
 
 ## Concurrency queue
 
-This queue manages how many builds can run in parallel based on the number of [concurrent build slots](/docs/builds/managing-builds#concurrent-builds) available to the team. If all concurrent build slots are in use, new builds are queued until a slot becomes available unless you have **On-Demand Concurrent Builds** [enabled at the project level](/docs/builds/managing-builds#project-level-on-demand-concurrent-builds).
+This queue manages how many builds can run in parallel based on the number of [concurrent build slots](/docs/builds/managing-builds#on-demand-concurrent-builds) available to the team. If all concurrent build slots are in use, new builds are queued until a slot becomes available unless you have **On-Demand Concurrent Builds** [enabled at the project level](/docs/builds/managing-builds#project-level-on-demand-concurrent-builds).
 
 ### How concurrent build slots work
 
@@ -90,7 +89,7 @@ Builds are handled sequentially. If new commits are pushed while a build is in p
 This means that commits in between the current build and most recent commit will not produce builds.
 
 > **💡 Note:** Enterprise users can use [Urgent On-Demand
-> Concurrency](/docs/builds/managing-builds#urgent-on-demand-concurrent-builds)
+> Concurrency](/docs/builds/managing-builds#force-an-on-demand-build)
 > to skip the Git branch queue for specific builds.
 
 
@@ -99,4 +98,4 @@ This means that commits in between the current build and most recent commit will
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

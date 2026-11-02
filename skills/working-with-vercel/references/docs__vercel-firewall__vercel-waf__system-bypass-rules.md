@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "81f88d8a899336aaaefc26af378c6112fc77267160ef595c19210be6828c5979"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "119cf6c2ebd08447e6cc0e2284743d43076d757dfb7e043c880a254a80dba8bb"
 ---
 
 # WAF System Bypass Rules
@@ -38,7 +38,7 @@ While Vercel's system-level mitigations (such as [DDoS protection](/docs/vercel-
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Improvements to Vercel Firewall system bypass rules](https://vercel.com/changelog/improvements-to-vercel-firewall-system-bypass-rules)
 - [Vercel Firewall now supports bypassing system mitigations for specific IPs](https://vercel.com/changelog/vercel-firewall-now-supports-bypassing-system-mitigations-for-specific-ips)
-- [WAF IP Blocking](https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking) — Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
+- [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \\(WAF\\)
 - [Create System Bypass Rule](https://vercel.com/docs/rest-api/security/create-system-bypass-rule) — POST /v1/security/firewall/bypass — Create new system bypass rules
 - [Remove System Bypass Rule](https://vercel.com/docs/rest-api/security/remove-system-bypass-rule) — DELETE /v1/security/firewall/bypass — Remove system bypass rules
 - [Create conditional firewall bypass](https://vercel.com/docs/rest-api/security/create-conditional-firewall-bypass) — POST /v1/security/firewall/bypass/rules — Create a conditional firewall bypass rule for a project domain.
@@ -80,4 +80,4 @@ System Bypass Rules have limits based on your [account plan](/docs/plans).
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/memory.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "02632438e022b5fc70b470b02d59819d9739756c2666b5632734b4564a08a801"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "f19bb5aa909fe5588d523cf302a0e15ed5950ca689fbb73bd932c315ec764a49"
 ---
 
 > ## Documentation Index
@@ -243,7 +243,7 @@ paths:
 
 Each brace group multiplies the number of expanded patterns: `src/*.{ts,tsx}` expands to two patterns, and `{a,b}/{c,d}/*.{ts,tsx}` to eight. To keep expansion bounded, a rule's whole `paths` list shares one budget of 1,000 expanded patterns and 4 MiB, and patterns without braces don't count against it.
 
-Claude Code uses any pattern that would exceed the budget unexpanded, and its literal braces match no files. Before v2.1.217, a `paths` value with many brace groups stalled or crashed the CLI at startup.
+Claude Code uses any pattern that would exceed the budget unexpanded, and its literal braces match no files.
 
 Glob syntax treats `[` as the start of a bracket expression such as `[abc]`. A pattern with a `[` that can't be read as a bracket expression, such as `photos [2024/**`, is invalid: it matches nothing, and the rule's other patterns keep working. To match a literal `[` in a file name, escape it as `photos \[2024/**`.
 
@@ -574,7 +574,7 @@ Auto memory files are plain markdown you can edit or delete at any time. Run [`/
 
 The `/memory` command lists your CLAUDE.md, CLAUDE.local.md, and other memory file locations across user and project scopes, including user and project CLAUDE.md entries for files that don't exist yet. It also lets you toggle auto memory on or off and provides an option to open the auto memory folder. Select any file to open it in your editor; selecting one that doesn't exist yet creates it first. To check which `CLAUDE.md` and rules files loaded at launch, run `/context`.
 
-GUI editors such as VS Code open the file in a separate window, and you can keep using the session while it's open. Before v2.1.216, `/memory` waited for you to close the file before responding. Terminal editors such as Vim take over the terminal until you exit.
+GUI editors such as VS Code open the file in a separate window, and you can keep using the session while it's open. Terminal editors such as Vim take over the terminal until you exit.
 
 When you ask Claude to remember something, like "always use pnpm, not npm" or "remember that the API tests require a local Redis instance," Claude saves it to auto memory. To add instructions to CLAUDE.md instead, ask Claude directly, like "add this to CLAUDE.md," or edit the file yourself via `/memory`.
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how to apply custom domain aliases to your Vercel deployments using the vercel alias CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alias.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3841a6a8e42af2a37bffd327dc9f51d0c5c325ed54e36a74dd9df4ac18ece76b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4ec218b30fc332965ba597a3683aeadaae2cd20318f433d0e120a172991d6b52"
 ---
 
 # vercel alias
@@ -158,4 +158,4 @@ If a custom domain belongs to an account you can't access, follow [claiming doma
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

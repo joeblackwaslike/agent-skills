@@ -13,8 +13,8 @@ related:
 summary: Use update_firewall_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/update_firewall_config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "bc13176f2f84021a1ac4e393dd9c2a5ac60a3cc785d9cffb3041c9fb32e7d508"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "00f9d4e9a85b528ea84a746e37d7a353f984e3408981a05c6dfac07d6b837914"
 ---
 
 # update_firewall_config
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firew
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

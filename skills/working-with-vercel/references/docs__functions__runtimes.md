@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "23bf93053c5938260f17a4fadc6b1c404485d7740bac04317d2c54e695e1929c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "70dca2022eafb064a23ab835f125139ed32798ac1063c769883fff02bbd38028"
 ---
 
 # Runtimes
@@ -166,4 +166,4 @@ Vercel supports [Tracing](/docs/tracing) that allows you to send OpenTelemetry t
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

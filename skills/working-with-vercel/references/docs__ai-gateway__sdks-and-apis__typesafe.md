@@ -16,8 +16,8 @@ related:
 summary: Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One decision requests through it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "083ed01e4517bd2ca722fb6c0ffda2329a7c57a8f1dae039dd37d4fc04632ee7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "db7c48987afc62a279db503a9f91c190b672dc6f2877616849e7b6ac14c80fdd"
 ---
 
 # TypeSafe API with AI Gateway
@@ -292,4 +292,4 @@ Errors returned by the model provider are passed through unchanged, so a client 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -9,12 +9,13 @@ prerequisites:
   - /docs/platforms/multi-tenant-platforms
   - /docs/platforms
 related:
+  - /docs/platforms/multi-tenant-platforms/quickstart
   - /docs/domains/working-with-domains/add-a-domain
 summary: Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/concepts.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "e38ad41f7bd610dd50f9e740043dd5ef924fe58814f3f107431243dc4d094cfc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "34da5b2ea30460b22f0e3987686d9b1ab65f470b574b5fce250cdf5f0c6cec0f"
 ---
 
 # Multi-Tenant Platform Concepts
@@ -34,9 +35,9 @@ A tenant represents a customer, workspace, or organization within your multi-ten
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
 - [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/proxy-and-routing) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Set up wildcard domains, custom domains, domain verification, and redirects for a multi-tenant application on Vercel.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/concepts.graph.md](/docs/platforms/multi-tenant-platforms/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -51,12 +52,19 @@ Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/conce
 
 You can identify tenants using three approaches:
 
-**Subdomain-based**: Extract the tenant from the subdomain (`tenant1.yourapp.com`)
+**Subdomain-based**: Extract the tenant from the subdomain (`tenant1.yourapp.com`). Note that we compare the host with your root domain, so that `yourapp.com` itself and `localhost:3000` aren't treated as tenants:
 
 ```ts filename="proxy.ts"
-const hostname = request.headers.get('host');
-const subdomain = hostname.split('.')[0]; // "tenant1"
+const hostname = request.headers.get('host') ?? '';
+const rootDomain = process.env.ROOT_DOMAIN ?? 'localhost:3000';
+// For tenant1.yourapp.com, subdomain is "tenant1". For the root domain
+// itself, or any other host, subdomain is null.
+const subdomain = hostname.endsWith(`.${rootDomain}`)
+  ? hostname.slice(0, -(rootDomain.length + 1))
+  : null;
 ```
+
+**Test locally**: You can try subdomain routing on your own computer before you set up any domain. Chrome and Firefox resolve every `*.localhost` name to your computer, so `http://tenant1.localhost:3000` reaches your dev server. In other browsers, add the name to `/etc/hosts` first. The [quickstart](/docs/platforms/multi-tenant-platforms/quickstart) builds a working app step by step.
 
 **Custom domain-based**: Map custom domains to tenants (`tenant1.com` → Tenant 1)
 
@@ -138,14 +146,29 @@ For domains already in use on Vercel, ownership verification is required:
 Next.js Proxy runs on every request before your pages render:
 
 ```ts filename="proxy.ts"
-export async function proxy(request: NextRequest) {
-  const hostname = request.headers.get('host');
+import { NextRequest, NextResponse } from 'next/server';
 
-  // Get tenant from subdomain or custom domain
+export async function proxy(request: NextRequest) {
+  const hostname = request.headers.get('host') ?? '';
+
+  // First, we look up the tenant from the subdomain or custom domain.
+  // resolveTenant is your own lookup function, such as a database query.
   const tenant = await resolveTenant(hostname);
 
-  // Forward tenant context to your app on the request headers
+  // Strip the inbound tenant header; only the proxy sets it
   const requestHeaders = new Headers(request.headers);
+  requestHeaders.delete('x-tenant-id');
+
+  if (!tenant) {
+    // Note that we use rewrite instead of redirect here, since a redirect to
+    // /not-found would send the browser back through the proxy, which would
+    // redirect it again in an endless loop.
+    return NextResponse.rewrite(new URL('/not-found', request.url), {
+      request: { headers: requestHeaders },
+    });
+  }
+
+  // Forward tenant context to your app on the request headers
   requestHeaders.set('x-tenant-id', tenant.id);
 
   return NextResponse.next({
@@ -168,10 +191,14 @@ export async function proxy(request: NextRequest) {
 
 **Global Config**: Store tenant configuration at the edge for sub-10ms lookups
 
-```ts filename="edge-config.ts"
+```ts filename="global-config.ts"
 import { get } from '@vercel/global-config';
 
-const tenant = await get(`tenant_${hostname}`);
+// Global Config keys can contain only letters, digits, _ and -, so we
+// replace the . and : in the host name before we use it in a key.
+const tenant = await get(
+  `tenant_${hostname.replaceAll('.', '_').replaceAll(':', '_')}`,
+);
 ```
 
 **Caching**: Cache tenant lookups in the proxy to reduce database queries
@@ -228,4 +255,4 @@ const tenantId = request.headers.get('x-tenant-id');
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

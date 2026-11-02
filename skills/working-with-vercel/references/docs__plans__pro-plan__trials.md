@@ -17,8 +17,8 @@ related:
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8088300be41e6c61c67a54d03aef1d2c5a83d1a1dd41962715042b68dadefa7c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "2da2c376fb891e1af68d2fe2c7ea3fa6ea8f31516682367a08f154135d20bdb4"
 ---
 
 # Understanding Vercel
@@ -32,8 +32,8 @@ Vercel offers three plan tiers: **Hobby**, **Pro**, and **Enterprise**.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
-- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
@@ -133,4 +133,4 @@ No charges apply for the months of inactivity. Billing will only cover the curre
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required. It also works without an account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drop.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f1822ea289ddfe49e7ffe784b248ecf385ed630d877739e599e563881fda56c8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f22e513eb5af83ef442eb2d7588915dc96ef309dc3d20f8ca240294d60dac013"
 ---
 
 # Deploying with Vercel Drop
@@ -30,8 +30,8 @@ Vercel Drop lets you deploy a file, folder, or `.zip` by dragging it into your b
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Drop vs Netlify Drop](https://vercel.com/kb/guide/vercel-drop-vs-netlify-drop) — Compare Vercel Drop and Netlify Drop for drag-and-drop deployment: framework builds, static sites, updates, size limits,
 - [Deploy with Vercel Drop without an account](https://vercel.com/changelog/deploy-with-vercel-drop-without-an-account)
+- [Vercel Drop vs Netlify Drop](https://vercel.com/kb/guide/vercel-drop-vs-netlify-drop) — Compare Vercel Drop and Netlify Drop for drag-and-drop deployment: framework builds, static sites, updates, size limits,
 - [Introducing Vercel Drop](https://vercel.com/changelog/vercel-drop)
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
 - [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
@@ -39,8 +39,8 @@ Vercel Drop lets you deploy a file, folder, or `.zip` by dragging it into your b
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Deploy a Lovable app on Vercel](https://vercel.com/docs/integrations/lovable) — Deploy your Lovable project to Vercel using GitHub sync and zero-configuration TanStack Start detection.
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/drop.graph.md](/docs/drop.graph.md)
 <!-- /docsgraph:related -->
@@ -113,4 +113,4 @@ A dropped project has no Git connection, so pushes don't create deployments. If 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

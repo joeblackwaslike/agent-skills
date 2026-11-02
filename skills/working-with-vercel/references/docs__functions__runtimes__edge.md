@@ -16,8 +16,8 @@ related:
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3608caf0d48854aa9afe992b1ba2e3a946c879ebbabb3ef71251f6659a3689a3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c4981be4dd997bb5825126005f19da89911ddfa9e68107535b80fe22abb6ad08"
 ---
 
 # Edge Runtime
@@ -360,4 +360,4 @@ process.env.hasOwnProperty('MY_VALUE');
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

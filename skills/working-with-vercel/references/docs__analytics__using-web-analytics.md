@@ -15,8 +15,8 @@ related:
 summary: "Learn how to use Vercel's Web Analytics to understand how visitors are using your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/using-web-analytics.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "5d0324203c0fd8c21c634e2e88cbe7fbbe6c7ff08c3af5ba75660084e7612768"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0755e55ff0b375c0da4f58bbfb1ec4886f0a765502082d2b162b4dc460085c70"
 ---
 
 # Using Web Analytics
@@ -39,6 +39,7 @@ To access Web Analytics:
 
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
+- [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available)
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
@@ -102,4 +103,4 @@ The export will include up to 250 entries from the panel, not just the top entri
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

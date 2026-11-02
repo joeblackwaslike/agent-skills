@@ -13,8 +13,8 @@ related:
 summary: Use list_access_groups with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7626de113894db0752046f6c7c26319d726d7a93cec6f5c8e2f6de186eb32f84"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "f2862409a338104d007ba5942a82ff13f6a8563a4237e11305d27241802d2918"
 ---
 
 # list_access_groups
@@ -55,4 +55,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

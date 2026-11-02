@@ -10,15 +10,15 @@ prerequisites:
   - /docs/deployment-protection
 related:
   - /docs/project-configuration/project-settings
-  - /docs/errors
+  - /docs/errors/DEPLOYMENT_NOT_FOUND
   - /docs/deployment-protection
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
   - /docs/deployment-protection/methods-to-protect-deployments/password-protection
 summary: Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ea5f8868751ccff7d9378a49849086dfd5d33f9fd1f0dd3cd197058eb2b94fd8"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "97e6123a6549c2e588e9326dfe53c6cda0bcefffb65dff25c0791f88b2ca1810"
 ---
 
 # Restrict deployment access by IP address
@@ -36,7 +36,7 @@ sha256: "ea5f8868751ccff7d9378a49849086dfd5d33f9fd1f0dd3cd197058eb2b94fd8"
 > guide](#migrate-trusted-ips-to-vercel-firewall) to move your existing
 > configuration.
 
-With Trusted IPs [enabled](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips#manage-trusted-ips) at the level of your [project](/docs/project-configuration/project-settings), only visitors from an allowed IP address can access your deployment. The deployment URL will return `404` [No Deployment Found](/docs/errors#404:-deployment_not_found) for all other requests. Trusted IPs is configured by specifying a list of IPv4 addresses and IPv4 CIDR ranges.
+With Trusted IPs [enabled](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips#manage-trusted-ips) at the level of your [project](/docs/project-configuration/project-settings), only visitors from an allowed IP address can access your deployment. The deployment URL will return `404` [No Deployment Found](/docs/errors/DEPLOYMENT_NOT_FOUND) for all other requests. Trusted IPs is configured by specifying a list of IPv4 addresses and IPv4 CIDR ranges.
 
 
 <!-- docsgraph:related -->
@@ -145,7 +145,7 @@ You can manage Trusted IPs through the dashboard, API, or Terraform.
   2. Select the [deployment environment](/docs/deployment-protection#choose-which-urls-to-protect) you want to protect
   3. Enter your list of IPv4 addresses and IPv4 CIDR ranges with an optional note describing the address
   4. Finally, select **Save**
-  All your existing and future deployments will be protected with Trusted IPs for that project. Visitors to your project deployments from IP addresses not included in your list will see a [No Deployment Found](/docs/errors#404:-deployment_not_found) error page.
+  All your existing and future deployments will be protected with Trusted IPs for that project. Visitors to your project deployments from IP addresses not included in your list will see a [No Deployment Found](/docs/errors/DEPLOYMENT_NOT_FOUND) error page.
 
 ### Manage using the API
 
@@ -189,4 +189,4 @@ You can configure Trusted IPs using `trusted_ips` in the `vercel_project` data s
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

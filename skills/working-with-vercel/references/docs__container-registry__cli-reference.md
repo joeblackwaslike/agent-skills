@@ -15,8 +15,8 @@ related:
 summary: Use the vercel vcr command group to manage Vercel Container Registry repositories, tags, and images from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/cli-reference.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "593cdbabc6ea12cd4dd66b8d2eaa4ef78ff09b8270256a4a488004cf5cb3b67a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "97b40907f9950d0c33fed986f646481586b28b9677b64129d1bb63c3db1b2912"
 ---
 
 # Container Registry CLI Reference
@@ -35,8 +35,8 @@ The `vercel vcr` command group lets you manage [Vercel Container Registry](/docs
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [vercel blob](https://vercel.com/docs/cli/blob) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
+- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 - [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
-- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 
 Full cross-link map for this page: [/docs/container-registry/cli-reference.graph.md](/docs/container-registry/cli-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -843,4 +843,4 @@ vercel vcr config my-repository --public false
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

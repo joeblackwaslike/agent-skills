@@ -12,8 +12,8 @@ related:
 summary: Prevent unsafe URL Imports from being added to Next.js applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_safe_url_imports.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "671215276d64634958951aac549b100b9f1bf31b61d74b1907fbc41d51e479d6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b6faaefea7ad7cd19e819cc2332215eee20cc52e5a99aed610d252d8ea746f86"
 ---
 
 # NEXTJS_SAFE_URL_IMPORTS
@@ -32,7 +32,7 @@ module.exports = {
 };
 ```
 
-If any of the URLs have not been added to the safe import comformance configuration,
+If any of the URLs have not been added to the safe import conformance configuration,
 then this will cause this rule to fail.
 
 ## How to fix
@@ -58,4 +58,4 @@ If this URL is deemed safe for general use, it can be added to the list of appro
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

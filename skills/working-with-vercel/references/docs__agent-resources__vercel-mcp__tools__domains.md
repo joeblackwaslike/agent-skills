@@ -14,8 +14,8 @@ related:
 summary: Vercel MCP tools for domains and dns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6ec5b05c57d8a73b3c2fa65550fa882eb195ce445e5afc787bf782670e95326d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8054bb39eb8bd76c8c9c67b6a8fce60fd06c93d621c79aeb157c4ed71a1e2328"
 ---
 
 # Domains and DNS
@@ -32,7 +32,7 @@ Check domain availability and pricing, then manage domains connected to your acc
 - [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing) — Vercel MCP tools for billing and purchases.
 - [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
 - [Get Domain Availability and Pricing](https://vercel.com/docs/rest-api/domains-registrar/get-domain-availability-and-pricing) — POST /v1/registrar/domains/search — Start domain research here. Get registration availability and pricing for 1–200 exac
-- [Get Domain Verification Record](https://vercel.com/docs/rest-api/domains/get-domain-verification-record) — GET /v9/domains/{domain}/verification — Get the TXT verification record needed to claim ownership of a domain for the au
+- [Get price data for multiple domains](https://vercel.com/docs/rest-api/domains-registrar/get-price-data-for-multiple-domains) — POST /v1/registrar/domains/price — Get price data for multiple domains in a single request.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains.graph.md](/docs/agent-resources/vercel-mcp/tools/domains.graph.md)
 <!-- /docsgraph:related -->
@@ -359,4 +359,4 @@ Update an existing DNS record.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

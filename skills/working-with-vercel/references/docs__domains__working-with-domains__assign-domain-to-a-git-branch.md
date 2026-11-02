@@ -15,8 +15,8 @@ related:
 summary: Learn how to assign a domain to a different Git branch with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/assign-domain-to-a-git-branch.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3c3747e01e89344484cf85bb670d9a08eed766e816d2c3495ba1e4bf1cd55048"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4fb58c07c256328b7a7db70b83cf88195ec267f2ac758289b65ba6df71dba5ef"
 ---
 
 # Assigning a domain to a Git branch
@@ -35,10 +35,10 @@ Every commit pushed to the [Production Branch](/docs/git#production-branch) of y
 - [Branch Domains](https://vercel.com/blog/branch-domains)
 - [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Git settings](https://vercel.com/docs/project-configuration/git-settings) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/assign-domain-to-a-git-branch.graph.md](/docs/domains/working-with-domains/assign-domain-to-a-git-branch.graph.md)
 <!-- /docsgraph:related -->
@@ -66,4 +66,4 @@ Pro and Enterprise teams can also set branch tracking for their [custom environm
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Disable Deployment Protection for a list of preview domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "3fcdacc0e8f63889866e7427439c3d1733ca0ced917252b19454d0191fe065d0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "5918db9dedc9d42da866ef84cfd55defbce29b1101aa6056aa0979942615ab2b"
 ---
 
 # Deployment Protection Exceptions
@@ -32,15 +32,15 @@ Deployment Protection Exceptions let you disable Deployment Protection (includin
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Slack](https://eve.dev/docs/channels/slack) — Reach your agent from Slack app mentions, DMs, slash commands, and interactive callbacks.
+- [Slack Reference](https://eve.dev/docs/channels/slack/reference) — Slack channel options, credentials, inbound hooks, code channels, rendering, human-in-the-loop, proactive targets, and a
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
-- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 
@@ -119,4 +119,4 @@ You can view and manage all the existing Deployment Protection Exceptions for yo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

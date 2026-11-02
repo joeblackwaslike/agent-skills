@@ -16,8 +16,8 @@ related:
 summary: Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and model.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/copilot.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6fab9b07c7f4c8ee44255864d59e89c8b229e203601da5c4776ebf1c8ca1ce8c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9c01c922e407e49d89bcdace8977f6f6d38bc0b50a97b558cbeb3426050c61a3"
 ---
 
 # GitHub Copilot CLI with AI Gateway
@@ -105,4 +105,4 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

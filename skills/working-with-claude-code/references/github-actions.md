@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/github-actions.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "c0596fead65466e68b6a95e1b9c2ca4db746f9546e87e5f6b6e801f590895690"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "5d695320e5381dd90cbe88a7c7df35407a75c4ccbd177e26572ac190731e41f4"
 ---
 
 > ## Documentation Index
@@ -80,7 +80,7 @@ During installation, you also grant permissions that other Claude features use. 
 Add one of the following secrets to your repository, depending on how you authenticate. See GitHub's guide to [using secrets in GitHub Actions](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
 * `ANTHROPIC_API_KEY`: a Claude API key from the [Claude Console](https://platform.claude.com)
-* `CLAUDE_CODE_OAUTH_TOKEN`: an OAuth token that authenticates with your Claude subscription, available on Pro, Max, Team, and Enterprise plans. Generate one by running `claude setup-token` locally. See [Generate a long-lived token](https://code.claude.com/docs/en/authentication.md#generate-a-long-lived-token)
+* `CLAUDE_CODE_OAUTH_TOKEN`: an OAuth token that authenticates with your Claude subscription, available on Pro, Max, Ultra, Team, and Enterprise plans. Generate one by running `claude setup-token` locally. See [Generate a long-lived token](https://code.claude.com/docs/en/authentication.md#generate-a-long-lived-token)
 
 In workflow files, pass the secret to the matching input: `anthropic_api_key` for an API key, or `claude_code_oauth_token` for an OAuth token.
 
@@ -247,8 +247,8 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          plugin_marketplaces: "https://github.com/anthropics/claude-code.git"
-          plugins: "code-review@claude-code-plugins"
+          plugin_marketplaces: "https://github.com/anthropics/claude-plugins-official.git"
+          plugins: "code-review@claude-plugins-official"
           prompt: "/code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
           claude_args: '--allowedTools "mcp__github_inline_comment__create_inline_comment"'
 ```

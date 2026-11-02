@@ -13,8 +13,8 @@ related:
 summary: Use get_project_trace with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_project_trace.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d9eac5305e69a296c460c17259eafe0fa256c9f609929d55d9be9aaf5d7aa5cc"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "548d2189160dde5f85c6de1609132ac4e4d411ac6a312b0794b17486503f2af5"
 ---
 
 # get_project_trace
@@ -30,8 +30,8 @@ Get a project trace by request ID.
 - [Get a project trace by request ID](https://vercel.com/docs/rest-api/projects/get-a-project-trace-by-request-id) — GET /v1/projects/traces — Returns the OTEL trace for a given Vercel CLI request.
 - [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
 - [get_microfrontends_config_for_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project) — Use get_microfrontends_config_for_project with Vercel MCP.
-- [get_project_deletion_link](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deletion_link) — Use get_project_deletion_link with Vercel MCP.
-- [list_project_route_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_project_route_versions) — Use list_project_route_versions with Vercel MCP.
+- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [get_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env) — Use get_project_env with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/get_project_trace.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/get_project_trace.graph.md)
 <!-- /docsgraph:related -->
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

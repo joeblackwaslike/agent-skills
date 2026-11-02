@@ -1,8 +1,8 @@
 ---
 title: "Extension Anatomy"
 source: "https://code.visualstudio.com/api/get-started/extension-anatomy"
-fetched_at: "2026-10-26T09:46:27.214Z"
-sha256: "87413048bd560903af9c1509241b802a3ce11db5bbc8d33de2c17d26cb9cd238"
+fetched_at: "2026-11-02T12:01:44.873Z"
+sha256: "950a0da5cf1e55ee710d4bd874e2aca5b4fef4bba40e20cb26d48c6526246842"
 ---
 
 # Extension Anatomy
@@ -180,4 +180,4 @@ export function deactivate() {}
 
 
  
- 10/21/2026
+ 10/28/2026

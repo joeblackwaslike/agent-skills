@@ -12,8 +12,8 @@ related:
 summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8510ec0fc96e00cf5ad3107b9ab781136f839ff48009e73ce09a807085bd503c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9f40f9be55b2069e79db5faea119948997647d6c8382e4e46b38bc0ef65c0948"
 ---
 
 # vercel tokens
@@ -27,6 +27,7 @@ The `vercel tokens` command manages your personal authentication tokens. Tokens 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
+- [Why is Vercel CLI asking me to log in? ](https://vercel.com/kb/guide/why-is-vercel-cli-asking-me-to-log-in) — Information on why you may be getting prompted to log in to Vercel CLI.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
@@ -191,4 +192,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

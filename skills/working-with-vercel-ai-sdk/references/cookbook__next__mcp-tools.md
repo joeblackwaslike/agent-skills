@@ -9,8 +9,8 @@ tags:
   - agent
   - mcp
 source: "https://ai-sdk.dev/cookbook/next/mcp-tools.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "61d3b301e515817760aae689a3ad4ac4d19964d6e692f196dfa4c5a0384aedc0"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "38b19bc7d38b1a5f3dcb208924e9767905a319d9b0015c6c2fd9a5cb9831bf95"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -34,7 +34,7 @@ import {
   streamText,
   toUIMessageStream,
 } from 'ai';
-import { Experimental_StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
+import { StdioMCPTransport } from '@ai-sdk/mcp/mcp-stdio';
 import { openai } from '@ai-sdk/openai';
 // Optional: Official transports if you prefer them
 // import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
 
   try {
     // Initialize an MCP client to connect to a `stdio` MCP server (local only):
-    const transport = new Experimental_StdioMCPTransport({
+    const transport = new StdioMCPTransport({
       command: 'node',
       args: ['src/stdio/dist/server.js'],
     });

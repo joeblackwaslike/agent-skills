@@ -13,8 +13,8 @@ related:
 summary: Use get_flag_settings with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "262e1cb58234d9487c343b90e5d0259ecd284620e24cb301acc4081bbd25d96b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "024f959696dfab2c6072cc78fabcb95c60594ee554ff2c490d82925c0f96b4dd"
 ---
 
 # get_flag_settings
@@ -31,7 +31,7 @@ Get project flag settings.
 - [get_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag) — Use get_flag with Vercel MCP.
 - [list_team_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings) — Use list_team_flag_settings with Vercel MCP.
 - [Get project flag settings](https://vercel.com/docs/rest-api/feature-flags/get-project-flag-settings) — GET /v1/projects/{projectIdOrName}/feature-flags/settings — Retrieve feature flag settings for a project.
-- [list_flag_segments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_segments) — Use list_flag_segments with Vercel MCP.
+- [List team project flag settings](https://vercel.com/docs/rest-api/feature-flags/list-team-project-flag-settings) — GET /v1/teams/{teamId}/feature-flags/settings — Retrieve feature flag settings for projects in a team.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings.graph.md)
 <!-- /docsgraph:related -->
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

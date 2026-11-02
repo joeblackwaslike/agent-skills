@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-10-26T09:46:05.169Z"
-sha256: "54bf561447203203889c3770d26f152980ad8e92c65c973996999cd983392a6d"
+fetched_at: "2026-11-02T12:01:15.657Z"
+sha256: "a82f770ce2a97ac3674f2146bd9220708a11ad2e497491de9693b4141ceb7d9f"
 ---
 
 # Available templates index
@@ -10,6 +10,18 @@ sha256: "54bf561447203203889c3770d26f152980ad8e92c65c973996999cd983392a6d"
 Source: https://containers.dev/templates
 
 Templates
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
 
@@ -234,7 +246,7 @@ Templates
 | SAP CAP | NickChecan | `ghcr.io/the-nefarious-developer/devcontainer-templates/sap-cap-javascript-node:1.0.0` | `1.0.0` |
 | SAP CAP | NickChecan | `ghcr.io/the-nefarious-developer/devcontainer-templates/sap-cap-typescript-node:1.0.0` | `1.0.0` |
 | Go Development Toolkit | irfansofyana | `ghcr.io/irfansofyana/devcontainer-templates/go-toolkit:1.0.3` | `1.0.3` |
-| Flutter | techiro | `ghcr.io/techiro/devcontainer-template/flutter:1.0.0` | `1.0.0` |
+| Flutter | techiro | `ghcr.io/techiro/devcontainer-template/flutter:2.0.0` | `2.0.0` |
 | Pixi | Austin Gregg-Smith | `ghcr.io/blooop/devcontainer-templates/pixi:1.0.4` | `1.0.4` |
 | Devcontainers Ziglang template | fardragon | `ghcr.io/fardragon/devcontainers-zig-template/ziglang:0.4.1` | `0.4.1` |
 | Axon Ivy | axonivy | `ghcr.io/axonivy/devcontainer-templates/axonivy:1.0.2` | `1.0.2` |
@@ -282,11 +294,11 @@ Templates
 | Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.3.0` | `1.3.0` |
 | Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.1.1` | `1.1.1` |
 | Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.5.0` | `1.5.0` |
-| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
-| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
-| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
-| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
-| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.10.19-2.38.57` | `2026.10.19-2.38.57` |
+| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
+| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
+| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
+| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
+| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
 | Blank ESP-IDF Environment | T0ng5 | `ghcr.io/t0ng5/esp-idf/esp-idf:0.0.1` | `0.0.1` |
 
 

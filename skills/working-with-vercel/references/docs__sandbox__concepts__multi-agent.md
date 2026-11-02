@@ -15,8 +15,8 @@ related:
 summary: Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUser methods, then share files...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/multi-agent.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "355bf72fac44fa3679335d2ce3edc82d91c75813595fc533157bd5c4ad41f933"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "14584820c45d776367904a0291a0252c0f1648f42c03ad6fde25dc974166d146"
 ---
 
 # Run isolated AI agents in one sandbox
@@ -33,9 +33,9 @@ Run several AI agents in one sandbox, each as its own Linux user with a private 
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [Sandbox](https://eve.dev/docs/sandbox) — Configure the isolated filesystem and command environment used by an eve agent.
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Sandbox](https://eve.dev/docs/sandbox) — Configure the isolated filesystem and command environment used by an eve agent.
+- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 
 Full cross-link map for this page: [/docs/sandbox/concepts/multi-agent.graph.md](/docs/sandbox/concepts/multi-agent.graph.md)
 <!-- /docsgraph:related -->
@@ -313,4 +313,4 @@ console.log(blocked.exitCode); // non-zero, isolation enforced
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

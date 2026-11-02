@@ -16,8 +16,8 @@ related:
 summary: Answer a typed boolean question about application state using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/decision.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1570c0aa054eea7d48f3ea6e2a6fce34f8460a3b8616fd279d49ef8785e8132e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "96b53b5aa5bb5783303a58b8343b8f212f2d578971ebac1a70f47d9ad0816a0a"
 ---
 
 # AI Gateway Decision Quickstart
@@ -34,8 +34,8 @@ Ask a typed question about application state through AI Gateway and get a boolea
 - [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [TypeSafe AI's Jev 1.14 is now available on AI Gateway](https://vercel.com/changelog/typesafe-ais-jev-1-14-is-now-available-on-ai-gateway)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
-- [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/decision.graph.md](/docs/ai-gateway/getting-started/decision.graph.md)
@@ -121,4 +121,4 @@ This quickstart logs only `result.answers`. The probability can vary, but you sh
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/structured-outputs.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "d85e294d567d82d9aa38b4671d3bbbc8488baab6974257128e4334434fff7645"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "9622d26f94623274a5e6b5e1c495092203c25c21c4398132a048cd18ea7ae109"
 ---
 
 > ## Documentation Index
@@ -22,7 +22,7 @@ Agents return free-form text by default, which works for chat but not when you n
 
 Consider a recipe app where an agent searches the web and brings back recipes. Without structured outputs, you get free-form text that you'd need to parse yourself. With structured outputs, you define the shape you want and get typed data you can use directly in your app.
 
-> **Without structured outputs**
+> [accordion] Without structured outputs
 >
 > ```text theme={null}
 > Here's a classic chocolate chip cookie recipe!
@@ -38,7 +38,7 @@ Consider a recipe app where an agent searches the web and brings back recipes. W
 >
 > To use this in your app, you'd need to parse out the title, convert "15 minutes" to a number, separate ingredients from instructions, and handle inconsistent formatting across responses.
 
-> **With structured outputs**
+> [accordion] With structured outputs
 >
 > ```jsonc theme={null}
 > {

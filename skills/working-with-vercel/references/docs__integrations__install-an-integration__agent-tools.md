@@ -13,8 +13,8 @@ related:
 summary: Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/agent-tools.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "61826ec5e36ff8d2d553af89d64f7072665785f9d53dcf1ab63c2eb316b8714d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e4e8f61547c3e8d8995a0fa18e9d4c280cf2b1cc94d2b3c312de3b87c85ad4a7"
 ---
 
 # Interact with Integrations using Agent Tools
@@ -105,4 +105,4 @@ Agent Tools is currently enabled for the following integrations: [Neon](https://
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

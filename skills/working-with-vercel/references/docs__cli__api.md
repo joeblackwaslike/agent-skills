@@ -14,8 +14,8 @@ related:
 summary: Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/api.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "34e9f7cd15927b3098d7317bb10c7ae1729b73494327aba7fac18446c0048626"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "24a5c1b2048a563e0543e79a23c13a25baa836eb955ce9af7f67be9a9a2ce0f6"
 ---
 
 # vercel api
@@ -31,7 +31,7 @@ The `vercel api` command lets you make authenticated HTTP requests to the Vercel
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
+- [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 - [vercel tokens](https://vercel.com/docs/cli/tokens) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
 
 Full cross-link map for this page: [/docs/cli/api.graph.md](/docs/cli/api.graph.md)
@@ -346,4 +346,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -17,8 +17,8 @@ related:
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "528f0ad2b9bf1708401e7826574cb97e56fd268acbf57bec999592b52e5dabd1"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "905c3cece80b3a0943d60d23638bf6fbccdf9414c68e36bcb65220a296b5602f"
 ---
 
 # Building Integrations with Vercel REST API
@@ -36,8 +36,8 @@ See the following API reference documentation for how to use Vercel REST API to 
 - [Vercel SDK Reference](https://vercel.com/docs/rest-api/sdk) — Interact programmatically with your Vercel account using the SDK.
 - [Retrieve project domains by project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-project-domains-by-project-by-id-or-name) — GET /v9/projects/{idOrName}/domains — Retrieve the domains associated with a given project by passing either the project
 - [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
+- [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 - [Update a project domain](https://vercel.com/docs/rest-api/projects/update-a-project-domain) — PATCH /v9/projects/{idOrName}/domains/{domain} — Update a project domain's configuration, including the name, git branch
-- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
 
 Full cross-link map for this page: [/docs/integrations/create-integration/vercel-api-integrations.graph.md](/docs/integrations/create-integration/vercel-api-integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -210,4 +210,4 @@ No, integration configuration IDs (`icfg_*`) are not reused after an integration
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

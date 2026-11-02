@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/020_programming-languages.md"
-fetched_at: "2026-10-26T09:52:48.732Z"
-sha256: "b32e100d11705867b8306ce27f94f488b49d5e471dfc8b56465812e34607ae93"
+fetched_at: "2026-11-02T12:06:22.105Z"
+sha256: "53770e8377ded3d2b8a3ef667fbb7a26240b1b8553a4af7dba19b8044a42cbf3"
 ---
 
 # Language Support
@@ -90,6 +90,14 @@ Some languages require additional installations or setup steps, as noted.
   (requires the [Gleam compiler](https://gleam.run) on PATH; the language server is bundled with the compiler and started via `gleam lsp`)
 * **Go**  
   (requires installation of `gopls`)
+* **GraphQL**  
+  (experimental; requires Node.js and npm; automatically installs `graphql-language-service-cli` (`graphql-lsp`) and its
+  `graphql` peer dependency; handles `.graphql` and `.gql` files; must be explicitly specified in the `languages` entry
+  in the `project.yml`. Cross-file navigation — go-to-definition from an operation field into the schema type that
+  declares it — requires a [graphql-config](https://the-guild.dev/graphql/config) file
+  (`.graphqlrc.yml` / `graphql.config.{yml,yaml,json}`) at the repository root pointing at the schema; without it only
+  single-file document symbols are available. Note: the upstream server does not implement `textDocument/references`,
+  so find-references is unsupported.)
 * **Groovy**  
   (requires a local groovy-language-server.jar, configured via `ls_jar_path` in `ls_specific_settings`;
   see the [Groovy Setup Guide](../03-special-guides/groovy_setup_guide_for_serena) for details)

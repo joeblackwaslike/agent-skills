@@ -15,8 +15,8 @@ related:
 summary: How a project grant authorizes a Vercel deployment to sign with a KMS issuer using its OIDC token, scoped to a team, project, and environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/project-grants.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a8d8d562105a6142f486596c49aa1d2f482754e51c5291195a2e18170fc90d62"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "60e4d842e608dba2564c2a89a6a6a79cbd965a44a5906b929c8a73ce581466c0"
 ---
 
 # Vercel KMS Project Grants
@@ -30,11 +30,11 @@ A project grant is an issuer policy (`project-grant`) that lets a Vercel deploym
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
-- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
 - [Vercel KMS Claims](https://vercel.com/docs/kms/concepts/claims) — How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 - [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
+- [Update an issuer policy](https://vercel.com/docs/rest-api/kms/update-an-issuer-policy) — PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} — Update an existing KMS issuer policy's environments or to
 
 Full cross-link map for this page: [/docs/kms/concepts/project-grants.graph.md](/docs/kms/concepts/project-grants.graph.md)
 <!-- /docsgraph:related -->
@@ -77,4 +77,4 @@ Create a separate issuer, each with its own project grant, for every project and
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

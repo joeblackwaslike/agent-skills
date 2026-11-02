@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions in Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dd9f7b3555c3cb59ee800c340003261756d764b378f76fb71fb6d6ca9838cf40"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "ee159c9d7fc7dd8461a91d9343dc519fb6b60118c3b503d5892b1cf3ca4f2def"
 ---
 
 # vercel.functions API Reference (Python)
@@ -52,9 +52,9 @@ sha256: "dd9f7b3555c3cb59ee800c340003261756d764b378f76fb71fb6d6ca9838cf40"
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api)
 - [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
 - [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
-- [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python) — Learn how to use the Python runtime to run Python applications on Vercel.
 - [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
-- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python) — Learn how to use the Python runtime to run Python applications on Vercel.
+- [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-sdk-python.graph.md](/docs/functions/functions-api-reference/vercel-sdk-python.graph.md)
 <!-- /docsgraph:related -->
@@ -217,4 +217,4 @@ Usage of the Vercel Runtime Cache is charged, learn more about pricing in the [r
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

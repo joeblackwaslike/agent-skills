@@ -13,8 +13,8 @@ related:
 summary: Use get_contact_info_schema with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_contact_info_schema.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "d958763391b1641f5aecaf826da72f9798129bba8ed1335031c3cdb28f133514"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "21986efe718044d096375b8d524ee5ea473c5f7f7c7f2e0251aca49d9d0e14b4"
 ---
 
 # get_contact_info_schema
@@ -30,8 +30,8 @@ Get contact info schema.
 - [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
 - [Get contact info schema](https://vercel.com/docs/rest-api/domains-registrar/get-contact-info-schema) — GET /v1/registrar/domains/{domain}/contact-info/schema — Some TLDs require additional contact information. Use this endp
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
-- [get_observability_schema](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema) — Use get_observability_schema with Vercel MCP.
 - [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
+- [get_observability_schema](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema) — Use get_observability_schema with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_contact_info_schema.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_contact_info_schema.graph.md)
 <!-- /docsgraph:related -->
@@ -49,4 +49,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

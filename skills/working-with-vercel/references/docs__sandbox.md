@@ -16,8 +16,8 @@ related:
 summary: Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f9f6d0bac1c2782bd8c280e4e57257ca76d79ae4c09cd11371406092fc765eb2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "391252a2136ff7728dbee5b05bd86cacde1cfa797359df1bb6e43092b579a8ec"
 ---
 
 # Vercel Sandbox
@@ -34,6 +34,7 @@ Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel San
 
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Security Model](https://eve.dev/docs/concepts/security-model) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
 - [Sandbox](https://eve.dev/docs/sandbox) — Configure the isolated filesystem and command environment used by an eve agent.
 - [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel)
@@ -42,8 +43,7 @@ Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel San
 - [Data downloaded by Vercel Sandbox is now free](https://vercel.com/changelog/data-downloaded-by-vercel-sandbox-is-now-free)
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 
 Full cross-link map for this page: [/docs/sandbox.graph.md](/docs/sandbox.graph.md)
 <!-- /docsgraph:related -->
@@ -61,24 +61,24 @@ Use sandboxes to:
 
 ## Active CPU pricing for agents
 
-Research shows that waiting for model inference accounts for [71% to 98% of runtime](https://arxiv.org/html/2605.26297v1#S5) across five agent benchmarks. With [Active CPU pricing](/docs/sandbox/pricing#active-cpu), Vercel doesn't charge you for CPU while your code waits for model responses or external APIs. You pay only for actively used CPU time.
+In agentic workflows, active CPU time is often dwarfed by time spent waiting on LLM calls and external APIs. With [Active CPU pricing](/docs/sandbox/pricing#active-cpu), Vercel doesn't charge you for CPU while your code waits for those responses. You pay only for actively used CPU time.
 
-The example below uses 10% CPU utilization.
+An idle sandbox keeps CPU charges low because it uses little CPU. Stop a sandbox when work is done to end CPU and memory charges.
 
 ### Example
 
-For a sandbox with **1 vCPU and 2 GB of memory** running for **one hour at 10% CPU utilization**:
+This table shows compute charges for a sandbox with **1 vCPU and 2 GB of memory** running in `iad1` for a full day:
 
-| Resource | Sandbox (Active CPU) | Wall-clock CPU billing |
-| --- | --- | --- |
-| CPU | $0.0128 | $0.1280 |
-| Provisioned memory | $0.0424 | $0.0424 |
-| CPU + memory | $0.0552 | $0.1704 |
+| Sandbox | What the meter reads | Per day | Per 30 days |
+| --- | --- | --- | --- |
+| Idle | 1% of a vCPU busy, 2 GB of memory in use | $1.05 | $31.45 |
+| Busy all day | 1 vCPU busy, 2 GB of memory in use | $4.09 | $122.69 |
+| Stopped | no CPU, no memory | $0.00 | $0.00 |
 
 
-Both columns use the same `iad1` rates to compare billing methods. Wall-clock billing charges for CPU throughout the hour, including time spent waiting. Your CPU usage will vary.
+This example uses current `iad1` rates. Idle assumes 1% CPU utilization. Your utilization will vary.
 
-You still pay for [allocated memory](/docs/sandbox/pricing#provisioned-memory) while the sandbox runs, including time spent waiting. The totals include CPU and memory only. See [pricing](/docs/sandbox/pricing) for other charges and included usage, and [stop your sandbox](/docs/sandbox/sdk-reference#sandbox.stop) when you finish using it.
+The totals include CPU and [allocated memory](/docs/sandbox/pricing#provisioned-memory) only. See [pricing](/docs/sandbox/pricing) for other charges and included usage.
 
 ## Using Vercel Sandbox
 
@@ -87,6 +87,8 @@ The Sandbox SDKs are the recommended way to integrate Vercel Sandbox into your a
 - **[JS SDK Reference](/docs/sandbox/sdk-reference)**: Use `@vercel/sandbox` for JavaScript and TypeScript
 - **[Python SDK Reference](/docs/sandbox/python-sdk-reference)**: Use `vercel.sandbox` from the `vercel` Python package
 - **[CLI](/docs/sandbox/cli-reference)**: Use the `sandbox` CLI for manual testing, agentic workflows, debugging, and one-off operations
+
+For a Python walkthrough, [run untrusted Python code safely with Vercel Sandbox](/kb/guide/python-and-vercel-sandbox). Execute code from a FastAPI app with network restrictions and snapshots for reusable environments.
 
 For end-to-end examples using these interfaces, browse the [Vercel Sandbox
 guides](/kb/vercel-sandbox).
@@ -107,6 +109,18 @@ To learn more on each method, see [Authentication](/docs/sandbox/concepts/authen
 Sandboxes run Linux images, with Ubuntu, Arch Linux, or any other Linux distribution you need. The default image is `vercel/sandbox/universal`, which includes the current Node.js LTS, Python 3.14, coding agents, and common utilities. You can use Vercel's [managed images](/docs/sandbox/concepts/images) or your own custom images stored in [Vercel Container Registry](/docs/container-registry).
 
 For detailed information about the sandbox environment, see [Concepts](/docs/sandbox/concepts).
+
+## Monitor CPU and memory usage
+
+Use the [**Observability** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability\&title=Go+to+Observability) in your dashboard to inspect Sandbox CPU and memory usage. From [**Sandboxes**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsandboxes\&title=Go+to+Sandboxes), open an individual sandbox's detail page to compare its memory usage with its memory limit.
+
+For CPU pressure, use **CPU usage**. Vercel charges for [**Active CPU**](/docs/sandbox/pricing#active-cpu), the time your code actively uses the CPU. Waiting for network requests or model calls doesn't incur CPU charges.
+
+For memory pressure, use **Memory Usage** (`memoryUsedBytes` in the query builder). [Provisioned Memory](/docs/sandbox/pricing#provisioned-memory) measures allocated memory over time for billing. It doesn't measure how much memory your processes use.
+
+### Monitor usage with alerts
+
+Configure [custom monitors](/docs/alerts/configure-alerts#configure-custom-monitors) to check CPU or memory usage periodically and notify you when it exceeds a threshold you set. Create and manage monitors in [**Settings > Alerts**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Falerts). Custom monitors require a Pro or Enterprise plan with [Observability Plus](/docs/observability/observability-plus), and queries incur [data-scanned charges](/docs/observability/observability-plus#pricing).
 
 ## Features
 
@@ -156,4 +170,4 @@ For detailed information about the sandbox environment, see [Concepts](/docs/san
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

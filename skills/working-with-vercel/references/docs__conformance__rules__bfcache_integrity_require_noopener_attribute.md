@@ -12,8 +12,8 @@ related:
 summary: "Requires that links opened with window.open use the noopener attribute to eliminate a source of eviction from the browser's Back-Forward Cache."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/bfcache_integrity_require_noopener_attribute.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "57a00fbdf8d612b2df555be1db2498f9c5c89c817d5e0bf672a0c84187ee4c19"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "9a569443d3c63bb9c5f42448851df68e35344839344ff881403ec5dd0ef0ca37"
 ---
 
 # BFCACHE_INTEGRITY_REQUIRE_NOOPENER_ATTRIBUTE
@@ -62,4 +62,4 @@ window.open('https://example.com', '_top', 'noreferrer');
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

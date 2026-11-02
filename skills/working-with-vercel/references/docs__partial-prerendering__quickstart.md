@@ -12,8 +12,8 @@ related:
 summary: "Set up Partial Prerendering (PPR) in a Next.js App Router project: enable Cache Components, cache a static shell, and stream dynamic content per..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering/quickstart.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "542b1be70ff803afaa94fdc35275abb85c5a6f5f3055a7359988f482bf0a7022"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c3dd3fcbddccba24dec9689f61919741df109e654a3515281fcceaad12785021"
 ---
 
 # Getting started with Partial Prerendering
@@ -27,14 +27,14 @@ This guide walks through setting up [Partial Prerendering (PPR)](/docs/partial-p
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Partial prerendering: Building towards a new default rendering model for web applications](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
-- [Caching](https://nextjs.org/docs/app/getting-started/caching) — Learn how to cache data and UI in Next.js
 - [Implementing Partial Prerendering on your platform](https://nextjs.org/docs/app/guides/ppr-platform-guide) — A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
+- [Caching](https://nextjs.org/docs/app/getting-started/caching) — Learn how to cache data and UI in Next.js
 - [Implementing PPR in an Adapter](https://nextjs.org/docs/app/api-reference/adapters/implementing-ppr-in-an-adapter) — Implement Partial Prerendering support in an adapter using fallback output and cache hooks.
-- [How to Integrate Next.js with Prismic's Headless CMS](https://vercel.com/kb/guide/how-to-integrate-nextjs-with-prismic) — Learn how to connect Next.js with Prismic's CMS and deploy the integrated website to Vercel
 - [How can I prerender my application on Vercel?](https://vercel.com/kb/guide/how-can-i-prerender-my-application-on-vercel) — Learn how to enable prerendering with your frontend framework on Vercel for better performance and SEO.
 - [Incremental Static Regeneration with Cache Components](https://nextjs.org/docs/app/guides/incremental-static-regeneration-cache-components) — Learn how to prerender a subset of dynamic routes, serve App Shells for the rest, and upgrade them after the first visit
-- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [Building public pages](https://nextjs.org/docs/app/guides/public-static-pages) — Learn how to build public, "static" pages that share data across users, such as landing pages, list pages (products, blo
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [Introducing Serverless Pre-Rendering (SPR)](https://vercel.com/blog/serverless-pre-rendering)
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 
@@ -150,4 +150,4 @@ Keep per-request data inside a `<Suspense>` boundary. With Cache Components, rea
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

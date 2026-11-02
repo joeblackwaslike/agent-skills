@@ -15,8 +15,8 @@ related:
 summary: Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "62358b43c37ed02607b2ae700b25978d90b1d5a701ba66aa370917226c51db83"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3a05f878f2466b34d6f0aa9ce8a331fabcf0f95aa260309939fc2cdf1d52833f"
 ---
 
 # AI Gateway Model Allowlist
@@ -34,7 +34,7 @@ The model allowlist lets team owners restrict which models can be used through A
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
-- [AI Gateway Provider Routing and Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/provider-options) — Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
+- [AI Gateway Rate Limits](https://vercel.com/docs/ai-gateway/rate-limits) — Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a r
 - [Update virtual model config](https://vercel.com/docs/rest-api/ai-gateway/update-virtual-model-config) — PATCH /ai-gateway/virtual-model-configs — Update a virtual model config
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md)
@@ -119,4 +119,4 @@ Team members on non-owner roles can view the current configuration but cannot mo
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

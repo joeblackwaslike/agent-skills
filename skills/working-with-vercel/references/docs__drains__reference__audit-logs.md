@@ -16,8 +16,8 @@ related:
 summary: Learn about Audit Log Drains - data formats, fields, and team activity events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/audit-logs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ff8d8421d1939ba28a97655034f5f8611170668be2ed654f19ca7dab1dfc8bbe"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "20adff618879a0af3d495f2f15d62bd5223ede852cbdfb68b7ef99c05a7b4b86"
 ---
 
 # Audit Log Drains Reference
@@ -37,7 +37,7 @@ Audit Log Drains forward team activity events to external endpoints for storage,
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Log Drains Reference](https://vercel.com/docs/drains/reference/logs) — Learn about Log Drains - data formats, sources, environments, and security configuration.
+- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
 - [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
 
 Full cross-link map for this page: [/docs/drains/reference/audit-logs.graph.md](/docs/drains/reference/audit-logs.graph.md)
@@ -196,4 +196,4 @@ For more information on Audit Log Drains and how to use them, check out the foll
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

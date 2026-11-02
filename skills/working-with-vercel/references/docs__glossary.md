@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/fluid-compute
   - /docs/activity-log
+  - /docs/agent-harnesses
   - /docs/ai-gateway
   - /docs/ai-sdk
-  - /docs/ai-gateway/sdks-and-apis/ai-sdk-python
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "05af7ad89d2b67bca9de8dd944a0ccd7b9920559cdf941e49989a49f726384c7"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6e5cde8b754b1c4e02b57a7ac9461d7df837ea4e8f3bce4ba8999531b43d8ffd"
 ---
 
 # Glossary
@@ -38,10 +38,10 @@ A full glossary of terms used in Vercel's products and documentation.
 - [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages)
 - [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md)
 <!-- /docsgraph:related -->
@@ -58,7 +58,15 @@ A chronological record of events on your team, including user actions, [deployme
 
 ### Agent
 
-See [Vercel Agent](#vercel-agent).
+An AI system that uses a model to choose actions, call tools, and use the results to work toward a task. An [agent harness](#agent-harness) manages this execution loop. For Vercel's built-in assistant, see [Vercel Agent](#vercel-agent).
+
+### Agent Browser
+
+A browser automation command-line tool for AI agents. Agents use `agent-browser` to navigate pages, inspect accessibility snapshots, interact with elements, and capture screenshots. See [Agent Browser](https://agent-browser.dev/).
+
+### Agent Harness
+
+The execution loop around an AI model that manages instructions, tool calls, and context. On Vercel, durable harnesses preserve conversation state and resume interrupted turns after a crash, timeout, or redeploy. See [Agent Harnesses](/docs/agent-harnesses).
 
 ### AI Gateway
 
@@ -127,6 +135,10 @@ The multi-layer cache between visitors and your backend. Covers the [CDN](#cdn-c
 ### CDN (Content Delivery Network)
 
 A distributed network of servers that stores static content in multiple locations around the globe to serve content from the closest server to users. See [Vercel's CDN](/docs/cdn).
+
+### Chat SDK
+
+A TypeScript library for building bots that work across chat platforms, including Slack, Discord, and Microsoft Teams. Platform adapters translate messages and interactions into a shared API, so you can reuse bot logic across platforms. See [Chat SDK](/docs/chat-sdk).
 
 ### Checks
 
@@ -262,7 +274,7 @@ Standardized codes for issues you may encounter on Vercel, covering both applica
 
 ### eve
 
-An open-source, filesystem-first framework in beta for building durable backend AI agents that run locally or on Vercel. See [eve](/docs/eve).
+Vercel's open-source framework for building durable AI agents. Define instructions and skills in Markdown, tools in TypeScript, and channels for interacting with users. eve handles durable execution and integrates with AI Gateway, Vercel Sandbox, and Vercel Connect. See [eve](/docs/frameworks/agents/eve).
 
 ### External Origins
 
@@ -281,6 +293,10 @@ Configuration switches that allow you to enable or disable features without depl
 ### Firewall
 
 See [Vercel Firewall](#vercel-firewall).
+
+### Flags SDK
+
+An open-source library for defining and evaluating [feature flags](#feature-flags) in Next.js and SvelteKit. Use flags declared in code with Vercel Flags, another provider, or your own evaluation logic. See [Flags SDK](/docs/flags/flags-sdk-reference).
 
 ### Flat Rate CDN
 
@@ -357,6 +373,12 @@ Third-party services and tools that connect with Vercel to extend functionality,
 ### JA3/JA4 Fingerprints
 
 TLS fingerprinting techniques used by Vercel's security systems to identify and restrict malicious traffic patterns.
+
+## K
+
+### Knowledge Base
+
+Vercel's collection of practical guides, tutorials, and troubleshooting articles for building and running applications on Vercel. Use it for task-specific walkthroughs that complement the product documentation and API references. See the [Knowledge Base](/kb).
 
 ## L
 
@@ -467,6 +489,10 @@ Vercel's account tiers: Hobby (free, for personal projects), Pro (credit-based, 
 ### Points of Presence (PoPs)
 
 Distributed servers in Vercel's CDN that provide the first point of contact for requests. PoPs terminate TCP and route traffic over a private network to the nearest Vercel region, where TLS termination and caching occur.
+
+### Portless
+
+A local development proxy that gives apps stable, named `.localhost` URLs instead of URLs with port numbers. It assigns ports to development servers and supports HTTPS and separate URLs for Git worktrees. See [Portless](https://portless.sh/).
 
 ### Postgres
 
@@ -742,4 +768,4 @@ In JavaScript, an entity in a repository that can be either a single package or 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

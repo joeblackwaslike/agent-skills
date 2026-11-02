@@ -12,8 +12,8 @@ related:
 summary: Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/ecommerce.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "643eeb8ee1808e73725315871b3282c97980f79dcbb4b901db81d58bc4ff61a5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "6dbaf9c12526dcdb77557ab832d5d2eaf62099c42d01d6d6865adb351916dcf8"
 ---
 
 # Vercel Commerce and Payments Integrations
@@ -34,10 +34,10 @@ Add commerce and payments to your Vercel projects. Use the Stripe native integra
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
-- [Vercel CMS Integrations](https://vercel.com/docs/integrations/cms) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Vercel CMS Integrations](https://vercel.com/docs/integrations/cms) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
+- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 
 Full cross-link map for this page: [/docs/integrations/ecommerce.graph.md](/docs/integrations/ecommerce.graph.md)
 <!-- /docsgraph:related -->
@@ -64,4 +64,4 @@ These third-party integrations are available through the [Vercel Marketplace](/m
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Protected Source Maps gates requests for browser source maps behind Vercel Authentication, so only authorized users can view your production source...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/protected-source-maps.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "1e184d05c75709a2865289cee73cea869359696647da0e5ac9160f3b9007523f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "52fd57df41cdb6f6a74624c9d3251e562c6191024fc2c34c06f813f6f08be441"
 ---
 
 # Restrict access to production source maps
@@ -36,10 +36,10 @@ Protected Source Maps gates requests for browser source maps behind [Vercel Auth
 
 - [Protected Source Maps: Ship browser source maps securely](https://vercel.com/changelog/protected-source-maps-ship-browser-source-maps-securely)
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
-- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Restrict access to deployments with Passport](https://vercel.com/docs/passport) — Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
 Full cross-link map for this page: [/docs/deployment-protection/protected-source-maps.graph.md](/docs/deployment-protection/protected-source-maps.graph.md)
@@ -146,4 +146,4 @@ This protection applies to browser source maps generated during a build, such as
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

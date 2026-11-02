@@ -16,8 +16,8 @@ related:
 summary: Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directly from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ddc87c53038b892087392e390b6bdd6efffd5beb752da2caec86e70b4c881995"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "edb28f9aec9b380a0991272a36420d1e48544c18c343204e8a3defbba1530d1b"
 ---
 
 # Vercel Flags
@@ -34,15 +34,15 @@ Vercel Flags is a feature flag provider built into the Vercel platform. Create f
 
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Flags SDK now evaluates flags 10x faster](https://vercel.com/changelog/flags-sdk-now-evaluates-flags-10x-faster)
 - [Inspect feature flag history with Vercel CLI](https://vercel.com/changelog/inspect-feature-flag-history-with-vercel-cli)
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
-- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Vercel Flags now supports JSON values](https://vercel.com/changelog/vercel-flags-now-supports-json-values)
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags.graph.md](/docs/flags/vercel-flags.graph.md)
@@ -76,6 +76,10 @@ Every flag belongs to a Vercel project. Create flags in the [dashboard](/docs/fl
 - **[Core library](/docs/flags/vercel-flags/sdks/core)**: Direct access to the evaluation engine for full control or unsupported frameworks.
 
 Follow the [quickstart guide](/docs/flags/vercel-flags/quickstart) to set up your first flag.
+
+### Project connections
+
+Use [Project Connections](/docs/flags/vercel-flags/project-connections) to read another project's flags within the same team. Your application authenticates with its own project's OIDC token, without copying SDK keys.
 
 ### Entities and targeting
 
@@ -135,4 +139,4 @@ Understand the limits and pricing model of Vercel Flags.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

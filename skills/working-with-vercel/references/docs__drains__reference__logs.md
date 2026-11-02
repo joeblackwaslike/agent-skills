@@ -16,8 +16,8 @@ related:
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "78d14535d2e6e8f4eb33555da930f16e7811b01a7d0d77e4a195f82964d810f3"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "513bdc812cfccbc3a768baddb31ddcd3eb7a58beba44b0515d190c075e7640aa"
 ---
 
 # Log Drains Reference
@@ -35,6 +35,7 @@ Log Drains forward logs from your deployments to external endpoints for storage 
 - [Log Drains](https://vercel.com/blog/log-drains)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
+- [Log Drains are now generally available](https://vercel.com/changelog/log-drains-are-now-generally-available)
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
@@ -139,7 +140,7 @@ When you configure a Log Drain, select which sources to collect in **Additional 
 | `lambda`   | Output from Vercel Functions like [API Routes](/docs/functions)                                                                                                |
 | `edge`     | Output from Vercel Functions using Edge runtime                                                                                                                |
 | `build`    | Output from the [Build Step](/docs/builds/configure-a-build)                                                                                              |
-| `external` | External [rewrites](/docs/project-configuration/vercel-json#rewrites) to a different domain. Includes [cached external rewrites](/docs/routing/rewrites#caching-external-rewrites) |
+| `external` | External [rewrites](/docs/project-configuration/vercel-json#rewrites) to a different domain. Includes [cached external rewrites](/docs/routing/rewrites#caching-rewrites-to-external-origins) |
 | `firewall` | Outputs log data from requests denied by [Vercel Firewall](/docs/vercel-firewall) rules                                                                        |
 | `redirect` | Requests that are redirected by [redirect rules](/docs/project-configuration/vercel-json#redirects)                                                                        |
 
@@ -216,4 +217,4 @@ For more information on Log Drains and how to use them, check out the following 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Find documentation, use the CLI, and share feedback with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c9cadb1ca4093de5cb13d28b77853af9e070a2c46b9340d4a68929247ab03b3c"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b6429d27a49a90fae377759ec6a1c4c39660f3029683c17a8cafcb0e960a1355"
 ---
 
 # Documentation, CLI, and Feedback
@@ -29,11 +29,11 @@ Find Vercel documentation for a task and get guidance on the Vercel CLI commands
 
 - [Send feedback from the Vercel MCP](https://vercel.com/changelog/send-feedback-from-vercel-mcp)
 - [Send feedback from the Vercel CLI](https://vercel.com/changelog/send-feedback-from-vercel-cli)
-- [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Integrations for Comments](https://vercel.com/docs/comments/integrations) — Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack
-- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
+- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/documentation.graph.md](/docs/agent-resources/vercel-mcp/tools/documentation.graph.md)
 <!-- /docsgraph:related -->
@@ -114,4 +114,4 @@ If a request times out or returns an uncertain outcome, it may already have reac
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

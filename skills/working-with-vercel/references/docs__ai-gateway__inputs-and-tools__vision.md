@@ -17,8 +17,8 @@ related:
 summary: Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/vision.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "f69cf7994e1320cff374848de9b7e401bbd650b835a6b7074b7a599cced4f3b9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e86c20a0c62d4371b0a7b023480a06c7b39e4f120b463ab5f305caf82c5ebb4d"
 ---
 
 # AI Gateway Vision and Image Input
@@ -35,7 +35,7 @@ Send an image and a question to a vision-capable model to describe a scene, read
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
-- [AI Gateway Image Generation via Chat Completions](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
+- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools/vision.graph.md](/docs/ai-gateway/inputs-and-tools/vision.graph.md)
 <!-- /docsgraph:related -->
@@ -449,4 +449,4 @@ For request details and failures, inspect [AI Gateway logs](/docs/ai-gateway/obs
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

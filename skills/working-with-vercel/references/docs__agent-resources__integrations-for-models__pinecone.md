@@ -15,8 +15,8 @@ related:
 summary: Learn how to add Pinecone connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/pinecone.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7c504f507b7164249f9917befcaf8bbef6dcf45adb91f89e49fafa4a75dc98a2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1958be7597c65414eac87477c78b0ed5cd9030ada33b7d90627cda0b5bbba98d"
 ---
 
 # Vercel Pinecone Integration
@@ -34,9 +34,9 @@ them in your applications.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Perplexity Integration](https://vercel.com/docs/agent-resources/integrations-for-models/perplexity) — Learn how to add Perplexity connectable account integration with Vercel.
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
+- [Vercel Perplexity Integration](https://vercel.com/docs/agent-resources/integrations-for-models/perplexity) — Learn how to add Perplexity connectable account integration with Vercel.
 - [Vercel Replicate Integration](https://vercel.com/docs/agent-resources/integrations-for-models/replicate) — Learn how to add Replicate connectable account integration with Vercel.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 
@@ -127,4 +127,4 @@ You can deploy a template to Vercel that includes a pre-trained model and a samp
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

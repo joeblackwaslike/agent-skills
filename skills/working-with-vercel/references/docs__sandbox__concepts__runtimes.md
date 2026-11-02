@@ -14,8 +14,8 @@ related:
 summary: Detailed specifications for the Vercel Sandbox environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/runtimes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "86fb4adb1eebc06e8b38bbf4efa2de7de405ab9a9ad2280bdfa466f834ab215a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "d2abcdc5dfb482ffc49d64122d37d0040d222167a481958c19b61c879bf17e7e"
 ---
 
 # Runtimes
@@ -29,13 +29,13 @@ Vercel Sandbox provides a secure, isolated environment for running your code. Th
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Run Cursor Cloud Agents on Vercel Sandbox](https://vercel.com/kb/guide/cursor-vercel-sandbox) — Learn how to run Cursor Cloud Agents on Vercel Sandbox with BYOM worker pools, durable workflows, isolated microVMs, and
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Learn how to run Docker on Vercel by deploying OCI container images as Vercel Functions, storing them in Vercel Containe
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Build an agent with OpenAI Agents API on Vercel](https://vercel.com/kb/guide/openai-agents-api-vercel) — Build and deploy an agent with OpenAI Agents API, Vercel Functions, Queues, and Sandbox for isolated code execution.
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Run Docker containers inside Vercel Sandbox](https://vercel.com/changelog/run-docker-containers-inside-vercel-sandbox)
+- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Vercel Sandbox now runs on Vercel Managed Images](https://vercel.com/changelog/vercel-sandbox-managed-images)
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
-- [Concepts](https://vercel.com/docs/eve/concepts) — Learn how eve agents, sessions, channels, tools, skills, connections, and sandboxes fit together.
+- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga)
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 
@@ -163,4 +163,4 @@ If you run containers inside the sandbox, the proxy CA certificate is not availa
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

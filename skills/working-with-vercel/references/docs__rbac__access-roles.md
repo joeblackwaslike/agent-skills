@@ -9,15 +9,15 @@ prerequisites:
   - /docs/rbac
 related:
   - /docs/rbac/access-roles/team-level-roles
-  - /docs/projects
+  - /docs/project-configuration/project-settings
   - /docs/deployments
   - /docs/integrations
   - /docs/domains
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6ab6a77754b02d108d48554220986e1b246517a442a1c5f69a713505c829308e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "3adcfea2772e2953cfe1d4ca446fe4be80e1e7a3c26e989067945de3a46684bf"
 ---
 
 # Access Roles
@@ -41,7 +41,7 @@ Vercel distinguishes between different roles to help manage team members' access
 - [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers)
 - [Developer role now available for Pro teams](https://vercel.com/changelog/developer-role-now-available-for-pro-teams)
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
-- [Directory Sync](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 
 Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md)
 <!-- /docsgraph:related -->
@@ -87,7 +87,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 
 | About                      | Details                                                                                                                                                                                                                                                                                                                                  |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description**            | The owner role is the highest level of authority within a team, possessing comprehensive access and control over all team and [project settings](/docs/projects#project-settings).                                                                                                                              |
+| **Description**            | The owner role is the highest level of authority within a team, possessing comprehensive access and control over all team and [project settings](/docs/project-configuration/project-settings).                                                                                                                              |
 | **Key Responsibilities**   | - Oversee and manage all team resources and projects <br /> - Modify team settings, including [billing](#billing-role) and [member](#member-role) roles <br /> - Grant or revoke access to team projects and determine project-specific roles for members <br /> - Access and modify all projects, including their settings and deployments |
 | **Access and Permissions** | Owners have unrestricted access to all team functionalities, can modify all settings, and change other members' roles. <br /> Team owners inherently act as [project administrators](#project-administrators) for every project within the team, ensuring that they can manage individual projects' settings and deployments.             |
 
@@ -129,7 +129,7 @@ See the [Team Level Roles Reference](/docs/rbac/access-roles/team-level-roles) f
 | About                      | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description**            | Central to the team's operational functionality, developers ensure a balance between project autonomy and the safeguarding of essential settings.                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Key Responsibilities**   | - Create [deployments](/docs/deployments) and manage projects <br /> - Control [environment variables](/docs/environment-variables), particularly for preview and development environments <br /> - Manage project [domains](/docs/domains) <br /> - Create a [production build](/docs/deployments/environments#production) by committing to the `main` branch of a project. Developers can also create preview branches and [preview deployments](/docs/deployments/environments#preview-environment-pre-production) by committing to any branch other than `main` |
+| **Key Responsibilities**   | - Create [deployments](/docs/deployments) and manage projects <br /> - Control [environment variables](/docs/environment-variables), particularly for preview and development environments <br /> - Manage project [domains](/docs/domains) <br /> - Create a [production build](/docs/deployments/environments#production-environment) by committing to the `main` branch of a project. Developers can also create preview branches and [preview deployments](/docs/deployments/environments#preview-environment-pre-production) by committing to any branch other than `main` |
 | **Access and Permissions** | While developers have significant access to project functionalities, they are restricted from altering production environment variables and team-specific settings. They cannot invite new team members. <br /> Only contributors can be assigned [project level roles](#project-level-roles); developers **cannot**. <br /> Developers can deploy to production by merging to the production branch in Git-based workflows.                                                                                                                                       |
 
 Central to the team's operational functionality, developers ensure a balance between project autonomy and the safeguarding of essential settings.
@@ -285,7 +285,7 @@ Project level roles provide fine-grained control and access to specific projects
 
 | Role                                                 | Description                                                                                                                                                                                                                                                                                        |
 | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Project Administrator**](#project-administrators) | Team owners and members inherently act as project administrators for every project. Project administrators can create production deployments, manage all [project settings](/docs/projects#project-settings), and manage production [environment variables](/docs/environment-variables). |
+| [**Project Administrator**](#project-administrators) | Team owners and members inherently act as project administrators for every project. Project administrators can create production deployments, manage all [project settings](/docs/project-configuration/project-settings), and manage production [environment variables](/docs/environment-variables). |
 | [**Project Developer**](#project-developer)          | Can create production deployments and manage the project's environment settings. Team developers inherently act as project developers.                                                                                                                                                             |
 | [**Project Viewer**](#project-viewer)                | Has read-only access to a specific project. Both team billing and viewer members automatically act as project viewers for every project.                                                                                                                                                           |
 
@@ -298,7 +298,7 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 | About                      | Details                                                                                                                                                                                                                                                 |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description**            | Project administrators hold significant authority at the project level, operating as the project-level counterparts to team [members](#owner-role) and [owners](#owner-role).                                                                           |
-| **Key Responsibilities**   | - Govern [project settings](/docs/projects#project-settings) <br /> - Deploy to all [environments](/docs/deployments/environments) <br /> - Manage all [environment variables](/docs/environment-variables) and oversee [domains](/docs/domains) |
+| **Key Responsibilities**   | - Govern [project settings](/docs/project-configuration/project-settings) <br /> - Deploy to all [environments](/docs/deployments/environments) <br /> - Manage all [environment variables](/docs/environment-variables) and oversee [domains](/docs/domains) |
 | **Access and Permissions** | Their authority doesn't extend across all [projects](/docs/projects) within the team. Project administrators are restricted to the projects they're assigned to.                                                                               |
 
 To assign the project administrator role to a team member, refer to our [Assigning project roles](/docs/rbac/managing-team-members#assigning-project-roles) documentation.
@@ -326,7 +326,7 @@ See the [Project Level Roles Reference](/docs/rbac/access-roles/project-level-ro
 | About                      | Details                                                                                                                                                                                                                                                                    |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description**            | Adopting an observational role within the project scope, they ensure transparency and understanding across projects.                                                                                                                                                       |
-| **Key Responsibilities**   | - View and inspect all [deployments](/docs/deployments) <br /> - Review [project settings](/docs/projects#project-settings) <br /> - Examine [environment variables](/docs/environment-variables) across all environments and view project [domains](/docs/domains) |
+| **Key Responsibilities**   | - View and inspect all [deployments](/docs/deployments) <br /> - Review [project settings](/docs/project-configuration/project-settings) <br /> - Examine [environment variables](/docs/environment-variables) across all environments and view project [domains](/docs/domains) |
 | **Access and Permissions** | They have a broad view but can't actively make changes.                                                                                                                                                                                                                    |
 
 To assign the project viewer role to a team member, refer to our [Assigning project roles](/docs/rbac/managing-team-members#assigning-project-roles) documentation.
@@ -354,4 +354,4 @@ See [project level roles](/docs/rbac/access-roles/project-level-roles) and [team
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "27989362b7930894ae4ec0c627e6bac80a29e6683f266c84ef5c693196bde05a"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "13b8446f8ba898fbda20dd412f8b95a179fecd849f1310ff26ec25b15a73f79f"
 ---
 
 # Managing with the Vercel Toolbar
@@ -73,7 +73,7 @@ To undo the changes back to the original values, open the microfrontends panel a
 
 ## Enable routing debug mode
 
-You can enable [debug headers](/docs/microfrontends/troubleshooting#debug-headers) on microfrontends responses to help [debug issues with routing](/docs/microfrontends/troubleshooting#requests-are-not-routed-to-the-correct-microfrontend-in-production). In the **Microfrontends** panel in the Toolbar, click the **Enable Debug Mode** toggle at the bottom of the panel.
+You can enable [debug headers](/docs/microfrontends/troubleshooting#debug-headers-when-deployed) on microfrontends responses to help [debug issues with routing](/docs/microfrontends/troubleshooting#requests-are-not-routed-to-the-correct-microfrontend-in-production). In the **Microfrontends** panel in the Toolbar, click the **Enable Debug Mode** toggle at the bottom of the panel.
 
 
 ---
@@ -81,4 +81,4 @@ You can enable [debug headers](/docs/microfrontends/troubleshooting#debug-header
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass, or serve stale from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cache-status.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0aceea9363ecd5777993fd0117374c271b2d196d26e6279142b443172449a145"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "4092bc8ce813d9ff93f5c08806f42b4f388118bec636b928519daf04665d2faa"
 ---
 
 # Cache Status and Reasons
@@ -36,7 +36,9 @@ Vercel records how each cacheable request resolves as a cache **status**, and wh
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
-- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/caching/cache-status.graph.md](/docs/caching/cache-status.graph.md)
 <!-- /docsgraph:related -->
@@ -162,4 +164,4 @@ This reason appears when a [cache tag](/docs/caching/cdn-cache/purge) deletion t
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

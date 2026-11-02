@@ -16,8 +16,8 @@ related:
 summary: Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibility, Git Fork Protection, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/security-settings.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6089ed450d2331601c1b3a7400c246fbcccc4a3321c6c50ca41bae951e6d6ffa"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bc2f69e1ac0d22eb266f160e11c895ee45b99c7a336aa4d2ea3e75ec2f563234"
 ---
 
 # Security settings
@@ -102,4 +102,4 @@ This section also provides information on the recently deleted deployments
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

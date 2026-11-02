@@ -13,8 +13,8 @@ related:
 summary: Use get_active_attack_status with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/get_active_attack_status.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "45bbb6cbd174badb6342f53dfaee116490e7a2a1a6cf576edb1cfa4dbcf7be20"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "77bb4d2ba8c7895713c6f22d25cd257c2a3efa30d6c2f4fb54cb026bf16ecd2d"
 ---
 
 # get_active_attack_status
@@ -30,8 +30,8 @@ Read active attack data.
 - [Read active attack data](https://vercel.com/docs/rest-api/security/read-active-attack-data) — GET /v1/security/firewall/attack-status — Retrieve active attack data within the last N days \\(default: 1 day\\)
 - [update_attack_challenge_mode](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/update_attack_challenge_mode) — Use update_attack_challenge_mode with Vercel MCP.
 - [Update Attack Challenge mode](https://vercel.com/docs/rest-api/security/update-attack-challenge-mode) — POST /v1/security/attack-mode — Update the setting for determining if the project has Attack Challenge mode enabled.
-- [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.
 - [get_remote_cache_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/get_remote_cache_status) — Use get_remote_cache_status with Vercel MCP.
+- [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firewall/get_active_attack_status.graph.md](/docs/agent-resources/vercel-mcp/tools/firewall/get_active_attack_status.graph.md)
 <!-- /docsgraph:related -->
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firew
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -16,8 +16,8 @@ related:
 summary: Look up an AI Gateway generation by ID to inspect its provider, latency, token usage, cost, and finish reason, or check your credit balance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/usage.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "9794d7dc1f9b90f9b86880fbdcd157268cc05702975a0d613a3f6e47ed2139f0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "35fb3ee6ac277599c5b209d64017baee7cd824a35082c570c168debedacf2578"
 ---
 
 # AI Gateway Generation Lookup and Usage API
@@ -31,12 +31,13 @@ AI Gateway records every generation it serves. Look up a generation by ID to ins
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs)
+- [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend)
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [AI Gateway Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability) — Monitor AI Gateway requests in the Vercel dashboard. Inspect token usage, latency, spend, and logs at team, project, and
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/usage.graph.md](/docs/ai-gateway/observability-and-spend/usage.graph.md)
 <!-- /docsgraph:related -->
@@ -138,4 +139,4 @@ The AI SDK maps the common generation fields to camelCase. Use the [REST respons
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

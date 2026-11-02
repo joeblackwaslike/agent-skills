@@ -16,8 +16,8 @@ related:
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "02d7db43ef14240f44e38dcddb9c1cd8e69ae7532929edff271d6e3f41ce5546"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "40947f5bd3446a02e8f4466cb528a83e2a04059ee5cd0ac1167816d89c0972e7"
 ---
 
 # Secure Compute
@@ -255,4 +255,4 @@ The maximum number of VPC peering connections that can be established per networ
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

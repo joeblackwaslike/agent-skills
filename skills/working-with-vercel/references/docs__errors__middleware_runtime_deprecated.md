@@ -13,8 +13,8 @@ related:
 summary: A middleware is using a deprecated runtime.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/middleware_runtime_deprecated.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ee572dfd00d3190097aae0d87d1216ee338a4ef5bbd89fb392df12cf28867969"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "13022c139586cc3f6a03ecb5cb3c6332f7d7f62f27090b7aef65d11ee74076f5"
 ---
 
 # MIDDLEWARE_RUNTIME_DEPRECATED
@@ -41,4 +41,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

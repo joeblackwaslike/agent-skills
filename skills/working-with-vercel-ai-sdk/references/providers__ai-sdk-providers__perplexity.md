@@ -4,8 +4,8 @@ description: Learn how to use Perplexity with AI Gateway and the direct provider
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "d6404d743d8851b10b86dac332e785c475fb9ea2893ad3bc82d4ca6ec436975e"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "cad7909c1cb222a3c8a023c8ac7ead25f86f3073bbb56928216c25c4e47eaae9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -95,10 +95,13 @@ You can use the following optional settings to customize the Perplexity provider
   Use a different URL prefix for API calls.
   The default prefix is `https://api.perplexity.ai`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key that is being sent using the `Authorization` header. It defaults to
   the `PERPLEXITY_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **headers** *Record\<string,string>*
 
@@ -248,6 +251,7 @@ console.log(result.providerMetadata);
 //   perplexity: {
 //     usage: { citationTokens: null, numSearchQueries: 1 },
 //     images: null,
+//     searchQueries: ['latest quantum computing developments'],
 //     cost: { totalCost: 0.006, currency: 'USD', ... },
 //     toolCalls: { search_web: { invocation: 1 } },
 //   },
@@ -314,6 +318,8 @@ The response metadata includes:
 
 - `usage`: `citationTokens` (always `null` for Agent API responses) and the
   number of search queries
+- `searchQueries`: The web search queries Perplexity ran, in order and without
+  duplicates, or `null` when no web search ran
 - `cost`: Token, tool, and total costs returned by Perplexity
 - `toolCalls`: Invocation counts grouped by native tool
 - `images`: Always `null`; the Agent API does not return Sonar image results

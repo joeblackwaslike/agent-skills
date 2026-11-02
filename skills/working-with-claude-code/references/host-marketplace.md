@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/host-marketplace.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "8c157a1f6d6c8acd86737fe163762f3bc2575da5f3fcbc5f7e0aa7ebd6a876bc"
+fetched_at: "2026-11-02T12:02:15.109Z"
+sha256: "9e64737ef4095d9ebd0d3809853efd653faa5334000833a9a277c62a6abb0e2e"
 ---
 
 > ## Documentation Index
@@ -409,7 +409,7 @@ An entry can declare dependencies on other plugins.
 
 For version ranges, the `<plugin>--v<version>` git-tag convention they resolve against, and cross-marketplace trust, see [Plugin dependencies](https://code.claude.com/docs/en/plugins/dependencies.md).
 
-To have Claude Code suggest a plugin when a project matches it, add a `relevance` block to the entry with the signals that identify the project. Users see suggestions from your marketplace only when an admin lists it in `pluginSuggestionMarketplaces`. For the signals and the enablement step, see [Plugin relevance](https://code.claude.com/docs/en/plugins/relevance.md).
+To have Claude Code suggest a plugin when a project matches it, add a `relevance` block to the entry with the signals that identify the project. Users see these suggestions only when an admin lists your marketplace in `pluginSuggestionMarketplaces`. For the signals and the enablement step, see [Plugin relevance](https://code.claude.com/docs/en/plugins/relevance.md).
 
 ## Work around what a marketplace can't do
 

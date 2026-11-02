@@ -15,8 +15,8 @@ related:
 summary: Learn how to add LMNT connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/lmnt.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "85dc09045ff667614dc7a58e01ba5a2639c6ef81e5f30379b60aa6870bd0de5e"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "fd1d92554ba0c6e902cf1a6b79c792b108c5efc918b7de2be8820b14c03442d2"
 ---
 
 # Vercel LMNT Integration
@@ -106,4 +106,4 @@ To follow this guide, you'll need the following:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

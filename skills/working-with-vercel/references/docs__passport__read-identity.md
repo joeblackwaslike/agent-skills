@@ -9,13 +9,14 @@ prerequisites:
   - /docs/passport
 related:
   - /docs/passport/token-claims
+  - /docs/chat-sdk/integrations/passport
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
   - /docs/passport/additional-identity-scopes
 summary: Read verified Passport identity in server-side code and apply application-level authorization.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/read-identity.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "536c09959c7357ed5a2aaa8758d909679d17ee6924fb147ef4c855c5dd790943"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "76d7f0e5c9bf2ef3a4dd229e1c633cf4fd9b740d4a1379011445e191a0fa9905"
 ---
 
 # Read Passport identity in your application
@@ -36,6 +37,8 @@ After Passport authenticates a visitor, Vercel stores a signed Passport session 
 - [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
+- [Flue with Vercel](https://vercel.com/docs/frameworks/agents/flue) — Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.
 
 Full cross-link map for this page: [/docs/passport/read-identity.graph.md](/docs/passport/read-identity.graph.md)
 <!-- /docsgraph:related -->
@@ -85,6 +88,8 @@ export async function GET() {
 ```
 
 Use `identity.subject` as the visitor identifier for a single Passport issuer. If your application accepts tokens from more than one Passport team, persist `identity.payload.iss` with `identity.subject`. Do not parse the subject. `identity.externalSubject` identifies the visitor in the configured identity provider. A visitor who signs in through a different Connector application or has a different external subject has a different Passport subject. Treat `identity.email` and `identity.name` as optional because Passport only includes profile fields returned by your identity provider.
+
+For a browser chatbot, use the verified issuer and subject to associate conversation history with the visitor. See [Chat SDK with Vercel Passport](/docs/chat-sdk/integrations/passport) for a Web Adapter example that stores and retrieves per-user history.
 
 ## Develop locally
 
@@ -180,4 +185,4 @@ Treat the request as unauthenticated. Confirm that application code reads the Ve
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

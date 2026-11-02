@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4504dbe9603d4e44e5b1150c247ae9258dee1e81660ee65e334b274d871e732f"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a2082d0e8a7c171581fad26fcec7e55462de34b82764f4370aaf99ef8febb38d"
 ---
 
 # Vercel CDN Cache
@@ -36,12 +36,12 @@ Vercel's CDN caches your content (including pages, API responses, and static ass
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
+- [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
+- [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
 - [use cache: remote](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote) — Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
 - [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components) — Learn how to migrate from route segment configs to Cache Components in Next.js.
-- [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
 - [cacheLife](https://nextjs.org/docs/app/api-reference/functions/cacheLife) — Learn how to use the cacheLife function to set the cache expiration time for a cached function or component.
-- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 
 Full cross-link map for this page: [/docs/caching/cdn-cache.graph.md](/docs/caching/cdn-cache.graph.md)
 <!-- /docsgraph:related -->
@@ -847,4 +847,4 @@ Vercel doesn't currently support using `proxy-revalidate` for server-side cachin
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

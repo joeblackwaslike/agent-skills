@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "a4721edf3760fa5900a05433b842c855a8b9028211f7989b8cd4389dd2d719c6"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "bcfd327d6bdd4423bc63cee3ca3505490e8fddabf0f7b334d6a0b95fdf0472d8"
 ---
 
 # Vercel Primitives
@@ -35,6 +35,7 @@ These primitives are the "building blocks" that make up a Vercel Deployment.
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
 - [Build your own web framework](https://vercel.com/blog/build-your-own-web-framework)
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
@@ -406,4 +407,4 @@ The following example shows a directory structure where the Prerender will be ac
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

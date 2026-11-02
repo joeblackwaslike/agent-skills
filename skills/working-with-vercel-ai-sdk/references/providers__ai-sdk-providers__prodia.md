@@ -4,8 +4,8 @@ description: Learn how to use Prodia with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/prodia.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "ca80b640fcf5ca7b57ef81ec0cbeb26abb67ed9e97a254df9455e42da737a796"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "1f55f71e7a70ef0e9a8a408443c53dd8f389cf4f15682aa73f3bee5d9c40cc3a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -92,7 +92,11 @@ You can use the following optional settings to customize the Prodia provider ins
   Use a different URL prefix for API calls.
   The default prefix is `https://inference.prodia.com/v2`.
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
 
   API key that is being sent using the `Authorization` header as a Bearer token.
   It defaults to the `PRODIA_TOKEN` environment variable.

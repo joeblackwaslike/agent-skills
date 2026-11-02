@@ -13,8 +13,8 @@ related:
 summary: Use edit_project_env with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/edit_project_env.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "0ea9f3f70d5d1892ab7b2de7c73c835ec235c658bac07a4f9deb50613a366e7b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "23675d3d6d80b91e801c0b70e413fae64df40816453d0f8f1da7eee5dd34407c"
 ---
 
 # edit_project_env
@@ -52,4 +52,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/envir
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

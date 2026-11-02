@@ -13,8 +13,8 @@ related:
 summary: Use get_tld_price with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_tld_price.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "758a987f51074f81d82aa76225da86a5cb370f0ad4b2e9a5ecd8536913566866"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "1aee81ec4d952185573809fcf25012a23749a5ab1444fec806ebe447813046d2"
 ---
 
 # get_tld_price
@@ -50,4 +50,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

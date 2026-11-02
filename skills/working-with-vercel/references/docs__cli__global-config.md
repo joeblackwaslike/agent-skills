@@ -16,8 +16,8 @@ related:
 summary: "Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "64117d73bc06d73ab522b059c27e7c9c13037e4e5db55412f8870625ec95aee9"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "e7bb92eea99b320e08b436f44a7cb85181e1492a845cfb508bf7144f3d7a701b"
 ---
 
 # vercel global-config
@@ -329,4 +329,4 @@ For more information on global options and their usage, refer to the [options se
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

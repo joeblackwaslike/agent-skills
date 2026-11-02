@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "dd2664ca46af4038a52da519f9f76fc2bef549d37efb0c60b6c78af7e0184cb0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "05c737ee0eb602ec0715e97edab45b47f08f4d357fcbf1cbed499bd1e41c0b23"
 ---
 
 # Caching
@@ -31,7 +31,7 @@ Manage cached build artifacts and check Remote Caching status for your account o
 - [Download a cache artifact](https://vercel.com/docs/rest-api/artifacts/download-a-cache-artifact) — GET /v8/artifacts/{hash} — Downloads a cache artifact indentified by its \\`hash\\` specified on the request path. The art
 - [Check if a cache artifact exists](https://vercel.com/docs/rest-api/artifacts/check-if-a-cache-artifact-exists) — HEAD /v8/artifacts/{hash} — Check that a cache artifact with the given \\`hash\\` exists. This request returns response he
 - [Record an artifacts cache usage event](https://vercel.com/docs/rest-api/artifacts/record-an-artifacts-cache-usage-event) — POST /v8/artifacts/events — Records an artifacts cache usage event. The body of this request is an array of cache usage
-- [Delete all cache artifacts](https://vercel.com/docs/rest-api/artifacts/delete-all-cache-artifacts) — DELETE /v8/artifacts — Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache.
+- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/caching.graph.md](/docs/agent-resources/vercel-mcp/tools/caching.graph.md)
 <!-- /docsgraph:related -->
@@ -125,4 +125,4 @@ Upload a cache artifact.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

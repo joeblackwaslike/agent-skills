@@ -9,7 +9,7 @@ prerequisites:
   - /docs/connect/frameworks
   - /docs/connect
 related:
-  - /docs/connect/legal
+  - /docs/frameworks/agents/eve
   - /docs/connect/concepts/authentication
   - /docs/connect/concepts/triggers
   - /docs/cli/connect
@@ -17,16 +17,16 @@ related:
 summary: Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, and authenticate inbound...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/eve.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "55c212eef2f17c34da6b89042d861f67a2178f50ef8e699641b6cdf9a03a4e39"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "0b2a45f588af8014604703784a3f4d7c4b04fa2b26ecd0b044590264ee071fbd"
 ---
 
 # eve with Vercel Connect
 
-> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/docs/connect/legal)
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/legal/service-terms#connect)
 
 The `@vercel/connect/eve` entrypoint adapts Vercel Connect credentials to
-eve's connection and channel APIs. It uses your deployment's
+[eve's](/docs/frameworks/agents/eve) connection and channel APIs. It uses your deployment's
 [Vercel OIDC token](/docs/connect/concepts/authentication) to request provider
 tokens, so your app doesn't store provider refresh tokens.
 
@@ -39,13 +39,12 @@ tokens, so your app doesn't store provider refresh tokens.
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [eve](https://vercel.com/docs/eve) — Build and deploy durable backend AI agents with eve, an open-source, filesystem-first framework.
 
 Full cross-link map for this page: [/docs/connect/frameworks/eve.graph.md](/docs/connect/frameworks/eve.graph.md)
 <!-- /docsgraph:related -->
@@ -294,7 +293,7 @@ derive this principal from the sender. For a web app, configure the eve
 channel's route authentication to return `principalType: 'user'`. Without an
 authenticated user principal, the first user-scoped connection call fails with
 `reason: 'principal_required'`. See
-[eve authentication](/docs/eve/authentication)
+[eve authentication](https://eve.dev/docs/guides/auth-and-route-protection)
 for route authentication options.
 
 Pass `connect()` directly to `defineMcpClientConnection`. The string can be a
@@ -513,6 +512,13 @@ Use `audiences` for exact audience values, or set `projectId` and
 `tenantIds`, `installationIds`, and additional claims. Invalid, missing, or
 out-of-policy bearer tokens return no authenticated session.
 
+## Start with a template
+
+Deploy an eve [software factory](/templates/eve/eve-software-factory),
+[agent with Python tools](/templates/eve/eve-agent-with-python), or
+[marketing team](/templates/eve/eve-marketing-team) on Vercel. Use the integration
+above to manage access to third-party services with Vercel Connect:
+
 ## Next steps
 
 - [Connect quickstart](/docs/connect/quickstart): Create and link a connector.
@@ -527,4 +533,4 @@ out-of-policy bearer tokens return no authenticated session.
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

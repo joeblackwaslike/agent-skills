@@ -12,8 +12,8 @@ related:
 summary: Forward a Passport visitor identity to another backend that you operate.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/forward-identity.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "2a9654acc4c8d6f6b351144f4dd7de217307a74031328f3cc2787005d788de51"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "a9ff701bfed55a48f227e5d5745204023532a0cb6d2fd92cc8a93e57e45da9f7"
 ---
 
 # Forward Passport identity to another backend
@@ -34,6 +34,7 @@ A Passport-protected Vercel app can call another backend with the Passport token
 - [Use Vercel Passport with Node.js and Python backends](https://vercel.com/kb/guide/vercel-passport-backend-frameworks) — Secure internal apps and verify a visitor's identity with Vercel Passport in your backend, with examples for Express, Ho
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+- [Flue with Vercel](https://vercel.com/docs/frameworks/agents/flue) — Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.
 
 Full cross-link map for this page: [/docs/passport/forward-identity.graph.md](/docs/passport/forward-identity.graph.md)
 <!-- /docsgraph:related -->
@@ -73,4 +74,4 @@ Only forward Passport tokens over HTTPS to backends that you operate. A Passport
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -13,8 +13,8 @@ related:
 summary: Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/ruby.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "6363720506b027c001dbdb20ddf904d70e4e981306979adde99ecfbc70e6b5c2"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "c66704b3251906ab6930d18dcdfbc0c3e9173917a89ae71435fce21d0e45bbab"
 ---
 
 # Using the Ruby Runtime with Vercel Functions
@@ -100,4 +100,4 @@ This runtime supports installing dependencies defined in the `Gemfile`. Alternat
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

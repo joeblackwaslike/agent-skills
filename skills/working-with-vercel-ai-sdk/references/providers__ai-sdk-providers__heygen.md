@@ -4,8 +4,8 @@ description: Learn how to use HeyGen with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/heygen"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/heygen.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "e4d923afc0629e2f8949b897fcbd9518facf9e268554ba1f9aa195124d35dea1"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "b0951ae6dd5e1284fe809dae86774b6763e4520ce10da64ecf9527c2e3f79659"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -88,9 +88,16 @@ const heygen = createHeyGen({
 
 The following settings are optional:
 
-- **apiKey** *string*: The key sent in the `x-api-key` header. Defaults to the `HEYGEN_API_KEY` environment variable.
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*: The key sent in the `x-api-key` header. Defaults to the `HEYGEN_API_KEY` environment variable.
+
+  Pass a function to resolve credentials before each request, including when keys
+  rotate. The function can return a string or a promise. Credential caching and
+  refresh are managed by the function.
+
 - **baseURL** *string*: The API URL prefix. Defaults to `https://api.heygen.com`.
+
 - **headers** *Record\<string, string>*: Additional request headers.
+
 - **fetch** *typeof fetch*: A custom fetch implementation.
 
 ## Video Models
@@ -150,7 +157,7 @@ const { videos } = await generateVideo({
 
 References are grouped by media type, preserving order within each group. Address them in the prompt as `<Picture 1>`, `<Video 1>`, and `<Audio 1>`. Provider-option references are appended after standard references of the same kind.
 
-Reference-to-video requires at least one image or video. Audio-only conditioning is not supported. HeyGen accepts up to 9 image references, 3 video references, and 3 audio references, with a combined maximum of 12. Only the first 5 seconds of each reference video are used.
+Reference-to-video requires at least one image or video. Audio-only conditioning is not supported. The adapter accepts up to 9 image references, 3 video references, and 3 audio references, with a combined maximum of 12. Reference videos share a 15-second input budget across the request. Footage within that budget is used in full; longer references are allocated and trimmed by HeyGen. See the [reference-video rules](https://developers.heygen.com/docs/models/heygen-video#references-and-prompt-labels).
 
 ### Provider Options
 
@@ -174,7 +181,7 @@ const { videos } = await generateVideo({
 
 - **mode** *'text\_to\_video' | 'image\_to\_video' | 'reference\_to\_video'*: Inferred from the inputs when omitted. Explicit modes must match the supplied inputs. First-frame images cannot be combined with references.
 - **resolution** *'480p' | '768p' | '1080p' | '2k'*: Output size class. Defaults to `768p`. Takes precedence over the standard `resolution` option.
-- **promptEnhancement** *'turbo' | 'quality' | 'disabled'*: HeyGen's prompt enhancement setting. The API defaults to `turbo`.
+- **promptEnhancement** *'turbo' | 'quality' | 'ultraquality' | 'disabled'*: HeyGen's prompt enhancement setting. The API defaults to `quality`.
 - **image** *HeyGenVideoAsset*: First-frame input, including an existing asset ID. Cannot be combined with a standard image or `frameImages`.
 - **referenceImages** *HeyGenVideoAsset\[]*: Additional image references.
 - **referenceVideos** *HeyGenVideoAsset\[]*: Additional video references.
@@ -208,7 +215,7 @@ Text-to-video defaults to `16:9`. Reference-to-video defaults to `adaptive`, inh
 ### Other Constraints
 
 - Prompts must contain between 1 and 32,000 characters.
-- Duration must be an integer from 5 to 15 seconds; the default is 5.
+- The SDK accepts positive whole-second durations and forwards them unchanged. HeyGen currently supports 5–30 seconds for text-to-video and image-to-video with `quality` or `turbo` prompt enhancement, and 5–15 seconds for reference-to-video or `ultraquality`/`disabled` enhancement. The default duration is 5. The API enforces these limits; see [duration limits](https://developers.heygen.com/docs/models/heygen-video#duration-limits).
 - Seeds must be unsigned 32-bit integers.
 - One video is generated per provider call.
 - Output is MP4 at 24 fps with generated audio. Unsupported `fps` values and `generateAudio: false` produce warnings.

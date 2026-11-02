@@ -13,8 +13,8 @@ related:
 summary: The Sandbox was stopped and is no longer reachable. This is a platform error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/sandbox_stopped.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "78bf6add89aab2ced773507327d41cd885b276447cd2dae202181f4278c059f0"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "cb2295873b010592123615b16c8de1e1821903006f5cb46e398d4db6a2482b21"
 ---
 
 # SANDBOX_STOPPED
@@ -39,4 +39,4 @@ To troubleshoot this error, follow these steps:
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

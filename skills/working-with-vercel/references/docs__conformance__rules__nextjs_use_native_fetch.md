@@ -12,8 +12,8 @@ related:
 summary: Requires using native `fetch` which Next.js provides, removing the need for third-party fetch libraries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_native_fetch.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "4c6353eebcd2c497e7aa150f2a2870319fd1e3251df5355160cead8ac34aa217"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "7438601017056a099d606cb1ec1dd8d69791b07400f4d49a49cd6c4b5a5d012b"
 ---
 
 # NEXTJS_USE_NATIVE_FETCH
@@ -68,4 +68,4 @@ Replace the third-party fetch library with the native `fetch` API Next.js provid
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

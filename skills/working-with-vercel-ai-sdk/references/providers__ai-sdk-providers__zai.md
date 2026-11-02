@@ -4,8 +4,8 @@ description: Learn how to use Z.AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/zai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/zai.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "f0c81bb6856b068763df50f0e38b9b247d0a2c8f32ce645c18a2b7055c663a69"
+fetched_at: "2026-11-02T12:06:29.726Z"
+sha256: "604f9ccb211d29d89209b3b6e2932a85f78e7b725b40cb3bd7e3ed742222926c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -86,9 +86,12 @@ const zai = createZai({
 
 The provider accepts these optional settings:
 
-- **apiKey** *string*
+- **apiKey** *string | PromiseLike\<string> | (() => string | PromiseLike\<string>)*
 
   API key sent in the `Authorization` header. It defaults to the `ZAI_API_KEY` environment variable.
+
+  A function is called before each request and may return a promise. Use it to
+  supply refreshed credentials; a promise value resolves to the same key each time.
 
 - **baseURL** *string*
 

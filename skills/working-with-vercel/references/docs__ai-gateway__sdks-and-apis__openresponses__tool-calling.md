@@ -13,8 +13,8 @@ related:
 summary: Define tools the model can call using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7b90ae7ce774149a8283e49c7de87d67965ac22a9d2cf736647d8b4fcce0fe72"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "caa518b63d4bcc4d89247f6b7581ff48bcf0db4ca63415b1daf04168bfcde5bb"
 ---
 
 # OpenResponses Tool Calling with AI Gateway
@@ -29,10 +29,10 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) supports t
 
 - [OpenAI Responses Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling) — Define tools the model can call with the OpenAI Responses API through AI Gateway.
 - [Call Tools](https://ai-sdk.dev/cookbook/node/call-tools) — Learn how to call tools using the AI SDK and Node
-- [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool) — Learn what tools are, how tool calling works, and how you can use them to build agents.
-- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [Anthropic Messages Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling) — Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
+- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [OpenAI Chat Completions Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling) — Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
+- [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling.graph.md)
 <!-- /docsgraph:related -->
@@ -187,4 +187,4 @@ When the model decides to call a tool, the response includes a `function_call` o
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

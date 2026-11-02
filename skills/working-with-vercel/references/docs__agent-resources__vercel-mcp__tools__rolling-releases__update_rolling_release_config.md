@@ -13,8 +13,8 @@ related:
 summary: Use update_rolling_release_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "ef2a543ba58586817fecf314c99f4a1a2b1bbbb53c29cd53f1d75a28e1b1a31b"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "03b95b96dfac684bf039d4ad1f2eff14f9568d381cea4351b5c64131106bf2ff"
 ---
 
 # update_rolling_release_config
@@ -30,8 +30,8 @@ Update the rolling release settings for the project.
 - [get_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config) — Use get_rolling_release_config with Vercel MCP.
 - [complete_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/complete_rolling_release) — Use complete_rolling_release with Vercel MCP.
 - [start_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/start_rolling_release) — Use start_rolling_release with Vercel MCP.
-- [approve_rolling_release_stage](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/approve_rolling_release_stage) — Use approve_rolling_release_stage with Vercel MCP.
 - [Update the rolling release settings for the project](https://vercel.com/docs/rest-api/rolling-release/update-the-rolling-release-settings-for-the-project) — PATCH /v1/projects/{idOrName}/rolling-release/config — Update \\(or disable\\) Rolling Releases for a project. When disabl
+- [approve_rolling_release_stage](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/approve_rolling_release_stage) — Use approve_rolling_release_stage with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config.graph.md)
 <!-- /docsgraph:related -->
@@ -51,4 +51,4 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

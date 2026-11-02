@@ -12,8 +12,8 @@ related:
 summary: This page covers frequently asked questions around taxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/taxes.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "8f7eef4398c6b53516371c2669447ab935443efdded25086ba91e7026da468b5"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "04cb5bbfed10359bf374ae8de9ba099537a2f9887340de48231f1ec2f9dd6948"
 ---
 
 # Taxes
@@ -30,10 +30,11 @@ All prices shown are in USD and exclude value-added tax (VAT), goods and service
 
 - [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
-- [Regional Pricing](https://vercel.com/docs/pricing/regional-pricing) — Vercel pricing for Managed Infrastructure resources in different regions.
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [Regional Pricing](https://vercel.com/docs/pricing/regional-pricing) — Vercel pricing for Managed Infrastructure resources in different regions.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
 Full cross-link map for this page: [/docs/pricing/taxes.graph.md](/docs/pricing/taxes.graph.md)
@@ -106,4 +107,4 @@ For questions about tax collection or US sales-tax exemptions, contact <tax@verc
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

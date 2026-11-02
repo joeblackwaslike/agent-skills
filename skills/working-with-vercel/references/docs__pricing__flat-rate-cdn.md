@@ -15,8 +15,8 @@ related:
 summary: Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/flat-rate-cdn.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "c4fa6b09575420c8fa8e3a645d810b2ec6af34feb2a2c9e0d9676d024758057d"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "b66c4a885c8ea52fdb356b049f1481e86f29e011dd1b030f3baa9b3653cebc07"
 ---
 
 # Flat Rate CDN
@@ -149,4 +149,4 @@ If your usage patterns fall within any of the above categories, as determined by
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

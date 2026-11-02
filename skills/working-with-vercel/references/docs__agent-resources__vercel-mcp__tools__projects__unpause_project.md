@@ -13,8 +13,8 @@ related:
 summary: Use unpause_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/unpause_project.md"
-fetched_at: "2026-10-26T09:55:32.834Z"
-sha256: "7e331c40dd0a8e69e7a96cdfb4c491c7f89479e090953b3a8f6bc69fcb5f3613"
+fetched_at: "2026-11-02T12:08:37.581Z"
+sha256: "8aa7f95217bfac12f613864d941e0db73754dc0efb06029cf2039ee9461b2f32"
 ---
 
 # unpause_project
@@ -60,4 +60,4 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 [View full sitemap](/docs/sitemap)
 
 
-If you find anything wrong or missing or can't find something, submit feedback by reading https://vercel.com/feedback.md to improve Vercel.
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.
