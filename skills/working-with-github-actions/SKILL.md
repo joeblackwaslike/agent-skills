@@ -61,6 +61,7 @@ Real-world, copy-paste patterns:
 | Deploy to AWS via OIDC (no stored secrets) | `references/cookbook-deploy-aws-oidc.md` |
 | Reusable workflow: call-and-share pattern | `references/cookbook-reusable-workflow.md` |
 | Monorepo: path-filtered jobs | `references/cookbook-monorepo-path-filter.md` |
+| Make CI faster for agent loops (audit, caches, skip logic, pre-push, TS 7/Oxlint) | `references/cookbook-fast-ci-for-agents.md` |
 
 ## Key Concepts
 
@@ -122,6 +123,11 @@ concurrency:
 ```
 
 Use `cancel-in-progress: false` for release/deploy jobs where partial runs are dangerous.
+On PR workflows, `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` cancels stale PR runs but never `main`.
+
+### Speed
+
+Before tuning a slow pipeline, measure it with `scripts/ci-audit.sh` (per-job queue, setup, and run medians), then follow `references/cookbook-fast-ci-for-agents.md`.
 
 ## Cross-References
 
