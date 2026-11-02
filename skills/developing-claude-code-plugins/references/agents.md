@@ -149,7 +149,7 @@ Choose a model to match the job. `haiku` for fast read-only work, `sonnet` for m
 
 ## Files Claude Code skips
 
-A file in `agents/` is skipped, with no error in the session, when:
+Claude Code skips a project, user, or managed agent file, with no error in the session, when:
 
 - it has no `name` (treated as documentation)
 - the opening `---` is not on line 1
@@ -157,8 +157,12 @@ A file in `agents/` is skipped, with no error in the session, when:
 - it has a `name` but no `description`
 - the YAML does not parse
 
-A plugin subagent with no `name` or unparseable frontmatter still loads, under its filename.
-Run `claude --debug` to see the reason in `~/.claude/debug/<session-id>.txt`.
+A plugin agent is not skipped under these conditions: Claude Code still loads it, naming it
+after the file (`agents/reviewer.md` in plugin `my-plugin` loads as `my-plugin:reviewer`), and
+for unparseable frontmatter also ignoring every field and using `Agent from my-plugin plugin`
+as its description.
+
+Run `claude --debug` to see the skip reason in `~/.claude/debug/<session-id>.txt`.
 
 ## Testing
 
