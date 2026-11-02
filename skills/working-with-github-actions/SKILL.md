@@ -61,6 +61,7 @@ Real-world, copy-paste patterns:
 | Deploy to AWS via OIDC (no stored secrets) | `references/cookbook-deploy-aws-oidc.md` |
 | Reusable workflow: call-and-share pattern | `references/cookbook-reusable-workflow.md` |
 | Monorepo: path-filtered jobs | `references/cookbook-monorepo-path-filter.md` |
+| Make CI faster for agent loops (audit, caches, skip logic, pre-push, TS 7/Oxlint) | `references/cookbook-fast-ci-for-agents.md` |
 
 ## Key Concepts
 
@@ -122,6 +123,17 @@ concurrency:
 ```
 
 Use `cancel-in-progress: false` for release/deploy jobs where partial runs are dangerous.
+On PR workflows, `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` cancels stale PR runs but never `main`. GitHub keeps only one pending run per concurrency group, so with several quick pushes to `main` the middle runs are still dropped; if every commit on `main` must run, give `main` its own group per SHA so pushes stop sharing a group instead of relying on `cancel-in-progress`:
+
+```yaml
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref == 'refs/heads/main' && github.sha || github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+```
+
+### Speed
+
+Before tuning a slow pipeline, measure it with `skills/working-with-github-actions/scripts/ci-audit.sh` (per-job queue, setup, and run medians), then follow `references/cookbook-fast-ci-for-agents.md`.
 
 ## Cross-References
 

@@ -216,6 +216,8 @@ All four steps are fast (seconds each) and require no network access after insta
 
 **`--max-warnings=0`**: ESLint exits 0 by default even with warnings. This flag turns any warning into a build failure, which prevents warning debt from accumulating silently.
 
+**Faster alternatives:** a Biome plus core-rules lint can move to Oxlint, and `tsc --noEmit` to TypeScript 7. A strict typed ESLint config (typescript-eslint strictTypeChecked, unicorn, sonarjs) cannot: Oxlint's `jsPlugins` have no type information, and typescript-eslint cannot load TS 7. Keep ESLint and run TS 7 `tsc` side by side with an aliased TS 6 for ESLint. Run the parity spike in `cookbook-fast-ci-for-agents.md` before changing any lint step.
+
 **`depcheck`**: Catches packages listed in `package.json` that are never imported, and imports that have no corresponding `package.json` entry. Neither `tsc` nor ESLint catches this category of drift.
 
 ### The `test` job — why inline setup instead of the composite action
