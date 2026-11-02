@@ -41,7 +41,7 @@ def read_description(skill_md: Path) -> tuple[str | None, str | None]:
     frontmatter = text[delims[0].end() : delims[1].start()]
     try:
         data = yaml.safe_load(frontmatter)
-    except yaml.YAMLError as exc:
+    except (yaml.YAMLError, ValueError) as exc:
         return None, f"YAML parse error: {str(exc).splitlines()[0]}"
     description = data.get("description") if isinstance(data, dict) else None
     if not isinstance(description, str) or not description.strip():
@@ -97,6 +97,7 @@ def self_test() -> int:
             "over_hard_cap": "---\nname: over_hard_cap\ndescription: " + "Use when " + ("x" * (HARD_CAP_CHARS - len("Use when ") + 1)) + "\n---\n",
             "embedded_dashes": '---\nname: embedded_dashes\ndescription: "Use when comparing --- separators in text."\n---\n',
             "broken": "---\nname: broken\ndescription: Use when a: b\n  c: d\n---\n",
+            "bad_scalar": "---\nname: bad_scalar\ndescription: Use when testing.\ndate: 2025-02-30\n---\n",
             "missing": "---\nname: missing\n---\n",
             "no_frontmatter": "# no frontmatter here\n",
             "unterminated": "---\nname: unterminated\ndescription: Use when testing.\n",
@@ -113,6 +114,7 @@ def self_test() -> int:
             "at_hard_cap",
             "over_hard_cap",
             "broken",
+            "bad_scalar",
             "missing",
             "no_frontmatter",
             "unterminated",
@@ -133,9 +135,25 @@ def self_test() -> int:
         empty_fails, empty_warns, empty_total = lint(empty_dir)
         check(empty_fails == [] and empty_warns == [] and empty_total == 0, "empty dir should report nothing")
 
-    nonexistent = Path(tmp) / "does-not-exist"
-    rc = main(["--skills-dir", str(nonexistent)])
-    check(rc != 0, "nonexistent --skills-dir should exit non-zero")
+        clean_dir = root / "clean_dir"
+        clean_dir.mkdir()
+        _write_case(clean_dir, "ok", cases["ok"])
+        check(main(["--skills-dir", str(clean_dir)]) == 0, "main() on a clean dir should exit 0")
+
+        warn_dir = root / "warn_dir"
+        warn_dir.mkdir()
+        _write_case(warn_dir, "warn_prefix", cases["warn_prefix"])
+        check(main(["--skills-dir", str(warn_dir)]) == 0, "main() on a WARN-only dir should exit 0")
+
+        fail_dir = root / "fail_dir"
+        fail_dir.mkdir()
+        _write_case(fail_dir, "broken", cases["broken"])
+        check(main(["--skills-dir", str(fail_dir)]) == 1, "main() on a dir with a FAIL should exit 1")
+
+        check(main(["--skills-dir", str(empty_dir)]) == 1, "main() on an existing empty dir should exit 1")
+
+        nonexistent = root / "does-not-exist"
+        check(main(["--skills-dir", str(nonexistent)]) != 0, "nonexistent --skills-dir should exit non-zero")
 
     if errors:
         for message in errors:
