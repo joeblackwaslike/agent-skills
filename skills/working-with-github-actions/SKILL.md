@@ -123,11 +123,11 @@ concurrency:
 ```
 
 Use `cancel-in-progress: false` for release/deploy jobs where partial runs are dangerous.
-On PR workflows, `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` cancels stale PR runs but never `main`.
+On PR workflows, `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` cancels stale PR runs but never `main`. GitHub keeps only one pending run per concurrency group, so with several quick pushes to `main` the middle runs are still dropped; use a per-SHA group for `main` if every commit must run.
 
 ### Speed
 
-Before tuning a slow pipeline, measure it with `scripts/ci-audit.sh` (per-job queue, setup, and run medians), then follow `references/cookbook-fast-ci-for-agents.md`.
+Before tuning a slow pipeline, measure it with `skills/working-with-github-actions/scripts/ci-audit.sh` (per-job queue, setup, and run medians), then follow `references/cookbook-fast-ci-for-agents.md`.
 
 ## Cross-References
 

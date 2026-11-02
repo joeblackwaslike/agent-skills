@@ -9,7 +9,7 @@ on another).
 ## 1. Audit first
 
 ```bash
-scripts/ci-audit.sh -n 15 -b main OWNER/REPO
+skills/working-with-github-actions/scripts/ci-audit.sh -n 15 -b main OWNER/REPO
 ```
 
 The script prints, per job, the median queue, setup, and run time plus the slowest steps.
@@ -36,8 +36,9 @@ Read the numbers before picking levers:
 3. **Per-job filtered installs.** `pnpm install --filter <pkg>...` per job. One repo spent
    31s of a 49s job installing 1,948 packages for a workspace the job barely used.
 4. **`setup-node` with `cache: pnpm`.**
-5. **Cache scoping.** A PR can only restore caches saved on its base branch. If `main`
-   never saves the cache, every PR starts cold. Make sure `main` runs the job that saves it.
+5. **Cache scoping.** A run restores caches saved on its own branch or on the base/default
+   branch; sibling PRs can't see each other's caches. If `main` never saves the cache,
+   a fresh PR starts cold. Make sure `main` runs the job that saves it.
 6. **Split a serial job** into lint+typecheck, test, and build jobs when each is 10s or
    more. Each new job pays setup again, so stop splitting once setup is the larger part.
 
@@ -50,10 +51,15 @@ when the workflow doesn't run. Filter inside the job instead:
 jobs:
   changes:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
     outputs:
       docs: ${{ steps.f.outputs.docs }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # push events need history to compare against
       - id: f
         uses: dorny/paths-filter@v3
         with:
@@ -69,14 +75,16 @@ jobs:
     steps: [...]
 ```
 
-A skipped job reports as success to branch protection. Include lockfiles and workspace
+A skipped job reports as success to branch protection. If `docs` is required but `changes`
+is not, a failed `changes` job skips `docs` and still passes, so make `changes` required too. Include lockfiles and workspace
 config in the filter, run everything on `main`, and test the skip logic: one PR that
 touches the paths (job runs) and one that doesn't (job skipped, check green).
 
 ## 4. Pre-push hook, not an AGENTS.md line
 
 "Run lint and typecheck before pushing" in AGENTS.md gets skipped. A `.husky/pre-push`
-that runs the same checks cannot be. Target under 10s (Biome or Oxlint, `tsc --noEmit`).
+that runs the same checks is much harder to skip (`git push --no-verify` still bypasses
+it, so keep CI as the backstop). Target under 10s (Biome or Oxlint, `tsc --noEmit`).
 
 - Keep any existing `bd hooks run pre-push` delegation.
 - Husky sets `core.hooksPath`, which every worktree of the repo shares.
@@ -129,4 +137,4 @@ test step was 23s), blobless clone (checkout 5s or less), `node_modules` caching
 - Release-please PRs can sit at `action_required` because their checks need approval. They
   are not a CI speed problem.
 - Re-enabling CodeQL on every PR adds about 40s. Run it on `main` and on a schedule.
-- Hosted review bots can run out of credits; `ai-review watch` runs them locally.
+- Hosted review bots can run out of credits; `ai-review watch --pr <number>` runs them locally.

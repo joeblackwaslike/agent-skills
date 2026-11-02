@@ -17,35 +17,40 @@ while getopts "n:w:b:h" opt; do
     n) runs=$OPTARG ;;
     w) workflow=$OPTARG ;;
     b) branch=$OPTARG ;;
+    h) sed -n '2,11p' "$0"; exit 0 ;;
     *) sed -n '2,11p' "$0"; exit 2 ;;
   esac
 done
 shift $((OPTIND - 1))
 [[ $# -gt 0 ]] || { sed -n '2,11p' "$0"; exit 2; }
 
-SETUP_RE='(?i)^(set up job|complete job|post )|checkout|setup|cache|install'
+SETUP_RE='(?i)^(set up job|complete job|post |run actions/(checkout|cache|setup-[a-z]+)|checkout|set ?up|cache|restore|install)'
+MED='def med: sort | if length == 0 then 0 else ((.[(length - 1) / 2 | floor] + .[length / 2 | floor]) / 2 | round) end;'
 
 audit_repo() {
   # shellcheck disable=SC2054 # commas are a gh --json field list
-  local repo=$1 args=(--status completed --limit "$runs" --json databaseId,createdAt,updatedAt)
+  local repo=$1 args=(--status completed --limit "$runs" --json databaseId,workflowName,createdAt,updatedAt)
   [[ -n $workflow ]] && args+=(--workflow "$workflow")
   [[ -n $branch ]] && args+=(--branch "$branch")
 
   local run_list
   run_list=$(gh run list -R "$repo" "${args[@]}")
 
-  echo "== $repo  (runs: $(jq length <<<"$run_list"), wall-clock median: $(jq '[.[] | (.updatedAt|fromdate) - (.createdAt|fromdate)] | sort | .[length/2|floor] // 0' <<<"$run_list")s)"
+  echo "== $repo  (runs: $(jq length <<<"$run_list"), wall-clock median: $(jq "$MED"'[.[] | (.updatedAt|fromdate) - (.createdAt|fromdate)] | med' <<<"$run_list")s)"
 
-  jq -r '.[].databaseId' <<<"$run_list" | while read -r id; do
-    gh api "repos/$repo/actions/runs/$id/jobs" --jq '.jobs[]' 2>/dev/null || true
-  done | jq -rs --arg re "$SETUP_RE" '
-    def med: sort | .[length/2|floor] // 0;
+  local id wf
+  while IFS=$'\t' read -r id wf; do
+    gh api --paginate "repos/$repo/actions/runs/$id/jobs" --jq '.jobs[]' \
+      | jq -c --arg wf "$wf" '. + {wf: $wf}' \
+      || { echo "warning: could not fetch jobs for run $id of $repo; excluded from medians" >&2; }
+  done < <(jq -r '.[] | [.databaseId, .workflowName] | @tsv' <<<"$run_list") \
+    | jq -rs --arg re "$SETUP_RE" "$MED"'
     def secs(a; b): (b|fromdate) - (a|fromdate);
     map(select(.started_at and .completed_at and .conclusion != "skipped")
       | . as $j
       | [.steps[]? | select(.started_at and .completed_at)
          | {n: .name, d: secs(.started_at; .completed_at)}] as $steps
-      | {job: .name,
+      | {job: (.wf + " / " + .name),
          queue: secs($j.created_at; $j.started_at),
          total: secs($j.started_at; $j.completed_at),
          setup: ([$steps[] | select(.n | test($re)) | .d] | add // 0),
