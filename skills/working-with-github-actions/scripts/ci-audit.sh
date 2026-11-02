@@ -6,8 +6,10 @@
 #   -w WORKFLOW  workflow name or file (default: all workflows)
 #   -b BRANCH    only runs on this branch
 #
-# Setup = runner bootstrap, checkout, toolchain setup, cache restore/save, and
-# dependency install. Queue = job created -> job started. Medians in seconds.
+# Skipped and cancelled jobs are excluded. Setup = runner bootstrap, checkout,
+# toolchain setup, cache restore/save, and dependency install, matched by step-name
+# prefix, so a test step named like "Install smoke test" counts as setup.
+# Queue = job created -> job started. Medians in seconds.
 # Requires: gh (authenticated), jq.
 set -euo pipefail
 
@@ -17,12 +19,12 @@ while getopts "n:w:b:h" opt; do
     n) runs=$OPTARG ;;
     w) workflow=$OPTARG ;;
     b) branch=$OPTARG ;;
-    h) sed -n '2,11p' "$0"; exit 0 ;;
-    *) sed -n '2,11p' "$0"; exit 2 ;;
+    h) sed -n '2,13p' "$0"; exit 0 ;;
+    *) sed -n '2,13p' "$0"; exit 2 ;;
   esac
 done
 shift $((OPTIND - 1))
-[[ $# -gt 0 ]] || { sed -n '2,11p' "$0"; exit 2; }
+[[ $# -gt 0 ]] || { sed -n '2,13p' "$0"; exit 2; }
 
 SETUP_RE='(?i)^(set up job|complete job|post |run actions/(checkout|cache|setup-[a-z]+)|checkout|set ?up|cache|restore|install)'
 MED='def med: sort | if length == 0 then 0 else ((.[(length - 1) / 2 | floor] + .[length / 2 | floor]) / 2 | round) end;'
@@ -48,7 +50,7 @@ audit_repo() {
   done < <(jq -r '.[] | [.databaseId, (.workflowName // "unknown")] | @tsv' <<<"$run_list") \
     | jq -rs --arg re "$SETUP_RE" "$MED"'
     def secs(a; b): (b|fromdate) - (a|fromdate);
-    map(select(.started_at and .completed_at and .conclusion != "skipped")
+    map(select(.started_at and .completed_at and .conclusion != "skipped" and .conclusion != "cancelled")
       | . as $j
       | [.steps[]? | select(.started_at and .completed_at)
          | {n: .name, d: secs(.started_at; .completed_at)}] as $steps
