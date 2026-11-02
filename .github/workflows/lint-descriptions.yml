@@ -1,0 +1,18 @@
+# Skill descriptions share one listing budget; an over-long or unparseable description
+# means the skill loses its trigger text (or is not discoverable at all).
+# See skills/authoring-agent-skills/references/description-conventions.md.
+name: lint-descriptions
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pyyaml==6.0.3
+      - run: python3 -I scripts/lint-descriptions.py --self-test
+      - run: python3 -I scripts/lint-descriptions.py

@@ -1,19 +1,10 @@
 ---
 name: senior-engineering-best-practices
-description: >
-  Use in any development session that benefits from a senior engineer's accumulated judgment,
-  methodology, and runbooks — broader than any single category, most agents don't have these
-  instincts by default. Concrete triggers: proposing a workaround/patch/shim for external code;
-  answering from memory about what a library/SDK/framework supports; patching the same area of
-  code a second or third time; treating an old "verified" finding as settled when it's currently
-  blocking a fix; a guard/fix that has a passing test but hasn't been checked against real
-  production data shape; assuming merged code is deployed code; a fix that generalizes beyond
-  where it was found and needs to be propagated and audited for complete adoption; adding a new
-  dependency; writing code whose failure would be undebuggable in production; taking an action
-  whose reversibility/blast-radius hasn't been considered; planning high-stakes infrastructure
-  or architecture for a system with broad blast radius. Routes to the matching runbook here, or
-  to a more specific existing skill (TDD, SOLID, DDD, debugging, verification, code review,
-  brainstorming, security) when one already covers the situation.
+description: >-
+  Use before proposing a workaround for third-party code, answering from memory about what a
+  library supports, patching the same area a second time, adding a dependency, or taking an action
+  whose blast radius is unconsidered. Routes to the matching runbook. For TDD, SOLID, DDD,
+  debugging, or code review, use those skills instead.
 metadata:
   last_updated: "2026-08-23"
 ---

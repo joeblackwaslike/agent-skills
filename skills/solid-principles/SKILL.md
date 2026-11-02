@@ -1,18 +1,10 @@
 ---
 name: solid-principles
-description: >
-  Use when designing or refactoring classes, modules, or interfaces in any OO language —
-  and whenever the user mentions SOLID, single responsibility / SRP, open/closed / OCP,
-  Liskov substitution / LSP, interface segregation / ISP, dependency inversion or dependency
-  injection / DIP/DI. Triggers explicitly on those names, AND implicitly whenever code shows
-  the smells they target: a god class doing three jobs, a `switch`/`if-isinstance` on a type
-  tag that grows with every feature, a subclass that throws "not supported", a fat interface
-  whose callers use 2 of 11 methods, or a high-level class that `new`s a concrete database /
-  mailer / HTTP client inside itself. Teaches all five principles with bad→good examples in
-  both TypeScript and Python, a cross-cutting anti-pattern catalog (including over-applying
-  SOLID), and one notification-dispatcher system refactored to honor all five together.
-  Skip for throwaway scripts and genuinely simple CRUD/glue where an interface per dependency
-  is pure ceremony — misapplied SOLID is needless indirection.
+description: >-
+  Use when designing or refactoring classes, modules, or interfaces and the user mentions SOLID,
+  SRP, OCP, LSP, ISP, DIP or dependency injection, or code shows a god class, a growing type-tag
+  switch, a subclass that throws "not supported", or a fat interface. TypeScript and Python
+  examples. Skip throwaway scripts and simple CRUD glue.
 metadata:
   last_updated: "2026-06-25"
 ---

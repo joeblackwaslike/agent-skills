@@ -74,4 +74,5 @@ Use the `marketplace-publishing` skill for the versioning rules (semantic versio
 2. `make update-<skill-name>` (doc-wrappers) — fetches, writes `references/`, and stamps `last_updated` on first run.
 3. Every `references/*.md` path the `SKILL.md` links to exists (no dangling links).
 4. `README.md` matches `skills/` exactly (the `diff` in step 2 prints nothing).
-5. Skill triggers: load the skill and confirm the `description` fires on its intended phrases (optionally via `skill-creator` eval).
+5. Description hygiene: `make lint-descriptions` reports 0 FAIL, and the description follows [`description-conventions.md`](description-conventions.md) (400-char target, key use case first, `Not for X (use Y)` exclusions in both directions against neighbours in `SKILLS.md`).
+6. Skill triggers: run the `skill-reviewer` agent on the SKILL.md, then load the skill and confirm the `description` fires on its intended phrases (optionally via `skill-creator` eval).

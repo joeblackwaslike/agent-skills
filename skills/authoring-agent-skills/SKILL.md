@@ -1,6 +1,10 @@
 ---
 name: authoring-agent-skills
-description: Use when creating, adding, or maintaining a skill in this agent-skills repo — especially a "working-with-X" skill that wraps external/official docs by fetching them (llms.txt, sitemap, or a curated URL list), storing them in references/, and keeping them current with an auto-update script plus freshness metadata. Covers the naming taxonomy (working-with-X / developing-X / topic skills), SKILL.md frontmatter, the doc-fetching cookbook, the doc-frontmatter.cjs freshness helpers, the Makefile/CI auto-discovery, and the registration checklist. Invoke on "create a skill", "add a working-with-X skill", "wrap these docs in a skill", "write an auto-update script", "add freshness metadata", or "add a skill to this repo".
+description: >-
+  Use when creating or maintaining a skill in the agent-skills repo, especially a working-with-X
+  doc-wrapper: naming, SKILL.md frontmatter and descriptions, doc-fetching scripts, freshness
+  metadata, registration. Triggers: "create a skill", "add a working-with-X skill", "add a skill
+  to this repo". Not for editing CLAUDE.md or AGENTS.md (agent-instructions).
 metadata:
   last_updated: "2026-08-12"
 ---
@@ -34,6 +38,7 @@ The biggest, most distinctive convention here is the **doc-wrapping `working-wit
 | Write the auto-update fetch script (llms.txt / sitemap / curated-list patterns) | [`references/doc-fetching-cookbook.md`](references/doc-fetching-cookbook.md) |
 | Wrap a **locally-installed** tool (not just a hosted API/library) — live inspection, event schemas, retention limits | [`references/local-tool-inspection.md`](references/local-tool-inspection.md) |
 | Wire freshness signals (`doc-frontmatter.cjs` API, change-detection, backfill) | [`references/freshness-metadata.md`](references/freshness-metadata.md) |
+| Write a description that survives the skill-listing budget (length, triggers, exclusions) | [`references/description-conventions.md`](references/description-conventions.md) |
 | Register the skill so it's discoverable and shippable | [`references/registration-checklist.md`](references/registration-checklist.md) |
 
 ## Naming taxonomy (the short version)

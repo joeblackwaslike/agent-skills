@@ -1,6 +1,10 @@
 ---
 name: developing-claude-code-plugins
-description: Use when working on Claude Code plugins (creating, modifying, testing, releasing, or maintaining) - provides streamlined workflows, patterns, and examples for the complete plugin lifecycle
+description: >-
+  Use when building a Claude Code plugin: plugin.json, hooks.json, skills/, commands/, agents/,
+  .mcp.json, userConfig, ${CLAUDE_PLUGIN_ROOT}, local testing with /reload-plugins, or releasing.
+  Hook, command, agent, MCP, and settings authoring references included. Not for official CLI docs
+  (working-with-claude-code) or porting to other tools (multi-provider-plugins).
 metadata:
   last_updated: "2026-05-17"
 ---
@@ -31,6 +35,12 @@ Use this skill when:
 | Understand directory structure | `references/plugin-structure.md` | `plugins.md` |
 | Choose a plugin pattern | `references/common-patterns.md` | `plugins.md` |
 | Make hooks work cross-platform | `references/polyglot-hooks.md` | `hooks.md` |
+| Write hooks (`hooks/hooks.json` needs a top-level `"hooks"` key) | `references/hooks.md` | `hooks.md` |
+| Write commands | `references/commands.md` | `skills.md` |
+| Write agents | `references/agents.md` | `sub-agents.md` |
+| Bundle an MCP server | `references/mcp-integration.md` | `mcp.md` |
+| Add per-project settings | `references/plugin-settings.md` | `plugins-reference.md` |
+| Validate hooks, agents, settings | `scripts/` (run `scripts/run-fixtures.sh` to self-test) | N/A |
 | Debug plugin issues | `references/troubleshooting.md` | Various |
 | See working examples | `examples/` directory | N/A |
 
@@ -237,6 +247,12 @@ Common issues are usually:
 - **`references/common-patterns.md`** - When to use each plugin pattern, examples
 - **`references/polyglot-hooks.md`** - Cross-platform hook wrapper for Windows/macOS/Linux
 - **`references/troubleshooting.md`** - Debug guide for common issues
+- **`references/hooks.md`** - Hook types, events, matchers, exit codes, the required `"hooks"` wrapper
+- **`references/commands.md`** - Command frontmatter, arguments, `!` bash, commands vs skills
+- **`references/agents.md`** - Subagent frontmatter, system-prompt skeleton, tool least-privilege
+- **`references/mcp-integration.md`** - `.mcp.json`, transports, auth, scoped tool names
+- **`references/plugin-settings.md`** - `userConfig` and the `.claude/<plugin>.local.md` pattern
+- **`scripts/`** - `validate-hook-schema.sh`, `hook-linter.sh`, `test-hook.sh`, `validate-agent.sh`, `validate-settings.sh`, `parse-frontmatter.sh`, `run-fixtures.sh`
 - **`examples/simple-greeter-plugin/`** - Minimal working plugin (one skill)
 - **`examples/full-featured-plugin/`** - Complete plugin with all components (includes `run-hook.cmd`)
 

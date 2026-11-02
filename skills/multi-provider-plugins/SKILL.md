@@ -1,6 +1,9 @@
 ---
 name: multi-provider-plugins
-description: Use when making a Claude Code plugin compatible with other AI coding assistants (Codex, OpenCode, Cursor, Gemini CLI), designing multi-provider plugin architecture, adding a provider adapter, or structuring a portable shared skills library
+description: >-
+  Use when porting a Claude Code plugin to Codex, OpenCode, Cursor, or Gemini CLI: provider
+  adapters, bootstrap patterns, tool-name mapping, or a shared skills library. Not for
+  single-platform plugin work (developing-<platform>-plugins).
 metadata:
   last_updated: "2026-06-04"
 ---

@@ -10,3 +10,5 @@ node_modules/
 *.db
 .beads-credential-key
 .beads/proxieddb/
+__pycache__/
+*.pyc
