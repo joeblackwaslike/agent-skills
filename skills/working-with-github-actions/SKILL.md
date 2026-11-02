@@ -127,7 +127,7 @@ On PR workflows, `cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}` ca
 
 ```yaml
 concurrency:
-  group: ${{ github.ref == 'refs/heads/main' && format('{0}-{1}', github.workflow, github.sha) || format('{0}-{1}', github.workflow, github.ref) }}
+  group: ${{ github.workflow }}-${{ github.ref == 'refs/heads/main' && github.sha || github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 ```
 
