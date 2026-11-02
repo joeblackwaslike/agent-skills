@@ -12,6 +12,9 @@ total=0
 expect() {
   want="$1"; label="$2"; shift 2
   total=$((total + 1))
+  for arg in "$@"; do
+    case "$arg" in "$fx"/*) [ -e "$arg" ] || { echo "FAIL: $label (missing fixture $arg)"; fails=$((fails + 1)); return; } ;; esac
+  done
   "$@" >/dev/null 2>&1
   got=$?
   if { [ "$want" = zero ] && [ "$got" -eq 0 ]; } || { [ "$want" = nonzero ] && [ "$got" -ne 0 ] && [ "$got" -lt 126 ]; }; then
@@ -23,6 +26,8 @@ expect() {
 }
 
 expect zero    "hooks.json wrapped is accepted"        "$here/validate-hook-schema.sh" "$fx/hooks/good-wrapped.json"
+expect nonzero "hooks.json empty file is rejected"        "$here/validate-hook-schema.sh" "$fx/hooks/bad-empty.json"
+expect nonzero "hooks.json two documents is rejected"     "$here/validate-hook-schema.sh" "$fx/hooks/bad-two-docs.json"
 expect nonzero "hooks.json unwrapped is rejected"      "$here/validate-hook-schema.sh" "$fx/hooks/bad-unwrapped.json"
 expect nonzero "hooks.json bad handler is rejected"    "$here/validate-hook-schema.sh" "$fx/hooks/bad-handler.json"
 expect zero    "hook script good lints clean"          "$here/hook-linter.sh" "$fx/hooks/good-hook.sh"

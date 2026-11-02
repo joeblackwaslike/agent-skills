@@ -6,7 +6,7 @@ current docs in `working-with-claude-code/references/skills.md` and `plugins-ref
 ## Commands versus skills
 
 Custom commands have been merged into skills. A file at `commands/deploy.md` and a skill at
-`skills/deploy/SKILL.md` both create `/deploy` and behave the same. The plugin reference now calls
+`skills/deploy/SKILL.md` both create `/deploy` outside a plugin (inside a plugin both are namespaced, as described below) and behave the same. The plugin reference now calls
 `commands/` "flat `.md` skill files". A command file accepts every skill frontmatter field except
 `name` and `paths`, and the name comes from the filename. If a skill and a command share a name, the
 skill wins.
@@ -127,7 +127,7 @@ is not scanned for further `!` placeholders. Use `${CLAUDE_PLUGIN_ROOT}` when th
 script bundled with the plugin:
 
 ```markdown
-Result: !`"${CLAUDE_PLUGIN_ROOT}"/scripts/analyze.sh $0`
+Result: !`"${CLAUDE_PLUGIN_ROOT}"/scripts/analyze.sh "$0"`
 ```
 
 ## Interactive flows with AskUserQuestion

@@ -4,7 +4,8 @@ description: >-
   Use when creating or editing CLAUDE.md, AGENTS.md, GEMINI.md, a SKILL.md, a runbook, or any file
   that instructs an AI coding agent: "set up Claude for this project", "what goes in my
   AGENTS.md", "add a rule", "edit this skill". Covers scope, content taxonomy, multi-tool
-  compatibility, and RED-GREEN editing of existing instructions.
+  compatibility, RED-GREEN editing. Not for skill-repo structure, naming, or registration
+  (authoring-agent-skills).
 metadata:
   last_updated: "2026-08-23"
 ---

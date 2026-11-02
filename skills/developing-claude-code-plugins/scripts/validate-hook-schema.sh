@@ -34,6 +34,11 @@ if ! jq empty "$file" >/dev/null 2>&1; then
   exit 1
 fi
 
+if [ "$(jq -s 'length' "$file")" != "1" ]; then
+  echo "ERROR: $file must contain exactly one JSON document"
+  exit 1
+fi
+
 # shellcheck disable=SC2016  # jq program, not shell
 JQ_PROGRAM='
 def events: ["SessionStart","Setup","UserPromptSubmit","UserPromptExpansion","PreToolUse",

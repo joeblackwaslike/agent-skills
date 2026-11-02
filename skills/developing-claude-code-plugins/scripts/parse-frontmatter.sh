@@ -51,7 +51,9 @@ function finish_value(   out, i, ind) {
       for (i = 1; i <= n; i++) out = out " " cont[i]
     } else {
       out = ind
+      if (match(out, /^"[^"]*"/) || match(out, /^\047[^\047]*\047/)) out = substr(out, 1, RLENGTH)
       if (out ~ /^".*"$/ || out ~ /^\047.*\047$/) out = substr(out, 2, length(out) - 2)
+      else sub(/[ \t]+#.*$/, "", out)
     }
     print out
   }

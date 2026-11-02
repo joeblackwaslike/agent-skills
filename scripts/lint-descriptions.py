@@ -46,7 +46,7 @@ def read_description(skill_md: Path) -> tuple[str | None, str | None]:
     description = data.get("description") if isinstance(data, dict) else None
     if not isinstance(description, str) or not description.strip():
         return None, "missing description"
-    return " ".join(description.split()), None
+    return description.strip(), None
 
 
 def lint(skills_dir: Path) -> tuple[list[str], list[str], int]:
@@ -67,7 +67,7 @@ def lint(skills_dir: Path) -> tuple[list[str], list[str], int]:
             fails.append(f"{name}: {length} chars exceeds {FAIL_CHARS}")
         elif length > WARN_CHARS:
             warns.append(f"{name}: {length} chars exceeds the {WARN_CHARS} target")
-        if not description.startswith(("Use when", "Use before")):
+        if not " ".join(description.split()).startswith(("Use when", "Use before")):
             warns.append(f"{name}: does not start with 'Use when' / 'Use before'")
     return fails, warns, total
 
