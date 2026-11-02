@@ -34,6 +34,7 @@ The biggest, most distinctive convention here is the **doc-wrapping `working-wit
 | Write the auto-update fetch script (llms.txt / sitemap / curated-list patterns) | [`references/doc-fetching-cookbook.md`](references/doc-fetching-cookbook.md) |
 | Wrap a **locally-installed** tool (not just a hosted API/library) — live inspection, event schemas, retention limits | [`references/local-tool-inspection.md`](references/local-tool-inspection.md) |
 | Wire freshness signals (`doc-frontmatter.cjs` API, change-detection, backfill) | [`references/freshness-metadata.md`](references/freshness-metadata.md) |
+| Write a description that survives the skill-listing budget (length, triggers, exclusions) | [`references/description-conventions.md`](references/description-conventions.md) |
 | Register the skill so it's discoverable and shippable | [`references/registration-checklist.md`](references/registration-checklist.md) |
 
 ## Naming taxonomy (the short version)

@@ -1,18 +1,10 @@
 ---
 name: agent-instructions
-description: >
-  Use whenever creating OR editing CLAUDE.md, AGENTS.md, GEMINI.md, a SKILL.md, or any
-  other file whose job is to instruct an AI coding agent, at any scope level (user/global,
-  project root, parent folder, subdirectory, or a skill/runbook in a plugin repo). Covers
-  scope diagnosis, content taxonomy, multi-tool compatibility for Claude Code, Codex, Gemini
-  CLI, and OpenCode, cookbook templates for Python, TypeScript, monorepo, agent/MCP, and
-  minimal projects, and the RED-GREEN editing discipline for revising instructions/skills/
-  runbooks that already exist. Invoke when the user asks to "create a CLAUDE.md", "set up
-  Claude for this project", "what should go in my AGENTS.md", "write agent instructions",
-  "help me set up my global Claude configuration", "edit this skill", "update this runbook",
-  "add a rule to AGENTS.md", or any similar request — even without explicit mention of
-  CLAUDE.md or AGENTS.md. If the user is starting a new project or onboarding into an
-  existing one and no instruction file exists, proactively suggest creating one.
+description: >-
+  Use when creating or editing CLAUDE.md, AGENTS.md, GEMINI.md, a SKILL.md, a runbook, or any file
+  that instructs an AI coding agent: "set up Claude for this project", "what goes in my
+  AGENTS.md", "add a rule", "edit this skill". Covers scope, content taxonomy, multi-tool
+  compatibility, and RED-GREEN editing of existing instructions.
 metadata:
   last_updated: "2026-08-23"
 ---

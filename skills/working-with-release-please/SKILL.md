@@ -1,6 +1,11 @@
 ---
 name: working-with-release-please
-description: "Use when working with release-please (Google's release automation, a.k.a. Release Please) — the tool that reads Conventional Commits on your default branch, opens/maintains a \"release PR\" that bumps the version and updates CHANGELOG.md, and on merge tags the release + creates the GitHub Release. Covers config (release-please-config.json + .release-please-manifest.json), manifest/monorepo mode with per-path components, the full set of release-type strategies (node, python, simple, go, rust, ruby, php, java, terraform-module, …), the release-please-action@v5 GitHub Actions wiring (permissions, outputs release_created/releases_created, gating downstream publish jobs), and cookbooks for shipping an npm package, a pip/PyPI package, and a VS Code extension. Bundles the upstream README, docs/, and JSON schemas fetched at a pinned tag, plus hand-written integration/automation/troubleshooting guides. Invoke for any release-please config field, version-bump/changelog/release question, \"set up automated releases\", \"why didn't a release PR appear\", or monorepo release setup. For raw gh/REST release commands use working-with-github; for general CI/workflow YAML use working-with-github-actions; for Conventional Commits authoring tooling (commitizen) see joe-stack-preferences."
+description: >-
+  Use when configuring or debugging release-please: release-please-config.json,
+  .release-please-manifest.json, release types, monorepo components, the release-please-action
+  workflow, or "why didn't a release PR appear". Not for raw gh release commands
+  (working-with-github), general workflow YAML (working-with-github-actions), or commit tooling
+  (joe-stack-preferences).
 metadata:
   last_updated: "2026-06-16"
 ---

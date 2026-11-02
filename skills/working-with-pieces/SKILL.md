@@ -1,17 +1,10 @@
 ---
 name: working-with-pieces
-description: Use when working with the Pieces for Developers ecosystem: Pieces OS
-  (local daemon), Pieces Desktop, Pieces CLI, IDE plugins (VS Code, JetBrains),
-  browser extension, or Obsidian plugin. Invoke for: setting up the Pieces MCP
-  server with Claude Code, Cursor, GitHub Copilot, or any of the 19 supported AI
-  tools; querying long-term memory (LTM) across sessions; saving, searching, or
-  managing code snippets; building apps with the Pieces TypeScript or Python SDK;
-  or understanding the Pieces OS internals (processes, databases, config). Also
-  invoke when the user mentions "Pieces", "Pieces Copilot", "pieces-os", or wants
-  AI tools to remember past workflow context across sessions.
-  Also invoke for: "what was I working on", "what did I do yesterday/last week",
-  "what code did I write for X", "what did I have open about Y" — these are
-  workstream-activity queries that Pieces LTM is built for.
+description: >-
+  Use when working with Pieces for Developers (Pieces OS, Desktop, CLI, IDE plugins, the Pieces
+  MCP server, long-term memory) or when asked "what was I working on", "what did I do
+  yesterday/last week", or "what did I have open about X". Covers MCP setup, LTM queries, snippet
+  search, and the Pieces SDKs. Not for session decisions or corrections (claude-mem).
 metadata:
   last_updated: "2026-09-02"
 ---

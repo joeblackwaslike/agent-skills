@@ -1,6 +1,10 @@
 ---
 name: working-with-bash
-description: "Use when working with Bash — any bash command, builtin, option (shopt/set -o), special variable, parameter expansion, test operator ([[ ]] vs [ ]), glob (extglob/globstar), or redirection lookup; writing/fixing .bashrc/.bash_profile/.inputrc; POSIX-sh portability and Bash↔Zsh differences; strict mode (set -euo pipefail) and quoting/word-splitting bugs; completion (complete/compgen, bash-completion); Readline bindings and history; choosing a framework (oh-my-bash, bash-it), package manager (basher, bpkg), prompt (Starship, Oh My Posh, Powerline, bash-git-prompt), or readline enhancers (ble.sh, bash-preexec); and linting/formatting/testing (ShellCheck, shfmt, bats-core). Bundles the version-exact man bash, the GNU Bash Reference/Readline/History manuals, ecosystem READMEs, a community corpus (pure-bash-bible, Google style guide, POSIX spec, BashPitfalls), and hand-written guides. Invoke for any bash command/option/concept lookup, a 'how do I do X in bash' question, tool selection, or script debugging."
+description: >-
+  Use when working with Bash: commands, builtins, shopt/set -o, parameter expansion, [[ ]] vs [ ],
+  globs, redirection, .bashrc/.inputrc, strict mode (set -euo pipefail), quoting bugs, POSIX
+  portability, completion, Readline, or ShellCheck/shfmt/bats. Version-exact manual bundled. For
+  Zsh use working-with-zsh.
 metadata:
   last_updated: "2026-06-16"
 ---
