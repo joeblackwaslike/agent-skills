@@ -72,15 +72,20 @@ owns its domain and every subdomain of it:
 ### Pacing
 
 One browser serves every request, so the gateway runs them one at a time in FIFO
-order. It waits a random gap between starts on the same profile: 20-40 s for `ebay`,
-5-10 s for `reddit`, 3-8 s for `anon`. At most five requests wait behind the running
+order. It waits a random gap between starts on the same key: 20-40 s for `ebay`,
+5-10 s for `reddit`, 8-15 s for `google.com`, 3-8 s for any other host. The key is the
+profile for eBay, Reddit and Google, and the hostname for everything else. At most five
+requests wait behind the running
 one, and each run can take about 50 s (30 s navigation timeout, plus `waitForTimeout`
 and a margin). On `ebay`, a request at the back of a full queue waits behind five runs
 and four 20-40 s gaps before its own run, about 500 s in the worst case, which is why
 the recipe uses `-m 600`. Add the extra seconds if you raise `waitForTimeout`.
 
-Keep eBay requests few. The gateway uses no proxy, and a block pauses the eBay profile
-for every caller.
+Keep eBay requests few. The gateway uses no proxy, and an unsolved block pauses the eBay
+profile for every caller. Only eBay and Reddit pause; Google and every other host never do.
+
+When a solver key is set, the gateway also solves reCAPTCHA challenge forms on any host,
+so one request can take about 240 s plus queue wait. `-m 600` covers that.
 
 ## Responses
 
@@ -90,14 +95,19 @@ for every caller.
 | 400 | `{"error":"invalid_request","message":...}` | Bad body or a disallowed URL | Fix the request |
 | 401 | not JSON | Token missing or wrong | Check `STEALTH_BROWSER_TOKEN`; don't retry |
 | 401 | `{"session_expired":true,"profile":...}` | Saved login for that profile is missing or expired | Tell the user; the gateway operator re-captures it with `pnpm signin <profile>`. Don't retry |
-| 423 | `{"blocked":true,"profile":...,"reason":...}` | Site served a bot check; profile now paused 30 min | Don't retry; fall back to the next escalation step |
-| 423 | same, `"reason":"paused"`, `Retry-After` header (seconds) | Profile still paused from an earlier block | Don't retry before `Retry-After` |
+| 423 | `{"blocked":true,"profile":...,"host":...,"reason":...,"marker":...,"html":...,"capture":...}` | Site served a bot check and the gateway did not solve it (it solves reCAPTCHA challenge forms itself when a solver key is set, and has no solver path for hCaptcha). eBay and Reddit also pause 30 min; other hosts never pause. No `Retry-After` | On eBay/Reddit, don't retry; fall back to the next escalation step. On any other host you can retry once, later, then fall back |
+| 423 | `{"blocked":true,"profile":...,"reason":"paused"}`, `Retry-After` header (seconds), no `html` | eBay or Reddit profile still paused from an earlier block | Don't retry before `Retry-After` |
 | 429 | `{"error":"rate_limited","profile":...}` | Target site rate-limited the request; no pause | Back off before the next request to that site |
 | 429 | `{"error":"queue_full"}` | Gateway queue is full | Retry shortly |
 | 502 | `{"error":"navigation_failed","message":...}` | Navigation failed or timed out | Retry once, then escalate |
 
-The `reason` on a fresh block is one of `ebay_challenge_redirect`,
-`interruption_page`, `ebay_error_page`, `captcha`, `verify_human`, or `http_block_status` (the site returned 403).
+A fresh block's `reason` is one of `ebay_challenge_redirect`, `interruption_page`,
+`ebay_error_page`, `captcha`, `verify_human`, `google_sorry`, or `http_block_status` (the
+site returned 403). `marker` is one of `ebay_challenge_redirect`, `interruption_page`,
+`ebay_error_page`, `captcha_widget:g-recaptcha`, `captcha_widget:h-captcha`,
+`captcha_widget:amazon`, `verify_human`, `google_sorry`, or `http_block_status`. `html` is
+the full page the site served and can be large, so pull fields with `jq` (for example `jq -r '.marker' "$dir/page.html"`) and never print the
+whole body. `capture` is the saved file name, omitted if the save failed.
 
 `pnpm signin` has a person log in by hand in a remote browser, so an agent can't run it.
 Report the expired profile and move on.
