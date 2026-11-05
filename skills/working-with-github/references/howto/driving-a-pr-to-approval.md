@@ -99,6 +99,50 @@ git push --force-with-lease origin feat/csv-export
 
 ## 4. Open the PR
 
+### Size gate: measure the branch before opening
+
+A PR too big for its reviewers never converges. A review bot with a diff budget reviews a
+different slice each round, so every push surfaces new findings and the loop has no fixed
+point. People lose the thread past a few hundred changed lines. Measure the branch first:
+
+```bash
+git fetch origin main
+git diff --shortstat origin/main...HEAD                                            # files, +/- lines
+git diff origin/main...HEAD -- . ':(exclude)*.lock' ':(exclude)*-lock.*' | wc -c   # characters, lockfiles excluded
+```
+
+Split before opening when either holds:
+
+- **The diff exceeds a reviewer's budget.** For `ai-review-bot` that is
+  `REVIEW_DIFF_BUDGET_CHARS` (200,000 characters by default). Past it, every round is a
+  "Partial review" and the PR can't get a full review at all.
+- **More than about 400 changed lines of hand-written code**, not counting lockfiles,
+  generated files and pure moves or renames.
+
+How many pieces: divide the diff's size by the budget for the minimum, then round up to
+the nearest set of natural seams. Leave room in each piece, since a bot's budget also covers
+file headers. Split along a seam, so each PR stands on its own: a refactor or move apart from the behavior
+change, schema and migration apart from the code that uses them, a new module apart from its
+call-site migration, a reference document apart from the work built on it. Make each piece a
+branch off the previous one and open them as stacked PRs, lowest first (`--base` set to the
+previous branch). When the pieces are separate files, `git checkout -b part-1 origin/main`
+then `git checkout <big-branch> -- <paths>` builds each one without rewriting history.
+
+Two exceptions:
+
+- **One file over the budget can't be split by path.** Say so in the PR body, freeze its
+  content once review starts, and expect partial reviews.
+- **A purely mechanical change** (formatter run, rename, codemod) can be large. It still goes
+  in its own PR, apart from any behavior change.
+
+If the PR is already open and over the gate, don't add new content to it during review. Fix
+real findings, put anything new in a follow-up PR, and merge.
+
+> Wrong: a 776k-character docs PR, a reference guide plus the design catalog built on it,
+> opened as one. Ten review rounds, each a partial review of a different slice. Right: six
+> stacked PRs under 200k each: the guide, the catalog's framework, two halves of the
+> operation entries, the domain entries, then the design docs that cite them all.
+
 ```bash
 gh pr create --fill --base main --assignee @me --reviewer alice,my-org/reviewers
 ```
