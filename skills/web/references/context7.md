@@ -22,7 +22,7 @@ Two servers are connected, with the same two tools:
 
 | Entry | Tool prefix | Auth |
 | --- | --- | --- |
-| `plugin:context7:context7` (plugin `context7@context7-marketplace`, `npx @upstash/context7-mcp`) | `mcp__plugin_context7_context7__` | The plugin does not read `CONTEXT7_API_KEY`. OAuth through `/mcp`, or anonymous with lower limits. |
+| `plugin:context7:context7` (plugin `context7@context7-marketplace`) | `mcp__plugin_context7_context7__` | The plugin does not read `CONTEXT7_API_KEY`. OAuth through `/mcp`, or anonymous with lower limits. |
 | `context7` (user scope, `https://mcp.context7.com/mcp`) | `mcp__context7__` | API key |
 
 `CONTEXT7_API_KEY` is set in the environment. For a headless, SSH, or CI host, run
