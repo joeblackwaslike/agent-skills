@@ -11,7 +11,7 @@ and the [MCP docs](https://docs.firecrawl.dev/mcp-server).
 | Entry | Auth | Tool prefix |
 | --- | --- | --- |
 | `plugin:firecrawl:firecrawl` (plugin `firecrawl@firecrawl`, endpoint `https://mcp.firecrawl.dev/v2/mcp-search`) | OAuth, completed with `/mcp` in an interactive session | `mcp__plugin_firecrawl_firecrawl__` |
-| `firecrawl` (user scope, added 2026-11-05) | `Authorization: Bearer ${FIRECRAWL_API_KEY}` | `mcp__firecrawl__` |
+| `firecrawl` (user scope) | `Authorization: Bearer ${FIRECRAWL_API_KEY}` | `mcp__firecrawl__` |
 
 Prefer `firecrawl` in non-interactive sessions. Re-create it with:
 

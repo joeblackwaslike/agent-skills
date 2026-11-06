@@ -1,6 +1,6 @@
 ---
 name: web
-description: Use before WebSearch or WebFetch, and for any web search, URL read, library-docs lookup, or multi-source research. Also when a fetch is blocked (403, 429, captcha, login wall, empty SPA). Routes to SearXNG, Exa, Context7, Ref, Firecrawl, Parallel, or stealth-browser. Not for clicks or forms (use agent-browser).
+description: Use before WebSearch or WebFetch, and for any web search, URL read, library-docs lookup, or multi-source research. Also when a fetch is blocked (403, 429, captcha, login wall, empty SPA). Routes to SearXNG, Exa, Context7, Ref, Firecrawl, Parallel, or stealth-browser. Not for multi-step browser automation (use agent-browser).
 license: MIT
 compatibility: Needs the MCP servers and env vars listed in each reference file. Falls back to built-in WebSearch and WebFetch when a service is unavailable.
 metadata:
@@ -11,8 +11,8 @@ metadata:
 
 Classify the request, pick the service, then read that service's reference file for
 tool names, parameters, and configuration. Don't ask the user which tool to use and
-don't narrate the routing. If a service is not connected or its env var is unset, skip
-it and take the next row. Report failures plainly; never return weaker results
+don't narrate the routing. If a service is not connected, skip it and take the next row. Connection can be OAuth,
+an API key, or keyless; don't treat a missing env var alone as unavailable. Report failures plainly; never return weaker results
 silently.
 
 ## Route a search
@@ -86,7 +86,8 @@ host here when it blocks twice; this table is the only copy.
   [context7.md](references/context7.md), don't just retry.
 - Never retry the same tool and query more than twice.
 - Cite only URLs a tool actually returned. Never fabricate a citation.
-- Run independent searches and fetches concurrently.
+- Run independent searches and fetches concurrently, except through stealth-browser: its
+  gateway runs one request at a time and queues at most five, so send those one by one.
 - Don't send credentials or private data in queries. They leave the machine.
 - Paid calls (Exa, Firecrawl, Parallel) are for jobs the free tools can't do. Adding
   Parallel balance or deleting a Firecrawl monitor needs the user's go-ahead.

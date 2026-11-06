@@ -11,7 +11,7 @@ The hosted MCP server is `https://mcp.exa.ai/mcp`. Two entries exist:
 | Entry | Auth | Tool prefix |
 | --- | --- | --- |
 | `plugin:exa:exa` (Claude Code plugin `exa@claude-plugins-official`) | OAuth, completed with `/mcp` in an interactive session | `mcp__plugin_exa_exa__` |
-| `exa` (user scope, added 2026-11-05) | `Authorization: Bearer ${EXA_API_KEY}` header | `mcp__exa__` |
+| `exa` (user scope) | `Authorization: Bearer ${EXA_API_KEY}` header | `mcp__exa__` |
 
 Prefer the `exa` entry in non-interactive sessions, since OAuth can't be completed
 there. Re-create it with:

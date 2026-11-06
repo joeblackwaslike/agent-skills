@@ -2,7 +2,7 @@
 
 Joe's self-hosted SearXNG runs in Kubernetes (namespace `searxng`) and is reachable on
 the tailnet through a Tailscale ingress named `search`. It is the default search tool:
-free, private, and not rate-limited by a vendor. Agents reach it through the
+self-hosted and private. Its `braveapi` engine uses the paid Brave Search API, and the Google path uses a paid captcha solver. Agents reach it through the
 [88plug/searxng-mcp](https://github.com/88plug/searxng-mcp) Claude Code plugin.
 
 ## What the backend runs
@@ -29,9 +29,9 @@ The plugin is `plugin:searxng:searxng`, so its tools appear as
 claude mcp list                    # expect plugin:searxng:searxng ... Connected
 ```
 
-There used to be a second server (`bunx mcp-searxng`) registered as plain `searxng`.
-It was removed on 2026-11-05. If `mcp__searxng__*` tools show up again, remove that
-entry with `claude mcp remove searxng -s user`.
+Only the plugin should provide SearXNG tools. If `mcp__searxng__*` tools show up, a
+second server is registered as plain `searxng`; remove it with
+`claude mcp remove searxng -s user`.
 
 ### Tools
 
