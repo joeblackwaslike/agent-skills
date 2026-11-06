@@ -1,10 +1,16 @@
 # stealth-browser gateway
 
 [stealth-browser](https://github.com/joeblackwaslike/stealth-browser) is a self-hosted
-gateway in front of Camoufox, a patched Firefox with a pinned fingerprint. It can keep
-logged-in eBay and Reddit sessions. Use it when a site blocks agents: 403, 429, a
-CAPTCHA, a login wall, or a near-empty body on a server-rendered page. The repo README
-covers what the gateway is and how to deploy it.
+gateway in front of Camoufox, a patched Firefox with a pinned fingerprint. It runs on
+Joe's Kubernetes cluster, reachable over the tailnet. It returns the fully rendered,
+JavaScript-executed HTML of a page and keeps logged-in eBay and Reddit sessions. Use it
+when a site blocks agents or `WebFetch`: 403, 429, a CAPTCHA, a login wall, or a
+near-empty body on a server-rendered page. The repo README covers deployment.
+
+It has two endpoints, `GET /healthz` and `POST /content`. There is no separate search
+API. Searching Google, eBay, Reddit, or Amazon means fetching that site's search URL
+through `/content` (see "Searching" below). The same gateway also powers the
+`stealth google` engine inside [SearXNG](searxng.md).
 
 ## Credentials
 
@@ -69,6 +75,31 @@ owns its domain and every subdomain of it:
 | `reddit.com` or any subdomain (`old.reddit.com`, `www.reddit.com`) | `reddit`, logged in |
 | anything else (Amazon included) | `anon`, no login |
 
+### Searching
+
+Build the site's own search URL and fetch it. URL-encode the query.
+
+| Site | Search URL | Profile |
+| --- | --- | --- |
+| Google | `https://www.google.com/search?q=<query>` | `anon` |
+| eBay (active) | `https://www.ebay.com/sch/i.html?_nkw=<query>` | `ebay` |
+| eBay (sold comps) | `https://www.ebay.com/sch/i.html?_nkw=<query>&LH_Sold=1&LH_Complete=1` | `ebay` |
+| Reddit | `https://www.reddit.com/search/?q=<query>` | `reddit` |
+| Amazon | `https://www.amazon.com/s?k=<query>` | `anon` |
+
+The response is raw HTML, so `grep` it for result titles and links instead of reading it
+whole. For plain Google queries, prefer [SearXNG](searxng.md), which already routes
+through this gateway and returns parsed results.
+
+### Captcha solving
+
+The gateway can solve a reCAPTCHA v2 challenge and continue to the real page. It is
+off unless the operator sets `SOLVER_API_KEY` (a 2Captcha-compatible service;
+`SOLVER_BASE_URL` overrides the host, and `SOLVER_MAX_PER_HOUR` caps attempts, default
+100, failures included). It acts only on a visible challenge form. Anything else, or an
+exhausted budget, returns the original page and is classified as a block. Callers see
+no change except slower responses when a solve happens.
+
 ### Pacing
 
 One browser serves every request, so the gateway runs them one at a time in FIFO
@@ -97,7 +128,8 @@ for every caller.
 | 502 | `{"error":"navigation_failed","message":...}` | Navigation failed or timed out | Retry once, then escalate |
 
 The `reason` on a fresh block is one of `ebay_challenge_redirect`,
-`interruption_page`, `ebay_error_page`, `captcha`, `verify_human`, or `http_block_status` (the site returned 403).
+`interruption_page`, `ebay_error_page`, `captcha`, `captcha_widget:*`, `verify_human`,
+`google_sorry` (Google's `/sorry` page), or `http_block_status` (the site returned 403).
 
 `pnpm signin` has a person log in by hand in a remote browser, so an agent can't run it.
 Report the expired profile and move on.
@@ -111,6 +143,7 @@ Skip `webFetch` for these hostnames:
   anonymous sold searches redirect to sign-in.
 - `reddit.com` and any subdomain: threads and search, including login-walled threads.
 - `www.amazon.com`: search results and product pages (`anon`).
+- `www.google.com/search`: only when you need the raw results page; otherwise use SearXNG.
 
 For other domains, escalate from `webFetch` when the response shows any of:
 
