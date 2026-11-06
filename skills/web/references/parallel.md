@@ -57,3 +57,46 @@ Use of the service falls under the
 
 Free, high-volume lookups go to [searxng](searxng.md). Blocked sites go to
 [stealth-browser](stealth-browser.md). Library docs go to [context7](context7.md).
+
+## Skills
+
+Installed with `parallel-cli skills install` (listed under Install):
+
+| Skill | Use when |
+| --- | --- |
+| `parallel-web-search` | CLI-backed search with extra controls or saved JSON output. Prefer the MCP `web_search` for ordinary lookups |
+| `parallel-web-extract` | CLI-backed URL extraction. Prefer the MCP `web_fetch` for ordinary pages |
+| `parallel-deep-research` | Only when the user says "deep research", "exhaustive", or "comprehensive report" |
+| `parallel-findall` | "Find all X that..." entity discovery |
+| `parallel-data-enrichment` | Add web-sourced fields to a CSV or list |
+| `parallel-monitor` | Track the web for changes on a cadence |
+| `parallel-memory` | Recall earlier Task, Monitor, and FindAll runs |
+| `parallel-cli-setup` | Install, authenticate, and check the CLI |
+| `parallel-mcp-setup` | Add the MCP server |
+| `parallel-search-setup` | Set up Parallel as the search provider |
+| `parallel-search-evaluation` | Compare search quality |
+
+## Install
+
+1. CLI: `brew install parallel-web/tap/parallel-cli` (macOS). Other options:
+   `uv tool install "parallel-web-tools[cli]"` or `npm install -g parallel-web-cli`.
+2. Log in: `parallel-cli login` (add `--no-browser` on a headless host), then confirm
+   with `parallel-cli auth --json`. Or set `PARALLEL_API_KEY` from
+   [platform.parallel.ai](https://platform.parallel.ai/).
+3. Skills: `parallel-cli skills install`. Restart the session if skills don't appear.
+4. MCP server: `claude mcp add --transport http "Parallel-Search-MCP" https://mcp.parallel.ai/mcp`.
+5. Check: `parallel-cli balance get`, and `claude mcp list` shows `Parallel-Search-MCP`
+   Connected. The `parallel-cli-setup` and `parallel-mcp-setup` skills automate this.
+
+Docs: [parallel.ai/agents.md](https://parallel.ai/agents.md).
+
+## Free tier and fallback
+
+- **Free allowance:** the Developer plan is pay-as-you-go with $5 of free credit a
+  month (card on file) plus up to $80 at signup, and lists up to 5,000 free requests a
+  month ([pricing](https://parallel.ai/pricing)). Search costs from $1 per 1,000
+  requests; deep research runs cost more.
+- **Out of balance or rate-limited:** don't top up without asking. Use
+  [searxng](searxng.md) `search` or `search_many` for search, `fetch_url` for page
+  text, and [exa](exa.md) for semantic or company queries. Structured sources
+  (PubMed, ClinicalTrials.gov, NPI) have no free equivalent here; say so.

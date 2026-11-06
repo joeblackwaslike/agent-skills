@@ -122,6 +122,6 @@ Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode
 
 | Skill | What it does |
 | --- | --- |
-| `web-search-and-fetch` | Router — picks the best search and fetch tool for any research task |
+| `web` | Router — picks the best search and fetch tool for any research task |
 | `docusaurus-docs-builder` | Create or overhaul a Docusaurus docs site |
 | `github-readme-overhaul` | Rewrite and visually overhaul a README for installs, stars, and marketplace conversion |

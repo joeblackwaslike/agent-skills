@@ -60,3 +60,27 @@ The plugin bundles two skills. Load them for orchestration instead of re-derivin
 - Exhaustive cited reports where cost matters: [parallel](parallel.md) deep research
   is purpose-built, but also slow and priced per run.
 - Bot-blocked pages: [stealth-browser](stealth-browser.md).
+
+## Install
+
+Run in an interactive Claude Code session, or prefix with `claude plugin` in a shell
+(`claude plugin install exa@claude-plugins-official`):
+
+1. Plugin (adds the MCP server and the `exa:search` and `exa:exa-agent` skills):
+   `claude plugin install exa@claude-plugins-official`. Then `/mcp` to sign in.
+2. Or the MCP server alone with an API key (see "Connection" above). Get a key at the
+   [Exa dashboard](https://dashboard.exa.ai/api-keys) and export it as `EXA_API_KEY`.
+3. Check: `claude mcp list` shows `exa` as Connected.
+
+Docs: [exa-mcp-server](https://github.com/exa-labs/exa-mcp-server),
+[Exa MCP reference](https://docs.exa.ai/reference/exa-mcp).
+
+## Free tier and fallback
+
+- **Free tier:** $10 of credits every month plus a $10 onboarding bonus, no card
+  needed ([pricing](https://exa.ai/pricing)). The hosted MCP also works without a key at
+  low rate limits.
+- **Out of credits or rate-limited:** stop retrying. Use [searxng](searxng.md)
+  `search_many` for web queries and `fetch_url` for page text. For a company or
+  people lookup with no free equivalent, use [parallel](parallel.md) `web_search`.
+  Tell the user which fallback you used.

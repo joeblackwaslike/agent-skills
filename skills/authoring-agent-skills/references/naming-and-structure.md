@@ -43,7 +43,7 @@ skills/developing-<x>-plugins/
 
 ### 3. Topic / capability skills
 
-**Job:** a capability or domain that isn't a single external tool: `agent-instructions`, `domain-driven-design`, `web-search-and-fetch`, `git-github-workflows`, `multi-provider-plugins`, `interactive-system-docs`.
+**Job:** a capability or domain that isn't a single external tool: `agent-instructions`, `domain-driven-design`, `web`, `git-github-workflows`, `multi-provider-plugins`, `interactive-system-docs`.
 
 - Name describes the capability (no fixed prefix). Hand-written `references/`. No fetch script.
 - Use a verb-ish, descriptive kebab name. This very skill, `authoring-agent-skills`, is one of these.

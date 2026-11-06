@@ -44,7 +44,7 @@ The former Extract tool is deprecated. Use `firecrawl_scrape` with JSON format f
 known URL, or `firecrawl_agent` when sources are unknown. Exact input schemas arrive
 from the server at connect time. Check them there.
 
-## Skills and commands
+## Skills
 
 The plugin adds `/firecrawl:setup`, `/firecrawl:search`, `/firecrawl:scrape`,
 `/firecrawl:map`, `/firecrawl:crawl`, `/firecrawl:agent`, and skills including
@@ -58,3 +58,37 @@ The plugin adds `/firecrawl:setup`, `/firecrawl:search`, `/firecrawl:scrape`,
 - A simple page read: `WebFetch`, then [stealth-browser](stealth-browser.md) if blocked.
 - Hosted deep research with citations and a defined budget: [parallel](parallel.md).
 - Never use Firecrawl for plain lookups. It spends credits per call.
+
+## Install
+
+Slash commands run in an interactive session. In a shell, use `claude plugin ...`.
+
+1. Plugin (MCP server plus skills and `/firecrawl:*` commands):
+   `/plugin marketplace add firecrawl/firecrawl-claude-plugin`, then
+   `/plugin install firecrawl@firecrawl`, then `/reload-plugins`, then `/mcp` to sign in.
+2. Or the MCP server alone with an API key (see "Connection" above). Create a key at
+   [firecrawl.dev/app/api-keys](https://www.firecrawl.dev/app/api-keys) and export it as
+   `FIRECRAWL_API_KEY`.
+3. The CLI skills (map, crawl, interact, monitor) are separate:
+   `npx skills add firecrawl/cli`.
+4. Check: `claude mcp list` shows the server Connected, and `firecrawl_search` works.
+
+Docs: [plugin README](https://github.com/firecrawl/firecrawl-claude-plugin),
+[MCP server docs](https://docs.firecrawl.dev/mcp-server).
+
+## Free tier and fallback
+
+- **Free plan:** 1,000 credits a month, no card, resets monthly. Once spent, requests
+  return HTTP `402` until the next cycle ([billing](https://docs.firecrawl.dev/billing.md)).
+- **Keyless:** search, scrape, and parse work with no key, capped per IP address per day
+  (requests and credits). Over the cap returns `429`
+  ([rate limits](https://docs.firecrawl.dev/rate-limits.md#keyless-no-api-key)).
+- **On 402 or 429, switch by job:**
+
+  | Job | Fallback |
+  | --- | --- |
+  | Search | [searxng](searxng.md) `search` |
+  | Scrape one page | [searxng](searxng.md) `fetch_url`, then [stealth-browser](stealth-browser.md) if blocked or JavaScript-rendered |
+  | Crawl a site | List pages from `sitemap.xml` or `llms.txt`, then `fetch_many` |
+  | Interact (clicks, forms) | `agent-browser` skill |
+  | Developer, legal, or paper search | [exa](exa.md) or [parallel](parallel.md) `find_verticals` |

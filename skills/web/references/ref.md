@@ -39,3 +39,25 @@ product for plans and has nothing to do with documentation search.
 - A known library with a clean ID and version: [context7](context7.md) first.
 - Open-web research, news, or non-doc pages: [exa](exa.md) or [searxng](searxng.md).
 - A page Ref can't read (blocked or interactive): [stealth-browser](stealth-browser.md).
+
+## Skills
+
+None. Ref ships only the MCP server, so there is no `SKILL.md` to load. The tool flow
+is in "Tools" above.
+
+## Install
+
+1. MCP server (recommended, the command is in "Install and configure" above). Get an
+   API key at [ref.tools](https://ref.tools) and export it as `REF_API_KEY`.
+2. Check: `claude mcp list` shows `Ref` as Connected, and `ref_search_documentation`
+   returns results for a test query.
+3. There is no Ref plugin or bundled skill. Its docs are the
+   [ref-tools-mcp README](https://github.com/ref-tools/ref-tools-mcp).
+
+## Free tier and fallback
+
+- **Free tier:** no published free-tier figure could be found (the
+  [pricing page](https://ref.tools/pricing) now describes a different product). Treat
+  the key's quota as unknown and watch for quota errors.
+- **Quota error or not connected:** use [context7](context7.md), then its "Fallback:
+  fetch the official docs as markdown" procedure, which doesn't need Ref.

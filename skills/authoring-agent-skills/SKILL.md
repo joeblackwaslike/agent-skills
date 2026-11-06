@@ -47,7 +47,7 @@ Three archetypes — pick the one that matches the skill's job. Full detail, dir
 
 - **`working-with-X`** — wraps the **external/official docs** for a tool or library X (Claude Code, Codex, the Vercel AI SDK, GitHub Actions). `references/` is **auto-fetched** by a script in `scripts/` and carries per-doc freshness frontmatter. This is the archetype the fetch/freshness pipeline is built for.
 - **`developing-X`** — the **workflow/lifecycle** for *building plugins or extensions for* platform X (developing Claude Code / Codex / Cursor / Gemini plugins). `references/` is **hand-written** (patterns, structure, troubleshooting), no fetch script. Cross-references the matching `working-with-X` for official docs.
-- **Topic / capability skills** — a domain or capability, not a single tool: `agent-instructions`, `domain-driven-design`, `web-search-and-fetch`, `git-github-workflows`. Hand-written `references/`, no fetch script.
+- **Topic / capability skills** — a domain or capability, not a single tool: `agent-instructions`, `domain-driven-design`, `web`, `git-github-workflows`. Hand-written `references/`, no fetch script.
 
 > This skill itself is a topic skill — it wraps no external docs and ships **no** fetch script.
 

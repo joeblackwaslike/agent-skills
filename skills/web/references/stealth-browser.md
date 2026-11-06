@@ -15,9 +15,11 @@ through `/content` (see "Searching" below). The same gateway also powers the
 ## Credentials
 
 The agent needs `STEALTH_BROWSER_URL` and `STEALTH_BROWSER_TOKEN` in its environment.
-If either is unset, skip the gateway and go to the next escalation step. Don't search
-the machine for credentials. Never print the token, not even a prefix. Check that the
-gateway is configured and reachable:
+If either is unset, tell the user plainly (message in `SKILL.md`, fetch step 3) and
+name the missing variable. This gateway is the only tool here that handles bot-blocked
+and JavaScript-rendered pages, so a silent skip hides the real reason a fetch failed.
+Don't search the machine for credentials. Never print the token, not even a prefix.
+Check that the gateway is configured and reachable:
 
 ```bash
 if [ -n "$STEALTH_BROWSER_URL" ] && [ -n "$STEALTH_BROWSER_TOKEN" ]; then
@@ -29,8 +31,9 @@ fi
 ```
 
 Fetch only if this prints `200`. On `not configured`, a 401 (wrong token), or a DNS,
-connection, or timeout error, skip the gateway and move to the next step. The gateway
-often sits on a private network, so it may not be reachable from this machine.
+connection, or timeout error, report that stealth-browser is unavailable and why, then
+use the degraded fallbacks in `SKILL.md` fetch step 4. The gateway sits on the
+tailnet, so it may not be reachable from this machine.
 
 ## Fetching a page
 
@@ -47,7 +50,7 @@ head -c 200000 "$dir/page.html"
 ```
 
 The recipe needs `jq`, which builds the JSON body so quotes in the URL can't break it.
-If `jq` isn't installed, skip the gateway rather than hand-writing the body.
+If `jq` isn't installed, report that and install it or stop. Don't hand-write the body.
 
 | Field | Type | Default | Notes |
 | --- | --- | --- | --- |
@@ -134,21 +137,39 @@ The `reason` on a fresh block is one of `ebay_challenge_redirect`,
 `pnpm signin` has a person log in by hand in a remote browser, so an agent can't run it.
 Report the expired profile and move on.
 
-## Domains to send straight here
+## Which hosts and responses come here
 
-Skip `webFetch` for these hostnames:
+The blocked-host list and the escalation triggers (403/429, captcha text, login wall,
+unhydrated SPA, near-empty body) live in `SKILL.md` under "Route a fetch". They are not
+repeated here, so there is one copy to maintain.
 
-- `ebay.com` and any subdomain: sold comps (`/sch/i.html?...&LH_Sold=1&LH_Complete=1`) and
-  Terapeak (Seller Hub research URLs). Both need the logged-in `ebay` profile;
-  anonymous sold searches redirect to sign-in.
-- `reddit.com` and any subdomain: threads and search, including login-walled threads.
-- `www.amazon.com`: search results and product pages (`anon`).
-- `www.google.com/search`: only when you need the raw results page; otherwise use SearXNG.
+## Skills
 
-For other domains, escalate from `webFetch` when the response shows any of:
+None. The gateway is plain HTTP with no MCP server or plugin, so this file is the
+only guidance. For interactive browsing (clicks, forms, screenshots), use the
+`agent-browser` skill instead.
 
-- HTTP 403 or 429
-- Body contains "captcha", "robot", "automated access", or "verify you are human"
-  (case-insensitive)
-- Body under ~300 characters on a page that is clearly server-rendered (no SPA root div)
-- A redirect to a login or challenge page unrelated to the target content
+## Install
+
+There is no plugin or MCP server. It is a self-hosted gateway, so setting it up means
+deploying it and exporting two variables.
+
+1. Deploy to the cluster from the
+   [stealth-browser repo](https://github.com/joeblackwaslike/stealth-browser)
+   (`deploy/deploy.sh`; manifests in `deploy/k8s/`). The README's deploy section covers
+   the secrets and first-run steps.
+2. Export `STEALTH_BROWSER_URL` (the gateway's tailnet URL) and `STEALTH_BROWSER_TOKEN`
+   (from the gateway's `stealth-browser-secrets` Secret) in the environment Claude Code
+   starts from.
+3. Check with the health command under "Credentials". It must print `200`.
+4. For logged-in eBay and Reddit, an operator captures the sessions with
+   `pnpm signin <profile>` (a person logs in by hand; an agent can't).
+
+## Free tier and fallback
+
+- **Cost:** self-hosted, so no per-request fee. The optional captcha solver bills
+  per solve at the 2Captcha-compatible service, capped by `SOLVER_MAX_PER_HOUR`.
+- **Gateway unavailable, paused, or queue full:** follow "Route a fetch" in `SKILL.md`:
+  report that stealth-browser is down, then use the degraded fallbacks (SearXNG
+  `fetch_url` with `rendered=true`, Firecrawl `firecrawl_scrape`, `agent-browser`).
+  For a `423` pause, wait out `Retry-After` instead of retrying.

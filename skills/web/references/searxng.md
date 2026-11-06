@@ -24,7 +24,8 @@ The plugin is `plugin:searxng:searxng`, so its tools appear as
 `mcp__plugin_searxng_searxng__<tool>`. Install and check it:
 
 ```text
-/plugin install searxng@88plug     # marketplace entry for 88plug/searxng-mcp
+/plugin marketplace add 88plug/claude-code-plugins
+/plugin install searxng@88plug
 claude mcp list                    # expect plugin:searxng:searxng ... Connected
 ```
 
@@ -97,6 +98,40 @@ categories) are listed in the
 - Google results through `stealth google` are slow (seconds, and queued behind other
   gateway traffic) and cost a captcha-solver call when Google serves a challenge.
 - Never pass credentials or private data in a query. It goes to Brave and Google.
+
+## Skills
+
+The plugin ships no skills. Its server instructions and the `searxng://guide` resource
+cover tool choice, and this skill routes to it. Use `/mcp` or `claude mcp list` to
+confirm the tools loaded.
+
+## Install
+
+1. A reachable SearXNG backend. Joe's runs in the cluster, deployed from the
+   stealth-browser repo (`deploy/k8s/searxng/deploy.sh`). Any other instance works too.
+2. The plugin, in an interactive session: `/plugin marketplace add 88plug/claude-code-plugins`
+   then `/plugin install searxng@88plug`. In a shell: `claude plugin marketplace add
+   88plug/claude-code-plugins` and `claude plugin install searxng@88plug`.
+3. Point it at the backend: export `SEARXNG_MCP_BASE_URL`, or write it to
+   `~/.config/searxng-mcp/env` (see "Configuration"). Restart the session.
+4. Check: `claude mcp list` shows `plugin:searxng:searxng` Connected, then call `health`.
+
+Without the plugin, run the server with
+`uvx --from git+https://github.com/88plug/searxng-mcp searxng-mcp` (Python 3.11+), or
+use its Docker image. Both are in the
+[installation docs](https://github.com/88plug/searxng-mcp/blob/main/docs/installation.md).
+
+## Free tier and fallback
+
+- **Cost:** the SearXNG service is self-hosted, so no per-query fee and no quota. The one
+  metered part is the Brave Search API key behind `braveapi`: Brave gives monthly free
+  credits but needs a card on file ([Brave Search API](https://brave.com/search/api/)).
+  Check usage in the Brave dashboard.
+- **Brave quota spent:** nothing to do. `stealth google` keeps returning results,
+  only from one engine, so results are narrower and slower.
+- **Backend down, `health` failing, or the tailnet unreachable:** say so, then use
+  [parallel](parallel.md) `web_search` or [exa](exa.md) `web_search_exa`. Use built-in
+  `WebSearch` last, labelled as a fallback.
 
 ## Sources
 
