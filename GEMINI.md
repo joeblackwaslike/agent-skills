@@ -18,7 +18,7 @@ Invoke with `activate_skill("name")`:
 | `activate_skill("working-with-opencode")` | Working with OpenCode CLI — skills, plugins, configuration, commands, agents |
 | `activate_skill("developing-opencode-plugins")` | Creating, modifying, testing, or releasing OpenCode skills or npm/Bun plugins |
 | `activate_skill("multi-provider-plugins")` | Making a plugin compatible with multiple AI coding assistants (Claude Code, Codex, Gemini, OpenCode, etc.) |
-| `activate_skill("web-research")` | Any web search, URL fetching, or multi-source research task |
+| `activate_skill("web")` | Any web search, URL fetching, or multi-source research task |
 | `activate_skill("git-github-workflows")` | Git commits, branch operations, PR creation, CI debugging, or review workflows |
 | `activate_skill("devcontainers")` | Building, using, modifying, developing, or distributing dev containers |
 | `activate_skill("docusaurus-docs-builder")` | Building or updating Docusaurus documentation sites |

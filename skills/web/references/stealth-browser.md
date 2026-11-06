@@ -1,17 +1,25 @@
 # stealth-browser gateway
 
 [stealth-browser](https://github.com/joeblackwaslike/stealth-browser) is a self-hosted
-gateway in front of Camoufox, a patched Firefox with a pinned fingerprint. It can keep
-logged-in eBay and Reddit sessions. Use it when a site blocks agents: 403, 429, a
-CAPTCHA, a login wall, or a near-empty body on a server-rendered page. The repo README
-covers what the gateway is and how to deploy it.
+gateway in front of Camoufox, a patched Firefox with a pinned fingerprint. It runs on
+Joe's Kubernetes cluster, reachable over the tailnet. It returns the fully rendered,
+JavaScript-executed HTML of a page and keeps logged-in eBay and Reddit sessions. Use it
+when a site blocks agents or `WebFetch`: 403, 429, a CAPTCHA, a login wall, or a
+near-empty body on a server-rendered page. The repo README covers deployment.
+
+It has two endpoints, `GET /healthz` and `POST /content`. There is no separate search
+API. Searching Google, eBay, Reddit, or Amazon means fetching that site's search URL
+through `/content` (see "Searching" below). The same gateway also powers the
+`stealth google` engine inside [SearXNG](searxng.md).
 
 ## Credentials
 
 The agent needs `STEALTH_BROWSER_URL` and `STEALTH_BROWSER_TOKEN` in its environment.
-If either is unset, skip the gateway and go to the next escalation step. Don't search
-the machine for credentials. Never print the token, not even a prefix. Check that the
-gateway is configured and reachable:
+If either is unset, tell the user plainly (message in `SKILL.md`, fetch step 3) and
+name the missing variable. This gateway is the only tool here that handles bot-blocked
+and JavaScript-rendered pages, so a silent skip hides the real reason a fetch failed.
+Don't search the machine for credentials. Never print the token, not even a prefix.
+Check that the gateway is configured and reachable:
 
 ```bash
 if [ -n "$STEALTH_BROWSER_URL" ] && [ -n "$STEALTH_BROWSER_TOKEN" ]; then
@@ -23,8 +31,9 @@ fi
 ```
 
 Fetch only if this prints `200`. On `not configured`, a 401 (wrong token), or a DNS,
-connection, or timeout error, skip the gateway and move to the next step. The gateway
-often sits on a private network, so it may not be reachable from this machine.
+connection, or timeout error, report that stealth-browser is unavailable and why, then
+use the degraded fallbacks in `SKILL.md` fetch step 4. The gateway sits on the
+tailnet, so it may not be reachable from this machine.
 
 ## Fetching a page
 
@@ -41,7 +50,7 @@ head -c 200000 "$dir/page.html"
 ```
 
 The recipe needs `jq`, which builds the JSON body so quotes in the URL can't break it.
-If `jq` isn't installed, skip the gateway rather than hand-writing the body.
+If `jq` isn't installed, report that and install it or stop. Don't hand-write the body.
 
 | Field | Type | Default | Notes |
 | --- | --- | --- | --- |
@@ -68,6 +77,31 @@ owns its domain and every subdomain of it:
 | `ebay.com` or any subdomain (`www.ebay.com`, `m.ebay.com`) | `ebay`, logged in |
 | `reddit.com` or any subdomain (`old.reddit.com`, `www.reddit.com`) | `reddit`, logged in |
 | anything else (Amazon included) | `anon`, no login |
+
+### Searching
+
+Build the site's own search URL and fetch it. URL-encode the query.
+
+| Site | Search URL | Profile |
+| --- | --- | --- |
+| Google | `https://www.google.com/search?q=<query>` | `anon` |
+| eBay (active) | `https://www.ebay.com/sch/i.html?_nkw=<query>` | `ebay` |
+| eBay (sold comps) | `https://www.ebay.com/sch/i.html?_nkw=<query>&LH_Sold=1&LH_Complete=1` | `ebay` |
+| Reddit | `https://www.reddit.com/search/?q=<query>` | `reddit` |
+| Amazon | `https://www.amazon.com/s?k=<query>` | `anon` |
+
+The response is raw HTML, so `grep` it for result titles and links instead of reading it
+whole. For plain Google queries, prefer [SearXNG](searxng.md), which already routes
+through this gateway and returns parsed results.
+
+### Captcha solving
+
+The gateway can solve a reCAPTCHA v2 challenge and continue to the real page. It is
+off unless the operator sets `SOLVER_API_KEY` (a 2Captcha-compatible service;
+`SOLVER_BASE_URL` overrides the host, and `SOLVER_MAX_PER_HOUR` caps attempts, default
+100, failures included). It acts only on a visible challenge form. Anything else, or an
+exhausted budget, returns the original page and is classified as a block. Callers see
+no change except slower responses when a solve happens.
 
 ### Pacing
 
@@ -97,25 +131,45 @@ for every caller.
 | 502 | `{"error":"navigation_failed","message":...}` | Navigation failed or timed out | Retry once, then escalate |
 
 The `reason` on a fresh block is one of `ebay_challenge_redirect`,
-`interruption_page`, `ebay_error_page`, `captcha`, `verify_human`, or `http_block_status` (the site returned 403).
+`interruption_page`, `ebay_error_page`, `captcha`, `captcha_widget:*`, `verify_human`,
+`google_sorry` (Google's `/sorry` page), or `http_block_status` (the site returned 403).
 
 `pnpm signin` has a person log in by hand in a remote browser, so an agent can't run it.
 Report the expired profile and move on.
 
-## Domains to send straight here
+## Which hosts and responses come here
 
-Skip `webFetch` for these hostnames:
+The blocked-host list and the escalation triggers (403/429, captcha text, login wall,
+unhydrated SPA, near-empty body) live in `SKILL.md` under "Route a fetch". They are not
+repeated here, so there is one copy to maintain.
 
-- `ebay.com` and any subdomain: sold comps (`/sch/i.html?...&LH_Sold=1&LH_Complete=1`) and
-  Terapeak (Seller Hub research URLs). Both need the logged-in `ebay` profile;
-  anonymous sold searches redirect to sign-in.
-- `reddit.com` and any subdomain: threads and search, including login-walled threads.
-- `www.amazon.com`: search results and product pages (`anon`).
+## Skills
 
-For other domains, escalate from `webFetch` when the response shows any of:
+None. The gateway is plain HTTP with no MCP server or plugin, so this file is the
+only guidance. For interactive browsing (clicks, forms, screenshots), use the
+`agent-browser` skill instead.
 
-- HTTP 403 or 429
-- Body contains "captcha", "robot", "automated access", or "verify you are human"
-  (case-insensitive)
-- Body under ~300 characters on a page that is clearly server-rendered (no SPA root div)
-- A redirect to a login or challenge page unrelated to the target content
+## Install
+
+There is no plugin or MCP server. It is a self-hosted gateway, so setting it up means
+deploying it and exporting two variables.
+
+1. Deploy to the cluster from the
+   [stealth-browser repo](https://github.com/joeblackwaslike/stealth-browser)
+   (`deploy/deploy.sh`; manifests in `deploy/k8s/`). The README's deploy section covers
+   the secrets and first-run steps.
+2. Export `STEALTH_BROWSER_URL` (the gateway's tailnet URL) and `STEALTH_BROWSER_TOKEN`
+   (from the gateway's `stealth-browser-secrets` Secret) in the environment Claude Code
+   starts from.
+3. Check with the health command under "Credentials". It must print `200`.
+4. For logged-in eBay and Reddit, an operator captures the sessions with
+   `pnpm signin <profile>` (a person logs in by hand; an agent can't).
+
+## Free tier and fallback
+
+- **Cost:** self-hosted, so no per-request fee. The optional captcha solver bills
+  per solve at the 2Captcha-compatible service, capped by `SOLVER_MAX_PER_HOUR`.
+- **Gateway unavailable, paused, or queue full:** follow "Route a fetch" in `SKILL.md`:
+  report that stealth-browser is down, then use the degraded fallbacks (SearXNG
+  `fetch_url` with `rendered=true`, Firecrawl `firecrawl_scrape`, `agent-browser`).
+  For a `423` pause, wait out `Retry-After` instead of retrying.
