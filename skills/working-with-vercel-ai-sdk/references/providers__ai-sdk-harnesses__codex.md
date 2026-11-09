@@ -4,8 +4,8 @@ description: Learn how to use the Codex harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "360db62dfdcc3a6c036e575d270edd0df287ab341d901ad38f234a845a8f8612"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "ab9dfaa2bd1546152f10519f09576540ae8ea3f2e32fd3db3f79351cc4701d7c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -113,6 +113,11 @@ Settings:
 - `webSearch`: allow live web search.
 - `port`: bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `hostDisconnectTimeoutMs`: aborts a running turn when the host disconnects
+  and no host reconnects within this many milliseconds. A suspended turn is
+  not aborted. When unset, a turn keeps running in the sandbox after its host
+  disconnects, including when the host process is gone for good, until the
+  turn finishes or the sandbox stops.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.
@@ -238,6 +243,10 @@ approvals still work.
 When the app-server must cold-resume a thread, Codex does not provide raw
 events for `apply_patch` and `view_image`, so those tool calls and results
 cannot be surfaced for that resumed thread.
+
+The Codex app-server cannot disable loading repository-owned configuration
+such as `.codex/config.toml`. Repository hooks still require separate per-hook
+trust before execution, so it is an acceptable limitation.
 
 ## Related
 

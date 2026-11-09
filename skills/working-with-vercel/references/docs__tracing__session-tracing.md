@@ -1,14 +1,14 @@
 ---
-title: Session tracing
+title: Session Tracing
 product: vercel
 url: /docs/tracing/session-tracing
 canonical_url: "https://vercel.com/docs/tracing/session-tracing"
-last_updated: 2026-08-28
+last_updated: 2026-11-03
 type: how-to
 prerequisites:
   - /docs/tracing
 related:
-  - /docs/tracing/always-on-tracing
+  - /docs/tracing/configure-tracing
   - /docs/vercel-toolbar/in-production-and-localhost
   - /docs/cli/curl
   - /docs/cli/traces
@@ -16,13 +16,13 @@ related:
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f5dbc4dc0d2782f90b7c85988cae4bba49faffa8b5cc50ed634507926f0a205a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "844ee4260d7dc3d91431f39fb2b5c7eac8a68c1db3ea2948a72a417a2b0b96aa"
 ---
 
-# Session tracing
+# Session Tracing
 
-With session tracing, you can use the Vercel toolbar to trace **your** own browser session and view the corresponding spans in the logs dashboard. Use it for targeted, interactive debugging when you want to trace a specific flow you're clicking through.
+With Session Tracing, you can use the Vercel toolbar to trace **your** own browser session and view the corresponding spans in the logs dashboard. Use it for targeted, interactive debugging when you want to trace a specific flow you're clicking through.
 
 
 <!-- docsgraph:related -->
@@ -34,16 +34,18 @@ With session tracing, you can use the Vercel toolbar to trace **your** own brows
 - [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
+- [Vercel Tracing is now generally available](https://vercel.com/changelog/vercel-tracing-is-now-generally-available)
+- [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [create_trace_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session) — Use create_trace_session with Vercel MCP.
-- [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
 - [Instrumentation](https://vercel.com/docs/tracing/instrumentation) — Learn how to instrument your application to understand performance and infrastructure details.
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
+- [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 
 Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md)
 <!-- /docsgraph:related -->
 
-Session tracing complements [always-on tracing](/docs/tracing/always-on-tracing), which continuously collects sampled traces from your production and preview traffic. Use session tracing when you want to trace only your own requests, without turning on collection for everyone.
+Session Tracing complements [tracing](/docs/tracing/configure-tracing), which continuously collects sampled traces from your production and preview traffic. Use Session Tracing when you want to trace only your own requests, without turning on collection for everyone.
 
 A session trace is initiated through the Vercel toolbar, either through a [Page Trace](/docs/tracing/session-tracing#run-a-page-trace) or a [Session Trace](/docs/tracing/session-tracing#run-a-session-trace). It is active for the person who initiated the trace on their browser indefinitely, until it is stopped or cookies are cleared.
 
@@ -82,11 +84,11 @@ To capture a trace for a single request from the terminal, use the [`vercel curl
 vercel curl --trace /api/hello
 ```
 
-Once the request completes, the CLI prints a `vercel traces get` command with the trace's request ID. Run it to inspect the trace in your terminal, or add `--open` to view it in the dashboard:
+Once the request completes, the CLI prints a `vercel traces inspect` command with the trace's request ID. Run it to inspect the trace in your terminal, or add `--open` to view it in the dashboard:
 
 ```bash filename="terminal"
-vercel traces get req_1234567890
-vercel traces get req_1234567890 --open
+vercel traces inspect qb46r-1790847620933-1145d2891a3e
+vercel traces inspect qb46r-1790847620933-1145d2891a3e --open
 ```
 
 See the [`vercel curl`](/docs/cli/curl) and [`vercel traces`](/docs/cli/traces) reference pages for all available options.
@@ -105,7 +107,7 @@ Once a trace is open, you can [switch between Timeline, Tree, and Waterfall view
 
 ## Usage and pricing
 
-Session Tracing is available on all plans with a limit of **1 million spans per month, per team**. This limit is separate from Always-on Tracing usage.
+Session Tracing is available on all plans with a limit of **1 million spans per month, per team**. This limit is separate from [tracing usage](/docs/tracing/configure-tracing#usage-and-pricing).
 
 | Plan       | Monthly Session Tracing span limit per team |
 | ---------- | ------------------------------------------- |

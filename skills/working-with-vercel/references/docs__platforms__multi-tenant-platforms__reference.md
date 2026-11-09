@@ -17,8 +17,8 @@ related:
 summary: Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "97a4cd81857f67ffff99ff02de2bde0d3fb47fe5ef38b5ab2495941b207c0b7c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fa270026f2b56d4023444a5f8b9f2174ccb88e3054bc0f78b13520163dfb2863"
 ---
 
 # Multi-tenant Reference
@@ -202,10 +202,10 @@ Project domain APIs cover the standard multi-tenant flow. Use another API when y
 
 | Code                    | Description                       | Solution                                |
 | ----------------------- | --------------------------------- | --------------------------------------- |
-| `domain_already_in_use` | Domain is used by another project | Verify domain ownership with TXT record |
+| `domain_already_in_use` | Domain is already assigned to a project in your team | Remove the domain from its current project, then add it again |
 | `invalid_domain`        | Domain format is invalid          | Check domain spelling and format        |
 | `forbidden`             | Insufficient permissions          | Check API token permissions             |
-| `rate_limit_exceeded`   | Too many requests                 | Wait and retry with exponential backoff |
+| `rate_limited`          | Too many requests                 | Wait and retry with exponential backoff |
 
 ## Troubleshooting
 
@@ -263,7 +263,7 @@ Project domain APIs cover the standard multi-tenant flow. Use another API when y
 **Solution**:
 
 - Preview URLs with custom domains require Enterprise plan
-- Use subdomain-based preview URLs: `branch-name---project.vercel.app`
+- Use the tenant prefix with a [custom preview suffix](/docs/deployments/preview-deployment-suffix), for example `tenant1---project-name-git-branch.yourdomain.dev`. The prefix does not work with the default `.vercel.app` suffix
 - Contact sales to upgrade for multi-tenant preview URLs
 - Keep branch names under 63 characters (DNS label limit)
 
@@ -313,7 +313,7 @@ Upgrade to the Pro plan for unlimited custom domains. [View pricing](/pricing).
 
 ### What are multi-tenant preview URLs?
 
-Multi-tenant preview URLs let you test changes for specific tenants before deploying to production. They follow the format: `tenant1---project-git-branch.vercel.app`.
+Multi-tenant preview URLs let you test changes for specific tenants before deploying to production. They follow the format `tenant1---project-name-git-branch.yourdomain.dev`, where `yourdomain.dev` is your [custom preview suffix](/docs/deployments/preview-deployment-suffix). The prefix does not work with the default `.vercel.app` suffix.
 
 This feature is **Enterprise only**. Contact your sales representative to enable it.
 

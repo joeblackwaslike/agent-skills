@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/help.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d6737354f4ad0a3bd0c09986246fcc825f5b45bccbfd271f594ab7af496a1a0a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0bbef853dad7492476a011988ce62c15f6753f4abeeb2eb136200df62c80ccb9"
 ---
 
 # vercel help
@@ -28,9 +28,9 @@ The `vercel help` command generates a list of all available Vercel CLI commands 
 
 - [use_vercel_cli](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli) — Use use_vercel_cli with Vercel MCP.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel changelog](https://vercel.com/docs/cli/changelog) — Read recent Vercel product updates and search the changelog from your terminal using the Vercel CLI.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
-- [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
+- [vercel guidance](https://vercel.com/docs/cli/guidance) — Enable or disable guidance messages in the Vercel CLI using the vercel guidance command.
 
 Full cross-link map for this page: [/docs/cli/help.graph.md](/docs/cli/help.graph.md)
 <!-- /docsgraph:related -->
@@ -54,6 +54,15 @@ vercel help [command]
 
 *Using the \`vercel help\` command to generate detailed
 information about a specific Vercel CLI command.*
+
+To get help for a subcommand, add the subcommand after the command:
+
+```bash filename="terminal"
+vercel help env add
+```
+
+*Using the \`vercel help\` command to generate detailed
+information about the \`vercel env add\` subcommand.*
 
 
 ---

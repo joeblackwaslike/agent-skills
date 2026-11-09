@@ -16,8 +16,8 @@ related:
 summary: Use logs to find information on deployment builds, function executions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/logs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "deabe5253ee749120ba463509ca526a5126c0ed310ec7afbe4f84d88e47d397a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4f39d6f53489a58567d889843da818d80f5ab6954337eeb5d9fafecc2c24a319"
 ---
 
 # Logs
@@ -37,12 +37,13 @@ When you deploy your website to Vercel, the platform generates build logs that s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Enhanced Logs to search, inspect, and share runtime logs](https://vercel.com/changelog/enhanced-logs-ui-to-search-inspect-and-share-application-logs)
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [Refined Logging](https://vercel.com/blog/refined-logging)
+- [Log Drains](https://vercel.com/blog/log-drains)
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
-- [Retrieves a list of all the Log Drains \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-list-of-all-the-log-drains-deprecated) — GET /v1/log-drains — Retrieves a list of all the Log Drains owned by the account. This endpoint must be called with an a
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
 
 Full cross-link map for this page: [/docs/logs.graph.md](/docs/logs.graph.md)
 <!-- /docsgraph:related -->
@@ -75,7 +76,7 @@ Learn more about [Activity Logs](/docs/activity-log).
 
 > Audit Logs are available on Enterprise plans
 >
-> Those with the owner role can access this feature
+> Those with the owner and security roles can access this feature
 
 Audit Logs allow owners to track events performed by other team members. The feature helps you verify who accessed what, for what reason, and at what time. You can export up to 90 days of audit logs to a CSV file.
 

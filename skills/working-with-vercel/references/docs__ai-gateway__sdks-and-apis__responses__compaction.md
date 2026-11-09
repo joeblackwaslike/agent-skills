@@ -10,14 +10,14 @@ prerequisites:
   - /docs/ai-gateway/sdks-and-apis
 related:
   - /docs/ai-gateway/coding-agents/openai-codex
-  - /docs/ai-gateway/pricing
   - /docs/ai-gateway/authentication-and-byok/byok
+  - /docs/ai-gateway/pricing
   - /docs/ai-gateway/security-and-compliance/zdr
 summary: Compress long conversations into a single compaction item with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/compaction.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "599d7813ba637aeb9ebcb0392448a9a8c7fa3dfadc137045c903f2d7971e5803"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bcf98e37444bdbb2206555ad360c622ba8d23fb30c9f34199e6199d63747f3d9"
 ---
 
 # OpenAI Responses Compaction with AI Gateway
@@ -30,10 +30,11 @@ Long agent sessions eventually fill the model's context window. [Compaction](htt
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway)
+- [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 - [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/compaction.graph.md](/docs/ai-gateway/sdks-and-apis/responses/compaction.graph.md)
@@ -178,7 +179,7 @@ The `compaction` item's `encrypted_content` is opaque to you. Replay it in `inpu
 | Parameter              | Type   | Description                                                                          |
 | ---------------------- | ------ | ------------------------------------------------------------------------------------ |
 | `instructions`         | string | System-level instructions to include in the compacted context                        |
-| `previous_response_id` | string | ID of a previous response whose conversation state you want to compact               |
+| `previous_response_id` | string | ID of a previous response that OpenAI stored, whose conversation state you want to compact. Use it only with [your own OpenAI key](/docs/ai-gateway/authentication-and-byok/byok). When AI Gateway uses its own OpenAI credentials, it sends Responses API requests with `store: false`, so OpenAI has no stored response for the ID               |
 | `prompt_cache_key`     | string | Key to identify cached prompts (max 64 characters)                                   |
 | `service_tier`         | string | OpenAI service tier: `auto`, `default`, `flex`, or `priority`                        |
 

@@ -15,8 +15,8 @@ related:
 summary: Request the faster serving path for supported models through AI Gateway using the `speed` option or the fast model slug, with automatic fallback to...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7da280de0aad4200343cd3830da6c4388e3528de57d9976d8f0cb55c1a6073ea"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fa7c2c93a0991315e8488081f6a12afbf05c921fe4505d08203e15820c486ec3"
 ---
 
 # AI Gateway Fast Mode
@@ -35,7 +35,6 @@ Some models expose a faster serving path that trades a higher per-token cost for
 - [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway)
 - [Opus 4.6 Fast Mode available on AI Gateway](https://vercel.com/changelog/opus-4-6-fast-mode-available-on-ai-gateway)
 - [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/fast-mode.graph.md](/docs/ai-gateway/models-and-providers/fast-mode.graph.md)
 <!-- /docsgraph:related -->

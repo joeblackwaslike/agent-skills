@@ -16,8 +16,8 @@ related:
 summary: The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f5ed0e678d9cf6d2c000b2a250182c00318852becb85b397c545ce7b35b0cac6"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e318cf729ba0fd31b72ce020a983358e531fbe401c34ceb00d414286090b0357"
 ---
 
 # Build Output API
@@ -35,6 +35,7 @@ The Build Output API is a file-system-based specification for a directory struct
 - [How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters)
 - [NestJS](https://workflow-sdk.dev/docs/getting-started/nestjs) — Set up Workflow SDK in a NestJS app.
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
+- [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel) — Learn how to work with build output limits for Next.js on Vercel.
 - [New build and deploy capabilities in Vercel CLI](https://vercel.com/changelog/new-build-and-deploy-capabilities-in-vercel-cli)
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w

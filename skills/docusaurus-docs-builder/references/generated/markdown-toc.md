@@ -1,8 +1,8 @@
 ---
 title: "Markdown Table of Contents"
 source: "https://docusaurus.io/docs/markdown-features/toc"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "16bad1836964486a1fd2d003d5a108a1dcb1d47ed1ed8ea26992ac8258f009ac"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "fd91eafb3cad54d582984b4d9ecf93f72cc9151b1a2461d5574a10b7baaae6e5"
 ---
 
 # Markdown Table of Contents
@@ -235,4 +235,4 @@ Lorem ipsum
 #### Example subsubsection 3 c II[​](https://docusaurus.io/docs/markdown-features/toc#example-subsubsection-3-c-ii)
 
 #### Example subsubsection 3 c III[​](https://docusaurus.io/docs/markdown-features/toc#example-subsubsection-3-c-iii)
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-toc.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-toc.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

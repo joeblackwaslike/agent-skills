@@ -17,8 +17,8 @@ related:
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "13ac4c7ec659c7d74d132d7552c28bd19b7b14c6b2b96891e13a84b43019a16c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "59d7100b03c6fdfdd1ef7dc85be4f4b8d0b478bf6f22c0e182a1cb3ec80e5e45"
 ---
 
 # Monitoring Reference
@@ -35,7 +35,7 @@ Monitoring is now
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/query/monitoring/monitoring-reference.graph.md](/docs/query/monitoring/monitoring-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -182,9 +182,9 @@ On the left navigation bar, you will find a list of example queries to get start
 | Requests by Bot/Crawler                   | The total number of requests for each `bot_name`                                                  |
 | Requests by User Agent                    | The total number of requests for each `user_agent`                                                |
 | Requests by Region                        | The total number of requests for each `region`                                                    |
-| Bandwidth by Project, Hostname            | The outgoing bandwidth for each `host` and `project_id` combination                               |
-| Bandwidth Per Second by Project, Hostname | The outgoing bandwidth per second for each `host` and `project_id`                                |
-| Bandwidth by Path, Hostname               | The outgoing bandwidth for each `host` and `source_path`                                          |
+| Fast Data Transfer by Project, Hostname      | The total Fast Data Transfer for each `host` and `project_id` combination                         |
+| Fast Data Transfer Rate by Project, Hostname | The total Fast Data Transfer per second for each `host` and `project_id`                          |
+| Fast Data Transfer by Path, Hostname         | The total Fast Data Transfer for each `host` and `source_path`                                    |
 | Request Cache Hits                        | The total number of request cache hits for each `host`                                            |
 | Request Cache Misses                      | The total number of request cache misses for each `host`                                          |
 | Cache Hit Rates                           | The percentage of cache hits and misses over time                                                 |

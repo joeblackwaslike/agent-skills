@@ -17,8 +17,8 @@ related:
 summary: Run any code and library on Vercel Functions with an OCI container image built from a Dockerfile or Containerfile at the project root.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/container.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "034bee5f349f0e07f6581a8d630adbb1cf303ca28dd792ca77eafd31774f50ad"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3853087dead5706232d38eb90f0226e44b6c56bf97e8cfa7afc1b7845cc8fbd6"
 ---
 
 # Container Runtime
@@ -35,13 +35,13 @@ Vercel Functions can run any code and library using Open Container Initiative (O
 
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
-- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [Deploy a container from a plain Dockerfile](https://vercel.com/changelog/deploy-a-container-from-a-plain-dockerfile)
 - [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
 - [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel)
+- [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions)
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Bring Your Own Cloud](https://vercel.com/docs/networking/bring-your-own-cloud) — Bring Your Own Cloud \\(BYOC\\) lets you run Vercel Functions behind your project in your own AWS account while Vercel rou
 
 Full cross-link map for this page: [/docs/functions/runtimes/container.graph.md](/docs/functions/runtimes/container.graph.md)
 <!-- /docsgraph:related -->
@@ -164,7 +164,7 @@ The same [limits](/docs/functions/limitations) and [Active CPU pricing model](/d
 
 Images must also stay within the [Container Registry limits](/docs/container-registry/limits-and-pricing), including the [optimization limits](/docs/container-registry/limits-and-pricing#optimization-limits) that cap how many entries an image can contain.
 
-[Secure Compute](/docs/networking/secure-compute) and [Static IPs](/docs/networking/static-ips) are not yet supported with custom container images.
+Custom container images are supported for projects using [Secure Compute](/docs/networking/secure-compute) or [Static IPs](/docs/networking/static-ips). [BYOC](/docs/networking/bring-your-own-cloud) is not yet supported with custom container images.
 
 ## Related
 

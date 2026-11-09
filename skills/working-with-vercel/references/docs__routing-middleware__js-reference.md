@@ -16,8 +16,8 @@ related:
 summary: Reference for writing Routing Middleware in TypeScript and JavaScript, including entrypoints, the config object, the middleware signature, and helper...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware/js-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5304a0058736e9223738a767fb5ea46c683153b16d7cc4d6164281c009f9d51a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7d2138783d7dc60f48649db7346fde7daab875643789866d9c84e4392dfc1fdd"
 ---
 
 # Routing Middleware: JS Reference
@@ -32,12 +32,13 @@ Use this reference to write [Routing Middleware](/docs/routing-middleware) in Ty
 
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static)
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route) — API reference for the route.js special file.
 - [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Routing Middleware: Python Reference](https://vercel.com/docs/routing-middleware/python-reference) — Reference for writing Routing Middleware in Python with the vercel-proxy package, including setup, routes, requests, and
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/routing-middleware/js-reference.graph.md](/docs/routing-middleware/js-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -392,7 +393,7 @@ export default function middleware(request, context) {
 ```
 
 ```ts filename="middleware.ts" framework=other
-import type { RequestContext } from '@vercel/functions';
+type RequestContext = { waitUntil: (promise: Promise<unknown>) => void };
 
 export const config = {
   matcher: '/',
@@ -537,7 +538,9 @@ export default function middleware(request) {
 The `RequestContext` is an extension of the standard `Request` object, which contains the [`waitUntil`](#waituntil) function. The following example works in middleware for all frameworks:
 
 ```ts filename="middleware.ts" framework=all
-import type { RequestContext } from '@vercel/functions';
+type RequestContext = {
+  waitUntil: (promise: Promise<unknown>) => void;
+};
 
 export default function handler(request: Request, context: RequestContext) {
   context.waitUntil(getAlbum().then((json) => console.log({ json })));
@@ -682,9 +685,10 @@ The `next()` helper returns a Response that instructs the function to continue t
 
 | Parameter    | type                     | Description                 |
 | ------------ | ------------------------ | --------------------------- |
-| `headers`    | `Headers[]` or `Headers` | The headers you want to set |
+| `headers`    | `HeadersInit`            | The headers you want to set |
 | `status`     | `number`                 | The status code             |
 | `statusText` | `string`                 | The status text             |
+| `request`    | `{ headers?: Headers }`  | The request headers to send in place of the incoming request headers |
 
 The following example adds a custom header, then continues the Routing Middleware chain:
 

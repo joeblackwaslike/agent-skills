@@ -8,21 +8,21 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
-  - /docs/sandbox/concepts/regions
-  - /docs/plans/pro-plan/trials
-  - /docs/cli/cache
-  - /docs/caching/cdn-cache
-  - /docs/deployment-protection/methods-to-protect-deployments/password-protection
-summary: "Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, rename, remove, and configure..."
+  - /docs/project-configuration/general-settings
+  - /docs/cli/login
+  - /docs/cli/global-options
+  - /docs/fluid-compute
+  - /docs/functions/configuring-functions/memory
+summary: "Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, rename, delete, and configure..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b77be20dac98a08e76607b56d939ef59084cea6425c97a57a50bec3e5ff9aed8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0fe669f655394cdad19977e5ab3ed3cbedafa05359300d5b777f657d839f7143"
 ---
 
 # vercel project
 
-The `vercel project` command manages your Vercel Projects from the terminal: list, create, inspect, update, rename, and remove projects, pause and resume production traffic, plus configure framework and build settings, deployment checks, deployment protection, access groups, project members, Web Analytics, Speed Insights, Observability Plus, and project-scoped OIDC tokens.
+The `vercel project` command manages your Vercel Projects from the terminal: list, create, inspect, update, rename, and delete projects, pause and resume production traffic, plus configure framework and build settings, deployment checks, deployment protection, access groups, project members, Web Analytics, Speed Insights, Observability Plus, and project-scoped OIDC tokens.
 
 
 <!-- docsgraph:related -->
@@ -32,12 +32,13 @@ The `vercel project` command manages your Vercel Projects from the terminal: lis
 
 - [Agents can now enable Web Analytics and Observability Plus with Vercel CLI](https://vercel.com/changelog/agents-can-now-enable-web-analytics-and-observability-plus-with-vercel-cli)
 - [Update Project Settings from the Vercel CLI](https://vercel.com/changelog/update-project-settings-from-the-vercel-cli)
+- [Vercel CLI can now set new projects to expire](https://vercel.com/changelog/vercel-cli-can-now-set-new-projects-to-expire)
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
-- [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
-- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
-- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
+- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
 
 Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md)
 <!-- /docsgraph:related -->
@@ -47,20 +48,18 @@ Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/projec
 ## Usage
 
 ```bash filename="terminal"
-vercel project ls
+vercel project list
 ```
 
-*Using the \`vercel project ls\` command to list projects in the current scope.*
+*Using the \`vercel project list\` command to list projects in the current scope.*
 
 ## Subcommands
 
-Subcommands that take a project argument (shown as `[name]`, `[project]`, or `<name>`) accept the project name (the name shown in the dashboard and `vercel project ls`) or its ID, for example `my-app` or `prj_abc123`. When the argument is optional and you omit it, the linked project is used.
+Subcommands that take a project argument (shown as `[name]`, `[project]`, or `<name>`) accept the project name (the name shown in the dashboard and `vercel project list`) or its ID, for example `my-app` or `prj_abc123`. When the argument is optional and you omit it, the linked project is used.
 
 ### `list`
 
-Aliases: `ls`.
-
-Show all projects in the selected scope. This is the default subcommand, so `vercel project` and `vercel project ls` behave the same way.
+Show all projects in the selected scope. This is the default subcommand, so `vercel project` and `vercel project list` behave the same way.
 
 ```bash filename="terminal"
 vercel project list [options]
@@ -68,29 +67,32 @@ vercel project list [options]
 
 #### Options
 
-| Option              | Description                                                                                                  |
-| ------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `-N, --next`        | Show the next page of results. Pass the timestamp (ms since the UNIX epoch) cursor.                          |
-| `--format`          | Output format. Supports `json`.                                                                              |
-| `--update-required` | Filter to projects affected by an upcoming Node.js runtime deprecation.                                      |
-| `-f, --filter`      | Filter projects by name (substring match).                                                                   |
+| Option              | Description                                                                       |
+| ------------------- | --------------------------------------------------------------------------------- |
+| `--next`            | Show the next page of results. Pass the cursor that the previous page prints.     |
+| `--limit`           | Number of projects to return per page. The default is 20, and the maximum is 100. |
+| `--json`            | Output the result as JSON.                                                        |
+| `--update-required` | Filter to projects affected by an upcoming Node.js runtime deprecation.           |
+| `--paused`          | Show only projects whose production traffic is [paused](#pause).                  |
+| `-q, --query`       | Filter projects by name (substring match).                                        |
 
 #### Examples
 
 ```bash filename="terminal"
 # Paginate results
-vercel project ls --next 1584722256178
+vercel project list --next 1584722256178
 
 # Projects affected by an upcoming Node.js deprecation, as JSON
-vercel project ls --update-required --format=json
+vercel project list --update-required --json
 
 # Substring filter
-vercel project ls --filter my-app
+vercel project list --query my-app
+
+# Projects whose production traffic is paused
+vercel project list --paused
 ```
 
 ### `create`
-
-Aliases: `add`.
 
 Create a new project. The `name` argument is required; `vercel project create` with no name (or with more than one positional) prints a usage error and exits.
 
@@ -98,11 +100,7 @@ Create a new project. The `name` argument is required; `vercel project create` w
 vercel project create <name>
 ```
 
-Wrap names that contain spaces in quotes:
-
-```bash filename="terminal"
-vercel project create "My Project"
-```
+Project names must be lowercase and can include letters, digits, `.`, `_`, and `-`. They can't contain spaces. See [Project name](/docs/project-configuration/general-settings#project-name) for the full rules.
 
 ### `inspect`
 
@@ -122,9 +120,46 @@ vercel project inspect
 vercel project inspect my-project
 ```
 
-### `update`
+### `keep`
 
-Aliases: `set`.
+Keep a temporary project by removing its scheduled automatic deletion:
+
+```bash filename="terminal"
+vercel project keep [project]
+```
+
+Omit the project argument to keep the linked project, or pass a project name or ID. [Sign in](/docs/cli/login) or [authenticate with a token](/docs/cli/global-options#token) before running the command. When you name a project outside a linked directory in [non-interactive mode](/docs/cli/global-options#non-interactive), pass `--scope` explicitly to select its team.
+
+The command applies the change without a confirmation prompt. If the project has no scheduled deletion, it reports that no change is needed and exits successfully.
+
+#### Examples
+
+```bash filename="terminal"
+# Keep the linked project
+vercel project keep
+
+# Keep a named project on a specific team
+vercel project keep my-project --scope my-team
+
+# Return the result as JSON
+vercel project keep my-project --scope my-team --json
+```
+
+*Remove a project's scheduled automatic deletion.*
+
+Use `--json`, or `--format=json`, to write the result to stdout:
+
+```json filename="output"
+{
+  "id": "prj_example",
+  "name": "my-project",
+  "kept": true
+}
+```
+
+`kept` is `true` when the command removes a scheduled deletion and `false` when the project wasn't scheduled for deletion. Both outcomes exit successfully. Missing projects and insufficient permissions return a nonzero exit code.
+
+### `update`
 
 Update the framework preset and build settings for a project. Only the settings you pass are changed; omitted settings remain unchanged. Defaults to the linked project. At least one setting option is required.
 
@@ -141,10 +176,17 @@ vercel project update [name] [options]
 | `--dev-command <COMMAND>`     | Set the development command.                                                                                                       |
 | `--install-command <COMMAND>` | Set the install command.                                                                                                           |
 | `--output-directory <DIR>`    | Set the output directory.                                                                                                          |
-| `--auto-detect <SETTING>`     | Reset a setting to automatic detection: `build-command`, `dev-command`, `install-command`, or `output-directory`. Repeat the flag or pass a comma-separated list. Can't be combined with the explicit flag for the same setting. |
+| `--root-directory <DIR>`      | Set the project root directory.                                                                                                    |
+| `--auto-detect <SETTING>`     | Reset a setting to automatic detection: `build-command`, `dev-command`, `install-command`, `output-directory`, or `root-directory`. Repeat the flag or pass a comma-separated list. Can't be combined with the explicit flag for the same setting. |
+| `--fluid-compute`             | Turn on [Fluid compute](/docs/fluid-compute) for the project. To turn it off, pass `--no-fluid-compute`. |
+| `--function-cpu <TIER>`       | Set the default [function CPU and memory](/docs/functions/configuring-functions/memory) tier, for example `standard` or `performance`. Changing this setting requires a Pro or Enterprise plan. |
+| `--build-machine <TYPE>`      | Set the [build machine type](/docs/builds/managing-builds#build-machines): `basic`, `standard`, `enhanced`, `turbo`, or `elastic`. Changing this setting requires a Pro or Enterprise plan. |
+| `--elastic-concurrency`       | Turn on [on-demand concurrent builds](/docs/builds/managing-builds#on-demand-concurrent-builds) for the project. To turn them off, pass `--no-elastic-concurrency`. Turning them on requires a Pro or Enterprise plan. |
+| `--node-version <VERSION>`    | Set the Node.js version, for example `24.x` or `22.x`. |
 | `--sandbox-region <REGION>`   | Set the default [region](/docs/sandbox/concepts/regions) for sandboxes created in the project. Use `""` to clear.                  |
-| `--sandbox-failover-regions <REGIONS>` | Set the ordered, comma-separated [failover regions](/docs/sandbox/concepts/regions#failover-regions) for sandboxes created in the project. Must not include the main region. Use `""` to clear. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
-| `--format`                    | Output format. Supports `json`.                                                                                                    |
+| `--sandbox-failover-regions <REGIONS>` | Set the comma-separated [failover regions](/docs/sandbox/concepts/regions#failover-regions) for sandboxes created in the project. Must not include the main region. Use `""` to clear. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
+| `-y, --yes`                   | Apply the changes without a confirmation prompt. Settings that can affect charges (`--function-cpu`, `--build-machine`, and `--elastic-concurrency`) always ask for confirmation in an interactive terminal. |
+| `--json`                      | Output the result as JSON.                                                                                                         |
 
 #### Examples
 
@@ -159,7 +201,7 @@ vercel project update my-project --auto-detect build-command --auto-detect outpu
 
 vercel project update my-project --sandbox-region sfo1 --sandbox-failover-regions cle1,iad1
 
-vercel project update my-project --framework other --format json
+vercel project update my-project --framework other --json
 ```
 
 ### `rename`
@@ -176,14 +218,18 @@ vercel project rename <name> <new-name>
 vercel project rename my-project my-renamed-project
 ```
 
-### `remove`
+### `delete`
 
-Aliases: `rm`.
-
-Remove a project.
+Delete a project and all of its deployments. You can't undo this operation. In a terminal, the command shows the project's team and asks you to type the project name to confirm.
 
 ```bash filename="terminal"
-vercel project rm <name>
+vercel project delete <name>
+```
+
+To delete a project without the prompt, for example from a script, pass `--confirm-name` with the project name and `--scope` with the team:
+
+```bash filename="terminal"
+vercel project delete my-app --confirm-name my-app --scope my-team
 ```
 
 ### `dangerously-delete-immutable-static-asset`
@@ -253,13 +299,14 @@ vercel project protection [action] [name] [options]
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `--sso`                               | Apply the action to SSO protection.                                                                        |
 | `--password`                          | Apply the action to password protection. Requires an eligible plan.                                        |
+| `--protection-password <PASSWORD>`    | When enabling `--password`, set the password value. Maximum 72 characters.                                 |
 | `--customer-support-code-visibility`  | Apply the action to customer support code visibility protection.                                           |
 | `--skew`                              | Apply the action to skew protection.                                                                       |
 | `--skew-max-age <SECONDS>`            | When enabling `--skew`, set the max age in seconds. Defaults to 2592000 (30 days).                         |
 | `--protection-bypass`                 | Apply the action to automation protection bypass secrets.                                                  |
 | `--protection-bypass-secret <SECRET>` | Optional bypass secret value. Required when disabling bypass.                                              |
 | `--git-fork-protection`               | Apply the action to Git fork protection.                                                                   |
-| `--format`                            | Output format. Supports `json`.                                                                            |
+| `--json`                              | Output the result as JSON.                                                                                 |
 
 #### Examples
 
@@ -268,7 +315,7 @@ vercel project protection [action] [name] [options]
 vercel project protection
 
 # Named project as JSON
-vercel project protection my-app --format json
+vercel project protection my-app --json
 
 # Toggle individual protections
 vercel project protection enable my-app --password
@@ -296,18 +343,19 @@ vercel project members add <project> <member> --role <role>
 vercel project members remove <project> <member>
 ```
 
-For `add` and `remove`, both arguments are required and `<member>` can be an email address, username, or user ID. `rm` is an alias for `remove`. Adding a member requires a Pro or Enterprise team, and the member must already be a confirmed member of the team. Invite them first with `vercel teams invite` if needed. The available project roles also depend on the member's team role: Contributors can hold any project role, Developers can only be added as `ADMIN`, Security members as `ADMIN` or `PROJECT_DEVELOPER`, and team Members and Owners already have access to every project.
+For `add` and `remove`, both arguments are required and `<member>` can be an email address, username, or user ID. Adding a member requires a Pro or Enterprise team, and the member must already be a confirmed member of the team. Invite them first with `vercel teams invite` if needed. The available project roles also depend on the member's team role: Contributors can hold any project role, Developers can only be added as `ADMIN`, Security members as `ADMIN` or `PROJECT_DEVELOPER`, and team Members and Owners already have access to every project.
 
 Both `add` and `remove` ask for confirmation and have no flag to skip it, so run them in an interactive terminal.
 
 #### Options
 
-| Option     | Description                                                                                                    |
-| ---------- | -------------------------------------------------------------------------------------------------------------- |
-| `--search` | Filter project members by name, username, or email (`list` only).                                              |
-| `--limit`  | Limit number of project members returned (1-100) (`list` only).                                                |
-| `--role`   | Required for `add`. Project role to grant: `ADMIN`, `PROJECT_DEVELOPER`, `PROJECT_VIEWER`, or `PROJECT_GUEST`. |
-| `--format` | Output format. Supports `json`.                                                                                |
+| Option        | Description                                                                                                    |
+| ------------- | -------------------------------------------------------------------------------------------------------------- |
+| `-q, --query` | Filter project members by name, username, or email (`list` only).                                              |
+| `--next`      | Show the next page of results (`list` only). Pass the cursor that the previous page prints.                    |
+| `--limit`     | Limit number of project members returned (1-100) (`list` only).                                                |
+| `--role`      | Required for `add`. Project role to grant: `ADMIN`, `PROJECT_DEVELOPER`, `PROJECT_VIEWER`, or `PROJECT_GUEST`. |
+| `--json`      | Output the result as JSON.                                                                                     |
 
 #### Examples
 
@@ -316,7 +364,7 @@ Both `add` and `remove` ask for confirmation and have no flag to skip it, so run
 vercel project members
 
 # List members for a named project as JSON
-vercel project members my-project --format json
+vercel project members my-project --json
 
 # Add a member to a project by email
 vercel project members add my-project user@example.com --role PROJECT_VIEWER
@@ -327,13 +375,11 @@ vercel project members add my-project octocat --role admin
 # Remove a member from a project
 vercel project members remove my-project user@example.com
 
-# Remove a member using the rm alias
-vercel project members rm my-project octocat
+# Remove a member by username
+vercel project members remove my-project octocat
 ```
 
 ### `access-groups`
-
-Aliases: `accessgroups`.
 
 List access groups for a project. Here `[name]` is the project (name or ID), not an access group; omit it to use the linked project.
 
@@ -343,12 +389,12 @@ vercel project access-groups [name] [options]
 
 #### Options
 
-| Option       | Description                                                                          |
-| ------------ | ------------------------------------------------------------------------------------ |
-| `--search`   | Search access groups by name.                                                        |
-| `--limit`    | Limit number of access groups returned (1-100).                                      |
-| `-N, --next` | Show the next page of results. Pass the timestamp (ms since the UNIX epoch) cursor. |
-| `--format`   | Output format. Supports `json`.                                                      |
+| Option        | Description                                                                   |
+| ------------- | ----------------------------------------------------------------------------- |
+| `-q, --query` | Search access groups by name.                                                 |
+| `--limit`     | Limit number of access groups returned (1-100).                               |
+| `--next`      | Show the next page of results. Pass the cursor that the previous page prints. |
+| `--json`      | Output the result as JSON.                                                    |
 
 #### Examples
 
@@ -357,12 +403,10 @@ vercel project access-groups [name] [options]
 vercel project access-groups
 
 # List access groups for a named project as JSON
-vercel project access-groups my-project --format json
+vercel project access-groups my-project --json
 ```
 
 ### `access-summary`
-
-Aliases: `summary`.
 
 Show member counts by team role for project access. Requires the access groups entitlement.
 
@@ -372,9 +416,9 @@ vercel project access-summary [name] [options]
 
 #### Options
 
-| Option     | Description                     |
-| ---------- | ------------------------------- |
-| `--format` | Output format. Supports `json`. |
+| Option   | Description                |
+| -------- | -------------------------- |
+| `--json` | Output the result as JSON. |
 
 #### Examples
 
@@ -383,7 +427,7 @@ vercel project access-summary [name] [options]
 vercel project access-summary
 
 # Summary for a named project as JSON
-vercel project access-summary my-app --format json
+vercel project access-summary my-app --json
 ```
 
 ### `web-analytics`
@@ -394,13 +438,16 @@ Enable or disable [Web Analytics](/docs/analytics) for a project. The `action` c
 vercel project web-analytics [action] [name] [options]
 ```
 
-Both `enable` and `disable` ask for confirmation and have no flag to skip it, so run the command in an interactive terminal. On Hobby, Web Analytics is free within the [documented limits](/docs/analytics/limits-and-pricing). On Pro and Enterprise, enabling incurs charges. The `--format json` option only changes the output format and the confirmation will come first.
+`enable` runs without a confirmation prompt. On Hobby, Web Analytics is free within the [documented limits](/docs/analytics/limits-and-pricing). On Pro and Enterprise, enabling incurs charges.
+
+`disable` stops data collection for the project and asks for confirmation. To skip the prompt, pass `--yes`. For a project on a Pro or Enterprise team, also pass `--scope` with the team. The `--json` option only changes the output format and doesn't skip the confirmation.
 
 #### Options
 
-| Option     | Description                     |
-| ---------- | ------------------------------- |
-| `--format` | Output format. Supports `json`. |
+| Option      | Description                                 |
+| ----------- | ------------------------------------------- |
+| `-y, --yes` | Skip the confirmation prompt for `disable`. |
+| `--json`    | Output the result as JSON.                  |
 
 #### Examples
 
@@ -414,8 +461,8 @@ vercel project web-analytics enable my-project
 # Disable for a named project
 vercel project web-analytics disable my-project
 
-# Disable and print the result as JSON
-vercel project web-analytics disable my-project --format json
+# Disable without a prompt and print the result as JSON
+vercel project web-analytics disable my-project --yes --scope my-team --json
 ```
 
 ### `speed-insights`
@@ -430,13 +477,13 @@ Both `enable` and `disable` ask for confirmation and have no flag to skip it, so
 
 Data collection continues under the free tier, subject to your team's [allocation limits](/docs/speed-insights/limits-and-pricing#limitations). To stop automatic collection from new visits to the updated deployment, [remove Speed Insights instrumentation and redeploy](/docs/speed-insights/using-speed-insights#stopping-data-collection).
 
-The `--format json` option only changes the output format, and the confirmation comes first. The JSON `enabled` field reports the project's Plus status. Data collection can continue when this field is `false`.
+The `--json` option only changes the output format, and the confirmation comes first. The JSON `enabled` field reports the project's Plus status. Data collection can continue when this field is `false`.
 
 #### Options
 
-| Option     | Description                     |
-| ---------- | ------------------------------- |
-| `--format` | Output format. Supports `json`. |
+| Option   | Description                |
+| -------- | -------------------------- |
+| `--json` | Output the result as JSON. |
 
 #### Examples
 
@@ -451,7 +498,7 @@ vercel project speed-insights enable my-project
 vercel project speed-insights disable my-project
 
 # Downgrade to the free tier and print the result as JSON
-vercel project speed-insights disable my-project --format json
+vercel project speed-insights disable my-project --json
 ```
 
 ### `observability`
@@ -462,25 +509,26 @@ Enable or disable [Observability Plus](/docs/observability) for a project. The `
 vercel project observability <action> [name] [options]
 ```
 
-Enabling Observability Plus incurs charges on your account and requires a Pro or Enterprise team. Both `enable` and `disable` ask for confirmation and have no flag to skip it, so run the command in an interactive terminal.
+Enabling Observability Plus incurs charges on your account and requires a Pro or Enterprise team. `enable` runs without a confirmation prompt. `disable` asks for confirmation. To skip the prompt, pass `--yes`, and for a team project also pass `--scope` with the team.
 
 #### Options
 
-| Option     | Description                     |
-| ---------- | ------------------------------- |
-| `--format` | Output format. Supports `json`. |
+| Option      | Description                                 |
+| ----------- | ------------------------------------------- |
+| `-y, --yes` | Skip the confirmation prompt for `disable`. |
+| `--json`    | Output the result as JSON.                  |
 
 #### Examples
 
 ```bash filename="terminal"
-# Enable for the linked project (prompts for confirmation)
+# Enable for the linked project
 vercel project observability enable
 
 # Disable for a named project
 vercel project observability disable my-project
 
-# Disable and print the result as JSON
-vercel project observability disable my-project --format json
+# Disable without a prompt and print the result as JSON
+vercel project observability disable my-project --yes --scope my-team --json
 ```
 
 ### `pause`
@@ -495,9 +543,9 @@ vercel project pause [project] [options]
 
 #### Options
 
-| Option     | Description                     |
-| ---------- | ------------------------------- |
-| `--format` | Output format. Supports `json`. |
+| Option   | Description                |
+| -------- | -------------------------- |
+| `--json` | Output the result as JSON. |
 
 #### Examples
 
@@ -509,24 +557,26 @@ vercel project pause
 vercel project pause my-project
 
 # Pause a project and print the result as JSON
-vercel project pause my-project --format json
+vercel project pause my-project --json
 ```
 
 ### `resume`
 
-Aliases: `unpause`.
-
-Resume production traffic for a paused project. Defaults to the linked project. The command asks for confirmation before restoring traffic, so run it in an interactive terminal.
+Resume production traffic for a paused project. Defaults to the linked project. Resuming a single project doesn't ask for confirmation.
 
 ```bash filename="terminal"
-vercel project resume [project] [options]
+vercel project resume [project...] [options]
 ```
+
+To resume several projects at once, name each project, or pass `--all` to resume every paused project in the team. With `--all`, or when more than one of the named projects is paused, the command asks for confirmation once before it resumes them. The command skips projects that aren't paused. To see which projects are paused, run `vercel project list --paused`.
 
 #### Options
 
-| Option     | Description                     |
-| ---------- | ------------------------------- |
-| `--format` | Output format. Supports `json`. |
+| Option      | Description                                                                                                     |
+| ----------- | --------------------------------------------------------------------------------------------------------------- |
+| `--all`     | Resume every paused project in the team. Can't be combined with project names.                                  |
+| `-y, --yes` | Skip the confirmation prompt when you resume several projects. With `--all`, also pass `--scope` with the team. |
+| `--json`    | Output the result as JSON.                                                                                      |
 
 #### Examples
 
@@ -537,8 +587,14 @@ vercel project resume
 # Resume a project by name
 vercel project resume my-project
 
+# Resume every paused project in the team
+vercel project resume --all
+
+# Resume every paused project in a team without a prompt
+vercel project resume --all --yes --scope my-team
+
 # Resume a project and print the result as JSON
-vercel project resume my-project --format json
+vercel project resume my-project --json
 ```
 
 ### `token`
@@ -551,10 +607,10 @@ vercel project token [name] [options]
 
 #### Options
 
-| Option      | Description                                          |
-| ----------- | ---------------------------------------------------- |
-| `-y, --yes` | Skip the confirmation prompt.                        |
-| `--format`  | Output format. Supports `json`.                      |
+| Option      | Description                   |
+| ----------- | ----------------------------- |
+| `-y, --yes` | Skip the confirmation prompt. |
+| `--json`    | Output the result as JSON.    |
 
 #### Examples
 
@@ -566,7 +622,7 @@ vercel project token
 vercel project token my-project
 
 # Token as JSON
-vercel project token my-project --format=json
+vercel project token my-project --json
 ```
 
 ## Global Options
@@ -581,7 +637,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

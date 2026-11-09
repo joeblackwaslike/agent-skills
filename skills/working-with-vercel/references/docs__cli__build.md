@@ -16,8 +16,8 @@ related:
 summary: Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/build.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "af9f289b825afb12e1dabf7d363f8c540c49701967d5453ed9d0bc04e122660e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "772929ccf84c24cf99d1dacd854eef46eb49bb142024a37df8bb5b41c6ffc2b7"
 ---
 
 # vercel build
@@ -33,9 +33,8 @@ Build artifacts are placed into the `.vercel/output` directory according to the
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Troubleshooting Vercel Cron Jobs](https://vercel.com/kb/guide/troubleshooting-vercel-cron-jobs) — Learn how to troubleshoot cron jobs that aren't being run or logged when using Vercel Cron Jobs.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
@@ -94,12 +93,14 @@ vercel build --yes
 *Using the \`vercel build\` command with the
 \`--yes\` option.*
 
-### target
+### Environment
 
-Use the `--target` option to define the environment you want to build against. This could be production, preview, or a [custom environment](/docs/deployments/environments#custom-environments).
+Use the `--environment` option to define the environment you want to build against. This could be production, preview, or a [custom environment](/docs/deployments/environments#custom-environments). For production, [`--prod`](#production) does the same as `--environment=production`.
+
+The following example builds for a custom environment named `staging`:
 
 ```bash filename="terminal"
-vercel build --target=staging
+vercel build --environment=staging
 ```
 
 ### Output
@@ -136,7 +137,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

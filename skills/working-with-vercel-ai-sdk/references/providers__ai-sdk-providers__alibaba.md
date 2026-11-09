@@ -4,8 +4,8 @@ description: Learn how to use Alibaba with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/alibaba.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "52787fa121f8529d5ed19c08c536017d59aef215459636522573311f9c0b7b5d"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "945138bf98b564763a8635def1de1af28d8145badbd9d6d0b53a6f84c00072b8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -671,15 +671,15 @@ reliable operation.
 
 | Model              | Audio    | Resolution  | Duration |
 | ------------------ | -------- | ----------- | -------- |
-| `wan2.6-i2v-flash` | Optional | 720P, 1080P | 2-15s    |
 | `wan2.6-i2v`       | Yes      | 720P, 1080P | 2-15s    |
+| `wan2.6-i2v-flash` | Optional | 720P, 1080P | 2-15s    |
 
 #### Reference-to-Video
 
 | Model                   | Audio    | Resolution  | Duration                      |
 | ----------------------- | -------- | ----------- | ----------------------------- |
-| `wan2.6-r2v-flash`      | Optional | 720P, 1080P | 2-10s                         |
 | `wan2.6-r2v`            | Yes      | 720P, 1080P | 2-10s                         |
+| `wan2.6-r2v-flash`      | Optional | 720P, 1080P | 2-10s                         |
 | `wan2.7-r2v`            | Yes      | 720P, 1080P | 2-10s (with video ref), 2-15s |
 | `wan2.7-r2v-2026-06-12` | Yes      | 720P, 1080P | 2-10s (with video ref), 2-15s |
 
@@ -691,6 +691,49 @@ You can also pass any available provider model ID as a string if needed.
 Please see the [Alibaba Cloud Model Studio docs](https://www.alibabacloud.com/help/en/model-studio/models) for a full
 list of available models. You can also pass any available provider model ID as
 a string if needed.
+
+## Language Model Capabilities
+
+## Video Capability Reference
+
+| Model                   | Text Input | Image Input | First Frame | Last Frame | Reference Images | Reference Video | Audio | Aspect Ratio | Resolution | Duration | FPS | Seed |
+| ----------------------- | ---------- | ----------- | ----------- | ---------- | ---------------- | --------------- | ----- | ------------ | ---------- | -------- | --- | ---- |
+| `wan2.6-t2v`            | ✓          | ✗           | ✗           | ✗          | ✗                | ✗               | ✓     | ✗            | ✓          | ✓        | ✗   | ✓    |
+| `wan2.5-t2v-preview`    | ✓          | ✗           | ✗           | ✗          | ✗                | ✗               | ✓     | ✗            | ✓          | ✓        | ✗   | ✓    |
+| `wan2.7-t2v`            | ✓          | ✗           | ✗           | ✗          | ✗                | ✗               | ✓     | ✓            | ✓          | ✓        | ✗   | ✓    |
+| `wan2.7-t2v-2026-06-12` | ✓          | ✗           | ✗           | ✗          | ✗                | ✗               | ✓     | ✓            | ✓          | ✓        | ✗   | ✓    |
+| `wan2.6-i2v`            | ✓          | ✓           | ✓           | ✗          | ✗                | ✗               | ✓     | ✗            | ✓          | ✓        | ✗   | ✓    |
+| `wan2.6-i2v-flash`      | ✓          | ✓           | ✓           | ✗          | ✗                | ✗               | ✓     | ✗            | ✓          | ✓        | ✗   | ✓    |
+| `wan2.6-r2v`            | ✓          | ✗           | ✗           | ✗          | ✓                | ✓               | ✓     | ✗            | ✓          | ✓        | ✗   | ✓    |
+| `wan2.6-r2v-flash`      | ✓          | ✗           | ✗           | ✗          | ✓                | ✓               | ✓     | ✗            | ✓          | ✓        | ✗   | ✓    |
+| `wan2.7-r2v`            | ✓          | ✗           | ✓           | ✗          | ✓                | ✓               | ✓     | ✓            | ✓          | ✓        | ✗   | ✓    |
+| `wan2.7-r2v-2026-06-12` | ✓          | ✗           | ✓           | ✗          | ✓                | ✓               | ✓     | ✓            | ✓          | ✓        | ✗   | ✓    |
+| `wan3.0-video`          | ✓          | ✓           | ✓           | ✓          | ✓                | ✓               | ✓     | ✓            | ✓          | ✓        | ✗   | ✓    |
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| language  | `enableThinking`    | Enable thinking/reasoning mode for supported models. When enabled, the model generates reasoning content before the response.                                                                                                                                                                                                                                                                                                                                                 |
+| language  | `thinkingBudget`    | Maximum number of reasoning tokens to generate.                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| language  | `preserveThinking`  | Whether to preserve reasoning from previous assistant messages. When enabled, historical reasoning is sent separately as `reasoning_content` and Alibaba receives `preserve_thinking: true`. Defaults to `true` for models that support preserved thinking; set to `false` to opt out.                                                                                                                                                                                        |
+| language  | `parallelToolCalls` | Whether to enable parallel function calling during tool use.                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| embedding | `textType`          | Differentiates query text from document text for asymmetric retrieval tasks. Defaults to `document`.                                                                                                                                                                                                                                                                                                                                                                          |
+| embedding | `dimension`         | The dimension of the output embedding vectors. Defaults to 1024. `text-embedding-v4` also supports 1536 and 2048 dimensions.                                                                                                                                                                                                                                                                                                                                                  |
+| embedding | `outputType`        | The output vector type. Defaults to `dense`. Sparse-only output is not supported by the AI SDK embedding interface, which requires dense number arrays.                                                                                                                                                                                                                                                                                                                       |
+| video     | `negativePrompt`    | Negative prompt to specify what to avoid (max 500 chars).                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| video     | `audioUrl`          | URL to audio file for audio-video sync (WAV/MP3, 3-30s, max 15MB).                                                                                                                                                                                                                                                                                                                                                                                                            |
+| video     | `promptExtend`      | Enable prompt extension/rewriting for better generation. Defaults to true.                                                                                                                                                                                                                                                                                                                                                                                                    |
+| video     | `shotType`          | Shot type: 'single' for single-shot or 'multi' for multi-shot narrative (wan2.6 and earlier; wan2.7 models describe shot structure in the prompt).                                                                                                                                                                                                                                                                                                                            |
+| video     | `watermark`         | Whether to add watermark to generated video. Defaults to false.                                                                                                                                                                                                                                                                                                                                                                                                               |
+| video     | `audio`             | Enable audio generation (wan2.6 I2V/R2V and wan3 models; wan2.7 models always generate audio). Defaults to true on wan3.                                                                                                                                                                                                                                                                                                                                                      |
+| video     | `referenceUrls`     | Reference URLs for reference-to-video mode (wan2.6 models). Array of URLs to images (0-5) and/or videos (0-3), max 5 total. Use character identifiers (character1, character2) in prompts to reference them.                                                                                                                                                                                                                                                                  |
+| video     | `media`             | Explicit media array (wan2.7 and wan3 models). Overrides the automatic mapping from `inputReferences` and `frameImages`. Use `Image 1`, `Video 1`, etc. in prompts to reference media items (images, videos, and audio are counted separately, in array order). `reference_audio`, `file`, and `link` are wan3-only and have no top-level call option, so they can only be passed here. wan3 also rejects mixing `reference_*`/`file`/`link` with `first_frame`/`last_frame`. |
+| video     | `ratio`             | Aspect ratio (wan2.7 text-to-video and reference-to-video models, and every wan3 generation). `adaptive` is wan3-only, and is its default.                                                                                                                                                                                                                                                                                                                                    |
+| video     | `pollIntervalMs`    | Polling interval in milliseconds. Defaults to 5000 (5 seconds).                                                                                                                                                                                                                                                                                                                                                                                                               |
+| video     | `pollTimeoutMs`     | Maximum wait time in milliseconds for video generation. Defaults to 600000 (10 minutes).                                                                                                                                                                                                                                                                                                                                                                                      |
 
 ---
 

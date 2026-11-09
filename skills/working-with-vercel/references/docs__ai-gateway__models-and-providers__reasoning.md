@@ -17,8 +17,8 @@ related:
 summary: Discover model reasoning capabilities and configure effort across AI SDK, Chat Completions, Messages, and Responses with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "58c86cecec4c1eba830a01fe9dc1cbde165a308dbc58a6e5956ba6ea54913413"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "651abce9c27dc632aafaa95725ba71289fe6fc5f75e4b793d20ee128a5bcce4a"
 ---
 
 # AI Gateway Reasoning
@@ -33,10 +33,10 @@ Control how much a model reasons before answering. Use the [model catalog](https
 
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
+- [Tencent Hy4 now available on AI Gateway](https://vercel.com/changelog/tencent-hy4-now-available-on-ai-gateway)
 - [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai) — Learn how to use OpenAI with AI Gateway and the direct provider.
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
 - [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
-- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai) — Learn how to use xAI with AI Gateway and the direct provider.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
@@ -386,19 +386,20 @@ AI SDK 7's TypeScript `reasoning` option accepts these values. They describe rel
 | `'low'`              | Fast, concise reasoning for simpler tasks.                                           |
 | `'medium'`           | Balanced reasoning for most tasks.                                                   |
 | `'high'`             | Thorough reasoning for complex tasks.                                                |
-| `'xhigh'`            | Highest effort exposed by the AI SDK 7 shorthand.                                                             |
+| `'xhigh'`            | Extra-high effort for the most demanding tasks.                                      |
+| `'max'`              | Maximum effort. Requires AI SDK 7.0.129 or later.                                    |
 
 Use the setting for your API format:
 
 | Format | Effort setting | Format-specific behavior |
 | ------ | -------------- | ------------------------ |
-| AI SDK 7 TypeScript | `reasoning: 'high'` | Accepts `provider-default`, `none`, `minimal`, `low`, `medium`, `high`, and `xhigh`. It doesn't accept `max`. |
+| AI SDK 7 TypeScript | `reasoning: 'high'` | Accepts `provider-default`, `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, and `max`. `max` requires AI SDK 7.0.129 or later. |
 | AI SDK Python (beta) | `ai.ReasoningParams(effort="high")` | The beta maps OpenAI and Claude effort to provider options; other models use shared effort. Use a supported string for the selected model. See the [Python reasoning parameters](https://ai-python.dev/docs/reference/ai#request-params). |
 | Chat Completions | `reasoning_effort: "high"` or `reasoning: { effort: "high" }` | The nested `reasoning.effort` takes precedence when both are present. The nested object is a Gateway extension in OpenAI clients. |
 | Messages API | `thinking: { type: "adaptive" }` and `output_config: { effort: "high" }` | Adaptive thinking applies to supported Claude models. Legacy token-budget thinking uses a different shape. See [Messages reasoning](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning). |
 | Responses / OpenResponses | `reasoning: { effort: "high" }` | Native OpenAI routing and cross-provider OpenResponses can apply different model-specific mappings. See [Responses routing](/docs/ai-gateway/sdks-and-apis/responses). |
 
-The HTTP Chat Completions and Responses schemas also accept `max`. AI SDK 7's shorthand doesn't. AI Gateway's cross-provider translation can map `max` to `xhigh`; Anthropic adaptive thinking can retain native `max`. A catalog value describes a model capability, not a guarantee that every SDK or routing path forwards the value unchanged.
+The HTTP Chat Completions and Responses schemas also accept `max`. AI Gateway's cross-provider translation can map `max` to `xhigh`; Anthropic adaptive thinking can retain native `max`. A catalog value describes a model capability, not a guarantee that every SDK or routing path forwards the value unchanged.
 
 AI Gateway maps shared effort to the serving provider's configuration. Some providers use named levels, others use token budgets, and some models don't let you disable reasoning. Use [provider-specific configuration](#provider-specific-configuration) when exact native behavior matters. A successful request alone doesn't prove that a provider honored an effort level.
 
@@ -760,7 +761,7 @@ curl https://ai-gateway.vercel.sh/v1/responses \
 
 For cross-provider requests, AI Gateway translates shared reasoning controls for the serving provider:
 
-- **An effort level** comes from the SDK or HTTP fields in [Reasoning levels](#reasoning-levels). The HTTP formats can accept levels, such as `max`, that the AI SDK 7 shorthand doesn't expose.
+- **An effort level** comes from the SDK or HTTP fields in [Reasoning levels](#reasoning-levels). The HTTP formats accept `max`, and the AI SDK 7 shorthand accepts it in version 7.0.129 or later.
 - **An on/off control** comes from `reasoning.enabled` in Chat Completions or `thinking.type` in Messages. Some models require reasoning and cannot turn it off.
 - **A token budget** comes from the `reasoning.max_tokens` field in the Chat Completions format, or the `thinking.budget_tokens` field in the Anthropic Messages format.
 
@@ -768,8 +769,8 @@ The following mappings describe AI Gateway's shared effort translation. Explicit
 
 | Target model                     | Native configuration                  | How the effort level is applied                                                                                                                            |
 | -------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| OpenAI reasoning models          | `reasoningEffort`                     | AI Gateway sends named effort. The shared translation maps `max` to `xhigh` and adjusts some unsupported values; native routes can retain native levels.                                                      |
-| Anthropic Claude 4.7 and later   | Adaptive thinking `effort`            | AI Gateway sets adaptive thinking. `minimal` maps to `low`; `max` maps to `xhigh`. Other enabled effort levels pass through.                                                                                              |
+| OpenAI reasoning models          | `reasoningEffort`                     | AI Gateway sends named effort. The shared translation keeps `max` on models that have a native `max` level, such as the GPT-5.6 series and GPT-6 Astra, and maps `max` to `xhigh` on other models. It also adjusts some unsupported values; native routes can retain native levels.                                                      |
+| Anthropic Claude 4.7 and later   | Adaptive thinking `effort`            | AI Gateway sets adaptive thinking. `minimal` maps to `low`. Other enabled effort levels, including `xhigh` and `max`, pass through.                                                                                              |
 | Anthropic Claude 4.6             | Adaptive thinking `effort`            | AI Gateway sets adaptive thinking. `minimal` maps to `low`; `xhigh` and `max` map to `max`. Other enabled effort levels pass through. Token-budget configurations are deprecated.                                                       |
 | Anthropic Claude 4.5 and earlier | `budgetTokens`                        | Converted to a thinking budget sized as a share of the maximum output tokens.                                                                               |
 | Google Gemini 3 and later        | `thinkingLevel`                       | `low` maps to `low`; all other effort levels map to `high`.                                                                                                             |

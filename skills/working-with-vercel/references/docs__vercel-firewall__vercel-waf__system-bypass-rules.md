@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "119cf6c2ebd08447e6cc0e2284743d43076d757dfb7e043c880a254a80dba8bb"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "af999ce161b2b186df7a9ee639bed7673a19735b1f8c0d7c9f3a5d1e952e4d0e"
 ---
 
 # WAF System Bypass Rules
@@ -34,7 +34,7 @@ While Vercel's system-level mitigations (such as [DDoS protection](/docs/vercel-
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
-- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Improvements to Vercel Firewall system bypass rules](https://vercel.com/changelog/improvements-to-vercel-firewall-system-bypass-rules)
 - [Vercel Firewall now supports bypassing system mitigations for specific IPs](https://vercel.com/changelog/vercel-firewall-now-supports-bypassing-system-mitigations-for-specific-ips)
@@ -58,11 +58,11 @@ You can ensure that specific IP addresses or CIDR ranges are never blocked by th
 To add an IP address that should bypass system mitigations, open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall\&title=Go+to+Firewall) in the sidebar of your project and follow these steps:
 
 1. On the top right, click **Add New** and select **System Bypass**
-2. Complete the following fields in the **Configure New System Bypass** modal:
+2. Complete the following fields in the **Add System Bypass Rule** modal:
    - IP Address Or CIDR (required)
    - Domain (required): The domain connected to the project or use `*` to specify all domains connected to a project
    - Note: For future reference
-3. Select the **Create System Bypass** button
+3. Select the **Add Bypass Rule** button
 
 You'll see a success message on the bottom right confirming that the rule was added.
 

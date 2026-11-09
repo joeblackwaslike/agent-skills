@@ -12,11 +12,12 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/sdks-and-apis/ai-sdk
   - /docs/ai-gateway/modalities/reranking
+  - /docs/ai-gateway/sdks-and-apis/rest-api
 summary: Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0a8dd282199bdda0d5a89985cb469e98ea5da6bfadf288e173682fbde695a890"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5da982facedf3fe9b6d7422162e2d7c5b0e2f704f07a7c76b9a804521cf495ca"
 ---
 
 # Cohere Rerank API with AI Gateway
@@ -33,10 +34,11 @@ AI Gateway provides Cohere-compatible Rerank API endpoints, so you can use the [
 - [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank) — API Reference for rerank.
 - [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere) — Learn how to use Cohere with AI Gateway and the direct provider.
 - [Voyage Rerank 3 and Rerank 3 Lite are now available on AI Gateway](https://vercel.com/changelog/voyage-rerank-3-and-rerank-3-lite-are-now-available-on-ai-gateway)
-- [Voyage AI](https://ai-sdk.dev/providers/ai-sdk-providers/voyage) — Learn how to use Voyage AI with AI Gateway and the direct provider.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [Get virtual model config](https://vercel.com/docs/rest-api/ai-gateway/get-virtual-model-config) — GET /ai-gateway/virtual-model-configs — Get a virtual model config
 - [Update virtual model config](https://vercel.com/docs/rest-api/ai-gateway/update-virtual-model-config) — PATCH /ai-gateway/virtual-model-configs — Update a virtual model config
+- [List virtual model configs](https://vercel.com/docs/rest-api/ai-gateway/list-virtual-model-configs) — GET /ai-gateway/virtual-model-configs/list — List virtual model configs. For a team, returns all of its VMCs, or with \\`
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md](/docs/ai-gateway/sdks-and-apis/cohere-rerank.graph.md)
 <!-- /docsgraph:related -->
@@ -231,7 +233,7 @@ If you use the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk), call reranking m
 
 ## Error handling
 
-The API returns standard HTTP status codes. Errors follow the Cohere error format:
+The API returns standard HTTP status codes. Authentication errors, billing errors, unknown model errors, and model provider failures use the [standard AI Gateway error format](/docs/ai-gateway/sdks-and-apis/rest-api#error-responses): an `error` object with `message` and `type` fields. Request validation errors follow the Cohere error format:
 
 ```json
 {

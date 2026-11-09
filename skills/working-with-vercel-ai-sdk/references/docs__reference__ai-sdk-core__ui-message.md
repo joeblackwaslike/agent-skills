@@ -4,8 +4,8 @@ description: API Reference for UIMessage
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "1404f836e020f3f1a890bdbf81167e959ec0fd902e13ee737e0306823f1afb3d"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "4c344bac8854085dfc59c899f7f9e77316953d3dded875cad5943626d30fc57c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -319,6 +319,27 @@ type DataUIPart<DATA_TYPES extends UIDataTypes> = ValueOf<{
     data: DATA_TYPES[NAME];
   };
 }>;
+```
+
+### `SteeringMessageUIPart`
+
+This part is experimental and exported as
+`Experimental_SteeringMessageUIPart`.
+
+A user message that was added to the run with [steering](/docs/agents/loop-control#steering) while the assistant message was generated. It is placed before the `step-start` part of the step that received it.
+
+```typescript
+type SteeringMessageUIPart = {
+  type: 'steering-message';
+  /**
+   * The id of the steering message.
+   */
+  id: string;
+  /**
+   * The content of the user message.
+   */
+  parts: Array<TextUIPart | FileUIPart>;
+};
 ```
 
 ### `StepStartUIPart`

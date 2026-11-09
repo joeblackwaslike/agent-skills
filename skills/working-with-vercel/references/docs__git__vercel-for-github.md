@@ -16,8 +16,8 @@ related:
 summary: Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9c4df4187f4f052e5b498fa88d439e1398337d28637d28d4a500ad20a7cda1fa"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "09e0dffb8576a46ae4945f29ddef00c2c848d1bc42973e45285693aff40743c6"
 ---
 
 # Deploying GitHub Projects with Vercel
@@ -37,10 +37,10 @@ Vercel for GitHub automatically deploys your GitHub projects with [Vercel](/), p
 - [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Introducing `vercel dev`: Serverless, on localhost](https://vercel.com/blog/vercel-dev)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [September 2020](https://vercel.com/blog/changelog-september-2020)
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Block Vercel deployment promotions with GitHub Actions](https://vercel.com/changelog/block-vercel-deployment-promotions-with-github-actions)
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 
 Full cross-link map for this page: [/docs/git/vercel-for-github.graph.md](/docs/git/vercel-for-github.graph.md)
@@ -71,7 +71,7 @@ repository to preview changes made before they are pushed to production.
 
 With each new push, if Vercel is already building a previous commit on the same branch, the current build will complete and any commit pushed during this time will be queued. Once the first build completes, the most recent commit will begin deployment and the other queued builds will be cancelled. This ensures that you always have the latest changes deployed as quickly as possible.
 
-You can disable this feature for GitHub by configuring the [github.autoJobCancellation](/docs/project-configuration/git-configuration#github.autojobcancelation) option in your `vercel.json` file.
+You can disable this feature for GitHub by configuring the [github.autoJobCancelation](/docs/project-configuration/git-configuration#github.autojobcancelation) option in your `vercel.json` file.
 
 ### Select Turbo for one deployment
 
@@ -242,13 +242,39 @@ Then, restart the Vercel [signup process](/signup).
 
 ## Missing Git repository
 
-When you create a new project from a GitHub repository or connect an existing project to one, you need specific permissions. The required permissions depend on whether a personal GitHub account or a GitHub organization [owns the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-ownership).
+A GitHub repository can be missing from the import screen, or unavailable when you connect it to an existing project. This section explains why that happens and how to fix it.
 
-### Personal account repositories
+### Why can't I find my GitHub repository in Vercel?
+
+If you can't find your GitHub repository when you [create a project](/docs/git#deploying-a-git-repository) or connect an existing project, Vercel can't see it yet. Vercel connects to GitHub through the Vercel GitHub App, and the app only sees the repositories you grant it access to. Your role on the repository also controls whether you can import it.
+
+Check these causes in order. Missing GitHub App access is the most common one.
+
+### Check the selected Git account
+
+The import screen lists repositories for one GitHub account or organization at a time. If the repository belongs to a different account or organization, select it from the account selector at the top left of the repository list.
+
+### Grant the Vercel GitHub App access to the repository
+
+When you install the Vercel GitHub App, you choose **All repositories** or **Only select repositories**. If you chose **Only select repositories**, the app can't see repositories you didn't select, including any repositories you've created since.
+
+To grant access:
+
+1. On the import screen, click **Adjust GitHub App Permissions** below the repository list, or **Configure GitHub App** if no repositories appear. You can also open the app from your GitHub **Settings** > **Applications** > **Installed GitHub Apps**, then click **Configure** next to Vercel.
+2. Under **Repository access**, add the missing repository, or select **All repositories**.
+3. Click **Save**.
+
+For a repository that an organization owns, the Vercel GitHub App must be installed on that organization. If you aren't an organization Owner, GitHub sends your installation request to the Owners for approval.
+
+### Check your repository permissions
+
+If the Vercel GitHub App has access and you still can't see the repository, check who owns it and your role on it. The required permissions depend on whether a personal GitHub account or a GitHub organization [owns the repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#about-repository-ownership).
+
+#### Personal account repositories
 
 To import or connect a GitHub repository owned by a [personal account](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/permission-levels-for-a-personal-account-repository), you must be the repository **Owner**. This allows Vercel to configure a webhook and automatically deploy your commits. A Collaborator on a personal repository cannot create new Vercel projects from that repository or connect it to existing projects.
 
-### Organization repositories
+#### Organization repositories
 
 If an organization owns the repository, you need one of the following permissions to import or connect a GitHub repository:
 
@@ -256,11 +282,15 @@ If an organization owns the repository, you need one of the following permission
 
 **OR**
 
-- **Member** of the GitHub organization *with access to the repository*. If you are a Member of the organization and do not see the repository as an option in Vercel, verify that you have an [access role](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization#repository-roles-for-organizations) to the repository in addition to being an organization Member.
+- **Member** of the GitHub organization *with write or admin access to the repository*. If you are a Member of the organization and do not see the repository as an option in Vercel, or you cannot connect it, verify that you have the Write, Maintain, or Admin [access role](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization#repository-roles-for-organizations) on the repository in addition to being an organization Member.
 
 If you have access to the repository but are only an [Outside Collaborator in the GitHub organization](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-outside-collaborators/adding-outside-collaborators-to-repositories-in-your-organization), you cannot import or connect a GitHub repository in Vercel. You need to be an Owner or a Member of the GitHub organization.
 
 Contact your GitHub organization's Owner(s) to confirm your current role and repository-level access.
+
+### Import the repository after you update access
+
+After you update the GitHub App access or your repository role, return to the [import screen](/new) and search for the repository again. It now appears in the list, ready to import. If it still doesn't appear, work through the causes above again. Any one of them can block the repository, even when the others are correct.
 
 ## Silence GitHub comments
 

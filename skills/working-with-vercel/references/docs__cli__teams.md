@@ -14,13 +14,13 @@ related:
 summary: Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "91a56a9736efb85107919849024bc5f1bd655e9edc62fc38eaae8ecb7b9a5664"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9dd9f83484ecee3f5cf138cafd5828db9e8a0676aac76327f2085d182e31443f"
 ---
 
 # vercel teams
 
-The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list teams you belong to, create a new team, switch between teams, invite [Team Members](/docs/rbac/managing-team-members), inspect SAML/SSO configuration, list members, and check team join-request status.
+The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list teams you belong to, create a new team, switch between teams, invite [Team Members](/docs/rbac/managing-team-members), inspect SAML/SSO configuration, list or remove members, and check team join-request status.
 
 
 <!-- docsgraph:related -->
@@ -30,14 +30,14 @@ The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list
 
 - [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
 - [vercel switch](https://vercel.com/docs/cli/switch) — Learn how to switch between different team scopes using the vercel switch CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
+- [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md)
 <!-- /docsgraph:related -->
 
-`vercel team` is an alias for the same command, and `vercel switch` is a top-level alias for `vercel teams switch`.
+`vercel switch` is a top-level alias for `vercel teams switch`.
 
 > **💡 Note:** You can manage Teams with further options and greater control from the Vercel
 > Dashboard.
@@ -54,8 +54,6 @@ vercel teams list
 
 ### `list`
 
-Aliases: `ls`.
-
 List all teams you're a member of.
 
 ```bash filename="terminal"
@@ -64,22 +62,21 @@ vercel teams list [options]
 
 #### Options
 
-| Option       | Description                                                                          |
-| ------------ | ------------------------------------------------------------------------------------ |
-| `-N, --next` | Show the next page of results. Pass the timestamp (ms since the UNIX epoch) cursor. |
-| `--format`   | Output format. Supports `json`.                                                      |
+| Option    | Description                                                                    |
+| --------- | ------------------------------------------------------------------------------ |
+| `--next`  | Show the next page of results. Pass the cursor that the previous page prints.  |
+| `--limit` | Number of teams to return per page. The default is 20, and the maximum is 100. |
+| `--json`  | Output the result as JSON.                                                     |
 
 #### Examples
 
-Paginate results (the value is the cursor in milliseconds since the UNIX epoch):
+Show the next page, using the cursor that the previous page prints:
 
 ```bash filename="terminal"
-vercel teams ls --next 1584722256178
+vercel teams list --next 1584722256178
 ```
 
 ### `create`
-
-Aliases: `add`.
 
 Create a new team. The interactive flow prompts for slug and display name; in non-interactive mode you must pass both `--slug` and `--name`.
 
@@ -132,8 +129,6 @@ vercel teams invite abc@vercel.com xyz@vercel.com
 
 ### `switch`
 
-Aliases: `change`.
-
 Switch your CLI context to a different team. If the slug is omitted, the command is interactive. Available as the top-level alias `vercel switch`.
 
 `switch` does not accept the global `--token` flag; use the global `--scope` flag if you need to override scope for a single command.
@@ -158,8 +153,6 @@ vercel teams switch
 
 ### `request`
 
-Aliases: `access-request`.
-
 Show the join-request status for the current team. Defaults to the authenticated user; pass a user ID to check another user's request.
 
 ```bash filename="terminal"
@@ -168,9 +161,9 @@ vercel teams request [userId] [options]
 
 #### Options
 
-| Option     | Description                     |
-| ---------- | ------------------------------- |
-| `--format` | Output format. Supports `json`. |
+| Option   | Description                |
+| -------- | -------------------------- |
+| `--json` | Output the result as JSON. |
 
 #### Examples
 
@@ -196,9 +189,9 @@ vercel teams sso [options]
 
 #### Options
 
-| Option     | Description                     |
-| ---------- | ------------------------------- |
-| `--format` | Output format. Supports `json`. |
+| Option   | Description                |
+| -------- | -------------------------- |
+| `--json` | Output the result as JSON. |
 
 #### Examples
 
@@ -211,25 +204,27 @@ vercel teams sso
 JSON output:
 
 ```bash filename="terminal"
-vercel teams sso --format json
+vercel teams sso --json
 ```
 
 ### `members`
 
-Aliases: `member`.
-
-List members for the currently scoped team.
+List the members of the currently scoped team, or remove a member from it. To invite a member, use [`invite`](#invite).
 
 ```bash filename="terminal"
 vercel teams members [options]
+vercel teams members remove <member>
 ```
+
+To remove a member, pass their email, username, or user ID. The command shows the team and the member, then asks you to confirm. No option skips this prompt, so run the command in an interactive terminal. If the team's invoices go to that member, the command first asks you for a new invoice recipient.
 
 #### Options
 
-| Option       | Description                                                                          |
-| ------------ | ------------------------------------------------------------------------------------ |
-| `-N, --next` | Show the next page of results. Pass the timestamp (ms since the UNIX epoch) cursor. |
-| `--format`   | Output format. Supports `json`.                                                      |
+| Option    | Description                                                                      |
+| --------- | -------------------------------------------------------------------------------- |
+| `--next`  | Show the next page of results. Pass the cursor that the previous page prints.    |
+| `--limit` | Number of members to return per page. The default is 20, and the maximum is 100. |
+| `--json`  | Output the result as JSON.                                                       |
 
 #### Examples
 
@@ -238,10 +233,13 @@ vercel teams members [options]
 vercel teams members
 
 # List team members as JSON
-vercel teams members --format json
+vercel teams members --json
 
 # Paginate results
 vercel teams members --next 1584722256178
+
+# Remove a member
+vercel teams members remove user@example.com
 ```
 
 ## Global Options
@@ -256,7 +254,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

@@ -3,7 +3,7 @@ title: post-v1-installations-resources-experimentation-items
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/post-v1-installations-resources-experimentation-items
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/post-v1-installations-resources-experimentation-items"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about post-v1-installations-resources-experimentation-items on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/post-v1-installations-resources-experimentation-items.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4fd21d52c3e213bfa68f8b6c45a764d8e9822604f38c206a44ffd1859dfe1c5a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4d359de0ff14cc63b4912903f11e8a44fca0a6c22c44e44c1ef7222b37aae720"
 ---
 
 # Create one or multiple experimentation items

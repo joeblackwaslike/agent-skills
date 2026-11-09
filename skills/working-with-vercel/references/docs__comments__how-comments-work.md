@@ -15,8 +15,8 @@ related:
 summary: Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session or interface levels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/how-comments-work.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "15bed0b3bce52a53d66e89a867d5c13820aa7c5de6d8b8abe360e1cfc512349d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "99ce61e6b8742e81728c0479bf353fad3b81f693a1b02a8099a5d9a5d7e78d13"
 ---
 
 # Enabling and Disabling Comments
@@ -31,10 +31,10 @@ Comments are enabled by default for all preview deployments on all new projects.
 
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
-- [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation)
 - [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments)
+- [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation)
 - [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience)
-- [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
+- [Comments are now visible in your dashboard notifications](https://vercel.com/changelog/comments-are-now-visible-in-your-dashboard-notifications)
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
@@ -53,7 +53,10 @@ You can enable or disable comments at the account level with certain permissions
 1. Navigate to [your Vercel dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard) and make sure that you have selected your team from the team switcher.
 2. From your [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), open **Settings** in the sidebar.
 3. In the **General** section, find **Vercel Toolbar**.
-4. Under each environment (**Preview** and **Production**), select either **On** or **Off** from the dropdown to determine the visibility of the Vercel Toolbar for that environment.
+4. Under **Pre-Production Deployments** and **Production Deployments**, select an option from the dropdown to determine the visibility of the Vercel Toolbar for those deployments. The options are:
+   - **Default (on)**: Keep the Vercel default, which enables the toolbar.
+   - **On**: Enable the toolbar.
+   - **Off**: Disable the toolbar.
 5. You can optionally choose to allow the setting to be overridden at the project level.
 
 ![The dashboard setting to enable or disable the toolbar at the team level.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/team-level-toolbar-management-light.png)
@@ -63,7 +66,7 @@ You can enable or disable comments at the account level with certain permissions
 1. From your [dashboard](/dashboard), select the project you want to enable or disable Vercel Toolbar for.
 2. Navigate to [**General**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fgeneral\&title=Go+to+General+settings) in **Settings**.
 3. Find **Vercel Toolbar**.
-4. Under each environment (**Preview** and **Production**), select either an option from the dropdown to determine the visibility of Vercel Toolbar for that environment. The options are:
+4. Under **Pre-Production Deployments** and **Production Deployments**, select an option from the dropdown to determine the visibility of Vercel Toolbar for those deployments. The options are:
    - **Default**: Respect team-level visibility settings.
    - **On**: Enable the toolbar for the environment.
    - **Off**: Disable the toolbar for the environment.

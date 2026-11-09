@@ -17,8 +17,8 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a4c63048fe0390674b60de51de8c6ab028c9ffc7285b71bb8bea22b610fd3924"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "110eeb05706990a0e5685338317c62f22f25d090dfc8b21ded9c5f3e563d1069"
 ---
 
 # OpenAI Chat Completions Reasoning with AI Gateway
@@ -374,7 +374,7 @@ Each detail object contains:
   - `'reasoning.encrypted'`: Contains encrypted or redacted reasoning content in the `data` field. Used by OpenAI models when reasoning is protected, or by Anthropic models when thinking is redacted. Preserves the encrypted payload for verification purposes.
   - `'reasoning.summary'`: Contains a condensed version of the reasoning process in the `summary` field. Used by OpenAI models to provide a readable summary alongside encrypted reasoning.
 - **`id`** (optional): Unique identifier for the reasoning block, used for tracking and correlation
-- **`format`**: Provider format identifier - `'openai-responses-v1'`, `'anthropic-claude-v1'`, or `'unknown'`
+- **`format`**: Provider format identifier, such as `'openai-responses-v1'`, `'anthropic-claude-v1'`, `'google-gemini-v1'`, `'xai-responses-v1'`, or `'unknown'`
 - **`index`** (optional): Position in the reasoning sequence (for responses with multiple reasoning blocks)
 
 **Example response with reasoning details**
@@ -536,7 +536,8 @@ The AI Gateway automatically maps reasoning parameters to each provider's native
 
 > **💡 Note:** **Automatic extraction:** For models that don't natively support reasoning
 > output, the gateway automatically extracts reasoning
-> from `<think>` tags in the response.
+> from `<think>` tags in non-streaming responses. In streaming responses,
+> the tags stay in `delta.content`.
 
 ## Next steps
 

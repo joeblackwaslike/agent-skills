@@ -16,13 +16,13 @@ related:
 summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d86c3bef98ce6b57cf7edb0c071f53bb00e1647154042a41d42cf50b4ea6d305"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b3ece9423b291ec5cacc0fdceeeef269af9c34fbe4e75f1616d8244a92a4189d"
 ---
 
 # Vercel Agent Pricing
 
-Vercel Agent charges the underlying provider inference rate with no markup, plus a Vercel Token Rate of $0.25 per million tokens.
+Vercel Agent charges the underlying provider inference rate with no markup, plus a Vercel Token Rate of $0.25 per million tokens (input, output, and cached).
 
 
 <!-- docsgraph:related -->
@@ -35,9 +35,8 @@ Vercel Agent charges the underlying provider inference rate with no markup, plus
 - [Vercel Agent investigations now included in Observability Plus](https://vercel.com/changelog/vercel-agent-investigations-now-included-in-observability-plus)
 - [Vercel Agent sessions now cost 67% less](https://vercel.com/changelog/vercel-agent-sessions-now-cost-67-percent-less)
 - [Vercel for Slack now in public beta](https://vercel.com/changelog/vercel-for-slack-now-in-public-beta)
-- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
-- [Vercel Agent has updated pricing](https://vercel.com/changelog/vercel-agent-has-updated-pricing)
-- [Pricing](https://v0.app/docs/pricing) — Understand the v0 plans, pricing, and usage limits.
+- [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
+- [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
@@ -58,7 +57,7 @@ Full cross-link map for this page: [/docs/agent/pricing.graph.md](/docs/agent/pr
 
 ## Vercel Token Rate
 
-The Vercel Token Rate is $0.25 per million tokens for paid Vercel Agent work. It is charged in addition to provider inference costs and applies to input, output, and cached tokens.
+The Vercel Token Rate is $0.25 per million tokens for paid Vercel Agent work. It is charged in addition to provider inference costs and applies to all tokens (input, output, and cached).
 
 The Vercel Token Rate covers:
 

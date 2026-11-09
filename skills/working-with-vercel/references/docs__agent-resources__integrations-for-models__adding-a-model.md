@@ -17,8 +17,8 @@ related:
 summary: Learn how to add a new AI model to your Vercel projects
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1c7aee6937fc521e66dc76a80c3c9d3d325b8a6f7c5b5bf2e441ed367dfd7c81"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6cd62bb411dc5631911d2a60c6793e7a23f99e393ad2be68072271f8d1baf2de"
 ---
 
 # Adding a Model
@@ -33,11 +33,12 @@ If you have integrations installed, scroll to the bottom to access the models ex
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
+- [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard)
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
-- [Vercel AI Gateway: Models, Routing, and Observability](https://vercel.com/docs/ai-gateway) — Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, r
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-model.graph.md](/docs/agent-resources/integrations-for-models/adding-a-model.graph.md)
 <!-- /docsgraph:related -->

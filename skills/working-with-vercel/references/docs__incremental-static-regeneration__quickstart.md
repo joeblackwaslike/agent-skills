@@ -14,8 +14,8 @@ related:
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e26761713a3c87514bf9e1745fb6681bd0780fb051e69202d4b1b8fcb296e1f8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6a7eb63bec0931019bb36a3c5c1efceb5829e74c4e2469ba34d592390af20d64"
 ---
 
 # Getting started with ISR
@@ -32,12 +32,12 @@ This guide helps you set up Incremental Static Regeneration (ISR) with your Verc
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Updating large-scale site navigation with minimal revalidation](https://vercel.com/kb/guide/update-mega-nav-min-reval) — When working with a large number of pages that share a common multi-level navigation, making a navigation update require
-- [How to implement Incremental Static Regeneration (ISR)](https://nextjs.org/docs/app/guides/incremental-static-regeneration) — Learn how to create or update static pages at runtime with Incremental Static Regeneration.
+- [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient)
 - [How HashiCorp developers iterate faster with Incremental Static Regeneration](https://vercel.com/blog/how-hashicorp-developers-iterate-faster-with-isr)
 - [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [Incremental Static Regeneration (ISR) is now faster and more cost-efficient](https://vercel.com/changelog/incremental-static-regeneration-is-now-faster-and-cheaper)
 - [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
 
@@ -88,21 +88,21 @@ When using Next.js with the App Router, you can enable ISR by using the `revalid
 
 > For \["sveltekit"]:
 
-To deploy a SvelteKit route with ISR, export a config object with an `isr` property. The following example demonstrates a SvelteKit route that Vercel will deploy with ISR, revalidating the page every 60 seconds:
+To deploy a SvelteKit route with ISR, export a config object with an `isr` property. The following example demonstrates a SvelteKit route that Vercel will deploy with ISR, revalidating the page every 10 seconds:
 
 > For \["nuxt"]:
 
 To enable ISR in a Nuxt route, add a `routeRules` option to your `nuxt.config.ts`, as shown in the example below:
 
-**apps/example/page.tsx**
+**app/example/page.tsx**
 
-```ts filename="apps/example/page.tsx" framework=nextjs-app
+```ts filename="app/example/page.tsx" framework=nextjs-app
 export const revalidate = 10; // seconds
 ```
 
-**apps/example/page.jsx**
+**app/example/page.jsx**
 
-```js filename="apps/example/page.jsx" framework=nextjs-app
+```js filename="app/example/page.jsx" framework=nextjs-app
 export const revalidate = 10; // seconds
 ```
 

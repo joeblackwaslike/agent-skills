@@ -16,8 +16,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions in Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ee159c9d7fc7dd8461a91d9343dc519fb6b60118c3b503d5892b1cf3ca4f2def"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "dd7f3e422505ede6c3faa1c27a589fdb4d811e1f3540002de45f0edbd48e3b73"
 ---
 
 # vercel.functions API Reference (Python)
@@ -50,7 +50,7 @@ sha256: "ee159c9d7fc7dd8461a91d9343dc519fb6b60118c3b503d5892b1cf3ca4f2def"
 
 - [Vercel Python SDK is now available in beta](https://vercel.com/changelog/vercel-python-sdk-in-beta)
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api)
-- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 - [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python) — Learn how to use the Python runtime to run Python applications on Vercel.

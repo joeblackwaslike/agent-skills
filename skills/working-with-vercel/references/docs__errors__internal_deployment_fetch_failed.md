@@ -14,15 +14,15 @@ related:
 summary: Failed to fetch the internal deployment. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_deployment_fetch_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "54cde2be643e54e7523f26b3926c5c74e3a63706146193780e9c6ee9fd060f4f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d960fc54cd86035145e11a2d68a5213d7d1111d3a4c0d008fddd59486f621428"
 ---
 
 # INTERNAL_DEPLOYMENT_FETCH_FAILED
 
 The `INTERNAL_DEPLOYMENT_FETCH_FAILED` error occurs when the system is unable to fetch the deployment. This could happen due to network issues, misconfigurations, or other internal errors that prevent the deployment data from being retrieved.
 
-**Error Code:** `414`
+**Error Code:** `500`
 
 **Name:** Internal Server Error
 

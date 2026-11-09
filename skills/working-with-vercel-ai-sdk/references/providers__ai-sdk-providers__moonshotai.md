@@ -4,8 +4,8 @@ description: Learn how to use Moonshot AI with AI Gateway and the direct provide
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/moonshotai.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "aaa1a93b79a7051b0408507ea12128e876a0684fe839286fe9dbdc0916b5d4b9"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "738b47458ac073f9a57bb3a22b2454493b753d1c7851c96f286cf226219a810e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -669,6 +669,23 @@ See the [Kimi model list](https://platform.kimi.ai/docs/models) and [model
 parameter reference](https://platform.kimi.ai/docs/api/models-overview) for
 current availability and model-specific constraints. You can also pass custom
 or retired provider model IDs as strings when needed.
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option               | Description                                                                                                                                                                                                                                                          |
+| --------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| language  | `strictJsonSchema`   | Whether to use strict JSON schema validation for structured outputs.                                                                                                                                                                                                 |
+| language  | `logprobs`           | Whether to return log probabilities for generated tokens.                                                                                                                                                                                                            |
+| language  | `topLogprobs`        | Number of most likely tokens to return at each token position. Setting this option automatically enables `logprobs`.                                                                                                                                                 |
+| language  | `reasoningEffort`    | Reasoning effort for Kimi K3.                                                                                                                                                                                                                                        |
+| language  | `prediction`         | Static predicted content that can accelerate responses when much of the output is known ahead of time.                                                                                                                                                               |
+| language  | `thinking`           | Controls thinking on Kimi K2.5 and K2.6. K2.7 is always enabled.                                                                                                                                                                                                     |
+| language  | `reasoningHistory`   | Controls preserved reasoning behavior in multi-turn conversations. `disabled` and `interleaved` are compatibility values that leave the request unchanged. `preserved` maps to `thinking.keep: 'all'` for Kimi K2.6. Kimi K2.7 and K3 preserve reasoning by default. |
+| language  | `promptCacheKey`     | Used to cache responses for similar requests to optimize cache hit rates. Typically a session or task id.                                                                                                                                                            |
+| language  | `promptCacheOptions` | Context caching options for Kimi K3 models. `ttl` selects the cache write tier (`5m` or `1h`). Moonshot uses `5m` when omitted.                                                                                                                                      |
+| language  | `safetyIdentifier`   | A stable identifier used to help Moonshot detect users violating usage policies. Recommended to hash the username or email address.                                                                                                                                  |
 
 ---
 

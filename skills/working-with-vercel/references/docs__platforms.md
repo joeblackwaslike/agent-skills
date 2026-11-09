@@ -16,8 +16,8 @@ related:
 summary: Build platforms where agents and users deploy apps with isolated projects or shared multi-tenant deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f35dc6efcd711f0e1a9f7d5d547d522a47274533ad890d487a45a2b962c8d5f4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "30bfc993775e49c06484c981b17b68f77c351eecd9a4b9c8b9201bb41d2baf12"
 ---
 
 # Vercel for Platforms
@@ -35,8 +35,8 @@ Vercel for Platforms gives generated apps isolated projects and deployments. Mul
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [Vercel for Platforms can now deploy from your users' GitHub repositories](https://vercel.com/changelog/vercel-for-platforms-can-now-deploy-from-your-users-github-repositories)
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
@@ -80,6 +80,8 @@ Most platforms on Vercel follow one of two patterns. Pick the one that matches h
 | [Multi-project](/docs/platforms/multi-project-platforms/concepts) | One project and deployment per tenant            | Higher     | Each tenant needs custom code or isolated infrastructure (AI coding platforms, user-generated apps)                 |
 
 For a multi-tenant build, clone the [Platforms Starter Kit](/templates/next.js/platforms-starter-kit). For a multi-project build, follow the [multi-project quickstart](/docs/platforms/multi-project-platforms/quickstart) to create and deploy tenant projects with the [Vercel SDK](/docs/rest-api/sdk).
+
+Explore the [multi-tenant platforms reference architecture](/kb/architecture/multi-tenant-platforms) for guidance on tenant isolation, request routing, custom domains, and provisioning customer deployments.
 
 ## What you can build
 

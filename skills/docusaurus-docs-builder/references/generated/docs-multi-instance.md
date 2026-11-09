@@ -1,8 +1,8 @@
 ---
 title: "Docs Multi-instance"
 source: "https://docusaurus.io/docs/docs-multi-instance"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "0910dfd52e321a28c7dc3907fa0dd214d244e3206714b52e83a20f9c91db3a36"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "b7de05390a196a2eb6e820d6180e641d37a32b77da61f8174976a4a8cf48f93a"
 ---
 
 # Docs Multi-instance
@@ -165,4 +165,4 @@ docusaurus.config.js
 ```
 export default {  themeConfig: {    navbar: {      items: [        {          type: 'docsVersionDropdown',          docsPluginId: 'ios',        },        {          type: 'docsVersionDropdown',          docsPluginId: 'android',        },      ],    },  },};
 ```
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/docs/docs-multi-instance.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/docs/docs-multi-instance.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

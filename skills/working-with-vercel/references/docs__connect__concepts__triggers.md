@@ -17,8 +17,8 @@ related:
 summary: Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ef9525b31b02b8192546cdb7c573b4882d50e630786c60ddead0afb2afdc9de3"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "1db7d1588d18d4609fba73d4c0565b682cb310a11f463e962d2746eb049941f9"
 ---
 
 # Webhook triggers for Vercel Connect
@@ -38,6 +38,7 @@ A **trigger** is an incoming webhook from a third-party service that Vercel Conn
 - [Call third-party APIs from Python with Vercel Connect](https://vercel.com/kb/guide/python-and-vercel-connect) — Call Slack and Linear APIs from Python with Vercel Connect. Request app and user tokens, handle consent, and verify prov
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks) — Learn how to set up webhooks and use them with Vercel Integrations.
@@ -85,11 +86,11 @@ Pass `--triggers` when attaching a connector to a project:
 vercel connect attach slack/acme-slack --project my-project --environment production --triggers
 ```
 
-To target a Preview branch, set a custom receiver path, or do both, add `--trigger-branch`, `--trigger-path`, or both:
+To target a Preview branch, set a custom receiver path, or do both, add `--git-branch`, `--trigger-path`, or both:
 
 ```bash filename="terminal"
 vercel connect attach slack/acme-slack --project my-project --environment production \
-  --triggers --trigger-branch staging --trigger-path /api/slack-events
+  --triggers --git-branch staging --trigger-path /api/slack-events
 ```
 
 To target a Custom Environment, pass its slug to `--trigger-environment`:
@@ -101,7 +102,7 @@ vercel connect attach slack/acme-slack --project my-project --environment qa \
 
 `--trigger-environment` selects where Vercel Connect sends provider events. The CLI combines the environments passed to `--environment` with the trigger target. For a project with no existing trigger destinations, the example above produces a project link that contains only `qa`. Existing trigger destinations remain registered, and the CLI preserves any Custom Environments they require on the project link. If you omit `--environment`, the CLI links `production`, `preview`, and `development`, adds `qa` because it is the trigger target, and preserves Custom Environments required by existing destinations.
 
-`--trigger-environment` and `--trigger-branch` are mutually exclusive and only valid with `--triggers`. If you omit both options, the trigger destination targets Production. If you omit `--trigger-path`, Vercel derives the receiver path from the connector and project framework. Pass `--trigger-path` to select the receiver path explicitly.
+`--trigger-environment` and `--git-branch` are mutually exclusive and only valid with `--triggers`. If you omit both options, the trigger destination targets Production. If you omit `--trigger-path`, Vercel derives the receiver path from the connector and project framework. Pass `--trigger-path` to select the receiver path explicitly.
 
 When you omit `--triggers`, `vercel connect attach` updates the project link without adding a trigger destination. Existing trigger destinations remain registered. You can also add or remove destinations from the Vercel Dashboard.
 

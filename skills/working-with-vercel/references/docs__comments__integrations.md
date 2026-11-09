@@ -11,20 +11,20 @@ related:
   - /docs/git
   - /docs/git/vercel-for-github
   - /docs/project-configuration/general-settings
+  - /docs/comments/using-comments
   - /docs/cli
-  - /docs/vercel-toolbar/in-production-and-localhost
 summary: Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/comments/integrations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f305f4b39d55f628436e2fbaa9139b0f0f8870aeddfe55ea60acc99b149563f8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a7a99b7f90ab9c1a506c86b5ad50ffa5e7915501b8b88608578d6b21976b78bc"
 ---
 
 # Integrations for Comments
 
 ## Git provider integration
 
-Comments are available for projects using **any** Git provider. GitHub, Bitbucket, and GitLab [are supported automatically](/docs/git#supported-git-providers) with the same level of integration.
+Comments are available for projects using **any** Git provider. GitHub, Bitbucket, and GitLab [are supported automatically](/docs/git#supported-git-providers).
 
 
 <!-- docsgraph:related -->
@@ -33,13 +33,14 @@ Comments are available for projects using **any** Git provider. GitHub, Bitbucke
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Comments now available in Vercel's Slack integration](https://vercel.com/changelog/comments-now-available-in-vercels-slack-integration)
+- [Convert comments to GitHub Issues](https://vercel.com/changelog/convert-comments-to-github-issues)
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
-- [July 2020](https://vercel.com/blog/changelog-july-2020)
 - [Convert Comments on deployments to Jira issues](https://vercel.com/changelog/convert-comments-on-deployments-to-jira-issues)
+- [Convert Comments on Preview Deployments to Linear issues](https://vercel.com/changelog/convert-comments-on-preview-deployments-to-linear-issues)
 - [September 2020](https://vercel.com/blog/changelog-september-2020)
-- [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
+- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 
 Full cross-link map for this page: [/docs/comments/integrations.graph.md](/docs/comments/integrations.graph.md)
@@ -47,11 +48,9 @@ Full cross-link map for this page: [/docs/comments/integrations.graph.md](/docs/
 
 Pull requests (PRs) with deployments enabled receive [generated PR messages from Vercel bot](/docs/git/vercel-for-github). These PR messages contain the deployment URL.
 
-Generated Vercel bot PR messages display the project's [avatar](/docs/project-configuration/general-settings#project-avatar) when one is available. When the project has no avatar, the framework icon or generated avatar is shown instead.
+Generated Vercel bot PR messages on GitHub display the project's [avatar](/docs/project-configuration/general-settings#project-avatar) when one is available. When the project has no avatar, the framework icon or generated avatar is shown instead.
 
-The generated PR message will also display an **Add your feedback** URL, which lets people visit the deployment and automatically log in. The PR message tracks how many comments have been resolved.
-
-![A message from Vercel bot in a GitHub PR.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/comments/vercel-bot-light.png)
+To [add or read comments](/docs/comments/using-comments) from a PR, select the **Preview** link in the PR message to open the deployment. On GitLab and Bitbucket, the PR message also displays a **Comment** link, which lets people visit the deployment and automatically log in. After people leave comments, the link shows how many are unresolved and resolved.
 
 Vercel will also add a check to PRs with comments enabled. This check reminds the author of any unresolved comments, and **is not required by default**.
 

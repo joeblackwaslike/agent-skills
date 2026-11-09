@@ -14,8 +14,8 @@ related:
 summary: Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation (RAG) through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/embeddings.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "208896aba770c8c692779d97d03253053a9cf8a871f5a21dd73a242c288c4ea9"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d755eefb3a8484884631b97e2d3ea1ed0adb1803917c9a00246e92244385a1d1"
 ---
 
 # AI Gateway Embeddings
@@ -222,7 +222,7 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/embeddings \
 
 ## Gateway provider instance
 
-Alternatively, if you're using the Gateway provider instance, specify embedding models with `gateway.textEmbeddingModel(...)`.
+Alternatively, if you're using the Gateway provider instance, specify embedding models with `gateway.embeddingModel(...)`.
 
 ```typescript filename="app/api/embed/route.ts" {6-7}
 import { embed } from 'ai';
@@ -230,7 +230,7 @@ import { gateway } from '@ai-sdk/gateway';
 
 export async function GET() {
   const result = await embed({
-    model: gateway.textEmbeddingModel('openai/text-embedding-3-small'),
+    model: gateway.embeddingModel('openai/text-embedding-3-small'),
     value: 'Sunny day at the beach',
   });
 

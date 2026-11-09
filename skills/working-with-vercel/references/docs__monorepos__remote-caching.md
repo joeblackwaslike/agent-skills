@@ -16,8 +16,8 @@ related:
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e17c9bf9931794153555e5eeaf3202ebf22848fbef3f4635e16174e193f800bc"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6f099b5f887aa0098d7da1387a901af1be457c5dabb0ae4702db1cdbb9c46922"
 ---
 
 # Remote Caching
@@ -33,6 +33,7 @@ Remote Caching saves you time by ensuring you never repeat the same task twice, 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
 - [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
 - [Buildkite](https://turborepo.dev/docs/guides/ci-vendors/buildkite) — Configure Buildkite pipelines to run Turborepo tasks with Remote Caching.
 - [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
@@ -42,8 +43,7 @@ Remote Caching saves you time by ensuring you never repeat the same task twice, 
 - [Turborepo and Vercel Remote Cache now support OpenID Connect (OIDC)](https://vercel.com/changelog/turborepo-and-remote-cache-now-support-openid-connect-oidc)
 - [Vercel CI is now in beta](https://vercel.com/changelog/vercel-ci-is-now-in-beta)
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
-- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
-- [How to scale a large codebase](https://vercel.com/blog/how-to-scale-a-large-codebase)
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 
 Full cross-link map for this page: [/docs/monorepos/remote-caching.graph.md](/docs/monorepos/remote-caching.graph.md)
 <!-- /docsgraph:related -->
@@ -79,7 +79,7 @@ For this guide, your monorepo should be using [Turborepo](/docs/monorepos/turbor
 
   As an Owner, you can enable or disable Remote Caching from your team settings.
   1. From the [Vercel Dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), select your team from the team switcher.
-  2. Open **Settings** in the sidebar and go to the **Billing** section
+  2. Open **Settings** in the sidebar and go to the **Build and Deployment** section
   3. From the **Remote Caching** section, toggle the switch to enable or disable the feature.
 
 - ### Authenticate with Vercel
@@ -231,7 +231,7 @@ Deployments created with the Vercel CLI or REST API aren't verified Git builds, 
 | Deployment environment | Reads, in order             | Uploads to     |
 | ---------------------- | --------------------------- | -------------- |
 | Production             | CLI production              | CLI production |
-| Preview or custom      | CLI production, CLI preview | CLI preview    |
+| Preview or custom      | CLI preview                 | CLI preview    |
 
 Production deployments never read CLI preview artifacts. Creating a production deployment requires a permission that preview deployments don't, so preview builds can't put artifacts in front of production builds.
 

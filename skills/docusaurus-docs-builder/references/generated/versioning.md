@@ -1,8 +1,8 @@
 ---
 title: "Versioning"
 source: "https://docusaurus.io/docs/versioning"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "68566f9595e73ca9c4fd637ad358d264ed2a58f4dbac44b68f8f822ce1fa6e31"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "17fc2fddb66e570ab1a3bc8dd0d5d52af6f84c83ac261cc236961e6bbe38ec30"
 ---
 
 # Versioning
@@ -269,4 +269,4 @@ If your assets are global, put them in `/static` and use absolute paths:
 ```
 ![img alt](/myImage.png)[download this file](/file.pdf)
 ```
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/docs/versioning.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/docs/versioning.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

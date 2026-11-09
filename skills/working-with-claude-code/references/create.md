@@ -1,6 +1,6 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/mods/create.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
+fetched_at: "2026-11-09T12:34:10.263Z"
 sha256: "aebd3b13e89ea35f269c3ce04d6e70ffbcc17e010cda44e7e5831705492415ef"
 ---
 

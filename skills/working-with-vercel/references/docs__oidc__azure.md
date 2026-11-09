@@ -14,8 +14,8 @@ related:
 summary: "Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f7a8c0306ae253850dae40227dbf30220cb915f0abdd0d58692e3cbad77f4aee"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4229d32e40fd7495f320274e56e511dccddce492c5334af5731d0fa5d282aa92"
 ---
 
 # Connect to Microsoft Azure
@@ -79,7 +79,7 @@ It also includes APIs you build and host yourself. If your API accepts Entra ID
   - In the **Name** field, use a name for your own reference such as: `[Project name] - [Environment]`
   - In the **Audience** field, you have two options:
     - **Default**: Enter `https://vercel.com/[TEAM_SLUG]`, replacing `[TEAM_SLUG]` with your team identifier from the Vercel team URL
-    - **Recommended**: Enter `api://AzureADTokenExchange`. When using this value, you must also pass a matching `audience` in your code. See the [custom audience section](#custom-audience) below
+    - **Recommended**: Enter `api://AzureADTokenExchange`. When using this value, you must also pass a matching `audience` in your code. A token with a custom audience always uses the team issuer, so enter the **Team** issuer URL in the **Issuer URL** field even when your issuer mode is Global. See the [custom audience section](#custom-audience) below
   > **💡 Note:** Azure does not allow for partial claim conditions so you must specify the `Subject` and `Audience` fields exactly. However, it is possible to create multiple federated credentials on the same app registration to allow for the various `sub` claims.
 
 - ### Grant access to the Azure service

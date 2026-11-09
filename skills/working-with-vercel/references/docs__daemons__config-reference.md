@@ -16,8 +16,8 @@ related:
 summary: Every field you can set on a daemon in the daemons key of vercel.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/daemons/config-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f94e97cc6e643f2cd58c05f16c04d07c6adbb3f0b58ff887ae6445e5b8c99cd8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3c597688262b10df036a44f808ae8908661b14a3424221f3577d90c6e3deb9f2"
 ---
 
 # Daemon Configuration Reference
@@ -39,9 +39,9 @@ You declare daemons with the top-level `daemons` key in `vercel.json`. The key i
 - [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 - [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons)
+- [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
-- [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 
 Full cross-link map for this page: [/docs/daemons/config-reference.graph.md](/docs/daemons/config-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -91,7 +91,7 @@ Daemon names and [service](/docs/services) names don't conflict. A project can h
 
 **Type:** `string`
 
-Required. The path to the daemon's source directory, relative to `vercel.json`. The path must stay inside the project.
+Required. The path to the daemon's source directory, relative to `vercel.json`. The path must stay inside the repository.
 
 Vercel doesn't publish files under a daemon's `root` as static assets of your deployment. If the project's output directory is the same directory as a daemon's `root`, the build fails. Choose a separate output directory.
 
@@ -99,7 +99,7 @@ Vercel doesn't publish files under a daemon's `root` as static assets of your de
 
 **Type:** `string`
 
-Required. The path to the `Dockerfile` or `Containerfile` to build, relative to `root`. Name the file `Dockerfile` or `Containerfile`, optionally with a suffix, such as `Dockerfile.worker`. The name is case-insensitive. The directory that contains the file is the build context.
+Required. The path to the `Dockerfile` or `Containerfile` to build, relative to `root`. Name the file `Dockerfile` or `Containerfile`, optionally with a suffix, such as `Dockerfile.worker`. The name is case-insensitive. The daemon's `root` is the build context.
 
 Vercel passes your deployment's environment variables to the build as build arguments, and builds the image for the Linux `amd64` architecture.
 

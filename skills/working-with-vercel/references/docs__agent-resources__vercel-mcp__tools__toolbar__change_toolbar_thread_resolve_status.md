@@ -13,8 +13,8 @@ related:
 summary: Use change_toolbar_thread_resolve_status with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a116dcc77b1352a448d13ea0c9b3de13abcf84aa01c494fd6f67bd5fc8aa8e68"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "46afe47f940aa74c7604805ed8942d6ddbbb741a01ead21a01b01b12b82cc3ad"
 ---
 
 # change_toolbar_thread_resolve_status
@@ -30,7 +30,6 @@ Change the resolve status of a toolbar thread. Use this to mark a thread as reso
 - [reply_to_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/reply_to_toolbar_thread) — Use reply_to_toolbar_thread with Vercel MCP.
 - [get_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/get_toolbar_thread) — Use get_toolbar_thread with Vercel MCP.
 - [list_toolbar_threads](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/list_toolbar_threads) — Use list_toolbar_threads with Vercel MCP.
-- [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
 - [edit_toolbar_message](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/edit_toolbar_message) — Use edit_toolbar_message with Vercel MCP.
 - [add_toolbar_reaction](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction) — Use add_toolbar_reaction with Vercel MCP.
 

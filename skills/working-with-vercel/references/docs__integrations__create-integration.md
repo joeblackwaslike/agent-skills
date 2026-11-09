@@ -16,8 +16,8 @@ related:
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "260100b5b9462864647b7cf80f64e9e453d46a1684577cebb13a03262d7c1f49"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ab6ef0d0c1f6911485e7154077f348e7e17e56e4b2c17076cdc7b481e66886ec"
 ---
 
 # Create an Integration
@@ -112,7 +112,7 @@ The **Create Product** form must be completed in full for at least one product b
 | [Tags](/docs/integrations/create-integration/submit-integration#product-tags)                                                       | Tags for the integrations marketplace categories.                          |     |
 | [Guides](/docs/integrations/create-integration/submit-integration#product-guides)                                                   | Getting started guides for specific frameworks.                            |     |
 | [Resource Links](/docs/integrations/create-integration/submit-integration#product-resource-links)                                   | Resource links such as documentation.                                      |  |
-| [Snippets](/docs/integrations/create-integration/submit-integration#product-snippets)                                               | Add up to 6 code snippets to help users get started with your product.     |  |
+| [Snippets](/docs/integrations/create-integration/submit-integration#product-snippets)                                               | Add up to 8 code snippets to help users get started with your product.     |  |
 | [Global Config Support](/docs/integrations/create-integration/submit-integration#global-config-support)                                 | Enable/Disable Experimentation Global Config Sync                            |  |
 | [Log Drain Settings](/docs/integrations/create-integration/submit-integration#log-drain-settings)                                   | Configure a Log Drain                                                      |  |
 | [Checks API](/docs/integrations/create-integration/submit-integration#checks-api)                                                   | Enable/Disable Checks API                                                  |  |

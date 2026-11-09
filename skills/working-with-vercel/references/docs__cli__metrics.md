@@ -14,8 +14,8 @@ related:
 summary: Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e4786bb285cf9fd8d665d4d113dc685cda60815fb240a1dd45ede0f2245a1dbc"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d6b82d92d9d1a94a10fb8e602755b3bec04e9aad0c360be8fed8856abf616a4c"
 ---
 
 # vercel metrics
@@ -31,13 +31,11 @@ The `vercel metrics` command, also available as `vc metrics`, lets you discover 
 - [AI traffic insights now available in Vercel Observability](https://vercel.com/changelog/ai-traffic-insights-now-available-in-vercel-observability)
 - [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [Query Reference](https://vercel.com/docs/query/reference) — Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
-- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [vercel billing usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel billing usage CLI command.
 
 Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metrics.graph.md)
 <!-- /docsgraph:related -->
@@ -56,16 +54,16 @@ vercel metrics schema
 vercel metrics schema <metric-or-prefix>
 
 # Query a custom metric and filter by an attribute
-vercel metrics database.duration_ms --filter 'plan:pro'
+vercel metrics database.duration_ms --query 'plan:pro'
 
 # Query production data for a specific project
-vercel metrics <metric_name> --since 7d --granularity 1d --project project-name --prod
+vercel metrics <metric_name> --since 7d --granularity 1d --project project-name --environment production
 
 # Query grouped results
-vercel metrics <metric_name> --group-by <dimension> --since 1d --limit 5 --project project-name --prod
+vercel metrics <metric_name> --group-by <dimension> --since 1d --limit 5 --project project-name --environment production
 
 # Query across every project in the current team
-vercel metrics <metric_name> --all --group-by projectId --since 24h --prod
+vercel metrics <metric_name> --all --group-by projectId --since 24h --environment production
 ```
 
 *Using the \`vercel metrics\` command to discover metrics before querying them.*
@@ -333,12 +331,12 @@ Run `vercel metrics schema` to discover your team's custom metrics, then inspect
 
 ```bash filename="terminal"
 vercel metrics schema database
-vercel metrics database.duration_ms --filter 'plan:pro'
+vercel metrics database.duration_ms --query 'plan:pro'
 ```
 
 ## Query output
 
-By default, `vercel metrics` prints a human-readable table or time series summary. Use `--format` to output structured JSON for scripts, agents, and continuous integration checks.
+By default, `vercel metrics` prints a human-readable table or time series summary. Use `--json` to output structured JSON for scripts, agents, and continuous integration checks.
 
 ## Feature access
 
@@ -376,11 +374,11 @@ vercel metrics schema
 vercel metrics schema <metric-or-prefix>
 ```
 
-Use `--format` when you are building scripts or agent workflows that need to validate available fields before querying.
+Use `--json` when you are building scripts or agent workflows that need to validate available fields before querying.
 
 ### Aggregation
 
-The `--aggregation` option, shorthand `-a`, selects the aggregation for the metric.
+The `--aggregation` option selects the aggregation for the metric.
 
 ```bash filename="terminal"
 vercel metrics <metric_name> --aggregation <aggregation>
@@ -399,18 +397,18 @@ vercel metrics <metric_name> --group-by <dimension> --group-by <dimension>
 
 ### Filter
 
-The `--filter` option, shorthand `-f`, filters the query using Vercel's supported subset of [Kibana Query Language (KQL)](https://www.elastic.co/docs/reference/query-languages/kql). For custom metrics, use `<attribute>:<value>` to filter by an attribute:
+The `--query` option, shorthand `-q`, filters results using Vercel's supported subset of [Kibana Query Language (KQL)](https://www.elastic.co/docs/reference/query-languages/kql). For custom metrics, use `<attribute>:<value>` to filter by an attribute:
 
 ```bash filename="terminal"
-vercel metrics database.duration_ms --filter 'plan:pro'
+vercel metrics database.duration_ms --query 'plan:pro'
 ```
 
 For platform metrics, use a dimension from the metric schema:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --filter 'environment:production'
-vercel metrics <metric_name> --filter 'httpStatus >= 500'
-vercel metrics <metric_name> --filter 'requestPath:(/docs* OR /guides*)'
+vercel metrics <metric_name> --query 'environment:production'
+vercel metrics <metric_name> --query 'httpStatus >= 500'
+vercel metrics <metric_name> --query 'requestPath:(/docs* OR /guides*)'
 ```
 
 The following KQL syntax is supported:
@@ -429,13 +427,13 @@ The following KQL syntax is supported:
 Wrap the complete filter in single quotes in your shell. Double-quote values that contain spaces or KQL-reserved characters. Use a backslash to escape the next character in a quoted or unquoted value:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --filter 'requestPath:"/pricing enterprise"'
+vercel metrics <metric_name> --query 'requestPath:"/pricing enterprise"'
 ```
 
-Repeat `--filter` to combine filters with `AND`:
+Repeat `--query` to combine filters with `AND`:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> -f 'country:US' -f 'deviceType != mobile'
+vercel metrics <metric_name> -q 'country:US' -q 'deviceType != mobile'
 ```
 
 The filter implementation is KQL-inspired and does not support every KQL feature. The following limits apply:
@@ -445,16 +443,18 @@ The filter implementation is KQL-inspired and does not support every KQL feature
 - Wildcards and regular expressions require string dimensions. Wildcards are only supported at the beginning or end of a value; infix patterns such as `i*d` are rejected.
 - Bare quoted phrases and unfielded wildcard searches are not supported.
 - KQL nested-object syntax and Lucene fuzzy, proximity, and boosting operators are not supported.
-- Each filter can contain up to 2,048 characters and 8 levels of nesting. A query can contain up to 50 expression nodes across all filters.
+- Each filter can contain up to 8 levels of nesting.
 
 OData filter syntax is deprecated. Use KQL for new queries.
 
-### Production environment
+### Environment
 
-The `--prod` option limits the query to production data. It is equivalent to `--filter 'environment:production'`.
+The `--environment` option, shorthand `-e`, limits the query to one environment, such as `production` or `preview`. `--environment production` is equivalent to `--query 'environment:production'`.
+
+Limit a query to production data:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --prod
+vercel metrics <metric_name> --environment production
 ```
 
 ### Since
@@ -467,23 +467,27 @@ vercel metrics <metric_name> --since 24h
 
 ### Until
 
-The `--until` option, shorthand `-u`, sets the end of the time range. If omitted, the command uses the current time.
+The `--until` option, shorthand `-u`, sets the end of the time range. It accepts the same values as `--since`. If omitted, the command uses the current time.
+
+Query the 24 hours that ended one day ago:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --since 24h --until 2026-03-19T12:00:00Z
+vercel metrics <metric_name> --since 2d --until 1d
 ```
 
 ### Granularity
 
-The `--granularity` option, shorthand `-g`, controls the time bucket size. If omitted, the CLI computes a granularity for the selected time range.
+The `--granularity` option controls the time bucket size. Use `1m`, `5m`, `15m`, `1h`, `4h`, or `1d`. If omitted, the CLI computes a granularity for the selected time range. If the value is too small for the time range, the CLI raises it to the smallest size that the range supports.
+
+Query the last 24 hours in one-hour buckets:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --granularity 1h --since 7d
+vercel metrics <metric_name> --granularity 1h --since 24h
 ```
 
 ### Limit
 
-The `--limit` option, shorthand `-l`, sets the maximum number of grouped results returned per time bucket. The default is `10`.
+The `--limit` option, shorthand `-n`, sets the maximum number of grouped results returned per time bucket. The default is `10`.
 
 ```bash filename="terminal"
 vercel metrics <metric_name> --group-by <dimension> --limit 50
@@ -511,7 +515,7 @@ vercel metrics <metric_name> --group-by <dimension> --order-by value --order asc
 The `--project` option, shorthand `-p`, specifies the project name or project ID to query. Use it when you want results for a specific project. It defaults to the linked project when `--all` is not set.
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --project project-name --prod
+vercel metrics <metric_name> --project project-name --environment production
 ```
 
 ### All
@@ -519,16 +523,16 @@ vercel metrics <metric_name> --project project-name --prod
 The `--all` option queries across all projects in the current team scope. It cannot be combined with `--project`.
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --all --group-by projectId --prod
+vercel metrics <metric_name> --all --group-by projectId --environment production
 ```
 
-### Format
+### JSON output
 
-The `--format` option outputs JSON instead of text. Use it for automation and agents.
+The `--json` option outputs JSON instead of text. Use it for automation and agents:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --format json
-vercel metrics schema <metric-or-prefix> --format json
+vercel metrics <metric_name> --json
+vercel metrics schema <metric-or-prefix> --json
 ```
 
 ## Examples
@@ -548,25 +552,25 @@ vercel metrics schema
 Query a custom metric for the `pro` plan:
 
 ```bash filename="terminal"
-vercel metrics database.duration_ms --filter 'plan:pro'
+vercel metrics database.duration_ms --query 'plan:pro'
 ```
 
 Query a metric for the last seven days:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --since 7d --granularity 1d --project project-name --prod
+vercel metrics <metric_name> --since 7d --granularity 1d --project project-name --environment production
 ```
 
 Query grouped results for a specific project:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --group-by <dimension> --since 24h --project project-name --prod
+vercel metrics <metric_name> --group-by <dimension> --since 24h --project project-name --environment production
 ```
 
 Query production data across every project in the current team:
 
 ```bash filename="terminal"
-vercel metrics <metric_name> --all --group-by projectId --since 24h --prod
+vercel metrics <metric_name> --all --group-by projectId --since 24h --environment production
 ```
 
 ## Global Options
@@ -581,7 +585,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

@@ -9,14 +9,15 @@ prerequisites:
   - /docs/passport
 related:
   - /docs/passport/token-claims
+  - /docs/passport/python-sdk-reference
   - /docs/chat-sdk/integrations/passport
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
   - /docs/passport/additional-identity-scopes
 summary: Read verified Passport identity in server-side code and apply application-level authorization.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/read-identity.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "76d7f0e5c9bf2ef3a4dd229e1c633cf4fd9b740d4a1379011445e191a0fa9905"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bfdbb8fd65b375db52fe39727c4f389fa208047dc46b03e853a8dfd7705efc64"
 ---
 
 # Read Passport identity in your application
@@ -50,6 +51,8 @@ Profile fields such as email or name are not guaranteed. They only appear if you
 > **💡 Note:** Read `x-vercel-oidc-passport-token` from server-side code. Vercel strips
 > incoming client-supplied values for this header and injects the verified token
 > after Passport validates the session.
+
+For Python applications, use the [Python SDK reference](/docs/passport/python-sdk-reference) for `get_identity()`, synchronous helpers, and opt-in local development identities.
 
 ## Use the Passport helper
 

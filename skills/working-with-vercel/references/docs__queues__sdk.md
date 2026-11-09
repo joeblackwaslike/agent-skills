@@ -10,13 +10,13 @@ prerequisites:
 related:
   - /docs/queues/python-sdk
   - /docs/queues/concepts
-  - /docs/queues/api
   - /docs/queues/poll-mode
+  - /docs/queues/api
 summary: Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/sdk.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "09c89651d75fcea102efbe266c04e8b9d3c0d57f8d5b650451b1813ca04f791c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "04ca88ef289332af6f3e93fd89dadd6ffaa82c34a726504683e64c952e853095"
 ---
 
 # Vercel Queues: JS SDK Reference
@@ -31,11 +31,12 @@ The `@vercel/queue` SDK lets JavaScript and TypeScript apps publish and consume 
 
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
-- [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
-- [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
+- [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Vercel Schedules: JS SDK Reference](https://vercel.com/docs/schedules/sdk) — Reference for @vercel/schedules: create, list, update, enable, disable, invoke, and delete schedules, and handle schedul
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 
 Full cross-link map for this page: [/docs/queues/sdk.graph.md](/docs/queues/sdk.graph.md)
@@ -132,7 +133,6 @@ await send('orders', payload, {
   retentionSeconds: 3600,
   delaySeconds: 60,
   idempotencyKey: 'order-123',
-  headers: { 'x-trace-id': 'abc-123' },
 });
 ```
 
@@ -141,8 +141,8 @@ await send('orders', payload, {
 | `region`           | `string`                 | Auto-detected | Target a specific region for this message                                   |
 | `retentionSeconds` | `number`                 | 24 hours      | Message TTL. Minimum 60 seconds, maximum 7 days (604,800 seconds)           |
 | `delaySeconds`     | `number`                 | Zero seconds  | Delay before message becomes visible. Maximum 7 days, capped at message TTL |
-| `idempotencyKey`   | `string`                 | -             | Deduplication key for the message. Deduplication window: `min(retention, 24 hours)`. Maximum 256 characters |
-| `headers`          | `Record<string, string>` | -             | Custom headers to include with this message                                 |
+| `idempotencyKey`   | `string`                 | -             | Deduplication key for the message. The deduplication window is the message's retention period. Maximum 256 characters |
+| `headers`          | `Record<string, string>` | -             | Custom HTTP headers to send with the publish request. Message handlers do not receive these headers. To pass data such as a trace ID to a handler, put it in the message payload |
 
 ### Batch sends
 
@@ -362,7 +362,6 @@ import {
   UnauthorizedError,
   BadRequestError,
   MessageNotFoundError,
-  QueueEmptyError,
 } from '@vercel/queue';
 
 try {
@@ -390,7 +389,7 @@ The SDK exports the following error classes:
 | `MessageCorruptedError`             | Message data is corrupted or cannot be parsed                                     |
 | `MessageLockedError`                | A message is temporarily locked by another consumer and currently being processed. Exposes an optional `retryAfter` (seconds) |
 | `MessageAlreadyProcessedError`      | You attempt to process a message that has already been successfully processed     |
-| `QueueEmptyError`                   | No messages are available in the queue                                            |
+| `QueueEmptyError`                   | Never thrown. An empty queue is not an error. When no messages are available, [`receive`](/docs/queues/poll-mode#receiving-messages) returns `{ ok: false, reason: 'empty' }`, so check that result instead of catching this class |
 | `InvalidLimitError`                 | A batch limit parameter is outside the valid range of 1 to 10 (inclusive)         |
 | `TooManyRequestsError`              | The server rate-limits a request (HTTP 429). Exposes an optional `retryAfter` (seconds) |
 | `InternalServerError`               | The server encounters an unexpected error                                         |
@@ -399,7 +398,7 @@ The SDK exports the following error classes:
 
 ## Transports
 
-The SDK serializes common JSON, text, and byte payloads from the payload type. Use transports when you need to override serialization, validate payloads, or receive large payloads as streams.
+The SDK serializes payloads as JSON by default. Use transports when you need to send raw bytes, override serialization, or send and receive large payloads as streams.
 
 ```ts filename="lib/queue.ts" framework=nextjs-app
 import { QueueClient, BufferTransport, StreamTransport } from '@vercel/queue';

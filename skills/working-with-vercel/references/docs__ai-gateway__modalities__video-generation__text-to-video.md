@@ -13,8 +13,8 @@ related:
 summary: Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d535c60cf8dd8f20549dda9920d5d258e850c519880bff9a5c575e9758e12eec"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b593be73fb5a6aa995b11482c8b51969d890669989fe5e0cc2763248e558055d"
 ---
 
 # AI Gateway Text-to-Video Generation
@@ -28,15 +28,15 @@ Generate videos from text prompts. Describe what you want to see and the model c
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
-- [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
 - [Seedance 2.0 Video Generation on AI Gateway](https://vercel.com/changelog/seedance-2.0-video-now-available-on-ai-gateway)
+- [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
 - [Grok Imagine Video 1.5 Lite on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-lite-on-ai-gateway)
+- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/text-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/text-to-video.graph.md)
 <!-- /docsgraph:related -->
@@ -90,7 +90,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ## KlingAI
 
-KlingAI offers text-to-video with standard and professional quality modes. Audio generation requires v2.6+ models. Duration is 5-10 seconds.
+KlingAI offers text-to-video with standard and professional quality modes. Audio generation requires v2.6+ models. Duration is 5 or 10 seconds for v2.x models and 3 to 15 seconds for v3.0 models.
 
 [Browse the latest KlingAI video models](/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
 
@@ -107,7 +107,7 @@ KlingAI offers text-to-video with standard and professional quality modes. Audio
 | `providerOptions.klingai.cfgScale`       | `number`           | No       | Prompt adherence (0-1). Higher = stricter. Defaults to `0.5`. Not supported on v2.x.         |
 | `providerOptions.klingai.voiceList`      | `array`            | No       | Voice IDs for speech. Max 2 voices. Requires v3.0+ with `generateAudio: true`.               |
 | `providerOptions.klingai.multiShot`      | `boolean`          | No       | Enable multi-shot generation. Requires v3.0+. See [KlingAI multi-shot](#klingai-multi-shot). |
-| `providerOptions.klingai.watermarkInfo`  | `object`           | No       | Set `{ enabled: true }` to generate watermarked result.                                      |
+| `providerOptions.klingai.watermarkEnabled` | `boolean`          | No       | Set to `true` to generate a watermarked result.                                      |
 | `providerOptions.klingai.pollIntervalMs` | `number`           | No       | How often to check task status. Defaults to `5000`.                                          |
 | `providerOptions.klingai.pollTimeoutMs`  | `number`           | No       | Maximum wait time. Defaults to `600000` (10 minutes).                                        |
 
@@ -256,12 +256,12 @@ Wan (by Alibaba) offers text-to-video with native audio generation and prompt en
 | Parameter                                | Type                    | Required | Description                                                                  |
 | ---------------------------------------- | ----------------------- | -------- | ---------------------------------------------------------------------------- |
 | `prompt`                                 | `string`                | Yes      | Text description of the video to generate                                    |
-| `resolution`                             | `string`                | No       | v2.6: `'1280x720'` or `'1920x1080'`. v2.5: also supports `'848x480'`         |
+| `resolution`                             | `string`                | No       | v2.6: `'1280x720'` or `'1920x1080'`. v2.5: also supports `'832x480'`         |
 | `duration`                               | `number`                | No       | v2.6: 2-15s. v2.5: 5s or 10s only. Defaults to 5                             |
 | `generateAudio`                          | `boolean`               | No       | Generate audio. `wan-v2.6-t2v` generates native audio and defaults to `true` |
 | `providerOptions.alibaba.promptExtend`   | `boolean`               | No       | Enhance prompt for better quality. Defaults to `true`                        |
 | `providerOptions.alibaba.negativePrompt` | `string`                | No       | What to avoid in the video. Max 500 characters                               |
-| `providerOptions.alibaba.audioUrl`       | `string`                | No       | URL to audio file for audio-video sync (WAV/MP3, 3-30s, max 15MB). v2.5 only |
+| `providerOptions.alibaba.audioUrl`       | `string`                | No       | URL to audio file for audio-video sync (WAV/MP3, 3-30s, max 15MB) |
 | `providerOptions.alibaba.shotType`       | `'single'` \| `'multi'` | No       | `'multi'` enables multi-shot cinematic narrative. v2.6 only                  |
 | `providerOptions.alibaba.watermark`      | `boolean`               | No       | Add watermark to the video. Defaults to `false`                              |
 | `providerOptions.alibaba.pollIntervalMs` | `number`                | No       | How often to check task status. Defaults to `5000`                           |
@@ -304,9 +304,9 @@ Grok Imagine Video (by SpaceXAI) generates videos from text prompts with support
 | `aspectRatio`                             | `string`             | No       | Aspect ratio (`'16:9'`, `'9:16'`, `'1:1'`, `'4:3'`, `'3:4'`, `'3:2'`, `'2:3'`). Defaults to `'16:9'` |
 | `duration`                                | `number`             | No       | Video length in seconds (1-15)                                                                       |
 | `resolution`                              | `string`             | No       | Resolution (`'854x480'` for 480p, `'1280x720'` for 720p). Defaults to 480p                           |
-| `providerOptions.spacexai.resolution`     | `'480p'` \| `'720p'` | No       | Native resolution format. Alternative to standard `resolution` parameter                             |
-| `providerOptions.spacexai.pollIntervalMs` | `number`             | No       | How often to check task status. Defaults to `5000`                                                   |
-| `providerOptions.spacexai.pollTimeoutMs`  | `number`             | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                                 |
+| `providerOptions.xai.resolution`          | `'480p'` \| `'720p'` | No       | Native resolution format. Alternative to standard `resolution` parameter                             |
+| `providerOptions.xai.pollIntervalMs`      | `number`             | No       | How often to check task status. Defaults to `5000`                                                   |
+| `providerOptions.xai.pollTimeoutMs`       | `number`             | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                                 |
 
 ### Grok example
 
@@ -320,7 +320,7 @@ const result = await generateVideo({
   aspectRatio: '16:9',
   duration: 5,
   providerOptions: {
-    spacexai: {
+    xai: {
       pollTimeoutMs: 600000,
     },
   },

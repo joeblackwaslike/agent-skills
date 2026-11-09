@@ -17,8 +17,8 @@ related:
 summary: Build a project, provision its functions in your AWS account, and complete a Bring Your Own Cloud (BYOC) deployment with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-cli.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "dc4890386f4964c1c044ef8f6a624e494dbe4d6616bf0eefe0352143ef29f74f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c72ef7165aeb3f7928bc002426e7ffe70933633117f7f0d0dab9d06a4a164567"
 ---
 
 # Deploying with BYOC Using the Vercel CLI
@@ -35,12 +35,12 @@ Create a [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud) de
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
+- [Bring Your Own Cloud on AWS is now generally available](https://vercel.com/changelog/bring-your-own-cloud-on-aws-is-now-generally-available)
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/deploy-with-cli.graph.md](/docs/networking/bring-your-own-cloud/deploy-with-cli.graph.md)
 <!-- /docsgraph:related -->
@@ -50,7 +50,7 @@ Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/deploy
 - An AWS account [connected to your Vercel team](/docs/networking/bring-your-own-cloud/connect-aws-account) with the **Active** status.
 - The ARN of a [Lambda execution role](/docs/networking/bring-your-own-cloud/connect-aws-account#create-the-lambda-execution-role) in that account.
 - macOS or Linux with Node.js 20 or later. `vercel deploy describe` doesn't run on Windows.
-- Vercel CLI 63.1.2 or later. Install the latest version with `npm i -g vercel@latest`.
+- Vercel CLI 65.0.0 or later. Install the latest version with `npm i -g vercel@latest`.
 - The [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) v2 and [`jq`](https://jqlang.org/download/).
 - AWS credentials for an identity with the [provisioning permissions](/docs/networking/bring-your-own-cloud/provisioning-reference#provisioning-identity-permissions).
 - A Vercel project with its build settings and environment variables configured for the target environment.
@@ -101,7 +101,7 @@ Run every command from your application's directory, and use the same deployment
 - ### Link the project and pull its settings
   Link your application to the Vercel project, then pull the project settings for the target environment:
   ```bash filename="Terminal"
-  vercel link --yes --team "$team_id" --project "$project_name"
+  vercel link --yes --scope "$team_id" --project "$project_name"
   vercel pull --yes --environment "$target" --scope "$team_id"
   ```
   **Check**: `.vercel/project.json` contains the intended team and project.
@@ -110,25 +110,25 @@ Run every command from your application's directory, and use the same deployment
   Create a deployment on Vercel and save its ID. `vercel deploy init` uploads no files. The deployment waits for you to provision its functions:
   ```bash filename="Terminal"
   mkdir -p .vercel/byoc
-  vercel deploy init --yes --target "$target" --scope "$team_id" --json > .vercel/byoc/init.json
+  vercel deploy init --yes --environment "$target" --scope "$team_id" --json > .vercel/byoc/init.json
   deployment_id=$(jq -er '.deployment.id // .id' .vercel/byoc/init.json)
   jq -r '.deployment.target // .target' .vercel/byoc/init.json
   ```
-  The deployment ID is at `.id` when you run the command in a terminal, and at `.deployment.id` when the CLI runs non-interactively, such as in CI or from a coding agent. The `jq` expression above handles both.
+  The deployment ID is at `.id` when you run the command in a terminal or in CI, and at `.deployment.id` when a coding agent runs the CLI or you pass `--non-interactive`. The `jq` expression above handles both.
 
   **Check**: The printed target is `production` for a production deployment, or `null` for a preview deployment. A new project's first deployment is assigned to production even when you request `preview`. If the target is wrong, [mark the deployment as failed](/docs/networking/bring-your-own-cloud/operations#abandon-a-pending-deployment) and initialize another.
 
 - ### Build the application
   Build the application with the environment variables of the deployment you initialized:
   ```bash filename="Terminal"
-  vercel build --id "$deployment_id" --target "$target" --yes
+  vercel build --deployment "$deployment_id" --environment "$target" --yes
   ```
   **Result**: The build output is written to `.vercel/output`.
 
 - ### Describe the AWS resources
   Package the functions and generate the descriptor for your AWS account:
   ```bash filename="Terminal"
-  vercel deploy describe --id "$deployment_id" --aws-account-id "$aws_account_id"
+  vercel deploy describe --deployment "$deployment_id" --aws-account-id "$aws_account_id"
   ```
   `vercel deploy describe` uses the team in `.vercel/project.json`, and fails if `--scope` or `VERCEL_ORG_ID` names a different team. It doesn't create any AWS resources.
 
@@ -160,7 +160,7 @@ Run every command from your application's directory, and use the same deployment
 - ### Complete the deployment
   Tell Vercel the functions are ready. `vercel deploy continue` uploads the code-free output and `provision.json`, then waits for the deployment to finish:
   ```bash filename="Terminal"
-  vercel deploy continue --id "$deployment_id" --scope "$team_id"
+  vercel deploy continue --deployment "$deployment_id" --scope "$team_id"
   vercel inspect "$deployment_id" --scope "$team_id" --wait
   ```
   **Check**: `vercel inspect` reports the `READY` status.

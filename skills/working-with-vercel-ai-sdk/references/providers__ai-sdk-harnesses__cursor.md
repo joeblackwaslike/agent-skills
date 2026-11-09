@@ -4,8 +4,8 @@ description: Learn how to use the Cursor harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "effa796a0131307acecd15c13d7c7396bbcc3a61e65d462b390f5c51a80e8199"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "673202cee7dbbbfa9557a7a26cbaf48c9ad04746f9d7d64e74bed63a2b1b0dd9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -103,6 +103,11 @@ Settings:
 - `mcpServers`: MCP server definitions keyed by server name.
 - `port`: ACP bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the ACP bridge to start.
+- `hostDisconnectTimeoutMs`: aborts a running turn when the host disconnects
+  and no host reconnects within this many milliseconds. A suspended turn is
+  not aborted. When unset, a turn keeps running in the sandbox after its host
+  disconnects, including when the host process is gone for good, until the
+  turn finishes or the sandbox stops.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.

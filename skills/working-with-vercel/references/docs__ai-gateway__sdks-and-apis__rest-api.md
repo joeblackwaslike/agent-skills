@@ -17,8 +17,8 @@ related:
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6f0c1b9f5b5f9680207592c26841ac5910659b43d865de1cd7125b085f4c9c62"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "301b6f06fdb8de81ae2543695bcffc451f9bfd90bb70e58ded4658264ca0515d"
 ---
 
 # AI Gateway REST API Reference
@@ -32,11 +32,13 @@ For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
+- [Open weight takes 71.5% of tokens and 23% of spend](https://vercel.com/blog/ai-gateway-production-index-october-2026)
+- [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026)
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
-- [List AI Gateway budgets](https://vercel.com/docs/rest-api/ai-gateway/list-ai-gateway-budgets) — GET /ai-gateway/budgets/list — List the team's AI Gateway budgets \\(team/project/user scopes, plus default-covered api-k
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
-- [AI Gateway Leaderboards](https://vercel.com/docs/ai-gateway/leaderboards) — See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the
+- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md)
 <!-- /docsgraph:related -->
@@ -119,6 +121,10 @@ For TypeScript, Python, and cURL examples that filter reasoning models and inspe
       "max_tokens": 64000,
       "type": "language",
       "tags": ["file-input", "tool-use", "reasoning", "vision"],
+      "modalities": {
+        "input": ["text", "image", "pdf"],
+        "output": ["text"]
+      },
       "pricing": {
         "input": "0.000002",
         "output": "0.000012",
@@ -138,15 +144,16 @@ For TypeScript, Python, and cURL examples that filter reasoning models and inspe
 | `data`                                   | array    | Array of available models                                             |
 | `data[].id`                              | string   | Model identifier (for example, `openai/gpt-6-astra`)                      |
 | `data[].object`                          | string   | Always `"model"`                                                      |
-| `data[].created`                         | integer  | Unix timestamp when the model was added                               |
+| `data[].created`                         | integer  | Unix timestamp with the same value for every model in the public catalog. It doesn't show when a model was added. To sort or compare models by date, use `released`. |
 | `data[].released`                        | integer  | Unix timestamp when the model was released                            |
 | `data[].owned_by`                        | string   | Model provider or owner                                               |
 | `data[].name`                            | string   | Human-readable model name                                             |
 | `data[].description`                     | string   | Model description                                                     |
 | `data[].context_window`                  | integer  | Maximum context length in tokens                                      |
 | `data[].max_tokens`                      | integer  | Maximum output tokens                                                 |
-| `data[].type`                            | string   | Model type: `language`, `embedding`, `reranking`, `image`, or `video` |
+| `data[].type`                            | string   | Model type, such as `language`, `embedding`, `reranking`, `image`, `video`, `speech`, `transcription`, or `realtime` |
 | `data[].tags`                            | string\[] | Capability tags (for example, `reasoning`, `tool-use`, `vision`)      |
+| `data[].modalities` | object | Input and output modalities, as `input` and `output` arrays. Values are `text`, `image`, `pdf`, `audio`, and `video`. |
 | `data[].supported_parameters` | string\[] | Broad parameter support, such as `reasoning` and `include_reasoning`. Optional. |
 | `data[].reasoning_options` | array | Known reasoning controls. Optional; omission means the controls aren't specified. |
 | `data[].reasoning_options[].type` | string | `effort`, `budget_tokens`, or `toggle`. A model can support several controls. |
@@ -197,14 +204,14 @@ Each model row gains a `model_eligibility` field, and the response adds request-
 | `data[].model_eligibility.reason` | string | Stable machine-readable reason for `ineligible` and `unknown` rows |
 | `request_context_availability` | object | Account admission per runtime (`available`, `unavailable`, or `unknown`): team blocking, verification, funds, quota |
 | `availability_status` | string | `complete`, or `partial` when any row is `unknown` |
-| `catalog_status` | string | `complete`, or `partial` when private model or virtual model resolution was incomplete |
+| `catalog_status` | string | `complete`, or `partial` when virtual model resolution was incomplete |
 | `evaluation_context` | object | The evaluation scope: `credential_mode: "runtime_default"` and `request_constraints: "default_only"` |
 
 A model can serve a request when its status is `eligible` and the matching `request_context_availability` runtime is `available`. Treat `unknown` as neither approval nor denial; it means a dependency could not be resolved.
 
 | Request | Response |
 | ------- | -------- |
-| No query parameter | Public catalog, edge-cached. Authenticated requests also include the team's private models and virtual models. No annotations. |
+| No query parameter | Public catalog, edge-cached. Authenticated requests also include the team's virtual models. No annotations. |
 | `include_availability` with authentication | The same catalog with annotations. `Cache-Control: private, no-store`. |
 | `include_availability` without authentication | `401` |
 
@@ -289,7 +296,7 @@ data.endpoints.forEach((endpoint) => {
 | -------------------------------------------------- | -------- | --------------------------------------------------------------- |
 | `data.id`                                          | string   | Model identifier                                                |
 | `data.name`                                        | string   | Human-readable model name                                       |
-| `data.created`                                     | integer  | Unix timestamp when the model was added                         |
+| `data.created`                                     | integer  | Unix timestamp with the same value for every model. It doesn't show when the model was added. For the model's release date, use `released`. |
 | `data.released`                                    | integer  | Unix timestamp when the model was released                      |
 | `data.description`                                 | string   | Model description                                               |
 | `data.architecture`                                | object   | Model architecture details                                      |
@@ -510,7 +517,7 @@ curl -X GET "https://ai-gateway.vercel.sh/v1/generation?id=gen_01ARZ3NDEKTSV4RRF
 - `is_byok`: Whether this generation used Bring Your Own Key (BYOK) credentials
 - `provider_name`: The provider that served this generation
 - `streamed`: Whether this generation used streaming
-- `finish_reason`: Why the generation ended (for example, `stop`, `length`, `content_filter`, `tool_calls`)
+- `finish_reason`: Why the generation ended (for example, `stop`, `length`, `content-filter`, `tool-calls`)
 - `latency`: Time to first token in milliseconds
 - `generation_time`: Total generation time in milliseconds
 - `tokens_prompt`: Number of prompt tokens

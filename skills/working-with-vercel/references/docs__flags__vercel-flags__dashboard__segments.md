@@ -16,8 +16,8 @@ related:
 summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5649f914c572f40e6d6e06edc0a4c2effcd76741507fc87fd4b63157806c459f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c5285bf45862f078c31c51189b42cf54281502cbf225abf01c29481e90761c03"
 ---
 
 # Segments
@@ -34,12 +34,11 @@ Segments are reusable groups of users for targeting feature flags. Instead of re
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [Manage Vercel Flags segments with Vercel CLI](https://vercel.com/changelog/manage-vercel-flags-segments-with-vercel-cli)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Create a segment](https://vercel.com/docs/rest-api/feature-flags/create-a-segment) — PUT /v1/projects/{projectIdOrName}/feature-flags/segments — Create a new feature flag segment.
 - [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Get a segment](https://vercel.com/docs/rest-api/feature-flags/get-a-segment) — GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Retrieve a feature flag segment by ID or s
-- [Update a segment](https://vercel.com/docs/rest-api/feature-flags/update-a-segment) — PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Update an existing feature flag segment.
+- [Delete a segment](https://vercel.com/docs/rest-api/feature-flags/delete-a-segment) — DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Delete a feature flag segment.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/segments.graph.md](/docs/flags/vercel-flags/dashboard/segments.graph.md)
 <!-- /docsgraph:related -->
@@ -71,10 +70,10 @@ Segment rules use [entities](/docs/flags/vercel-flags/dashboard/entities) to mat
 
 - **Attribute**: The entity property to check (e.g., `user.email`, `team.plan`)
 - **Operator**: How to compare the value:
-  - `equals` / `does not equal`
+  - `is` / `is not`
   - `contains` / `does not contain`
   - `starts with` / `ends with`
-  - `is one of` / `is not one of` (for lists)
+  - `is in` / `is not in` (for lists)
 - **Value**: What to match against
 
 **Combining rules:**
@@ -84,7 +83,7 @@ You can combine multiple conditions with AND or OR logic:
 ```
 user.email ends with "@yourcompany.com"
 OR
-user.role equals "admin"
+user.role is "admin"
 ```
 
 This segment matches anyone with a company email OR anyone with the admin role.
@@ -119,12 +118,12 @@ All flags using this segment will immediately use the updated rules.
 Use `vercel flags segments` to list, inspect, create, update, and delete segments from a linked project:
 
 ```bash filename="terminal"
-vercel flags segments ls
+vercel flags segments list
 vercel flags segments inspect beta-users
 vercel flags segments create beta-users --label "Beta users" \
   --add include:user.id=user_123
 vercel flags segments update beta-users --add rule:user.plan:eq:enterprise
-vercel flags segments rm beta-users --yes
+vercel flags segments delete beta-users --yes
 ```
 
 See the [`vercel flags` CLI reference](/docs/cli/flags#segments) for the full command syntax, including JSON output and `--data` examples. For operator values, see [available rule operators](/docs/cli/flags#available-rule-operators).

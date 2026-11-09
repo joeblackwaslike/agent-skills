@@ -13,12 +13,12 @@ related:
   - /docs/drains/reference/logs
   - /docs/rest-api
   - /docs/integrations/create-integration/submit-integration
-  - /docs/project-configuration
+  - /docs/rest-api/integrations/retrieve-an-integration-configuration
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "905c3cece80b3a0943d60d23638bf6fbccdf9414c68e36bcb65220a296b5602f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c38cd60f690933888439cc484078155e9099bcbd8d285a1fbad892e1ad526fa7"
 ---
 
 # Building Integrations with Vercel REST API
@@ -35,8 +35,8 @@ See the following API reference documentation for how to use Vercel REST API to 
 
 - [Vercel SDK Reference](https://vercel.com/docs/rest-api/sdk) — Interact programmatically with your Vercel account using the SDK.
 - [Retrieve project domains by project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-project-domains-by-project-by-id-or-name) — GET /v9/projects/{idOrName}/domains — Retrieve the domains associated with a given project by passing either the project
-- [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
 - [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
+- [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
 - [Update a project domain](https://vercel.com/docs/rest-api/projects/update-a-project-domain) — PATCH /v9/projects/{idOrName}/domains/{domain} — Update a project domain's configuration, including the name, git branch
 
 Full cross-link map for this page: [/docs/integrations/create-integration/vercel-api-integrations.graph.md](/docs/integrations/create-integration/vercel-api-integrations.graph.md)
@@ -108,7 +108,7 @@ Each installation of your integration is stored and tracked as a configuration.
 
 Sometimes it makes sense to fetch the configuration to get more insights about the current scope or the projects your integration has access to.
 
-To see which endpoints are available, see the [Configurations](/docs/project-configuration) documentation for more details.
+To see which endpoints are available, see the [Configurations](/docs/rest-api/integrations/retrieve-an-integration-configuration) documentation for more details.
 
 #### Disabled Integration Configurations
 

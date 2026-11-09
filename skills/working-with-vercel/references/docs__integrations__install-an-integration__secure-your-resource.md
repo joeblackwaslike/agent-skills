@@ -14,8 +14,8 @@ related:
 summary: Learn how to secure native integration resources by choosing where they can connect and using Production-only mode to protect credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "97b010d9f74651b49c67d3cc1c7ed04136b036dff72149394a128f951462997d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "afc99aee29f1a361686d76fc7c67f579784d925239b070d213c675e4c8853003"
 ---
 
 # Secure Your Resource
@@ -30,7 +30,7 @@ Secure a native integration resource by controlling where projects can connect t
 
 - [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access)
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
@@ -49,8 +49,8 @@ Confirm these requirements:
 - You have reviewed existing non-production project connections
 
 > **💡 Note:** Securing a resource is a dashboard action. The CLI currently supports
-> `remove`, `disconnect`, and `create-threshold` for integration resources. See
-> [`vercel integration-resource`](/docs/cli/integration#vercel-integration-resource).
+> `connect`, `disconnect`, `delete`, `create-threshold`, `claim`, and `inspect` for integration resources. See
+> [`vercel integration resource`](/docs/cli/integration#vercel-integration-resource).
 
 ## Secure your resource with Production-only access
 

@@ -11,12 +11,11 @@ prerequisites:
 related:
   - /docs/ai-gateway/models-and-providers/uptime
   - /docs/ai-gateway/sdks-and-apis/rest-api
-  - /docs/ai-gateway/authentication-and-byok
 summary: Understand how AI Gateway measures throughput and latency per provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "007527d714228b9f6026d98539cf9c2249589ca48a57d33bc326429def6da85b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d3f78b5b3936baf2ca095931f03638f1f1fd293342a286c039fd9baf44a35d17"
 ---
 
 # AI Gateway Provider Latency and Throughput Metrics
@@ -30,11 +29,11 @@ AI Gateway tracks **throughput** and **latency** for each model and provider, me
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
+- [Open weight takes 71.5% of tokens and 23% of spend](https://vercel.com/blog/ai-gateway-production-index-october-2026)
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
-- [Open weight takes 71.5% of tokens and 23% of spend](https://vercel.com/blog/ai-gateway-production-index-october-2026)
-- [Observability added to AI Gateway alpha](https://vercel.com/changelog/observability-added-to-ai-gateway-alpha)
 - [Sort providers by cost, latency, or throughput on AI Gateway](https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway)
+- [Open-weight models surge to 29% of volume, price per token flattens](https://vercel.com/blog/ai-gateway-production-index-july-2026)
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/metrics.graph.md](/docs/ai-gateway/models-and-providers/metrics.graph.md)
@@ -57,7 +56,7 @@ Latency is time to first token (TTFT), measured in milliseconds. It's the durati
 You can find metrics in the following places:
 
 - The [AI Gateway model catalog](/ai-gateway/models): each model row shows the best metrics across all providers (highest throughput, lowest latency).
-- The [**AI Gateway** > **Models**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fmodels\&title=Go+to+AI+Gateway+Models) tab in your project: same view as the catalog, scoped to your team.
+- The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project: go to **Model List** to open the same catalog.
 
 To see metrics broken down by provider, click any model to open its detail page. For each provider, the detail page shows the live values from the last hour and a chart of how each metric has trended over time.
 
@@ -74,11 +73,10 @@ Select **Share** in the top-right corner to export the current view as an image.
 Each endpoint returned by the [model endpoints API](/docs/ai-gateway/sdks-and-apis/rest-api#get-model-endpoints) includes rolling one-hour metrics for that provider:
 
 ```bash
-curl -i https://ai-gateway.vercel.sh/v1/models/anthropic/claude-opus-5/endpoints \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
+curl -i https://ai-gateway.vercel.sh/v1/models/anthropic/claude-opus-5/endpoints
 ```
 
-Replace `anthropic/claude-opus-5` with the model ID you want to inspect, and set `AI_GATEWAY_API_KEY` to a valid [AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys). Each endpoint object includes:
+Replace `anthropic/claude-opus-5` with the model ID you want to inspect. This request doesn't require authentication. Each endpoint object includes:
 
 | Field                    | Type   | Description                                         |
 | ------------------------ | ------ | --------------------------------------------------- |

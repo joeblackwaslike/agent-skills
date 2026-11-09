@@ -9,27 +9,24 @@ prerequisites:
   - /docs/ai-gateway/security-and-compliance
   - /docs/ai-gateway
 related:
-  - /docs/ai-gateway/security-and-compliance/zdr
-  - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/authentication-and-byok/byok
-  - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
-  - /docs/ai-gateway/models-and-providers
-summary: Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compliance requirements.
+  - /docs/ai-gateway/security-and-compliance/zdr
+  - /docs/rbac/access-roles/team-level-roles
+  - /docs/ai-gateway/sdks-and-apis/rest-api
+  - /docs/ai-gateway/sdks-and-apis
+summary: Route AI Gateway inference to the region you choose, team-wide or per request, and control where providers store data, for data residency and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9f012e71927e22be35a410ae8b92365dfd9da86fe017e610ca5f39f784f08689"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c83e6b56bfaf1b34929ec82b216115fee341c6772641788c83a07eae933919ce"
 ---
 
 # AI Gateway Regional Inference
 
-AI Gateway lets you pick which region to route each request to your model's
-provider, where available. This may help with your data residency, compliance,
-and latency requirements. You choose the region per request.
-AI Gateway routes your data to the provider in a data center in that region, and
-to the extent the provider stores data, it's configured to store it there. If AI
-Gateway can't honor the chosen region, the request fails instead of silently
-running somewhere else.
+AI Gateway lets you choose the region where your model's provider runs
+inference, where the provider supports it. This may help with your data
+residency, compliance, and latency requirements. You can pin one of these
+regions, or leave inference on the default:
 
 
 <!-- docsgraph:related -->
@@ -41,17 +38,64 @@ running somewhere else.
 - [Regional inference now available on AI Gateway](https://vercel.com/changelog/regional-inference-now-available-on-ai-gateway)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
+- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/regional-inference.graph.md](/docs/ai-gateway/security-and-compliance/regional-inference.graph.md)
 <!-- /docsgraph:related -->
+
+- 🇺🇸 **United States** (`us`): [available models](/ai-gateway/models?inferenceRegionUs=true)
+- 🇪🇺 **European Union** (`eu`): [available models](/ai-gateway/models?inferenceRegionEu=true)
+- 🇦🇺 **Australia** (`au`): [available models](/ai-gateway/models?inferenceRegionAu=true)
+- 🇯🇵 **Japan** (`jp`): [available models](/ai-gateway/models?inferenceRegionJp=true)
+- 🌐 **Any region** (`global`, the default): AI Gateway picks whichever region can serve the model
+
+AI Gateway routes your data to the provider in a data center in the region you
+choose, and to the extent the provider stores data, it's configured to store it
+there. If AI Gateway can't honor the chosen region, the request fails instead of
+silently running somewhere else. Tools that AI Gateway runs for you, such as web
+search, are an exception (see [where your data goes](#where-your-data-goes)).
+
+There are two ways to pin a region:
+
+- **Team-wide**: Pin one or more regions for the whole team from the [AI Gateway Dashboard Settings tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fsettings\&title=AI+Gateway+Settings). AI Gateway then restricts the team's requests to providers that can serve a selected region. See [team-wide region pinning](#team-wide-region-pinning).
+- **Per-request**: Set [`inferenceRegion`](#choosing-a-region-per-request) in `providerOptions` for individual requests. This gives you fine-grained control over which requests you pin and where.
+
+A per-request `inferenceRegion` takes precedence over the team-wide pin, and it
+must stay inside it: a request that asks for a region the team hasn't pinned
+fails with HTTP 400 instead of routing outside the pin. See
+[how team-wide and per-request pinning interact](#how-team-wide-and-per-request-pinning-interact).
 
 > **💡 Note:** `inferenceRegion` pins where the provider runs inference and stores your data.
 > It doesn't pin where your request reaches AI Gateway: your request can
 > terminate and be processed in any Vercel region before AI Gateway forwards it
 > to the provider. Region-pinned gateway hosts that terminate TLS and run gateway
 > processing in a single region are coming.
+
+## Pricing
+
+| Option                     | Cost                     | Availability       |
+| -------------------------- | ------------------------ | ------------------ |
+| Per-request region pinning | No additional cost       | All plans          |
+| Team-wide region pinning   | $0.10 per 1,000 requests | Pro and Enterprise |
+
+While your team has a team-wide pin, AI Gateway charges the team-wide pinning
+surcharge on every successful request from the team, including:
+
+- Requests that set their own `inferenceRegion`, because the team-wide pin still
+  checks that the region is inside it
+- Requests that use your [BYOK](/docs/ai-gateway/authentication-and-byok/byok)
+  keys
+
+AI Gateway doesn't charge it on failed requests, including a request that fails
+because it asked for a region outside the pin. On WebSocket connections, AI
+Gateway charges the surcharge once per session instead of once per response. You
+also pay the provider's rate for the region that serves the request (see
+[regional pricing](#regional-pricing)).
+
+To stop the surcharge, remove the team-wide pin: uncheck every region under
+**Region Pinning** in the [AI Gateway Dashboard Settings tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fsettings\&title=AI+Gateway+Settings),
+then click **Save**.
 
 ## What regional routing controls
 
@@ -70,7 +114,75 @@ providers store nothing for inference, and
 provider delete prompts and responses after the request (see
 [where your data goes](#where-your-data-goes)).
 
-## Choosing a region
+## Team-wide region pinning
+
+On Pro and Enterprise plans, a team can pin regions for every request it sends,
+so callers don't have to set `inferenceRegion` themselves. This is useful when
+residency is a team-level policy instead of a per-call decision. Only team
+[**Owners**](/docs/rbac/access-roles/team-level-roles) can change the pin, and
+teams on a Pro trial can't turn it on.
+
+To pin regions team-wide:
+
+1. Go to the [AI Gateway Dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway).
+2. Open the [**Settings** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fsettings\&title=AI+Gateway+Settings).
+3. Under **Region Pinning**, check the regions you want to allow.
+4. Drag the selected regions into your preference order, then click **Save**.
+5. If the team had no regions pinned before, review the surcharge in the
+   **Enable Region Pinning** dialog and click **Enable Region Pinning**.
+
+To remove the pin, uncheck every region and click **Save**. With no regions
+selected, the team is unpinned, which is the default: requests may use providers
+in any region.
+
+The order of the selected regions is the fallback priority. A provider that can
+serve more than one of your regions gets an attempt in each, in the order listed.
+By default, AI Gateway tries your
+[BYOK](/docs/ai-gateway/authentication-and-byok/byok) keys before system
+credentials, and applies the region order within each group. With `us` then `eu`
+selected, that means your keys in `us`, then your keys in `eu`, then system
+credentials in `us`, then system credentials in `eu`. Without BYOK keys, AI
+Gateway tries every provider in `us` before any provider in `eu`. Either way, if
+your first region fails, the request falls back to the next selected region
+instead of failing.
+
+Once you pin regions:
+
+- AI Gateway drops providers that can't serve any selected region from routing.
+  If no provider remains for the requested model, the request fails instead of
+  routing out of region.
+- Only models with regional endpoints work while the pin is on (see
+  [keeping a request in-region](#keeping-a-request-in-region) to find them). AI
+  Gateway doesn't have regional endpoints for image, video, speech,
+  transcription, or realtime models yet, so requests and sessions for those
+  models fail.
+- An authenticated request to
+  [`/v1/models`](https://ai-gateway.vercel.sh/v1/models) with
+  `include_availability` sets `model_eligibility.reason` to
+  `inference_region_unavailable` on models that no provider serves in a pinned
+  region, so you can check the pin's effect before sending a request. See
+  [team availability annotations](/docs/ai-gateway/sdks-and-apis/rest-api#team-availability-annotations).
+- Responses still report the region that served the request, so you can verify
+  residency the same way (see [confirming where a request ran](#confirming-where-a-request-ran)).
+
+Team-wide pinning carries a surcharge. See [pricing](#pricing).
+
+## How team-wide and per-request pinning interact
+
+A per-request `inferenceRegion` wins over the team-wide pin, within the bounds of
+the pin:
+
+| Team-wide pin | Request sets `inferenceRegion` | Result | [Surcharge](#pricing) |
+|---------------|--------------------------------|--------|-----------------------|
+| None | No | Routes globally, the default | No |
+| None | Yes | Routes to the requested region | No |
+| `us` | No | Routes to `us` | Yes |
+| `us`, `eu` | No | Tries `us`, then falls back to `eu` (see [team-wide region pinning](#team-wide-region-pinning)) | Yes |
+| `us` | `us` | Routes to `us` | Yes |
+| `us` | `eu` | Fails with HTTP 400, `eu` is outside the pin | No, the request failed |
+| `us` | `global` | Fails with HTTP 400, `global` isn't inside the pin | No, the request failed |
+
+## Choosing a region per request
 
 Set `providerOptions.gateway.inferenceRegion` on the request, and AI Gateway
 routes inference to that region:
@@ -90,6 +202,9 @@ routes inference to that region:
   runs matters to you.
 - `zone` requires `geoRegion` (`us`, `eu`, `au`, or `jp`). If you omit it, the
   request fails.
+- If your team has a [team-wide pin](#team-wide-region-pinning),
+  `{ scope: 'global' }` fails with HTTP 400 because it asks to route outside the
+  pin. Leave `inferenceRegion` out to route within the pin.
 - You set the region in the request body or config only. There's no HTTP header
   for it.
 
@@ -408,6 +523,13 @@ that provider stores your request data at rest, it's configured to store it in
 that region. Each provider's own terms set what it keeps and for how long, so
 check the provider's documentation for the specifics.
 
+Tools that AI Gateway runs for you aren't pinned. When a model calls
+[web search](/docs/ai-gateway/models-and-providers/web-search) tools such as
+Perplexity Search, Exa Search, or Parallel Search, AI Gateway calls the tool
+vendor's API wherever the vendor runs it, whether the region comes from the
+request or a team-wide pin, so search queries built from your prompt can leave
+the region.
+
 Abuse and safety monitoring is separate. Regardless of your pinned region or
 retention settings, a provider handles and retains requests it flags for abuse
 or safety review under its own policies, which can fall outside your region.
@@ -431,9 +553,12 @@ Pinning a region can raise what a request costs. Providers often price regional
 inference above their default routing, and one region can cost more than another
 for the same model. The provider sets that price.
 
-AI Gateway passes the provider's regional price straight through. Choosing a
-region adds no AI Gateway markup on top of it: you pay the provider's rate for
-the region you picked.
+AI Gateway passes the provider's regional price straight through. Setting
+`inferenceRegion` on a request adds no AI Gateway markup on top of it: you pay
+the provider's rate for the region you picked.
+
+AI Gateway bills team-wide pinning separately from the provider's rate. See
+[pricing](#pricing).
 
 To see what a model charges per region, open it from the
 [model list](/ai-gateway/models) and hover the price in the **Providers** table.
@@ -459,8 +584,9 @@ absolute per-token numbers, under `pricing.regional`:
 To see what a specific request cost, check the cost reported in the response
 metadata.
 
-You only take on a region's rate when you set `inferenceRegion`. Leave it unset
-(the `global` default) to route at the provider's standard rate.
+You pay a region's rate only when the request's `inferenceRegion` or your
+team-wide pin selects that region. With neither (the `global` default), you pay
+the provider's standard rate.
 
 ## BYOK and data residency
 
@@ -558,7 +684,7 @@ endpoints, the same object sits on each choice's message as
 
 Read `inferenceEndpoint.geoRegion` (here `us`) and compare it against the region
 you asked for; `finalProvider` names the provider that served the request. When
-you don't pin a region, `inferenceEndpoint` is `null`, matching the `global`
+you don't pin a region, the attempt has no `inferenceEndpoint` field, or the field reports an endpoint with the `global` scope, matching the `global`
 default, which doesn't pin a region.
 
 ## GDPR and regional routing
@@ -572,13 +698,19 @@ the location question; it doesn't by itself make a workload GDPR-compliant.
 - The regions available today are `us`, `eu`, `au`, and `jp`, and not every
   model supports all of them. Check a model's `regions` in the [model list](/docs/ai-gateway/models-and-providers)
   or from `https://ai-gateway.vercel.sh/v1/models`.
-- Region selection is opt-in; the default is `global`.
+- Region selection is opt-in; the default is `global`, both per request and
+  team-wide.
 - There's no cross-region fallback: a region that AI Gateway can't honor fails the
-  request.
+  request. Team-wide pinning falls back across the regions you selected, in order,
+  but never outside them.
+- Regional routing doesn't apply to web search tools that AI Gateway runs for
+  you (see [where your data goes](#where-your-data-goes)).
+- Image, video, speech, transcription, and realtime models don't have regional
+  endpoints yet, so they don't work with a region pinned.
 
 ## Regions in virtual models
 
-Pin an inference region on a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) to route all of its system-credential traffic to that region. The virtual model's region wins over the request's.
+Pin an inference region on a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) to route all of its system-credential traffic to that region. The virtual model's region wins over the request's. If your team has a [team-wide pin](#team-wide-region-pinning), the virtual model's region must be inside it, or requests to the virtual model fail with HTTP 400.
 
 
 ---

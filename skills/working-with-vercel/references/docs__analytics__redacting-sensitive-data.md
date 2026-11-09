@@ -12,8 +12,8 @@ related:
 summary: Learn how to redact sensitive data from your Web Analytics events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/redacting-sensitive-data.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b66f95820e69ec904c4b8b47e1e63d616f783cb3ed3042899700c6f6ec72cae6"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "83daa90f1fe176a8e1768ac021cc0050aed3dc6c82cc439092e6c822aa1fbacc"
 ---
 
 # Redacting Sensitive Data from Web Analytics Events
@@ -27,6 +27,8 @@ Sometimes, URLs and query parameters may contain sensitive data. This could be a
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
+- [Track server-side custom events with Vercel Web Analytics](https://vercel.com/changelog/track-server-side-custom-events-with-vercel-web-analytics)
+- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Tracking custom events](https://vercel.com/docs/analytics/custom-events) — Learn how to send custom analytics events from your application.

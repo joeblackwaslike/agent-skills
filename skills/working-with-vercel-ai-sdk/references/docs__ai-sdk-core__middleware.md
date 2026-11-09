@@ -4,8 +4,8 @@ description: Learn how to use middleware to enhance the behavior of language mod
 url: "https://ai-sdk.dev/docs/ai-sdk-core/middleware"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/middleware.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "ad10d4fd4076bb26ba770447b21b559d9332830b7b0634017f6af79155a7120d"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "6b5ce9e727ada13ba158c528faafb18b247bc99462ec3d3c6d6efc6902b7b889"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -402,6 +402,7 @@ export const yourLogMiddleware: LanguageModelV4Middleware = {
 ### Caching
 
 This example shows how to build a simple cache for the generated text of a language model call.
+The cache key includes the provider, model ID, and call parameters so responses are only reused for the same model and request.
 
 ```ts
 import type { LanguageModelV4Middleware } from '@ai-sdk/provider';
@@ -411,8 +412,12 @@ const cache = new Map<string, any>();
 export const yourCacheMiddleware: LanguageModelV4Middleware = {
   specificationVersion: 'v4',
 
-  wrapGenerate: async ({ doGenerate, params }) => {
-    const cacheKey = JSON.stringify(params);
+  wrapGenerate: async ({ doGenerate, params, model }) => {
+    const cacheKey = JSON.stringify({
+      provider: model.provider,
+      modelId: model.modelId,
+      params,
+    });
 
     if (cache.has(cacheKey)) {
       return cache.get(cacheKey);

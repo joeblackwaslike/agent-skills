@@ -16,8 +16,8 @@ related:
 summary: Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transfer, and CDN Requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/manage-cdn-usage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "08dd4f51156aca35fa057308d419ceff482da9295ee87be677511f17bfb2ff34"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "96a37a5ff49384d1189e17aca09b29c465fb2581e09a03cae49fc5d4f787842e"
 ---
 
 # CDN pricing and usage
@@ -39,9 +39,9 @@ CDN pricing covers three resources:
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Introducing Flat Rate CDN](https://vercel.com/blog/introducing-flat-rate-cdn)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 
 Full cross-link map for this page: [/docs/manage-cdn-usage.graph.md](/docs/manage-cdn-usage.graph.md)
 <!-- /docsgraph:related -->
@@ -117,7 +117,18 @@ If using Vercel Functions, you can optimize Fast Origin Transfer by reducing the
 
 You can also add [caching headers](/docs/caching/cdn-cache) to the function response. By caching the response, future requests serve from the CDN cache, rather than invoking the function again. This reduces Fast Origin Transfer usage and improves performance.
 
-Ensure your Function supports `If-Modified-Since` or `ETag` to prevent duplicate data transmission ([on by default for Next.js applications](https://nextjs.org/docs/app/api-reference/config/next-config-js/generateEtags)).
+Return an `ETag` or `Last-Modified` header from your Function so the CDN can answer repeat requests with `304 Not Modified` instead of re-sending the body ([on by default for Next.js applications](https://nextjs.org/docs/app/api-reference/config/next-config-js/generateEtags)).
+
+> **💡 Note:** The CDN performs this comparison, not your Function. When the CDN needs a
+> fresh copy of a cacheable response, it removes the client's `If-None-Match`
+> and `If-Modified-Since` headers before invoking the Function so that it
+> receives a complete response to store. Your Function sees these headers only
+> during background revalidation, where returning `304` keeps the existing
+> cached response. To avoid recomputing an expensive response on every cache
+> miss, set a longer freshness period with
+> [`Vercel-CDN-Cache-Control`](/docs/caching/cache-control-headers#vercel-cdn-cache-control)
+> and invalidate it by [cache tag](/docs/caching/cdn-cache/purge#cache-tags)
+> when the data changes.
 
 #### Middleware
 

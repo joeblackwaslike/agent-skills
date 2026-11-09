@@ -4,8 +4,8 @@ description: Learn how to use Voyage AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/voyage.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "951346e54373f81950cc3a64c0b87f6f4affb4e790f72804c22aca8027d7c35e"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "dc96750670091884213cd945bca23e65a2b1fb5e7feb8a9e4ec35fd6a4460f34"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -178,23 +178,17 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                   | Default Dimensions | Context Length |
-| ----------------------- | ------------------ | -------------- |
-| `voyage-4-large`        | 1024               | 32,000         |
-| `voyage-4`              | 1024               | 32,000         |
-| `voyage-4-lite`         | 1024               | 32,000         |
-| `voyage-4-nano`         | 1024               | 32,000         |
-| `voyage-code-3.5`       | 1024               | 32,000         |
-| `voyage-code-3`         | 1024               | 32,000         |
-| `voyage-3-large`        | 1024               | 32,000         |
-| `voyage-3.5`            | 1024               | 32,000         |
-| `voyage-3.5-lite`       | 1024               | 32,000         |
-| `voyage-3`              | 1024               | 32,000         |
-| `voyage-3-lite`         | 512                | 32,000         |
-| `voyage-finance-2`      | 1024               | 32,000         |
-| `voyage-multilingual-2` | 1024               | 32,000         |
-| `voyage-law-2`          | 1024               | 16,000         |
-| `voyage-code-2`         | 1536               | 16,000         |
+| Model             | Default Dimensions | Context Length | Custom Dimensions | Max Values per Call |
+| ----------------- | ------------------ | -------------- | ----------------- | ------------------- |
+| `voyage-4-large`  | 1024               | 32,000         | ✓                 | 128                 |
+| `voyage-4`        | 1024               | 32,000         | ✓                 | 128                 |
+| `voyage-4-lite`   | 1024               | 32,000         | ✓                 | 128                 |
+| `voyage-4-nano`   | 1024               | 32,000         | ✓                 | 128                 |
+| `voyage-code-3.5` | 1024               | 32,000         | ✓                 | 128                 |
+| `voyage-code-3`   | 1024               | 32,000         | ✓                 | 128                 |
+| `voyage-3-large`  | 1024               | 32,000         | ✓                 | 128                 |
+| `voyage-3.5`      | 1024               | 32,000         | ✓                 | 128                 |
+| `voyage-3.5-lite` | 1024               | 32,000         | ✓                 | 128                 |
 
 The table above lists popular models. Please see the [Voyage AI
 docs](https://docs.voyageai.com/docs/embeddings) for a full list of available
@@ -263,14 +257,27 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model             | Context Length |
-| ----------------- | -------------- |
-| `rerank-2.5`      | 32,000         |
-| `rerank-2.5-lite` | 32,000         |
-| `rerank-2`        | 16,000         |
-| `rerank-2-lite`   | 8,000          |
-| `rerank-1`        | 8,000          |
-| `rerank-lite-1`   | 4,000          |
+| Model             | Context Length | Text Documents | Object Documents | Top N |
+| ----------------- | -------------- | -------------- | ---------------- | ----- |
+| `rerank-2.5`      | 32,000         | ✓              | ✓                | ✓     |
+| `rerank-2.5-lite` | 32,000         | ✓              | ✓                | ✓     |
+| `rerank-2`        | 16,000         | ✓              | ✓                | ✓     |
+| `rerank-2-lite`   | 8,000          | ✓              | ✓                | ✓     |
+| `rerank-1`        | 8,000          | ✓              | ✓                | ✓     |
+| `rerank-lite-1`   | 4,000          | ✓              | ✓                | ✓     |
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option            | Description     |
+| --------- | ----------------- | --------------- |
+| embedding | `inputType`       | inputType       |
+| embedding | `truncation`      | truncation      |
+| embedding | `outputDimension` | outputDimension |
+| embedding | `outputDtype`     | outputDtype     |
+| reranking | `returnDocuments` | returnDocuments |
+| reranking | `truncation`      | truncation      |
 
 ---
 

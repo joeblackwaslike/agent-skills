@@ -13,8 +13,8 @@ related:
 summary: Use get_webhooks with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_webhooks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9e04904fa7d809e0215c442c0d6f857a3261df5f4ecc6078b5b933a76f8d8e3c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "db63213c669df06e24a4e9ee49cd808c4d2c09c3edc874d181e606e9e780e884"
 ---
 
 # get_webhooks
@@ -30,8 +30,8 @@ Get a list of webhooks
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks) — GET /v1/webhooks — Get a list of webhooks
 - [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook) — GET /v1/webhooks/{id} — Get a webhook
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks) — Learn how to set up webhooks and use them with Vercel Integrations.
+- [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 - [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook) — POST /v1/webhooks — Creates a webhook
-- [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations/get_webhooks.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations/get_webhooks.graph.md)
 <!-- /docsgraph:related -->

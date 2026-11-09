@@ -8,18 +8,19 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/deployments/managing-deployments
   - /docs/projects
   - /docs/cli/global-options
 summary: Learn how to remove a deployment using the vercel remove CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/remove.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0125054b9939db290600778b9b669a0c4ceec5e2855f6c6c1e895ec02d34b6af"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "aaf22d25fdef61b4afd8ccf412e6af80eaa622b1d69a5a86de5e1271c26eee70"
 ---
 
 # vercel remove
 
-The `vercel remove` command, which can be shortened to `vercel rm`, is used to remove deployments either by ID or for a specific Vercel Project.
+The `vercel remove` command is used to remove deployments either by ID or for a specific Vercel Project.
 
 
 <!-- docsgraph:related -->
@@ -30,14 +31,14 @@ The `vercel remove` command, which can be shortened to `vercel rm`, is used to r
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
 - [vercel rollback](https://vercel.com/docs/cli/rollback) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 
 Full cross-link map for this page: [/docs/cli/remove.graph.md](/docs/cli/remove.graph.md)
 <!-- /docsgraph:related -->
 
-> **💡 Note:** You can also remove deployments from the Project Overview page on the Vercel
-> Dashboard.
+> **💡 Note:** You can also remove deployments from the Vercel Dashboard. For the steps, see
+> [Delete a deployment](/docs/deployments/managing-deployments#delete-a-deployment).
 
 ## Usage
 
@@ -61,8 +62,8 @@ deployments from the Vercel platform.*
 vercel remove [project-name]
 ```
 
-*Using the \`vercel remove\` command to remove all
-deployments for a Vercel Project from the Vercel platform.*
+*Using the \`vercel remove\` command to remove a Vercel Project and all of
+its deployments from the Vercel platform.*
 
 > **💡 Note:** By using the [project name](/docs/projects), the entire Vercel
 > Project will be removed from the current scope unless the
@@ -74,7 +75,7 @@ These are options that only apply to the `vercel remove` command.
 
 ### Safe
 
-The `--safe` option, shorthand `-s`, can be used to skip the removal of deployments with an active preview URL or production domain when a Vercel Project is provided as the parameter.
+The `--safe` option can be used to skip the removal of deployments with an active preview URL or production domain when a Vercel Project is provided as the parameter.
 
 ```bash filename="terminal"
 vercel remove my-project --safe
@@ -88,7 +89,7 @@ vercel remove my-project --safe
 The `--yes` option, shorthand `-y`, can be used to skip the confirmation step for a deployment or Vercel Project removal.
 
 ```bash filename="terminal"
-vercel remove my-deployment.com --yes
+vercel remove example-app-6vd6bhoqt.vercel.app --yes
 ```
 
 *Using the \`vercel remove\` command with the
@@ -106,7 +107,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

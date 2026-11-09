@@ -16,8 +16,8 @@ related:
 summary: Learn how to set up Code Owners for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/code-owners/getting-started.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "63450023009e25669e9b494d5a8f9870b11b5262e43d2c5411855937b8c62e6c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e8f00138e8b831ea44f0d67ab88306959cfe71dc2cdb4906e8d3f08768245700"
 ---
 
 # Getting Started with Code Owners
@@ -35,7 +35,7 @@ If you've already set up Conformance, you may have already completed some of the
 **Agent prompt**
 
 ```text
-Help me set up Code Owners for this Vercel project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Run `vercel link` to connect the project. 2. Configure code ownership rules using the Vercel CLI so the right team members are assigned to review changes.
+Help me set up Code Owners for this Vercel project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). If I'm using Claude Code or Cursor, install the Vercel Plugin (`npx plugins add vercel/vercel-plugin`). For other agents, install Vercel Skills (`npx skills add vercel-labs/agent-skills`). Then: 1. Run `vercel link` to connect the project. 2. Define code ownership rules in `.vercel.approvers` files so the right team members are assigned to review changes.
 ```
 
 ## Prerequisites

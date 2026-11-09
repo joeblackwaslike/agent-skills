@@ -13,13 +13,13 @@ related:
 summary: Learn how to manage certificates for your domains using the vercel certs CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/certs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4884a24d03ba2d49c156d8d66665f7d1f52148ab783ee1818447e10b6eb988db"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "29ad7b4330faea39a681f7c674a24c695e6c6c7f9b2365fe12f94a71a471d174"
 ---
 
 # vercel certs
 
-The `vercel certs` command is used to manage certificates for domains, providing functionality to list, issue, and remove them. Vercel manages certificates for domains automatically.
+The `vercel certs` command is used to manage certificates for domains, providing functionality to list, issue, upload, and delete them. Vercel manages certificates for domains automatically.
 
 
 <!-- docsgraph:related -->
@@ -39,7 +39,7 @@ Full cross-link map for this page: [/docs/cli/certs.graph.md](/docs/cli/certs.gr
 ## Usage
 
 ```bash filename="terminal"
-vercel certs ls
+vercel certs list
 ```
 
 *Using the \`vercel certs\` command to list all
@@ -51,14 +51,23 @@ certificates under the current scope.*
 vercel certs issue [domain1, domain2, domain3]
 ```
 
-*Using the \`vercel certs\` command to issue certificates
-for multiple domains.*
+*Using the \`vercel certs\` command to issue a certificate
+that covers multiple domains.*
 
 ```bash filename="terminal"
-vercel certs rm [certificate-id]
+vercel certs add --crt certificate.pem --key private-key.pem --ca ca.pem
 ```
 
-*Using the \`vercel certs\` command to remove a
+*Using the \`vercel certs\` command to upload a
+custom SSL certificate, which
+requires an Enterprise team. You must pass the certificate, private key,
+and Certificate Authority files.*
+
+```bash filename="terminal"
+vercel certs delete [certificate-id]
+```
+
+*Using the \`vercel certs\` command to delete a
 certificate by ID.*
 
 ## Unique Options
@@ -78,14 +87,25 @@ vercel certs issue foo.com --challenge-only
 
 ### Limit
 
-The `--limit` option can be used to specify the maximum number of certs returned when using `ls`. The default value is `20` and the maximum is `100`.
+The `--limit` option can be used to specify the maximum number of certs returned when using `list`. The default value is `20` and the maximum is `100`.
 
 ```bash filename="terminal"
-vercel certs ls --limit 100
+vercel certs list --limit 100
 ```
 
-*Using the \`vercel certs ls\` command with the
+*Using the \`vercel certs list\` command with the
 \`--limit\` option.*
+
+### Next
+
+Use the `--next` option with `list` to show the next page of certificates. When more certificates remain, the output includes the command for the next page. Pass the `--next` value from that command:
+
+```bash filename="terminal"
+vercel certs list --next 1234567890123
+```
+
+*Using the \`vercel certs list\` command with the
+\`--next\` option.*
 
 ## Global Options
 
@@ -99,7 +119,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

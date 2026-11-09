@@ -13,8 +13,8 @@ related:
 summary: Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/ruby.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c66704b3251906ab6930d18dcdfbc0c3e9173917a89ae71435fce21d0e45bbab"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e39abbc197f6c59498267228e1d0bddf8786db29926d4c0f9ffc563542ff5d12"
 ---
 
 # Using the Ruby Runtime with Vercel Functions
@@ -31,13 +31,12 @@ The Ruby runtime is used by Vercel to compile Ruby Vercel functions that define 
 
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications) — Learn how to deploy a Ruby on Rails application on Vercel — either as a container image on Vercel Functions or as a head
-- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
-- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
+- [Rust runtime now in public beta for Vercel Functions](https://vercel.com/changelog/rust-runtime-now-in-public-beta-for-vercel-functions)
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime) — Learn how to configure the runtime for Vercel Functions.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
+- [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go) — Learn how to use the Go runtime to run Go APIs on Vercel.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
-- [Secure Compute](https://vercel.com/docs/networking/secure-compute) — Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 
 Full cross-link map for this page: [/docs/functions/runtimes/ruby.graph.md](/docs/functions/runtimes/ruby.graph.md)
 <!-- /docsgraph:related -->

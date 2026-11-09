@@ -16,8 +16,8 @@ related:
 summary: Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/external-platforms/kubernetes.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e2b5a0f402f02f330631aad57a99c2f9de013b838541f67935f91cb61ebb2cb0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a80239f35fb32d0944c091eae31851cd17c993b795710627bae2838641b11ffd"
 ---
 
 # Integrating Vercel and Kubernetes
@@ -35,10 +35,9 @@ Kubernetes (K8s) is an open-source system for automating deployment, scaling, an
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
 - [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy)
-- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
-- [Accelerating developer velocity and creating high-impact web teams](https://vercel.com/blog/accelerating-developer-velocity-and-creating-high-impact-web-teams)
 - [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
-- [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
+- [Accelerating developer velocity and creating high-impact web teams](https://vercel.com/blog/accelerating-developer-velocity-and-creating-high-impact-web-teams)
+- [What does Vercel do? ](https://vercel.com/blog/what-is-vercel)
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 
@@ -142,7 +141,7 @@ To incrementally move your frontend applications to Vercel:
   - Missing [environment variables](/docs/environment-variables)
   Continue addressing errors until you get a successful Preview Deployment.
 
-  Depending on how you have your Kubernetes environment configured, you may need to adjust firewall and security policies to allow the applications to talk to each other. Vercel [provides some options](/kb/guide/how-to-allowlist-deployment-ip-address), including [Vercel Secure Compute](/docs/networking/secure-compute) for Enterprise teams, which allows you to establish secure connections between Vercel and backend environments.
+  Depending on how you have your Kubernetes environment configured, you may need to adjust firewall and security policies to allow the applications to talk to each other. Vercel [provides some options](/docs/networking/static-ips), including [Vercel Secure Compute](/docs/networking/secure-compute) for Enterprise teams, which allows you to establish secure connections between Vercel and backend environments.
 
   The goal is to use the Preview Deployment to test the integration with your Kubernetes-hosted backends, ensuring that API calls and data flow work as expected.
 
@@ -161,7 +160,7 @@ To incrementally move your frontend applications to Vercel:
   - [A/B Testing on Vercel](/kb/guide/ab-testing-on-vercel)
   - [Implementing Blue-Green Deployments on Vercel](/kb/guide/blue_green_deployments_on_vercel)
   - [Transferring Domains to Vercel](/kb/guide/transferring-domains-to-vercel)
-  - [How to migrate a site to Vercel without downtime](/kb/guide/zero-downtime-migration)
+  - [Pre-generating SSL certificates for a migration without downtime](/docs/domains/pre-generating-ssl-certs)
 
 - ### Maintain the backend on Kubernetes
   Continue running your backend services on Kubernetes, taking advantage of its strengths in container orchestration for applications your company may not want to move or are unable to move. Examples could include:

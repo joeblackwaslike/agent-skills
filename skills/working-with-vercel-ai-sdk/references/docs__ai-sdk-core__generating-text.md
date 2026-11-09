@@ -4,8 +4,8 @@ description: Learn how to generate text with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "32d78dcd0e1826d9664be3e1055347bb2119c66503ebba0efed1a76286ce2088"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "44ed2f75e0b25f0c6e2582fd463c00ee4e69f102441b212cba6753f88c8a1f21"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -273,6 +273,7 @@ When using `streamText`, you can provide an `onChunk` callback that is triggered
 It receives all stream part types from `stream`, including:
 
 - `start`
+- `steering-message`
 - `start-step`
 - `text-start`
 - `text-delta`

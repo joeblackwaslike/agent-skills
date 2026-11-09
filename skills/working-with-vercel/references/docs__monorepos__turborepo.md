@@ -16,8 +16,8 @@ related:
 summary: Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware hashing, and Remote Caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "65f7faf413939728a601e31c987a9d83486f2bc67ac3a56cd42653ac327ac990"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7959c534e59aaa9352d038bad55b3bb46b82bfa4098f894d8998c6269763f7e8"
 ---
 
 # Deploying Turborepo to Vercel
@@ -34,14 +34,14 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 - [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/app/guides/ci-build-caching) — Learn how to configure CI to cache Next.js builds
 - [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/pages/guides/ci-build-caching) — Learn how to configure CI to cache Next.js builds
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
-- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel with zero-config Remote Caching.
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
 - [Caching](https://turborepo.dev/docs/crafting-your-repository/caching) — Configure task caching to avoid repeating work, using fingerprinting for inputs and restoring outputs from cache.
-- [Monorepos](https://vercel.com/blog/monorepos-are-changing-how-teams-build-software)
 - [Monorepos are changing how teams build software](https://vercel.com/blog/monorepos)
+- [Visualize time saved using Turborepo with Remote Caching](https://vercel.com/changelog/visualize-time-saved-using-turborepo-with-remote-caching)
 - [Turborepo Open-Source CLI and Remote Caching on Vercel](https://vercel.com/changelog/turborepo-open-source-cli-and-remote-caching-on-vercel)
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
+- [Turborepo Run Summary is now available](https://vercel.com/changelog/turborepo-run-summary-is-now-available)
 
 Full cross-link map for this page: [/docs/monorepos/turborepo.graph.md](/docs/monorepos/turborepo.graph.md)
 <!-- /docsgraph:related -->

@@ -17,8 +17,8 @@ related:
 summary: Add a Chat SDK bot to Nitro, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks/nitro.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4c24d90f3458a1c3f213dfb75475461342f3b9812074ded3c28cf7d1286eca2f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "425a6ed0ba7e7969d2ae3e4aa2f380dcf942cfa331c7dbc6b6ff9c969e369a0e"
 ---
 
 # Chat SDK with Nitro
@@ -33,8 +33,8 @@ Use a Nitro route to receive Slack events and process them with Chat SDK. This g
 
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
-- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Getting Started with Chat SDK](https://vercel.com/docs/chat-sdk/quickstart) — Create a Slack bot with the Chat SDK CLI, connect it to Slack through Vercel Connect, and deploy it on Vercel.
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
@@ -184,7 +184,7 @@ Ensure the integration supplies `REDIS_URL` in the project's **Production** envi
 Create a Slack connector and allow token requests from the project's Production and Development environments. Attach its trigger to your production webhook route:
 
 ```bash filename="Terminal"
-vercel connect create slack --name my-bot --triggers
+vercel connect create slack --name my-bot --triggers --trigger-path /api/webhooks/slack
 vercel connect attach slack/my-bot --environment production --environment development --triggers --trigger-path /api/webhooks/slack
 ```
 
@@ -201,6 +201,28 @@ Invite the bot to a Slack channel and mention it. It should reply with a greetin
 Vercel deployments receive `VERCEL_OIDC_TOKEN` automatically. For local outbound API calls, configure a development `REDIS_URL` and run `vercel env pull .env.local`. This supplies a Development OIDC token, which can access the connector because the attachment above enables Development.
 
 Connect forwards inbound events to deployed URLs, not `localhost`. To test inbound events before production, [attach the trigger to a Preview branch](/docs/cli/connect#vercel-connect-attach).
+
+## Frequently asked questions
+
+### Should I use the Nitro guide or the Nuxt guide?
+
+Use this guide for a standalone Nitro 3 app that imports from the `nitro` package. Use the [Nuxt guide](/docs/chat-sdk/frameworks/nuxt) for a Nuxt 4 app, which runs on Nitro 2 and H3 1. The two versions expose the request and background tasks differently, so their webhook routes aren't interchangeable.
+
+### Why put the webhook in `routes/api/` instead of a top-level `api/` directory?
+
+Nitro's top-level `api/` directory isn't compatible with Vercel, so Nitro's Vercel docs recommend `routes/api/` instead. Nitro scans no directories for routes until you set `serverDir`. With `serverDir: './'` in `nitro.config.ts`, the file `routes/api/webhooks/slack.post.ts` serves `/api/webhooks/slack`. See [Nitro on Vercel](https://nitro.build/deploy/providers/vercel#api-routes).
+
+### How do I get the Web `Request` in a Nitro 3 route?
+
+Use `event.req`. Nitro 3 exposes the incoming request as a standard Web `Request`, which you pass straight to `bot.webhooks.slack`. Leave the body unread, because the adapter reads it to parse and verify the event.
+
+### Do I need `@vercel/functions` with Nitro 3?
+
+No. Nitro 3 provides `event.waitUntil`, which this guide passes to the adapter as `waitUntil: (task) => event.waitUntil(task)`. It keeps the function running while your handlers finish after the webhook response. Nuxt 4 on Nitro 2 is different and needs `waitUntil` from `@vercel/functions`.
+
+### What does the `.post` suffix in the route file name do?
+
+The `.post` suffix limits the route to `POST` requests, which is how platforms deliver webhook events. Nitro answers other methods on that path with `405 Method Not Allowed`. Some platforms, such as WhatsApp and Messenger, verify a webhook with a `GET` request first, so add a `GET` handler for those. See [Nitro routing](https://nitro.build/docs/routing).
 
 ## Next steps
 

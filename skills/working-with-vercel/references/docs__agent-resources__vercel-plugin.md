@@ -8,12 +8,12 @@ type: reference
 prerequisites:
   - /docs/agent-resources
 related:
-  []
+  - /docs/sandbox/quickstart
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e84b686a964e1851df6b6b1604c42eec31d5164d74eddb069b043e9df63a2684"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "af99c2d655e914f67974868eb60fd8f92bc575de8fa3ed7aec657a0a5c0a6126"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -36,8 +36,8 @@ The Vercel plugin gives [supported AI coding tools](#supported-tools) Vercel-spe
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
 - [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md](/docs/agent-resources/vercel-plugin.graph.md)
 <!-- /docsgraph:related -->
@@ -83,7 +83,7 @@ After installation, session context is injected automatically only for empty dir
 | Component               | Description                                                                                                                                    |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Ecosystem graph**     | A relational knowledge graph covering every Vercel product, library, CLI, API, and service, with decision matrices and cross-product workflows |
-| **[33 skills](#available-skills)**           | Deep-dive guidance for specific Vercel products, libraries, and workflows                                                                      |
+| **[Skills](#available-skills)**           | Deep-dive guidance for specific Vercel products, libraries, and workflows                                                                      |
 | **3 specialist agents** | Purpose-built agents for deployment, performance optimization, and AI architecture                                                             |
 | **4 slash commands**    | Quick actions for deploying, managing environment variables, bootstrapping projects, and more                                                  |
 
@@ -118,7 +118,7 @@ The skills remain available on demand, and the plugin includes the injection eng
 
 ## Available skills
 
-The plugin includes 33 skills covering the Vercel ecosystem:
+The plugin includes skills covering the Vercel ecosystem:
 
 | Skill                                | Covers |
 | ------------------------------------ | ------ |
@@ -132,15 +132,17 @@ The plugin includes 33 skills covering the Vercel ecosystem:
 | `chat-sdk`                           | Multi-platform chat bots for Slack, Telegram, Teams, Discord, Google Chat, GitHub, and Linear |
 | `create-a-backend`                   | Choosing between Functions, Services, containers, Workflow, Queues, and databases for a backend |
 | `custom-metrics`                     | Application and business metrics emitted from Functions and queried with `vc metrics` |
+| `daemons`                            | Vercel Daemons, including long-running workers built from a Dockerfile, the `daemons` key in `vercel.json`, instances per region, and `SIGTERM` handling |
 | `deployments-cicd`                   | Deployment and CI/CD workflows, including deploy, promote, rollback, `--prebuilt`, and CI files |
 | `domains`                            | Domain search and pricing, registration, project domains, DNS, transfers, and renewals |
 | `env-vars`                           | Environment variable management, including `.env` files, `vercel env`, and OIDC tokens |
 | `eve`                                | The eve framework for durable AI agents, including channels, sandboxes, schedules, evals, and frontend clients |
-| `flags-sdk`                          | Feature flags and A/B tests with the Flags SDK, provider adapters, the `vercel flags` CLI, and Flags Explorer |
+| `flags-sdk`                          | Flags SDK code in Next.js and SvelteKit, including `flag()` declarations, provider adapters, precompute, and Flags Explorer |
 | `is-agentic`                         | Agent readiness scores for websites and public MCP endpoints with Is Agentic |
 | `knowledge-update`                   | Knowledge update guidance for the plugin |
 | `marketplace`                        | Integration discovery and installation with `vercel integration add` and `vercel install`, auto-provisioned environment variables, and unified billing |
 | `microfrontends`                     | Microfrontends on Vercel, including path routing, project composition, local development, and troubleshooting |
+| `offload-to-sandbox`                  | Move heavy builds, test suites, and parallel experiments to Vercel Sandboxes, collect results, and clean up task sandboxes |
 | `queues`                             | Vercel Queues, including durable topics, consumer groups, retries, delays, and idempotency |
 | `react-best-practices`               | React and Next.js performance guidance across component, data, and rendering patterns |
 | `routing-middleware`                 | Request interception before cache, rewrites, redirects, and personalization for Edge, Node.js, and Bun |
@@ -149,14 +151,28 @@ The plugin includes 33 skills covering the Vercel ecosystem:
 | `vercel-cli`                         | Vercel CLI commands for deploy, env, dev, domains, cache management, MCP integration, and Marketplace provisioning with `vercel install` |
 | `vercel-connect`                     | Vercel Connect guidance for scoped OAuth tokens, third-party services, MCP servers, and eve agent connections |
 | `vercel-firewall`                    | DDoS protection, WAF rules, rate limiting, bot filtering, and IP controls |
+| `vercel-flags`                       | Vercel Flags, including choosing an integration, the `vercel flags` CLI, rollouts, and A/B tests |
 | `vercel-functions`                   | Node.js, Bun, Python, and Rust runtimes on Fluid Compute, streaming, WebSockets, and Cron Jobs |
-| `vercel-sandbox`                     | Ephemeral Firecracker microVMs for running untrusted or AI-generated code safely |
+| `vercel-sandbox`                     | Run generated or user-submitted code in isolated Linux environments, with SDK and CLI guidance for files, previews, and sandbox lifecycle |
+| `vercel-schedules`                   | Vercel Schedules, including static schedules in `vercel.json`, dynamic schedules with `@vercel/schedules`, one-time runs, and migration from Cron Jobs |
 | `vercel-services`                    | Multiple frontends and backends in one project, with public rewrites and private service bindings |
 | `vercel-storage`                     | Blob, Global Config, Neon Postgres, Upstash Redis, one-command Marketplace provisioning with `vercel install`, and migration from sunset packages |
+| `vercel-tracing`                     | OpenTelemetry tracing, including `@vercel/otel` setup, custom spans, and span queries with `vercel traces` |
 | `verification`                       | End-to-end verification across browser, API, data, and response flows |
 | `workflow`                           | Workflow SDK, including durable execution, WorkflowAgent, steps, Worlds, and pause or resume flows |
 
 The plugin doesn't ship Next.js skills. Next.js includes version-matched docs for agents, and you can add its workflow skills with `npx skills add vercel/next.js`. See the [Next.js AI agents guide](https://nextjs.org/docs/app/guides/ai-agents).
+
+### Run code and tests in Sandbox
+
+Use `vercel-sandbox` when your application needs to execute generated code or manage an isolated workspace. Use `offload-to-sandbox` when you want your coding agent to run the project's heavy builds or tests remotely.
+
+From your project, ask your coding agent:
+
+- "Use vercel-sandbox to run this generated Python script in an isolated sandbox and show me its output."
+- "Use offload-to-sandbox to run this project's test suite in Vercel Sandbox and return the failing tests and logs."
+
+Both tasks require access to a Vercel project. Follow the [Sandbox quickstart](/docs/sandbox/quickstart) for authentication and your first run.
 
 ## Specialist agents
 
@@ -227,7 +243,7 @@ You can also run the built-in doctor command:
 npx vercel-plugin doctor
 ```
 
-The doctor command validates manifest parity, checks hook timeout risk, verifies dedup health, and reports skill map issues.
+The doctor command checks hook timeout risk, verifies dedup health, and reports skill map issues.
 
 ## Reporting issues
 

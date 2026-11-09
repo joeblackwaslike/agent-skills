@@ -12,8 +12,8 @@ related:
 summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3c0faff2b047bde0a4a70dbbf279f68c60a0fc9a3d158b1770a1e71e894edcab"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "40b4fc3547e1d20f1bb1e474e6220014fa6ed26e9929d93a321d8429434935bc"
 ---
 
 # Set up Passport with an identity provider
@@ -30,16 +30,15 @@ This guide covers the common Passport setup flow for OpenID Connect providers, i
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available)
+- [Capture AI SDK token usage, tool calls, and cost with evlog](https://vercel.com/kb/guide/ai-sdk-and-evlog) — Record AI SDK usage with evlog, add cost estimates and request context, and investigate expensive or failed requests.
 - [Use Vercel Passport with Node.js and Python backends](https://vercel.com/kb/guide/vercel-passport-backend-frameworks) — Secure internal apps and verify a visitor's identity with Vercel Passport in your backend, with examples for Express, Ho
 - [Using Vercel Passport with Microsoft Entra ID](https://vercel.com/kb/guide/vercel-passport-microsoft-entra-id) — Configure Microsoft Entra ID and Vercel Passport to protect a Next.js app, limit access to assigned users, and read veri
 - [Identify users and control access in Next.js with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nextjs) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Next.js, then personalize pages, restri
-- [Personalize and lock down a Nuxt app with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nuxt) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Nuxt server routes, then personalize pa
-- [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
 - [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
@@ -83,7 +82,7 @@ Create an Okta OpenID Connect web application, then add its credentials to a Ver
 
 6. In the Vercel dashboard, configure the Connect application:
    - Create an **OAuth** Connect application.
-   - Select **Your own credentials**.
+   - Select **Bring Your Own**.
    - Enter the exact issuer URI in the **Server URL** field.
    - Select **Discover** to fill the **Authorization Endpoint** and **Token Endpoint**.
    - Enter the Okta client ID and client secret.
@@ -112,7 +111,7 @@ https://login.microsoftonline.com/your_tenant_id/v2.0
 In the Vercel dashboard, configure the Connect application:
 
 - Create an **OAuth** Connect application.
-- Select **Your own credentials**.
+- Select **Bring Your Own**.
 - Enter that issuer URI in the **Server URL** field.
 - Select **Discover** to fill the **Authorization Endpoint** and **Token Endpoint**.
 - Enter the Microsoft Entra application client ID and client secret.
@@ -126,12 +125,12 @@ Use a tenant-specific issuer rather than a multi-tenant endpoint so Passport can
   From your Vercel dashboard, open [Project Passport Settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fpassport\&title=Project+Passport+Settings).
 
 - ### Enable Passport
-  Use the **Passport** toggle to enable the feature.
+  You enable Passport for the project when you save a Connect application in the **Connection** section.
 
 - ### Select or create a Connect application
   Select an existing Connect application, or create a new one from the Passport setup flow.
 
-  When you create an application, choose **OAuth** for an OpenID Connect provider, then select **Your own credentials** because you bring an existing identity provider application with a client secret. Enter your provider's issuer URI in the **Server URL** field and select **Discover**. If discovery does not work, enter the OAuth endpoints manually.
+  When you create an application, choose **OAuth** for an OpenID Connect provider, then select **Bring Your Own** because you bring an existing identity provider application with a client secret. Enter your provider's issuer URI in the **Server URL** field and select **Discover**. If discovery does not work, enter the OAuth endpoints manually.
 
   Your provider must allow this redirect URI:
   ```txt
@@ -148,9 +147,8 @@ Use a tenant-specific issuer rather than a multi-tenant endpoint so Passport can
 You can set a team default so new projects inherit Passport settings.
 
 1. From your Vercel dashboard, open [Team Passport Settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fpassport\&title=Team+Passport+Settings).
-2. Enable Passport.
-3. Select or create a Connect application.
-4. Click **Save**.
+2. Select or create a Connect application.
+3. Click **Save**.
 
 Existing projects keep their current Passport settings. Use the project list on the team Passport page to assign Passport to existing projects.
 

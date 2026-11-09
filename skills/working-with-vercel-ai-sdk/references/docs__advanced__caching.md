@@ -4,8 +4,8 @@ description: How to handle caching when working with the AI SDK
 url: "https://ai-sdk.dev/docs/advanced/caching"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/caching.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "55023f749e420a9f703bc8a239852cae657133885f0912483cc91188b6e47e5e"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "3fa6ee6c4f1065db3e914602ad6c578a1d5a70f7f750f146682e124b3ab5fbf2"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -19,6 +19,7 @@ and the [`simulateReadableStream`](/docs/reference/ai-sdk-core/simulate-readable
 
 Language model middleware is a way to enhance the behavior of language models by intercepting and modifying the calls to the language model.
 Let's see how you can use language model middleware to cache responses.
+Include the provider and model ID in the cache key alongside the call parameters to keep cached responses separate across models and providers.
 
 ```ts title="ai/middleware.ts"
 import { Redis } from '@upstash/redis';
@@ -36,8 +37,12 @@ const redis = new Redis({
 
 export const cacheMiddleware: LanguageModelV4Middleware = {
   specificationVersion: 'v4',
-  wrapGenerate: async ({ doGenerate, params }) => {
-    const cacheKey = JSON.stringify(params);
+  wrapGenerate: async ({ doGenerate, params, model }) => {
+    const cacheKey = JSON.stringify({
+      provider: model.provider,
+      modelId: model.modelId,
+      params,
+    });
 
     const cached = (await redis.get(cacheKey)) as Awaited<
       ReturnType<LanguageModelV4['doGenerate']>
@@ -61,8 +66,12 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
 
     return result;
   },
-  wrapStream: async ({ doStream, params }) => {
-    const cacheKey = JSON.stringify(params);
+  wrapStream: async ({ doStream, params, model }) => {
+    const cacheKey = JSON.stringify({
+      provider: model.provider,
+      modelId: model.modelId,
+      params,
+    });
 
     // Check if the result is in the cache
     const cached = await redis.get(cacheKey);

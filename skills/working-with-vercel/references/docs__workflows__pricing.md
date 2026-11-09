@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e6ecd7550b6a3bd5b28544bc75792edc8ab1ec62148b3ea767909244f58e8a84"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "febee42b263083fdab82e7fb6ee517d550dbafa9efcd88f75dc00c57ae5e6bc3"
 ---
 
 # Workflow Pricing and Limits
@@ -32,16 +32,16 @@ Vercel bills Workflows usage across three resources:
 
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
+- [Choosing between eve, AI SDK agents, and \\`WorkflowAgent\\`](https://vercel.com/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) — Compare eve, \\`ToolLoopAgent\\`, and \\`WorkflowAgent\\` by durability, approvals, channels, and setup to choose an agent f
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
-- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Workflow SDK vs AWS Bedrock AgentCore](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-agentcore) — AgentCore hosts and operates AI agents in isolated microVMs but is not a durable-execution engine. The Workflow SDK prov
 - [max-events-exceeded](https://workflow-sdk.dev/docs/errors/max-events-exceeded) — Run long-running workflows on the QuickJS VM with snapshotting, which is exempt from the default event limit, or split t
 - [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries) — Control how steps handle failures and customize retry behavior.
-- [Worlds](https://workflow-sdk.dev/docs/configuration/worlds) — Select and configure Local, Postgres, Vercel, or custom Worlds.
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [Worlds](https://workflow-sdk.dev/docs/configuration/worlds) — Select and configure Local, Postgres, Vercel, or custom Worlds.
+- [Limits](https://vercel.com/docs/limits) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 
 Full cross-link map for this page: [/docs/workflows/pricing.graph.md](/docs/workflows/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -143,6 +143,28 @@ A rate-limited write that records a step's result is retried for as long as the 
 | Hobby      | 50,000              |
 | Pro        | 500,000             |
 | Enterprise | 2,500,000           |
+
+## Frequently asked questions
+
+### How much does a workflow run cost?
+
+A run's cost depends on how many events it records and how much data it writes and keeps. Vercel bills it as Workflow Events, Workflow Data Written, and Workflow Data Retained at the rates in the table above. The functions that execute your workflow and steps are billed at [Vercel Functions rates](/docs/functions/usage-and-pricing), and the messages that dispatch them at [Vercel Queues rates](/docs/queues/pricing). To estimate events, count three for the run itself (created, started, and completed or failed), three for each step that succeeds on its first attempt, at least one more for each retry, two for each `sleep()`, and at least two for each hook. To see how much data a finished run wrote, open it on the Workflows page in the dashboard.
+
+### Can I use Vercel Workflows on the Hobby plan?
+
+Yes. Hobby includes a monthly allowance of Workflow Events and Workflow Data Written, listed in the table above. Workflow Data Retained isn't available on Hobby. On Pro, Vercel bills all three resources on demand at the rates in the table.
+
+### Do I pay for compute while a workflow sleeps or waits for a hook?
+
+No. A suspended run doesn't invoke any functions, so it uses no compute while it sleeps or waits on a hook, even for days or months. Creating and completing the sleep or hook records events, which count toward Workflow Events.
+
+### What happens when a run reaches the event limit?
+
+On the default Node.js runtime, a run that reaches 25,000 events fails with the `MAX_EVENTS_EXCEEDED` error code and doesn't resume on its own. Reduce the events per run, then start it again. You can split independent work into [child workflows](https://workflow-sdk.dev/cookbook/advanced/child-workflows), [bundle several items into each step](https://workflow-sdk.dev/cookbook/common-patterns/batching), or switch to the [QuickJS runtime](#quickjs-runtime) with snapshotting, which is exempt from the cap. Replay can slow down past 2,000 events, so split long runs well before they reach the limit.
+
+### How are eve agents and Chat SDK bots that use Workflows billed?
+
+Vercel bills the resources your agent or bot uses, not eve or Chat SDK themselves. Every [eve](/docs/frameworks/agents/eve) session on Vercel runs as a workflow, so its checkpoints and waits count toward Workflow Events and Workflow Data Written, alongside Vercel Functions, AI Gateway, Vercel Sandbox, and any other resources it uses. See [eve pricing and limits](/docs/frameworks/agents/eve#pricing-and-limits). A [Chat SDK](/docs/chat-sdk) bot incurs Workflows charges only for the workflows you start from it, such as an [approval flow](/docs/chat-sdk/integrations/workflows). Its webhook handlers run as regular Vercel Functions.
 
 
 ---

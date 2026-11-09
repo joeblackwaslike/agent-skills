@@ -17,8 +17,8 @@ related:
 summary: Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks/nextjs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8a40d51a9b8fbf317129021250801e6f4cda9a19f4eb8ce25652e6d98994a175"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e9a532b7abf8f5b38f3f4665f4af9a7f2c0bf577e9659c4a1351ebfd5c1ab985"
 ---
 
 # Chat SDK with Next.js
@@ -161,7 +161,7 @@ Ensure the integration supplies `REDIS_URL` in the project's **Production** envi
 Create a Slack connector and allow token requests from the project's Production and Development environments. Attach its trigger to your production webhook route:
 
 ```bash filename="Terminal"
-vercel connect create slack --name my-bot --triggers
+vercel connect create slack --name my-bot --triggers --trigger-path /api/webhooks/slack
 vercel connect attach slack/my-bot --environment production --environment development --triggers --trigger-path /api/webhooks/slack
 ```
 
@@ -382,6 +382,28 @@ Use `messages` to render the conversation and `sendMessage({ text })` to submit 
 After configuring authentication, sign in and open `/chat`. Select **Send a test message** to send `Hello`; the bot should respond with `You said: Hello`. The `support` conversation ID is scoped to the authenticated user by the adapter. Generate a different conversation ID when you want to start a new conversation.
 
 For a fuller chat interface, see the [official Next.js example](https://github.com/vercel/chat/tree/main/examples/nextjs-chat).
+
+## Frequently asked questions
+
+### Which Next.js version does Chat SDK need?
+
+Use Next.js 15.1 or later with the App Router. The webhook route uses `after` from `next/server` to keep processing after the response, and `after` became stable in Next.js 15.1. Run the route on the Node.js runtime, which is the App Router default, so the Redis state adapter can connect.
+
+### Why does the webhook route use `after`?
+
+`after` lets the route acknowledge the webhook right away while your handlers keep running. Slack expects a response within three seconds and retries the event if it doesn't get one, so a route that waits for a full model reply can time out and trigger retries. Processing in `after` still counts toward the function's [maximum duration](/docs/functions/configuring-functions/duration).
+
+### How do I handle several platforms with one Next.js route?
+
+Create a dynamic route at `app/api/webhooks/[platform]/route.ts`, read the `platform` parameter, and call the matching `bot.webhooks[platform]` handler. Return a 404 for unknown platforms. `create-chat-sdk` generates this route and exports it as both `GET` and `POST`, because platforms such as WhatsApp and Messenger verify the webhook with a `GET` request first.
+
+### Can I add a chat UI to my Next.js app that uses the same bot?
+
+Yes. Add the [Web Adapter](#add-browser-chat-with-the-web-adapter) to your `Chat` instance, expose `bot.webhooks.web` at a route such as `/api/chat`, and use `useChat` from `@chat-adapter/web/react` in a Client Component. Browser messages reach `onDirectMessage`, the same handler code that serves Slack. Your `getUser` function authenticates each browser request and returns `null` to reject it.
+
+### Does the Web Adapter trust message history sent from the browser?
+
+No. The Web Adapter never reads earlier turns from the request body. It stores incoming messages in your state adapter and reads history from there, so a client can't add or change earlier messages. Keep a shared state adapter such as Redis so history stays available across function instances. See [Web Adapter configuration](https://chat-sdk.dev/adapters/official/web#configuration).
 
 ## Next steps
 

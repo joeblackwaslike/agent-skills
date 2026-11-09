@@ -17,8 +17,8 @@ related:
 summary: Learn how you can add a product to your Vercel project through a native integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/product-integration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "de7ab965be99d23fb90053021263331e8c0dea844eb37ea6c2f189391773be2f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "997a0a979d70cf9c6c85c6a1669a189cef0eb408fb984731aa41f24ccdb3788e"
 ---
 
 # Add a Native Integration
@@ -61,10 +61,10 @@ vercel integration add neon
 The CLI supports both interactive and non-interactive workflows. For non-interactive usage (useful for CI pipelines and AI agents), provide options as flags:
 
 ```bash filename="terminal"
-vercel integration add neon --name my-database --plan pro -e production -e preview
+vercel integration add neon --name my-database --billing-plan pro -e production -e preview
 ```
 
-Run `vercel integration add <integration-name> --help` to see integration-specific options like available metadata keys and billing plans.
+Run `vercel integration add <integration-name> --help` to see integration-specific options like available metadata keys and billing plans. Pass the ID of a billing plan from that output to `--billing-plan`.
 
 See the [CLI reference](/docs/cli/integration#vercel-integration-add) for the full list of options.
 

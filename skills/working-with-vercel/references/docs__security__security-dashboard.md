@@ -16,8 +16,8 @@ related:
 summary: The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfigurations, and shows how to fix them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/security-dashboard.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f9dc694305a5e689d3ed431d2eb61b99e2a974f9eec1055805341ca95bcefd14"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0b416a00e63f81c10d458b83566bf07c889a464d12fe761378dd33f515818ec1"
 ---
 
 # Security Dashboard
@@ -33,7 +33,10 @@ The Security Dashboard aggregates the security posture of every account and proj
 - [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available)
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Unified security actions dashboard](https://vercel.com/changelog/unified-security-actions-dashboard)
+- [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [Vercel Security Dashboard is in private beta](https://vercel.com/changelog/vercel-security-dashboard-is-in-private-beta)
+- [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
+- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report) — Learn how to preview and download Vercel compliance documents from the dashboard.
@@ -90,7 +93,7 @@ These checks cover your team's members and access tokens.
 | Check                                             | Risk | What it checks                                                                                     | How to resolve                                                                                                             |
 | ------------------------------------------------- | ---- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Team members without multi-factor authentication | High | Members who can sign in without a second factor, so a stolen password alone can take over the account. | [Enforce two-factor authentication](/docs/two-factor-enforcement) for the team so every member needs a second factor.     |
-| Team owners to review                             | High | Fires when more than 30% of your team are owners. Extra owners widen the blast radius of a compromised account. | Review member [roles](/docs/rbac/access-roles) and demote owners who don't need full access.                              |
+| Team owners to review                             | High | Fires when owners make up more than 50% of a team with 11 to 20 members, or more than 30% of a team with more than 20 members. The check does not fire for teams with 10 or fewer members. Extra owners widen the blast radius of a compromised account. | Review member [roles](/docs/rbac/access-roles) and demote owners who don't need full access.                              |
 | Personal access tokens that never expire         | High | Personal access tokens with no expiration, which stay valid until someone revokes them manually.  | Recreate the token with an expiration from [account tokens](/docs/accounts/access-tokens).                                |
 
 > **💡 Note:** Personal access tokens belong to individual accounts. You can't edit or delete
@@ -107,7 +110,7 @@ These checks cover your team's projects, their deployment settings, and their en
 | Projects without Git fork deploy prevention                   | High   | Projects where forked pull requests can deploy and read your environment variables without review. | Turn on [Git fork protection](/docs/project-configuration/security-settings#git-fork-protection) in the project's security settings.              |
 | Projects without preview deployment protection                | High   | Preview deployments that anyone with the URL can reach.                                            | Enable [deployment protection](/docs/deployment-protection) so only authorized users can open preview URLs.                                       |
 | Environment variables not marked Sensitive                    | Medium | Values that can be read back from the dashboard or API after they are written.                     | Store the variable as a [Secret](/docs/environment-variables/sensitive-environment-variables) so new values can't be read back once saved. Because the existing value was readable, [rotate it](/docs/environment-variables/rotating-secrets) when you make the change. |
-| Environment variables older than 90 days                      | Medium | Variables that have not been rotated in over 90 days.                                              | [Rotate the secret](/docs/environment-variables/rotating-secrets), or delete the variable if it's no longer needed.                               |
+| Environment variables older than 90 days                      | Medium | Variables that are not stored as a [Secret](/docs/environment-variables/sensitive-environment-variables), were last updated more than 90 days ago, and have a name that suggests a credential. Examples of such names are `API_KEY`, `AUTH_TOKEN`, `DB_PASSWORD`, and `DATABASE_URL`. | [Rotate the secret](/docs/environment-variables/rotating-secrets), or delete the variable if it's no longer needed.                               |
 | Environment variables exposed via a web application framework | Medium | Variables a web application framework exposes to the client, which increases the risk of a leak.   | Review your [framework environment variables](/docs/environment-variables/framework-environment-variables) and keep secrets server-only.          |
 
 ## Card states
@@ -120,7 +123,8 @@ The dashboard shows each check as a card. Its badge and icon reflect the check's
 | A blue check-circle                                       | The check passes with no findings.                                                                                |
 | A blue check-circle with a `Check muted` badge           | The whole check is muted and excluded from your score.                                                             |
 | An `N muted` badge next to the risk badge or check-circle | Some of the check's findings are muted and excluded from your score.                                               |
-| A `Data Unavailable` overlay                             | The check couldn't be computed. When your role lacks permission to read the data, the overlay reads `Insufficient Permissions`. |
+| A `Data Unavailable` overlay                             | The check couldn't be computed.                                                                                     |
+| A `No Access` badge                                      | Your role lacks permission to read the data behind the check.                                                       |
 
 ## Act on findings
 
@@ -170,7 +174,7 @@ The command outputs JSON in non-interactive environments, so you can run it in C
 
 ## Who can access the Security Dashboard
 
-Access to the Security Dashboard depends on your team role. Some checks read data that requires elevated permissions: when your role can't read the data behind a check, its card shows a `Data Unavailable` overlay labeled `Insufficient Permissions`, and the [`vercel security`](/docs/cli/security) command reports the check as `no access`. Muting checks and findings requires permission to manage your team. For an overview of team roles and what each can do, see [access roles](/docs/rbac/access-roles).
+Access to the Security Dashboard depends on your team role. Some checks read data that requires elevated permissions: when your role can't read the data behind a check, its card shows a `No Access` badge, and the [`vercel security`](/docs/cli/security) command reports the check as `no access`. Muting checks and findings requires permission to manage your team. For an overview of team roles and what each can do, see [access roles](/docs/rbac/access-roles).
 
 ## Related
 

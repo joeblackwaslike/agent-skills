@@ -16,8 +16,8 @@ related:
 summary: Learn about the Global Configs limits and pricing based on account plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-limits.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f1666d15b863223126b25c0e787a6f9391f75915f6e822640ae724fa614cd0ba"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "23328796caf0dca35026cb0950b18c82fd670c7c43462cb46c0d6c51aa80fe57"
 ---
 
 # Global Config Limits and pricing
@@ -37,7 +37,7 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
 - [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 
 Full cross-link map for this page: [/docs/global-config/global-config-limits.graph.md](/docs/global-config/global-config-limits.graph.md)
@@ -82,7 +82,7 @@ Reads indicate how often your project has requested access to Global Config to r
 
 ### Writes
 
-Writes represent how often you updated your Global Config through the SDK or the REST API.
+Writes represent how often you updated your Global Config through the dashboard or the REST API.
 
 ### Maximum store size
 
@@ -112,11 +112,11 @@ To learn more about backups, see [Global Config backups](/docs/global-config/usi
 
 ## Reviewing Global Config reads
 
-The **Reads** chart shows the number of times your [Global Config](/docs/global-config) has been read. You can filter the data by **Count** or **Projects**.
+The **Reads** chart shows the number of times your [Global Config](/docs/global-config) has been read. You can filter the data by **Count**, **Global Configs**, or **Reader Projects**.
 
 ### Optimizing Global Config reads
 
-- Open **Project** in the sidebar to identify which project has the most Global Config reads
+- Select **Reader Projects** on the **Reads** chart to identify which project has the most Global Config reads
 - Review how you access the stores through both the [REST API](/docs/global-config/vercel-api) and the [SDK](/docs/global-config/global-config-sdk). They both count toward your reads
 - Where possible, use [`getAll()`](/docs/global-config/global-config-sdk#read-multiple-values) instead of separate [`get(key)`](/docs/global-config/global-config-sdk#read-a-single-value) calls with the SDK, ensuring they count as a single read.
 
@@ -126,7 +126,7 @@ The **Writes** chart shows the number of times your [Global Configs](/docs/globa
 
 ### Optimizing Global Config writes
 
-- Open **Global Configs** in the sidebar to identify which Global Config has the most Global Config writes
+- Select **Global Configs** on the **Writes** chart to identify which Global Config has the most Global Config writes
 - Review your points of updating the stores through the [REST API](/docs/global-config/vercel-api) as they count towards your writes
 
 ## Troubleshooting
@@ -156,7 +156,7 @@ To learn how to prevent this error, see [best practices](#global-config-best-pra
 
 ### Global Config update rejected
 
-Updates to items in your Global Config will be rejected if the resulting size of your Global Config would exceed your account plan's limits. When this happens, all members of your team will receive a [notification](/docs/notifications) from Vercel, whether the error originated in the dashboard, an API request, or an [Integration](/docs/global-config/global-config-integrations). The Global Config editor in your dashboard can detect many cases where the final size would exceed the limit and warn you upfront without triggering the notification.
+Updates to items in your Global Config will be rejected if the resulting size of your Global Config would exceed your account plan's limits. When this happens, team members who have permission to update Global Config items will receive a [notification](/docs/notifications) from Vercel, whether the error originated in the dashboard, an API request, or an [Integration](/docs/global-config/global-config-integrations). The Global Config editor in your dashboard can detect many cases where the final size would exceed the limit and warn you upfront without triggering the notification.
 
 To resolve this issue, you can:
 

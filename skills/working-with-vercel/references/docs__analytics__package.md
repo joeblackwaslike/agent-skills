@@ -14,8 +14,8 @@ related:
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e35faeda93e5fbb8ab7707810763bcf9389bf8380ced7b3fba312fbe14924395"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "be9eadfa586801478b749128a5acf2feea2660e00fd3b91d00740104e886b237"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -31,8 +31,8 @@ To get started with analytics, follow our [Quickstart](/docs/analytics/quickstar
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support)
+- [How to prevent flash before hydration](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration) — Learn how to prevent a flash of unstyled content (FOUC) by correcting server-rendered HTML, such as a dark mode theme, b
 - [layout.js](https://nextjs.org/docs/app/api-reference/file-conventions/layout) — API reference for the layout.js file.
-- [How to prevent flash before hydration](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration) — Learn how to correct server-rendered content before the browser paints, avoiding visible flash when the page hydrates.
 - [How to build single-page applications with Next.js](https://nextjs.org/docs/app/guides/single-page-applications) — Next.js fully supports building Single-Page Applications (SPAs).
 - [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
 - [Streaming](https://nextjs.org/docs/app/guides/streaming) — Learn how streaming works in Next.js and how to use it to progressively render UI as data becomes available.

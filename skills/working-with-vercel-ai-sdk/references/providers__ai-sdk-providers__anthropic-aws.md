@@ -4,8 +4,8 @@ description: Learn how to use Claude Platform on AWS with AI Gateway and the dir
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "8769cef5f2c81931ce0e1e2301ece2c66d002bd3c9385e38349a6c54f591eab3"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "5a6047cc11aa3c6f22f20eb996cc5c9e57e66213ce3c8bcb0f63ca13129fbda7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -75,6 +75,16 @@ including its model factories and settings. Gateway model and feature
 availability can differ.
 
 This differs from [Amazon Bedrock](/providers/ai-sdk-providers/amazon-bedrock) in two important ways: Claude Platform on AWS uses Anthropic's Messages API directly (not Bedrock's `Converse`/`InvokeModel`), and new features are available the same day they launch on the first-party Claude API (no AWS integration delay).
+
+### Message threads
+
+The direct provider supports [Anthropic message threads](/providers/ai-sdk-providers/anthropic#message-threads)
+through `providerOptions.anthropic.thread`. Create with `{ type: 'create' }`, then
+continue with `{ type: 'continue', previousMessageId }` and only new messages.
+The required beta header is added automatically. Keep a full local history for
+replay after expiry and keep fixed settings and beta headers identical between
+requests. When using SigV4, sign every request of a thread with credentials for
+the same IAM role or IAM user that created it.
 
 ### Prerequisites
 
@@ -200,6 +210,56 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 - `AnthropicFullAccess` — grants `aws-external-anthropic:*` on all resources.
 - `AnthropicInferenceAccess` — grants read actions plus `CreateInference`, `CreateBatchInference`, `CancelBatchInference`, `DeleteBatchInference`, and `CountTokens` on all workspaces. **This is the minimum for calling models.**
 - `AnthropicReadOnlyAccess` — grants `Get*`, `List*`, and `CallWithBearerToken` on all workspaces. Insufficient for inference.
+
+## Model Capabilities
+
+| Model               | Image Input | Object Generation | Tool Usage | Tool Streaming | Computer Use | Web Search | Tool Search | Compaction |
+| ------------------- | ----------- | ----------------- | ---------- | -------------- | ------------ | ---------- | ----------- | ---------- |
+| `claude-opus-5-5`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-5`     | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-sonnet-5-5` | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-sonnet-5`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-haiku-5-5`  | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-fable-5-1`  | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-fable-5`    | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-4-8`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-4-7`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-4-6`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-sonnet-4-6` | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-opus-4-5`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✗          |
+| `claude-haiku-4-5`  | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✗          |
+| `claude-sonnet-4-5` | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✗          |
+| `claude-opus-4-1`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✗           | ✗          |
+| `claude-opus-4-0`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✗           | ✗          |
+| `claude-sonnet-4-0` | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✗           | ✗          |
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option                   | Description                                        |
+| --------- | ------------------------ | -------------------------------------------------- |
+| language  | `thread`                 | Create or continue a short-lived message thread.   |
+| language  | `sendReasoning`          | Whether to send reasoning to the model.            |
+| language  | `includePings`           | Include transient ping events in streams.          |
+| language  | `structuredOutputMode`   | How structured outputs are generated.              |
+| language  | `thinking`               | Extended thinking configuration.                   |
+| language  | `disableParallelToolUse` | Use at most one tool per response.                 |
+| language  | `cacheControl`           | Prompt cache control settings.                     |
+| language  | `metadata`               | Request metadata, such as a user ID.               |
+| language  | `mcpServers`             | MCP servers to use in the request.                 |
+| language  | `container`              | Container and Agent Skills configuration.          |
+| language  | `toolStreaming`          | Fine-grained streaming of tool inputs and outputs. |
+| language  | `effort`                 | Effort spent on thinking, text, and tool calls.    |
+| language  | `taskBudget`             | Advisory token budget for an agentic task.         |
+| language  | `speed`                  | Fast mode for faster output token speeds.          |
+| language  | `serviceTier`            | Service tier for the request.                      |
+| language  | `inferenceGeo`           | Where model inference runs.                        |
+| language  | `fallbacks`              | Server-side fallback models.                       |
+| language  | `anthropicBeta`          | Additional beta features to enable.                |
+| language  | `safeguards`             | Server-side safeguards to run.                     |
+| language  | `compaction`             | On-demand conversation summary.                    |
+| language  | `contextManagement`      | Server-side context management.                    |
 
 ---
 

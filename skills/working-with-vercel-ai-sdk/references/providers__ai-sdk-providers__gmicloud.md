@@ -4,8 +4,8 @@ description: Learn how to use GMI Cloud with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/gmicloud.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "98875b7a65fe8745f806c969e20f65a64c8ba4e758f676ccd12cd1b90bacd18a"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "c9cbd0c71151e815191aa17abde84e537bcecf8ef87f19a9d298b9d00876beeb"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -131,6 +131,22 @@ GMI Cloud serves an evolving catalog of open-weight models, so model ids are typ
 ## Error diagnostics
 
 GMI Cloud's edge reports a generic banner in `error.message` on rejections and nests the backend engine's diagnostic in `error.details`. This provider unwraps the nested diagnostic, so `AI_APICallError.message` carries the engine's reason (e.g. `The request is invalid: Invalid max_tokens value, the valid range of max_tokens is [1, 393216].`) instead of `Backend request failed with status 400`.
+
+## Model Capabilities
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option             | Description                                                                                                                                                                                                    |
+| --------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| language  | `user`             | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| language  | `reasoningEffort`  | Reasoning effort for reasoning models. Defaults to `medium`. Set to `null` to send `"reasoning_effort": null`, for providers that treat an explicit `null` differently from an omitted field.                  |
+| language  | `textVerbosity`    | Controls the verbosity of the generated text. Defaults to `medium`.                                                                                                                                            |
+| language  | `strictJsonSchema` | Whether to use strict JSON schema validation. When true, the model uses constrained decoding to guarantee schema compliance. Only used when the provider supports structured outputs and a schema is provided. |
+| language  | `echo`             | Echo back the prompt in addition to the completion.                                                                                                                                                            |
+| language  | `logitBias`        | Modify the likelihood of specified tokens appearing in the completion. Accepts a JSON object that maps tokens (specified by their token ID in the GPT tokenizer) to an associated bias value from -100 to 100. |
+| language  | `suffix`           | The suffix that comes after a completion of inserted text.                                                                                                                                                     |
 
 ---
 

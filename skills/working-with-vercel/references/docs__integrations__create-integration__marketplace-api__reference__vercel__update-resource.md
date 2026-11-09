@@ -3,7 +3,7 @@ title: update-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about update-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2277dad2ef307c1928f59cc598b84febd1894711e63ad94d3b1af0ed7328c0db"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7688baaeff94afed85299a78f71b446c8025b2652feae685e91ac69f3b4cdcc2"
 ---
 
 # Update Resource
@@ -82,7 +82,10 @@ This endpoint updates an existing resource in the installation. All parameters a
       },
       "claims": "object" // required // Claims to set (string, number, boolean, or array of strings), shallow-merged over earlier rules and over the default claims. `null` removes a claim. Reserved claims cannot be set; `aud` and `sub` can be overridden with a string but not removed.
     ]
-  }
+  },
+  "credentialTypes": [
+"string"
+  ]
 }
 ```
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how to use microfrontends on Vercel to split apart large applications, improve developer experience and make incremental migrations easier.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "312a2c2eb2baba5001740050935d48d6b4b316728f54409140d152c9167cd2bb"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f3c10a6fc5858f22307744c20da1ffb30301264675b08d4fce74283580e198ed"
 ---
 
 # Microfrontends
@@ -40,8 +40,8 @@ Microfrontends allow you to split a single application into smaller, independent
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
+- [withWorkflow](https://workflow-sdk.dev/docs/api-reference/workflow-next/with-workflow) — Wrap your Next.js config with withWorkflow to enable workflow directive transformation.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
-- [Reference](https://vercel.com/docs/flags/flags-explorer/reference) — In-depth reference for configuring the Flags Explorer
 
 Full cross-link map for this page: [/docs/microfrontends.graph.md](/docs/microfrontends.graph.md)
 <!-- /docsgraph:related -->
@@ -68,11 +68,11 @@ The layout you choose affects how each application finds the `microfrontends.jso
 
 | Task                                | Monorepo                                                | Polyrepo                                                              |
 | ----------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------- |
-| Finding `microfrontends.json`       | Vercel detects it automatically                         | Pull it with the Vercel CLI or set `VC_MICROFRONTENDS_CONFIG`        |
+| Finding `microfrontends.json`       | Vercel detects it automatically                         | Vercel provides it for builds on Vercel. Locally, pull it with the Vercel CLI or set `VC_MICROFRONTENDS_CONFIG`        |
 | Running the local proxy             | Starts automatically with Turborepo, or run the script  | Run the proxy script in the repository you're working in             |
 | Running multiple apps together      | Turborepo can run every app at once                     | Start each app in its own repository                                 |
 
-In a monorepo, every application can locate the shared `microfrontends.json` automatically. In a polyrepo, the configuration lives in only one repository, so each other application needs its own access to it. This applies at build time as well as locally: a polyrepo application whose build can't find `microfrontends.json` fails with a build error. Pull the configuration into the application with `vercel microfrontends pull` or set `VC_MICROFRONTENDS_CONFIG`. See [Polyrepo setup](/docs/microfrontends/local-development#polyrepo-setup).
+In a monorepo, every application can locate the shared `microfrontends.json` automatically. In a polyrepo, the configuration lives in only one repository, so each other application needs its own access to it. When a child application builds on Vercel, Vercel provides the configuration from the default application's current production deployment, so deploy the default application with `microfrontends.json` to production first. For local development, and for builds that you run outside of Vercel, pull the configuration into the application with `vercel microfrontends pull` or set `VC_MICROFRONTENDS_CONFIG`. A build that can't find `microfrontends.json` fails with a build error. See [Polyrepo setup](/docs/microfrontends/local-development#polyrepo-setup).
 
 Choose the layout that fits how your teams already work. For the setup steps in each case, see [Test your microfrontends locally](/docs/microfrontends/local-development).
 

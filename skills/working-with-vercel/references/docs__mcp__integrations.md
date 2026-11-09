@@ -16,8 +16,8 @@ related:
 summary: Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp/integrations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "373c77493eb93c14a033cd32a32dd7024f138d7c82b684641e18df53a2eb31b3"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "cdb1f54ed0663e49f78c0d23da06ee5ecd43a308d793e24ba8f8ee1e60b48e78"
 ---
 
 # MCP Integrations
@@ -31,13 +31,14 @@ Connect your application or agent to a [Model Context Protocol (MCP)](/docs/mcp)
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to perform large-scale data analysis with Vercel Sandbox and MCP](https://vercel.com/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) — Use Vercel Sandbox and an MCP server built with \\`mcp-handler\\` to let AI agents run DuckDB SQL and Python on large data
+- [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
 - [MCP Integrations](https://v0.app/docs/MCP) — Connect and use MCP servers directly in v0
-- [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
-- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
+- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp)
+- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
+- [Devin, Raycast, Windsurf, and Goose now supported on Vercel MCP](https://vercel.com/changelog/devin-raycast-windsurf-and-goose-now-supported-on-vercel-mcp)
 - [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
-- [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
 Full cross-link map for this page: [/docs/mcp/integrations.graph.md](/docs/mcp/integrations.graph.md)
 <!-- /docsgraph:related -->

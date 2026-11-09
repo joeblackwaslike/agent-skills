@@ -4,8 +4,8 @@ description: Learn about the providers and models available in the AI SDK.
 url: "https://ai-sdk.dev/docs/foundations/providers-and-models"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "15b42e2492494bb049b7aaaf2ec80c59600b709d499b82a86fcf045f4acb40ec"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "99d58a879eb67e9702a4a6893af8a423c50c4ec63ad27b35bbb5c856de143ef0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -72,6 +72,7 @@ The open-source community has created the following providers:
 - [Letta Provider](/providers/community-providers/letta) (`@letta-ai/vercel-ai-sdk-provider`)
 - [Hindsight Provider](/providers/community-providers/hindsight) (`@vectorize-io/hindsight-ai-sdk`)
 - [Supermemory Provider](/providers/community-providers/supermemory) (`@supermemory/tools`)
+- [Redis Agent Memory Provider](/providers/community-providers/redis-agent-memory) (`@redis/vercel-ai-sdk`)
 - [Spark Provider](/providers/community-providers/spark) (`spark-ai-provider`)
 - [AnthropicVertex Provider](/providers/community-providers/anthropic-vertex-ai) (`anthropic-vertex-ai`)
 - [LangDB Provider](/providers/community-providers/langdb) (`@langdb/vercel-provider`)
@@ -95,6 +96,7 @@ The open-source community has created the following providers:
 - [Neon AI Gateway Provider](/providers/community-providers/neon-ai-gateway) (`@neon/ai-sdk-provider`)
 - [Interfaze Provider](/providers/community-providers/interfaze) (`@interfaze-ai/ai-sdk`)
 - [Telnyx Provider](/providers/community-providers/telnyx) (`@telnyx/ai-sdk-provider`)
+- [ZeroGPU Provider](/providers/community-providers/zerogpu) (`@zerogpu/ai-sdk-provider`)
 
 ## Self-Hosted Models
 

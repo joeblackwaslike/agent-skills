@@ -14,8 +14,8 @@ related:
 summary: Use the Vercel CLI to query Speed Insights metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ae95bbfd0e3345c98f6dad128a6dee1c539a1c76eb4d2e238e036de8fac39150"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f2a615b5573b3b696cb1fc5a09feb01aecf3fdf9630192c7845bbea39693f1b0"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -29,6 +29,7 @@ Use `vercel metrics` to query Speed Insights data from your terminal. You can re
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
+- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
@@ -57,7 +58,7 @@ Use `vercel.speed_insights.fcp_ms` and `vercel.speed_insights.ttfb_ms` for the a
 Query P75 Largest Contentful Paint by route:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --group-by route --since 7d --project project-name --prod
+vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --group-by route --since 7d --project project-name --environment production
 ```
 
 When you group a Speed Insights value metric, `vercel metrics` orders results by collected data points for that metric. For the LCP query above, routes are ordered by `count desc` unless you pass `--order-by value`.
@@ -65,19 +66,19 @@ When you group a Speed Insights value metric, `vercel metrics` orders results by
 Query P75 Interaction to Next Paint by device type:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.inp_ms --aggregation p75 --group-by deviceType --since 7d --order-by count --project project-name --prod
+vercel metrics vercel.speed_insights.inp_ms --aggregation p75 --group-by deviceType --since 7d --order-by count --project project-name --environment production
 ```
 
 Query P75 Cumulative Layout Shift by country:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.cls --aggregation p75 --group-by country --since 7d --limit 10 --project project-name --prod
+vercel metrics vercel.speed_insights.cls --aggregation p75 --group-by country --since 7d --limit 10 --project project-name --environment production
 ```
 
 Query daily P75 Largest Contentful Paint for one route:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --filter 'route:/dashboard' --since 7d --granularity 1d --project project-name --prod
+vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --query 'route:/dashboard' --since 7d --granularity 1d --project project-name --environment production
 ```
 
 ## Query collected data points
@@ -89,13 +90,13 @@ By default, grouped queries return the results with the most data points first. 
 Query collected LCP data points by route:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.lcp_ms --aggregation count --group-by route --since 7d --project project-name --prod
+vercel metrics vercel.speed_insights.lcp_ms --aggregation count --group-by route --since 7d --project project-name --environment production
 ```
 
 Query collected CLS data points by country:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.cls --aggregation count --group-by country --since 7d --limit 10 --project project-name --prod
+vercel metrics vercel.speed_insights.cls --aggregation count --group-by country --since 7d --limit 10 --project project-name --environment production
 ```
 
 ## Find best and worst performing pages
@@ -105,19 +106,19 @@ Use `--group-by route` to compare pages, then use `--order-by value` to order th
 Find the slowest production routes by P75 LCP:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --group-by route --since 7d --order-by value --order desc --limit 10 --project project-name --prod
+vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --group-by route --since 7d --order-by value --order desc --limit 10 --project project-name --environment production
 ```
 
 Find the fastest production routes by P75 LCP:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --group-by route --since 7d --order-by value --order asc --limit 10 --project project-name --prod
+vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --group-by route --since 7d --order-by value --order asc --limit 10 --project project-name --environment production
 ```
 
 Find the routes with the lowest P75 CLS:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.cls --aggregation p75 --group-by route --since 7d --order-by value --order asc --limit 10 --project project-name --prod
+vercel metrics vercel.speed_insights.cls --aggregation p75 --group-by route --since 7d --order-by value --order asc --limit 10 --project project-name --environment production
 ```
 
 > **💡 Note:** Real Experience Score is not available through `vercel metrics`; use the Speed
@@ -132,7 +133,7 @@ The following query shapes are not available in the Speed Insights dashboard. Us
 Use a field-scoped `OR` expression to include multiple path prefixes, `!=` to exclude a value, and repeated `--group-by` options to compare Core Web Vitals for selected path prefixes:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --filter 'requestPath:(/docs* OR /guides*)' --filter 'country != US' --group-by route --group-by deviceType --since 7d --project project-name --prod
+vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --query 'requestPath:(/docs* OR /guides*)' --query 'country != US' --group-by route --group-by deviceType --since 7d --project project-name --environment production
 ```
 
 ### Query every project in your team
@@ -140,7 +141,7 @@ vercel metrics vercel.speed_insights.lcp_ms --aggregation p75 --filter 'requestP
 Use `--all` with `projectId` to compare Speed Insights metrics across every project in the current team:
 
 ```bash filename="terminal"
-vercel metrics vercel.speed_insights.lcp_ms --all --aggregation p75 --group-by projectId --group-by country --since 7d --limit 20 --prod
+vercel metrics vercel.speed_insights.lcp_ms --all --aggregation p75 --group-by projectId --group-by country --since 7d --limit 20 --environment production
 ```
 
 For all options, see the [`vercel metrics` reference](/docs/cli/metrics). For what each dashboard metric measures, see [Speed Insights Metrics](/docs/speed-insights/metrics).

@@ -17,8 +17,8 @@ related:
 summary: Add a Chat SDK bot to TanStack Start, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks/tanstack-start.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "39a85c5804d548bc1df24bf2306d6b893f982b5c3ccc52cda7577a288513d264"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "238b6a3bdd100f0140ee0d5ff95510d9c42f05b17d8eb6fd9d94e02f1080f968"
 ---
 
 # Chat SDK with TanStack Start
@@ -34,9 +34,9 @@ Use a TanStack Start React server route to receive Slack events and pass them to
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
+- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Chat SDK with Nuxt](https://vercel.com/docs/chat-sdk/frameworks/nuxt) — Add a Chat SDK bot to Nuxt, receive Slack events through Vercel Connect, and deploy on Vercel.
-- [Getting Started with Chat SDK](https://vercel.com/docs/chat-sdk/quickstart) — Create a Slack bot with the Chat SDK CLI, connect it to Slack through Vercel Connect, and deploy it on Vercel.
 - [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
 - [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
@@ -169,7 +169,7 @@ Ensure the integration supplies `REDIS_URL` in the project's **Production** envi
 Create a Slack connector and allow token requests from the project's Production and Development environments. Attach its trigger to your production webhook route:
 
 ```bash filename="Terminal"
-vercel connect create slack --name my-bot --triggers
+vercel connect create slack --name my-bot --triggers --trigger-path /api/webhooks/slack
 vercel connect attach slack/my-bot --environment production --environment development --triggers --trigger-path /api/webhooks/slack
 ```
 
@@ -398,6 +398,28 @@ TanStack AI sends a string with `sendMessage(text)` and exposes text parts as `p
 After configuring authentication, sign in and open `/chat`. Select **Send a test message** to send `Hello`; the bot should respond with `You said: Hello`. The `support` conversation ID is scoped to the authenticated user by the adapter. Generate a different conversation ID when you want to start a new conversation.
 
 For a fuller chat interface, see the [official TanStack Start example](https://github.com/vercel/chat/tree/main/examples/tanstack-start-chat).
+
+## Frequently asked questions
+
+### How do I add a webhook route to TanStack Start?
+
+Create a file route with `createFileRoute` and add a `POST` function under `server.handlers`. The handler receives a Web `Request`, which you pass to `bot.webhooks.slack` along with `waitUntil` from `@vercel/functions`. Return the adapter's `Response` directly. See [TanStack Start server routes](https://tanstack.com/start/latest/docs/framework/react/guide/server-routes).
+
+### Why doesn't my new TanStack Start route respond?
+
+TanStack Start registers routes from a generated route tree, so a new file isn't served until the tree updates. Run your development or build command to regenerate it. On Vercel, also confirm that the [Nitro Vite plugin is configured](/docs/frameworks/full-stack/tanstack-start#nitro-configuration), because it deploys server routes as functions.
+
+### Why does TanStack Start use the `ag-ui` protocol for browser chat?
+
+The browser client in this guide uses TanStack AI through `@tanstack/ai-react`, which speaks the AG-UI protocol. Set `protocol: 'ag-ui'` on the Web Adapter so the server matches it. AI SDK clients use the default `ai-sdk` protocol instead. With TanStack AI, send text with `sendMessage(text)` and read it from `part.content`.
+
+### Can I import the bot in a TanStack Start component?
+
+No. Import the bot only in server routes. The bot module holds platform credentials and opens the Redis connection, so it must stay out of the client bundle. Browser components talk to the bot through the `/api/chat` endpoint instead.
+
+### Do I need `@vercel/functions` with TanStack Start?
+
+Yes, for the webhook routes in this guide. `waitUntil` from `@vercel/functions` keeps the function running after the adapter acknowledges the event, so your handlers can finish. Without it, the function can stop before your bot replies. Background work still counts toward the function's [maximum duration](/docs/functions/configuring-functions/duration).
 
 ## Next steps
 

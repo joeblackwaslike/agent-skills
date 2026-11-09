@@ -12,8 +12,8 @@ related:
 summary: The Vercel Checks API lets you create tests and assertions that run after each deployment has been built, and are powered by Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/checks/checks-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d8c79f894a5c459373f95f1da0103f130d3c4d52c86a08d7c5e7101e90c92934"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c8565ae6473531ae8f80a890140b80cc847e2d6e63b5372d1eb866ede50b9bb2"
 ---
 
 # Checks API Reference
@@ -28,8 +28,8 @@ API endpoints allow integrations to interact with the Vercel platform. Integrati
 
 - [Checks API support added for Marketplace integration providers](https://vercel.com/changelog/checks-api-support-added-for-marketplace-integration-providers)
 - [Anatomy of the Checks API](https://vercel.com/docs/checks/creating-checks) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration to register any arbitra
-- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check) — GET /v2/projects/{projectIdOrName}/checks/{checkId} — Return a detailed response for a single check.
+- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [Update a check](https://vercel.com/docs/rest-api/checks-v2/update-a-check) — PATCH /v2/projects/{projectIdOrName}/checks/{checkId} — Update an existing check.
 - [Checks](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks) — Vercel MCP tools for checks.
 

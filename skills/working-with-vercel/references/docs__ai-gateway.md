@@ -16,8 +16,8 @@ related:
 summary: Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, routing, and provider failover.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "978c7f5fbce3e2e9bea02bb9c515de57063965e3abd8fa75dd5e7a5575029259"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f11cd65b9c2b881e30d325bbb96414a21c15bbe25447188442fff072758ee0bc"
 ---
 
 # Vercel AI Gateway: Models, Routing, and Observability
@@ -33,6 +33,7 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
+- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai) — Feed thread history into TanStack AI's chat(), give it Chat SDK tools, and serve a TanStack AI browser chat from the sam
@@ -43,7 +44,6 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 - [AI Gateway is now in Beta](https://vercel.com/changelog/ai-gateway-is-now-in-beta)
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Auto-recharge available in AI Gateway](https://vercel.com/changelog/auto-recharge-available-in-ai-gateway)
-- [Claude Opus 4.1 is now supported in Vercel AI Gateway](https://vercel.com/changelog/claude-4-1-opus-is-now-supported-in-vercel-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway.graph.md](/docs/ai-gateway.graph.md)
 <!-- /docsgraph:related -->
@@ -98,10 +98,10 @@ Use AI Gateway when you want these controls without operating your own proxy, da
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Centralized credentials | Authenticate your application once, then use AI Gateway system credentials or your own provider accounts through [BYOK](/docs/ai-gateway/authentication-and-byok/byok).                                                      |
 | Request logging         | Inspect each request's model, provider attempts, latency, token usage, status, and cost in [request logs](/docs/ai-gateway/observability-and-spend/logs).                                                                    |
-| Spending controls       | Set [budgets](/docs/ai-gateway/observability-and-spend/budgets) for a team, project, API key, or team member. AI Gateway rejects new system-credential requests after an applicable budget is exceeded.                      |
+| Spending controls       | Set [budgets](/docs/ai-gateway/observability-and-spend/budgets) for a team, project, API key, or team member. AI Gateway rejects new requests after an applicable budget is exceeded.                                        |
 | Provider failover       | Route a model across healthy providers and configure ordered [provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) and [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks). |
 
-Budgets cover spend billed through AI Gateway system credentials. BYOK spend is metered separately and does not count toward those limits. If a BYOK request fails, AI Gateway can fall back to system credentials. Review the [BYOK behavior](/docs/ai-gateway/authentication-and-byok/byok) and [soft-cap budget semantics](/docs/ai-gateway/observability-and-spend/budgets#how-budgets-work) when strict provider-account use or zero-overshoot limits are requirements.
+Budgets cover spend billed through AI Gateway system credentials. BYOK spend is metered separately and does not count toward those limits. If a BYOK request fails, AI Gateway can fall back to system credentials. After a budget is exceeded, AI Gateway rejects every request in that budget's scope with an HTTP `402` response. This includes BYOK requests. Review the [BYOK behavior](/docs/ai-gateway/authentication-and-byok/byok) and [soft-cap budget semantics](/docs/ai-gateway/observability-and-spend/budgets#how-budgets-work) when strict provider-account use or zero-overshoot limits are requirements.
 
 ## Choose how to start
 
@@ -131,6 +131,11 @@ Budgets cover spend billed through AI Gateway system credentials. BYOK spend is 
 
 Explore [chat platforms](/docs/ai-gateway/chat-platforms) and [ecosystem integrations](/docs/ai-gateway/ecosystem), learn how to handle [`429` responses](/docs/ai-gateway/rate-limits), or see the [AI Gateway FAQ](/docs/ai-gateway/faq) for common questions about model availability, pricing, and request errors.
 
+## Related guides
+
+- [Build AI agents in Python with the AI SDK](https://vercel.com/kb/guide/python-and-ai-sdk): Stream model responses, get typed output, and build tool-using agents in Python on Vercel.
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data): Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with Vercel AI Gateway.
+- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents): Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment changes, and persistent files.
 
 ---
 

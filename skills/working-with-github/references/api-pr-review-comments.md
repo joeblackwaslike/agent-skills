@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/comments"
-fetched_at: "2026-10-26T09:52:24.329Z"
-sha256: "a1210fde48575cfffd2cdea644199d7b9a2e2e61b316747a61e7addbfeecf4dc"
+fetched_at: "2026-11-09T12:39:02.495Z"
+sha256: "7e4d9a2a0efd5d8306414fb35cebb9fe2f2bbf598a479c7ae1e92d0e3b50e599"
 ---
 
 # REST API endpoints for pull request review comments
@@ -83,6 +83,11 @@ curl -L \
 
 Array of `Pull Request Review Comment`:
 
+* `is_copilot_code_review`: boolean
+* `copilot_code_review_sources`: array of objects:
+  * `kind`: required, string, enum: `SKILL`, `MCP`, `CUSTOM_INSTRUCTIONS`
+  * `name`: required, string
+  * `path`: string
 * `url`: required, string
 * `pull_request_review_id`: required, integer or null, format: int64
 * `id`: required, integer, format: int64
@@ -207,6 +212,11 @@ curl -L \
 
 **Response schema (Status: 200):**
 
+* `is_copilot_code_review`: boolean
+* `copilot_code_review_sources`: array of objects:
+  * `kind`: required, string, enum: `SKILL`, `MCP`, `CUSTOM_INSTRUCTIONS`
+  * `name`: required, string
+  * `path`: string
 * `url`: required, string
 * `pull_request_review_id`: required, integer or null, format: int64
 * `id`: required, integer, format: int64

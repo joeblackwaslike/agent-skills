@@ -13,8 +13,8 @@ related:
 summary: Use get_runtime_errors with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2653257e781a6e371054f690d4ce891dd502d434abd455a173c279a0b9db257f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "56b44acaa80e1860047e398f3719f2bb782f9def1f6b1cd5864535c4594d6309"
 ---
 
 # get_runtime_errors
@@ -31,7 +31,7 @@ Get grouped runtime error clusters for a project. Each cluster includes the erro
 - [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
 - [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md)
 <!-- /docsgraph:related -->

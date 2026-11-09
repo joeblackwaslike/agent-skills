@@ -1,8 +1,8 @@
 ---
 title: "Styling and Layout"
 source: "https://docusaurus.io/docs/styling-layout"
-fetched_at: "2026-10-19T09:38:00.847Z"
-sha256: "983d87b1074360a8325f5343d14660a6c92165f769e3913e07c5a3303a019e36"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "1c2b06d5d00fd760e9b9b3b67ce79cc2934f83fefed666b5ec4be50bdb224379"
 ---
 
 # Styling and Layout
@@ -203,4 +203,4 @@ To enable TypeScript support for Sass/SCSS modules, the TypeScript configuration
 ```
 {  "extends": "@docusaurus/tsconfig",  "compilerOptions": {    ...+    "types": ["docusaurus-plugin-sass"]  }}
 ```
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/styling-layout.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/styling-layout.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

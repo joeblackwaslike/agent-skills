@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure the runtime for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/runtime.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "687f272205ab03072fe921bca6038e1bf091340919ef40eec4387b84581e11c2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "850e9354ea7833969b6f2d150b2bd7ea3b124eaceb3820d9661532661d3a638a"
 ---
 
 # Configuring the Runtime for Vercel Functions
@@ -29,7 +29,6 @@ The runtime of your function determines the environment in which your function w
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Customizing Serverless Functions](https://vercel.com/blog/customizing-serverless-functions)
 - [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 - [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go) — Learn how to use the Go runtime to run Go APIs on Vercel.
 - [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo

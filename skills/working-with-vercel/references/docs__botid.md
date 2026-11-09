@@ -16,8 +16,8 @@ related:
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "92acbc372bdb41de3b64333722c01d7a0d3ad1a8e5f15f95326b186932ef3709"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6746b7ac33d457d332c1529f14c58330277aaa6706510e05fe7896f592bcd6fb"
 ---
 
 # BotID
@@ -41,7 +41,7 @@ sha256: "92acbc372bdb41de3b64333722c01d7a0d3ad1a8e5f15f95326b186932ef3709"
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Introduction](https://vercel.shop/docs) — What Vercel Shop is, what you get out of the box, and how it fits Shopify's new Hydrogen.
 - [Shop Configuration](https://vercel.shop/docs/reference/shop-config) — Choose optional storefront features and set your store's identity and locale.
 
@@ -124,6 +124,11 @@ Metrics are also available in [Observability Plus](/docs/observability/observabi
 - [Form submissions](/docs/botid/form-submissions) - Handling form submissions with BotID protection
 - [Local Development Behavior](/docs/botid/local-development-behavior) - Testing BotID in development environments
 
+## Related guides
+
+- [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile): Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, checkBotId() vs Siteverify, framework support, and pricing.
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid): Gate every request to your AI endpoints with Vercel BotID and checkBotId() so inference runs only for verified callers. Covers setup, Deep Analysis, and verified bots.
+- [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features): A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protection Managed Rules, AI Bots Managed Rules, BotID, and custom WAF rules. Learn how to enable, monitor, and tune protections to block bad bots, preserve performance for real users, and safely allow good crawlers.
 
 ---
 

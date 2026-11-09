@@ -16,8 +16,8 @@ related:
 summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d89cadd0973b9c76a6ef7c1d7e61bc47987f08db3e9e8d1231f52fac73b91c7d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b57aa1769e849cbfec7ea4f635b595b0ccf34baa370d13fd9b6c14e40ec63b83"
 ---
 
 # Vercel Functions Limits
@@ -35,11 +35,11 @@ The table below outlines the limits and restrictions of using Vercel Functions w
 - [Python Vercel Functions bundle size limit increased to 500MB](https://vercel.com/changelog/python-vercel-functions-bundle-size-limit-increased-to-500mb)
 - [Vercel Functions can now be up to 5GB in package size](https://vercel.com/changelog/vercel-functions-can-now-be-up-to-5-gb-in-package-size)
 - [WebSocket support is now in Public Beta](https://vercel.com/changelog/websocket-support-is-now-in-public-beta)
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
 - [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Running Agent Harnesses Durably on Vercel](https://vercel.com/docs/agent-harnesses) — Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash, a function timeout, or a redeploy resumes the ag
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 
@@ -72,6 +72,45 @@ For Vercel Functions, the maximum uncompressed size is **250 MB** including laye
 
 You can use [`includeFiles` and `excludeFiles`](/docs/project-configuration/vercel-json#functions) to specify items which may affect the function size. These configurations are not supported in Next.js, instead use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).
 
+### Troubleshooting the 250 MB limit
+
+When a function exceeds the limit, the build fails with this error:
+
+```txt
+The Vercel Function "api/hello" is 300mb uncompressed which exceeds the maximum uncompressed size limit of 250mb.
+```
+
+If your project is eligible for [large functions](#large-functions-beta), the function can deploy without other changes once large functions are enabled. To find out what's making a function large, add the `VERCEL_ANALYZE_BUILD_OUTPUT` [environment variable](/docs/environment-variables) with the value `1` and redeploy. The build logs then list each function's uncompressed size and its largest files:
+
+```txt
+Function : /api
+Size     : 1991.54 MB
+  Large dependencies:
+    • _vendor/tensorflow/libtensorflow_cc.so.2: 972.15 MB
+    • _vendor/tensorflow/include: 307.87 MB
+```
+
+Common causes of large functions include:
+
+- **Heavy dependencies:** Packages that ship binaries, such as Puppeteer with its bundled Chromium, or machine learning libraries. Duplicate copies of the same package also add size. Run `npm ls <package>` to see why a package is installed, and `npm dedupe` to remove duplicates.
+- **Static assets traced into the function:** Images, videos, or large JSON files that server code imports or reads are packaged with the function. Serve them from the `public` directory or external storage instead.
+- **Dynamic imports with variable paths:** An import or `require` with a path built at runtime can make the bundler include every file in a directory. Use static import paths where you can.
+
+To exclude files a function doesn't need, use `excludeFiles` in `vercel.json`. This example keeps the `public` and `test` directories out of every function under `api`:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/**": {
+      "excludeFiles": "{public,test}/**"
+    }
+  }
+}
+```
+
+In Next.js, use [`outputFileTracingExcludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) in `next.config.js` instead.
+
 ## Large functions Beta
 
 Large functions let you deploy uncompressed bundles up to **5 GB**. Use them for workloads that ship large dependencies, model files, or binaries. Large functions are supported on Node.js, Bun, and Python runtimes.
@@ -96,9 +135,10 @@ Large functions are supported on the following runtimes:
 - [`bun`](/docs/functions/runtimes/bun)
 - [`python`](/docs/functions/runtimes/python)
 
-> **💡 Note:** Large functions are not yet supported for projects using
+> **💡 Note:** Large functions are supported for projects using
 > [Secure Compute](/docs/networking/secure-compute) or
-> [Static IPs](/docs/networking/static-ips).
+> [Static IPs](/docs/networking/static-ips). They are not yet supported with
+> [BYOC](/docs/networking/bring-your-own-cloud).
 
 ## Max duration
 
@@ -119,9 +159,10 @@ With [fluid compute](/docs/fluid-compute) enabled, Vercel Functions have the fol
 > **💡 Note:** The 800 second maximum is generally available for Pro and Enterprise teams.
 > The 1800 second extended maximum is in beta. Values above 800 seconds require
 > function-level configuration and are only supported for specific Node.js,
-> Bun, and Python runtime versions. [Secure Compute](/docs/networking/secure-compute)
-> and [Static IPs](/docs/networking/static-ips) do not support durations above
-> 800 seconds during the beta. See [configuring maximum
+> Bun, and Python runtime versions. Durations above 800 seconds are supported
+> with [Secure Compute](/docs/networking/secure-compute) and
+> [Static IPs](/docs/networking/static-ips), but not with
+> [BYOC](/docs/networking/bring-your-own-cloud). See [configuring maximum
 > duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta)
 > for the supported runtimes and examples.
 
@@ -154,7 +195,7 @@ check the size of a package and search for a smaller alternative.
 
 In Vercel, the request body size is the maximum amount of data that can be included in the body of a request to a function.
 
-The maximum payload size for the request body or the response body of a Vercel Function is **4.5 MB**. If a Vercel Function receives a payload in excess of the limit it will return an error [413: `FUNCTION_PAYLOAD_TOO_LARGE`](/docs/errors/function_payload_too_large). See [How do I bypass the 4.5MB body size limit of Vercel Functions](/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions) for more information.
+The maximum payload size for the request body or the response body of a Vercel Function is **4.5 MB**. The response body limit doesn't apply to [streamed responses](/docs/functions/streaming-functions). If a Vercel Function receives a payload in excess of the limit it will return an error [413: `FUNCTION_PAYLOAD_TOO_LARGE`](/docs/errors/function_payload_too_large). See [How do I bypass the 4.5MB body size limit of Vercel Functions](/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions) for more information.
 
 ## File descriptors
 

@@ -14,8 +14,8 @@ related:
 summary: Create isolated sandbox environments to run builds, tests, and commands safely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/run-commands-in-sandbox.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "07f86b4618527a80b188d23c2bb0d211ba238606ecad7c92229ff5ca6a75e7cd"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "00197bcc31464ed949ac8eb4cf97e93a728542f14802945663165273c95d10b6"
 ---
 
 # Running commands in a Vercel Sandbox
@@ -28,16 +28,16 @@ Use this guide to create isolated sandbox environments for running commands, bui
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
-- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Vercel Sandbox CLI is now available](https://vercel.com/changelog/vercel-sandbox-cli-is-now-available)
+- [SSH into running Vercel Sandboxes with the CLI](https://vercel.com/changelog/ssh-into-running-sandboxes-with-the-sandbox-cli)
 - [The Vercel Sandbox CLI is now more agent-friendly](https://vercel.com/changelog/the-vercel-sandbox-cli-is-now-more-agent-friendly)
+- [Vercel Sandbox CLI is now available](https://vercel.com/changelog/vercel-sandbox-cli-is-now-available)
+- [Use and manage Vercel Sandbox directly from the Vercel CLI](https://vercel.com/changelog/use-vercel-sandbox-directly-within-vercel-cli)
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
 - [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 
 Full cross-link map for this page: [/docs/sandbox/run-commands-in-sandbox.graph.md](/docs/sandbox/run-commands-in-sandbox.graph.md)
 <!-- /docsgraph:related -->
@@ -51,13 +51,11 @@ Full cross-link map for this page: [/docs/sandbox/run-commands-in-sandbox.graph.
 Use this block when you already know what you're doing and want the full command sequence. Use the steps below for context and checks.
 
 ```bash filename="terminal"
-# 1. Create a named sandbox
+# 1. Create a sandbox with a name
 sandbox create --name my-sandbox --image vercel/sandbox/node:24 --timeout 1h --publish-port 3000
 
-# 2. Copy project files into the sandbox (sandbox copy transfers one file at a time)
-tar -czf app.tgz -C ./my-app .
-sandbox copy ./app.tgz my-sandbox:/tmp/app.tgz
-sandbox exec my-sandbox -- sh -c "mkdir -p /tmp/app && tar -xzf /tmp/app.tgz -C /tmp/app"
+# 2. Copy project files into the sandbox
+sandbox copy --recursive ./my-app my-sandbox:/tmp/app
 
 # 3. Run commands inside the sandbox
 sandbox exec --workdir /tmp/app my-sandbox -- npm install
@@ -86,7 +84,7 @@ Create a new sandbox environment with the image and configuration you need:
 sandbox create --image vercel/sandbox/node:24 --timeout 1h
 ```
 
-This creates a Node.js 24 sandbox that auto-stops after one hour. The command outputs the sandbox ID. If you don't pass `--image`, the sandbox uses the default [`vercel/sandbox/universal`](/docs/sandbox/concepts/images) image. The older `--runtime` flag is deprecated. Use `--image` instead.
+This creates a Node.js 24 sandbox that auto-stops after one hour. The command prints the sandbox name. If you don't pass `--image`, the sandbox uses the default [`vercel/sandbox/universal`](/docs/sandbox/concepts/images) image. The older `--runtime` flag is deprecated. Use `--image` instead.
 
 To make a port accessible via a public URL (useful for testing web applications):
 
@@ -108,25 +106,31 @@ sandbox create --image vercel/sandbox/node:24 --timeout 1h --connect
 
 ## 2. Copy files into the sandbox
 
-The `sandbox copy` command transfers one file at a time. To copy a single file into the sandbox:
+The `sandbox copy` command copies one file by default. To copy a single file into the sandbox:
 
 ```bash filename="terminal"
 sandbox exec <name> -- mkdir -p /tmp/app
 sandbox copy ./my-app/package.json <name>:/tmp/app/package.json
 ```
 
-To move a whole directory, archive it first and extract it inside the sandbox:
+To copy a whole directory, add `--recursive` (or `-r`):
 
 ```bash filename="terminal"
-tar -czf app.tgz -C ./my-app .
-sandbox copy ./app.tgz <name>:/tmp/app.tgz
-sandbox exec <name> -- sh -c "mkdir -p /tmp/app && tar -xzf /tmp/app.tgz -C /tmp/app"
+sandbox copy --recursive ./my-app <name>:/tmp/app
 ```
+
+The contents of the source directory end up inside the destination directory, so `./my-app/package.json` becomes `/tmp/app/package.json`. The command creates the destination directory if it doesn't exist.
 
 You can also copy files out of the sandbox back to your local machine:
 
 ```bash filename="terminal"
 sandbox copy <name>:/tmp/app/output/results.json ./results.json
+```
+
+To copy a directory out of the sandbox, add `--recursive`:
+
+```bash filename="terminal"
+sandbox copy --recursive <name>:/tmp/app/output ./output
 ```
 
 ## 3. Run commands

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-apps-gateway-on-aws.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "ef0fd2569534fb8a3fbadbef589789bf4e6961891ab9ba2993b76796b9b87d59"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "9e3af8eeb5f39a42feafa28ab1a6fb02e851e6a68a75c98d2a6a74d51449d45e"
 ---
 
 > ## Documentation Index
@@ -626,7 +626,7 @@ managed:
 
 Have the developer pass the id of the team the work is for, such as `claude --model data-claude-opus-4-8`.
 
-The gateway applies the [first policy that matches](https://code.claude.com/docs/en/claude-apps-gateway-config.md#managed), so a developer in only the two team groups gets the `team-platform` policy. Their sessions on the data team's id fail with `is not in your role's availableModels allowlist`, naming Claude Code's default model and not the id they typed. If you list both team groups in one policy's `groups` instead, everyone in either team can bill either team's profile.
+By default, the gateway applies the [first policy that matches](https://code.claude.com/docs/en/claude-apps-gateway-config.md#managed), so a developer in only the two team groups gets the `team-platform` policy. Their sessions on the data team's id fail with `is not in your role's availableModels allowlist`, naming Claude Code's default model and not the id they typed. If you list both team groups in one policy's `groups` instead, everyone in either team can bill either team's profile.
 
 In the gateway's own [spend limits](https://code.claude.com/docs/en/claude-apps-gateway-spend-limits.md#set-a-cap), the developer has one total and one cap per period, by default the lowest of their groups' caps, whichever id a session uses. To keep one team's lower cap from stopping work for the other, set a per-user cap for the developer.
 
@@ -634,5 +634,6 @@ In the gateway's own [spend limits](https://code.claude.com/docs/en/claude-apps-
 
 * [Configuration reference](https://code.claude.com/docs/en/claude-apps-gateway-config.md): every `gateway.yaml` option, including `managed.policies` and `telemetry`
 * [Deployment and operations](https://code.claude.com/docs/en/claude-apps-gateway-deploy.md): IdP setup, health checks, JWT secret rotation, upgrades, and the security model
+* [Load-test mode](https://code.claude.com/docs/en/claude-apps-gateway-config.md#load_test_mode): load testing a gateway without calling a model provider
 * [Claude apps gateway overview](https://code.claude.com/docs/en/claude-apps-gateway): quickstart and connecting developers
 * [AWS samples for Claude apps gateway](https://github.com/aws-samples/anthropic-on-aws/tree/main/claude-apps-gateway): AWS-maintained deployment samples covering a range of customer environments

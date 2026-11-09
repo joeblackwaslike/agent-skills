@@ -4,8 +4,8 @@ description: Learn how to use DeepInfra with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "b0693b3bbedb29a7d05b16fb284e647f42c4cdcb9ff3f98c76fda2d5b9d987f0"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "63190d725751089ceb34974c69a4c9423343cce3a1e2392d345aff26c6d508c2"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -137,30 +137,30 @@ DeepInfra language models can also be used in the `streamText` function (see [AI
 
 | Model                                               | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | --------------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | ✓           | ✗                 | ✗          | ✗              |
-| `meta-llama/Llama-4-Scout-17B-16E-Instruct`         | ✓           | ✗                 | ✗          | ✗              |
+| `deepseek-ai/DeepSeek-V3`                           | ✗           | ✓                 | ✓          | ✓              |
+| `deepseek-ai/DeepSeek-R1`                           | ✗           | ✗                 | ✗          | ✗              |
+| `deepseek-ai/DeepSeek-R1-Distill-Llama-70B`         | ✗           | ✗                 | ✗          | ✗              |
+| `deepseek-ai/DeepSeek-R1-Turbo`                     | ✗           | ✗                 | ✗          | ✗              |
+| `google/codegemma-7b-it`                            | ✗           | ✗                 | ✗          | ✗              |
+| `google/gemma-2-9b-it`                              | ✗           | ✗                 | ✗          | ✗              |
+| `meta-llama/Llama-3.2-11B-Vision-Instruct`          | ✓           | ✓                 | ✗          | ✗              |
+| `meta-llama/Llama-3.2-90B-Vision-Instruct`          | ✓           | ✓                 | ✗          | ✗              |
 | `meta-llama/Llama-3.3-70B-Instruct-Turbo`           | ✗           | ✓                 | ✓          | ✓              |
 | `meta-llama/Llama-3.3-70B-Instruct`                 | ✗           | ✓                 | ✓          | ✓              |
+| `meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8` | ✓           | ✗                 | ✗          | ✗              |
+| `meta-llama/Llama-4-Scout-17B-16E-Instruct`         | ✓           | ✗                 | ✗          | ✗              |
 | `meta-llama/Meta-Llama-3.1-405B-Instruct`           | ✗           | ✓                 | ✓          | ✓              |
 | `meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo`      | ✗           | ✓                 | ✓          | ✓              |
 | `meta-llama/Meta-Llama-3.1-70B-Instruct`            | ✗           | ✓                 | ✓          | ✓              |
 | `meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo`       | ✗           | ✓                 | ✓          | ✗              |
 | `meta-llama/Meta-Llama-3.1-8B-Instruct`             | ✗           | ✓                 | ✓          | ✓              |
-| `meta-llama/Llama-3.2-11B-Vision-Instruct`          | ✓           | ✓                 | ✗          | ✗              |
-| `meta-llama/Llama-3.2-90B-Vision-Instruct`          | ✓           | ✓                 | ✗          | ✗              |
+| `microsoft/WizardLM-2-8x22B`                        | ✗           | ✗                 | ✗          | ✗              |
 | `mistralai/Mixtral-8x7B-Instruct-v0.1`              | ✗           | ✓                 | ✓          | ✗              |
-| `deepseek-ai/DeepSeek-V3`                           | ✗           | ✓                 | ✓          | ✓              |
-| `deepseek-ai/DeepSeek-R1`                           | ✗           | ✗                 | ✗          | ✗              |
-| `deepseek-ai/DeepSeek-R1-Distill-Llama-70B`         | ✗           | ✗                 | ✗          | ✗              |
-| `deepseek-ai/DeepSeek-R1-Turbo`                     | ✗           | ✗                 | ✗          | ✗              |
 | `nvidia/Llama-3.1-Nemotron-70B-Instruct`            | ✗           | ✓                 | ✓          | ✗              |
 | `Qwen/Qwen2-7B-Instruct`                            | ✗           | ✓                 | ✗          | ✗              |
 | `Qwen/Qwen2.5-72B-Instruct`                         | ✗           | ✓                 | ✓          | ✓              |
 | `Qwen/Qwen2.5-Coder-32B-Instruct`                   | ✗           | ✓                 | ✗          | ✗              |
 | `Qwen/QwQ-32B-Preview`                              | ✗           | ✓                 | ✗          | ✗              |
-| `google/codegemma-7b-it`                            | ✗           | ✗                 | ✗          | ✗              |
-| `google/gemma-2-9b-it`                              | ✗           | ✗                 | ✗          | ✗              |
-| `microsoft/WizardLM-2-8x22B`                        | ✗           | ✗                 | ✗          | ✗              |
 
 The table above lists popular models. Please see the [DeepInfra
 docs](https://deepinfra.com) for a full list of available models. You can also
@@ -318,17 +318,18 @@ For models supporting size parameters, dimensions must typically be:
 - Width and height between 256 and 1440 pixels
 - Default size is 1024x1024
 
-| Model                                  | Dimensions Specification | Notes                                                    |
-| -------------------------------------- | ------------------------ | -------------------------------------------------------- |
-| `stabilityai/sd3.5`                    | Aspect Ratio             | Premium quality base model, 8B parameters                |
-| `black-forest-labs/FLUX-1.1-pro`       | Size                     | Latest state-of-art model with superior prompt following |
-| `black-forest-labs/FLUX-1-schnell`     | Size                     | Fast generation in 1-4 steps                             |
-| `black-forest-labs/FLUX-1-dev`         | Size                     | Optimized for anatomical accuracy                        |
-| `black-forest-labs/FLUX-pro`           | Size                     | Flagship Flux model                                      |
-| `black-forest-labs/FLUX.1-Kontext-dev` | Size                     | Image editing and transformation model                   |
-| `black-forest-labs/FLUX.1-Kontext-pro` | Size                     | Professional image editing and transformation            |
-| `stabilityai/sd3.5-medium`             | Aspect Ratio             | Balanced 2.5B parameter model                            |
-| `stabilityai/sdxl-turbo`               | Aspect Ratio             | Optimized for fast generation                            |
+| Model                                  | Dimensions Specification | Notes                                                    | Image Editing | Mask Input | Max Images Per Call |
+| -------------------------------------- | ------------------------ | -------------------------------------------------------- | ------------- | ---------- | ------------------- |
+| `stabilityai/sd3.5`                    | Aspect Ratio             | Premium quality base model, 8B parameters                | ✓             | ✓          | 1                   |
+| `black-forest-labs/FLUX-1.1-pro`       | Size                     | Latest state-of-art model with superior prompt following | ✓             | ✓          | 1                   |
+| `black-forest-labs/FLUX-1-schnell`     | Size                     | Fast generation in 1-4 steps                             | ✓             | ✓          | 1                   |
+| `black-forest-labs/FLUX-1-dev`         | Size                     | Optimized for anatomical accuracy                        | ✓             | ✓          | 1                   |
+| `black-forest-labs/FLUX-pro`           | Size                     | Flagship Flux model                                      | ✓             | ✓          | 1                   |
+| `black-forest-labs/FLUX.1-Kontext-dev` | Size                     | Image editing and transformation model                   | ✓             | ✓          | 1                   |
+| `black-forest-labs/FLUX.1-Kontext-pro` | Size                     | Professional image editing and transformation            | ✓             | ✓          | 1                   |
+| `stabilityai/sd3.5-medium`             | Aspect Ratio             | Balanced 2.5B parameter model                            | ✓             | ✓          | 1                   |
+| `stabilityai/sdxl-turbo`               | Aspect Ratio             | Optimized for fast generation                            | ✓             | ✓          | 1                   |
+| `Qwen/Qwen-Image-Edit`                 | Not declared             | Not declared                                             | ✓             | ✓          | 1                   |
 
 For more details and pricing information, see the [DeepInfra text-to-image models page](https://deepinfra.com/models/text-to-image).
 
@@ -370,6 +371,30 @@ const { embedding } = await embed({
 
 For a complete list of available embedding models, see the [DeepInfra
 embeddings page](https://deepinfra.com/models/embeddings).
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option                | Description                                                                                                                                                                                                    |
+| --------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| embedding | `dimensions`          | The number of dimensions the resulting output embeddings should have. Only supported in text-embedding-3 and later models.                                                                                     |
+| embedding | `user`                | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| language  | `user`                | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| language  | `reasoningEffort`     | Reasoning effort for reasoning models. Defaults to `medium`. Set to `null` to send `"reasoning_effort": null`, for providers that treat an explicit `null` differently from an omitted field.                  |
+| language  | `textVerbosity`       | Controls the verbosity of the generated text. Defaults to `medium`.                                                                                                                                            |
+| language  | `strictJsonSchema`    | Whether to use strict JSON schema validation. When true, the model uses constrained decoding to guarantee schema compliance. Only used when the provider supports structured outputs and a schema is provided. |
+| language  | `echo`                | Echo back the prompt in addition to the completion.                                                                                                                                                            |
+| language  | `logitBias`           | Modify the likelihood of specified tokens appearing in the completion. Accepts a JSON object that maps tokens (specified by their token ID in the GPT tokenizer) to an associated bias value from -100 to 100. |
+| language  | `suffix`              | The suffix that comes after a completion of inserted text.                                                                                                                                                     |
+| image     | `negative_prompt`     | negative\_prompt                                                                                                                                                                                               |
+| image     | `num_inference_steps` | num\_inference\_steps                                                                                                                                                                                          |
+| image     | `guidance_scale`      | guidance\_scale                                                                                                                                                                                                |
+| image     | `guidance`            | guidance                                                                                                                                                                                                       |
+| image     | `response_format`     | response\_format                                                                                                                                                                                               |
+| image     | `quality`             | quality                                                                                                                                                                                                        |
+| image     | `style`               | style                                                                                                                                                                                                          |
+| image     | `user`                | user                                                                                                                                                                                                           |
 
 ---
 

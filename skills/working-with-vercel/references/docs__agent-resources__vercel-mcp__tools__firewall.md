@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for firewall and security.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c941170e27627f3840d3cdbbedfb238540c9923228a183c19a158d3c27902d95"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "91b0ee0ad1b59372c3c6e1d3d396c45c537174646a3bda949ac7c7d403cee568"
 ---
 
 # Firewall and Security
@@ -27,6 +27,7 @@ Inspect your firewall configuration and active attack data to understand how Ver
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
 - [Vercel Firewall](https://vercel.com/docs/vercel-firewall) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Update Firewall Configuration](https://vercel.com/docs/rest-api/security/update-firewall-configuration) — PATCH /v1/security/firewall/config — Process updates to modify the existing firewall config for a project

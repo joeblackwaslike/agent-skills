@@ -13,8 +13,8 @@ related:
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d6271729d800e8dbd4402a6c2e1833c390cbb896a366dad3743c8936af095c51"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d749a797fa4b88c6e0cfbbbb2ae3406dccad1128f7e9be8cd3127ca8eb670ab0"
 ---
 
 # Vercel Signed URLs
@@ -34,10 +34,11 @@ Vercel Signed URLs grant time-limited access to a Blob URL without exposing a re
 - [Signed URLs are now available for Vercel Blob](https://vercel.com/changelog/signed-urls-are-now-available-for-vercel-blob)
 - [Vercel CLI now supports signing blob URLs](https://vercel.com/changelog/vercel-cli-now-supports-signing-blob-urls)
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
+- [Introducing Vercel Blob](https://vercel.com/changelog/vercel-blob)
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 
 Full cross-link map for this page: [/docs/vercel-blob/vercel-signed-urls.graph.md](/docs/vercel-blob/vercel-signed-urls.graph.md)
@@ -106,7 +107,7 @@ It accepts the following parameters:
 
 For `'put'` operations, `options` also accepts upload-shaping fields (`allowedContentTypes`, `maximumSizeInBytes`, `addRandomSuffix`, `allowOverwrite`, `cacheControlMaxAge`, `ifMatch`, and `onUploadCompleted`).
 
-For `'get'` operations, `options` also accepts `useCache`. Set it to `false` to append a `cache=0` query parameter so fetches bypass the CDN cache and read the latest content directly from origin storage. See the [`GET` example](#get---get-a-blob) below.
+For `'get'` operations, `options` also accepts `useCache`. Set it to `false` to append a `cache=0` query parameter so fetches bypass the CDN cache and read the latest content directly from origin storage. This applies to private blobs only. `presignUrl()` ignores `useCache` when `access` is `'public'`. See the [`GET` example](#get---get-a-blob) below.
 
 For `'delete'` operations, `options` also accepts `ifMatch` to require a specific ETag on the target blob. `'head'` accepts no additional fields beyond the ones in the table above.
 
@@ -190,7 +191,7 @@ const contentType = res.headers.get('content-type');
 
 Call `presignUrl` directly when you need a one-off upload URL outside of [`handleUploadPresigned`](#handleuploadpresigned), for example from a CLI or a server-to-server job. The PUT options enforce constraints on the upload at the CDN, so the URL is safe to hand to a client even if the client controls the request body:
 
-- `allowedContentTypes` rejects requests whose `Content-Type` header is not in the list.
+- `allowedContentTypes` rejects uploads whose content type is not in the list. Vercel Blob takes the content type from the pathname's extension, for example `image/png` for `media/photo.png`. It reads the request's `Content-Type` header only when the pathname has no recognized extension. If you upload with [`uploadPresigned`](#presigned-uploads) and set its [`contentType`](/docs/vercel-blob/using-blob-sdk#upload) option, Vercel Blob checks that value instead.
 - `maximumSizeInBytes` rejects requests larger than the configured size.
 - `addRandomSuffix` and `allowOverwrite` control collision behavior on the target pathname.
 - `ifMatch` requires the existing blob at the pathname to have a specific `ETag`, so an upload only succeeds if the blob has not changed since you last read it (conditional write).
@@ -224,7 +225,6 @@ const { presignedUrl } = await presignUrl(token, {
 
 const res = await fetch(presignedUrl, {
   method: 'PUT',
-  headers: { 'content-type': 'image/png' },
   body: pngBytes,
 });
 ```
@@ -350,7 +350,8 @@ From the browser, call [`uploadPresigned`](https://github.com/vercel/storage/tre
 ```tsx filename="app/upload/page.tsx" framework=nextjs-app
 'use client';
 
-import { uploadPresigned, type PutBlobResult } from '@vercel/blob/client';
+import type { PutBlobResult } from '@vercel/blob';
+import { uploadPresigned } from '@vercel/blob/client';
 import { useRef, useState } from 'react';
 
 export default function UploadPage(): React.JSX.Element {

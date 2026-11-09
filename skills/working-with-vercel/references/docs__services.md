@@ -16,8 +16,8 @@ related:
 summary: Deploy multiple backends and frontends within a single Vercel project using services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7b6f7ee5adef90466bb17538f0d02606f3b0697ec6caa178ae9b4fd10eb76a28"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "76190c4ac8959e0af29e66c258c76a64d15ca126cfa7477de529a4bb2d9812a7"
 ---
 
 # Services
@@ -37,14 +37,14 @@ replacing the need to split monorepos into separate Vercel projects.
 - [Nuxt](https://eve.dev/docs/guides/frontend/nuxt) — Run an eve agent and a Nuxt app as one project with the eve/nuxt module.
 - [SvelteKit](https://eve.dev/docs/guides/frontend/sveltekit) — Run an eve agent and a SvelteKit app as one project with the eveSvelteKit Vite plugin.
 - [TanStack Start](https://eve.dev/docs/guides/frontend/tanstack) — Run an eve agent and a TanStack Start app as one project with the eveTanStack Vite plugin.
+- [Vite](https://eve.dev/docs/guides/frontend/vite) — Run eve agents alongside any Vite app with the eveVite plugin.
+- [Projects can now be configured with vercel.toml](https://vercel.com/changelog/projects-can-now-be-configured-with-vercel-toml)
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
 - [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 
 Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md)
 <!-- /docsgraph:related -->
@@ -180,10 +180,10 @@ Run all your services together locally with `vercel dev`:
 vercel dev
 ```
 
-To run everything locally without authenticating with the Vercel Cloud, add the `-L` flag (short for `--local`):
+To run everything locally without authenticating with the Vercel Cloud, add the `--local` flag:
 
 ```bash filename="Terminal"
-vercel dev -L
+vercel dev --local
 ```
 
 In both cases, generated binding environment variables are injected automatically, so calls between services work the same locally as in production.

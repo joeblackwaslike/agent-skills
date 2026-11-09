@@ -16,8 +16,8 @@ related:
 summary: Learn how to protect deployments with Passport, read visitor identity, and verify Passport tokens in server-side code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "434e0b6da63aa6c196b37b18e7962a9dfcccd4a6ed045b0d8714f9920e5c835e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e82a8438a3b34a580bc124970276b2d3cd65a9d76a74a48263629c6e5a5aecb2"
 ---
 
 # Restrict access to deployments with Passport
@@ -36,14 +36,13 @@ Passport lets you protect deployments with your own identity provider. Visitors 
 
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available)
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Bypass Deployment Protection for testing, sharing, and automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
-- [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Password Protection](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection) — Require visitors to enter a password before they can view your deployments.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
-- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
 Full cross-link map for this page: [/docs/passport.graph.md](/docs/passport.graph.md)
 <!-- /docsgraph:related -->
@@ -128,6 +127,7 @@ Passport is available as an Enterprise feature. Contact your Vercel account team
 
 ## Related resources
 
+- [Python SDK reference](/docs/passport/python-sdk-reference): Read and verify visitor identity with async and sync Python helpers.
 - [Deployment Protection](/docs/deployment-protection)
 - [Methods to protect deployments](/docs/deployment-protection/methods-to-protect-deployments)
 - [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication)

@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/pulls/reviews"
-fetched_at: "2026-07-06T05:37:45.074Z"
-sha256: "11d615a46345370471ad36f96559daf176ae9931928371bf6e55426145e7e065"
+fetched_at: "2026-11-09T12:39:02.495Z"
+sha256: "756b9b59a2e406c7bc8b8a6aa3a458d1b7fc1aa9614709bf9322cbad33ef843b"
 ---
 
 # REST API endpoints for pull request reviews
@@ -103,6 +103,8 @@ Array of `Pull Request Review`:
       * `user_view_type`: string
   * `body`: required, string
   * `state`: required, string
+  * `is_copilot_code_review`: boolean
+  * `copilot_code_review_effort`: string or null
   * `html_url`: required, string, format: uri
   * `pull_request_url`: required, string, format: uri
   * `_links`: required, object:
@@ -243,6 +245,8 @@ curl -L \
     * `user_view_type`: string
 * `body`: required, string
 * `state`: required, string
+* `is_copilot_code_review`: boolean
+* `copilot_code_review_effort`: string or null
 * `html_url`: required, string, format: uri
 * `pull_request_url`: required, string, format: uri
 * `_links`: required, object:
@@ -501,6 +505,11 @@ curl -L \
 **Response schema (Status: 200):**
 
 Array of `Legacy Review Comment`:
+  * `is_copilot_code_review`: boolean
+  * `copilot_code_review_sources`: array of objects:
+    * `kind`: required, string, enum: `SKILL`, `MCP`, `CUSTOM_INSTRUCTIONS`
+    * `name`: required, string
+    * `path`: string
   * `url`: required, string, format: uri
   * `pull_request_review_id`: required, integer or null, format: int64
   * `id`: required, integer, format: int64

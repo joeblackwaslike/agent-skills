@@ -17,8 +17,8 @@ related:
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "12d7c4078bdcf73d88140e6c0facdf85a3ad26cc9923ca10fdaffc588381fe51"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2e0a4892d081549a13a5dad95d84435e63d0df4fe24a74110ca5538cd6267b82"
 ---
 
 # Using Global Config with Split
@@ -35,11 +35,11 @@ This guide will help you get started with using Vercel's Split integration with 
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
 - [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route) — API reference for the route.js special file.
+- [How to build zero-CLS A/B tests with Next.js and Vercel Edge Config](https://vercel.com/blog/zero-cls-experiments-nextjs-edge-config)
 - [TanStack Start](https://ai-sdk.dev/docs/getting-started/tanstack-start) — Learn how to build your first agent with the AI SDK and TanStack Start.
-- [Expo](https://ai-sdk.dev/docs/getting-started/expo) — Learn how to build your first agent with the AI SDK and Expo.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
-- [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
 - [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
+- [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md)
 <!-- /docsgraph:related -->
@@ -167,7 +167,7 @@ bunx create-next-app@latest
   4. You should see the item key on the page that opens. Copy it
   To add your Global Config's connection string to your project:
   1. Visit your project's page in [the dashboard](/dashboard)
-  2. Open **Storage** in the sidebar. Select **Connect Store** and select the Global Config associated with your Split integration. The `GLOBAL_CONFIG` environment variable will be set automatically.
+  2. Open **Storage** in the sidebar. Select **Connect Database** and select the Global Config associated with your Split integration. The `GLOBAL_CONFIG` environment variable will be set automatically.
   Now you're ready to use the Split Global Config integration in your code.
 
 - ### Use the Split integration in your code

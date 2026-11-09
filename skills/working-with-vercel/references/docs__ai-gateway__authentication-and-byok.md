@@ -8,16 +8,16 @@ type: conceptual
 prerequisites:
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/authentication-and-byok/oidc
   - /docs/ai-gateway/authentication-and-byok/api-keys
   - /docs/ai-gateway/observability-and-spend/budgets
-  - /docs/ai-gateway/authentication-and-byok/oidc
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/authentication-and-byok/byok
 summary: Authenticate AI Gateway requests with API keys or OIDC tokens, and configure bring your own key (BYOK) credentials for model providers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "aa9be94aa14114989bb963da34f897f3741d361bb9ff769a8de95e3c3587b098"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9866b546e11fa9575f711c7a39e427db151d22283d628d4d9f813eebbd00741c"
 ---
 
 # AI Gateway Authentication and BYOK
@@ -30,28 +30,33 @@ Every request to AI Gateway requires Vercel authentication. Use an AI Gateway AP
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started) — Create an eve project, configure model credentials, and run your first agent.
 - [DeepSeek models now available via Azure on AI Gateway](https://vercel.com/changelog/deepseek-models-now-available-via-azure-on-ai-gateway)
+- [Vercel token scanning expands to more public sources](https://vercel.com/changelog/vercel-token-scanning-expands-to-more-public-sources)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Jev for Python engineers](https://vercel.com/blog/jev-for-python-engineers)
 - [Create a BYOK credential](https://vercel.com/docs/rest-api/ai-gateway/create-a-byok-credential) — POST /ai-gateway/byok-credentials — Create a new BYOK credential
-- [Get a BYOK credential](https://vercel.com/docs/rest-api/ai-gateway/get-a-byok-credential) — GET /ai-gateway/byok-credentials/{credentialId} — Get a BYOK credential by ID. The credential value is never returned.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
-- [List BYOK credentials](https://vercel.com/docs/rest-api/ai-gateway/list-byok-credentials) — GET /ai-gateway/byok-credentials/list — List BYOK credentials for an owner, optionally filtered by provider
+- [Get a BYOK credential](https://vercel.com/docs/rest-api/ai-gateway/get-a-byok-credential) — GET /ai-gateway/byok-credentials/{credentialId} — Get a BYOK credential by ID. The credential value is never returned.
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok.graph.md](/docs/ai-gateway/authentication-and-byok.graph.md)
 <!-- /docsgraph:related -->
+
+> **💡 Note:** If you deploy to Vercel and use the AI SDK, you don't need an API key. When
+> `AI_GATEWAY_API_KEY` isn't set, the AI SDK authenticates deployed code with
+> your project's [OIDC token](/docs/ai-gateway/authentication-and-byok/oidc)
+> automatically.
 
 ## Quick start
 
 Get authenticated in under a minute:
 
 1. Go to the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys) in your Vercel dashboard
-2. Click **Create key** and follow the steps to generate a new API key.
+2. Click **Create API Key** and follow the steps to generate a new API key.
 3. Copy the API key and add it to your environment:
 
 ```bash {1}
@@ -65,7 +70,7 @@ If you are using a different SDK, you may need to pass the API key manually.
 
 ### API keys
 
-API keys work anywhere, whether it's local development, external servers, or CI pipelines. They never expire unless you revoke them. To create, view, or delete keys, see [API keys](/docs/ai-gateway/authentication-and-byok/api-keys). To cap how much a key can spend, see [Budgets](/docs/ai-gateway/observability-and-spend/budgets#api-key-budgets).
+API keys work anywhere, whether it's local development, external servers, or CI pipelines. They don't expire unless you set an expiration date when you create them or you revoke them. To create, view, or delete keys, see [API keys](/docs/ai-gateway/authentication-and-byok/api-keys). To cap how much a key can spend, see [Budgets](/docs/ai-gateway/observability-and-spend/budgets#api-key-budgets).
 
 > **💡 Note:** When a team member leaves your team, Vercel deactivates any API keys
 > they created. If you need authentication that isn't tied to a

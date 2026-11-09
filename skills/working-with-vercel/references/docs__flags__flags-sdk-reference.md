@@ -14,8 +14,8 @@ related:
 summary: API reference for the Flags SDK for Next.js and SvelteKit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-sdk-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "44bce8110ed03866267c58977af844cbe5f2af8b775c32268e8156816174c738"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4123a18f107a4dbe4574c2261c1b31b996e48745acc0960f4dd3904ddf2786dd"
 ---
 
 # Flags SDK Reference
@@ -32,7 +32,9 @@ The Flags SDK is a free, open-source library that gives you the tools you need t
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Flags as Code](https://flags-sdk.dev/docs/principles/flags-as-code)
+- [npm i flags](https://vercel.com/changelog/npm-i-flags)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
+- [Flags SDK 3.0](https://vercel.com/changelog/flags-sdk-3-0)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer) — View and override your application's feature flags from the Vercel Toolbar
 - [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.

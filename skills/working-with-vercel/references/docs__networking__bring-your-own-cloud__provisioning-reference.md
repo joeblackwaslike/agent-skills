@@ -17,8 +17,8 @@ related:
 summary: "Reference for Bring Your Own Cloud (BYOC) provisioning: the descriptor.json format, generated files, values to preserve, size limits, permissions,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/provisioning-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a12c864abd6a6c9c7b97905f355ff4ffa1115195340c30b7fa65e3e70a17e5d0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "34e1fdae5d5cf8158d1cec0f5b3e2258ab6453ec2910de66edb52faf5e4d8ccc"
 ---
 
 # BYOC Provisioning Reference
@@ -35,6 +35,9 @@ A [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud) provision
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [June 2020](https://vercel.com/blog/changelog-june-2020)
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [July 2020](https://vercel.com/blog/changelog-july-2020)
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
@@ -46,7 +49,7 @@ Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/provis
 
 ## Generated files
 
-`vercel deploy describe --id <deployment-id> --aws-account-id <aws-account-id>` writes these files:
+`vercel deploy describe --deployment <deployment-id> --aws-account-id <aws-account-id>` writes these files:
 
 | Path                                    | Contents                                                                                       | Uploaded to Vercel |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------ |
@@ -254,15 +257,15 @@ A BYOC deployment includes a `manualProvisioning` object in the [Vercel REST API
 
 | Command                                                                  | Purpose                                                                                        |
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
-| `vercel deploy init --target <environment> --json`                       | Create a deployment that waits for provisioning. Uploads no files.                              |
-| `vercel build --id <deployment-id> --target <environment>`               | Build with the deployment's environment variables                                               |
-| `vercel deploy describe --id <deployment-id> --aws-account-id <aws-account-id>` | Generate `descriptor.json`, function packages, and the code-free output. Add `--json` for machine-readable output. |
-| `vercel deploy continue --id <deployment-id>`                            | Upload the code-free output and `provision.json`, then wait for the deployment to finish       |
-| `vercel deploy continue --id <deployment-id> --error "<reason>"`         | Mark a pending deployment as failed                                                             |
+| `vercel deploy init --environment <environment> --json`                  | Create a deployment that waits for provisioning. Uploads no files.                              |
+| `vercel build --deployment <deployment-id> --environment <environment>`  | Build with the deployment's environment variables                                               |
+| `vercel deploy describe --deployment <deployment-id> --aws-account-id <aws-account-id>` | Generate `descriptor.json`, function packages, and the code-free output. Add `--json` for machine-readable output. |
+| `vercel deploy continue --deployment <deployment-id>`                    | Upload the code-free output and `provision.json`, then wait for the deployment to finish       |
+| `vercel deploy continue --deployment <deployment-id> --error "<reason>"` | Mark a pending deployment as failed                                                             |
 | `vercel inspect <deployment-id> --wait`                                  | Wait for the deployment to finish and show its status                                           |
 | `vercel curl <path> --deployment <deployment-id>`                        | Send a request to a specific deployment                                                         |
 
-`vercel deploy describe` requires Vercel CLI 62.7.0 or later. Use Vercel CLI 63.1.2 or later for BYOC deployments.
+Use Vercel CLI 65.0.0 or later for BYOC deployments.
 
 ## Webhook events
 

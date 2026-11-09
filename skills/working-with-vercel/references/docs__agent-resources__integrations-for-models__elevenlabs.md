@@ -15,8 +15,8 @@ related:
 summary: Learn how to add the ElevenLabs connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "307c9bef8399ce015058e939dbee5c05a95aed349b4970d28adbb7f01fed227e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ad2b2da39ed564662327b33ce5dc2359e8e135990230f41f1ecf49ac12da1644"
 ---
 
 # Vercel ElevenLabs Integration
@@ -32,7 +32,6 @@ applications, ideal for creating interactive media experiences.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Vercel LMNT Integration](https://vercel.com/docs/agent-resources/integrations-for-models/lmnt) — Learn how to add LMNT connectable account integration with Vercel.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.

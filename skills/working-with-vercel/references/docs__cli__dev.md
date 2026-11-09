@@ -16,8 +16,8 @@ related:
 summary: Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the vercel dev CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/dev.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1030353cdc08b0a62da2142349daacc904eb9a23ea1df49078206f81ff224506"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d95bde6b9fa6c92743b862c985f97f9e0ac7158e80967a33bd7513f26b65725a"
 ---
 
 # vercel dev
@@ -32,12 +32,13 @@ The `vercel dev` command is used to replicate the Vercel deployment environment 
 
 - [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
 - [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
+- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Introducing `vercel dev`: Serverless, on localhost](https://vercel.com/blog/vercel-dev)
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
-- [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/dev.graph.md](/docs/cli/dev.graph.md)
 <!-- /docsgraph:related -->
@@ -68,7 +69,7 @@ These are options that only apply to the `vercel dev` command.
 
 ### Listen
 
-The `--listen` option, shorthand `-l`, can be used to specify which port `vercel dev` runs on.
+The `--listen` option can be used to specify which port `vercel dev` runs on.
 
 ```bash filename="terminal"
 vercel dev --listen 5005
@@ -77,10 +78,23 @@ vercel dev --listen 5005
 *Using the \`vercel dev\` command with the
 \`--listen\` option.*
 
+### Local
+
+To start `vercel dev` in a directory that is not [linked](/docs/cli/project-linking) to a Vercel Project, without setting up a project or logging in, use the `--local` option:
+
+```bash filename="terminal"
+vercel dev --local
+```
+
+*Using the \`vercel dev\` command with the
+\`--local\` option.*
+
+Without a linked project, the CLI does not pull environment variables from Vercel, and your project settings come from your local configuration, such as `vercel.json`.
+
 ### Yes
 
 The `--yes` option can be used to skip questions you are asked when setting up a new Vercel Project.
-The questions will be answered with the default scope and current directory for the Vercel Project name and location.
+The CLI answers the questions with the current directory for the Vercel Project name and location. The `--yes` option does not choose a team. If you belong to more than one team, also pass the [`--scope` option](/docs/cli/global-options#scope).
 
 ```bash filename="terminal"
 vercel dev --yes
@@ -101,7 +115,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

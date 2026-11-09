@@ -17,8 +17,8 @@ related:
 summary: Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process background tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/dramatiq.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c3803205c8ee148c10677e96b8aab659f2449fd90944595a1c366dc78491e920"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7949984ceabcd0e8094419388c5337cd0585c2cf698ca19e80e01faf48248eaa"
 ---
 
 # Deploy Dramatiq workers on Vercel
@@ -297,15 +297,19 @@ client instead.
 ## Splitting queues across functions
 
 With no `topics` filter, the generated function consumes every queue the broker
-declares. Add a filter to split queues across separate functions:
+declares. Add a filter to split queues across separate functions. Each
+subscriber needs its own entrypoint module, because Vercel names a subscriber
+after its entrypoint and the build fails when two subscribers share a name.
+Create one worker module for each function, for example `emails_worker.py` and
+`reports_worker.py`, with the same contents as `worker.py`:
 
 ```toml filename="pyproject.toml"
 [[tool.vercel.subscribers]]
-entrypoint = "worker"
+entrypoint = "emails_worker"
 topics = ["emails*"]
 
 [[tool.vercel.subscribers]]
-entrypoint = "worker"
+entrypoint = "reports_worker"
 topics = ["reports*"]
 ```
 

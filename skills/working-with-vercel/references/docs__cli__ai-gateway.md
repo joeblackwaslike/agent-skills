@@ -16,8 +16,8 @@ related:
 summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c108012bd2abb091dd0cc4b18a404f46b1fabf914902adedebe77292ccda171d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "1cc30219fcc0aa93848ac944bbfeb054893a17d0b006ed8b7d7bf034a79da408"
 ---
 
 # vercel ai-gateway
@@ -36,10 +36,10 @@ The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Virtual models now available on AI Gateway](https://vercel.com/changelog/virtual-models-now-available-on-ai-gateway)
 - [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
-- [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
+- [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
+- [vercel token-pass](https://vercel.com/docs/cli/token-pass) — Configure supported coding agents to use Vercel Token Pass through AI Gateway from your terminal.
 
 Full cross-link map for this page: [/docs/cli/ai-gateway.graph.md](/docs/cli/ai-gateway.graph.md)
 <!-- /docsgraph:related -->
@@ -57,7 +57,7 @@ vercel ai-gateway [subcommand]
 *Using the \`vercel ai-gateway\` command to manage AI Gateway resources for the
 current team.*
 
-Most subcommands accept `--format json` (`-F json`) to print a machine-readable payload instead of a table. The `rules`, `models`, and `budgets set`, `list`, `inspect`, and `remove` subcommands also accept `--json`, which does the same thing. [`setup`](#setup) uses [`--non-interactive`](#non-interactive-output) instead.
+Most subcommands accept `--json` to print a machine-readable payload instead of a table. [`leaderboard`](#leaderboard) takes `--format json` instead, and [`setup`](#setup) uses [`--non-interactive`](#non-interactive-output).
 
 ## Commands
 
@@ -77,10 +77,10 @@ Create a new AI Gateway API key. The CLI returns the plaintext key once; store i
 vercel ai-gateway api-keys create
 ```
 
-*Create an API key interactively, using the default settings.*
+*Create an API key with the default settings.*
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys create --name my-key --limit 500 --refresh-period monthly
+vercel ai-gateway api-keys create --name my-key --amount 500 --refresh-period monthly
 ```
 
 *Create an API key with a human-readable name and a monthly $500 quota.*
@@ -90,14 +90,11 @@ vercel ai-gateway api-keys create --name my-key --limit 500 --refresh-period mon
 | Option | Type | Description |
 | --- | --- | --- |
 | `--name <NAME>` | String | Human-readable name for the API key |
-| `--limit <AMOUNT>` | Number | Quota budget limit in dollars (minimum 1) |
+| `--amount <USD>` | Number | Quota budget limit in dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Quota refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `none`) |
 | `--alert-thresholds <LIST>` | String | Comma-separated spend percentages to alert at, a subset of `50`, `75`, and `100`, for example `75,100` |
 | `--expiration <PERIOD>` | String | Expiry for the key: `7d`, `30d`, `60d`, `90d`, `1y`, or `none` (default `none`) |
 | `--zdr-exempt` | Boolean | Exempt the key from the team's [zero data retention](/docs/ai-gateway/security-and-compliance/zdr) (ZDR) only model restriction. Team owners only |
-
-> **💡 Note:** `--limit` is available in Vercel CLI v59.13.0 and later. On older versions,
-> use `--budget`, which is deprecated but names the same quota limit.
 
 > **⚠️ Warning:** A ZDR-exempt key can reach models that don't offer zero data retention, which
 > is why only team owners can create one. Pair it with `--expiration` so the
@@ -111,25 +108,29 @@ vercel ai-gateway api-keys create --name escape-hatch --zdr-exempt --expiration 
 
 #### list
 
-List the AI Gateway API keys for the current team. The table shows each key's ID, name, masked key, quota, and expiry. Alias: `ls`.
+List the AI Gateway API keys for the current team. The table shows each key's ID, name, masked key, budget, current spend, refresh period, and creation date. The list leaves out expired keys unless you pass `--state expired` or `--state any`.
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys ls
+vercel ai-gateway api-keys list
 ```
 
 ##### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `--format <FORMAT>` | String | Set to `json` for the full key payload |
-| `--limit <NUMBER>` | Number | Maximum number of keys per page, not a dollar quota |
+| `--query <TEXT>`, `-q` | String | Only list keys whose name or key suffix contains this text. The match ignores case |
+| `--creator <USER>` | String | Only list keys that one team member created. Pass an email, username, or user ID, or `me` for your own keys |
+| `--state <STATE>` | String | Which keys to list: `active` (not expired), `expired`, `deleted`, or `any` (default `active`) |
+| `--sort <FIELD>` | String | Sort by `createdAt`, `lastActiveAt`, `name`, or `expiresAt`. Add `:asc` or `:desc` to set the direction (default `lastActiveAt:desc`) |
+| `--limit <NUMBER>` | Number | Maximum number of keys per page (default 20, maximum 100) |
 | `--next <CURSOR>` | String | Fetch the next page using the cursor from `pagination.next` |
+| `--json` | Boolean | Print the full key payload as JSON |
 
 JSON output includes `pagination.next` when another page is available. Human-readable output prints a next-page command hint. Fetch a page of 50 keys, then use the returned cursor:
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys ls --limit 50 --format json
-vercel ai-gateway api-keys ls --limit 50 --next='<cursor>' --format json
+vercel ai-gateway api-keys list --limit 50 --json
+vercel ai-gateway api-keys list --limit 50 --next='<cursor>' --json
 ```
 
 API key lookup by name, such as `budgets set api-key my-key`, searches all pages of keys.
@@ -146,14 +147,14 @@ vercel ai-gateway api-keys inspect key_123
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `--format <FORMAT>` | String | Set to `json` for the full key payload |
+| `--json` | Boolean | Print the full key payload as JSON |
 
-#### remove
+#### revoke
 
-Remove an API key by its ID. Aliases: `rm`, `delete`. Pass `--yes` to skip the confirmation prompt.
+Revoke an API key by its ID. Pass `--yes` to skip the confirmation prompt.
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys remove key_123 --yes
+vercel ai-gateway api-keys revoke key_123 --yes
 ```
 
 ##### Options
@@ -161,7 +162,7 @@ vercel ai-gateway api-keys remove key_123 --yes
 | Option | Type | Description |
 | --- | --- | --- |
 | `--yes`, `-y` | Boolean | Skip the confirmation prompt |
-| `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
+| `--json` | Boolean | Print the machine-readable payload as JSON |
 
 ### budgets
 
@@ -183,31 +184,31 @@ Create or update the budget for a scope, or the scope's default budget with `--d
 | `user` | Member email, username, or user ID |
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set team --limit 500 --refresh-period monthly
+vercel ai-gateway budgets set team --amount 500 --refresh-period monthly
 ```
 
 *Cap team-wide AI Gateway spend at $500 per month.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set project my-project --limit 200
+vercel ai-gateway budgets set project my-project --amount 200
 ```
 
 *Cap one project at $200.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set api-key my-key --limit 50 --refresh-period weekly
+vercel ai-gateway budgets set api-key my-key --amount 50 --refresh-period weekly
 ```
 
 *Cap one API key at $50 per week.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set user teammate@example.com --limit 100 --refresh-period monthly
+vercel ai-gateway budgets set user teammate@example.com --amount 100 --refresh-period monthly
 ```
 
 *Cap one team member at $100 per month across every key attributed to them.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set user --default --limit 50 --refresh-period monthly
+vercel ai-gateway budgets set user --default --amount 50 --refresh-period monthly
 ```
 
 *Give every team member without their own budget a $50 monthly limit.*
@@ -216,27 +217,27 @@ vercel ai-gateway budgets set user --default --limit 50 --refresh-period monthly
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `--limit <AMOUNT>` | Number | Budget limit in dollars (minimum 1) |
+| `--amount <USD>` | Number | Budget limit in dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Budget refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `monthly`) |
 | `--default` | Boolean | Target the scope's default budget, applied to resources of that scope without their own budget |
-| `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
+| `--json` | Boolean | Print the machine-readable payload as JSON |
 
 #### list
 
-List the budgets for the current team, with each budget's scope, limit, current spend, and refresh cadence. User-scoped budgets are listed by member handle. Alias: `ls`. Filter to one scope with `--scope-type`, or list the team's default budget policy with `--defaults`.
+List the budgets for the current team, with each budget's scope, limit, current spend, and refresh cadence. User-scoped budgets are listed by member handle. Filter to one scope with `--scope-type`, or list the team's default budget policy with `--defaults`.
 
 ```bash filename="terminal"
-vercel ai-gateway budgets ls
+vercel ai-gateway budgets list
 ```
 
 ```bash filename="terminal"
-vercel ai-gateway budgets ls --scope-type user
+vercel ai-gateway budgets list --scope-type user
 ```
 
 *List only the user-scoped budgets.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets ls --defaults
+vercel ai-gateway budgets list --defaults
 ```
 
 *List the team's budget defaults.*
@@ -247,7 +248,7 @@ vercel ai-gateway budgets ls --defaults
 | --- | --- | --- |
 | `--scope-type <SCOPE>` | String | Only list budgets for one scope: `team`, `project`, `user`, or `api-key` |
 | `--defaults` | Boolean | List the team's default budgets instead of individual budgets |
-| `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
+| `--json` | Boolean | Print the machine-readable payload as JSON |
 
 #### inspect
 
@@ -260,7 +261,7 @@ vercel ai-gateway budgets inspect user teammate@example.com
 *Show one team member's budget and current spend.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets inspect project my-project --format json
+vercel ai-gateway budgets inspect project my-project --json
 ```
 
 *Print a project budget's machine-readable payload.*
@@ -270,13 +271,13 @@ vercel ai-gateway budgets inspect project my-project --format json
 | Option | Type | Description |
 | --- | --- | --- |
 | `--default` | Boolean | Show the scope's default budget |
-| `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
+| `--json` | Boolean | Print the machine-readable payload as JSON |
 
 #### remove
 
-Remove the budget for a scope, using the same scope names and identifiers as [`set`](#set), or a scope's default budget with `--default`. Aliases: `rm`, `delete`.
+Remove the budget for a scope, using the same scope names and identifiers as [`set`](#set), or a scope's default budget with `--default`.
 
-Removing a budget lifts that scope's own cap. A project, key, or member still covered by a [default](#defaults) falls back to that default rather than becoming unlimited.
+Removing a budget lifts that scope's own cap. A project, key, or member still covered by a [default](#default-budgets) falls back to that default rather than becoming unlimited.
 
 ```bash filename="terminal"
 vercel ai-gateway budgets remove team
@@ -306,34 +307,34 @@ vercel ai-gateway budgets remove user --default
 | --- | --- | --- |
 | `--yes`, `-y` | Boolean | Skip the confirmation prompt |
 | `--default` | Boolean | Remove the scope's default budget |
-| `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
+| `--json` | Boolean | Print the machine-readable payload as JSON |
 
-#### defaults
+#### Default budgets
 
-Manage budget defaults. A default applies to every resource of that scope that has no budget of its own, so new projects, new API keys, and new team members inherit a spend limit instead of starting unlimited.
+A default budget applies to every project, API key, or team member that has no budget of its own, so new projects, new API keys, and new team members inherit a spend limit instead of starting unlimited.
 
-Set or remove a default with the `--default` flag on [`set`](#set) and [`remove`](#remove), show one with [`inspect`](#inspect), and list the policy with [`list --defaults`](#list):
+Set or remove a default with the `--default` flag on [`set`](#set) and [`remove`](#remove), show one with [`inspect`](#budgets-inspect), and list the policy with [`list --defaults`](#budgets-list):
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set project --default --limit 200 --refresh-period monthly
+vercel ai-gateway budgets set project --default --amount 200 --refresh-period monthly
 ```
 
 *Give every project without its own budget a $200 monthly limit.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set api-key --default --limit 50
+vercel ai-gateway budgets set api-key --default --amount 50
 ```
 
 *Give every API key without its own quota a $50 limit.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set user --default --limit 50 --refresh-period monthly
+vercel ai-gateway budgets set user --default --amount 50 --refresh-period monthly
 ```
 
 *Give every team member without their own budget a $50 monthly limit.*
 
 ```bash filename="terminal"
-vercel ai-gateway budgets ls --defaults
+vercel ai-gateway budgets list --defaults
 ```
 
 *List the team's budget defaults.*
@@ -344,16 +345,9 @@ vercel ai-gateway budgets remove user --default
 
 *Remove the per-member default budget.*
 
-> **💡 Note:** The `--default` flag is available in Vercel CLI v59.13.0 and later. The
-> nested `budgets defaults` command group it replaces still works but prints a
-> deprecation warning; use the flag forms instead.
-
 ### rules
 
 Manage [AI Gateway routing rules](/docs/ai-gateway/models-and-providers/routing-rules) for the current team. A rule rewrites a request from one model to another, or denies a model. See the [routing rules documentation](/docs/ai-gateway/models-and-providers/routing-rules) for concepts, request behavior, and propagation details.
-
-> **💡 Note:** AI Gateway routing rules are in beta and may change before general
-> availability.
 
 ```bash filename="terminal"
 vercel ai-gateway rules [subcommand]
@@ -384,27 +378,27 @@ vercel ai-gateway rules add --type deny --source openai/gpt-5.6-sol
 | `--destination <MODEL>` | String | Target model a `rewrite` rule routes to |
 | `--reason <TEXT>` | String | Reason surfaced when the rule applies |
 | `--description <TEXT>` | String | Human-readable description of the rule |
-| `--format <FORMAT>` | String | Set to `json` for the machine-readable payload |
+| `--json` | Boolean | Print the machine-readable payload as JSON |
 
 #### list
 
-List routing rules for the current team. Alias: `ls`. Pass `--include-disabled` to also show disabled rules.
+List routing rules for the current team. Pass `--include-disabled` to also show disabled rules.
 
 ```bash filename="terminal"
 vercel ai-gateway rules list
 ```
 
-#### edit
+#### update
 
-Edit a rule by its ID. Change the destination, reason, or description, or toggle the rule with `--enable` / `--disable`.
+Update a rule by its ID. Change the destination, reason, or description. Pass `--no-enable` to turn a rule off, and `--enable` to turn it back on:
 
 ```bash filename="terminal"
-vercel ai-gateway rules edit rule_123 --disable
+vercel ai-gateway rules update rule_123 --no-enable
 ```
 
 #### remove
 
-Remove a rule by its ID. Aliases: `rm`, `delete`. Pass `--yes` to skip the confirmation prompt.
+Remove a rule by its ID. Pass `--yes` to skip the confirmation prompt.
 
 ```bash filename="terminal"
 vercel ai-gateway rules remove rule_123 --yes
@@ -427,8 +421,6 @@ npm i -g vercel@latest
 vercel ai-gateway setup
 ```
 
-`vercel ai-gateway setup` is the canonical command. The older spelling, `vercel ai-gateway coding-agents setup`, still works as an alias, and managed shell blocks written under the old name are still recognized as configured.
-
 Configure [supported coding agents](#supported-coding-agents) to route requests through AI Gateway. The command provisions or reuses an AI Gateway API key and writes each agent's config file so requests use the gateway with your key.
 
 This is the recommended way to connect an agent because it picks the right [compatibility URL](#gateway-urls-the-command-writes) per agent, keeps your key out of plaintext config on macOS, and preserves your existing desktop sessions. The [coding agents guide](/docs/ai-gateway/coding-agents) covers the same agents from the other direction, with per-agent features and manual configuration for the tools this command doesn't handle.
@@ -445,8 +437,8 @@ Run the command without flags to step through each prompt in order:
 2. **Consent** for any agent with a pre-flight warning, described in [Warnings and consent](#warnings-and-consent). Declining skips that agent and continues with the others.
 3. **Session migration**, when you have Claude Desktop or Codex Desktop sessions that would otherwise disappear from the switched provider. See [Desktop session migration](#desktop-session-migration).
 4. **API key source**: create a new key or paste an existing one. The prompt defaults to *create*, and to *use an existing key* when your agent configs already point at the gateway.
-5. **API key name** for a new key. The prompt suggests `[<user>'s <device>] Coding Agents`.
-6. **Team** that owns the key.
+5. **Team** that owns the key.
+6. **API key name** for a new key. The prompt suggests `[<user>'s <device>] Coding Agents`.
 7. **Spend limit** (quota) for the key.
 8. **Expiration** for the key.
 9. **Keychain storage** on macOS: whether to store the key in your Keychain (default yes).
@@ -520,7 +512,7 @@ Every agent without a dedicated endpoint should point at the shared coding agent
 https://ai-gateway.vercel.sh/coding-agent/v1
 ```
 
-It passes straight through to the standard `/v1` handlers, so auth, routing, billing, CORS, and errors behave exactly as they do on the bare `/v1` surface, and unknown paths return the same JSON 404. Use it anyway because it marks the traffic as coming from a coding agent. It also gives behavior shared across harnesses somewhere to live later, without requiring another config edit.
+Except for model discovery, it passes straight through to the standard `/v1` handlers, so auth, routing, billing, CORS, and errors behave exactly as they do on the bare `/v1` surface, and unknown paths return the same JSON 404. `/coding-agent/v1/models` omits models that a coding agent can't use for text responses, such as embedding, image, and video models, so they don't appear in agent model pickers. Use this surface because it marks the traffic as coming from a coding agent. It also gives behavior shared across harnesses somewhere to live later, without requiring another config edit.
 
 For a client that speaks the Anthropic protocol and appends `/v1/messages` itself, drop the `/v1` and use `https://ai-gateway.vercel.sh/coding-agent`.
 
@@ -556,7 +548,7 @@ For a client that speaks the Anthropic protocol and appends `/v1/messages` itsel
 | Qwen Code | `~/.qwen/settings.json` | `modelProviders.openai` entries, each with an `envKey` reference to `AI_GATEWAY_API_KEY` so the key never lands in the file |
 | Mistral Vibe | `$VIBE_HOME/config.toml` (default `~/.vibe`) | The gateway provider and an unaliased `[[models]]` shortlist, with `api_key_env_var` keeping the key in the shell environment and `active_model` pinned to the leading Mistral model |
 | ZCode | `~/.zcode/v2/config.json` (mode `0600`) | A gateway provider entry with the base URL and a model shortlist. ZCode has no env-var lookup for custom providers, so the key is stored in this file |
-| Zed | Zed's JSONC `settings.json` (honors `$ZED_HOME` and `$APPDATA`); shell startup file | Zed's first-party `vercel_ai_gateway` provider (comment-preserving merge) pointed at the coding-agent endpoint, the Agent Panel default model, and a `VERCEL_AI_GATEWAY_API_KEY` shell export |
+| Zed | Zed's JSONC `settings.json` (honors `$XDG_CONFIG_HOME` on Linux and `$APPDATA` on Windows); shell startup file | Zed's first-party `vercel_ai_gateway` provider (comment-preserving merge) pointed at the coding-agent endpoint, the Agent Panel default model, and a `VERCEL_AI_GATEWAY_API_KEY` shell export |
 
 The command edits existing files in place, preserving their formatting, and saves a `.bak` copy first. Disable backups with `--no-backup`. If it can't parse a file, it skips that file instead of overwriting it.
 
@@ -566,7 +558,7 @@ Shell exports live in a marked, removable block in your shell's startup file: `~
 
 Model lists come from the AI Gateway leaderboard instead of a hardcoded snapshot. The command ranks text models by spend and writes the top 10 into each agent's picker. A harness with a preferred model family, such as DeepSeek Harness, Kimi CLI, Qwen Code, or Mistral Vibe, leads its shortlist with the newest models from that family and follows with the leaderboard's most-used.
 
-For Claude Code, Codex, OpenCode, Pi, Kilo Code, Cursor, fx, and omp, the command pins no model, so you keep choosing your own inside the agent. The other agents can't start without one, so they get the top-ranked model as a starting point, falling back to `anthropic/claude-fable-5` when the leaderboard lookup fails. Change it at any time:
+For Claude Code, Codex, OpenCode, Pi, Kilo Code, Cursor, fx, and omp, the command pins no model, so you keep choosing your own inside the agent. The other agents can't start without one, so they get the top-ranked model as a starting point, falling back to `anthropic/claude-fable-5` when the leaderboard lookup fails. A harness with a preferred model family starts on the leading model from that family instead, and Grok Build always starts on a Grok model. Change it at any time:
 
 | Agent | How to switch models |
 | --- | --- |
@@ -584,7 +576,7 @@ For Claude Code, Codex, OpenCode, Pi, Kilo Code, Cursor, fx, and omp, the comman
 | Junie CLI | Run `junie --model custom:vercel-ai-gateway`, or pick the model with `/model` |
 | OpenHands | Edit the `llm` block in `agent_settings.json` |
 | ZCode | Pick the model in-session |
-| Zed | Agent Panel model picker (the full catalog loads from `/models` once the key is visible) |
+| Zed | Agent Panel model picker (the model list loads from `/models` once the key is visible) |
 
 #### Desktop session migration
 
@@ -647,7 +639,7 @@ Re-running the command against an already-configured setup doesn't mint a second
 | `--all` | Boolean | Configure every [supported coding agent](#supported-coding-agents), whether or not it's detected on this machine |
 | `--key <KEY>` | String | Use an existing AI Gateway API key instead of creating one. Skips key creation and the name, team, budget, and expiry prompts |
 | `--name <NAME>` | String | Name for a newly created API key |
-| `--budget <AMOUNT>` | Number | Spend limit for a new key, in US dollars (minimum 1) |
+| `--amount <USD>` | Number | Spend limit for a new key, in US dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Quota reset cadence for a new key: `daily`, `weekly`, `monthly`, or `none` |
 | `--expiration <PERIOD>` | String | Expiry for a new key: `7d`, `30d`, `60d`, `90d`, `1y`, or `none` (default `none`) |
 | `--reconfigure` | Boolean | Run setup again when agents are already configured, for example to rotate the key or switch teams |
@@ -660,7 +652,7 @@ Re-running the command against an already-configured setup doesn't mint a second
 | `--no-session-migration` | Boolean | Do not copy existing Claude Desktop or Codex Desktop sessions |
 | `--no-keychain` | Boolean | Write the key into the agent config files and shell startup file instead of the macOS Keychain |
 | `--yes`, `-y` | Boolean | Run without prompts |
-| `--scope <SLUG>`, `--team <SLUG>` | String | Team that owns a newly created key. Global options, also available as `-S` and `-T` |
+| `--scope <SLUG>` | String | Team that owns a newly created key. A global option, also available as `-S` |
 
 #### Defaults with `--yes`
 
@@ -671,8 +663,8 @@ The `--yes` option skips every prompt, which makes the command fully non-interac
 | Agents | The agents detected on your machine. If none are detected, the command errors and asks you to pass `--agent` or `--all`. The command skips agents with warnings unless you name them |
 | API key | Creates a new key unless you pass `--key`, or the configs already point at the gateway and the stored key can be recovered |
 | Key name | Omitted, so the server assigns a name. Interactively, the prompt suggests `[<user>'s <device>] Coding Agents` |
-| Team or scope | Uses `--scope` or `--team`, or your currently selected team. Without one, the command errors with `missing_scope`. Not needed with `--key` |
-| Spend limit | Unlimited, unless you pass `--budget` |
+| Team or scope | Uses `--scope`, or your currently selected team. Without one, the command errors with `missing_scope`. Not needed with `--key` |
+| Spend limit | Unlimited, unless you pass `--amount` |
 | Refresh | One-time limit with no reset, unless you pass `--refresh-period` |
 | Expiration | Never (`--expiration none`) |
 | Key storage | Your macOS Keychain when available, otherwise the agent config files. Pass `--no-keychain` to always use config |
@@ -705,7 +697,7 @@ If at least one agent config can be written, the run exits `0` and lists the res
 
 - Open a new terminal after connecting so the shell exports load. Codex always reads `AI_GATEWAY_API_KEY` from your environment; in Keychain mode, every agent except Pi, Cline, ForgeCode, Kimi CLI, OpenHands, and ZCode reads its key from the shell.
 - Restart Claude Code so it picks up the new settings, and restart the OpenClaw gateway process so it loads the new provider.
-- The command follows the [CLI exit-code contract](/docs/cli/global-options#exit-codes): `0` for success, a no-op, or help; `1` for an operational failure; and `2` for a usage error.
+- The command follows the [CLI exit-code contract](/docs/cli/global-options#exit-codes): `0` for success, a no-op, or help; `1` for an operational failure; and `2` for a usage error. One exception: in human-readable output, an invalid option value, such as an unsupported `--apply` mode, exits `1`.
 
 > **⚠️ Warning:** Your API key is sensitive. Human-readable output only shows it masked (for
 > example `vck_••••1234`), but the JSON payload includes it in full, and the
@@ -720,7 +712,7 @@ Manage [virtual models](/docs/ai-gateway/models-and-providers/virtual-models) fo
 vercel ai-gateway virtual-models [subcommand]
 ```
 
-Every subcommand accepts `--format json` (or `--json`) for machine-readable output.
+Every subcommand accepts `--json` for machine-readable output.
 
 #### create
 
@@ -760,7 +752,7 @@ vercel ai-gateway virtual-models create my-model --model openai/gpt-5.1 --config
 
 #### list
 
-List virtual models for the current team. Alias: `ls`. Archived virtual models are hidden unless you pass `--include-archived`.
+List virtual models for the current team. Archived virtual models are hidden unless you pass `--include-archived`.
 
 ```bash filename="terminal"
 vercel ai-gateway virtual-models list
@@ -774,29 +766,29 @@ Show every field set on a virtual model, by slug.
 vercel ai-gateway virtual-models inspect my-model
 ```
 
-#### edit
+#### update
 
-Edit a virtual model by its slug. Takes the same field flags and `--config` as `create` except `--kind`, which is create-only, and requires at least one of them.
+Update a virtual model by its slug. Takes the same field flags and `--config` as `create` except `--kind`, which is create-only, and requires at least one of them.
 
 ```bash filename="terminal"
-vercel ai-gateway virtual-models edit my-model --model anthropic/claude-sonnet-4.5
+vercel ai-gateway virtual-models update my-model --model anthropic/claude-sonnet-4.5
 ```
 
 *Point an existing virtual model at a different model.*
 
-#### remove
+#### delete
 
-Remove a virtual model by its slug. Aliases: `rm` and `delete`. There is no confirmation prompt, so the virtual model is removed as soon as the command runs. Requests to `vmc/<slug>` stop resolving once it is removed, and the configuration is preserved so you can restore it later.
+Delete a virtual model by its slug. There is no confirmation prompt, so the virtual model is deleted as soon as the command runs. Requests to `vmc/<slug>` stop resolving once it is deleted, and the configuration is preserved so you can restore it later.
 
-Removing is not the same as archiving. A removed virtual model stops resolving and no longer appears in `list`, even with `--include-archived`. An archived one still appears, labeled `archived`.
+Deleting is not the same as archiving. A deleted virtual model stops resolving and no longer appears in `list`, even with `--include-archived`. An archived one still appears, labeled `archived`.
 
 ```bash filename="terminal"
-vercel ai-gateway virtual-models rm my-model
+vercel ai-gateway virtual-models delete my-model
 ```
 
 #### restore
 
-Restore a removed virtual model by its slug. Requests to `vmc/<slug>` resolve again, using the configuration the virtual model had before it was removed. Because a removed virtual model is not listed, you need to know its slug.
+Restore a deleted virtual model by its slug. Requests to `vmc/<slug>` resolve again, using the configuration the virtual model had before it was deleted. Because a deleted virtual model is not listed, you need to know its slug.
 
 ```bash filename="terminal"
 vercel ai-gateway virtual-models restore my-model
@@ -804,7 +796,7 @@ vercel ai-gateway virtual-models restore my-model
 
 ### models
 
-Browse the [models](/docs/ai-gateway/models-and-providers) available through AI Gateway and compare the providers that serve them. Both commands are read-only. Add `--format json` to either command for the full, machine-readable payload.
+Browse the [models](/docs/ai-gateway/models-and-providers) available through AI Gateway and compare the providers that serve them. Both commands are read-only. Add `--json` to either command for the full, machine-readable payload.
 
 ```bash filename="terminal"
 vercel ai-gateway models [subcommand]
@@ -812,16 +804,16 @@ vercel ai-gateway models [subcommand]
 
 #### list
 
-List the models available through AI Gateway. The table shows each model's ID, name, owner, and type. Alias: `ls`. Your team's [virtual models](/docs/ai-gateway/models-and-providers/virtual-models) are listed alongside the catalog, and you can narrow the list to one or the other.
+List the models available through AI Gateway. The table shows each model's ID, name, owner, and type. Your team's [virtual models](/docs/ai-gateway/models-and-providers/virtual-models) are listed alongside the catalog, and you can narrow the list to one or the other.
 
 ```bash filename="terminal"
-vercel ai-gateway models ls
+vercel ai-gateway models list
 ```
 
 *List every model available through AI Gateway.*
 
 ```bash filename="terminal"
-vercel ai-gateway models ls --virtual
+vercel ai-gateway models list --virtual
 ```
 
 *List only your team's virtual models.*
@@ -830,13 +822,12 @@ vercel ai-gateway models ls --virtual
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `--virtual` | Boolean | Show only your team's virtual models |
-| `--no-virtual` | Boolean | Hide virtual models |
-| `--format <FORMAT>` | String | Set to `json` to output the full model payload |
+| `--virtual`, `--no-virtual` | Boolean | Narrow the list. `--virtual` shows only your team's virtual models, and `--no-virtual` hides them. By default, the list shows catalog models and virtual models |
+| `--json` | Boolean | Output the full model payload as JSON |
 
 #### endpoints
 
-List the provider endpoints that serve a model. The table shows each endpoint's context window, input and output pricing, time-to-first-token latency, and uptime. Run `vercel ai-gateway models ls` to find model IDs.
+List the provider endpoints that serve a model. The table shows each endpoint's context window, input and output pricing, time-to-first-token latency, and uptime. Run `vercel ai-gateway models list` to find model IDs.
 
 ```bash filename="terminal"
 vercel ai-gateway models endpoints <model-id>
@@ -852,7 +843,7 @@ vercel ai-gateway models endpoints anthropic/claude-opus-5
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `--format <FORMAT>` | String | Set to `json` to output the full endpoints payload, including throughput and tags |
+| `--json` | Boolean | Output the full endpoints payload as JSON, including throughput and tags |
 
 ### leaderboard
 
@@ -882,7 +873,7 @@ vercel ai-gateway leaderboard labs --metric spend
 *Rank model creators by spend instead of request count.*
 
 ```bash filename="terminal"
-vercel ai-gateway leaderboard models --format csv --out models.csv
+vercel ai-gateway leaderboard models --format csv --output models.csv
 ```
 
 *Export the full model leaderboard as CSV.*
@@ -894,15 +885,15 @@ vercel ai-gateway leaderboard models --format csv --out models.csv
 | `--modality <MODALITY>` | String | Filter by modality: `all`, `text`, `image`, or `video` (default `all`). Applies to `models` and `labs` |
 | `--metric <METRIC>` | String | Metric for the table view: `requests`, `tokens`, `spend`, `imageCount`, or `videoCount` (default `requests`). Applies to `models` and `labs` |
 | `--date <YYYY-MM-DD>` | String | Day to show in the table view (default: most recent). Applies to `models` and `labs` |
-| `--format <FORMAT>`, `-F` | String | Output format: `table`, `json`, or `csv` (default: `table` in a terminal, `json` otherwise) |
-| `--out <FILE>`, `-o` | String | Write the payload to a file instead of stdout. Defaults to JSON; use `--format csv` for CSV |
+| `--format <FORMAT>` | String | Output format: `table`, `json`, or `csv` (default: `table` in a terminal, `json` otherwise) |
+| `--output <PATH>`, `-o` | String | Write the payload to a file instead of stdout. Defaults to JSON; use `--format csv` for CSV |
 
 ## Examples
 
 ### Create an API key with a monthly budget
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys create --name my-key --limit 500 --refresh-period monthly --alert-thresholds 75,100
+vercel ai-gateway api-keys create --name my-key --amount 500 --refresh-period monthly --alert-thresholds 75,100
 ```
 
 *Create an API key named \`my-key\` with a $500 monthly quota that alerts at 75%
@@ -911,7 +902,7 @@ and 100% of the limit.*
 ### Give every new project a spend limit
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set project --default --limit 200 --refresh-period monthly
+vercel ai-gateway budgets set project --default --amount 200 --refresh-period monthly
 ```
 
 *Apply a $200 monthly budget to any project that has no budget of its own.*
@@ -931,7 +922,7 @@ vercel ai-gateway setup \
   --agent claude-code --agent codex \
   --name "My Coding Key" \
   --scope my-team \
-  --budget 500 --refresh-period monthly \
+  --amount 500 --refresh-period monthly \
   --expiration 30d \
   --yes
 ```
@@ -1003,7 +994,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

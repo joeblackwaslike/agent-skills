@@ -16,8 +16,8 @@ related:
 summary: Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "769177bb3eb7a2dc89d939b624348a482f864ce7b2e0da83f4b541f9206c730f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "61962e67ecbc284cf2e0e140c251374e6945ae0d623b882c853779d100070796"
 ---
 
 # Vercel Storage overview
@@ -40,10 +40,10 @@ Upload generated files with Vercel Blob, read low-latency configuration with Glo
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How to build scalable AI applications](https://vercel.com/blog/how-to-build-scalable-ai-applications)
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
+- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
-- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 
 Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md)
 <!-- /docsgraph:related -->
@@ -59,7 +59,7 @@ vercel blob list --prefix images/ --limit 20
 #### Create global config
 
 ```bash filename="terminal"
-vercel global-config add flags --items '{"betaUiEnabled":true,"region":"sfo1"}'
+vercel global-config create flags --items '{"betaUiEnabled":true,"region":"sfo1"}'
 ```
 
 #### Provision a database

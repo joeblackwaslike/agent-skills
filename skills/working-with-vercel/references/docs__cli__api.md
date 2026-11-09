@@ -14,8 +14,8 @@ related:
 summary: Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "24a5c1b2048a563e0543e79a23c13a25baa836eb955ce9af7f67be9a9a2ce0f6"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "14ea98670f71ea2989930eb2f06d3edc5957e9f1b58d8d01a497abb7da0a4bc9"
 ---
 
 # vercel api
@@ -28,11 +28,12 @@ The `vercel api` command lets you make authenticated HTTP requests to the Vercel
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Introducing the vercel api CLI command](https://vercel.com/changelog/introducing-the-vercel-api-cli-command)
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel tokens](https://vercel.com/docs/cli/tokens) — Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
-- [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel tokens](https://vercel.com/docs/cli/tokens) — Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 
 Full cross-link map for this page: [/docs/cli/api.graph.md](/docs/cli/api.graph.md)
 <!-- /docsgraph:related -->
@@ -268,7 +269,7 @@ vercel api /v2/user --raw
 
 ### Refresh
 
-The `--refresh` flag forces a refresh of the cached OpenAPI specification used for interactive mode.
+The `--refresh` flag forces a refresh of the cached OpenAPI specification used for interactive mode and the `list` subcommand.
 
 ```bash filename="terminal"
 vercel api --refresh
@@ -288,7 +289,7 @@ vercel api /v2/user --generate=curl
 
 ### Dangerously skip permissions
 
-The `--dangerously-skip-permissions` flag skips confirmation prompts for DELETE operations. Use with caution.
+The CLI asks you to confirm every DELETE request before it sends the request. The `--dangerously-skip-permissions` flag skips that confirmation. When the CLI can't prompt, such as in CI, a DELETE request fails unless you pass this flag. Use with caution.
 
 ```bash filename="terminal"
 vercel api /v13/deployments/dpl_abc123 -X DELETE --dangerously-skip-permissions
@@ -300,10 +301,10 @@ vercel api /v13/deployments/dpl_abc123 -X DELETE --dangerously-skip-permissions
 
 ### list
 
-The `list` subcommand (alias `ls`) displays all available API endpoints.
+The `list` subcommand displays all available API endpoints.
 
 ```bash filename="terminal"
-vercel api ls
+vercel api list
 ```
 
 *Listing all available API endpoints.*
@@ -311,7 +312,7 @@ vercel api ls
 You can output the list as JSON:
 
 ```bash filename="terminal"
-vercel api ls --format json
+vercel api list --json
 ```
 
 *Listing endpoints in JSON format for scripting.*
@@ -328,7 +329,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

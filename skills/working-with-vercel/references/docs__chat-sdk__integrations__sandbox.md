@@ -17,8 +17,8 @@ related:
 summary: Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/integrations/sandbox.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e73f76568a045bfb3d86489eff8c140478def7395eb73333df21fceb2eef1ddc"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3dcafec037b2b2804027a4109f181764d966f845e5efb75991f5378d53e2dd71"
 ---
 
 # Chat SDK with Vercel Sandbox
@@ -31,14 +31,13 @@ Let a chat agent analyze an attached CSV by running commands in [Vercel Sandbox]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [Ship a GitHub code review bot with Hono and Redis](https://vercel.com/kb/guide/ship-a-github-code-review-bot-with-hono-and-redis) — This guide walks through building a GitHub bot that reviews pull requests on demand. When a user @mentions the bot on a
-- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
-- [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
-- [How to build an agent for Liveblocks with Chat SDK and AI SDK](https://vercel.com/kb/guide/liveblocks-chat-sdk-ai-sdk) — Build an AI agent that replies to @-mentions in Liveblocks comment threads with streamed responses and tool calling, usi
+- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
-- [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
-- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
 
 Full cross-link map for this page: [/docs/chat-sdk/integrations/sandbox.graph.md](/docs/chat-sdk/integrations/sandbox.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +103,7 @@ export async function respond(thread: Thread, message: Message) {
     image: 'vercel/sandbox/node:24',
     timeout: 120_000,
     networkPolicy: 'deny-all',
+    persistent: false,
   });
 
   try {
@@ -170,6 +170,7 @@ export async function respond(thread, message) {
     image: 'vercel/sandbox/node:24',
     timeout: 120_000,
     networkPolicy: 'deny-all',
+    persistent: false,
   });
 
   try {
@@ -266,6 +267,28 @@ Pears,80
 Deploy the bot, attach the file to a Slack message, and mention the bot with **What is the total revenue?** It should use the Bash tool and report a total of 200. An attachment-free message should prompt you to attach a CSV.
 
 Each follow-up needs its own attachment because the sandbox is stopped after the turn. For sessions that need to retain files, see [Sandbox persistence](/docs/sandbox/concepts/snapshots).
+
+## Frequently asked questions
+
+### Is it safe to let a chat agent run commands from model output?
+
+This guide runs those commands in Vercel Sandbox, an isolated environment, rather than in your bot's server process. The sandbox uses the `deny-all` network policy, so commands can't make outbound requests, and the bot doesn't pass AI Gateway or platform credentials into it. Model requests run in your bot's process. Treat file contents as untrusted data, and see [Sandbox network policies](/docs/sandbox/concepts/firewall) to allow specific destinations.
+
+### Which files can the bot analyze?
+
+The example accepts a UTF-8 CSV file of up to 1 MiB. It checks the size the platform reports before downloading and the actual size afterward, then writes the file to `/vercel/sandbox/input.csv`. You can change the file type check and size limit in the handler, but keep both checks so the bot never processes an oversized file.
+
+### Do files stay in the sandbox between messages?
+
+No. Each message gets a new sandbox, and the handler stops it when the response finishes, so each follow-up needs its own attachment. For sessions that need to keep files between turns, see [Sandbox persistence](/docs/sandbox/concepts/snapshots).
+
+### How long can a file analysis take?
+
+The example bounds every stage. Each command can run for 10 seconds, the model can take up to five steps, the model request stops after 90 seconds, and the sandbox times out after two minutes. The webhook route sets `maxDuration` to 180 seconds to cover the download, sandbox startup, the model request, and cleanup. Check the [function duration limits](/docs/functions/configuring-functions/duration) for your plan.
+
+### Which package versions does the Sandbox example need?
+
+Use Node.js 22.13 or later and AI SDK 7.0.150 or later, with the `@ai-sdk/tool-bash`, `@ai-sdk/sandbox-vercel`, and `@vercel/sandbox` packages. The Bash tool API is experimental, which is why the example imports it as `experimental_createBashTool`. See the [AI SDK Bash tool documentation](https://ai-sdk.dev/docs/ai-sdk-core/tools#bash-tool).
 
 ## Next steps
 

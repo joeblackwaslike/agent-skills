@@ -10,12 +10,13 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/responses/tool-calling
+  - /docs/ai-gateway/pricing
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
 summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4873876e7511f4630a093580f0791282d5034d2dece878f0476986bba29661c2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d4b1d2a97e4df2d8f005c559394748b1a38084c06540e63d79cbf5506b3ed7dd"
 ---
 
 # AI Gateway Web Search
@@ -28,16 +29,15 @@ AI Gateway provides built-in search tools that let AI models access current web 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Built-in Tools](https://eve.dev/docs/concepts/built-in-tools) — The default and opt-in tools eve provides, including glob, grep, and sleep.
+- [Built-in Tools](https://eve.dev/docs/concepts/built-in-tools) — The default and opt-in tools eve provides, including bash, file tools, glob, grep, and sleep.
 - [AI Gateway adds Browserbase Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-browserbase-search-and-fetch-tools)
+- [AI Gateway adds DeepSeek Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-deepseek-search-and-fetch-tools)
 - [Exa web search free through August 31 on AI Gateway and eve](https://vercel.com/changelog/exa-web-search-free-through-august-31-on-ai-gateway-and-eve)
 - [Tako Search is free on AI Gateway through September 30](https://vercel.com/changelog/tako-search-is-free-on-ai-gateway-through-september-30th)
 - [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent) — Learn how to build an agent that has access to web with the AI SDK and Node
 - [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway)
 - [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model)
 - [Tool Search](https://ai-sdk.dev/docs/ai-sdk-core/tool-search) — Let models discover tools on demand, with direct calling or cache-preserving code mode.
-- [Exa joins the Vercel AI Gateway and Agent Marketplace](https://vercel.com/changelog/exa-joins-vercel-ai-gateway-agent-marketplace)
-- [toolSearch](https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-search) — Search deferred tools and load their definitions on demand for direct calling or code mode.
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md)
@@ -45,10 +45,10 @@ Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-se
 
 AI Gateway supports two types of web search:
 
-- **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), [Tako Search](#using-tako-search), [Browserbase Search](#using-browserbase-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
+- **Search for all providers**: Use [Perplexity Search](#using-perplexity-search), [Exa Search](#using-exa-search), [Tako Search](#using-tako-search), [Browserbase Search](#using-browserbase-search), [DeepSeek Search](#using-deepseek-search), or [Parallel Search](#using-parallel-search) with any model regardless of provider. This gives you consistent web search behavior across different models.
 - **Provider-specific search**: Use native web search tools from [Anthropic](#anthropic-web-search), [OpenAI](#openai-web-search), [Google](#google-web-search), or [SpaceXAI](#spacexai-web-search). These tools are optimized for their respective providers and may offer [additional features](#provider-specific-search).
 
-For pages the model already has a URL for, [Browserbase Fetch](#using-browserbase-fetch) retrieves the contents directly instead of searching.
+For pages the model already has a URL for, [Browserbase Fetch](#using-browserbase-fetch) or [DeepSeek Fetch](#using-deepseek-fetch) retrieves the contents directly instead of searching.
 
 ## Search across API formats
 
@@ -875,6 +875,107 @@ and `'json'` requests can return `configuration_error` with status code 403 or
 
 For the complete input and output schema, see the [AI SDK AI Gateway reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#browserbase-fetch). For fetch behavior and Browserbase-specific options, see the [Browserbase Fetch documentation](https://docs.browserbase.com/platform/fetch/overview).
 
+## Using DeepSeek Search
+
+Use `gateway.tools.deepseekSearch()` with any model that supports tool calling
+to find pages with DeepSeek's search engine. Results include titles, URLs,
+snippets, summaries, and optional page content. You only need an AI Gateway API
+key; a DeepSeek API key is not required.
+
+Use `@ai-sdk/gateway` version `3.0.227` or later with AI SDK 6, or `4.0.133` or
+later with AI SDK 7.
+
+```typescript filename="deepseek-search.ts"
+import { gateway } from '@ai-sdk/gateway';
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: gateway('openai/gpt-6.1-terra'),
+  prompt: 'Search for the latest Vercel AI Gateway updates.',
+  tools: {
+    deepseek_search: gateway.tools.deepseekSearch({
+      count: 5,
+      needContent: true,
+    }),
+  },
+});
+
+console.log(text);
+```
+
+### DeepSeek Search parameters
+
+All configuration fields are optional. Values you set override the model's
+arguments for that field.
+
+| Parameter | Description |
+| --- | --- |
+| `query` | Pin the search query. Must contain 1 to 128 Unicode characters and cannot be all whitespace. Supports operators such as `site:`, `lang:`, `before:`, and `after:`. |
+| `count` | Number of results, from 1 to 50. Defaults to `10`. |
+| `needContent` | Include page content when available. Defaults to `false`. |
+| `oriQuestion` | The original question that triggered the search, from 1 to 128 characters. `null` is treated as omitted. |
+| `localization` | An IP address used to localize results. Set this in tool configuration; it is not a model-generated argument. |
+
+### DeepSeek Search and Fetch pricing
+
+| Tool | Price per 1,000 billable requests |
+| --- | --- |
+| DeepSeek Search | $0.75 |
+| DeepSeek Fetch | $0.75 |
+
+Search is billable when a successful request returns a nonempty results array,
+including results that are filtered before reaching the model. Fetch is billable
+when a successful request returns nonempty page content. Failed requests,
+timeouts, and empty results are not billed. The requested result count does not
+change the price.
+
+The host model's input and output tokens are charged separately, including tool
+results in its context. Remove the tools from `tools` to stop further tool calls.
+See [AI Gateway pricing](/docs/ai-gateway/pricing) for model pricing and spending
+controls.
+
+## Using DeepSeek Fetch
+
+Use `gateway.tools.deepseekFetch()` to read a known HTTP or HTTPS URL. It returns
+Markdown content and a page title when available. You can pair it with
+[DeepSeek Search](#using-deepseek-search) to find and then read pages.
+
+```typescript filename="deepseek-fetch.ts"
+import { gateway } from '@ai-sdk/gateway';
+import { streamText } from 'ai';
+
+const result = streamText({
+  model: gateway('openai/gpt-6.1-terra'),
+  prompt: 'Fetch https://vercel.com/docs/ai-gateway and summarize it.',
+  tools: {
+    deepseek_fetch: gateway.tools.deepseekFetch({
+      url: 'https://vercel.com/docs/ai-gateway',
+    }),
+  },
+});
+
+for await (const part of result.fullStream) {
+  if (part.type === 'text-delta') {
+    process.stdout.write(part.text);
+  } else if (part.type === 'tool-error') {
+    console.error('The page could not be fetched.');
+  }
+}
+```
+
+### DeepSeek Fetch parameters
+
+The optional `url` configuration pins the page to fetch. Otherwise, the model
+supplies the URL. URLs must be at most 8192 characters, include a host, and have
+no username or password. Fetch supports Markdown output only. Access depends on
+the target site's availability and policies.
+
+Both tools report failures as `tool-error` stream parts. With `generateText`,
+check `result.content` for `tool-error` entries when handling tool failures.
+See [DeepSeek Search and Fetch pricing](#deepseek-search-and-fetch-pricing) and
+the [DeepSeek documentation](https://api-docs.deepseek.com/guides/search) for
+more details.
+
 ## Using AI Gateway search tools with Chat Completions
 
 Use AI Gateway server tools from the OpenAI-compatible Chat Completions API. AI
@@ -883,16 +984,18 @@ the final answer in the same response.
 
 Choose the search provider by adding one server tool to `tools`:
 
-| Tool type | Search provider | Required config field |
+| Tool type | Search provider | Required input (from the model or `config`) |
 | --- | --- | --- |
 | `vercel:browserbase_search` | Browserbase | `query` |
+| `vercel:deepseek_search` | DeepSeek | `query` |
 | `vercel:exa_search` | Exa | `query` |
 | `vercel:parallel_search` | Parallel | `objective` |
 | `vercel:perplexity_search` | Perplexity | `query` |
 | `vercel:tako_search` | Tako | `query` |
 
-Browserbase Fetch is also available as a server tool. Add `vercel:browserbase_fetch`
-with a `url` config field to fetch a page instead of searching for one.
+Browserbase Fetch and DeepSeek Fetch are also available as server tools. Add
+`vercel:browserbase_fetch` or `vercel:deepseek_fetch` with a `url` config field to
+fetch a page instead of searching for one.
 
 Put static tool settings in `config`. Use snake case for config keys. AI Gateway
 uses these values as developer defaults and overrides model-generated values.
@@ -936,8 +1039,9 @@ search results. Inspect `choices[0].message.provider_metadata.gateway.gatewayToo
 for successful search-call counts and the gateway metadata for aggregate cost.
 
 Use distinct names for your own function tools. Do not define a client function
-named `browserbase_fetch`, `browserbase_search`, `exa_search`,
-`parallel_search`, `perplexity_search`, or `tako_search` in a request that
+named `browserbase_fetch`, `browserbase_search`, `deepseek_fetch`,
+`deepseek_search`, `exa_search`, `parallel_search`, `perplexity_search`, or
+`tako_search` in a request that
 includes the corresponding AI Gateway server tool.
 
 ## Using Parallel Search

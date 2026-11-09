@@ -12,12 +12,12 @@ related:
   - /docs/cdn
   - /docs/workflows
   - /docs/frameworks/agents/eve
-  - /docs/functions/functions-api-reference
+  - /docs/background-workers
 summary: Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "bd770f78eba45c2e540c9ff16fee943045cf7e163da28dffa86b8b2195684990"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e564e4747b416fe879e8b67ed9851b36d629b27ff77613626c5e5c09901b78dd"
 ---
 
 # Vercel Functions
@@ -32,8 +32,11 @@ Build API routes, webhooks, and agent request handlers that scale with traffic. 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [Evolving Vercel Functions](https://vercel.com/blog/evolving-vercel-functions)
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available)
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [30-day runtime log retention, now available in Observability Plus](https://vercel.com/changelog/30-day-runtime-log-retention-now-available-in-observability-plus)
 - [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support)
 - [Agents can now access runtime logs with Vercel's MCP server](https://vercel.com/changelog/agents-can-now-access-runtime-logs-with-vercels-mcp-server)
@@ -41,9 +44,6 @@ Build API routes, webhooks, and agent request handlers that scale with traffic. 
 - [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
-- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 
 Full cross-link map for this page: [/docs/functions.graph.md](/docs/functions.graph.md)
 <!-- /docsgraph:related -->
@@ -109,7 +109,7 @@ Vercel Functions run request-driven API routes, webhooks, streamed model respons
 
 ### Run work after a response
 
-Use `waitUntil` for short tasks that continue after you send a response, within the function's maximum duration. For work that needs retries, durable waits, or a continuous worker, see [Running background workers on Vercel](/kb/guide/background-workers-on-vercel) to compare the options.
+Use `waitUntil` for short tasks that continue after you send a response, within the function's maximum duration. For work that needs retries, durable waits, or a continuous worker, compare the [background worker options](/docs/background-workers). Follow [Running background workers on Vercel](/kb/guide/background-workers-on-vercel) for detailed examples.
 
 ## Create your first Vercel Function
 
@@ -153,17 +153,17 @@ export function GET(request) {
 }
 ```
 
-**pages/api/hello.ts**
+**app/api/hello/route.ts**
 
-```ts v0="build" filename="pages/api/hello.ts" framework=nextjs
+```ts v0="build" filename="app/api/hello/route.ts" framework=nextjs
 export function GET(request: Request) {
   return new Response('Hello from Vercel!');
 }
 ```
 
-**pages/api/hello.js**
+**app/api/hello/route.js**
 
-```js v0="build" filename="pages/api/hello.js" framework=nextjs
+```js v0="build" filename="app/api/hello/route.js" framework=nextjs
 export function GET(request) {
   return new Response('Hello from Vercel!');
 }
@@ -242,6 +242,11 @@ If your project is not using fluid compute, see the [legacy pricing documentatio
 
 **Debugging slow functions**: Diagnose and fix functions that take too long to respond. [Learn more →](/docs/functions/debug-slow-functions)
 
+## Related guides
+
+- [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel): Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write cost and origin traffic.
+- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons): Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background workers.
+- [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel): Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Celery workers, and cron services.
 
 ---
 

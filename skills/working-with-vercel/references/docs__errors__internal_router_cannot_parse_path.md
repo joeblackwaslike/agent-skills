@@ -12,17 +12,17 @@ related:
 summary: The CDN has failed to parse application-specified URL, such as rewrite/redirection URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_router_cannot_parse_path.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "dd6e7496111090304a9e368b994d826188a5a151ddb03b303a726850c63cc18a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f34efd871da28d181bc75a6169ea2b9323ccb8a768f018ed3e4cae42768b4c50"
 ---
 
 # INTERNAL_ROUTER_CANNOT_PARSE_PATH
 
 The `INTERNAL_ROUTER_CANNOT_PARSE_PATH` error occurs when the CDN has failed to parse application-specified URL, such as rewrite/redirection URLs.
 
-**Error Code:** `500`
+**Error Code:** `502`
 
-**Name:** Internal Server Error
+**Name:** Bad Gateway
 
 ## Troubleshoot
 

@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3641f786b19afb7923915e9246bd6b282b4ce8505634405073c95790ae86612a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "87d20ecb996c028ec6008bb7c0ce110867d47c1d8a091f1919ea34ffc9409f0f"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -37,12 +37,12 @@ Use the Node.js runtime to run Vercel Functions written in JavaScript or TypeScr
 - [Node.js 24 LTS is now generally available for builds and functions](https://vercel.com/changelog/node-js-24-lts-is-now-generally-available-for-builds-and-functions)
 - [Node.js Vercel Functions now support per-path request cancellation ](https://vercel.com/changelog/node-js-vercel-functions-now-support-per-path-request-cancellation)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
 - [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md)
 <!-- /docsgraph:related -->
@@ -92,13 +92,14 @@ To learn more about the supported Node.js versions on Vercel, see [Supported Nod
 
 ## Node.js dependencies
 
-For dependencies listed in a `package.json` file at the root of a project, the following behavior is used:
+For dependencies listed in a `package.json` file at the root of a project, Vercel checks for lockfiles in the following order and uses the first match:
 
-- If `bun.lock` or `bun.lockb` is present, `bun install` is executed
-- If `yarn.lock` is present `yarn install` is executed
+- If `yarn.lock` and either `bun.lock` or `bun.lockb` are present, `bun install` is executed
+- If `yarn.lock` is present, `yarn install` is executed
 - If `pnpm-lock.yaml` is present, `pnpm install` is executed
   - See [supported package managers](/docs/package-managers#supported-package-managers) for pnpm detection details
 - If `package-lock.json` is present, `npm install` is executed
+- If `bun.lock` or `bun.lockb` is present, `bun install` is executed
 - If `vlt-lock.json` is present, `vlt install` is executed
 - Otherwise, `npm install` is executed
 

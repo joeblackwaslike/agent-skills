@@ -14,8 +14,8 @@ related:
 summary: API reference for @vercel/kms, including signJWT, signMessage, region resolution, and signing the KMS API directly without the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/ts-sdk-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5b58566525a582dbf77f58ed308f6e616dae3110743d26fbcca4ff764b4ba08f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4e42c3a5f4836baf605d6c1a13cb27bb127d7eb059fae95771bec2cd875fad80"
 ---
 
 # Vercel KMS SDK Reference
@@ -33,7 +33,7 @@ The `@vercel/kms` package wraps the KMS signing API and fetches the function's [
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
-- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
+- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team, or for the team or organization identified by
 
 Full cross-link map for this page: [/docs/kms/ts-sdk-reference.graph.md](/docs/kms/ts-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -169,9 +169,9 @@ export async function GET() {
 }
 ```
 
-The token endpoint returns `{ "token": "<compact JWT>" }`.
+The token endpoint returns `{ token, keyId, algorithm, fingerprint }`, with `token` as the compact JWT.
 
-To sign a message, `POST` to `/v1/kms/issuers/<issuerId>/sign/message` with a base64-encoded `message`. The endpoint returns `{ signature, keyId, algorithm }`, with `signature` as standard-base64 of the raw signature bytes:
+To sign a message, `POST` to `/v1/kms/issuers/<issuerId>/sign/message` with a base64-encoded `message`. The endpoint returns `{ signature, keyId, algorithm, fingerprint }`, with `signature` as standard-base64 of the raw signature bytes:
 
 ```bash
 curl -X POST \

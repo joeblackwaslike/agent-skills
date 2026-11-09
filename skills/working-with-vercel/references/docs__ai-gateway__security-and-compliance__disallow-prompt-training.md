@@ -16,13 +16,13 @@ related:
 summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a1aa7edc497b4ccde5593bf00eed87e7a455299a6f08321eceeb3ba618c243c5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a24014b0d44b2406904eb95c62187a5f6489cff28ff57eebcde112cd78ae9c95"
 ---
 
 # AI Gateway Disallow Prompt Training
 
-No training on prompt data is available to all AI Gateway users at no extra charge. This feature ensures your prompts are not used by AI providers to train their models. Set `disallowPromptTraining: true` in `providerOptions` to ensure requests are only routed to providers that do not use your data for training.
+No training on prompt data is available to all AI Gateway users at no extra charge. This feature ensures your prompts are not used by AI providers to train their models. There are two ways to enforce it:
 
 
 <!-- docsgraph:related -->
@@ -41,6 +41,11 @@ No training on prompt data is available to all AI Gateway users at no extra char
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md](/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md)
 <!-- /docsgraph:related -->
+
+- **Team-wide**: Pro and Enterprise teams, and teams that have purchased AI Gateway credits, can enable it globally from the [AI Gateway Dashboard Settings tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fsettings\&title=AI+Gateway+Settings). Once enabled, all requests are routed only to providers that do not use your data for training.
+- **Per-request**: Set `disallowPromptTraining: true` in `providerOptions` for individual requests. This gives you fine-grained control over which requests disallow prompt training.
+
+These two methods work as an OR: if either is enabled, disallow prompt training is enforced for that request. Neither method has an additional cost.
 
 Disallow prompt training is a subset of [Zero Data Retention (ZDR)](/docs/ai-gateway/security-and-compliance/zdr). All ZDR-compliant providers also disallow prompt training, but not all providers that disallow prompt training offer full zero data retention.
 
@@ -66,16 +71,34 @@ By default, AI Gateway does not route based on the training data policy of provi
 > disallow prompt training is enabled on a request, it will not be routed
 > through that provider.
 
+## Team-wide disallow prompt training
+
+Pro and Enterprise teams, and teams that have purchased AI Gateway credits, can enable disallow prompt training for all requests from the [AI Gateway Dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway). If your team stops being eligible while it's on, for example after downgrading from Pro, you can still turn it off.
+
+To enable team-wide disallow prompt training:
+
+1. Go to the [AI Gateway Dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway)
+2. Navigate to the [**Settings** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fsettings\&title=AI+Gateway+Settings)
+3. Toggle on the **Disallow Prompt Training** option
+
+Once enabled, it applies to all requests through the Vercel team you configured it for, at no additional cost. Models with no compliant provider are also removed from your team's available model list (`/v1/models`) and from tools that read it, such as the model pickers in Codex and Claude Code.
+
+Team-wide disallow prompt training and [team-wide zero data retention](/docs/ai-gateway/security-and-compliance/zdr#team-wide-zero-data-retention) are separate settings, and turning on one doesn't turn on the other. To enforce both for your team, turn on both toggles. Team-wide ZDR is billed at $0.10 per 1,000 requests.
+
+> **💡 Note:** As with per-request enforcement, team-wide disallow prompt training does not
+> apply to [BYOK](/docs/ai-gateway/authentication-and-byok/byok) requests, since
+> those use your own API key, configuration, and agreement with the provider.
+
 ## Disallow prompt training per request
 
-Set `disallowPromptTraining` to `true` in `providerOptions` to ensure requests are only routed to providers that do not use your data for training. If you are looking for stricter controls that apply for all requests without configuration each time, see [team-wide zero data retention](/docs/ai-gateway/security-and-compliance/zdr#team-wide-zero-data-retention).
+Set `disallowPromptTraining` to `true` in `providerOptions` to ensure requests are only routed to providers that do not use your data for training. If you are looking for controls that apply for all requests without configuration each time, see [team-wide disallow prompt training](#team-wide-disallow-prompt-training). For a stronger guarantee that also covers data retention, see [team-wide zero data retention](/docs/ai-gateway/security-and-compliance/zdr#team-wide-zero-data-retention).
 
 If no compliant providers are available for the requested model, the request fails with an error:
 
 ```json
 {
-  "error": "No providers available that disallow prompt training for model: example/model-name. Providers considered: provider-a, provider-b",
-  "type": "no_providers_available",
+  "error": "No providers that disallow prompt training available for model: example/model-name. Providers considered: provider-a, provider-b",
+  "type": "invalid_request_error",
   "statusCode": 400
 }
 ```

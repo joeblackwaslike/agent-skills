@@ -9,15 +9,15 @@ prerequisites:
   - /docs/queues
 related:
   - /docs/queues/concepts
-  - /docs/cron-jobs
+  - /docs/schedules
   - /docs/daemons
   - /docs/frameworks/agents/eve
   - /docs/queues/python-sdk
 summary: Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/poll-mode.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "31c50095d95d0fbb08ce59bbc611e394648c32d556524d4e285f9b13c29535d0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2f3476210168ab1dd26e78e877b9d105cba29519dda9725a44f6e8bc9c18144d"
 ---
 
 # Poll Mode
@@ -61,7 +61,7 @@ On Vercel, [push mode](/docs/queues/concepts#delivery) is the default and handle
 
 Common patterns include:
 
-- **Cron-triggered processing**: Use a [Vercel Cron Job](/docs/cron-jobs) to invoke a function on a schedule that polls the queue and processes messages in batch.
+- **Schedule-triggered processing**: Use [Vercel Schedules](/docs/schedules) to invoke a function on a recurring cadence that polls the queue and processes messages in batch.
 - **Client-driven polling**: Have your client-side application poll a server endpoint, which then polls the queue on behalf of that client. This is useful for building real-time experiences without persistent connections.
 - **Long-running consumers**: Run a [daemon](/docs/daemons) that polls the queue continuously, with a fixed number of instances in each region.
 - **Rate-controlled consumption**: Poll for messages at a pace that matches a downstream dependency's rate limits.
@@ -158,10 +158,16 @@ Vercel retries messages that aren't acknowledged according to the same [retry be
 ### Receive options
 
 ```typescript filename="lib/poll-worker.ts" framework=nextjs-app
+// Receive up to 10 messages from the consumer group
 await receive('orders', 'fulfillment', handler, {
   limit: 10,
   visibilityTimeoutSeconds: 300,
+});
+
+// Receive one message by ID. The SDK ignores `limit` and `cursorFallback` when you set `messageId`
+await receive('orders', 'fulfillment', handler, {
   messageId: 'specific-message-id',
+  visibilityTimeoutSeconds: 300,
 });
 ```
 

@@ -13,8 +13,8 @@ related:
 summary: Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "014a7140e79c4bdc31775a8f6cbd59831ae19e7f1da7cf4e1f672907313f9047"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f1ad6563663a8768d6f44c283cf3ab452d100ff93ae801908c193bb3b1ec1de9"
 ---
 
 # Limits and Pricing for Vercel Flags
@@ -36,7 +36,7 @@ A flag request is an application request that reads a source project's flag conf
 - [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag) — Learn how to configure individual feature flags in the Vercel Dashboard.
 - [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
-- [Create a segment](https://vercel.com/docs/rest-api/feature-flags/create-a-segment) — PUT /v1/projects/{projectIdOrName}/feature-flags/segments — Create a new feature flag segment.
+- [Get project flag settings](https://vercel.com/docs/rest-api/feature-flags/get-project-flag-settings) — GET /v1/projects/{projectIdOrName}/feature-flags/settings — Retrieve feature flag settings for a project.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/limits-and-pricing.graph.md](/docs/flags/vercel-flags/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->

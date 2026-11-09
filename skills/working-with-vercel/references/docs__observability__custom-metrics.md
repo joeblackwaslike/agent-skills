@@ -13,8 +13,8 @@ related:
 summary: Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/custom-metrics.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "279ad3f6b135e80997a07715c8786b1b0a9c5ff0811f625ddfc936419f7c206a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9f40e029f038f35497c2efa11640e06017279b6b52e3732cfb77db0a2279c9d5"
 ---
 
 # Emit Custom Metrics from Vercel Functions
@@ -29,6 +29,8 @@ Custom metrics let you record application-specific numeric values from your Verc
 
 - [Custom metrics are now supported in Vercel Observability](https://vercel.com/changelog/custom-metrics-are-now-supported-in-vercel-observability)
 - [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli)
+- [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests)
+- [Understand the Cost Impact of Function Invocations](https://vercel.com/kb/guide/understand-cost-impact-of-function-invocations) — Learn how to use Observability to understand function invocations and their cost impact.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Legacy Metrics](https://vercel.com/docs/pricing/legacy) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
@@ -90,7 +92,7 @@ The `metric()` function accepts the following parameters:
 
 ## Metric and attribute requirements
 
-Metric names, attribute names, and attribute values must be non-empty and shorter than 64 bytes. They can contain ASCII letters (`A-Z`, `a-z`), digits (`0-9`), hyphens (`-`), underscores (`_`), periods (`.`), and slashes (`/`). Unsupported characters are automatically replaced with an underscore (`_`). For example, `data+summary` is stored as `data_summary`.
+Metric names, attribute names, and attribute values must be non-empty and shorter than 64 bytes. They can contain ASCII letters (`A-Z`, `a-z`), digits (`0-9`), hyphens (`-`), underscores (`_`), periods (`.`), and slashes (`/`). Unsupported characters are automatically replaced with an underscore (`_`). For example, `data+summary` is stored as `data_summary`. Metric names can't start with `vercel.`. Vercel reserves this prefix and doesn't record data points for metric names that use it.
 
 For example, this data point is valid:
 
@@ -132,7 +134,7 @@ vercel metrics schema
 Query a custom metric and filter it by an attribute:
 
 ```bash filename="terminal"
-vercel metrics database.duration_ms --filter "plan:pro"
+vercel metrics database.duration_ms --query "plan:pro"
 ```
 
 ## Pricing

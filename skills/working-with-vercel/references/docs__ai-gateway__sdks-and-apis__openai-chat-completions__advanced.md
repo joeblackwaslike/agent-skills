@@ -17,8 +17,8 @@ related:
 summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e4928cdb82f6a063716a909eb510dfb455ac2b85e501a071868a420f6e0a1305"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3d2d188b079b5f8ff0fd360600b33180db60d1cfb8c3d8cc85ff924ebb998876"
 ---
 
 # OpenAI Chat Completions Configuration with AI Gateway
@@ -34,9 +34,9 @@ Control which providers serve your request, what happens when one fails, and how
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
 - [OpenAI Compatible Providers](https://ai-sdk.dev/providers/openai-compatible-providers) — Use OpenAI compatible providers with the AI SDK.
 - [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management) — Learn how to work with multiple providers and models
+- [Sort providers by cost, latency, or throughput on AI Gateway](https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway)
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [Bring Your Own Key \\(BYOK\\) to AI Gateway](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok) — Learn how to configure your own provider keys with AI Gateway.
-- [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md)
 <!-- /docsgraph:related -->
@@ -656,7 +656,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   }'
 ```
 
-> **💡 Note:** The `provider` shorthand is equivalent to setting the same fields in `providerOptions.gateway`. If both are provided for the same option, they must resolve to the same value or the request will fail. For the full details on sorting behavior, metrics, and health interactions, see [Provider Filtering, Ordering & Sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#provider-sorting).
+> **💡 Note:** The `provider` shorthand supports `sort` only. Setting `provider.sort` is equivalent to setting `providerOptions.gateway.sort`. If you set both, they must resolve to the same value or the request fails. For the full details on sorting behavior, metrics, and health interactions, see [Provider Filtering, Ordering & Sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#provider-sorting).
 
 ## Provider timeouts
 
@@ -815,7 +815,7 @@ Anthropic Claude models support prompt caching, which can significantly reduce c
 
 ### Automatic caching
 
-Use `caching: 'auto'` in `providerOptions` to let AI Gateway automatically add cache markers for providers that require them (like Anthropic). For full details, supported providers, and examples, see [Automatic Caching](/docs/ai-gateway/models-and-providers/automatic-caching).
+Use `caching: 'auto'` in `providerOptions.gateway` to let AI Gateway automatically add cache markers for providers that require them (like Anthropic). For full details, supported providers, and examples, see [Automatic Caching](/docs/ai-gateway/models-and-providers/automatic-caching).
 
 ### Manual caching
 
@@ -901,7 +901,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
 ```
 
 > **💡 Note:** **Cache control types:** The `ephemeral` cache type stores content for the
-> duration of the session. This is useful for large system prompts, documents,
+> default cache lifetime of 5 minutes. Each cache hit refreshes the lifetime. This is useful for large system prompts, documents,
 > or context that you want to reuse across multiple requests. Prompt caching
 > works with Anthropic models across all supported providers (Anthropic, Vertex
 > AI, and Bedrock). For more details, see [Anthropic's prompt caching

@@ -12,8 +12,8 @@ related:
 summary: Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/upgrade.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ac2a33a77fc698d482decca1db4ad5fd49e6c33d0a4f2a6418f6f463fbafb3bd"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "08c69c2fdf99f91d962826ab6394338e80740d6127de72b12c6618ac0930a9b7"
 ---
 
 # vercel upgrade
@@ -26,11 +26,11 @@ The `vercel upgrade` command upgrades the Vercel CLI on your machine to the late
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [vercel changelog](https://vercel.com/docs/cli/changelog) — Read recent Vercel product updates and search the changelog from your terminal using the Vercel CLI.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel doctor](https://vercel.com/docs/cli/doctor) — Learn how to check your Vercel CLI setup and fix problems with the vercel doctor CLI command.
 
 Full cross-link map for this page: [/docs/cli/upgrade.graph.md](/docs/cli/upgrade.graph.md)
 <!-- /docsgraph:related -->
@@ -67,18 +67,16 @@ vercel upgrade --dry-run
 
 *Print the command that would be executed without making any changes.*
 
-### Enable automatic CLI updates
+### Turn automatic CLI updates on or off
 
 ```bash filename="terminal"
-vercel upgrade --enable-auto
+vercel upgrade --autoupdate
 ```
 
 *Opt into automatic Vercel CLI updates for future releases.*
 
-### Disable automatic CLI updates
-
 ```bash filename="terminal"
-vercel upgrade --disable-auto
+vercel upgrade --no-autoupdate
 ```
 
 *Opt out of automatic updates.*
@@ -86,10 +84,28 @@ vercel upgrade --disable-auto
 ### Get upgrade information as JSON
 
 ```bash filename="terminal"
-vercel upgrade --format=json
+vercel upgrade --json
 ```
 
 *Emit the upgrade plan as JSON. Implies \`--dry-run\`; no upgrade is performed.*
+
+### Install a specific version
+
+```bash filename="terminal"
+vercel upgrade 59.11.7
+```
+
+*Install an exact Vercel CLI version. Use the full \`major.minor.patch\` version.*
+
+### Install the newest release that your package manager allows
+
+```bash filename="terminal"
+vercel upgrade latest
+```
+
+*Use this when your package manager's minimum release
+age blocks the newest release. Your package manager
+installs the newest release that its settings allow.*
 
 ## Unique options
 
@@ -105,32 +121,59 @@ vercel upgrade --dry-run
 
 *Show what would happen, without actually upgrading.*
 
-### Enable auto
+### Automatic updates
 
-The `--enable-auto` option turns on automatic CLI updates for future releases.
+The `--autoupdate` option turns on automatic CLI updates for future releases:
 
 ```bash filename="terminal"
-vercel upgrade --enable-auto
+vercel upgrade --autoupdate
 ```
 
 *Enable automatic updates.*
 
-### Disable auto
-
-The `--disable-auto` option turns off automatic CLI updates.
+The `--no-autoupdate` option turns them off:
 
 ```bash filename="terminal"
-vercel upgrade --disable-auto
+vercel upgrade --no-autoupdate
 ```
 
 *Disable automatic updates.*
 
-### Format
+Both options change the setting only and don't run an upgrade.
 
-The `--format` option, value `json`, emits the upgrade plan as JSON. This implies `--dry-run`, so no upgrade is performed.
+### Minimum release age
+
+npm and pnpm can hold back a package release until it reaches a minimum age. If that setting blocks the newest Vercel CLI release, `vercel upgrade` doesn't install it. It shows you two options: keep the check or skip it.
+
+To keep the check, run `vercel upgrade latest`. Your package manager installs the newest release that its settings allow.
+
+To skip the check and install the newest release, use the `--bypass-min-release-age` option:
 
 ```bash filename="terminal"
-vercel upgrade --format=json
+vercel upgrade --bypass-min-release-age
+```
+
+*Upgrade to the newest release without the package manager's minimum
+release-age check.*
+
+The CLI remembers this choice for later upgrades that you run. [Automatic updates](#automatic-updates) always follow your package manager's settings.
+
+To turn the check back on, use the `--no-bypass-min-release-age` option. It changes the setting only and doesn't run an upgrade:
+
+```bash filename="terminal"
+vercel upgrade --no-bypass-min-release-age
+```
+
+*Turn the minimum release-age check back on.*
+
+The `--bypass-min-release-age` option works only when you installed the CLI with npm or pnpm.
+
+### JSON
+
+The `--json` option emits the upgrade plan as JSON. This implies `--dry-run`, so no upgrade is performed.
+
+```bash filename="terminal"
+vercel upgrade --json
 ```
 
 *Output the upgrade plan as JSON for scripting or agent workflows.*
@@ -147,7 +190,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

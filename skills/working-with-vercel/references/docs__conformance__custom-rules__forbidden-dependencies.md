@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow one or more files from depending on one or more predefined module
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-dependencies.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "dbf380498db0324266d2b48953c6f17981adc467a3c1e4610b4402567c672370"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "8192a7bef52800057aed1ca03b26a2654ae8d6e510a8dc6ffd1bb5fe40842cf8"
 ---
 
 # forbidden-dependencies
@@ -70,7 +70,7 @@ the required properties below:
 | `categories`          | `("nextjs" \| "performance" \| "security" \| "code-health")[]` (optional) | The custom rule's categories. Default is `["code-health"]`.                                                                                                                                                                                                                                                                         |
 | `errorMessage`        | `string`                                                                  | The error message, which is shown to users when they encounter this rule.                                                                                                                                                                                                                                                           |
 | `errorLink`           | `string` (optional)                                                       | An optional link to show alongside the error message.                                                                                                                                                                                                                                                                               |
-| `description`         | `string` (optional)                                                       | The rule description, which is shown in the Vercel Compass dashboard and included in allowlist files.                                                                                                                                                                                                                               |
+| `description`         | `string` (optional)                                                       | The rule description, which is included in allowlist files.                                                                                                                                                                                                                               |
 | `severity`            | `"major" \| "minor"` (optional)                                           | The rule severity added to the allowlists and used to calculate a project's conformance score.                                                                                                                                                                                                                                      |
 | `moduleNames`         | `string[]`                                                                | An array of exact module names or glob expressions\*.<br /><br />*\*Note that paths containing square brackets need to be escaped, i.e. `[folder-name]\page.tsx` would become `\[folder-name\]\page.tsx`.*                                                                                                                       |
 | `paths`               | `string[]` (optional)                                                     | An optional array of exact paths or glob expressions, which restricts the paths that this custom rule applies to. This acts as the overridable default value for `paths`\*.<br /><br />*\*Note that paths containing square brackets need to be escaped, i.e. `[folder-name]\page.tsx` would become `\[folder-name\]\page.tsx`.* |

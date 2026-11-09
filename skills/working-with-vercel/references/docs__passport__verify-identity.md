@@ -8,13 +8,14 @@ type: how-to
 prerequisites:
   - /docs/passport
 related:
+  - /docs/passport/python-sdk-reference
   - /docs/passport/token-claims
   - /docs/passport/additional-identity-scopes
 summary: Verify a Passport token forwarded to your backend as a signed JWT.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/verify-identity.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d040f4de9f00448eb58956c24a08084c47ad7ee1e78050ec2582ea220629bb29"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "8413f3303c5bdaf7255fc4d5a80507d9c07474dc32abce7b3b4b58786f327005"
 ---
 
 # Verify forwarded Passport tokens
@@ -81,7 +82,9 @@ If the receiving backend runs in another Vercel project, keep validating the iss
 
 ## Verify tokens outside JavaScript
 
-For non-JavaScript services, verify the Passport token as a signed JWT. The service should check:
+For Python services, use [`verify_identity()` from `vercel-passport`](/docs/passport/python-sdk-reference#verify_identity) to verify the token and source deployment claims.
+
+For other languages, verify the Passport token as a signed JWT. The service should check:
 
 - The signature with the Passport issuer's JSON Web Key Set (JWKS).
 - The `iss` claim, such as `https://passport.vercel.com/your_team_slug_here`.

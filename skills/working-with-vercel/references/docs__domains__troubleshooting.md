@@ -16,8 +16,8 @@ related:
 summary: Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/troubleshooting.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0d39371b55551e844010cfdd3e604899de75c2aa6670dba48dccae863425375b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3b22238fa5fde3f6cf9a90015e9dbf1408ad8261ca485042a25b760df3cdc000"
 ---
 
 # Troubleshooting domains
@@ -30,16 +30,13 @@ There are many common reasons why your domain configuration may not be working. 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
-- [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
-- [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers) — Learn about nameservers and the benefits Vercel nameservers provide.
-- [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
+- [Claiming Domain Ownership](https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership) — Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 
 Full cross-link map for this page: [/docs/domains/troubleshooting.graph.md](/docs/domains/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -73,7 +70,7 @@ If you prefer a non-command-line interface, you can use a free online tool, such
 DNS changes can take a while to propagate across the globe, depending on the previous DNS record TTL length. This may mean that certain regions can access your site as intended, while others wait until the DNS changes have reached them. Please allow some time for these changes to take effect.
 Changes to standard DNS records (A, CNAME, TXT, etc.) typically propagate quicker, but changing a domain’s nameservers can take up to **24–48 hours** to fully propagate across the internet. During this time, different users may see different versions of your site depending on their local DNS caches. You can monitor this propagation using tools like [DNSChecker](https://dnschecker.org) or the [dig](/docs/domains/managing-dns-records#verifying-dns-records) command in your terminal.
 
-For more information on [propagation times](/docs/domains/working-with-dns#dns-propagation) for nameservers and other DNS records, see "[How long will it take for my Vercel DNS records to update?](/kb/guide/how-long-to-update-dns-records)"
+For more information on propagation times for nameservers and other DNS records, see [DNS propagation](/docs/domains/working-with-dns#dns-propagation).
 
 > **💡 Note:** Before changing your DNS records to point to Vercel, we recommend updating
 > your existing DNS record to "lower" the TTL (for example 60 seconds) and
@@ -95,7 +92,7 @@ When working with DNS records, you may make minor errors in the syntax. These er
 
 When you add a new DNS record to a domain, the **Name** field should use the prefix or location of the record. For `www.example.com`, the name argument would be `www`.
 
-If you have already added a record with this, [remove the record](/docs/domains/managing-dns-records#removing-dns-records) from the **DNS Records** section of the **Domains** tab, and add the record again **without** the domain as the **Name** argument.
+If you enter the full hostname, for example `www.example.com`, Vercel removes the domain from the name and saves the record with the name `www`.
 
 #### Absolute CNAME records
 
@@ -168,6 +165,29 @@ If you transfer before this time, the transfer will fail. Besides this restricti
 When you add an [apex domain](/docs/domains/working-with-domains#subdomains-wildcard-domains-and-apex-domains) (e.g. `example.com`) to your project, Vercel provides you with details, including an IP address, to add as an `A` record in your DNS configuration, as opposed to a `CNAME` record.
 
 The main reason for that is the DNS [RFC1034](https://www.ietf.org/rfc/rfc1034.txt) (section 3.6.2) states that `If a CNAME RR is present at a node, no other data should be present`. Because an apex domain requires `NS` records and usually some other records, such as `MX` (for a mail service), adding a `CNAME` at the zone apex would violate this rule and likely cause an issue on your domain. Therefore, we encourage you to use an `A` record at your zone apex instead.
+
+#### Records for an apex domain and `www`
+
+Use the `A` record value shown in your project's **Settings** > **Domains**. Vercel assigns anycast IP addresses per project, so the value can differ between projects. Many projects show `76.76.21.21`, and newer projects can show an address such as `216.198.79.1`. A different Vercel address, such as one copied from another project or an older guide, can leave the domain with a **DNS Change Recommended**, **DNS Change Required**, or **Invalid Configuration** status.
+
+To serve both `example.com` and `www.example.com`, add both domains to your project and create these records at your DNS provider:
+
+| Type | Name | Value |
+| --- | --- | --- |
+| `A` | `@`, or blank if your provider doesn't accept `@` | The `A` record value shown for the apex domain in **Settings** > **Domains** |
+| `CNAME` | `www` | The `CNAME` target shown for `www` in **Settings** > **Domains**, such as `d1d4fc829fe7bc7c.vercel-dns-017.com` |
+
+Remove any other `A` or `AAAA` records for the apex domain before you add the new record. Then [redirect](/docs/domains/working-with-domains/deploying-and-redirecting#redirecting-domains) one domain to the other. Making `www` the primary domain lets it use a `CNAME` record, which gives Vercel more flexibility to route traffic than a fixed `A` record.
+
+After the records propagate, check them from your terminal:
+
+```bash filename="terminal"
+dig A example.com +short
+dig CNAME www.example.com +short
+curl -IL https://example.com
+```
+
+The `dig` commands should return the values shown in **Settings** > **Domains**. The `curl` command should complete over HTTPS and end at your primary domain. If the `A` record is correct but you see `ERR_TOO_MANY_REDIRECTS` and the domain is proxied through Cloudflare, Cloudflare's **Flexible** SSL/TLS mode is a common cause. See [Cloudflare redirect loops](/docs/security/reverse-proxy#cloudflare-redirect-loops).
 
 ### Domain IP address and geographic regions
 

@@ -3,7 +3,7 @@ title: request-secrets-rotation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/request-secrets-rotation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/request-secrets-rotation"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about request-secrets-rotation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/request-secrets-rotation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3f0dc77c614aef2f3c07a7f4c8f0f388950cbd511e6d21d839f7e44d3ab7c311"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "48f369d725863b3cb301b1af79cc68cd3d6053703c27df0891dd6e4251a81464"
 ---
 
 # Request Secrets Rotation
@@ -202,7 +202,10 @@ System Auth OIDC token claims schema:
 ```json
 {
   "reason": "string" // Optional reason for the secrets rotation request.,
-  "delayOldSecretsExpirationHours": "number" // Delay in hours before old secrets expire after rotation. The value can be fractional.
+  "delayOldSecretsExpirationHours": "number" // Delay in hours before old secrets expire after rotation. The value can be fractional.,
+  "credentialTypes": [
+"string"
+  ]
 }
 ```
 

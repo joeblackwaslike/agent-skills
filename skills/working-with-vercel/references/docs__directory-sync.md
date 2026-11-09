@@ -14,8 +14,8 @@ related:
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "adb9a3b2e27397a2055b1e87b371fb038d9ae4abaae41f0b2b429265c361ecb8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a039f18933048704cdbe6a394100251dc70ce2035b828c4c5336ccbbd6aaa454"
 ---
 
 # Directory Sync (SCIM)
@@ -90,7 +90,7 @@ If access is lost due to removal of team owners, use the following group names t
 | `vercel-role-member`      | [Member](/docs/rbac/access-roles#member-role)                                                                                |
 | `vercel-role-developer`   | [Developer](/docs/rbac/access-roles#developer-role)                                                                          |
 | `vercel-role-billing`     | [Billing](/docs/rbac/access-roles#billing-role)                                                                              |
-| `vercel-role-viewer`      | [Viewer Pro](/docs/rbac/access-roles#pro-viewer-role) or [Viewer Enterprise](/docs/rbac/access-roles#enterprise-viewer-role) |
+| `vercel-role-viewer`      | [Viewer Enterprise](/docs/rbac/access-roles#enterprise-viewer-role) |
 | `vercel-role-contributor` | [Contributor](/docs/rbac/access-roles#contributor-role)                                                                      |
 | `vercel-role-security`    | [Security](/docs/rbac/access-roles#security-role)                                                                            |
 

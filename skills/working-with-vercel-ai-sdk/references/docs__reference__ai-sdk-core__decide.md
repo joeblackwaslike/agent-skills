@@ -4,8 +4,8 @@ description: Decide answers to typed questions against shared state with a decis
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/decide"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/decide.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "a6898e943157a9515611768260cdfd978cc82625b511ded91ef447c5d167622f"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "7927f4b2d8ac785f765b0ba4eb69852945cc99805142d9697d3b822b5f9b18d4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -48,15 +48,15 @@ described below.
 Instructions and criterion descriptions accept strings, JSON objects, or JSON
 arrays.
 
-| Type      | Instructions            | Criteria                                                                                                            |
-| --------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `choice`  | Optional; may be `null` | Required nonempty map of option names to descriptions                                                               |
-| `score`   | Optional; may be `null` | Required nonempty array of levels, indexed from zero                                                                |
-| `boolean` | Optional; may be `null` | Optional object with `true` and/or `false` descriptions; at least one must be non-null when instructions are absent |
-| `box`     | Required and non-null   | None                                                                                                                |
+| Type      | Instructions            | Criteria                                                                                                                       |
+| --------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `choice`  | Optional; may be `null` | Required nonempty map of option names to descriptions                                                                          |
+| `score`   | Optional; may be `null` | Required nonempty array of levels, indexed from zero                                                                           |
+| `boolean` | Optional; may be `null` | Optional object or `null`, with `true` and/or `false` descriptions; at least one must be non-null when instructions are absent |
+| `box`     | Optional; may be `null` | None                                                                                                                           |
 
 Criterion descriptions may be `null` in the shared type, but providers can impose
-stricter limits. Perplexity requires non-null Score levels and accepts 1–10 levels;
+stricter limits. TypeSafe and Perplexity require non-null Score levels and accept 1–10 levels;
 a single level yields score `0` and probability `1`. Other providers may require
 at least two levels. Optional instructions also remain subject to the provider's
 API contract.

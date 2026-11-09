@@ -17,8 +17,8 @@ related:
 summary: Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8a7ee7c751a08c9a2eaa487c377ddeb396f670d2123faf88684f4d0e93546d4f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "78f8af8fc11880ac8941ce0b57c30e570bd9cccbb82c2932e0c3c2ad41c7f492"
 ---
 
 # SvelteKit on Vercel
@@ -35,8 +35,8 @@ SvelteKit is a frontend framework that enables you to build Svelte applications 
 - [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
 - [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel)
 - [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5)
-- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
@@ -326,26 +326,26 @@ SvelteKit allows you to import environment variables, but separates them into di
 
 [System Environment Variables](/docs/environment-variables/system-environment-variables) are private and you should never expose them to the frontend client. This means you can only import them from `'$env/static/private'` or `'$env/dynamic/private'`.
 
-The example below exposes `VERCEL_COMMIT_REF`, a variable that exposes the name of the branch associated with your project's deployment, to [a `load` function](https://kit.svelte.dev/docs/load) for a Svelte layout:
+The example below exposes `VERCEL_GIT_COMMIT_REF`, a variable that exposes the name of the branch associated with your project's deployment, to [a `load` function](https://kit.svelte.dev/docs/load) for a Svelte layout:
 
 ```js filename="+layout.server.js" framework=all
-import { VERCEL_COMMIT_REF } from '$env/static/private';
+import { VERCEL_GIT_COMMIT_REF } from '$env/static/private';
 
 /** @type {import('./$types').LayoutServerLoad} */
 export function load() {
   return {
-    deploymentGitBranch: VERCEL_COMMIT_REF,
+    deploymentGitBranch: VERCEL_GIT_COMMIT_REF,
   };
 }
 ```
 
 ```ts filename="+layout.server.ts" framework=all
 import type { LayoutServerLoad } from './$types';
-import { VERCEL_COMMIT_REF } from '$env/static/private';
+import { VERCEL_GIT_COMMIT_REF } from '$env/static/private';
 
 export const load: LayoutServerLoad = () => {
   return {
-    deploymentGitBranch: VERCEL_COMMIT_REF,
+    deploymentGitBranch: VERCEL_GIT_COMMIT_REF,
   };
 };
 ```
@@ -475,7 +475,7 @@ To use image optimization with SvelteKit, you have to construct your own `srcset
 ```js filename="src/lib/image.js" framework=all
 import { dev } from '$app/environment';
 
-export function optimize(src, widths = [640, 960, 1280], quality = 90) {
+export function optimize(src, widths = [640, 828, 1200], quality = 90) {
   if (dev) return src;
 
   return widths
@@ -493,7 +493,7 @@ export function optimize(src, widths = [640, 960, 1280], quality = 90) {
 ```ts filename="src/lib/image.ts" framework=all
 import { dev } from '$app/environment';
 
-export function optimize(src: string, widths = [640, 960, 1280], quality = 90) {
+export function optimize(src: string, widths = [640, 828, 1200], quality = 90) {
   if (dev) return src;
 
   return widths
@@ -685,7 +685,7 @@ Users outside your Vercel team cannot toggle Draft Mode.
 
 ## Routing Middleware
 
-Routing Middleware is useful for modifying responses before they're sent to a user. **We recommend [using SvelteKit's server hooks](https://kit.svelte.dev/docs/hooks) to modify responses**. Due to SvelteKit's client-side rendering, you cannot use Vercel's Routing Middleware with SvelteKit.
+Routing Middleware is useful for modifying responses before they're sent to a user. **We recommend [using SvelteKit's server hooks](https://kit.svelte.dev/docs/hooks) to modify responses**. You can also use [Routing Middleware](/docs/routing-middleware) with SvelteKit, but SvelteKit does not support URL rewrites from Routing Middleware.
 
 ## Rewrites
 

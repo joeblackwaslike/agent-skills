@@ -12,8 +12,8 @@ related:
 summary: This reference provides information on how the @vercel/og package works on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/og-image-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6034486b3c4a60e5b07ce794976b35b9212afdbc0063f22bb098067fb3371ea2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f36559a72a26118b38158f588d34f56482fd49b1f30899fa4bd63381502d203a"
 ---
 
 # @vercel/og Reference
@@ -29,12 +29,13 @@ The package exposes an `ImageResponse` constructor, with the following parameter
 - [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
 - [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
 - [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
+- [Images on the web](https://vercel.com/blog/images-on-the-web)
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Inspecting your Open Graph metadata](https://vercel.com/docs/deployments/og-preview) — Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
 - [Image Optimization with Vercel](https://vercel.com/docs/image-optimization) — Transform and optimize images to improve page load performance.
-- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
-- [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
+- [Inspecting your Open Graph metadata](https://vercel.com/docs/deployments/og-preview) — Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
 
 Full cross-link map for this page: [/docs/og-image-generation/og-image-api.graph.md](/docs/og-image-generation/og-image-api.graph.md)
 <!-- /docsgraph:related -->
@@ -47,12 +48,12 @@ new ImageResponse(
   options: {
     width?: number = 1200
     height?: number = 630
-    emoji?: 'twemoji' | 'blobmoji' | 'noto' | 'openmoji' = 'twemoji',
+    emoji?: 'twemoji' | 'blobmoji' | 'noto' | 'openmoji' | 'fluent' | 'fluentFlat' = 'twemoji',
     fonts?: {
       name: string,
       data: ArrayBuffer,
-      weight: number,
-      style: 'normal' | 'italic'
+      weight?: number,
+      style?: 'normal' | 'italic'
     }[]
     debug?: boolean = false
 
@@ -77,7 +78,7 @@ new ImageResponse(
 | ------------ | ------------------------------------------------ | --------------------- | -------------------------------------- |
 | `width`      | `number`                                         | `1200`                | The width of the image.                |
 | `height`     | `number`                                         | `630`                 | The height of the image.               |
-| `emoji`      | `twemoji` `blobmoji` `noto` `openmoji` `twemoji` | The emoji set to use. |
+| `emoji`      | `twemoji` `blobmoji` `noto` `openmoji` `fluent` `fluentFlat` | `twemoji`             | The emoji set to use.                  |
 | `debug`      | `boolean`                                        | `false`               | Debug mode flag.                       |
 | `status`     | `number`                                         | `200`                 | The HTTP status code for the response. |
 | `statusText` | `string`                                         | —                     | The HTTP status text for the response. |
@@ -105,7 +106,7 @@ By default, the following headers will be included by `@vercel/og`:
 
 Refer to [Satori's documentation](https://github.com/vercel/satori#documentation) for a list of supported HTML and CSS features.
 
-By default, `@vercel/og` only has the Noto Sans font included. If you need to use other fonts, you can pass them in the `fonts` option. View the [custom font example](/kb/guide/using-custom-font) for more details.
+By default, `@vercel/og` only has the Geist font included. Earlier versions of `@vercel/og` included Noto Sans instead. If you need to use other fonts, you can pass them in the `fonts` option. View the [custom font example](/kb/guide/using-custom-font) for more details.
 
 ## Acknowledgements
 

@@ -17,8 +17,8 @@ related:
 summary: Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fd58b203ef8df8dadc0e32feb5d489eceeb7dd2aa2121510a28d9e2b4d9d5d2f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fcfdbc6a64d22dc9db438bb36418c3ee93b38d9a1de20f23f1522da1b69e9bb6"
 ---
 
 # AI Gateway Provider Timeouts
@@ -34,8 +34,8 @@ You can set per-provider timeouts to trigger fast failover when a provider is sl
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Customize timeouts for faster automatic failover on Vercel AI Gateway](https://vercel.com/changelog/provider-level-custom-timeouts-for-faster-fail-over-on-ai-gateway)
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
-- [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 - [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
+- [OpenAI Chat Completions Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) — Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 - [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 
@@ -426,7 +426,6 @@ When a provider times out, the attempt metadata includes `providerTimeout` and `
 ```json
 "modelAttempts": [
   {
-    "modelId": "anthropic:claude-sonnet-5",
     "canonicalSlug": "anthropic/claude-sonnet-5",
     "success": true,
     "providerAttemptCount": 2,

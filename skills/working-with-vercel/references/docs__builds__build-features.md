@@ -16,8 +16,8 @@ related:
 summary: "Learn how to customize your deployments using Vercel's build features."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-features.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3698c3f02c27704f4abf2a5608a554200cb5402a7f6caebcf1d02a2258bd5672"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d920f50b14865d7535e8ec1b85a5c033b20d19fd1968048098d1c386e14a7477"
 ---
 
 # Build Features for Customizing Deployments
@@ -31,11 +31,13 @@ Vercel provides the following features to customize your deployments:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
+- [How do I use the "Ignored Build Step" field on Vercel?](https://vercel.com/kb/guide/how-do-i-use-the-ignored-build-step-field-on-vercel) — Instructions on how to use the "Ignored Build Step" field to programmatically prevent a new deployment from being built.
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 
 Full cross-link map for this page: [/docs/builds/build-features.graph.md](/docs/builds/build-features.graph.md)
 <!-- /docsgraph:related -->
@@ -77,6 +79,7 @@ Vercel ignores certain files and folders by default and prevents them from being
 .env.*.local
 .venv
 .yarn/cache
+.pnp*
 npm-debug.log
 config.gypi
 node_modules
@@ -88,9 +91,11 @@ CVS
 *A complete list of files and folders ignored by Vercel during the Deployment
 process.*
 
+If the directory that you deploy has a `Cargo.toml` file at its root, Vercel CLI also ignores the `target` directory at that root. To upload it, add `!/target` to your `.vercelignore` file.
+
 The `.vercel/output` directory is **not** ignored when [`vercel deploy --prebuilt`](/docs/cli/deploying-from-cli#deploying-from-local-build-prebuilt) is used to deploy a prebuilt Vercel Project, according to the [Build Output API](/docs/build-output-api) specification.
 
-During a prebuilt deploy, Vercel excludes a required function file from the upload if it also matches a rule in your `.vercelignore` (or `.nowignore`).
+During a prebuilt deploy, Vercel excludes a required function file from the upload if it also matches a rule in your `.vercelignore` (or `.nowignore`). The exceptions are files that match `.pnp*` and files in the `node_modules`, `.next`, `.yarn/cache`, `.venv`, `venv`, `__pycache__`, and root `target` directories. Vercel uploads these files when a prebuilt function needs them, even if your ignore file lists them.
 
 > **💡 Note:** You do not need to add any of the above files and folders to your
 > `.vercelignore` file because it is done automatically

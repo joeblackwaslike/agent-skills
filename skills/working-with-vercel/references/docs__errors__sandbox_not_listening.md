@@ -12,11 +12,11 @@ related:
 summary: The Sandbox is not listening on the requested port. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/sandbox_not_listening.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4497fca83938f99198066f68d643674297d00c7bd5ca285650148e609cd45b8b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "64ee31c39c15db3bcd47e2ee0172e0b53a513cef01dfd9ab498f3b252d7deeea"
 ---
 
-# SANBDOX_NOT_LISTENING
+# SANDBOX_NOT_LISTENING
 
 The `SANDBOX_NOT_LISTENING` error occurs when you are trying to access a Sandbox that is not listening on the requested port. This could happen if the port is malconfigured, or the process running on that port has exited.
 

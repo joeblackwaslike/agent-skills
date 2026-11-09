@@ -10,16 +10,18 @@ prerequisites:
 related:
   - /docs/ci
   - /docs/cli/global-options
-summary: List, inspect, search logs, and rerun Vercel CI runs from the command line.
+  - /docs/cli
+  - /docs/cli/login
+summary: Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/ci.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a880eb4f0afd3f109471a3c3877dcdadccc0b93cb99a97892432bcb291bff7df"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5b63421cd6dccc69e473773b747ddaecfdadd58bda60451f7a1ece5fe5100c3c"
 ---
 
 # vercel ci
 
-The `vercel ci` command lets you enable repositories and inspect or rerun [Vercel CI](/docs/ci) runs. Use Vercel CLI 64.3.1 or later. Run commands from a GitHub repository with an `origin` remote, or select another remote with `vercel ci enable --remote <NAME>` when enabling CI.
+The `vercel ci` command lets you enable or disable repositories and inspect or rerun [Vercel CI](/docs/ci) runs. Use Vercel CLI 64.3.1 or later. Run commands from a GitHub repository with an `origin` remote, or select another remote with `--remote <NAME>` when enabling or disabling CI.
 
 Select the team that owns the CI run, or pass [`--scope <team>`](/docs/cli/global-options#scope).
 
@@ -55,6 +57,26 @@ With one Git remote, the CLI selects it automatically. With multiple remotes, it
 | `--remote <NAME>` | Select an existing Git remote without the picker. Required with multiple remotes in non-interactive mode. |
 
 Running the command again for an enabled repository leaves its settings unchanged.
+
+### Disable a repository
+
+`vercel ci disable` disables Vercel CI for the current GitHub repository. [Update Vercel CLI](/docs/cli#updating-vercel-cli) before using this subcommand. Sign in with [`vercel login`](/docs/cli/login), or pass a [`--token`](/docs/cli/global-options#token). The repository must connect to a project on the selected team.
+
+```bash filename="terminal"
+vercel ci disable
+vercel ci disable --remote upstream --scope your-team --non-interactive
+```
+
+*Disabling Vercel CI for the current repository or a specific Git remote.*
+
+With one Git remote, the CLI selects it automatically, even if the remote isn't named `origin`. With multiple remotes, it prompts you to select one. Pass `--remote` when using JSON output or non-interactive mode with multiple remotes.
+
+| Option | Description |
+| --- | --- |
+| `--remote <NAME>` | Select an existing Git remote. |
+| `--json` | Write the repository settings and an `outcome` of `disabled` or `unchanged` to standard output. Also accepts `--format json`. |
+
+Non-interactive mode returns JSON automatically. Running the command again for a disabled repository leaves its settings unchanged.
 
 ### List runs
 
@@ -162,7 +184,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

@@ -16,8 +16,8 @@ related:
 summary: You may encounter a variety of errors when you interact with the Vercel platform. This section focuses on errors that can happen when you interact...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2d920b6f35488f2aa3a7e9a9118a83cd571bd5b5dd927171dc7db2df881d0bcb"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "62f83e833bcf1945608b3f968a6f8034fa76f3f39a170983f98ce1d687f4b37c"
 ---
 
 # Error List
@@ -54,7 +54,7 @@ Once you have defined the `build` [script](https://docs.npmjs.com/misc/scripts),
 
 ## Maximum team member requests
 
-The maximum amount of open requests to join a team is 10. To allow for more requests, the existing requests need to be approved or declined by a [Team Owner](/docs/rbac/access-roles#owner-role).
+The maximum amount of open requests to join a team is 100. To allow for more requests, the existing requests need to be approved or declined by a [Team Owner](/docs/rbac/access-roles#owner-role).
 
 This ensures the list always remains manageable and protected against spam.
 
@@ -66,7 +66,7 @@ This ensures no team invites are accidentally accepted.
 
 ## Request access with the required Git account
 
-When a deployment fails with the message "Team access required to deploy.", the commit author either does not have a Vercel account, or the team has enabled **Manual Approval**.
+When a deployment fails with the message `Git author <username> must have access to the project on Vercel to create deployments.`, the commit author either does not have a Vercel account, or the team has enabled **Manual Approval**.
 
 If the committer has a Vercel account and manual approval is enabled, a [team Owner](/docs/rbac/access-roles#owner-role) must approve their membership in [team settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fmembers\&title=Collaboration+Settings).
 
@@ -105,8 +105,12 @@ For example, negative lookaheads must be wrapped in a group.
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "source": "/feedback/(?!general)",
-  "destination": "/api/feedback/general"
+  "rewrites": [
+    {
+      "source": "/feedback/(?!general)",
+      "destination": "/api/feedback/general"
+    }
+  ]
 }
 ```
 
@@ -115,8 +119,12 @@ For example, negative lookaheads must be wrapped in a group.
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "source": "/feedback/((?!general).*)",
-  "destination": "/api/feedback/general"
+  "rewrites": [
+    {
+      "source": "/feedback/((?!general).*)",
+      "destination": "/api/feedback/general"
+    }
+  ]
 }
 ```
 
@@ -133,8 +141,12 @@ A named segment parameter defined in the `destination` property must also be def
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "source": "/feedback/:type",
-  "destination": "/api/feedback/:id"
+  "rewrites": [
+    {
+      "source": "/feedback/:type",
+      "destination": "/api/feedback/:id"
+    }
+  ]
 }
 ```
 
@@ -143,8 +155,12 @@ A named segment parameter defined in the `destination` property must also be def
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "source": "/feedback/:id",
-  "destination": "/api/feedback/:id"
+  "rewrites": [
+    {
+      "source": "/feedback/:id",
+      "destination": "/api/feedback/:id"
+    }
+  ]
 }
 ```
 
@@ -162,14 +178,15 @@ Double-check that the name and version of the Builder you are requesting is corr
 
 ## Conflicting configuration files
 
-For backward compatibility purposes, there are two naming conventions for configuration files used by Vercel CLI (for example `vercel.json` and `now.json`). Both naming conventions are supported, however only *one* may be defined at a time. Vercel CLI will output an error message if both naming conventions are used at the same time.
+For backward compatibility purposes, there are two naming conventions for configuration files used by Vercel CLI (for example `.vercelignore` and `.nowignore`). Both naming conventions are supported, however only *one* may be defined at a time. Vercel CLI will output an error message if both naming conventions are used at the same time.
 
 These conflicting configuration errors occur if:
 
-- Both `vercel.json` and `now.json` exist in your project.<br />**Solution:** Delete the `now.json` file
 - Both `.vercel` and `.now` directories exist in your project.<br />**Solution:** Delete the `.now` directory
 - Both `.vercelignore` and `.nowignore` files exist in your project.<br />**Solution:** Delete the `.nowignore` file
 - Environment Variables that begin with `VERCEL_` have a conflicting Environment Variable that begins with `NOW_`.<br />**Solution:** Only define the `VERCEL_` prefixed Environment Variable
+
+Vercel CLI also outputs an error message if a `now.json` file exists in your project, because it no longer supports `now.json`. To fix this, rename `now.json` to `vercel.json`. If a `vercel.json` file already exists, delete `now.json` instead.
 
 ## Conflicting functions and builds configuration
 
@@ -189,9 +206,9 @@ When using Next.js, only `memory` and `maxDuration` can be configured within the
 
 ## Deploying Vercel functions to multiple regions
 
-It's possible to deploy Vercel functions to multiple regions. This functionality is only available to [Enterprise teams](/docs/plans/enterprise).
+It's possible to deploy Vercel functions to multiple regions. This functionality is available on the [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) plans. The number of regions that you can deploy to [depends on your plan](/docs/functions/configuring-functions/region#limits).
 
-On the [Pro plan](/docs/plans/pro-plan), the limitation has existed since the [launch](/blog/simpler-pricing) of the current pricing model but was applied on **July 10, 2020**. For Projects created on or after the date, it's no longer possible to deploy to multiple regions.
+On the [Pro plan](/docs/plans/pro-plan), the region limit applies to Projects created on or after **July 10, 2020**.
 
 To select the region closest to you, read our [guide](/docs/functions/configuring-functions/region) on choosing deployment regions for Vercel functions.
 
@@ -205,6 +222,8 @@ If you are using Next.js, Vercel functions source files can be created in the fo
 - `src/pages/api` directory
 - `pages` directory when the module exports [getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
 - `src/pages` directory when the module exports [getServerSideProps](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props)
+- `app` directory
+- `src/app` directory
 
 Additionally, if you'd like to use a Vercel Function that isn't written with Node.js, and in combination with Next.js, you can place it in the `api` directory (provided by the platform), since `pages/api` (provided by Next.js) only supports JavaScript.
 
@@ -272,7 +291,7 @@ vercel
 
 ## Project name validation
 
-Project names can only consist of up to one hundred alphanumeric lowercase characters. Hyphens can be used in between words in the name, but never at the start or end.
+Project names can be up to 100 characters long and must be lowercase. They can include letters, digits, periods (`.`), underscores (`_`), and hyphens (`-`), but they cannot contain the sequence `---`.
 
 ## Repository connection limitation
 
@@ -437,7 +456,7 @@ To prevent this error, consider the following options:
 
 This error occurs when attempting to create a deployment where at least one of its environment variables contains an outdated Global Config connection string. A connection string can be outdated if either the Global Config store itself was deleted or if the token used in the connection string is invalid or has been deleted.
 
-To resolve this error, delete or update the environment variable that contains the connection string. In most cases, the environment variable is named `EDGE_CONFIG`.
+To resolve this error, delete or update the environment variable that contains the connection string. In most cases, the environment variable is named `GLOBAL_CONFIG` or `EDGE_CONFIG`.
 
 ## Globally installed `@vercel/speed-insights` or `@vercel/analytics` packages
 
@@ -448,6 +467,8 @@ To fix this error, add the packages to your `package.json` file as a dependency.
 ## Oversized Incremental Static Regeneration page
 
 [Incremental Static Regeneration](https://vercel.com/docs/incremental-static-regeneration) (ISR) responses that are greater than 20 MB result in pages not rendering in production with a [`FALLBACK_BODY_TOO_LARGE`](/docs/errors/FALLBACK_BODY_TOO_LARGE) error. This affects all Next.js build time pre-rendering, and other frameworks that use [Prerender Functions](/docs/build-output-api/v3/primitives#prerender-functions).
+
+To prevent this, the build fails by default when a pre-rendered response is greater than 20 MB. To fix the build, reduce the size of the response and redeploy.
 
 
 ---

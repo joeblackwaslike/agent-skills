@@ -4,8 +4,8 @@ description: Learn how to use Google models through AI Gateway or the direct Goo
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "2256e54f4ad1c57a108c3c3ac04ba74052fa4f7a71fba683de594f726af18d3f"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "6a51d431d8af1581cafca4f1d768ff6c5de6dab8e6473a298a05913f1e3a9512"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -1352,6 +1352,8 @@ When the serialized batch creation body is under 20 MB, the provider sends the r
 
 ## Realtime Models
 
+For a trusted [server-owned connection](/docs/ai-sdk-core/realtime#server-owned-connections), `getServerWebSocketConfig()` uses the unconstrained Gemini Live endpoint with resolved API-key headers. Use `createServerEventParser()` once per socket. Completion-frame usage is attached to `response-done`; independently delivered usage uses `custom` events with `rawType: 'usageMetadata'` and typed `usage`, without inferring a response association. Gross totals never substitute for missing modality counts.
+
 Realtime is an experimental feature.
 
 You can create models that call the [Gemini Live API](https://ai.google.dev/gemini-api/docs/live)
@@ -1583,6 +1585,14 @@ await generateText({
 ```
 
 The following optional provider options are available:
+
+- **labels** *Record\<string, string>*
+
+  User-defined metadata sent in the top-level `labels` field of the Interactions
+  request. For example, set `{ safety_identifier: 'opaque_user_123' }` to attach
+  an opaque end-user identifier. Other labels are preserved unchanged.
+  Vertex AI Interactions models also read labels from `providerOptions.google`,
+  not `providerOptions.googleVertex` or `providerOptions.vertex`.
 
 - **previousInteractionId** *string*
 
@@ -2497,6 +2507,11 @@ the provider passes those bytes through unchanged. Older models return raw PCM,
 which the provider wraps in a WAV container. Write `result.audio.uint8Array`
 directly to disk without adding another WAV header.
 
+Set `language` to a supported BCP-47 language code, such as `en-US` or `de-DE`.
+The provider forwards explicit codes unchanged as `speechConfig.languageCode`
+for both single- and multi-speaker requests. Omit `language` or set it to `'auto'`
+to let Gemini detect the language from the input text.
+
 Gemini 3.8 supports the following `outputFormat` values:
 
 | Format | Values                 | Result                       |
@@ -2596,9 +2611,8 @@ Older models continue to use labelled transcripts, such as
 `text: 'Joe: How are you? Jane: Doing great, thanks!'`, with
 `multiSpeakerVoiceConfig` and without `turns`.
 
-Gemini TTS models do not support the `speed` or `language` options; passing
-them adds a warning to `result.warnings`. Language is detected automatically
-from the input text.
+Gemini TTS models do not support the `speed` option; passing it adds a warning
+to `result.warnings`.
 
 ### Model Capabilities
 

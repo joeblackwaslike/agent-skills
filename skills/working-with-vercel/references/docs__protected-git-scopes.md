@@ -12,8 +12,8 @@ related:
 summary: Information to stop developers from deploying their repositories to a personal Vercel account by using Protected Git Scopes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/protected-git-scopes.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9ab8ac6f6d7f46d862465d13ebe42dece72d4add2a856b1681441ff73db3bcc9"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "227806036853167e4f75ce45f4fd16566f96d46f5f2f09aae9a55869c8bb8235"
 ---
 
 # Restricting Git Connections to a single Vercel team
@@ -32,11 +32,12 @@ Teams often need control over who can deploy their repositories to which teams o
 
 - [Restrict repository deployments to specific teams](https://vercel.com/changelog/restrict-repository-deployments-to-specific-teams)
 - [Multiple Git namespaces per Personal Account and Team](https://vercel.com/changelog/multiple-git-namespaces-per-personal-account-and-team)
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Git Fork Protection can now be disabled](https://vercel.com/changelog/git-fork-protection-can-now-be-disabled)
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/protected-git-scopes.graph.md](/docs/protected-git-scopes.graph.md)
 <!-- /docsgraph:related -->
@@ -60,7 +61,7 @@ To add a Protected Git Scopes:
 
 ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/protected-git-scopes-light.png)
 
-3. Select **Add** to add a new Protected Git Scope
+3. Select **Add Scope** to add a new Protected Git Scope
 4. In the modal, select the Git provider you wish to add:
 
    ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/protected-git-scopes-modal-1-light.png)

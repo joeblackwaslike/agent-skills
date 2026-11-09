@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel routes, secures, and serves requests from your users to your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals/infrastructure.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "50ea4594fd6dfc8498f0a107b041f924d9637518b094dac4c9bffc82c87dd3da"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b7a685b99141053d41133b180eec5f58829b8bf3f46e97faa5ea5e9b77823f5b"
 ---
 
 # How requests flow through Vercel
@@ -30,14 +30,13 @@ When you deploy to Vercel, your code runs on a global network of servers. This n
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
 - [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
-- [The user experience of the Frontend Cloud](https://vercel.com/blog/the-user-experience-of-the-frontend-cloud)
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
-- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [The user experience of the Frontend Cloud](https://vercel.com/blog/the-user-experience-of-the-frontend-cloud)
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
 Full cross-link map for this page: [/docs/fundamentals/infrastructure.graph.md](/docs/fundamentals/infrastructure.graph.md)
 <!-- /docsgraph:related -->
@@ -112,7 +111,7 @@ Most applications serve a mix of static and dynamic content. For static assets, 
 
 | Cache Status        | What Happens                                                                        |
 | ------------------- | ----------------------------------------------------------------------------------- |
-| **Hit**             | Content returns immediately to the user from the PoP closest to them                |
+| **Hit**             | Content returns immediately to the user from the Vercel region closest to them      |
 | **Miss**            | Content generates in real time and populates the cache for future requests          |
 | **Stale hit (ISR)** | Stale content serves instantly while a background process regenerates fresh content |
 

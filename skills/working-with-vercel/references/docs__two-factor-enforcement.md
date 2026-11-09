@@ -1,25 +1,25 @@
 ---
-title: Two-factor enforcement
+title: Two-factor Enforcement
 product: vercel
 url: /docs/two-factor-enforcement
 canonical_url: "https://vercel.com/docs/two-factor-enforcement"
 last_updated: 2026-08-28
-type: reference
+type: how-to
 prerequisites:
   []
 related:
   - /docs/two-factor-authentication
   - /docs/rbac/managing-team-members
-summary: Learn how to enforce two-factor authentication (2FA) for your Vercel team members to enhance security.
+summary: Require two-factor authentication for your team and review the impact on members and automation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/two-factor-enforcement.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7dc51e75921528cc215a5dbeee19e82756a9cdbb4a3044bfe129bb884f5984a4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bc9cab2f3273bbda4c3e238535389bd1aa1860d015bb366d7d7aef421436c646"
 ---
 
-# Two-factor enforcement
+# Two-factor Enforcement
 
-To enhance the security of your Vercel team, you can enforce two-factor authentication (2FA) for all team members. When enabled, members will be required to configure 2FA before they can access team resources.
+Two-factor authentication (2FA) enforcement requires members to enable personal 2FA before accessing your team's resources. Team owners can enable enforcement after enabling their own 2FA.
 
 
 <!-- docsgraph:related -->
@@ -29,42 +29,58 @@ To enhance the security of your Vercel team, you can enforce two-factor authenti
 
 - [Two-factor authentication (2FA) team enforcement](https://vercel.com/changelog/2fa-team-enforcement)
 - [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available)
-- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Directory Sync \\(SCIM\\)](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/two-factor-enforcement.graph.md](/docs/two-factor-enforcement.graph.md)
 <!-- /docsgraph:related -->
 
-What to expect:
+## Upcoming enforcement
 
-- Team members will not be able to access team resources until they have 2FA enabled.
-- Team members will continue to occupy a team seat.
-- Any CI/CD pipeline tokens associated with users without 2FA will cease to work.
-- Managed accounts, like service accounts or bots, will also need to have 2FA enabled.
-- Members without 2FA will be prompted to enable it when visiting the team dashboard.
-- Builds will fail for members without 2FA.
-- Notifications will continue to be sent to members without 2FA.
+All Vercel users must complete authenticator app setup by **January 20, 2027**. See [authenticator app requirements](/docs/two-factor-authentication#authenticator-app-requirements).
 
-For more information on how to set up two-factor authentication for your account, see the [two-factor authentication](/docs/two-factor-authentication) documentation.
+Existing team enforcement takes effect immediately. Members must have 2FA enabled to access teams that already enforce it.
+
+Prepare your team before January 20:
+
+1. Ask every member to [set up an authenticator app](/docs/two-factor-authentication#enabling-two-factor-authentication). Members who use a passkey must also add an authenticator app.
+2. Ask members to save their recovery codes. They can also [add a passkey](/docs/two-factor-authentication#configuring-a-passkey) for phishing-resistant sign-in.
+3. [Review member readiness](#viewing-team-members-2fa-status) and the accounts behind deployment and automation tokens before enforcement takes effect.
+
+Current enforcement accepts enabled personal 2FA with an authenticator app or a passkey. The upcoming requirements also apply to members whose 2FA uses only a passkey.
+
+## What happens when enforcement is enabled
+
+Members without enabled 2FA can't access team resources. Vercel prompts them to complete setup when they visit the team dashboard. They remain on the team, occupy a seat, and receive notifications.
+
+Review deployments and automation before enabling enforcement:
+
+- Personal access tokens use their owner's 2FA status. If the owner hasn't enabled 2FA, requests to the team can fail, including deployments from the CLI or CI/CD pipelines.
+- Accounts used for services or bots also need enabled 2FA if automation uses their personal access tokens.
+- Integration tokens are exempt from this personal 2FA enforcement check.
+
+After completing setup on their own account, members can return to the team dashboard to regain access.
 
 ## Viewing team members' 2FA status
 
-Team owners can view the two-factor authentication status of all team members in the [team members page](/docs/rbac/managing-team-members). Users without 2FA will have a label indicating their state. A filter is available on the same page to show members with two-factor authentication enabled or disabled.
+Open **Settings**, then **Members** for your team to [review members' 2FA status](/docs/rbac/managing-team-members). Filter for disabled 2FA to find members who need to complete setup.
+
+This filter doesn't identify members with passkey-only 2FA. Ask members to confirm that they've added an authenticator app, even if their 2FA status shows enabled.
 
 ![Two-factor authentication status on the Members page.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/two-factor/members-2fa-light.png)
 
 ## Enabling team 2FA enforcement
 
-Before enabling 2FA enforcement for your team, you must have 2FA enabled on your own account. To prevent workflow disruptions, we recommend notifying your team members about the policy change beforehand.
+As a team owner, [set up an authenticator app](/docs/two-factor-authentication#enabling-two-factor-authentication) on your account. Tell members when you plan to enable enforcement and share the setup instructions. Review members and automation accounts before continuing.
 
-Steps to follow:
+1. Select your team in the dashboard and open **Settings**, then [**Security & Privacy**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fsecurity%23two-factor-enforcement\&title=Go+to+Security+settings).
+2. Find **Two-Factor Authentication Enforcement** and turn on the switch.
+3. Select **Save** and confirm that enforcement shows **Enabled**.
 
-1. Go to **Team Settings** then [**Security & Privacy**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fsecurity\&title=Go+to+Security+settings) and scroll to **Two-Factor Authentication Enforcement**
-2. Toggle the switch to enforce 2FA
-3. Click the **Save** button to confirm the action
+Saving takes effect immediately. Members without enabled 2FA must complete setup to regain team access.
 
 ![Two-factor authentication enforcement team setting.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/two-factor/team-2fa-enforcement-light.png)
 

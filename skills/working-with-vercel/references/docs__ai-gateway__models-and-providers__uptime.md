@@ -10,13 +10,12 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/sdks-and-apis/rest-api
-  - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1edb9448c5080f75d7837728897c2ebbbfa1eb63853a0b00e60990e18b6215aa"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d8333c584faa6b36df00e9a5f19b8b25a755f6a8ab555ef64f64ba345d99d0bc"
 ---
 
 # AI Gateway Uptime and Provider Status
@@ -29,8 +28,8 @@ When a provider has an outage, AI Gateway falls back to a healthy provider so yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
+- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
 - [AI Gateway Provider Latency and Throughput Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics) — Understand how AI Gateway measures throughput and latency per provider.
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
@@ -40,11 +39,11 @@ When a provider has an outage, AI Gateway falls back to a healthy provider so yo
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/uptime.graph.md](/docs/ai-gateway/models-and-providers/uptime.graph.md)
 <!-- /docsgraph:related -->
 
-Both views share the same time-range toggle in the top-right corner. Each window uses a different bucket size:
+Each view has its own time-range toggle in the top-right corner. Each window uses a different bucket size:
 
 | Toggle | Window | Bucket size |
 | ------ | ------ | ----------- |
-| `1H`   | 1 hour | Per-minute  |
+| `1H`   | 1 hour | 5-minute    |
 | `1D`   | 1 day  | 15-minute   |
 | `1W`   | 1 week | Per-hour    |
 
@@ -54,14 +53,14 @@ The uptime view charts the percentage of successful requests over time, with one
 
 ![1-week uptime for anthropic/claude-opus-5](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/opus-4.7-uptime-1-week)
 
-If a provider has no recent activity, AI Gateway can't measure its uptime, so the chart shows it at 100%. The 100% line is a placeholder, not a trend. It doesn't mean the provider was fully available.
+If a provider has no activity in a bucket, AI Gateway can't measure its uptime for that bucket. The provider's line skips the bucket and connects the measurements before and after it.
 
 ### Where to find uptime
 
 You can open the uptime view from:
 
 - The [AI Gateway model catalog](/ai-gateway/models). Select a model, then choose **Uptime**.
-- The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Models**, select a model, then choose **Uptime**.
+- The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Model List**, select a model, then choose **Uptime**.
 
 You can also link directly at `vercel.com/ai-gateway/models/<model-id>#uptime`, replacing `<model-id>` with the model you want to inspect. For example, see [uptime for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7#uptime).
 
@@ -75,14 +74,15 @@ You can query uptime programmatically through the [model endpoints API](/docs/ai
 | `uptime_last_1h`  | Last 1 hour     |
 | `uptime_last_1d`  | Last 1 day      |
 
+Request the endpoints for a model. This request doesn't require authentication:
+
 ```bash
-curl -i https://ai-gateway.vercel.sh/v1/models/anthropic/claude-opus-5/endpoints \
-  -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
+curl -i https://ai-gateway.vercel.sh/v1/models/anthropic/claude-opus-5/endpoints
 ```
 
-Replace `anthropic/claude-opus-5` with the model ID you want to inspect, and set `AI_GATEWAY_API_KEY` to a valid [AI Gateway API key](/docs/ai-gateway/authentication-and-byok#api-keys).
+Replace `anthropic/claude-opus-5` with the model ID you want to inspect.
 
-The response returns one entry per provider serving the model, each with the three uptime windows:
+The response returns one entry per provider serving the model, each with the three uptime windows. This excerpt shows two providers and only the uptime fields:
 
 ```json
 {
@@ -100,17 +100,13 @@ The response returns one entry per provider serving the model, each with the thr
         "uptime_last_15m": 100,
         "uptime_last_1h": 100,
         "uptime_last_1d": 99.9
-      },
-      {
-        "provider_name": "vertex",
-        "uptime_last_15m": 100,
-        "uptime_last_1h": 100,
-        "uptime_last_1d": 99.1
       }
     ]
   }
 }
 ```
+
+A window is `null` when AI Gateway has no measurement for it.
 
 ## Status
 
@@ -122,7 +118,7 @@ The status view shows a row of health bars across the selected window, giving yo
 | Amber | 75% to less than 95% | Degraded |
 | Red   | Less than 75%        | Down     |
 
-If a provider has no activity in a bucket, the bar reads "No activity" instead of a color.
+A gray bar reads "No data". It covers time before the provider's first measurement in the selected window, for example when the provider was added recently. After that, a bucket with no activity shows as green. That green bar is a placeholder, not a measurement.
 
 ![1-day status for anthropic/claude-opus-5](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/opus-4.7-status)
 
@@ -131,7 +127,7 @@ If a provider has no activity in a bucket, the bar reads "No activity" instead o
 You can open the status view from:
 
 - The [AI Gateway model catalog](/ai-gateway/models). Select a model, then choose **Status**.
-- The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Models**, select a model, then choose **Status**.
+- The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Model List**, select a model, then choose **Status**.
 
 You can also link directly at `vercel.com/ai-gateway/models/<model-id>#status`, replacing `<model-id>` with the model you want to inspect. For example, see [status for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7#status).
 

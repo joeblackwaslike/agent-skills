@@ -14,8 +14,8 @@ related:
 summary: Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/link.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cb3bbf1f736449be7c19cfa7f4fd7a9ee3defac7abed7761c77a7d1e3beacd3e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "de260640934ce4b7808f6cd78205f82113c7ebbb7ed8b55c289c81895b5be1b0"
 ---
 
 # vercel link
@@ -36,8 +36,8 @@ The `vercel link` command links your local directory to a [Vercel Project](/docs
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 
 Full cross-link map for this page: [/docs/cli/link.graph.md](/docs/cli/link.graph.md)
 <!-- /docsgraph:related -->
@@ -54,11 +54,43 @@ directory to a Vercel Project.*
 ## Extended Usage
 
 ```bash filename="terminal"
-vercel link [path-to-directory]
+vercel link --cwd [path-to-directory]
 ```
 
 *Using the \`vercel link\` command and supplying a path to
 the local directory of the Vercel Project.*
+
+## Add projects to a repository link
+
+Use `vercel link add` to add projects to an existing repository link while preserving its current project mappings.
+Run `vercel link --repo` first to create `.vercel/repo.json` at the repository root.
+The repository must have a Git remote, and existing Vercel Projects must connect to that remote through the [Git integration](/docs/git).
+
+```bash filename="terminal"
+vercel link add
+```
+
+*Adding projects to an existing repository link.*
+
+The command uses the Git remote saved in `.vercel/repo.json` and prompts you to choose a team and projects.
+It excludes projects whose ID or root directory already appears in the repository link.
+Interactive selection can also offer to create projects for detected local applications.
+Selecting those entries creates Vercel Projects and connects them to the Git repository.
+
+After you select projects, the command appends their mappings to `.vercel/repo.json`.
+You can run `vercel link add` from the repository root or a subdirectory.
+If no eligible projects remain, the existing repository link stays unchanged.
+
+To add all eligible existing projects without answering prompts, use `--yes` (or `-y`):
+
+```bash filename="terminal"
+vercel link add --yes --scope your_team_slug
+```
+
+*Adding existing projects from a specific team without prompts.*
+
+With `--yes`, the command selects existing projects and skips creating detected local applications.
+For non-interactive usage, provide `--scope` explicitly and authenticate with [a token or existing login](/docs/cli/global-options#token).
 
 ## Unique Options
 
@@ -77,7 +109,7 @@ vercel link --repo
 ### Yes
 
 The `--yes` option can be used to skip questions you are asked when setting up a new Vercel Project.
-The questions will be answered with the default scope and current directory for the Vercel Project name and location.
+The CLI answers the questions with the current directory for the Vercel Project name and location. The `--yes` option does not choose a team. If you belong to more than one team, also pass the [`--scope` option](/docs/cli/global-options#scope).
 
 ```bash filename="terminal"
 vercel link --yes
@@ -97,7 +129,7 @@ vercel link --yes --project foo
 *Using the \`vercel link\` command with the
 \`--project\` option.*
 
-You can also set the `VERCEL_PROJECT_ID` environment variable instead of using the `--project` flag. If both are provided, the `--project` flag takes precedence. See [CLI Global Options](/docs/cli/global-options#project) for the full precedence order when specifying a project.
+To use a project without a link, for example in a CI/CD pipeline, set both the `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` environment variables. Vercel CLI commands then use that project, and you do not need to run `vercel link`. If you run `vercel link` with both variables set, it confirms that project without prompts, and it does not create or change the link in the `.vercel` directory. See [CLI Global Options](/docs/cli/global-options#project) for how other commands select a project.
 
 ## Global Options
 
@@ -111,7 +143,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

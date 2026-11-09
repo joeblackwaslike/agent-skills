@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/mods/interface.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "710f44f950e1888db8fa1ad2a2fde8e304ec703404deaf25dc10791614fd5fa6"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "1deecedffc218c3507f30f63d73f931a65403990d16811a7e4c8b74d0e26a423"
 ---
 
 > ## Documentation Index
@@ -744,7 +744,7 @@ on('session.start', async ($, e, next) => {
 })
 ```
 
-Claude Code now runs your `ui.render` hook once a second. The timer stops when the module reloads, and the new instance of the module starts its own.
+Claude Code now runs your `ui.render` hook once a second. The timer stops after the module reloads, and the new instance of the module starts its own.
 
 ### How often a site can redraw
 

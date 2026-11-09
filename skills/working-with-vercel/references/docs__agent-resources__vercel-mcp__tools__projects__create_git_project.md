@@ -13,8 +13,8 @@ related:
 summary: Use create_git_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_git_project.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a37434f511697baff800308d7c79369ca1e5d13f8630794e9817d83ea130cb4f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a50133abe4f7ddba6ef0672000ef07cdf822116c26737ecb9454c29dd247c708"
 ---
 
 # create_git_project
@@ -31,7 +31,7 @@ Create or reuse a Vercel project linked to an accessible Git repository. By defa
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [create_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment) — Use create_deployment with Vercel MCP.
-- [get_git_deployment_context](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context) — Use get_git_deployment_context with Vercel MCP.
+- [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/create_git_project.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/create_git_project.graph.md)
 <!-- /docsgraph:related -->

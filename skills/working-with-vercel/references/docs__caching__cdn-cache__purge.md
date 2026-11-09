@@ -17,8 +17,8 @@ related:
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b91b17b917ecb96a7fbb474611a45d9bdcf08b67369ae59a8912550b7255242a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "07419e8d767a7b3060fca08d88ec8c437d604dbfc4edf292e8d5e6ce0ddcc0fe"
 ---
 
 # Purging Vercel CDN Cache
@@ -37,16 +37,16 @@ Learn how to [invalidate and delete](/docs/caching/cdn-cache/purge#programmatica
 
 - [Vercel CDN now respects Cache-Control headers from external origins by default](https://vercel.com/changelog/vercels-cdn-now-respects-cache-control-headers-from-external-origins-by-default)
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
+- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Invalidate the CDN cache by tag](https://vercel.com/changelog/invalidate-the-cdn-cache-by-tag)
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
 - [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image)
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
-- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 
 Full cross-link map for this page: [/docs/caching/cdn-cache/purge.graph.md](/docs/caching/cdn-cache/purge.graph.md)
 <!-- /docsgraph:related -->
@@ -91,9 +91,18 @@ There are several ways to add cache tags to a response:
 
 - **`Vercel-Cache-Tag` response header**: Set the `Vercel-Cache-Tag` header on responses from [Vercel Functions](/docs/functions) or [external rewrites](/docs/routing/rewrites#rewrites-to-external-origins). The value is a comma-separated list of tags.
 - **`addCacheTag()` function**: Import [addCacheTag](/docs/functions/functions-api-reference/vercel-functions-package#addcachetag) from `@vercel/functions` and pass in your tag.
-- **`cacheTag()` function (Next.js only)**: Import [cacheTag](https://nextjs.org/docs/app/api-reference/functions/cacheTag) from `next/cache` and pass in your tag.
+- **`cacheTag()` function (Next.js only)**: Call [cacheTag](https://nextjs.org/docs/app/api-reference/functions/cacheTag) from `next/cache` inside a `"use cache"` function and pass in your tag.
 
-The example below sets both `Vercel-CDN-Cache-Control` and `Vercel-Cache-Tag` in a Vercel Function to ensure the response is cached and can be purged on-demand by tag at some point in the future:
+> **⚠️ Warning:** Don't set `Vercel-CDN-Cache-Control` on Next.js pages and routes that
+> [ISR](/docs/incremental-static-regeneration) already caches. Vercel derives
+> the cache headers for those routes from your framework code, and a route
+> cached by headers alone gives up request collapsing, durable storage, 300ms
+> global purges, instant rollbacks, and path grouping. The header is still the
+> right tool in a Next.js [Route
+> Handler](/docs/caching/cache-control-headers) or API route whose response you
+> cache yourself.
+
+The example below is a framework-agnostic [Vercel Function](/docs/functions) rather than a Next.js route. It sets both `Vercel-CDN-Cache-Control` and `Vercel-Cache-Tag` to ensure the response is cached and can be purged on-demand by tag at some point in the future:
 
 ```ts filename="api/product.ts"
 export default {
@@ -115,7 +124,9 @@ Vercel's CDN can also cache and purge responses originating outside of Vercel by
 
 Functions using [ISR](/docs/incremental-static-regeneration) don't have access to the raw Response headers. You can add cache tags by importing [addCacheTag](/docs/functions/functions-api-reference/vercel-functions-package#addcachetag) from `@vercel/functions` to add tags at runtime.
 
-If you're using Next.js, you can add cache tags by importing [cacheTag](https://nextjs.org/docs/app/api-reference/functions/cacheTag) from `next/cache` instead.
+If you're using Next.js, you can add cache tags by calling [cacheTag](https://nextjs.org/docs/app/api-reference/functions/cacheTag) from `next/cache` inside a `"use cache"` function instead.
+
+On Next.js 16 and above with [Cache Components](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) enabled (`cacheComponents: true`), [`use cache: remote`](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote) stores a function's return value in [Runtime Cache](/docs/caching/runtime-cache) and accepts `cacheTag()`, so you can purge it by tag. It saves repeated origin work inside the function rather than caching the HTTP response at the CDN, so it complements the headers above instead of replacing them. On Next.js 15 and below, use [Data Cache](/docs/caching/runtime-cache/data-cache) instead.
 
 #### Cache tag case sensitivity
 
@@ -202,7 +213,7 @@ Purge calls made from your functions with [`@vercel/functions`](/docs/functions/
 | Pro        | 200 per team                  |
 | Enterprise | 500 per project               |
 
-The limit counts calls, not tags. An API that accepts several tags in one call, such as `invalidateByTag()` from `@vercel/functions`, uses one call for all of them. It's averaged over a 30-second window, so short bursts above it are allowed. When you exceed it, the call fails with an HTTP `429` response that includes a `retry-after` header, and the cache is left unchanged. Retry the call after that delay.
+The limit counts calls, not tags. An API that accepts several tags in one call, such as `invalidateByTag()` from `@vercel/functions`, uses one call for all of them. It's averaged over a 30-second window, so short bursts above it are allowed. When you exceed it, Vercel rejects the call and leaves the cache unchanged. `invalidateByTag()` and `dangerouslyDeleteByTag()` throw an error whose message includes the status code `429`. Catch the error and retry the call after a short delay. The `next/cache` functions don't throw. They log a warning in your [runtime logs](/docs/logs/runtime).
 
 Purges made with the [Vercel CLI](/docs/cli/cache), the [REST API](/docs/rest-api/edge-cache/invalidate-by-tag), or the dashboard are rate limited separately under the [REST API rate limits](/docs/limits#rate-limits).
 

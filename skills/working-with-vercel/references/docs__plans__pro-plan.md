@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve enterprise features for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "20a8a21cd4f304a6d3dc5c034b26cbe181a4f94eb9883ffb7be4555e7f9b9222"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "1d8290223cbde1442e8d4a2ddb7ab29722b36a3232bb89744a20ca4b2567592d"
 ---
 
 # Vercel Pro Plan
@@ -35,13 +35,13 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions)
 - [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage)
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases)
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 
 Full cross-link map for this page: [/docs/plans/pro-plan.graph.md](/docs/plans/pro-plan.graph.md)
 <!-- /docsgraph:related -->
@@ -157,7 +157,7 @@ To downgrade from a Pro to Hobby plan without losing access to the team's projec
 3. Select **Billing** in the Settings navigation
 4. Click **Downgrade Plan** in the **Plan** sub-section
 
-When you downgrade a Pro team, all active members except for the original owner are removed.
+When you downgrade a Pro team, Vercel removes all members except for the owner who performs the downgrade.
 
 Due to restrictions in the downgrade flow, Pro teams will need to [manually transfer any connected Stores](/docs/storage#transferring-your-store) and/or [Domains](/docs/domains/working-with-domains/transfer-your-domain#transferring-domains-between-projects) to a new destination before proceeding with downgrade.
 

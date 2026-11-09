@@ -4,8 +4,8 @@ description: Learn more about the supported stream protocols in the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "52a38d9b483269fe1b81e95a81361825f43588b6c32089b3b7141531c3b0e7b0"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "13e29b27c9659d1cbe921397c967a273ea96a0c57e7c6bdf2e21ca043685a135"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -422,6 +422,19 @@ Example:
 
 ```
 data: {"type":"tool-output-denied","toolCallId":"call_fJdQDqnXeGxTmr4E3YPSR7Ar"}
+
+```
+
+### Steering Message Part
+
+Experimental. A user message that was added to the run with [steering](/docs/agents/loop-control#steering). It is sent before the `start-step` part of the step that received it, and `useChat` adds it to the assistant message as a `steering-message` part.
+
+Format: Server-Sent Event with JSON object
+
+Example:
+
+```
+data: {"type":"steering-message","id":"steer-1","parts":[{"type":"text","text":"I meant Paris, Texas."}]}
 
 ```
 

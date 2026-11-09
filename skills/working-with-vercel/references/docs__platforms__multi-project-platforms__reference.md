@@ -17,8 +17,8 @@ related:
 summary: API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-project-platforms/reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4e34c3a31a3f4c476d1018aa0bf7f3ccb146a0771af3e2e263cf487d0641f2d0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5816722a432484fb8a3a77ff6775916562cffcdae2585770bd73bcbcdea9598c"
 ---
 
 # Multi-Project Platforms Reference
@@ -34,6 +34,7 @@ Start with our Custom [Blocks](/docs/platforms/platform-elements/blocks/deploy-p
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
@@ -170,13 +171,14 @@ run();
 
 | Code                     | Description                | Solution                                   |
 | ------------------------ | -------------------------- | ------------------------------------------ |
-| `project_limit_exceeded` | Team project limit reached | Upgrade plan or clean up unused projects   |
-| `invalid_name`           | Project name is invalid    | Use alphanumeric characters and hyphens    |
+| `too_many_projects`      | Team project limit reached | Upgrade plan or clean up unused projects   |
+| `invalid_project_name`   | Project name is invalid    | Use up to 100 lowercase letters, digits, `.`, `_`, and `-`. Do not use the sequence `---` |
 | `forbidden`              | Insufficient permissions   | Check API token has project creation scope |
-| `rate_limit_exceeded`    | Too many requests          | Implement exponential backoff              |
-| `build_failed`           | Deployment build failed    | Check build logs for errors                |
+| `rate_limited`           | Too many requests          | Implement exponential backoff              |
 
 If a project with the same name exists already, the API returns HTTP status `409`. In that case, you can call `getProject` with the name to reuse the project, or choose another name.
+
+A failed build does not return an API error code. Instead, the deployment's `readyState` field changes to `ERROR`, and its `errorCode` and `errorMessage` fields describe the failure. To read these fields, get the deployment with the [get deployment API](/docs/rest-api/deployments/get-a-deployment-by-id-or-url), which is `vercel.deployments.getDeployment` in the SDK. To see why the build failed, read the build logs with the [get deployment events API](/docs/rest-api/deployments/get-deployment-events), which is `vercel.deployments.getDeploymentEvents` in the SDK.
 
 ## Troubleshooting
 
@@ -318,9 +320,8 @@ This is a significant migration. Consider carefully before switching.
 
 API rate limits for project operations:
 
-- **Create project**: 100 requests per hour
 - **Create deployment**: 1000 requests per hour
-- **Delete project**: 100 requests per hour
+- **Create project** and **Delete project**: Rate limited per team. Read the `X-RateLimit-Limit` and `X-RateLimit-Remaining` response headers to track your limit
 - **Other operations**: Standard API limits
 
 See [API rate limits documentation](/docs/rest-api#rate-limits).

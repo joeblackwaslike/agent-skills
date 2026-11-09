@@ -3,25 +3,25 @@ title: vercel traces
 product: vercel
 url: /docs/cli/traces
 canonical_url: "https://vercel.com/docs/cli/traces"
-last_updated: 2026-08-25
+last_updated: 2026-11-03
 type: reference
 prerequisites:
   - /docs/cli
 related:
   - /docs/tracing
-  - /docs/tracing/always-on-tracing
+  - /docs/tracing/configure-tracing
   - /docs/cli/global-options
   - /docs/tracing/session-tracing
-summary: Search spans across a team, inspect request traces, capture session traces, or manage project trace sampling rules from the terminal.
+summary: Search spans across a team, inspect a trace by trace ID or request ID, capture session traces, or manage project trace sampling rules from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6e419120e10b77d9af65af24554d387a07fb567d854ebda3cf8e5e5ed67038cb"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "de3f841a7055dbd9d7044ba345158a1112202118e395882159fda28515b722a1"
 ---
 
 # vercel traces
 
-The `vercel traces` command lets you search spans across a team, inspect request traces, capture session traces, and manage project trace sampling rules.
+The `vercel traces` command lets you search spans across a team, inspect a trace by trace ID or request ID, capture session traces, and manage project trace sampling rules.
 
 
 <!-- docsgraph:related -->
@@ -31,11 +31,13 @@ The `vercel traces` command lets you search spans across a team, inspect request
 
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
-- [vercel firewall](https://vercel.com/docs/cli/firewall) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
-- [vercel project](https://vercel.com/docs/cli/project) — Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, renam
+- [Vercel Tracing is now generally available](https://vercel.com/changelog/vercel-tracing-is-now-generally-available)
+- [Trace and debug eve agent runs](https://vercel.com/kb/guide/trace-and-debug-eve-agent-runs) — Inspect eve traces in Vercel Agent Runs, control captured content, export OpenTelemetry spans, and test fixes with regre
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
+- [vercel project](https://vercel.com/docs/cli/project) — Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, renam
+- [vercel firewall](https://vercel.com/docs/cli/firewall) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
+- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 
 Full cross-link map for this page: [/docs/cli/traces.graph.md](/docs/cli/traces.graph.md)
 <!-- /docsgraph:related -->
@@ -47,7 +49,7 @@ For more information about tracing, see the [Tracing documentation](/docs/tracin
 The `vercel traces` command supports the following operations:
 
 - [`search`](#search) - Search spans across team projects
-- [`inspect`](#inspect) - Inspect a captured trace by request ID
+- [`inspect`](#inspect) - Inspect a captured trace by trace ID or request ID
 - [`create`](#create) - Capture a session trace for a request
 - [`config`](#manage-trace-sampling-rules) - Manage trace sampling rules
 
@@ -73,23 +75,27 @@ At a repository root linked to multiple teams, pass `--scope <team>` or run from
 **Options:**
 
 - `--project <name-or-id>`, `-p`: Search only this project. When omitted, search all projects in the selected team
-- `--environment <environment>`: Filter by `production` or `preview`, case-insensitive
+- `--environment <environment>`, `-e`: Filter by `production` or `preview`, case-insensitive
 - `--service <name>`: Filter by service name
 - `--name <name>`: Filter by span name
 - `--kind <kind>`: Filter by span kind name, case-insensitive, or its numeric value. See [Span kinds](#span-kinds)
 - `--status <status>`: Filter by `error`, `ok`, or `unset`, case-insensitive
-- `--deployment-id <id>`: Filter by deployment ID
+- `--deployment <id>`: Filter by deployment ID
 - `--request-id <id>`: Filter by request ID
-- `--trace-id <id>`: Filter by trace ID
-- `--span-id <id>`: Filter by span ID
+- `--trace <id>`: Filter by trace ID
+- `--span <id>`: Filter by span ID
 - `--root`: Filter root spans only
 - `-s, --since <time>`: Start time. Defaults to one hour ago
 - `-u, --until <time>`: End time. Defaults to now
 - `--limit <number>`, `-n`: Total number of spans to return, from 1 to 1,000. Defaults to 100
-- `--next <cursor>`, `-N`: Continue a previous search from its summary's `next` value. Cannot be combined with filter options, `--project`, `--since`, or `--until`. `--limit` can change
+- `--next <cursor>`: Continue a previous search from its summary's `next` value. Cannot be combined with filter options, `--project`, `--since`, or `--until`. `--limit` can change
 - `--query <kql>`, `-q`: Filter spans using a KQL field expression
 - `--columns <list>`: Comma-separated column keys in display order. Cannot be combined with `--json`
-- `--json`, `-j`: Output JSON Lines ending with a summary line
+- `--json`: Output JSON Lines ending with a summary line
+
+> **💡 Note:** `--deployment` replaced `--deployment-id` in Vercel CLI 65.0.0, and `--trace`
+> and `--span` replaced `--trace-id` and `--span-id` in 65.4.0. The old names
+> still work but are deprecated.
 
 The command combines all filters, including `--root` and `--query`, with `AND`. Search accepts no positional arguments.
 
@@ -103,10 +109,10 @@ vercel traces search --status error --since 1h
 vercel traces search --environment production --service checkout-api
 
 # Find every span in one trace
-vercel traces search --trace-id 4bf92f3577b34da6a3ce929d0e0e4736
+vercel traces search --trace 4bf92f3577b34da6a3ce929d0e0e4736
 
 # Find one span in that trace
-vercel traces search --trace-id 4bf92f3577b34da6a3ce929d0e0e4736 --span-id 00f067aa0ba902b7
+vercel traces search --trace 4bf92f3577b34da6a3ce929d0e0e4736 --span 00f067aa0ba902b7
 
 # Find root spans
 vercel traces search --root
@@ -128,7 +134,7 @@ Search a one-hour window ending 30 minutes ago:
 vercel traces search --since 90m --until 30m
 ```
 
-The start must be before the end. Your plan determines how far back you can search. See [trace retention](/docs/tracing/always-on-tracing#retention).
+The start must be before the end. Your plan determines how far back you can search. See [trace retention](/docs/tracing/configure-tracing#retention).
 
 ### Filter with KQL
 
@@ -224,25 +230,27 @@ vercel traces search --next <cursor> --json
 
 The cursor keeps the team, project, filters, and time window from the first search. You can change `--limit` on the next page.
 
-## Inspect a request trace
+## Inspect a trace
 
 ### `inspect`
 
 `get` remains a supported alias, but prints a deprecation warning. Use `inspect` for new commands.
 
-Fetch a captured trace by request ID. The command prints a summary in the terminal by default.
+Fetch a captured trace by trace ID or request ID. The command prints a summary in the terminal by default.
 
 ```bash filename="terminal"
-vercel traces inspect req_1234567890
+vercel traces inspect qb46r-1790847620933-1145d2891a3e
 ```
 
 *Using the \`vercel traces inspect\` command to inspect a request trace.*
 
-`inspect` is the default subcommand, so `vercel traces req_1234567890` returns the same trace. Unlike `search`, it defaults to the linked project.
+The ID format decides how `inspect` looks up the trace. A 32-character hexadecimal ID uses trace-ID lookup, which retrieves the trace directly within the [trace retention](/docs/tracing/configure-tracing#retention) window. Any other ID uses request-ID lookup.
+
+`inspect` is the default subcommand, so `vercel traces qb46r-1790847620933-1145d2891a3e` returns the same trace. Unlike `search`, it defaults to the linked project.
 
 **Options:**
 
-- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+- `--project <name-or-id>`, `-p`: Project name or ID, defaulting to the linked project
 - `--json`: Output the raw trace as JSON instead of a terminal summary
 - `--open`: Open the trace in the Vercel Dashboard instead of printing it
 - `--view <view>`: Dashboard view to open. Accepts `timeline`, `tree`, or `waterfall`, and requires `--open`. Defaults to `timeline`
@@ -252,17 +260,20 @@ vercel traces inspect req_1234567890
 **Examples:**
 
 ```bash filename="terminal"
+# Fetch a trace by trace ID
+vercel traces inspect e5c0d1efb3904155472b01692c7f2d00
+
 # Fetch a trace from a specific team and project
-vercel traces inspect req_1234567890 --scope my-team --project my-app
+vercel traces inspect qb46r-1790847620933-1145d2891a3e --scope my-team --project my-app
 
 # Open a trace in the dashboard tree view
-vercel traces inspect req_1234567890 --open --view tree
+vercel traces inspect qb46r-1790847620933-1145d2891a3e --open --view tree
 
 # Output the raw trace as JSON
-vercel traces inspect req_1234567890 --json
+vercel traces inspect qb46r-1790847620933-1145d2891a3e --json
 ```
 
-A request ID in search results does not guarantee that `inspect` can retrieve the trace. Lookup requires a matching root span in the same project within 30 minutes after the request ID timestamp. If no matching root span exists, `inspect` returns 404. When inspecting a team-wide search result, pass its project with `--project` and use the same team scope.
+If `inspect` can't find the trace, it returns 404 (`Trace not found`). Check that the trace is within the [retention window](/docs/tracing/configure-tracing#retention), and that `--project` and `--scope` match the project and team the trace belongs to. A request ID in search results doesn't guarantee a match either. Request-ID lookup needs a root span in the same project within 30 minutes after the request ID timestamp. When you inspect a team-wide search result, pass its project with `--project` and use the same team scope.
 
 To find a span's project, check the **SERVICE NAME** column in search results. The service name is usually the project name, which `--project` accepts. Add the `request.id` column to see each span's request ID in the same table:
 
@@ -287,7 +298,7 @@ vercel traces search --scope my-team --root --json |
 Pass a request ID and its project name or ID to `inspect`, along with the same team:
 
 ```bash filename="terminal"
-vercel traces inspect req_1234567890 --scope my-team --project my-app
+vercel traces inspect qb46r-1790847620933-1145d2891a3e --scope my-team --project my-app
 ```
 
 ## Capture a session trace
@@ -307,7 +318,7 @@ vercel traces create /api/hello
 - `--deployment <id-or-url>`: Deployment ID or URL to target
 - `--protection-bypass <secret>`: Protection bypass secret for a protected deployment
 - `--json`: Output the response and request ID as JSON
-- `--yes`, `-y`: Skip the production confirmation prompt
+- `--yes`: Skip the production confirmation prompt
 
 Pass curl flags after `--`.
 
@@ -323,7 +334,7 @@ vercel traces create /api/test -- --request POST --data '{"name": "John"}'
 
 ## Manage trace sampling rules
 
-Sampling rules decide which requests [always-on tracing](/docs/tracing/always-on-tracing) collects a trace for. Each rule pairs an environment and an optional path prefix with a rate, and a project holds at most 10 rules.
+Sampling rules decide which requests Vercel [collects a trace](/docs/tracing/configure-tracing) for. Each rule pairs an environment and an optional path prefix with a rate, and a project holds at most 10 rules.
 
 The `vercel traces config` subcommands read and write those rules for the linked project, or for the project you name with `--project`. Changing rules requires a role with project update access. Running `vercel traces config` with no subcommand prints help.
 
@@ -331,12 +342,12 @@ The `vercel traces config` command supports the following operations:
 
 - [`config ls`](#config-ls) - List every rule on the project
 - [`config set`](#config-set) - Add a rule or change the rate of an existing rule
-- [`config rm`](#config-rm) - Remove one rule or every rule for an environment
+- [`config remove`](#config-remove) - Remove one rule or every rule for an environment
 
-> **💡 Note:** `config set` and `config rm` take the environment as `--environment` in Vercel
-> CLI 64.7.0 and later. Earlier versions take it as the first argument, such as
-> `vercel traces config set production 25`. Newer versions still accept that
-> form, but print a deprecation warning.
+> **💡 Note:** `config set` and `config remove` take the environment as `--environment` in
+> Vercel CLI 64.7.0 and later. Earlier versions take it as the first argument,
+> such as `vercel traces config set production 25`. Newer versions still accept
+> that form, but print a deprecation warning.
 
 ### How the CLI describes a sampling rule
 
@@ -424,31 +435,29 @@ When the project already holds 10 rules, `set` refuses the write before it chang
 - `--json`: Output the new rule as JSON
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
 
-### `config rm`
-
-Aliases: `config remove`, `config delete`.
+### `config remove`
 
 Remove one trace sampling rule or every rule for an environment.
 
 ```bash filename="terminal"
-vercel traces config rm [requestPath] --environment <environment>
+vercel traces config remove [requestPath] --environment <environment>
 ```
 
-*Using the \`vercel traces config rm\` command to remove trace sampling rules.*
+*Using the \`vercel traces config remove\` command to remove trace sampling rules.*
 
 The path prefix decides how many rules the command removes:
 
-| Command                                                      | Removes                                        |
-| ------------------------------------------------------------ | ---------------------------------------------- |
-| `vercel traces config rm /api --environment production`      | The one production rule with the `/api` prefix |
-| `vercel traces config rm --environment production --default` | Only the production rule that covers all paths |
-| `vercel traces config rm --environment production`           | Every production rule                          |
+| Command                                                          | Removes                                        |
+| ---------------------------------------------------------------- | ---------------------------------------------- |
+| `vercel traces config remove /api --environment production`      | The one production rule with the `/api` prefix |
+| `vercel traces config remove --environment production --default` | Only the production rule that covers all paths |
+| `vercel traces config remove --environment production`           | Every production rule                          |
 
 Combining `--default` with a path prefix is an error, because the two select different rules.
 
-`rm --environment any` removes the rules that match every environment, not every rule on the project. To clear a project and turn always-on tracing off, run `rm` once for each of `any`, `preview`, and `production`.
+`remove --environment any` removes the rules that match every environment, not every rule on the project. To clear a project and turn tracing off, run `remove` once for each of `any`, `preview`, and `production`.
 
-`rm` always asks you to confirm. One command can remove up to 10 rules, and nothing records what those rules held afterwards, so the command lists every rule it matched with its path and rate before it asks:
+`remove` always asks you to confirm. One command can remove up to 10 rules, and nothing records what those rules held afterwards, so the command lists every rule it matched with its path and rate before it asks:
 
 ```text filename="stdout"
 > The following 2 rules will be removed from my-app:
@@ -459,7 +468,7 @@ Combining `--default` with a path prefix is an error, because the two select dif
 
 No option skips that prompt. A session that cannot show one, such as a CI job or a coding agent, fails without changing the project and prints the command to run in a terminal instead.
 
-When nothing matches the environment and path prefix you passed, `rm` reports that no rule matched and leaves the project unchanged.
+When nothing matches the environment and path prefix you passed, `remove` reports that no rule matched and leaves the project unchanged.
 
 **Options:**
 
@@ -506,7 +515,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 
@@ -515,7 +523,7 @@ For more information on global options and their usage, refer to the [options se
 ## Related
 
 - [Tracing overview](/docs/tracing)
-- [Always-on tracing](/docs/tracing/always-on-tracing)
+- [Configuring Tracing](/docs/tracing/configure-tracing)
 - [Session tracing](/docs/tracing/session-tracing)
 
 

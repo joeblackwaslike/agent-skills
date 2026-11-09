@@ -16,8 +16,8 @@ related:
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "658e31d2bf2e0af924c7dddb192cf5694b40b36d95743f2d493438f7f3219de8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5129332c713a8222a6f0be333b351d57a122f0f6bc55c243a9d54eb9d799a680"
 ---
 
 # AI Gateway Image-to-Video Generation
@@ -32,11 +32,10 @@ Animate a static image into a video. The image you provide becomes the video con
 
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
-- [Black Forest Labs](https://ai-sdk.dev/providers/ai-sdk-providers/black-forest-labs) — Learn how to use Black Forest Labs with AI Gateway and the direct provider.
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md)
 <!-- /docsgraph:related -->
@@ -152,7 +151,7 @@ KlingAI's image-to-video models animate images with standard or professional qua
 | `providerOptions.klingai.voiceList`      | `array`            | No       | Voice IDs for speech. Max 2 voices. Requires v3.0+ with `generateAudio: true`. Cannot coexist with `elementList`. See [voice generation](/docs/ai-gateway/modalities/video-generation/image-to-video#klingai-voice-generation). |
 | `providerOptions.klingai.multiShot`      | `boolean`          | No       | Enable multi-shot generation. Requires v3.0+. See [multi-shot](/docs/ai-gateway/modalities/video-generation/image-to-video#klingai-multi-shot).                                                                         |
 | `providerOptions.klingai.elementList`    | `array`            | No       | Reference elements for element control. Up to 3 elements. Requires v3.0+. Cannot coexist with `voiceList`.                                           |
-| `providerOptions.klingai.watermarkInfo`  | `object`           | No       | Set `{ enabled: true }` to generate watermarked result.                                                                                              |
+| `providerOptions.klingai.watermarkEnabled` | `boolean`          | No       | Set to `true` to generate a watermarked result.                                                                                              |
 | `providerOptions.klingai.pollIntervalMs` | `number`           | No       | How often to check task status. Defaults to `5000`.                                                                                                  |
 | `providerOptions.klingai.pollTimeoutMs`  | `number`           | No       | Maximum wait time. Defaults to `600000` (10 minutes).                                                                                                |
 
@@ -499,9 +498,9 @@ Grok Imagine Video (by SpaceXAI) can animate images into videos. The output defa
 | `prompt.image`                            | `string`                      | No       | URL of the image to animate. Used when `frameImages` is omitted                         |
 | `duration`                                | `number`                      | No       | Video length in seconds (1-15)                                                          |
 | `aspectRatio`                             | `string`                      | No       | Override the input image's aspect ratio (stretches the image)                           |
-| `providerOptions.spacexai.resolution`     | `'480p'` \| `'720p'`          | No       | Video resolution. Defaults to 480p                                                      |
-| `providerOptions.spacexai.pollIntervalMs` | `number`                      | No       | How often to check task status. Defaults to `5000`                                      |
-| `providerOptions.spacexai.pollTimeoutMs`  | `number`                      | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                    |
+| `providerOptions.xai.resolution`          | `'480p'` \| `'720p'`          | No       | Video resolution. Defaults to 480p                                                      |
+| `providerOptions.xai.pollIntervalMs`      | `number`                      | No       | How often to check task status. Defaults to `5000`                                      |
+| `providerOptions.xai.pollTimeoutMs`       | `number`                      | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                    |
 
 ### Grok example
 
@@ -517,7 +516,7 @@ const result = await generateVideo({
   ],
   duration: 5,
   providerOptions: {
-    spacexai: {
+    xai: {
       pollTimeoutMs: 600000,
     },
   },

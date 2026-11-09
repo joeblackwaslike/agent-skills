@@ -16,8 +16,8 @@ related:
 summary: How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "398183c4ef9d5ac73579954b250cc5d32f05359fd58c73269a63b0386777371f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c47319f8eee299402cc36f111aa2848fa876a95c2c23dce0d1566fdfc9e2b6ac"
 ---
 
 # Vercel Connect Pricing
@@ -37,7 +37,7 @@ Vercel Connect is billed by token requests and triggers.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing) — Understand Vercel Agent pricing and how to track costs
 - [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
-- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/connect/pricing.graph.md](/docs/connect/pricing.graph.md)
 <!-- /docsgraph:related -->

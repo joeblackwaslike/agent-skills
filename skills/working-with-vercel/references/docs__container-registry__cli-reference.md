@@ -15,8 +15,8 @@ related:
 summary: Use the vercel vcr command group to manage Vercel Container Registry repositories, tags, and images from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/container-registry/cli-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "97b40907f9950d0c33fed986f646481586b28b9677b64129d1bb63c3db1b2912"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "240d1ed325ab19f6b9519fb2058dd1e05e591047d7c44ed375141f84b801dc9e"
 ---
 
 # Container Registry CLI Reference
@@ -30,13 +30,14 @@ The `vercel vcr` command group lets you manage [Vercel Container Registry](/docs
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
-- [How to use Vercel Container Registry](https://vercel.com/kb/guide/how-to-use-vercel-container-registry) — Push, store, and pull OCI container images with Vercel Container Registry, then deploy them to Vercel Functions and Verc
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli)
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
-- [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [vercel blob](https://vercel.com/docs/cli/blob) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
-- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 - [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
+- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
+- [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
 
 Full cross-link map for this page: [/docs/container-registry/cli-reference.graph.md](/docs/container-registry/cli-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -98,16 +99,16 @@ vercel vcr <subcommand> [OPTIONS]
 **Available subcommands:**
 
 - [`ls`](#vercel-vcr-ls): List container registry repositories for a project. (alias: `list`)
-- [`inspect`](#vercel-vcr-inspect): Show details for a single repository. (alias: `get`)
-- [`add`](#vercel-vcr-add): Create a container registry repository. (alias: `create`)
-- [`rm`](#vercel-vcr-rm): Delete a container registry repository. (aliases: `remove`, `delete`)
+- [`inspect`](#vercel-vcr-inspect): Show details for a single repository.
+- [`create`](#vercel-vcr-create): Create a container registry repository.
+- [`delete`](#vercel-vcr-delete): Delete a container registry repository.
 - [`login`](#vercel-vcr-login): Authenticate a container tool with the Vercel Container Registry.
 - [`build`](#vercel-vcr-build): Build a container image tagged for the Vercel Container Registry.
 - [`push`](#vercel-vcr-push): Push a container image to the Vercel Container Registry.
 - [`tag`](#vercel-vcr-tag): List or inspect a repository's tags. (alias: `tags`)
 - [`image`](#vercel-vcr-image): List, inspect, or delete images in a repository. (alias: `images`)
 - [`permissions`](#vercel-vcr-permissions): Manage which teams can pull images from a repository. (alias: `permission`)
-- [`config`](#vercel-vcr-config): Configure a repository, such as its visibility.
+- [`update`](#vercel-vcr-update): Update a repository, such as its visibility.
 
 For more help, try running `vercel vcr <subcommand> --help`.
 
@@ -126,10 +127,10 @@ vercel vcr ls [OPTIONS]
 vercel vcr ls
 
 # List repositories for a specific project as JSON
-vercel vcr ls --project my-app --format json
+vercel vcr ls --project my-app --json
 
 # Page through results using the cursor reported by the previous page
-vercel vcr ls --cursor <token>
+vercel vcr ls --next <token>
 ```
 
 ### `vercel vcr ls` options
@@ -137,14 +138,14 @@ vercel vcr ls --cursor <token>
 | Option                   | Short | Description                                                    |
 | ------------------------ | ----- | ------------------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project).          |
-| `--limit <number>`       | -     | Number of results to return per page (default: 20, max: 100). |
-| `--cursor <token>`       | `-c`  | Cursor from a previous page to continue listing from.         |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                                |
+| `--limit <number>`       | `-n`  | Number of results to return per page (max: 100).              |
+| `--next <token>`         | -     | Cursor from a previous page to continue listing from.         |
 
 ### `vercel vcr ls` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` | -     | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
 ## `vercel vcr inspect`
@@ -170,12 +171,12 @@ vercel vcr inspect repo_CVSY2AmyvugNN6WOTFKOF5VfeZ6r
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
 ### `vercel vcr inspect` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` |       | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
 ### `vercel vcr inspect` arguments
@@ -184,79 +185,79 @@ vercel vcr inspect repo_CVSY2AmyvugNN6WOTFKOF5VfeZ6r
 | -------------- | ----------------------------------------------- |
 | `<repository>` | The name or ID of the repository to inspect.    |
 
-## `vercel vcr add`
+## `vercel vcr create`
 
 Create a container registry repository.
 
 ```bash filename="terminal"
-vercel vcr add [OPTIONS] <name>
+vercel vcr create [OPTIONS] <name>
 ```
 
-### `vercel vcr add` example
+### `vercel vcr create` example
 
 ```bash filename="terminal"
 # Create a repository
-vercel vcr add my-repository
+vercel vcr create my-repository
 ```
 
 > **💡 Note:** Repository names can include lowercase letters, numbers, periods,
 > underscores, and dashes. The name can't start or end with a period,
 > underscore, or dash.
 
-### `vercel vcr add` options
+### `vercel vcr create` options
 
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
-### `vercel vcr add` flags
+### `vercel vcr create` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` |       | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
-### `vercel vcr add` arguments
+### `vercel vcr create` arguments
 
 | Argument | Description                        |
 | -------- | ---------------------------------- |
 | `<name>` | The name of the repository to create. |
 
-## `vercel vcr rm`
+## `vercel vcr delete`
 
 Delete a container registry repository and all of its images.
 
 ```bash filename="terminal"
-vercel vcr rm [OPTIONS] <repository>
+vercel vcr delete [OPTIONS] <repository>
 ```
 
 > **💡 Note:** This action is permanent and cannot be undone.
 
-### `vercel vcr rm` example
+### `vercel vcr delete` example
 
 ```bash filename="terminal"
 # Delete a repository, with a confirmation prompt
-vercel vcr rm my-repository
+vercel vcr delete my-repository
 
 # Delete a repository without the confirmation prompt
-vercel vcr rm my-repository --yes
+vercel vcr delete my-repository --yes
 ```
 
-### `vercel vcr rm` options
+### `vercel vcr delete` options
 
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
-### `vercel vcr rm` flags
+### `vercel vcr delete` flags
 
 | Flag     | Short | Description                          |
 | -------- | ----- | ------------------------------------ |
 | `--yes`  | `-y`  | Skip the confirmation prompt.        |
+| `--json` |       | Output as JSON.                      |
 | `--help` | `-h`  | Display help information.            |
 
-### `vercel vcr rm` arguments
+### `vercel vcr delete` arguments
 
 | Argument       | Description                              |
 | -------------- | ---------------------------------------- |
@@ -295,12 +296,12 @@ vercel vcr login docker --project my-app
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
 ### `vercel vcr login` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` |       | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
 ### `vercel vcr login` arguments
@@ -413,7 +414,7 @@ vercel vcr tag <subcommand> [OPTIONS]
 ### `vercel vcr tag` subcommands
 
 - [`ls`](#vercel-vcr-tag-ls): List a repository's tags. (alias: `list`)
-- [`inspect`](#vercel-vcr-tag-inspect): Show details for a single tag. (alias: `get`)
+- [`inspect`](#vercel-vcr-tag-inspect): Show details for a single tag.
 
 ## `vercel vcr tag ls`
 
@@ -443,14 +444,14 @@ vercel vcr tag ls my-app --limit 5
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project).          |
 | `--sort-by <field>`      | -     | Field to sort tags by. `updatedAt` (default) or `tag`.        |
 | `--sort-order <order>`   | -     | Sort direction. `asc` or `desc` (default).                    |
-| `--limit <number>`       | -     | Number of results to return per page (default: 20, max: 100). |
-| `--cursor <token>`       | `-c`  | Cursor from a previous page to continue listing from.         |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                                |
+| `--limit <number>`       | `-n`  | Number of results to return per page (max: 100).              |
+| `--next <token>`         | -     | Cursor from a previous page to continue listing from.         |
 
 ### `vercel vcr tag ls` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` | -     | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
 ### `vercel vcr tag ls` arguments
@@ -479,12 +480,12 @@ vercel vcr tag inspect my-app latest
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
 ### `vercel vcr tag inspect` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` |       | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
 ### `vercel vcr tag inspect` arguments
@@ -505,8 +506,8 @@ vercel vcr image <subcommand> [OPTIONS]
 ### `vercel vcr image` subcommands
 
 - [`ls`](#vercel-vcr-image-ls): List images in a container registry repository. (alias: `list`)
-- [`inspect`](#vercel-vcr-image-inspect): Show details for a single image, including its layer history. (alias: `get`)
-- [`rm`](#vercel-vcr-image-rm): Delete an image from a repository. (aliases: `remove`, `delete`)
+- [`inspect`](#vercel-vcr-image-inspect): Show details for a single image, including its layer history.
+- [`delete`](#vercel-vcr-image-delete): Delete an image from a repository.
 
 ## `vercel vcr image ls`
 
@@ -523,7 +524,7 @@ vercel vcr image ls [OPTIONS] <repository>
 vercel vcr image ls my-app
 
 # List only untagged images as JSON
-vercel vcr image ls my-app --untagged --format json
+vercel vcr image ls my-app --untagged --json
 ```
 
 ### `vercel vcr image ls` options
@@ -531,15 +532,15 @@ vercel vcr image ls my-app --untagged --format json
 | Option                   | Short | Description                                                    |
 | ------------------------ | ----- | ------------------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project).          |
-| `--limit <number>`       | -     | Number of results to return per page (default: 20, max: 100). |
-| `--cursor <token>`       | `-c`  | Cursor from a previous page to continue listing from.         |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                                |
+| `--limit <number>`       | `-n`  | Number of results to return per page (max: 100).              |
+| `--next <token>`         | -     | Cursor from a previous page to continue listing from.         |
 
 ### `vercel vcr image ls` flags
 
 | Flag         | Short | Description                        |
 | ------------ | ----- | ---------------------------------- |
 | `--untagged` | -     | Only list images that have no tags. |
+| `--json`     | -     | Output as JSON.                    |
 | `--help`     | `-h`  | Display help information.          |
 
 ### `vercel vcr image ls` arguments
@@ -568,12 +569,12 @@ vercel vcr image inspect my-app image_XTPv9FRCWob68TkdGMUHC9vCXIAz
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
 ### `vercel vcr image inspect` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` |       | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
 ### `vercel vcr image inspect` arguments
@@ -583,41 +584,41 @@ vercel vcr image inspect my-app image_XTPv9FRCWob68TkdGMUHC9vCXIAz
 | `<repository>` | The name or ID of the repository the image belongs to. |
 | `<image-id>`   | The ID of the image to inspect.                |
 
-## `vercel vcr image rm`
+## `vercel vcr image delete`
 
 Delete an image from a repository.
 
 ```bash filename="terminal"
-vercel vcr image rm [OPTIONS] <repository> <image-id>
+vercel vcr image delete [OPTIONS] <repository> <image-id>
 ```
 
 > **💡 Note:** This action is permanent and cannot be undone.
 
-### `vercel vcr image rm` example
+### `vercel vcr image delete` example
 
 ```bash filename="terminal"
 # Delete an image by ID, with a confirmation prompt
-vercel vcr image rm my-app image_Ml0PUBaNT8SRrYXDOOEiFedAsAEs
+vercel vcr image delete my-app image_Ml0PUBaNT8SRrYXDOOEiFedAsAEs
 
 # Delete an image without the confirmation prompt
-vercel vcr image rm my-app image_Ml0PUBaNT8SRrYXDOOEiFedAsAEs --yes
+vercel vcr image delete my-app image_Ml0PUBaNT8SRrYXDOOEiFedAsAEs --yes
 ```
 
-### `vercel vcr image rm` options
+### `vercel vcr image delete` options
 
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
-### `vercel vcr image rm` flags
+### `vercel vcr image delete` flags
 
 | Flag     | Short | Description                   |
 | -------- | ----- | ----------------------------- |
 | `--yes`  | `-y`  | Skip the confirmation prompt. |
+| `--json` |       | Output as JSON.               |
 | `--help` | `-h`  | Display help information.     |
 
-### `vercel vcr image rm` arguments
+### `vercel vcr image delete` arguments
 
 | Argument       | Description                                    |
 | -------------- | ---------------------------------------------- |
@@ -638,7 +639,7 @@ Unlike `vercel vcr tag` and `vercel vcr image`, the repository comes before the 
 
 - [`ls`](#vercel-vcr-permissions-ls): List teams with access to a repository. (alias: `list`)
 - [`add`](#vercel-vcr-permissions-add): Give one or more teams access to pull images from a repository.
-- [`rm`](#vercel-vcr-permissions-rm): Remove one or more teams' access to a repository. (alias: `remove`)
+- [`remove`](#vercel-vcr-permissions-remove): Remove one or more teams' access to a repository.
 - [`clear`](#vercel-vcr-permissions-clear): Remove access to a repository for every team.
 
 ## `vercel vcr permissions ls`
@@ -656,7 +657,7 @@ vercel vcr permissions <repository> ls [OPTIONS]
 vercel vcr permissions my-repository ls
 
 # List teams with access as JSON
-vercel vcr permissions my-repository ls --format json
+vercel vcr permissions my-repository ls --json
 ```
 
 ### `vercel vcr permissions ls` options
@@ -664,14 +665,14 @@ vercel vcr permissions my-repository ls --format json
 | Option                   | Short | Description                                            |
 | ------------------------ | ----- | ------------------------------------------------------ |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project).   |
-| `--limit <number>`       | -     | Number of results to return per page (max: 100).       |
-| `--cursor <token>`       | `-c`  | Cursor from a previous page to continue listing from.  |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                         |
+| `--limit <number>`       | `-n`  | Number of results to return per page (max: 100).       |
+| `--next <token>`         | -     | Cursor from a previous page to continue listing from.  |
 
 ### `vercel vcr permissions ls` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` | -     | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
 ### `vercel vcr permissions ls` arguments
@@ -708,12 +709,12 @@ vercel vcr permissions my-repository add team_1a2b3c4d,other-team
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
 ### `vercel vcr permissions add` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` |       | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
 ### `vercel vcr permissions add` arguments
@@ -723,38 +724,38 @@ vercel vcr permissions my-repository add team_1a2b3c4d,other-team
 | `<repository>` | The name or ID of the repository to share.                                       |
 | `<team>`       | One or more team IDs or slugs to grant access to, comma or space separated.      |
 
-## `vercel vcr permissions rm`
+## `vercel vcr permissions remove`
 
 Remove one or more teams' access to a repository.
 
 ```bash filename="terminal"
-vercel vcr permissions <repository> rm <team> [OPTIONS]
+vercel vcr permissions <repository> remove <team> [OPTIONS]
 ```
 
-### `vercel vcr permissions rm` example
+### `vercel vcr permissions remove` example
 
 ```bash filename="terminal"
 # Remove a team's access by ID
-vercel vcr permissions my-repository rm team_1a2b3c4d
+vercel vcr permissions my-repository remove team_1a2b3c4d
 
 # Remove multiple teams' access
-vercel vcr permissions my-repository rm team_1a2b3c4d,other-team
+vercel vcr permissions my-repository remove team_1a2b3c4d,other-team
 ```
 
-### `vercel vcr permissions rm` options
+### `vercel vcr permissions remove` options
 
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
-### `vercel vcr permissions rm` flags
+### `vercel vcr permissions remove` flags
 
 | Flag     | Short | Description               |
 | -------- | ----- | ------------------------- |
+| `--json` |       | Output as JSON.           |
 | `--help` | `-h`  | Display help information. |
 
-### `vercel vcr permissions rm` arguments
+### `vercel vcr permissions remove` arguments
 
 | Argument       | Description                                                                    |
 | -------------- | ------------------------------------------------------------------------------ |
@@ -784,13 +785,13 @@ vercel vcr permissions my-repository clear --yes
 | Option                   | Short | Description                                          |
 | ------------------------ | ----- | ---------------------------------------------------- |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project). |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                       |
 
 ### `vercel vcr permissions clear` flags
 
 | Flag     | Short | Description                   |
 | -------- | ----- | ----------------------------- |
 | `--yes`  | `-y`  | Skip the confirmation prompt. |
+| `--json` |       | Output as JSON.               |
 | `--help` | `-h`  | Display help information.     |
 
 ### `vercel vcr permissions clear` arguments
@@ -799,39 +800,40 @@ vercel vcr permissions my-repository clear --yes
 | -------------- | -------------------------------------------------- |
 | `<repository>` | The name or ID of the repository to clear access for. |
 
-## `vercel vcr config`
+## `vercel vcr update`
 
-Configure a container registry repository, such as the repository's visibility. See [Public Repositories](/docs/container-registry/public-and-shared-repositories#public-repositories) for how visibility works.
+Update a container registry repository, such as the repository's visibility. See [Public Repositories](/docs/container-registry/public-and-shared-repositories#public-repositories) for how visibility works.
 
 ```bash filename="terminal"
-vercel vcr config <repository> [OPTIONS]
+vercel vcr update <repository> [OPTIONS]
 ```
 
-### `vercel vcr config` example
+### `vercel vcr update` example
 
 ```bash filename="terminal"
 # Make a repository public
-vercel vcr config my-repository --public true
+vercel vcr update my-repository --public
 
 # Make a repository private without revoking access for shared teams
-vercel vcr config my-repository --public false
+vercel vcr update my-repository --no-public
 ```
 
-### `vercel vcr config` options
+### `vercel vcr update` options
 
 | Option                   | Short | Description                                                   |
 | ------------------------ | ----- | ------------------------------------------------------------- |
-| `--public <boolean>`     |       | Pass `true` for public or `false` for private.                 |
 | `--project <name-or-id>` | `-p`  | Project name or ID (defaults to the linked project).          |
-| `--format <format>`      | `-F`  | Output format. Accepts `json`.                                |
 
-### `vercel vcr config` flags
+### `vercel vcr update` flags
 
-| Flag     | Short | Description               |
-| -------- | ----- | ------------------------- |
-| `--help` | `-h`  | Display help information. |
+| Flag          | Short | Description                  |
+| ------------- | ----- | ---------------------------- |
+| `--public`    |       | Make the repository public.  |
+| `--no-public` |       | Make the repository private. |
+| `--json`      |       | Output as JSON.              |
+| `--help`      | `-h`  | Display help information.    |
 
-### `vercel vcr config` arguments
+### `vercel vcr update` arguments
 
 | Argument       | Description                                 |
 | -------------- | ------------------------------------------- |

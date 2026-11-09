@@ -16,8 +16,8 @@ related:
 summary: Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/sensitive-environment-variables.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "44aaaadcf2dc30e2243faa2bc79d05895c8bc1c5ddb40a4bb5b10ef772f60163"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e284c7ba49c82b82deb51e91972af1153fce6810281f0692facdbeb726f1c4c2"
 ---
 
 # Config and Secret environment variables
@@ -30,7 +30,7 @@ When you add or edit [environment variables](/docs/environment-variables "Enviro
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types)
 - [Vercel Integration](https://v0.app/docs/vercel-integration) — How v0 and Vercel work in tandem.
 - [Build logs now redact Sensitive Environment Variable values](https://vercel.com/changelog/build-logs-now-redact-sensitive-environment-variable-values)
 - [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access)
@@ -38,10 +38,10 @@ When you add or edit [environment variables](/docs/environment-variables "Enviro
 - [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
-- [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types)
-- [Sensitive environment variables are now available](https://vercel.com/changelog/sensitive-environment-variables-are-now-available)
+- [Migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
 - [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
-- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
+- [Sensitive environment variables are now available](https://vercel.com/changelog/sensitive-environment-variables-are-now-available)
+- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
 
 Full cross-link map for this page: [/docs/environment-variables/sensitive-environment-variables.graph.md](/docs/environment-variables/sensitive-environment-variables.graph.md)
 <!-- /docsgraph:related -->

@@ -17,8 +17,8 @@ related:
 summary: Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c66ae517e12a9dd788176d922e81dfea405f4a463c34a081e427df2138430ff1"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fc43060542f5bd2ef6bdc8b4e1c2a5c31974ee37950fcbecef4deaddbbd8a531"
 ---
 
 # Claude Code and Claude Agent SDK with AI Gateway
@@ -36,11 +36,10 @@ AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-a
 - [Claude Opus 5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-now-available-on-ai-gateway)
 - [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
 - [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code)
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
+- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
 - [Collaborating with Anthropic on Claude Sonnet 4.5 to power intelligent coding agents](https://vercel.com/blog/collaborating-with-anthropic-on-claude-sonnet-4-5)
-- [Claude Code](https://ai-sdk.dev/providers/community-providers/claude-code) — Learn how to use the Claude Code provider to access Claude models through the Claude Agent SDK.
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/claude-code.graph.md](/docs/ai-gateway/coding-agents/claude-code.graph.md)
 <!-- /docsgraph:related -->
@@ -265,7 +264,9 @@ https://ai-gateway.vercel.sh/claude-code
 
 Use it everywhere on this page. The URL takes no `/v1` suffix, because the Anthropic SDK appends `/v1/messages` itself, so adding it yourself produces a 404. To call the gateway from your own code rather than through Claude Code, see the [Anthropic Messages API](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api) instead.
 
-On the `/claude-code` surface, gateway models are listed with a `claude-code/` prefix, for example `claude-code/anthropic/claude-opus-5`, and models with a context window of 1M tokens or more carry a `[1m]` suffix. Those are display IDs for the picker. The gateway strips them before routing, so a request still bills and traces against the underlying model. Image generation models are filtered out, since Claude Code can't use them.
+On the `/claude-code` surface, gateway models are listed with a `claude-code/` prefix. Some also carry a `[1m]` suffix, for example `claude-code/anthropic/claude-opus-5[1m]`. The suffix tells Claude Code to use a 1M-token context window with that model. AI Gateway adds it only to models that accept a prompt of that size. For a model listed without the suffix, Claude Code limits the context window to 200,000 tokens.
+
+These are display IDs for the picker. The gateway strips the prefix and suffix before routing, so a request still bills and traces against the underlying model. Image generation models are filtered out, since Claude Code can't use them.
 
 To turn the picker on, set `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY` alongside the base URL:
 

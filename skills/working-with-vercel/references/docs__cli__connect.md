@@ -10,13 +10,14 @@ prerequisites:
 related:
   - /docs/connect
   - /docs/connect/concepts/connectors
+  - /docs/connect/concepts/tokens
+  - /docs/cli/login
   - /docs/cli/global-options
-  - /docs/connect/quickstart
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9bc8c4921d5918bfac7d863829cccf70bc99ee293aa2a518df8c2d783c7403bb"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7400e5b93d85c3e039a451de0fa63f5fc298c21d52bd6b08e5f2fcf8d008111e"
 ---
 
 # vercel connect
@@ -40,7 +41,7 @@ The `vercel connect` command manages [Vercel Connect](/docs/connect) connectors.
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 - [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
 - [Manage your Sanity project from Slack with eve](https://vercel.com/kb/guide/eve-sanity-copilot) — A Slack-based Sanity copilot built on eve. It queries and edits content with GROQ, shapes schemas, manages releases, and
-- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [vercel tokens](https://vercel.com/docs/cli/tokens) — Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the
 
 Full cross-link map for this page: [/docs/cli/connect.graph.md](/docs/cli/connect.graph.md)
 <!-- /docsgraph:related -->
@@ -54,9 +55,11 @@ It supports the following subcommands:
 - [`attach`](#vercel-connect-attach): Attach a project to a connector
 - [`detach`](#vercel-connect-detach): Detach a project from a connector
 - [`update`](#vercel-connect-update): Update connector branding
-- [`remove`](#vercel-connect-remove): Delete a connector
+- [`delete`](#vercel-connect-delete): Delete a connector
+- [`revoke-tokens`](#vercel-connect-revoke-tokens): Revoke tokens issued from a connector
 - [`open`](#vercel-connect-open): Open a connector in the Vercel dashboard
 - [`categories`](#vercel-connect-categories): List the categories services are grouped into
+- [`contacts add`](#vercel-connect-contacts-add): Add a phone contact that a connector may message
 
 Connectors are identified by their ID (for example, `scl_abc123`) or their UID (for example, `slack/my-bot`).
 
@@ -88,9 +91,9 @@ The command returns 50 services by default. When more match, the output ends wit
 | `--connection-method <METHOD>` | | Filter by connection method (for example, `oauth`, `api-key`, `mcp`). Repeatable. |
 | `--target <TARGET>` | | Filter by the product a service exposes (for example, `api`, `mcp`). Repeatable. |
 | `--supports-triggers` | | Only show services that can forward webhook triggers. |
-| `--limit <COUNT>` | | Number of services to return. Defaults to 50, maximum 500. |
+| `--limit <COUNT>` | `-n` | Number of services to return. Defaults to 50, maximum 500. |
 | `--next <CURSOR>` | | Cursor for the next page of results. |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+| `--json` | | Output as JSON. |
 
 ### Examples
 
@@ -102,7 +105,7 @@ vercel connect discover --connection-method mcp
 vercel connect discover --supports-triggers
 vercel connect discover --limit 100
 vercel connect discover --next <cursor>
-vercel connect discover --format=json
+vercel connect discover --json
 ```
 
 ## vercel connect create
@@ -164,7 +167,7 @@ Pass `--data @<path>` to read credentials from a file, or `--data @-` to read th
 
 | Option | Shorthand | Description |
 | --- | --- | --- |
-| `--name <NAME>` | `-n` | Name for the connector. |
+| `--name <NAME>` | | Name for the connector. |
 | `--connection-method <METHOD>` | | How to connect to the service (for example, `oauth`, `api-key`, `mcp`). Omit it to choose interactively. |
 | `--target <TARGET>` | | Which of the service's products to connect to (for example, `api`, `mcp`). Only needed when a service exposes more than one. |
 | `--param <KEY=VALUE>` | | Value for a setup field on the connection method (for example, `domain=acme.okta.com`). Repeatable. |
@@ -172,11 +175,15 @@ Pass `--data @<path>` to read credentials from a file, or `--data @-` to read th
 | `--connector-type <TYPE>` | | Connector type to create. Only valid with `--data`. By default, Vercel resolves the type from the service. |
 | `--triggers` | | Enable webhook trigger forwarding for this connector. |
 | `--trigger-event <EVENT>` | | Webhook event to receive. Repeatable. Requires `--triggers`, and replaces the provider's default events. |
+| `--trigger-project <PROJECT>` | | Name or ID of the project that receives forwarded webhooks. Defaults to the currently linked project. Requires `--triggers`. |
+| `--trigger-path <PATH>` | | Path on the destination project that receives forwarded webhooks. Requires `--triggers`. |
+| `--git-branch <BRANCH>` | | Git branch whose Preview deployment receives forwarded webhooks. Without `--git-branch` or `--trigger-environment`, webhooks go to Production. Requires `--triggers`. |
+| `--trigger-environment <ENV>` | | Slug of the Custom Environment that receives forwarded webhooks. You can't combine it with `--git-branch`. Requires `--triggers`. |
 | `--yes` | `-y` | Skip the confirmation prompt shown when a service has a single connection method. |
 | `--icon <PATH>` | | Path to a PNG or JPEG image to use as the connector icon. |
 | `--background-color <HEX>` | | Background color for the connector icon (for example, `#1A2B3C`). |
 | `--accent-color <HEX>` | | Accent color for the connector icon (for example, `#FF0066`). |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+| `--json` | | Output as JSON. |
 
 ### Examples
 
@@ -188,14 +195,15 @@ vercel connect create notion --target api --connection-method oauth --name notio
 vercel connect create notion --connection-method api-key --name notion --data @key.json
 vercel connect create okta --connection-method custom-server --param domain=acme.okta.com --name okta --data @credentials.json
 vercel connect create slack --name my-bot --triggers
+vercel connect create slack --name my-bot --triggers --trigger-path /api/slack-events --git-branch staging
 vercel connect create mcp.linear.app --name linear-connector
 vercel connect create slack --name my-bot --icon ./logo.png --background-color '#1A2B3C'
-vercel connect create slack --format=json
+vercel connect create slack --json
 ```
 
 ## vercel connect list
 
-Lists connectors for your team or project, with optional filtering by type, service, or search text. Also available as `vercel connect ls`.
+Lists connectors for your team or project, with optional filtering by type, service, or search text.
 
 ```bash filename="terminal"
 vercel connect list
@@ -218,10 +226,10 @@ vercel connect list --all-projects
 | `--all-projects` | | List every connector in the team, regardless of project link. |
 | `--type <TYPE>` | | Filter by connector type (`slack`, `github`, `oauth`, `custom`). Repeatable. |
 | `--service <NAME>` | | Filter by service name (for example, `slack`, `mcp.linear.app`). Repeatable. |
-| `--search <TEXT>` | | Search connectors by name or UID. |
-| `--limit <COUNT>` | | Number of connectors to return per page. |
+| `--query <TEXT>` | `-q` | Search connectors by name or UID. |
+| `--limit <COUNT>` | `-n` | Number of connectors to return per page. |
 | `--next <CURSOR>` | | Cursor for the next page of results. |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+| `--json` | | Output as JSON. |
 
 ### Examples
 
@@ -230,9 +238,9 @@ vercel connect list --all-projects
 vercel connect list --type slack
 vercel connect list --type oauth --type github
 vercel connect list --service mcp.linear.app
-vercel connect list --search prod
+vercel connect list --query prod
 vercel connect list --limit 10
-vercel connect list --format=json
+vercel connect list --json
 ```
 
 ## vercel connect token
@@ -259,11 +267,11 @@ If authorization or installation is required and the session is interactive, the
 
 | Option | Shorthand | Description |
 | --- | --- | --- |
-| `--subject <TYPE>` | `-s` | Subject type: `user` (default) or `app`. |
-| `--installation-id <ID>` | | Target a specific installation. Only applies with `--subject app`. |
-| `--scopes <SCOPES>` | | Scopes for the token request. Comma- or space-separated. |
+| `--subject <TYPE>` | | Subject type: `user` (default) or `app`. |
+| `--installation <ID>` | | Target a specific installation. Only applies with `--subject app`. |
+| `--scopes <SCOPES>` | | Scopes for the token request. Comma- or space-separated. Without `--scopes`, the command requests the connector's default scopes. To send the request with no scopes, pass `--no-default-scopes`. |
 | `--yes` | `-y` | Allow opening the browser automatically if authorization or installation is required. |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). JSON output includes `expiresAt`, `installationId`, and other fields. |
+| `--json` | | Output as JSON. Includes `expiresAt`, `installationId`, and other fields. |
 
 ### Examples
 
@@ -271,10 +279,10 @@ If authorization or installation is required and the session is interactive, the
 vercel connect token scl_abc123
 vercel connect token slack/my-bot
 vercel connect token scl_abc123 --subject app
-vercel connect token scl_abc123 --subject app --installation-id inst_1
+vercel connect token scl_abc123 --subject app --installation inst_1
 vercel connect token scl_abc123 --scopes channels:read,chat:write
 vercel connect token scl_abc123 --yes
-vercel connect token scl_abc123 --format=json
+vercel connect token scl_abc123 --json
 ```
 
 ## vercel connect attach
@@ -311,7 +319,7 @@ vercel connect attach scl_abc123 --triggers
 
 *Attach and register the project as a trigger destination.*
 
-If you do not pass `--trigger-branch` or `--trigger-environment`, the destination targets Production.
+If you do not pass `--git-branch` or `--trigger-environment`, the destination targets Production.
 
 If you omit `--trigger-path`, Vercel derives the receiver path from the connector and project framework. Pass `--trigger-path` to select the receiver path explicitly.
 
@@ -327,8 +335,8 @@ vercel connect attach scl_abc123 --environment qa --triggers \
 The CLI combines the environments passed to `--environment` with the trigger target. For a project with no existing trigger destinations, the example above produces a project link that contains only `qa`. Existing trigger destinations remain registered, and the CLI preserves any Custom Environments they require on the project link. If you omit `--environment`, the CLI links `production`, `preview`, and `development`, adds `qa` because it is the trigger target, and preserves Custom Environments required by existing destinations.
 
 > **💡 Note:** Detaching a project (via `vercel connect detach`) removes the token-access
-> link but does not remove the project from the connector's trigger
-> destinations. Manage trigger destinations separately.
+> link and also removes the project from the connector's trigger
+> destinations.
 
 ### Options
 
@@ -337,11 +345,11 @@ The CLI combines the environments passed to `--environment` with the trigger tar
 | `--project <NAME_OR_ID>` | `-p` | Project name or ID. Defaults to the currently linked project. |
 | `--environment <ENV>` | `-e` | Environments to enable by built-in name or Custom Environment slug. Repeatable and comma-separated. Defaults to `production`, `preview`, and `development`. |
 | `--triggers` | | Register this project as a trigger destination for incoming webhooks. |
-| `--trigger-branch <BRANCH>` | | Git branch for the trigger destination. Mutually exclusive with `--trigger-environment` and only valid with `--triggers`. |
-| `--trigger-environment <ENV>` | | Custom Environment slug for the trigger destination. Mutually exclusive with `--trigger-branch` and only valid with `--triggers`. |
+| `--git-branch <BRANCH>` | | Git branch for the trigger destination. Mutually exclusive with `--trigger-environment` and only valid with `--triggers`. |
+| `--trigger-environment <ENV>` | | Custom Environment slug for the trigger destination. Mutually exclusive with `--git-branch` and only valid with `--triggers`. |
 | `--trigger-path <PATH>` | | Path on the project that receives forwarded webhooks. Only valid with `--triggers`. |
 | `--yes` | `-y` | Skip the confirmation prompt. |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+| `--json` | | Output as JSON. Requires `--yes`. |
 
 ### Examples
 
@@ -351,9 +359,9 @@ vercel connect attach scl_abc123 -e production -e preview
 vercel connect attach scl_abc123 -e qa
 vercel connect attach slack/my-bot --project my-app
 vercel connect attach scl_abc123 --triggers
-vercel connect attach scl_abc123 --triggers --trigger-branch staging --trigger-path /slack
+vercel connect attach scl_abc123 --triggers --git-branch staging --trigger-path /slack
 vercel connect attach scl_abc123 -e qa --triggers --trigger-environment qa --trigger-path /slack
-vercel connect attach scl_abc123 --yes --format=json
+vercel connect attach scl_abc123 --yes --json
 ```
 
 ## vercel connect detach
@@ -378,14 +386,14 @@ vercel connect detach slack/my-bot --project my-app
 | --- | --- | --- |
 | `--project <NAME_OR_ID>` | `-p` | Project name or ID. Defaults to the currently linked project. |
 | `--yes` | `-y` | Skip the confirmation prompt. |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+| `--json` | | Output as JSON. Requires `--yes`. |
 
 ### Examples
 
 ```bash filename="terminal"
 vercel connect detach scl_abc123
 vercel connect detach slack/my-bot --project my-app
-vercel connect detach scl_abc123 --yes --format=json
+vercel connect detach scl_abc123 --yes --json
 ```
 
 ## vercel connect update
@@ -405,22 +413,22 @@ vercel connect update <connector>
 | `--icon <PATH>` | | Path to a PNG or JPEG image to use as the connector icon. |
 | `--background-color <HEX>` | | Background color for the connector icon (for example, `#1A2B3C`). |
 | `--accent-color <HEX>` | | Accent color for the connector icon (for example, `#FF0066`). |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+| `--json` | | Output as JSON. |
 
 ### Examples
 
 ```bash filename="terminal"
 vercel connect update scl_abc123 --icon ./logo.png
 vercel connect update scl_abc123 --background-color '#1A2B3C' --accent-color '#FF0066'
-vercel connect update scl_abc123 --icon ./logo.png --format=json
+vercel connect update scl_abc123 --icon ./logo.png --json
 ```
 
-## vercel connect remove
+## vercel connect delete
 
-Deletes a connector. By default the command prompts for confirmation. Also available as `vercel connect rm`.
+Deletes a connector. By default the command prompts for confirmation.
 
 ```bash filename="terminal"
-vercel connect remove <connector>
+vercel connect delete <connector>
 ```
 
 *Delete a connector by ID or UID.*
@@ -428,7 +436,7 @@ vercel connect remove <connector>
 If the connector still has projects attached, the deletion fails unless you pass `--disconnect-all` to detach all projects first.
 
 ```bash filename="terminal"
-vercel connect remove scl_abc123 --disconnect-all --yes
+vercel connect delete scl_abc123 --disconnect-all --yes
 ```
 
 *Detach all projects from a connector and then delete it without prompting.*
@@ -437,23 +445,62 @@ vercel connect remove scl_abc123 --disconnect-all --yes
 
 | Option | Shorthand | Description |
 | --- | --- | --- |
-| `--disconnect-all` | `-a` | Disconnect all projects from the connector before deletion. |
+| `--disconnect-all` | | Disconnect all projects from the connector before deletion. |
 | `--yes` | `-y` | Skip the confirmation prompt. |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+| `--json` | | Output as JSON. Requires `--yes`. |
 
 ### Examples
 
 ```bash filename="terminal"
-vercel connect remove scl_abc123
-vercel connect remove slack/my-bot
-vercel connect remove scl_abc123 --disconnect-all
-vercel connect remove scl_abc123 --yes
-vercel connect remove scl_abc123 --disconnect-all --yes --format=json
+vercel connect delete scl_abc123
+vercel connect delete slack/my-bot
+vercel connect delete scl_abc123 --disconnect-all
+vercel connect delete scl_abc123 --yes
+vercel connect delete scl_abc123 --disconnect-all --yes --json
+```
+
+## vercel connect revoke-tokens
+
+Revokes tokens that a connector issued. Anyone whose tokens you revoke must authorize the connector again before they can use it. If the provider doesn't support revocation, a revoked token can keep working at the provider until it expires. See [Revocation](/docs/connect/concepts/tokens#revocation).
+
+Pass the ID or UID of the connector:
+
+```bash filename="terminal"
+vercel connect revoke-tokens <connector>
+```
+
+*Choose which of a connector's tokens to revoke.*
+
+In a terminal, the command asks whether to revoke only your own tokens or every token, and then asks you to confirm. In a script or in CI, pass `--my-tokens` or `--all-tokens` together with `--yes`:
+
+```bash filename="terminal"
+vercel connect revoke-tokens scl_abc123 --my-tokens --yes
+```
+
+*Revoke your own tokens for a connector without prompts.*
+
+### Options
+
+| Option | Shorthand | Description |
+| --- | --- | --- |
+| `--my-tokens` | | Revoke only your own tokens for the connector. |
+| `--all-tokens` | | Revoke every token for all users and installations. |
+| `--yes` | `-y` | Skip the confirmation prompt. Requires `--my-tokens` or `--all-tokens`. |
+| `--json` | | Output as JSON. Requires `--yes`. |
+
+### Examples
+
+```bash filename="terminal"
+vercel connect revoke-tokens scl_abc123
+vercel connect revoke-tokens scl_abc123 --my-tokens
+vercel connect revoke-tokens scl_abc123 --all-tokens
+vercel connect revoke-tokens scl_abc123 --my-tokens --yes
+vercel connect revoke-tokens scl_abc123 --my-tokens --yes --json
 ```
 
 ## vercel connect open
 
-Opens a connector in the Vercel dashboard. With `--format=json`, prints the dashboard URL instead of opening a browser.
+Opens a connector in the Vercel dashboard. With `--json`, prints the dashboard URL instead of opening a browser.
 
 ```bash filename="terminal"
 vercel connect open <connector>
@@ -465,14 +512,14 @@ vercel connect open <connector>
 
 | Option | Shorthand | Description |
 | --- | --- | --- |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+| `--json` | | Output as JSON. |
 
 ### Examples
 
 ```bash filename="terminal"
 vercel connect open scl_abc123
 vercel connect open slack/my-bot
-vercel connect open scl_abc123 --format=json
+vercel connect open scl_abc123 --json
 ```
 
 ## vercel connect categories
@@ -489,13 +536,44 @@ vercel connect categories
 
 | Option | Shorthand | Description |
 | --- | --- | --- |
-| `--format <FORMAT>` | `-F` | Specify the output format (`json`). |
+| `--json` | | Output as JSON. |
 
 ### Examples
 
 ```bash filename="terminal"
 vercel connect categories
-vercel connect categories --format=json
+vercel connect categories --json
+```
+
+## vercel connect contacts add
+
+Adds a phone contact that a connector may message. Pass the connector's ID or UID and a phone number in E.164 format, with `+` followed by the country code and number, without spaces, parentheses, or hyphens:
+
+```bash filename="terminal"
+vercel connect contacts add linq/support --phone-number +12025550123
+```
+
+*Add a phone contact to the \`linq/support\` connector.*
+
+[Log in](/docs/cli/login) or use a [token](/docs/cli/global-options#token) to authenticate. Use `--scope <team-slug>` to select the connector's team. In non-interactive mode, pass `--scope` unless the current directory is linked to a project in that team.
+
+In text output, the command prints `Contact +12025550123 added.` on success followed by any verification instructions. Follow those instructions to complete verification. The command can finish successfully while verification is still pending; it doesn't wait for verification to complete.
+
+Use `--json` to output the verification response instead of the success message. The response can include `status`, `verified`, and `instructions`.
+
+### Options
+
+| Option | Shorthand | Description |
+| --- | --- | --- |
+| `--phone-number <PHONE>` | | Required. Contact phone number in E.164 format, such as `+12025550123`. |
+| `--json` | | Output the verification response as JSON. |
+
+### Examples
+
+```bash filename="terminal"
+vercel connect contacts add scl_abc123 --phone-number +12025550123
+vercel connect contacts add linq/support --phone-number +12025550123 --scope my-team
+vercel connect contacts add scl_abc123 --phone-number +12025550123 --json
 ```
 
 ## Global Options
@@ -510,7 +588,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

@@ -1,8 +1,8 @@
 ---
 title: "MDX Plugins"
 source: "https://docusaurus.io/docs/markdown-features/plugins"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "351366584e111852cdb334658353532cf748ed933510a1310455ea3cb973ba40"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "0b14e394f4e5ebb1be95d2facde69b491b7a22e67f06247118aa97fec6ae5fdb"
 ---
 
 # MDX Plugins
@@ -125,4 +125,4 @@ noteThe default plugins of Docusaurus would operate before the custom remark plu
 ```
 export default {  presets: [    [      '@docusaurus/preset-classic',      {        docs: {          beforeDefaultRemarkPlugins: [sectionPrefix],        },      },    ],  ],};
 ```
-This would make the table of contents generated contain the `Section X.` prefix as well.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-plugins.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+This would make the table of contents generated contain the `Section X.` prefix as well.[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-plugins.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

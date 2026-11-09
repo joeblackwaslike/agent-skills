@@ -16,8 +16,8 @@ related:
 summary: Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remote files through the local...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/mount-remote-storage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ff065d239ea4b6c1458f7eb19d9c3083fe5933b7f96265756f563b915637049d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a10988acbc80e3cf5d316fe8cde230712f09cc97ea7dca1e11e267de4b72d58e"
 ---
 
 # Mount remote storage
@@ -32,10 +32,10 @@ Mount an external object store such as Amazon S3 into a sandbox and work with re
 
 - [Vercel Sandbox now supports FUSE-based filesystems](https://vercel.com/changelog/vercel-sandbox-now-supports-fuse-based-filesystems)
 - [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
-- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta)
 - [Box Mount now runs in Vercel Sandbox](https://vercel.com/changelog/box-mount-now-runs-in-vercel-sandbox)
+- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
+- [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/mount-remote-storage.graph.md](/docs/sandbox/mount-remote-storage.graph.md)
@@ -131,10 +131,10 @@ from vercel import sandbox
 async def main() -> None:
     async with sandbox.create_sandbox() as box:
         # Refresh the package index. The sandbox starts without one.
-        await box.run_process("apt-get", ["update"], sudo=True, check=True)
+        await box.run_command("apt-get", ["update"], sudo=True, check=True)
 
         # apt-get cannot install from a URL, so download the package first.
-        await box.run_process(
+        await box.run_command(
             "curl",
             [
                 "-sL",
@@ -146,7 +146,7 @@ async def main() -> None:
         )
 
         # Install Mountpoint for Amazon S3. It pulls in its own FUSE dependency.
-        await box.run_process(
+        await box.run_command(
             "apt-get",
             ["install", "-y", "/tmp/mount-s3.deb"],
             sudo=True,
@@ -154,9 +154,9 @@ async def main() -> None:
         )
 
         mount_dir = "/mnt/s3"
-        await box.run_process("mkdir", ["-p", mount_dir], sudo=True, check=True)
+        await box.run_command("mkdir", ["-p", mount_dir], sudo=True, check=True)
 
-        await box.run_process(
+        await box.run_command(
             "mount-s3",
             [os.environ["S3_BUCKET_NAME"], mount_dir, "--allow-other"],
             sudo=True,
@@ -169,7 +169,7 @@ async def main() -> None:
             check=True,
         )
 
-        result = await box.run_process(
+        result = await box.run_command(
             "ls", ["-la", mount_dir], capture_output=True, check=True
         )
         print(result.stdout)

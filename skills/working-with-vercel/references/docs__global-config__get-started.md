@@ -16,8 +16,8 @@ related:
 summary: Learn how to create a Global Config store and read from it in your project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/get-started.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "afc841f420463a18d15b2f54b2d5de05114f0111951ac7ff58a2881139649004"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6e8d207a33299661bc4f35c4db271273a0038b3b582d19f5d31fb2611960dadf"
 ---
 
 # Getting started with Global Config
@@ -32,11 +32,12 @@ Global Config is a distributed key-value store that allows you to store and retr
 
 - [How to handle redirects in Next.js](https://nextjs.org/docs/app/guides/redirecting) — Learn the different ways to handle redirects in Next.js.
 - [How to handle redirects in Next.js](https://nextjs.org/docs/pages/guides/redirecting) — Learn the different ways to handle redirects in Next.js.
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config) — Learn how to use Global Config with Vercel's Statsig integration.
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config/get-started.graph.md](/docs/global-config/get-started.graph.md)
 <!-- /docsgraph:related -->
@@ -101,18 +102,18 @@ bun add -g vercel@latest
 
   Create a new store by typing `hello_world_store` under **Global Config** in the dialog that opens, and click **Create**.
   > **💡 Note:** The name can only contain alphanumeric letters, "\_" and "-". It cannot exceed
-  > 32 characters.
+  > 64 characters.
 
 - ### Review what was created
   Once created, select `hello_world_store` to see a summary of what was created for you. Notice the following:
-  - If you select **Project**, you'll see that your project was connected to the Global Config by using an environment variable. If you go to your project's **Settings > Environment Variables**, you'll see the newly created environment variable.
+  - If you select **Projects**, you'll see that your project was connected to the Global Config by using an environment variable. If you go to your project's **Settings > Environment Variables**, you'll see the newly created environment variable.
   - If you select **Tokens**, you'll see a [read access token](/docs/global-config/using-global-config#creating-a-read-access-token). This token, along with your **GLOBAL CONFIG ID**, is used to create a [connection string](/docs/global-config/using-global-config#using-a-connection-string). This connection string is saved as the value of your `GLOBAL_CONFIG` environment variable. This enables you to use the SDK in your project to read the store's contents.
   > **💡 Note:** If you're creating a project at the account-level, we won't automatically
   > create a token, connection string, and environment variable until a project
   > has been connected.
 
 - ### Add a key-value pair
-  Under **Items**, add the following key-value pair and click **Save Items**:
+  Under **Items**, add the following key-value pair and click **Save**:
   ```json
   {
     "greeting": "hello world"

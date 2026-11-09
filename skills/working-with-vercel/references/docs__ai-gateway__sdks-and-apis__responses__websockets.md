@@ -15,8 +15,8 @@ related:
 summary: Keep a persistent connection open across turns with the OpenAI Responses API over WebSocket through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/websockets.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "79d7c2117374b7e821a30841517dfc6b977bf96645cc1e67113526a33d5e2532"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2c41629680a000ea6d8733f8fe0c6e699d7c32a8c233fd93b1ab73d84eecd238"
 ---
 
 # OpenAI Responses API WebSocket Mode with AI Gateway
@@ -107,7 +107,7 @@ ws.send(
 );
 ```
 
-One connection serves one model. Every frame must use the model the connection was opened with; a frame with a different model returns an error and closes the connection with code 1008.
+One connection serves one model. Every frame must use the model the connection was opened with; a later frame with a different model closes the connection with code 1008, and AI Gateway doesn't send an `error` frame first.
 
 ## Using store: false
 
@@ -139,7 +139,7 @@ For complete AI SDK, Chat Completions, Responses, and WebSocket examples, see [U
 
 ## Supported models
 
-WebSocket mode is available for OpenAI text models, currently GPT-5.4 and later (including the GPT-5.6 series). Requests for any other model return an error frame and close the connection:
+WebSocket mode is available for OpenAI text models, currently GPT-5.4 and later (including the GPT-5.6 series). Requests for a model that isn't an OpenAI text model return an error frame and close the connection:
 
 ```json
 {
@@ -160,16 +160,17 @@ Connections are long-lived but not unbounded. Build clients to reconnect and sta
 
 | Behavior | Value |
 | --- | --- |
-| Idle timeout | 5 minutes without frames, then close 1001. Ping/pong frames reset the timer, so keepalive pings hold an idle connection open. |
+| Idle timeout | None. AI Gateway sends a ping frame every 30 seconds. If your client doesn't answer with a pong frame within 30 seconds, the connection closes with code 1001. |
 | Maximum connection duration | Approximately 13 minutes, then close 1001. Reconnect and start a new chain. |
-| Maximum frame size | 4 MiB |
+| Maximum frame size | 8 MiB for frames you send. 4 MiB for events from the model provider. |
 
 Close codes:
 
 | Code | Meaning |
 | --- | --- |
-| 1001 | Idle timeout or maximum duration reached. Reconnect and continue. |
+| 1001 | Unanswered ping or maximum duration reached. Reconnect and continue. |
 | 1008 | Invalid request (for example, an unsupported model or a mid-connection model switch) |
+| 1009 | Frame too large or buffer limit exceeded. Reconnect and send smaller frames. |
 | 1011 | Upstream provider error |
 | 4402 | Out of credits mid-session. Add credits and reconnect. |
 

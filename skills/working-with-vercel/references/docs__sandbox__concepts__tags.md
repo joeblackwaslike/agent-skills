@@ -16,8 +16,8 @@ related:
 summary: Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/tags.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b06fc7da1e9cc57bf48c8795d215e40ea689b3ab6bbeed0efe181138e882463c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "20ae54633ebdba9f6b6cd9f35ad163e30582e8d4819b4727b021f52cc985865d"
 ---
 
 # Tags
@@ -31,11 +31,12 @@ Tags let you categorize sandboxes by environment, team, or any other criteria. E
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Custom tags available in beta on Vercel Sandbox](https://vercel.com/changelog/custom-tags-available-in-beta-on-vercel-sandbox)
+- [Vercel Sandboxes now allow unique, customizable names](https://vercel.com/changelog/vercel-sandboxes-now-allow-unique-customizable-names)
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Working with Sandbox](https://vercel.com/docs/sandbox/working-with-sandbox) — Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
-- [Quickstart](https://vercel.com/docs/sandbox/quickstart) — Learn how to run your first code in a Vercel Sandbox.
 - [Sandbox Regions](https://vercel.com/docs/sandbox/concepts/regions) — Choose the regions where Vercel Sandbox runs your sandboxes, set a project default, and configure failover regions.
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart) — Learn how to run your first code in a Vercel Sandbox.
+- [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/tags.graph.md](/docs/sandbox/concepts/tags.graph.md)
 <!-- /docsgraph:related -->
@@ -177,6 +178,8 @@ sandbox list --tag env=production
 Tags have a few hard limits to keep in mind when designing your tagging scheme:
 
 - Each sandbox supports a maximum of five tags.
+- Tag keys can contain only ASCII letters, numbers, hyphens, underscores, periods, and forward slashes, and can be up to 128 characters long.
+- Tag values can be up to 256 characters long.
 - `Sandbox.list()` and `sandbox list` support filtering by one tag at a time.
 
 ## Next steps

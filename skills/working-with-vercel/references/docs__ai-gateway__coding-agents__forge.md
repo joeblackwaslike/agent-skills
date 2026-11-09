@@ -16,8 +16,8 @@ related:
 summary: Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/forge.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4a7991ede4f2cffecc5d82064242d20ee267faee4f71a75a5d2b263a32ffc2fa"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "15bc74e6251c7928568bb94cdbe1bf6a92f77bf40770345d7d8c37a49dae8fce"
 ---
 
 # ForgeCode with AI Gateway
@@ -30,8 +30,8 @@ sha256: "4a7991ede4f2cffecc5d82064242d20ee267faee4f71a75a5d2b263a32ffc2fa"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
@@ -77,7 +77,7 @@ If you can't use the Vercel CLI, configure ForgeCode manually:
   ```json filename="~/.forge/.credentials.json"
   [
     {
-      "provider_id": "vercel-ai-gateway",
+      "id": "vercel-ai-gateway",
       "auth_details": {
         "api_key": "your-ai-gateway-api-key"
       }
@@ -93,7 +93,7 @@ If you can't use the Vercel CLI, configure ForgeCode manually:
   ```bash filename="Terminal"
   forge
   ```
-  Switch models in-session with `:config-model`. The picker fills from the gateway's `/models` endpoint, so the full catalog is available.
+  Switch models in-session with `:config-model`. The picker fills from the gateway's `/models` endpoint, which lists the gateway models that a coding agent can use.
 
 ### Monitor usage and spend
 

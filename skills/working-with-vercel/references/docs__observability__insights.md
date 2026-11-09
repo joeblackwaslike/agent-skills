@@ -16,8 +16,8 @@ related:
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c9c83e0a69bfc04e606e169af9ac772b904038975cedb34dccedb1260f200eb3"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "afb45e55fc1b67d4ec2a7cae83d2e1ed4fff961962ed3b72e599a4b6cc1c4279"
 ---
 
 # Observability Insights
@@ -34,14 +34,14 @@ Vercel organizes Observability through sections that correspond to different fea
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Anyone can build agents, but it takes a platform to run them](https://vercel.com/blog/anyone-can-build-agents-but-it-takes-a-platform-to-run-them)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [Overview page in Observability](https://vercel.com/changelog/overview-page-in-observability)
+- [Vercel Observability is now generally available](https://vercel.com/changelog/vercel-observability-is-now-generally-available)
+- [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
-- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md)
 <!-- /docsgraph:related -->
@@ -173,19 +173,21 @@ For more information, see [the AI Gateway announcement](/blog/ai-gateway).
 
 With [Vercel Sandbox](/docs/sandbox), you can safely run untrusted or user-generated code on Vercel in isolated, persistent Linux microVMs using the `@vercel/sandbox` SDK.
 
-You can view a list of sandboxes that were started for this project. For each sandbox, you can see:
+The **Sandboxes** tab in Observability shows charts of sandbox creations, running sandboxes, CPU usage, memory usage, and data transfer.
 
-- Time started
-- Status such as pending or stopped
-- Runtime such as `node24`
-- Resources such as `4x CPU 8.19 KB`
-- Duration it ran for
+To view a list of your project's sandboxes, open the **Sandboxes** page from your project's sidebar. For each sandbox, you can see:
+
+- Name
+- Status such as running or stopped
+- Resources such as `4x CPU · 8 GiB`
+- Time it was last used
+- Time it was created
 
 Clicking on a sandbox item from the list takes you to the detail page that provides detailed information, including the URL and port of the sandbox.
 
-## External Rewrites
+## External Origins
 
-The **External Rewrites** tab gives you visibility into how your external rewrites are performing at both the team and project levels. For each external rewrite, you can see:
+The **External Origins** tab gives you visibility into how your [rewrites to external origins](/docs/routing/rewrites#rewrites-to-external-origins), also called external rewrites, are performing at both the team and project levels. For each external rewrite, you can see:
 
 - Total external rewrites
 - External rewrites by hostnames

@@ -15,13 +15,13 @@ related:
 summary: Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/webhooks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f915488af2bacda7b2148c9973af5f307e210541530a3e25f24deb20ea2b6244"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "8d68a6a304e558f3344e878f32219ccd8e5a4895e7109ff5ac7911a5cdb997d9"
 ---
 
 # vercel webhooks
 
-The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for your Vercel account, providing functionality to list, inspect, create, and remove webhooks. Webhooks allow you to receive HTTP POST requests when events occur in your Vercel account.
+The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for your Vercel account, providing functionality to list, inspect, create, and delete webhooks. Webhooks allow you to receive HTTP POST requests when events occur in your Vercel account.
 
 
 <!-- docsgraph:related -->
@@ -29,7 +29,7 @@ The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and delete deploy hook URLs that trigger
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks) — GET /v1/webhooks — Get a list of webhooks
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook) — POST /v1/webhooks — Creates a webhook
@@ -47,7 +47,7 @@ The `vercel webhooks` command supports the following subcommands:
 - [`list`](#vercel-webhooks-list) - List all webhooks
 - [`inspect`](#vercel-webhooks-inspect) - Inspect details of a specific webhook
 - [`create`](#vercel-webhooks-create) - Create a new webhook
-- [`rm`](#vercel-webhooks-rm) - Remove a webhook
+- [`delete`](#vercel-webhooks-delete) - Delete a webhook
 
 ## vercel webhooks list
 
@@ -59,23 +59,15 @@ vercel webhooks list
 
 *Using the \`vercel webhooks list\` command to list all webhooks.*
 
-You can also use the `ls` alias:
-
-```bash filename="terminal"
-vercel webhooks ls
-```
-
-*Using the \`vercel webhooks ls\` alias to list all webhooks.*
-
 ### JSON output
 
-Use the `--format` option to output the list as JSON:
+Use the `--json` option to output the list as JSON:
 
 ```bash filename="terminal"
-vercel webhooks ls --format json
+vercel webhooks list --json
 ```
 
-*Using the \`--format json\` option to output webhooks as JSON.*
+*Using the \`--json\` option to output webhooks as JSON.*
 
 ## vercel webhooks inspect
 
@@ -91,13 +83,13 @@ vercel webhooks inspect <id>
 
 ### JSON output
 
-Use the `--format` option to output the webhook details as JSON:
+Use the `--json` option to output the webhook details as JSON:
 
 ```bash filename="terminal"
-vercel webhooks inspect <id> --format json
+vercel webhooks inspect <id> --json
 ```
 
-*Using the \`--format json\` option to output webhook details as JSON.*
+*Using the \`--json\` option to output webhook details as JSON.*
 
 ## vercel webhooks create
 
@@ -109,17 +101,9 @@ vercel webhooks create <url> --event <event>
 
 *Using the \`vercel webhooks create\` command to create a new webhook.*
 
-You can also use the `add` alias:
-
-```bash filename="terminal"
-vercel webhooks add <url> --event <event>
-```
-
-*Using the \`vercel webhooks add\` alias to create a new webhook.*
-
 ### Specifying events
 
-At least one event is required when creating a webhook. Use the `--event` option (shorthand `-e`) to specify which events the webhook should listen for. You can specify multiple events by using the option multiple times:
+At least one event is required when creating a webhook. Use the `--event` option to specify which events the webhook should listen for. You can specify multiple events by using the option multiple times:
 
 ```bash filename="terminal"
 vercel webhooks create https://example.com/webhook --event deployment.created --event deployment.ready
@@ -129,7 +113,7 @@ vercel webhooks create https://example.com/webhook --event deployment.created --
 
 ### Specifying projects
 
-By default, webhooks listen to events from all projects in your account. Use the `--project` option (shorthand `-p`) to limit the webhook to specific projects. You must provide the **project ID** (for example, `prj_abc123`), not the project name. To find a project ID, open the project in the [Vercel dashboard](/dashboard), go to **Settings** → **General**, or run `vercel project ls` in the CLI.
+By default, webhooks listen to events from all projects in your account. Use the `--project` option (shorthand `-p`) to limit the webhook to specific projects. You must provide the **project ID** (for example, `prj_abc123`), not the project name. To find a project ID, open the project in the [Vercel dashboard](/dashboard), go to **Settings** → **General**, or run `vercel project inspect <name>` in the CLI.
 
 ```bash filename="terminal"
 vercel webhooks create https://example.com/webhook --event deployment.created --project prj_abc123
@@ -149,29 +133,20 @@ vercel webhooks create https://example.com/webhook --event deployment.created --
 > will not be shown again. You can use this secret to verify webhook signatures
 > using the [x-vercel-signature](/docs/headers/request-headers#x-vercel-signature) header.
 
-## vercel webhooks rm
+## vercel webhooks delete
 
-The `vercel webhooks rm` command removes a webhook from your account.
-
-```bash filename="terminal"
-vercel webhooks rm <id>
-```
-
-*Using the \`vercel webhooks rm\` command to remove a webhook.*
-
-You can also use the `remove` or `delete` aliases:
+The `vercel webhooks delete` command deletes a webhook from your account.
 
 ```bash filename="terminal"
-vercel webhooks remove <id>
 vercel webhooks delete <id>
 ```
 
-*Using the \`vercel webhooks remove\` or \`vercel webhooks delete\` aliases to remove a webhook.*
+*Using the \`vercel webhooks delete\` command to delete a webhook.*
 
-By default, the command prompts for confirmation before removing the webhook. Use the `--yes` option to skip the confirmation:
+By default, the command prompts for confirmation before deleting the webhook. Use the `--yes` option to skip the confirmation:
 
 ```bash filename="terminal"
-vercel webhooks rm <id> --yes
+vercel webhooks delete <id> --yes
 ```
 
 *Using the \`--yes\` option to skip the confirmation prompt.*
@@ -180,19 +155,19 @@ vercel webhooks rm <id> --yes
 
 These are options that only apply to the `vercel webhooks` command.
 
-### Format
+### JSON
 
-The `--format` option can be used with the `list` and `inspect` subcommands to output results as JSON. The only supported value is `json`.
+The `--json` option can be used with the `list` and `inspect` subcommands to output results as JSON:
 
 ```bash filename="terminal"
-vercel webhooks ls --format json
+vercel webhooks list --json
 ```
 
-*Using the \`vercel webhooks ls\` command with the \`--format\` option.*
+*Using the \`vercel webhooks list\` command with the \`--json\` option.*
 
 ### Event
 
-The `--event` option (shorthand `-e`) specifies which events the webhook should listen for when using the `create` subcommand. This option can be used multiple times to subscribe to multiple events.
+The `--event` option specifies which events the webhook should listen for when using the `create` subcommand. This option can be used multiple times to subscribe to multiple events.
 
 ```bash filename="terminal"
 vercel webhooks create https://example.com/webhook --event deployment.created
@@ -204,7 +179,7 @@ See the [supported event types](/docs/webhooks/webhooks-api#supported-event-type
 
 ### Project
 
-The `--project` option (shorthand `-p`) limits the webhook to specific projects when using the `create` subcommand. Provide the project ID (for example, `prj_abc123`). You can find it in the project's **Settings** → **General** in the [dashboard](/dashboard), or by running `vercel project ls`. This option can be used multiple times to include multiple projects.
+The `--project` option (shorthand `-p`) limits the webhook to specific projects when using the `create` subcommand. Provide the project ID (for example, `prj_abc123`). You can find it in the project's **Settings** → **General** in the [dashboard](/dashboard), or by running `vercel project inspect <name>`. This option can be used multiple times to include multiple projects.
 
 ```bash filename="terminal"
 vercel webhooks create https://example.com/webhook --event deployment.created --project prj_abc123
@@ -214,13 +189,13 @@ vercel webhooks create https://example.com/webhook --event deployment.created --
 
 ### Yes
 
-The `--yes` option can be used with the `rm` subcommand to skip the confirmation prompt when removing a webhook.
+The `--yes` option can be used with the `delete` subcommand to skip the confirmation prompt when deleting a webhook.
 
 ```bash filename="terminal"
-vercel webhooks rm <id> --yes
+vercel webhooks delete <id> --yes
 ```
 
-*Using the \`vercel webhooks rm\` command with the \`--yes\` option.*
+*Using the \`vercel webhooks delete\` command with the \`--yes\` option.*
 
 ## Global Options
 
@@ -234,7 +209,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

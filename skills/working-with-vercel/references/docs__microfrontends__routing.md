@@ -16,8 +16,8 @@ related:
 summary: Configure which microfrontend handles each path and understand how Vercel selects deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/routing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "135371689d9251e85b4870b05d69abb0363a84ca79a462552f7d748f1a63ae43"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "074765ca60b4abe42223a5f901c2941f56f4eb56eef264565419ea61329279c0"
 ---
 
 # Microfrontends Routing
@@ -32,8 +32,11 @@ Microfrontends routing determines which application handles a path and which dep
 
 - [Microfrontends previews now link across repositories](https://vercel.com/changelog/microfrontends-previews-now-link-across-repositories)
 - [Microfrontends Routing is now free for Firewall-mitigated traffic](https://vercel.com/changelog/microfrontends-routing-is-now-free-for-firewall-mitigated-traffic)
+- [withWorkflow](https://workflow-sdk.dev/docs/api-reference/workflow-next/with-workflow) — Wrap your Next.js config with withWorkflow to enable workflow directive transformation.
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
+- [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths)
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
+- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
@@ -57,7 +60,7 @@ To route paths to a new microfrontend, modify the `microfrontends.json` file in 
 {
   "$schema": "https://openapi.vercel.sh/microfrontends.json",
   "applications": {
-    "web": {},
+    "web": { "development": { "fallback": "vercel.com" } },
     "docs": {
       "routing": [
         {
@@ -160,7 +163,7 @@ This is compatible with the [Flags SDK](https://flags-sdk.dev) or it can be used
   {
     "$schema": "https://openapi.vercel.sh/microfrontends.json",
     "applications": {
-      "web": {},
+      "web": { "development": { "fallback": "vercel.com" } },
       "docs": {
         "routing": [
           {
@@ -175,7 +178,7 @@ This is compatible with the [Flags SDK](https://flags-sdk.dev) or it can be used
   Instead of being automatically routed to the `docs` microfrontend, requests to `/flagged-path` will now be routed to the default application to make the decision about routing.
 
 - ### Add microfrontends middleware
-  The `@vercel/microfrontends` package uses middleware to route requests to the correct location for flagged paths and based on what microfrontends were deployed for your commit. Only the default application needs microfrontends middleware.
+  The `@vercel/microfrontends` package uses middleware to route requests to the correct location for flagged paths. Only the default application needs microfrontends middleware.
 
   You can add it to your Next.js application with the following code:
   ```ts filename="middleware.ts"

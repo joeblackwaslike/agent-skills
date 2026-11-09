@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel serves documentation to AI agents as Markdown and helps them discover related pages through content negotiation, discovery indexes,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/markdown-access.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f7c98f9334faa1f591db6103c5f924eb839357506ed4966e47d0282d4e52fdbb"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "473ab52602976d124d4adb84cd81273b6e4e18d46d0afa7e62f441960510d96a"
 ---
 
 # Markdown and Agent Discovery
@@ -30,18 +30,18 @@ Vercel documentation is available as HTML for humans and structured Markdown for
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Making agent-friendly pages with content negotiation](https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation)
 - [How to serve documentation for agents](https://vercel.com/kb/guide/how-to-serve-documentation-for-agents) — Learn how to serve markdown to agents and HTML for humans from the same URL
+- [Making agent-friendly pages with content negotiation](https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation)
 - [Docs pages support Markdown responses](https://vercel.com/changelog/docs-pages-support-markdown-responses)
-- [AEO & GEO](https://vercel.shop/docs/anatomy/aeo-geo) — How the storefront makes itself legible to AI answer engines and generative search, with built-in content negotiation, s
-- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide) — Learn how to deploy an AI application to production on Vercel
 - [Open Vercel documentation pages in AI providers](https://vercel.com/changelog/open-vercel-documentation-pages-in-ai-providers)
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
-- [Docs Contribution Guide](https://nextjs.org/docs/community/contribution-guide) — Learn how to contribute to Next.js Documentation
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [vercel agent](https://vercel.com/docs/cli/agent) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
-- [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [AI-enhanced search for Vercel documentation](https://vercel.com/changelog/ai-enhanced-search-for-vercel-documentation)
+- [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel) — This is my wonderful
+- [How our agents build on-brand pages with design.md](https://vercel.com/blog/how-our-agents-build-on-brand-pages-with-design-md)
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
+- [AGENTS.md outperforms skills in our agent evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals)
+- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
+- [AEO & GEO](https://vercel.shop/docs/anatomy/aeo-geo) — How the storefront makes itself legible to AI answer engines and generative search, with built-in content negotiation, s
 
 Full cross-link map for this page: [/docs/agent-resources/markdown-access.graph.md](/docs/agent-resources/markdown-access.graph.md)
 <!-- /docsgraph:related -->
@@ -88,13 +88,25 @@ Each Markdown response starts with YAML frontmatter with these fields:
 | `last_updated` | The date the page last changed, in `YYYY-MM-DD` format |
 | `type` | The content type: `conceptual`, `tutorial`, `how-to`, `reference`, or `integration` |
 | `prerequisites` | Paths of pages to read first. Empty (`[]`) when none are available |
-| `related` | Paths of curated related pages. Empty (`[]`) when none are available |
+| `related` | Paths of up to five other docs pages that the page links to. Empty (`[]`) when none are available |
 | `summary` | A one-sentence description of the page |
 | `install_vercel_plugin` | The command to install the [Vercel Plugin](/docs/agent-resources/vercel-plugin) |
 
 The response body preserves headings, links, fenced code blocks, and tables. When the docs graph has curated links for the page, the Markdown response also includes a **Related pages** section after the introduction.
 
 Each HTML page advertises its Markdown version in a `rel="alternate"` link with the `text/markdown` content type. It also advertises the page's `.graph.md` cross-link map.
+
+## Prompt library
+
+The [prompt library](/kb/prompts) contains tasks you can give to a coding agent to build an app, extend an agent, or improve a project. Agents can browse the [Markdown index](/kb/prompts.md) to find prompts by title and description.
+
+Append `.md` to an individual prompt URL to read its prerequisites, expected results, and prompt text. For example, [the AI chat app prompt as Markdown](/kb/prompts/build-ai-chat-app.md) includes instructions for building a streaming chat interface with the AI SDK and AI Gateway.
+
+## Reference architecture
+
+The [reference architecture library](/kb/architecture) groups documentation, guides, templates, and courses around application design decisions. Agents can browse the [Markdown index](/kb/architecture.md) to find a stack for their application.
+
+Append `.md` to a stack URL to read its guidance and resource links. For example, [the agent stack as Markdown](/kb/architecture/agents.md) covers models, tools, durable workflows, and production operation.
 
 ## Cross-link graph
 
@@ -129,6 +141,8 @@ Agents can use these files to discover Vercel documentation, the REST API, and o
 | `https://vercel.com/docs/llms-full.txt` | The full Vercel docs corpus in one file |
 | `https://vercel.com/docs/sitemap.md` | A semantic page index with summaries and prerequisites |
 | `https://vercel.com/kb/sitemap.md` | A page index for the Vercel Knowledge Base |
+| [`/kb/prompts.md`](/kb/prompts.md) | A prompt library index with task titles, descriptions, and links to individual prompts |
+| [`/kb/architecture.md`](/kb/architecture.md) | A reference architecture index with stack descriptions and links to application design guidance |
 | `https://vercel.com/docs/taxonomy.json` | Canonical product names, aliases, and deprecations |
 | `https://vercel.com/docs/graph.json` | The complete cross-site documentation graph |
 | `https://vercel.com/openapi.json` | The OpenAPI 3.0 description of the [Vercel REST API](/docs/rest-api) |

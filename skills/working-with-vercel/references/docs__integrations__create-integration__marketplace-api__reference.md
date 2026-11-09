@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4ad5ad654afade3230fb794dc0ec5e8c90f55dfa0396760de37231bfd644b1cf"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0acada27be49068746b38e97163c8e06c75e8b89d61a0b95ac21dbedec337f23"
 ---
 
 # Vercel Marketplace REST API
@@ -344,6 +344,7 @@ Content-Type: `application/json`
 - `billingPlanId` (required): string - Partner-provided billing plan. Example: "pro200"
 - `externalId`: string - An partner-provided identifier used to indicate the source of the resource provisioning. In the Deploy Button flow, the `externalId` will equal the `external-id` query parameter.
 - `protocolSettings`: object
+- `credentialTypes`: array - The credential types the resource must accept: `static` for long-lived secrets, `oidc` for Vercel resource OIDC tokens. Without `static`, do not create or return any long-lived secrets. When omitted, the resource uses the integration's default credential types.
 
 **Responses:**
 
@@ -457,6 +458,7 @@ Content-Type: `application/json`
 
 - `reason`: string - Optional reason for the secrets rotation request.
 - `delayOldSecretsExpirationHours`: number - Delay in hours before old secrets expire after rotation. The value can be fractional.
+- `credentialTypes`: array - When set, this rotation changes the credential types the resource accepts to these: `static` for long-lived secrets, `oidc` for Vercel resource OIDC tokens. Without `static`, once the old secrets expire the resource must not have long-lived secrets. Confirm the change is complete by calling Update Resource with the same `credentialTypes`.
 
 **Responses:**
 
@@ -990,6 +992,7 @@ Content-Type: `application/json`
 - `extras`: object
 - `secrets`
 - `customClaims`: object - Custom claims embedded in the resource tokens Vercel mints for this resource.
+- `credentialTypes`: array - The credential types the resource accepts: `static` for long-lived secrets, `oidc` for Vercel resource OIDC tokens. Can be set freely while the resource has none. After that, only to confirm a change Vercel requested with a secrets rotation, once it is complete. Without `static`, all long-lived secrets must be expired and removed, and no new ones minted or injected.
 
 **Responses:**
 

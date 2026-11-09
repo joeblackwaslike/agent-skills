@@ -15,8 +15,8 @@ related:
 summary: Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/project-routing-rules.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a59c8caf2cbce5af058e28fda165c1df2a54d8e4911bacd3f6616418bc447fed"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0c53f5bf4cf36f1fdd62eb8e8f3cb90b19c6ac9c620bb101fb9bcb7ec4844d41"
 ---
 
 # Project-Level Routing Rules
@@ -31,7 +31,6 @@ Project-level routing rules let you add redirects, rewrites, response headers, a
 
 - [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules)
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment)
 - [Stage routing rules](https://vercel.com/docs/rest-api/project-routes/stage-routing-rules) — PUT /v1/projects/{projectId}/routes — Stage routing rules for a project. Set \\`overwrite\\` to true to replace all existi
 - [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e

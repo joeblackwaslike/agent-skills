@@ -17,8 +17,8 @@ related:
 summary: Run Cursor Cloud Agents on Vercel Sandbox by backing a Cursor Self-Hosted Machines Team Pool with one isolated microVM per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/cursor.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "277343a9625ac6ead03ac1ec30bb7460f86e74a4f57e266b6756508106bf7ed4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "61137e590aa0453f3e40837bea3d5ca16d15f470e53fdfb7ea3e9adb673730ae"
 ---
 
 # Cursor Cloud Agents
@@ -37,9 +37,10 @@ clones code, runs commands, edits files, and executes tests.
 - [Cursor Cloud Agents can now run in Vercel Sandbox](https://vercel.com/changelog/run-cursor-cloud-agents-vercel-sandbox)
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [Cursor](https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor) — Learn how to use the Cursor harness adapter.
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
+- [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
 - [Cursor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cursor) — Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, an
-- [OpenAI Agents API](https://vercel.com/docs/sandbox/ecosystem/openai-agents-api) — Connect OpenAI Agents API sessions to Vercel Sandbox for isolated code execution and persistent workspace files.
 - [AgentEnv by Scale AI](https://vercel.com/docs/sandbox/ecosystem/agentenv) — Run evaluations with AgentEnv by Scale AI using separate Vercel sandboxes for the environment and agent.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/cursor.graph.md](/docs/sandbox/ecosystem/cursor.graph.md)
@@ -115,7 +116,7 @@ how the reference implementation delivers the refreshed token to the worker.
 2. The parent Workflow polls the pending-request queue and claims each request
    with a deterministic worker ID.
 3. The parent starts a child Workflow for every claimed request.
-4. The child retrieves or creates a named Sandbox from a snapshot with the
+4. The child retrieves or creates a Sandbox from a snapshot with the
    Cursor Agent CLI preinstalled, then starts the request-scoped worker.
 5. The child monitors the agent and stops the Sandbox when the agent becomes
    idle or reaches its timeout.
@@ -180,7 +181,7 @@ right away instead of competing for requests.
 ### Start a worker in Sandbox
 
 For each claim, the child Workflow mints a worker token for the requesting
-Cursor user, creates the request's named Sandbox from the worker snapshot with
+Cursor user, creates the request's Sandbox from the worker snapshot with
 [`Sandbox.getOrCreate()`](/docs/sandbox/sdk-reference#sandbox.getorcreate),
 writes the token to a file with mode `0600`, and starts the Cursor worker as a
 detached process. The reference implementation uses `persistent: false` and a

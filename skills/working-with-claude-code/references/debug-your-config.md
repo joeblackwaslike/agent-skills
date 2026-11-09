@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/debug-your-config.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "8c01fd8ffb6206a20e851595c2ca0b09139cfa9716f155e084936a0fee5e96d8"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "8a6ae3fea43dde994505503b4b4b18d24676125df3ec2878dc89a0f397895910"
 ---
 
 > ## Documentation Index
@@ -18,7 +18,9 @@ For installation, authentication, and connectivity problems, see [Troubleshoot i
 
 ## See what loaded into context
 
-The `/context` command shows everything occupying the context window for the current session, broken down by category: system prompt, system tools, MCP tools, custom subagents with the source each loaded from, memory files, skills, and conversation messages. Run it first to confirm whether your `CLAUDE.md`, rules, or skill descriptions are present at all. The skills section in `/context` also includes [bundled skills](https://code.claude.com/docs/en/skills.md#bundled-skills), which `/skills` doesn't list.
+The `/context` command shows everything occupying the context window for the current session. It breaks this down by category: system prompt, system tools, MCP tools, custom subagents with the source each loaded from, memory files, skills, and conversation messages. Run it first to confirm whether your `CLAUDE.md`, rules, or skill descriptions are present at all. The skills section in `/context` also includes [bundled skills](https://code.claude.com/docs/en/skills.md#bundled-skills), which `/skills` doesn't list.
+
+In [fullscreen mode](https://code.claude.com/docs/en/fullscreen.md), `/context` collapses the per-item breakdown, so run `/context all` to expand it.
 
 For detail on a specific category, follow up with the dedicated command:
 

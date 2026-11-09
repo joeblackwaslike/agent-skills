@@ -16,8 +16,8 @@ related:
 summary: Bring Your Own Cloud (BYOC) lets you run Vercel Functions behind your project in your own AWS account while Vercel routes requests and serves your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8be8fb23d8b0189e38c5022574754a4b5574375cdb86ee62dcc3c252d5766e59"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6059f5b9607956f25d51bfd6bd7f9f1580915442442006dbfe059e02ab76e06d"
 ---
 
 # Bring Your Own Cloud
@@ -36,9 +36,10 @@ Bring Your Own Cloud (BYOC) lets you run the [Vercel Functions](/docs/functions)
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
+- [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud.graph.md](/docs/networking/bring-your-own-cloud.graph.md)
@@ -55,10 +56,10 @@ A BYOC deployment splits the work between Vercel and your AWS account. You build
 A BYOC deployment follows five stages, run from your machine or your CI environment:
 
 1. **Initialize**: `vercel deploy init` creates a deployment on Vercel that waits for you to provision its functions. No files are uploaded at this stage.
-2. **Build**: `vercel build --id` builds your application with the environment variables of that deployment.
-3. **Describe**: `vercel deploy describe --id` packages each function as a ZIP file and writes a `descriptor.json` file that lists the AWS Lambda functions and layers to create. It doesn't create any AWS resources.
+2. **Build**: `vercel build --deployment` builds your application with the environment variables of that deployment.
+3. **Describe**: `vercel deploy describe --deployment` packages each function as a ZIP file and writes a `descriptor.json` file that lists the AWS Lambda functions and layers to create. It doesn't create any AWS resources.
 4. **Provision**: Your provisioning tool creates the Lambda functions and layers in your AWS account from the descriptor.
-5. **Continue**: `vercel deploy continue --id` uploads your static assets and deployment metadata, without function code, and Vercel completes the deployment.
+5. **Continue**: `vercel deploy continue --deployment` uploads your static assets and deployment metadata, without function code, and Vercel completes the deployment.
 
 You have 15 minutes from initializing the deployment to running `vercel deploy continue`. After 15 minutes, the deployment fails with the error `Provisioning exceeded the maximum allowed time.`
 

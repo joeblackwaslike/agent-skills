@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/artifacts.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "f887123b24614ac620d0cdca115eb529cb183f76e5f598dd0b6270f8b9bc4118"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "5d8196cf9ed60bf55aff278e44d8a5eeb542f7ca8b243dca65b16476eb7fd198"
 ---
 
 > ## Documentation Index
@@ -147,7 +147,7 @@ Claude Code asks for your approval before Claude reads the artifact in these cas
 
 * **Cloud session without network access**: for a [cloud environment](https://code.claude.com/docs/en/cloud-environments.md#access-levels), that's the **None** level. In [auto mode](https://code.claude.com/docs/en/permission-modes.md#eliminate-prompts-with-auto-mode), the classifier can approve instead; in a [Cowork](https://claude.com/product/cowork) session, the approval is yours alone.
 * **Another organization's public artifact**: Claude Code asks you first, even in auto mode. Where Claude Code can't ask you, such as in `bypassPermissions` mode, Claude can't read the artifact. Claude can read these artifacts only while [feature-flag fetching](https://code.claude.com/docs/en/env-vars.md#features-that-need-feature-flag-fetching) is on.
-* **Unconfirmed owner or network setting**: when Claude Code can't confirm who made the artifact, or can't confirm a cloud session's network setting, it asks, and your approval covers that one request.
+* **Unconfirmed owner or network setting**: when Claude Code can't confirm who made the artifact, or can't confirm a cloud session's network setting, it asks, and your approval covers that one request. In [auto mode](https://code.claude.com/docs/en/permission-modes.md#eliminate-prompts-with-auto-mode), the classifier can approve or block the read instead of asking you.
 * **Plan mode**: in [plan mode](https://code.claude.com/docs/en/permission-modes.md#analyze-before-you-edit-with-plan-mode), Claude Code asks before the Artifact tool reads an artifact someone else in your organization made.
 
 When Claude reads the artifact with WebFetch, WebFetch's own [prompting rules](https://code.claude.com/docs/en/tools-reference.md#webfetch-tool-behavior) still apply.

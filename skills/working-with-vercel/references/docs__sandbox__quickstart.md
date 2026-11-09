@@ -16,8 +16,8 @@ related:
 summary: Learn how to run your first code in a Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/quickstart.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6b1cbc3f4dbf0b1d2c8c323e21e500b57e99d10b9e4a91bd4554cd9c140dcc09"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9466c0081f2b8984acf50700722194e223fc5dd93ce2cfa4b05d16a82733304b"
 ---
 
 # Quickstart
@@ -31,15 +31,17 @@ This guide shows you how to run your first code in a Vercel Sandbox.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga)
+- [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
-- [Build a Software Factory with the AI SDK](https://vercel.com/docs/agent-resources/software-factory/ai-sdk) — Compose investigation, sandbox execution, review, and GitHub publication stages with the AI SDK on Vercel.
+- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [Agent Skills](https://vercel.com/docs/agent-resources/skills) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 
 Full cross-link map for this page: [/docs/sandbox/quickstart.graph.md](/docs/sandbox/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -47,7 +49,7 @@ Full cross-link map for this page: [/docs/sandbox/quickstart.graph.md](/docs/san
 **Agent prompt**
 
 ```text
-Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI is installed (`npm i -g vercel`). Then: 1. Install the @vercel/sandbox SDK. 2. Run `vercel link` and `vercel env pull` to get credentials. 3. Create a script that spins up a sandbox, runs code inside it, and captures the output. 4. Run it to verify the sandbox works.
+Help me set up Vercel Sandbox in this project. First, load the installed Sandbox skill, or install it with `npx skills add vercel/sandbox`. Make sure the Vercel CLI is installed (`npm i -g vercel`). Then: 1. Install the @vercel/sandbox SDK. 2. Run `vercel link` and `vercel env pull` to get credentials. 3. Create a script that spins up a sandbox, runs code inside it, and captures the output. 4. Run it to verify the sandbox works.
 ```
 
 > Install the [Vercel plugin](/docs/agent-resources/vercel-plugin?from=docs-callout\&source_path=%2Fdocs%2Fsandbox%2Fquickstart) to create and run a Vercel Sandbox with your coding agent.
@@ -55,6 +57,11 @@ Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI i
 > ```bash
 > npx plugins add vercel/vercel-plugin
 > ```
+
+The plugin includes `vercel-sandbox` for SDK and CLI guidance, and `offload-to-sandbox` for remote builds and tests. Once you've connected your project using the steps below, try these prompts in your coding agent:
+
+- "Use vercel-sandbox to run this generated Python script in an isolated sandbox and show me its output."
+- "Use offload-to-sandbox to run this project's test suite in Vercel Sandbox and return the failing tests and logs."
 
 ## Prerequisites
 
@@ -107,6 +114,12 @@ Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI i
   uv add vercel python-dotenv
   ```
   For TypeScript, `dotenv` provides access to environment variables, `tsx` runs TypeScript code, `typescript` provides the compiler, and `@types/node` provides Node.js type definitions.
+  #### Add Sandbox guidance for your coding agent (optional)
+  If you only need Sandbox guidance, install the [Sandbox skill](https://github.com/vercel/sandbox/tree/main/skills/sandbox) on its own:
+  ```bash filename="Terminal"
+  npx skills add vercel/sandbox
+  ```
+  Choose your coding agent when prompted. If you already installed the Vercel plugin, use its bundled `vercel-sandbox` skill.
 
 - ### Write your code
   Create a file that creates a sandbox and runs a command:
@@ -139,7 +152,7 @@ Help me set up Vercel Sandbox in this project. First, make sure the Vercel CLI i
 
   async def main() -> None:
       async with sandbox.create_sandbox(persistent=False) as box:
-          result = await box.run_process(
+          result = await box.run_command(
               'echo',
               ['Hello from Vercel Sandbox!'],
               capture_output=True,

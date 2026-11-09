@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low latency."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/how-vercel-cdn-works.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "26b027577b4f02826e366a3a927ca863acc3bd05c0826eaf3505694d3986f968"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a801a2831ad651bada6ebcfa372885d4b1daf9da0be9fa0f769db4f6fd36c5de"
 ---
 
 # How Vercel CDN Works
@@ -30,17 +30,17 @@ Every request to a Vercel deployment flows through a globally distributed CDN be
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to choose a Salesforce Commerce Cloud storefront: PWA Kit, Storefront Next, or Next.js](https://vercel.com/kb/guide/salesforce-pwa-kit-vs-storefront-next-vs-nextjs) — Compare PWA Kit, Storefront Next, and a Next.js storefront on Vercel for Salesforce Commerce Cloud. Learn how caching, p
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
+- [How to choose a Salesforce Commerce Cloud storefront: PWA Kit, Storefront Next, or Next.js](https://vercel.com/kb/guide/salesforce-pwa-kit-vs-storefront-next-vs-nextjs) — Compare PWA Kit, Storefront Next, and a Next.js storefront on Vercel for Salesforce Commerce Cloud. Learn how caching, p
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
+- [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [How to troubleshoot stale content returned from the Vercel CDN when using an external proxy or CDN](https://vercel.com/kb/guide/how-to-troubleshoot-stale-content-returned-from-the-edge-network-when-using-an-external-proxy-or-cdn) — Learn how to diagnose and fix stale content issues when using external proxies or CDNs with Vercel. Understand troublesh
+- [Vercel CDN gets a new dashboard experience](https://vercel.com/changelog/vercels-cdn-gets-a-new-dashboard-experience)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 
 Full cross-link map for this page: [/docs/how-vercel-cdn-works.graph.md](/docs/how-vercel-cdn-works.graph.md)
 <!-- /docsgraph:related -->
@@ -61,29 +61,29 @@ The [Vercel Firewall](/docs/cdn-security) inspects every request before it reach
 
 Blocked requests never reach the routing or caching layers.
 
-## Routing layer
-
-Before the CDN checks any cache, it evaluates routing rules in order:
-
-1. [**Redirects**](/docs/routing/redirects): Return a new URL to the client (e.g., enforce HTTPS, move pages, localize paths)
-2. [**Rewrites**](/docs/routing/rewrites): Map a public URL to a different backend path without changing what the visitor sees
-3. [**Headers**](/docs/headers): Add or modify request and response headers, including [security headers](/docs/cdn-security/security-headers) and [cache-control directives](/docs/caching/cache-control-headers)
-
-If a redirect matches, the CDN responds immediately. Rewrites and header rules continue through the remaining layers.
-
 ## Traffic management layer
 
-After routing rules resolve, the CDN determines which deployment handles the request:
+Before the CDN evaluates a deployment's routing rules, it determines which deployment handles the request:
 
 - **[Skew Protection](/docs/skew-protection)**: Locks each client session to a specific deployment version so client-side code and server responses stay in sync. This prevents errors caused by version mismatches during deployments.
 - **[Rolling Releases](/docs/rolling-releases)**: Gradually shifts traffic from your current production deployment to a new one across configurable stages. You can monitor metrics at each stage and abort if needed.
 - **[Microfrontends](/docs/microfrontends)**: Routes requests to different microfrontend applications based on path configuration in `microfrontends.json`. This routing happens within the same request with no additional network hop.
 
+## Routing layer
+
+Before the CDN checks any cache, it evaluates routing rules. Rules in your framework configuration follow the framework's order: for example, Next.js applies `headers` from `next.config.js` before `redirects`. The CDN evaluates rules in `vercel.json` in this order:
+
+1. [**Redirects**](/docs/routing/redirects): Return a new URL to the client (e.g., enforce HTTPS, move pages, localize paths)
+2. [**Headers**](/docs/headers): Add or modify request and response headers, including [security headers](/docs/cdn-security/security-headers) and [cache-control directives](/docs/caching/cache-control-headers)
+3. [**Rewrites**](/docs/routing/rewrites): Map a public URL to a different backend path without changing what the visitor sees
+
+If a redirect matches, the CDN responds immediately. Rewrites and header rules continue through the remaining layers.
+
 ## Caching layers
 
 Vercel maintains two tiers of caching. Together, they minimize how often your functions run:
 
-- **[CDN cache](/docs/caching/cdn-cache)**: It stores responses at the nearest PoP, closest to your visitors and is controlled by [`Cache-Control` headers](/docs/caching/cache-control-headers) your functions return. A CDN hit serves the response without reaching your origin.
+- **[CDN cache](/docs/caching/cdn-cache)**: It stores responses in the Vercel region nearest to your visitors and is controlled by [`Cache-Control` headers](/docs/caching/cache-control-headers) your functions return. A CDN hit serves the response without reaching your origin.
 - **[ISR cache](/docs/incremental-static-regeneration)**: A durable store in your configured [function region](/docs/functions/configuring-functions/region): Vercel selects one region if you have multiple regions configured. It persists content for up to 31 days. When the CDN misses but the ISR cache has the content, Vercel serves it without invoking your function.
   - [Request collapsing](/docs/incremental-static-regeneration/request-collapsing) further protects this layer by deduplicating concurrent requests to the same ISR path into a single function invocation.
 

@@ -16,8 +16,8 @@ related:
 summary: Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrations for your AI applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8e1a7040e82243b110c41e9a07cbea3264273888ec540500ef427ad9c225d35f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "28b2944ba7e4a8c5c990dc28ecf29e54c76dbb56b0e3a0e691f53c997491d403"
 ---
 
 # AI Gateway Ecosystem and Integrations
@@ -30,12 +30,12 @@ AI Gateway integrates with the AI development ecosystem you use. Whether you're 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem.graph.md](/docs/ai-gateway/ecosystem.graph.md)
 <!-- /docsgraph:related -->
@@ -165,8 +165,8 @@ Add attribution to your requests:
 const response = await fetch('https://ai-gateway.vercel.sh/v1/chat/completions', {
   headers: {
     'Authorization': `Bearer ${apiKey}`,
-    'X-Vercel-AI-App-Name': 'My AI App',
-    'X-Vercel-AI-App-Url': 'https://myaiapp.com',
+    'http-referer': 'https://myaiapp.com',
+    'x-title': 'My AI App',
   },
   // ... request body
 });

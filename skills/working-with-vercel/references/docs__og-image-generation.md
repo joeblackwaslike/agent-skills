@@ -16,8 +16,8 @@ related:
 summary: Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3531cd708806477c0f52b2b57cda626386595bedd2701046d3537fce3e30c9b1"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "56e77350c05c27f53af7152b973035986c28631f8eae88d9f7d636ea7588add5"
 ---
 
 # Open Graph (OG) Image Generation
@@ -37,10 +37,10 @@ To assist with generating dynamic [Open Graph (OG)](https://ogp.me/ "Open Graph 
 - [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available)
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
+- [Images on the web](https://vercel.com/blog/images-on-the-web)
 - [Building a fast, animated image gallery with Next.js](https://vercel.com/blog/building-a-fast-animated-image-gallery-with-next-js)
 - [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart) — Learn how you can leverage Vercel Image Optimization in your projects.
 - [AI Gateway Image Generation via Chat Completions](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
-- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/og-image-generation.graph.md](/docs/og-image-generation.graph.md)
@@ -294,7 +294,7 @@ export default async function handler() {
 ```ts filename="api/og.tsx" framework=other
 import { ImageResponse } from '@vercel/og';
 
-export default async function handler() {
+export async function GET() {
   return new ImageResponse(
     (
       <div
@@ -324,7 +324,7 @@ export default async function handler() {
 ```js filename="api/og.jsx" framework=other
 import { ImageResponse } from '@vercel/og';
 
-export default async function handler() {
+export async function GET() {
   return new ImageResponse(
     (
       <div

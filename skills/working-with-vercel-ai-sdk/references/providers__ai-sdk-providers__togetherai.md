@@ -4,8 +4,8 @@ description: Learn how to use Together.ai with AI Gateway and the direct provide
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/togetherai.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "68f9643716d8ff2254d1ea0d12ca17cd46db6b45467219ed4c9ea18859db5cd4"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "8c48b2ca69df4ae4a1f6dccbd64b8265555d53b6df947aa448cde4364524e068"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -308,21 +308,25 @@ a known provider namespace.
 
 Together.ai image models support various image dimensions that vary by model. Common sizes include 512x512, 768x768, and 1024x1024, with some models supporting up to 1792x1792. The default size is 1024x1024.
 
-| Available Models                           |
-| ------------------------------------------ |
-| `stabilityai/stable-diffusion-xl-base-1.0` |
-| `black-forest-labs/FLUX.1-dev`             |
-| `black-forest-labs/FLUX.1-dev-lora`        |
-| `black-forest-labs/FLUX.1-schnell`         |
-| `black-forest-labs/FLUX.1-canny`           |
-| `black-forest-labs/FLUX.1-depth`           |
-| `black-forest-labs/FLUX.1-redux`           |
-| `black-forest-labs/FLUX.1.1-pro`           |
-| `black-forest-labs/FLUX.1-pro`             |
-| `black-forest-labs/FLUX.1-schnell-Free`    |
-| `black-forest-labs/FLUX.1-kontext-pro`     |
-| `black-forest-labs/FLUX.1-kontext-max`     |
-| `black-forest-labs/FLUX.1-kontext-dev`     |
+| Model                                      | Sizes                                                               | Image Editing | Mask Input | Max Images Per Call |
+| ------------------------------------------ | ------------------------------------------------------------------- | ------------- | ---------- | ------------------- |
+| `stabilityai/stable-diffusion-xl-base-1.0` | Explicit width and height; accepted dimensions depend on the model. | ✗             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-dev`             | Explicit width and height; accepted dimensions depend on the model. | ✗             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-dev-lora`        | Explicit width and height; accepted dimensions depend on the model. | ✗             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-schnell`         | Explicit width and height; accepted dimensions depend on the model. | ✗             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-canny`           | Explicit width and height; accepted dimensions depend on the model. | ✓             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-depth`           | Explicit width and height; accepted dimensions depend on the model. | ✓             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-redux`           | Explicit width and height; accepted dimensions depend on the model. | ✓             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1.1-pro`           | Explicit width and height; accepted dimensions depend on the model. | ✗             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-pro`             | Explicit width and height; accepted dimensions depend on the model. | ✗             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-schnell-Free`    | Explicit width and height; accepted dimensions depend on the model. | ✗             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-kontext-pro`     | Explicit width and height; accepted dimensions depend on the model. | ✓             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-kontext-max`     | Explicit width and height; accepted dimensions depend on the model. | ✓             | ✗          | 1                   |
+| `black-forest-labs/FLUX.1-kontext-dev`     | Explicit width and height; accepted dimensions depend on the model. | ✓             | ✗          | 1                   |
+| `black-forest-labs/FLUX.2-pro`             | Explicit width and height; accepted dimensions depend on the model. | ✓             | ✗          | 1                   |
+| `black-forest-labs/FLUX.2-flex`            | Explicit width and height; accepted dimensions depend on the model. | ✓             | ✗          | 1                   |
+| `black-forest-labs/FLUX.2-dev`             | Explicit width and height; accepted dimensions depend on the model. | ✗             | ✗          | 1                   |
+| `google/gemini-3-pro-image`                | Explicit width and height; accepted dimensions depend on the model. | ✗             | ✗          | 1                   |
 
 Please see the [Together.ai models
 page](https://docs.together.ai/docs/serverless-models#image-models) for a full
@@ -425,9 +429,31 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                                 |
-| ------------------------------------- |
-| `mixedbread-ai/Mxbai-Rerank-Large-V2` |
+| Model                                 | Text Documents | Object Documents | Top N |
+| ------------------------------------- | -------------- | ---------------- | ----- |
+| `Salesforce/Llama-Rank-v1`            | ✓              | ✓                | ✓     |
+| `mixedbread-ai/Mxbai-Rerank-Large-V2` | ✓              | ✓                | ✓     |
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option                   | Description                                                                                                                                                                                                    |
+| --------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| embedding | `dimensions`             | The number of dimensions the resulting output embeddings should have. Only supported in text-embedding-3 and later models.                                                                                     |
+| embedding | `user`                   | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| language  | `user`                   | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| language  | `reasoningEffort`        | Reasoning effort for reasoning models. Defaults to `medium`. Set to `null` to send `"reasoning_effort": null`, for providers that treat an explicit `null` differently from an omitted field.                  |
+| language  | `textVerbosity`          | Controls the verbosity of the generated text. Defaults to `medium`.                                                                                                                                            |
+| language  | `strictJsonSchema`       | Whether to use strict JSON schema validation. When true, the model uses constrained decoding to guarantee schema compliance. Only used when the provider supports structured outputs and a schema is provided. |
+| language  | `echo`                   | Echo back the prompt in addition to the completion.                                                                                                                                                            |
+| language  | `logitBias`              | Modify the likelihood of specified tokens appearing in the completion. Accepts a JSON object that maps tokens (specified by their token ID in the GPT tokenizer) to an associated bias value from -100 to 100. |
+| language  | `suffix`                 | The suffix that comes after a completion of inserted text.                                                                                                                                                     |
+| image     | `steps`                  | Number of generation steps. Higher values can improve quality.                                                                                                                                                 |
+| image     | `guidance`               | Guidance scale for image generation.                                                                                                                                                                           |
+| image     | `negative_prompt`        | Negative prompt to guide what to avoid.                                                                                                                                                                        |
+| image     | `disable_safety_checker` | Disable the safety checker for image generation. When true, the API will not reject images flagged as potentially NSFW. Not available for Flux Schnell Free and Flux Pro models.                               |
+| reranking | `rankFields`             | List of keys in the JSON Object document to rank by. Defaults to use all supplied keys for ranking.                                                                                                            |
 
 ---
 

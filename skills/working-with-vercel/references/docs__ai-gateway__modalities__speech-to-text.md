@@ -15,8 +15,8 @@ related:
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "33535bf6c6757f4a2cf6c61a37bf3faefd972de85f5524e6cc3ddf907544b1b6"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "da403a10a2ae9ca189efd0bc89111a9a313ea0d95bd2eaff6f661b3a413b9d4c"
 ---
 
 # AI Gateway Speech to Text
@@ -31,11 +31,11 @@ Transcribe recorded audio into text with transcription models such as `elevenlab
 
 - [AI Gateway now supports streaming transcription](https://vercel.com/changelog/ai-gateway-now-supports-streaming-transcription)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
-- [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [Gemini 3.5 Transcribe now available on AI Gateway](https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway)
-- [Rev.ai](https://ai-sdk.dev/providers/ai-sdk-providers/revai) — Learn how to set up the Rev.ai provider and check AI Gateway availability.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
+- [Deepgram](https://ai-sdk.dev/providers/ai-sdk-providers/deepgram) — Learn how to set up the Deepgram provider and check AI Gateway availability.
+- [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
+- [transcribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe) — API Reference for transcribe.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md)
 <!-- /docsgraph:related -->

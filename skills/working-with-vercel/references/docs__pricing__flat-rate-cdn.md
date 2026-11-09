@@ -15,8 +15,8 @@ related:
 summary: Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/flat-rate-cdn.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b66c4a885c8ea52fdb356b049f1481e86f29e011dd1b030f3baa9b3653cebc07"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ef6e7a964b2d9af4adc05d926f453a2476594bef07a7b4dc70a3a794f9f258e9"
 ---
 
 # Flat Rate CDN
@@ -52,7 +52,7 @@ On this page, you'll learn how [Flat Rate CDN handles usage](#how-vercel-handles
 
 If your total usage for a billing cycle exceeds your monthly capacity, Vercel moves you to a [higher tier](#flat-rate-cdn-tiers) at the start of the next cycle. A one-day spike doesn't trigger an upgrade. Vercel will transition you to [on-demand pricing](/docs/cdn#on-demand-cdn) if you exceed the highest tier.
 
-Vercel provides visibility into your CDN usage in the [billing usage dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fusage\&title=Go+to+Usage) or with [`vercel usage`](/docs/cli/usage), which can break usage down by day. This gives you time to understand your usage and take action before any changes occur.
+Vercel provides visibility into your CDN usage in the [billing usage dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fusage\&title=Go+to+Usage) or with [`vercel billing usage`](/docs/cli/usage), which can break usage down by day. This gives you time to understand your usage and take action before any changes occur.
 
 ### Flat Rate CDN tiers
 

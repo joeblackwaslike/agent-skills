@@ -16,8 +16,8 @@ related:
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/generated-urls.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2a0ff14faea29f56a05a7e8d952b5325370274cff40469cb9ef692eab8f3853a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "55ce555d4b5ce1be3e7713ba5d5ef0bec15b633a1f922837086c501fd7fbf27f"
 ---
 
 # Accessing Deployments through Generated URLs
@@ -32,10 +32,8 @@ When you create a new [deployment](/docs/deployments) in either a preview or pro
 
 - [Protect past Production Deployments with Deployment Protection](https://vercel.com/changelog/protect-past-production-deployments-with-deployment-protection)
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
 - [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
-- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
@@ -79,7 +77,7 @@ Generated URLs are comprised of several different pieces of data associated with
 | Value            | Description                                                                                                         | Created when                |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------- | --------------------------- |
 | `<project-name>` | The name of the [Project](/docs/projects) that contains the deployment                                     | Git branch, Git commit, CLI |
-| `<unique-hash>`  | 9 randomly generated numbers and letters                                                                            | Git commit                  |
+| `<unique-hash>`  | 9 randomly generated numbers and letters                                                                            | Git commit, CLI             |
 | `<scope-slug>`   | The slug (not the name) of the account or [team](/docs/accounts#creating-a-team) that contains the project/deployment | Git branch, Git commit, CLI |
 | `<branch-name>`  | The name of the Git branch for which the deployment was created                                                     | Git branch                  |
 
@@ -102,7 +100,7 @@ To access the commit URL, click the **View deployment** button from your pull re
 
 ### Generated with Vercel CLI
 
-To access the URL for a successful deployment from Vercel CLI, you can save the [standard output of the deploy command](/docs/cli/deploy#standard-output-usage). The generated URL will have the following structure:
+To access the URL for a successful deployment from Vercel CLI, you can save the [standard output of the deploy command](/docs/cli/deploy#standard-output-usage). The standard output is the unique URL of the deployment. It has the structure `<project-name>-<unique-hash>-<scope-slug>.vercel.app`. When you deploy to production, Vercel also generates a URL with the following structure:
 
 ```bash filename="url-structure"
 <project-name>-<scope-slug>.vercel.app

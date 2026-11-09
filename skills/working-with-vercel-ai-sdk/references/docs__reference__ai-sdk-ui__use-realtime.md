@@ -4,8 +4,8 @@ description: API reference for the experimental_useRealtime hook.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "548803ea997e766b6fa226020eafa862faa49e50aa797858a79a525fb948d389"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "c20cc91e67ca2c1dc1224e17cad9ce974f930b7d56e04fd952eafa5238027692"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -16,7 +16,8 @@ Creates a browser-side realtime session for bidirectional audio and text
 conversations with a realtime provider model.
 
 The hook supports token-based provider WebSockets, application-owned WebSocket
-relays, and optional WebRTC where the model declares support. It provides controls for capture and playback, plus turn-based text input
+relays, optional WebRTC, and provider-owned transports where the model declares
+support. It provides controls for capture and playback, plus supported turn-based text input
 and tool output. Turn-based conversation messages use `UIMessage[]`; continuous
 transcript fragments remain in `session`.
 
@@ -187,12 +188,33 @@ updates remain unsupported.
 
 ## Lifecycle and failure handling
 
+### Provider-owned sessions
+
+For [Mistral voice agents](/providers/ai-sdk-providers/mistral#realtime-voice-agents),
+use `api: { provider: '/api/mistral-realtime' }`. The Mistral provider handles
+LiveKit internally.
+The hook calls `POST` on that endpoint to create a session and
+`DELETE ?sessionId=...` to close it. The server uses
+`mistral.experimental_realtime.createSession()` and `closeSession()` with its API
+key. Keep the model, voice, instructions, and allowed settings on the server.
+
+`connect()` starts microphone capture and remote audio playback. Mistral
+transcripts populate `messages`; audio travels through the provider's LiveKit
+transport. Await `close()` to finish server-side cleanup. `disconnect()` and
+unmount release local media and initiate cleanup without waiting. Client tools
+use `onToolCall` and `addToolOutput`. Text, manual audio-buffer, and response
+commands are unsupported. See the provider guide for the complete route and
+client example.
+
+### Shared lifecycle
+
 Use `status === 'connected'` as the readiness signal; `connect()` does not promise
 to wait for provider readiness. Operational startup errors are reported through
 `onError` and `status`; the legacy resolve-and-report behavior is preserved.
 
-`close()` stops local capture and submissions, then drains events until the provider
-confirms final usage or the close deadline expires. A failed close-command send
+For continuous Live sessions, `close()` stops local capture and submissions, then
+drains events until the provider confirms final usage or the close deadline
+expires. A failed close-command send
 uses the shorter accepted-event drain rather than waiting for an acknowledgment
 to an unsent command. Read `session.finalization`: a fulfilled close promise does
 not by itself confirm usage. `disconnect()` and unmount release resources immediately.
@@ -238,10 +260,11 @@ import { experimental_useRealtime } from "@ai-sdk/react"
 ### Parameters
 
 - `model` (`Experimental_RealtimeModel`): The realtime model to connect to.
-- `api` (`{ token: string } | { websocket: string; protocols?: string[] } | { session: string }`): Choose one supported connection mechanism: token setup, a WebSocket relay, or a WebRTC SDP endpoint. Conversation semantics and connection capabilities are independent.
+- `api` (`{ token: string } | { websocket: string; protocols?: string[] } | { session: string } | { provider: string }`): Choose one supported connection mechanism: token setup, a WebSocket relay, a WebRTC SDP endpoint, or a provider-managed session endpoint. Conversation semantics and connection capabilities are independent.
   - `Object`
     - `token?` (`string`): The setup endpoint that returns an Experimental\_RealtimeSetupResponse.
     - `session?` (`string`): Application WebRTC setup endpoint. Accepts JSON \{ sdp, sessionConfig } and returns JSON \{ sdp, sessionId }.
+    - `provider?` (`string`): Application endpoint for a provider-owned transport. Mistral uses POST to create a session and DELETE with a sessionId query parameter to close it.
     - `websocket?` (`string`): Application-owned raw-protocol relay URL. Use wss in production; never put provider credentials in the URL.
     - `protocols?` (`string[]`): Optional relay subprotocols, supported only with websocket.
 - `sessionConfig?` (`Partial<Experimental_RealtimeSessionConfig>`): Provider-neutral session configuration, such as instructions, voice, audio formats, input audio transcription, turn detection, tools, and providerOptions.
@@ -263,9 +286,9 @@ import { experimental_useRealtime } from "@ai-sdk/react"
 - `isCapturing` (`boolean`): Capture state observed through SDK controls and events on the selected audio track. External changes to borrowed tracks may require an explicit refresh; see Capture ownership.
 - `isPlaying` (`boolean`): Whether model audio playback is active.
 - `session` (`Experimental_RealtimeSessionState | undefined`): Session lifecycle metadata where supported: sessionId, transcript fragments, client delegation metadata, cumulative voice usage, input mute, terminationReason, and pending/confirmed/unconfirmed finalization. Transcript fragments may overlap or arrive late; they are not complete turns.
-- `connect` (`(options?: { stream?: MediaStream; capture?: boolean }) => Promise<void>`): Starts the selected connection. Continuous browser sessions acquire microphone audio by default; capture: false opts out. A supplied Live stream remains caller-owned. The zero-argument overload remains usable as an event handler.
-- `close` (`(options?: { eventId?: string }) => Promise<void>`): Stops capture/submissions and waits for bounded graceful finalization where supported. Inspect session.finalization for confirmation; models without acknowledged close disconnect immediately.
-- `disconnect` (`() => void`): Immediately releases transports and owned media. Preserves latest usage as unconfirmed unless a terminal provider event was received.
+- `connect` (`(options?: { stream?: MediaStream; capture?: boolean }) => Promise<void>`): Starts the selected connection. Continuous Live and Mistral sessions acquire microphone audio by default; capture: false opts out. Supplied tracks remain caller-owned on these paths. The zero-argument overload remains usable as an event handler.
+- `close` (`(options?: { eventId?: string }) => Promise<void>`): Stops capture/submissions and waits for bounded graceful finalization where supported. Provider-owned transports await session cleanup. For Live, inspect session.finalization for usage confirmation; models without acknowledged close disconnect immediately.
+- `disconnect` (`() => void`): Immediately releases transports and owned media. Provider-owned transports initiate server cleanup without awaiting it. Preserves latest usage as unconfirmed unless a terminal provider event was received.
 - `addToolOutput` (`(callId: string, result: unknown) => void`): Turn-based only: submits a tool result back to the realtime provider. Continuous Live sessions reject this control; append application-handled client delegation results with sendEvent instead.
 - `sendEvent` (`(event: Experimental_RealtimeClientEvent) => Promise<void>`): Sends a normalized command in order. Resolves on local serialization/submission, not provider acceptance. Validation can throw synchronously; asynchronous send failures reject and are reported through onError. Live context/results use context-append with a known client delegation ID or null.
 - `sendTextMessage` (`(text: string) => void`): Turn-based only: sends user text and requests a response. Continuous Live sessions reject this control. The application owns its text conversation and supplies Live context through sendEvent.

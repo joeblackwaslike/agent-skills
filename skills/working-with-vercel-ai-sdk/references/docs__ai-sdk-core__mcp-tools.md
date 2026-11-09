@@ -4,8 +4,8 @@ description: Learn how to connect to Model Context Protocol (MCP) servers and us
 url: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "34b586b765c63ee625c5841c6c5b7700ffd666a01a77f6d847479fa79e0a0dd8"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "60df2eccb8a3dcae6884a5842dc9d58d6e0224c3bf96f2fb8432a710496cc9ce"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -183,6 +183,18 @@ persistence, resumable streams, and receiving notifications.
 Authorization via OAuth is supported when using the AI SDK MCP HTTP or SSE
 transports by providing an `authProvider`.
 
+### OAuth Resource Binding
+
+The MCP client includes the OAuth `resource` parameter in authorization,
+authorization-code exchange, and token refresh requests. It uses the validated
+resource from protected resource metadata when available. If metadata is
+unavailable, it uses the configured MCP server URL with its fragment removed.
+
+To customize resource validation and selection, implement
+`OAuthClientProvider.validateResourceURL`. Return a `URL` to select a resource,
+or throw to reject it. Returning `undefined` uses the canonical MCP server URL;
+it does not omit the `resource` parameter.
+
 ### Shared OAuth Credential Storage
 
 When multiple MCP clients or replicas share OAuth credentials, a rotating refresh
@@ -206,7 +218,11 @@ If they no longer match, leave the newer tokens in storage. The SDK retries
 authorization and reads the stored tokens again.
 
 The SDK also provides this context when invalidating stored tokens that lack an
-authorization server pin. Other invalidations can omit the context.
+authorization server pin. These tokens must be cleared before the SDK saves a new
+client registration or authorization server pin. If the invalidation hook is
+missing or refresh tokens remain in storage, authorization stops with an error;
+clear the stored tokens and start authorization again. Other invalidations can
+omit the context.
 
 If an authorization-code exchange returns `invalid_grant`, the SDK propagates
 the error without invalidating stored credentials or retrying the rejected code.

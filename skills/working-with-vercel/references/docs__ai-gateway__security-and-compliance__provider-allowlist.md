@@ -17,8 +17,8 @@ related:
 summary: Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2fec2c13947ff2ded0ee8b6d20a1ea64a559f1d1f0108d7fec264587a3697eb0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "17d5044e58be08aff3ad41ab691c2f17759d6e9995e74a5eef296ba8e36d2170"
 ---
 
 # AI Gateway Provider Allowlist
@@ -31,12 +31,12 @@ The provider allowlist lets team owners restrict which AI providers can serve re
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway)
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
+- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway)
 - [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/provider-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/provider-allowlist.graph.md)
@@ -60,7 +60,7 @@ The team-wide surcharge applies only to successful responses. Requests blocked b
 Only team owners can change this setting.
 
 1. Open the [AI Gateway **Settings** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fsettings\&title=AI+Gateway+Settings).
-2. Toggle on **Restrict allowed providers**.
+2. Toggle on **Provider Allowlist**.
 
 When you toggle on, every provider currently available on AI Gateway is added to the allowlist by default. This guarantees that turning the feature on never breaks existing traffic. You then remove providers you want to block as an explicit action.
 
@@ -72,7 +72,7 @@ Disabling a provider removes it from the routing candidates for any request. If 
 
 ```json
 {
-  "error": "Your team has restricted access to this provider. Contact the owner of the account for more details.",
+  "error": "Your team (acme) has restricted access to this provider. Owners of team acme can edit AI Gateway Settings (https://vercel.com/acme/~/ai-gateway/settings) to enable this provider in Provider Allowlist. Providers considered: provider-a, provider-b",
   "type": "no_providers_available",
   "statusCode": 403
 }
@@ -93,7 +93,7 @@ If you also use the request-level [`only`](/docs/ai-gateway/models-and-providers
 - The provider must be in the request's `only` list, and
 - The provider must be in your team's allowlist.
 
-If either filter rejects every candidate, the request returns a `403`.
+If the request's `only` list matches none of the providers that serve the model, the request returns a `400`. If your team's allowlist rejects every remaining candidate, the request returns a `403`.
 
 ## BYOK
 

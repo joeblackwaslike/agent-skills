@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/configuration.md"
-fetched_at: "2026-11-02T12:04:46.311Z"
-sha256: "2aede57ecc85e7b448677a13ec71c6b9253e1c48478843b2319ccb268103c7e3"
+fetched_at: "2026-11-09T12:36:42.699Z"
+sha256: "d1e25508aa3dd61cb58729fdca0ae087e998d31f4c0a416eda3f01a4cf2e3926"
 ---
 
 # Gemini CLI configuration
@@ -552,6 +552,14 @@ their corresponding top-level category object in your `settings.json` file.
   - **Description:** Maximum number of user/model/tool turns to keep in a
     session. -1 means unlimited.
   - **Default:** `-1`
+
+- **`model.requestTimeoutMs`** (number):
+
+  - **Description:** How long to wait, in milliseconds, for the API to start
+    responding before a request is aborted and retried. Defaults to 60000. Raise
+    this if long-thinking requests are timing out.
+  - **Default:** `undefined`
+  - **Requires restart:** Yes
 
 - **`model.summarizeToolOutput`** (object):
 
@@ -1197,15 +1205,7 @@ their corresponding top-level category object in your `settings.json` file.
         ]
       },
       "gemini-2.5-flash": {
-        "default": "gemini-2.5-flash",
-        "contexts": [
-          {
-            "condition": {
-              "useLatestFlash": true
-            },
-            "target": "gemini-3.8-flash"
-          }
-        ]
+        "default": "gemini-2.5-flash"
       },
       "gemini-3-pro-preview": {
         "default": "gemini-3-pro-preview",

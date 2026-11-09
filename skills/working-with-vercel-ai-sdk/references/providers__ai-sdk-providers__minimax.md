@@ -4,8 +4,8 @@ description: Learn how to use MiniMax with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/minimax.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "5ded1478ca628735b3627de53e613b1b7f2af26bb94c0995ab5e4d0346dcf75a"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "74cc2f4cc009c3beb61f89b552d9f36c933a41df88bd9c3d1514e6a962e67648"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -357,6 +357,19 @@ The following optional provider options are available for MiniMax language model
   reasoning tokens and increase latency. Maps to `output_config.effort` in the
   MiniMax API. When omitted, the server uses its default (`'max'` for M3.1 Flash).
 
+- **serviceTier** *'standard' | 'priority'*
+
+  Request admission tier, sent as `service_tier`. Priority admission is billed
+  at 1.5x the standard price. Omit this option to use the API's default tier.
+  Anthropic-only tier values are omitted with an unsupported-setting warning.
+  See [MiniMax Messages](https://platform.minimax.io/docs/api-reference/messages-create#body-service-tier).
+
+  When the API returns its applied tier, it is exposed as
+  `providerMetadata.minimax.serviceTier` if `providerOptions.minimax` was
+  supplied. The canonical `providerMetadata.anthropic.serviceTier` also contains
+  the returned tier, including when no MiniMax options were supplied. An omitted
+  response tier is not inferred from the requested tier.
+
 - **thinking** *object*
 
   Controls the model's reasoning ("thinking") behavior.
@@ -598,7 +611,7 @@ MiniMax video results include `providerMetadata.minimax`:
 
 | Model                    | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ------------------------ | ----------- | ----------------- | ---------- | -------------- |
-| `MiniMax-M3.1-Flash`     | ✓           | ✓                 | ✓          | ✓              |
+| `minimax-m3.1-flash`     | ✓           | ✓                 | ✓          | ✓              |
 | `minimax-m3`             | ✗           | ✓                 | ✓          | ✓              |
 | `minimax-m2.7`           | ✗           | ✓                 | ✓          | ✓              |
 | `minimax-m2.7-highspeed` | ✗           | ✓                 | ✓          | ✓              |
@@ -611,6 +624,29 @@ MiniMax video results include `providerMetadata.minimax`:
 Please see the [MiniMax docs](https://platform.minimax.io/docs) for a full
 list of available models. You can also pass any available provider model ID as
 a string if needed.
+
+## Video Model Capabilities
+
+| Model            | Image Input | First Frame | Last Frame                                   | Reference Images | Reference Video | Audio | Aspect Ratio                               | Resolution | Duration | FPS | Seed |
+| ---------------- | ----------- | ----------- | -------------------------------------------- | ---------------- | --------------- | ----- | ------------------------------------------ | ---------- | -------- | --- | ---- |
+| `MiniMax-H3`     | ✓           | ✓           | Conditional: A first frame is also supplied. | ✓                | ✓               | ✗     | Conditional: No frame images are supplied. | ✓          | ✓        | ✗   | ✗    |
+| `MiniMax-H3-Max` | ✓           | ✓           | Conditional: A first frame is also supplied. | ✗                | ✗               | ✗     | Conditional: No frame images are supplied. | ✓          | ✓        | ✗   | ✗    |
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option               | Description                                                                                                                                                             |
+| --------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| language  | `effort`             | Reasoning effort for MiniMax M3.1 and later models. Higher levels can use more reasoning tokens and increase latency. Defaults to the server's setting.                 |
+| language  | `serviceTier`        | Request admission tier (`standard` or `priority`), sent as `service_tier`. Priority admission is billed at 1.5x the standard price. Omit to use the API's default tier. |
+| language  | `thinking`           | thinking                                                                                                                                                                |
+| video     | `resolution`         | Output resolution.                                                                                                                                                      |
+| video     | `ratio`              | Aspect ratio of the generated video. Overrides the top-level `aspectRatio`.                                                                                             |
+| video     | `referenceAudioUrls` | Reference audio URLs for reference-to-video generation.                                                                                                                 |
+| video     | `aigcWatermark`      | Whether to embed an AIGC watermark in the output. Defaults to `false`.                                                                                                  |
+| video     | `pollIntervalMs`     | Interval in milliseconds between task status polls. Default: 10000.                                                                                                     |
+| video     | `pollTimeoutMs`      | Maximum time in milliseconds to poll before timing out. Default: 600000.                                                                                                |
 
 ---
 

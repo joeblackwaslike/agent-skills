@@ -15,8 +15,8 @@ related:
 summary: Connect an AWS account to your Vercel team so Bring Your Own Cloud (BYOC) can invoke Lambda functions in your account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "049987a6b0c23d065b8bbd1f95d79d3292e529d1f64bdb72330ef417161a20db"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c247c6b4141c71c191ef8c57182f7b17f96ded1cc20794263bb6b59153f706e3"
 ---
 
 # Connecting an AWS Account for BYOC
@@ -33,6 +33,7 @@ Connect an AWS account to your Vercel team so [Bring Your Own Cloud (BYOC)](/doc
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Bring Your Own Cloud on AWS is now generally available](https://vercel.com/changelog/bring-your-own-cloud-on-aws-is-now-generally-available)
+- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [Operating BYOC Deployments](https://vercel.com/docs/networking/bring-your-own-cloud/operations) — Retry failed Bring Your Own Cloud \\(BYOC\\) deployments, clean up AWS resources, monitor logs, and rotate credentials.
 - [Deploying with BYOC from GitHub Actions](https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions) — Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud \\(BYOC\\) d
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).

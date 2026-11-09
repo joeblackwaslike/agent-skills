@@ -3,7 +3,7 @@ title: list-billing-plans-for-product
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-product
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-product"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about list-billing-plans-for-product on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-product.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "053bd28bef1601b6d469457fe4e14bdd6483b490cda1a651324681c1e93a95dc"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "463c92f035316b03aeb878725b7d62cc2e3e27321bd7bc60b7e6b3d0f6cac6a3"
 ---
 
 # List Billing Plans For Product

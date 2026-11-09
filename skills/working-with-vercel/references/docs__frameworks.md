@@ -16,8 +16,8 @@ related:
 summary: Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter what tool you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5b98c69a444ba22714d68cfbaab942965b28c0418d332d4a26b9a44dc42ab819"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c3721d0b3e3fbde3c7dec85d98c9fb9ae78dfa88c684f76653310b9e7cb49c94"
 ---
 
 # Frameworks on Vercel
@@ -40,13 +40,15 @@ Vercel has first-class support for [a wide range of the most popular frameworks]
 - [Expanding the experimentation ecosystem with Edge Config and LaunchDarkly](https://vercel.com/blog/edge-config-and-launch-darkly)
 - [Framework-defined infrastructure](https://vercel.com/blog/framework-defined-infrastructure)
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [The developer experience of the Frontend Cloud](https://vercel.com/blog/the-developer-experience-of-the-frontend-cloud)
+- [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud)
 
 Full cross-link map for this page: [/docs/frameworks.graph.md](/docs/frameworks.graph.md)
 <!-- /docsgraph:related -->
 
 For AI applications, explore [agent frameworks](/docs/frameworks/agents) to build agents with eve, Mastra, Flue, and Vercel. Each guide covers the framework’s setup, hosting requirements, and Vercel integrations.
+
+Use the [web applications reference architecture](/kb/architecture/web) to choose a framework and rendering approach, then plan data access, authentication, and caching.
 
 Learn how to [get started with Vercel](/docs/getting-started-with-vercel) or clone one of our example repos to your favorite git provider and deploy it on Vercel using one of the templates below:
 

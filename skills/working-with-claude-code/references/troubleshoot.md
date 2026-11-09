@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/mods/troubleshoot.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "2fb07df87ca59651831f9f5bdb5920d3da1e06e6833a40265399ca621d8f1109"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "d7e1c6c2db49c3b916ac8afb6d509c3fb82638e85b2667a5bd2bbb822935a507"
 ---
 
 > ## Documentation Index
@@ -204,6 +204,10 @@ The mod loaded and its hooks run, and a tool call it touched is refused.
 In auto mode, a denied tool call gives this reason. A hook changed the tool call's input after the [server-side classifier](https://code.claude.com/docs/en/permission-modes.md#server-side-classifier-review) reviewed it, so that review doesn't cover what would run. The hook can be a mod's [`tool.call`](https://code.claude.com/docs/en/plugins/mods/reference#tools) or [`turn.step`](https://code.claude.com/docs/en/plugins/mods/reference#turns) hook, or a [`PreToolUse`](https://code.claude.com/docs/en/hooks#pretooluse) settings hook. The message doesn't say which.
 
 The message tells Claude to issue the call once more as recorded. If that's denied too, the hook changes the input every time, so turn off the mod or hook, or leave auto mode and approve the call yourself.
+
+> [!NOTE]
+>
+> In [some interactive terminal sessions and VS Code sessions](https://code.claude.com/docs/en/hooks.md#pretooluse-updatedinput-in-auto-mode), the same denial gives the reason `a hook changed this call's input after auto mode reviewed it`. The repeated call there carries the mod's first change, and a `tool.call` hook still runs on it, but a further change is dropped. You don't need to change your mod unless Claude tells you in its reply that [auto mode couldn't check the call](https://code.claude.com/docs/en/errors.md#hook-changed-input-after-review).
 
 ### A message about the deny rules in your settings
 

@@ -12,12 +12,13 @@ related:
   - /docs/ai-gateway/modalities/decision
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/models-and-providers/decision-fallbacks
+  - /docs/ai-gateway/sdks-and-apis/rest-api
   - /docs/ai-gateway/models-and-providers
 summary: Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One decision requests through it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "db7c48987afc62a279db503a9f91c190b672dc6f2877616849e7b6ac14c80fdd"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "1b2f3ce3e4dd8c36ee49e88f56f434cc8af0641a0b483727f85c711aec8941e2"
 ---
 
 # TypeSafe API with AI Gateway
@@ -267,16 +268,16 @@ See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallback
 
 ## Errors
 
-Errors use TypeSafe's shape, with a machine-readable code alongside the message:
+On `POST /typesafe/v1/systemone`, request validation and authentication errors use TypeSafe's shape, with a machine-readable code alongside the message:
 
 ```json
 {
-  "message": "questions.refund.type: expected one of 'noul', 'choice', 'score'",
-  "error_type": "invalid_request"
+  "message": "Authentication failed",
+  "error_type": "authentication_error"
 }
 ```
 
-Errors returned by the model provider are passed through unchanged, so a client that already handles TypeSafe errors keeps working.
+Errors such as insufficient credits, an unknown model, or a model provider failure use the [standard AI Gateway error format](/docs/ai-gateway/sdks-and-apis/rest-api#error-responses) instead: an `error` object with `message` and `type` fields. `GET /typesafe/v1/models` returns its errors in the standard format. If your code reads `message` or `error_type` from an error response, also check for the `error` object and read `error.message` and `error.type`.
 
 ## Related
 

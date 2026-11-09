@@ -8,7 +8,7 @@ type: how-to
 prerequisites:
   []
 related:
-  - /docs/tracing/always-on-tracing
+  - /docs/tracing/configure-tracing
   - /docs/cli/traces
   - /docs/cli/agent-runs
   - /docs/agent-resources/vercel-mcp
@@ -16,8 +16,8 @@ related:
 summary: Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-runs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2de873730a0dfa2681f6c6257ee5eab32c26078c6678d15c3541a537201952bc"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "dff1b1553b32d2b7c10685f0e7acca715d2608f91be46b7b778d3213d56761f9"
 ---
 
 # Agent Runs
@@ -35,8 +35,8 @@ Vercel dashboard. It appears automatically for eve projects, with no instrumenta
 - [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects)
-- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
 - [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 - [Build a Software Factory with eve](https://vercel.com/docs/agent-resources/software-factory/eve) — Customize an eve software factory on Vercel with GitHub access, sandbox execution, and reviewed draft pull requests.
@@ -46,8 +46,8 @@ Full cross-link map for this page: [/docs/agent-runs.graph.md](/docs/agent-runs.
 
 > Agent Runs are available in Beta on Enterprise, Pro, and Hobby plans
 
-Agent Runs usage is billed at
-[Always-on Tracing rates](/docs/tracing/always-on-tracing#usage-and-pricing) during beta. All plans
+Vercel bills Agent Runs usage at
+[Tracing rates](/docs/tracing/configure-tracing#usage-and-pricing) during beta. All plans
 include 30-day Agent Runs retention during beta.
 
 Open your project in the Vercel dashboard and go to
@@ -60,7 +60,7 @@ The overview shows:
 - **Runs** over time, broken down by trigger, such as Slack and HTTP.
 - **Token usage** over the same window, split into input, output, and cached tokens.
 - A **table of runs** with the triggering message, trigger type, tokens in and out, turn count,
-  duration, and time.
+  and time.
 
 Select a run to see its model, trigger, and deployment, followed by a per-turn breakdown with:
 
@@ -71,18 +71,18 @@ Select a run to see its model, trigger, and deployment, followed by a per-turn b
 - Input, cached, and output token counts for the turn.
 
 Agent Runs is eve's built-in OpenTelemetry integration for Vercel. Configure it with `agentRuns()`.
-New eve deployments automatically configure tracing to sample at 100%. Existing deployments must
+When `eve deploy` creates a new Vercel project, it configures tracing to sample at 100%. Existing projects must
 configure sampling.
 
 To investigate an agent's actions, connect its tool calls with the initiating identity, approval records, and changes recorded by downstream systems. Agent Runs captures execution traces; your application and connected systems must supply the approval and outcome records. Read [How do you audit what an AI agent did?](/i/how-to-audit-ai-agents) for guidance on reconstructing a run and handling gaps in the evidence.
 
-## Configure tracing for existing deployments
+## Configure tracing for existing projects
 
-New eve deployments automatically configure tracing to sample at 100%. Existing deployments must
+When `eve deploy` creates a new Vercel project, it configures tracing to sample at 100%. Existing projects must
 add a tracing rule before Vercel collects traces. We recommend sampling at 100% to collect all of the
 spans related to the run.
 
-For an existing deployment, select your team and project, then open
+To add the rule, select your team and project, then open
 [**Settings → Tracing**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Ftracing\&title=Go+to+Tracing+settings):
 
 1. Select **Add Sampling Rule**.

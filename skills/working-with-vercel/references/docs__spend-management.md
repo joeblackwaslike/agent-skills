@@ -16,8 +16,8 @@ related:
 summary: Learn how to get notified about your account spend and configure a webhook.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/spend-management.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7ccc33013984469435f8c48813221777e79218993b83b2ead13b890a1767a26a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bdf5c0d2832d1a32fe5f14053a5775b6fe2169a82d6c2aeb1ae7687d344ed2f0"
 ---
 
 # Spend Management
@@ -34,15 +34,15 @@ Spend management is a way for you to notify or to automatically take action on y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications)
+- [Spend Management now available for Pro users](https://vercel.com/changelog/spend-management-now-available-for-pro-users)
 - [Spend Management expands to Enterprise Flexible Commitment plans](https://vercel.com/changelog/spend-management-enterprise-flex)
 - [Vercel CLI adds Spend Management](https://vercel.com/changelog/vercel-cli-adds-spend-management)
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
-- [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
-- [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications)
-- [Spend Management now available for Pro users](https://vercel.com/changelog/spend-management-now-available-for-pro-users)
 - [Spend Management now pauses production deployments by default](https://vercel.com/changelog/spend-management-now-pauses-production-deployments-by-default)
 - [Improved hard caps for Spend Management](https://vercel.com/changelog/improved-hard-caps-for-spend-management)
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
@@ -94,15 +94,16 @@ Because these checks are not continuous, notifications, webhooks, and project pa
 
 ## Managing your budget from the CLI
 
-You can view and manage your team's On-Demand Budget from the Vercel CLI with the `vercel budgets` command, available in `vercel@59.23.0` and later. The same [Owner](/docs/rbac/access-roles#owner-role) or [Billing](/docs/rbac/access-roles#billing-role) role requirement applies.
+You can view and manage your team's On-Demand Budget from the Vercel CLI with the `vercel billing budgets` command. The same [Owner](/docs/rbac/access-roles#owner-role) or [Billing](/docs/rbac/access-roles#billing-role) role requirement applies.
 
 ```bash filename="terminal"
-vercel budgets
-vercel budgets set --amount 200 --pause --webhook https://example.com/spend
-vercel budgets remove --yes
+vercel billing budgets
+vercel billing budgets inspect
+vercel billing budgets set --amount 200 --pause --webhook https://example.com/spend
+vercel billing budgets remove --yes
 ```
 
-`set` creates or updates the budget. `--pause` pauses all projects' production deployments when the budget is reached, and `--webhook` triggers an HTTPS POST at spend thresholds. For the full reference, see [`vercel budgets`](/docs/cli/budgets).
+`vercel billing budgets` lists the budget and its settings, and `inspect` shows this cycle's on-demand spend against it. `set` creates or updates the budget. `--pause` pauses all projects' production deployments when the budget is reached, and `--webhook` triggers an HTTPS POST at spend thresholds. For the full reference, see [`vercel billing budgets`](/docs/cli/budgets).
 
 ## Managing alert threshold notifications
 
@@ -166,7 +167,7 @@ To configure a webhook for spend management:
 
 1. In the **Spend Management** section of your team's settings, set your [spend amount](#managing-your-spend-amount)
 2. Enter the webhook URL for the endpoint that will receive a POST request. To be accessible, make sure your endpoints are public
-3. Secure your webhooks by comparing the [`x-vercel-signature`](/docs/headers/request-headers#x-vercel-signature) request header to the SHA that is generated when you save your webhook. To learn more, see the [securing webhooks](/docs/webhooks/webhooks-api#securing-webhooks) documentation
+3. Secure your webhooks by checking the [`x-vercel-signature`](/docs/headers/request-headers#x-vercel-signature) request header. The header contains an HMAC-SHA1 hash of the request body, created with the secret that Vercel shows when you first save your webhook. To learn more, see the [securing webhooks](/docs/webhooks/webhooks-api#securing-webhooks) documentation
 
 ### Webhook payload
 
@@ -174,21 +175,30 @@ The webhook URL receives an HTTP POST request with the following JSON payload fo
 
 #### Spend amount
 
-Sent when the team hits 50%, 75%, and 100% of their spend amount. For budgets created before September 2025, this is only sent at 100%.
+Sent when the team hits 50%, 75%, and 100% of their spend amount. For budgets created before September 2025, this is only sent at 100%. If the team's spend continues past the spend amount, Vercel also sends this event each time the spend crosses another 100% of the spend amount, from 200% up to 1,000%. For these events, `thresholdPercent` is greater than 100.
 
 | Parameters         | Type                              | Description                                                                                                                                                                                    |
 | ------------------ | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `budgetAmount`     | int    | The [spend amount](/docs/spend-management#managing-your-spend-amount) that you have set                                                                                                        |
-| `currentSpend`     | int    | The [total cost](/docs/spend-management#managing-your-spend-amount) that your team [has accrued](/docs/spend-management#what-does-spend-management-include) during the current billing cycle. |
+| `currentSpend`     | number | The [total cost](/docs/spend-management#managing-your-spend-amount) that your team [has accrued](/docs/spend-management#what-does-spend-management-include) during the current billing cycle. |
 | `teamId`           | string | Your Vercel Team ID                                                                                                                                                                            |
 | `thresholdPercent` | int    | The percentage of the total budget amount for the threshold that triggered this alert                                                                                                          |
 
+Vercel sends these parameters inside the `payload` object of the request body. The request body uses the same format as other [webhook payloads](/docs/webhooks/webhooks-api#payload), and the event type is `budget.reached`:
+
 ```json filename="webhook-payload.json"
 {
-  "budgetAmount": 500,
-  "currentSpend": 500,
-  "teamId": "team_jkT8yZ3oE1u6xLo8h6dxfNc3",
-  "thresholdPercent": 100
+  "id": "2qn7PZrx89yxY34vEZPD3",
+  "type": "budget.reached",
+  "createdAt": 1759449600000,
+  "payload": {
+    "user": { "id": null },
+    "team": { "id": "team_jkT8yZ3oE1u6xLo8h6dxfNc3" },
+    "budgetAmount": 500,
+    "currentSpend": 500,
+    "teamId": "team_jkT8yZ3oE1u6xLo8h6dxfNc3",
+    "thresholdPercent": 100
+  }
 }
 ```
 

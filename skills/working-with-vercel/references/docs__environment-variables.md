@@ -9,20 +9,20 @@ prerequisites:
   []
 related:
   - /docs/deployments/environments
+  - /docs/rbac/access-roles
   - /docs/environment-variables/rotating-secrets
   - /docs/environment-variables/sensitive-environment-variables
   - /docs/builds/configure-a-build
-  - /docs/functions
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0476931c109a9f402a546d081f1a2ceb74581272c4f884894d2f02930cbe977a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f6c031eaa32563c9f4dc82f8b42fb8b2f793f26e2e29b61e7c76ef11abcd94fc"
 ---
 
 # Environment variables
 
-Environment variables are key-value pairs configured outside your source code so that each value can change depending on the [Environment](/docs/deployments/environments). These values are encrypted at rest. Config values remain readable to members with project access, while Secret values are write-only after saving. When you need to replace an API key, token, or other credential, follow the steps for [rotating environment variables](/docs/environment-variables/rotating-secrets) to update it without downtime.
+Environment variables are key-value pairs configured outside your source code so that each value can change depending on the [Environment](/docs/deployments/environments). These values are encrypted at rest. Config values remain readable to team members whose [role](/docs/rbac/access-roles) gives access to the project's environment variables, while Secret values are write-only after saving. When you need to replace an API key, token, or other credential, follow the steps for [rotating environment variables](/docs/environment-variables/rotating-secrets) to update it without downtime.
 
 
 <!-- docsgraph:related -->
@@ -54,9 +54,24 @@ Any change you make to environment variables are not applied to previous deploym
 
 ## Creating environment variables
 
-Environment variables can either be declared at the team or project level. When declared at the team level, they are available to all projects within the team. When declared at the project level, they are only available to that project.
+Environment variables can either be declared at the team or project level. When declared at the team level, they are available only to the projects that you [link them to](/docs/environment-variables/shared-environment-variables#linking-to-projects). When declared at the project level, they are only available to that project.
 
 To learn how to create and manage environment variables, see [Managing environment variables](/docs/environment-variables/managing-environment-variables).
+
+### Add variables in bulk
+
+To add many variables at once, such as when you move a project from another platform, use an existing `.env` file. In the **Add Environment Variable** form, paste the file's contents into the **Key** field, or select **Import .env** and choose the file. Vercel creates one variable for each line. Review the type and environments for each variable before you save.
+
+### Choose Config or Secret from the CLI
+
+[`vercel env add`](/docs/cli/env#type) accepts these flags to set a variable's type. `vercel env update` accepts `--type` and `--sensitive`:
+
+| Type | Flag | Equivalent flag |
+| --- | --- | --- |
+| Config | `--type config` | `--no-sensitive` |
+| Secret | `--type secret` | `--sensitive` |
+
+`--visibility` is a deprecated alias for `--type`, so `--visibility secret` still creates a Secret. Passing `--sensitive` or `--no-sensitive` with a conflicting `--type` returns an error. If you omit all of these flags, the CLI uses the [default type for the target environment](/docs/cli/env#type).
 
 ## Environment variable size
 
@@ -109,15 +124,15 @@ Any branch-specific variables will override other preview environment variables 
 
 Environment variables for local development are defined in the `.env.local` file. This is a plain text file that contains `key=value` pairs of environment variables, that you can manually create in your project's root directory to define specific variables.
 
-You can use the `vercel env pull` command to automatically create and populate the `.env` file (which serves the same purpose as `.env.local`) with the environment variables from your Vercel project:
+You can use the `vercel env pull` command to automatically create and populate the `.env.local` file with the environment variables from your Vercel project:
 
 ```bash
 vercel env pull
 Downloading Development Environment Variables for Project my-lovely-project
-✅ Created .env file [510ms]
+✅ Created .env.local file [510ms]
 ```
 
-This command creates a `.env` file in your project's current directory with the environment variables from your Vercel project's **Development** environment.
+This command creates a `.env.local` file in your project's current directory with the environment variables from your Vercel project's **Development** environment.
 
 If you're using [`vercel dev`](/docs/cli/dev), there's no need to run `vercel env pull`, as `vercel dev` automatically downloads the Development Environment Variables into memory. For more information on the `vercel env` command, see the [CLI](/docs/cli/env) docs.
 
@@ -131,6 +146,18 @@ In that case, the Integration that added the Variable will be displayed in your 
 ![An Environment Variable added by the MongoDB Integration.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/environment-variables/integration-env-variable-light.png)
 
 For Native Marketplace resources, the variable scope matches the environments on the project connection. The scope can include Production, Preview, Development, and individual Custom Environments. A Custom Environment uses the provider's Preview secret value when one exists. Otherwise, the Custom Environment uses the default secret value.
+
+## Troubleshooting environment variables
+
+If a variable doesn't have the value you expect, find your symptom in the following table:
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| A change in the dashboard has no effect | Environment variable changes apply only to new deployments. The running deployment keeps the values it was built with. | [Redeploy](/docs/deployments/managing-deployments#redeploy-a-project) the project. |
+| A `NEXT_PUBLIC_` variable is `undefined` in the browser | Next.js inlines `NEXT_PUBLIC_` variables into the client bundle at build time. Dynamic lookups such as `process.env[name]` aren't inlined. | Add the `NEXT_PUBLIC_` prefix, reference the variable by its full name, make sure it's set for the environment you build, and redeploy. |
+| A preview deployment reads the wrong values | The variable isn't scoped to Preview, or code that branches on `VERCEL_ENV` runs in a [custom environment](/docs/deployments/environments#custom-environments), where `VERCEL_ENV` is `preview`. | Check the variable's environments. To identify a custom environment, read [`VERCEL_TARGET_ENV`](/docs/environment-variables/system-environment-variables), which returns the custom environment's name. |
+| A Turborepo build uses values from another environment | Turborepo leaves environment variables out of its cache key unless `turbo.json` lists them, so it can reuse a build made with different values. | List the variables in `env` for each task or in `globalEnv` in `turbo.json`. |
+| System environment variables are empty in local development | Deployment-specific [system environment variables](/docs/environment-variables/system-environment-variables), such as `VERCEL_GIT_REPO_OWNER`, are set only when Vercel builds a deployment. | Set the values you need in `.env.local` for local development. |
 
 
 ---

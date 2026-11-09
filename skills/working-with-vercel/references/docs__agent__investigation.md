@@ -13,8 +13,8 @@ related:
 summary: Let AI investigate your error alerts to help you debug faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/investigation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9aa9a333cc3382cb8783eb0870b38467e4e8e5eb212a4704ddd27cde7e2344f9"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7c724551d2ae92140c452260a67785a4bc89249f21e107759362908e7438af22"
 ---
 
 # Investigation
@@ -29,18 +29,18 @@ When you get an anomaly alert, Vercel Agent can investigate your logs and metric
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations)
 - [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga)
 - [Vercel Agent investigations now available in Slack](https://vercel.com/changelog/vercel-agent-investigations-now-available-in-slack)
 - [Vercel Agent Investigations now in Public Beta](https://vercel.com/changelog/vercel-agent-investigations-now-in-public-beta)
 - [Vercel Agent investigations now included in Observability Plus](https://vercel.com/changelog/vercel-agent-investigations-now-included-in-observability-plus)
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
-- [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta)
+- [Vercel Agent can now validate alerts before paging](https://vercel.com/changelog/vercel-agent-can-now-validate-alerts-before-paging-you)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Installation](https://vercel.com/docs/agent/installation) — Let AI automatically install Web Analytics and Speed Insights in your app
 
 Full cross-link map for this page: [/docs/agent/investigation.graph.md](/docs/agent/investigation.graph.md)
 <!-- /docsgraph:related -->
@@ -67,7 +67,7 @@ You can [run an investigation manually](#run-an-investigation-manually) if you w
 To run investigations automatically for [eligible](#eligible-alerts-for-automatic-investigation) alerts, enable Vercel Agent Investigations in your team's settings:
 
 1. Go to your team's [Settings](https://vercel.com/d?to=%2Fteams%2F%5Bteam%5D%2Fsettings\&title=Go+to+Settings\&personalTo=%2Faccount) page.
-2. In the **General** section, find **Vercel Agent** and under **Investigations**, switch the toggle to **Enabled**.
+2. Select **Agent** in the sidebar. Under **Investigations**, turn on **Investigate anomalies automatically**.
 3. Under **Projects to Investigate**, choose **All projects** or **Specific projects**. If you choose **Specific projects**, select the projects that Vercel Agent should investigate.
 4. Select **Save** to confirm your changes.
 
@@ -83,7 +83,7 @@ To view an investigation:
 2. Find the alert you want to review and click on it.
 3. Review the investigation results alongside your alert details. If the investigation is still running, you can see the analysis stream in real time.
 
-If you want to run the investigation again with fresh data, click the **Rerun** button.
+If you want to run the investigation again with fresh data, click the **Investigate Again** button.
 
 ### Run an investigation manually
 
@@ -91,7 +91,7 @@ If you do not have Vercel Agent Investigations enabled and running automatically
 
 1. Go to your [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fobservability%2Falerts\&title=Open+Alerts) and navigate to **Observability**, then **Alerts**.
 2. Find the alert you want to review and click on it.
-3. Click the **Investigate** (or **Rerun**) button to run an investigation manually.
+3. Click the **Investigate** button to run an investigation manually.
 
 ## Pricing
 
@@ -104,7 +104,7 @@ See [Vercel Agent pricing](/docs/agent/pricing) for complete rates and cost-trac
 To disable Vercel Agent Investigation:
 
 1. Go to your team's [Settings](https://vercel.com/d?to=%2Fteams%2F%5Bteam%5D%2Fsettings\&title=Go+to+Settings\&personalTo=%2Faccount) page.
-2. In the **General** section, find **Vercel Agent** and under **Investigations**, switch the toggle to **Disabled**.
+2. Select **Agent** in the sidebar. Under **Investigations**, turn off **Investigate anomalies automatically**.
 3. Select **Save** to confirm your changes.
 
 Once disabled, Vercel Agent Investigation won't run automatically on any new alerts. You can re-enable Vercel Agent Investigation at any time from the same menu or [run an investigation manually](#run-an-investigation-manually) from the alert details page.

@@ -13,8 +13,8 @@ related:
 summary: Learn how to configure custom rate limiting rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a5c3814de9105e094b7494382d2760893f4e898ce880ab6a2be855061e3758ae"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "03738a2fe00d6e0d4c34b495cda0d592246c1fe0487f2f83efcfcc94fdf94b36"
 ---
 
 # WAF Rate Limiting
@@ -29,7 +29,7 @@ Rate limiting allows you to control the number of times that a request from the 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Add Rate Limiting with Vercel](https://vercel.com/kb/guide/add-rate-limiting-vercel) — Learn how to implement rate limiting with Vercel
+- [Add rate limiting with Vercel](https://vercel.com/kb/guide/add-rate-limiting-vercel) — Learn how to implement rate limiting with Vercel.
 - [Rate limiting now available on Hobby, with higher included usage on Pro](https://vercel.com/changelog/rate-limiting-now-available-on-hobby-with-higher-included-usage-on-pro)
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
@@ -37,7 +37,6 @@ Rate limiting allows you to control the number of times that a request from the 
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel WAF rate limiting now generally available](https://vercel.com/changelog/vercel-waf-rate-limiting-now-generally-available)
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
-- [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall)
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk) — Learn how to configure a custom rule with rate limit in your code.
 - [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
@@ -72,7 +71,7 @@ The use of rate limiting rules helps ensure that only intended traffic reaches y
 1. Update the **Time Window** field as needed (defaults to 60s) and the **Request Limit** field as needed (defaults to 100 requests)
    - The **Request Limit** defines the maximum number of requests allowed in the selected time window from a common source
 2. Select the key(s) from the request's source that you want to match against
-3. For the **Then** action, you can leave the **Default (429)** action or choose between **Log**, **Deny** and **Challenge**
+3. For the **Then** action, you can leave the default **Too Many Requests (429)** action or choose between **Log**, **Deny (403)**, and **Challenge**
    > **💡 Note:** The **Log** action will not perform any blocks. You can use it to first
    > monitor the effect before applying a rate limit or block action.
 4. Select **Save Rule**

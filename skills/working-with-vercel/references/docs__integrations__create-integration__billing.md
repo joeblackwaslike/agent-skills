@@ -17,8 +17,8 @@ related:
 summary: Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/billing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e3315bbedbd31bbc400917a7366353cd1c671096a87115d90d813a12588d73a7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6c216f7e5d0b4936b61cf7e115ff587bae7697fdc7fba46c91466b9a60a84969"
 ---
 
 # Manage Billing and Refunds for Integrations
@@ -31,6 +31,7 @@ When a Vercel user installs your native integration, you manage billing through 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
 - [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
 - [Submit Invoice](https://vercel.com/docs/rest-api/marketplace/submit-invoice) — POST /v1/installations/{integrationConfigurationId}/billing/invoices — This endpoint allows the partner to submit an inv
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
@@ -118,6 +119,7 @@ flowchart TD
 | **paid**      | Vercel received payment successfully.                                                                             |
 | **notpaid**   | Payment failed on first attempt. Vercel continues retrying up to 9 times while the invoice remains in this state. |
 | **overdue**   | The 15 day payment period has elapsed. Automatic payment attempts will not continue. A customer may still pay.    |
+| **refund\_requested** | Vercel received a refund request for the invoice and has not completed the refund yet. |
 | **refunded**  | Vercel fully or partially refunded the invoice.                                                                   |
 
 > **💡 Note:** When an invoice enters `notpaid` status, Vercel does not automatically
@@ -313,7 +315,7 @@ When you request a refund, Vercel handles it as follows:
 3. If the payment method isn't working, Vercel creates a support ticket
 4. If anything goes wrong with the refund attempt, Vercel creates a support ticket
 
-For invoices in `notpaid` or `overdue` status, a refund request succeeds and moves the status to `refund_requested`, then to `refunded` once the funds are returned. Only invoices already in `refund_requested` status are blocked from additional refund requests.
+For invoices in `notpaid` or `overdue` status, a refund request succeeds and moves the status to `refund_requested`, then to `refunded` once the funds are returned. You can request more than one refund for the same invoice. Vercel rejects a refund request when the sum of all refunds for the invoice is more than the invoice total.
 
 ### Refunds after installation deletion
 

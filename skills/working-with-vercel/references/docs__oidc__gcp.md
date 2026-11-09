@@ -13,8 +13,8 @@ related:
 summary: "Learn how to configure your GCP project to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/gcp.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "13a31cd71ecf6945add38d2fbe3c82ae137cb4dccf70f324ff5aaa0d31a8e1df"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4ae98cfc2d7bb99e9aa27014b1e11f72f94ebd8477a2a2ae0b7c82500cec968c"
 ---
 
 # Connect to Google Cloud Platform (GCP)
@@ -31,6 +31,7 @@ To understand how GCP supports OIDC through Workload Identity Federation, consul
 
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
+- [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
@@ -61,7 +62,7 @@ Full cross-link map for this page: [/docs/oidc/gcp.graph.md](/docs/oidc/gcp.grap
      - **Global**: `https://oidc.vercel.com`
   5. Leave JWK file (JSON) empty
   6. For the **Audience** field, you have two options:
-     - **Default audience (recommended)**: Select `Default audience`. GCP generates the audience URL automatically based on your provider configuration. You can copy this value from the provider details page after creation. When using this option, you must pass the same URL as the `audience` in your code. See the [custom audience section](#custom-audience) below
+     - **Default audience (recommended)**: Select `Default audience`. GCP generates the audience URL automatically based on your provider configuration. You can copy this value from the provider details page after creation. When using this option, you must pass the same URL as the `audience` in your code. A token with a custom audience always uses the team issuer, so enter the **Team** issuer URL in the **Issuer URL** field even when your issuer mode is Global. See the [custom audience section](#custom-audience) below
      - **Allowed audiences**: Select `Allowed audiences` and enter `https://vercel.com/[TEAM_SLUG]` in the "Audience 1" field. This works without any additional code configuration
   7. Click **Continue**
   ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/oidc-tokens/gcp-create-id-pool-2.png)
@@ -138,6 +139,8 @@ In the following example, you create a [Vercel function](/docs/functions/quickst
 
 ### Return GCP Vertex AI generated text
 
+This example uses the token's default `aud` claim, so it works with the **Allowed audiences** option. If you selected **Default audience**, use the custom audience example after this one.
+
 Install the following packages:
 
 **pnpm**
@@ -192,7 +195,7 @@ const authClient = ExternalAccountClient.fromJSON({
   service_account_impersonation_url: `https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${GCP_SERVICE_ACCOUNT_EMAIL}:generateAccessToken`,
   subject_token_supplier: {
     // Use the Vercel OIDC token as the subject token
-    getSubjectToken: getVercelOidcToken,
+    getSubjectToken: () => getVercelOidcToken(),
   },
 });
 

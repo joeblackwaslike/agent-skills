@@ -15,8 +15,8 @@ related:
 summary: Learn how to run and test your microfrontends locally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7515324e1265da462e190a66416b2071a438277e2bc6c50b1255fd0e573f8153"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "56f358f7d31d44d6948cbeafb2c6ed83a08cabcc1192e09522f665655ac78fa2"
 ---
 
 # Microfrontends local development
@@ -30,6 +30,7 @@ To provide a seamless local development experience, `@vercel/microfrontends` pro
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
@@ -70,10 +71,11 @@ A developer working on `/docs` only runs the **Docs** microfrontend, while a dev
 
 Therefore, the microfrontends proxy allows developers to run only the microfrontend they are working on locally and be able to test paths in other microfrontends.
 
-> **💡 Note:** When developing locally with Next.js any traffic a child application receives
-> will be redirected to the local proxy. Setting the environment variable
-> `MFE_DISABLE_LOCAL_PROXY_REWRITE=1` will disable the redirect and allow you to
-> visit the child application directly.
+> **💡 Note:** When you develop locally with Next.js and Turborepo runs the local proxy, any
+> traffic that an application receives directly is redirected to the local
+> proxy. This applies to the default application and to child applications. Set
+> the environment variable `MFE_DISABLE_LOCAL_PROXY_REWRITE=1` to disable the
+> redirect and visit the application directly.
 
 ## Setting up microfrontends proxy
 
@@ -101,7 +103,7 @@ Therefore, the microfrontends proxy allows developers to run only the microfront
   {
     "$schema": "https://openapi.vercel.sh/microfrontends.json",
     "applications": {
-      "web": {},
+      "web": { "development": { "fallback": "vercel.com" } },
       "docs": {
         "routing": [
           {
@@ -123,7 +125,7 @@ Therefore, the microfrontends proxy allows developers to run only the microfront
   {
     "$schema": "https://openapi.vercel.sh/microfrontends.json",
     "applications": {
-      "web": {},
+      "web": { "development": { "fallback": "vercel.com" } },
       "docs": {
         "routing": [
           {
@@ -294,7 +296,7 @@ Therefore, you can run `npm run docs-dev` and `npm run docs-proxy` to get the fu
 
 When the local proxy falls back to a Vercel deployment protected with [Deployment Protection](/docs/deployment-protection), it needs a [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) secret to reach the protected deployment.
 
-The preferred approach is to set a single shared `VERCEL_AUTOMATION_BYPASS_SECRET` in the default application's local environment. The local proxy reads this value and sends it as the `x-vercel-protection-bypass` header when proxying to protected child project deployments. When Protection Bypass for Automation is enabled on the default application's project, Vercel sets `VERCEL_AUTOMATION_BYPASS_SECRET` automatically as a system environment variable, so running `vercel env pull` in the default app brings it down to your local environment.
+The preferred approach is to set a single shared `VERCEL_AUTOMATION_BYPASS_SECRET` in the default application's local environment. The local proxy reads this value and sends it as the `x-vercel-protection-bypass` header when proxying to protected child project deployments. When Protection Bypass for Automation is enabled on the default application's project, Vercel sets `VERCEL_AUTOMATION_BYPASS_SECRET` automatically as a system environment variable on that project's deployments. `vercel env pull` doesn't download this variable, so add it to the default application's local environment file (for example, `.env.local`) yourself.
 
 For one shared secret to authorize requests to every protected child project, each child project must recognize the same bypass secret value. Copy the default application's secret and add it to each protected child project.
 
@@ -314,15 +316,12 @@ For one shared secret to authorize requests to every protected child project, ea
   4. Under **Protection Bypass for Automation**, set the secret to the same value you copied from the default app
   5. Repeat for every protected child project you want the proxy to reach
 
-- ### Pull the secret into your local environment
-  1. Ensure you have the [Vercel CLI](https://vercel.com/cli) installed
-  2. Navigate to the root of the default app folder
-  3. Run `vercel login` to authenticate with Vercel
-  4. Run `vercel link` to link the folder to the Vercel project
-  5. Run `vercel env pull` to pull `VERCEL_AUTOMATION_BYPASS_SECRET` into your local environment file (for example, `.env.local`)
+- ### Add the secret to your local environment
+  1. Navigate to the root of the default app folder
+  2. Add `VERCEL_AUTOMATION_BYPASS_SECRET=<secret>` to your local environment file (for example, `.env.local`), where `<secret>` is the value that you copied from the default app
 
 - ### Update your README.md
-  Include [the previous step](#share-one-bypass-secret-across-projects) in your repository setup instructions, so that other developers pull the secret and have it available locally.
+  Include [the previous step](#share-one-bypass-secret-across-projects) in your repository setup instructions, so that other developers add the secret and have it available locally.
 
 ### Use a per-app secret for distinct bypass values
 

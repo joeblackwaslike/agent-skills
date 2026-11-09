@@ -1,8 +1,8 @@
 ---
 title: "Search"
 source: "https://docusaurus.io/docs/search"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "85a1039e9c4adcd856e83fa23a279cfbeb5353f4a95547420153e882a457dc5d"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "a1eda9a684efc03d8afcc7c8eac9a8567ca59de5985ed8dddfba9c9fbb1377bc"
 ---
 
 # Search
@@ -267,4 +267,4 @@ bun run swizzle @docusaurus/theme-classic SearchBar
 
 This will create an `src/theme/SearchBar` file in your project folder. Restart your dev server and edit the component, you will see that Docusaurus uses your own `SearchBar` component now.
 
-**Notes**: You can alternatively [swizzle from Algolia SearchBar](https://docusaurus.io/docs/search#editing-the-algolia-search-component) and create your own search component from there.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/search.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+**Notes**: You can alternatively [swizzle from Algolia SearchBar](https://docusaurus.io/docs/search#editing-the-algolia-search-component) and create your own search component from there.[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/search.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

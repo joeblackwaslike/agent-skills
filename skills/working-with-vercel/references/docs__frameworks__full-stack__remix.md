@@ -17,8 +17,8 @@ related:
 summary: Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "da85dd642e25a83dce974bbe8ae06d71fc6bdb4afcf49b20c7606683a602118b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "39ea8ee2dfd4e262e70c0c166ae54ab28bdb2f467563aa0a19ccb06f7e14ddd7"
 ---
 
 # Remix on Vercel
@@ -34,9 +34,9 @@ Remix is a fullstack, [server-rendered](#server-side-rendering-ssr) React framew
 - [Remix without limits (historical)](https://vercel.com/blog/vercel-remix-integration-with-edge-functions-support)
 - [Support for Remix with Vite](https://vercel.com/changelog/support-for-remix-with-vite)
 - [Support for Remix v2](https://vercel.com/changelog/support-for-remix-v2)
-- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [Remix projects can now be deployed with zero configuration](https://vercel.com/changelog/remix-projects-can-now-be-deployed-with-zero-configuration)
+- [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support)
 - [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability

@@ -14,8 +14,8 @@ related:
 summary: Connect Grok Build to AI Gateway with environment variables. Populate the model picker from the model catalog and monitor requests and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9fed500f430355d557d87b5f55c3a708a3411f7424efc51701272e940f25eb7a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "eded964ccc7babbd0a27b1f971ff51616de52a09dfbe308fc4822b8835c1cd5a"
 ---
 
 # Grok Build with AI Gateway
@@ -31,19 +31,20 @@ sha256: "9fed500f430355d557d87b5f55c3a708a3411f7424efc51701272e940f25eb7a"
 - [Grok Build 0.1 now available on Vercel AI Gateway](https://vercel.com/changelog/grok-build-0-1-now-available-on-vercel-ai-gateway)
 - [Grok 4.7 now available on AI Gateway, fx, and eve](https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve)
 - [Grok 4.6 now available on AI Gateway](https://vercel.com/changelog/grok-4-6-now-available-on-ai-gateway)
+- [Grok 4.5 now available on AI Gateway](https://vercel.com/changelog/grok-4-5-now-available-on-ai-gateway)
+- [Grok 4.3 on AI Gateway](https://vercel.com/changelog/grok-4-3-on-ai-gateway)
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Vercel Groq Integration](https://vercel.com/docs/agent-resources/integrations-for-models/groq) — Learn how to add the Groq native integration with Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/grok-build.graph.md](/docs/ai-gateway/coding-agents/grok-build.graph.md)
 <!-- /docsgraph:related -->
 
-- Use any model available through the gateway
+- Use models from other providers, not only SpaceXAI ones
 - Monitor traffic and spend in your AI Gateway Overview
 - View detailed traces in Vercel Observability under AI
 - Switch models from the in-CLI picker without re-authenticating
 
-Set two environment variables and every request routes through AI Gateway, with the model picker populated from the gateway's full catalog.
+Set two environment variables and every request routes through AI Gateway, with the model picker populated from the gateway's catalog.
 
 ## Set up with the Vercel CLI
 
@@ -73,7 +74,7 @@ If you can't use the Vercel CLI, configure Grok Build manually:
   ```
   Replace `your-ai-gateway-api-key` with a key from the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys). See [API key authentication](/docs/ai-gateway/authentication-and-byok) for details.
 
-  `https://ai-gateway.vercel.sh/coding-agent/v1` is the [coding agent surface](/docs/cli/ai-gateway#the-coding-agent-surface), the default base URL for agents that have no dedicated endpoint. It passes through to the gateway's standard `/v1` handlers, so routing, billing, and errors are unchanged.
+  `https://ai-gateway.vercel.sh/coding-agent/v1` is the [coding agent surface](/docs/cli/ai-gateway#the-coding-agent-surface), the default base URL for agents that have no dedicated endpoint. Except for model discovery, it passes through to the gateway's standard `/v1` handlers, so routing, billing, and errors are unchanged.
 
   Reload your shell:
   ```bash
@@ -89,7 +90,7 @@ If you can't use the Vercel CLI, configure Grok Build manually:
   ```bash
   grok
   ```
-  Press `Ctrl+M` to open the model picker. It lists every model AI Gateway exposes at `/v1/models`. To set a default model, add it to `~/.grok/config.toml`:
+  Press `Ctrl+M` to open the model picker. It lists the models AI Gateway exposes at `/coding-agent/v1/models`, which omits models that a coding agent can't use for text responses, such as embedding, image, and video models. To set a default model, add it to `~/.grok/config.toml`:
   ```toml filename="~/.grok/config.toml"
   [models]
   default = "spacexai/grok-4.5"

@@ -15,8 +15,8 @@ related:
 summary: Run terminal-based coding agents in persistent Vercel Sandbox microVMs from Herdr. Review and apply their changes locally as Git patches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/ecosystem/herdr.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0a3cce8ceaa40caba9058da6c8e83e82c1a0aae84c1b7e39ad1d3a771533ee97"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "80737acbc05663f90a690775a6af0c3134ebb735609eb7727db48b2087a5f9fe"
 ---
 
 # Herdr
@@ -35,12 +35,12 @@ back as a Git patch you review and apply locally.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox)
-- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
+- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
-- [Paseo](https://vercel.com/docs/sandbox/ecosystem/paseo) — Run Codex, Claude Code, OpenCode, and Pi in persistent Vercel Sandbox microVMs from Paseo, and reach the same session fr
-- [Harbor and Terminal-Bench](https://vercel.com/docs/sandbox/ecosystem/harbor) — Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker m
-- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [Vercel Plugin for AI Coding Agents](https://vercel.com/docs/agent-resources/vercel-plugin) — Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, a
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/herdr.graph.md](/docs/sandbox/ecosystem/herdr.graph.md)
 <!-- /docsgraph:related -->
@@ -106,7 +106,7 @@ Before you begin, make sure you have:
 ## How it works
 
 The plugin drives the locally authenticated Vercel CLI. Each Herdr pane maps
-to one named sandbox:
+to one sandbox:
 
 - **One sandbox per agent**: Starting an agent creates a
   [persistent sandbox](/docs/sandbox/concepts/persistent-sandboxes) and
@@ -256,7 +256,7 @@ sandbox is confirmed missing, exit the agent in the mapped pane, invoke
 
 Detaching leaves pane processes running, and a full restart restores the
 layout but not the terminal process. Focus the mapped pane and invoke
-**Reconnect agent to this Sandbox**. Reconnect attaches to the existing named
+**Reconnect agent to this Sandbox**. Reconnect attaches to the pane's existing
 sandbox and never creates a new one.
 
 For rarer recovery paths, such as partially failed deletions and moved

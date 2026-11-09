@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage project-level redirects using the vercel redirects CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/redirects.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f602535e396ea10c511de837cb5bad2f28e03218fc2041f721f077683f16207a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "8f684306fbec96d97b919ad887c625a9cba795a3441d710a57658b2ea07984eb"
 ---
 
 # vercel redirects
@@ -27,11 +27,10 @@ The `vercel redirects` command lets you manage redirects for a project. Redirect
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Getting Started](https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
-- [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 
 Full cross-link map for this page: [/docs/cli/redirects.graph.md](/docs/cli/redirects.graph.md)
@@ -52,7 +51,7 @@ redirects for the current project.*
 
 ## Commands
 
-The `vercel redirects` command includes several subcommands for managing redirects:
+The `vercel redirects` command includes several subcommands for managing redirects. Each subcommand uses the linked project unless you pass [`--project`](/docs/cli/global-options#project) with a project name or ID.
 
 ### `list`
 
@@ -64,11 +63,11 @@ vercel redirects list [options]
 
 **Options:**
 
-- `--page <NUMBER>`: Page number to display
-- `--per-page <NUMBER>`: Number of redirects per page (default: 50)
-- `-s, --search <QUERY>`: Search for redirects by source or destination
+- `--next <CURSOR>`: Show the next page, using the cursor that the CLI prints with the previous page
+- `--limit <NUMBER>`: Number of redirects per page (default: 50)
+- `-q, --query <TEXT>`: Search for redirects by source or destination
 - `--staging`: List redirects from the staging version
-- `--version <VERSION_ID>`: List redirects from a specific version ID
+- `--redirects-version <VERSION_ID>`: List redirects from a specific version ID
 
 **Examples:**
 
@@ -77,19 +76,19 @@ vercel redirects list [options]
 vercel redirects list
 
 # Search for redirects
-vercel redirects list --search "/old-path"
+vercel redirects list --query "/old-path"
 
-# List redirects on page 2
-vercel redirects list --page 2
+# Show the next page, using the cursor from the previous page
+vercel redirects list --next 2
 
 # List redirects with custom page size
-vercel redirects list --per-page 25
+vercel redirects list --limit 25
 
 # List redirects from staging version
 vercel redirects list --staging
 
 # List redirects from a specific version
-vercel redirects list --version ver_abc123
+vercel redirects list --redirects-version ver_abc123
 ```
 
 ### `list-versions`
@@ -134,33 +133,33 @@ vercel redirects add /old-path /new-path --status 301 --case-sensitive --preserv
 vercel redirects add /old-path /new-path --yes
 ```
 
-### `upload`
+### `import`
 
-Upload redirects from a CSV or JSON file.
+Import redirects from a CSV or JSON file.
 
 ```bash filename="terminal"
-vercel redirects upload file [options]
+vercel redirects import file [options]
 ```
 
 **Options:**
 
-- `--overwrite`: Replace all existing redirects
+- `--force`: Replace all existing redirects
 - `-y, --yes`: Skip confirmation prompt
 
 **Examples:**
 
 ```bash filename="terminal"
-# Upload redirects from CSV file
-vercel redirects upload redirects.csv
+# Import redirects from CSV file
+vercel redirects import redirects.csv
 
-# Upload redirects from JSON file
-vercel redirects upload redirects.json
+# Import redirects from JSON file
+vercel redirects import redirects.json
 
-# Upload and overwrite existing redirects
-vercel redirects upload redirects.csv --overwrite
+# Import and replace all existing redirects
+vercel redirects import redirects.csv --force
 
-# Upload without confirmation
-vercel redirects upload redirects.csv --yes
+# Import without confirmation
+vercel redirects import redirects.csv --yes
 ```
 
 #### File Formats
@@ -168,9 +167,9 @@ vercel redirects upload redirects.csv --yes
 **CSV Format:**
 
 ```csv filename="redirects.csv"
-source,destination,status,caseSensitive,preserveQueryParams
+source,destination,statusCode,caseSensitive,preserveQueryParams
 /old-path,/new-path,301,false,true
-/legacy/*,/modern/:splat,308,false,false
+/legacy/page,/modern/page,308,false,false
 /old-blog,/blog,302,false,false
 ```
 
@@ -181,14 +180,14 @@ source,destination,status,caseSensitive,preserveQueryParams
   {
     "source": "/old-path",
     "destination": "/new-path",
-    "status": 301,
+    "statusCode": 301,
     "caseSensitive": false,
     "preserveQueryParams": true
   },
   {
-    "source": "/legacy/*",
-    "destination": "/modern/:splat",
-    "status": 308,
+    "source": "/legacy/page",
+    "destination": "/modern/page",
+    "statusCode": 308,
     "caseSensitive": false,
     "preserveQueryParams": false
   }
@@ -264,7 +263,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

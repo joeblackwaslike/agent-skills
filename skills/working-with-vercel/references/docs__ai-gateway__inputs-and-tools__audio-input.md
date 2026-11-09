@@ -17,8 +17,8 @@ related:
 summary: Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supported API format.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "947f7f3019198240f94694d0269795f2466392fa3aeb7e4d2494fae2d412f1ad"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "078f2e08c3dbcfef79c00041b69ff6761070a70f1ca793e3b5266cd3f0207607"
 ---
 
 # AI Gateway Audio Input
@@ -32,6 +32,7 @@ Send a recording with a question to a model that can understand audio. Ask for a
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
+- [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
 - [AI Gateway File and PDF Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/file-input) — Send PDFs and documents to AI Gateway models with examples for each supported SDK and API format.
 - [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 - [AI Gateway Text to Speech](https://vercel.com/docs/ai-gateway/modalities/text-to-speech) — Generate spoken audio from text with speech models through Vercel AI Gateway.

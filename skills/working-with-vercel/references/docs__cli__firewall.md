@@ -16,8 +16,8 @@ related:
 summary: "Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, system bypass rules, attack..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "bc3415fbaa50a29029f9bd0f7f9ae967bc6b88821d7fd3b89396c85e36aebcb1"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c26cae4f7b7afbb245adbce4bb581c4b796fd36f96e247e959042b8afdaeff98"
 ---
 
 # vercel firewall
@@ -34,11 +34,11 @@ The `vercel firewall` command is used to inspect and configure the [Vercel Firew
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration) — Learn how to create scalable firewall configurations with Terraform
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
-- [vercel traces](https://vercel.com/docs/cli/traces) — Search spans across a team, inspect request traces, capture session traces, or manage project trace sampling rules from
+- [vercel traces](https://vercel.com/docs/cli/traces) — Search spans across a team, inspect a trace by trace ID or request ID, capture session traces, or manage project trace s
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk) — Learn how to configure a custom rule with rate limit in your code.
 - [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration) — GET /v1/security/firewall/config/{configVersion} — Retrieve the specified firewall configuration for a project. The depl
-- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md)
 <!-- /docsgraph:related -->
@@ -131,13 +131,11 @@ Both subcommands describe traffic with the same 10 dimensions: `ip`, `ja4`, `asn
 - `traffic inspect` takes it as the dimension to inspect, or as `--group-by`
 - A flag of the same name narrows either report to matching requests, such as `--ip 1.2.3.4` or `--action deny`
 
-You can combine the narrowing flags with each other and with `--filter`.
+You can combine the narrowing flags with each other and with `--query`.
 
 `--since` and `--until` both accept a relative offset (`1h`, `24h`, `7d`) or an ISO 8601 date.
 
 ### `traffic list`
-
-Aliases: `ls`.
 
 Show requests by firewall action over a window, with a trend and total for each action, followed by a top list per dimension: the busiest client IPs, JA4 TLS fingerprints, autonomous systems, user agents, request paths, rules, hostnames, and verified bots.
 
@@ -181,10 +179,10 @@ Each top list is its own query. A dimension your account cannot report marks tha
 - `--project <name-or-id>`: Project name or ID, defaulting to the linked project
 - `-s, --since <time>`: Start of the window. Defaults to 24 hours ago
 - `-u, --until <time>`: End of the window. Defaults to now
-- `--top <number>`: Rows per top list. Defaults to 5
+- `--limit <number>`: Rows per top list. Defaults to 5
 - `--dimension <dim>`: Top list to include, from the dimensions above. Repeatable, or comma-separated. Defaults to every dimension except `country` and `action`
 - `--alert <alert-id>`: Scope the window and rule to one alert from [`alerts list`](#alerts-list)
-- `--filter <expr>`: KQL filter expression. Repeatable, ANDed together
+- `--query <expr>`: KQL filter expression. Repeatable, ANDed together
 - `--ip <ip>`, `--ja4 <digest>`, `--asn <name>`, `--user-agent <ua>`, `--path <path>`, `--rule <rule-id>`, `--host <hostname>`, `--bot <bot>`, `--country <code>`, `--action <action>`: Narrow every top list to requests matching the given dimension value
 
 **Examples:**
@@ -194,7 +192,7 @@ Each top list is its own query. A dimension your account cannot report marks tha
 vercel firewall traffic list
 
 # Show the last hour, with the top 20 rows per list
-vercel firewall traffic list --since 1h --top 20
+vercel firewall traffic list --since 1h --limit 20
 
 # Show which countries and user agents denied traffic came from
 vercel firewall traffic list --action deny --dimension country --dimension user-agent
@@ -241,9 +239,9 @@ The breakdown dimension defaults to whichever pairs best with the one being insp
 - `-s, --since <time>`: Start of the window. Defaults to 24 hours ago
 - `-u, --until <time>`: End of the window. Defaults to now
 - `--group-by <dim>`: Dimension to break the traffic down by. Defaults to the one that pairs with the inspected dimension
-- `--top <number>`: Rows in the breakdown. Defaults to 10
+- `--limit <number>`: Rows in the breakdown. Defaults to 10
 - `--alert <alert-id>`: Scope the window and rule to one alert from [`alerts list`](#alerts-list)
-- `--filter <expr>`: KQL filter expression. Repeatable, ANDed together
+- `--query <expr>`: KQL filter expression. Repeatable, ANDed together
 - `--ip <ip>`, `--ja4 <digest>`, `--asn <name>`, `--user-agent <ua>`, `--path <path>`, `--rule <rule-id>`, `--host <hostname>`, `--bot <bot>`, `--country <code>`, `--action <action>`: Narrow the inspected value further, to requests matching the given dimension value as well
 
 **Examples:**
@@ -273,8 +271,6 @@ Error: No firewall traffic for IP Address "9.9.9.9" in this window. Run vercel f
 Firewall alerts record periods when the platform detected and mitigated anomalous traffic, including DDoS mitigation episodes. Alerts are read-only and require a team scope.
 
 ### `alerts list`
-
-Aliases: `ls`.
 
 List firewall alerts raised in a window, active ones first. Each row carries the alert's id for use with [`alerts inspect`](#alerts-inspect).
 
@@ -330,8 +326,6 @@ The chart reaches a day further back than the alert to compare it against. On Pr
 When the firewall keeps applying a decision to a particular client rather than a single request, that decision is a persistent action: a challenge or denial that stays in force against an IP and hostname pair for a period. These are read-only and require a team scope.
 
 ### `persistent-actions list`
-
-Aliases: `ls`.
 
 List persistent actions in a window, newest first, with a summary of what is currently in force. Actions still being applied show `Ongoing` in place of an end time, because their recorded end is a projected expiry rather than a time they stopped.
 
@@ -400,8 +394,6 @@ When an IP has more than one matching action, the most recent is shown and the o
 
 ### `rules list`
 
-Aliases: `ls`.
-
 List managed bot rules, then custom firewall rules, including any unpublished draft changes. Draft additions, removals, and modifications are annotated in the output. Managed bot rules appear only on a project. `--team-level` lists custom rules alone.
 
 ```bash filename="terminal"
@@ -412,7 +404,7 @@ vercel firewall rules list
 
 **Options:**
 
-- `-e, --expand`: Show full condition and action details for each rule
+- `--expand`: Show full condition and action details for each rule
 - `--json`: Output as JSON
 
 **Examples:**
@@ -463,18 +455,18 @@ vercel firewall rules add [name] [options]
 *Using the \`vercel firewall rules add\` command to create a new rule.*
 
 > **💡 Note:** The `--ai` and interactive modes require a terminal (TTY). In scripts and CI
-> environments, use `--condition` flags or `--json` instead.
+> environments, use `--condition` flags or `--data` instead.
 
 **Options:**
 
 - `--ai <PROMPT>`: Generate a rule from natural language (interactive only)
-- `--json <PAYLOAD>`: Create a rule from a full JSON payload
+- `--data <JSON>`: Create a rule from a full JSON payload
 - `--condition <JSON>`: Add a condition as a JSON object (repeatable). Multiple conditions are combined with AND
 - `--or`: Start a new OR group. Conditions before `--or` are combined with AND, conditions after form a separate group
 - `--action <TYPE>`: Action: `deny`, `challenge`, `log`, `bypass`, `rate_limit`, `redirect`
 - `--duration <DURATION>`: Action duration: `1m`, `5m`, `15m`, `30m`, `1h`
 - `--description <TEXT>`: Rule description (max 256 characters)
-- `--disabled`: Create the rule in a disabled state
+- `--no-enable`: Create the rule in a disabled state. A new rule is enabled by default. Enable it later with [`rules enable`](#rules-enable)
 - `--rate-limit-window <SECONDS>`: Rate limit time window in seconds, 10 to 3,600 (required for `rate_limit`)
 - `--rate-limit-requests <NUMBER>`: Max requests per window, 1 to 10,000,000 (required for `rate_limit`)
 - `--rate-limit-keys <KEY>`: What to count by: `ip` (default), `ja4`, `header:<name>` (repeatable)
@@ -528,7 +520,7 @@ vercel firewall rules add "Redirect old path" \
   --redirect-permanent --yes
 
 # Create from JSON
-vercel firewall rules add --json '{"name":"Block bots","conditionGroup":[{"conditions":[{"type":"user_agent","op":"sub","value":"crawler"}]}],"action":{"mitigate":{"action":"deny"}}}' --yes
+vercel firewall rules add --data '{"name":"Block bots","conditionGroup":[{"conditions":[{"type":"user_agent","op":"sub","value":"crawler"}]}],"action":{"mitigate":{"action":"deny"}}}' --yes
 ```
 
 #### Condition format
@@ -564,28 +556,27 @@ vercel firewall rules add "Require auth" \
 
 Conditions within a group are combined with AND. Use `--or` between conditions to create separate groups that are combined with OR.
 
-### `rules edit`
+### `rules update`
 
 Edit an existing custom firewall rule, or change the action on a [managed bot rule](#bot-management). Custom rules accept AI, an interactive editor, command-line flags, or a JSON payload. Managed bot rules accept `--action` only.
 
 ```bash filename="terminal"
-vercel firewall rules edit <name-or-id> [options]
+vercel firewall rules update <name-or-id> [options]
 ```
 
-*Using the \`vercel firewall rules edit\` command to modify an existing rule.*
+*Using the \`vercel firewall rules update\` command to modify an existing rule.*
 
 **Options:**
 
 - `--ai <PROMPT>`: Describe changes using natural language (interactive only)
-- `--json <PAYLOAD>`: Replace the rule with a full JSON payload
+- `--data <JSON>`: Replace the rule with a full JSON payload
 - `--condition <JSON>`: Replace conditions (repeatable, same format as `add`)
 - `--or`: Start a new OR group
 - `--name <NAME>`: Rename the rule
 - `--action <TYPE>`: Change action: `deny`, `challenge`, `log`, `bypass`, `rate_limit`, `redirect`
 - `--duration <DURATION>`: Change action duration
 - `--description <TEXT>`: Change description (use `""` to clear)
-- `--enabled`: Set the rule to enabled (mutually exclusive with `--disabled`)
-- `--disabled`: Set the rule to disabled (mutually exclusive with `--enabled`)
+- `--enable`, `--no-enable`: Enable or disable the rule along with other changes. To only enable or disable a rule, use [`rules enable`](#rules-enable) or [`rules disable`](#rules-disable)
 - `--rate-limit-window`, `--rate-limit-requests`, `--rate-limit-keys`, `--rate-limit-algo`, `--rate-limit-action`: Rate limit options (same as [`rules add`](#rules-add))
 - `--redirect-url`, `--redirect-permanent`: Redirect options (same as [`rules add`](#rules-add))
 - `-y, --yes`: Skip the confirmation prompt
@@ -594,23 +585,23 @@ vercel firewall rules edit <name-or-id> [options]
 
 ```bash filename="terminal"
 # Interactive mode
-vercel firewall rules edit "My Rule"
+vercel firewall rules update "My Rule"
 
 # Edit with AI
-vercel firewall rules edit "My Rule" --ai "Change action to challenge"
+vercel firewall rules update "My Rule" --ai "Change action to challenge"
 
 # Change action
-vercel firewall rules edit "My Rule" --action challenge --duration 5m --yes
+vercel firewall rules update "My Rule" --action challenge --duration 5m --yes
 
 # Rename
-vercel firewall rules edit "My Rule" --name "New Name" --yes
+vercel firewall rules update "My Rule" --name "New Name" --yes
 
 # Replace conditions
-vercel firewall rules edit "My Rule" \
+vercel firewall rules update "My Rule" \
   --condition '{"type":"path","op":"pre","value":"/new"}' --yes
 
 # Change a managed bot rule action
-vercel firewall rules edit ai-bots --action deny --yes
+vercel firewall rules update bot-protection --action log --yes
 ```
 
 ### `rules enable`
@@ -643,8 +634,6 @@ vercel firewall rules disable <name-or-id>
 
 ### `rules remove`
 
-Aliases: `rm`, `delete`.
-
 Remove a custom firewall rule. Stages a draft change that you must publish.
 
 ```bash filename="terminal"
@@ -657,17 +646,15 @@ vercel firewall rules remove <name-or-id> --yes
 
 - `-y, --yes`: Skip the confirmation prompt
 
-### `rules reorder`
-
-Aliases: `move`.
+### `rules move`
 
 Change the priority order of a custom firewall rule. Rules are evaluated in order from first to last, so position controls which rules match first. Stages a draft change that you must publish.
 
 ```bash filename="terminal"
-vercel firewall rules reorder <name-or-id> [options]
+vercel firewall rules move <name-or-id> [options]
 ```
 
-*Using the \`vercel firewall rules reorder\` command to change a rule's priority.*
+*Using the \`vercel firewall rules move\` command to change a rule's priority.*
 
 **Options:**
 
@@ -682,17 +669,17 @@ Pass exactly one of `--position`, `--first`, or `--last`.
 
 ```bash filename="terminal"
 # Move to first position
-vercel firewall rules reorder "My Rule" --first --yes
+vercel firewall rules move "My Rule" --first --yes
 
 # Move to position 3
-vercel firewall rules reorder "My Rule" --position 3 --yes
+vercel firewall rules move "My Rule" --position 3 --yes
 ```
 
 ## Bot management
 
 [Bot Protection](/docs/bot-management#bot-protection-managed-ruleset), [AI Bots](/docs/bot-management#ai-bots-managed-ruleset), and [BotID](/docs/botid) are reserved managed rules. They appear at the top of [`rules list`](#rules-list) and in `bot-management`. They are project-only. `--team-level` has no managed bot settings.
 
-Action changes are [staged as drafts and require publishing](#staging-and-publishing-workflow). `rules add`, `remove`, `enable`, `disable`, and `reorder` refuse these slugs. Change the action with [`rules edit --action`](#rules-edit) instead.
+Action changes are [staged as drafts and require publishing](#staging-and-publishing-workflow). `rules add`, `remove`, `enable`, `disable`, and `move` refuse these slugs. Change the action with [`rules update --action`](#rules-update) instead.
 
 ### `bot-management`
 
@@ -720,11 +707,11 @@ The command prints the current action for each rule, then unknown bot traffic:
 
   Next steps:
   Change Bot Protection
-  vercel firewall rules edit bot-protection --action log
+  vercel firewall rules update bot-protection --action log
   Change AI Bots
-  vercel firewall rules edit ai-bots --action deny
+  vercel firewall rules update ai-bots
   Change BotID
-  vercel firewall rules edit bot-id --action deep-analysis
+  vercel firewall rules update bot-id --action deep-analysis
   Break unknown bot traffic down further
   vercel firewall traffic inspect unknown-bot <category>
 ```
@@ -747,9 +734,9 @@ vercel firewall bot-management
 # Report the same data as JSON
 vercel firewall bot-management --json
 
-# Change AI Bots to deny, then publish
-vercel firewall rules edit ai-bots --category ai-crawlers --action deny --yes
-vercel firewall publish --yes
+# Change AI Bots to deny, then publish (my-app is the project name)
+vercel firewall rules update ai-bots --category ai-crawlers --action deny --yes
+vercel firewall publish --confirm-name my-app
 ```
 
 | Rule | ID | Actions |
@@ -765,8 +752,6 @@ Inspect also accepts the WAF id that traffic reports, such as `managed_bot_prote
 [IP blocking](/docs/vercel-firewall/vercel-waf/ip-blocking) lets you block specific IP addresses or CIDR ranges from accessing your project. Use it for known malicious IPs, abuse sources, or to restrict access to specific networks. IP block changes are [staged as drafts and require publishing](#staging-and-publishing-workflow).
 
 ### `ip-blocks list`
-
-Aliases: `ls`.
 
 List all IP blocking rules, including any unpublished draft changes.
 
@@ -811,8 +796,6 @@ vercel firewall ip-blocks block 1.2.3.4 --hostname example.com --yes
 
 ### `ip-blocks unblock`
 
-Aliases: `rm`. The `rm` alias maps to `unblock`, not to a generic remove command; for example, `vercel firewall ip-blocks rm 1.2.3.4` unblocks that IP.
-
 Remove an IP blocking rule to allow the address to access your project again. Stages a draft change that you must publish.
 
 ```bash filename="terminal"
@@ -846,8 +829,6 @@ vercel firewall ip-blocks unblock ip_abc123 --yes
 > **💡 Note:** To allow traffic that your own [custom rules](/docs/vercel-firewall/vercel-waf/custom-rules) block, use a [custom rule with a bypass action](/docs/vercel-firewall/vercel-waf/managed-rulesets#bypassing-custom-rules) instead. System bypass rules do not replace WAF custom rule logic.Plan limits apply; see [System Bypass Rules limits](/docs/vercel-firewall/vercel-waf/system-bypass-rules#limits).
 
 ### `system-bypass list`
-
-Aliases: `ls`.
 
 List all system bypass rules for IPs that skip system-level mitigations.
 
@@ -894,8 +875,6 @@ vercel firewall system-bypass add 10.0.0.1 --domain "*.example.com" --yes
 ```
 
 ### `system-bypass remove`
-
-Aliases: `rm`.
 
 Remove a system bypass rule so the IP is no longer exempt from system-level mitigations. Takes effect immediately without publishing.
 
@@ -1000,8 +979,8 @@ vercel firewall rules add "Block bots" \
 # Review staged changes
 vercel firewall diff
 
-# Publish to production
-vercel firewall publish --yes
+# Publish to production (my-app is the project name)
+vercel firewall publish --confirm-name my-app
 ```
 
 *Staging a new rule, reviewing changes, and publishing to production.*
@@ -1031,14 +1010,16 @@ vercel firewall diff
 Publish all staged firewall changes to production.
 
 ```bash filename="terminal"
-vercel firewall publish --yes
+vercel firewall publish
 ```
 
 *Using the \`vercel firewall publish\` command to push staged changes to production.*
 
+In a terminal, the command lists the staged changes and asks you to confirm.
+
 **Options:**
 
-- `-y, --yes`: Skip the confirmation prompt
+- `--confirm-name <name>`: Publish without the confirmation prompt, for example from a script. Pass the name of the project, as in `vercel firewall publish --confirm-name my-app`. If the name doesn't match the project, the command publishes nothing
 
 ### `discard`
 
@@ -1056,7 +1037,7 @@ vercel firewall discard --yes
 
 ## Custom rules reference
 
-The tables below mirror the [Rule configuration reference](/docs/vercel-firewall/vercel-waf/rule-configuration) for [custom rules](/docs/vercel-firewall/vercel-waf/custom-rules). Use them with the `--condition` and `--action` flags in [`rules add`](#rules-add) and [`rules edit`](#rules-edit).
+The tables below mirror the [Rule configuration reference](/docs/vercel-firewall/vercel-waf/rule-configuration) for [custom rules](/docs/vercel-firewall/vercel-waf/custom-rules). Use them with the `--condition` and `--action` flags in [`rules add`](#rules-add) and [`rules update`](#rules-update).
 
 ### Condition types
 
@@ -1130,7 +1111,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

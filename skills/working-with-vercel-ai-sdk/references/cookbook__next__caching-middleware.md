@@ -9,8 +9,8 @@ tags:
   - caching
   - middleware
 source: "https://ai-sdk.dev/cookbook/next/caching-middleware.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "793cb3d51c2a68165221ffc82d86131a7a31767ba941d4ba9b48669a6c59f029"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "cc5eafda9702733c05cb8ec674768d46618f9c55b8f90e3db1ddc68b1bf7fffc"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -67,6 +67,7 @@ export default function Chat() {
 Next, you will create a `LanguageModelMiddleware` that caches the assistant's responses in KV storage.
 `LanguageModelMiddleware` has two methods: `wrapGenerate` and `wrapStream`.
 `wrapGenerate` is called when using [`generateText`](/docs/reference/ai-sdk-core/generate-text), while `wrapStream` is called when using [`streamText`](/docs/reference/ai-sdk-core/stream-text).
+Include the provider and model ID in the cache key alongside the call parameters to keep cached responses separate across models and providers.
 
 For `wrapGenerate`, you can cache the response directly.
 Instead, for `wrapStream`, you cache an array of the stream parts, which can then be used with [`simulateReadableStream`](/docs/reference/ai-sdk-core/simulate-readable-stream) function to create a simulated `ReadableStream` that returns the cached response.
@@ -88,8 +89,12 @@ const redis = new Redis({
 });
 
 export const cacheMiddleware: LanguageModelV4Middleware = {
-  wrapGenerate: async ({ doGenerate, params }) => {
-    const cacheKey = JSON.stringify(params);
+  wrapGenerate: async ({ doGenerate, params, model }) => {
+    const cacheKey = JSON.stringify({
+      provider: model.provider,
+      modelId: model.modelId,
+      params,
+    });
 
     const cached = (await redis.get(cacheKey)) as Awaited<
       ReturnType<LanguageModelV4['doGenerate']>
@@ -113,8 +118,12 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
 
     return result;
   },
-  wrapStream: async ({ doStream, params }) => {
-    const cacheKey = JSON.stringify(params);
+  wrapStream: async ({ doStream, params, model }) => {
+    const cacheKey = JSON.stringify({
+      provider: model.provider,
+      modelId: model.modelId,
+      params,
+    });
 
     // Check if the result is in the cache
     const cached = await redis.get(cacheKey);

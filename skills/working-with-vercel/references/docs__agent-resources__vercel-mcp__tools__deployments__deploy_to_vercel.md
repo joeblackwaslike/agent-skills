@@ -13,8 +13,8 @@ related:
 summary: Use deploy_to_vercel with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3f5f60c884785d56b59c72b72f1358e2ea192ad6a6f407a80b5eee74bde26952"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "01ccfc35e54fd36ca6db50565c7adf3e27481499fef80dca4f45bda44f72b21e"
 ---
 
 # deploy_to_vercel
@@ -31,7 +31,7 @@ Deploy a small, simple project from inline file contents only when the Vercel CL
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [open_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments) — Use open_deployments with Vercel MCP.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel.graph.md)
 <!-- /docsgraph:related -->

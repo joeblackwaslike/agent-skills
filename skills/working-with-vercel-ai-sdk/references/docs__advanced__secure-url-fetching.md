@@ -4,8 +4,8 @@ description: How the AI SDK protects server-side fetches of URLs returned by mod
 url: "https://ai-sdk.dev/docs/advanced/secure-url-fetching"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/advanced/secure-url-fetching.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "f1091223e7604cc0444188bcb721ff43b51e8eba5c37bbb6cdbe9613d15a8691"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "2a17c4f63e2e43a21f7730a455d4e6a15168b9a16eda8e1c36ef8ad67b2e395d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -37,6 +37,10 @@ When the SDK fetches a URL taken from a provider response, it:
   `.internal` hostnames. Non-`http(s)` schemes are rejected too.
 - **Re-validates every redirect hop** — a URL that passes but then redirects to
   an internal address is blocked; the redirect is never followed blindly.
+- **Rejects HTTPS downgrades on server-side downloads** — a redirect from HTTPS
+  to HTTP is blocked before requesting the insecure target, even when that target
+  matches `trustedOrigin`. Initial HTTP URLs and HTTP-to-HTTPS upgrades remain
+  supported.
 - **Validates DNS at connection time on Node.js** — every resolved address is
   checked, and the socket is pinned to the validated DNS result so DNS
   rebinding cannot introduce a different address between validation and

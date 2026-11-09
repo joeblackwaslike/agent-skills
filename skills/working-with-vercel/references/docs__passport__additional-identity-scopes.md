@@ -13,8 +13,8 @@ related:
 summary: Request group membership and other provider-specific identity claims when using Passport.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/passport/additional-identity-scopes.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "390ba58d071cd24b47ef7abaa3fa9790bd76ca070e678794eb181bcaf715457f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "61a6644f8afd1494eaf15440c093d0c8d8653b3dad788541495ee0559373e524"
 ---
 
 # Configure additional identity scopes
@@ -36,7 +36,6 @@ Passport requests identity information through the Connect application assigned 
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 
 Full cross-link map for this page: [/docs/passport/additional-identity-scopes.graph.md](/docs/passport/additional-identity-scopes.graph.md)
 <!-- /docsgraph:related -->
@@ -53,7 +52,7 @@ For example, configure the `groups` scope when your application needs to make au
 4. Under **Forwarded ID Token Claims**, add `groups`. This is the allowlist for additional identity claims that Connect can include in the Passport token.
 5. Save the application.
 
-The scope must also be enabled for the OAuth application in your identity provider. The exact setup varies by provider. Requesting a scope does not grant access by itself: your provider must authorize the scope and return the selected claim from its UserInfo endpoint before Connect can include it in the Passport token.
+The scope must also be enabled for the OAuth application in your identity provider. The exact setup varies by provider. Requesting a scope does not grant access by itself: your provider must authorize the scope and return the selected claim in its ID token or from its UserInfo endpoint before Connect can include it in the Passport token.
 
 > **💡 Note:** Scope suggestions come from your provider's OAuth metadata and can include
 > non-identity API permissions. Request only the scopes your application needs.

@@ -9,11 +9,13 @@ prerequisites:
   - /docs/agent-resources
 related:
   - /docs/frameworks/agents/eve
+  - /docs/agent-resources/vercel-plugin
+  - /docs/sandbox/quickstart
 summary: Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/skills.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "922a07f594431aa537468b0e5f7ef7f7aade586efc6b3cb797ade230eca8c808"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "daafb8bcf42d75075e94ee85e9b0ed52458c902b2e00d32d9539bdf761f5bc04"
 ---
 
 # Agent Skills
@@ -26,17 +28,18 @@ An agent skill is a packaged capability that extends an AI agent with a specific
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
 - [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
-- [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem)
+- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
 - [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
-- [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support)
-- [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
+- [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem)
 - [Skills Night: 69,000+ ways agents are getting smarter](https://vercel.com/blog/skills-night-69000-ways-agents-are-getting-smarter)
-- [Skills](https://eve.dev/docs/skills) — Author load-on-demand procedures the model pulls into context with eve__skill.
-- [Vercel Plugin for AI Coding Agents](https://vercel.com/docs/agent-resources/vercel-plugin) — Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, a
+- [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support)
+- [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Schedules](https://vercel.com/docs/schedules) — Run code on a recurring cron schedule or once at a specific time, and create schedules at runtime for each of your users
+- [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
 
 Full cross-link map for this page: [/docs/agent-resources/skills.graph.md](/docs/agent-resources/skills.graph.md)
 <!-- /docsgraph:related -->
@@ -106,6 +109,18 @@ Skills for building AI-powered applications with the Vercel AI SDK.
 | [ai-elements](https://skills.sh/vercel/ai-elements/ai-elements) | Component library built on shadcn/ui for AI-native applications | `npx skills add vercel/ai-elements --skill ai-elements` |
 | [streamdown](https://skills.sh/vercel/streamdown/streamdown) | Streaming-optimized React Markdown renderer with built-in security | `npx skills add vercel/streamdown --skill streamdown` |
 
+
+## Sandbox
+
+Use these skills to run code in an isolated Linux environment or move heavy builds and tests off your local machine.
+
+| Skill | Description | Install |
+| --- | --- | --- |
+| [sandbox](https://skills.sh/vercel/sandbox/sandbox) | Create sandboxes, execute code, manage files, and run development servers with the Sandbox SDK and CLI | `npx skills add vercel/sandbox --skill sandbox` |
+| [offload-to-sandbox](https://skills.sh/vercel/vercel-plugin/offload-to-sandbox) | Run heavy builds, test suites, and parallel experiments in Vercel Sandboxes, then collect results and clean up | `npx skills add vercel/vercel-plugin --skill offload-to-sandbox` |
+
+
+The [Vercel plugin](/docs/agent-resources/vercel-plugin) also bundles Sandbox guidance as `vercel-sandbox`, alongside `offload-to-sandbox`. Follow the [Sandbox quickstart](/docs/sandbox/quickstart) to connect your Vercel project and run your first command.
 
 ## Design and UI
 

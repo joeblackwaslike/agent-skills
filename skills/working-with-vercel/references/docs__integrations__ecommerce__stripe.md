@@ -13,8 +13,8 @@ related:
 summary: Connect your Stripe account to Vercel and accept payments in your applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/ecommerce/stripe.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a9b6066a1e1f8e267ceb04463f6377c38ee9bb43b1243111f506052d25cf29f0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9b5317bcb412f4d53509867647497b787b884e0e288b114cc059a8d6164517b5"
 ---
 
 # Stripe Integration
@@ -27,18 +27,18 @@ Connect your [Stripe](https://docs.stripe.com/) account to Vercel to accept paym
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to deploy a Next.js online store with Stripe](https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe) — Learn how to build and deploy a Next.js e-commerce store with Stripe payments on Vercel. This step-by-step guide covers
 - [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe)
 - [Stripe is now generally available on the Marketplace and v0](https://vercel.com/changelog/stripe-is-now-generally-available-on-the-marketplace-and-v0)
+- [How to deploy a Next.js online store with Stripe](https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe) — Learn how to build and deploy a Next.js e-commerce store with Stripe payments on Vercel. This step-by-step guide covers
 - [Stripe is now available in beta on the Vercel Marketplace](https://vercel.com/changelog/stripe-is-now-available-in-beta-on-the-vercel-marketplace)
-- [Getting started with Next.js, TypeScript, and Stripe Checkout](https://vercel.com/kb/guide/getting-started-with-nextjs-typescript-stripe) — Add payments functionality to your Next.js applications with Stripe and deploy to Vercel.
 - [Vercel is now available in Stripe Projects](https://vercel.com/changelog/vercel-is-now-available-in-stripe-projects)
 - [Vercel Connect adds managed Stripe API keys](https://vercel.com/changelog/vercel-connect-adds-managed-stripe-api-keys)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Vercel now supports Pro plan in Stripe Projects ](https://vercel.com/changelog/vercel-now-supports-pro-plan-in-stripe-projects)
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
+- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 
 Full cross-link map for this page: [/docs/integrations/ecommerce/stripe.graph.md](/docs/integrations/ecommerce/stripe.graph.md)
 <!-- /docsgraph:related -->

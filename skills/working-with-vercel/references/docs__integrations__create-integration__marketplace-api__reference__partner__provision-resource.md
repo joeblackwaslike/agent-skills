@@ -3,7 +3,7 @@ title: provision-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about provision-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "02ffd8ca01e4990071cac1a92039bc7dc3a728bb10d619a1d3bf3daf02c0ab67"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "266d5e1f2ae61cb8f7116840f2d3ba29c415da3aa73dedcaba971f143e83693f"
 ---
 
 # Provision Resource
@@ -156,7 +156,10 @@ User Auth OIDC token claims schema:
         "target": "string" // required
       ]
     }
-  }
+  },
+  "credentialTypes": [
+"string"
+  ]
 }
 ```
 

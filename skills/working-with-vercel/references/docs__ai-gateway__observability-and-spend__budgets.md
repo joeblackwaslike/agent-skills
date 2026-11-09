@@ -17,8 +17,8 @@ related:
 summary: Cap AI Gateway spend for your team, a project, an individual API key, or a team member with budgets, refresh periods, spend alerts, and defaults.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ad932d4f64226b6d75e55fed63b06bac9d31979f1891c20a2c3fa00099650283"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2462d328efbf0c3e2ca8705d42ce3add0c463d5c70d1f43de3ce6f29cf027a56"
 ---
 
 # AI Gateway Budgets and Spend Limits
@@ -40,14 +40,15 @@ A budget caps AI Gateway spend at one of four scopes:
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
-- [vercel budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
+- [vercel billing budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
+- [Spend Management](https://vercel.com/docs/spend-management) — Learn how to get notified about your account spend and configure a webhook.
 - [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/budgets.graph.md](/docs/ai-gateway/observability-and-spend/budgets.graph.md)
 <!-- /docsgraph:related -->
 
 - **[Team](#team-and-project-budgets)**: everything your team spends, across every project and key.
-- **[Project](#team-and-project-budgets)**: what one project's deployments spend, through their OIDC tokens.
+- **[Project](#team-and-project-budgets)**: what one project's deployments spend through their OIDC tokens, plus what API keys scoped to that project spend.
 - **[API key](#api-key-budgets)**: what one API key spends.
 - **[User](#user-budgets)**: what one team member spends, across every API key attributed to them.
 
@@ -79,17 +80,17 @@ Two requests against that team get different outcomes:
 | Request                                            | Budgets in scope    | Outcome                                                      |
 | -------------------------------------------------- | ------------------- | ------------------------------------------------------------ |
 | A deployment in `storefront`, using its OIDC token | Team, project       | Rejected. The project budget is exhausted.                   |
-| Any request using the API key                      | Team, API key, user | Succeeds. No project budget applies, and the rest have room. |
+| Any request using the API key                      | Team, API key, user | Succeeds. The key isn't scoped to a project, so no project budget applies, and the rest have room. |
 
 Each budget counts a specific set of authentication types:
 
 - **Team budget**: [API keys](/docs/ai-gateway/authentication-and-byok/api-keys), [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc), [app tokens](/docs/sign-in-with-vercel/tokens), and [personal access tokens](/docs/cli/tokens)
-- **Project budget**: [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc) from that project's deployments
+- **Project budget**: [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc) from that project's deployments, and [API keys](/docs/ai-gateway/authentication-and-byok/api-keys) scoped to that project
 - **API key budget**: that one [API key](/docs/ai-gateway/authentication-and-byok/api-keys)
 - **User budget**: [API keys](/docs/ai-gateway/authentication-and-byok/api-keys) attributed to that team member
 - **No budget**: [BYOK](/docs/ai-gateway/authentication-and-byok/byok) provider keys
 
-An API key's spend is never attributed to a project, no matter which project uses the key. Spending down a project budget requires an OIDC token from that project's deployments.
+An API key's spend counts toward a project budget only when you scope the key to that project. To scope a key, set the `projectId` field when you [create the key](/docs/ai-gateway/authentication-and-byok/api-keys#create-a-key). Using an unscoped key in a project's deployment doesn't count toward that project's budget. Without a scoped key, spending down a project budget requires an OIDC token from that project's deployments.
 
 Each API key is also attributed to either your team or the member who created it. A key attributed to a member counts its spend toward both the team budget and that member's user budget; a key attributed to the team counts toward the team budget only. Only API keys carry this attribution, so OIDC tokens, personal access tokens, and app tokens never count toward a user budget. See [Spend attribution](/docs/ai-gateway/authentication-and-byok/api-keys#spend-attribution) to set it.
 
@@ -104,7 +105,7 @@ A default budget is a catch-all cap for one scope, with one default for projects
 
 A default takes effect as soon as you save it. AI Gateway caps every covered resource and lists it with the default's limit and a **Default** label. Spend shows as $0 until the resource's first request arrives, then starts filling in.
 
-A default carries a limit and a refresh period only. It doesn't send [spend alerts](#spend-alerts); set a custom budget on a resource to get alerts for it.
+A default carries a limit, a refresh period, and optional [spend alerts](#spend-alerts).
 
 Removing a default lifts that cap from every resource it covered. After that, only the team budget still applies to them, if you've set one.
 
@@ -136,7 +137,7 @@ A team or project budget:
 ```json filename="Response"
 {
   "error": {
-    "message": "Project budget exceeded. Current spend: $200.00, limit: $200.00. Please contact your administrator to increase the budget.",
+    "message": "Project budget exceeded. Current spend: $200.00, limit: $200.00. Team owners can edit this budget in AI Gateway Budgets & Spend (https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Dproject&title=AI+Gateway+Budgets+%26+Spend).",
     "type": "quota_for_entity_exceeded"
   }
 }
@@ -147,7 +148,7 @@ An API key budget:
 ```json filename="Response"
 {
   "error": {
-    "message": "Quota limit exceeded for \"api_key_id_<your_key_id>\". Current spend: $10.00, limit: $10.00. Please contact your administrator to increase the quota.",
+    "message": "API key budget exceeded. Current spend: $10.00, limit: $10.00. Team owners can edit this budget in AI Gateway Budgets & Spend (https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Dapi-key&title=AI+Gateway+Budgets+%26+Spend).",
     "type": "quota_for_entity_exceeded"
   }
 }
@@ -167,7 +168,7 @@ Who receives the email depends on the budget's scope:
 
 | Budget scope    | Alerts go to                                      |
 | --------------- | ------------------------------------------------- |
-| Team or project | Team owners and members with the **Billing** role |
+| Team or project | Team owners, members with the **Billing** or **Security** role, and members with the [**Usage Viewer**](/docs/rbac/access-roles/extended-permissions#usage-viewer) permission |
 | API key         | The key's creator                                 |
 | User            | The team member whose budget it is                |
 
@@ -175,7 +176,7 @@ Alerts are informational. Crossing a threshold below 100% never blocks requests.
 
 ## Roles and permissions
 
-Every [team role](/docs/rbac/access-roles/team-level-roles) except **Contributor** can see budgets. Owner, Member, Developer, Security, Viewer, and Billing all have read access to the **Budgets** page and its tabs.
+Every [team role](/docs/rbac/access-roles/team-level-roles) except **Contributor** can see budgets. Owner, Member, Developer, Security, Viewer, and Billing all have read access to the **Budgets** page.
 
 Writing is more restricted. Besides the Owner role, an Owner can grant a member the **AI Gateway Budget Manager** permission from the team's [member settings](/docs/rbac/managing-team-members); it covers every budget action below without the rest of the Owner role.
 
@@ -193,6 +194,12 @@ API key budgets are the one exception to the Budget Manager grant. They follow k
 
 These rules apply the same way whether you use the dashboard, the [CLI](/docs/cli/ai-gateway#budgets), or the Vercel API.
 
+## Reasons for budget changes
+
+The dashboard asks for a **Reason for Change** whenever you set, change, or remove a team, project, user, or API key budget, or a default budget. The reason is recorded in your team's [activity log](/docs/activity-log) and [audit log drains](/docs/drains/reference/audit-logs) with the change, alongside who made it and the previous and new limits.
+
+In the Vercel API the reason is the optional `justification` field: in the request body for `PUT` and `PATCH` requests, and as a query parameter for `DELETE` requests. It can be up to 500 characters and is stored as a single line.
+
 ## Team and project budgets
 
 The two scopes are independent, and you can use either or both:
@@ -204,17 +211,17 @@ The two scopes are independent, and you can use either or both:
 
 #### Dashboard
 
-1. **Choose the scope.** Open the [**Team** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fteam\&title=AI+Gateway+Team+Budget) for a team budget, or the [**Projects** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fprojects\&title=AI+Gateway+Project+Budgets) to pick a project.
+1. **Choose the scope.** Open the [AI Gateway Budgets page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets\&title=AI+Gateway+Budgets). The team budget is at the top of the page. For a project budget, select [**Projects**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Dproject\&title=AI+Gateway+Project+Budgets) to pick a project.
 2. **Add the budget.** Click **Add budget**, enter a spending limit in dollars, and choose a refresh period.
-3. **Save.** The budget takes effect within a few minutes.
+3. **Save.** Enter a reason for the change, then save. The budget takes effect within a few minutes.
 
 #### CLI
 
 Set the team budget, or scope a budget to a single project by name or ID (every budget subcommand and flag is in the [CLI reference](/docs/cli/ai-gateway#budgets)):
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set team --limit 500 --refresh-period monthly
-vercel ai-gateway budgets set project my-project --limit 200 --refresh-period monthly
+vercel ai-gateway budgets set team --amount 500 --refresh-period monthly
+vercel ai-gateway budgets set project my-project --amount 200 --refresh-period monthly
 ```
 
 ```text filename="Output"
@@ -225,7 +232,7 @@ vercel ai-gateway budgets set project my-project --limit 200 --refresh-period mo
 
 | Flag                        | Description                                        |
 | --------------------------- | -------------------------------------------------- |
-| `--limit <AMOUNT>`          | Spending limit in dollars (minimum `$1`).          |
+| `--amount <USD>`            | Spending limit in dollars (minimum `$1`).          |
 | `--refresh-period <PERIOD>` | `daily`, `weekly`, `monthly` (default), or `none`. |
 
 #### API
@@ -261,7 +268,7 @@ curl -X PUT "https://api.vercel.com/ai-gateway/budgets?teamId=$VERCEL_TEAM_ID" \
 
 #### Dashboard
 
-The [**Team**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fteam\&title=AI+Gateway+Team+Budget) and [**Projects**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fprojects\&title=AI+Gateway+Project+Budgets) tabs show each budget's spend against its limit with a usage bar. The [**Overview**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets\&title=AI+Gateway+Budgets) tab breaks spend down across every scope, and the team budget includes a spend history chart.
+The [AI Gateway Budgets page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets\&title=AI+Gateway+Budgets) shows the team budget's spend against its limit at the top, with a spend history chart. Select [**Projects**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Dproject\&title=AI+Gateway+Project+Budgets) to see each project's spend against its limit.
 
 A budget inherited from the project default is labeled **Default** until you set a custom one.
 
@@ -272,7 +279,7 @@ vercel ai-gateway budgets list
 ```
 
 ```text filename="Output"
-> Budgets
+> Custom budgets
   scope      name          limit      spent    refresh
   team       acme           $500    $110.00    monthly
   project    storefront     $100    $100.00    monthly
@@ -291,7 +298,7 @@ curl "https://api.vercel.com/ai-gateway/budgets/list?teamId=$VERCEL_TEAM_ID" \
 
 #### Dashboard
 
-1. **Find the budget.** Open the [**Team** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fteam\&title=AI+Gateway+Team+Budget) or the [**Projects** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fprojects\&title=AI+Gateway+Project+Budgets).
+1. **Find the budget.** Open the [AI Gateway Budgets page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets\&title=AI+Gateway+Budgets). The team budget is at the top of the page. For a project budget, select [**Projects**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Dproject\&title=AI+Gateway+Project+Budgets).
 2. **Open the budget's menu.** Find the budget and open its **···** menu.
 3. **Edit or remove.** Select **Edit budget** to change the limit, refresh period, or spend alerts. Select **Remove budget** to lift the cap.
 
@@ -332,14 +339,14 @@ A default budget applies to every project without a custom budget, including pro
 
 #### Dashboard
 
-1. **Open the projects tab.** Go to the [**Projects** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fprojects\&title=AI+Gateway+Project+Budgets) of the AI Gateway Budgets page.
+1. **Open the projects view.** On the [AI Gateway Budgets page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Dproject\&title=AI+Gateway+Project+Budgets), select **Projects**.
 2. **Set the project default.** Click **Set Default** (or the current default value, if one is set) and enter a spending limit in dollars and a refresh period in the **Project Default** dialog.
-3. **Save.** Every project without its own budget now inherits this limit, shown as **Default** in the projects list.
+3. **Save.** Enter a reason for the change, then save. Every project without its own budget now inherits this limit, shown as **Default** in the projects list.
 
 #### CLI
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set project --default --limit 200 --refresh-period monthly
+vercel ai-gateway budgets set project --default --amount 200 --refresh-period monthly
 ```
 
 ```text filename="Output"
@@ -390,7 +397,7 @@ Add a budget at the time you create the key:
 
 #### Dashboard
 
-1. **Open the create-key dialog.** On the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys), click **Create key**.
+1. **Open the create-key dialog.** On the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys), click **Create API Key**.
 2. **Enable a budget.** Turn on the budget option and enter a spending limit in dollars.
 3. **Choose a refresh period.** Select how often the budget resets (see [refresh periods](#how-budgets-work)).
 4. **Save the key.** Save the key, and copy its value immediately. You cannot retrieve it again.
@@ -398,7 +405,7 @@ Add a budget at the time you create the key:
 #### CLI
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys create --name my-api-key --limit 10 --refresh-period monthly
+vercel ai-gateway api-keys create --name my-api-key --amount 10 --refresh-period monthly
 ```
 
 ```text filename="Output"
@@ -408,7 +415,7 @@ your_new_api_key_here
 
 | Flag                        | Description                                                            |
 | --------------------------- | ---------------------------------------------------------------------- |
-| `--limit <AMOUNT>`          | Spending limit in dollars (minimum `$1`).                              |
+| `--amount <USD>`            | Spending limit in dollars (minimum `$1`).                              |
 | `--refresh-period <PERIOD>` | `daily`, `weekly`, `monthly`, or `none` (default).                     |
 | `--expiration <PERIOD>`     | `7d`, `30d`, `60d`, `90d`, `1y`, or `none` (default).                  |
 | `--alert-thresholds <LIST>` | Comma-separated subset of `50`, `75`, and `100`, for example `75,100`. |
@@ -416,7 +423,7 @@ your_new_api_key_here
 To bound spend in time as well as amount, pair the budget with an expiration. Budgets never end on their own, so this is how you cap a contractor or experiment key in both dimensions. The key below allows at most $50 total, and stops working entirely after 30 days.
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys create --name contractor --limit 50 --refresh-period none --expiration 30d
+vercel ai-gateway api-keys create --name contractor --amount 50 --refresh-period none --expiration 30d
 ```
 
 #### API
@@ -449,7 +456,7 @@ The response returns the key's value in `apiKeyString`, which you can't retrieve
 
 On the [API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys), a budgeted key shows its spend against the limit (for example, **$1.04 / $10 spent**) with the refresh period. A key without a budget shows **Unlimited budget**.
 
-To compare every key's budget in one place, use the [**API Keys** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fapi-keys\&title=AI+Gateway+API+Key+Budgets) of the Budgets page.
+To compare every key's budget in one place, select [**API Keys**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Dapi-key\&title=AI+Gateway+API+Key+Budgets) on the Budgets page.
 
 #### CLI
 
@@ -465,33 +472,21 @@ vercel ai-gateway api-keys list
   key_123    my-api-key    …1fAj    $10       $1.04    monthly    8/24/2026
 ```
 
-Inspect one key for the full picture, including BYOK spend and alert thresholds:
+Inspect one key's budget by key ID or name:
 
 ```bash filename="terminal"
-vercel ai-gateway api-keys inspect key_123
+vercel ai-gateway budgets inspect api-key key_123
 ```
 
 ```text filename="Output"
-> API key my-api-key [154ms]
-  id              key_123
-  name            my-api-key
-  key             …1fAj
-  purpose         ai-gateway
-  project         all projects
-  created         8/24/2026, 10:15:03 AM
-  last used       8/24/2026, 11:02:47 AM
-  expires         never
-  created by      your_user_id_here
-  budget          $10
-  spend           $1.04
-  byok spend      $0
-  include byok    no
-  refresh         monthly
-  alerts          none
-  active          yes
+  Scope           api-key
+  Name            my-api-key
+  Limit           $10
+  Spent           $1.04
+  Refresh         monthly
 ```
 
-Both commands accept `--format json` for scripting; in the JSON output, a key without a budget has a `null` quota.
+Both commands accept `--format json` for scripting. In the `api-keys list` JSON output, a key without a budget has no `quota` field.
 
 > **💡 Note:** A key shows no budget both when it never had one and after you remove its
 > budget. The value can lag right after a change.
@@ -512,7 +507,7 @@ Give an existing key a budget, or change the one it has, from the dashboard, the
 #### Dashboard
 
 1. **Open the API Keys page.** Go to the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys).
-2. **Edit the key.** Find the key, open its **···** menu, and select **Edit key**.
+2. **Edit the key.** Find the key, open its **···** menu, and select **Edit**.
 3. **Add or change the budget.** Enable or update the budget, set the limit and refresh period, and save.
 
 #### CLI
@@ -520,7 +515,7 @@ Give an existing key a budget, or change the one it has, from the dashboard, the
 Identify the key by name or ID (a name shared by several keys errors and asks for the ID; find IDs with `api-keys list`):
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set api-key my-key --limit 50 --refresh-period weekly
+vercel ai-gateway budgets set api-key my-key --amount 50 --refresh-period weekly
 ```
 
 ```text filename="Output"
@@ -531,7 +526,7 @@ vercel ai-gateway budgets set api-key my-key --limit 50 --refresh-period weekly
 
 | Flag                        | Description                                        |
 | --------------------------- | -------------------------------------------------- |
-| `--limit <AMOUNT>`          | Spending limit in dollars (minimum `$1`).          |
+| `--amount <USD>`            | Spending limit in dollars (minimum `$1`).          |
 | `--refresh-period <PERIOD>` | `daily`, `weekly`, `monthly` (default), or `none`. |
 
 #### API
@@ -563,7 +558,7 @@ Removing a budget lifts that key's own cap. A key covered by the [API key defaul
 #### Dashboard
 
 1. **Open the API Keys page.** Go to the [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys\&title=AI+Gateway+API+Keys).
-2. **Edit the key.** Find the key, open its **···** menu, and select **Edit key**.
+2. **Edit the key.** Find the key, open its **···** menu, and select **Edit**.
 3. **Remove the budget.** Turn off the budget and save. The key falls back to the API key default if your team has one, and is otherwise unlimited.
 
 #### CLI
@@ -601,14 +596,14 @@ A default budget applies to every API key without a custom budget, including key
 
 #### Dashboard
 
-1. **Open the API Keys tab.** Go to the [**API Keys** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fapi-keys\&title=AI+Gateway+API+Key+Budgets) of the AI Gateway Budgets page.
+1. **Open the API Keys view.** On the [AI Gateway Budgets page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Dapi-key\&title=AI+Gateway+API+Key+Budgets), select **API Keys**.
 2. **Set the API key default.** Click **Set Default** (or the current default value, if one is set) and enter a spending limit in dollars and a refresh period in the **API Key Default** dialog.
-3. **Save.** Every key without its own budget now inherits this limit.
+3. **Save.** Enter a reason for the change, then save. Every key without its own budget now inherits this limit.
 
 #### CLI
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set api-key --default --limit 50 --refresh-period monthly
+vercel ai-gateway budgets set api-key --default --amount 50 --refresh-period monthly
 ```
 
 ```text filename="Output"
@@ -663,16 +658,16 @@ Only API keys attributed to a member count toward their user budget. [OIDC token
 
 #### Dashboard
 
-1. **Open the Users tab.** Go to the [**Users** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fusers\&title=AI+Gateway+User+Budgets) of the AI Gateway Budgets page.
+1. **Open the Users view.** On the [AI Gateway Budgets page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Duser\&title=AI+Gateway+User+Budgets), select **Users**.
 2. **Add the budget.** Click **Add budget**, pick a team member, enter a spending limit in dollars, and choose a refresh period.
-3. **Save.** The budget takes effect within a few minutes.
+3. **Save.** Enter a reason for the change, then save. The budget takes effect within a few minutes.
 
 #### CLI
 
 Identify the member by email, username, or user ID:
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set user teammate@example.com --limit 100 --refresh-period monthly
+vercel ai-gateway budgets set user teammate@example.com --amount 100 --refresh-period monthly
 ```
 
 ```text filename="Output"
@@ -683,7 +678,7 @@ vercel ai-gateway budgets set user teammate@example.com --limit 100 --refresh-pe
 
 | Flag                        | Description                                        |
 | --------------------------- | -------------------------------------------------- |
-| `--limit <AMOUNT>`          | Spending limit in dollars (minimum `$1`).          |
+| `--amount <USD>`            | Spending limit in dollars (minimum `$1`).          |
 | `--refresh-period <PERIOD>` | `daily`, `weekly`, `monthly` (default), or `none`. |
 
 #### API
@@ -706,7 +701,7 @@ curl -X PUT "https://api.vercel.com/ai-gateway/budgets?teamId=$VERCEL_TEAM_ID" \
 
 #### Dashboard
 
-The [**Users** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fusers\&title=AI+Gateway+User+Budgets) groups spend by the team member who owns the key used for each request, showing each member's spend against their limit with a usage bar.
+On the AI Gateway Budgets page, the [**Users**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Duser\&title=AI+Gateway+User+Budgets) view groups spend by the team member who owns the key used for each request, showing each member's spend against their limit with a usage bar.
 
 #### CLI
 
@@ -715,7 +710,7 @@ vercel ai-gateway budgets list
 ```
 
 ```text filename="Output"
-> Budgets
+> Custom budgets
   scope    name        limit     spent    refresh
   user     teammate     $100    $12.40    monthly
 ```
@@ -735,7 +730,7 @@ curl "https://api.vercel.com/ai-gateway/budgets/list?teamId=$VERCEL_TEAM_ID&scop
 
 #### Dashboard
 
-1. **Open the Users tab.** Go to the [**Users** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fusers\&title=AI+Gateway+User+Budgets).
+1. **Open the Users view.** On the [AI Gateway Budgets page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Duser\&title=AI+Gateway+User+Budgets), select **Users**.
 2. **Open the budget's menu.** Find the member and open the **···** menu.
 3. **Edit or remove.** Select **Edit budget** to change the limit, refresh period, or spend alerts. Select **Remove budget** to lift the cap.
 
@@ -766,14 +761,14 @@ A default budget applies to every team member without a custom budget, including
 
 #### Dashboard
 
-1. **Open the Users tab.** Go to the [**Users** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%2Fusers\&title=AI+Gateway+User+Budgets) of the AI Gateway Budgets page.
+1. **Open the Users view.** On the [AI Gateway Budgets page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Duser\&title=AI+Gateway+User+Budgets), select **Users**.
 2. **Set the user default.** Click **Set Default** (or the current default value, if one is set) and enter a spending limit in dollars and a refresh period in the **User Default** dialog.
-3. **Save.** Every member without their own budget now inherits this limit.
+3. **Save.** Enter a reason for the change, then save. Every member without their own budget now inherits this limit.
 
 #### CLI
 
 ```bash filename="terminal"
-vercel ai-gateway budgets set user --default --limit 50 --refresh-period monthly
+vercel ai-gateway budgets set user --default --amount 50 --refresh-period monthly
 ```
 
 ```text filename="Output"
@@ -820,7 +815,8 @@ Budgets limit usage; they do not reserve or purchase capacity. Your team still n
 
 > **💡 Note:** [BYOK](/docs/ai-gateway/authentication-and-byok/byok) spend isn't counted in
 > budgets. Spend that draws on your own provider keys is metered separately and
-> doesn't count toward any limit.
+> doesn't count toward any limit. An exceeded budget still rejects BYOK
+> requests in its scope with an HTTP `402` response.
 
 
 ---

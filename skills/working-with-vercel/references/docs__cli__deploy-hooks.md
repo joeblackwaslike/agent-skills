@@ -10,16 +10,16 @@ prerequisites:
 related:
   - /docs/deploy-hooks
   - /docs/cli/global-options
-summary: "Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger new deployments when called."
+summary: "Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and delete deploy hook URLs that trigger new deployments when called."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploy-hooks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d88a8b40ba6d11c34d73a456debdd32c0ec9b2d326c1e3e66e1788eda8f16ce4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "74c7701572b85d018813061c172e9daf79455480eab7f2ca4d796a3a851656f7"
 ---
 
 # vercel deploy-hooks
 
-The `vercel deploy-hooks` command (alias `vercel deploy-hook`) manages [Deploy Hooks](/docs/deploy-hooks). A deploy hook is a URL that, when called with an HTTP POST, triggers a new deployment of a specific Git branch. They are useful for triggering redeploys from external systems like content management systems and cron schedulers.
+The `vercel deploy-hooks` command manages [Deploy Hooks](/docs/deploy-hooks). A deploy hook is a URL that, when called with an HTTP POST, triggers a new deployment of a specific Git branch. They are useful for triggering redeploys from external systems like content management systems and cron schedulers.
 
 
 <!-- docsgraph:related -->
@@ -27,11 +27,13 @@ The `vercel deploy-hooks` command (alias `vercel deploy-hook`) manages [Deploy H
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Introducing Deploy Hooks](https://vercel.com/blog/introducing-deploy-hooks)
+- [How to use Deploy Hooks with Vercel and a Headless CMS](https://vercel.com/kb/guide/set-up-and-use-deploy-hooks-with-vercel-and-headless-cms) — Create your own Deploy Hooks to trigger automatic deployments on Vercel when using a Headless CMS.
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/deploy-hooks.graph.md](/docs/cli/deploy-hooks.graph.md)
 <!-- /docsgraph:related -->
@@ -47,31 +49,31 @@ current project.*
 
 ## Commands
 
-### list (ls)
+### list
 
 Lists deploy hooks for the current (or specified) project.
 
 ```bash filename="terminal"
 vercel deploy-hooks list
-vercel deploy-hooks ls --format json
-vercel deploy-hooks ls --project my-app
+vercel deploy-hooks list --json
+vercel deploy-hooks list --project my-app
 ```
 
-*List deploy hooks. Use \`--format json\` for machine-readable output.*
+*List deploy hooks. Use \`--json\` for machine-readable output.*
 
 #### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 | `-p, --project <NAME_OR_ID>` | String | Project to list deploy hooks for (defaults to the linked project) |
 
-### create (add)
+### create
 
 Creates a new deploy hook for a Git branch. The CLI returns the hook URL.
 
 ```bash filename="terminal"
-vercel deploy-hooks create cms-rebuild --ref main
+vercel deploy-hooks create cms-rebuild --git-branch main
 ```
 
 *Create a deploy hook named \`cms-rebuild\` that deploys the \`main\` branch when
@@ -87,38 +89,38 @@ the URL is called.*
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `-r, --ref <BRANCH>` | String | Git branch ref to deploy when the hook URL is triggered |
+| `--git-branch <BRANCH>` | String | Git branch to deploy when the hook URL is triggered |
 | `-p, --project <NAME_OR_ID>` | String | Project to create the deploy hook in (defaults to the linked project) |
 
-### remove (rm, delete)
+### delete
 
-Removes a deploy hook by ID. Use `vercel deploy-hooks list` first to find the hook ID.
+Deletes a deploy hook by ID. Use `vercel deploy-hooks list` first to find the hook ID.
 
 ```bash filename="terminal"
-vercel deploy-hooks rm hook_abc123
+vercel deploy-hooks delete hook_abc123
 ```
 
-*Remove a deploy hook by ID.*
+*Delete a deploy hook by ID.*
 
 #### Arguments
 
 | Argument | Required | Description |
 | --- | --- | --- |
-| `id` | Yes | ID of the deploy hook to remove |
+| `id` | Yes | ID of the deploy hook to delete |
 
 #### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
 | `-p, --project <NAME_OR_ID>` | String | Project containing the deploy hook (defaults to the linked project) |
-| `-y, --yes` | Boolean | Skip the confirmation prompt |
+| `-y, --yes` | Boolean | Skip the confirmation prompt. Takes effect with [`--non-interactive`](/docs/cli/global-options#non-interactive) |
 
 ## Examples
 
 ### Create a hook to redeploy on CMS publish
 
 ```bash filename="terminal"
-vercel deploy-hooks create cms-rebuild --ref main
+vercel deploy-hooks create cms-rebuild --git-branch main
 ```
 
 *Wire the returned URL into your CMS's publish webhook to trigger a
@@ -127,15 +129,15 @@ production redeploy whenever content changes.*
 ### List deploy hooks as JSON
 
 ```bash filename="terminal"
-vercel deploy-hooks ls --format json
+vercel deploy-hooks list --json
 ```
 
 *Useful for syncing hook URLs with external systems.*
 
-### Remove a hook non-interactively
+### Delete a hook non-interactively
 
 ```bash filename="terminal"
-vercel deploy-hooks rm hook_abc123 --yes
+vercel deploy-hooks delete hook_abc123 --yes --non-interactive
 ```
 
 *Skip the confirmation prompt; appropriate for CI scripts.*
@@ -156,7 +158,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

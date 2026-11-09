@@ -10,14 +10,14 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/pricing
-  - /docs/ai-gateway/modalities/decision
   - /docs/ai-gateway/sdks-and-apis/openai-decisions
   - /docs/ai-gateway/sdks-and-apis/typesafe
+  - /docs/ai-gateway/modalities/decision
 summary: Answer a typed boolean question about application state using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/decision.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "96b53b5aa5bb5783303a58b8343b8f212f2d578971ebac1a70f47d9ad0816a0a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "02e029ed7a85a0ea724aeab9c734f810492880c7b87445ac1793f3f16613e63f"
 ---
 
 # AI Gateway Decision Quickstart
@@ -30,11 +30,12 @@ Ask a typed question about application state through AI Gateway and get a boolea
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
 - [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
 - [TypeSafe AI's Jev 1.14 is now available on AI Gateway](https://vercel.com/changelog/typesafe-ais-jev-1-14-is-now-available-on-ai-gateway)
+- [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
+- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
@@ -105,8 +106,7 @@ This quickstart logs only `result.answers`. The probability can vary, but you sh
 
 ## Next steps
 
-- Make decisions through the [HTTP API](/docs/ai-gateway/modalities/decision#http-api)
-- Use the OpenAI SDK with the [OpenAI-Compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions)
+- Make decisions over HTTP or with the OpenAI SDK through the [OpenAI-Compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions)
 - Migrate an existing client to the [TypeSafe-compatible API](/docs/ai-gateway/sdks-and-apis/typesafe)
 - Add [choice and score questions](/docs/ai-gateway/modalities/decision#question-types)
 - Ask [multiple questions](/docs/ai-gateway/modalities/decision#multiple-questions-in-one-request) or pass [structured state](/docs/ai-gateway/modalities/decision#structured-state)

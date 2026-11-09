@@ -17,8 +17,8 @@ related:
 summary: Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1bf41eb6cbb8c738e385b17737b7a8915294cb23ebd5ca0f224bee659a9fc2f9"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e9d1e2fb2ddec87708f786b7060fcf47906c7e62796d9f5bd9d8dca7e100fdec"
 ---
 
 # WAF Managed Rulesets
@@ -39,8 +39,8 @@ WAF Managed Rulesets are collections of predefined WAF rules based on standards 
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 
@@ -125,13 +125,15 @@ To enable and configure AI bots:
 
 #### CLI
 
-Run [`vercel firewall rules`](/docs/cli/firewall#custom-rules):
+Run [`vercel firewall rules`](/docs/cli/firewall#custom-rules) to set an action for each category, then publish the changes:
 
 ```bash filename="terminal"
-vercel firewall rules edit ai-bots --category ai-crawlers --action deny --yes
-vercel firewall rules edit ai-bots --category ai-assistants --action allow --yes
-vercel firewall publish --yes
+vercel firewall rules update ai-bots --category ai-crawlers --action deny --yes
+vercel firewall rules update ai-bots --category ai-assistants --action allow --yes
+vercel firewall publish
 ```
+
+This example blocks AI Crawlers and allows AI Assistants. Each category accepts `allow`, `log`, or `deny`. [`vercel firewall publish`](/docs/cli/firewall#publish) shows the staged changes and asks you to confirm before they go live.
 
 ## Bypassing rulesets
 

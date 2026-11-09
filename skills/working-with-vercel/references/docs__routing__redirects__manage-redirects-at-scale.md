@@ -16,8 +16,8 @@ related:
 summary: Add, bulk upload, version, and roll back project-level redirects using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/manage-redirects-at-scale.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f1fd827e3ec3228d3a536387290fab8e249274e89b6dd6b73d3d40423e4273c5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "39466bd7d27e8ae04b1afd4691de41a2a1055a00f2db806a5e25f9b24d907e64"
 ---
 
 # Managing redirects at scale
@@ -30,14 +30,14 @@ Use this guide to manage project-level redirects from the CLI. You'll add indivi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
+- [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel)
+- [Bulk redirects UI, API, and CLI now generally available](https://vercel.com/changelog/bulk-redirects-ui-api-and-cli-now-generally-available)
 - [Getting Started](https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
-- [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
 - [Bulk Redirects](https://vercel.com/docs/routing/redirects/bulk-redirects) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
+- [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
-- [Routing](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing) — Vercel MCP tools for routing.
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
 
 Full cross-link map for this page: [/docs/routing/redirects/manage-redirects-at-scale.graph.md](/docs/routing/redirects/manage-redirects-at-scale.graph.md)
 <!-- /docsgraph:related -->
@@ -51,14 +51,14 @@ Use this block when you already know what you're doing and want the full command
 
 ```bash filename="terminal"
 # 1. Review existing redirects
-vercel redirects list --per-page 50
+vercel redirects list --limit 50
 
 # 2. Add individual redirects
 vercel redirects add /old-path /new-path --status 301
 vercel redirects add /temp-path /new-path --status 302 --preserve-query-params
 
 # 3. Bulk upload from a file
-vercel redirects upload redirects.csv
+vercel redirects import redirects.csv
 
 # 4. Review the staged version before it goes live
 vercel redirects list --staging
@@ -73,7 +73,7 @@ vercel redirects promote <version-id>
 vercel redirects restore <previous-version-id>
 
 # 7. Search and remove specific redirects
-vercel redirects list --search "/old-blog"
+vercel redirects list --query "/old-blog"
 vercel redirects remove /old-blog/post-1
 ```
 
@@ -82,13 +82,13 @@ vercel redirects remove /old-blog/post-1
 Start by checking what redirects are currently active:
 
 ```bash filename="terminal"
-vercel redirects list --per-page 50
+vercel redirects list --limit 50
 ```
 
 To search for a specific redirect pattern:
 
 ```bash filename="terminal"
-vercel redirects list --search "/old-blog"
+vercel redirects list --query "/old-blog"
 ```
 
 ## 2. Add individual redirects
@@ -118,16 +118,16 @@ Available status codes are 301 (permanent), 302 (temporary), 307 (temporary, pre
 For site migrations with many redirects, upload them from a CSV file:
 
 ```bash filename="terminal"
-vercel redirects upload redirects.csv
+vercel redirects import redirects.csv
 ```
 
 > **💡 Note:** By default, uploading adds to your existing redirects. To replace all existing
-> redirects with the contents of the file, use the `--overwrite` flag.
+> redirects with the contents of the file, use the `--force` flag.
 
 To replace all existing redirects:
 
 ```bash filename="terminal"
-vercel redirects upload redirects.csv --overwrite
+vercel redirects import redirects.csv --force
 ```
 
 ## 4. Review the staged version

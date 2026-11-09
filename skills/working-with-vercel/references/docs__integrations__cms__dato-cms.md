@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content seamlessly using DatoCMS API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/dato-cms.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0d57ad993779ce4263b41c9e5fb0d2de75df8e8388e51820d2a6d9166ad8f5fd"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bfdc046a755a344f0165ae0e09e2593e64ee5ea0285c27d13f6dc095d4f8e7cc"
 ---
 
 # Vercel DatoCMS Integration
@@ -29,7 +29,6 @@ DatoCMS is a headless content management system designed for creating and managi
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Visual Editing can now be used with DatoCMS](https://vercel.com/changelog/visual-editing-can-now-be-used-with-datocms)
-- [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Edit Mode](https://vercel.com/docs/edit-mode) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless

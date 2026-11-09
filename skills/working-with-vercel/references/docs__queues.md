@@ -12,12 +12,12 @@ related:
   - /docs/workflows
   - /docs/queues/sdk
   - /docs/agent-harnesses
-  - /docs/queues/concepts
+  - /docs/background-workers
 summary: Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-once delivery.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e62ac21d175db3497124167fac99b6879922fc8f88eb8069d342d430068ce914"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4e14a8504e2f20576c68bff5c95ba9b005a8727a30b8091b28af1cdd9b3ac651"
 ---
 
 # Vercel Queues
@@ -109,6 +109,8 @@ Vercel Queues is useful when you need to:
 Vercel Queues is the lower-level primitive that powers [Vercel Workflows](/docs/workflows). Workflows provides a higher-level SDK with durable steps, sleep, and hooks that makes building multi-step applications more ergonomic. If you need direct control over message publishing, consumption, and routing, use the [Queues SDK](/docs/queues/sdk) directly. If you're building stateful multi-step workflows, start with [Workflows](/docs/workflows).
 
 On Vercel, `durable-harness` also uses Queues to back agent turns. If a function stops mid-turn, Queues redelivers the work and the harness resumes from its durable session log. To set this up for Pi, Claude Code, Codex, or OpenCode, see [Running Agent Harnesses Durably](/docs/agent-harnesses).
+
+To choose how jobs start and where they execute, compare [background worker options](/docs/background-workers), including Queues with Functions or Daemons.
 
 ## Features
 

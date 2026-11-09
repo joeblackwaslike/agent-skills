@@ -4,8 +4,8 @@ description: Learn how to use the GitHub Copilot harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "ed4ed7f837e3a77ad1ebe7fafc53a1704af913137317c6b9c09cdfccb1aa87c1"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "3042a9fc00bf128a3bb21ad1f722752315abf20bf6a7285aadc7a4a9b95f757c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -127,6 +127,11 @@ Settings:
 - `portEndpoint`: host endpoint for the ACP bridge when the sandbox session
   cannot expose ports directly.
 - `startupTimeoutMs`: maximum time to wait for the ACP bridge to start.
+- `hostDisconnectTimeoutMs`: aborts a running turn when the host disconnects
+  and no host reconnects within this many milliseconds. A suspended turn is
+  not aborted. When unset, a turn keeps running in the sandbox after its host
+  disconnects, including when the host process is gone for good, until the
+  turn finishes or the sandbox stops.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.
@@ -230,8 +235,18 @@ GitHub Copilot sends a permission request. `allow-reads` approves read
 operations, `allow-edits` also approves file mutations, and `allow-all` approves
 every request. Shell execution still requires approval under `allow-edits`.
 
+Under `allow-reads` and `allow-edits`, native file operations are automatically
+approved only when every declared location resolves within the session working
+directory. Operations with external, missing, or unresolvable locations require
+host approval. Symlink targets are checked, including existing parent directories
+for new files. Use separate sandboxes when jobs require filesystem isolation.
+
 ## Known Limitations
 
+- GitHub Copilot CLI does not support disabling project-level configuration.
+  Therefore the harness's working directory contents cannot be properly isolated.
+  Do not use the GitHub Copilot harness with workdir contents that you do not
+  trust.
 - ACP v1 does not expose a stable programmatic name for every native tool event.
   The adapter uses standard title, kind, and schema matching and leaves
   unmatched tools dynamic.
@@ -242,9 +257,6 @@ every request. Shell execution still requires approval under `allow-edits`.
 - ACP v1 has no portable built-in tool filtering API. Filtering host tools is
   supported, but filtering GitHub Copilot built-ins throws an
   unsupported-capability error.
-- GitHub Copilot does not currently support built-in tool approval requests. Use
-  `permissionMode: 'allow-all'` with this adapter. Host-executed AI SDK tool
-  approvals still work.
 - GitHub Copilot ACP does not expose a structured-output metadata mapping, so
   schema-backed structured output is unsupported.
 - GitHub Copilot ACP does not expose any question tool, so `askUserQuestions`

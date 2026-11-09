@@ -14,8 +14,8 @@ related:
 summary: Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/rollback.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "bd91a4f3ada26d1e856665c314a0b27082c8efaf18a90e8e30cde7e5cc088efb"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "af37598c8a22fa9da7b4625aecd556df428e60f7d29940ab261f7b1f0e46544d"
 ---
 
 # vercel rollback
@@ -31,9 +31,9 @@ The `vercel rollback` command is used to [roll back production deployments](/doc
 - [Instant Rollback public beta now available in the CLI](https://vercel.com/changelog/instant-rollback-public-beta-cli)
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [request_rollback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_rollback) — Use request_rollback with Vercel MCP.
-- [vercel remove](https://vercel.com/docs/cli/remove) — Learn how to remove a deployment using the vercel remove CLI command.
+- [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 
 Full cross-link map for this page: [/docs/cli/rollback.graph.md](/docs/cli/rollback.graph.md)
 <!-- /docsgraph:related -->
@@ -51,7 +51,7 @@ deployment.*
 > back](/docs/instant-rollback#who-can-roll-back-deployments) to the previous
 > production deployment. If you attempt to pass in a deployment id or url from
 > an earlier deployment, you will be given an error:
-> `To roll back further than the previous production deployment, upgrade to pro`.
+> `To rollback further than the previous production deployment, upgrade to pro.`
 
 ## Commands
 
@@ -87,14 +87,14 @@ These are options that only apply to the `vercel rollback` command.
 
 The `--timeout` option is the time that the `vercel rollback` command will wait for the rollback to complete. It does not affect the actual rollback which will continue to proceed.
 
-When rolling back a deployment, a timeout of `0` will immediately exit after requesting the rollback.
+When rolling back a deployment, a timeout of `0` will immediately exit after requesting the rollback. The default timeout is `3m`. To wait longer, pass a higher value:
 
 ```bash filename="terminal"
-vercel rollback https://example-app-6vd6bhoqt.vercel.app
+vercel rollback https://example-app-6vd6bhoqt.vercel.app --timeout 5m
 ```
 
-*Using the \`vercel rollback\` command to the
-\`https://example-app-6vd6bhoqt.vercel.app\` deployment.*
+*Using the \`vercel rollback\` command with the
+\`--timeout\` option.*
 
 ## Undo a rollback
 
@@ -118,7 +118,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

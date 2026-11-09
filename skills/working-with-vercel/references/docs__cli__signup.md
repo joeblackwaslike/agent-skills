@@ -14,8 +14,8 @@ related:
 summary: Learn how to create a new Vercel account using the vercel signup CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/signup.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8bddae3ffc015728e24872b830989a83d579e16bfa3d5739614f25dd9e6eee19"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7bf2915291f35d853f8e522d30cc5f86d5892a0f5eec1d6d59c81f9dea14be3c"
 ---
 
 # vercel signup
@@ -29,10 +29,10 @@ The `vercel signup` command allows you to create a new Vercel account through Ve
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel logout](https://vercel.com/docs/cli/logout) — Learn how to logout from your Vercel account using the vercel logout CLI command.
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
-- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel) — Learn how to Sign in with Vercel
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 
 Full cross-link map for this page: [/docs/cli/signup.graph.md](/docs/cli/signup.graph.md)
 <!-- /docsgraph:related -->
@@ -47,7 +47,23 @@ vercel signup
 
 *Using the \`vercel signup\` command to create a new Vercel account.*
 
+The command asks for your email address, then opens the sign-up page in your browser, where you create the account with that email address.
+
 Run [`vercel whoami`](/docs/cli/whoami) to confirm the account you are signed in as.
+
+## Unique options
+
+These are options that only apply to the `vercel signup` command.
+
+### Email
+
+The `--email` option sets the email address for the new account, so the command doesn't ask for it. It's required when Vercel CLI can't prompt you, for example when a coding agent runs the command:
+
+```bash filename="terminal"
+vercel signup --email user@example.com
+```
+
+*Using the \`vercel signup\` command with the \`--email\` option.*
 
 ## Global Options
 
@@ -61,7 +77,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--version`](/docs/cli/global-options#version)
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).

@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage scopes and permissions for Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "648c4659a41b8b14eedf70ef98c789db74383607aa529474d1fb4788aa12a3ef"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3b4d15362a478449b00819b558b7d087cc019e6ae413771b89ba26baedf1a565"
 ---
 
 # Scopes and Permissions
@@ -27,7 +27,6 @@ Scopes define what data is included in the [ID Token](/docs/sign-in-with-vercel/
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel)
-- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
@@ -77,8 +76,6 @@ The following permissions are available:
 | AI Gateway API Keys | Read and Write | Read and make changes to AI Gateway API keys. |
 | AI Gateway Budgets | Read Only, Read and Write | Read and manage AI Gateway budgets and budget defaults. |
 | AI Gateway BYOK Credentials | Read Only, Read and Write | Read and manage the provider API keys a team brings to AI Gateway, including adding, replacing and deleting keys. |
-| AI Gateway Guardrails | Read Only, Read and Write | Read and manage AI Gateway guardrails. |
-| AI Gateway Private Models | Read Only, Read and Write | Read and manage AI Gateway private model configurations. |
 | AI Gateway Rules | Read Only, Read and Write | Read and manage AI Gateway routing rules. |
 | AI Gateway Virtual Models | Read Only, Read and Write | Read and manage AI Gateway virtual model configurations. |
 | Alerts | Read Only, Read and Write | Read and manage alerts and alert rules. |
@@ -109,6 +106,7 @@ The following permissions are available:
 | CDN Cache | Read and Write | Manage CDN Cache. |
 | Deployments | Read Only, Read and Write | Read and make changes to deployments. |
 | Domain Registrar | Read and Write | Buy or transfer-in new domains. |
+| Drives | Read Only, Read and Write | Read and manage drives. |
 | Firewall | Read Only, Read and Write | Read and manage Firewall configuration and IP blocking rules. |
 | Flags | Read Only | Read feature flags. |
 | Non-Production Environment Variables | Read Only, Read and Write | Manage non-production project environment variables. |

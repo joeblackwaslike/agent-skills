@@ -17,8 +17,8 @@ related:
 summary: Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/agents/eve.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "db0a1356b123f68bd890568cf3bb514bf53f48069a0864c3de107eeb88111698"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c4fdb329fc46bbf08b98f8b688490e6aaede18349f8d0c11f9c12c010b1d7d8f"
 ---
 
 # eve on Vercel
@@ -32,15 +32,15 @@ Deploy an [eve](/eve) agent to Vercel to run conversations that persist across i
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [Next.js](https://eve.dev/docs/guides/frontend/nextjs) — Add an eve chat to a Next.js app, from setup and authentication to saved conversations and deployment.
-- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
-- [Terminal UI](https://eve.dev/docs/guides/dev-tui) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
+- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
+- [Next.js](https://eve.dev/docs/guides/frontend/nextjs) — Add an eve chat to a Next.js app, from setup and authentication to saved conversations and deployment.
+- [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
 - [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
+- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework)
 - [Deployment](https://eve.dev/docs/guides/deployment) — How an eve agent runs in production, and the backends you choose on Vercel or your own infrastructure.
+- [Terminal UI](https://eve.dev/docs/guides/dev-tui) — Use eve locally or connect to a deployed agent from an interactive terminal UI.
 - [The Agent Stack](https://vercel.com/blog/agent-stack)
-- [Give your eve agent an email inbox with Resend](https://vercel.com/kb/guide/eve-agent-with-resend) — Connect an eve agent to email using the Chat SDK channel and the Resend adapter. Handle inbound email, threaded replies,
-- [Mastra on Vercel](https://vercel.com/docs/frameworks/agents/mastra) — Deploy a Mastra agent as a Vercel Function and route its model requests through AI Gateway.
 - [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 - [Agent Skills](https://vercel.com/docs/agent-resources/skills) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 
@@ -350,7 +350,7 @@ eve uses the billing and limits of the Vercel resources your agent consumes. Rev
 - [Vercel Sandbox pricing and limits](/docs/sandbox/pricing) for isolated code execution.
 - [AI Gateway pricing](/docs/ai-gateway/pricing) for model calls and BYOK.
 - [Vercel Blob usage and pricing](/docs/vercel-blob/usage-and-pricing) for persistent file memory.
-- [Always-on Tracing usage and pricing](/docs/tracing/always-on-tracing#usage-and-pricing) for indexed Agent Runs spans.
+- [Tracing usage and pricing](/docs/tracing/configure-tracing#usage-and-pricing) for indexed Agent Runs spans.
 
 Use [Agent Runs](/docs/agent-runs) to inspect a representative task's model and tool calls, and configure [Spend Management](/docs/spend-management) for your team.
 

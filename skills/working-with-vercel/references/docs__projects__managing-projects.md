@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your projects through the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/managing-projects.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "99f3816ed9d38fbc8c20420587e8a7cbf4396a6bffe0c5d1af12cc36cc202ea7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ac31a698cd43da41b7a5d450e2cd0410cecf3c057666cbe3d506017b3e2f2c46"
 ---
 
 # Managing projects
@@ -33,11 +33,12 @@ You can manage your project on Vercel in your project's dashboard. To learn more
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
+- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
-- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/projects/managing-projects.graph.md](/docs/projects/managing-projects.graph.md)
 <!-- /docsgraph:related -->
@@ -74,14 +75,13 @@ curl --request POST \
       {
         "key": "<env-key>",
         "target": "production",
-        "gitBranch": "<git-branch>",
-        "type": "system",
+        "type": "encrypted",
         "value": "<env-value>"
       }
     ],
     "framework": "<framework>",
     "gitRepository": {
-      "repo": "<repo-url>",
+      "repo": "<owner>/<repo>",
       "type": "github"
     },
     "installCommand": "<install-command>",
@@ -109,14 +109,13 @@ async function run() {
         {
           key: '<env-key>',
           target: 'production',
-          gitBranch: '<git-branch>',
-          type: 'system',
+          type: 'encrypted',
           value: '<env-value>',
         },
       ],
       framework: '<framework>',
       gitRepository: {
-        repo: '<repo-url>',
+        repo: '<owner>/<repo>',
         type: 'github',
       },
       installCommand: '<install-command>',

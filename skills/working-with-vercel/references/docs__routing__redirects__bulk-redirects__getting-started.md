@@ -16,13 +16,13 @@ related:
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8bcd8363d61ace3939c10cccd0c50f2adbd32208178793d8708a468156757bde"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "48ca32c3253194d8935789a810f4365e28d60dd6c0e5e070618747fe03c7e140"
 ---
 
 # Getting Started
 
-Bulk redirects can be specified either as part of a Vercel deployment or updated immediately through the UI, API, or CLI by settings redirects at the Project level without the need for a new deployment.
+Bulk redirects can be specified either as part of a Vercel deployment or updated immediately through the UI, API, or CLI by setting redirects at the Project level without the need for a new deployment.
 
 
 <!-- docsgraph:related -->
@@ -31,15 +31,15 @@ Bulk redirects can be specified either as part of a Vercel deployment or updated
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
-- [Bulk redirects UI, API, and CLI now generally available](https://vercel.com/changelog/bulk-redirects-ui-api-and-cli-now-generally-available)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Bulk redirects are now generally available](https://vercel.com/changelog/bulk-redirects-are-now-generally-available)
+- [Bulk redirects UI, API, and CLI now generally available](https://vercel.com/changelog/bulk-redirects-ui-api-and-cli-now-generally-available)
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel)
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
 - [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
 - [Stages new redirects for a project.](https://vercel.com/docs/rest-api/bulk-redirects/stages-new-redirects-for-a-project) — PUT /v1/bulk-redirects — Stages new redirects for a project and returns the new version.
+- [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
 
 Full cross-link map for this page: [/docs/routing/redirects/bulk-redirects/getting-started.graph.md](/docs/routing/redirects/bulk-redirects/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -124,11 +124,13 @@ Project-level redirects let you create and update bulk redirects without needing
   From your [dashboard](/dashboard), select your project and click the [**Redirects**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fredirects\&title=Go+to+Redirects).
 
 - ### Create a redirect
-  Click **Create** and enter the following:
+  Click **Create Redirect**, select **Manual**, and enter the following:
   - **Source**: The path or URL to redirect from (e.g., `/old-page` or `https://old-domain.com/page`)
   - **Destination**: The path or URL to redirect to (e.g., `/new-page`)
   - **Status code**: Select `307` (temporary) or `308` (permanent)
   You can also configure whether the redirect should be **case sensitive** (default `false`) or whether **query parameters should be preserved** (default `false`).
+
+  Click **Create** to stage the redirect.
 
 - ### Test your changes
   New redirects are staged until you publish them. From the review redirects dialog, click on the **source** path for each redirect to open a staging URL where the new redirects are applied.
@@ -149,29 +151,29 @@ To edit or delete a redirect:
 
 You can upload multiple redirects at once:
 
-1. From the **Redirects** tab, click the **Create** button and click **CSV**.
+1. From the **Redirects** tab, click the **Create Redirect** button and click **CSV**.
 2. Select a CSV file containing your redirects.
 3. Review the changes and click **Publish**.
 
 ### Using the CLI
 
-You can manage redirects using the [Vercel CLI](/docs/cli/redirects). Make sure that you are using at least version `50.1.0` of the CLI for the full command set shown below, including `vercel redirects upload`.
+You can manage redirects using the [Vercel CLI](/docs/cli/redirects). Make sure that you are using at least version `50.1.0` of the CLI for the full command set shown below, including `vercel redirects import`.
 
 ```bash filename="terminal"
 # List all redirects
-vercel redirects ls
+vercel redirects list
 
 # List all redirects versions
-vercel redirects ls-versions
+vercel redirects list-versions
 
 # Add a redirect (use `--status 301` for permanent, `--status 308` to preserve the request method)
 vercel redirects add /old-path /new-path --status 301
 
 # Bulk upload CSV files
-vercel redirects upload my-redirects.csv
+vercel redirects import my-redirects.csv
 
 # Remove a redirect
-vercel redirects rm /old-path
+vercel redirects remove /old-path
 
 # Promote staging redirects
 vercel redirects promote 596558a5-24cd-4b94-b91a-d1f4171b7c3f

@@ -16,8 +16,8 @@ related:
 summary: Configure Vercel CI to run Turborepo tasks with custom CPU allocations and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ci.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "dfa82903c455c197ef9124b4ff2ffe5530c54db7fbf65a1ac3ba460ab9149b68"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "aa9aaef5bf28b6b39aeb322e24413fa28196fc643cbe478c717a825ed8a159fc"
 ---
 
 # Vercel CI
@@ -25,6 +25,8 @@ sha256: "dfa82903c455c197ef9124b4ff2ffe5530c54db7fbf65a1ac3ba460ab9149b68"
 Vercel CI intelligently schedules your tasks so that you do as little work as possible every time you or your agent pushes code.
 
 - Your [Turborepo Task Graph](https://turborepo.dev/docs/core-concepts/package-and-task-graph#task-graph) is used to find the minimal set of tasks to run. If a task isn't affected by your code changes or has already been cached, it will be restored from cache or skipped.
+- Vercel CI runs every independent task in the Task Graph in parallel. You don't configure concurrency, so it stays correct as your codebase changes.
+- Dependencies are cached across runs and installed once per run. Every task then starts from a snapshot of that setup instead of reinstalling.
 - [Vercel Remote Cache](https://vercel.com/docs/monorepos/remote-caching#vercel-remote-cache) is enabled with zero-configuration.
 - Each task is executed in its own isolated compute and given the right amount of compute for its needs. This substantially improves resource provisioning and makes task execution faster.
 
@@ -109,7 +111,6 @@ You can use [branch protection rules](https://docs.github.com/en/repositories/co
 - GitHub is currently the only supported source code forge.
 - Public repositories are not currently supported.
 - Pushing code to GitHub with `git push` is currently the only supported trigger.
-- A repository must be connected to at least one Vercel project.
 - A repository must not have projects connected to multiple Vercel teams.
 
 ## Learn more

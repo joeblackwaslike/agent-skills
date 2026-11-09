@@ -16,8 +16,8 @@ related:
 summary: Connect your Vercel projects to backend services with static IPs and secure networking options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8bd7a749dc56fc981d827e6efe1d7c8f4e3b0beafdb5e3d5466f076484580272"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b14e9491a21987b3868236bd74246fa3766a8b3399ea350981d97089bf84d1ef"
 ---
 
 # Networking
@@ -31,15 +31,14 @@ Connect your projects to backend services that require IP allowlisting, AWS Priv
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [AWS PrivateLink is now available on Pro and Enterprise](https://vercel.com/changelog/aws-privatelink-is-now-available-on-pro-and-enterprise)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 - [Flat Rate CDN](https://vercel.com/docs/pricing/flat-rate-cdn) — Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
+- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
 Full cross-link map for this page: [/docs/networking.graph.md](/docs/networking.graph.md)
 <!-- /docsgraph:related -->
@@ -76,7 +75,7 @@ When your database or API needs to see traffic from known IP addresses, Static I
 
 When an AWS-hosted service exposes an AWS PrivateLink endpoint, PrivateLink keeps traffic on the AWS private network instead of the public internet. It extends the same shared-network model as Static IPs with endpoint-specific routing and Vercel-managed DNS names.
 
-- **Use case**: Private connectivity to RDS, SaaS with PrivateLink endpoints, S3 or DynamoDB gateway endpoints, and compliance-focused deployments
+- **Use case**: Private connectivity to RDS, SaaS with PrivateLink endpoints, S3 or DynamoDB interface endpoints, and compliance-focused deployments
 - **Network**: Shared VPC with dedicated endpoint interfaces per connection
 
 [Learn more about AWS PrivateLink](/docs/networking/privatelink)
@@ -125,7 +124,7 @@ Data transfer costs kick in for all traffic to or from your Vercel Functions, in
 - File uploads and downloads
 - Any other inbound or outbound network traffic
 
-Keep tabs on your usage in the **Team Settings** **Usage** tab under the **Private Data Transfer** section.
+Keep tabs on your usage in the **Private Data Transfer** section of **Usage** in your dashboard sidebar.
 
 
 ---

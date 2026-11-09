@@ -16,8 +16,8 @@ related:
 summary: Limits on the configuration, size, and capabilities of Vercel Daemons during the beta.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/daemons/limits.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b91c5823d09948aedf79c5b4adfb2d65dc22f065f27c2427c20b5c3b0000f333"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f3943c01527023cf2857e292f9b3b5e2960957be8387ff600a783ac5ee4a947e"
 ---
 
 # Daemons Limits
@@ -37,10 +37,10 @@ The following limits apply to Vercel Daemons during the beta. Vercel may raise l
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 - [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
+- [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
+- [Schedules Limits](https://vercel.com/docs/schedules/limits) — Limits for Vercel Schedules, including schedules per team, run frequency, jitter, Hobby usage, and API requests.
 - [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits) — Understand the limits and features available for Vercel for Platforms.
 - [Vercel Functions Limits](https://vercel.com/docs/functions/limitations) — Learn about the limits and restrictions of using Vercel Functions.
-- [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 
 Full cross-link map for this page: [/docs/daemons/limits.graph.md](/docs/daemons/limits.graph.md)
 <!-- /docsgraph:related -->
@@ -103,7 +103,6 @@ Daemons don't support the following features during the beta:
 | Running in `vercel dev`         | Run the daemon's image locally with Docker. See [Local development](/docs/daemons#local-development).                                                      |
 | Service bindings and rewrites   | Daemons can't be the target of a [service binding](/docs/services/bindings) or a rewrite.                                                                  |
 | Builds without a Dockerfile     | Add a `Dockerfile` or `Containerfile` to the daemon's `root`.                                                                                              |
-| Root directory set to a subfolder | Projects with a [root directory](/docs/builds/configure-a-build#root-directory) such as `apps/web` can't add daemons yet.                                |
 
 
 ---

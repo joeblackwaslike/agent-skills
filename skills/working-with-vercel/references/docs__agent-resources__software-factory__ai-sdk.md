@@ -17,8 +17,8 @@ related:
 summary: Compose investigation, sandbox execution, review, and GitHub publication stages with the AI SDK on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/software-factory/ai-sdk.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "84240ddbe32bf83b3c8f482d1b440486673d62a9697bab4eda4904cb6e263906"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f3556beee99c00b98cd1cdae5089afd3c4185bd0ece240ed67f50d39323e11d9"
 ---
 
 # Build a Software Factory with the AI SDK
@@ -32,13 +32,13 @@ Use the [AI SDK](/docs/ai-sdk) to build a software factory from explicit agent s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Building a software factory for AI SDK](https://vercel.com/blog/building-a-software-factory-for-ai-sdk)
-- [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
+- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
+- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
 - [Build a Software Factory with eve](https://vercel.com/docs/agent-resources/software-factory/eve) — Customize an eve software factory on Vercel with GitHub access, sandbox execution, and reviewed draft pull requests.
-- [Code Review](https://vercel.com/docs/agent/pr-review) — Get automatic AI-powered code reviews on your pull requests
+- [Build a Software Factory with Flue](https://vercel.com/docs/agent-resources/software-factory/flue) — Use Flue with AI Gateway, Vercel Sandbox, and explicit GitHub tool adapters for investigated and reviewed code changes.
 
 Full cross-link map for this page: [/docs/agent-resources/software-factory/ai-sdk.graph.md](/docs/agent-resources/software-factory/ai-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -152,7 +152,7 @@ A successful investigation names the issue, cites repository files, and identifi
 
 Create a [Vercel Sandbox](/docs/sandbox/quickstart) for each implementation run. Clone the repository at the recorded base commit and create a branch for the run. Expose narrowly defined file and command tools to the implementation agent through [AI SDK tool calling](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling).
 
-Keep the run's sandbox ID in server-side state so tools operate on that workspace. Return command output and exit codes to the agent, and enforce a timeout for commands. Keep the GitHub publishing token outside the sandbox so repository scripts can't use it.
+Keep the run's sandbox name in server-side state so tools operate on that workspace. Return command output and exit codes to the agent, and enforce a timeout for commands. Keep the GitHub publishing token outside the sandbox so repository scripts can't use it.
 
 Have the implementation stage:
 

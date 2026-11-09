@@ -16,8 +16,8 @@ related:
 summary: Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web search, and compare provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a81e31521e611ef9dd6417c11439eedf211477f0606ee55c6e9f646e0912013b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bd69bf4ece7e81fada7f91363b0252ebea153847618db2a8dc1d7358b341e93c"
 ---
 
 # AI Gateway Models and Providers
@@ -34,10 +34,10 @@ The AI Gateway's unified API provides flexibility, allowing you to switch betwee
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
-- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway)
-- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
+- [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Chat SDK](https://vercel.com/docs/chat-sdk) — Build bots for Slack and other chat platforms with Chat SDK, and deploy them on Vercel.
 - [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
@@ -148,7 +148,7 @@ import { createGateway } from '@ai-sdk/gateway';
 
 const gateway = createGateway({
   apiKey: process.env.AI_GATEWAY_API_KEY, // the default environment variable for the API key
-  baseURL: 'https://ai-gateway.vercel.sh/v1/ai', // the default base URL
+  baseURL: 'https://ai-gateway.vercel.sh/v4/ai', // the default base URL for AI SDK 7 (AI SDK 6 uses /v3/ai)
 });
 
 export async function GET() {

@@ -4,8 +4,8 @@ description: Add manual and automatic approval flows to ToolLoopAgent tools.
 url: "https://ai-sdk.dev/docs/agents/tool-approvals"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/tool-approvals.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "ce8785e43020bb94e06412f1bb192780f28fb0ed7f2864219f121b5643c14309"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "248f2be743967a629f1de8e47b6600e2acdaa6026771bb849102125056e33904"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -293,6 +293,8 @@ does not redact it from approval metadata.
 In the standard `useChat` pattern, the server rebuilds the conversation from the messages the client sends each turn. The server does not persist conversation state between requests. This means the message history is client-controlled input.
 
 Tool approvals reconstructed from this history are re-validated before execution: the tool input is checked against the tool's schema, and the approval policy is re-evaluated. However, without additional protection, a client that crafts a valid-looking approval for a schema-conforming input can bypass the human-in-the-loop step.
+
+During re-validation, `toolCall.toolMetadata` and `toolCall.dynamic` come from the current server-side tool definition. The deprecated `toolCall.title` field is also restored from that definition. A server-side policy denial prevents execution even when the client supplies an approved response with a valid signature.
 
 If your tools perform sensitive operations (modifying data, spending money, calling external APIs, accessing private resources), use `experimental_toolApprovalSecret` to cryptographically bind approvals to the server that issued them.
 

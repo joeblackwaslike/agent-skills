@@ -16,8 +16,8 @@ related:
 summary: Vercel Drop lets you deploy a file or folder by dragging it into your browser, with no Git or CLI required. It also works without an account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drop.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f22e513eb5af83ef442eb2d7588915dc96ef309dc3d20f8ca240294d60dac013"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "21e1138d49df19a2cc9aff74d16e7d2fa6d930c825ec207634541647197e386c"
 ---
 
 # Deploying with Vercel Drop
@@ -36,11 +36,12 @@ Vercel Drop lets you deploy a file, folder, or `.zip` by dragging it into your b
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
 - [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
 - [Deploy a Google Stitch design with Vercel Drop](https://vercel.com/kb/guide/google-stitch-vercel-drop) — Download the HTML from your Google Stitch screens and deploy them to production with Vercel Drop, with no Git or CLI req
+- [Deploy without an account using Vercel CLI](https://vercel.com/changelog/deploy-without-an-account-using-vercel-cli)
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Deploy a Lovable app on Vercel](https://vercel.com/docs/integrations/lovable) — Deploy your Lovable project to Vercel using GitHub sync and zero-configuration TanStack Start detection.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/drop.graph.md](/docs/drop.graph.md)
 <!-- /docsgraph:related -->
@@ -63,7 +64,7 @@ You can deploy a static site without an account. To create a deployment:
 1. Go to [vercel.com/drop](/drop).
 2. Drag and drop a file, folder, or `.zip` onto the page, or choose a **file** or **folder** to upload.
 
-Vercel deploys your site right away and gives you a live URL. The deployment is temporary, and the success page shows a countdown until it expires. To keep the site, select **Claim your project** and create a free account before the countdown ends. If the deployment expires, you can sign up and drop your files again.
+Vercel deploys your site right away and gives you a live URL. The deployment is temporary, and the success page shows a countdown until it expires. To keep the site, select **Claim Project** and create a free account before the countdown ends. If the deployment expires, you can sign up and drop your files again.
 
 If you drop a framework project, or a drop that exceeds the [anonymous limits](#limitations), Vercel asks you to sign up first. To deploy from a terminal without an account, see [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
@@ -107,6 +108,11 @@ A dropped project has no Git connection, so pushes don't create deployments. If 
 - [Environments](/docs/deployments/environments) to understand local, preview, and production.
 - [Managing deployments](/docs/deployments/managing-deployments) to redeploy, inspect, and promote.
 
+## Related guides
+
+- [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design): Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to Vercel Drop. No Git or CLI required.
+- [Vercel Drop vs Cloudflare Direct Upload](https://vercel.com/kb/guide/vercel-drop-vs-cloudflare-direct-upload): Compare Vercel Drop and Cloudflare Direct Upload: framework builds, browser vs CLI workflows, file limits, Git integration paths, and when to choose each.
+- [Export your Webflow site and host it on Vercel](https://vercel.com/kb/guide/webflow-vercel-drop): Learn how to export your Webflow site's code and host it on Vercel with Vercel Drop. Drag your .zip export into the browser for a live production URL with no Git or CLI setup.
 
 ---
 

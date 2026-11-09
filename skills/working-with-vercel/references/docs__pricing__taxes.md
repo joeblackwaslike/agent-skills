@@ -12,8 +12,8 @@ related:
 summary: This page covers frequently asked questions around taxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/taxes.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "04cb5bbfed10359bf374ae8de9ba099537a2f9887340de48231f1ec2f9dd6948"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "1df35f9e0e18852b959845d0170a37e375186ee0e76661998e91ab17df1c67b3"
 ---
 
 # Taxes
@@ -28,7 +28,6 @@ All prices shown are in USD and exclude value-added tax (VAT), goods and service
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
@@ -92,6 +91,10 @@ After updating your VAT ID or receiving confirmation of your US sales-tax exempt
 ### When will international customers start being charged VAT?
 
 We will start collecting VAT for invoices issued on and after April 1, 2026.
+
+### How do sales tax changes in California and Colorado affect me?
+
+Starting January 1, 2027, customers with billing addresses in California or Colorado will have sales taxes added to their invoices, as required by state law. The final state regulations are not yet published, so consult the state tax agencies and your own tax advisor for the latest guidance: the [California Department of Tax and Fee Administration](https://cdtfa.ca.gov/industry/retailers-and-purchasers-of-digital-products/) and the [Colorado Department of Revenue, Taxation Division](https://tax.colorado.gov/sales-use-tax-topics-computer-software).
 
 ### Where can I find more information about Vercel's terms of service about tax?
 

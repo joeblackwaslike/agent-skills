@@ -16,8 +16,8 @@ related:
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ec9b057163059c35a31d60c46c12ab3d2b11eb2f0966a9efab854b52dc76a5a2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "749e0dbb3c00f0c701055aa77cff2c4937a158c997cac416fc40e0e253f8d0cd"
 ---
 
 # Public Storage
@@ -35,15 +35,15 @@ Public Blob stores make files accessible to anyone with the URL. Use public stor
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
 - [Store and serve files from Python with Vercel Blob](https://vercel.com/kb/guide/python-and-vercel-blob) — Upload, list, stream, and protect files from a Python app with Vercel Blob, including private per-user storage in FastAP
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
-- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available)
+- [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available)
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 
 Full cross-link map for this page: [/docs/vercel-blob/public-storage.graph.md](/docs/vercel-blob/public-storage.graph.md)
 <!-- /docsgraph:related -->
@@ -165,7 +165,7 @@ import Image from 'next/image';
 </a>
 ```
 
-Adding `?download=1` to a blob URL forces a file download, regardless of file type. The SDK also returns this URL as the download URL of each uploaded blob. Without it, the URL displays the file in the browser when the MIME type supports it (images, videos, audio, PDFs, plain text, XML, and JSON). All other MIME types automatically trigger a download.
+Adding `?download=1` to a blob URL forces a file download, regardless of file type. The SDK also returns this URL as the download URL of each uploaded blob. Without it, the URL displays the file in the browser when the MIME type supports it (images, videos, audio, PDFs, plain text, JSON, and `text/xml`). All other MIME types automatically trigger a download. This includes `application/xml`, which is the default content type for a pathname that ends in `.xml`. To display an XML file in the browser, set its content type to `text/xml` when you upload it.
 
 This behavior is controlled by the `content-disposition` header. Vercel Blob sets it to `inline` for displayable types and `attachment` for everything else. This also prevents hosting HTML pages on Vercel Blob.
 

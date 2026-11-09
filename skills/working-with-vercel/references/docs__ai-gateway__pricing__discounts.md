@@ -14,8 +14,8 @@ related:
 summary: "Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with zero-fee ACH payments."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing/discounts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "84bf70b9903a815a24fad35414e4df4a3ac5e340356d75dc75e8fb8156b59c2f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "692da20e881a65ec55e2066dc5f20c0a5a3f27cc4447d6a9094186ff6298201a"
 ---
 
 # AI Gateway Discounts
@@ -29,8 +29,8 @@ Discounts on [AI Gateway](/docs/ai-gateway) token spend come in two forms: model
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
-- [AI Gateway is now available on AWS Marketplace](https://vercel.com/changelog/ai-gateway-is-now-available-on-aws-marketplace)
 - [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
+- [AI Gateway is now available on AWS Marketplace](https://vercel.com/changelog/ai-gateway-is-now-available-on-aws-marketplace)
 - [AI Gateway is now generally available](https://vercel.com/changelog/ai-gateway-is-now-generally-available)
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Rate Limits](https://vercel.com/docs/ai-gateway/rate-limits) — Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a r

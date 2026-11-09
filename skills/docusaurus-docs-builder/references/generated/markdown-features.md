@@ -1,8 +1,8 @@
 ---
 title: "Markdown Features"
 source: "https://docusaurus.io/docs/markdown-features"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "c331cd80e304e5b8d8b0c8f8460da4d70545bc4abd52890a8d49d716b3c73ff9"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "71928e06ee3effcb57952dab9665dca0c18164864959986a4b255160c317aa85"
 ---
 
 # Markdown Features
@@ -112,4 +112,4 @@ Toggle me!This is the detailed content
 console.log("Markdown features including the code block are available");
 ```
 You can use Markdown here including **bold** and _italic_ text, and [inline link](https://docusaurus.io)Nested toggle! Some surprise inside...😲😲😲😲😲
-infoYou may want to keep your `<summary>` on a single line. Keep in mind that [MDX creates extra HTML <p> paragraphs for line breaks.](https://mdxjs.com/migrating/v2/#jsx). When in doubt, use the [MDX playground](https://mdxjs.com/playground/) to troubleshoot `<details>` rendering problems.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-intro.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+infoYou may want to keep your `<summary>` on a single line. Keep in mind that [MDX creates extra HTML <p> paragraphs for line breaks.](https://mdxjs.com/migrating/v2/#jsx). When in doubt, use the [MDX playground](https://mdxjs.com/playground/) to troubleshoot `<details>` rendering problems.[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-intro.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

@@ -17,13 +17,13 @@ related:
 summary: Learn how to add a new AI provider to your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fd6b6d2777eaf0db53af096f5fd6b3d0a6291c450f1751c30d7ca5c9d1fc42e5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "304d0fc4a1eeef0de16b11d6949f1ae79208849139368558b8f03d336f65d41c"
 ---
 
 # Adding a Provider
 
-When you Open **AI** in the sidebar, you'll see a list of installed AI integrations. If you don't have installed integrations, you can browse and connect to the AI models and services that best fit your project's needs.
+You add AI providers from the Vercel Marketplace. To view your installed AI integrations, open **Integrations** in the sidebar of your Vercel [dashboard](/dashboard).
 
 
 <!-- docsgraph:related -->
@@ -34,17 +34,17 @@ When you Open **AI** in the sidebar, you'll see a list of installed AI integrati
 - [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
-- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
-- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md](/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md)
 <!-- /docsgraph:related -->
 
 ## Adding a native integration provider
 
-1. Select the **Install AI Provider** button on the top right of the **AI** dashboard page.
+1. From the [Vercel dashboard](/dashboard), open **Integrations** in the sidebar and select **Browse Marketplace**.
 2. From the list of Marketplace AI Providers, select the provider that you would like to install and click **Continue**.
 3. Select a plan from the list of available plans that can include both prepaid and post-paid plans.
    - For prepaid plans, once you select your plan and click Continue:
@@ -73,9 +73,9 @@ If no integrations are installed, browse the list of available providers and cli
 6. You'll be redirected to the provider's website to complete the connection process
 7. Once the connection is complete, you'll be redirected back to the Vercel dashboard, and the provider integration dashboard page. From here you can manage your provider settings, view usage, and more
 
-Once you add a provider, the **AI** section in the sidebar will display a list of the providers you have installed or connected to. To add more providers:
+Once you add a provider, **Integrations** in the sidebar lists the providers you have installed or connected to. To add more providers:
 
-1. Select the **Install AI Provider** button on the top right of the page.
+1. Open **Integrations** in the sidebar and select **Browse Marketplace**.
 2. Browse down to the list of connectable accounts.
 3. Select the provider that you would like to connect to and click **Continue** and follow the instructions from step 4 above.
 

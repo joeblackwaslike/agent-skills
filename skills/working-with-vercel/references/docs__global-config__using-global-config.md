@@ -16,8 +16,8 @@ related:
 summary: Learn how to use Global Configs in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/using-global-config.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "04512a3b6a6fb8ac1ac66d5ea7c07dd5b4f2562035264613035f3958c6ec6105"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "98a77568d3c97f321d95a37362efa6dd76b8543ae9fbf35839cbc814fddd801f"
 ---
 
 # Using Global Config
@@ -35,7 +35,7 @@ sha256: "04512a3b6a6fb8ac1ac66d5ea7c07dd5b4f2562035264613035f3958c6ec6105"
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 - [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config/using-global-config.graph.md](/docs/global-config/using-global-config.graph.md)
 <!-- /docsgraph:related -->
@@ -65,7 +65,7 @@ Global Config is available at two separate REST APIs which are built for distinc
 - It is intended to [manage Global Configs](/docs/global-config/vercel-api)
 - You can use this endpoint to create, update, and delete Global Configs
 - This endpoint is served from a single region and we do not apply any of our read optimizations
-- This endpoint is rate limited to 500 requests per minute
+- Requests that read a Global Config or its items from this endpoint are rate limited to 500 requests per minute
 - Reading Global Config from this endpoint will always return the latest version of a Global Config
 - This endpoint uses the [Vercel REST API authentication](/docs/rest-api#authentication)
 
@@ -90,7 +90,7 @@ You can authenticate with a [Read Access token](/docs/global-config/using-global
 
 You can find your Global Config ID with one of the following methods:
 
-- In your dashboard, under the **Storage** section in the sidebar. Select your Global Config, and you'll see the ID under the **Global Config ID** label near the top of the page, as shown in the screenshot below:
+- In your dashboard, under the **Storage** section in the sidebar. Select your Global Config, and you'll see the ID under the **ID** label near the top of the page, as shown in the screenshot below:
 
 ![Your Global Config ID in the Vercel Dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/storage/global-config/config-id-light.png)
 

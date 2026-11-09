@@ -16,8 +16,8 @@ related:
 summary: Integrate powerful AI services and models seamlessly into your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2ed33e6645b428f9daba53520f810010ddfe176731f188439c76500bfa594370"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7f43874e9be307eb2783e7c8c5e587d96dcdfd0b3d1ef85033b67b95ff14d5a3"
 ---
 
 # Build with AI on Vercel
@@ -32,12 +32,12 @@ AI services and models help enhance and automate the building and deployment of 
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard)
-- [AI agents and services on the Vercel Marketplace](https://vercel.com/blog/ai-agents-and-services-on-the-vercel-marketplace)
 - [xAI and Vercel partner to bring zero-friction AI to developers](https://vercel.com/blog/xai-and-vercel-partner-to-bring-zero-friction-ai-to-developers)
-- [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications)
+- [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
+- [AI agents and services on the Vercel Marketplace](https://vercel.com/blog/ai-agents-and-services-on-the-vercel-marketplace)
 - [How to integrate AI into your business](https://vercel.com/blog/how-to-integrate-ai-into-your-business)
+- [Introducing AI agents & services on the Vercel Marketplace](https://vercel.com/changelog/introducing-ai-agents-and-services-on-the-vercel-marketplace)
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
-- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations) — Connect Flue, LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gatewa
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models.graph.md](/docs/agent-resources/integrations-for-models.graph.md)
@@ -59,7 +59,7 @@ With Vercel AI integrations, you can build and deploy these AI-powered applicati
 
 ## Using AI integrations
 
-You can view your installed AI integrations by navigating to the **AI** section in the sidebar of your Vercel [dashboard](/dashboard). If you don't have installed integrations, you can browse and connect to the AI models and services that best fit your project's needs. Otherwise, you will see a list of your installed native and connectable account integrations, with an indication of which project(s) they are connected to. You will be able to browse available services, models and templates below the list of installed integrations.
+To view your installed AI integrations, open **Integrations** in the sidebar of your Vercel [dashboard](/dashboard). The page lists your installed native and connectable account integrations. To browse and install AI providers and services, select **Browse Marketplace**.
 
 See the [adding a provider](/docs/agent-resources/integrations-for-models/adding-a-provider) guide to learn how to add a provider to your Vercel project, or the [adding a model](/docs/agent-resources/integrations-for-models/adding-a-model) guide to learn how to add a model to your Vercel project.
 

@@ -17,8 +17,8 @@ related:
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8691e42f0039b4b468a3a9f5ba5a74d7caf7c9afd123ab16d1e2d3b9994e0134"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "16e2494d3ddcdf43f46a4b62d66dcedd83e24829a05adf64bcf789e29c7e44ce"
 ---
 
 # Connectors in Vercel Connect
@@ -105,7 +105,7 @@ Connectors are created, updated, and deleted by team members through the dashboa
 
 ### Deleting a connector
 
-When you delete a connector from the dashboard or with `vercel connect remove`, it stops serving token requests right away. Vercel Connect also removes its project links and installations. You can't restore a deleted connector.
+When you delete a connector from the dashboard or with `vercel connect delete`, it stops serving token requests right away. Vercel Connect also removes its project links and installations. You can't restore a deleted connector.
 
 After the delete, Vercel Connect:
 

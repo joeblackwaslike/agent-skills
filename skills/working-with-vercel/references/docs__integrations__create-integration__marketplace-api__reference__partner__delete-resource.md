@@ -3,7 +3,7 @@ title: delete-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/delete-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/delete-resource"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about delete-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/delete-resource.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3a62b1260580ef710f606fb75a5af09786717173875e1da32d0744d1144901b5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4301dd3c724e31ca0395dfb725ecaa05bef986e710fd5c7d8313246defe9ecb4"
 ---
 
 # Delete Resource

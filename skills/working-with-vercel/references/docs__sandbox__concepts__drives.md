@@ -10,15 +10,15 @@ prerequisites:
   - /docs/sandbox
 related:
   - /docs/sandbox/concepts/snapshots
+  - /docs/sandbox/concepts/images
   - /docs/sandbox/concepts/regions
   - /docs/sandbox/pricing
   - /docs/sandbox/concepts/persistent-sandboxes
-  - /docs/sandbox/cli-reference
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "22de764845f0d35884ba90e1af97af3931d5cad56145a7af1ab7624c4048705e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6cef6a29a9ceae0e1935ab6819247c44955ddf67d9dafe61a9d361997060e995"
 ---
 
 # Drives
@@ -33,16 +33,16 @@ Drives provide persistent storage that you mount into a sandbox as a working dir
 
 - [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta)
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 - [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
 - [Vercel Drives is now generally available](https://vercel.com/changelog/vercel-drives-is-now-generally-available)
+- [Vercel Sandbox with Drives now starts up to 2.4× faster](https://vercel.com/changelog/vercel-sandbox-with-drives-now-starts-up-to-2-4x-faster)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
+- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 - [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape)
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running Pi Durably on Vercel](https://vercel.com/docs/agent-harnesses/pi) — Make a Pi agent durable on Vercel so a crashed turn resumes in a new function instead of starting over.
-- [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 
 Full cross-link map for this page: [/docs/sandbox/concepts/drives.graph.md](/docs/sandbox/concepts/drives.graph.md)
 <!-- /docsgraph:related -->
@@ -59,18 +59,24 @@ Use a drive when you want a directory of files to persist independently of that 
 
 You can use both together. For example, start a sandbox from a snapshot with your tools installed, then mount a drive for your project files and cached dependencies. This lets you reuse the working files with a different starting environment later.
 
+Think of a snapshot as the computer you want to start, and a drive as the files you want to work on. Keep the starting environment lean. Use a [custom image](/docs/sandbox/concepts/images#custom-images) for stable setup that many sandboxes need, such as OS packages, language runtimes, package managers, agents, and common tools. Use snapshots for reusable runtime state that should be ready at startup.
+
+Put heavy working state on drives. Cloned repositories, generated files, datasets, build output, dependency caches, logs, and agent workspace state usually belong on a drive. A drive mounts as a directory in the sandbox, and the sandbox reads and writes those files through the mount path as the workload needs them.
+
+If a snapshot is large and rarely reused, move stable setup into a custom image and move changing project data into a drive. This keeps the boot path smaller and helps the sandbox start faster.
+
 Drives also support [read-only snapshots](#snapshots) for sharing a point-in-time view of a drive with multiple sandboxes. These are separate from the sandbox snapshots compared below.
 
-| Aspect                 | Drive                                                          | Snapshot                                                      |
-| ---------------------- | -------------------------------------------------------------- | ------------------------------------------------------------- |
-| Storage type           | Single directory mounted on a sandbox                          | Full sandbox filesystem                                       |
-| Sharing                | Shared storage across sandboxes                                | Independent copy per sandbox, changes are not shared          |
-| Read/write access      | One read-write mount, many read-only mounts via snapshots      | Read-write filesystem for each sandbox                        |
-| Read/Write performance | NVMe speed writes and cache hit reads, slower cache miss reads | NVMe speed reads and writes                                   |
-| Storage size           | 1 TiB by default (1 GiB for Hobby). 16 TiB maximum quota, higher by request      | 64 GB (filesystem size)                                       |
-| Expiration             | Persists until manually deleted                                | Expires after 30 days by default, can be extended to infinity |
-| Use cases              | Agent output, caching, shared data                             | Agent state, temporary data, base filesystem                  |
-| Price                  | $0.05/GB-month storage, plus reads and writes                  | $0.08/GB-month                                                |
+| Aspect                 | Drive                                                                                                           | Snapshot                                                                           |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Storage type           | Single directory mounted on a sandbox                                                                           | Full sandbox filesystem                                                            |
+| Sharing                | Shared storage across sandboxes                                                                                 | Independent copy per sandbox, changes are not shared                               |
+| Read/write access      | One read-write mount, many read-only mounts via snapshots                                                       | Read-write filesystem for each sandbox                                             |
+| Read/Write performance | NVMe speed writes and cache hit reads, slower cache miss reads                                                  | NVMe speed reads and writes                                                        |
+| Storage size           | 1 TiB by default (1 GiB for Hobby). 16 TiB maximum quota, higher by request                                     | 64 GB (filesystem size)                                                            |
+| Expiration             | Persists until manually deleted                                                                                 | Expires after 30 days by default, can be extended to infinity                      |
+| Use cases              | Working files, cloned repositories, generated output, datasets, dependency caches, agent workspace state        | Reusable startup environments, installed tools, small filesystem checkpoints       |
+| Price                  | $0.05/GB-month storage, plus reads and writes | $0.08/GB-month |
 
 ## Common patterns
 
@@ -111,7 +117,7 @@ cache, created = await sandbox.get_or_create_drive(name="shared-deps")
 
 # One sandbox populates the cache (single read-write mount)
 writer = await sandbox.create_sandbox(mounts={"/cache": cache})
-await writer.run_process(
+await writer.run_command(
     "pnpm",
     ["install", "--store-dir", "/cache"],
     check=True,
@@ -187,7 +193,7 @@ const drive = await Drive.getOrCreate({ name: 'workspace-cache' });
 const sandbox = await Sandbox.create({
   name: 'my-sandbox',
   mounts: {
-    '/data': drive
+    '/data': drive,
   },
 });
 ```
@@ -229,13 +235,13 @@ const drive = await Drive.getOrCreate({ name: 'shared' });
 const firstReader = await Sandbox.create({
   name: 'reader-1',
   mounts: {
-    '/data': drive.snapshot()
+    '/data': drive.snapshot(),
   },
 });
 const secondReader = await Sandbox.create({
   name: 'reader-2',
   mounts: {
-    '/data': drive.snapshot()
+    '/data': drive.snapshot(),
   },
 });
 ```
@@ -271,7 +277,9 @@ In the CLI, `--mount` uses the format `drive:/path[:read-write|snapshot]`.
 
 You can fork an existing drive into a new drive, copying the drive's data and inheriting its region and maximum size. The fork belongs to the same project. Writes to a forked drive do not change the original drive, allowing you to safely edit a copy while preserving the source data. This can be useful to start a fleet of agents, each working independently on their own read-write copy forked from a base drive.
 
-> **💡 Note:** A drive must be mounted read-write and written to at least once before you can create a fork from it. Creating a fork of a drive that has never been written to fails with a `drive_not_initialized` error.
+> **💡 Note:** A drive must be mounted read-write and written to at least once before you can
+> create a fork from it. Creating a fork of a drive that has never been written
+> to fails with a `drive_not_initialized` error.
 
 **index.ts**
 

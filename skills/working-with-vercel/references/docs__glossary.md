@@ -3,7 +3,7 @@ title: Glossary
 product: vercel
 url: /docs/glossary
 canonical_url: "https://vercel.com/docs/glossary"
-last_updated: 2026-09-18
+last_updated: 2026-11-03
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6e5cde8b754b1c4e02b57a7ac9461d7df837ea4e8f3bce4ba8999531b43d8ffd"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "600edfb3e2d611e37db32d70c8bedeaa9be56109f8020bdd5851a9a9a5bf9934"
 ---
 
 # Glossary
@@ -36,12 +36,12 @@ A full glossary of terms used in Vercel's products and documentation.
 - [Single-package workspaces](https://turborepo.dev/docs/guides/single-package-workspaces) — Use Turborepo's caching and task parallelization in a standalone application without a monorepo.
 - [Recursive `turbo` invocations](https://turborepo.dev/docs/messages/recursive-turbo-invocations) — How to fix infinite loops caused by package.json scripts that recursively invoke `turbo`.
 - [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages)
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md)
 <!-- /docsgraph:related -->
@@ -668,7 +668,7 @@ See [Vercel Toolbar](#vercel-toolbar).
 
 ### Tracing
 
-The collection and analysis of how a request flows through your application and Vercel's infrastructure, captured as spans. Continuously collect sampled traces from production and preview traffic with [always-on tracing](/docs/tracing/always-on-tracing), trace your own session with Session Tracing in the [Vercel Toolbar](#vercel-toolbar), export them with trace [drains](#drains), or add spans with `@vercel/otel` for OpenTelemetry. See [Tracing](/docs/tracing).
+The collection and analysis of how a request flows through your application and Vercel's infrastructure, captured as spans. You can collect sampled traces from production and preview traffic by [turning on tracing](/docs/tracing/configure-tracing), trace your own session with Session Tracing in the [Vercel Toolbar](#vercel-toolbar), export traces with [drains](#drains), or add spans with `@vercel/otel` for OpenTelemetry. See [Tracing](/docs/tracing).
 
 ### Trusted IPs
 

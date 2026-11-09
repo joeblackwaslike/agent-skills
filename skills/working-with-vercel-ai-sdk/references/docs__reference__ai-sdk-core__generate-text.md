@@ -4,8 +4,8 @@ description: API Reference for generateText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "15fdf736b3b934ace200649e399fa2f27ff46717d58a46b51d4114bb2e18756d"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "b915adde8d0c7bc7d4cb6486caf6c3304907f522a18fe50d1969dc55fe4b01b9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -172,7 +172,7 @@ import { generateText } from "ai"
 - `runtimeContext?` (`CONTEXT`): User-defined shared runtime context object passed to \`prepareStep\` and lifecycle callbacks.
 - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map keyed by tool name. Required when at least one tool defines \`contextSchema\`; not accepted when no tools need context.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
-- `experimental_steering?` (`Experimental_Steering`): Experimental steering object created with \`experimental\_createSteering()\`. Messages sent with \`steering.steer()\` are added as user messages at the next step boundary, after the current step and its tool calls are done. A waiting message keeps the loop going for another step unless a stop condition is met. \`steer()\` resolves with \`\{ type: 'delivered', id, message, stepNumber }\` or \`\{ type: 'not-delivered', id, message, reason }\`. See \[Steering]\(/docs/agents/loop-control#steering).
+- `experimental_steering?` (`Experimental_Steering`): Experimental steering object created with \`experimental\_createSteering()\`. Messages sent with \`steering.steer()\` are added as user messages at the next step boundary, after the current step and its tool calls are done. Messages sent with \`steering.queue()\` wait until the model finishes its current task and are added one per task. A waiting message keeps the loop going for another step unless a stop condition is met. \`steer()\` and \`queue()\` resolve with \`\{ type: 'delivered', id, message, stepNumber }\` or \`\{ type: 'not-delivered', id, message, reason }\`. See \[Steering]\(/docs/agents/loop-control#steering).
 - `experimental_download?` (`(requestedDownloads: Array<{ url: URL; isUrlSupportedByModel: boolean }>) => Promise<Array<null | { data: Uint8Array; mediaType?: string }>>`): Custom download function to control how URLs are fetched when they appear in prompts. By default, files are downloaded if the model does not support the URL for the given media type. Experimental feature. Return null to pass the URL directly to the model (when supported), or return downloaded content with data and media type.
 - `include?` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean }`): Controls inclusion of request bodies, request messages, and response bodies in step results. By default, request bodies, request messages, and response bodies are excluded to reduce memory usage. Set requestBody, requestMessages, and/or responseBody to true when you need access to the data.
   - `Object`
@@ -242,6 +242,7 @@ import { generateText } from "ai"
     - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map passed via \`toolsContext\`, keyed by tool name.
 - `onStepStart?` (`(event: GenerateTextStepStartEvent) => PromiseLike<void> | void`): Callback that is called when a step begins, before the provider is called. Errors thrown in this callback are silently caught and do not break the generation flow.
   - `GenerateTextStepStartEvent`
+    - `callId` (`string`): Unique identifier for the generation call.
     - `stepNumber` (`number`): Zero-based index of the current step.
     - `provider` (`string`): The provider identifier (e.g., "openai", "anthropic").
     - `modelId` (`string`): The specific model identifier (e.g., "gpt-6-astra").
@@ -253,12 +254,7 @@ import { generateText } from "ai"
     - `toolOrder` (`ToolOrder<TOOLS>`): Controls the order in which tools are sent to the provider for this step.
     - `steps` (`ReadonlyArray<StepResult<TOOLS>>`): Array of results from previous steps (empty for first step).
     - `providerOptions` (`ProviderOptions | undefined`): Additional provider-specific options for this step.
-    - `timeout` (`number | { totalMs?: number; stepMs?: number; chunkMs?: number } | undefined`): Timeout configuration for the generation. Can be a number (milliseconds) or an object with totalMs, stepMs, chunkMs.
-    - `headers` (`Record<string, string | undefined> | undefined`): Additional HTTP headers sent with the request.
-    - `stopWhen` (`StopCondition<TOOLS> | Array<StopCondition<TOOLS>> | undefined`): Condition(s) for stopping the generation. When the condition is an array, any of the conditions can be met to stop.
     - `output` (`OUTPUT | undefined`): The output specification for structured outputs, if configured.
-    - `abortSignal` (`AbortSignal | undefined`): Abort signal for cancelling the operation.
-    - `include` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean } | undefined`): Settings for controlling what data is included in step results.
     - `runtimeContext` (`CONTEXT`): User-defined shared runtime context object. May be updated from prepareStep between steps.
     - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map. May be updated from prepareStep between steps.
 - `onLanguageModelCallStart?` (`(event: LanguageModelCallStartEvent) => PromiseLike<void> | void`): Callback that is called immediately before the provider model call begins. Unlike \`onStepStart\`, this callback is scoped to model work only and excludes any later client-side tool execution. Errors thrown in this callback are silently caught and do not break the generation flow.
@@ -353,6 +349,7 @@ import { generateText } from "ai"
     - `warnings` (`CallWarning[] | undefined`): Warnings from the model provider (e.g. unsupported settings).
     - `request` (`LanguageModelRequestMetadata`): Additional request information.
       - `LanguageModelRequestMetadata`
+        - `url?` (`string`): HTTP origin reported by the provider, without URL credentials, paths, queries or fragments. Unset when unavailable.
         - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
         - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
     - `response` (`LanguageModelResponseMetadata`): Additional response information.
@@ -429,6 +426,7 @@ import { generateText } from "ai"
     - `warnings` (`CallWarning[] | undefined`): Warnings from the model provider (e.g. unsupported settings) in all steps.
     - `request` (`LanguageModelRequestMetadata`): Additional request information from the final step.
       - `LanguageModelRequestMetadata`
+        - `url?` (`string`): HTTP origin reported by the provider, without URL credentials, paths, queries or fragments. Unset when unavailable.
         - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
         - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
     - `response` (`LanguageModelResponseMetadata`): Additional response information from the final step.
@@ -502,6 +500,7 @@ import { generateText } from "ai"
     - `totalTokens` (`number | undefined`): The total number of tokens as reported by the provider. This number might be different from the sum of inputTokens and outputTokens and e.g. include reasoning tokens or other overhead.
 - `request?` (`LanguageModelRequestMetadata`): Deprecated. Use \`finalStep.request\` instead. Request metadata from the final step.
   - `LanguageModelRequestMetadata`
+    - `url?` (`string`): HTTP origin reported by the provider, without URL credentials, paths, queries or fragments. Unset when unavailable.
     - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
     - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
 - `response?` (`LanguageModelResponseMetadata`): Deprecated. Use \`finalStep.response\` instead. Response metadata from the final step.
@@ -567,6 +566,7 @@ import { generateText } from "ai"
     - `warnings` (`Warning[] | undefined`): Warnings from the model provider (e.g. unsupported settings).
     - `request` (`LanguageModelRequestMetadata`): Additional request information.
       - `LanguageModelRequestMetadata`
+        - `url?` (`string`): HTTP origin reported by the provider, without URL credentials, paths, queries or fragments. Unset when unavailable.
         - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
         - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
     - `response` (`LanguageModelResponseMetadata`): Additional response information.

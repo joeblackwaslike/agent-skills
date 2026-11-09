@@ -16,8 +16,8 @@ related:
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0cd0713db2ad35f9791aba348640b69ccbf0c9c56e6bfc93440bbb8eff64ca41"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9669652e036f713a03f471886e145f93e686b7df5e4b7562cb0016e0a99b8dae"
 ---
 
 # Routing Middleware
@@ -253,7 +253,7 @@ The following limits apply to requests processed by Routing Middleware:
 | Maximum URL length                | 14 KB |
 | Maximum request body length       | 4 MB  |
 | Maximum number of request headers | 64    |
-| Maximum request headers length    | 16 KB |
+| Maximum request header length     | 32 KB |
 
 ## Runtime options
 
@@ -284,6 +284,11 @@ Learn more about Routing Middleware by exploring the following resources:
 - [Fluid compute](/docs/fluid-compute)
 - [Runtimes](/docs/functions/runtimes)
 
+## Related guides
+
+- [How to Fix Sitecore JSS Middleware Performance](https://vercel.com/kb/guide/how-to-fix-sitecore-jss-middleware-performance): Learn how to troubleshoot and resolve Vercel Middleware timeouts and memory errors in your Sitecore JSS application caused by URLs with many query parameters.
+- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare): Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss): This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS application.
 
 ---
 

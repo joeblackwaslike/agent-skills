@@ -14,8 +14,8 @@ related:
 summary: Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/privacy-policy.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7f4cc0f86c3ffe26820df03bcb31a4998e853670a1b5a2fa943619ef506e37fa"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "df31f98e7808ec820ffce8458059a058245de5eff9e71380a1cdbf5c4ea308b3"
 ---
 
 # Vercel Speed Insights Privacy & Compliance
@@ -32,8 +32,8 @@ To ensure that the Speed Insights feature can be used despite many different reg
 
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
-- [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
+- [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 - [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.

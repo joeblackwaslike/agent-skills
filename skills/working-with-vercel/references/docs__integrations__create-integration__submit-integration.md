@@ -17,8 +17,8 @@ related:
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4ad3bf4d275e53f8725175c70bee4a00f00fb19f50e08f26b635561cafdf5455"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "59fb1b62cba556277b52cb386301aa4ef1838b7764dc184b118e72976ca918a1"
 ---
 
 # Requirements for listing an Integration
@@ -33,9 +33,9 @@ Defining the content specs helps you create the main cover page of your integrat
 
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
-- [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner) — Learn how to implement Partner API endpoints for your Vercel integration
+- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/submit-integration.graph.md](/docs/integrations/create-integration/submit-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -95,7 +95,7 @@ There are two types of email that you must provide:
 
 ## Short Description
 
-- **Character Limit**: 40
+- **Character Limit**: 80
 - **Required**: Yes
 
 The integration tagline on the Marketplace card, and the Integrations overview in the dashboard.
@@ -120,22 +120,34 @@ You must make sure that the images adhere to the following dimensions and aspect
 
 The category of your integration is used to help developers find your integration in the marketplace. You can choose from the following categories:
 
-- Commerce
-- Logging
-- Databases
-- CMS
-- Monitoring
-- Dev Tools
-- Performance
+- Agents
+- AI
 - Analytics
-- Experiments
-- Security
-- Searching
+- Authentication
+- CMS
+- Code Repository
+- Code Review
+- Code Security
+- Code Testing
+- Commerce
+- DevTools
+- Experimentation
+- Flags
+- Logging
 - Messaging
-- Productivity
-- Testing
+- Monitoring
 - Observability
-- Checks
+- Payments
+- Performance
+- Productivity
+- Searching
+- Security
+- Storage
+- Support Agent
+- Testing
+- Video
+- Web Automation
+- Workflow
 
 ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/creating/details-category-light.png)
 
@@ -193,7 +205,7 @@ Your media should adhere to the following dimensions and aspect ratios:
 
 ## Redirect URL
 
-- **Required**: Yes
+- **Required**: Yes, unless your integration is a native integration that sets the **Base URL** and the **Redirect Login URL**
 
 The Redirect URL is an HTTP endpoint that handles the installation process by exchanging a code for an API token, serving a user interface, and managing project connections:
 
@@ -268,7 +280,7 @@ The following events are available for projects:
 The following events are available for checks:
 
 - [`deployment.ready`](/docs/webhooks/webhooks-api#deployment-ready)
-- [`deployment.check-rerequested`](/docs/webhooks/webhooks-api#deployment-check-rerequested)
+- [`deployment.check-rerequested`](/docs/webhooks/webhooks-api#deployment-check-rerequested) (deprecated: you can no longer add this event to an integration webhook)
 
 See the [Webhooks](/docs/webhooks) documentation to learn more.
 
@@ -442,7 +454,7 @@ Under the **Resources** section, Vercel automatically adds a **Support** link th
 
 These code snippets are designed to be quick starts for the integration user to connect with the installed product with tools such as `cURL` to retrieve data and test that their application is working as expected.
 
-You can add up to 6 code snippets to help users get started with your product. These appear at the top of the product's detail page under a **Quickstart** section with a tab for each code block.
+You can add up to 8 code snippets to help users get started with your product. These appear at the top of the product's detail page under a **Quickstart** section with a tab for each code block.
 
 You can include secrets in the following way:
 

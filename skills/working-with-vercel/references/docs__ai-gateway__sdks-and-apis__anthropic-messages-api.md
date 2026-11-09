@@ -17,8 +17,8 @@ related:
 summary: Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images, and extended thinking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cf7946c256e1c226c7fc1df970c59f345d78177b72ad7e7f1943ceb2765b3f53"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "764b59f04317bd9ec1f70b08ca07c07e111583074fb8eabca4f9ba9118085690"
 ---
 
 # Anthropic Messages API with AI Gateway
@@ -38,11 +38,11 @@ AI Gateway provides Anthropic Messages API endpoints, so you can use the Anthrop
 - [Kimi K3.1 Pro and Kimi K3.1 Pro Highspeed are available now in AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-and-kimi-k3-1-pro-highspeed-are-available-now-in-ai-gateway)
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
 - [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
-- [Caching](https://ai-sdk.dev/docs/advanced/caching) — How to handle caching when working with the AI SDK
 - [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
-- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
-- [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
+- [Caching](https://ai-sdk.dev/docs/advanced/caching) — How to handle caching when working with the AI SDK
+- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [Conductor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/conductor) — Connect Conductor to AI Gateway through its Claude Code configuration. Route parallel coding agents through the Anthropi
+- [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.graph.md)
 <!-- /docsgraph:related -->
@@ -66,7 +66,7 @@ The Anthropic Messages API supports the same authentication methods as the main 
 - **API key**: Use your AI Gateway API key with the `x-api-key` header or `Authorization: Bearer <token>` header
 - **OIDC token**: Use your Vercel OIDC token with the `Authorization: Bearer <token>` header
 
-You only need to use one of these forms of authentication. If an API key is specified it will take precedence over any OIDC token, even if the API key is invalid.
+You only need to use one of these forms of authentication. If you send both the `x-api-key` and `Authorization` headers, AI Gateway uses the token in the `Authorization` header and ignores `x-api-key`.
 
 ## Supported endpoints
 
@@ -592,6 +592,8 @@ The API returns standard HTTP status codes and error responses:
 - `500 Internal Server Error`: Server error
 
 ### Error response format
+
+For `POST /v1/messages`, authentication, billing, and model routing errors use the AI Gateway error format. Model routing errors include an unknown model and a model provider failure before the response starts. These responses have the details in `error.message` and `error.type`, and they don't have the top-level `type` field. Request validation errors follow the Anthropic error format:
 
 ```json
 {

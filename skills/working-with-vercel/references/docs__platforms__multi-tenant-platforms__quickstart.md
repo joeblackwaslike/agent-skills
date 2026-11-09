@@ -16,8 +16,8 @@ related:
 summary: Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5f5b9ec379bf39b4fbf055a766711e08247d2eb0861473d163315fbe26b248ce"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "44b33b47649c8c3456d3847beca5844698ea53862ea6d4248fafa8937db8ad68"
 ---
 
 # Multi-Tenant Platform Quickstart
@@ -36,7 +36,7 @@ Watch the walkthrough on [YouTube](https://www.youtube.com/watch?v=vVYlCnNjEWA).
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart) — Programmatically host code for user-generated or AI-generated applications on Vercel.
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
-- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/quickstart.graph.md](/docs/platforms/multi-tenant-platforms/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -180,7 +180,7 @@ curl -s -H "Host: acme.localhost:3000" http://127.0.0.1:3000/ | grep -o Acme | h
 
 Note that the proxy compares the full host name, including the port, so use the addresses exactly as above. If you run the app on another port, set `ROOT_DOMAIN` to match, for example `ROOT_DOMAIN=localhost:3001`.
 
-When the app works locally, you're ready to deploy it. First, link the folder to a Vercel project with `npx vercel link` (it asks you to log in first if needed). Then set `ROOT_DOMAIN` to your domain with `npx vercel env add ROOT_DOMAIN production`, and deploy with `npx vercel deploy --prod`.
+When the app works locally, you're ready to deploy it. First, link the folder to a Vercel project with `npx vercel link` (it asks you to log in first if needed). Then set `ROOT_DOMAIN` to your domain with `npx vercel env add ROOT_DOMAIN --environment production`, and deploy with `npx vercel deploy --prod`.
 
 Note that the deployment's `*.vercel.app` URL returns a 404, since that host is neither your domain nor a tenant. You'll test the app with your own domain after you set up domains in the next section.
 

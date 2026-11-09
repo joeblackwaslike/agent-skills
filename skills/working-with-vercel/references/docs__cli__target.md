@@ -1,5 +1,5 @@
 ---
-title: vercel target
+title: vercel environments
 product: vercel
 url: /docs/cli/target
 canonical_url: "https://vercel.com/docs/cli/target"
@@ -12,16 +12,16 @@ related:
   - /docs/cli/deploy
   - /docs/cli/env
   - /docs/cli/global-options
-summary: Work with custom environments using the --target flag in Vercel CLI.
+summary: Work with custom environments using the --environment option in Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/target.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cd063f880dba77bd616b9fb92e80f1ef1b83a9e8da73fb2556285d4eeecc6576"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "10428646c9907cc3bb4058883be8498aa4bb58b1443de112c39a71162c40f5ac"
 ---
 
-# vercel target
+# vercel environments
 
-The `vercel target` command (alias: `vercel targets`) manages your Vercel project's targets (custom environments). Targets are custom deployment environments beyond the standard production, preview, and development environments.
+The `vercel environments` command lists your Vercel project's environments, including its custom environments. Custom environments are deployment environments beyond the standard production, preview, and development environments.
 
 
 <!-- docsgraph:related -->
@@ -29,11 +29,11 @@ The `vercel target` command (alias: `vercel targets`) manages your Vercel projec
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [list_project_custom_environments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/list_project_custom_environments) — Use list_project_custom_environments with Vercel MCP.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
-- [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
-- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Retrieve custom environments](https://vercel.com/docs/rest-api/environment/retrieve-custom-environments) — GET /v9/projects/{idOrName}/custom-environments — Retrieve custom environments for the project. Must not be named 'Produ
+- [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 
 Full cross-link map for this page: [/docs/cli/target.graph.md](/docs/cli/target.graph.md)
 <!-- /docsgraph:related -->
@@ -41,49 +41,47 @@ Full cross-link map for this page: [/docs/cli/target.graph.md](/docs/cli/target.
 ## Usage
 
 ```bash filename="terminal"
-vercel target list
+vercel environments list
 ```
 
-*Using \`vercel target list\` to list all targets for your project.*
+*Using \`vercel environments list\` to list all environments for your project.*
 
 ## Commands
 
-### list (ls)
+### list
 
-List all targets defined for the current project.
+List the standard environments and all custom environments defined for the current project:
 
 ```bash filename="terminal"
-vercel target list
-vercel target ls
-vercel targets ls
+vercel environments list
 ```
 
-*List all custom environments configured for your project.*
+*List all environments configured for your project.*
 
-## Using the --target flag
+## Using the --environment option
 
-The `--target` flag is available on several commands to specify which environment to target:
+The `--environment` option is available on several commands to specify which environment to target:
 
 ```bash filename="terminal"
 # Deploy to a custom environment named "staging"
-vercel deploy --target=staging
+vercel deploy --environment=staging
 ```
 
 *Deploy your project to a custom environment by specifying
-\`--target=\&lt;environment-name\&gt;\`.*
+\`--environment=\&lt;environment-name\&gt;\`.*
 
 ## Examples
 
-### List all targets
+### List all environments
 
 ```bash filename="terminal"
-vercel target list
+vercel environments list
 ```
 
 ### Deploy to a custom environment
 
 ```bash filename="terminal"
-vercel deploy --target=staging
+vercel deploy --environment=staging
 ```
 
 ### Pull environment variables for a custom environment
@@ -95,8 +93,8 @@ vercel pull --environment=staging
 ### Set and use environment variables for a custom environment
 
 ```bash filename="terminal"
-vercel env add MY_KEY staging
-vercel env ls staging
+vercel env add MY_KEY --environment=staging
+vercel env list --environment=staging
 ```
 
 ## Related
@@ -107,7 +105,7 @@ vercel env ls staging
 
 ## Global Options
 
-The following [global options](/docs/cli/global-options) can be passed when using the `vercel target` command:
+The following [global options](/docs/cli/global-options) can be passed when using the `vercel environments` command:
 
 - [`--cwd`](/docs/cli/global-options#current-working-directory)
 - [`--debug`](/docs/cli/global-options#debug)
@@ -117,7 +115,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

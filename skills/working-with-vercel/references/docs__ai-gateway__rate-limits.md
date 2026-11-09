@@ -15,8 +15,8 @@ related:
 summary: Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a rate-limited request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/rate-limits.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ff0a1fb8a08183b0edaed107ab7979609e6cbacbfac9854f1ef061622dcfc3eb"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "50a36b362ffa87ab1385df1650a2001b71d7d4a55291257443524908d9b9e519"
 ---
 
 # AI Gateway Rate Limits
@@ -30,7 +30,7 @@ AI Gateway does not rate limit paid-tier requests. The free tier applies lower p
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Securing your AI applications with Rate Limiting](https://vercel.com/kb/guide/securing-ai-app-rate-limiting) — Learn how to secure your AI applications with rate limiting using Vercel WAF and Vercel AI SDK
 - [AI Gateway Discounts](https://vercel.com/docs/ai-gateway/pricing/discounts) — Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc

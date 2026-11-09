@@ -13,13 +13,13 @@ related:
 summary: The DNS server was unable to fulfill the DNS request due to an internal issue or misconfiguration. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/dns_hostname_server_error.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "25d383bda16a3e4e6923db2e63a7a6feec28c21f229eb3e1f5914597913ed752"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "30f30254f3782f7436f6568847617be58585a8b84bcacf6f1c80b734be32149a"
 ---
 
 # DNS_HOSTNAME_SERVER_ERROR
 
-The `DNS_HOSTNAME_SERVER_ERROR` error occurs when attempting to connect to a private IP from an external rewrite. This error typically means that the DNS server was unable to fulfill the DNS request due to an internal issue or misconfiguration.
+The `DNS_HOSTNAME_SERVER_ERROR` error occurs when the DNS server returns a server failure (`SERVFAIL`) response during the DNS resolution of the destination hostname of an external rewrite. This error typically means that the DNS server was unable to fulfill the DNS request due to an internal issue or misconfiguration.
 
 **Error Code:** `502`
 

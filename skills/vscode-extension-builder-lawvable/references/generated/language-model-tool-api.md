@@ -1,8 +1,8 @@
 ---
 title: "Language Model Tool API"
 source: "https://code.visualstudio.com/api/extension-guides/tools"
-fetched_at: "2026-11-02T12:01:44.873Z"
-sha256: "e74eea923661c3d0ff3271587c82187a4375225f3acf82991b2e5e2db7667180"
+fetched_at: "2026-11-09T12:33:26.963Z"
+sha256: "323c20a4c0aa6bd930deb90379884df9cd2fce5e961f6d870c8071849b733369"
 ---
 
 # Language Model Tool API
@@ -380,4 +380,4 @@ Get more best practices for creating tools in the [OpenAI documentation](https:/
 - [Use MCP tools in agent mode](https://code.visualstudio.com/docs/agent-customization/mcp-servers)
 
  
- 10/28/2026
+ 11/4/2026

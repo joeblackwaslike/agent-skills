@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/mvdan/sh/master/README.md"
-fetched_at: "2026-10-05T11:13:13.412Z"
-sha256: "aa5efaed151661acb8a5d3e3ecbc2ee74617a1f5dec93758e19468a912d9f696"
+fetched_at: "2026-11-09T12:33:49.565Z"
+sha256: "7eae98ae5e5745c6d326357d260df09f3ccfdcaf65aaf449c1f819dd9c800a7c"
 ---
 
 # sh
@@ -82,6 +82,10 @@ ${array[dash - string]}
 $ echo '$((foo); (bar))' | shfmt
 1:1: reached ) without matching $(( with ))
 ```
+
+* Unlike Bash, arithmetic expressions are parsed before their words are
+  expanded, so `$((1 ? 1 : $(cmd)))` never runs `cmd`, with `a='1 + 2'`
+  `$(($a * 2))` is 6 rather than 5, and `$((1 $op 2))` is a syntax error.
 
 * `export`, `let`, and `declare` are parsed as keywords.
   This allows statically building their syntax tree,

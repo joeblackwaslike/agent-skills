@@ -14,8 +14,8 @@ related:
 summary: Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1dcc1952566f79b7684e15a453bd5ab1d8ceb6ad6857b991d287c29572a05e01"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "97e8ad9a34f0fcdf5d7568b91a8583666475926a21029cae4e1f2b01a897d630"
 ---
 
 # AI Gateway Video Extension
@@ -29,12 +29,12 @@ Continue an existing video from its last frame. Describe what happens next and t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Grok Imagine Video 1.5 Lite on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-lite-on-ai-gateway)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Grok Imagine Video 1.5 on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway)
-- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/video-extension.graph.md](/docs/ai-gateway/modalities/video-generation/video-extension.graph.md)
 <!-- /docsgraph:related -->
@@ -51,7 +51,7 @@ To edit an existing video instead of extending it, see [Video editing](/docs/ai-
 
 Only `spacexai/grok-imagine-video` supports extension. The `spacexai/grok-imagine-video-1.5` and `spacexai/grok-imagine-video-1.5-preview` models support image-to-video only.
 
-> **💡 Note:** Extension requires `providerOptions.spacexai.mode: 'extend-video'`. Setting `videoUrl`
+> **💡 Note:** Extension requires `providerOptions.xai.mode: 'extend-video'`. Setting `videoUrl`
 > alone triggers [video editing](/docs/ai-gateway/modalities/video-generation/video-editing)
 > mode, not extension.
 
@@ -61,10 +61,10 @@ Only `spacexai/grok-imagine-video` supports extension. The `spacexai/grok-imagin
 | ----------------------------------------- | ---------------- | -------- | --------------------------------------------------------------------------------------- |
 | `prompt`                                  | `string`         | Yes      | Prompt describing what should happen next in the video                                  |
 | `duration`                                | `number`         | No       | Length of the extension segment only, not total output (1 to 10 seconds). Defaults to 6 |
-| `providerOptions.spacexai.mode`           | `'extend-video'` | Yes      | Routes the request to video extension instead of editing                                |
-| `providerOptions.spacexai.videoUrl`       | `string`         | Yes      | URL of the source video to extend                                                       |
-| `providerOptions.spacexai.pollIntervalMs` | `number`         | No       | How often to check task status. Defaults to `5000`                                      |
-| `providerOptions.spacexai.pollTimeoutMs`  | `number`         | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                    |
+| `providerOptions.xai.mode`                | `'extend-video'` | Yes      | Routes the request to video extension instead of editing                                |
+| `providerOptions.xai.videoUrl`            | `string`         | Yes      | URL of the source video to extend                                                       |
+| `providerOptions.xai.pollIntervalMs`      | `number`         | No       | How often to check task status. Defaults to `5000`                                      |
+| `providerOptions.xai.pollTimeoutMs`       | `number`         | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                    |
 
 ### Two-step example
 
@@ -81,11 +81,11 @@ const source = await generateVideo({
   duration: 5,
   aspectRatio: '16:9',
   providerOptions: {
-    spacexai: { pollTimeoutMs: 600000 },
+    xai: { pollTimeoutMs: 600000 },
   },
 });
 
-const sourceUrl = source.providerMetadata?.spacexai?.videoUrl as string;
+const sourceUrl = source.providerMetadata?.xai?.videoUrl as string;
 
 // Step 2: Extend from last frame
 const extended = await generateVideo({
@@ -93,7 +93,7 @@ const extended = await generateVideo({
   prompt: 'The cat turns its head, notices a butterfly, and leaps off.',
   duration: 6,
   providerOptions: {
-    spacexai: {
+    xai: {
       mode: 'extend-video',
       videoUrl: sourceUrl,
       pollTimeoutMs: 600000,
@@ -118,7 +118,7 @@ const result = await generateVideo({
     'The cat continues walking slowly through the dandelions as the breeze picks up.',
   duration: 5,
   providerOptions: {
-    spacexai: {
+    xai: {
       mode: 'extend-video',
       videoUrl: 'https://example.com/source-video.mp4',
       pollTimeoutMs: 600000,
@@ -143,7 +143,7 @@ const result = await generateVideo({
   prompt: 'The cat turns its head, notices a butterfly, and leaps off.',
   duration: 6,
   providerOptions: {
-    spacexai: {
+    xai: {
       mode: 'extend-video',
       // Already a hosted URL, which is what the asynchronous flow needs.
       videoUrl: 'https://example.com/source-video.mp4',

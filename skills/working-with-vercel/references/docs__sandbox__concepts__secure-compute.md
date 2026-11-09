@@ -16,8 +16,8 @@ related:
 summary: You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and reach your own VPC over VPC...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/secure-compute.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cbd3182c0d7cf055335f29b714c3545ff16e37b8c98ded4f269ceaacbdad9df4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "90669436190f8888fc707aef66fc86dbef1c21f03a5c8c1dfecdf86f2baca392"
 ---
 
 # Using Secure Compute with Sandbox
@@ -33,9 +33,9 @@ Attaching a Vercel Sandbox to a [Secure Compute](/docs/networking/secure-compute
 - [Vercel Sandbox now supports Secure Compute](https://vercel.com/changelog/vercel-sandbox-now-supports-secure-compute)
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
-- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
+- [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox)
 - [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
+- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Networking](https://vercel.com/docs/networking) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 
@@ -85,7 +85,7 @@ async def main() -> None:
         network_id="3k9x7m2p5q8w1z4n",
     )
 
-    result = await box.run_process(
+    result = await box.run_command(
         "curl",
         ["-s", "https://checkip.amazonaws.com/"],
         capture_output=True,
@@ -112,7 +112,7 @@ The printed address is one of the network's two static IPs, listed in the networ
 
 You can also attach an existing sandbox to a network, or switch it to another network, with `update`. Unlike setting `networkId` at creation, the change takes effect on the sandbox's next session: a running session keeps its existing network until it stops. Update the network, then stop the sandbox to apply it.
 
-On a persistent sandbox (the default), the next SDK call auto-resumes the sandbox into a new session. Therefore, you don't need to start it explicitly. The `runCommand` or `run_process` call below resumes the sandbox on the new network and prints its network static IP:
+On a persistent sandbox (the default), the next SDK call auto-resumes the sandbox into a new session. Therefore, you don't need to start it explicitly. The `runCommand` or `run_command` call below resumes the sandbox on the new network and prints its network static IP:
 
 **index.ts**
 
@@ -146,7 +146,7 @@ async def main() -> None:
     await box.stop()
 
     # The next command auto-resumes the sandbox into a new session with the new network
-    result = await box.run_process(
+    result = await box.run_command(
         "curl",
         ["-s", "https://checkip.amazonaws.com/"],
         capture_output=True,
@@ -202,7 +202,7 @@ async def main() -> None:
     await box.stop()
 
     # The next command auto-resumes the sandbox without the Secure Compute network
-    result = await box.run_process(
+    result = await box.run_command(
         "curl",
         ["-s", "https://checkip.amazonaws.com/"],
         capture_output=True,

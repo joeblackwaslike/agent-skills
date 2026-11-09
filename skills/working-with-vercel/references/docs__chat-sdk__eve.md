@@ -16,8 +16,8 @@ related:
 summary: Send Chat SDK messages to an eve agent with a channel, persistent state, and Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/eve.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "adf69af88178cf5e3d2f54263ee4189a3adda9faa20d17d6e7fc5e4b6dc88226"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fbdf1fcd5c33eca578d2972a086224800c142a11ff2c3c9d9e593d5cf40e8407"
 ---
 
 # Using eve with Chat SDK
@@ -32,10 +32,10 @@ Use [eve's Chat SDK channel](https://eve.dev/docs/channels/chat-sdk) to send pla
 
 - [Using Chat SDK and eve together](https://vercel.com/kb/guide/chat-sdk-and-eve) — Understand how eve and Chat SDK divide responsibilities, when to use eve's first-class channels versus the Chat SDK chan
 - [Give your eve agent an email inbox with Resend](https://vercel.com/kb/guide/eve-agent-with-resend) — Connect an eve agent to email using the Chat SDK channel and the Resend adapter. Handle inbound email, threaded replies,
-- [Chat SDK Reference](https://eve.dev/docs/channels/chat-sdk/reference) — Chat SDK channel options, webhook routes, send and respond, steering, delivery, human-in-the-loop, sign-ins, proactive s
 - [Use any Chat SDK adapter with eve](https://vercel.com/changelog/eve-chat-sdk-channel)
+- [Chat SDK Reference](https://eve.dev/docs/channels/chat-sdk/reference) — Chat SDK channel options, webhook routes, send and respond, steering, delivery, human-in-the-loop, sign-ins, proactive s
+- [eve adds new Slack event hooks and session controls](https://vercel.com/changelog/eve-adds-new-slack-event-hooks-and-session-controls)
 - [Next.js](https://eve.dev/docs/guides/frontend/nextjs) — Add an eve chat to a Next.js app, from setup and authentication to saved conversations and deployment.
-- [Slack](https://eve.dev/docs/channels/slack) — Reach your agent from Slack mentions, DMs, threads, slash commands, and buttons.
 - [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Dae
 
 Full cross-link map for this page: [/docs/chat-sdk/eve.graph.md](/docs/chat-sdk/eve.graph.md)
@@ -203,6 +203,28 @@ Invite the installed app to a Slack channel and mention it with a question. The 
 Swap the Slack adapter for another [platform adapter](/docs/chat-sdk/adapters#platform-adapters) and complete its authentication setup. By default, each adapter key becomes a route under `/eve/v1`: an adapter registered as `resend`, for example, receives webhooks at `/eve/v1/resend`. Connect is available only for supported adapters.
 
 The channel streams replies by default. For email and other destinations that can't edit sent messages, set `streaming: false` in `chatSdkChannel` so the reply is posted when the turn completes. See the [eve channel reference](https://eve.dev/docs/channels/chat-sdk) for route overrides, attachments, and human input handling.
+
+## Frequently asked questions
+
+### Should I use eve's Chat SDK channel or its built-in Slack channel?
+
+Use the built-in Slack channel for a new Slack-only agent, because `eve add channel/slack` sets it up with Vercel Connect. Use the Chat SDK channel when you already have Chat SDK handlers, need a platform without a first-class eve channel, such as email or WhatsApp, or want to manage credentials and state with Chat SDK adapters. Don't mount both channels on the same webhook path. See [eve channels](https://eve.dev/docs/channels/overview).
+
+### Which webhook URL does eve's Chat SDK channel use?
+
+By default, each adapter receives webhooks at `/eve/v1/<adapter-key>`, where the key is the name you register in `adapters`. A Slack adapter registered as `slack` uses `/eve/v1/slack`, and one registered as `resend` uses `/eve/v1/resend`. The channel mounts `GET` and `POST` handlers there, so you don't add a framework route. Point the Connect trigger or the provider's webhook at that path.
+
+### How do I stop the agent from answering the same message twice?
+
+Pass the platform message ID as `idempotencyKey` when you call `send`, as in `send(message.text, { thread, idempotencyKey: message.id })`. Platforms retry webhooks, and eve rejects input with a key it has seen within its recent-key window. Chat SDK's own event deduplication doesn't guarantee that a message reaches eve only once, so keep the key even with a state adapter.
+
+### Can an eve agent reply by email or WhatsApp?
+
+Yes. Register the email or WhatsApp adapter in `chatSdkChannel` and set `streaming: false`. By default, eve posts a message and edits it as the reply streams, which email and WhatsApp can't do. With streaming turned off, eve posts the complete reply once the turn finishes. See the [eve Chat SDK channel guide](https://eve.dev/docs/channels/chat-sdk).
+
+### How do approvals work in eve's Chat SDK channel?
+
+When the agent needs approval for a tool or asks a question, the channel posts a Chat SDK card with buttons, and a click resumes the session. On platforms that can't show cards, it posts numbered options, and replying with an option's number or label answers. To pass the clicking user's identity into the resumed turn, set `resolveInputAuth`. See [eve human-in-the-loop](https://eve.dev/docs/human-in-the-loop).
 
 ## Next steps
 

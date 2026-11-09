@@ -4,8 +4,8 @@ description: Learn how to use Fal with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fal"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "2aae2b98e3771f0bca1bed6b08d444349b2efa683f0f9ee8cabb33918b94b5a9"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "e686fdc3d1164e1c920cfab52990f2141fc1146bba3c5f6362303825afaf0e80"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -148,18 +148,27 @@ providerMetadata.fal.images[0].contentType; // string, mime type of the image
 
 Fal offers many models optimized for different use cases. Here are a few popular examples. For a full list of models, see the [Fal AI Search Page](https://fal.ai/explore/search).
 
-| Model                                          | Description                                                                                                                       |
-| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `fal-ai/flux/dev`                              | FLUX.1 \[dev] model for high-quality image generation                                                                             |
-| `fal-ai/flux-pro/kontext`                      | FLUX.1 Kontext \[pro] handles both text and reference images as inputs, enabling targeted edits and complex transformations       |
-| `fal-ai/flux-pro/kontext/max`                  | FLUX.1 Kontext \[max] with improved prompt adherence and typography generation                                                    |
-| `fal-ai/flux-lora`                             | Super fast endpoint for FLUX.1 with LoRA support                                                                                  |
-| `fal-ai/ideogram/character`                    | Generate consistent character appearances across multiple images. Maintain facial features, proportions, and distinctive traits   |
-| `fal-ai/qwen-image`                            | Qwen-Image foundation model with significant advances in complex text rendering and precise image editing                         |
-| `fal-ai/omnigen-v2`                            | Unified image generation model for Image Editing, Personalized Image Generation, Virtual Try-On, Multi Person Generation and more |
-| `fal-ai/bytedance/dreamina/v3.1/text-to-image` | Dreamina showcases superior picture effects with improvements in aesthetics, precise and diverse styles, and rich details         |
-| `fal-ai/recraft/v3/text-to-image`              | SOTA in image generation with vector art and brand style capabilities                                                             |
-| `fal-ai/wan/v2.2-a14b/text-to-image`           | High-resolution, photorealistic images with fine-grained detail                                                                   |
+| Model                                          | Description                                                                                                                 | Sizes                                                             | Image Editing | Mask Input | Max Images Per Call |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------- | ---------- | ------------------- |
+| `bria/text-to-image/3.2`                       | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✗             | ✗          | 1                   |
+| `fal-ai/bria/text-to-image/base`               | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✗             | ✗          | 1                   |
+| `fal-ai/bria/text-to-image/fast`               | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✗             | ✗          | 1                   |
+| `fal-ai/bria/text-to-image/hd`                 | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✗             | ✗          | 1                   |
+| `fal-ai/bytedance/dreamina/v3.1/text-to-image` | Dreamina showcases superior picture effects with improvements in aesthetics, precise and diverse styles, and rich details   | Accepted size or aspect ratio depends on the model and operation. | ✗             | ✗          | 1                   |
+| `fal-ai/flux-general/image-to-image`           | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
+| `fal-ai/flux-general/inpainting`               | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✓          | 1                   |
+| `fal-ai/flux-kontext-lora/text-to-image`       | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✗             | ✗          | 1                   |
+| `fal-ai/flux-lora/image-to-image`              | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
+| `fal-ai/flux-lora/inpainting`                  | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✓          | 1                   |
+| `fal-ai/flux-pro/kontext`                      | FLUX.1 Kontext \[pro] handles both text and reference images as inputs, enabling targeted edits and complex transformations | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
+| `fal-ai/flux-pro/kontext/max`                  | FLUX.1 Kontext \[max] with improved prompt adherence and typography generation                                              | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
+| `fal-ai/flux/dev/image-to-image`               | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
+| `fal-ai/flux/krea/image-to-image`              | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
+| `fal-ai/recraft/v3/text-to-image`              | SOTA in image generation with vector art and brand style capabilities                                                       | Accepted size or aspect ratio depends on the model and operation. | ✗             | ✗          | 1                   |
+| `fal-ai/recraft/v3/image-to-image`             | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
+| `fal-ai/wan/v2.2-5b/text-to-image`             | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✗             | ✗          | 1                   |
+| `fal-ai/wan/v2.2-a14b/text-to-image`           | High-resolution, photorealistic images with fine-grained detail                                                             | Accepted size or aspect ratio depends on the model and operation. | ✗             | ✗          | 1                   |
+| `fal-ai/flux-2/edit`                           | Not declared                                                                                                                | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
 
 Fal models support the following aspect ratios:
 
@@ -303,10 +312,10 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model     | Transcription | Duration | Segments | Language |
-| --------- | ------------- | -------- | -------- | -------- |
-| `whisper` | ✓             | ✓        | ✓        | ✓        |
-| `wizper`  | ✓             | ✓        | ✓        | ✓        |
+| Model     | Transcription | Streaming | Duration | Segments | Language |
+| --------- | ------------- | --------- | -------- | -------- | -------- |
+| `whisper` | ✓             | ✗         | ✓        | ✓        | ✓        |
+| `wizper`  | ✓             | ✗         | ✓        | ✓        | ✓        |
 
 ## Speech Models
 
@@ -326,15 +335,15 @@ const result = await generateSpeech({
 
 ### Model Capabilities
 
-| Model                                     | Description                                                                                                                                                           |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fal-ai/minimax/voice-clone`              | Clone a voice from a sample audio and generate speech from text prompts                                                                                               |
-| `fal-ai/minimax/voice-design`             | Design a personalized voice from a text description and generate speech from text prompts                                                                             |
-| `fal-ai/dia-tts/voice-clone`              | Clone dialog voices from a sample audio and generate dialogs from text prompts                                                                                        |
-| `fal-ai/minimax/speech-02-hd`             | Generate speech from text prompts and different voices                                                                                                                |
-| `fal-ai/minimax/speech-02-turbo`          | Generate fast speech from text prompts and different voices                                                                                                           |
-| `fal-ai/dia-tts`                          | Directly generates realistic dialogue from transcripts with audio conditioning for emotion control. Produces natural nonverbals like laughter and throat clearing     |
-| `resemble-ai/chatterboxhd/text-to-speech` | Generate expressive, natural speech with Resemble AI's Chatterbox. Features unique emotion control, instant voice cloning from short audio, and built-in watermarking |
+| Model                                     | Description                                                                                                                                                           | Instructions |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `fal-ai/minimax/voice-clone`              | Clone a voice from a sample audio and generate speech from text prompts                                                                                               | ✗            |
+| `fal-ai/minimax/voice-design`             | Design a personalized voice from a text description and generate speech from text prompts                                                                             | ✗            |
+| `fal-ai/dia-tts/voice-clone`              | Clone dialog voices from a sample audio and generate dialogs from text prompts                                                                                        | ✗            |
+| `fal-ai/minimax/speech-02-hd`             | Generate speech from text prompts and different voices                                                                                                                | ✗            |
+| `fal-ai/minimax/speech-02-turbo`          | Generate fast speech from text prompts and different voices                                                                                                           | ✗            |
+| `fal-ai/dia-tts`                          | Directly generates realistic dialogue from transcripts with audio conditioning for emotion control. Produces natural nonverbals like laughter and throat clearing     | ✗            |
+| `resemble-ai/chatterboxhd/text-to-speech` | Generate expressive, natural speech with Resemble AI's Chatterbox. Features unique emotion control, instant voice cloning from short audio, and built-in watermarking | ✗            |
 
 ### Provider Options
 
@@ -358,6 +367,58 @@ Pass provider-specific options via `providerOptions.fal` depending on the model:
   Custom pronunciation dictionary for specific words.
 
 Model-specific parameters (e.g., `audio_url`, `prompt`, `preview_text`, `ref_audio_url`, `ref_text`) can be passed directly under `providerOptions.fal` and will be forwarded to the Fal API.
+
+## Video Model Capabilities
+
+| Model                | Image Input                                            | First Frame | Last Frame | Reference Images | Reference Video | Audio | Aspect Ratio                                           | Resolution                                                   | Duration                                               | FPS | Seed                                                   |
+| -------------------- | ------------------------------------------------------ | ----------- | ---------- | ---------------- | --------------- | ----- | ------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------ | --- | ------------------------------------------------------ |
+| `luma-dream-machine` | Conditional: Supported by the selected model endpoint. | ✗           | ✗          | ✗                | ✗               | ✗     | Conditional: Supported by the selected model endpoint. | Conditional: Configured with providerOptions.fal.resolution. | Conditional: Supported by the selected model endpoint. | ✗   | Conditional: Supported by the selected model endpoint. |
+| `luma-ray-2`         | Conditional: Supported by the selected model endpoint. | ✗           | ✗          | ✗                | ✗               | ✗     | Conditional: Supported by the selected model endpoint. | Conditional: Configured with providerOptions.fal.resolution. | Conditional: Supported by the selected model endpoint. | ✗   | Conditional: Supported by the selected model endpoint. |
+| `luma-ray-2-flash`   | Conditional: Supported by the selected model endpoint. | ✗           | ✗          | ✗                | ✗               | ✗     | Conditional: Supported by the selected model endpoint. | Conditional: Configured with providerOptions.fal.resolution. | Conditional: Supported by the selected model endpoint. | ✗   | Conditional: Supported by the selected model endpoint. |
+| `minimax-video`      | Conditional: Supported by the selected model endpoint. | ✗           | ✗          | ✗                | ✗               | ✗     | Conditional: Supported by the selected model endpoint. | Conditional: Configured with providerOptions.fal.resolution. | Conditional: Supported by the selected model endpoint. | ✗   | Conditional: Supported by the selected model endpoint. |
+| `minimax-video-01`   | Conditional: Supported by the selected model endpoint. | ✗           | ✗          | ✗                | ✗               | ✗     | Conditional: Supported by the selected model endpoint. | Conditional: Configured with providerOptions.fal.resolution. | Conditional: Supported by the selected model endpoint. | ✗   | Conditional: Supported by the selected model endpoint. |
+| `hunyuan-video`      | Conditional: Supported by the selected model endpoint. | ✗           | ✗          | ✗                | ✗               | ✗     | Conditional: Supported by the selected model endpoint. | Conditional: Configured with providerOptions.fal.resolution. | Conditional: Supported by the selected model endpoint. | ✗   | Conditional: Supported by the selected model endpoint. |
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation     | Option                  | Description                                                                                                                                                                                                                    |
+| ------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| image         | `imageUrl`              | imageUrl                                                                                                                                                                                                                       |
+| image         | `maskUrl`               | maskUrl                                                                                                                                                                                                                        |
+| image         | `guidanceScale`         | guidanceScale                                                                                                                                                                                                                  |
+| image         | `numInferenceSteps`     | numInferenceSteps                                                                                                                                                                                                              |
+| image         | `enableSafetyChecker`   | enableSafetyChecker                                                                                                                                                                                                            |
+| image         | `outputFormat`          | outputFormat                                                                                                                                                                                                                   |
+| image         | `syncMode`              | syncMode                                                                                                                                                                                                                       |
+| image         | `strength`              | strength                                                                                                                                                                                                                       |
+| image         | `acceleration`          | acceleration                                                                                                                                                                                                                   |
+| image         | `safetyTolerance`       | safetyTolerance                                                                                                                                                                                                                |
+| image         | `useMultipleImages`     | When true, converts multiple input images to `image_urls` array instead of `image_url` string.                                                                                                                                 |
+| image         | `image_url`             | image\_url                                                                                                                                                                                                                     |
+| image         | `mask_url`              | mask\_url                                                                                                                                                                                                                      |
+| image         | `guidance_scale`        | guidance\_scale                                                                                                                                                                                                                |
+| image         | `num_inference_steps`   | num\_inference\_steps                                                                                                                                                                                                          |
+| image         | `enable_safety_checker` | enable\_safety\_checker                                                                                                                                                                                                        |
+| image         | `output_format`         | output\_format                                                                                                                                                                                                                 |
+| image         | `sync_mode`             | sync\_mode                                                                                                                                                                                                                     |
+| image         | `safety_tolerance`      | safety\_tolerance                                                                                                                                                                                                              |
+| speech        | `voice_setting`         | voice\_setting                                                                                                                                                                                                                 |
+| speech        | `audio_setting`         | audio\_setting                                                                                                                                                                                                                 |
+| speech        | `language_boost`        | language\_boost                                                                                                                                                                                                                |
+| speech        | `pronunciation_dict`    | pronunciation\_dict                                                                                                                                                                                                            |
+| transcription | `language`              | Language of the audio file. If set to null, the language will be automatically detected. Defaults to null. If translate is selected as the task, the audio will be translated to English, regardless of the language selected. |
+| transcription | `diarize`               | Whether to diarize the audio file. Defaults to true.                                                                                                                                                                           |
+| transcription | `chunkLevel`            | Level of the chunks to return. Either segment or word. Default value: "segment"                                                                                                                                                |
+| transcription | `version`               | Version of the model to use. All of the models are the Whisper large variant. Default value: "3"                                                                                                                               |
+| transcription | `batchSize`             | Default value: 64                                                                                                                                                                                                              |
+| transcription | `numSpeakers`           | Number of speakers in the audio file. Defaults to null. If not provided, the number of speakers will be automatically detected.                                                                                                |
+| video         | `loop`                  | loop                                                                                                                                                                                                                           |
+| video         | `motionStrength`        | motionStrength                                                                                                                                                                                                                 |
+| video         | `resolution`            | resolution                                                                                                                                                                                                                     |
+| video         | `negativePrompt`        | negativePrompt                                                                                                                                                                                                                 |
+| video         | `promptOptimizer`       | promptOptimizer                                                                                                                                                                                                                |
 
 ---
 

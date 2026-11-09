@@ -4,8 +4,8 @@ description: Learn how to use the AI Gateway provider with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "d1fa0d442b35c3cf591f532e3f99c970d0050e60dc4b06e8de3225cef456278a"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "2b0bd596797c6218477872326d30835c4bee3391111d45942108d1419ddd1bb1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -226,6 +226,40 @@ started, AI SDK Core exposes it as a
 [`StreamProviderError`](/docs/reference/ai-sdk-errors/ai-stream-provider-error).
 Use its `type`, `code`, `statusCode`, and `isRetryable` metadata to classify
 the failure without inspecting the Gateway's serialized error payload.
+
+## Image Models
+
+AI Gateway supports image generation through `generateImage`. To reduce peak
+memory when receiving large images, opt in to streaming base64 decoding:
+
+```ts
+import { generateImage } from 'ai';
+import type { GatewayProviderOptions } from '@ai-sdk/gateway';
+
+const { image } = await generateImage({
+  model: 'bfl/flux-kontext-pro',
+  prompt: 'A mountain lake at sunrise',
+  providerOptions: {
+    gateway: {
+      experimental_streamingImageDecoding: true,
+    } satisfies GatewayProviderOptions,
+  },
+});
+
+console.log(image.uint8Array.byteLength);
+```
+
+The option defaults to `false`, preserving base64 strings in provider results.
+When enabled, canonical base64 images of at least 64 KiB are decoded while the
+response arrives. The model returns these images as `Uint8Array`; if a response
+mixes extracted bytes with smaller images, all images in that result become
+bytes. Images that cannot be extracted retain the regular decoding path.
+
+This experimental option changes what image-model middleware sees in
+`result.images`. `GeneratedFile` still provides both `uint8Array` and `base64`,
+but reading `base64` can require re-encoding. Validation errors contain short
+placeholders for extracted data. The option is handled by the client and is
+not sent to the Gateway service.
 
 ## Batch
 
@@ -530,6 +564,8 @@ const result = streamSpeech({
 
 ## Realtime Models
 
+For a trusted [server-owned connection](/docs/ai-sdk-core/realtime#server-owned-connections), `getServerWebSocketConfig()` reuses Gateway HTTP authentication, protocol, team and custom headers. Only the conversation intent is supported. The identity codec passes through normalized usage only when the Gateway route includes it in its events; credentials in connection settings remain on your server.
+
 Realtime support is experimental and the API may change in patch releases.
 
 You can create realtime models for bidirectional audio/text WebSocket sessions using the `experimental_realtime` method on the provider instance. The first argument is the model ID in the format `creator/model-name`:
@@ -766,6 +802,9 @@ It returns a `GatewayGenerationInfo` object with the following fields:
 
 - **id** *string* - The generation ID
 - **totalCost** *number* - Total cost in USD
+- **marketCost** *number (optional)* - Market cost in USD, excluding surcharges
+- **surchargeCost** *number (optional)* - Total surcharges applied in USD
+- **gatewayCost** *number (optional)* - Total amount debited in USD
 - **upstreamInferenceCost** *number* - Upstream inference cost in USD (relevant for BYOK)
 - **usage** *number* - Usage cost in USD (same as totalCost)
 - **createdAt** *string* - ISO 8601 timestamp when the generation was created
@@ -782,6 +821,11 @@ It returns a `GatewayGenerationInfo` object with the following fields:
 - **cachedTokens** *number* - Cached tokens used (if applicable)
 - **cacheCreationTokens** *number* - Cache creation input tokens
 - **billableWebSearchCalls** *number* - Number of billable web search calls
+
+The optional cost breakdown fields contain the values reported by AI Gateway.
+Fields that are missing or `null` in the API response are omitted from the result,
+so unavailable costs remain distinct from a reported cost of zero. The SDK does
+not calculate these fields from other costs.
 
 ## Examples
 
@@ -1415,6 +1459,100 @@ for await (const part of result.stream) {
 }
 ```
 
+#### DeepSeek Search and Fetch
+
+Use `gateway.tools.deepseekSearch()` to search the web and
+`gateway.tools.deepseekFetch()` to retrieve a page as Markdown. Both tools call
+DeepSeek's standalone Search/Fetch APIs from AI Gateway and work with supported
+tool-calling models from any provider. They are separate from a model's built-in
+web search. No additional model provider package is required.
+
+```ts
+import { gateway, generateText } from 'ai';
+
+const result = await generateText({
+  model: 'openai/gpt-6-luna',
+  prompt: 'Search for DeepSeek API documentation and fetch a relevant page.',
+  tools: {
+    deepseek_search: gateway.tools.deepseekSearch({
+      count: 5,
+      needContent: true,
+    }),
+    deepseek_fetch: gateway.tools.deepseekFetch(),
+  },
+});
+
+console.log(result.text);
+console.log(result.toolResults);
+for (const part of result.content) {
+  if (part.type === 'tool-error') console.error('Tool error:', part.error);
+}
+```
+
+The Search tool supports the following optional configuration options:
+
+- **query** *string*
+
+  Pin the search query; otherwise the model chooses it. Queries contain 1–128 Unicode characters and cannot be all whitespace.
+
+- **count** *number*
+
+  Number of results, 1–50 (default: 10).
+
+- **needContent** *boolean*
+
+  Include available page content (default: false).
+
+- **oriQuestion** *string | null*
+
+  Original question, 1–128 Unicode characters. `null` means not provided.
+
+- **localization** *string*
+
+  IP address used to localize results; developer configuration only.
+
+The model-facing input uses `query`, `count`, `need_content`, and `ori_question`.
+Queries support search operators including `site:`, `-site:`, `lang:`, `after:`,
+`before:`, and quoted phrases. Search returns `{ results }`, containing ranked
+URLs, titles, snippets, summaries, optional page content, and nullable site/date
+metadata. An empty `results` array is a successful search with no matches.
+
+Fetch accepts an HTTP(S) `url` up to 8,192 characters, without a username or
+password, and returns `{ content, title? }`. The content is Markdown. You can
+pin the URL with `gateway.tools.deepseekFetch({ url: 'https://example.com' })`.
+The Fetch tool supports the following optional configuration option:
+
+- **url** *string*
+
+  Pin the HTTP(S) URL; otherwise the model chooses it.
+
+Tool failures appear as `tool-error` parts in `result.content` (for
+`generateText`) or `result.stream` (for `streamText`). Inspect `part.error`
+there; failures are not included in `result.toolResults`.
+
+The tools also work with `streamText`:
+
+```ts
+import { gateway, streamText } from 'ai';
+
+const result = streamText({
+  model: 'openai/gpt-6-luna',
+  prompt: 'Search for DeepSeek API documentation and fetch a relevant page.',
+  tools: {
+    deepseek_search: gateway.tools.deepseekSearch(),
+    deepseek_fetch: gateway.tools.deepseekFetch(),
+  },
+});
+
+for await (const part of result.stream) {
+  if (part.type === 'text-delta') process.stdout.write(part.text);
+  if (part.type === 'tool-error') console.error('Tool error:', part.error);
+}
+```
+
+See the [DeepSeek API guide](https://api-docs.deepseek.com/guides/search/) for the
+underlying APIs.
+
 ### Custom Reporting
 
 Track usage per end-user and categorize requests with tags, then query the data through the reporting API.
@@ -1611,6 +1749,10 @@ The following gateway provider options are available:
 - **disallowPromptTraining** *boolean*
 
   Restricts routing to providers that have agreements with Vercel for AI Gateway to not use prompts for model training. When using BYOK credentials, this filter is not applied. If BYOK credentials fail and the request falls back to system credentials, only providers that do not train on prompt data will be used. If there are no providers available for the model that disallow prompt training, the request will fail.
+
+- **headquarters** *string\[]*
+
+  Restricts routing to providers whose parent company is headquartered in the listed countries, given as ISO 3166-1 alpha-2 codes (for example `['US', 'DE']`). To exclude countries instead, prefix every code with `!`, as in `['!US']`. A list can't mix allowed and excluded countries. The filter applies to both BYOK and system credentials, since it's about the provider rather than the credential. Providers without a recorded headquarters country are always excluded. If no provider for the model is headquartered in an allowed country, the request fails.
 
 - **quotaEntityId** *string*
 

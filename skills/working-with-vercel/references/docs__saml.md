@@ -15,8 +15,8 @@ related:
 summary: Learn how to configure SAML SSO for your organization on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/saml.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0c4cbd47cd70a78172181b766f4e0d9510b50c0b8db5b3acc7dffe6e2c5ab5f5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "eb9d308798158856603d76468253c9a59be3ad58fe2ac6e4b62306091a9af3ad"
 ---
 
 # SAML Single Sign-On
@@ -41,7 +41,7 @@ To manage the [members](/docs/rbac/managing-team-members) of your team through a
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
-- [Two-factor enforcement](https://vercel.com/docs/two-factor-enforcement) — Learn how to enforce two-factor authentication \\(2FA\\) for your Vercel team members to enhance security.
+- [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 
 Full cross-link map for this page: [/docs/saml.graph.md](/docs/saml.graph.md)
 <!-- /docsgraph:related -->
@@ -66,7 +66,7 @@ For Enterprise customers, you can also automatically manage team member roles an
 
 ### Session lifetime
 
-Use the optional `session_lifetime` attribute in your identity provider's SAML configuration to customize how long SAML SSO sessions last. Its value is an integer number of seconds between 86,400 (1 day) and 2,592,000 (30 days), inclusive, applied when the team member logs in. When `session_lifetime` is not used, sessions last 24 hours by default, after which team members must re-authenticate with the third-party SAML provider.
+Use the optional `session_lifetime` attribute in your identity provider's SAML configuration to customize how long SAML SSO sessions last. Its value is an integer number of seconds between 3,600 (1 hour) and 2,592,000 (30 days), inclusive, applied when the team member logs in. When `session_lifetime` is not used, sessions last 24 hours by default, after which team members must re-authenticate with the third-party SAML provider.
 
 ## Enforcing SAML
 

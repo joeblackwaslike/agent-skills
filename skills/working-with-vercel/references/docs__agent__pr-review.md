@@ -16,8 +16,8 @@ related:
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "dc299349afb6d1dccf92bbc38adc63df4ee95dca4ce7226d07d7e5cd15ee960d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bd608517b0162df32c90efd35225e891bddabb27436e8ac434c9199f720ffc36"
 ---
 
 # Code Review
@@ -33,17 +33,17 @@ Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validate
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
+- [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
 - [Vercel Agent code reviews now follow your code guidelines](https://vercel.com/changelog/vercel-agent-code-reviews-now-follow-your-code-guidelines)
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
+- [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
+- [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
-- [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta)
 - [Introducing Vercel CI](https://vercel.com/blog/introducing-vercel-ci)
-- [Build a Software Factory with the AI SDK](https://vercel.com/docs/agent-resources/software-factory/ai-sdk) — Compose investigation, sandbox execution, review, and GitHub publication stages with the AI SDK on Vercel.
 
 Full cross-link map for this page: [/docs/agent/pr-review.graph.md](/docs/agent/pr-review.graph.md)
 <!-- /docsgraph:related -->
@@ -58,9 +58,9 @@ To enable code reviews for your [repositories](/docs/git#supported-git-providers
 1. Click **Enable** to turn on Vercel Agent.
 2. Under **Repositories**, choose which repositories to review:
    - All repositories (default)
-   - Public only
-   - Private only
-3. Under **Review Draft PRs**, select whether to:
+   - Public repositories only
+   - Private repositories only
+3. Under **Include Draft PRs**, select whether to:
    - Skip draft PRs (default)
    - Review draft PRs
 4. Click **Save** to confirm your settings.

@@ -17,8 +17,8 @@ related:
 summary: Save and restore sandbox state with snapshots for faster startups and environment sharing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a56f600bc3556faee9c98a0693eb3f0d66be73f1de46c2ad8c1635eb2db594f4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a6328246bb4ddc63dba034529eb45168f2c406015e2c466062e207c5fc32c305"
 ---
 
 # Snapshots
@@ -31,18 +31,18 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
 - [Vercel Sandbox now calculates snapshot storage costs daily](https://vercel.com/changelog/vercel-sandbox-now-calculates-snapshot-storage-costs-daily)
 - [Vercel Sandbox now supports Devin Outposts](https://vercel.com/changelog/vercel-sandbox-now-supports-devin-outposts)
-- [How to install system packages in Vercel Sandbox](https://vercel.com/kb/guide/how-to-install-system-packages-in-vercel-sandbox) — Learn how to install additional system packages in Vercel Sandbox with apt-get on the default Ubuntu-based managed image
 - [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Filesystem snapshots supported on Vercel Sandboxes](https://vercel.com/changelog/filesystem-snapshots-supported-on-vercel-sandboxes)
 - [Vercel Sandbox snapshots now allow custom retention periods](https://vercel.com/changelog/vercel-sandbox-snapshots-now-allow-custom-retention-periods)
+- [Sandboxes now expire based on last use](https://vercel.com/changelog/sandboxes-now-expire-based-on-last-use)
 - [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot) — POST /v2/sandboxes/sessions/{sessionId}/snapshot — Creates a point-in-time snapshot of a running session's filesystem. S
 - [Get a snapshot](https://vercel.com/docs/rest-api/sandboxes/get-a-snapshot) — GET /v2/sandboxes/snapshots/{snapshotId} — Retrieves detailed information about a specific snapshot, including its creat
 - [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots) — GET /v2/sandboxes/snapshots — Retrieves a paginated list of snapshots for a specific project.
 - [Delete a snapshot](https://vercel.com/docs/rest-api/sandboxes/delete-a-snapshot) — DELETE /v2/sandboxes/snapshots/{snapshotId} — Permanently deletes a snapshot and frees its associated storage. This acti
+- [Chat SDK with Vercel Sandbox](https://vercel.com/docs/chat-sdk/integrations/sandbox) — Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md)
 <!-- /docsgraph:related -->
@@ -68,7 +68,7 @@ The cycle looks like this:
 
 You can also snapshot a running sandbox at any time by calling `snapshot()`, which captures its current filesystem before stopping the session.
 
-Snapshots outlive the sandbox they came from. Deleting a sandbox removes the sandbox and its sessions, but its snapshots stay available until they expire or you [delete them](#delete-a-snapshot), and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime.
+Snapshots outlive the sandbox they came from. Deleting a sandbox removes the sandbox and its sessions, but by default its snapshots stay available until they expire or you [delete them](#delete-a-snapshot), and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime.
 
 A snapshot isn't tied to one sandbox. You can create or [fork](/docs/sandbox/sdk-reference#sandbox.fork) any number of sandboxes from the same snapshot, so deleting a single sandbox can't remove a snapshot that other sandboxes still start from.
 
@@ -99,7 +99,7 @@ When a snapshot's expiration passes, it moves to `deleted`. The [retention setti
 
 Call `snapshot()` on a running sandbox:
 
-> **💡 Note:** Once you create a snapshot, the sandbox shuts down automatically and becomes unreachable. You don't need to stop it afterwards.
+> **💡 Note:** Creating a snapshot automatically stops the sandbox. You can resume it later from the saved filesystem.
 
 **terminal.sh**
 
@@ -143,7 +143,7 @@ async def main() -> None:
     box = await sandbox.create_sandbox()
 
     # Install dependencies, configure environment, etc.
-    await box.run_process("uv", ["sync"], check=True)
+    await box.run_command("uv", ["sync"], check=True)
 
     # Snapshot and get the ID.
     snapshot = await box.snapshot(expiration=timedelta(days=14))
@@ -254,7 +254,7 @@ Look up a snapshot by ID:
 **terminal.sh**
 
 ```bash filename="terminal.sh"
-sandbox snapshots list
+sandbox snapshots get snap_abc123
 ```
 
 **index.ts**
@@ -282,7 +282,7 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-The CLI doesn't support retrieving a single snapshot by ID. Use `sandbox snapshots list` to view all snapshots for your project.
+Use [`sandbox snapshots get`](/docs/sandbox/cli-reference#sandbox-snapshots-get) to inspect one snapshot, or `sandbox snapshots list` to list snapshots for your project.
 
 ## Delete a snapshot
 
@@ -324,9 +324,9 @@ asyncio.run(main())
 
 Snapshots expire **30 days after their last use** by default. You can shorten, extend, or remove that expiration at three levels:
 
-- **Per-call**: pass `expiration` to `sandbox.snapshot({ expiration })` or `--expiration` to `sandbox snapshot`. Use `0` (or `none` in the CLI) for no expiration.
+- **Per-call**: pass `expiration` to `sandbox.snapshot({ expiration })` or `--expiration` to `sandbox snapshot`. Use `0` for no expiration.
 - **Per-sandbox default**: set `snapshotExpiration` at the sandbox level. Every automatic snapshot taken on stop, and every manual snapshot that omits an explicit `expiration`, inherits this value.
-- **Retention policy**: use `keepLastSnapshots` to bound how many snapshots a sandbox keeps, regardless of expiration. For [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes) (the default), the SDK creates a snapshot every time a session stops, so a retention policy is how you keep storage flat.
+- **Retention policy**: use `keepLastSnapshots` to bound how many snapshots a sandbox keeps, regardless of expiration. For [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes) (the default), Vercel creates a snapshot every time a session stops, so a retention policy is how you keep storage flat.
 
 ```ts
 await sandbox.update({
@@ -345,6 +345,7 @@ await sandbox.update({
 
 - Snapshots expire **30 days after their last use** by default. See [Snapshot states](#snapshot-states) for how expiration moves a snapshot to `deleted`.
 - Snapshots can only be used in a region where they are available. See [Snapshots and regions](#snapshots-and-regions).
+- A custom expiration must be `0` (no expiration) or between 1 day and 10 years. This applies to `expiration`, `snapshotExpiration`, and `keepLastSnapshots.expiration`.
 - See [Pricing and Limits](/docs/sandbox/pricing#snapshot-storage) for storage costs and limits.
 
 

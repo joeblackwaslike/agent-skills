@@ -10,12 +10,12 @@ prerequisites:
 related:
   - /docs/runtime-logs
   - /docs/rest-api
-  - /docs/rest-api/reference/errors
+  - /docs/rest-api/errors
 summary: This error signifies that a specified resource could not be located.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/resource_not_found.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "78a121a94f8ba023fa7d4bff8e36ba5be360c6128b097bc35a8cb37212653c31"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fa1c15336c726e757bddeec0671825de4441045e29bd9fcfaf5006a293979721"
 ---
 
 # RESOURCE_NOT_FOUND
@@ -36,7 +36,7 @@ To troubleshoot this error, follow these steps:
 4. **Check application configuration:** Review your application's configuration settings to ensure they are correctly set up to locate and access the resource
 5. **Review logs:** Consult your [application logs](/docs/runtime-logs) for more details or clues as to why the resource could not be found. This can provide insights into whether the issue is due to an incorrect path, permissions, or other reasons
 
-Additionally, the error can also occur in the context of the [Vercel REST API](/docs/rest-api), where it is similar to the [HTTP 500 Internal Server Error](/docs/rest-api/reference/errors#resource-not-found). In this case, the error message will contain the details of the resource that could not be found.
+Additionally, the error can also occur in the context of the [Vercel REST API](/docs/rest-api), where the API returns the [`not_found` error code](/docs/rest-api/errors#resource-not-found) with the HTTP status `404`. In this case, the error message will contain the details of the resource that could not be found.
 
 
 ---

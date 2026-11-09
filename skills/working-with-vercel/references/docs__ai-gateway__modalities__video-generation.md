@@ -17,8 +17,8 @@ related:
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8381afe2f58074b616b07dd3e4ad907f44afde862c73f00fa7232b1a10851b8c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "07b1ec5f9d72d1b6b8059fed9c175da103e83955b7c91368dfc9fc2ba8dbc6a1"
 ---
 
 # AI Gateway Video Generation
@@ -39,8 +39,9 @@ AI Gateway supports video generation, letting you create videos from text prompt
 - [MiniMax H3 and H3 Max are 50% off on AI Gateway](https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway)
 - [Wan 3.0 now available on AI Gateway](https://vercel.com/changelog/wan-3-0-now-available-on-ai-gateway)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [generateVideo](https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video) — API Reference for durable video generation in workflows.
+- [HeyGen](https://ai-sdk.dev/providers/ai-sdk-providers/heygen) — Learn how to use HeyGen with AI Gateway and the direct provider.
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation.graph.md](/docs/ai-gateway/modalities/video-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -217,9 +218,14 @@ const result = await generateVideo({
 > Text-to-video is unaffected.
 
 > **💡 Note:** Top-level `poll` is not the same as the `providerOptions.<provider>.pollIntervalMs`
-> and `pollTimeoutMs` options documented on the mode pages. Those control how a
-> provider polls its own upstream task inside a single request. Top-level `poll`
+> and `pollTimeoutMs` options documented on the mode pages. Top-level `poll`
 > controls whether AI Gateway runs the generation as a background job at all.
+> The provider options control how a provider polls its own upstream task
+> inside a single request, and they apply to AI SDK 6 only. With AI SDK 7, they
+> have no effect, so you don't need to set them, even where a mode page
+> recommends a value. In a single request, AI Gateway instead checks the
+> provider's task every 5 seconds and stops waiting after 10 minutes. To set
+> your own interval and timeout, pass top-level `poll`.
 
 Starting a generation costs money, so the SDK sends a stable `idempotency-key` header on the start request and AI Gateway deduplicates on it, which keeps its internal retries from billing a second generation. Pass your own key through `headers` to make your own retry loop deduplicate too.
 

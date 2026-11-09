@@ -16,8 +16,8 @@ related:
 summary: ISR serves cached static pages while regenerating content in the background. Vercel\
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/incremental-static-regeneration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a078cea917f22da0adbdc3e415a2fd9626619f1be74f9c27834826cf8d9d13c1"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "56d10f97ecfb290769b4958f921aaee76d0c48351df7aeadfac631c0916c4420"
 ---
 
 # Incremental Static Regeneration (ISR)
@@ -34,6 +34,7 @@ Incremental Static Regeneration (ISR) is a caching strategy that combines the sp
 
 - [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
+- [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient)
 - [Deploys are now up to 33% faster for apps with many ISR pages](https://vercel.com/changelog/deploys-are-now-up-to-33-faster-for-apps-with-many-isr-pages)
 - [Flags SDK 3.2](https://vercel.com/changelog/flags-sdk-3-2)
 - [Fluid compute now supports ISR background and on-demand revalidation](https://vercel.com/changelog/fluid-compute-now-supports-isr-background-and-on-demand-revalidation)
@@ -43,7 +44,6 @@ Incremental Static Regeneration (ISR) is a caching strategy that combines the sp
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [Caching audits: Five antipatterns that cost you performance and money](https://vercel.com/kb/guide/caching-antipatterns) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
-- [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing)
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration.graph.md](/docs/incremental-static-regeneration.graph.md)
 <!-- /docsgraph:related -->
@@ -214,9 +214,13 @@ For detailed pricing, usage metrics, and optimization strategies, see [ISR usage
 
 ### On-demand revalidation limits
 
-On-demand revalidation applies to the domain and deployment where you trigger it, and doesn't affect subdomains or other deployments.
+The method you use for on-demand revalidation determines which domains and deployments it applies to.
 
-For example, if you trigger on-demand revalidation for `example-domain.com/example-page`, Vercel won't revalidate `sub.example-domain.com/example-page`. Subdomains and other deployments aren't affected.
+`res.revalidate` in the Next.js Pages Router applies to the domain and deployment where you trigger it, and doesn't affect subdomains or other deployments. The same applies to the [`x-prerender-revalidate` request header](/docs/incremental-static-regeneration/quickstart#on-demand-revalidation) that frameworks such as SvelteKit and Nuxt use.
+
+For example, if you use either method to revalidate `example-domain.com/example-page`, Vercel won't revalidate `sub.example-domain.com/example-page`. Subdomains and other deployments aren't affected.
+
+Tag-based revalidation, including `revalidateTag` and `revalidatePath` in the Next.js App Router, applies to every domain and deployment in the same project and environment. See [cache tag scope](/docs/caching/cdn-cache/purge#cache-tag-scope).
 
 ## More resources
 

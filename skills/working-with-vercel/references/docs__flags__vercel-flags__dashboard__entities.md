@@ -16,8 +16,8 @@ related:
 summary: Define entities and their attributes for precise feature flag targeting.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8b311b73aede490cc5d0ee736e6604b19a17cc3942595e2409df5b6519598613"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "24e89d9a67d5a437569b5d4cee33135e481561627cd80ec372bb34b589574f02"
 ---
 
 # Entities
@@ -35,7 +35,7 @@ Entities represent the things your application knows about: users, teams, device
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
@@ -79,11 +79,11 @@ Each attribute has a type that determines how it can be used in targeting rules:
 
 Entities are evaluated fresh for each flag call. There's no automatic merging or persistence between evaluations.
 
-- If you don't provide an entity or attribute, rules targeting it won't match
+- If you don't provide an entity or attribute, conditions that target it don't match, with the exceptions listed below
 - Each evaluation uses exactly the context you supply
 - Previously sent attributes aren't remembered
 
-Provide the full context on every evaluation. If a targeting rule references an attribute that is missing from the context, that rule is skipped.
+Provide the full context on every evaluation. If a targeting rule references an attribute that is missing from the context, the condition on that attribute doesn't match. The exceptions are the **is not**, **has no value**, and **contains none of** operators, which match a missing attribute.
 
 ## How to provide entities in code
 

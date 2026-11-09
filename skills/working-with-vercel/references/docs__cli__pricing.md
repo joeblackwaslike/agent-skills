@@ -13,8 +13,8 @@ related:
 summary: Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d5111bce2a06405a275854661a38153ddda6448ac5a579fff46fc59cdf22c89f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2ef2f30ec7bea9ed5d450fe2f9b64a55b7bd3f7709a7d3eddd5fc49a220cbc52"
 ---
 
 # vercel pricing
@@ -27,11 +27,11 @@ The `vercel pricing` command reads the public pricing table and lists features g
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel usage CLI command.
+- [vercel billing usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel billing usage CLI command.
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel billing contract](https://vercel.com/docs/cli/contract) — Learn how to view contract commitment information for your Vercel account using the vercel billing contract CLI command.
 
 Full cross-link map for this page: [/docs/cli/pricing.graph.md](/docs/cli/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -56,10 +56,10 @@ The optional `query` argument filters the pricing table. Multiple words form one
 
 ### JSON output
 
-Use `--format json` (shorthand `-F json`) or `--json` to return structured JSON:
+Use `--json` to return structured JSON:
 
 ```bash filename="terminal"
-vercel pricing "skew protection" --format json
+vercel pricing "skew protection" --json
 vercel pricing firewall --json
 ```
 
@@ -77,7 +77,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

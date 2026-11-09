@@ -4,8 +4,8 @@ description: Learn how to use Z.AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/zai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/zai.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "604f9ccb211d29d89209b3b6e2932a85f78e7b725b40cb3bd7e3ed742222926c"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "4b6c7d16cf2a49a5be19f666e41bb4b10e421be2534506e15b72cdc509836918"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -204,6 +204,21 @@ for await (const part of result.fullStream) {
   console.log(part);
 }
 ```
+
+## Model Capability Reference
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option            | Description                                                                           |
+| --------- | ----------------- | ------------------------------------------------------------------------------------- |
+| language  | `doSample`        | Enables or disables sampling. When disabled, temperature and topP do not take effect. |
+| language  | `thinking`        | Controls model thinking and whether reasoning from earlier turns is kept.             |
+| language  | `reasoningEffort` | Controls reasoning effort for GLM-5.2 and later models.                               |
+| language  | `toolStream`      | Enables incremental function-call argument streaming on supported models.             |
+| language  | `requestId`       | A caller-provided request identifier between 6 and 64 characters.                     |
+| language  | `userId`          | A non-sensitive end-user identifier between 6 and 128 characters.                     |
 
 ---
 

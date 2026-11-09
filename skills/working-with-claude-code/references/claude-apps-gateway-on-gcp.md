@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-apps-gateway-on-gcp.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "abcf5b98f6ec5f1ef999cbe22218875664e010993044e97993d3235b8d4b9c57"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "be63ffc783a545b48728df92330ba382d9034688bb177782b376c723de209655"
 ---
 
 > ## Documentation Index
@@ -322,4 +322,5 @@ For gateway boot and login errors, see the platform-agnostic [troubleshooting ta
 
 * [Configuration reference](https://code.claude.com/docs/en/claude-apps-gateway-config.md): every `gateway.yaml` option, including `managed.policies` and `telemetry`
 * [Deployment and operations](https://code.claude.com/docs/en/claude-apps-gateway-deploy.md): IdP setup, health checks, JWT secret rotation, upgrades, and the security model
+* [Load-test mode](https://code.claude.com/docs/en/claude-apps-gateway-config.md#load_test_mode): load testing a gateway without calling a model provider
 * [Claude apps gateway overview](https://code.claude.com/docs/en/claude-apps-gateway): quickstart and connecting developers

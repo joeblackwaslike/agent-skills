@@ -4,8 +4,8 @@ description: Learn how to set up the ElevenLabs provider and check AI Gateway av
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "8cd3e994ec0a3dab07de8174c058223f21f34a8f442e91ca89f89d4f8784fbed"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "973f42ece420004772a34a3cd0833b43000da5bf2df369a524b95d3f31dc979d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -601,6 +601,29 @@ The following provider options are available:
   Allowed values: `'pcm_s16le_16'`, `'other'`.
   For `'pcm_s16le_16'`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order.
   Latency will be lower than with passing an encoded waveform.
+
+- **sourceUrl** *string*
+
+  The HTTPS URL of a file for ElevenLabs to fetch and transcribe, instead of uploading the `audio` bytes.
+  Use it for large files: ElevenLabs downloads the file itself, so pass an empty `audio` input.
+  Any `audio` input is ignored when `sourceUrl` is set.
+
+### Transcribing from a URL
+
+`transcribe()` downloads a `URL` passed as `audio` and uploads the bytes. To let
+ElevenLabs fetch the file instead, pass the URL as `sourceUrl`:
+
+```ts
+const result = await transcribe({
+  model: elevenLabs.transcription('scribe_v2'),
+  audio: new Uint8Array(),
+  providerOptions: {
+    elevenlabs: {
+      sourceUrl: 'https://example.com/meeting.mp3',
+    } satisfies ElevenLabsTranscriptionModelOptions,
+  },
+});
+```
 
 ### Transcription Timestamps
 

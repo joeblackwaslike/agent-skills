@@ -16,8 +16,8 @@ related:
 summary: Learn how to apply custom domain aliases to your Vercel deployments using the vercel alias CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alias.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4ec218b30fc332965ba597a3683aeadaae2cd20318f433d0e120a172991d6b52"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "eefd2483b4b337909d056069333ddbaa3681ce50bcf922f884a0ca931e975835"
 ---
 
 # vercel alias
@@ -35,7 +35,7 @@ The `vercel alias` command allows you to apply [custom domains](/docs/domains/wo
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
 - [List Deployment Aliases](https://vercel.com/docs/rest-api/aliases/list-deployment-aliases) — GET /v2/deployments/{id}/aliases — Retrieves all Aliases for the Deployment with the given ID. The authenticated user or
 - [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias) — GET /v4/aliases/{idOrAlias} — Retrieves an Alias for the given host name or alias ID.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
+- [List aliases](https://vercel.com/docs/rest-api/aliases/list-aliases) — GET /v4/aliases — Retrieves a list of aliases for the authenticated User or Team. When \\`domain\\` is provided, only alia
 
 Full cross-link map for this page: [/docs/cli/alias.graph.md](/docs/cli/alias.graph.md)
 <!-- /docsgraph:related -->
@@ -70,14 +70,14 @@ vercel alias set [deployment-url] [custom-domain]
 domain to a deployment.*
 
 ```bash filename="terminal"
-vercel alias rm [custom-domain]
+vercel alias remove [custom-domain]
 ```
 
 *Using the \`vercel alias\` command to remove a custom
 domain from a deployment.*
 
 ```bash filename="terminal"
-vercel alias ls
+vercel alias list
 ```
 
 *Using the \`vercel alias\` command to list custom domains
@@ -92,22 +92,33 @@ These are options that only apply to the `vercel alias` command.
 The `--yes` option can be used to bypass the confirmation prompt when removing an alias.
 
 ```bash filename="terminal"
-vercel alias rm [custom-domain] --yes
+vercel alias remove [custom-domain] --yes
 ```
 
-*Using the \`vercel alias rm\` command with the
+*Using the \`vercel alias remove\` command with the
 \`--yes\` option.*
 
 ### Limit
 
-The `--limit` option can be used to specify the maximum number of aliases returned when using `ls`. The default value is `20` and the maximum is `100`.
+The `--limit` option can be used to specify the maximum number of aliases returned when using `list`. The default value is `20` and the maximum is `100`.
 
 ```bash filename="terminal"
-vercel alias ls --limit 100
+vercel alias list --limit 100
 ```
 
-*Using the \`vercel alias ls\` command with the
+*Using the \`vercel alias list\` command with the
 \`--limit\` option.*
+
+### Next
+
+The `--next` option shows the next page of aliases when using `list`. When there are more aliases than the limit, the output includes the command for the next page. Pass the `--next` value from that command:
+
+```bash filename="terminal"
+vercel alias list --next 1234567890123
+```
+
+*Using the \`vercel alias list\` command with the
+\`--next\` option.*
 
 ## Global Options
 
@@ -121,7 +132,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 
@@ -137,15 +147,15 @@ You might encounter one of these errors:
 Check which team owns the alias before changing it. List aliases in each team you can access, using [`vercel switch`](/docs/cli/switch) or an explicit scope:
 
 ```bash filename="terminal"
-vercel alias ls --scope your_team_slug --limit 100
+vercel alias list --scope your_team_slug --limit 100
 ```
 
-The list shows aliases and their target deployments. The default limit is 20 and the maximum is 100, so an alias missing from this list isn't proof that it's available. Check the owning project's domains and deployments in the dashboard, especially for teams with more aliases than the list limit.
+The list shows aliases and their target deployments. The default limit is 20 and the maximum is 100, so an alias missing from this list isn't proof that it's available. To see the next page of aliases, add the [`--next`](#next) option to the same command. Check the owning project's domains and deployments in the dashboard, especially for teams with more aliases than the list limit.
 
 If you own the conflicting alias and intend to detach it, remove the alias in its owning scope:
 
 ```bash filename="terminal"
-vercel alias rm your-project.vercel.app --scope your_team_slug
+vercel alias remove your-project.vercel.app --scope your_team_slug
 ```
 
 Review the confirmation prompt. Removing an alias stops that hostname from serving its current deployment; you don't need to delete the deployment to remove its alias. Then retry the assignment or domain move.

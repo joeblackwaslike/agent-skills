@@ -16,8 +16,8 @@ related:
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d54f26e1f095bff103d25ac6870fac8a438d54c4325a60c4c635840f2c910675"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9aea3fa2c9de23168d73ab8feda14d504b749c8bb3b805923d52b1ceeda5024e"
 ---
 
 # Quickstart
@@ -50,7 +50,7 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
 
 - A [Vercel account](https://vercel.com/signup)
 - [Vercel CLI](/docs/cli) installed (`npm i -g vercel`)
-- For TypeScript: Node.js 18 or later
+- For TypeScript: Node.js 20 or later
 - For Python: Python 3.10 or later and [uv](https://docs.astral.sh/uv/)
 - A [Linear](https://linear.app) workspace you can authorize
 
@@ -94,7 +94,7 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
 
   Attach the connector to the currently linked project so it can request tokens:
   ```bash filename="Terminal"
-  vercel connect attach oauth/linear
+  vercel connect attach mcp.linear.app/linear
   ```
   By default, `attach` links Production, Preview, and Development. It does not automatically include Custom Environments. Use `-e production -e preview` to restrict the link, or pass a Custom Environment slug such as `-e qa`. See the [`vercel connect`](/docs/cli/connect) reference for the full surface.
 
@@ -144,7 +144,7 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
 
   async function main() {
     try {
-      const response = await getTokenResponse('oauth/linear', {
+      const response = await getTokenResponse('mcp.linear.app/linear', {
         subject: { type: 'user', id: userId },
         scopes: ['read'],
       });
@@ -182,7 +182,7 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
   async def main() -> None:
       try:
           response = await connect.get_token_response(
-              'oauth/linear',
+              'mcp.linear.app/linear',
               subject=ConnectUserTokenSubject(id=user_id),
               scopes=['read'],
           )
@@ -209,7 +209,7 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
   ```ts filename="consent.ts"
   import { startAuthorization } from '@vercel/connect';
 
-  const { url } = await startAuthorization('oauth/linear', {
+  const { url } = await startAuthorization('mcp.linear.app/linear', {
     subject: { type: 'user', id: userId },
     scopes: ['read'],
   });
@@ -225,7 +225,7 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
 
   async def get_consent_url(user_id: str) -> str:
       authorization = await connect.start_authorization(
-          'oauth/linear',
+          'mcp.linear.app/linear',
           subject=ConnectUserTokenSubject(id=user_id),
           scopes=['read'],
       )
@@ -249,16 +249,20 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
   User user_demo_123 has not authorized Linear yet.
   In a real app, surface the consent URL to the user here.
   ```
-  That's because no Linear OAuth grant exists yet for `user_demo_123`. In a real app you'd catch [`UserAuthorizationRequiredError`](/docs/connect/concepts/tokens#errors), redirect the user to the connector's consent URL, and retry the request once they authorize. Once the user has consented (try it from the connector's page in the dashboard for this demo), re-run the script and you'll see:
+  That's because no Linear OAuth grant exists yet for `user_demo_123`. In a real app you'd catch [`UserAuthorizationRequiredError`](/docs/connect/concepts/tokens#errors), redirect the user to the connector's consent URL, and retry the request once they authorize.
+
+  To authorize `user_demo_123` for this demo, get a consent URL from your script. In the `UserAuthorizationRequiredError` handler, call `startAuthorization` or `start_authorization()` as shown in the previous step, and print the URL that it returns. Run the script again, open the URL in your browser, and approve access. Don't authorize from the connector's page in the dashboard, because that authorizes your own Vercel account, not `user_demo_123`.
+
+  After you approve access, re-run the script and you'll see:
 
   **Terminal**
   ```text filename="Terminal" framework=node
-  Got token for user_demo_123 on oauth/linear
+  Got token for user_demo_123 on mcp.linear.app/linear
   Expires at: 2026-06-03T22:42:00.000Z
   ```
   **Terminal**
   ```text filename="Terminal" framework=py
-  Got token for user_demo_123 on oauth/linear
+  Got token for user_demo_123 on mcp.linear.app/linear
   Expires at: 2026-06-03T22:42:00+00:00
   ```
   If you only need the token string for an `Authorization` header, use `getToken` or `get_token()` instead.

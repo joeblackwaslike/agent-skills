@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/ai-gateway/models-and-providers/virtual-models
   - /docs/ai-gateway/models-and-providers/routing-rules
+  - /docs/ai-gateway/sdks-and-apis/openai-decisions
   - /docs/ai-gateway/modalities/decision
   - /docs/ai-gateway/models-and-providers/model-fallbacks
-  - /docs/ai-gateway/models-and-providers/provider-options
 summary: Escalate uncertain AI Gateway decision results to another model with confidence, probability, and compound conditions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/decision-fallbacks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8c853d2cd63d57ed80f3b475b3a9132876699d59d1f66fe2f6d0a8835c8e45a2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6d6b6e1ca090f7c5e8786d927cb482f0e8bae100f7aae8fe44726ad93274a409"
 ---
 
 # Decision Fallbacks
@@ -33,10 +33,10 @@ Decision fallbacks rerun a successful decision with another model when an answer
 
 - [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks)
 - [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
-- [Perplexity](https://ai-sdk.dev/providers/ai-sdk-providers/perplexity) — Learn how to use Perplexity with AI Gateway and the direct provider.
 - [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
 - [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai) — Learn how to use TypeSafe with AI Gateway and the direct provider.
 - [experimental_decide](https://ai-sdk.dev/docs/reference/ai-sdk-core/decide) — Decide answers to typed questions against shared state with a decision model.
+- [Perplexity](https://ai-sdk.dev/providers/ai-sdk-providers/perplexity) — Learn how to use Perplexity with AI Gateway and the direct provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md)
 <!-- /docsgraph:related -->
@@ -134,7 +134,7 @@ console.log(result.providerMetadata?.gateway);
 #### TypeScript
 
 ```typescript filename="decide-with-fallback-rest.ts"
-const response = await fetch('https://ai-gateway.vercel.sh/v1/evaluate', {
+const response = await fetch('https://ai-gateway.vercel.sh/v1/decisions', {
   method: 'POST',
   headers: {
     Authorization: `Bearer ${process.env.AI_GATEWAY_API_KEY}`,
@@ -142,18 +142,19 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/evaluate', {
   },
   body: JSON.stringify({
     model: 'typesafe-ai/jev',
-    state: 'I was charged twice and cannot sign in to request a refund.',
-    questions: {
-      intent: {
+    input: 'I was charged twice and cannot sign in to request a refund.',
+    questions: [
+      {
         type: 'choice',
+        name: 'intent',
         instructions: 'Which team should handle this support request?',
-        criteria: {
-          billing: 'Charges, invoices, and refunds',
-          technical: 'Bugs and outages',
-          account: 'Sign-in and account access',
-        },
+        choices: [
+          { value: 'billing', description: 'Charges, invoices, and refunds' },
+          { value: 'technical', description: 'Bugs and outages' },
+          { value: 'account', description: 'Sign-in and account access' },
+        ],
       },
-    },
+    ],
     providerOptions: {
       gateway: {
         models: [
@@ -179,18 +180,19 @@ import urllib.request
 
 body = {
     "model": "typesafe-ai/jev",
-    "state": "I was charged twice and cannot sign in to request a refund.",
-    "questions": {
-        "intent": {
+    "input": "I was charged twice and cannot sign in to request a refund.",
+    "questions": [
+        {
             "type": "choice",
+            "name": "intent",
             "instructions": "Which team should handle this support request?",
-            "criteria": {
-                "billing": "Charges, invoices, and refunds",
-                "technical": "Bugs and outages",
-                "account": "Sign-in and account access",
-            },
+            "choices": [
+                {"value": "billing", "description": "Charges, invoices, and refunds"},
+                {"value": "technical", "description": "Bugs and outages"},
+                {"value": "account", "description": "Sign-in and account access"},
+            ],
         }
-    },
+    ],
     "providerOptions": {
         "gateway": {
             "models": [
@@ -204,7 +206,7 @@ body = {
 }
 
 request = urllib.request.Request(
-    "https://ai-gateway.vercel.sh/v1/evaluate",
+    "https://ai-gateway.vercel.sh/v1/decisions",
     data=json.dumps(body).encode(),
     headers={
         "Authorization": "Bearer " + os.environ["AI_GATEWAY_API_KEY"],
@@ -218,23 +220,24 @@ with urllib.request.urlopen(request) as response:
 #### cURL
 
 ```bash filename="decide-with-fallback.sh"
-curl --fail-with-body https://ai-gateway.vercel.sh/v1/evaluate \
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/decisions \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
   "model": "typesafe-ai/jev",
-  "state": "I was charged twice and cannot sign in to request a refund.",
-  "questions": {
-    "intent": {
+  "input": "I was charged twice and cannot sign in to request a refund.",
+  "questions": [
+    {
       "type": "choice",
+      "name": "intent",
       "instructions": "Which team should handle this support request?",
-      "criteria": {
-        "billing": "Charges, invoices, and refunds",
-        "technical": "Bugs and outages",
-        "account": "Sign-in and account access"
-      }
+      "choices": [
+        { "value": "billing", "description": "Charges, invoices, and refunds" },
+        { "value": "technical", "description": "Bugs and outages" },
+        { "value": "account", "description": "Sign-in and account access" }
+      ]
     }
-  },
+  ],
   "providerOptions": {
     "gateway": {
       "models": [
@@ -294,18 +297,19 @@ console.log(result.answers.requestsRefund.probability);
 #### cURL
 
 ```bash filename="decide-with-probability-fallback.sh"
-curl --fail-with-body https://ai-gateway.vercel.sh/v1/evaluate \
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/decisions \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
   "model": "typesafe-ai/jev",
-  "state": "I was charged twice and now the app will not load at all.",
-  "questions": {
-    "requestsRefund": {
-      "type": "boolean",
+  "input": "I was charged twice and now the app will not load at all.",
+  "questions": [
+    {
+      "type": "predicate",
+      "name": "requestsRefund",
       "instructions": "Does the customer ask for a refund?"
     }
-  },
+  ],
   "providerOptions": {
     "gateway": {
       "models": [
@@ -397,26 +401,28 @@ const result = await decide({
 #### cURL
 
 ```bash filename="decide-with-compound-fallback.sh"
-curl --fail-with-body https://ai-gateway.vercel.sh/v1/evaluate \
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/decisions \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
   "model": "typesafe-ai/jev",
-  "state": "I was charged twice and now the app will not load at all.",
-  "questions": {
-    "intent": {
+  "input": "I was charged twice and now the app will not load at all.",
+  "questions": [
+    {
       "type": "choice",
+      "name": "intent",
       "instructions": "Which team should handle this support request?",
-      "criteria": {
-        "billing": "Charges, invoices, and refunds",
-        "technical": "Bugs and outages"
-      }
+      "choices": [
+        { "value": "billing", "description": "Charges, invoices, and refunds" },
+        { "value": "technical", "description": "Bugs and outages" }
+      ]
     },
-    "requestsRefund": {
-      "type": "boolean",
+    {
+      "type": "predicate",
+      "name": "requestsRefund",
       "instructions": "Does the customer ask for a refund?"
     }
-  },
+  ],
   "providerOptions": {
     "gateway": {
       "models": [
@@ -498,15 +504,15 @@ Before any billable primary work, AI Gateway validates the condition structure a
 
 AI Gateway does not check the condition again against the fallback result, so a request runs at most two successful decision stages.
 
-The check that each primary answer has the shape the condition needs runs after the billed primary stage. If the provider returns a malformed answer, such as a missing answer, an answer of the wrong type, or a non-finite probability, the request fails with a `500` status. `/v1/evaluate` returns an `internal_server_error` error, the TypeSafe-compatible API returns an `internal_error` error, and the AI SDK throws a `GatewayInternalServerError`. The primary stage is still billed.
+The check that each primary answer has the shape the condition needs runs after the billed primary stage. If the provider returns a malformed answer, such as a missing answer, an answer of the wrong type, or a non-finite probability, the request fails with a `500` status. `/v1/decisions` returns an `internal_server_error` error, the TypeSafe-compatible API returns an `internal_error` error, and the AI SDK throws a `GatewayInternalServerError`. The primary stage is still billed.
 
 If the condition matches and the fallback stage fails, including any string fallbacks listed after the conditional object, the request fails with the fallback's error. AI Gateway does not return the primary result in that case, and the primary stage is still billed.
 
-The final response identifies the model that produced the returned answers. In the AI SDK, read `result.response.modelId`. `/v1/evaluate` returns the final model in its top-level `model` field. The TypeSafe-compatible API's top-level `model` echoes the model ID you requested when the primary answered, and names the fallback model whenever a fallback answered.
+The final response identifies the model that produced the returned answers. In the AI SDK, read `result.response.modelId`. `/v1/decisions` returns the final model in its top-level `model` field. The TypeSafe-compatible API's top-level `model` echoes the model ID you requested when the primary answered, and names the fallback model whenever a fallback answered.
 
 ### Read why the fallback ran
 
-When a condition matches, the fallback attempt in `routing.modelAttempts` carries `triggeredBy`, a list of `{ question, reason }` entries for the direct conditions that matched. In the AI SDK, read it from `result.providerMetadata?.gateway?.routing`. `/v1/evaluate` returns it under `providerMetadata.gateway.routing`, and the TypeSafe-compatible API under `provider_metadata.gateway.routing`.
+When a condition matches, the fallback attempt in `routing.modelAttempts` carries `triggeredBy`, a list of `{ question, reason }` entries for the direct conditions that matched. In the AI SDK, read it from `result.providerMetadata?.gateway?.routing`. `/v1/decisions` and the TypeSafe-compatible API return it under `provider_metadata.gateway.routing`.
 
 | `reason` | Meaning |
 | --- | --- |
@@ -566,17 +572,18 @@ A request-scoped condition can target a virtual model. The virtual model's model
 ```json
 {
   "model": "typesafe-ai/jev",
-  "state": "I was charged twice and need help.",
-  "questions": {
-    "intent": {
+  "input": "I was charged twice and need help.",
+  "questions": [
+    {
       "type": "choice",
+      "name": "intent",
       "instructions": "Which team should handle this?",
-      "criteria": {
-        "billing": "Charges and refunds",
-        "technical": "Bugs and outages"
-      }
+      "choices": [
+        { "value": "billing", "description": "Charges and refunds" },
+        { "value": "technical", "description": "Bugs and outages" }
+      ]
     }
-  },
+  ],
   "providerOptions": {
     "gateway": {
       "models": [
@@ -619,9 +626,11 @@ When a virtual model has a `models` policy, it replaces the request's `providerO
 
 ## Use the HTTP decision API
 
-`POST /v1/evaluate` accepts the same conditional `providerOptions.gateway.models` object as AI SDK `decide`. The **HTTP API** and **cURL** tabs above show complete requests. Provider-specific options such as `openai.reasoningEffort` go at the top level of `providerOptions`, next to `gateway`.
+`POST /v1/decisions`, the [OpenAI-compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions), accepts the same conditional `providerOptions.gateway.models` object as AI SDK `decide`. The **HTTP API** and **cURL** tabs above show complete requests. Conditions name questions by their `name`. Provider-specific options such as `openai.reasoningEffort` go at the top level of `providerOptions`, next to `gateway`. With the OpenAI SDKs, pass `providerOptions` through `extra_body` in Python, or add it to the request object in TypeScript.
 
-Native decision results preserve Choice and Score confidence and probability distributions when the provider returns them. A language-model fallback doesn't produce `confidence`: it returns one structured value per question, with no probability distribution to measure concentration from. `/v1/evaluate` omits `confidence` and `probabilities` from those Choice and Score answers. Boolean answers continue to return their final `probability`.
+Native decision results preserve Choice and Score confidence and probability distributions when the provider returns them. A language-model fallback doesn't produce `confidence`: it returns one structured value per question, with no probability distribution to measure concentration from. `/v1/decisions` omits `confidence` and `probabilities` from those Choice and Score answers. Predicate answers continue to return their final `probability`.
+
+The deprecated `POST /v1/evaluate` accepts the same `providerOptions`. See [`/v1/evaluate` (deprecated)](/docs/ai-gateway/modalities/decision#deprecated-evaluate-api) to move a request to `/v1/decisions`.
 
 ## Use the TypeSafe-compatible API
 

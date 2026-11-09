@@ -8,12 +8,13 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/cli/inspect
   - /docs/cli/global-options
 summary: Learn how to promote an existing deployment using the vercel promote CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/promote.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b85e457609a0826b2fc49e62c849907b1d2995b015af88e8371a0fa6d02d55c2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5ac5a12353b45a993221078d1c8e78eb412910f553b0153ab4694f3d79af49b5"
 ---
 
 # vercel promote
@@ -26,11 +27,12 @@ The `vercel promote` command is used to promote an existing deployment to be the
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [New deployment promotion event](https://vercel.com/changelog/new-webhook-for-promotion-events)
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment) — Learn how to promote deployments to production on Vercel.
 - [request_promote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_promote) — Use request_promote with Vercel MCP.
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
-- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/promote.graph.md](/docs/cli/promote.graph.md)
 <!-- /docsgraph:related -->
@@ -92,6 +94,8 @@ vercel promote https://example-app-6vd6bhoqt.vercel.app --timeout=5m
 *Using the \`vercel promote\` command with the
 \`--timeout\` option.*
 
+The `--timeout` option has no effect when you promote a deployment built for the Preview environment. The command creates the new production deployment, prints a link to it, and exits without waiting for the build to finish. To wait for the build, pass that link to [`vercel inspect`](/docs/cli/inspect#wait) with the `--wait` option.
+
 ## Global Options
 
 The following [global options](/docs/cli/global-options) can be passed when using the `vercel promote` command:
@@ -104,7 +108,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

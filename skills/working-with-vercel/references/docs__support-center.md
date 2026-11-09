@@ -12,8 +12,8 @@ related:
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d4bca11bf5c145ad1aff034be396bc8985f2748e662dd53c776ab0041c665985"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bda86df9cdac751803c71dc28311d2cda76e020c931aec44ca0217712af0579d"
 ---
 
 # Support Center
@@ -30,14 +30,14 @@ The Vercel Support Center provides a secure and streamlined way for you to submi
 
 - [Create and view support cases on the Vercel dashboard](https://vercel.com/changelog/support-center)
 - [Support Center is now available for Pro customers](https://vercel.com/changelog/support-center-on-pro)
+- [Get support from the dashboard](https://vercel.com/blog/support-form)
 - [Improvements to Support Center](https://vercel.com/changelog/improvements-to-support-center)
 - [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support) — Information on how to get help from Vercel Support through the available channels.
-- [Get support from the dashboard](https://vercel.com/blog/support-form)
 - [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
-- [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 
 Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md)
 <!-- /docsgraph:related -->
@@ -46,11 +46,11 @@ Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support
 
 To submit a ticket to Vercel Support, do the following:
 
-1. From your team's dashboard, open **Support** in the sidebar and then click the **Contact Support** button
-2. Select **Start Chat**, then select your team the issue is related to in the dropdown.
+1. From your team's dashboard, open **Support** in the sidebar and then click the **New Case** button
+2. In the support chat, select the product, then make sure the team the issue is related to is selected in the account dropdown.
 3. Start a conversation with the AI support agent.
-4. If the AI is unable to resolve your issue, you can submit a ticket by clicking **Create Case** under the chat.
-5. The AI agent will create a case for you and fill out the initial details based on your conversation with it. You can view the proposed case by clicking the **View Support Case Form** button. Here you can edit any fields that need changing.
+4. If the AI is unable to resolve your issue, click **Create Support Case** when the AI agent offers it in the chat.
+5. The case form opens with the initial details filled out based on your conversation with the AI agent. Here you can edit any fields that need changing.
 6. Once you are happy with the case, click **Submit Case**.
 
 The team aims to respond to tickets as described in the [Support Terms](/legal/support-terms#when).

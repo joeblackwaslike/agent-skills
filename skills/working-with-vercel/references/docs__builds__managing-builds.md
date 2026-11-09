@@ -16,8 +16,8 @@ related:
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9f6feb164d83d2ed6a80ee06ebe714a46d9828ef6a72ce783e417dbfdc09feb7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "8f9baa5e77ec393effb52b92998b37bffbc85a53020a88eee01db27ea854faf0"
 ---
 
 # Managing Builds
@@ -38,10 +38,10 @@ When you build your application code, Vercel runs compute to install dependencie
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Configuring a Build](https://vercel.com/docs/builds/configure-a-build) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
-- [Limits](https://vercel.com/docs/limits) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 
 Full cross-link map for this page: [/docs/builds/managing-builds.graph.md](/docs/builds/managing-builds.graph.md)
 <!-- /docsgraph:related -->
@@ -98,12 +98,12 @@ Enterprise customers who have Enhanced build machines enabled via contract will 
 
 On-demand concurrent builds allow your builds to skip the queue and run immediately. By default, projects have on-demand concurrent builds enabled with full concurrency. Learn more about [concurrency modes](/docs/builds/build-queues#with-on-demand-concurrent-builds).
 
-You are charged for on-demand concurrent builds based on the number of concurrent builds required to allow the builds to proceed. See [Pricing](/docs/pricing#builds) for more information.
+See [Pricing](/docs/pricing#builds) for rates and calculation examples.
 
 ### Concurrency limits by plan
 
 - **Hobby:** 1 concurrent deployment. Builds beyond this run sequentially.
-- **Pro:** Up to 500 concurrent deployments with on-demand concurrency (3 if on demand is off). You are billed for the build minutes you use.
+- **Pro:** Up to 500 concurrent deployments with on-demand concurrency. When on-demand concurrency is disabled, your team's configured limit applies. You are billed for the CPU minutes you use.
 - **Enterprise:** Custom concurrency limits tailored to your organization's needs.
 
 ### Project-level on-demand concurrent builds
@@ -208,6 +208,29 @@ In practice, this means:
 - **Optimized bills.** Many projects don't fully utilize a Turbo machine's 30 vCPUs. Elastic detects this and assigns a smaller machine, reducing your build minute costs without making builds noticeably slower.
 - **Faster builds where it matters.** Projects that are CPU- or memory-bound (heavy bundling, expensive type checking) are auto-upgraded to a larger machine so they finish sooner.
 - **No manual tuning.** You don't need to benchmark each project or guess the right tier. The assignment is reevaluated as your project changes over time, so it stays right-sized as your codebase grows.
+
+Besides recent build durations, Elastic considers how much memory your build uses. Only the build's own memory counts, not the memory that Vercel's build infrastructure uses. Elastic doesn't downgrade a fast but memory-intensive build, upgrades a build that's close to running out of memory, and runs the next deployment after an out-of-memory failure on a higher tier. Elastic also counts Turborepo cache hits when deciding whether to use a smaller machine, so a warm-cache build doesn't trigger a downgrade.
+
+### Check which machine a deployment used and what it cost
+
+Each deployment shows its billable duration and CPU minutes in the dashboard, in Vercel CLI, and in the REST API. Billable duration is the build and post-build time combined, rounded up to the next whole minute. CPU minutes are the billable duration multiplied by the build machine's vCPUs.
+
+To see the breakdown from the CLI, update to Vercel CLI 59.23.1 or later and run [`vercel inspect`](/docs/cli/inspect) with the deployment URL or ID. The output lists the vCPU count next to the CPU minutes:
+
+```bash filename="terminal"
+vercel inspect your_deployment_url_here
+
+  Duration
+
+    build duration       5m 9s
+    post-build duration  3m 21s
+    billable duration    9m
+    CPU Minutes Usage    270 minutes (9m x 30vCPU)
+```
+
+To find which part of a build takes the longest, open [Build Diagnostics](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fbuild-diagnostics\&title=Visit+Build+Diagnostics) in your project's **Observability** section. Build Diagnostics shows the time per build step, so you can tell whether clone, install, or the build command takes the longest.
+
+A larger build machine lowers Build CPU Minutes only if it cuts build time by at least as much as it adds vCPUs. To compare build machines and lower your usage, see [How to reduce build costs on Vercel](/kb/guide/how-reduce-build-costs).
 
 ### When to choose a fixed machine type instead
 

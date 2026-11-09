@@ -13,8 +13,8 @@ related:
 summary: "Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless collaboration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/edit-mode.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "20a7d4607c14e736dfd769cd54542763acb194bc9f239905aa16ebf99fa73a0d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "788587770c1f69b0e610c99e8dbd2da8aff2fb4c9bd2473e1e5ee01748a197a6"
 ---
 
 # Edit Mode
@@ -40,7 +40,7 @@ Content editing in CMSs usually occurs separately from the website's layout and 
 - [Visual Editing can now be used with DatoCMS](https://vercel.com/changelog/visual-editing-can-now-be-used-with-datocms)
 - [Visual Editing can now be used with Builder.io ](https://vercel.com/changelog/visual-editing-can-now-be-used-with-builder-io)
 - [Visual Editing can now be used with TinaCMS](https://vercel.com/changelog/visual-editing-can-now-be-used-with-tinacms)
-- [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
+- [Vercel + Sanity: Innovating on a faster, more collaborative Web](https://vercel.com/blog/vercel-sanity-innovating-on-a-faster-collaborative-web)
 
 Full cross-link map for this page: [/docs/edit-mode.graph.md](/docs/edit-mode.graph.md)
 <!-- /docsgraph:related -->

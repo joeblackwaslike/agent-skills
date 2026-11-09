@@ -8,18 +8,21 @@ type: reference
 prerequisites:
   []
 related:
+  - /docs/routing/rewrites
+  - /docs/errors/DNS_HOSTNAME_NOT_FOUND
+  - /docs/errors/DNS_HOSTNAME_EMPTY
+  - /docs/errors/DNS_HOSTNAME_SERVER_ERROR
   - /docs/domains/working-with-domains/view-and-search-domains
-  - /docs/domains/working-with-dns
 summary: No error with the DNS resolution but no IP was returned. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/dns_hostname_resolve_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "88cfeac0549153a0eeccd786b509cfd67c6a547a82eab9b7c7f9792b9a15dc9d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d5a8f1ab25c19af5fc6c3c1445fb89f2a9b7be7f37e4bc06e19feb0d62da0bd5"
 ---
 
 # DNS_HOSTNAME_RESOLVE_FAILED
 
-The `DNS_HOSTNAME_RESOLVE_FAILED` error occurs when attempting to connect to a private IP from an external rewrite. Although there's no error with the DNS resolution, no IP address is returned. This could be due to an issue with the domain name being queried, corrupted or malformed DNS responses, or network issues.
+The `DNS_HOSTNAME_RESOLVE_FAILED` error occurs when Vercel can't resolve the destination hostname of an [external rewrite](/docs/routing/rewrites#rewrites-to-external-origins) to an IP address. This could be due to an issue with the domain name being queried, corrupted or malformed DNS responses, or network issues. If the domain does not exist, the DNS record is empty, or the DNS server reports a server failure (`SERVFAIL`), Vercel returns a more specific error instead: [`DNS_HOSTNAME_NOT_FOUND`](/docs/errors/DNS_HOSTNAME_NOT_FOUND), [`DNS_HOSTNAME_EMPTY`](/docs/errors/DNS_HOSTNAME_EMPTY), or [`DNS_HOSTNAME_SERVER_ERROR`](/docs/errors/DNS_HOSTNAME_SERVER_ERROR).
 
 **Error Code:** `502`
 

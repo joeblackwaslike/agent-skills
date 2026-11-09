@@ -16,8 +16,8 @@ related:
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e932a224a49e67dbdec0318c29f8a9e4ee4c27e39aeac0e354041f461d349c1a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5475ea458eddfab416eed3b3ec151ce33334d4a648ff9199d5811314594d404d"
 ---
 
 # Webhooks API Reference
@@ -33,8 +33,8 @@ Vercel Integrations allow you to subscribe to certain trigger-based events throu
 - [New webhook events for domain management](https://vercel.com/changelog/new-webhook-events-for-domain-management)
 - [Subscribe to webhook events for Vercel Flags](https://vercel.com/changelog/subscribe-to-webhook-events-for-vercel-flags)
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 - [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action) — These actions allow integration providers to set up automated tasks with Vercel deployments.
+- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 - [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
 - [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
@@ -51,7 +51,6 @@ The webhook payload is a JSON object with the following keys.
 | **type**      | [String](/docs/rest-api#types)       | The [event type](#supported-event-types).                                                             |
 | **id**        | [ID](/docs/rest-api#types)           | The ID of the webhook delivery.                                                                       |
 | **createdAt** | [Date](/docs/rest-api#types)         | The date and time the webhook event was generated.                                                    |
-| **region**    | [String](/docs/rest-api#types)       | The region the event occurred in (possibly null).                                                     |
 | **payload**   | [Object](/docs/rest-api#types)       | The payload of the webhook. See [Supported Event Types](#supported-event-types) for more information. |
 
 ## Supported Event Types
@@ -76,6 +75,10 @@ Occurs whenever a deployment is canceled.
 | **payload.regions**          | [List](/docs/rest-api#types)         | An array of the supported regions for the deployment.                                      |
 
 ### deployment.check-rerequested
+
+> **💡 Note:** This event is deprecated. You can no longer add it to an integration webhook.
+> Vercel continues to deliver it to integration webhooks that already listen for
+> it.
 
 Occurs when a user has requested for a [check](/docs/checks) to be rerun after it failed.
 
@@ -226,10 +229,12 @@ Occurs when Vercel accepts an instant rollback request.
 | **payload.project.id**       | [ID](/docs/rest-api#types)           | The ID of the project.                      |
 | **payload.fromDeploymentId** | [ID](/docs/rest-api#types)           | The ID of the deployment being replaced.    |
 | **payload.toDeploymentId**   | [ID](/docs/rest-api#types)           | The ID of the deployment being restored.    |
+| **payload.fromDeploymentUrl** | [String](/docs/rest-api#types)      | The URL of the deployment being replaced (possibly null). |
+| **payload.toDeploymentUrl**   | [String](/docs/rest-api#types)      | The URL of the deployment being restored (possibly null). |
 
 ### deployment.ready
 
-Occurs whenever a deployment is ready.
+Occurs whenever a deployment is successfully built and your integration has registered at least one [check](/docs/checks).
 
 | Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
@@ -248,11 +253,11 @@ Occurs whenever a deployment is ready.
 
 ### deployment.succeeded
 
-Occurs whenever a deployment is successfully built and your integration has registered at least one [check](/docs/checks).
+Occurs whenever a deployment is ready.
 
 > **💡 Note:** This event gets fired after all blocking Checks have passed. See [
-> `deployment-prepared`
-> ](/docs/webhooks/webhooks-api#deployment-prepared) if you registered
+> `deployment.ready`
+> ](/docs/webhooks/webhooks-api#deployment.ready) if you registered
 > Checks.
 
 | Key                          | [Type](/docs/rest-api#types) | Description                                                                                |
@@ -281,7 +286,7 @@ Occurs whenever a domain has been created.
 | **payload.domain.name**      | [String](/docs/rest-api#types)       | The Domain name created.                        |
 | **payload.domain.delegated** | [Boolean](/docs/rest-api#types)      | Whether or not the domain was delegated/shared. |
 
-### domain.auto-renew-changed
+### domain.auto-renew.changed
 
 Occurs whenever a domain's auto-renewal setting is changed.
 
@@ -290,10 +295,10 @@ Occurs whenever a domain's auto-renewal setting is changed.
 | **payload.team.id**     | [ID](/docs/rest-api#types)      | The ID of the event's team (possibly null). |
 | **payload.user.id**     | [ID](/docs/rest-api#types)      | The ID of the event's user.                 |
 | **payload.domain.name** | [String](/docs/rest-api#types)  | The name of the domain.                     |
-| **payload.previous**    | [Boolean](/docs/rest-api#types) | The previous auto-renewal setting.          |
-| **payload.next**        | [Boolean](/docs/rest-api#types) | The new auto-renewal setting.               |
+| **payload.previous.renew** | [Boolean](/docs/rest-api#types) | The previous auto-renewal setting.          |
+| **payload.next.renew**     | [Boolean](/docs/rest-api#types) | The new auto-renewal setting.               |
 
-### domain.certificate-add
+### domain.certificate.add
 
 Occurs whenever a new SSL certificate is added for a domain.
 
@@ -303,7 +308,7 @@ Occurs whenever a new SSL certificate is added for a domain.
 | **payload.user.id** | [ID](/docs/rest-api#types)     | The ID of the event's user.                            |
 | **payload.cert**    | [Object](/docs/rest-api#types) | The certificate object containing certificate details. |
 
-### domain.certificate-add-failed
+### domain.certificate.add.failed
 
 Occurs whenever adding a new SSL certificate for a domain fails.
 
@@ -313,7 +318,7 @@ Occurs whenever adding a new SSL certificate for a domain fails.
 | **payload.user.id**  | [ID](/docs/rest-api#types)   | The ID of the event's user.                                      |
 | **payload.dnsNames** | [List](/docs/rest-api#types) | An array of DNS names for which the certificate addition failed. |
 
-### domain.certificate-deleted
+### domain.certificate.deleted
 
 Occurs whenever an SSL certificate is deleted for a domain.
 
@@ -323,7 +328,7 @@ Occurs whenever an SSL certificate is deleted for a domain.
 | **payload.user.id** | [ID](/docs/rest-api#types)     | The ID of the event's user.                            |
 | **payload.cert**    | [Object](/docs/rest-api#types) | The certificate object containing certificate details. |
 
-### domain.certificate-renew
+### domain.certificate.renew
 
 Occurs whenever an SSL certificate is renewed for a domain.
 
@@ -333,7 +338,7 @@ Occurs whenever an SSL certificate is renewed for a domain.
 | **payload.user.id** | [ID](/docs/rest-api#types)     | The ID of the event's user.                            |
 | **payload.cert**    | [Object](/docs/rest-api#types) | The certificate object containing certificate details. |
 
-### domain.certificate-renew-failed
+### domain.certificate.renew.failed
 
 Occurs whenever renewing an SSL certificate for a domain fails.
 
@@ -343,7 +348,7 @@ Occurs whenever renewing an SSL certificate for a domain fails.
 | **payload.user.id**  | [ID](/docs/rest-api#types)   | The ID of the event's user.                                     |
 | **payload.dnsNames** | [List](/docs/rest-api#types) | An array of DNS names for which the certificate renewal failed. |
 
-### domain.dns-records-changed
+### domain.dns.records.changed
 
 Occurs whenever DNS records for a domain are modified.
 
@@ -367,7 +372,7 @@ Occurs whenever a domain is renewed.
 | **payload.expirationDate** | [Date](/docs/rest-api#types)   | The new expiration date of the domain.      |
 | **payload.renewedAt**      | [Date](/docs/rest-api#types)   | The timestamp when the domain was renewed.  |
 
-### domain.renewal-failed
+### domain.renewal.failed
 
 Occurs whenever a domain renewal fails.
 
@@ -379,7 +384,7 @@ Occurs whenever a domain renewal fails.
 | **payload.errorReason** | [String](/docs/rest-api#types) | The reason why the renewal failed.               |
 | **payload.failedAt**    | [Date](/docs/rest-api#types)   | The timestamp when the renewal failed.           |
 
-### domain.transfer-in-completed
+### domain.transfer-in.completed
 
 Occurs whenever a domain transfer into Vercel is completed.
 
@@ -389,7 +394,7 @@ Occurs whenever a domain transfer into Vercel is completed.
 | **payload.user.id**     | [ID](/docs/rest-api#types)     | The ID of the event's user.                  |
 | **payload.domain.name** | [String](/docs/rest-api#types) | The name of the domain that was transferred. |
 
-### domain.transfer-in-failed
+### domain.transfer-in.failed
 
 Occurs whenever a domain transfer into Vercel fails.
 
@@ -399,7 +404,7 @@ Occurs whenever a domain transfer into Vercel fails.
 | **payload.user.id**     | [ID](/docs/rest-api#types)     | The ID of the event's user.                           |
 | **payload.domain.name** | [String](/docs/rest-api#types) | The name of the domain for which the transfer failed. |
 
-### domain.transfer-in-started
+### domain.transfer-in.started
 
 Occurs whenever a domain transfer into Vercel is initiated.
 
@@ -655,7 +660,7 @@ Occurs whenever a member is added, removed, or their role changed for an install
 | **payload.memberId**         | [ID](/docs/rest-api#types)           | The ID of the member.                                                                       |
 | **payload.role**             | [String](/docs/rest-api#types)       | The member's role: "ADMIN", "USER" or "NONE". "NONE" indicates the member has been removed. |
 | **payload.globalUserId**     | [ID](/docs/rest-api#types)           | The ID of the user. Requires separate permission.                                           |
-| **payload.userEmail**        | [String](/docs/rest-api#types)       | The email of the user. Requires separate permission.                                        |
+| **payload.userEmail**        | [String](/docs/rest-api#types)       | The email of the user, when available.                                                      |
 
 ### alerts.triggered
 
@@ -673,7 +678,7 @@ Occurs whenever an alert is triggered.
 | **payload.severity**                 | [String](/docs/rest-api#types) | The alert severity. Possible values are `low`, `medium`, `high`, and `critical`. Vercel calculates severity automatically, and only a completed Vercel Agent investigation sets `critical`. |
 | **payload.level**                    | [String](/docs/rest-api#types) | The legacy alert level derived from `severity`. Possible values are `warning`, `error`, and `critical`. Both `high` and `critical` severities map to `critical`, so use `severity` to distinguish them. |
 | **payload.initialSeverity**          | [String](/docs/rest-api#types) | The severity calculated when the alert first triggered, before any Vercel Agent investigation. Possible values are `low`, `medium`, and `high`. Optional.                                   |
-| **payload.alerts\[].startedAt**       | [String](/docs/rest-api#types) | ISO 8601 timestamp when this specific alert started.           |
+| **payload.alerts\[].startedAt**       | [Number](/docs/rest-api#types) | Timestamp when this specific alert started (milliseconds since epoch).           |
 | **payload.alerts\[].title**           | [String](/docs/rest-api#types) | Human-readable title for the alert.                            |
 | **payload.alerts\[].unit**            | [String](/docs/rest-api#types) | Unit of measurement (e.g., `requests`).                        |
 | **payload.alerts\[].formattedValues** | [Object](/docs/rest-api#types) | Formatted values for display purposes.                         |
@@ -759,8 +764,7 @@ Occurs whenever a project has been removed.
 
 Occurs whenever a project has been renamed.
 
-> **💡 Note:** This event is sent only when the integration has access to all projects in a
-> Vercel scope.
+> **💡 Note:** This event is sent only when the integration has access to the project.
 
 | Key                      | [Type](/docs/rest-api#types) | Description                                 |
 | ------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------- |
@@ -779,7 +783,7 @@ Occurs whenever a rolling release stage is approved and progresses to the next s
 | **payload.team.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                    |
 | **payload.user.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                                    |
 | **payload.project.id**                                | [ID](/docs/rest-api#types)           | The ID of the project.                                                                         |
-| **payload.project.name**                              | [String](/docs/rest-api#types)       | Name of the project.                                                                           |
+| **payload.projectName**                               | [String](/docs/rest-api#types)       | Name of the project.                                                                           |
 | **payload.rollingRelease**                            | [Object](/docs/rest-api#types)       | The current rolling release configuration.                                                     |
 | **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api#types)           | The ID of the project.                                                                         |
 | **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api#types)           | The ID of the team or user that owns the rolling release.                                      |
@@ -807,7 +811,7 @@ Occurs whenever a rolling release is completed successfully.
 | **payload.team.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                   |
 | **payload.user.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's user.                                   |
 | **payload.project.id**                                | [ID](/docs/rest-api#types)           | The ID of the project.                                        |
-| **payload.project.name**                              | [String](/docs/rest-api#types)       | Name of the project.                                          |
+| **payload.projectName**                               | [String](/docs/rest-api#types)       | Name of the project.                                          |
 | **payload.rollingRelease**                            | [Object](/docs/rest-api#types)       | The completed rolling release configuration.                  |
 | **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api#types)           | The ID of the project.                                        |
 | **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api#types)           | The ID of the team or user that owns the rolling release.     |
@@ -835,7 +839,7 @@ Occurs whenever a rolling release is aborted.
 | **payload.team.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                 |
 | **payload.user.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's user.                                 |
 | **payload.project.id**                                | [ID](/docs/rest-api#types)           | The ID of the project.                                      |
-| **payload.project.name**                              | [String](/docs/rest-api#types)       | Name of the project.                                        |
+| **payload.projectName**                               | [String](/docs/rest-api#types)       | Name of the project.                                        |
 | **payload.rollingRelease**                            | [Object](/docs/rest-api#types)       | The aborted rolling release configuration.                  |
 | **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api#types)           | The ID of the project.                                      |
 | **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api#types)           | The ID of the team or user that owns the rolling release.   |
@@ -862,7 +866,7 @@ Occurs whenever a rolling release is started.
 | **payload.team.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                      |
 | **payload.user.id**                                   | [ID](/docs/rest-api#types)           | The ID of the event's user.                                                      |
 | **payload.project.id**                                | [ID](/docs/rest-api#types)           | The ID of the project.                                                           |
-| **payload.project.name**                              | [String](/docs/rest-api#types)       | Name of the project.                                                             |
+| **payload.projectName**                               | [String](/docs/rest-api#types)       | Name of the project.                                                             |
 | **payload.rollingRelease**                            | [Object](/docs/rest-api#types)       | The started rolling release configuration.                                       |
 | **payload.rollingRelease.projectId**                  | [ID](/docs/rest-api#types)           | The ID of the project.                                                           |
 | **payload.rollingRelease.ownerId**                    | [ID](/docs/rest-api#types)           | The ID of the team or user that owns the rolling release.                        |
@@ -988,7 +992,6 @@ The legacy webhook payload is a JSON object with the following keys.
 | **type**      | [String](/docs/rest-api#types)       | The [legacy event type](#legacy-event-types).                                                   |
 | **id**        | [ID](/docs/rest-api#types)           | The ID of the webhook delivery.                                                                 |
 | **createdAt** | [Number](/docs/rest-api#types)       | The date and time the webhook event was generated.                                              |
-| **region**    | [String](/docs/rest-api#types)       | The region the event occurred in (possibly null).                                               |
 | **clientId**  | [ID](/docs/rest-api#types)           | The ID of integration's client.                                                                 |
 | **ownerId**   | [ID](/docs/rest-api#types)           | The ID of the event owner (user or team).                                                       |
 | **teamId**    | [ID](/docs/rest-api#types)           | The ID of the event's team (possibly null).                                                     |
@@ -1104,7 +1107,7 @@ Occurs whenever a deployment has failed.
 ### deployment-check-rerequested
 
 > **💡 Note:** This event is replaced by [
-> deployment.check-rerequested](#deployment.check-rerequested).
+> deployment.check-rerequested](#deployment.check-rerequested), which is also deprecated.
 
 Occurs when a user has requested for a [check](/docs/checks) to be rerun after it failed.
 
@@ -1115,8 +1118,10 @@ Occurs when a user has requested for a [check](/docs/checks) to be rerun after i
 
 ### deployment-checks-completed
 
-> **💡 Note:** This event has been removed. [deployment.succeeded](#deployment.succeeded) can
-> be used for the same purpose.
+> **💡 Note:** This event is deprecated. Vercel continues to deliver it to integration
+> webhooks that already listen for it.
+> [deployment.succeeded](#deployment.succeeded) can be used for the same
+> purpose.
 
 Occurs when all checks for a deployment have completed. This does not indicate that they have all passed, only that they are no longer running. It is possible for webhook to occur multiple times for a single deployment if any checks are [re-requested](/docs/checks/creating-checks#rerunning-checks).
 
@@ -1132,7 +1137,7 @@ Each item in `checks` has the following properties:
 | **payload.id**            | [ID](/docs/rest-api#types)           | The unique identifier of the check. Always prepended with `check_`.                             |
 | **payload.name**          | [String](/docs/rest-api#types)       | The name of the check.                                                                          |
 | **payload.status**        | [String](/docs/rest-api#types)       | The status of the check. One of `registered`, `running` or `completed`                          |
-| **payload.conclusion**    | [String](/docs/rest-api#types)       | The conclusion of the check. One of `cancelled`, `failed`, `neutral`, `succeeded` or `skipped`. |
+| **payload.conclusion**    | [String](/docs/rest-api#types)       | The conclusion of the check. One of `canceled`, `failed`, `neutral`, `succeeded`, `skipped`, or `stale`. |
 | **payload.blocking**      | [Boolean](/docs/rest-api#types)      | Whether a deployment should be blocked or not.                                                  |
 | **payload.integrationId** | [String](/docs/rest-api#types)       | The unique identifier of the integration.                                                       |
 
@@ -1218,7 +1223,7 @@ Occurs whenever a domain has been created.
 | Key                          | [Type](/docs/rest-api#types) | Description                                     |
 | ---------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------- |
 | **payload.domain.name**      | [String](/docs/rest-api#types)       | The Domain name created.                        |
-| **payload.domain.delegated** | [String](/docs/rest-api#types)       | Whether or not the domain was delegated/shared. |
+| **payload.domain.delegated** | [Boolean](/docs/rest-api#types)      | Whether or not the domain was delegated/shared. |
 
 ## Securing webhooks
 
@@ -1282,14 +1287,10 @@ export const config = {
 **pages/api/webhook-validator-example.js**
 
 ```js filename="pages/api/webhook-validator-example.js" framework="nextjs"
-import type { NextApiRequest, NextApiResponse } from 'next';
 import crypto from 'crypto';
 import getRawBody from 'raw-body';
 
-export default async function handler(
-  request: NextApiRequest,
-  response: NextApiResponse,
-) {
+export default async function handler(request, response) {
   const { INTEGRATION_SECRET } = process.env;
 
   if (typeof INTEGRATION_SECRET != 'string') {
@@ -1316,7 +1317,7 @@ export default async function handler(
   return response.status(200).end('OK');
 }
 
-function sha1(data: Buffer, secret: string): string {
+function sha1(data, secret) {
   return crypto.createHmac('sha1', secret).update(data).digest('hex');
 }
 
@@ -1378,14 +1379,10 @@ export const config = {
 **api/webhook-validator-example.js**
 
 ```js filename="api/webhook-validator-example.js" framework="other"
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 import crypto from 'crypto';
 import getRawBody from 'raw-body';
 
-export default async function handler(
-  request: VercelRequest,
-  response: VercelResponse,
-) {
+export default async function handler(request, response) {
   const { INTEGRATION_SECRET } = process.env;
 
   if (typeof INTEGRATION_SECRET != 'string') {
@@ -1412,7 +1409,7 @@ export default async function handler(
   return response.status(200).end('OK');
 }
 
-function sha1(data: Buffer, secret: string): string {
+function sha1(data, secret) {
   return crypto.createHmac('sha1', secret).update(data).digest('hex');
 }
 
@@ -1428,7 +1425,7 @@ export const config = {
 ```ts filename="app/api/webhook-validator-example/route.ts" framework="nextjs-app"
 import crypto from 'crypto';
 
-export async function GET(request: Request) {
+export async function POST(request: Request) {
   const { INTEGRATION_SECRET } = process.env;
 
   if (typeof INTEGRATION_SECRET != 'string') {
@@ -1468,7 +1465,7 @@ function sha1(data: Buffer, secret: string): string {
 ```js filename="app/api/webhook-validator-example/route.js" framework="nextjs-app"
 import crypto from 'crypto';
 
-export async function GET(request) {
+export async function POST(request) {
   const { INTEGRATION_SECRET } = process.env;
 
   if (typeof INTEGRATION_SECRET != 'string') {
@@ -1498,7 +1495,7 @@ export async function GET(request) {
   });
 }
 
-function sha1(data: Buffer, secret: string): string {
+function sha1(data, secret) {
   return crypto.createHmac('sha1', secret).update(data).digest('hex');
 }
 ```

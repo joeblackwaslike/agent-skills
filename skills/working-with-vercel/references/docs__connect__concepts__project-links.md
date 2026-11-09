@@ -17,8 +17,8 @@ related:
 summary: A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a runtime token request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/project-links.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "02820787840adb44b6a32179716ab7aaf3bad60d8115452f58b4e83a16ad7520"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ae734185da859df8db250be71f3689a4d71a3e87cd1d28f0cd870eac5dcd0a58"
 ---
 
 # Project links in Vercel Connect
@@ -36,8 +36,8 @@ A **project link** connects a team-owned connector to one Vercel project on the 
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking) — Learn how to link existing Vercel Projects with Vercel CLI.
 - [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [Disconnect a connector from a project environment](https://vercel.com/docs/rest-api/connect/disconnect-a-connector-from-a-project-environment) — DELETE /v1/connect/connectors/{connector}/projects/{projectId}/environments/{environment} — Remove a connector's access
+- [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
-- [Networking](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking) — Vercel MCP tools for networking.
 
 Full cross-link map for this page: [/docs/connect/concepts/project-links.graph.md](/docs/connect/concepts/project-links.graph.md)
 <!-- /docsgraph:related -->
@@ -74,16 +74,16 @@ Repeat `--environment`, or provide a comma-separated list, to enable more than o
 
 ## Errors
 
-Two runtime errors map to project-link state:
+Two runtime errors map to project-link state. In both cases, Vercel Connect rejects the request with a `403` response, and the SDK throws a `ConnectError` with the code `forbidden`. The error message identifies the cause:
 
-- `ClientNotLinkedToProjectError`: no link exists between the calling project and this connector.
-- `ClientNotEnabledForEnvironmentError`: the link exists, but its environment list does not include the environment the OIDC token was issued for.
+- `Connector is not linked to this project`: no link exists between the calling project and this connector.
+- `Connector is not enabled for this environment`: the link exists, but its environment list does not include the environment the OIDC token was issued for.
 
 Both are terminal for user-authenticated calls. A team member must use the dashboard's project-page link UI or the user-auth upsert endpoint to fix them.
 
 ## Lifecycle
 
-Project links are created when a team member attaches a connector to a project and removed with `vercel connect detach` or from the dashboard. Removing a link does not delete the connector or any installations. It only revokes the project's ability to request tokens.
+Project links are created when a team member attaches a connector to a project and removed with `vercel connect detach` or from the dashboard. Removing a link does not delete the connector or any installations. It revokes the project's ability to request tokens and removes the project's trigger destinations from the connector.
 
 Deleting a Custom Environment immediately prevents deployments that use its identity from requesting tokens. Vercel Connect also removes the environment from its project links. Other environments remain linked. If no environments remain, Vercel removes the project link.
 

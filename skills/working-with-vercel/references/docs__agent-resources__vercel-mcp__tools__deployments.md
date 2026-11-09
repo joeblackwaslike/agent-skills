@@ -15,8 +15,8 @@ related:
 summary: Vercel MCP tools for deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d810da5517e2a100cdc0c5ff83499e03e208c3ce73285ae102ace6369b1648a8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c2b82f094bd8d9fb8a3d625eeb21e2e9480ca319608a7b4809e678180c004675"
 ---
 
 # Deployments
@@ -32,8 +32,8 @@ Create and inspect deployments for your projects, including their files and buil
 - [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
 - [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments.graph.md)
 <!-- /docsgraph:related -->

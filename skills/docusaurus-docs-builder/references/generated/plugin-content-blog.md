@@ -1,8 +1,8 @@
 ---
 title: "Blog Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "5d697f1ce5aacfce5ec09bec5f250708b36563d4f5cfdc75a550d2a008fe9dd1"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "2e27b08561458ccb796694cf66be840f8b89eeff55fed9862be6a61b4662ceaf"
 ---
 
 # Blog Plugin
@@ -221,4 +221,4 @@ Read the [i18n introduction](https://docusaurus.io/docs/i18n/introduction) first
 ```
 website/i18n/[locale]/docusaurus-plugin-content-blog││ # translations for website/blog├── authors.yml├── first-blog-post.md├── second-blog-post.md││ # translations for the plugin options that will be rendered└── options.json
 ```
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/api/plugins/plugin-content-blog.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/api/plugins/plugin-content-blog.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

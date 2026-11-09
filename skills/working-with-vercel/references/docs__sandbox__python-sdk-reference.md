@@ -16,8 +16,8 @@ related:
 summary: Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persistence, and network policies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/python-sdk-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1975cad63e5632322dfaca64a056fc633c5b188f87c7faab0a31a19d82ec46e9"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "cbc5251ceecde9564c8caabd18293c8611252d82be6c127155d8b90c68a00de0"
 ---
 
 # Python SDK Reference
@@ -37,10 +37,10 @@ Use the Vercel Sandbox Python SDK to create isolated Linux microVMs, run process
 - [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 - [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes) — Vercel MCP tools for sandboxes.
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
 
 Full cross-link map for this page: [/docs/sandbox/python-sdk-reference.graph.md](/docs/sandbox/python-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -79,7 +79,7 @@ from vercel import sandbox
 
 async def main() -> None:
     async with sandbox.create_sandbox() as box:
-        result = await box.run_process(
+        result = await box.run_command(
             "python",
             ["-c", "print('Hello from Vercel Sandbox!')"],
             capture_output=True,
@@ -147,7 +147,7 @@ async def main() -> None:
     )
 
     try:
-        await box.run_process("uv", ["sync"], check=True)
+        await box.run_command("uv", ["sync"], check=True)
     finally:
         await box.stop()
 
@@ -157,7 +157,7 @@ asyncio.run(main())
 
 ### `fork_sandbox()`
 
-Create a sandbox from an existing named sandbox:
+Create a sandbox from an existing sandbox:
 
 ```python filename="main.py"
 from vercel import sandbox
@@ -169,7 +169,7 @@ async with sandbox.fork_sandbox(
     resources=SandboxResources(vcpus=4, memory=8192),
     tags={"purpose": "debug"},
 ) as forked:
-    result = await forked.run_process(
+    result = await forked.run_command(
         "python",
         ["script.py"],
         capture_output=True,
@@ -178,7 +178,7 @@ async with sandbox.fork_sandbox(
     print(result.stdout)
 ```
 
-The fork uses the named source sandbox as its starting point and inherits its configuration and Secure Compute network (`network_id`), except for drive mounts. Values passed to `fork_sandbox()` replace the corresponding inherited values. Pass `network_id` to override the inherited network. Pass `mounts` to attach drives to the fork. Like `create_sandbox()`, the returned operation is single-use, awaitable, and an async context manager. Context-manager exit stops and destroys the fork by default.
+The fork uses the source sandbox as its starting point and inherits its configuration and Secure Compute network (`network_id`), except for drive mounts. Values passed to `fork_sandbox()` replace the corresponding inherited values. Pass `network_id` to override the inherited network. Pass `mounts` to attach drives to the fork. Like `create_sandbox()`, the returned operation is single-use, awaitable, and an async context manager. Context-manager exit stops and destroys the fork by default.
 
 ## Retrieve and resume sandboxes
 
@@ -204,11 +204,11 @@ content = await box.fs.read_text("state.json")
 print(content)
 ```
 
-This behavior applies to `run_process()`, `create_process()`, process queries, methods on `box.fs`, `extend_execution_time_limit()`, `update_network_policy()`, and `snapshot()`. Lifecycle and sandbox configuration operations, including `stop()`, `destroy()`, and `update()`, don't auto-resume.
+This behavior applies to `run_command()`, `create_command()`, command queries, methods on `box.fs`, `extend_execution_time_limit()`, `update_network_policy()`, and `snapshot()`. Lifecycle and sandbox configuration operations, including `stop()`, `destroy()`, and `update()`, don't auto-resume.
 
 ### `get_or_create_sandbox()`
 
-Retrieve a named sandbox or create it when it doesn't exist:
+Retrieve a sandbox by name or create it when it doesn't exist:
 
 ```python filename="main.py"
 box, created = await sandbox.get_or_create_sandbox(
@@ -217,7 +217,7 @@ box, created = await sandbox.get_or_create_sandbox(
 )
 
 if created:
-    await box.run_process("uv", ["sync"], check=True)
+    await box.run_command("uv", ["sync"], check=True)
 ```
 
 The function resumes an existing sandbox by default. Pass `resume=False` for a passive lookup. If the sandbox's latest snapshot no longer exists, the SDK deletes the stale sandbox and creates a replacement with the same name. The `created` value is `True` when the SDK creates or replaces the sandbox.
@@ -290,7 +290,7 @@ A `Sandbox` handle describes the persistent sandbox and its current runtime sess
 | `memory`               | `int \| None`                     | Memory in megabytes.                                                     |
 | `vcpus`                | `int \| None`                     | Number of virtual CPUs.                                                  |
 | `execution_time_limit` | `timedelta \| None`               | Current session execution limit.                                         |
-| `network_policy`       | `NetworkPolicy \| None`           | Current outbound network policy.                                         |
+| `network_policy`       | `NetworkPolicyReadback \| None`   | Cached saved-policy metadata. See [policy metadata](#inspect-policy-metadata). |
 | `network_id`           | `str \| None`                     | Attached Secure Compute network ID.                                      |
 | `snapshot_expiration`  | `timedelta \| None`               | Default snapshot expiration.                                             |
 | `snapshot_retention`   | `SnapshotRetentionState \| None`  | Active retention policy.                                                 |
@@ -313,7 +313,7 @@ Use `session()` when you want to scope work to the sandbox's active runtime sess
 box = await sandbox.get_sandbox(name="my-development-environment")
 
 async with box.session() as runtime_session:
-    result = await runtime_session.run_process(
+    result = await runtime_session.run_command(
         "python",
         ["script.py"],
         capture_output=True,
@@ -370,7 +370,7 @@ await box.update(
 )
 ```
 
-You can update `ports`, `execution_time_limit`, `resources`, `persistent`, `network_policy`, `network_id`, `env`, `tags`, `mounts`, `snapshot_expiration`, `snapshot_retention`, `current_snapshot_id`, `region`, and `failover_regions`. Only non-`None` values are sent, except that `snapshot_retention=None` removes the retention policy and `network_id=None` detaches the [Secure Compute](/docs/sandbox/concepts/secure-compute) network. Network changes apply from the sandbox's next session. `ports` replaces the complete exposed port list. `mounts` replaces all drive mounts for the next session, and an empty mapping removes all mounts. Pass `failover_regions=[]` to clear failover regions. Set `current_snapshot_id` to choose the snapshot restored on the next resume. The method refreshes and returns the same `Sandbox` handle.
+You can update `ports`, `execution_time_limit`, `resources`, `persistent`, `network_policy`, `network_id`, `env`, `tags`, `mounts`, `snapshot_expiration`, `snapshot_retention`, `current_snapshot_id`, `region`, and `failover_regions`. Only non-`None` values are sent, except that `snapshot_retention=None` removes the retention policy and `network_id=None` detaches the [Secure Compute](/docs/sandbox/concepts/secure-compute) network. Changes to `network_id` apply from the sandbox's next session. For saved and live `network_policy` updates, see [updating a running session](#update-a-running-session). `ports` replaces the complete exposed port list. `mounts` replaces all drive mounts for the next session, and an empty mapping removes all mounts. Pass `failover_regions=[]` to clear failover regions. Set `current_snapshot_id` to choose the snapshot restored on the next resume. The method refreshes and returns the same `Sandbox` handle.
 
 ### `extend_execution_time_limit()`
 
@@ -399,7 +399,7 @@ Delete the sandbox and its sessions. By default, snapshots remain until they exp
 await box.destroy()
 ```
 
-To delete snapshots that no other sandbox uses, pass `delete_orphan_snapshots=True` to `destroy()`. Context-managed sandbox creation deletes these orphaned snapshots on exit by default.
+To asynchronously delete snapshots that no other sandbox uses, pass `delete_orphan_snapshots=True` to `destroy()`. Snapshots referenced by another sandbox remain available. Context-managed sandbox creation requests this orphan cleanup on exit by default, unlike an explicit `destroy()` call.
 
 ### `list_sessions()` and `list_snapshots()`
 
@@ -517,12 +517,12 @@ Use `await sandbox.delete_drive(name="workspace-cache")` when you don't have a d
 
 ## Run processes
 
-### `run_process()`
+### `run_command()`
 
 Run a process and wait for it to exit:
 
 ```python filename="main.py"
-result = await box.run_process(
+result = await box.run_command(
     "python",
     ["-m", "pytest"],
     env={"PYTHONUNBUFFERED": "1"},
@@ -536,31 +536,35 @@ print(result.stdout)
 print(result.stderr)
 ```
 
-By default, `run_process()` streams remote stdout and stderr to the matching local streams. Set `capture_output=True` to store both streams on the returned `CompletedProcess`. You can stream to custom text writers with `stdout` and `stderr`.
+`run_command()` replaces `run_process()`, which still works as a deprecated alias and emits a `DeprecationWarning`.
 
-| Parameter        | Type                         | Default  | Description                                                    |
-| ---------------- | ---------------------------- | -------- | -------------------------------------------------------------- |
-| `command`        | `str`                        | Required | Executable or command name.                                    |
-| `args`           | `Sequence[str] \| None`      | `None`   | Arguments excluding the executable.                            |
-| `cwd`            | `str \| None`                | `None`   | Working directory.                                             |
-| `env`            | `Mapping[str, str] \| None`  | `None`   | Environment variables added to the process.                    |
-| `sudo`           | `bool`                       | `False`  | Run with elevated privileges.                                  |
-| `kill_after`     | `float \| timedelta \| None` | `None`   | Server-side time before `SIGKILL`. Numbers represent seconds.  |
-| `check`          | `bool`                       | `False`  | Raise `subprocess.CalledProcessError` for a nonzero exit code. |
-| `stdout`         | `TextIO \| int \| None`      | `None`   | Local destination or `subprocess` output sentinel.             |
-| `stderr`         | `TextIO \| int \| None`      | `None`   | Local destination or `subprocess` output sentinel.             |
-| `capture_output` | `bool`                       | `False`  | Capture stdout and stderr on the result.                       |
+By default, `run_command()` streams remote stdout and stderr to the matching local streams. Set `capture_output=True` to store both streams on the returned `CompletedProcess`. You can stream to custom text writers with `stdout` and `stderr`.
+
+| Parameter        | Type                                              | Default  | Description                                                                    |
+| ---------------- | ------------------------------------------------- | -------- | ------------------------------------------------------------------------------ |
+| `command`        | `str`                                             | Required | Executable or command name.                                                    |
+| `args`           | `Sequence[str] \| None`                           | `None`   | Arguments excluding the executable.                                            |
+| `cwd`            | `str \| None`                                     | `None`   | Working directory.                                                             |
+| `env`            | `Mapping[str, str] \| None`                       | `None`   | Environment variables added to the process.                                    |
+| `sudo`           | `bool`                                            | `False`  | Run with elevated privileges.                                                  |
+| `kill_after`     | `float \| timedelta \| None`                      | `None`   | Server-side time before `SIGKILL`. Numbers represent seconds.                  |
+| `check`          | `bool`                                            | `False`  | Raise `subprocess.CalledProcessError` for a nonzero exit code.                 |
+| `stdout`         | `TextIO \| int \| None`                           | `None`   | Local destination or `subprocess` output sentinel.                             |
+| `stderr`         | `TextIO \| int \| None`                           | `None`   | Local destination or `subprocess` output sentinel.                             |
+| `capture_output` | `bool`                                            | `False`  | Capture stdout and stderr on the result.                                       |
+| `input`          | `str \| bytes \| bytearray \| memoryview \| None` | `None`   | Data written to stdin, which is then closed. Text is encoded as UTF-8.         |
+| `on_start`       | `Callable[[Command], None] \| None`               | `None`   | Synchronous callback that receives a `Command` handle when the process starts. |
 
 `CompletedProcess` includes `id`, `name`, `args`, `cwd`, `session_id`, `started_at`, `returncode`, `stdout`, and `stderr`. Its `check_returncode()` method raises `subprocess.CalledProcessError` after the process completes unsuccessfully.
 
-### `create_process()`
+### `create_command()`
 
 Start a process and return before it exits:
 
 ```python filename="main.py"
 import sys
 
-process = await box.create_process(
+process = await box.create_command(
     "sh",
     ["-lc", "for i in 1 2 3; do echo $i; sleep 1; done"],
 )
@@ -572,37 +576,56 @@ async for line in process.stdout:
 returncode = await process.wait()
 ```
 
-`create_process()` accepts `command`, `args`, `cwd`, `env`, `sudo`, and `kill_after`. It also accepts `stdout` and `stderr` using `subprocess.PIPE`, `subprocess.DEVNULL`, or `subprocess.STDOUT`. Both streams default to `subprocess.PIPE`.
+`create_command()` replaces `create_process()`, which still works as a deprecated alias and emits a `DeprecationWarning`.
 
-### Process properties and methods
+`create_command()` accepts `command`, `args`, `cwd`, `env`, `sudo`, and `kill_after`. It also accepts `stdout` and `stderr` using `subprocess.PIPE`, `subprocess.DEVNULL`, or `subprocess.STDOUT`. Both streams default to `subprocess.PIPE`. Pass `stdin=subprocess.PIPE` to write to the process's standard input. The default, `None`, gives the process an empty stdin, as does `subprocess.DEVNULL`.
 
-| Member             | Description                                                                            |
-| ------------------ | -------------------------------------------------------------------------------------- |
-| `id`               | Process identifier.                                                                    |
-| `name`             | Executable name.                                                                       |
-| `args`             | Command arguments.                                                                     |
-| `cwd`              | Working directory.                                                                     |
-| `session_id`       | Owning runtime session.                                                                |
-| `started_at`       | Unix start timestamp.                                                                  |
-| `returncode`       | Exit code, or `None` while running.                                                    |
-| `status`           | `ProcessStatus.RUNNING` or `ProcessStatus.EXITED`.                                     |
-| `stdout`, `stderr` | Single-use `TextReader` streams, or `None` when dropped or merged.                     |
-| `stdin`            | Always `None`. Process standard input isn't supported.                                 |
-| `refresh()`        | Refresh process state.                                                                 |
-| `wait()`           | Wait for exit and return the exit code.                                                |
-| `communicate()`    | Read both streams and wait. Returns `(stdout, stderr)`. Process stdin isn't supported. |
-| `send_signal()`    | Send an integer, `signal.Signals` value, or name such as `"SIGTERM"`.                  |
-| `terminate()`      | Send `SIGTERM`.                                                                        |
-| `kill()`           | Send `SIGKILL`.                                                                        |
+This example writes to stdin and reads the output:
+
+```python filename="main.py"
+import subprocess
+
+process = await box.create_command("cat", stdin=subprocess.PIPE)
+
+stdout, stderr = await process.communicate("hello from stdin\n")
+print(stdout)
+```
+
+### Command properties and methods
+
+| Member             | Description                                                                                                                                           |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`               | Process identifier.                                                                                                                                   |
+| `name`             | Executable name.                                                                                                                                      |
+| `args`             | Command arguments.                                                                                                                                    |
+| `cwd`              | Working directory.                                                                                                                                    |
+| `session_id`       | Owning runtime session.                                                                                                                               |
+| `started_at`       | Unix start timestamp.                                                                                                                                 |
+| `returncode`       | Exit code, or `None` while running.                                                                                                                   |
+| `status`           | `CommandStatus.RUNNING` or `CommandStatus.EXITED`.                                                                                                    |
+| `stdout`, `stderr` | Single-use `TextReader` streams, or `None` when dropped or merged.                                                                                    |
+| `stdin`            | A `CommandStdin` writer when created with `stdin=subprocess.PIPE`, otherwise `None`.                                                                  |
+| `refresh()`        | Refresh process state.                                                                                                                                |
+| `wait()`           | Wait for exit and return the exit code.                                                                                                               |
+| `communicate()`    | Write optional `input` to stdin, read both streams, and wait. Returns `(stdout, stderr)`. Passing `input` without a stdin writer raises `ValueError`. |
+| `send_signal()`    | Send an integer, `CommandSignal` member, or name such as `"SIGTERM"`. Passing `signal.Signals` is deprecated.                                         |
+| `terminate()`      | Send `SIGTERM`.                                                                                                                                       |
+| `kill()`           | Send `SIGKILL`.                                                                                                                                       |
 
 A `TextReader` supports `read()`, `readline()`, async iteration, and `aclose()`. Each stream moves forward and can't rewind.
 
-Get an existing process or list processes in the current session:
+A `CommandStdin` writer supports `send()` for bytes and `aclose()` to close stdin. Each `send()` returns once the process accepts the bytes. After the process exits or stops reading, `send()` raises `anyio.BrokenResourceError`. If a request fails, it raises `SandboxStdinError`.
+
+Get an existing command or list commands in the current session:
 
 ```python filename="main.py"
-process = await box.get_process("cmd_123", wait=True)
-processes = await box.query_processes()
+process = await box.get_command("cmd_123", wait=True)
+processes = await box.query_commands()
 ```
+
+`get_process()` and `query_processes()` are deprecated aliases for `get_command()` and `query_commands()`. A command handle returned by `get_command()` or `query_commands()` always has a `stdin` writer. If the process was started without stdin, the first `send()` raises `SandboxStdinError`.
+
+`communicate()` always closes stdin when you pass `input`, even an empty string. With no `input`, it closes stdin only if the handle owns it: the command was created with `stdin=subprocess.PIPE`, or the handle has written to it. A handle from `get_command()` or `query_commands()` leaves stdin open, so a command that reads until end of file, such as `cat`, keeps running and `communicate()` waits for it. Call `communicate("")` or `await process.stdin.aclose()` to send end of file.
 
 ## Manage files
 
@@ -694,6 +717,10 @@ For binary uploads, pass `size` when you know the expected byte count. The SDK r
 
 ### Create and restore a snapshot
 
+Keep the producer sandbox until restoration completes. A default `create_sandbox()` context stops and destroys its sandbox on exit, and asynchronously deletes snapshots that no other sandbox uses. Snapshot expiration doesn't prevent this explicit deletion.
+
+Await the producer to manage its lifetime yourself. The restored sandbox's context handles its cleanup, and the nested `finally` blocks attempt producer and snapshot cleanup even if setup, restoration, or another cleanup step raises:
+
 ```python filename="main.py"
 import asyncio
 from datetime import timedelta
@@ -703,24 +730,23 @@ from vercel.sandbox import SnapshotSource
 
 
 async def main() -> None:
+    producer = await sandbox.create_sandbox()
     snapshot = None
-    restored = None
-
-    async with sandbox.create_sandbox() as box:
-        await box.fs.mkdir("state")
-        await box.fs.write_text("state/message.txt", "saved\n")
-        snapshot = await box.snapshot(expiration=timedelta(days=7))
-
     try:
-        restored = await sandbox.create_sandbox(
+        await producer.fs.mkdir("state")
+        await producer.fs.write_text("state/message.txt", "saved\n")
+        snapshot = await producer.snapshot(expiration=timedelta(days=7))
+
+        async with sandbox.create_sandbox(
             source=SnapshotSource(snapshot_id=snapshot.id),
-        )
-        print(await restored.fs.read_text("state/message.txt"))
+        ) as restored:
+            print(await restored.fs.read_text("state/message.txt"))
     finally:
-        if restored is not None:
-            await restored.destroy()
-        if snapshot is not None:
-            await snapshot.delete()
+        try:
+            await producer.destroy()
+        finally:
+            if snapshot is not None:
+                await snapshot.delete()
 
 
 asyncio.run(main())
@@ -846,7 +872,7 @@ retention = SnapshotRetention(
 )
 ```
 
-`count` must be between one and 100. `delete_evicted` controls whether Vercel deletes snapshots removed from the retention window.
+`count` must be between one and 10. `delete_evicted` controls whether Vercel deletes snapshots removed from the retention window.
 
 ## Configure network access
 
@@ -911,7 +937,7 @@ policy = NetworkPolicy.custom(
 
 ### Match requests
 
-Restrict a rule by path, method, query string, or headers:
+Select requests for a rule by path, method, query string, or headers. A matcher selects requests for an action; the matcher alone does not allow or deny traffic:
 
 ```python filename="main.py"
 from vercel.sandbox import (
@@ -919,6 +945,7 @@ from vercel.sandbox import (
     NetworkPolicyMatcher,
     NetworkPolicyRequestMatcher,
     NetworkPolicyRule,
+    NetworkPolicyTransform,
 )
 
 rule = NetworkPolicyRule(
@@ -931,17 +958,92 @@ rule = NetworkPolicyRule(
                 value=NetworkPolicyMatcher.regex("^(true|false)$"),
             )
         ],
-    )
+    ),
+    transform=[
+        NetworkPolicyTransform(headers={"x-api-key": "your_api_key_here"})
+    ],
 )
 ```
 
-`NetworkPolicyMatcher` provides `exact()`, `starts_with()`, and `regex()` constructors. `NetworkPolicyRule` also accepts `forward_url`. `NetworkPolicyTransform` can set headers and declare `header_names`. `NetworkPolicySubnets` accepts optional `allow` and `deny` CIDR lists.
+`NetworkPolicyMatcher` provides `exact()`, `starts_with()`, and `regex()` constructors. All specified dimensions must match; any listed method can match. `NetworkPolicyRule` requires exactly one action: a nonempty `transform`, `forward_url`, or `response`. `NetworkPolicyTransform` accepts `headers`, a mapping of header names to values. `NetworkPolicySubnets` accepts optional `allow` and `deny` CIDR lists.
 
-Update a running session's policy:
+### Return a direct response
+
+Use `NetworkPolicyResponse` to answer from the network proxy without contacting the destination. Rules run in declaration order, and the first matching rule handles the request. A rule without `match` matches all requests to the domain. If no rule matches, the request reaches the allowed domain unchanged.
+
+This policy injects a credential for `POST` requests to `/v1/` paths and returns `403` for all other requests to the domain:
+
+```python filename="policy.py"
+from vercel.sandbox import (
+    NetworkPolicy,
+    NetworkPolicyMatcher,
+    NetworkPolicyRequestMatcher,
+    NetworkPolicyResponse,
+    NetworkPolicyRule,
+    NetworkPolicyTransform,
+)
+
+policy = NetworkPolicy.custom(
+    allow={
+        "api.example.com": [
+            NetworkPolicyRule(
+                match=NetworkPolicyRequestMatcher(
+                    path=NetworkPolicyMatcher.starts_with("/v1/"),
+                    method=["POST"],
+                ),
+                transform=[
+                    NetworkPolicyTransform(
+                        headers={"x-api-key": "your_api_key_here"}
+                    )
+                ],
+            ),
+            NetworkPolicyRule(response=NetworkPolicyResponse(status_code=403)),
+        ]
+    }
+)
+```
+
+| `NetworkPolicyResponse` argument | Type | Required | Description |
+| --- | --- | --- | --- |
+| `status_code` | `int` | Yes | Integer from 200 through 599. |
+| `headers` | `Mapping[str, str] \| None` | No | Response headers. Names must be unique, ignoring case. |
+| `body` | `str \| None` | No | Response body. Requires `content_type`; omit for status codes 204, 205, and 304. |
+| `content_type` | `str \| None` | When `body` is set | Nonempty content type of the response body, required even for an empty string body. |
+
+The proxy manages `connection`, `content-length`, `keep-alive`, `proxy-connection`, `trailer`, `transfer-encoding`, and `upgrade`. The SDK or API rejects these response headers, regardless of capitalization. Python validates `connection`, `content-length`, and `transfer-encoding` locally with `ValueError`; the API rejects the other protected headers with HTTP 400.
+
+### Inspect policy metadata
+
+`box.network_policy` returns cached saved-policy metadata, and `runtime_session.network_policy` returns cached metadata for that session. Both properties return `NetworkPolicyReadback | None`. Reading these properties doesn't fetch fresh state.
+
+Readback omits secret header values, matcher values, response headers and bodies, and the original ordering across action types. You cannot submit readback as a `NetworkPolicy`. Retain the authored policy separately for updates.
+
+| Exported type | Fields |
+| --- | --- |
+| `NetworkPolicyReadback` | `mode`, `allowed_domains`, `subnets`, `injection_rules`, `forward_rules`, and `response_rules`. |
+| `NetworkPolicyInjectionRuleSummary` | `domain`, `header_names`, and `match_dimensions`. Header names contain no secret values. |
+| `NetworkPolicyForwardRuleSummary` | `domain`, `forward_url`, and `match_dimensions`. |
+| `NetworkPolicyResponseRuleSummary` | `domain`, `status_code`, and `match_dimensions`. |
+
+The domain and rule collections are tuples. `subnets` is `NetworkPolicySubnets | None`. `match_dimensions` contains dimension names (`"path"`, `"method"`, `"query"`, or `"headers"`), rather than authored matchers.
+
+### Update a running session
+
+Use `box.update(network_policy=...)` to replace the current session's policy, when eligible, and save the policy for future sessions:
 
 ```python filename="main.py"
-await box.update_network_policy(NetworkPolicy.deny_all())
+from vercel.sandbox import NetworkPolicy
+
+await box.update(network_policy=NetworkPolicy.deny_all())
 ```
+
+The method never resumes a stopped sandbox. It uses the cached current session, skipping the live update if no session is attached or its cached status is `STOPPED`, `STOPPING`, `ABORTED`, or `FAILED`. Otherwise, it applies the live policy before saving configuration and tags. Live-policy errors propagate and prevent the SDK's later sandbox configuration-and-tags request. A later save failure can leave the live policy changed, so the operation is not atomic.
+
+Each policy replaces the previous policy in full. Use `NetworkPolicy.allow_all()` to remove restrictions. Omit `network_policy` or pass `None` to leave it unchanged. The method returns the same `Sandbox` handle; the synchronous equivalent returns the same `SyncSandbox` handle without `await`.
+
+To update and run work on one specific session, acquire it with `runtime_session = await box.session()`, call `await runtime_session.update_network_policy(policy)`, then run the workload through that same handle. Acquiring a session can resume the sandbox; subsequent operations on the acquired handle stay on that session and propagate failures instead of resuming another one. The SDK targets that session directly. When it is still the sandbox's current session, the API also persists the policy for future sessions; updates to older sessions do not replace the current saved policy.
+
+The sandbox-level `box.update_network_policy()` is deprecated and emits `DeprecationWarning`. It targets the current session endpoint, can auto-resume the sandbox, and returns a `SandboxRuntimeSession`. Its synchronous equivalent returns `SyncSandboxRuntimeSession`. The runtime-session method remains available for pinned updates. Both methods call the session endpoint, which also persists the policy when the target remains the sandbox's current session. The parent handle's cached saved-policy metadata can remain stale.
 
 ## Synchronous API
 
@@ -951,7 +1053,7 @@ The synchronous API mirrors the asynchronous API. Import it explicitly from `ver
 from vercel.sandbox import sync as sandbox
 
 with sandbox.create_sandbox() as box:
-    result = box.run_process(
+    result = box.run_command(
         "python",
         ["-c", "print('Hello from Vercel Sandbox!')"],
         capture_output=True,
@@ -997,6 +1099,7 @@ Catch `SandboxError` to handle any Sandbox SDK error. Catch a more specific type
 | `SandboxCleanupError`            | Context-managed cleanup failed.                                               |
 | `SandboxResponseError`           | A successful API response was malformed.                                      |
 | `SandboxStreamError`             | A process log stream reported an error.                                       |
+| `SandboxStdinError`              | Writing to or closing a process's stdin failed.                               |
 | `SandboxInvalidHandleError`      | A handle isn't attached to a valid session or execution mode.                 |
 | `SandboxFilesystemError`         | Base error for filesystem operations.                                         |
 | `SandboxFilesystemCommandError`  | A command-backed filesystem operation failed.                                 |
@@ -1005,7 +1108,7 @@ Catch `SandboxError` to handle any Sandbox SDK error. Catch a more specific type
 | `SandboxFilesystemTransferError` | Base error for streaming transfers.                                           |
 | `SandboxUploadSizeMismatchError` | An upload didn't match its declared size.                                     |
 
-`run_process(check=True)` raises Python's `subprocess.CalledProcessError` for nonzero exit codes.
+`run_command(check=True)` raises Python's `subprocess.CalledProcessError` for nonzero exit codes.
 
 ```python filename="main.py"
 from subprocess import CalledProcessError
@@ -1013,7 +1116,7 @@ from subprocess import CalledProcessError
 from vercel.sandbox import SandboxApiError
 
 try:
-    await box.run_process("python", ["-m", "pytest"], check=True)
+    await box.run_command("python", ["-m", "pytest"], check=True)
 except CalledProcessError as error:
     print(error.returncode, error.stderr)
 except SandboxApiError as error:
@@ -1082,7 +1185,7 @@ def create_http_client() -> httpx.AsyncClient:
 async def main() -> None:
     async with session(httpx_client_factory=create_http_client):
         async with sandbox.create_sandbox() as box:
-            await box.run_process("python", ["--version"], check=True)
+            await box.run_command("python", ["--version"], check=True)
 
 
 asyncio.run(main())

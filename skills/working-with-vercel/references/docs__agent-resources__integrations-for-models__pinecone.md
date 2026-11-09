@@ -15,8 +15,8 @@ related:
 summary: Learn how to add Pinecone connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/pinecone.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1958be7597c65414eac87477c78b0ed5cd9030ada33b7d90627cda0b5bbba98d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4c845a80bf03cd1593a02a9f116b0866ab52a9e437df9c537d3cd06f05bde644"
 ---
 
 # Vercel Pinecone Integration
@@ -34,6 +34,7 @@ them in your applications.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Pinecone integration now available for vector databases](https://vercel.com/changelog/pinecone-integration-now-available-for-vector-databases)
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
 - [Vercel Perplexity Integration](https://vercel.com/docs/agent-resources/integrations-for-models/perplexity) — Learn how to add Perplexity connectable account integration with Vercel.

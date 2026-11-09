@@ -13,8 +13,8 @@ related:
 summary: Learn how to connect Vercel to your third-party account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/install-an-integration/add-a-connectable-account.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b1865bbdd4de81ac05ad74c53eed9ea4908bcd8b3231bf12a48dd5d16b1c50c5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6f0a60a0070ac317ff471892b6d446b6a64aed0218fce4b03ee37e563e14b6e5"
 ---
 
 # Add a Connectable Account
@@ -40,8 +40,8 @@ Once installed, you can manage the following aspect of the integration:
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [Get Account Information](https://vercel.com/docs/rest-api/marketplace/get-account-information) — GET /v1/installations/{integrationConfigurationId}/account — Fetches the best account or user’s contact info
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
+- [Get Account Information](https://vercel.com/docs/rest-api/marketplace/get-account-information) — GET /v1/installations/{integrationConfigurationId}/account — Fetches the best account or user’s contact info
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/add-a-connectable-account.graph.md](/docs/integrations/install-an-integration/add-a-connectable-account.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ related:
 summary: Learn how to get started with microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4f6f1c13122476468d6c0f316ae7be0fbcb60779c7ed2dadec9eae0657206f7a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a9fea558d341b7ddbbca5a61a6615c7f76802a652535c4888604d40b9103c3a7"
 ---
 
 # Getting started with microfrontends
@@ -33,11 +33,11 @@ This quickstart guide will help you set up microfrontends on Vercel. Microfronte
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available)
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/microfrontends/quickstart.graph.md](/docs/microfrontends/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -90,7 +90,7 @@ Before diving into implementation, it's helpful to understand these core concept
 
   Production behavior will not be changed until the `microfrontends.json` file is merged and promoted, so you test in the [Preview](/docs/deployments/environments#preview-environment-pre-production) environment before deploying changes to production.
 
-  On the Settings page for the new microfrontends group, click the **Add Config** button to copy the `microfrontends.json` to your code.
+  On the **Microfrontends** settings page for the default application's project, copy the suggested `microfrontends.json` from the **Finish setting up your microfrontend** section to your code.
 
   You can also create the configuration manually in code:
   ```json filename="microfrontends.json"

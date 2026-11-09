@@ -17,8 +17,8 @@ related:
 summary: Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b8b24092acf66d7c76449cf18a7a0cbc1b3479706650ba12d37054464acfa1ed"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ed757ed7243664046320c3169f3839898612258d0c043f5b284fdc49d699b715"
 ---
 
 # OpenAI Codex with AI Gateway
@@ -34,10 +34,10 @@ sha256: "b8b24092acf66d7c76449cf18a7a0cbc1b3479706650ba12d37054464acfa1ed"
 - [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway)
 - [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
 - [GPT 5.2 Codex now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-2-codex-now-available-on-vercel-ai-gateway)
+- [GPT 5.1 Codex Max now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-max-now-available-on-vercel-ai-gateway)
+- [GPT 5.1 Codex models now available in Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-models-now-available-in-vercel-ai-gateway)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli) — Learn how to use the Codex CLI provider to access OpenAI GPT-5 models through the Codex CLI.
-- [GPT 5.1 Codex Max now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-max-now-available-on-vercel-ai-gateway)
-- [Codex](https://ai-sdk.dev/providers/ai-sdk-harnesses/codex) — Learn how to use the Codex harness adapter.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
@@ -47,7 +47,7 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openai-codex.
 - Route requests through multiple AI providers
 - Monitor traffic and spend in your AI Gateway Overview
 - View detailed traces in Vercel Observability under AI
-- Use any model available through the gateway
+- Use models from other providers, not only OpenAI ones
 
 ## ChatGPT API credit eligibility
 
@@ -151,7 +151,7 @@ supports_websockets = true
 
 ## Choose a different model
 
-Run `/model` inside Codex to switch models without leaving your session. The picker lists the full gateway catalog and sets reasoning effort at the same time, because the Codex compatibility endpoint serves `/codex/v1/models` when the CLI starts.
+Run `/model` inside Codex to switch models without leaving your session. The picker lists the gateway models that Codex can use and sets reasoning effort at the same time, because the Codex compatibility endpoint serves `/codex/v1/models` when the CLI starts.
 
 To start a session on a specific model, pass `--model` (or `-m`):
 
@@ -168,7 +168,7 @@ model = "openai/gpt-5.5-pro"
 # model = "openai/gpt-5.4-nano"
 ```
 
-Every model in the gateway catalog works here, not only OpenAI ones. The examples stay on OpenAI models because Codex reads their metadata natively.
+Any model in the `/model` list works here, not only OpenAI ones. The examples stay on OpenAI models because Codex reads their metadata natively.
 
 To apply AI Gateway settings such as provider order, model fallbacks, regional inference, or zero data retention to Codex requests, create a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models#using-a-virtual-model-with-claude-code-codex-and-other-coding-agents) and use its slug as the model. Codex lists your team's virtual models in `/model`, and the slug also works with `--model` and in `config.toml`:
 
@@ -213,7 +213,7 @@ Codex records each session against the provider that served it, so switching to 
 npx vercel@latest ai-gateway setup --agent codex
 ```
 
-The command copies each rollout file under `sessions` and `archived_sessions` to a new deterministic session ID with `model_provider` set to `vercel`. Originals are never moved, edited, or deleted, and re-running never duplicates a session it already copied. Pass `--no-session-migration` to skip the step, and decompress any `.jsonl.zst` sessions first, since compressed rollouts can't be rewritten. See [session migration](/docs/cli/ai-gateway#desktop-session-migration) for details.
+The command copies each Codex Desktop rollout file under `sessions` and `archived_sessions` to a new deterministic session ID with `model_provider` set to `vercel`. Originals are never moved, edited, or deleted, and re-running never duplicates a session it already copied. Pass `--no-session-migration` to skip the step, and decompress any `.jsonl.zst` sessions first, since compressed rollouts can't be rewritten. See [session migration](/docs/cli/ai-gateway#desktop-session-migration) for details.
 
 ## Run Codex durably
 
@@ -228,7 +228,7 @@ Point Codex at its own compatibility endpoint:
 base_url = "https://ai-gateway.vercel.sh/codex/v1"
 ```
 
-Use it everywhere on this page. It serves `/codex/v1/models` in the proprietary `ModelsResponse` shape Codex decodes at startup, so the CLI attaches its shell tool and sees the full gateway catalog. Every other path falls through to the standard handlers, so routing, billing, and errors are unchanged. To call the gateway from your own code rather than through Codex, see the [Responses API](/docs/ai-gateway/sdks-and-apis/responses) instead.
+Use it everywhere on this page. It serves `/codex/v1/models` in the proprietary `ModelsResponse` shape Codex decodes at startup, so the CLI attaches its shell tool and sees the gateway models that it can use. The list omits models that a coding agent can't use for text responses, such as embedding, image, and video models. Every other path falls through to the standard handlers, so routing, billing, and errors are unchanged. To call the gateway from your own code rather than through Codex, see the [Responses API](/docs/ai-gateway/sdks-and-apis/responses) instead.
 
 `wire_api` must be `responses`. Codex removed Chat Completions support, and the gateway serves the Responses API at `/v1/responses`.
 

@@ -17,8 +17,8 @@ related:
 summary: Add a Chat SDK bot to Nuxt, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks/nuxt.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "439052364646b153a5231d324d92f25be58cbd1256365c618633d8e27b13bf64"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a0d8d9b01ca5429abb22a04ea5c41c17229151e684fd98a9b7cad24d8e87d5a2"
 ---
 
 # Chat SDK with Nuxt
@@ -33,8 +33,8 @@ Use a Nuxt server API route to receive Slack events and pass them to Chat SDK. T
 
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
-- [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
+- [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Chat SDK with TanStack Start](https://vercel.com/docs/chat-sdk/frameworks/tanstack-start) — Add a Chat SDK bot to TanStack Start, receive Slack events through Vercel Connect, and deploy on Vercel.
 
@@ -163,7 +163,7 @@ Ensure the integration supplies `REDIS_URL` in the project's **Production** envi
 Create a Slack connector and allow token requests from the project's Production and Development environments. Attach its trigger to your production webhook route:
 
 ```bash filename="Terminal"
-vercel connect create slack --name my-bot --triggers
+vercel connect create slack --name my-bot --triggers --trigger-path /api/webhooks/slack
 vercel connect attach slack/my-bot --environment production --environment development --triggers --trigger-path /api/webhooks/slack
 ```
 
@@ -339,6 +339,28 @@ The client sends directly to `/api/chat`; no Connect trigger is needed for brows
 After configuring authentication, sign in and open `/chat`. Select **Send a test message** to send `Hello`; the bot should respond with `You said: Hello`. The `support` conversation ID is scoped to the authenticated user by the adapter. Generate a different conversation ID when you want to start a new conversation.
 
 For a fuller chat interface, see the [official Nuxt example](https://github.com/vercel/chat/tree/main/examples/nuxt-chat).
+
+## Frequently asked questions
+
+### Which Nuxt version does this guide support?
+
+This guide targets Nuxt 4, which runs on Nitro 2 and H3 1. It uses H3's `toWebRequest` and `waitUntil` from `@vercel/functions`, which match that stack. If you run Nitro 3 on its own without Nuxt, follow the [Nitro guide](/docs/chat-sdk/frameworks/nitro), which uses `event.req` and `event.waitUntil` instead.
+
+### Why does the Nuxt route use `toWebRequest`?
+
+Chat SDK adapters accept a standard Web `Request`, and Nuxt server routes receive an H3 event. `toWebRequest(event)` converts the event into a `Request` that carries the original body, which the adapter reads to parse and verify the event. Pass that `Request` to the adapter unchanged. Don't read its body yourself or build a new `Request` from parsed JSON, because the adapter needs the exact bytes the platform sent.
+
+### Why use `waitUntil` from `@vercel/functions` instead of `event.waitUntil`?
+
+On Nitro 2's Node.js Vercel preset, `event.waitUntil` doesn't connect tasks to the Vercel invocation, so the function can stop before your handlers finish. `waitUntil` from `@vercel/functions` registers the work with the invocation, which lets the adapter respond to the webhook while the bot keeps processing. The function's [maximum duration](/docs/functions/configuring-functions/duration) still applies.
+
+### Can I deploy a Chat SDK bot with `nuxt generate`?
+
+No. A static-only build has no server, so the webhook route can't run. Deploy with Nuxt's server output, which Vercel runs as a function. See [Nuxt on Vercel](/docs/frameworks/full-stack/nuxt).
+
+### How do I build a Vue chat UI for my Chat SDK bot?
+
+Add the Web Adapter with `protocol: 'ai-sdk'`, expose `bot.webhooks.web` at `server/api/chat.post.ts`, and call `useChat` from `@chat-adapter/web/vue` in a page. Keep the object that `useChat` returns intact, because destructuring its properties loses Vue reactivity. Browser messages reach `onDirectMessage` in the same bot that serves Slack. See [Add browser chat with the Web Adapter](#add-browser-chat-with-the-web-adapter).
 
 ## Next steps
 

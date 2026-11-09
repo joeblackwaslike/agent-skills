@@ -16,8 +16,8 @@ related:
 summary: Let AI automatically install Web Analytics and Speed Insights in your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/installation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f057056cabb1d2b0c0a34480a2aebb1a30354e439d1797fd4244400e6e3908c4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "248488124171dbb09a860749d2dea99f59bf1845442ebc55dfed5a6d10afae9c"
 ---
 
 # Installation
@@ -36,10 +36,10 @@ Vercel Agent Installation helps add [Web Analytics](/docs/analytics) and [Speed 
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel Agent can now install Web Analytics and Speed insights for you](https://vercel.com/changelog/vercel-agent-installation)
-- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Introducing Vercel Agent: Your new Vercel teammate](https://vercel.com/blog/introducing-vercel-agent)
-- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
+- [Vercel Agent now installs private packages from npm and custom registries](https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
@@ -62,7 +62,7 @@ To have Vercel Agent install **Web Analytics** or **Speed Insights** to your pro
 1. Go to your [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D\&title=Open+Project) and select your GitHub-connected project.
 2. Navigate to the **Analytics** or **Speed Insights** tab.
 3. Web Analytics only: click **Enable** to turn on the feature.
-4. Click the **Implement** button to start Vercel Agent.
+4. Click the **Implement with Vercel Agent** button to start Vercel Agent.
 5. Review the pull request and merge when ready.
 
 Once the pull request is merged and deployed, tracking starts automatically. If you need to regenerate the pull request, click **Run Again**.

@@ -4,8 +4,8 @@ description: Learn how to use Cohere with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cohere.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "eecff3ee7526ca5a67f05ba523d1197c540fa86c790124f486191e75f9c03146"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "bca4a715bbdc61ef57188b1b7c15bd2224811409cb24dbb9521811bb17bc199f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -252,6 +252,75 @@ async function main() {
 main().catch(console.error);
 ```
 
+#### Sources
+
+You can ground a Cohere response in documents by adding text files to the prompt
+as file parts. When the model cites one of these documents, the provider returns
+the cited text span as a source.
+
+With `generateText`, cited documents are available in `result.sources`:
+
+```ts
+import { cohere } from '@ai-sdk/cohere';
+import { generateText } from 'ai';
+import { readFileSync } from 'node:fs';
+
+const model = cohere('command-a-03-2025');
+
+const { text, sources } = await generateText({
+  model,
+  messages: [
+    {
+      role: 'user',
+      content: [
+        { type: 'text', text: 'What is the capital of Zephyria?' },
+        {
+          type: 'file',
+          mediaType: 'text/plain',
+          filename: 'zephyria.txt',
+          data: readFileSync('./data/zephyria.txt'),
+        },
+      ],
+    },
+  ],
+});
+
+console.log(sources);
+```
+
+With `streamText`, the same citations are emitted as `source` stream parts:
+
+```ts
+import { streamText } from 'ai';
+
+const result = streamText({
+  model,
+  messages: [
+    // same messages as above
+  ],
+});
+
+for await (const part of result.fullStream) {
+  if (part.type === 'source') {
+    console.log(part.sourceType); // 'document'
+    console.log(part.title);
+    console.log(part.providerMetadata?.cohere);
+  }
+}
+```
+
+Each source has `sourceType: 'document'`, the document title (`'Document'` when
+Cohere does not return one), and citation details in `providerMetadata.cohere`:
+
+- `start` / `end` *number* - character offsets of the cited text in the response.
+- `text` *string* - the cited text.
+- `sources` *array* - the raw Cohere sources, including each document's `id`, `text`, and `title`.
+- `citationType` *string* - the Cohere citation type, e.g. `'TEXT_CONTENT'`.
+
+Keys that Cohere omits are absent from `providerMetadata.cohere`. Citations that
+only reference tool output have no document to cite and are not emitted as
+sources.
+
 ## Embedding Models
 
 You can create models that call the [Cohere embed API](https://docs.cohere.com/v2/reference/embed)
@@ -350,18 +419,18 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                           | Embedding Dimensions                      |
-| ------------------------------- | ----------------------------------------- |
-| `embed-v5.0-pro`                | 256, 512, 768, 1024, 1536, 2048 (default) |
-| `embed-v5.0-fast`               | 256, 512, 768, 1024, 1536, 2048 (default) |
-| `embed-v4.0`                    | 256, 512, 1024, 1536 (default)            |
-| `embed-english-v3.0`            | 1024                                      |
-| `embed-multilingual-v3.0`       | 1024                                      |
-| `embed-english-light-v3.0`      | 384                                       |
-| `embed-multilingual-light-v3.0` | 384                                       |
-| `embed-english-v2.0`            | 4096                                      |
-| `embed-english-light-v2.0`      | 1024                                      |
-| `embed-multilingual-v2.0`       | 768                                       |
+| Model                           | Default Dimensions | Supported Dimensions            | Custom Dimensions |
+| ------------------------------- | ------------------ | ------------------------------- | ----------------- |
+| `embed-v5.0-pro`                | 2048               | 256, 512, 768, 1024, 1536, 2048 | ✓                 |
+| `embed-v5.0-fast`               | 2048               | 256, 512, 768, 1024, 1536, 2048 | ✓                 |
+| `embed-v4.0`                    | 1536               | 256, 512, 1024, 1536            | ✓                 |
+| `embed-english-v3.0`            | 1024               | 1024                            | ✗                 |
+| `embed-multilingual-v3.0`       | 1024               | 1024                            | ✗                 |
+| `embed-english-light-v3.0`      | 384                | 384                             | ✗                 |
+| `embed-multilingual-light-v3.0` | 384                | 384                             | ✗                 |
+| `embed-english-v2.0`            | 4096               | 4096                            | ✗                 |
+| `embed-english-light-v2.0`      | 1024               | 1024                            | ✗                 |
+| `embed-multilingual-v2.0`       | 768                | 768                             | ✗                 |
 
 ## Reranking Models
 
@@ -429,13 +498,13 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                      |
-| -------------------------- |
-| `rerank-v4.0-pro`          |
-| `rerank-v4.0-fast`         |
-| `rerank-v3.5`              |
-| `rerank-english-v3.0`      |
-| `rerank-multilingual-v3.0` |
+| Model                      | Text Documents | Object Documents                                                                 | Top N |
+| -------------------------- | -------------- | -------------------------------------------------------------------------------- | ----- |
+| `rerank-v4.0-pro`          | ✓              | Conditional: Objects are converted to JSON strings with a compatibility warning. | ✓     |
+| `rerank-v4.0-fast`         | ✓              | Conditional: Objects are converted to JSON strings with a compatibility warning. | ✓     |
+| `rerank-v3.5`              | ✓              | Conditional: Objects are converted to JSON strings with a compatibility warning. | ✓     |
+| `rerank-english-v3.0`      | ✓              | Conditional: Objects are converted to JSON strings with a compatibility warning. | ✓     |
+| `rerank-multilingual-v3.0` | ✓              | Conditional: Objects are converted to JSON strings with a compatibility warning. | ✓     |
 
 ---
 

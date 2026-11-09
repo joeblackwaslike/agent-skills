@@ -4,8 +4,8 @@ description: API Reference for streamText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "96f0fa7ea697d6ec8d12e3ecbe65fda848db676833db9d955a78399995459754"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "5337ab0a3e3ebb603752a486b2edf7de44581823f5881c8bc30b1165a706a022"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -188,7 +188,7 @@ import { streamText } from "ai"
 - `runtimeContext?` (`CONTEXT`): User-defined shared runtime context object passed to \`prepareStep\` and lifecycle callbacks.
 - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map keyed by tool name. Required when at least one tool defines \`contextSchema\`; not accepted when no tools need context.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
-- `experimental_steering?` (`Experimental_Steering`): Experimental steering object created with \`experimental\_createSteering()\`. Messages sent with \`steering.steer()\` are added as user messages at the next step boundary, after the current step and its tool calls are done. A waiting message keeps the loop going for another step unless a stop condition is met. \`steer()\` resolves with \`\{ type: 'delivered', id, message, stepNumber }\` or \`\{ type: 'not-delivered', id, message, reason }\`. See \[Steering]\(/docs/agents/loop-control#steering).
+- `experimental_steering?` (`Experimental_Steering`): Experimental steering object created with \`experimental\_createSteering()\`. Messages sent with \`steering.steer()\` are added as user messages at the next step boundary, after the current step and its tool calls are done. Messages sent with \`steering.queue()\` wait until the model finishes its current task and are added one per task. A waiting message keeps the loop going for another step unless a stop condition is met. \`steer()\` and \`queue()\` resolve with \`\{ type: 'delivered', id, message, stepNumber }\` or \`\{ type: 'not-delivered', id, message, reason }\`. See \[Steering]\(/docs/agents/loop-control#steering).
 - `experimental_download?` (`(requestedDownloads: Array<{ url: URL; isUrlSupportedByModel: boolean }>) => Promise<Array<null | { data: Uint8Array; mediaType?: string }>>`): Custom download function to control how URLs are fetched when they appear in prompts. By default, files are downloaded if the model does not support the URL for the given media type. Experimental feature. Return null to pass the URL directly to the model (when supported), or return downloaded content with data and media type.
 - `include?` (`{ requestBody?: boolean; requestMessages?: boolean; rawChunks?: boolean }`): Controls inclusion of request body and request messages in step results, and raw provider chunks in the stream. By default, request body, request messages, and raw chunks are excluded to reduce memory usage. Set requestBody or requestMessages to true when you need access to the data. Set rawChunks to true when you need access to raw provider chunks.
   - `Object`
@@ -207,7 +207,7 @@ import { streamText } from "ai"
     - `abortSignal?` (`AbortSignal`): An optional signal for cancelling the tool call repair.
 - `onChunk?` (`(event: OnChunkResult) => Promise<void> |void`): Callback that is called for each stream part. The stream processing will pause until the callback promise is resolved.
   - `OnChunkResult`
-    - `chunk` (`TextStreamPart<TOOLS>`): The stream part. This is the same union as \`stream\` and includes \`start\`, \`start-step\`, \`text-start\`, \`text-delta\`, \`text-end\`, \`reasoning-start\`, \`reasoning-delta\`, \`reasoning-end\`, \`custom\`, \`source\`, \`file\`, \`reasoning-file\`, \`tool-call\`, \`tool-input-start\`, \`tool-input-delta\`, \`tool-input-end\`, \`tool-result\`, \`tool-error\`, \`tool-output-denied\`, \`tool-approval-request\`, \`tool-approval-response\`, \`finish-step\`, \`finish\`, \`abort\`, \`error\`, and \`raw\`.
+    - `chunk` (`TextStreamPart<TOOLS>`): The stream part. This is the same union as \`stream\` and includes \`start\`, \`steering-message\`, \`start-step\`, \`text-start\`, \`text-delta\`, \`text-end\`, \`reasoning-start\`, \`reasoning-delta\`, \`reasoning-end\`, \`custom\`, \`source\`, \`file\`, \`reasoning-file\`, \`tool-call\`, \`tool-input-start\`, \`tool-input-delta\`, \`tool-input-end\`, \`tool-result\`, \`tool-error\`, \`tool-output-denied\`, \`tool-approval-request\`, \`tool-approval-response\`, \`finish-step\`, \`finish\`, \`abort\`, \`error\`, \`raw\`, and \`ping\`.
       - `TextStreamPart`
         - `type` (`'text-delta'`): The type to identify the object as text delta.
         - `text` (`string`): The text delta.
@@ -550,6 +550,7 @@ import { streamText } from "ai"
 - `dynamicToolResults` (`PromiseLike<Array<DynamicToolResult>>`): The dynamic tool results that have been generated in all steps.
 - `request` (`Promise<LanguageModelRequestMetadata>`): Deprecated. Use \`finalStep.request\` instead. Additional request information from the final step. Automatically consumes the stream.
   - `LanguageModelRequestMetadata`
+    - `url?` (`string`): HTTP origin reported by the provider, without URL credentials, paths, queries or fragments. Unset when unavailable.
     - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
     - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
 - `response` (`Promise<LanguageModelResponseMetadata>`): Deprecated. Use \`finalStep.response\` instead. Additional response information from the final step. Automatically consumes the stream.
@@ -600,6 +601,7 @@ import { streamText } from "ai"
         - `raw?` (`object | undefined`): Raw usage information from the provider. This is the provider's original usage information and may include additional fields.
     - `request?` (`RequestMetadata`): Request metadata.
       - `RequestMetadata`
+        - `url?` (`string`): The HTTP origin reported by the provider, without URL credentials, paths, queries or fragments.
         - `messages?` (`Array<ModelMessage>`): The input messages that were sent to the model for this step. Undefined by default unless requestMessages is set to true.
         - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
     - `response?` (`ResponseMetadata`): Response metadata.
@@ -616,6 +618,8 @@ import { streamText } from "ai"
 - `textStream` (`AsyncIterableStream<string>`): A text stream that returns only the generated text deltas. You can use it as either an AsyncIterable or a ReadableStream. Error parts are not surfaced in this stream. Use the \`onError\` callback or \`stream\` to observe them.
 - `finalStep` (`Promise<StepResult>`): The final step. This is a shortcut for \`steps.at(-1)\`. Automatically consumes the stream.
 - `stream` (`AsyncIterable<TextStreamPart<TOOLS>> & ReadableStream<TextStreamPart<TOOLS>>`): A stream with all events, including text deltas, tool calls, tool results, and errors. Well-formed mid-stream provider failures are emitted in error parts as StreamProviderError instances. You can use it as either an AsyncIterable or a ReadableStream. Only errors that stop the stream, such as network errors, are thrown.
+  - `TextStreamPingPart`
+    - `type` (`'ping'`): A transient provider heartbeat. It contains no generated content, does not reset model-output timeouts, and is omitted from text and UI message streams. Providers may require an explicit opt-in.
   - `TextStreamTextEndPart`
     - `type` (`'text-end'`): The event type.
     - `id` (`string`): The text block ID.
@@ -667,9 +671,15 @@ import { streamText } from "ai"
     - `input` (`object based on tool parameters`): Parameters that were passed to the tool. The type is inferred from the tool definition.
     - `output` (`tool execution return type`): The result returned by the tool after execution has completed. The type is inferred from the tool execute function return type.
   - `TextStreamPart`
+    - `type` (`'steering-message'`): Experimental. A user message that was added to the run with \`experimental\_steering\`. It is streamed before the \`start-step\` part of the step that received it.
+    - `id` (`string`): The id of the steering message.
+    - `message` (`UserModelMessage`): The user message that was added to the run.
+    - `stepNumber` (`number`): The number of the step whose model call received the message.
+  - `TextStreamPart`
     - `type` (`'start-step'`): Indicates the start of a new step in the stream.
     - `request` (`LanguageModelRequestMetadata`): Information about the request that was sent to the language model provider.
       - `LanguageModelRequestMetadata`
+        - `url?` (`string`): HTTP origin reported by the provider, without URL credentials, paths, queries or fragments. Unset when unavailable.
         - `messages` (`Array<ModelMessage>`): The input messages that were sent to the model for this step.
         - `body?` (`unknown`): Request HTTP body that was sent to the provider API.
     - `warnings` (`Warning[]`): Warnings from the model provider (e.g. unsupported settings).

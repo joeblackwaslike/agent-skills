@@ -1,8 +1,8 @@
 ---
 title: "Activation Events"
 source: "https://code.visualstudio.com/api/references/activation-events"
-fetched_at: "2026-11-02T12:01:44.873Z"
-sha256: "2c6468b686ed1eb0d175a08e823eed4de0f6833eee38e8bfb3e9010d02cad6ff"
+fetched_at: "2026-11-09T12:33:26.963Z"
+sha256: "53f05a74f119e9a198b2ab18c759e8e7999060dc361ab0091893552559725062"
 ---
 
 # Activation Events
@@ -214,7 +214,7 @@ This activation event is emitted just before the `provideDebugConfigurations` me
 
 ## onView
 
-This activation event is emitted and interested extensions will be activated whenever a view of the specified id is expanded in the VS Code sidebar. Built-in views do not emit an activation event.
+This activation event is emitted and interested extensions will be activated whenever a view of the specified id is expanded in the VS Code sidebar. Built-in views generally do not emit this event. The Timeline view supports `onView:timeline` to activate [Timeline providers](https://code.visualstudio.com/api/extension-guides/timeline).
 
 The activation event below will fire whenever a view with the `nodeDependencies` id is visible:
 
@@ -226,6 +226,8 @@ The activation event below will fire whenever a view with the `nodeDependencies`
 ```
 
 **Note**: Beginning with VS Code 1.74.0, views contributed by your extension do not require a corresponding `onView` activation event declaration for your extension to be activated.
+
+For the built-in Timeline view, explicitly declare `"activationEvents": ["onView:timeline"]` in your extension manifest.
 
 ## onUri
 
@@ -485,4 +487,4 @@ The `*` activation event is emitted and interested extensions will be activated 
 **Note:** An extension **must** export an `activate()` function from its main module and it will be invoked **only once** by VS Code when any of the specified activation events is emitted. Also, an extension **should** export a `deactivate()` function from its main module to perform cleanup tasks on VS Code shutdown. Extension **must** return a Promise from `deactivate()` if the cleanup process is asynchronous. An extension may return `undefined` from `deactivate()` if the cleanup runs synchronously.
 
  
- 10/28/2026
+ 11/4/2026

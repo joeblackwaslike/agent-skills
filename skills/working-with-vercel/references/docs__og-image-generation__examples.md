@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the @vercel/og library with examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/og-image-generation/examples.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7ab03c8197af34b06ae3b3ba4e4db27c9917eae5183899fe4b3f9445ed501d75"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "515a984ca010fbac50ddddcba73a1e09445e95d24e68caeed7a0866d09c598ee"
 ---
 
 # OG Image Generation Examples
@@ -35,7 +35,7 @@ Create an api route with `route.tsx` in `/app/api/og/` and paste the following c
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Codemods](https://nextjs.org/docs/pages/guides/upgrading/codemods) — Use codemods to upgrade your Next.js codebase when new features are released.
+- [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 - [Routing Middleware: JS Reference](https://vercel.com/docs/routing-middleware/js-reference) — Reference for writing Routing Middleware in TypeScript and JavaScript, including entrypoints, the config object, the mid
@@ -2408,7 +2408,7 @@ function toHex(arrayBuffer: ArrayBuffer) {
 }
 
 export default async function handler(request: VercelRequest) {
-  const { searchParams } = request.url;
+  const { searchParams } = new URL(request.url);
 
   const id = searchParams.get('id');
   const token = searchParams.get('token');
@@ -2454,7 +2454,6 @@ export default async function handler(request: VercelRequest) {
 
 ```js filename="api/encrypted.jsx" framework=other
 import { ImageResponse } from '@vercel/og';
-import { VercelRequest } from '@vercel/node';
 
 export const config = {
   runtime: 'edge',
@@ -2468,14 +2467,14 @@ const key = crypto.subtle.importKey(
   ['sign'],
 );
 
-function toHex(arrayBuffer: ArrayBuffer) {
+function toHex(arrayBuffer) {
   return Array.prototype.map
     .call(new Uint8Array(arrayBuffer), (n) => n.toString(16).padStart(2, '0'))
     .join('');
 }
 
-export default async function handler(request: VercelRequest) {
-  const { searchParams } = request.url;
+export default async function handler(request) {
+  const { searchParams } = new URL(request.url);
 
   const id = searchParams.get('id');
   const token = searchParams.get('token');
@@ -2535,14 +2534,13 @@ function getToken(id: string): string {
 }
 
 interface PageParams {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function Page({ params }: PageParams) {
-  console.log(params);
-  const { id } = params;
+export default async function Page({ params }: PageParams) {
+  const { id } = await params;
   const token = getToken(id);
 
   return (
@@ -2574,9 +2572,8 @@ function getToken(id) {
   return token;
 }
 
-export default function Page({ params }) {
-  console.log(params);
-  const { id } = params;
+export default async function Page({ params }) {
+  const { id } = await params;
   const token = getToken(id);
 
   return (
@@ -2664,8 +2661,8 @@ export default function Page({ id, token }: PageProps) {
 // This SSG page generates the token to prevent generating OG images with random parameters (`id`).
 import { createHmac } from 'node:crypto';
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { id } = context.params as IParams;
+export const getStaticProps = async (context) => {
+  const { id } = context.params;
   const hmac = createHmac('sha256', 'my_secret');
   hmac.update(JSON.stringify({ id: id }));
   const token = hmac.digest('hex');

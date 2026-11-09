@@ -17,8 +17,8 @@ related:
 summary: Lean more about when you may need to upgrade your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/upgrade-integration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9e28c6ded0e26c3c2f9ff8710e168170c8319febf84184f83ccd22c3341bb9a8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5c5e857e088b274645d1018f88338bb9e74c97c2867e534f5848ab02dd57001d"
 ---
 
 # Upgrade an Integration
@@ -32,8 +32,8 @@ You should upgrade your integration if you are using any of the following scenar
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure)
+- [UI Hooks for Integrations will be deprecated](https://vercel.com/changelog/ui-hooks-for-integrations-will-be-deprecated)
 - [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently)
-- [July 2020](https://vercel.com/blog/changelog-july-2020)
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
@@ -135,7 +135,7 @@ If your Integration assumes that it can be installed multiple times in a Vercel 
 
 ## Latest API for Environment Variables
 
-If your Integration is setting Environment Variables, please make sure to use `type=encrypted` with the latest version (v7) of the API when [creating Environment Variables for a Project](/docs/rest-api/projects/create-one-or-more-environment-variables).
+If your Integration is setting Environment Variables, please make sure to use `type=encrypted` with the latest version (v10) of the API when [creating Environment Variables for a Project](/docs/rest-api/projects/create-one-or-more-environment-variables).
 
 > **💡 Note:** Creating project secrets is not required anymore and will be deprecated in the
 > near future.

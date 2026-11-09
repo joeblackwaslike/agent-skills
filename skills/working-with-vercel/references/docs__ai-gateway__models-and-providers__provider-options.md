@@ -17,8 +17,8 @@ related:
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "337c906ac4b1e8b541d078d564917ecca100c8e33c7c77f1ecb95a7beb19aa06"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e2586d446b10bac5ac05fed3b34376839c9a26e2ad1539059a44a8d85e6416be"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -37,12 +37,12 @@ AI Gateway can route your AI model requests across multiple AI providers. Each p
 - [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere) — Learn how to use Cohere with AI Gateway and the direct provider.
 - [Fal](https://ai-sdk.dev/providers/ai-sdk-providers/fal) — Learn how to use Fal with AI Gateway and the direct provider.
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
+- [Kimi K3.1 Pro now has more ZDR providers on AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-now-has-more-zdr-providers-on-ai-gateway)
 - [MiniMax M3.1 Flash now available on AI Gateway for free](https://vercel.com/changelog/minimax-m3-1-flash-now-available-on-ai-gateway-for-free)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway)
 - [Hermes with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/hermes) — Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, an
 - [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
-- [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-options.graph.md](/docs/ai-gateway/models-and-providers/provider-options.graph.md)
 <!-- /docsgraph:related -->
@@ -680,6 +680,12 @@ HeyGen
 
 heygen.com
 
+humansand
+
+Humans&
+
+humansand.ai
+
 inception
 
 Inception
@@ -877,12 +883,6 @@ sakana
 Sakana AI
 
 sakana.ai
-
-sambanova
-
-SambaNova
-
-sambanova.ai
 
 scaledown
 

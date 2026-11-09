@@ -16,8 +16,8 @@ related:
 summary: The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so you can start reading Global...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-sdk.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f2339a466778ef195a887959d62180a49a0b3c3b25731a87c1a86ebded3308e4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "54298421482a962116368ed9e1abadda5ced9ef4a2cc0e2f638983d3333e6622"
 ---
 
 # @vercel/global-config
@@ -35,7 +35,8 @@ The [Global Config](/docs/global-config) client SDK is the most ergonomic way to
 - [Global Config Limits and pricing](https://vercel.com/docs/global-config/global-config-limits) — Learn about the Global Configs limits and pricing based on account plans.
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config/global-config-sdk.graph.md](/docs/global-config/global-config-sdk.graph.md)
 <!-- /docsgraph:related -->

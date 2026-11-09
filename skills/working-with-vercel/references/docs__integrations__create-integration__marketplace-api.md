@@ -17,8 +17,8 @@ related:
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "497c8a205adc230f4dfb548a27873fa57e711457e8ac9e4ace96fdfd02ef78ef"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b654d55ad7fb89b719ab406382ee25d0bb7112d642c34eb2c6cc3f67210399c1"
 ---
 
 # Using the Integrations REST API
@@ -32,11 +32,11 @@ Learn how to authenticate and use the Integrations REST API to build your native
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
-- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
+- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
+- [Finalize Installation](https://vercel.com/docs/rest-api/marketplace/finalize-installation) — POST /v1/installations/{integrationConfigurationId}/billing/finalize — This endpoint allows the partner to mark an insta
+- [Revoke Installation Credential](https://vercel.com/docs/rest-api/marketplace/revoke-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/revoke — Retires a superseded installation credential, s
+- [Update Resource](https://vercel.com/docs/rest-api/marketplace/update-resource) — PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} — This endpoint updates an existing resource
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
-- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md)
 <!-- /docsgraph:related -->
@@ -92,7 +92,7 @@ Review the [user authentication](/docs/integrations/create-integration/marketpla
 
 ### Vercel API authentication
 
-When your integration calls Vercel's API, you authenticate using an access token. You receive this token during the installation process when you call the [Upsert Installation API](/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation). The response includes a `credentials` object with an `access_token` that you use as a bearer token for subsequent API calls.
+When your integration calls Vercel's API, authenticate using an access token. During installation, Vercel calls your [Upsert Installation API](/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation) and sends the token in the request body's `credentials.access_token` field. Use it as a bearer token for subsequent API calls.
 
 You can also use OAuth2 to obtain access tokens for user-specific operations.
 
@@ -185,7 +185,7 @@ const response = await fetch(
         title: 'Review your usage',
         message: 'Your monthly usage report is ready',
         href: 'sso:https://your-integration.com/dashboard/usage',
-        type: 'info',
+        level: 'info',
       },
     }),
   },
@@ -309,11 +309,8 @@ async function getMemberInfo(
 ```json filename="get-member-info-response.json"
 {
   "id": "member_abc123",
-  "name": "Timmy Triangle",
-  "email": "timmy@example.com",
   "role": "ADMIN",
-  "avatar": "https://example.com/avatar.jpg",
-  "createdAt": "2025-01-15T10:00:00Z"
+  "userEmail": "timmy@example.com"
 }
 ```
 
@@ -339,7 +336,7 @@ interface Notification {
   title: string;
   message: string;
   href?: string;
-  type?: 'info' | 'warning' | 'error';
+  level: 'info' | 'warn' | 'error';
 }
 
 async function updateInstallationNotification(
@@ -361,8 +358,6 @@ async function updateInstallationNotification(
   if (!response.ok) {
     throw new Error(`Failed to update notification: ${response.statusText}`);
   }
-
-  return response.json();
 }
 
 // Example usage with regular URL:
@@ -370,31 +365,21 @@ await updateInstallationNotification('icfg_abc123', {
   title: 'Action Required',
   message: 'Please complete your account setup',
   href: 'https://your-integration.com/setup',
-  type: 'warning',
+  level: 'warn',
 });
 
 // Or with SSO-enabled URL for authenticated access:
 // href: 'sso:https://your-integration.com/setup',
 ```
 
-```json filename="update-installation-notification-response.json"
-{
-  "id": "icfg_abc123",
-  "notification": {
-    "title": "Action Required",
-    "message": "Please complete your account setup",
-    "href": "https://your-integration.com/setup",
-    "type": "warning"
-  }
-}
-```
+A successful request returns a `204` status code with no response body.
 
 ### Notification types
 
-Use different notification types to indicate severity:
+Set the required `level` field to indicate severity:
 
-- `info` - Informational message (default)
-- `warning` - Warning that requires attention
+- `info` - Informational message
+- `warn` - Warning that requires attention
 - `error` - Error that needs immediate action
 
 ### SSO-enabled notification links
@@ -420,7 +405,7 @@ await updateInstallationNotification('icfg_abc123', {
   title: 'Review your usage',
   message: 'Your monthly usage report is ready',
   href: 'sso:https://your-integration.com/dashboard/usage',
-  type: 'info',
+  level: 'info',
 });
 ```
 
@@ -444,33 +429,24 @@ async function clearInstallationNotification(installationId: string) {
     }
   );
 
-  return response.json();
+  if (!response.ok) {
+    throw new Error(`Failed to clear notification: ${response.statusText}`);
+  }
 }
 ```
 
 ### Get installation with notification
 
-You can find the value of the notification field by calling the [`/v1/installations/{installationId}`](/docs/integrations/create-integration/marketplace-api/reference/partner/get-installation) endpoint as shown below:
+Vercel also reads the notification from your integration server. When **Supports Installation Billing Plans** is enabled in the Integration Console, Vercel calls the [Get Installation](/docs/integrations/create-integration/marketplace-api/reference/partner/get-installation) endpoint (`GET /v1/installations/{installationId}`) on your integration server to fetch the installation state. Return the current notification in the `notification` field of the response, together with the rest of the installation state, or set the field to `null` to remove the notification. This example shows only the `notification` field of the response:
 
-```ts filename="get-installation-with-notification.ts"
-async function getInstallation(installationId: string) {
-  const response = await fetch(
-    `https://api.vercel.com/v1/installations/${installationId}`,
-    {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-      },
-    }
-  );
-
-  const installation = await response.json();
-
-  if (installation.notification) {
-    console.log(`Notification: ${installation.notification.title}`);
-    console.log(`Message: ${installation.notification.message}`);
+```json filename="get-installation-notification.json"
+{
+  "notification": {
+    "level": "warn",
+    "title": "Action Required",
+    "message": "Please complete your account setup",
+    "href": "https://your-integration.com/setup"
   }
-
-  return installation;
 }
 ```
 
@@ -586,7 +562,7 @@ async function handleInvoiceCreated(webhook: WebhookPayload) {
     "configuration": {
       "id": "icfg_def456"
     },
-    "installationId": "oac_ghi789",
+    "installationId": "icfg_def456",
     "invoiceId": "inv_xyz987",
     "externalInvoiceId": "1234-5678",
     "period": {
@@ -638,7 +614,7 @@ async function handleInvoicePaid(webhook: WebhookPayload) {
     "configuration": {
       "id": "icfg_def456"
     },
-    "installationId": "oac_ghi789",
+    "installationId": "icfg_def456",
     "invoiceId": "inv_xyz987",
     "externalInvoiceId": "1234-5678",
     "period": {
@@ -708,7 +684,7 @@ async function handleInvoiceNotPaid(webhook: WebhookPayload) {
     "configuration": {
       "id": "icfg_def456"
     },
-    "installationId": "oac_ghi789",
+    "installationId": "icfg_def456",
     "invoiceId": "inv_xyz987",
     "externalInvoiceId": "1234-5678",
     "period": {
@@ -766,7 +742,7 @@ async function handleInvoiceOverdue(webhook: WebhookPayload) {
     "configuration": {
       "id": "icfg_def456"
     },
-    "installationId": "oac_ghi789",
+    "installationId": "icfg_def456",
     "invoiceId": "inv_xyz987",
     "externalInvoiceId": "1234-5678",
     "period": {
@@ -818,7 +794,7 @@ async function handleInvoiceRefunded(webhook: WebhookPayload) {
     "configuration": {
       "id": "icfg_def456"
     },
-    "installationId": "oac_ghi789",
+    "installationId": "icfg_def456",
     "invoiceId": "inv_xyz987",
     "externalInvoiceId": "1234-5678",
     "period": {

@@ -4,8 +4,8 @@ description: Learn how to write a custom provider for the AI SDK
 url: "https://ai-sdk.dev/providers/community-providers/custom-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/community-providers/custom-providers.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "9240f6553cfcefb56ca910697601b37965adc1835e82b333b6a327c6b949af97"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "6162f50930c08e925a0b32db729bce1fc4f3d2c063e1caa2c222bf6ad88de9df"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -288,6 +288,7 @@ The streaming system uses typed events for different stages:
    - `response-metadata`: Model information and response headers
    - `finish`: Final event with usage statistics and finish reason
    - `error`: Error events that can occur at any point
+   - `ping`: Optional transient heartbeat with no generated content or usage; SDK consumers must support this stream part before a provider enables it
 
 2. **Content Events**:
    - All content types (`text`, `file`, `reasoning`, `source`, `tool-call`) stream directly

@@ -15,8 +15,8 @@ related:
 summary: Learn more about MCP and how you can use it on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/mcp.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cb89c420117366cfa0e3ae624ba62fa6af109a6d2563e564eae3881094315335"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "412398ceff8a6eb4bcbdddc6a4d07f3a0b3c79d86f1cf333fc162212cb59c0ec"
 ---
 
 # Model Context Protocol
@@ -39,8 +39,8 @@ sha256: "cb89c420117366cfa0e3ae624ba62fa6af109a6d2563e564eae3881094315335"
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
 - [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers)
 - [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
-- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Vercel MCP now supports the 2026-07-28 MCP specification](https://vercel.com/changelog/vercel-mcp-now-supports-the-2026-07-28-mcp-specification)
+- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp)
 
 Full cross-link map for this page: [/docs/mcp.graph.md](/docs/mcp.graph.md)
 <!-- /docsgraph:related -->
@@ -80,8 +80,8 @@ Learn more about Model Context Protocol and explore available MCP servers.
 - [Deploy your own MCP servers on Vercel](/docs/mcp/deploy-mcp-servers-to-vercel)
 - [Explore MCP integrations for eve, AI SDK, and TanStack AI](/docs/mcp/integrations)
 - [Authorize access to OAuth-protected MCP servers with Vercel Connect](/docs/connect/frameworks/ai-sdk-and-mcp)
-- [Use the AI SDK to initialize an MCP client on your MCP host to connect to an MCP server](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling#initializing-an-mcp-client)
-- [Use the AI SDK to call tools that an MCP server provides](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling#using-mcp-tools)
+- [Use the AI SDK to initialize an MCP client on your MCP host to connect to an MCP server](https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools#initializing-an-mcp-client)
+- [Use the AI SDK to call tools that an MCP server provides](https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools#using-mcp-tools)
 - [Use Vercel's MCP server](/docs/agent-resources/vercel-mcp)
 - [Explore the list from MCP servers repository](https://github.com/modelcontextprotocol/servers)
 

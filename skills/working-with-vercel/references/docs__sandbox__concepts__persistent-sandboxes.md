@@ -17,8 +17,8 @@ related:
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ed41cd3661bb1f4ea73ba7bb98446552e88451fc76776fc857506f49018d76f8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "27ecb4539d3edcfd5c7cee9136d34d2468f89986a7f5bc18e53975e4d3105da5"
 ---
 
 # Persistence
@@ -39,6 +39,8 @@ Persistent sandboxes automatically save their filesystem state when stopped and 
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Sandbox persistence is now GA](https://vercel.com/changelog/sandbox-persistence-is-now-ga)
 - [Automatic persistence now in beta on Vercel Sandbox](https://vercel.com/changelog/vercel-sandbox-persistent-sandboxes-beta)
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes) — Vercel MCP tools for sandboxes.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/persistent-sandboxes.graph.md](/docs/sandbox/concepts/persistent-sandboxes.graph.md)
@@ -55,9 +57,9 @@ Persistence changes how a sandbox behaves when its current session stops. The ta
 | Aspect                  | Persistent (default)                                      | Non-persistent                                |
 | :---------------------- | :-------------------------------------------------------- | :-------------------------------------------- |
 | **State on stop**       | Automatically snapshotted                                 | Discarded unless manually snapshotted         |
-| **Resuming**            | `Sandbox.get({ name })` or any SDK call auto-resumes      | Cannot be resumed; create a new sandbox       |
+| **Resuming**            | `Sandbox.get({ name })`, then any SDK call auto-resumes   | Cannot be resumed; create a new sandbox       |
 | **Identification**      | User-defined `name` (unique per project)                  | Same; `name` is still used                    |
-| **Snapshot management** | Automatic, handled by the SDK                             | None                                          |
+| **Snapshot management** | Automatic, handled by Vercel                              | None                                          |
 | **Typical use cases**   | Developer environments, agent workspaces, long-lived jobs | One-off CI tasks, build-and-discard workflows |
 
 ## Opt out of persistence
@@ -96,7 +98,7 @@ Persistent sandboxes use a two-level model:
 - **Sandbox**: A long-lived entity identified by a unique `name` within your project. It survives across multiple VM boots.
 - **Session**: A single running VM instance inside a sandbox. Each time you resume a sandbox, a new session starts from the last saved state.
 
-When you stop a persistent sandbox, the SDK automatically snapshots the filesystem. When you resume it, a new session boots from that snapshot with a fresh [session timeout](/docs/sandbox/pricing#runtime-limits). A sandbox is made up of many sessions, so the maximum duration caps each one, not the sandbox.
+When you stop a persistent sandbox, Vercel automatically snapshots the filesystem. When you resume it, a new session boots from that snapshot with a fresh [session timeout](/docs/sandbox/pricing#runtime-limits). A sandbox is made up of many sessions, so the maximum duration caps each one, not the sandbox.
 
 ### Sandbox names
 
@@ -207,7 +209,7 @@ async def main() -> None:
         name="my-sandbox",
         snapshot_expiration=timedelta(days=7),
     )
-    await box.run_process("uv", ["sync"], check=True)
+    await box.run_command("uv", ["sync"], check=True)
     await box.stop()
 
 
@@ -223,21 +225,18 @@ Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply 
 **index.ts**
 
 ```ts filename="index.ts"
+async function startServer(sbx: Sandbox) {
+  await sbx.runCommand({ cmd: 'npm', args: ['run', 'dev'], detached: true });
+}
+
 const sandbox = await Sandbox.getOrCreate({
   name: 'my-sandbox',
   onCreate: async (sbx) => {
-    // Runs only the first time the sandbox is created
     await sbx.runCommand('git', ['clone', repoUrl, '.']);
     await sbx.runCommand('npm', ['install']);
+    await startServer(sbx);
   },
-  onResume: async (sbx) => {
-    // Runs every time the session resumes
-    await sbx.runCommand({
-      cmd: 'npm',
-      args: ['run', 'dev'],
-      detached: true,
-    });
-  },
+  onResume: startServer,
 });
 ```
 
@@ -252,18 +251,20 @@ from vercel import sandbox
 async def main() -> None:
     box, created = await sandbox.get_or_create_sandbox(name="my-sandbox")
     if created:
-        await box.run_process("uv", ["sync"], check=True)
+        await box.run_command("uv", ["sync"], check=True)
 
 
 asyncio.run(main())
 ```
+
+Creation invokes `onCreate` only, so both callbacks call `startServer`. Installation runs once, while later resumes restart the server. Detached startup returns before the server is ready; wait for your application's readiness check before forwarding requests.
 
 Behavior:
 
 - If a sandbox with that `name` exists, `getOrCreate` retrieves it without resuming it by default. The sandbox resumes on the first SDK call (such as `runCommand`), and `onResume` fires at that point, not before `getOrCreate` resolves. Pass `resume: true` to resume immediately and have `onResume` awaited before `getOrCreate` resolves.
 - If a sandbox with that `name` exists, its configuration is not updated. Creation parameters passed to `getOrCreate` are ignored; use [`sandbox.update`](#update-sandbox-configuration) to change the configuration of an existing sandbox.
 - If it does not exist, a fresh sandbox is created with the parameters you pass, and `onCreate` fires (awaited before `getOrCreate` resolves).
-- If the sandbox exists but its snapshot has expired, the stale sandbox is deleted, re-created with the same name, and `onCreate` fires.
+- If the sandbox exists but its snapshot has expired, the result depends on `resume`. With `resume: true`, `getOrCreate` deletes the stale sandbox, re-creates it with the same name, and fires `onCreate`. Without `resume: true`, `getOrCreate` returns the existing sandbox, and the first SDK call that resumes it fails with a `snapshot_not_found` error.
 
 ## Resume where you left off
 
@@ -347,7 +348,7 @@ asyncio.run(main())
 
 ## Delete a sandbox
 
-Deleting a sandbox permanently removes the sandbox and all of its sessions. Its [snapshots](/docs/sandbox/concepts/snapshots) survive the deletion, because several sandboxes can start from the same snapshot. They stay available until they expire or you delete them, and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime.
+Deleting a sandbox permanently removes the sandbox and all of its sessions. By default, its [snapshots](/docs/sandbox/concepts/snapshots) survive the deletion, because several sandboxes can start from the same snapshot. They stay available until they expire or you delete them, and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime. To also delete the snapshots that no other sandbox uses, pass `deleteOrphanSnapshots: true` to `sandbox.delete()`.
 
 **index.ts**
 
@@ -381,7 +382,7 @@ asyncio.run(main())
 const result = await Sandbox.list({
   namePrefix: 'user-a', // Filter by name prefix (requires sortBy: "name")
   tags: { env: 'production' }, // Filter by tags
-  sortBy: 'createdAt', // "createdAt" (default), "name", or "statusUpdatedAt"
+  sortBy: 'name', // Required when filtering by namePrefix
   sortOrder: 'desc', // "asc" or "desc" (default)
 });
 
@@ -457,7 +458,7 @@ sandbox run --name my-sandbox -- npm test
 List the sandbox sessions that have run inside the sandbox to audit lifecycle events or troubleshoot a stopped session:
 
 ```bash filename="Terminal"
-sandbox sessions list my-sandbox
+sandbox sessions list my-sandbox --all
 ```
 
 ### Configure a sandbox
@@ -477,7 +478,7 @@ sandbox config tags my-sandbox --tag env=production
 
 ### Delete a sandbox
 
-`sandbox remove` permanently deletes the sandbox along with all of its sessions. The operation is irreversible. The sandbox's snapshots survive it, so delete them separately with [`sandbox snapshots delete`](/docs/sandbox/cli-reference#sandbox-snapshots-delete):
+`sandbox remove` permanently deletes the sandbox along with all of its sessions. The operation is irreversible. The sandbox's snapshots survive it by default. Pass `--delete-orphan-snapshots` to also delete the snapshots that no other sandbox uses, or delete them separately with [`sandbox snapshots delete`](/docs/sandbox/cli-reference#sandbox-snapshots-delete):
 
 ```bash filename="Terminal"
 sandbox remove my-sandbox

@@ -16,8 +16,8 @@ related:
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a29627da03f2fda0103894ea69e690cc1e6efac7a3999548ddc361f01499b3db"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ceae517ebb1b1cac91f61e54899de4ecb7f8d3ff778b98344225f54a134aa32d"
 ---
 
 # Limits
@@ -39,11 +39,11 @@ You can raise many of the limits on this page. The process depends on your plan:
 - [Increased limit for projects per Git repo](https://vercel.com/changelog/increased-limit-for-projects-per-git-repo)
 - [Skipped monorepo deployments no longer count against limits](https://vercel.com/changelog/skipped-monorepo-deployments-no-longer-count-against-limits)
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 
 Full cross-link map for this page: [/docs/limits.graph.md](/docs/limits.graph.md)
 <!-- /docsgraph:related -->
@@ -149,7 +149,7 @@ If you are using [System Environment Variables](/docs/environment-variables/syst
 
 ## Files
 
-The maximum number of files that can be uploaded when creating a CLI [Deployment](/docs/deployments) is `15,000` for source files. Deployments that contain more files than the limit will fail at the [build step](/docs/builds/configure-a-build).
+The maximum number of files that can be uploaded when creating a CLI [Deployment](/docs/deployments) is `15,000` for source files. If you upload more files than the limit, Vercel rejects the request and does not create the deployment. To deploy more files, use the [`--archive=tgz`](/docs/cli/deploy#archive) option.
 
 Although there is no upper limit for output files created during a build, you can expect longer build times as a result of having many thousands of output files (100,000 or more, for example). If the build time exceeds 45 minutes then the build will fail.
 
@@ -219,7 +219,7 @@ Below are six examples that provide further information on how rate limits work.
 
 #### Domain deletion
 
-You are able to delete up to `60` domains every `60` seconds (1 minute). Should you hit the rate limit, you will need to wait another minute before you can delete another domain.
+You are able to delete up to `100` domains every `60` seconds (1 minute). Should you hit the rate limit, you will need to wait another minute before you can delete another domain.
 
 #### Team deletion
 
@@ -259,6 +259,7 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Project production deployment per minute. | `api-projects-production-deployment` | 500 | 60 | `user` |
 | Project expiration updates per minute. | `api-projects-deployment-expiration` | 100 | 60 | `owner` |
 | Project expiration lock requests per minute. | `api-projects-expiration-lock` | 200 | 60 | `owner` |
+| Project expiration removal requests per minute. | `api-projects-expiration-remove` | 200 | 60 | `owner` |
 | Project expiration schedule requests per minute. | `api-projects-expiration-schedule` | 200 | 60 | `owner` |
 | Project expiration unlock requests per minute. | `api-projects-expiration-unlock` | 200 | 60 | `owner` |
 | Project release configuration updates per minute. | `api-projects-rolling-release` | 100 | 60 | `owner` |
@@ -609,6 +610,10 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Sandbox control plane requests per minute for Hobby plan. | `api-sandboxes-control-plane-hobby` | 1000 | 60 | `owner` |
 | Sandbox control plane requests per minute for Pro plan. | `api-sandboxes-control-plane-pro` | 10000 | 60 | `owner` |
 | Sandbox control plane requests per minute for Enterprise plan. | `api-sandboxes-control-plane-enterprise` | 100000 | 60 | `owner` |
+| Drive control plane requests per minute for Hobby plan. | `api-drives-control-plane-hobby` | 1000 | 60 | `owner` |
+| Drive control plane requests per minute for Pro plan. | `api-drives-control-plane-pro` | 10000 | 60 | `owner` |
+| Drive control plane requests per minute for Enterprise plan. | `api-drives-control-plane-enterprise` | 100000 | 60 | `owner` |
+| Drive and drive snapshot deletions per second. | `api-drives-control-plane-delete` | 20 | 1 | `owner` |
 | Sandbox, snapshot and drive deletions per second. | `api-sandboxes-control-plane-delete` | 20 | 1 | `owner` |
 | Manual AI code review requests per minute. | `api-vade-request-review` | 30 | 60 | `owner` |
 | VCR management API requests per minute for Hobby plan. | `api-vcr-crud-hobby` | 100 | 60 | `owner` |

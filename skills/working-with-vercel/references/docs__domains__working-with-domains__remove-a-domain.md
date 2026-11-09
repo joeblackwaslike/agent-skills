@@ -14,8 +14,8 @@ related:
 summary: Remove a domain from a Vercel project, or delete it from your account and all associated projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/remove-a-domain.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fbf505589aec47dbcb91235549d21af6ba5b83c97042866616475954fac7898f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "967743f9cef50358864e26f2f2e8e8de184cc5ceec2432b02dcc2fbc00a5e775"
 ---
 
 # Removing a Domain from a Project or Account
@@ -29,20 +29,19 @@ To remove a domain from one Vercel project, delete it from the project's **Domai
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Remove a domain from a project](https://vercel.com/docs/rest-api/projects/remove-a-domain-from-a-project) — DELETE /v9/projects/{idOrName}/domains/{domain} — Remove a domain from a project by passing the domain name and by speci
-- [Removing Domains is now much easier](https://vercel.com/changelog/removing-domains-is-now-much-easier)
 - [Remove a domain by name](https://vercel.com/docs/rest-api/domains/remove-a-domain-by-name) — DELETE /v6/domains/{domain} — Delete a previously registered domain name from Vercel. Deleting a domain will automatical
 - [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
-- [vercel remove](https://vercel.com/docs/cli/remove) — Learn how to remove a deployment using the vercel remove CLI command.
 - [Viewing & Searching Domains](https://vercel.com/docs/domains/working-with-domains/view-and-search-domains) — Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
+- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/remove-a-domain.graph.md](/docs/domains/working-with-domains/remove-a-domain.graph.md)
 <!-- /docsgraph:related -->
 
 - ### Navigate to the Domains tab
-  To remove a domain that is assigned to a project, open [**Domains**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fdomains\&title=Go+to+Domains+Settings) in the sidebar from the **Project Overview** and click the **More Options** button for the domain you want to remove.
+  To remove a domain that is assigned to a project, open [**Domains**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fdomains\&title=Go+to+Domains+Settings) in the sidebar from the **Project Overview** and click **Edit** for the domain you want to remove.
 
 - ### Click remove button
-  Once the **• • •** menu button has been clicked, you will be presented with further options. Click the **Delete** menu button to remove the domain from the project.
+  In the edit form, click **Remove**. Then confirm the removal in the **Remove Domain from Project** dialog.
 
 - ### Remove domain from your account
   Remove the domain from your account from the dashboard or the Vercel CLI.
@@ -51,9 +50,9 @@ Full cross-link map for this page: [/docs/domains/working-with-domains/remove-a-
 
   ![Option to delete domain(s) from the Domains tab.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/remove-domains.png)
   #### CLI
-  Run [`vercel domains rm`](/docs/cli/domains) to remove the domain from your account and all projects:
+  Run [`vercel domains remove`](/docs/cli/domains) to remove the domain from your account and all projects:
   ```bash filename="terminal"
-  vercel domains rm example.com
+  vercel domains remove example.com
   ```
   > **💡 Note:** If the domain was purchased through Vercel, you must first wait for the domain
   > to expire before you can remove it from your account.

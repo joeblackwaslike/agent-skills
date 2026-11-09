@@ -14,8 +14,8 @@ related:
 summary: Learn about the core concepts of Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/fundamentals.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3c07ad10d4cf772c826e03caeec450d00b15d2dceb3ff3652c1a40ad593f776f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2f4ea86d3abfe3cf0f2af8c5835ce58eaa97e90d60cb8fbdfe0ae12c89608d52"
 ---
 
 # Vercel fundamental concepts
@@ -28,11 +28,15 @@ The articles below explain core concepts that shape how Vercel works:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support) — Information on how to get help from Vercel Support through the available channels.
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
-- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 
 Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundamentals.graph.md)
 <!-- /docsgraph:related -->
@@ -42,6 +46,10 @@ Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundament
 **Build System**: Learn how Vercel transforms your source code into optimized assets. Covers framework detection, build environments, and caching. [Learn more →](/docs/fundamentals/builds)
 
 **What is Compute?**: Understand how Vercel manages building, rendering, and on-demand tasks. Covers servers, serverless, and Fluid compute. [Learn more →](/docs/fundamentals/what-is-compute)
+
+## Plan your application
+
+Explore [reference architectures](/kb/architecture) to choose a stack and work through application design decisions. Each stack brings together documentation, guides, templates, and courses for building on Vercel.
 
 
 ---

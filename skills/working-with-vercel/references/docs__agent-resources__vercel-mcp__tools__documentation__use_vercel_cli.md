@@ -13,8 +13,8 @@ related:
 summary: Use use_vercel_cli with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0cfb9737d41120283b9659425d516698e9bcb8762db9c275e221ebf3794a5890"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3245e67d1d18683519c040e42572f7d8a580a9414dd60b9f3869a7c3a4cff01d"
 ---
 
 # use_vercel_cli
@@ -29,9 +29,9 @@ This tool is available through the `https://mcp.vercel.com/cli/mcp` connection.
 
 - [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 - [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
-- [vercel mcp](https://vercel.com/docs/cli/mcp) — Set up Model Context Protocol \\(MCP\\) usage with a Vercel project using the vercel mcp CLI command.
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel mcp](https://vercel.com/docs/cli/mcp) — Set up Model Context Protocol \\(MCP\\) clients to use Vercel MCP with the vercel mcp CLI command.
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli.graph.md](/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli.graph.md)
 <!-- /docsgraph:related -->

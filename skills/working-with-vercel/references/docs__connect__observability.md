@@ -16,8 +16,8 @@ related:
 summary: Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/observability.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1c215e182133225bd9caeba0b858563896962466d791f2d9bdff945249f34e37"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "812f8ad5949ffacb1fa7080ab181363ffa538a5424db4f6778603db422ae09e6"
 ---
 
 # Observability
@@ -35,9 +35,9 @@ Every connector has an **Observability** tab that shows runtime events for token
 - [Vercel Connect adds observability support](https://vercel.com/changelog/vercel-connect-adds-observability-support)
 - [Webhook triggers for Vercel Connect](https://vercel.com/docs/connect/concepts/triggers) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [Provider tokens in Vercel Connect](https://vercel.com/docs/connect/concepts/tokens) — Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/connect/observability.graph.md](/docs/connect/observability.graph.md)
 <!-- /docsgraph:related -->
@@ -140,7 +140,6 @@ Logged when a token is requested through `getToken` (SDK), `vercel connect token
 | `userId`               | `string` | no       | The Vercel user ID associated with the request.                             |
 | `installationId`       | `string` | no       | The ID of the client installation associated with the token request. |
 | `expiresAt`            | `number` | no       | The token expiration timestamp.                                      |
-| `refreshTokenExpiresAt`| `number` | no       | The expiration timestamp of the refresh token.                       |
 
 ### Completed Authorization Request
 
@@ -157,7 +156,6 @@ Logged when a user or app completes an OAuth authorization flow and obtains a gr
 | `userId`               | `string` | no       | The Vercel user ID associated with the request.                             |
 | `installationId`       | `string` | no       | The ID of the client installation.                                   |
 | `externalTenantId`     | `string` | no       | The external tenant ID from the provider.                            |
-| `refreshTokenExpiresAt`| `number` | no       | The expiration timestamp of the refresh token.                       |
 
 ### Revoked Token Request
 
@@ -175,7 +173,6 @@ Logged when a token is revoked from the dashboard, CLI, or REST API.
 | `userId`               | `string` | no       | The Vercel user ID associated with the request.                             |
 | `installationId`       | `string` | no       | The ID of the client installation.                                   |
 | `tokenExpiresAt`       | `number` | no       | The expiration timestamp of the revoked token.                       |
-| `refreshTokenExpiresAt`| `number` | no       | The expiration timestamp of the refresh token.                       |
 | `revokedAt`            | `number` | yes      | The timestamp when the token was revoked.                            |
 
 ### Inbound Trigger

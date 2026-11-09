@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-11-02T12:08:33.177Z"
-sha256: "3d62652823ef8f4ec5ab4694275719b8985c7e92b20bad8ab2fc64492b68bf45"
+fetched_at: "2026-11-09T12:41:17.654Z"
+sha256: "a0078d03e42f66f88da76654d43e656c0a15f7c35c1b971713580f9d79e2d508"
 ---
 
 # Vercel REST API Reference

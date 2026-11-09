@@ -16,8 +16,8 @@ related:
 summary: Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/vercel-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "522e27c1887ffc90f725b014d5daeb4bebfe5ddff4d3b91c8bc87d5987072a7d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7ae11249fa1affac8505af544b1ff7519379a9b87849f1cb6f4acee05dfb34a3"
 ---
 
 # Managing Global Configs with Vercel REST API
@@ -35,7 +35,7 @@ We recommend you use the Vercel REST API only for creating and updating a [Globa
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 - [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
-- [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
+- [Update a Global Config](https://vercel.com/docs/rest-api/global-config/update-a-global-config) — PUT /v1/global-config/{edgeConfigId} — Updates a Global Config.
 
 Full cross-link map for this page: [/docs/global-config/vercel-api.graph.md](/docs/global-config/vercel-api.graph.md)
 <!-- /docsgraph:related -->
@@ -57,7 +57,7 @@ To create a Global Config with the [Vercel REST API](/docs/rest-api), make a `PO
 The request body should be a JSON object containing a `"slug"` with the name you would like to call your Global Config as its value.
 
 > **💡 Note:** The name can only contain alphanumeric letters, "\_" and "-". It cannot exceed
-> 32 characters.
+> 64 characters.
 
 See the example below:
 
@@ -136,7 +136,8 @@ Your request body should be a JSON object containing an `"items"` array. The `"i
 | ----------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | **`"operation"`** | The change you want to make to your Global Config.                          | `"create"`, `"update"`, `"upsert"`, `"delete"`                                       |
 | **`"key"`**       | The name of the key you want to add to or update within your Global Config. | String of alphanumeric characters, "\_" and "-" only. Up to 256 characters.          |
-| **`"value"`**     | The value you want to assign to the key.                                  | Strings, JSON objects, `null` objects, Numbers and arrays of the previous four types |
+| **`"value"`**     | The value you want to assign to the key.                                  | Any JSON value: strings, numbers, booleans, `null`, JSON objects, and arrays |
+| **`"description"`** | An optional description of the item. | String of 1 to 512 characters, or `null` to remove the description |
 
 The following example demonstrates a request body that creates an `"example_key_1"` key with a value of `"example_value_1"`, then updates the `"example_key_2"` key with a new value of `"new_value"`:
 

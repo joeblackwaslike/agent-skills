@@ -12,8 +12,8 @@ related:
 summary: Learn how to manage project-level routing rules using the vercel routes CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/routes.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "11ec52d191c3e3fdc643a27535f904cfc817148b753c255f49a119362152f5a2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "1f0a746f50b1d3348baeddf9714b53987f391cc08965608f6b0dbcb4b1cead03"
 ---
 
 # vercel routes
@@ -33,8 +33,8 @@ The `vercel routes` command lets you manage routing rules for a project. These r
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 - [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 - [Routing](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing) — Vercel MCP tools for routing.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
-- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 
 Full cross-link map for this page: [/docs/cli/routes.graph.md](/docs/cli/routes.graph.md)
 <!-- /docsgraph:related -->
@@ -53,7 +53,7 @@ routing rules for the current project.*
 
 ## Staging workflow
 
-When you add, edit, delete, enable, disable, or reorder routes, changes are staged first. Staged changes don't affect production traffic until you publish them:
+When you add, update, remove, enable, disable, or move routes, changes are staged first. Staged changes don't affect production traffic until you publish them:
 
 ```bash filename="terminal"
 # Make changes (they're staged automatically)
@@ -70,6 +70,8 @@ To discard staged changes without publishing, run `vercel routes discard-staging
 
 ## Commands
 
+Each subcommand uses the linked project unless you pass [`--project`](/docs/cli/global-options#project) with a project name or ID.
+
 ### `list`
 
 List all routing rules for the current project.
@@ -80,12 +82,12 @@ vercel routes list [options]
 
 **Options:**
 
-- `-s, --search <QUERY>`: Search by name, description, source, or destination
-- `-f, --filter <TYPE>`: Filter by type: `rewrite`, `redirect`, `set_status`, `transform`
+- `-q, --query <TEXT>`: Search by name, description, source, or destination
+- `--type <TYPE>`: Filter by type: `rewrite`, `redirect`, `set_status`, `transform`
 - `--production`: List routes from the live production version
-- `--version-id <VERSION_ID>`: List routes from a specific version ID (supports prefix matching)
-- `--diff`: Compare staged changes against production. Use with `--version-id` to compare a specific version.
-- `-e, --expand`: Show expanded details for each route
+- `--routes-version <VERSION>`: List routes from a specific version ID (supports prefix matching)
+- `--diff`: Compare staged changes against production. Use with `--routes-version` to compare a specific version.
+- `--expand`: Show expanded details for each route
 
 **Examples:**
 
@@ -94,10 +96,10 @@ vercel routes list [options]
 vercel routes list
 
 # Search for routes
-vercel routes list --search "api"
+vercel routes list --query "api"
 
 # Filter by type
-vercel routes list --filter rewrite
+vercel routes list --type rewrite
 
 # Show staged changes with diff markers
 vercel routes list --diff
@@ -119,7 +121,7 @@ vercel routes list-versions [options]
 
 **Options:**
 
-- `--count <NUMBER>`: Number of versions to fetch (default: 20, max: 100)
+- `-n, --limit <NUMBER>`: Number of versions to fetch (default: 20, max: 100)
 
 **Examples:**
 
@@ -128,7 +130,7 @@ vercel routes list-versions [options]
 vercel routes list-versions
 
 # List more versions
-vercel routes list-versions --count 50
+vercel routes list-versions --limit 50
 ```
 
 ### `inspect`
@@ -184,7 +186,7 @@ vercel routes add [name] [options]
 - `--append-request-query <KEY=VALUE>`: Append to a query parameter (repeatable)
 - `--delete-request-query <KEY>`: Delete a query parameter (repeatable)
 - `--description <TEXT>`: Route description (max 1024 characters)
-- `--disabled`: Create the route in a disabled state
+- `--no-enable`: Create the route in a disabled state. Without this option, a new route starts enabled. To enable the route later, run `vercel routes enable`.
 - `--position <POSITION>`: Position: `start`, `end`, `before:<id>`, `after:<id>`
 - `-y, --yes`: Skip confirmation prompts
 
@@ -227,12 +229,12 @@ vercel routes add "Auth Required" \
   --missing "cookie:session" --yes
 ```
 
-### `edit`
+### `update`
 
-Edit an existing routing rule. Run without edit flags for interactive mode, or use `--ai` to describe changes in natural language.
+Update an existing routing rule. Run with only the route name or ID for interactive mode, or use `--ai` to describe changes in natural language.
 
 ```bash filename="terminal"
-vercel routes edit name-or-id [options]
+vercel routes update name-or-id [options]
 ```
 
 **Options:**
@@ -267,31 +269,31 @@ vercel routes edit name-or-id [options]
 
 ```bash filename="terminal"
 # Interactive mode
-vercel routes edit "API Proxy"
+vercel routes update "API Proxy"
 
-# Edit with AI
-vercel routes edit "API Proxy" --ai "Add a Cache-Control header set to no-store"
+# Update with AI
+vercel routes update "API Proxy" --ai "Add a Cache-Control header set to no-store"
 
 # Change the destination
-vercel routes edit "API Proxy" --dest "https://new-api.example.com/:path*"
+vercel routes update "API Proxy" --dest "https://new-api.example.com/:path*"
 
 # Switch to a redirect
-vercel routes edit "Old Route" --action redirect --dest "/new" --status 301
+vercel routes update "Old Route" --action redirect --dest "/new" --status 301
 
 # Add a response header
-vercel routes edit "My Route" \
+vercel routes update "My Route" \
   --set-response-header "Cache-Control=public, max-age=3600"
 
 # Clear all conditions and add new ones
-vercel routes edit "My Route" --clear-conditions --has "header:Authorization"
+vercel routes update "My Route" --clear-conditions --has "header:Authorization"
 ```
 
-### `delete`
+### `remove`
 
-Delete one or more routing rules.
+Remove one or more routing rules.
 
 ```bash filename="terminal"
-vercel routes delete name-or-id [...name-or-id] [options]
+vercel routes remove name-or-id [...name-or-id] [options]
 ```
 
 **Options:**
@@ -301,14 +303,14 @@ vercel routes delete name-or-id [...name-or-id] [options]
 **Examples:**
 
 ```bash filename="terminal"
-# Delete a route by name
-vercel routes delete "Old Redirect"
+# Remove a route by name
+vercel routes remove "Old Redirect"
 
-# Delete multiple routes
-vercel routes delete "Route A" "Route B"
+# Remove multiple routes
+vercel routes remove "Route A" "Route B"
 
-# Delete without confirmation
-vercel routes delete "Old Route" --yes
+# Remove without confirmation
+vercel routes remove "Old Route" --yes
 ```
 
 ### `enable`
@@ -339,12 +341,12 @@ vercel routes disable name-or-id
 vercel routes disable "API Proxy"
 ```
 
-### `reorder`
+### `move`
 
 Move a routing rule to a different position. Routes are evaluated in order, so position affects which route matches first.
 
 ```bash filename="terminal"
-vercel routes reorder name-or-id [options]
+vercel routes move name-or-id [options]
 ```
 
 **Options:**
@@ -358,16 +360,16 @@ vercel routes reorder name-or-id [options]
 
 ```bash filename="terminal"
 # Move to first position
-vercel routes reorder "Catch All" --first
+vercel routes move "Catch All" --first
 
 # Move to a specific position
-vercel routes reorder "API Proxy" --position 3
+vercel routes move "API Proxy" --position 3
 
 # Move after another route
-vercel routes reorder "API Proxy" --position after:route-id-123
+vercel routes move "API Proxy" --position after:route-id-123
 
-# Interactive reorder (prompts for position)
-vercel routes reorder "API Proxy"
+# Interactive move (prompts for position)
+vercel routes move "API Proxy"
 ```
 
 ### `export`
@@ -380,7 +382,7 @@ vercel routes export [name-or-id] [options]
 
 **Options:**
 
-- `--format <FORMAT>`: Output format: `json` (default) or `ts`
+- `-o, --output <FORMAT>`: Output file format: `json` (default) or `ts`
 
 **Examples:**
 
@@ -389,7 +391,7 @@ vercel routes export [name-or-id] [options]
 vercel routes export
 
 # Export as vercel.ts format
-vercel routes export --format ts
+vercel routes export --output ts
 
 # Export a specific route
 vercel routes export "API Proxy"
@@ -476,7 +478,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

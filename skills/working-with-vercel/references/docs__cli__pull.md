@@ -10,13 +10,13 @@ prerequisites:
 related:
   - /docs/environment-variables
   - /docs/cli/env
-  - /docs/deployments/environments
   - /docs/cli/global-options
+  - /docs/deployments/environments
 summary: Learn how to update your local project with remote environment variables using the vercel pull CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/pull.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c6a0ed1c3b8904a7610712de0b59b89f05fac02f7ec3ec94c911b546aeaf287b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f1339db2acfe516ff6e92371fdc9109904373d6243b293377fa5bc4c45c5fde6"
 ---
 
 # vercel pull
@@ -29,11 +29,10 @@ The `vercel pull` command is used to store [Environment Variables](/docs/environ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
+- [vercel environments](https://vercel.com/docs/cli/target) — Work with custom environments using the --environment option in Vercel CLI.
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/pull.graph.md](/docs/cli/pull.graph.md)
@@ -83,7 +82,7 @@ These are options that only apply to the `vercel pull` command.
 ### Yes
 
 The `--yes` option can be used to skip questions you are asked when setting up a new Vercel Project.
-The questions will be answered with the default scope and current directory for the Vercel Project name and location.
+The CLI answers the questions with the current directory for the Vercel Project name and location. The `--yes` option does not choose a team. If you belong to more than one team, also pass the [`--scope` option](/docs/cli/global-options#scope).
 
 ```bash filename="terminal"
 vercel pull --yes
@@ -112,7 +111,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

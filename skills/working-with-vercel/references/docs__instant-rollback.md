@@ -16,8 +16,8 @@ related:
 summary: Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed production deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/instant-rollback.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a3abb514ac8cc0ee6c0b98fcf4df471df81a06a0346e585c0fe943d06f32497b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "cb1105bf383bb6771ec74e8f42fdea889f5618d1286de6952b79f20566eeaee8"
 ---
 
 # Performing an Instant Rollback on a Deployment
@@ -41,7 +41,7 @@ Vercel provides Instant Rollback as a way to quickly revert to a previous produc
 - [Introducing eve](https://vercel.com/blog/introducing-eve)
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
 - [Instant Rollback is now generally available to revert deployments](https://vercel.com/changelog/instant-rollback-is-now-available-to-revert-deployments)
-- [Instant Rollback public beta available to revert deployments](https://vercel.com/changelog/instant-rollback-public-beta-available-to-revert-deployments)
+- [Revert and pin deployments with Instant Rollback](https://vercel.com/changelog/revert-and-pin-deployments-with-instant-rollback)
 
 Full cross-link map for this page: [/docs/instant-rollback.graph.md](/docs/instant-rollback.graph.md)
 <!-- /docsgraph:related -->
@@ -49,7 +49,7 @@ Full cross-link map for this page: [/docs/instant-rollback.graph.md](/docs/insta
 - Vercel treats the rolled-back deployment as a restored version of a previous deployment
 - The configuration used for the rolled-back deployment may become stale
 - Vercel won't update environment variables if you change them in the project settings and will roll back to a previous build
-- If the project uses [cron jobs](/docs/cron-jobs/manage-cron-jobs#rollbacks-with-cron-jobs), Vercel restores the cron job definitions associated with the target deployment. The project's **Disable Cron Jobs** setting persists across rollbacks and deployment promotions, so disabled cron jobs remain disabled until you explicitly re-enable them
+- If the project uses [cron jobs](/docs/cron-jobs/manage-cron-jobs#rollbacks-and-promotions-with-cron-jobs), Vercel restores the cron job definitions associated with the target deployment. The project's **Disable Cron Jobs** setting persists across rollbacks and deployment promotions, so disabled cron jobs remain disabled until you explicitly re-enable them
 
 For teams on a Pro or Enterprise plan, all deployments previously aliased to a production domain are [eligible to roll back](#eligible-deployments). Hobby users can roll back to the immediately previous deployment.
 
@@ -111,9 +111,9 @@ After a rollback, Vercel turns off [auto-assignment of production domains](/docs
 
 ### From the dashboard
 
-When your project is in a rolled-back state, an **Undo Rollback** button appears on the production deployment tile:
+When your project is in a rolled-back state, a **Manage** button appears on the production deployment tile:
 
-1. On your project's overview page, click the **Undo Rollback** button on the production deployment tile
+1. On your project's overview page, click the **Manage** button on the production deployment tile
 2. In the dialog, select the deployment you'd like to promote
 3. Click **Confirm** to promote the selected deployment
 
@@ -142,6 +142,16 @@ Rollback can also be initiated by:
 ## Eligible deployments
 
 Deployments previously aliased to a production domain are eligible for Instant Rollback. Deployments that have never been aliased to production a domain, e.g., most [preview deployments](/docs/deployments/environments#preview-environment-pre-production), are not eligible.
+
+## Rollbacks and promotions run one at a time
+
+A rollback or a [promotion](/docs/deployments/promoting-a-deployment) reassigns your production domains in a background job that usually finishes within seconds. Vercel allows only one such job per project at a time:
+
+- A new rollback is rejected while a rollback or promotion is still in progress. The dashboard and CLI show an error, and the [rollback](/docs/rest-api/projects/point-production-traffic-to-a-previous-production-deployment-by-id) and [promote](/docs/rest-api/projects/point-production-traffic-to-a-given-deployment) REST API endpoints respond with `409 Conflict`
+- A new promotion supersedes a promotion that is still in progress, except that promoting the same deployment twice is rejected until the first promotion finishes
+- A job that has not finished within 3 minutes of being requested is treated as stale and no longer blocks new requests
+
+To check for an in-progress job through the API, request the project with `rollbackInfo=true` and read `lastAliasRequest.jobStatus`: `pending` and `in-progress` mean a job is still running, while `succeeded`, `failed`, and `skipped` are final. Without the `rollbackInfo` parameter the field is always `null`.
 
 ## Comparing Instant Rollback and manual promote options
 

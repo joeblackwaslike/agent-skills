@@ -15,8 +15,8 @@ related:
 summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e266a600971fe6045af8f33ba7ee4c446b6b04b2138a666adb2fe3d30810ddc7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2efdcd9ac7d9a9897e93108866f423b5ba0350533ca32575883ebe55f77f317b"
 ---
 
 # AI Gateway Text to Speech
@@ -33,8 +33,10 @@ Generate spoken audio from text with ElevenLabs, Google, Microsoft, and OpenAI s
 - [Gemini 3.8 text-to-speech models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-text-to-speech-models-now-available-on-ai-gateway)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
 - [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
-- [generateSpeech](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech) — API Reference for generateSpeech.
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
+- [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway)
+- [generateSpeech](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech) — API Reference for generateSpeech.
+- [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-to-speech.graph.md](/docs/ai-gateway/modalities/text-to-speech.graph.md)
@@ -501,7 +503,7 @@ The response is a JSON object with the base64-encoded audio:
 
 ## Limitations
 
-- Audio returns base64-encoded in a JSON response. Streaming audio output is not supported.
+- The REST API returns audio base64-encoded in a single JSON response. Streaming audio output is supported only for the ElevenLabs models in [Stream speech with ElevenLabs](#stream-speech-with-elevenlabs).
 - Google speech models don't support `speed` or `language`. Set pacing through `instructions` since the model detects the language from the text.
 - Microsoft speech models don't support `instructions`. Set the delivery with `providerOptions.azure.style` instead.
 - Microsoft speech models reject unknown voices and unsupported styles.

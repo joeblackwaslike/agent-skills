@@ -4,8 +4,8 @@ description: Decide answers to Choice, Score, and Boolean questions against shar
 url: "https://ai-sdk.dev/docs/ai-sdk-core/decisions"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/decisions.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "b3c320fc9b84da481af9ee7fde345db8391fda2d4e4d19a99555c85f888d460c"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "341b728538224dee32b7ecc1f0cd0885e549195a8ea062fc3e702f5c3a5a6ba8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -244,14 +244,16 @@ to retain its experimental `decisionModel` method.
 descriptions can be strings, JSON objects, or JSON arrays. Descriptions can also
 be `null` when the provider supports it.
 
-For Choice, Score, and Boolean, `instructions` may be omitted or `null`. A Boolean
+For every question type, `instructions` may be omitted or `null` when supported
+by the provider. Boolean `criteria` may also be `null`. A Boolean
 question without instructions must describe at least one of its `true` or `false`
-criteria. Box questions always require instructions. Provider APIs can impose
+criteria. Provider APIs can impose
 additional requirements; see the provider's documentation.
 
-Score rubrics require at least one level in Core. Perplexity accepts a single
-level, which returns score `0` with probability `1`; other providers may require
-more levels. See [Perplexity's examples](/providers/ai-sdk-providers/perplexity#single-level-score-rubrics).
+Score rubrics require at least one level in Core. TypeSafe and Perplexity accept
+a single level, which returns score `0` with probability `1`; other providers may
+require more levels. See the [TypeSafe provider documentation](/providers/ai-sdk-providers/typesafe-ai)
+and [Perplexity's examples](/providers/ai-sdk-providers/perplexity#single-level-score-rubrics).
 
 Functions, class instances, cycles, undefined values inside JSON content, and
 nonfinite numbers are not JSON-compatible.
@@ -282,6 +284,9 @@ their API probabilities. Provider-specific confidence statistics belong
 in `providerMetadata`. TypeSafe exposes its separate Choice/Score/Box confidence
 statistic at `result.providerMetadata?.typesafe?.confidence`, keyed by question
 ID. It is not the selected option's probability or a portable confidence measure.
+TypeSafe Score legends are available at
+`result.providerMetadata?.typesafe?.legend`, also keyed by question ID, with
+structured descriptions preserved.
 Perplexity exposes Choice/Score confidence at
 `result.providerMetadata?.perplexity?.confidence` and Score legends at
 `result.providerMetadata?.perplexity?.legend`, also keyed by question ID.

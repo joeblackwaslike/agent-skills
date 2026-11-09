@@ -15,8 +15,8 @@ related:
 summary: What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAuth.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/providers.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "35ed2e7729da2ddf071e0aa16571f8f18db19a308624fe66ba047a1b07d2a3aa"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bcf66ebf87e477bad176c8538ef288747a90495a4fb117d3b223a01103e44050"
 ---
 
 # For Service Providers
@@ -37,7 +37,6 @@ If you are a service owner, this page covers what your service needs to support 
 - [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 - [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/connect/providers.graph.md](/docs/connect/providers.graph.md)
 <!-- /docsgraph:related -->
@@ -223,7 +222,7 @@ The CLI discovers your well-known endpoints and will automatically register the 
 | Symptom                                                              | Cause                                                                                                    |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | Vercel Connect can't find your discovery document for a URL with a path | Metadata is only at the origin. Add the path-suffixed form from RFC 8414 Section 3.1                      |
-| Vercel Connect skips a document that exists                          | The document isn't served as `application/json` nor form-encoded.                                                         |
+| Vercel Connect skips a document that exists                          | The document isn't served as `application/json`.                                                         |
 | Your users enter a client ID and secret even though you support DCR  | `token_endpoint_auth_methods_supported` names no method Vercel Connect can use for registration           |
 | Your API receives requests with expired tokens                       | Token responses omit `expires_in`, so Vercel Connect infers the lifetime                                 |
 | Your users re-authorize more often than expected                     | `grant_types_supported` omits `refresh_token`, or rotation returns no new refresh token                   |

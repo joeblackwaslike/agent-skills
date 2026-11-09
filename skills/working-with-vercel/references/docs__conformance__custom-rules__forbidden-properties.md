@@ -12,8 +12,8 @@ related:
 summary: "Learn how to set custom rules to disallow reading from, writing to, and/or calling one or more properties"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-properties.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "faea1edf0a3886b6363026a020154ec5c8c5292ef442a5fe2fe4662a27a0f872"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4d15627b2678bf6f800077898778ac95f82114d86c45c42196f46e23e1a14bb9"
 ---
 
 # forbidden-properties
@@ -45,7 +45,7 @@ required properties:
 | `ruleName`            | `string`                                    | The custom rule's name.                                                                               |
 | `errorMessage`        | `string`                                    | The error message, which is shown to users when they encounter this rule.                             |
 | `errorLink`           | `string` (optional)                         | An optional link to show alongside the error message.                                                 |
-| `description`         | `string` (optional)                         | The rule description, which is shown in the Vercel Compass dashboard and included in allowlist files. |
+| `description`         | `string` (optional)                         | The rule description, which is included in allowlist files. |
 | `severity`            | `"major" \| "minor"` (optional)             | The rule severity added to the allowlists and used to calculate a project's conformance score.        |
 | `forbiddenProperties` | [`ForbiddenProperty[]`](#forbiddenproperty) | One or more properties and their forbidden operations.                                                |
 

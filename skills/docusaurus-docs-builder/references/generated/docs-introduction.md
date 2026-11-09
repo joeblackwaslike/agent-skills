@@ -1,8 +1,8 @@
 ---
 title: "Docs Introduction"
 source: "https://docusaurus.io/docs/docs-introduction"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "679c1367ccc1f1191727f25eb790c70aaea4029f007520c3bea8030f7c94cca4"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "385a56fa2945bfc1e11265875d82986ccebf36854464f04eac6c238d68901365"
 ---
 
 # Docs Introduction
@@ -69,4 +69,4 @@ Now, the site's structure will be like the following:
 example.com/                       -> generated from `docs/intro.md`example.com/tutorial-basics/...    -> generated from `docs/tutorial-basics/...`...
 ```
 
-tipThere's also a "blog-only mode" for those who only want to use the blog feature of Docusaurus. You can use the same method detailed above. Follow the setup instructions on [Blog-only mode](https://docusaurus.io/docs/blog#blog-only-mode).[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/docs/docs-introduction.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+tipThere's also a "blog-only mode" for those who only want to use the blog feature of Docusaurus. You can use the same method detailed above. Follow the setup instructions on [Blog-only mode](https://docusaurus.io/docs/blog#blog-only-mode).[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/docs/docs-introduction.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

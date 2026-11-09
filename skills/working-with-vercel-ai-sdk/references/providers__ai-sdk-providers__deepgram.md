@@ -4,8 +4,8 @@ description: Learn how to set up the Deepgram provider and check AI Gateway avai
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "878c182179cdcd7d3fd927bc09595df3e44ab296e38f5c606d0be334208a948b"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "7827ed5fcc8cdba27342608c690880b79a61ef6abe1aa1e4ad92a439ed223c0b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -104,6 +104,12 @@ You can use the following optional settings to customize the Deepgram provider i
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
 
+- **webSocket** *WebSocketConstructor*
+
+  Custom WebSocket implementation for streaming transcription. Defaults to the
+  global `WebSocket`. Use a header-capable implementation such as `ws` when you
+  need to forward custom HTTP headers during the handshake.
+
 ## Speech Models
 
 You can create models that call the [Deepgram text-to-speech API](https://developers.deepgram.com/docs/text-to-speech)
@@ -180,14 +186,17 @@ The following provider options are available:
 
 - **callback** *string*
 
-  URL to which Deepgram will make a callback request with the audio.
-  Optional.
+  Not supported. Deepgram processes requests with a callback URL asynchronously
+  and answers with a JSON acknowledgement (`{ "request_id": "..." }`) instead of
+  audio, so `generateSpeech` rejects this option with an `InvalidArgumentError`.
+  Call the Deepgram REST API directly when you need asynchronous callback
+  delivery.
 
 - **callbackMethod** *enum*
 
-  HTTP method for the callback request.
-  Allowed values: `'POST'`, `'PUT'`.
-  Optional.
+  Not supported. Only used together with `callback`, which `generateSpeech`
+  rejects. Allowed values: `'POST'`, `'PUT'`. The option is ignored with an
+  `unsupported` warning.
 
 - **mipOptOut** *boolean*
 
@@ -358,6 +367,82 @@ The following provider options are available:
 | `nova` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova))         | ✓             | ✓        | ✓        | ✗        |
 | `enhanced` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#enhanced)) | ✓             | ✓        | ✓        | ✗        |
 | `base` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#base))         | ✓             | ✓        | ✓        | ✗        |
+
+## Streaming Transcription
+
+Use `experimental_streamTranscribe` with Nova models to transcribe live audio
+through Deepgram's [`/v1/listen` WebSocket API](https://developers.deepgram.com/reference/speech-to-text/listen-streaming):
+
+```ts
+import { deepgram } from '@ai-sdk/deepgram';
+import { experimental_streamTranscribe as streamTranscribe } from 'ai';
+
+const result = streamTranscribe({
+  model: deepgram.transcription('nova-3'),
+  audio: audioStream, // ReadableStream<Uint8Array | string>
+  inputAudioFormat: { type: 'audio/pcm', rate: 16000 },
+  providerOptions: {
+    deepgram: {
+      language: 'en',
+      streaming: { interimResults: true, endpointing: 300 },
+    },
+  },
+});
+
+for await (const part of result.fullStream) {
+  if (part.type === 'transcript-partial' || part.type === 'transcript-final') {
+    console.log(part.type, part.text);
+  }
+}
+
+console.log(await result.text);
+console.log(await result.segments);
+console.log(await result.durationInSeconds);
+```
+
+Input chunks contain raw 16-bit little-endian PCM (`audio/pcm`), G.711 μ-law
+(`audio/pcmu`), or G.711 A-law (`audio/pcma`). Set `rate` to the actual sample
+rate. Strings contain base64-encoded audio. Closing the audio input flushes the
+remaining transcript before the result finishes. Idle input connections send
+keepalive messages, and cancellation closes the socket and cancels the audio
+source.
+
+The provider authenticates with WebSocket subprotocols when using a Deepgram API
+key, so native WebSockets work without custom headers. Keep long-lived API keys
+on the server. Flux models use a separate `/v2/listen` protocol and are not
+supported by this implementation.
+
+To authenticate with a short-lived token, use the Bearer scheme:
+
+```ts
+const deepgram = createDeepgram({
+  apiKey: temporaryToken,
+  headers: { authorization: `Bearer ${temporaryToken}` },
+});
+```
+
+Live transcription supports `language`, `smartFormat`, `punctuate`, `diarize`,
+`fillerWords`, `redact`, `replace`, `search`, and `keyterm`. Batch-only settings
+produce warnings. The optional `providerOptions.deepgram.streaming` object
+accepts:
+
+- **interimResults** *boolean*: emit revisable partial transcripts (default `false`).
+- **endpointing** *number | false*: silence duration in milliseconds before
+  finalizing an utterance; `false` disables endpointing.
+- **channels** *number*: number of interleaved audio channels (default `1`).
+- **multichannel** *boolean*: transcribe each channel independently.
+- **vadEvents** *boolean*: include speech-start events when `includeRawChunks` is enabled.
+- **utteranceEndMs** *number*: silence duration in milliseconds before an
+  utterance-end event; at least `1000`, used with `interimResults`.
+
+Final transcript parts contain channel indices and timing. Aggregate text and
+segments combine all channels in chronological order; consume `fullStream` when
+you need each segment's channel index. Word timings appear in `result.segments`, and Deepgram's reported duration appears in
+`result.durationInSeconds`. Native usage (`{ seconds: duration }`) is forwarded
+to the `experimental_onStreamTranscriptionEnd` telemetry callback. The
+`providerMetadata.deepgram.speechFinal` flag indicates an utterance boundary.
+Enable `includeRawChunks` for complete provider events, including request IDs,
+speaker labels, and utterance-end events.
 
 ---
 

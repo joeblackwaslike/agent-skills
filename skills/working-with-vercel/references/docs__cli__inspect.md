@@ -12,8 +12,8 @@ related:
 summary: Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/inspect.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "33e15f2a3a59b3e5cf04f972c5facfafb14f63101890819c98212d7bbd3b9691"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "709293998938636f8d3e4b29c8fc6da3ba3c0a4381dd7db7c3540a2689f494e9"
 ---
 
 # vercel inspect
@@ -30,8 +30,8 @@ The `vercel inspect` command is used to retrieve information about a deployment 
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [vercel bisect](https://vercel.com/docs/cli/bisect) — Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 
 Full cross-link map for this page: [/docs/cli/inspect.graph.md](/docs/cli/inspect.graph.md)
 <!-- /docsgraph:related -->
@@ -53,22 +53,20 @@ These are options that only apply to the `vercel inspect` command.
 
 ### Timeout
 
-The `--timeout` option sets the time to wait for deployment completion. It defaults to 3 minutes.
+The `--timeout` option sets the time to wait for deployment completion when you use [`--wait`](#wait). It defaults to 3 minutes.
 
 Any valid time string for the [ms](https://www.npmjs.com/package/ms) package can be used.
 
 ```bash filename="terminal"
-vercel inspect https://example-app-6vd6bhoqt.vercel.app --timeout=5m
+vercel inspect https://example-app-6vd6bhoqt.vercel.app --wait --timeout=5m
 ```
 
 *Using the \`vercel inspect\` command with the
-\`--timeout\` option.*
+\`--wait\` and \`--timeout\` options.*
 
 ### Wait
 
-The `--wait` option blocks the CLI until the deployment completes or [`--timeout`](#timeout) expires. If the wait times out while the deployment is still in progress, the command exits with code `124`. A timeout does not mean the deployment is ready.
-
-This is a command-specific exception to the [CLI exit-code contract](/docs/cli/global-options#exit-codes).
+The `--wait` option blocks the CLI until the deployment completes or [`--timeout`](#timeout) expires. If the wait times out while the deployment is still in progress, the command exits with code `1` in Vercel CLI 64.1.0 and later. A timeout does not mean the deployment is ready.
 
 ```bash filename="terminal"
 vercel inspect https://example-app-6vd6bhoqt.vercel.app --wait
@@ -79,7 +77,7 @@ vercel inspect https://example-app-6vd6bhoqt.vercel.app --wait
 
 ### Logs
 
-The `--logs` option, shorthand `-l`, prints the build logs instead of the deployment information.
+The `--logs` option prints the build logs instead of the deployment information.
 
 ```bash filename="terminal"
 vercel inspect https://example-app-6vd6bhoqt.vercel.app --logs
@@ -112,7 +110,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

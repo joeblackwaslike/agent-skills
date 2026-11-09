@@ -17,8 +17,8 @@ related:
 summary: Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/integrations/daemons.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5c2b2873eaa6e271e9f7caf8ca4ae2a1aeaa61d515595013551707b9327f9fba"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f33cd727506745e86d9ae66de1ac69543ce0588a97756739fda513ec081bc8b8"
 ---
 
 # Chat SDK with Vercel Daemons
@@ -32,9 +32,9 @@ Process work from a [Chat SDK](/docs/chat-sdk) bot in a [Vercel Daemon](/docs/da
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
-- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
@@ -378,6 +378,28 @@ A daemon can also run a [Slack Socket Mode bot](https://chat-sdk.dev/adapters/of
 Connect's Slack helper supplies the bot token and verifies forwarded HTTP events. It doesn't supply the app-level token required by Socket Mode, and the Connect-created Slack app doesn't expose that token. Use an app you create and control in Slack for Socket Mode. Requesting an `app` subject in Connect selects application credentials; it doesn't request Slack's app-level token type.
 
 Keep the Connect-backed webhook and queue flow above when using a Slack app created through Connect. See [Connect delivery limitations](/docs/connect/frameworks/chat-sdk#account-for-delivery-limitations).
+
+## Frequently asked questions
+
+### When should a Chat SDK bot use a daemon instead of a function?
+
+Use a daemon for a worker that runs continuously, such as a report generator, or one that depends on system tools you package in a container. Keep handling webhooks in [Vercel Functions](/docs/functions), and use a function alone when the work fits within its maximum duration. For tasks that need persisted steps, retries, or human approval, use [Vercel Workflows](/docs/chat-sdk/integrations/workflows).
+
+### Can a Vercel Daemon receive Slack webhooks?
+
+No. Daemons don't accept inbound HTTP or TCP traffic, so Slack can't deliver events to them. In this guide, a Vercel Function receives the webhook and adds a job to Vercel Queues, and the daemon polls the queue and replies through Chat SDK. The daemon gets its Slack credentials from Vercel Connect.
+
+### Can I run a Slack Socket Mode bot in a Vercel Daemon?
+
+Yes, with a Slack app you create and control. Socket Mode connects over an outbound WebSocket and needs an app-level token (`xapp-…`) with the `connections:write` scope as well as a bot token. The Slack app that Vercel Connect creates doesn't expose an app-level token, and Connect trigger forwarding uses HTTP. Keep the webhook and queue flow from this guide when you use a Connect-created app.
+
+### Can a daemon post the same reply twice?
+
+Yes, in rare cases. Vercel Queues delivers each message at least once, so a job can arrive again after a failure. The worker saves a completion marker in Redis to skip completed jobs, but a crash after posting to Slack and before saving the marker can still produce a duplicate reply. Design external writes to be safe to retry. See [at-least-once delivery](/docs/queues/concepts#at-least-once-delivery).
+
+### Do daemons run in Preview deployments?
+
+No. During the beta, daemons run only in production deployments. To test a worker before production, use a separate project, connector, and Redis database, and follow [Daemons local development](/docs/daemons#local-development). Don't poll the production queue from your machine, because a local process with the same topic and consumer group can claim jobs meant for the deployed worker. See [Daemons limits](/docs/daemons/limits).
 
 ## Next steps
 

@@ -17,8 +17,8 @@ related:
 summary: Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7e47e055a2b4a67b3b71cc62e081b6e45acb18cf9e2b794518656d9e14e19f51"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0f3466a65871594c5d5d4f3efb06e5eed36caa0c72e3f2d4f88077a12628ee39"
 ---
 
 # Trusted Sources
@@ -177,12 +177,18 @@ For GitHub, the dashboard offers a guided form so you don't write claims by hand
 2. In **Trusted Sources** > **External Services**, select **Add**, then choose **GitHub Actions**.
 3. Pick a **GitHub account**. If you don't see yours, select **Add GitHub account** to install the Vercel app.
 4. Optionally pick a **Repository** to narrow the rule to one repo. Leave empty to allow any repo in the selected account.
-5. Optionally enter a **Branch name** (for example `main`) to narrow to one branch.
-6. Optionally enter a **GitHub Actions environment** to narrow to jobs running with that environment.
+5. Optionally enter a **Workflow** name to match the `workflow` claim in your GitHub Actions OIDC token.
+6. Optionally enter a **Branch** name (for example `main`) to narrow to one branch.
 7. Under **Applies to environments**, pick which environments on this project the workflow can reach.
 8. Select **Add**.
 
 The audience is auto-set to `https://github.com/<account>`, which is what GitHub Actions sends when your workflow calls `getIDToken()` without an argument. If your workflow passes a custom audience to `getIDToken()`, expand **Use a custom audience** and enter the value you pass.
+
+To require additional token claims, such as `environment`, `workflow_ref`, or `workflow_sha`, use the [Update Project API](/docs/rest-api/projects/update-an-existing-project) to configure `trustedSources.oidcProviders`. Map `https://token.actions.githubusercontent.com` to an array of rules. In each rule's `claims` object, map each claim to an array of accepted strings. Keep all required claims in the same rule so each must match, and use `to.slugs` to select the destination Vercel environments, such as `["preview"]`.
+
+The `environment` claim identifies the GitHub Actions job's environment. **Applies to environments** selects the Vercel environments the workflow can reach.
+
+Retrieve the current project configuration before updating, and preserve any existing Trusted Sources entries you want to keep. The update replaces the `projects` and `oidcProviders` maps.
 
 ### Add another external service
 
@@ -195,8 +201,6 @@ For GitLab, Bitbucket, Vercel OIDC, or any custom OIDC provider, fill in the cla
 5. Under **Workload identity**, fill in `aud` plus at least one of the identity claims for that provider. Each value field accepts a comma-separated list of accepted values, so you can list multiple acceptable subjects in one rule.
 6. Under **Applies to environments**, select which environments on this project the rule allows the service to reach.
 7. Select **Add**.
-
-For GitHub Actions, you can switch to this raw form with **Edit raw claims** if you need to match on a claim the guided form doesn't expose, such as `actor` or `workflow_ref`.
 
 > **💡 Note:** Every claim you configure must match exactly. Claims you don't list are not checked, so a missing claim is the same as accepting any value for it. Scope on `repository` (GitHub), `project_path` (GitLab), or `workspaceUuid` (Bitbucket) at minimum, and add `ref` or `environment` if you also want to lock to a specific branch or environment.
 

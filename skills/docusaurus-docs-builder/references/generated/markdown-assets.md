@@ -1,8 +1,8 @@
 ---
 title: "Markdown Assets"
 source: "https://docusaurus.io/docs/markdown-features/assets"
-fetched_at: "2026-10-19T09:38:00.847Z"
-sha256: "d9c653ad71617ef035675ad3b39b1ddea98324e0a6a7a263ac9f65be9f715a31"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "4e0d8e74dcf4901275d44f827a918d38c7069c8ee58cc016f47511dfaaa8ea72"
 ---
 
 # Markdown Assets
@@ -132,4 +132,4 @@ If you intend to write URLs, you can use the `pathname://` protocol to disable a
 ![banner](pathname:///img/docusaurus-asset-example-banner.png)
 ```
 
-This link will be generated as `<img src="/img/docusaurus-asset-example-banner.png" alt="banner" />`, without any processing or file existence checking.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-assets.mdx)Last updated on Oct 15, 2026 by Sébastien Lorber
+This link will be generated as `<img src="/img/docusaurus-asset-example-banner.png" alt="banner" />`, without any processing or file existence checking.[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-assets.mdx)Last updated on Oct 15, 2026 by Sébastien Lorber

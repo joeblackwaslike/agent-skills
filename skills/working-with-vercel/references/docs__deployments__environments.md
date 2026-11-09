@@ -16,8 +16,8 @@ related:
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "23a83a5e542558186dbc141bb5944d9c4fb5657a14c5af117caabc47a6526e58"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bb8a857d43f3be7fe3e4ea309c56f7ec91b277b69ecd248bfe0d79f3d85eaea4"
 ---
 
 # Environments
@@ -30,18 +30,18 @@ Vercel provides three default environments (**Local**, **Preview**, and **Produc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Additional custom environments can now be purchased](https://vercel.com/changelog/additional-custom-environments-can-now-be-purchased)
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
 - [Prioritize production builds available on all plans](https://vercel.com/changelog/prioritize-production-deployments-to-build-before-queued-preview)
 - [Set team-wide defaults for Deployment Protection](https://vercel.com/changelog/set-team-wide-defaults-for-deployment-protection)
 - [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments)
-- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
-- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 
 Full cross-link map for this page: [/docs/deployments/environments.graph.md](/docs/deployments/environments.graph.md)
 <!-- /docsgraph:related -->
@@ -136,7 +136,7 @@ Use a staging workflow to test changes before serving them on your production do
 4. [Assign a domain to the environment](/docs/domains/working-with-domains/add-a-domain-to-environment), such as `staging.example.com`.
 5. Push to the matching branch to deploy your changes to staging.
 
-The environment's domain points to its latest deployment. You can also deploy from the CLI with `vercel deploy --target=staging`.
+The environment's domain points to its latest deployment. You can also deploy from the CLI with `vercel deploy --environment=staging`.
 
 ### Using a preview branch for staging
 
@@ -266,13 +266,13 @@ You can deploy, pull, and manage environment variables to your custom environmen
 
 ```bash
 # Deploy to a custom environment named "staging":
-vercel deploy --target=staging
+vercel deploy --environment=staging
 
 # Pull environment variables from "staging":
 vercel pull --environment=staging
 
 # Add environment variables to "staging":
-vercel env add MY_KEY staging
+vercel env add MY_KEY --environment staging
 ```
 
 ### Using custom environments with Vercel Connect
@@ -339,6 +339,42 @@ To purchase additional custom environments:
 To stop the monthly charge, reduce the number back to your plan's included amount in the same section. If the project uses more environments than the reduced amount allows, delete custom environments first: reductions below current usage are not accepted.
 
 Purchased packs apply to a single project. Members with permission to update the team's billing plan can change pack quantities.
+
+## Frequently asked questions
+
+### Are Vercel preview deployments indexed by search engines?
+
+No, not by default. Vercel adds an [`X-Robots-Tag: noindex`](/docs/headers/response-headers#x-robots-tag) response header to preview deployments, and to production deployments that you open through their unique deployment URL. Search engines that support `noindex`, such as Google, leave those pages out of their results. [Deployment Protection](/docs/deployment-protection) also blocks crawlers from reading protected previews.
+
+Vercel doesn't add the header when you serve a preview from a [custom domain assigned to a Git branch](/docs/domains/working-with-domains/assign-domain-to-a-git-branch), such as `staging.example.com`. Search engines can index that domain unless you protect it or [add the header yourself](/docs/headers/response-headers#x-robots-tag). To check a URL, run `curl -I` against it and look for `x-robots-tag: noindex` in the response.
+
+### Who can view my preview deployments?
+
+New projects start with [Standard Protection](/docs/deployment-protection#standard-protection) and [Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication), unless your team has set a different default. With this setup, visitors to a preview deployment must log in with a Vercel account that has access to the project. Your production domains stay public.
+
+To share a preview with someone outside your team, approve their access request or send them a [Shareable Link](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links). You can change the protection method and scope in your project's **Deployment Protection** settings.
+
+### Can AI agents test my preview deployments for me?
+
+Yes. An agent that sends HTTP requests directly can't complete the Vercel Authentication login, so give it access in one of these ways:
+
+- **[Vercel MCP](/docs/agent-resources/vercel-mcp)**: The [`web_fetch_vercel_url`](/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url) tool fetches a protected deployment that you have access to. The [`get_access_to_vercel_url`](/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) tool creates a temporary Shareable Link that browser tools such as Playwright can open.
+- **[`vercel curl`](/docs/cli/curl)**: Pass the full preview URL, and the Vercel CLI adds a protection bypass token to the request.
+- **[Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation)**: Store a bypass secret in your agent, CI pipeline, or test runner, and send it in the `x-vercel-protection-bypass` header.
+
+Agents that drive a full browser can also sign in with [agent-browser](/docs/deployment-protection/automated-agent-access#agents-that-need-browser-interaction). See [Automated & Agent Access](/docs/deployment-protection/automated-agent-access) for setup steps and examples for Playwright, Cypress, and GitHub Actions.
+
+### Do preview deployments use production environment variables?
+
+No. Preview deployments use the variables you scope to the **Preview** environment. You can also give a Git branch its own values, which override Preview variables with the same name. See [Preview environment variables](/docs/environment-variables#preview-environment-variables).
+
+The exception is the [first deployment](#first-deployment) of a new project, which is always a production deployment and builds with your **Production** variables. Deployments to a [custom environment](#custom-environments) use that environment's variables.
+
+### Can I promote a preview deployment to production?
+
+Yes. In your project's **Deployments** list, open the menu next to the preview deployment and select **Promote to Production**. Vercel rebuilds the deployment with your Production environment variables, then assigns your production domains to it. Your Preview variables aren't used in the production build.
+
+To promote a build without rebuilding it, [stage a production deployment](#verifying-a-production-build-before-promotion) instead. See [Promoting Deployments](/docs/deployments/promoting-a-deployment) for every option.
 
 ## More resources
 

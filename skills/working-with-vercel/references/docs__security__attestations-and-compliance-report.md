@@ -13,8 +13,8 @@ related:
 summary: Learn how to preview and download Vercel compliance documents from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/attestations-and-compliance-report.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8f019bb50689d19f8d060480e1fc641fda8041b266206a4e288f330db2d3a6a4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "85ca1b3196eb28c7c27cd53f7fe349f2cdbb11824f3712b709b166e83cd41cea"
 ---
 
 # Attestations and Compliance Report
@@ -31,7 +31,7 @@ Team members on Pro and Enterprise plans can preview and download Vercel's compl
 - [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings)
 - [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available)
 - [Security Dashboard](https://vercel.com/docs/security/security-dashboard) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Get certs](https://vercel.com/docs/rest-api/certs/get-certs) — GET /v8/certs — Get certs
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.

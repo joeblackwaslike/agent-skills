@@ -17,8 +17,8 @@ related:
 summary: Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/integrations/ai-gateway.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fd8f237668041606e4fbba074d8aca556e2ca0bc2becd6014e74ec8de1cab087"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5c289fa667416f2e83c22c9cbda71a19acf6c184983f079b557509138b6f699b"
 ---
 
 # Chat SDK with AI Gateway
@@ -34,11 +34,13 @@ Turn a Chat SDK bot into an AI assistant with [AI Gateway](/docs/ai-gateway) and
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
-- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 
 Full cross-link map for this page: [/docs/chat-sdk/integrations/ai-gateway.graph.md](/docs/chat-sdk/integrations/ai-gateway.graph.md)
 <!-- /docsgraph:related -->
@@ -171,6 +173,28 @@ Deploy the updated bot, invite it to a channel, and mention it with a question. 
 Platforms differ in how they display streamed replies. Use the [Web Adapter](/docs/chat-sdk/frameworks/nextjs#add-browser-chat-with-the-web-adapter) with `protocol: 'ai-sdk'` to serve a browser chat from the same handler.
 
 The handler reads at most 20 messages; it does not summarize older conversations. The model request has a 60-second timeout, and the webhook function's [maximum duration](/docs/functions/configuring-functions/duration) must also cover history retrieval and delivery.
+
+## Frequently asked questions
+
+### Which AI models can a Chat SDK bot use through AI Gateway?
+
+Your bot can use any text model that AI Gateway serves. Set `AI_GATEWAY_MODEL` to a model ID in `creator/model-name` form and pass it to AI SDK. Because the handler reads the model ID from the environment, you can switch models by changing the variable and redeploying, without changing code. See [AI Gateway models and providers](/docs/ai-gateway/models-and-providers) for the available IDs.
+
+### Do I need an AI Gateway API key for my Chat SDK bot?
+
+Not on Vercel. AI SDK authenticates to AI Gateway with the deployment's OIDC token. For local development, link the project and run `vercel env pull .env.local` to get a development token. You can set `AI_GATEWAY_API_KEY` instead, for example when the bot runs outside Vercel. See [AI Gateway authentication](/docs/ai-gateway/authentication-and-byok) for which credential takes precedence.
+
+### How does the bot remember earlier messages in a conversation?
+
+The handler reads the thread's recent messages through `thread.messages` and converts them into model messages with `toAiMessages`, oldest first. It sends up to 20 messages with each request and doesn't summarize older ones. For adapters without a platform history API, `thread.messages` returns the messages Chat SDK stored in your state adapter. To keep history across conversations for one person, see [Chat SDK with Vercel Passport](/docs/chat-sdk/integrations/passport).
+
+### Why do AI replies look different in Slack, Teams, and Discord?
+
+Each platform displays streamed text differently. Slack has a native streaming API, so the message updates as text arrives. Microsoft Teams streams natively in direct messages but posts one final message in group chats. On Discord and Google Chat, Chat SDK posts a `...` placeholder and edits it as chunks arrive, no more than once every 500 milliseconds by default. Change the interval with `streamingUpdateIntervalMs` and the placeholder with `fallbackStreamingPlaceholderText`. Adapters such as GitHub and WhatsApp collect the whole stream and post one final message. See [streaming responses](https://chat-sdk.dev/docs/streaming).
+
+### How do I stop long AI responses from timing out?
+
+The example aborts the model request after 60 seconds, and the webhook function's [maximum duration](/docs/functions/configuring-functions/duration) must cover that request, history retrieval, and delivery. Raise `maxDuration` on the route if your bot needs more time. For work that must survive interruptions or wait for a person, use [Vercel Workflows](/docs/chat-sdk/integrations/workflows). To keep the bot responding when a provider fails, configure [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks).
 
 ## Next steps
 

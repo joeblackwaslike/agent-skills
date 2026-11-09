@@ -14,8 +14,8 @@ related:
 summary: Customize which repositories get reviewed and track your review metrics and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent/pr-review/usage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c29444486148d17bcc3ae4a3e2eaee17dda861e435e2e08779ff745c9d2c787a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2e2ab3be7df0a7ecc38e2f6bec5ab212ab7c33d8bf92f734fd6cf77cf067166a"
 ---
 
 # Managing Code Reviews
@@ -29,16 +29,14 @@ Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
-- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
+- [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
+- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
 - [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
 - [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Installation](https://vercel.com/docs/agent/installation) — Let AI automatically install Web Analytics and Speed Insights in your app
 
 Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/agent/pr-review/usage.graph.md)
 <!-- /docsgraph:related -->
@@ -51,10 +49,10 @@ To choose which repositories get reviewed:
 
 1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
 2. Click the **…** button, and then select **Settings** to view the Vercel Agent settings.
-3. Under **Repositories**, choose which repositories to review:
+3. Under **Repositories to Review**, choose which repositories to review:
    - **All repositories** (default): Reviews every repository connected to your Vercel projects
-   - **Public only**: Only reviews publicly accessible repositories
-   - **Private only**: Only reviews private repositories
+   - **Public repositories only**: Only reviews publicly accessible repositories
+   - **Private repositories only**: Only reviews private repositories
 4. Click **Save** to apply your changes.
 
 These settings help you start small with specific repos or focus on the repositories that matter most to your team.
@@ -67,7 +65,7 @@ To enable reviews on draft PRs:
 
 1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
 2. Click the **…** button, and then select **Settings** to view the Vercel Agent settings.
-3. Under **Review Draft PRs**, select **Review draft PRs**.
+3. Under **Include Draft PRs**, select **Review draft PRs**.
 4. Click **Save** to apply your changes.
 
 Draft reviews contribute to your Vercel Agent usage, but provide feedback earlier in your development process.
@@ -99,15 +97,13 @@ The **Agent** page provides several metrics for each review:
 - **PR**: The pull request identifier (click to view the PR)
 - **Suggestions**: Number of code changes recommended
 - **Review time**: How long the review took to complete
-- **Files read**: Number of files the AI analyzed
-- **Spend**: Total cost for that review
+- **Cost**: Total cost for that review
 - **Time**: When the review occurred
 
 Use this data to identify patterns:
 
 - **Expensive reviews**: If certain repositories consistently have high costs, consider whether they need special handling or different review settings
 - **Long review times**: Reviews taking longer than expected might indicate complex codebases or large PRs that could benefit from smaller, incremental changes
-- **High file counts**: Repositories with many files analyzed might benefit from more focused review scopes
 
 ## Export review metrics
 
@@ -116,7 +112,7 @@ You can export all your review data to CSV for deeper analysis, reporting, or tr
 To export your data:
 
 1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
-2. Click the **Export** button.
+2. Click the **Export CSV** button.
 3. Save the CSV file to your computer.
 
 The exported data includes all metrics from the dashboard, letting you:

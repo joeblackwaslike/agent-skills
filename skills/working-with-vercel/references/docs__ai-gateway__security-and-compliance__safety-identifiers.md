@@ -13,8 +13,8 @@ related:
 summary: Learn how to send a unique safety identifier per end user through AI Gateway so provider-side abuse action isolates individual users instead of your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/safety-identifiers.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d502c1e1950a31838c6af0fcbdb3a0046cfcab9a258a7f5893344307d9efd465"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3cb849ec86b04f22fe40b1b2c3563a666c6db28e2866fde469d39455dac12f13"
 ---
 
 # AI Gateway Safety Identifiers
@@ -28,10 +28,10 @@ A safety identifier tells providers like OpenAI, Anthropic, and Meta which of yo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway App Attribution](https://vercel.com/docs/ai-gateway/ecosystem/app-attribution) — Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [OpenAI-Compatible Decisions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-decisions) — Ask predicate, choice, and score questions with the OpenAI-compatible /decisions endpoint through Vercel AI Gateway, usi
-- [TypeSafe API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe) — Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One decision requests through i
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [AI Gateway Session Affinity](https://vercel.com/docs/ai-gateway/models-and-providers/session-affinity) — Keep AI Gateway conversations on the provider that holds their prompt cache, using session IDs, fingerprinting, and pin
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/safety-identifiers.graph.md](/docs/ai-gateway/security-and-compliance/safety-identifiers.graph.md)
 <!-- /docsgraph:related -->
@@ -302,6 +302,10 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
 
 ### Using the Embeddings API
 
+To identify an end user on the Embeddings API, set the top-level `user` field to that user's opaque ID. The Embeddings API has no `safety_identifier` field, and AI Gateway does not forward `providerOptions.gateway.safetyIdentifier` on embedding requests.
+
+AI Gateway sends `user` to OpenAI embedding models as OpenAI's `user` field. Other embedding models do not receive it. These examples set `user` for an OpenAI embedding model:
+
 #### TypeScript
 
 ```typescript filename="safety-identifier.ts"
@@ -317,14 +321,7 @@ const openai = new OpenAI({
 const response = await openai.embeddings.create({
   model: 'openai/text-embedding-3-small',
   input: 'Sunny day at the beach',
-
-  ...{
-    providerOptions: {
-      gateway: {
-        safetyIdentifier: 'user_9f8e7d6c5b',
-      },
-    },
-  },
+  user: 'user_9f8e7d6c5b',
 });
 ```
 
@@ -342,11 +339,7 @@ client = OpenAI(
 response = client.embeddings.create(
     model="openai/text-embedding-3-small",
     input="Sunny day at the beach",
-    extra_body={
-        "providerOptions": {
-            "gateway": {"safetyIdentifier": "user_9f8e7d6c5b"}
-        }
-    },
+    user="user_9f8e7d6c5b",
 )
 ```
 
@@ -359,11 +352,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/embeddings" \
   -d '{
     "model": "openai/text-embedding-3-small",
     "input": "Sunny day at the beach",
-    "providerOptions": {
-      "gateway": {
-        "safetyIdentifier": "user_9f8e7d6c5b"
-      }
-    }
+    "user": "user_9f8e7d6c5b"
   }'
 ```
 
@@ -373,7 +362,7 @@ AI Gateway forwards the identifier to whichever provider serves the request, usi
 
 - OpenAI models, including when served by Azure or Bedrock, receive it as OpenAI's `safety_identifier`
 - Models served by Meta receive it as `safety_identifier`
-- Anthropic models, including when served by Vertex or Claude Platform on AWS, receive it as Anthropic's `metadata.user_id`
+- Anthropic models, including when served by Vertex, Bedrock, or Claude Platform on AWS, receive it as Anthropic's `metadata.user_id`
 
 The identifier follows the request across provider and model fallbacks, so the same value reaches whichever provider ultimately serves the request.
 

@@ -16,8 +16,8 @@ related:
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4556dfa862dc16053fba5d617fd82b7ff3ad43d22062aa3db19effe146d3612a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4612775e5d9e2837ac6014da1644d6c0457620844b849df7e74f1706b2804415"
 ---
 
 # Vercel Blob
@@ -34,7 +34,6 @@ sha256: "4556dfa862dc16053fba5d617fd82b7ff3ad43d22062aa3db19effe146d3612a"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos) — Recommendations and best practices for optimizing videos in your Next.js application.
 - [Databases](https://v0.app/docs/databases) — Build full-stack applications with v0's database integrations.
@@ -46,6 +45,7 @@ sha256: "4556dfa862dc16053fba5d617fd82b7ff3ad43d22062aa3db19effe146d3612a"
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
 
 Full cross-link map for this page: [/docs/vercel-blob.graph.md](/docs/vercel-blob.graph.md)
 <!-- /docsgraph:related -->
@@ -149,7 +149,7 @@ The SDK reads these variables automatically, and you never need to read or pass 
 
 ### When to use a read-write token
 
-`BLOB_READ_WRITE_TOKEN` is a long-lived static token added to your project when you create a store. OIDC takes precedence when its environment variables are present. Use the read-write token only when:
+`BLOB_READ_WRITE_TOKEN` is a long-lived static token. The dashboard adds it to a connected project only when you select **Add a read-write token env var to this connection**. OIDC takes precedence when its environment variables are present. Use the read-write token only when:
 
 - Your code runs outside Vercel, such as in a CI job or on another host
 - You generate client tokens for [browser uploads](/docs/vercel-blob/client-upload)

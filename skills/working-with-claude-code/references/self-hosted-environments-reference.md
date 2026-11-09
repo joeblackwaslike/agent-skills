@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/self-hosted-environments-reference.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "f9a2a9bec478de4c304eef10f63f14c4a16c353da8cccd0c093f1904bd123f22"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "094a12dd1585674b4bad7f70f2351951a35e9b7115b8c2c84e9791fa2e43e8ca"
 ---
 
 > ## Documentation Index
@@ -159,7 +159,7 @@ The runner serves `GET /healthz` on the configured health port. The response is 
 }
 ```
 
-Use `last_poll_age_ms` as a liveness signal in custom probes; a value that grows unbounded indicates the poll loop is stuck. Both `last_poll_at` and `last_poll_age_ms` are `null` until the first poll completes.
+Alert on `last_poll_age_ms`, but don't use it in a liveness probe; keep that probe on the HTTP status code. The value is the time since the last successful poll, so it also rises while the runner can't reach Anthropic. Both `last_poll_at` and `last_poll_age_ms` are `null` until the first poll succeeds. To catch polls that fail from the start, also alert on `claude_code_self_hosted_runner_poll_errors_total`, listed under [Prometheus metrics](#prometheus-metrics).
 
 The orchestrator's own `/healthz`, on its health port, always returns `200`. The body carries a `connected` field reporting whether the most recent poll succeeded, plus per-state spawn-queue counts in `queue_counts`. To see why `connected` is `false`, read the top-level `last_error` field, which each successful poll resets to `null`. Gate readiness and alerting on `connected` rather than the status code.
 

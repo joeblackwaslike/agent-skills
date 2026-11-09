@@ -13,8 +13,8 @@ related:
 summary: Use git_namespaces with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "77fd681259d1630c0becf5cbc188852eb7e371827996f211346b05b4d3379c65"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ed4c38284a9218cc35e20fd56f5a66ebde671fb15633ee8130dad827453e4c11"
 ---
 
 # git_namespaces
@@ -28,6 +28,7 @@ Lists git namespaces for a supported provider. Supported providers are `github`,
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [List git namespaces by provider](https://vercel.com/docs/rest-api/integrations/list-git-namespaces-by-provider) — GET /v1/integrations/git-namespaces — Lists git namespaces for a supported provider. Supported providers are \\`github\\`,
+- [Multiple Git namespaces per Personal Account and Team](https://vercel.com/changelog/multiple-git-namespaces-per-personal-account-and-team)
 - [List git repositories linked to namespace by provider](https://vercel.com/docs/rest-api/integrations/list-git-repositories-linked-to-namespace-by-provider) — GET /v1/integrations/search-repo — Lists git repositories linked to a namespace \\`id\\` for a supported provider. A speci
 - [search_repo](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/search_repo) — Use search_repo with Vercel MCP.
 - [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.

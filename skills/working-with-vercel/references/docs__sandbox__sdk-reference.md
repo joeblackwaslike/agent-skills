@@ -8,16 +8,16 @@ type: reference
 prerequisites:
   - /docs/sandbox
 related:
-  - /docs/sandbox/python-sdk-reference
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/concepts/tags
   - /docs/sandbox/concepts/regions
   - /docs/sandbox/concepts/secure-compute
+  - /docs/sandbox/pricing
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "eee9435cb0eba75695fffc03c26d81899062e283a6bb90c579b814de2cf0cd95"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6949305033fffc2cb01d88c5c3412cb5b4cde35c2f9793a62a4d808bf07e7275"
 ---
 
 # JS SDK Reference
@@ -45,8 +45,6 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md)
 <!-- /docsgraph:related -->
-
-For Python, see the [Python SDK Reference](/docs/sandbox/python-sdk-reference).
 
 ## Prerequisites
 
@@ -88,7 +86,7 @@ After installation, link your project and pull environment variables with `verce
 | [`FileSystem`](#filesystem-class)           | Provides a `node:fs/promises`-compatible API       | `await sandbox.fs.readFile('/tmp/a.txt')`       |
 | [`Command`](#command-class)                 | Handles running commands inside the sandbox        | `const cmd = await sandbox.runCommand('ls')`    |
 | [`CommandFinished`](#commandfinished-class) | Contains the result after a command completes      | Access `cmd.exitCode` and `cmd.stdout()`        |
-| [`NetworkPolicy`](#networkpolicy-class)     | Defines firewall rules for sandbox traffic         | `Sandbox.create({ networkPolicy: 'deny-all' })` |
+| [`NetworkPolicy`](#networkpolicy-type)     | Defines firewall rules for sandbox traffic         | `Sandbox.create({ networkPolicy: 'deny-all' })` |
 | [`Snapshot`](#snapshot-class)               | Represents a saved sandbox state for fast restarts | `const snapshot = await sandbox.snapshot()`     |
 | [`Drive`](#drive-class)                    | Represents persistent storage mounted to sandboxes | `const drive = await Drive.getOrCreate()`      |
 
@@ -105,7 +103,7 @@ const result = await sandbox.runCommand('node', ['--version']);
 console.log(result.exitCode); // 0
 console.log(await result.stdout()); // v22.x.x
 
-// 4. Later, resume the same sandbox by name
+// 4. Later, retrieve the same sandbox by name
 const same = await Sandbox.get({ name: 'my-sandbox' });
 ```
 
@@ -139,19 +137,20 @@ console.log(sandbox.persistent);
 
 #### `status`
 
-The `status` accessor reports the lifecycle state of the current session. Poll this value when you need to wait for startup or confirm shutdown, and treat `failed` as a signal to investigate.
+The `status` accessor reads cached metadata for the current session. Repeated property access doesn't poll the API. Retrieve a fresh handle with `Sandbox.get({ name, resume: false })` to observe external changes without resuming the sandbox. A status check doesn't coordinate concurrent lifecycle operations; finish `stop()` or `snapshot()` before submitting more commands.
 
-**Returns:** `"pending" | "running" | "stopping" | "stopped" | "failed"`.
+**Returns:** `"pending" | "running" | "stopping" | "stopped" | "failed" | "aborted" | "snapshotting"`.
 
 ```ts
-console.log(sandbox.status);
+const fresh = await Sandbox.get({ name: sandbox.name, resume: false });
+console.log(fresh.status);
 ```
 
 #### `timeout`
 
-`timeout` is the session timeout the sandbox was created with, in milliseconds. It stays constant for the sandbox's lifetime and never decreases while the session runs. Calling `sandbox.extendTimeout()` extends the live deadline but leaves `timeout` unchanged. To read how much time the session has left, use `expiresAt`.
+`timeout` is the sandbox's saved default session timeout, in milliseconds, when available. Change it with `sandbox.update({ timeout })`. Calling `sandbox.extendTimeout()` adds to the live session's deadline without changing this saved value. To read the deadline, use `expiresAt`.
 
-**Returns:** `number`.
+**Returns:** `number | undefined`.
 
 ```ts
 console.log(sandbox.timeout);
@@ -275,7 +274,7 @@ console.log(sandbox.snapshotExpiration);
 
 Retention policy that keeps only the N most recent snapshots of this sandbox. A new snapshot is created whenever a persistent session stops or when you call [`sandbox.snapshot()`](#sandbox.snapshot).
 
-When a new snapshot brings the total above `count` for a given named sandbox, the oldest snapshots are no longer kept.
+When a new snapshot brings the total above `count` for a sandbox, the oldest snapshots are no longer kept.
 
 The `deleteEvicted` field controls what happens to them: delete them immediately, or leave them to expire on their own.
 
@@ -340,7 +339,11 @@ console.log(sandbox.mounts);
 
 Use `Sandbox.list()` to enumerate sandboxes for a project, with optional filters and cursor-based pagination. The returned value is **async-iterable**: iterate it directly to auto-paginate through every page, iterate `result.pages()` to walk page by page, or call `result.toArray()` to collect everything.
 
-**Returns:** `Promise<Paginated<{ sandboxes: Sandbox[]; pagination: Pagination; }>>`.
+Omit `token`, `teamId`, and `projectId` to use OIDC or local development authentication. To use an access token, pass all three fields together. `projectId` alone does not override the OIDC project.
+
+`SandboxMetaData` items are plain API metadata records, not `Sandbox` instances. Records identify sandboxes by `name` and have no instance methods. Timestamps such as `createdAt` are numbers. Retrieve a handle with `Sandbox.get({ name: record.name })`.
+
+**Returns:** `Promise<Paginated<{ sandboxes: SandboxMetaData[]; pagination: Pagination; }>>`.
 
 | Parameter    | Type                          | Required | Details                                                              |
 | ------------ | ----------------------------- | -------- | -------------------------------------------------------------------- |
@@ -350,7 +353,9 @@ Use `Sandbox.list()` to enumerate sandboxes for a project, with optional filters
 | `sortOrder`  | `"asc" \| "desc"`             | No       | Sort direction. Defaults to `"desc"`.                                |
 | `limit`      | `number`                      | No       | Maximum number of sandboxes per page.                                |
 | `cursor`     | `string`                      | No       | Pagination cursor returned by the previous page.                     |
-| `projectId`  | `string`                      | No       | Project whose sandboxes you want to list.                            |
+| `token` | `string` | No | Access token. Requires `teamId` and `projectId` when supplied. |
+| `teamId` | `string` | No | Team ID. Requires `token` and `projectId` when supplied. |
+| `projectId`  | `string`                      | No       | Project to list. Requires `token` and `teamId` when supplied.                            |
 | `signal`     | `AbortSignal`                 | No       | Cancel the request.                                                  |
 
 ```ts
@@ -362,6 +367,26 @@ const result = await Sandbox.list({
 
 // Per-item iteration auto-paginates
 for await (const sandbox of result) {
+  console.log(sandbox.name);
+}
+```
+
+To select a project with an access token, pass the complete credential set:
+
+```ts
+const result = await Sandbox.list({
+  token: 'your_access_token_here',
+  teamId: 'your_team_id_here',
+  projectId: 'your_project_id_here',
+});
+
+for await (const record of result) {
+  const sandbox = await Sandbox.get({
+    name: record.name,
+    token: 'your_access_token_here',
+    teamId: 'your_team_id_here',
+    projectId: 'your_project_id_here',
+  });
   console.log(sandbox.name);
 }
 ```
@@ -434,7 +459,7 @@ const sandbox = await Sandbox.get({ name: 'my-sandbox' });
 
 #### `Sandbox.getOrCreate()`
 
-`Sandbox.getOrCreate()` is the recommended pattern for long-lived sandboxes: it retrieves the sandbox if it exists, or creates it if it doesn't. By default (`resume: false`), an existing sandbox is retrieved without resuming it. A stopped persistent sandbox resumes on the first SDK call that needs a running session, or immediately when you pass `resume: true`. Use `onCreate` for one-time setup and `onResume` for setup that should run on every session start.
+`Sandbox.getOrCreate()` is the recommended pattern for long-lived sandboxes: it retrieves the sandbox if it exists, or creates it if it doesn't. By default (`resume: false`), an existing sandbox is retrieved without resuming it. A stopped persistent sandbox resumes on the first SDK call that needs a running session, or immediately when you pass `resume: true`. Use `onCreate` for initial setup and `onResume` for setup on later session starts. Creation calls `onCreate` only, so start services in both callbacks when they must run in every session.
 
 Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply only when `getOrCreate` creates the sandbox. If a sandbox with the same `name` already exists, `getOrCreate` returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, call [`sandbox.update()`](#sandbox.update).
 
@@ -453,20 +478,25 @@ Behavior:
 - If a sandbox with that `name` exists, `getOrCreate` retrieves it without resuming it by default. The sandbox resumes on the first SDK call (such as `runCommand`), and `onResume` fires at that point, not before `getOrCreate` resolves. Pass `resume: true` to resume immediately and have `onResume` awaited before `getOrCreate` resolves.
 - If a sandbox with that `name` exists, its configuration is not updated. Creation parameters passed to `getOrCreate` are ignored; use [`sandbox.update()`](#sandbox.update) to change the configuration of an existing sandbox.
 - If no sandbox exists, a fresh sandbox is created with the parameters you pass, and `onCreate` is awaited before `getOrCreate` resolves.
-- If the sandbox exists but its snapshot expired, the stale sandbox is deleted, re-created with the same name, and `onCreate` fires.
+- If the sandbox exists but its snapshot expired and you pass `resume: true`, the stale sandbox is deleted, re-created with the same name, and `onCreate` fires. Without `resume: true`, `getOrCreate` returns the existing sandbox, and the first SDK call that resumes it fails with a `snapshot_not_found` error.
 
 ```ts
+async function startServer(sbx: Sandbox) {
+  await sbx.runCommand({ cmd: 'npm', args: ['run', 'dev'], detached: true });
+}
+
 const sandbox = await Sandbox.getOrCreate({
   name: 'my-sandbox',
   onCreate: async (sbx) => {
     await sbx.runCommand('git', ['clone', repoUrl, '.']);
     await sbx.runCommand('npm', ['install']);
+    await startServer(sbx);
   },
-  onResume: async (sbx) => {
-    await sbx.runCommand({ cmd: 'npm', args: ['run', 'dev'], detached: true });
-  },
+  onResume: startServer,
 });
 ```
+
+Both callbacks start the server in detached mode, while installation runs only on creation. Detached startup returns before the server is ready. Wait for your application's readiness check before forwarding requests.
 
 #### `Sandbox.fork()`
 
@@ -593,10 +623,13 @@ await sandbox.mkDir('assets');
 
 #### `sandbox.readFile()`
 
-Use `sandbox.readFile()` to pull file contents from the sandbox to a `ReadableStream`. The promise resolves to `null` when the file does not exist. You can use [`sandbox.readFileToBuffer()`](#sandbox.readfiletobuffer) directly if you prefer receiving a `Buffer`.
+Use `sandbox.readFile()` to pull file contents from the sandbox to a Node.js readable stream. The promise resolves to `null` when the file does not exist. You can use [`sandbox.readFileToBuffer()`](#sandbox.readfiletobuffer) directly if you prefer receiving a `Buffer`.
 
 ```ts
 const stream = await sandbox.readFile({ path: 'package.json' });
+if (stream) {
+  stream.pipe(process.stdout);
+}
 ```
 
 | Parameter     | Type          | Required | Details                                   |
@@ -605,7 +638,7 @@ const stream = await sandbox.readFile({ path: 'package.json' });
 | `file.cwd`    | `string`      | No       | Base directory for resolving `file.path`. |
 | `opts.signal` | `AbortSignal` | No       | Cancel the read operation.                |
 
-**Returns:** `Promise<null | ReadableStream>`.
+**Returns:** `Promise<NodeJS.ReadableStream | null>`.
 
 #### `sandbox.readFileToBuffer()`
 
@@ -663,9 +696,9 @@ await sandbox.writeFiles([
 
 | Parameter       | Type                                                  | Required | Details                                                                                       |
 | --------------- | ----------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------- |
-| `files`         | `{ path: string; content: Buffer; mode?: number; }[]` | Yes      | File descriptors to write.                                                                    |
+| `files`         | `{ path: string; content: string \| Uint8Array; mode?: number; }[]` | Yes      | File descriptors to write.                                                                    |
 | `files.path`    | `string`                                              | Yes      | Path to the file inside the sandbox.                                                          |
-| `files.content` | `Buffer`                                              | Yes      | File contents as a Buffer.                                                                    |
+| `files.content` | `string \| Uint8Array`                              | Yes      | File contents as a string or byte array, including `Buffer`.                                                                    |
 | `files.mode`    | `number`                                              | No       | Unix file permissions in octal (for example, `0o644` for read/write, `0o755` for executable). |
 | `opts.signal`   | `AbortSignal`                                         | No       | Cancel the write operation.                                                                   |
 
@@ -715,7 +748,11 @@ console.log(result.networkTransfer); // { ingress, egress }
 
 #### `sandbox.update()`
 
-`sandbox.update()` updates any mutable parameter on the sandbox. When `ports` is provided, it replaces the full current port list. When `mounts` is provided, it replaces all mounts and applies to the next session. `networkPolicy` is applied to the current session and future sessions. Changes to `networkId` take effect when the sandbox starts its next session, not in the running session.
+`sandbox.update()` changes saved sandbox configuration. Resource, mount, region, and Secure Compute network changes apply to later sessions; they don't resize or move the running VM. `ports` replaces the full exposed port list and updates the current session's routes. `networkPolicy` applies to the active session and future sessions.
+
+`timeout` sets the default for future sessions. If it exceeds the running session's timeout, the SDK extends the live deadline by the difference. Lowering the saved timeout doesn't shorten the live deadline. Use [`sandbox.extendTimeout()`](#sandbox.extendtimeout) to add time without changing the saved default.
+
+Updates aren't atomic. The SDK first attempts a positive live timeout extension, then applies a live network policy, then submits configuration and tags. The session-policy request can also persist the policy for future sessions when it targets the sandbox's current session. A later failure doesn't roll back earlier live changes or saved-policy changes. If the call rejects, retrieve fresh metadata and inspect the active session before retrying; don't assume nothing changed.
 
 ```ts
 await sandbox.update({
@@ -736,8 +773,8 @@ await sandbox.update({
 
 | Parameter            | Type                       | Required | Details                                                                                                |
 | -------------------- | -------------------------- | -------- | ------------------------------------------------------------------------------------------------------ |
-| `resources.vcpus`    | `number`                   | No       | New vCPU count (memory auto-scales to 2048 MB per vCPU).                                               |
-| `timeout`            | `number`                   | No       | New session timeout in milliseconds.                                                                   |
+| `resources.vcpus`    | `number`                   | No       | New vCPU count for future sessions (memory auto-scales to 2048 MB per vCPU).                                               |
+| `timeout`            | `number`                   | No       | Saved session timeout in milliseconds. A higher value can extend the running deadline; a lower value applies only to future sessions.                                                                   |
 | `networkPolicy`      | `NetworkPolicy`            | No       | Replace the firewall policy on the current and future sessions.                                        |
 | `networkId`          | `string \| null`           | No       | Assign a [Secure Compute network](/docs/sandbox/concepts/secure-compute) by ID, or pass `null` to remove it. The running session keeps its current network until it stops and resumes. |
 | `ports`              | `number[]`                 | No       | Replace the exposed ports. Ports not present in the array are deregistered.                            |
@@ -746,6 +783,7 @@ await sandbox.update({
 | `snapshotExpiration` | `number`                   | No       | New default snapshot TTL in milliseconds. Use `0` for no expiration.                                   |
 | `keepLastSnapshots`  | `object \| null`           | No       | Retention policy that keeps only the N most recent snapshots. Pass `null` to clear. See [`keepLastSnapshots`](#keeplastsnapshots) for field details. |
 | `currentSnapshotId`  | `string`                   | No       | Point the sandbox at a different snapshot. New sessions resume from it.                                |
+| `region`             | `string`                   | No       | [Region](/docs/sandbox/concepts/regions) for the next session. The running session keeps its current region. |
 | `failoverRegions`    | `string[]`                 | No       | Replace the [failover regions](/docs/sandbox/concepts/regions#failover-regions). Must not include the sandbox's main region. Pass `[]` to remove them. Applies to the next session; the running session keeps the region it started in. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
 | `mounts`             | `SandboxMounts`            | No       | Replace the drives mounted in the next session. Pass a `Drive` for read-write access or `drive.snapshot()` for a point-in-time, read-only snapshot. Pass `{}` to remove all mounts. |
 | `opts.signal`        | `AbortSignal`              | No       | Cancel the operation.                                                                                  |
@@ -754,15 +792,18 @@ await sandbox.update({
 
 #### `sandbox.delete()`
 
-Permanently delete the sandbox and all of its sessions. Its snapshots stay available until they expire or you delete them with [`snapshot.delete()`](#snapshot.delete). After deletion the instance becomes inert: further API calls throw immediately.
+Permanently delete the sandbox and all of its sessions. By default, snapshots stay available until they expire or you delete them with [`snapshot.delete()`](#snapshot.delete). Pass `deleteOrphanSnapshots: true` to also request asynchronous deletion of this sandbox's snapshots that no other sandbox uses. Snapshots referenced by another sandbox remain available.
+
+Discard the handle after deletion.
 
 ```ts
-await sandbox.delete();
+await sandbox.delete({ deleteOrphanSnapshots: true });
 ```
 
-| Parameter     | Type          | Required | Details               |
-| ------------- | ------------- | -------- | --------------------- |
-| `opts.signal` | `AbortSignal` | No       | Cancel the operation. |
+| Parameter                    | Type          | Required | Details                                                                                   |
+| ---------------------------- | ------------- | -------- | ----------------------------------------------------------------------------------------- |
+| `opts.deleteOrphanSnapshots` | `boolean`     | No       | Asynchronously delete snapshots no other sandbox uses. Defaults to `false`.                 |
+| `opts.signal`               | `AbortSignal` | No       | Cancel the operation.                                                                     |
 
 **Returns:** `Promise<void>`.
 
@@ -784,7 +825,9 @@ for await (const session of sessions) {
 | `sortOrder` | `"asc" \| "desc"` | No       | Sort direction. Defaults to `"desc"`. |
 | `signal`    | `AbortSignal`     | No       | Cancel the request.                |
 
-**Returns:** `Promise<Paginated<{ sessions: Session[]; pagination: Pagination; }>>`.
+`SessionMetaData` items are plain API metadata records, not `Session` instances. Their identifier is `id`, and timestamps such as `createdAt` are numbers. Use `sandbox.currentSession()` for the current session handle.
+
+**Returns:** `Promise<Paginated<{ sessions: SessionMetaData[]; pagination: Pagination; }>>`.
 
 #### `sandbox.listSnapshots()`
 
@@ -804,13 +847,15 @@ for await (const snapshot of snapshots) {
 | `sortOrder` | `"asc" \| "desc"` | No       | Sort direction. Defaults to `"desc"`. |
 | `signal`    | `AbortSignal`     | No       | Cancel the request.                |
 
-**Returns:** `Promise<Paginated<{ snapshots: Snapshot[]; pagination: Pagination; }>>`.
+`SnapshotMetadata` items are plain API metadata records, not `Snapshot` instances. Their identifier is `id`, and timestamps such as `createdAt` are numbers. Retrieve a handle with `Snapshot.get({ snapshotId: record.id })`.
+
+**Returns:** `Promise<Paginated<{ snapshots: SnapshotMetadata[]; pagination: Pagination; }>>`.
 
 #### `sandbox.updateNetworkPolicy()` (deprecated)
 
 > **💡 Note:** `sandbox.updateNetworkPolicy()` is deprecated. Use [`sandbox.update({ networkPolicy })`](#sandbox.update) instead.
 
-Update the firewall settings applied to the sandbox egress traffic. The provided configuration fully replaces the pre-existing one. This allows for instance a user to start a sandbox, gather data, then run some untrusted program on it without risking data exfiltration.
+This deprecated method targets the current session's policy endpoint rather than the sandbox configuration endpoint and can auto-resume the sandbox. The API also saves the policy for future sessions when the target remains the sandbox's current session. The sandbox handle's cached policy can remain stale. Use `sandbox.update({ networkPolicy })` to update the live policy and saved configuration, or `session.update({ networkPolicy })` to target a pinned session. See [live updates](/docs/sandbox/concepts/firewall#live-updates).
 
 ```ts
 await sandbox.updateNetworkPolicy('allow-all'); // Allow all egress from the sandbox
@@ -827,8 +872,9 @@ await sandbox.updateNetworkPolicy({
   },
 });
 
-// Allow traffic to the Internet while blocking private network
+// Allow traffic to the Internet while blocking the specified private range
 await sandbox.updateNetworkPolicy({
+  allow: ["*"],
   subnets: {
     deny: ["10.0.0.0/8"],
   },
@@ -850,14 +896,16 @@ await sandbox.updateNetworkPolicy({
 
 | Parameter       | Type            | Required | Details                                                  |
 | --------------- | --------------- | -------- | -------------------------------------------------------- |
-| `networkPolicy` | `NetworkPolicy` | Yes      | New firewall setup. Will fully replace the existing one. |
+| `networkPolicy` | `NetworkPolicy` | Yes      | Replace the current session's entire firewall policy. |
 | `opts.signal`   | `AbortSignal`   | No       | Cancel the operation.                                    |
 
-**Returns:** `Promise<void>`.
+**Returns:** `Promise<NetworkPolicy>`, containing the updated session's [incomplete policy readback](#policy-readback).
 
 #### `sandbox.extendTimeout()`
 
-Use `sandbox.extendTimeout()` to extend the sandbox lifetime by the specified duration. This lets you keep the sandbox running up to the maximum execution timeout for your plan, so check `sandbox.timeout` first and extend only when necessary to avoid premature shutdown.
+Use `sandbox.extendTimeout()` to add the specified duration to the live session's deadline, up to the maximum execution timeout for your plan. Check `sandbox.expiresAt` to estimate the remaining time. The saved `sandbox.timeout` default stays unchanged.
+
+This parent-handle method can automatically resume a stopped sandbox before extending its new session. To extend only an already-running session, use `sandbox.currentSession().extendTimeout()` or [`sandbox extend`](/docs/sandbox/cli-reference#sandbox-extend).
 
 ```ts
 await sandbox.extendTimeout(60000); // Extend by 60 seconds
@@ -874,7 +922,9 @@ await sandbox.extendTimeout(60000); // Extend by 60 seconds
 
 Call `sandbox.snapshot()` to capture the current state of the sandbox, including the filesystem and installed packages. Use snapshots to skip lengthy setup steps when creating new sandboxes. To learn more, see [Snapshots](/docs/sandbox/concepts/snapshots).
 
-The sandbox must be running to create a snapshot. Once you call this method, the sandbox shuts down automatically and becomes unreachable. You do not need to call `stop()` afterwards, and any subsequent commands to the sandbox will fail.
+`sandbox.snapshot()` resumes the sandbox if necessary, then snapshots and stops that session. The stopped VM's processes terminate, and its `Session` and command handles remain tied to that session. You don't need to call `stop()` afterwards.
+
+The parent `Sandbox` handle remains usable. A later operation such as `sandbox.runCommand()` can automatically resume a new session, which can incur additional usage charges. Resuming doesn't restart old processes or reactivate handles from the previous session.
 
 > **💡 Note:** Snapshots expire 30 days after their last use by default. Set `expiration` to `0` to disable expiration,
 > or choose a custom duration in milliseconds (e.g., `ms('14d')`) to fit your workflow.
@@ -1190,12 +1240,12 @@ A later parent resume creates a different session. It doesn't reactivate old pro
 
 ### Session class accessors
 
-Read-only accessors on a `Session` instance returned by `sandbox.currentSession()`. Iterating `sandbox.listSessions()` yields raw API objects with the same fields keyed as `id` instead of `sessionId`.
+Read-only accessors on a `Session` instance returned by `sandbox.currentSession()`. Iterating `sandbox.listSessions()` yields plain API metadata records, not `Session` instances. Records use `id` instead of `sessionId` and numeric timestamps instead of `Date` accessors.
 
 | Accessor                 | Returns                                                       | Description                                   |
 | ------------------------ | ------------------------------------------------------------- | --------------------------------------------- |
 | `sessionId`              | `string`                                                      | Unique identifier of the session.             |
-| `status`                 | `"pending" \| "running" \| "stopping" \| "stopped" \| "failed"` | Current lifecycle state.                      |
+| `status`                 | `"pending" \| "running" \| "stopping" \| "stopped" \| "failed" \| "aborted" \| "snapshotting"` | Cached lifecycle state. Repeated reads don't poll the API. |
 | `createdAt`              | `Date`                                                        | When the session started.                     |
 | `activeCpuUsageMs`       | `number \| undefined`                                          | CPU used during the session, in milliseconds. Available once the session is stopped. |
 | `networkTransfer`        | `{ ingress: number; egress: number } \| undefined`            | Network traffic during the session. Available once the session is stopped. |
@@ -1216,6 +1266,8 @@ Read-only accessors on a `Session` instance returned by `sandbox.currentSession(
 const session = sandbox.currentSession();
 console.log(session.sessionId, session.status);
 ```
+
+To observe external changes, retrieve a fresh parent handle with `Sandbox.get({ name: sandbox.name, resume: false })` and inspect its current session. The old `Session` handle continues to describe its original VM; a later resume creates a different session. Status reads don't synchronize concurrent stop, snapshot, or command operations.
 
 ## FileSystem class
 
@@ -1603,9 +1655,9 @@ console.log(`Command took ${duration}ms`);
 
 `CommandFinished` inherits all methods from `Command` including `logs()`, `output()`, `stdout()`, `stderr()`, and `kill()`. See the [Command class](#command-class) section for details on these methods. `writeStdin()` and `closeStdin()` always reject on a `CommandFinished`, because the process has exited.
 
-## NetworkPolicy class
+## NetworkPolicy type
 
-`NetworkPolicy` instances represent the firewall setup of the sandbox. To learn more, see [network firewall](/docs/sandbox/concepts/firewall).
+`NetworkPolicy` is an exported TypeScript union type for the sandbox firewall configuration. Use `"allow-all"`, `"deny-all"`, or a custom policy object. To learn more, see [network firewall](/docs/sandbox/concepts/firewall).
 
 ### Base modes
 
@@ -1631,12 +1683,13 @@ Matching is based on:
 - if the domain includes a wildcard `*` as a middle segment (e.g. `www.*.com`), it only matches this one segment.
 - if the domain starts with a wildcard `*` (e.g. `*.google.com`), any subdomain is matched. It will not match the parent domain (e.g. `google.com` here).
 
-Encryption is not intercepted if no transformation or forwarding rules are defined, allowing end-to-end data confidentiality.
+Encryption is not intercepted if no transformation, forwarding, or direct-response rules are defined, allowing end-to-end data confidentiality.
 
-The `allow` property can be set as an object providing the websites to allow traffic to, with additional transformation or forwarding rules. Only one of `transform` or `forwardURL` can be defined per rule.
-When such rules are defined, encryption is intercepted to allow request alteration.
+The `allow` property can be an object mapping allowed domains to rules. Each rule defines exactly one action, using `transform`, `forwardURL`, or `response`. The firewall terminates TLS for domains with these rules to inspect requests and apply the action.
 
-Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matchers) on the path, method, query parameters, and headers. When defined, only requests matching the specified dimensions will be transformed or forwarded. Learn more about transformation rules and forwarding rules in the [firewall documentation](/docs/sandbox/concepts/firewall).
+Each rule can define [matchers](/docs/sandbox/concepts/firewall#matchers) on the path, method, query parameters, and headers. All specified dimensions must match. `method` takes a string array, such as `["GET", "POST"]`; matching any listed method succeeds. Path, header, and query matchers use `exact`, `startsWith`, or `regex`.
+
+Rules run in declaration order, and the first matching rule handles the request. A rule without `match` matches every request to the domain. If no rule matches, the request reaches the allowed domain unchanged. To restrict paths, put a catch-all `response` rule after the accepted paths, as shown in [direct responses](/docs/sandbox/concepts/firewall#direct-responses).
 
 ```ts filename="index.ts"
 // Allow traffic only to the provided websites.
@@ -1656,9 +1709,7 @@ Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matcher
     }],
     "*.github.com": [{
       "match": {
-        "method": {
-          "exact": "POST"
-        }
+        "method": ["POST"]
       },
       "forwardURL": "https://my-proxy.vercel.app/github"
     }],
@@ -1680,6 +1731,35 @@ Each rule can define a set of [matchers](/docs/sandbox/concepts/firewall#matcher
 }
 ```
 
+#### `response`
+
+The `response` action returns a response from the network proxy without contacting the destination. Use a final rule without `match` to reject requests that earlier rules did not handle:
+
+```ts filename="policy.ts"
+import type { NetworkPolicy } from '@vercel/sandbox';
+
+const policy: NetworkPolicy = {
+  allow: {
+    'api.example.com': [
+      {
+        match: { path: { startsWith: '/v1/' }, method: ['POST'] },
+        transform: [{ headers: { 'x-api-key': 'your_api_key_here' } }],
+      },
+      { response: { statusCode: 403 } },
+    ],
+  },
+};
+```
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `statusCode` | `number` | Yes | Integer from 200 through 599. |
+| `headers` | `Record<string, string>` | No | Response headers. Names must be unique, ignoring case. |
+| `body` | `string` | No | Response body. Requires `contentType`; omit for status codes 204, 205, and 304. |
+| `contentType` | `string` | When `body` is set | Nonempty content type of the response body, required even for an empty string body. |
+
+The proxy manages `connection`, `content-length`, `keep-alive`, `proxy-connection`, `trailer`, `transfer-encoding`, and `upgrade`. The SDK or API rejects these response headers, regardless of capitalization.
+
 #### `subnets.allow`
 
 `subnets.allow` allows the user to provide a list of address ranges to allow traffic to.
@@ -1694,6 +1774,12 @@ Beware of virtual hosting providers which can host many websites behind a given 
 Those ranges will always take precedence over `subnets.allow` and domain-based `allow` entries.
 
 It allows the user to deny access to part of their network for instance while allowing access to the Internet in general.
+
+### Policy readback
+
+`sandbox.networkPolicy` returns cached saved-policy metadata as `NetworkPolicy | undefined`. `session.networkPolicy` returns cached metadata for that session with the same type. Neither getter fetches fresh state or reconstructs the complete authored policy.
+
+Readback replaces injected header values with `"<redacted>"`, groups injection rules before forwarding rules, and omits direct-response rules. Resubmitting readback can change rule ordering, replace credentials with the redaction placeholder, or remove rejection rules. Retain the original authored policy separately and use it for updates.
 
 ## Snapshot class
 
@@ -1765,9 +1851,9 @@ console.log(snapshot.createdAt);
 
 #### `expiresAt`
 
-The `expiresAt` accessor returns the date and time when the snapshot will automatically expire and be deleted, based on its last use. If the snapshot was created with `expiration: 0`, this value is `null`.
+The `expiresAt` accessor returns the date and time when the snapshot will automatically expire and be deleted, based on its last use. If the snapshot was created with `expiration: 0`, this value is `undefined`.
 
-**Returns:** `Date | null`.
+**Returns:** `Date | undefined`.
 
 ```ts
 if (snapshot.expiresAt) {
@@ -1781,7 +1867,11 @@ if (snapshot.expiresAt) {
 
 Use `Snapshot.list()` to enumerate snapshots for a project. Filter by sandbox name, sort, and paginate using a cursor. The returned value is async-iterable and auto-paginates through every page.
 
-**Returns:** `Promise<Paginated<{ snapshots: Snapshot[]; pagination: Pagination; }>>`.
+Omit `token`, `teamId`, and `projectId` to use OIDC or local development authentication. To use an access token, pass all three fields together. `projectId` alone does not override the OIDC project.
+
+`SnapshotMetadata` items are plain API metadata records, not `Snapshot` instances. Their identifier is `id`, and timestamps such as `createdAt` are numbers. Retrieve a handle with `Snapshot.get({ snapshotId: record.id })`.
+
+**Returns:** `Promise<Paginated<{ snapshots: SnapshotMetadata[]; pagination: Pagination; }>>`.
 
 | Parameter   | Type              | Required | Details                                                |
 | ----------- | ----------------- | -------- | ------------------------------------------------------ |
@@ -1789,7 +1879,9 @@ Use `Snapshot.list()` to enumerate snapshots for a project. Filter by sandbox na
 | `limit`     | `number`          | No       | Maximum number of snapshots per page.                  |
 | `cursor`    | `string`          | No       | Pagination cursor returned by the previous page.       |
 | `sortOrder` | `"asc" \| "desc"` | No       | Sort direction. Defaults to `"desc"`.                  |
-| `projectId` | `string`          | No       | Project whose snapshots you want to list.              |
+| `token` | `string` | No | Access token. Requires `teamId` and `projectId` when supplied. |
+| `teamId` | `string` | No | Team ID. Requires `token` and `projectId` when supplied. |
+| `projectId` | `string`          | No       | Project to list. Requires `token` and `teamId` when supplied.              |
 | `signal`    | `AbortSignal`     | No       | Cancel the request.                                    |
 
 ```ts
@@ -1978,13 +2070,17 @@ console.log(drive.updatedAt);
 
 #### `Drive.list()`
 
-Use `Drive.list()` to enumerate drives for a project. Filter by name prefix when you need to find drives for a specific workspace or user.
+Use `Drive.list()` to enumerate drives for a project. Filter by name prefix when you need to find drives for a specific workspace or user. Each item is a `Drive` instance with accessors and instance methods.
+
+Omit `token`, `teamId`, and `projectId` to use OIDC or local development authentication. To use an access token, pass all three fields together. `projectId` alone does not override the OIDC project.
 
 **Returns:** `Promise<Paginated<{ drives: Drive[]; pagination: Pagination; }>>`.
 
 | Parameter    | Type                                             | Required | Details                                      |
 | ------------ | ------------------------------------------------ | -------- | -------------------------------------------- |
-| `projectId`  | `string`                                         | No       | Project whose drives you want to list.       |
+| `token` | `string` | No | Access token. Requires `teamId` and `projectId` when supplied. |
+| `teamId` | `string` | No | Team ID. Requires `token` and `projectId` when supplied. |
+| `projectId`  | `string`                                         | No       | Project to list. Requires `token` and `teamId` when supplied.       |
 | `limit`      | `number`                                         | No       | Maximum number of drives to return.          |
 | `cursor`     | `string`                                         | No       | Pagination cursor returned by the previous page. |
 | `sortBy`     | `"createdAt" \| "updatedAt" \| "name"`           | No       | Field to sort drives by.                     |
@@ -2133,7 +2229,7 @@ See the [firewall documentation](/docs/sandbox/concepts/firewall#requests-proxyi
 
 ## Example workflows
 
-- [Install system packages](/kb/guide/how-to-install-system-packages-in-vercel-sandbox) while keeping sudo-enabled commands isolated.
+- [Install system packages](/docs/sandbox/working-with-sandbox#install-system-packages) while keeping sudo-enabled commands isolated.
 - [Execute long-running tasks](/docs/sandbox/working-with-sandbox#execute-long-running-tasks) by extending sandbox timeouts for training or large dependency installs.
 - [Mount persistent drives](/docs/sandbox/concepts/drives) when sandbox runs need to reuse workspace files, caches, or shared inputs.
 - Browse more scenarios in the [Sandbox examples](/docs/sandbox/working-with-sandbox#examples) catalog.

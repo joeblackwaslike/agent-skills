@@ -3,19 +3,21 @@ title: Instrumentation
 product: vercel
 url: /docs/tracing/instrumentation
 canonical_url: "https://vercel.com/docs/tracing/instrumentation"
-last_updated: 2026-09-15
+last_updated: 2026-11-03
 type: how-to
 prerequisites:
   - /docs/tracing
 related:
+  - /docs/tracing/configure-tracing
+  - /docs/environment-variables/system-environment-variables
   - /docs/functions/runtimes/edge
   - /docs/tracing/session-tracing
   - /docs/drains/reference/traces
 summary: Learn how to instrument your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/tracing/instrumentation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6f1be3a8c43cda939d3b5f29533e16c14d670d1c446a0fc810d640d4d681ea90"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "451912a2f983a139034b5a8637be5a4c5a85ea74b353dd2cc00e982a501cce06"
 ---
 
 # Instrumentation
@@ -38,11 +40,19 @@ Observability is crucial for understanding and optimizing the behavior and perfo
 - [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [@vercel/otel 1.3.0](https://vercel.com/changelog/vercel-otel-1-3-0)
 - [Native support for SvelteKit's new OpenTelemetry spans](https://vercel.com/changelog/native-support-for-sveltekits-new-opentelemetry-spans)
+- [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
 - [Instrumentation](https://eve.dev/docs/observability/instrumentation) — Configure lifecycle instrumentation, handle runtime events, and control the content each destination receives.
-- [instrumentation.js](https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation) — API reference for the instrumentation.js file.
 
 Full cross-link map for this page: [/docs/tracing/instrumentation.graph.md](/docs/tracing/instrumentation.graph.md)
 <!-- /docsgraph:related -->
+
+## Using default tracing
+
+If your project is eligible for [default tracing](/docs/tracing/configure-tracing#default-tracing-for-new-next.js-projects), Vercel adds `@vercel/otel` at build time, so you get framework spans without following [Getting started](#getting-started).
+
+To add [custom spans](#adding-custom-spans), set up `@vercel/otel` yourself as described in [Getting started](#getting-started). Once your project has its own `instrumentation.ts` file, Vercel stops adding `@vercel/otel` and your setup takes over.
+
+Default tracing uses your project name as the service name. To keep your traces under the same service, set `serviceName` in `registerOTel` to `process.env.VERCEL_PROJECT_NAME`, the same [system environment variable](/docs/environment-variables/system-environment-variables) default tracing uses.
 
 ## Getting started
 
@@ -123,6 +133,18 @@ import { registerOTel } from '@vercel/otel';
 registerOTel({ serviceName: 'your-project-name' });
 // NOTE: You can replace `your-project-name` with the actual name of your project
 ```
+
+## How OpenTelemetry affects fetch spans
+
+Vercel records fetch spans for outbound HTTP requests by default. When your `package.json` lists any of these packages, Vercel stops recording them, and your OpenTelemetry setup records them instead:
+
+- `@opentelemetry/api` 1.7 or later
+- `@vercel/otel` 1.11 or later
+- `@opentelemetry/sdk-trace-node` 1.19 or later
+
+With default tracing, the `@vercel/otel` that Vercel adds records your fetch spans.
+
+If your project lists one of these packages but never registers an OpenTelemetry SDK, such as `@vercel/otel`, your traces have no fetch spans.
 
 ## Configuring context propagation
 
@@ -342,9 +364,9 @@ This ensures consistency in distributed systems: if an upstream service marks a 
 
 ## Adding custom spans
 
-After installing `@vercel/otel`, you can add custom spans to your traces to capture additional visibility into your application. Custom spans let you track specific operations that matter to your business logic, such as processing payments, generating reports, or transforming data, so you can measure their performance and debug issues more effectively.
+Custom spans track operations that matter to your business logic, such as processing payments, generating reports, or transforming data. To add them, first set up `@vercel/otel` as described in [Getting started](#getting-started), even if your project uses [default tracing](#using-default-tracing).
 
-Use the `@opentelemetry/api` package to instrument specific operations:
+Then use the `@opentelemetry/api` package to start a span and end it when the operation finishes:
 
 ```ts filename="custom-span.ts" {3, 6, 9-11, 13}
 import { trace } from '@opentelemetry/api';

@@ -1,8 +1,8 @@
 ---
 title: "Markdown Links"
 source: "https://docusaurus.io/docs/markdown-features/links"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "c80c10bed559f4dabcf112368a662a10693f0c2679ff2d6db562e3a000de25d1"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "3b49d8c4b422991d9b4c36fdf5adc848cf138bf11f8a338babb6912e109b7309"
 ---
 
 # Markdown Links
@@ -60,4 +60,4 @@ Using relative _file_ paths (with `.md` extensions) instead of relative _URL_ li
 
 - Relative URL links are very likely to break if you update the [trailingSlash config](https://docusaurus.io/docs/api/docusaurus-config#trailingSlash)
 
-warningMarkdown file references only work when the source and target files are processed by the same plugin instance. This is a technical limitation of our Markdown processing architecture and will be fixed in the future. If you are linking files between plugins (e.g. linking to a doc page from a blog post), you have to use URL links.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-links.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+warningMarkdown file references only work when the source and target files are processed by the same plugin instance. This is a technical limitation of our Markdown processing architecture and will be fixed in the future. If you are linking files between plugins (e.g. linking to a doc page from a blog post), you have to use URL links.[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-links.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

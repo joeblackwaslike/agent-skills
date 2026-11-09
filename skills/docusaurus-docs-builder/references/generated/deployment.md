@@ -1,8 +1,8 @@
 ---
 title: "Deployment"
 source: "https://docusaurus.io/docs/deployment"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "301a3ce94b2ae9dd98c6d023b86a8610da6c836d865ec1a07e0bfbf892674c16"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "0b5126995e2fd5b5704e2297fa9e5eb5e99cb048ce4d81e2e56202c455a4f2b0"
 ---
 
 # Deployment
@@ -641,4 +641,4 @@ See [docs](https://docs.quantcdn.io/docs/cli/continuous-integration) and [blog](
 
 [Kinsta Static Site Hosting](https://kinsta.com/static-site-hosting) lets you deploy up to 100 static sites for free, custom domains with SSL, 100 GB monthly bandwidth, and 260+ Cloudflare CDN locations.
 
-Get started in just a few clicks by following our [Docusaurus on Kinsta](https://kinsta.com/docs/docusaurus-example/) article.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/deployment.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+Get started in just a few clicks by following our [Docusaurus on Kinsta](https://kinsta.com/docs/docusaurus-example/) article.[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/deployment.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

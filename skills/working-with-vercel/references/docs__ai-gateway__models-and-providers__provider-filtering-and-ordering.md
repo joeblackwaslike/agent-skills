@@ -17,8 +17,8 @@ related:
 summary: Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by cost, latency, or throughput.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ddef5d0e7fd565818c550f996990480455930f3ecf81d757ba00b100a1359d30"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f609ce9f17b1dc011ae70b5a93eb7cc195efd522c762718865c67ebf29bd4eb1"
 ---
 
 # AI Gateway Provider Filtering, Ordering, and Sorting
@@ -385,26 +385,22 @@ The bottom section of the page lists the available providers for that model. The
     "routing": {
       "originalModelId": "anthropic/claude-sonnet-5",
       "resolvedProvider": "anthropic",
-      "resolvedProviderApiModelId": "claude-sonnet-5",
       "fallbacksAvailable": ["bedrock", "vertex"],
-      "planningReasoning": "System credentials planned for: anthropic. Total execution order: anthropic(system)",
       "canonicalSlug": "anthropic/claude-sonnet-5",
       "finalProvider": "anthropic",
       "modelAttemptCount": 1,
       "modelAttempts": [
         {
-          "modelId": "anthropic:claude-sonnet-5",
           "canonicalSlug": "anthropic/claude-sonnet-5",
           "success": true,
           "providerAttemptCount": 1,
           "providerAttempts": [
             {
               "provider": "anthropic",
-              "providerApiModelId": "claude-sonnet-5",
               "credentialType": "system",
               "success": true,
-              "startTime": 458753.407267,
-              "endTime": 459891.705775
+              "startTime": 1754639042520,
+              "endTime": 1754639043658
             }
           ]
         }
@@ -418,21 +414,19 @@ The bottom section of the page lists the available providers for that model. The
 }
 ```
 
-The `gateway.cost` value is the inference cost for this request, returned as a decimal string. It does not include other charges that may apply (for example, Custom Reporting writes or Zero Data Retention surcharges). The `gateway.marketCost` represents the market rate cost for the inference. The `gateway.generationId` is a unique identifier for this generation that can be used with the [Generation Lookup API](/docs/ai-gateway/sdks-and-apis/rest-api#look-up-a-generation). For more on pricing see [Pricing](/docs/ai-gateway/pricing).
+The `gateway.cost` value is the inference cost for this request plus the cost of any tools that AI Gateway runs for the request, such as web search, returned as a decimal string. It does not include other charges that may apply (for example, Custom Reporting writes or Zero Data Retention surcharges). The `gateway.marketCost` represents the market rate cost for the inference. The `gateway.generationId` is a unique identifier for this generation that can be used with the [Generation Lookup API](/docs/ai-gateway/sdks-and-apis/rest-api#look-up-a-generation). For more on pricing see [Pricing](/docs/ai-gateway/pricing).
 
 In cases where your request encounters issues with one or more providers or if your BYOK credentials fail, you'll find error detail in the `providerAttempts` array within each entry of `modelAttempts`:
 
 ```json
 "modelAttempts": [
   {
-    "modelId": "novita:zai-org/glm-5",
     "canonicalSlug": "zai/glm-5",
     "success": true,
     "providerAttemptCount": 2,
     "providerAttempts": [
       {
         "provider": "novita",
-        "providerApiModelId": "zai-org/glm-5",
         "credentialType": "byok",
         "success": false,
         "error": "Unauthorized",
@@ -441,7 +435,6 @@ In cases where your request encounters issues with one or more providers or if y
       },
       {
         "provider": "novita",
-        "providerApiModelId": "zai-org/glm-5",
         "credentialType": "system",
         "success": true,
         "startTime": 1754639042710,
@@ -1114,9 +1107,9 @@ When `sort` is active, the response's provider metadata includes a `sort` object
         "option": "cost",
         "executionOrder": ["anthropic", "bedrock", "vertex"],
         "metrics": {
-          "anthropic": 0.003,
-          "bedrock": 0.003,
-          "vertex": 0.005
+          "anthropic": 3,
+          "bedrock": 3,
+          "vertex": 5
         },
         "deprioritizedProviders": []
       }
@@ -1128,7 +1121,7 @@ When `sort` is active, the response's provider metadata includes a `sort` object
 | Field                     | Description                                                                |
 | ------------------------- | -------------------------------------------------------------------------- |
 | `option`                  | The sort metric used (`cost`, `ttft`, or `tps`)                            |
-| `executionOrder`          | Providers in the order they were attempted after sorting                    |
+| `executionOrder`          | Provider order that sorting produced, before AI Gateway moves providers from `order` to the front. Can include providers that AI Gateway didn't try                    |
 | `metrics`                 | Per-provider metric values used for ranking (`null` if no data available)   |
 | `deprioritizedProviders`  | Providers that were penalized due to degraded health                        |
 
@@ -1150,7 +1143,7 @@ This means sort optimizes for your chosen metric while still avoiding unhealthy 
 | `only`  | `string[]`                     | Restrict routing to only these provider slugs                  |
 | `sort`  | `'cost'` \| `'ttft'` \| `'tps'` | Sort providers by cost, time to first token, or tokens per second |
 
-All options are set under `providerOptions.gateway` in the AI SDK, or under `providerOptions` in the REST API / OpenAI-compatible Chat Completions API. The Chat Completions API also accepts a top-level `provider` shorthand (e.g., `"provider": { "sort": "tps" }`). See [Available Providers](/docs/ai-gateway/models-and-providers/provider-options#available-providers) for the full list of provider slugs.
+Set all options under `providerOptions.gateway`, both in the AI SDK and in the request body of the Chat Completions, Messages, and Responses APIs. The Chat Completions API also accepts a top-level `provider` shorthand (e.g., `"provider": { "sort": "tps" }`). See [Available Providers](/docs/ai-gateway/models-and-providers/provider-options#available-providers) for the full list of provider slugs.
 
 To filter by a capability of the model itself (rather than by provider), see [Model Filtering](/docs/ai-gateway/models-and-providers/model-filtering).
 

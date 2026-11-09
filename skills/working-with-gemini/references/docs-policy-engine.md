@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/policy-engine.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "4895bc05bccef1a16ab1442c7a9b12ebe61945f0f079e9fca3261cf8b9e2d0f5"
+fetched_at: "2026-11-09T12:36:42.699Z"
+sha256: "ddebca37578716667552a06767bb7e4c23f52f4eca90732cf74310b20df4c7b2"
 ---
 
 # Policy engine
@@ -357,6 +357,12 @@ interactive = true
 # defined in. In chained commands (e.g., cmd1 > file && cmd2), each
 # individual command rule must permit redirection if it's used.
 allowRedirection = true
+
+# (Optional) If true, lets shell commands use command substitution
+# ($(), backticks, <(), >(), or PowerShell @()). By default, the policy
+# engine asks for confirmation when substitution syntax is detected, even if
+# inner subcommands are also allowed.
+allowCommandSubstitution = true
 ```
 
 ### Using arrays (lists)

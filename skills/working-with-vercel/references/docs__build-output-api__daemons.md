@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel Daemons are represented in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/daemons.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f0a03c89e3fbe4f158a7a3036be30e4cac18c9d6bd23ae353ee6fe1504c1510b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a1f0ea6b1eca882cdb2afeef1dc7ef53ae9d429e6e8037eac3f2f6316958144f"
 ---
 
 # Daemons
@@ -31,13 +31,14 @@ A deployment can declare [daemons](/docs/daemons), which are long-running contai
 
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
-- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
+- [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons)
 - [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
+- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
 - [Migrate Render background workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-render-workers-to-vercel-daemons) — Migrate Render workers to Vercel Daemons. Translate render.yaml, package Celery in Docker, prepare the broker, and verif
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
-- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 
 Full cross-link map for this page: [/docs/build-output-api/daemons.graph.md](/docs/build-output-api/daemons.graph.md)
 <!-- /docsgraph:related -->
@@ -78,6 +79,28 @@ type ServiceBinding = {
   env: string;
 };
 
+type LivenessHttpHeader = {
+  name: string;
+  value: string;
+};
+
+type LivenessHttpGet = {
+  port: number;
+  path?: string;
+  host?: string;
+  scheme?: 'HTTP' | 'HTTPS';
+  httpHeaders?: LivenessHttpHeader[];
+};
+
+type LivenessProbe = {
+  httpGet: LivenessHttpGet;
+  initialDelaySeconds?: number;
+  periodSeconds?: number;
+  timeoutSeconds?: number;
+  successThreshold?: number;
+  failureThreshold?: number;
+};
+
 type DaemonDescriptor = {
   runtime: 'container';
   image: string;
@@ -88,6 +111,7 @@ type DaemonDescriptor = {
       memory: '1Gi' | '2Gi' | '4Gi' | '8Gi';
     };
   };
+  livenessProbe?: LivenessProbe;
   terminationGracePeriodSeconds?: number;
   bindings?: ServiceBinding[];
 };
@@ -100,6 +124,7 @@ type DaemonDescriptor = {
 | **command**   | `string[]`               | No       | The command and arguments to run. Defaults to the image's `ENTRYPOINT` and `CMD`.                                                                 |
 | **instances** | `Record<string, number>` | Yes      | The number of instances to run in each region, keyed by region ID. Each count is an integer from `0` to `100`.                                    |
 | **resources** | `object`                 | No       | The memory for each instance. See [`resources`](/docs/daemons/config-reference#resources).                                                         |
+| **livenessProbe** | `LivenessProbe`      | No       | An HTTP `GET` health check that Vercel requests periodically to check that the instance is still healthy. Has the same fields as [`livenessProbe`](/docs/daemons/config-reference#livenessprobe) in `vercel.json`. |
 | **terminationGracePeriodSeconds** | `number` | No | The number of seconds Vercel waits after `SIGTERM` before terminating the instance. An integer from `0` to `3600`. Defaults to `30`. See [`terminationGracePeriodSeconds`](/docs/daemons/config-reference#terminationgraceperiodseconds). |
 | **bindings**  | `ServiceBinding[]`       | No       | Bindings to services in the same deployment. Each `service` must be a service in the build output. See [`bindings`](/docs/daemons/config-reference#bindings). |
 
@@ -138,7 +163,7 @@ When you use `vercel build`, the CLI builds each daemon's `Dockerfile`, pushes t
 
 ## Constraints
 
-- Daemon names contain only lowercase letters separated by `_`, `__`, or `-`, and are limited to 64 characters. See [Daemon names](/docs/daemons/config-reference#daemon-names).
+- Daemon names contain only lowercase letters separated by `_`, `__`, or one or more `-`, and are limited to 64 characters. See [Daemon names](/docs/daemons/config-reference#daemon-names).
 - Each daemon listed in `config.json` must have a descriptor. A missing descriptor fails the deployment.
 - The `image` must be in Vercel Container Registry.
 - Routes can't target a daemon, because daemons don't receive traffic.

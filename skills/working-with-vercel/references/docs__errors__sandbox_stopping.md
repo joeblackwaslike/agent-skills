@@ -13,8 +13,8 @@ related:
 summary: The Sandbox is mid-shutdown and is no longer accepting commands. This is a transient state.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/sandbox_stopping.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "105a39e1ce706d620ceab8e70efc1fd3cca855967e3e9d388324fc99303d2551"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e8c9bf6090061e1a33f565ae6bc5a7ded85c40b0d06bbd8f08fc5ef40315cf9a"
 ---
 
 # SANDBOX_STOPPING
@@ -29,8 +29,8 @@ The `SANDBOX_STOPPING` error occurs when a request lands on a Sandbox whose curr
 
 To troubleshoot this error, follow these steps:
 
-1. **Wait for the session to stop, then resume:** This is a transient state. For a persistent Sandbox, wait until the shutdown finishes, then call `Sandbox.get({ name })` (or run any SDK command) to start a new session from the snapshot taken on shutdown.
-2. **Check whether your code is racing `stop()`:** If your application calls `sandbox.stop()` from one path while another path is still issuing commands, the second path can see `SANDBOX_STOPPING`. Coordinate the two paths or guard them with the [`status`](/docs/sandbox/sdk-reference#status) accessor.
+1. **Wait for the session to stop, then resume:** This is a transient state. For a persistent Sandbox, wait until the shutdown finishes, then call `Sandbox.get({ name, resume: true })` (or run a command through the parent `Sandbox` handle) to start a new session from the snapshot taken on shutdown.
+2. **Check whether your code is racing `stop()`:** If your application calls `sandbox.stop()` from one path while another path is still issuing commands, the second path can see `SANDBOX_STOPPING`. Coordinate the two paths so `stop()` finishes before submitting more commands. The [`status`](/docs/sandbox/sdk-reference#status) accessor reads cached metadata and doesn't prevent lifecycle races.
 3. **Inspect the Sandbox history:** Navigate to the [Sandboxes dashboard](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fsandboxes\&title=Go+to+Sandboxes), select the Sandbox, and check the history section to see what triggered the shutdown.
 
 

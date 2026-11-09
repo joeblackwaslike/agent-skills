@@ -16,8 +16,8 @@ related:
 summary: Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatible model provider entries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/qwen.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d7de08be5da7b80349e3083b7146c825d9bdec236ac765813aa45fc9daf11816"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2a11f9a0a174998af844152699a553765f93e19d2aab9b3635fcb67d4a3cb2e4"
 ---
 
 # Qwen Code with AI Gateway
@@ -30,12 +30,12 @@ sha256: "d7de08be5da7b80349e3083b7146c825d9bdec236ac765813aa45fc9daf11816"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Qwen3-Coder is now supported in Vercel AI Gateway](https://vercel.com/changelog/qwen3-coder-is-now-supported-in-vercel-ai-gateway)
 - [Qwen 3.8 Max 0902 now available on AI Gateway](https://vercel.com/changelog/qwen-3-8-max-0902-now-available-on-ai-gateway)
+- [Qwen3-Coder is now supported in Vercel AI Gateway](https://vercel.com/changelog/qwen3-coder-is-now-supported-in-vercel-ai-gateway)
+- [Qwen 3.8 Max now available on Vercel AI Gateway](https://vercel.com/changelog/qwen-3-8-max-now-available-on-vercel-ai-gateway)
+- [Qwen3-Next models are now supported in Vercel AI Gateway](https://vercel.com/changelog/qwen3-next-models-are-now-supported-in-vercel-ai-gateway)
+- [Qwen 3.6 Plus on AI Gateway](https://vercel.com/changelog/qwen-3.6-plus-on-ai-gateway)
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/qwen.graph.md](/docs/ai-gateway/coding-agents/qwen.graph.md)
 <!-- /docsgraph:related -->

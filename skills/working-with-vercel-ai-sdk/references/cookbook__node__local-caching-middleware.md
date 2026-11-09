@@ -8,8 +8,8 @@ tags:
   - caching
   - middleware
 source: "https://ai-sdk.dev/cookbook/node/local-caching-middleware.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "41fb1532169bb0e3f43c5dda42452f00f6d0e3dc73d8e83079d287393d81ebab"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "4611e202f200dace04aef4fe3f29b980480b4b8fcc3e6d2fc555bd5f1ac3a8af"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -24,6 +24,7 @@ This approach is particularly useful in two scenarios:
 ## Implementation
 
 In this implementation, you create a JSON file to store responses. When a request is made, you first check if you have already seen this exact request. If you have, you return the cached response immediately (as a one-off generation or chunks of tokens). If not, you trigger the generation, save the response, and return it.
+Cache keys include the provider and model ID so models with the same name on different providers have separate entries.
 
 Make sure to add the path of your local cache to your `.gitignore` so you do
 not commit it.
@@ -72,13 +73,13 @@ const ensureCacheFile = () => {
   }
 };
 
-const getCachedResult = (key: string | object) => {
+const getCachedResult = async (key: string | object) => {
   ensureCacheFile();
   const cacheKey = typeof key === 'object' ? JSON.stringify(key) : key;
   try {
     const cacheContent = fs.readFileSync(CACHE_FILE, 'utf-8');
 
-    const parseResult = safeParseJSON({ text: cacheContent });
+    const parseResult = await safeParseJSON({ text: cacheContent });
     if (!parseResult.success) {
       console.error('Failed to parse cache:', parseResult.error);
       return null;
@@ -94,10 +95,10 @@ const getCachedResult = (key: string | object) => {
   }
 };
 
-const updateCache = (key: string, value: any) => {
+const updateCache = async (key: string, value: any) => {
   ensureCacheFile();
   try {
-    const parseResult = safeParseJSON({
+    const parseResult = await safeParseJSON({
       text: fs.readFileSync(CACHE_FILE, 'utf-8'),
     });
     const cache = parseResult.success
@@ -142,10 +143,11 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
       ...params,
       prompt: cleanPrompt(params.prompt),
       _function: 'generate',
+      provider: model.provider,
       model: model.modelId,
     });
 
-    const cached = getCachedResult(cacheKey);
+    const cached = await getCachedResult(cacheKey);
 
     if (cached && cached !== null) {
       return {
@@ -161,7 +163,7 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
 
     const result = await doGenerate();
 
-    updateCache(cacheKey, result);
+    await updateCache(cacheKey, result);
 
     return result;
   },
@@ -171,10 +173,11 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
       ...params,
       prompt: cleanPrompt(params.prompt),
       _function: 'stream',
+      provider: model.provider,
       model: model.modelId,
     });
 
-    const cached = getCachedResult(cacheKey);
+    const cached = await getCachedResult(cacheKey);
 
     if (cached && cached !== null) {
       const { chunks, ...rest } = cached;
@@ -208,8 +211,8 @@ export const cacheMiddleware: LanguageModelV4Middleware = {
         controller.enqueue(chunk);
       },
 
-      flush() {
-        updateCache(cacheKey, { chunks: fullResponse, ...rest });
+      async flush() {
+        await updateCache(cacheKey, { chunks: fullResponse, ...rest });
       },
     });
 

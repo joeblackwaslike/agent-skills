@@ -16,8 +16,8 @@ related:
 summary: Find guides and reference documentation for building, deploying, and managing applications with Vercel, including the CLI, SDKs, and APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "933253620c4624f1d0d287389a1b5181cd0903317ebd57defeb20818e3cc6711"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7d6aa67d1b2f349d6d7e89ac4789a207aacd43c93463f771d8e581c9934dad32"
 ---
 
 # Vercel Documentation
@@ -96,10 +96,18 @@ Set up Vercel for me. Fetch https://vercel.com/get-started.md and follow it.
 
 The latest changes across the Vercel platform. Browse the full [changelog](https://vercel.com/changelog) for everything that shipped.
 
-- Oct 30, 2026: [Data Cache is moving to Runtime Cache](https://vercel.com/changelog/data-cache-is-moving-to-runtime-cache). Data Cache is exiting beta and merging into Runtime Cache, which brings faster performance under load, 8–10x more cache storage per project, and deeper observability.&#x20;
-- Oct 30, 2026: [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings). Vercel Daemons can now call the services in their deployment through service bindings.
-- Oct 30, 2026: [Ling 3.1 Flash 1019 now available on AI Gateway for free](https://vercel.com/changelog/ling-3-1-flash-1019-now-available-on-ai-gateway-for-free). Ling 3.1 Flash 1019 is now available on AI Gateway.
-- Oct 30, 2026: [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons). Vercel Daemons now support configuring HTTP liveness checks, for restarting processes in a bad state proactively.
+- Nov 7, 2026: [DeepSeek V4.1 Flash 1017 Ultrafast now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-ultrafast-now-available-on-ai-gateway). Call DeepSeek V4.1 Flash 1017 Ultrafast through Vercel AI Gateway with one API key, no provider account, spend tracking, and request traces
+- Nov 6, 2026: [Chat SDK agents can now stream generative UI with json-render](https://vercel.com/changelog/json-render-and-chat-sdk-agents). Stream AI-generated cards from one typed catalog to Slack, Teams, and every other Chat SDK platform.
+- Nov 6, 2026: [AI Gateway adds DeepSeek Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-deepseek-search-and-fetch-tools). AI Gateway now supports DeepSeek Search and Fetch. Search the web and retrieve page content with any tool-calling model and one API key.
+- Nov 6, 2026: [Vercel CLI can now set new projects to expire](https://vercel.com/changelog/vercel-cli-can-now-set-new-projects-to-expire). Set new projects to expire when you deploy them, and remove the expiration with vercel project keep.
+
+View the latest Vercel updates from your terminal:
+
+```bash filename="terminal"
+vercel changelog
+```
+
+[Explore changelog filters and options →](/docs/cli/changelog)
 
 ## Build with AI
 

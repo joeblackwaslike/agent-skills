@@ -4,8 +4,8 @@ description: Learn how to use Open Responses with AI Gateway and the direct prov
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/open-responses.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "1d57a93a0995022e6cccf9529c14ec9e15c89ae8bf1bf00fc22691fc5c129f73"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "d4eabe2238139ba6ca28ba96fa4be7811e308da34d0c493d1967c68e4b44adf5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -563,6 +563,15 @@ with extensions throws a `SerializationError`.
 - AI SDK function tools and registered Open Responses extensions are supported.
   Other provider-specific tools and options require a dedicated provider
   implementation.
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option             | Description                                                                                                                                |
+| --------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| language  | `reasoningEffort`  | Provider-native reasoning effort. The value is passed through to the endpoint and takes precedence over the top-level `reasoning` setting. |
+| language  | `reasoningSummary` | Controls reasoning summary output from the model. Valid values: 'concise', 'detailed', 'auto'.                                             |
 
 ---
 

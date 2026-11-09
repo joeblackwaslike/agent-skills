@@ -16,8 +16,8 @@ related:
 summary: Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflake, without storing provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "32a24d846be975fd21764ea912cc79276b1a8a9645905b4b621b6fb0c164e259"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4e547080e54e39936ce1741857df420f9f54387751dfff59484227613af3c18d"
 ---
 
 # Vercel Connect
@@ -37,13 +37,13 @@ With [Vercel Connect](/connect), your deployed apps can talk to other services. 
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Telegram](https://eve.dev/docs/channels/telegram) — Reach your agent from a Telegram bot in private chats, groups, and forum topics.
+- [Telegram Reference](https://eve.dev/docs/channels/telegram/reference) — Telegram channel options, credentials, dispatch rules, delivery, human-in-the-loop, proactive sessions, and attachments.
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect)
 - [Discover 1000+ services on Vercel Connect from the CLI](https://vercel.com/changelog/discover-1000-services-on-vercel-connect-from-the-cli)
 - [Vercel Connect adds managed Stripe API keys](https://vercel.com/changelog/vercel-connect-adds-managed-stripe-api-keys)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
 
 Full cross-link map for this page: [/docs/connect.graph.md](/docs/connect.graph.md)
 <!-- /docsgraph:related -->
@@ -193,6 +193,11 @@ securely access third-party services and APIs:
 
 **For Service Providers**: OAuth standards your service needs to support so Vercel teams can connect to it. [Learn more →](/docs/connect/providers)
 
+## Related guides
+
+- [Call third-party APIs from Python with Vercel Connect](https://vercel.com/kb/guide/python-and-vercel-connect): Call Slack and Linear APIs from Python with Vercel Connect. Request app and user tokens, handle consent, and verify provider events in FastAPI.
+- [Give your software factory a browser](https://vercel.com/kb/guide/software-factory-browser): Add a KERNEL cloud browser to the eve software factory template so Foreman can reproduce flow bugs, sign in through managed auth, and verify fixes on preview deployments in attended sessions.
+- [Manage Vercel projects with a software factory](https://vercel.com/kb/guide/software-factory-vercel-mcp): Add Vercel's hosted MCP to the eve software factory template so Foreman can read build logs, runtime errors, and deployment history for the app your target repository deploys, brokered at app scope through Vercel Connect.
 
 ---
 

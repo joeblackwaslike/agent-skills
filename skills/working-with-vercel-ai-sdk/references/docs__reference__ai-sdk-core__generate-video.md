@@ -4,8 +4,8 @@ description: API Reference for experimental_generateVideo.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "7550b98815c1883b21cac9851f008e06a0c1f4dd2c056cccf230547541fb52ee"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "f4a1377e71fab16b5783d9493913849207c2dd4ece82a83eb306573e95128570"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -69,7 +69,7 @@ import { experimental_generateVideo } from "ai"
 
 ### Returns
 
-- `video` (`GeneratedFile`): The first video that was generated.
+- `video` (`GeneratedFile`): The first video available to the SDK. For upload-only results, accessing this property throws NoVideoGeneratedError; use uploadedVideos instead.
   - `GeneratedFile`
     - `base64` (`string`): Video as a base64 encoded string.
     - `uint8Array` (`Uint8Array`): Video as a Uint8Array.
@@ -79,6 +79,7 @@ import { experimental_generateVideo } from "ai"
     - `base64` (`string`): Video as a base64 encoded string.
     - `uint8Array` (`Uint8Array`): Video as a Uint8Array.
     - `mediaType` (`string`): The IANA media type of the video (e.g., video/mp4).
+- `uploadedVideos` (`number`): Number of videos delivered directly to caller-managed storage by the provider. These are not downloaded and are not included in videos.
 - `warnings` (`Warning[]`): Warnings from the model provider (e.g. unsupported settings).
 - `providerMetadata?` (`VideoModelProviderMetadata`): Optional metadata from the provider. The outer key is the provider name. The inner values are the metadata. A \`videos\` key is typically present in the metadata and is an array with the same length as the top level \`videos\` key. Details depend on the provider.
 - `responses` (`Array<VideoModelResponseMetadata>`): Response metadata from the provider. There may be multiple responses if we made multiple calls to the model.

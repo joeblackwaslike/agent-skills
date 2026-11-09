@@ -1,6 +1,6 @@
 ---
 source: "https://code.claude.com/docs/en/security.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
+fetched_at: "2026-11-09T12:34:10.263Z"
 sha256: "b9cbdaa3db416b1bdd759e48c367d4273947713151eebed423c95f59ff5a71db"
 ---
 

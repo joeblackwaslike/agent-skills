@@ -16,8 +16,8 @@ related:
 summary: Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b7d209760caf00b3d9f0a81422fb6e5c9b986e497dfb2020d611b3323bb6a5d0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "84da708b91e34b0748c5325b091998287428f97a657020f4de0ec4f72546acc3"
 ---
 
 # OpenID Connect (OIDC) Federation
@@ -33,13 +33,13 @@ When you create long-lived, persistent credentials in your backend to allow acce
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
+- [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available)
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Authentication](https://eve.dev/docs/guides/auth-and-route-protection) — Secure your agent's HTTP routes with an ordered auth walk, verifier helpers, and connection OAuth via Vercel Connect.
 - [Sandbox Troubleshooting](https://eve.dev/docs/sandbox/troubleshooting) — Causes and fixes for common eve sandbox errors in the sandbox file, after a build, when a session resumes, and during ev
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
 - [The skills.sh API is now available](https://vercel.com/changelog/the-skills-sh-api-is-now-available)
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection)
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
@@ -97,7 +97,7 @@ environment variable. You can then exchange the token for short-lived access tok
 When your application invokes a Vercel Function, the OIDC token is set to the `x-vercel-oidc-token` header
 on the Function's `Request` object.
 
-Vercel does not generate a fresh OIDC token for each execution. It reuses a token for up to 90 minutes. Function tokens have a Time to Live (TTL) of two hours. The remaining 30 minutes ensures the token stays valid throughout a Function's maximum execution duration.
+Vercel does not generate a fresh OIDC token for each execution. Function tokens have a Time to Live (TTL) of two hours. Vercel reuses a token for the first part of that time, and then issues a new one. The token that your Function receives stays valid throughout the Function's [maximum execution duration](/docs/functions/configuring-functions/duration).
 
 ### In Local Development
 

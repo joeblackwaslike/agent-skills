@@ -16,8 +16,8 @@ related:
 summary: Learn how domains work and the options Vercel provides for managing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "eec1f1c6e4d06749b3d0c0ce4fddc82c817d0b2c61e883ebe01fd9bb56bebd10"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "cbfab7117bf975b3450a08eb74f89b447b1452481247fdf284b5db19d3781382"
 ---
 
 # Working with domains
@@ -32,13 +32,11 @@ You can [buy a domain through Vercel](#buying-a-domain-through-vercel) by going 
 
 - [Search and buy domains in the dashboard](https://vercel.com/changelog/search-and-buy-domains-in-the-dashboard)
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases)
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
-- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
+- [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains.graph.md](/docs/domains/working-with-domains.graph.md)
 <!-- /docsgraph:related -->
@@ -101,11 +99,11 @@ A **subdomain** is a more specific part of that domain that can be assigned to a
 
 ### Wildcard domain
 
-You can also configure **wildcard domains**. Using a wildcard domain, such as `*.acme.com`, is a way to scale and customize your project on Vercel. Rather than specifying a particular subdomain, you can add a wildcard domain to your project, and then you need to set the nameservers to the intended nameservers, allowing the domain to be resolved. See our [multi-tenant SaaS template](https://vercel.com/templates/next.js/platforms-starter-kit) for an example of using wildcard domains on Vercel.
+You can also configure **wildcard domains**. Using a wildcard domain, such as `*.acme.com`, is a way to scale and customize your project on Vercel. Rather than specifying a particular subdomain, you can add a wildcard domain to your project, and then you need to let Vercel manage the DNS challenge for the wildcard certificate, either with Vercel's nameservers or by delegating certificate validation. See our [multi-tenant SaaS template](https://vercel.com/templates/next.js/platforms-starter-kit) for an example of using wildcard domains on Vercel.
 
 To add a wildcard domain, follow the steps in [Adding a domain](/docs/domains/working-with-domains/add-a-domain#using-wildcard-domain).
 
-Wildcard domains **must** be configured with the [nameservers method](/docs/domains/working-with-domains/add-a-domain#vercel-nameservers). This is because Vercel needs to be able to set DNS records to generate the wildcard certificates, since the service that Vercel uses to generate those requires us to solve a challenge to verify ownership.
+Vercel must be able to set DNS records to issue and renew wildcard certificates, because the certificate authority requires a DNS challenge to verify ownership. Configure wildcard domains with the [nameservers method](/docs/domains/working-with-domains/add-a-domain#vercel-nameservers), or [delegate certificate validation to Vercel](/docs/domains/working-with-domains/add-a-domain#use-wildcard-domains-with-an-external-dns-provider) if you can't change your domain's nameservers.
 
 ## Using email with domains
 

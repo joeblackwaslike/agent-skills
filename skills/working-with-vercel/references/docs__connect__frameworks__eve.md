@@ -17,8 +17,8 @@ related:
 summary: Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, and authenticate inbound...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/eve.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0b2a45f588af8014604703784a3f4d7c4b04fa2b26ecd0b044590264ee071fbd"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2d8b36615fcc3f881440b1fb07a0ded2cc17cb4e73a37aa1953c736d1bd4cc6d"
 ---
 
 # eve with Vercel Connect
@@ -36,12 +36,13 @@ tokens, so your app doesn't store provider refresh tokens.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
-- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
@@ -252,7 +253,8 @@ export default photonIMessageChannel({
 ## Select scopes and installations
 
 Each helper accepts Connect token parameters, such as `scopes` and
-`installationId`, as its second argument. For a multi-workspace or
+`installationId`, as its second argument. `connectTeamsCredentials` does not
+accept `scopes`, because it always requests the Microsoft Bot Framework scope. For a multi-workspace or
 multi-organization connector, select an
 [installation](/docs/connect/concepts/installations):
 
@@ -275,15 +277,17 @@ installation. You cannot override the app subject.
 
 - **Preview deployments:** Connect forwards triggers to deployed URLs, not
   `localhost`. To receive triggers on Preview, register the branch with
-  `--triggers --trigger-branch <branch> --trigger-path /eve/v1/<channel>`.
-  Add `--environment preview` to let the Preview deployment request
-  credentials. Use a separate connector and select its UID at runtime with
+  `--triggers --git-branch <branch> --trigger-path /eve/v1/<channel>`.
+  Registering the branch also enables `preview` on the project link, so the
+  Preview deployment can request credentials. If you pass `--environment`,
+  list every environment that needs access, because the option replaces the
+  environments on the project link. Use a separate connector and select its UID at runtime with
   `VERCEL_ENV` only when you need to isolate Preview traffic from Production.
 - **Trigger destinations:** Each connector supports up to three trigger
   destinations, and creating a connector with `--triggers` registers a default
   production destination.
-- **Detaching:** `vercel connect detach` removes token access but not trigger
-  destinations. Remove destinations you no longer need separately.
+- **Detaching:** `vercel connect detach` removes token access and removes the
+  project's trigger destinations from the connector.
 
 ## Authorize an MCP connection
 

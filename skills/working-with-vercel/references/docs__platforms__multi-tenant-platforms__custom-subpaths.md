@@ -13,8 +13,8 @@ related:
 summary: Host platform content on custom subpaths of customer domains while maintaining a single Next.js application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "37f2ce76a0695369bebded30c4151a5c601a211e3f44d5119b86ad5e7d77d194"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5c4aecfa069bd42680daab089523b8abf1c8dea9b27bd0bc317f711d4cbf4be4"
 ---
 
 # Configuring Custom Subpaths
@@ -46,9 +46,10 @@ Use a catch-all route to handle all customer requests in one application:
 export default async function CustomerSite({
   params,
 }: {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 }) {
-  const [customerSlug, ...contentPath] = params.slug;
+  const { slug } = await params;
+  const [customerSlug, ...contentPath] = slug;
 
   // Load customer config
   const customer = await getCustomer(customerSlug);
@@ -181,9 +182,10 @@ export default async function CustomerLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 }) {
-  const customerSlug = params.slug[0];
+  const { slug } = await params;
+  const customerSlug = slug[0];
   const customer = await getCustomer(customerSlug);
 
   return (

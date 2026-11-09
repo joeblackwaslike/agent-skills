@@ -17,8 +17,8 @@ related:
 summary: Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8701e71b89e41adcc65ff3b5a3ce508ec507a09f3f2226575b27ea9ff99fb47d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2f704060bab3cc7dd7747ded2570c6168c9f74a485f3f5088eac9c61ba15e131"
 ---
 
 # OpenAI Responses API with AI Gateway
@@ -37,8 +37,8 @@ The [OpenAI Responses API](https://developers.openai.com/api/reference/responses
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [OpenAI Codex with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openai-codex) — Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
-- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses.graph.md](/docs/ai-gateway/sdks-and-apis/responses.graph.md)
 <!-- /docsgraph:related -->
@@ -120,11 +120,11 @@ Set `reasoning.effort` to control how much the model thinks before answering. Se
 | `tool_choice`          | string or object | Tool selection: `auto`, `required`, `none`, or a specific function                                                                                                                                            |
 | `parallel_tool_calls`  | boolean          | Allows the model to call multiple tools in a single turn                                                                                                                                                      |
 | `allowed_tools`        | array            | Subset of tool names the model can use for this request                                                                                                                                                       |
-| `reasoning`            | object           | Reasoning config with `effort` (`none`, `minimal`, `low`, `medium`, `high`, `xhigh`). OpenAI models also support `summary` (`detailed`, `auto`, `concise`) to receive a text summary of the model's reasoning |
+| `reasoning`            | object           | Reasoning config with `effort` (`none`, `minimal`, `low`, `medium`, `high`, `xhigh`, `max`). OpenAI models also support `summary` (`detailed`, `auto`, `concise`) to receive a text summary of the model's reasoning |
 | `text`                 | object           | Output format config, including `json_schema` and `json_object` for structured output                                                                                                                         |
 | `truncation`           | string           | Truncation strategy for long inputs: `auto` or `disabled`                                                                                                                                                     |
-| `previous_response_id` | string           | ID of a previous response for multi-turn conversations                                                                                                                                                        |
-| `store`                | boolean          | Stores the response for later retrieval                                                                                                                                                                       |
+| `previous_response_id` | string           | Continues a multi-turn conversation from a previous response. In [WebSocket mode](/docs/ai-gateway/sdks-and-apis/responses/websockets#multiple-turns-on-one-connection), pass the `response.id` from the previous turn's `response.completed` event on the same connection. Over HTTP, send the earlier turns in `input` instead. An HTTP response `id` that starts with `gen_` is an AI Gateway [generation ID](/docs/ai-gateway/sdks-and-apis/rest-api#look-up-a-generation), not the provider's response ID, so don't pass it as `previous_response_id` |
+| `store`                | boolean          | Asks the provider to store the response. This takes effect only when the request uses [your own provider credentials](/docs/ai-gateway/authentication-and-byok/byok) and you haven't marked that key as [ZDR-compliant](/docs/ai-gateway/security-and-compliance/zdr#byok). When AI Gateway uses its own credentials for the provider, it sets `store` to `false` and the response reports `store: false`. AI Gateway has no endpoint to retrieve a stored response |
 | `metadata`             | object           | Up to 16 key-value pairs for tracking (keys max 64 chars, values max 512 chars)                                                                                                                               |
 | `caching`              | string           | Enables [automatic prompt caching](/docs/ai-gateway/models-and-providers/automatic-caching). Only `auto` is supported                                                                                          |
 | `cache_anchor_items`   | integer          | Declares how many leading input items stay unchanged so automatic caching can add a stable-prefix [cache anchor](/docs/ai-gateway/models-and-providers/automatic-caching#cache-anchor)                           |

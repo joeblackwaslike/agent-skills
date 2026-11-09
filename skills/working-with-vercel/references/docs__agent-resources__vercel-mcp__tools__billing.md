@@ -15,8 +15,8 @@ related:
 summary: Vercel MCP tools for billing and purchases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c42aa24d7faa4f8e869c7417a736a9cebc11e197dc919309bf7ebb6e406f140a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d9bf1ca08507fcf0804ab9beaf4f6a3cba6956256ca32489166ea97984993850"
 ---
 
 # Billing and Purchases
@@ -31,9 +31,9 @@ Review your team's billing charges and contract commitments. Get a domain regist
 
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 - [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains) — Use buy_domains with Vercel MCP.
-- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 - [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 - [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits) — POST /v1/billing/buy — Purchases credits for a Vercel team using the default payment method on file. The purchase is cha
+- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billing.graph.md](/docs/agent-resources/vercel-mcp/tools/billing.graph.md)
 <!-- /docsgraph:related -->

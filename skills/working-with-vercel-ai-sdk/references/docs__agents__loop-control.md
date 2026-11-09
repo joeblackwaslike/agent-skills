@@ -4,8 +4,8 @@ description: Control agent execution with built-in loop management using stopWhe
 url: "https://ai-sdk.dev/docs/agents/loop-control"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/loop-control.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "3ed69c79a4f9942550cbd4e414e1c96a82fd3777c186c1e99c5ff360b3a0075b"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "5135241cae6e023b5275b8c71068e4f4dd871ce684a1d67acfe85ee794a29b69"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -17,7 +17,7 @@ You can control both the execution flow and the settings at each step of the age
 - A tool call needs approval, or
 - A stop condition is met
 
-A [steering message](#steering) that is waiting when the model finishes its answer keeps the loop going for another step.
+A [steering message](#steering) that is waiting when the model finishes its answer keeps the loop going for another step. So does a [queued message](#queueing-messages), unless the answer was cut off.
 
 The AI SDK provides built-in loop control through two parameters: `stopWhen` for defining stopping conditions and `prepareStep` for modifying settings (model, tools, messages, and more) between steps.
 
@@ -468,6 +468,34 @@ prepareStep: ({ initialMessages, steps, experimental_steeringMessages }) => ({
 }),
 ```
 
+### Queueing Messages
+
+`steer()` changes what the agent is doing right now. Use `queue()` for a follow-up that should wait until the agent has finished its current task:
+
+```ts
+const steering = experimental_createSteering();
+
+const resultPromise = agent.generate({
+  prompt: 'Refactor the auth module.',
+  experimental_steering: steering,
+});
+
+// while the agent is working:
+steering.queue('Then add tests for it.');
+steering.queue('Then update the readme.');
+
+const result = await resultPromise;
+```
+
+A queued message is added once the model finishes its current task, i.e. when it gives a final answer without tool calls. The loop then continues with the message, so the agent works through the queue one task at a time:
+
+- Queued messages are added one per task, in the order they are queued.
+- Waiting steering messages are added first. A queued message waits for the next task that finishes.
+- Messages that are queued before the loop starts wait until the model has answered the prompt.
+- A response that is cut off (finish reason `length` or `content-filter`) does not finish the task, so the loop ends and the queued message is reported as not delivered.
+- Stop conditions still apply, and a queued message that the loop does not reach is reported as not delivered, so you can send it as a new message instead.
+- Queued messages are saved in `experimental_steeringMessages` like steering messages, and `queue()` resolves with the same outcome as `steer()`.
+
 ### Handling the Outcome
 
 `steer()` resolves with the outcome of the message and never rejects:
@@ -509,6 +537,40 @@ const messages = [
   ]),
 ];
 ```
+
+### Showing Steering Messages in the UI
+
+`streamText` streams a `steering-message` part when a steering or queued message is added to the run. It comes before the `start-step` part of the step that received the message:
+
+```ts
+for await (const part of result.fullStream) {
+  if (part.type === 'steering-message') {
+    console.log(part.id, part.message, part.stepNumber);
+  }
+}
+```
+
+`toUIMessageStream()` sends it to the client, and `useChat` adds it to the assistant message as a `steering-message` part at that position. Render it like a user message:
+
+```tsx
+{
+  message.parts.map((part, index) => {
+    switch (part.type) {
+      case 'steering-message':
+        return (
+          <div key={index} className="user-message">
+            {part.parts.map(content =>
+              content.type === 'text' ? content.text : null,
+            )}
+          </div>
+        );
+      // ...
+    }
+  });
+}
+```
+
+`convertToModelMessages` turns the part back into a user message between the steps, so saved chats keep the steering messages in the order the model saw them. Pass the id of your UI message to `steer()` or `queue()` to match the part to the message that the user sent.
 
 ## Access Step Information
 

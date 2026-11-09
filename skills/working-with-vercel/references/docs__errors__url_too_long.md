@@ -12,13 +12,13 @@ related:
 summary: The URL of the request is too long. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/url_too_long.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "28adade868543ff31bc9a2a5e25f0d4a6fa81ac434922da9b5ea813c2fae8990"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c2658d9bb6ad0b2dfd9f525fd43a741ffe9f9d278797e2de8f3c6decd8b4a31b"
 ---
 
 # URL_TOO_LONG
 
-The `URL_TOO_LONG` error occurs when the URL of the request exceeds the maximum length allowed by the CDN (**14 KB**). Long URLs can be a result of long query strings, lengthy path segments, or an excessive number of path segments.
+The `URL_TOO_LONG` error occurs when the URL of the request exceeds the maximum length allowed by the CDN (**14 KB**). Long URLs can be a result of long query strings, lengthy path segments, or an excessive number of path segments. The error page can show this error as `URI_TOO_LONG`, with `URI` in place of `URL`. Both codes refer to the same error, and the steps on this page apply to both.
 
 **Error Code:** `414`
 

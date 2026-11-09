@@ -8,30 +8,32 @@ type: reference
 prerequisites:
   []
 related:
-  []
+  - /docs/deployment-retention
 summary: The deployment has been removed
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/deployment_deleted.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "39998c4a3cb8a621d18113a8c686a7d649d8ee79a4e71f465f2b87ff775d20ef"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e2b50f55ff73f21de2df4c6dbf3148b4fe64e13698a59a81ee090ece10e99cb7"
 ---
 
 # DEPLOYMENT_DELETED
 
-The `DEPLOYMENT_DELETED` error occurs when a request is made for a deployment that has been removed based on the projects deployment retention policy.
+The `DEPLOYMENT_DELETED` error occurs when a request is made for a deployment that has been removed based on the project's deployment retention policy.
 
 **Error Code:** `410`
 
 **Name:** Deployment Deleted
 
+When this error occurs, the error page shows the code `GONE`, the standard name of the `410` status, instead of `DEPLOYMENT_DELETED`.
+
 ## Troubleshoot
 
-Recently deleted deployments can be restored within 30 days of deletion.
+You can restore a deleted deployment during its recovery period, which lasts up to 30 days from deletion. For the exact length, see [Restoring a deleted deployment](/docs/deployment-retention#restoring-a-deleted-deployment).
 
 To restore a deleted deployment, open **Settings** in the sidebar of your project:
 
 1. Select **Security** on the side panel of the project settings page
-2. Scroll down to the **Recently Deleted** section
+2. Scroll down to the **Recently Deleted Deployments** section
 3. Find the deployment that needs to be restored, and click on the dropdown menu item **Restore**
 4. Complete the modal
 

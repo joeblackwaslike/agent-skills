@@ -10,11 +10,11 @@ prerequisites:
 related:
   - /docs/domains/troubleshooting
   - /docs/cli/global-options
-summary: Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
+summary: Learn how to buy, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c88108e14f0728b8dff8626820f7da781efebdbb08057ad31580c72adaeba3e3"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7bc8635e93489892043f6b12aa8597787cd2d23be898241ef83b5fa712fb134f"
 ---
 
 # vercel domains
@@ -31,10 +31,10 @@ The `vercel domains` command manages domains under the current scope. With it, y
 - [Search domains without authentication](https://vercel.com/changelog/search-domains-without-authentication)
 - [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration)
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
-- [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
+- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 
 Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md)
 <!-- /docsgraph:related -->
@@ -45,7 +45,7 @@ Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domain
 ## Usage
 
 ```bash filename="terminal"
-vercel domains ls
+vercel domains list
 ```
 
 *Using the \`vercel domains\` command to list all domains
@@ -75,7 +75,7 @@ vercel domains add [domain] [project]
 the current scope or a Vercel Project.*
 
 ```bash filename="terminal"
-vercel domains rm [domain]
+vercel domains remove [domain]
 ```
 
 *Using the \`vercel domains\` command to remove a domain
@@ -132,16 +132,16 @@ registered domain before it expires. The command shows the renewal
 price and term, then asks you to confirm the charge.*
 
 ```bash filename="terminal"
-vercel domains auto-renew [domain] [on|off]
+vercel domains auto-renew [enable|disable] [domain]
 ```
 
 *Using the \`vercel domains\` command to turn automatic
-renewal on or off for a registered domain. Both the domain and the
-\`on|off\` state are required.*
+renewal on or off for a registered domain. Use \`enable\` to turn it on or
+\`disable\` to turn it off. Both the subcommand and the domain are required. The \`enable\` and \`disable\` subcommands need Vercel CLI 65.1.0 or later.*
 
 ## Buy or renew without prompts
 
-With Vercel CLI 63.1.0 and later, scripts and agents can use `domains buy` and `domains renew` without an interactive terminal. The commands also skip prompts in CI when you pass `--json`.
+With Vercel CLI 63.1.0 and later, scripts and agents can use `domains buy` and `domains renew` without an interactive terminal. The commands also skip prompts in CI, or when you pass `--json`.
 
 Before charging a team, pass `--scope <team>` or set `VERCEL_ORG_ID` to that team's ID. A saved team selection or `vercel.json` scope alone isn't sufficient. If `VERCEL_ORG_ID` names a different team, the command refuses the charge.
 
@@ -219,38 +219,37 @@ Use these options with the [prompt-free purchase procedure](#buy-or-renew-withou
 | `--zip <TEXT>` | Unless supplied by approved billing details | Postal or ZIP code. The CLI requires this for every country. |
 | `--country <CODE>` | Unless supplied by approved billing details | Two-letter country code, such as `US`. |
 | `--company <TEXT>` | No | Registrant company name. |
-| `--auto-renew` | One of `--auto-renew` or `--no-auto-renew` | Allow recurring renewal charges at the end of each term. |
-| `--no-auto-renew` | One of `--auto-renew` or `--no-auto-renew` | Turn automatic renewal off. |
-| `--json` or `--format json` | No | Return structured output without prompts. |
+| `--auto-renew` or `--no-auto-renew` | Yes, exactly one | `--auto-renew` allows recurring renewal charges at the end of each term. `--no-auto-renew` turns automatic renewal off. |
+| `--json` | No | Return structured output without prompts. |
 
 Contact flags override billing details. Replacing an existing billing address field with a flag discards the remaining billing address fields, so supply the complete replacement address. Adding a field missing from billing details keeps the other billing address fields.
 
-Pass exactly one of `--auto-renew` and `--no-auto-renew`. These flags don't take values such as `false`. To stop automatic renewal after a purchase, use [`vercel domains auto-renew <domain> off`](#extended-usage).
+Pass exactly one of `--auto-renew` and `--no-auto-renew`. These flags don't take values such as `false`. To stop automatic renewal after a purchase, use [`vercel domains auto-renew disable <domain>`](#extended-usage).
 
 ### Renewal options
 
-`domains renew` accepts `--amount <USD>`, `--json`, and `--format json`. The amount approves the current renewal price for the reported term. Renewal doesn't require new registrant details or change the domain's automatic-renewal setting.
+`domains renew` accepts `--amount <USD>` and `--json`. The amount approves the current renewal price for the reported term. Renewal doesn't require new registrant details or change the domain's automatic-renewal setting.
 
 ### Yes
 
 Use the `--yes` option to bypass the confirmation prompt when removing a domain.
 
 ```bash filename="terminal"
-vercel domains rm [domain] --yes
+vercel domains remove [domain] --yes
 ```
 
-*Using the \`vercel domains rm\` command with the
+*Using the \`vercel domains remove\` command with the
 \`--yes\` option.*
 
 ### Limit
 
-Use the `--limit` option to specify the maximum number of domains that `ls` returns. The default value is `20` and the maximum is `100`.
+Use the `--limit` option to specify the maximum number of domains that `list` returns. The default value is `20` and the maximum is `100`.
 
 ```bash filename="terminal"
-vercel domains ls --limit 100
+vercel domains list --limit 100
 ```
 
-*Using the \`vercel domains ls\` command with the
+*Using the \`vercel domains list\` command with the
 \`--limit\` option.*
 
 You can also use the `--limit` option with `search` to specify the number of domain candidates to check per page. The default value is `20` and the maximum is `200`.
@@ -264,13 +263,13 @@ vercel domains search acme --limit 200
 
 ### Next
 
-The `--next` option enables pagination when listing domains. Pass the timestamp (in milliseconds since the UNIX epoch) from a previous response to get the next page of results.
+The `--next` option enables pagination when listing domains. When more domains remain, the output includes a cursor for the next page. Pass that cursor to get the next page of results:
 
 ```bash filename="terminal"
-vercel domains ls --next 1584722256178
+vercel domains list --next 1584722256178
 ```
 
-*Using the \`vercel domains ls\` command with the
+*Using the \`vercel domains list\` command with the
 \`--next\` option for pagination.*
 
 You can also use the `--next` option with `search` to fetch the next page of candidates. Pass the cursor returned in the previous search response or printed in the continuation command.
@@ -326,43 +325,43 @@ vercel domains search acme --tld com --tld dev
 *Using the \`vercel domains search\` command with the
 \`--tld\` option.*
 
-### Format
+### JSON
 
-Use the `--format=json` option with `search` to return structured JSON output.
+Use the `--json` option with `search` to return structured JSON output.
 
 ```bash filename="terminal"
-vercel domains search acme --format=json
+vercel domains search acme --json
 ```
 
 *Using the \`vercel domains search\` command with the
-\`--format=json\` option.*
+\`--json\` option.*
 
-You can also use the `--format=json` option with `verify` to return structured JSON output describing the current and expected DNS records for the domain.
+You can also use the `--json` option with `verify` to return structured JSON output describing the current and expected DNS records for the domain.
 
 ```bash filename="terminal"
-vercel domains verify my-domain.com --format=json
+vercel domains verify my-domain.com --json
 ```
 
 *Using the \`vercel domains verify\` command with the
-\`--format=json\` option.*
+\`--json\` option.*
 
-You can also use the `--format=json` option with `buy` or `renew` to return structured JSON without prompts. Without `--amount`, the command charges nothing and returns the current price and approval instructions. To complete the charge, follow [Buy or renew without prompts](#buy-or-renew-without-prompts).
+You can also use the `--json` option with `buy` or `renew` to return structured JSON without prompts. Without `--amount`, the command charges nothing and returns the current price and approval instructions. To complete the charge, follow [Buy or renew without prompts](#buy-or-renew-without-prompts).
 
 ```bash filename="terminal"
-vercel domains renew my-domain.com --scope my-team --format=json
+vercel domains renew my-domain.com --scope my-team --json
 ```
 
 *Checking the renewal price for \`my-team\` without charging, using the
-\`--format=json\` option.*
+\`--json\` option.*
 
-You can also use the `--format=json` option with `auto-renew` to return a structured JSON result describing the domain's new automatic renewal state.
+You can also use the `--json` option with `auto-renew` to return a structured JSON result describing the domain's new automatic renewal state.
 
 ```bash filename="terminal"
-vercel domains auto-renew my-domain.com on --format=json
+vercel domains auto-renew enable my-domain.com --json
 ```
 
 *Using the \`vercel domains auto-renew\` command with the
-\`--format=json\` option.*
+\`--json\` option.*
 
 ### Project
 
@@ -398,7 +397,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

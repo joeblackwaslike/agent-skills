@@ -3,7 +3,7 @@ title: upsert-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about upsert-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8a984682cc188b708f37dc4b65ea309a3d971f003a354d36aa2789598cda9e7c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a8bf7b48f05b02a50e80999e2c488b2153a27c582dd7979861bae570e271e618"
 ---
 
 # Upsert Installation
@@ -146,7 +146,8 @@ User Auth OIDC token claims schema:
   "acceptedPolicies": "object" // required // Policies accepted by the customer. Example: { "toc": "2024-02-28T10:00:00Z" },
   "credentials": { // required
     "access_token": "string" // required // Access token authorizes marketplace and integration APIs.,
-    "token_type": "string" // required // The type of token (default: `Bearer`).
+    "token_type": "string" // required // The type of token (default: `Bearer`).,
+    "expires_in": "integer"
   },
   "account": { // required
     "name": "string",

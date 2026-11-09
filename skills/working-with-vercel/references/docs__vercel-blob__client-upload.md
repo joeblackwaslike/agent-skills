@@ -15,8 +15,8 @@ related:
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ed02c3730fafacee3178fdf12759153c80e7b8c76a17e8065017a2992bdeb1d1"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7849235a5c5e197e20a66c1818b2397da290948373d96b98d97abf5251513ab6"
 ---
 
 # Client Uploads with Vercel Blob
@@ -42,8 +42,7 @@ In this guide, you'll learn how to do the following:
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
 - [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
-- [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
-- [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
+- [Background Workers on Vercel](https://vercel.com/docs/background-workers) — Run background jobs on Vercel, from continuous workers with Daemons to queued tasks, scheduled jobs, and durable workflo
 
 Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md)
 <!-- /docsgraph:related -->
@@ -85,8 +84,8 @@ bun add @vercel/blob
   1. Go to your project's [**Storage** section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
   2. Select **Create Storage**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private** or **Public**
-  4. Use the name "Images" and select **Create a new Blob store**
-  5. Select the environments where you would like the read-write token to be included. **Production** and **Preview** are preselected; include **Development** if you plan to work with the store locally. You can also update the prefix of the Environment Variable in Advanced Options
+  4. Use the name "Images". Select **Add a read-write token env var to this connection**, because the client upload route needs this token to generate client tokens. You can also set a **Custom Environment Variable Prefix**
+  5. Select **Create**. Vercel connects the store to the project's **Production** and **Preview** environments. To work with the store locally, add **Development** to the connection from the store's **Projects** tab
   Once created, you are taken to the Vercel Blob store page.
   #### CLI
   Run [`vercel blob create-store`](/docs/cli/blob#create-store) from your linked project directory. The `--access` flag is required and accepts `private` or `public`. The `--yes` flag connects the new store to the project in all environments, including **Development**, which `vercel env pull` reads from:
@@ -101,7 +100,7 @@ bun add @vercel/blob
   The default setup uses OIDC authentication with short-lived, auto-rotated credentials:
   - `BLOB_STORE_ID`: Identifies your Blob store
   - `VERCEL_OIDC_TOKEN`: A short-lived token automatically rotated by Vercel; used with `BLOB_STORE_ID` for server-side access
-  A long-lived static token is also added as a fallback and is required for generating client upload tokens:
+  A long-lived static token is required for generating client upload tokens. The dashboard adds it only when you select **Add a read-write token env var to this connection**:
   - `BLOB_READ_WRITE_TOKEN`: A long-lived static read-write token; required by `handleUpload` to generate client tokens for browser uploads, and for code that runs outside Vercel. Not needed by [`handleUploadPresigned`](/docs/vercel-blob/vercel-signed-urls#handleuploadpresigned), which works with OIDC and verifies callbacks with `BLOB_WEBHOOK_PUBLIC_KEY`
   To use these Environment Variables locally, we recommend pulling them with the Vercel CLI:
   ```bash
@@ -357,7 +356,9 @@ When you need to upload files larger than 4.5 MB, you can use client uploads. Th
     } catch (error) {
       return NextResponse.json(
         { error: (error as Error).message },
-        { status: 400 }, // The webhook will retry 5 times waiting for a 200
+        // Vercel Blob does not retry the webhook on a 400 response.
+        // It retries up to 5 times on a 429, 500, 502, 503, or 504 response.
+        { status: 400 },
       );
     }
   }
@@ -408,7 +409,9 @@ When you need to upload files larger than 4.5 MB, you can use client uploads. Th
     } catch (error) {
       return NextResponse.json(
         { error: error.message },
-        { status: 400 }, // The webhook will retry 5 times waiting for a status 200
+        // Vercel Blob does not retry the webhook on a 400 response.
+        // It retries up to 5 times on a 429, 500, 502, 503, or 504 response.
+        { status: 400 },
       );
     }
   }
@@ -463,7 +466,8 @@ When you need to upload files larger than 4.5 MB, you can use client uploads. Th
 
       return response.status(200).json(jsonResponse);
     } catch (error) {
-      // The webhook will retry 5 times waiting for a 200
+      // Vercel Blob does not retry the webhook on a 400 response.
+      // It retries up to 5 times on a 429, 500, 502, 503, or 504 response.
       return response.status(400).json({ error: (error as Error).message });
     }
   }
@@ -511,7 +515,8 @@ When you need to upload files larger than 4.5 MB, you can use client uploads. Th
 
       return response.status(200).json(jsonResponse);
     } catch (error) {
-      // The webhook will retry 5 times waiting for a 200
+      // Vercel Blob does not retry the webhook on a 400 response.
+      // It retries up to 5 times on a 429, 500, 502, 503, or 504 response.
       return response.status(400).json({ error: error.message });
     }
   }
@@ -564,7 +569,9 @@ When you need to upload files larger than 4.5 MB, you can use client uploads. Th
     } catch (error) {
       return Response.json(
         { error: (error as Error).message },
-        { status: 400 }, // The webhook will retry 5 times waiting for a 200
+        // Vercel Blob does not retry the webhook on a 400 response.
+        // It retries up to 5 times on a 429, 500, 502, 503, or 504 response.
+        { status: 400 },
       );
     }
   }
@@ -614,7 +621,9 @@ When you need to upload files larger than 4.5 MB, you can use client uploads. Th
     } catch (error) {
       return Response.json(
         { error: error.message },
-        { status: 400 }, // The webhook will retry 5 times waiting for a 200
+        // Vercel Blob does not retry the webhook on a 400 response.
+        // It retries up to 5 times on a 429, 500, 502, 503, or 504 response.
+        { status: 400 },
       );
     }
   }

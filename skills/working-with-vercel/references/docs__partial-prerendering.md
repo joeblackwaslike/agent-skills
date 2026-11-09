@@ -16,8 +16,8 @@ related:
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ae4411104690b1be9c80363de02e59d0008e6c2e6afe6072766bb24a1a7c33cf"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9fba20ac7d6b4fa2bd14f3b84c65d7c64e043d74c7c968478a7040991f0d9c2a"
 ---
 
 # Partial Prerendering (PPR)
@@ -37,10 +37,10 @@ Partial Prerendering (PPR) is a rendering strategy that combines fast cached sta
 - [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
 - [Rendering strategies for retail: ISR vs SSR vs static](https://vercel.com/kb/guide/ssr-vs-ssg-vs-isr-vs-csr-for-ecommerce) — Choose between SSR, SSG, ISR, and CSR for each ecommerce surface. Compare rendering modes on freshness, personalization,
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
-- [Implementing Partial Prerendering on your platform](https://nextjs.org/docs/app/guides/ppr-platform-guide) — A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
+- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [Introducing Serverless Pre-Rendering (SPR)](https://vercel.com/blog/serverless-pre-rendering)
+- [Implementing Partial Prerendering on your platform](https://nextjs.org/docs/app/guides/ppr-platform-guide) — A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
-- [Deploying React with Vercel](https://vercel.com/kb/guide/deploying-react-with-vercel) — Deploy React with Vercel to replace your build pipeline and shared staging. See how framework detection, previews, and F
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
@@ -85,7 +85,7 @@ Partial Prerendering is currently available with Next.js:
 | ------------------------ | ---------------------------------------------------------- |
 | **Next.js** (App Router) | Enable Cache Components and mark cached segments with `use cache` |
 
-In Next.js, Cache Components and the `use cache` directive define the cached shell and the dynamic sections. You set how long cached content stays fresh with `cacheLife` and invalidate it on demand with `cacheTag`.
+In Next.js, Cache Components and the `use cache` directive define the cached shell and the dynamic sections. You set how long cached content stays fresh with `cacheLife`, tag it with `cacheTag`, and invalidate it on demand with `revalidateTag`.
 
 **app/page.tsx**
 

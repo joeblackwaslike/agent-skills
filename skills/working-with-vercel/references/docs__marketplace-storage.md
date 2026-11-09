@@ -16,8 +16,8 @@ related:
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b076e73a904f551e39d886c0c074ef7fc60a17758f78a0321d8a76e4ef7af9c3"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e8301d21999362f0f0dcd5a1c5facba2bca76c036c7a0875871a4c6a5f1c6136"
 ---
 
 # Storage on Vercel Marketplace
@@ -42,8 +42,8 @@ The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provid
 - [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
-- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Integrated billing for Supabase, Redis, and EdgeDB](https://vercel.com/changelog/integrated-billing-for-supabase-redis-and-edgedb)
+- [Query and manage Marketplace databases from the dashboard](https://vercel.com/changelog/query-and-manage-marketplace-databases-from-the-dashboard)
 
 Full cross-link map for this page: [/docs/marketplace-storage.graph.md](/docs/marketplace-storage.graph.md)
 <!-- /docsgraph:related -->
@@ -80,10 +80,10 @@ The command installs the integration if it isn't already on your team, provision
 To skip prompts in CI or scripted agent flows, pass options as flags:
 
 ```bash filename="terminal"
-vercel install neon --name my-database --plan free -e production -e preview
+vercel install neon --name my-database --billing-plan free -e production -e preview
 ```
 
-Run `vercel install <integration-name> --help` to see the available products, metadata keys, and billing plans for a specific integration. For the full reference, see [`vercel integration add`](/docs/cli/integration#vercel-integration-add).
+Run `vercel install <integration-name> --help` to see the available products, metadata keys, and billing plans for a specific integration. To choose a billing plan, pass its ID from that output to `--billing-plan`. For the full reference, see [`vercel integration add`](/docs/cli/integration#vercel-integration-add).
 
 ### From the dashboard
 
@@ -125,7 +125,7 @@ Repeat `--environment` to connect more environments. If you omit the option, the
 ### Deploy and verify isolation
 
 1. Open **Project Settings**, and then select [**Environment Variables**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fenvironment-variables\&title=Go+to+Environment+Variables). Confirm that the integration variables have the exact Custom Environment scope.
-2. Deploy to the Custom Environment. For a Custom Environment with the `staging` slug, run `vercel deploy --target=staging`.
+2. Deploy to the Custom Environment. For a Custom Environment with the `staging` slug, run `vercel deploy --environment=staging`.
 3. Verify that the deployment can connect to the resource. Do not print secret values.
 4. Create a deployment in an environment that you did not select. When no Preview Deployment Action fallback applies, confirm that the environment variables provided by the resource are not available.
 
@@ -191,7 +191,7 @@ For Postgres integrations, the **Query** tab lets you run SQL queries and view r
 
 ### Data editor
 
-For Postgres integrations, the **Data** tab displays your table data in a spreadsheet-like interface where you can:
+For Postgres integrations, the **Data Editor** tab displays your table data in a spreadsheet-like interface where you can:
 
 - Sort and filter rows
 - Copy data as CSV, JSON, or Markdown

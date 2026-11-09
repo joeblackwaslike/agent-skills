@@ -17,8 +17,8 @@ related:
 summary: Ask typed questions about shared state and get back structured choices, scores, and boolean probabilities through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/decision.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "45bb983e38b0d8544bf5c38e01c21d9186cf4e64259e1c1c62404ba3aed8e8ec"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "10dde3e4cf70c5a90008b0de9760a974c2ec06271f7468d5f2dbd843c91276d0"
 ---
 
 # Decision
@@ -37,9 +37,7 @@ Ask typed questions about a piece of shared state and get structured answers bac
 - [Liquid AI's d1-ultra now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
 - [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
-- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Automatic Model Selection](https://eve.dev/docs/guides/decide) — Choose agent models automatically or ask typed questions in your tools and application code.
-- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/decision.graph.md](/docs/ai-gateway/modalities/decision.graph.md)
@@ -52,10 +50,10 @@ To see which decision models AI Gateway supports, use the **Decision** filter at
 For a step-by-step setup, see the [Decision quickstart](/docs/ai-gateway/getting-started/decision).
 
 > **💡 Note:** Through the AI SDK, decisions require `ai` 7.0.128 or later, or
-> `experimental_evaluate` on earlier AI SDK 7 releases. Decisions are also
-> available through the [HTTP API](#http-api) below, the
-> [OpenAI-compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions),
-> and the [TypeSafe-compatible API](/docs/ai-gateway/sdks-and-apis/typesafe).
+> `experimental_evaluate` on earlier AI SDK 7 releases. Over HTTP, use the
+> [OpenAI-compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions)
+> described in [HTTP API](#http-api) below. Existing TypeSafe clients can use the
+> [TypeSafe-compatible API](/docs/ai-gateway/sdks-and-apis/typesafe).
 > They are not supported through Chat Completions, Responses, or the
 > Anthropic-compatible or Cohere-compatible endpoints.
 
@@ -215,13 +213,13 @@ export async function GET() {
 
 ## Escalating uncertain decisions
 
-Decision fallbacks can rerun a successful decision with another model when a Choice or Score has low confidence, a Boolean probability falls inside an uncertain band, or a compound condition matches. Configure the policy under `providerOptions.gateway.models` for AI SDK `decide`, `POST /v1/evaluate`, or the TypeSafe-compatible API.
+Decision fallbacks can rerun a successful decision with another model when a Choice or Score has low confidence, a Boolean probability falls inside an uncertain band, or a compound condition matches. Configure the policy under `providerOptions.gateway.models` for AI SDK `decide`, `POST /v1/decisions`, or the TypeSafe-compatible API.
 
 Decision fallbacks are opt-in and support one successful-response fallback stage. See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks) for the condition contract, full-request rerun behavior, virtual model configuration, response metadata, and two-stage billing.
 
 ## Structured state
 
-`state` accepts a string, an object, or an array, so you can pass structured records or a message history directly without serializing them yourself.
+`state` accepts a string, an object, or an array of parts, so you can pass structured records directly without serializing them yourself. Pass a record as an object:
 
 ```typescript
 const result = await decide({
@@ -234,6 +232,26 @@ const result = await decide({
     refunded: {
       type: 'boolean',
       instructions: 'Is the order refunded?',
+    },
+  },
+});
+```
+
+In `ai` 7.0.133 and later, an array passed as `state` is an ordered list of parts, not JSON data. Use `{ type: 'text', text }` for a string and `{ type: 'json', value }` for any JSON value. To pass a JSON array, such as a message history, wrap it in an object (`state: { messages }`) or put it in a `json` part:
+
+```typescript
+const messages = [
+  { role: 'user', content: 'My order arrived damaged.' },
+  { role: 'assistant', content: 'I issued a full refund to your card.' },
+];
+
+const result = await decide({
+  model: 'typesafe-ai/jev',
+  state: [{ type: 'json', value: messages }],
+  questions: {
+    refunded: {
+      type: 'boolean',
+      instructions: 'Was a refund issued?',
     },
   },
 });
@@ -265,32 +283,32 @@ export async function GET() {
 
 ## HTTP API
 
-If you are not using the AI SDK, post to `/v1/evaluate` with the same `model`, `state`, and `questions` fields.
+If you are not using the AI SDK, post to `/v1/decisions`, AI Gateway's [OpenAI-compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions). It accepts OpenAI's Decisions request and response format, so you can use plain HTTP or point the OpenAI SDK at `https://ai-gateway.vercel.sh/v1`, with any decision model answering. Questions are an array of `predicate`, `choice`, and `score` questions, and each `name` keys its answer.
 
 ```bash filename="decide.sh"
-curl https://ai-gateway.vercel.sh/v1/evaluate \
+curl https://ai-gateway.vercel.sh/v1/decisions \
   -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "typesafe-ai/jev",
-    "state": "I was charged twice for my subscription.",
-    "questions": {
-      "refund": {
-        "type": "boolean",
+    "input": "I was charged twice for my subscription.",
+    "questions": [
+      {
+        "type": "predicate",
+        "name": "refund",
         "instructions": "Is the customer asking for money back?"
       }
-    }
+    ]
   }'
 ```
 
-The response reports the model that ran, the answers, token usage, and AI Gateway routing and cost metadata:
+The response lists the answers in question order and reports the model that ran, token usage, and AI Gateway routing and cost metadata:
 
 ```json
 {
+  "answers": [{ "type": "predicate", "name": "refund", "probability": 0.98 }],
   "model": "typesafe-ai/jev",
-  "answers": { "refund": { "type": "boolean", "probability": 0.98 } },
-  "usage": { "inputTokens": 275, "outputTokens": 20 },
-  "providerMetadata": {
+  "provider_metadata": {
     "gateway": {
       "routing": {
         "originalModelId": "typesafe-ai/jev",
@@ -298,13 +316,14 @@ The response reports the model that ran, the answers, token usage, and AI Gatewa
         "canonicalSlug": "typesafe-ai/jev",
         "finalProvider": "typesafe-ai"
       },
-      "cost": "0.00001155",
-      "marketCost": "0.00001155",
+      "cost": "0.000011844",
+      "marketCost": "0.000011844",
       "surchargeCost": "0",
-      "gatewayCost": "0.00001155",
+      "gatewayCost": "0.000011844",
       "generationId": "gen_..."
     }
-  }
+  },
+  "usage": { "input_tokens": 282, "output_tokens": 20, "total_tokens": 302 }
 }
 ```
 
@@ -312,13 +331,13 @@ Decision requests work with [BYOK](/docs/ai-gateway/authentication-and-byok/byok
 
 ### Provider options
 
-`/v1/evaluate` accepts the same [routing and compliance options](/docs/ai-gateway/models-and-providers/provider-options) as other AI Gateway endpoints. For example, you can require zero data retention for the request:
+`/v1/decisions` accepts the same [routing and compliance options](/docs/ai-gateway/models-and-providers/provider-options) as other AI Gateway endpoints under `providerOptions`. For example, you can require zero data retention for the request:
 
 ```json
 {
   "model": "typesafe-ai/jev",
-  "state": "...",
-  "questions": { "refund": { "type": "boolean", "instructions": "..." } },
+  "input": "...",
+  "questions": [{ "type": "predicate", "name": "refund", "instructions": "..." }],
   "providerOptions": {
     "gateway": { "zeroDataRetention": true }
   }
@@ -327,11 +346,31 @@ Decision requests work with [BYOK](/docs/ai-gateway/authentication-and-byok/byok
 
 String entries in `providerOptions.gateway.models` can name native decision models or language models, and a language model answers through structured output. The array also accepts one conditional decision fallback object. Provider-specific namespaces, such as `providerOptions.openai`, carry to a matching fallback provider. See [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks#configure-a-choice-or-score-confidence-fallback) for complete requests.
 
-## OpenAI-compatible API
+See [OpenAI-compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions) for images, JSON input, prompt caching, the OpenAI SDKs, and errors.
 
-If you use OpenAI's Decisions API, point the OpenAI SDK at `https://ai-gateway.vercel.sh/v1` and call `decisions.create` as before. AI Gateway accepts OpenAI's `predicate`, `choice`, and `score` questions and returns OpenAI's response shape, with any decision model answering.
+### `/v1/evaluate` (deprecated)
 
-See [OpenAI-compatible Decisions API](/docs/ai-gateway/sdks-and-apis/openai-decisions) for the request and response formats.
+> **💡 Note:** `POST /v1/evaluate` is deprecated. It keeps working for existing integrations,
+> but new integrations should use `/v1/decisions`.
+
+To move a request from `/v1/evaluate`, move `state` into `input`, turn the `questions` object into an array with each key as `name`, and rename the question types and criteria:
+
+| `/v1/evaluate` | `/v1/decisions` |
+| --- | --- |
+| `state: 'text'` | `input: 'text'` |
+| `state` as an object or an array of objects | `input: [{ role: 'user', content: [{ type: 'input_json', data: state }] }]` |
+| `state` as any other JSON value | `input: JSON.stringify(state)` |
+| `questions: { refund: { ... } }` | `questions: [{ name: 'refund', ... }]` |
+| `instructions` as JSON | `instructions` as a string |
+| `boolean` | `predicate` |
+| `boolean` with `criteria: { true, false }` | `predicate` with the criteria written into `instructions` |
+| `choice` with `criteria: { billing: 'Charges and refunds' }` | `choice` with `choices: [{ value: 'billing', description: 'Charges and refunds' }]` |
+| `score` with `criteria: ['Low', 'High']` | `score` with `levels: [{ label: 'Low' }, { label: 'High' }]` |
+| `box` | `box` |
+| `answers` object keyed by question ID | `answers` array in question order, each with its `name` |
+| `providerMetadata` | `provider_metadata` |
+
+`providerOptions`, including decision fallbacks, carries over unchanged.
 
 ## TypeSafe-compatible API
 

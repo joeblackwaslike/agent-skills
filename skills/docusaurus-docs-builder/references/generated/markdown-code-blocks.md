@@ -1,8 +1,8 @@
 ---
 title: "Markdown Code Blocks"
 source: "https://docusaurus.io/docs/markdown-features/code-blocks"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "d3e996249d54a5ee1da74ccbc722845ace169e040d48129a348f1fc73ebad9b7"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "fa5ee5b252ab7bb54746c5553006f45c09a6dbc5f0c5736617c34c2febefed18"
 ---
 
 # Markdown Code Blocks
@@ -398,4 +398,4 @@ The props accepted are `language`, `title` and `showLineNumbers`, in the same wa
 
 Although discouraged, you can also pass in a `metastring` prop like `metastring='{1-2} title="/src/components/HelloCodeTitle.js" showLineNumbers'`, which is how Markdown code blocks are handled under the hood. However, we recommend you [use comments for highlighting lines](https://docusaurus.io/docs/markdown-features/code-blocks#highlighting-with-comments).
 
-As [previously stated](https://docusaurus.io/docs/markdown-features/code-blocks#using-jsx-markup), syntax highlighting is only applied when the children is a simple string.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-code-blocks.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+As [previously stated](https://docusaurus.io/docs/markdown-features/code-blocks#using-jsx-markup), syntax highlighting is only applied when the children is a simple string.[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-code-blocks.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

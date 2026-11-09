@@ -15,8 +15,8 @@ related:
 summary: Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/managing-usage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "74ac6b42e2a747ba4709ac731de9b1fec59a3cecbdc2652dad40b23491f6798b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "37dd732ba1952da7f8519aef8b22d4b86970fd3e8259c9633f08334d9889a5f3"
 ---
 
 # Managing Usage & Costs
@@ -31,6 +31,7 @@ Use the [`@vercel/speed-insights`](https://www.npmjs.com/package/@vercel/speed-i
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo

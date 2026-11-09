@@ -16,8 +16,8 @@ related:
 summary: Test a preview deployment and promote it to production using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promote-preview-to-production.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8a641297d05a9902a72764ffa53e6fd81f7ed2f5690d545bd499b28eb3adc284"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "927df488848f5035f42da758113259176655c223792167b2812f4f9a5e249d8b"
 ---
 
 # Promoting a preview deployment to production
@@ -30,14 +30,13 @@ Use this guide to verify a preview deployment and promote it to production. You'
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production)
+- [Preview deployments for retail campaign review](https://vercel.com/kb/guide/preview-deployments-retail-campaign-review) — Use preview deployments so merchandising, brand, and engineering review a retail campaign on one live URL before launch.
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment) — Learn how to promote deployments to production on Vercel.
-- [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/deployments/promote-preview-to-production.graph.md](/docs/deployments/promote-preview-to-production.graph.md)
@@ -62,14 +61,14 @@ vercel curl /api/health --deployment <deployment-url>
 vercel httpstat / --deployment <deployment-url>
 
 # 4. Check for errors
-vercel logs --deployment <deployment-url> --level error --limit 50
+vercel logs --deployment <deployment-url> --query 'level:error' --limit 50
 
 # 5. Promote to production (--yes skips confirmation prompt)
 vercel promote <deployment-url> --yes
-vercel promote status
+vercel list --environment production
 
 # 6. Verify production
-vercel logs --environment production --level error --since 5m
+vercel logs --environment production --query 'level:error' --since 5m
 vercel httpstat /
 ```
 
@@ -81,7 +80,7 @@ List recent deployments that have finished building and are ready to serve traff
 vercel list --status READY
 ```
 
-This shows all READY deployments with their URLs, timestamps, and Git branches. Find the preview deployment you want to promote.
+This shows all READY deployments with their age, URL, environment, build duration, and creator. Find the preview deployment you want to promote.
 
 To filter by a specific environment:
 
@@ -97,7 +96,7 @@ Confirm that the deployment built successfully and check its metadata:
 vercel inspect <deployment-url>
 ```
 
-This shows the Git commit, branch, build duration, and function configuration. Verify it matches the code you expect to promote.
+This shows the deployment ID, target environment, status, URL, creation time, and build duration. Verify that it is the deployment you expect to promote.
 
 To check the build logs for any warnings:
 
@@ -131,14 +130,10 @@ vercel httpstat / --deployment <deployment-url>
 Review the deployment's logs for any errors that occurred during testing or from other traffic:
 
 ```bash filename="terminal"
-vercel logs --deployment <deployment-url> --level error --limit 50
+vercel logs --deployment <deployment-url> --query 'level:error' --limit 50
 ```
 
-To expand truncated error messages and see full stack traces:
-
-```bash filename="terminal"
-vercel logs --deployment <deployment-url> --level error --expand
-```
+The `vercel logs` command prints full error messages and stack traces by default.
 
 If the output is clean, the deployment is safe to promote.
 
@@ -161,13 +156,15 @@ For non-interactive environments (CI/CD or automation), add `--yes` to skip the 
 vercel promote <deployment-url> --yes
 ```
 
-Monitor the promotion progress:
+Check the status of the new production deployment:
 
 ```bash filename="terminal"
-vercel promote status
+vercel list --environment production
 ```
 
-By default, the CLI waits up to three minutes for the promotion to complete. To change the timeout:
+The new production deployment is the first row in the list. Wait until its status is Ready.
+
+When you promote a preview deployment, the CLI creates the new production deployment and exits. It does not wait for the build to complete. The `--timeout` option applies only when you promote a deployment that was built for the production environment. In that case, the CLI waits up to three minutes by default for the promotion to complete. To change the timeout:
 
 ```bash filename="terminal"
 vercel promote <deployment-url> --timeout 5m
@@ -178,7 +175,7 @@ vercel promote <deployment-url> --timeout 5m
 After the promotion completes, confirm that production is serving traffic correctly:
 
 ```bash filename="terminal"
-vercel logs --environment production --level error --since 5m
+vercel logs --environment production --query 'level:error' --since 5m
 ```
 
 Check that the production domain responds with the expected content:

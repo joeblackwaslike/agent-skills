@@ -4,8 +4,8 @@ description: Learn how to use the OpenCode harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "8fc977178f22cfb2e89a905a4e5a8272ebea2e490818f8c4721fa2668f88f611"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "e2e873593a7a3beb703feeb2e7f8378d494ea8a74520e12dd936540ca795a2a8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -100,8 +100,8 @@ const harness = createOpenCode({
 
 Settings:
 
-- `auth`: authentication mode (`auto`, `anthropic`, `openai`, or `ai-gateway`)
-  or an isolated authentication environment.
+- `auth`: authentication mode (`auto`, `direct`, `anthropic`, `openai`, or
+  `ai-gateway`) or an isolated authentication environment.
 - `credentialForwarding`: optional synchronous or asynchronous callback that
   customizes each credential immediately before the harness adapter forwards it
   into a sandbox process. It receives the credential value that would otherwise
@@ -120,6 +120,11 @@ Settings:
   such as `low`, `medium`, or `high`.
 - `port`: bridge port override.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `hostDisconnectTimeoutMs`: aborts a running turn when the host disconnects
+  and no host reconnects within this many milliseconds. A suspended turn is
+  not aborted. When unset, a turn keeps running in the sandbox after its host
+  disconnects, including when the host process is gone for good, until the
+  turn finishes or the sandbox stops.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.
@@ -145,6 +150,7 @@ environment:
 
 - `auto` (default): use AI Gateway credentials when available, then use the
   credentials for the selected model provider.
+- `direct`: use the credentials for the selected model provider.
 - `anthropic`: use Anthropic credentials.
 - `openai`: use OpenAI credentials.
 - `ai-gateway`: use AI Gateway credentials.
@@ -174,6 +180,7 @@ authentication is selected.
 Select a specific authentication mode when you do not want automatic detection:
 
 ```ts
+const directHarness = createOpenCode({ auth: 'direct' });
 const anthropicHarness = createOpenCode({ auth: 'anthropic' });
 const openAIHarness = createOpenCode({ auth: 'openai' });
 const gatewayHarness = createOpenCode({ auth: 'ai-gateway' });
@@ -228,6 +235,14 @@ not fit a common tool shape.
 
 OpenCode supports built-in tool approval requests when `permissionMode` is
 `allow-reads` or `allow-edits`. Host-executed AI SDK tool approvals also work.
+
+In these modes, file reads are automatically approved only within the session
+workdir or an active skill's directory. `allow-edits` automatically approves
+file changes only within the workdir. Paths outside those directories, including
+symlink targets, and paths that cannot be resolved require host approval.
+Approvals apply only to the current tool call, not subsequent calls.
+`allow-all` remains unrestricted. These approval rules are not a filesystem
+sandbox, and approved shell commands can access paths outside the workdir.
 
 ## Built-in Tool Filtering
 

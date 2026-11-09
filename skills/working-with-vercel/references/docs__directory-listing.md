@@ -12,8 +12,8 @@ related:
 summary: The Directory Listing is served when a particular path is a directory and does not contain an index file. Learn how to toggle and disable it in this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/directory-listing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "062939c906d005be15e5b37f7ccdbaf380084954f92021f072bf25481a5e630b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "10b2709b531e3dfefc160c9daf5d39aafd84d679e35ac2e79aeed940982ca5a1"
 ---
 
 # Using the Directory Listing
@@ -34,10 +34,9 @@ When enabled, the Directory Listing will be displayed. When disabled, a "Not Fou
 
 ### Disabling Directory Listing on a specific directory
 
-To prevent Directory Listing for a specific path, you can either:
+To prevent Directory Listing for a specific path, add an index file with any extension except `.css`, such as `index.html`. This file will be displayed instead of the Directory Listing.
 
-- Add an index file with any extension except `.css`, such as `index.html`. This file will be displayed instead of the Directory Listing
-- Or, [set up a custom 404 error](/kb/guide/custom-404-page)
+A [custom 404 page](/kb/guide/custom-404-page) doesn't prevent Directory Listing. When the directory contains files, Vercel displays the Directory Listing instead of the 404 page.
 
 
 ---

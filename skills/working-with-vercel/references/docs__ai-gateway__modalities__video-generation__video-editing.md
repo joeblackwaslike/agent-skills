@@ -13,8 +13,8 @@ related:
 summary: Edit existing videos using text prompts with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ceacc8fdd1c29e0cd0926af76937ec3d0911e8951592e3ef297e3fadd16140ad"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fcdcf7c3c006b52add7c6d06d479589013f6a6b0ea92b0e55578d9062dfc977a"
 ---
 
 # AI Gateway Video Editing
@@ -30,9 +30,9 @@ Edit existing videos using text prompts. Describe the changes you want and the m
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 - [Grok Imagine Video 1.5 Lite on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-lite-on-ai-gateway)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Grok Imagine Video 1.5 on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway)
+- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/video-editing.graph.md](/docs/ai-gateway/modalities/video-generation/video-editing.graph.md)
@@ -55,9 +55,9 @@ Grok Imagine Video (by SpaceXAI) can edit existing videos using text prompts. Pr
 | Parameter                                 | Type     | Required | Description                                          |
 | ----------------------------------------- | -------- | -------- | ---------------------------------------------------- |
 | `prompt`                                  | `string` | Yes      | Description of the edits to apply to the video       |
-| `providerOptions.spacexai.videoUrl`       | `string` | Yes      | URL of the source video to edit                      |
-| `providerOptions.spacexai.pollIntervalMs` | `number` | No       | How often to check task status. Defaults to `5000`   |
-| `providerOptions.spacexai.pollTimeoutMs`  | `number` | No       | Maximum wait time. Defaults to `600000` (10 minutes) |
+| `providerOptions.xai.videoUrl`            | `string` | Yes      | URL of the source video to edit                      |
+| `providerOptions.xai.pollIntervalMs`      | `number` | No       | How often to check task status. Defaults to `5000`   |
+| `providerOptions.xai.pollTimeoutMs`       | `number` | No       | Maximum wait time. Defaults to `600000` (10 minutes) |
 
 ### Grok example
 
@@ -69,7 +69,7 @@ const result = await generateVideo({
   model: 'spacexai/grok-imagine-video',
   prompt: 'Give the person sunglasses and a hat',
   providerOptions: {
-    spacexai: {
+    xai: {
       videoUrl: 'https://example.com/source-video.mp4',
       pollTimeoutMs: 600000,
     },
@@ -92,7 +92,7 @@ const result = await generateVideo({
   model: 'spacexai/grok-imagine-video',
   prompt: 'Give the person sunglasses and a hat',
   providerOptions: {
-    spacexai: {
+    xai: {
       // Already a hosted URL, which is what the asynchronous flow needs.
       videoUrl: 'https://example.com/source-video.mp4',
     },

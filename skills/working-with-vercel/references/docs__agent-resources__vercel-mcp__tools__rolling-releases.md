@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for rolling releases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7c40a76d6ea5d34766aea2bc63a1d2c2c23a253f843e203026b8c5139df5b346"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7b26c352094888372b953e9c41d4bbd4fc1dfa42a300a8f10f3a08368036be5f"
 ---
 
 # Rolling Releases
@@ -28,10 +28,10 @@ Control how a new deployment receives production traffic for your project. You c
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Rolling Releases](https://vercel.com/docs/rolling-releases) — Learn how to use Rolling Releases for more cautious deployments.
-- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 - [Update the rolling release settings for the project](https://vercel.com/docs/rest-api/rolling-release/update-the-rolling-release-settings-for-the-project) — PATCH /v1/projects/{idOrName}/rolling-release/config — Update \\(or disable\\) Rolling Releases for a project. When disabl
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 - [Complete the rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/complete-the-rolling-release-for-the-project) — POST /v1/projects/{idOrName}/rolling-release/complete — Force-complete a Rolling Release. The canary deployment will beg
+- [Update the active rolling release to the next stage for a project](https://vercel.com/docs/rest-api/rolling-release/update-the-active-rolling-release-to-the-next-stage-for-a-project) — POST /v1/projects/{idOrName}/rolling-release/approve-stage — Advance a rollout to the next stage. This is only needed wh
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases.graph.md)
 <!-- /docsgraph:related -->

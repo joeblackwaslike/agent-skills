@@ -12,12 +12,12 @@ related:
   - /docs/vercel-blob/public-storage
   - /docs/vercel-blob/private-storage
   - /docs/vercel-blob/using-blob-sdk
-  - /docs/image-optimization/limits-and-pricing
+  - /docs/vercel-blob/vercel-signed-urls
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1bb44ffb994383aa677fe7123fb0f4240867d57f10394cd7fdf169d8d77222b9"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "05c55176bd726f538f08d845bd9d6c2f327076a41e8a49781941787ab4473fa0"
 ---
 
 # vercel blob
@@ -32,11 +32,12 @@ The `vercel blob` command is used to interact with [Vercel Blob](/docs/vercel-bl
 
 - [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available)
 - [Vercel Blob now available in all Vercel Regions](https://vercel.com/changelog/vercel-blob-now-available-in-all-vercel-regions)
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
 - [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage) — Create blob stores, upload files, list contents, and manage storage using the CLI.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
 
 Full cross-link map for this page: [/docs/cli/blob.graph.md](/docs/cli/blob.graph.md)
 <!-- /docsgraph:related -->
@@ -47,21 +48,23 @@ For more information about Vercel Blob, see the [Vercel Blob documentation](/doc
 
 The `vercel blob` command supports the following operations:
 
-- [`list`](#list-ls) - List all files in the Blob store
+- [`list`](#list) - List all files in the Blob store
 - [`put`](#put) - Upload a file to the Blob store
 - [`put-image`](#put-image) - Optimize an image and store the result in the Blob store
-- [`del`](#del) - Delete a file from the Blob store
-- [`copy`](#copy-cp) - Copy a file in the Blob store
+- [`delete`](#delete) - Delete a file from the Blob store
+- [`copy`](#copy) - Copy a file in the Blob store
 - [`get`](#get) - Download a blob from the Blob store
+- `signed-token` - Issue a short-lived signed token for Blob operations. See [Vercel Signed URLs](/docs/vercel-blob/vercel-signed-urls)
+- `presign` - Generate a presigned URL for a Blob operation. See [Vercel Signed URLs](/docs/vercel-blob/vercel-signed-urls)
 - [`create-store`](#create-store) - Create a new Blob store
 - [`delete-store`](#delete-store) - Delete a Blob store
 - [`get-store`](#get-store) - Get a Blob store
-- [`list-stores`](#list-stores-ls-stores) - List all Blob stores
+- [`list-stores`](#list-stores) - List all Blob stores
 - [`empty-store`](#empty-store) - Delete all blobs in a Blob store
 
 In a linked project with a connected Blob store, the CLI authenticates using OIDC by default: Vercel auto-populates `VERCEL_OIDC_TOKEN` and pairs it with `BLOB_STORE_ID`. If OIDC is not available, the CLI falls back to reading `BLOB_READ_WRITE_TOKEN` from your env file, or you can supply it directly with the [`--rw-token` option](#rw-token). For example, this can happen for an unlinked project, outside of Vercel, or during local development.
 
-### list (ls)
+### list
 
 ```bash filename="terminal"
 vercel blob list
@@ -102,29 +105,32 @@ vercel blob put-image https://example.com/hero.png --pathname images/hero.webp -
 *Fetching a remote image, converting it to a 512 pixel wide WebP, and storing
 it in the Blob store.*
 
-The command requires OIDC credentials: pass `--oidc-token` and `--store-id`, or set the `VERCEL_OIDC_TOKEN` and `BLOB_STORE_ID` environment variables (available in `.env.local` after `vercel env pull`). Read-write tokens are not accepted.
+The command requires OIDC credentials: pass `--oidc-token` and `--store` (your Blob store ID), or set the `VERCEL_OIDC_TOKEN` and `BLOB_STORE_ID` environment variables (available in `.env.local` after `vercel env pull`). Read-write tokens are not accepted.
 
 Each upload is billed as one [image transformation](/docs/image-optimization/limits-and-pricing#image-transformations) plus a regular blob upload at standard [Vercel Blob pricing](/docs/vercel-blob/usage-and-pricing).
 
 > **💡 Note:** If the transformed image would be larger than the source image, the source
-> image is stored unchanged and the command prints a warning. The
+> image is stored unchanged. If you set `--format` and the image is not
+> converted, the command prints a warning. The
 > `--content-type` and `--multipart` options are
 > not available: the stored content type always comes from the optimizer
 > output, so use `--format` to control it, and optimized
 > uploads cannot be split into parts.
 
-### del
+### delete
 
 > **💡 Note:** This action is permanent and cannot be undone.
 
 ```bash filename="terminal"
-vercel blob del [url-or-pathname]
+vercel blob delete [url-or-pathname] [--yes]
 ```
 
-*Using the \`vercel blob del\` command to delete a file
-from the Blob store.*
+*Using the \`vercel blob delete\` command to delete a file
+from the Blob store. In a terminal, the command asks you to confirm.
+Use \`--yes\` to skip the confirmation prompt, and pass it in scripts
+and CI environments.*
 
-### copy (cp)
+### copy
 
 ```bash filename="terminal"
 vercel blob copy [from-url-or-pathname] [to-pathname] --access private
@@ -162,12 +168,12 @@ to connect (repeatable).*
 > **💡 Note:** This action is permanent and cannot be undone.
 
 ```bash filename="terminal"
-vercel blob delete-store [store-id] [--yes]
+vercel blob delete-store [store-id]
 ```
 
 *Using the \`vercel blob delete-store\` command to delete
-a Blob store. Use \`--yes\` to skip the confirmation
-prompt in CI environments.*
+a Blob store. The command always asks you to confirm, so
+you must run it in an interactive terminal.*
 
 ### get-store
 
@@ -178,7 +184,7 @@ vercel blob get-store [store-id]
 *Using the \`vercel blob get-store\` command to get a Blob
 store.*
 
-### list-stores (ls-stores)
+### list-stores
 
 ```bash filename="terminal"
 vercel blob list-stores [--all]
@@ -195,12 +201,14 @@ browse store details.*
 > **💡 Note:** This action is permanent and cannot be undone.
 
 ```bash filename="terminal"
-vercel blob empty-store [store-id] [--yes]
+vercel blob empty-store [--yes]
 ```
 
 *Using the \`vercel blob empty-store\` command to delete
-all blobs in a Blob store. Use \`--yes\` to skip the
-confirmation prompt in CI environments.*
+all blobs in a Blob store. The command empties the store that
+your Blob credentials point to. It does not accept a store ID
+as an argument. Use \`--yes\` to skip the confirmation prompt in
+CI environments.*
 
 ## Unique Options
 
@@ -211,7 +219,7 @@ These are options that only apply to the `vercel blob` command.
 You can use the `--rw-token` option to specify your Blob read-write token. This is a fallback authentication method for cases where OIDC is not available such as unlinked projects, environments outside of Vercel, or local development.
 
 ```bash filename="terminal"
-vercel blob put image.jpg --rw-token [rw-token]
+vercel blob put image.jpg --access private --rw-token [rw-token]
 ```
 
 *Using the \`vercel blob put\` command with the
@@ -228,16 +236,16 @@ vercel blob list --limit 100
 *Using the \`vercel blob list\` command with the
 \`--limit\` option.*
 
-### Cursor
+### Next
 
-You can use the `--cursor` option to specify the cursor from a previous page to start listing from.
+You can use the `--next` option to show the next page of results when using `list`. Pass the cursor that the previous page printed:
 
 ```bash filename="terminal"
-vercel blob list --cursor [cursor-value]
+vercel blob list --next [cursor-value]
 ```
 
 *Using the \`vercel blob list\` command with the
-\`--cursor\` option.*
+\`--next\` option.*
 
 ### Prefix
 
@@ -266,7 +274,7 @@ vercel blob list --mode folded
 You can use the `--add-random-suffix` option to add a random suffix to the file name when using `put`, `put-image`, or `copy`.
 
 ```bash filename="terminal"
-vercel blob put image.jpg --add-random-suffix
+vercel blob put image.jpg --access private --add-random-suffix
 ```
 
 *Using the \`vercel blob put\` command with the
@@ -277,7 +285,7 @@ vercel blob put image.jpg --add-random-suffix
 You can use the `--pathname` option to specify the pathname to upload the file to. For `put`, the default is the filename. For `put-image`, this option is required: the command takes a separate input (a file or URL, possibly a blob already in your store) and output, so it needs an explicit pathname for the result.
 
 ```bash filename="terminal"
-vercel blob put image.jpg --pathname assets/images/hero.jpg
+vercel blob put image.jpg --access private --pathname assets/images/hero.jpg
 ```
 
 *Using the \`vercel blob put\` command with the
@@ -318,7 +326,7 @@ vercel blob put-image photo.png --pathname images/photo.webp --width 1200 --form
 
 ### JSON
 
-You can use the `--json` option to print the stored blob as JSON, including its `url`, `downloadUrl`, `pathname`, and `contentType`, instead of only the URL. This option only applies to the `put-image` command.
+You can use the `--json` option to print the result as JSON. This option applies to the `list`, `put-image`, `signed-token`, `presign`, and `list-stores` commands. With `put-image`, the command prints the stored blob, including its `url`, `downloadUrl`, `pathname`, and `contentType`, instead of only the URL:
 
 ```bash filename="terminal"
 vercel blob put-image photo.png --pathname images/photo.png --width 1200 --access public --json
@@ -332,7 +340,7 @@ vercel blob put-image photo.png --pathname images/photo.png --width 1200 --acces
 You can use the `--content-type` option to overwrite the content-type when using `put` or `copy`. It will be inferred from the file extension if not provided.
 
 ```bash filename="terminal"
-vercel blob put data.txt --content-type application/json
+vercel blob put data.txt --access private --content-type application/json
 ```
 
 *Using the \`vercel blob put\` command with the
@@ -343,40 +351,40 @@ vercel blob put data.txt --content-type application/json
 You can use the `--cache-control-max-age` option to set the `max-age` of the cache-control header directive when using `put`, `put-image`, or `copy`. The default is `2592000` (30 days).
 
 ```bash filename="terminal"
-vercel blob put image.jpg --cache-control-max-age 86400
+vercel blob put image.jpg --access private --cache-control-max-age 86400
 ```
 
 *Using the \`vercel blob put\` command with the
 \`--cache-control-max-age\` option.*
 
-### Allow Overwrite
+### Force
 
-You can use the `--allow-overwrite` option to overwrite the file if it already exists when uploading with `put` or `put-image`. The default is `false`.
+You can use the `--force` option to overwrite the file if it already exists when uploading with `put` or `put-image`. The default is `false`.
 
 ```bash filename="terminal"
-vercel blob put image.jpg --allow-overwrite
+vercel blob put image.jpg --access private --force
 ```
 
 *Using the \`vercel blob put\` command with the
-\`--allow-overwrite\` option.*
+\`--force\` option.*
 
 ### Multipart
 
-You can use the `--multipart` option to upload the file in multiple small chunks for performance and reliability. The default is `true`.
+The `put` command uploads the file in multiple small chunks for performance and reliability. This is the default, so you do not need to pass `--multipart`. To upload the file in a single request instead, use the `--no-multipart` option:
 
 ```bash filename="terminal"
-vercel blob put large-file.zip --multipart false
+vercel blob put image.jpg --access private --no-multipart
 ```
 
 *Using the \`vercel blob put\` command with the
-\`--multipart\` option.*
+\`--no-multipart\` option.*
 
 ### Region
 
 You can use the `--region` option to specify the region where your Blob store should be created. The default is `iad1`. This option is only applicable when using the `create-store` command.
 
 ```bash filename="terminal"
-vercel blob create-store my-store --region sfo1
+vercel blob create-store my-store --access private --region sfo1
 ```
 
 *Using the \`vercel blob create-store\` command with the \`--region\` option.*
@@ -397,7 +405,7 @@ vercel blob put image.jpg --access private
 You can use the `--output` option to save the blob content to a file instead of printing it to stdout. This option only applies to the `get` command.
 
 ```bash filename="terminal"
-vercel blob get image.jpg --output ./local-image.jpg
+vercel blob get image.jpg --access private --output ./local-image.jpg
 ```
 
 *Using the \`vercel blob get\` command with the
@@ -405,10 +413,10 @@ vercel blob get image.jpg --output ./local-image.jpg
 
 ### If Match
 
-You can use the `--if-match` option to only perform the operation if the blob's ETag matches the provided value. This option applies to the `put`, `del`, and `copy` commands.
+You can use the `--if-match` option to only perform the operation if the blob's ETag matches the provided value. This option applies to the `put`, `delete`, and `copy` commands. With `put`, the upload replaces the existing blob only if its ETag matches:
 
 ```bash filename="terminal"
-vercel blob put image.jpg --if-match "etag-value"
+vercel blob put image.jpg --access private --if-match "etag-value"
 ```
 
 *Using the \`vercel blob put\` command with the
@@ -419,7 +427,7 @@ vercel blob put image.jpg --if-match "etag-value"
 You can use the `--if-none-match` option to only return content if the blob's ETag does not match the provided value. If unchanged, the server returns a 304 response. This option applies to the `get` command.
 
 ```bash filename="terminal"
-vercel blob get image.jpg --if-none-match "etag-value"
+vercel blob get image.jpg --access private --if-none-match "etag-value"
 ```
 
 *Using the \`vercel blob get\` command with the
@@ -437,7 +445,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

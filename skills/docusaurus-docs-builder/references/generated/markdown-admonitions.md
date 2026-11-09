@@ -1,8 +1,8 @@
 ---
 title: "Markdown Admonitions"
 source: "https://docusaurus.io/docs/markdown-features/admonitions"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "f9f51c58dd9b9260bfb0acf4ce02c2f85d672f0ecf32617f080cc28492113801"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "bb5fe00f0422b4e2d87e223236e9533169d5ec0de1fae906d655ceb6794e5f96"
 ---
 
 # Markdown Admonitions
@@ -152,4 +152,4 @@ Now you can use your new admonition keyword in a Markdown file, and it will be p
 :::my-custom-admonition[My Title]It works!:::
 ```
 
-http://localhost:3000My TitleIt works![Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-admonitions.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+http://localhost:3000My TitleIt works![Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-admonitions.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

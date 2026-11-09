@@ -16,8 +16,8 @@ related:
 summary: Set retention periods, review remaining usage, and reduce deployment output size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-storage/optimize.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "265ef4e872aef5bd80084e58582135269824558d4d9743fa248bef6cc4d431fa"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3f7a92fa59ae051430812f1c7a79255e9ce14427cd667fe39bd82120a521e1a5"
 ---
 
 # Optimize Deployment Storage
@@ -34,10 +34,10 @@ Start with deployment retention. It controls how long Vercel keeps deployment ou
 - [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams)
 - [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage)
 - [New Pro teams now default to 30-day deployment retention](https://vercel.com/changelog/new-pro-teams-now-default-to-30-day-deployment-retention)
-- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
+- [Updated defaults for deployment retention](https://vercel.com/changelog/updated-defaults-for-deployment-retention)
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment) — Information on deleting an individual deployment.
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
@@ -57,7 +57,7 @@ Confirm how long each application needs its Pre-Production and Production deploy
 To set the default for new projects:
 
 1. Open **Team Settings**.
-2. Select **Security & Privacy**.
+2. Select **Build and Deployment**.
 3. Find **Deployment Retention Policy**.
 4. Set the periods for Canceled, Errored, Pre-Production, and Production deployments.
 5. Clear **Apply this policy to all existing projects** unless you intend to update every existing project.
@@ -70,7 +70,7 @@ The team policy applies to new projects. Selecting **Apply this policy to all ex
 To change one project:
 
 1. Open the project.
-2. Select **Settings**, then **Security**.
+2. Select **Settings**, then **Build and Deployment**.
 3. Find **Deployment Retention Policy**.
 4. Set the periods for this project.
 5. Select **Save**.

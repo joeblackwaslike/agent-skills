@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0df57b20d4f2f840b23d4e035b0065857a4edb9b1235fdd423e9dea2b4afd391"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7bf90862ab7737efeb0ae7ff6dd2073c904aa1a19a809e25df907dd9684c01a8"
 ---
 
 # Skew Protection
@@ -41,8 +41,8 @@ sha256: "0df57b20d4f2f840b23d4e035b0065857a4edb9b1235fdd423e9dea2b4afd391"
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
-- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
 - [Skew Protection is now generally available](https://vercel.com/changelog/skew-protection-is-now-generally-available)
@@ -66,13 +66,15 @@ When Skew Protection is enabled with a [supported framework](#supported-framewor
 
 The framework attaches the deployment ID as a `?dpl=` query parameter or `x-deployment-id` header, ensuring these requests resolve to the same deployment that served the initial page. The framework doesn't automatically pin custom `fetch()` calls you make from client components. To pin those, pass the deployment ID yourself using the methods described in [supported frameworks](#supported-frameworks).
 
+Frameworks that use a `__vdpl` cookie instead, such as [React Router](#skew-protection-with-react-router), also pin custom `fetch()` calls, because your browser sends the cookie with every request to the same domain.
+
 ### Document navigations
 
-**The framework doesn't pin full-page navigations by default.** When the browser makes a top-level document request, such as a hard refresh, entering a URL in the address bar, or opening a link in a new tab, Vercel serves the latest production deployment. If a new deployment went live since the user's last page load, the client detects the version mismatch and triggers a full page reload so the user receives the updated version.
+**Skew Protection doesn't pin full-page navigations.** When the browser makes a top-level document request, such as a hard refresh, entering a URL in the address bar, or opening a link in a new tab, Vercel serves the latest production deployment. This applies whichever way the request carries the deployment ID: the `?dpl=` query parameter, the `x-deployment-id` header, or the `__vdpl` cookie.
 
 For most applications, this is the ideal behavior. Users get the latest version on their next full-page navigation while their current page stays stable.
 
-However, some applications have long-running sessions where a full page reload would disrupt the user experience. See [Extending Skew Protection for long-lived sessions](#extending-skew-protection-for-long-lived-sessions) for how to handle these cases.
+However, some applications have long-running sessions that must stay on one deployment. See [Extending Skew Protection for long-lived sessions](#extending-skew-protection-for-long-lived-sessions) for how to pin every request from an open page.
 
 ## Enable Skew Protection
 
@@ -135,7 +137,7 @@ To configure the maximum age:
 3. Select [**Advanced**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fadvanced\&title=Go+to+Advanced+settings) in the sidebar
 4. Scroll down to **Skew Protection** and adjust the **Maximum Age** value
 
-The default maximum age is one day from deployment creation. This strikes a good balance between protecting from version skew for frequently deployed projects and preventing old deployments from being accessed. However, if your users keep the website open for extended periods without refreshing, such as dashboards, monitoring tools, or long-running workflows, you may want to increase this value. You can configure a maximum age up to your project's [Deployment Retention](/docs/deployment-retention) limit.
+The default maximum age is 12 hours on Pro and one day on Enterprise, measured from when the deployment was created. This strikes a good balance between protecting from version skew for frequently deployed projects and preventing old deployments from being accessed. However, if your users keep the website open for extended periods without refreshing, such as dashboards, monitoring tools, or long-running workflows, you may want to increase this value. You can configure a maximum age up to your project's [Deployment Retention](/docs/deployment-retention) limit.
 
 When you set a large maximum age, older deployments stay accessible for longer. If one of those deployments has a bug or security issue, you can either set a [Custom Skew Protection Threshold](#custom-skew-protection-threshold) or [delete the deployment](/docs/deployments/managing-deployments#delete-a-deployment) to stop clients from reaching it.
 
@@ -215,6 +217,7 @@ Skew Protection is available with zero configuration when Vercel runs your build
 - [Qwik](#skew-protection-with-qwik)
 - [Astro](#skew-protection-with-astro)
 - [Nuxt](#skew-protection-with-nuxt)
+- [React Router](#skew-protection-with-react-router)
 
 Other frameworks can implement Skew Protection by checking if `VERCEL_SKEW_PROTECTION_ENABLED` has value `1`
 and then appending the value of `VERCEL_DEPLOYMENT_ID` to each request using **one of the following** options.
@@ -321,11 +324,17 @@ Older versions can be upgraded by running `npm i -D @astrojs/vercel@latest`.
 
 If you are using Nuxt, there is no additional configuration needed to [enable Skew Protection](#enable-skew-protection). Simply enable Skew Protection in the Vercel dashboard and Nuxt will automatically handle the deployment ID for framework-managed requests.
 
+### Skew Protection with React Router
+
+If you are using [React Router as a framework](/docs/frameworks/frontend/react-router), there is no additional configuration needed to [enable Skew Protection](#enable-skew-protection).
+
+Each time Vercel serves a page, it sets a `__vdpl` cookie with the ID of the deployment that served the page. Your browser sends the cookie with every later request to the same domain, so assets, data requests, and your custom `fetch()` calls all resolve to that deployment. As with other frameworks, a [full-page navigation](#document-navigations) loads the latest deployment.
+
 ## Extending Skew Protection for long-lived sessions
 
-The default Skew Protection behavior works well for most applications. However, if your application has long-running client sessions where a full page reload would be disruptive, you can pin document navigations to a specific deployment using the `__vdpl` cookie.
+The default Skew Protection behavior works well for most applications. However, some applications have long-running client sessions that must stay on one deployment. For these, you can use the `__vdpl` cookie to pin every request the page makes to a specific deployment. This includes client-side navigations and your custom `fetch()` calls.
 
-When Vercel receives a request with the `__vdpl` cookie set, it routes that request to the deployment ID stored in the cookie, including document navigations. This prevents the hard refresh that would otherwise occur after a new deployment.
+When Vercel receives a request with the `__vdpl` cookie set, it routes that request to the deployment ID stored in the cookie. The requests of an open page then stay on that deployment after a new deployment goes live. A [full-page navigation](#document-navigations), such as a hard refresh, is the exception: it loads the latest deployment even with the cookie set.
 
 Common use cases include:
 
@@ -335,7 +344,7 @@ Common use cases include:
 
 ### Setting the cookie in Routing Middleware
 
-You can set the `__vdpl` cookie in [Routing Middleware](/docs/routing-middleware) to pin all requests for the duration of a session:
+You can set the `__vdpl` cookie in [Routing Middleware](/docs/routing-middleware) to pin the requests of an open page:
 
 ```ts filename="middleware.ts"
 import { NextResponse } from 'next/server';
@@ -344,8 +353,9 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const response = NextResponse.next();
   const deploymentId = process.env.VERCEL_DEPLOYMENT_ID;
+  const isPageLoad = request.headers.get('sec-fetch-dest') === 'document';
 
-  if (deploymentId && !request.cookies.get('__vdpl')) {
+  if (deploymentId && (isPageLoad || !request.cookies.get('__vdpl'))) {
     response.cookies.set('__vdpl', deploymentId, {
       path: '/',
       httpOnly: true,
@@ -357,11 +367,13 @@ export function middleware(request: NextRequest) {
 }
 ```
 
-With this middleware, the first request to your application sets the `__vdpl` cookie. All subsequent requests, including page navigations, route to the same deployment until you clear the cookie.
+With this middleware, each full-page load sets the `__vdpl` cookie to the deployment that serves the page. A request that arrives without the cookie sets it to the deployment that serves that request. Later requests from the page, including client-side navigations and your custom `fetch()` calls, route to that deployment.
+
+Your browser keeps one `__vdpl` cookie for the domain. A full-page load in another tab replaces it, and custom `fetch()` calls from the older tab then route to the newer deployment.
 
 ### Scoping the pin to specific routes
 
-If you only need to pin certain parts of your application, add a [matcher](/docs/routing-middleware#path-matching) to the middleware so it only sets the cookie for matching paths:
+After the middleware sets the cookie, it applies to every request to the same domain. If only some routes start a pinned session, add a [matcher](/docs/routing-middleware#path-matching) so the middleware sets the cookie only on those paths:
 
 ```ts filename="middleware.ts"
 // ... same middleware function as above
@@ -373,7 +385,7 @@ export const config = {
 
 ### Clearing the pin
 
-When the user's session completes, clear the `__vdpl` cookie so subsequent visits load the latest deployment. You can do this from a [Server Action](https://nextjs.org/docs/app/getting-started/mutating-data):
+When the user's session completes, clear the `__vdpl` cookie so Vercel no longer pins later requests to that deployment. You can do this from a [Server Action](https://nextjs.org/docs/app/getting-started/mutating-data):
 
 ```ts filename="app/actions.ts"
 'use server';
@@ -403,10 +415,13 @@ export function SessionComplete() {
 }
 ```
 
-> **💡 Note:** The `__vdpl` cookie pins requests to a specific deployment for as long as that
-> deployment remains accessible. If your [retention
-> policy](/docs/deployment-retention) removes a deployment, Vercel can no longer
-> route to it, even with the cookie set.
+> **💡 Note:** The `__vdpl` cookie pins requests to a deployment only while that deployment
+> is younger than the [Maximum Age](#configure-maximum-age). Vercel measures the
+> age from the deployment's creation time, not from when you set the cookie.
+> After that, Vercel serves the latest deployment, even with the cookie set. The
+> same applies if you delete the deployment or your [retention
+> policy](/docs/deployment-retention) removes it. Choose a Maximum Age that
+> covers the time between your deployments plus your longest session.
 
 ## Limitations
 

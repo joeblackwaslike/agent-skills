@@ -4,8 +4,8 @@ description: Learn how to use Groq with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/groq"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/groq.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "517faabed10d5f8271df1f42fc22f0782b0cf47892513d3c6579d5c3738a05dc"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "f6dcdc4109575cca3d3719143eff0f5e7250627912a229caf4d1e65f6d3fca92"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -345,28 +345,28 @@ const { text } = await generateText({
 
 ## Model Capabilities
 
-| Model                                           | Image Input | Object Generation | Tool Usage | Tool Streaming |
-| ----------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `gemma2-9b-it`                                  | ✗           | ✓                 | ✓          | ✓              |
-| `llama-3.1-8b-instant`                          | ✗           | ✓                 | ✓          | ✓              |
-| `llama-3.3-70b-versatile`                       | ✗           | ✓                 | ✓          | ✓              |
-| `meta-llama/llama-guard-4-12b`                  | ✓           | ✓                 | ✗          | ✗              |
-| `deepseek-r1-distill-llama-70b`                 | ✗           | ✓                 | ✓          | ✓              |
-| `meta-llama/llama-4-maverick-17b-128e-instruct` | ✓           | ✓                 | ✓          | ✓              |
-| `meta-llama/llama-4-scout-17b-16e-instruct`     | ✓           | ✓                 | ✓          | ✓              |
-| `meta-llama/llama-prompt-guard-2-22m`           | ✗           | ✓                 | ✗          | ✗              |
-| `meta-llama/llama-prompt-guard-2-86m`           | ✗           | ✓                 | ✗          | ✗              |
-| `moonshotai/kimi-k2-instruct-0905`              | ✗           | ✓                 | ✓          | ✓              |
-| `qwen/qwen3.6-27b`                              | ✗           | ✓                 | ✓          | ✓              |
-| `llama-guard-3-8b`                              | ✗           | ✓                 | ✓          | ✓              |
-| `llama3-70b-8192`                               | ✗           | ✓                 | ✓          | ✓              |
-| `llama3-8b-8192`                                | ✗           | ✓                 | ✓          | ✓              |
-| `mixtral-8x7b-32768`                            | ✗           | ✓                 | ✓          | ✓              |
-| `qwen-qwq-32b`                                  | ✗           | ✓                 | ✓          | ✓              |
-| `qwen-2.5-32b`                                  | ✗           | ✓                 | ✓          | ✓              |
-| `deepseek-r1-distill-qwen-32b`                  | ✗           | ✓                 | ✓          | ✓              |
-| `openai/gpt-oss-20b`                            | ✗           | ✓                 | ✓          | ✓              |
-| `openai/gpt-oss-120b`                           | ✗           | ✓                 | ✓          | ✓              |
+| Model                                           | Image Input | Object Generation | Tool Usage | Tool Streaming | Browser Search |
+| ----------------------------------------------- | ----------- | ----------------- | ---------- | -------------- | -------------- |
+| `gemma2-9b-it`                                  | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `llama-3.1-8b-instant`                          | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `llama-3.3-70b-versatile`                       | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `meta-llama/llama-guard-4-12b`                  | ✓           | ✓                 | ✗          | ✗              | ✗              |
+| `deepseek-r1-distill-llama-70b`                 | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `meta-llama/llama-4-maverick-17b-128e-instruct` | ✓           | ✓                 | ✓          | ✓              | ✗              |
+| `meta-llama/llama-4-scout-17b-16e-instruct`     | ✓           | ✓                 | ✓          | ✓              | ✗              |
+| `meta-llama/llama-prompt-guard-2-22m`           | ✗           | ✓                 | ✗          | ✗              | ✗              |
+| `meta-llama/llama-prompt-guard-2-86m`           | ✗           | ✓                 | ✗          | ✗              | ✗              |
+| `moonshotai/kimi-k2-instruct-0905`              | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `qwen/qwen3.6-27b`                              | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `llama-guard-3-8b`                              | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `llama3-70b-8192`                               | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `llama3-8b-8192`                                | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `mixtral-8x7b-32768`                            | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `qwen-qwq-32b`                                  | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `qwen-2.5-32b`                                  | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `deepseek-r1-distill-qwen-32b`                  | ✗           | ✓                 | ✓          | ✓              | ✗              |
+| `openai/gpt-oss-20b`                            | ✗           | ✓                 | ✓          | ✓              | ✓              |
+| `openai/gpt-oss-120b`                           | ✗           | ✓                 | ✓          | ✓              | ✓              |
 
 The tables above list the most commonly used models. Please see the [Groq
 docs](https://console.groq.com/docs/models) for a complete list of available
@@ -495,6 +495,23 @@ const result = await transcribe({
 });
 ```
 
+For audio hosted at an HTTP(S) URL, pass a `URL` to let Groq fetch the audio directly:
+
+```ts
+import { transcribe } from 'ai';
+import { groq } from '@ai-sdk/groq';
+
+const result = await transcribe({
+  model: groq.transcription('whisper-large-v3-turbo'),
+  audio: new URL('https://example.com/large-audio.mp3'),
+});
+```
+
+The SDK sends Groq's `url` parameter without downloading or uploading the audio locally.
+This avoids the attachment size limit; Groq's overall audio size and duration limits still apply.
+The URL must be accessible to Groq. If Groq rejects a redirect, the SDK falls back to its secure local download and file upload; the attachment limit then applies. Request headers configure the Groq API request and are not sent to the audio host.
+If you supply a custom `download` function, the SDK downloads the audio with that function and uploads the resulting bytes instead.
+
 The following provider options are available:
 
 - **timestampGranularities** *string\[]*
@@ -524,10 +541,10 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                    | Transcription | Duration | Segments | Language |
-| ------------------------ | ------------- | -------- | -------- | -------- |
-| `whisper-large-v3`       | ✓             | ✓        | ✓        | ✓        |
-| `whisper-large-v3-turbo` | ✓             | ✓        | ✓        | ✓        |
+| Model                    | Transcription | Streaming | Duration                                                      | Segments                                                      | Language                                                      |
+| ------------------------ | ------------- | --------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `whisper-large-v3`       | ✓             | ✗         | Conditional: Returned when responseFormat is 'verbose\_json'. | Conditional: Returned when responseFormat is 'verbose\_json'. | Conditional: Returned when responseFormat is 'verbose\_json'. |
+| `whisper-large-v3-turbo` | ✓             | ✗         | Conditional: Returned when responseFormat is 'verbose\_json'. | Conditional: Returned when responseFormat is 'verbose\_json'. | Conditional: Returned when responseFormat is 'verbose\_json'. |
 
 ---
 

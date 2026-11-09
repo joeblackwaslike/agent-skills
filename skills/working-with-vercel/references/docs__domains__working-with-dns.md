@@ -16,8 +16,8 @@ related:
 summary: Learn how DNS works to properly configure your domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-dns.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c470a34279248a37afc5b7b4a24450a12f97fc78061b58c2a69e649080c35fcc"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c6951f9fa21a56831af7a433df5fbc88ef8ad6a3317e2c82e206174220161ebd"
 ---
 
 # Working with DNS
@@ -30,10 +30,7 @@ DNS is the system used to connect domain names to IP addresses. When you make a 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
-- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
-- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
+- [DNS Records UI](https://vercel.com/blog/dns-records-ui)
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
@@ -60,7 +57,7 @@ To learn more about adding, verifying, and removing DNS records, see "[Managing 
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A     | This is used to translate domain names into IPv4 addresses. It is the most common type of DNS record.                                                                                                                                                                                                                                                                                                                                                                                    |
 | AAAA  | Similar to `A`, but this is used to translate domain names into IPv6 addresses. **IPv6 is not supported on Vercel**. See [IPv6 support](/docs/domains/troubleshooting#ipv6-support) for more information.                                                                                                                                                                                                                                                                                |
-| ALIAS | This is used to map a domain name to another domain name. It is similar to a `CNAME` record, but can only be used at the zone apex. The target domain must return `A` or `AAAA` record.                                                                                                                                                                                                                                                                                                  |
+| ALIAS | This is used to map a domain name to another domain name. It is similar to a `CNAME` record, but you can also use it at the zone apex. The target domain must return `A` or `AAAA` record.                                                                                                                                                                                                                                                                                                  |
 | CAA   | This is used to specify which certificate authorities are allowed to issue certificates for a domain. Vercel automatically adds a CAA record for Let's Encrypt at the zone apex.                                                                                                                                                                                                                                                                                                         |
 | CNAME | This is used to specify that the domain name is an alias for another domain name. It cannot be used at the zone apex. See [Working with Apex domain](/docs/domains/troubleshooting#working-with-apex-domain) for more information.                                                                                                                                                                                                                                                       |
 | HTTPS | This is used to achieve a CNAME-like functionality, but can be used at the zone apex. This is designed specifically for HTTP protocol to improve client performance in establishing secure connections. The record includes additional information about the target server, such as supported ALPN protocols (e.g., HTTP/2, HTTP/3, etc). This is a fairly new record type, and not all clients can support. See [RFC 9460](https://datatracker.ietf.org/doc/rfc9460/) for more details. |
@@ -75,7 +72,7 @@ When you're configuring or making changes to your DNS settings, you should be aw
 
 As we described earlier, when you set a record, you normally set a **TTL** value, or **Time to Live**, on a DNS record. This value, set in seconds, is the length of time a DNS cache will store information about your site, before it requests a new copy of the record from the authoritative server.
 
-When you set the TTL value in your DNS record, you need to find the balance between serving your users the site quickly, and ensuring they're not seeing outdated information. A short TTL (minimum 30s) is beneficial if you are constantly updating the content, but will cause slower load times for your site. Using a longer TTL (max 86400 seconds, or 24 hours) means that records are cached for longer, so the site can load quickly for your users. Vercel defaults to 60s for a DNS record.
+When you set the TTL value in your DNS record, you need to find the balance between serving your users the site quickly, and ensuring they're not seeing outdated information. A short TTL (minimum 60 seconds) is beneficial if you are constantly updating the content, but will cause slower load times for your site. Using a longer TTL (Vercel recommends a maximum of 172800 seconds, or 48 hours) means that records are cached for longer, so the site can load quickly for your users. Vercel defaults to 60s for a DNS record.
 
 ### DNS best practices
 

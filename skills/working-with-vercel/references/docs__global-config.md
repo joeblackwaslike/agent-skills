@@ -16,8 +16,8 @@ related:
 summary: A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c5d6078562293acd2f92b63ea31ecbfe1abd7e7bb3a064b31e0b97823aa2bb23"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5a564ff7cc67b587839660f84c377d74df1e366592e083befa42cfdf8f8e02ab"
 ---
 
 # Vercel Global Config
@@ -43,7 +43,7 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
+- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta)
 
 Full cross-link map for this page: [/docs/global-config.graph.md](/docs/global-config.graph.md)
 <!-- /docsgraph:related -->

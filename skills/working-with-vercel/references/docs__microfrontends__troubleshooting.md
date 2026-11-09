@@ -16,8 +16,8 @@ related:
 summary: Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "88f32d239c6ab792902793a14d93f9998038c1e659f7140fb2d22b9ac5ddc642"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "264266df238da52c176a1ede42a1c7444f5127ce7499ae3629a45ae6ed869df7"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -32,14 +32,15 @@ The `@vercel/microfrontends` package includes test utilities to help avoid commo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
+- [Vercel Microfrontends checks for missing configuration](https://vercel.com/changelog/vercel-microfrontends-checks-for-missing-configuration)
+- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available)
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
 - [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [Get microfrontends config for a project](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project) — GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config — Get the microfrontends config for a project by
 
 Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.md](/docs/microfrontends/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -138,6 +139,7 @@ Requests to your domain will then return additional headers on every response:
 - `x-vercel-mfe-app`: The name of the microfrontend project that handled the request.
 - `x-vercel-mfe-target-deployment-id`: The ID of the deployment that handled the request.
 - `x-vercel-mfe-default-app-deployment-id`: The ID of the default application deployment, the source of the `microfrontends.json` configuration.
+- `x-vercel-mfe-default-app-project-id`: The ID of the default application project.
 - `x-vercel-mfe-zone-from-middleware`: For flagged paths, the name of the microfrontend that middleware decided should handle the request.
 - `x-vercel-mfe-matched-path`: The path from `microfrontends.json` that was matched by the routing configuration.
 - `x-vercel-mfe-response-reason`: The internal reason for the MFE response.
@@ -155,6 +157,7 @@ You may need to zoom in to the Microfrontends span. The span includes:
 - `vercel.mfe.app`: The name of the microfrontend project that handled the request.
 - `vercel.mfe.target_deployment_id`: The ID of the deployment that handled the request.
 - `vercel.mfe.default_app_deployment_id`: The ID of the default application deployment, the source of the `microfrontends.json` configuration.
+- `vercel.mfe.default_app_project_id`: The ID of the default application project.
 - `vercel.mfe.app_from_middleware`: For flagged paths, the name of the microfrontend that middleware decided should handle the request.
 - `vercel.mfe.matched_path`: The path from `microfrontends.json` that was matched by the routing configuration.
 
@@ -171,13 +174,13 @@ In a monorepo, each application searches the repository for the configuration au
 - The application isn't listed under `applications` in `microfrontends.json`.
 - The application's name in `microfrontends.json` doesn't match its Vercel project name. If the `package.json` name differs from the Vercel project name, add a `packageName` field to the application in `microfrontends.json`. See [Configuration](/docs/microfrontends/configuration).
 
-In a [polyrepo](/docs/microfrontends/local-development#polyrepo-setup), the configuration lives in only one repository, so the other applications can't find it unless you give them access:
+In a [polyrepo](/docs/microfrontends/local-development#polyrepo-setup), the configuration lives in only one repository. When a child application builds on Vercel, Vercel provides the configuration from the default application's current production deployment. If the default application has no production deployment that includes `microfrontends.json`, deploy it to production first. For local development, and for builds that you run outside of Vercel, the other applications can't find the configuration unless you give them access:
 
 - Pull the configuration into the application with `vercel microfrontends pull`, which writes it to the application's `.vercel` directory. See [Accessing the configuration file](/docs/microfrontends/local-development#accessing-the-configuration-file).
 - Or set the `VC_MICROFRONTENDS_CONFIG` environment variable to the path of the configuration file.
 - If the configuration uses a custom file name, set `VC_MICROFRONTENDS_CONFIG_FILE_NAME`. See [File naming](/docs/microfrontends/configuration#file-naming).
 
-Add any [environment variables](/docs/environment-variables/managing-environment-variables) to every project in the microfrontends group so they apply during each build.
+If you use a custom file name, add `VC_MICROFRONTENDS_CONFIG_FILE_NAME` as an [environment variable](/docs/environment-variables/managing-environment-variables) to every project in the microfrontends group so it applies during each build. Don't add `VC_MICROFRONTENDS_CONFIG` to a child application's project on Vercel: when it's set, the build reads only that path and not the configuration that Vercel provides.
 
 ### Microfrontends aren't working in local development
 

@@ -16,8 +16,8 @@ related:
 summary: API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0f1459ddf7224bf5838abf5e3f365a45f22e5bc5062f1296e4d3a89b1db31f42"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3c05d50af3711366ffacf8e96cc74ce90353f08e7f1364186d78c0fb89e3099f"
 ---
 
 # TypeScript SDK Reference
@@ -39,9 +39,9 @@ sha256: "0f1459ddf7224bf5838abf5e3f365a45f22e5bc5062f1296e4d3a89b1db31f42"
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [MCP Events](https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-events) — Reference for experimental MCP event methods, the webhook handler, and subscription and storage types.
-- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime) — API reference for the experimental_useRealtime hook.
-- [Eject a managed connector](https://vercel.com/docs/rest-api/connect/eject-a-managed-connector) — POST /v1/connect/connectors/{connector}/managed/eject — Disconnect a managed connector from its provider-side manager.
+- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
+- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 
 Full cross-link map for this page: [/docs/connect/ts-sdk-reference.graph.md](/docs/connect/ts-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -166,6 +166,53 @@ console.log(accountIdentifier);
 
 The calling project and environment must be linked to the connector, just as they must be for `getToken`.
 
+## `startAuthorization`
+
+Starts a user consent flow and returns the URL to send the user to. Call it when `getToken` throws `UserAuthorizationRequiredError`. After the user authorizes, request the token again.
+
+```ts filename="signature"
+function startAuthorization(
+  connector: string,
+  params: ConnectTokenParams,
+  options?: ConnectAuthorizationOptions,
+): Promise<ConnectAuthorizationResponse>;
+```
+
+To send the user back to your app after the flow ends, pass `callbackUrl`:
+
+```ts filename="app/lib/consent.ts"
+import { startAuthorization } from '@vercel/connect';
+
+const { url } = await startAuthorization(
+  'oauth/linear',
+  { subject: { type: 'user', id: 'user_123' }, scopes: ['read'] },
+  { callbackUrl: 'https://example.com/settings/integrations' },
+);
+```
+
+All `ConnectAuthorizationOptions` fields are optional:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `vercelToken` | `string` | Override the OIDC token the SDK reads from the environment. |
+| `callbackUrl` | `string` | The URL that Vercel Connect sends the user to after the authorization flow ends. Use an `https://` URL or an `http://localhost` URL. |
+| `webhook` | `string` | An `https://` URL that Vercel Connect sends a `POST` request to when the authorization flow finishes. |
+| `deviceCode` | `boolean` | Set to `true` when the user opens the consent URL outside your app, such as from a CLI or a headless process. The response then includes a `deviceCode` to show to the user. |
+| `expiresInMs` | `number` | How long the authorization request stays valid, in milliseconds. Vercel Connect keeps the value between 15 minutes and 24 hours. The default is 24 hours. |
+| `prompt` | `string` | The OAuth `prompt` value to pass to the provider's authorization server. |
+| `region` | `string` | The region that the SDK sends the request to, such as `sfo1`. Defaults to the `VERCEL_REGION` environment variable. |
+
+`ConnectAuthorizationResponse` has these fields:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `url` | `string` | The consent URL to send the user to. |
+| `request` | `string` | An opaque identifier of the authorization request. You don't need it to complete the flow. |
+| `verifier` | `string` | An opaque value that belongs to the authorization request. You don't need it to complete the flow. |
+| `deviceCode` | `string \| undefined` | A code to show to the user together with `url`, returned when you set `deviceCode: true`. The consent page shows the same code, so the user can confirm that it matches. |
+| `expiresAt` | `number \| undefined` | When the authorization request expires, as a Unix timestamp in milliseconds. |
+| `connector` | `object \| undefined` | The connector being authorized. |
+
 ## MCP events
 
 Use `@vercel/connect@2.5.2` or later for the experimental MCP event APIs below.
@@ -202,15 +249,9 @@ Non-success API responses use the [Connect error types](#errors).
 
 ### `experimental_discoverEvents`
 
-Checks event support for an authorized connection. This does not create a
-subscription or retrieve event occurrences.
-
-- **Parameters:** `Experimental_McpEventSourceInput`.
-- **Returns:** `Promise<{ status: 'supported' | 'unsupported' | 'unavailable' | 'needs_auth' }>`.
-
-`unsupported` means the server does not support events. `unavailable` means
-discovery could not establish support; don't treat it as confirmed lack of support.
-`needs_auth` requires account authorization before discovery can complete.
+Don't call this function. Vercel Connect does not support the operation, so the
+call always fails. To see which events a server offers, call
+`experimental_listEventTypes`.
 
 ### `experimental_listEventTypes`
 
@@ -283,14 +324,10 @@ cleanup remains unfinished. Retry unsubscribe to finish cleanup.
 
 ### `experimental_unsubscribeAll`
 
-Requests a bulk stop for the connector, subject, and calling project/environment.
-
-- **Parameters:** `Experimental_McpEventScope` plus required `idempotencyKey: string`.
-- **Returns:** `Promise<{ accepted: true }>`.
-
-This affects every subscription in that scope, not just one conversation or
-receiver path. `accepted: true` acknowledges the request; it does not mean every
-provider subscription has finished cleanup.
+Don't call this function. Vercel Connect does not support a bulk stop, so the
+call always fails. To stop every subscription for a connector and account in
+the calling project and environment, call `experimental_listSubscriptions`, and
+then call `experimental_unsubscribe` with each subscription ID.
 
 ### `Experimental_McpSubscription`
 
@@ -483,6 +520,7 @@ The SDK infers `type: 'token'` for `subject: { token: '...' }` before sending th
 | -------------- | --------- | ---------------------------------------------------------------------------------------------------------------- |
 | `vercelToken`  | `string`  | Override the OIDC token the SDK reads from the environment. Useful for tests and non-Vercel runtimes.            |
 | `forceRefresh` | `boolean` | For `getToken` and `getTokenResponse`, bypass the in-process cache and revalidate the grant with Vercel Connect. |
+| `region`       | `string`  | The region that the SDK sends the request to, such as `sfo1`. Defaults to the `VERCEL_REGION` environment variable. When no region is available, the SDK sends the request to the global Vercel API. |
 
 ## `revokeToken`
 
@@ -534,13 +572,11 @@ The SDK throws typed error classes you can match on with `instanceof`:
 | `NoValidTokenError`                   | The connector exists but cannot produce a token for this request. The grant may have been revoked at the provider.                 |
 | `UserAuthorizationRequiredError`      | The request used a `{ type: 'user' }` subject and that user has not authorized the connector. Surface a "connect your account" UI. |
 | `ConnectorInstallationRequiredError`  | The connector type requires an installation and none matches the request. Surface an install link.                                 |
-| `ConnectorNotFoundError`              | The team has no connector registered under the given `uid`.                                                                        |
-| `ClientNotLinkedToProjectError`       | The calling project is not linked to this connector. See [Project links](/docs/connect/concepts/project-links).                    |
-| `ClientNotEnabledForEnvironmentError` | The link exists but does not include the environment the OIDC token was issued for.                                                |
+| `ConnectError`                        | The base class of the errors above. The SDK also throws it for other error responses from Vercel Connect. Read `status` and `code` to find the cause. If the team has no connector registered under the given `uid`, the error has status `404` and code `not_found`. If the calling project is not linked to the connector, or the link does not include the environment the OIDC token was issued for, the error has status `403` and code `forbidden`. See [Project links](/docs/connect/concepts/project-links). |
 
 ## CLI parity
 
-Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The CLI supports `--subject`, `--installation-id`, and `--scopes`. The SDK additionally supports `resources` and `authorizationDetails`, which are not exposed through the CLI. The CLI supports `--triggers` on `vercel connect attach`, which has no SDK equivalent.
+Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The CLI supports `--subject`, `--installation`, and `--scopes`. The SDK additionally supports `resources` and `authorizationDetails`, which are not exposed through the CLI. The CLI supports `--triggers` on `vercel connect attach`, which has no SDK equivalent.
 
 ## Next steps
 

@@ -17,8 +17,8 @@ related:
 summary: Retry failed Bring Your Own Cloud (BYOC) deployments, clean up AWS resources, monitor logs, and rotate credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/operations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9c72450aa3c9357f79991b3fc5ac81575ba271a6a83ba819cab1d0831de6669a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "252d3242ddf9b90c12238f978534e0762392f8f4251b605c2a6bb127ae404f94"
 ---
 
 # Operating BYOC Deployments
@@ -34,14 +34,14 @@ With [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud), your 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Bring Your Own Cloud on AWS is now generally available](https://vercel.com/changelog/bring-your-own-cloud-on-aws-is-now-generally-available)
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/operations.graph.md](/docs/networking/bring-your-own-cloud/operations.graph.md)
 <!-- /docsgraph:related -->
@@ -65,7 +65,7 @@ A deployment that waits longer than 15 minutes fails with the error `Provisionin
 To stop a deployment that's still waiting for provisioning, mark it as failed with a reason:
 
 ```bash filename="Terminal"
-vercel deploy continue --id "<DEPLOYMENT_ID>" --error "Initialized with the wrong target"
+vercel deploy continue --deployment "<DEPLOYMENT_ID>" --error "Initialized with the wrong target"
 ```
 
 **Result**: The CLI prints `Marked deployment <DEPLOYMENT_ID> as errored`, and the deployment shows as failed in Vercel.

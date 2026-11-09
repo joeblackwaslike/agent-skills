@@ -14,13 +14,13 @@ related:
 summary: Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects, and pull configuration for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/microfrontends.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2232d17fac91309649dd1e6093561ffa9e8cf356f45afddfcd242d2c1b8acef5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "29259b9c474dde50d69048a07b2a58b4bbb4d1d66bbc467141fa6114d7057180"
 ---
 
 # vercel microfrontends
 
-The `vercel microfrontends` command (alias: `vercel mf`) provides utilities for managing Vercel Microfrontends from the CLI.
+The `vercel microfrontends` command provides utilities for managing Vercel Microfrontends from the CLI.
 
 
 <!-- docsgraph:related -->
@@ -30,9 +30,9 @@ The `vercel microfrontends` command (alias: `vercel mf`) provides utilities for 
 
 - [Manage Vercel Microfrontends with AI Agents and the CLI](https://vercel.com/changelog/manage-vercel-microfrontends-with-ai-agents-and-the-cli)
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
-- [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
-- [Create a microfrontends group with applications](https://vercel.com/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications) — POST /v1/microfrontends/group — Creates a microfrontends group and attaches multiple projects in a single request.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
 - [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration) — Configure your microfrontends.json.
 
 Full cross-link map for this page: [/docs/cli/microfrontends.graph.md](/docs/cli/microfrontends.graph.md)
@@ -56,7 +56,7 @@ Full cross-link map for this page: [/docs/cli/microfrontends.graph.md](/docs/cli
 
 ## create-group
 
-Create a new microfrontends group to compose multiple projects into one cohesive application with shared routing. The group is created in the current scope (team or user). The command is interactive if options are omitted.
+Create a new microfrontends group to compose multiple projects into one cohesive application with shared routing. The command creates the group in the current team. If the current scope is not a team, the command exits with an error. The command is interactive if options are omitted.
 
 ```bash filename="terminal"
 vercel microfrontends create-group [options]
@@ -84,7 +84,7 @@ vercel microfrontends create-group
 #### Create a group with flags
 
 ```bash filename="terminal"
-vercel mf create-group --name="My Group" --project=web --project=docs --default-app=web --project-default-route=docs=/docs --yes
+vercel microfrontends create-group --name="My Group" --project=web --project=docs --default-app=web --project-default-route=docs=/docs --yes
 ```
 
 ## add-to-group
@@ -115,7 +115,7 @@ vercel microfrontends add-to-group
 #### Add the current project to a group with flags
 
 ```bash filename="terminal"
-vercel mf add-to-group --group="My Group" --default-route=/docs
+vercel microfrontends add-to-group --group="My Group" --default-route=/docs
 ```
 
 ## remove-from-group
@@ -130,9 +130,9 @@ vercel microfrontends remove-from-group [options]
 
 ### Options
 
-| Option      | Description                                                                                              |
-| ----------- | -------------------------------------------------------------------------------------------------------- |
-| `-y, --yes` | Skip the project-link prompt and removal confirmations, including the warning for referenced projects. |
+| Option      | Description                                                                                                                     |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `-y, --yes` | Skip the project-link prompt and removal confirmations, including the one for a project that is still in `microfrontends.json`. |
 
 ### Examples
 
@@ -168,7 +168,7 @@ vercel microfrontends delete-group
 #### Delete a group without prompts
 
 ```bash filename="terminal"
-vercel mf delete-group --group="My Group" --yes
+vercel microfrontends delete-group --group="My Group" --yes
 ```
 
 ## inspect-group
@@ -187,7 +187,7 @@ vercel microfrontends inspect-group [options]
 | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `--group`            | Name, slug, or ID of the microfrontends group to inspect                                                         |
 | `--config-file-name` | Custom microfrontends config file path/name relative to the default app root (must end with `.json` or `.jsonc`) |
-| `-F, --format`       | Output format. Use `json` for machine-readable output                                                            |
+| `--json`             | Output the group and project metadata as JSON                                                                    |
 
 ### Examples
 
@@ -200,13 +200,13 @@ vercel microfrontends inspect-group
 #### Inspect a group as JSON
 
 ```bash filename="terminal"
-vercel mf inspect-group --group="My Group" --format=json
+vercel microfrontends inspect-group --group="My Group" --json
 ```
 
 #### Inspect a group with a custom config filename
 
 ```bash filename="terminal"
-vercel mf inspect-group --group="My Group" --config-file-name=microfrontends.jsonc --format=json
+vercel microfrontends inspect-group --group="My Group" --config-file-name=microfrontends.jsonc --json
 ```
 
 ## pull
@@ -215,7 +215,7 @@ Pull the remote microfrontends configuration to your local repository for develo
 
 > **💡 Note:** For a polyrepo setup walkthrough, see
 > [Accessing the configuration file](/docs/microfrontends/local-development#accessing-the-configuration-file).
-> This subcommand requires Vercel CLI 44.2.2 or newer.
+> This subcommand requires Vercel CLI 44.2.2 or newer. The `--deployment` option requires Vercel CLI 65.0.0 or newer.
 
 ```bash filename="terminal"
 vercel microfrontends pull [options]
@@ -223,10 +223,10 @@ vercel microfrontends pull [options]
 
 ### Options
 
-| Option       | Description                                                                       |
-| ------------ | --------------------------------------------------------------------------------- |
-| `-y, --yes`  | Skip confirmation when linking is required (for example, in non-interactive mode) |
-| `--dpl`      | The deployment ID to use for pulling the microfrontends configuration             |
+| Option         | Description                                                                       |
+| -------------- | --------------------------------------------------------------------------------- |
+| `-y, --yes`    | Skip confirmation when linking is required (for example, in non-interactive mode) |
+| `--deployment` | The deployment ID to use for pulling the microfrontends configuration             |
 
 ### Examples
 
@@ -239,7 +239,7 @@ vercel microfrontends pull
 #### Pull configuration for a specific deployment
 
 ```bash filename="terminal"
-vercel mf pull --dpl dpl_123xyz
+vercel microfrontends pull --deployment dpl_123xyz
 ```
 
 ## Global Options
@@ -254,7 +254,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

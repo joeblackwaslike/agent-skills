@@ -12,8 +12,8 @@ related:
 summary: Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c2c1a9c1e78f80e7ea5f81132c4ba6bf948a77018074947da556c7016cc36391"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "637913ae6676e7cde55520c6a6bbad1041301eb3a58cdd2d7d0fd12b648faab3"
 ---
 
 # Use Vercel
@@ -30,17 +30,17 @@ an open standard that lets AI assistants interact with your Vercel projects.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
+- [Vercel MCP now renders deployments as an interactive card](https://vercel.com/changelog/monitor-vercel-deployments-in-chatgpt)
 - [Send feedback from the Vercel MCP](https://vercel.com/changelog/send-feedback-from-vercel-mcp)
 - [Vercel MCP can now deploy code](https://vercel.com/changelog/vercel-mcp-can-now-deploy-code)
+- [Vercel MCP now supports Client ID Metadata Documents](https://vercel.com/changelog/vercel-mcp-now-supports-client-id-metadata-documents)
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases)
-- [Vercel MCP now supports the 2026-07-28 MCP specification](https://vercel.com/changelog/vercel-mcp-now-supports-the-2026-07-28-mcp-specification)
-- [Vercel Plugin now available in OpenCode](https://vercel.com/changelog/vercel-plugin-now-available-in-opencode)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Migrate from GitHub Actions to Vercel CI](https://vercel.com/kb/guide/github-actions-to-vercel-ci) — Move Turborepo tasks from GitHub Actions workflows to Vercel CI, migrate secrets to CI environment variables, and switch
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
+- [Trace and debug eve agent runs](https://vercel.com/kb/guide/trace-and-debug-eve-agent-runs) — Inspect eve traces in Vercel Agent Runs, control captured content, export OpenTelemetry spans, and test fixes with regre
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
-- [Introducing Vercel CI](https://vercel.com/blog/introducing-vercel-ci)
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp.graph.md](/docs/agent-resources/vercel-mcp.graph.md)
 <!-- /docsgraph:related -->
@@ -76,9 +76,13 @@ Use Vercel MCP to search documentation, manage projects, inspect deployments, an
 
 Follow [Manage Vercel projects with a software factory](/kb/guide/software-factory-vercel-mcp) to give an eve agent read-only access to deployment data through Vercel Connect and diagnose failed deployments.
 
+## Client identification with CIMD
+
+If you're building an MCP client, you can connect without a review by using a [Client ID Metadata Document (CIMD)](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document): set your OAuth `client_id` to an HTTPS URL that serves your client's metadata. Redirect URIs must use HTTPS, a custom scheme, or `http` on a loopback address, and `logo_uri` must be a PNG or JPEG under 100 KB. Users still approve each connection.
+
 ## Connecting to Vercel MCP
 
-To ensure secure access, Vercel MCP only supports AI clients that have been reviewed and approved by Vercel.
+To ensure secure access, Vercel MCP supports clients that use [CIMD](#client-identification-with-cimd) or that have been reviewed and approved by Vercel.
 
 If you're building an MCP client and want it included in the supported clients list below, submit the [client review form](https://forms.gle/FQ3nYPbovoHvbfmz9).
 
@@ -100,8 +104,9 @@ The list of supported AI tools that can connect to Vercel MCP to date:
 - [Gemini CLI](#gemini-cli)
 - [OpenCode](#opencode)
 - [Pi](#pi)
+- [fx](#fx)
 
-Additional clients will be added over time. The [Quick Setup](#quick-setup) `add-mcp` command also configures other HTTP MCP clients, including Cline, fx, Grok Build, Kimi Code, Kilo Code, and Zed.
+Additional clients will be added over time. The [Quick Setup](#quick-setup) `add-mcp` command also configures other HTTP MCP clients, including Cline, Grok Build, Kimi Code, Kilo Code, and Zed.
 
 ## Setup
 
@@ -355,6 +360,31 @@ npx add-mcp https://mcp.vercel.com -a pi
 ```
 
 Restart Pi, or run `/reload` in a running session, then complete the Vercel sign-in flow when prompted.
+
+### fx
+
+[fx](https://fx.sh) is a terminal coding agent. Inside fx, add Vercel MCP with `/mcp add`. You can also use `add-mcp`, which configures fx globally, or merge the snippet below into `~/.fx/mcp.json`. For more details, see the [fx MCP documentation](https://fx.sh/docs/capabilities/mcp).
+
+```bash
+/mcp add vercel https://mcp.vercel.com
+```
+
+```bash
+npx add-mcp https://mcp.vercel.com -a fx -g
+```
+
+```json
+{
+  "mcpServers": {
+    "vercel": {
+      "type": "http",
+      "url": "https://mcp.vercel.com"
+    }
+  }
+}
+```
+
+When you add the server with `/mcp add`, fx opens your browser to complete the Vercel sign-in flow. If you edited the file or used `add-mcp`, run `/mcp login vercel`.
 
 > **💡 Note:** Setup steps may vary based on your MCP client version. Always check your
 > client's documentation for the latest instructions.

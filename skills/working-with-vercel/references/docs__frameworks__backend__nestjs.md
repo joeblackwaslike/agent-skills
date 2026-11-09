@@ -17,8 +17,8 @@ related:
 summary: Deploy NestJS applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/nestjs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d4d7cfc5c82bba55d313edf2f3794fd7f47111e05d2151a333f1bd6e7d14f605"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0d5a7e5bab89794adf20c52b4870217cd88285236ad34da69f87e9a1ce8b6715"
 ---
 
 # NestJS on Vercel
@@ -32,10 +32,10 @@ NestJS is a progressive Node.js framework for building efficient, reliable and s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Zero-configuration support for NestJS](https://vercel.com/changelog/zero-configuration-support-for-nestjs)
-- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
+- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 
@@ -62,6 +62,7 @@ To allow Vercel to deploy your NestJS application and process web requests, your
 - `src/app.{js,mjs,cjs,ts,cts,mts}`
 - `src/index.{js,mjs,cjs,ts,cts,mts}`
 - `src/server.{js,mjs,cjs,ts,cts,mts}`
+- `main.{js,mjs,cjs,ts,cts,mts}`
 - `app.{js,mjs,cjs,ts,cts,mts}`
 - `index.{js,mjs,cjs,ts,cts,mts}`
 - `server.{js,mjs,cjs,ts,cts,mts}`

@@ -16,8 +16,8 @@ related:
 summary: Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "dd784f565c1e91b862f7ae53e9db02b773149a9b440b55ed246f7f6a346ea5b2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "49df6dd4d59f66c58729f93788b40b04e2f74f9965fe55b271042cf701ce2516"
 ---
 
 # Observability
@@ -38,10 +38,10 @@ Find production errors, capture request traces, and discover queryable metrics f
 - [Create and share queries with notebooks in Vercel Observability](https://vercel.com/changelog/create-and-share-queries-with-notebooks-in-vercel-observability)
 - [Edge Function metrics now available in Monitoring](https://vercel.com/changelog/edge-function-metrics-now-available-in-monitoring)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
+- [Capture AI SDK token usage, tool calls, and cost with evlog](https://vercel.com/kb/guide/ai-sdk-and-evlog) — Record AI SDK usage with evlog, add cost estimates and request context, and investigate expensive or failed requests.
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Caching audits: Five antipatterns that cost you performance and money](https://vercel.com/kb/guide/caching-antipatterns) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [How to integrate AI into your business](https://vercel.com/blog/how-to-integrate-ai-into-your-business)
 
@@ -51,7 +51,7 @@ Full cross-link map for this page: [/docs/observability.graph.md](/docs/observab
 #### Inspect 500 errors
 
 ```bash filename="terminal"
-vercel logs --environment production --status-code 500 --json
+vercel logs requests --environment production --query 'httpStatus:500' --json
 ```
 
 #### Capture a request trace
@@ -105,10 +105,10 @@ Observability provides different sections of features and traffic sources that h
 | [Fast Data Transfer](/docs/observability/insights#fast-data-transfer)                                     | ✓          | ✓             |
 | [Image Optimization](/docs/observability/insights#image-optimization)                                     | ✓          | ✓             |
 | [ISR (Incremental Static Regeneration)](/docs/observability/insights#isr-incremental-static-regeneration) | ✓          | ✓             |
-| [Blob](/docs/observability/insights#blob)                                                                 | ✓          |               |
+| [Blob](/docs/observability/insights#blob)                                                                 | ✓          | ✓             |
 | [Build Diagnostics](/docs/observability/insights#build-diagnostics)                                       |            | ✓             |
 | [AI Gateway](/docs/observability/insights#ai-gateway)                                                     | ✓          | ✓             |
-| [Queues](/docs/observability/insights#queues)                                                             |            | ✓             |
+| [Queues](/docs/observability/insights#queues)                                                             | ✓          | ✓             |
 | [External Rewrites](/docs/observability/insights#external-rewrites)                                       | ✓          | ✓             |
 | [Microfrontends](/docs/observability/insights#microfrontends)                                             | ✓          | ✓             |
 | [AI Traffic](/docs/observability/insights#ai-traffic)                                                     | ✓          | ✓             |
@@ -161,6 +161,11 @@ For step-by-step debugging workflows using the Vercel CLI with Observability dat
 
 **Managing projects**: Control which projects are included in Observability Plus. [Learn more →](/docs/observability/observability-plus#managing-projects)
 
+## Related guides
+
+- [Capture AI SDK token usage, tool calls, and cost with evlog](https://vercel.com/kb/guide/ai-sdk-and-evlog): Record AI SDK usage with evlog, add cost estimates and request context, and investigate expensive or failed requests.
+- [Trace and debug eve agent runs](https://vercel.com/kb/guide/trace-and-debug-eve-agent-runs): Inspect eve traces in Vercel Agent Runs, control captured content, export OpenTelemetry spans, and test fixes with regression evals.
+- [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel): Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write cost and origin traffic.
 
 ---
 

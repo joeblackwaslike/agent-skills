@@ -12,8 +12,8 @@ related:
 summary: Learn how to use the Vercel Deploy Button source URL parameters.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-button/source.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "03f0e8c817d23622c1b981c9ba9fba75d301a1f006cd88a241537e96b31bd5f8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "8650772b66acfd2014186e037165833bb1063befe9e41bbeab749f687a178b55"
 ---
 
 # Deploy Button Source
@@ -72,7 +72,7 @@ https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2F
 
 | Parameter | Type     | Value                                        |
 | --------- | -------- | -------------------------------------------- |
-| `stores`  | `string` | A default JSON object converted to a string. |
+| `stores`  | `string` | A JSON-encoded array of store configurations.  |
 
 The `stores` parameter accepts a JSON array of store configurations. Each item in the array defines a store to create during deployment. You can use it to set up a Vercel Blob store or an integration-based store.
 

@@ -12,8 +12,8 @@ related:
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8bd9bdc5eaa7df7e20e069cc71201406e633be3bcf308db4de73f9d19e535143"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2d77e1b2b5541ac5f8070bc7f59ce75d036e1bb0256088f96339e7d3c199d14d"
 ---
 
 # OIDC Federation Reference
@@ -222,7 +222,7 @@ This is a list of standard tokens that you can expect from an OpenID Connect JWT
 
 | Claim | Kind       | Description                                                                                                                                                                                |
 | ----- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `iss` | Issuer     | When using the **team** issuer mode, the issuer is set to `https://oidc.vercel.com/[TEAM_SLUG]`<br />When using the **global** issuer mode, the issuer is set to `https://oidc.vercel.com` |
+| `iss` | Issuer     | When using the **team** issuer mode, the issuer is set to `https://oidc.vercel.com/[TEAM_SLUG]`<br />When using the **global** issuer mode, the issuer is set to `https://oidc.vercel.com`<br />When you pass a custom `audience`, the issuer is set to `https://oidc.vercel.com/[TEAM_SLUG]` in both issuer modes |
 | `aud` | Audience   | Defaults to `https://vercel.com/[TEAM_SLUG]`. You can set a custom audience by passing the `audience` option to `getVercelOidcToken()` or `awsCredentialsProvider()` |
 | `sub` | Subject    | The subject is set to `owner:[TEAM_SLUG]:project:[PROJECT_NAME]:environment:[ENVIRONMENT]`. `[ENVIRONMENT]` is `development`, `preview`, `production`, or a Custom Environment slug.       |
 | `iat` | Issued at  | The time the token was created                                                                                                                                                             |

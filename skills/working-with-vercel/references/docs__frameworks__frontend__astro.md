@@ -17,8 +17,8 @@ related:
 summary: Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/astro.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "80172012d9c41c6f9e96675450b48bcab6980e386428adb81ba8a033ca31b26c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fd47ed602f7cccc54ed92ec7e271996da63251c8eb5e91546cdb3f65da8e4223"
 ---
 
 # Astro on Vercel
@@ -34,9 +34,10 @@ Astro is an all-in-one web framework that enables you to build performant static
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
-- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
-- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static)
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [Astro projects can now be deployed with zero configuration](https://vercel.com/changelog/astro-projects-can-now-be-deployed-with-zero-configuration)
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
@@ -532,36 +533,12 @@ The `Astro.locals` object exposes data to your `.astro` components, allowing you
 1. Add a new middleware file next to your `src/middleware.ts` and name it `src/vercel-edge-middleware.ts`. This file name is required to make changes to [`Astro.locals`](https://docs.astro.build/en/reference/api-reference/#astrolocals). If you don't want to update `Astro.locals`, this step is not required
 2. Return an object with the properties you want to add to `Astro.locals`:
 
-   For TypeScript, you must install [the `@vercel/functions` package](/docs/routing-middleware/js-reference#routing-middleware-helper-methods):
-
-   **pnpm**
-
-   ```bash
-   pnpm i @vercel/functions
-   ```
-
-   **yarn**
-
-   ```bash
-   yarn add @vercel/functions
-   ```
-
-   **npm**
-
-   ```bash
-   npm i @vercel/functions
-   ```
-
-   **bun**
-
-   ```bash
-   bun add @vercel/functions
-   ```
-
-   Then, type your middleware function like so:
+   For TypeScript, declare a type for the `context` parameter, which exposes the `waitUntil` method:
 
    ```ts filename="src/vercel-edge-middleware.ts" framework=all
-   import type { RequestContext } from '@vercel/functions';
+   type RequestContext = {
+     waitUntil(promise: Promise<unknown>): void;
+   };
 
    // Note the parameters are different from standard Astro middleware
    export default function ({
@@ -669,7 +646,6 @@ if (!isLoggedIn(cookie)) {
 
 - Executes before a request is processed on a site, allowing you to modify responses to user requests
 - Runs on *all* requests, but can be scoped to specific paths [through a `matcher` config](/docs/routing-middleware/js-reference#match-paths-based-on-custom-matcher-config)
-- Uses Vercel's lightweight Edge Runtime to keep costs low and responses fast
 
 [Learn more about Routing Middleware](/docs/routing-middleware)
 

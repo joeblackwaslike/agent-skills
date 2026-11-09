@@ -16,8 +16,8 @@ related:
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3adcfea2772e2953cfe1d4ca446fe4be80e1e7a3c26e989067945de3a46684bf"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5aac1d41439fcd343074c11c1e6adc3f14e13ae34e2cb9ae364e27c4f0914d99"
 ---
 
 # Access Roles
@@ -35,13 +35,13 @@ Vercel distinguishes between different roles to help manage team members' access
 - [GitHub](https://v0.app/docs/github) — Connect GitHub repositories to v0 and ship changes through branches, previews, pull requests, and CI.
 - [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
 - [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
 - [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers)
 - [Developer role now available for Pro teams](https://vercel.com/changelog/developer-role-now-available-for-pro-teams)
+- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans)
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
-- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 
 Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md)
 <!-- /docsgraph:related -->
@@ -339,7 +339,7 @@ Existing team roles can be combined with permission groups to create custom acce
 
 | Permission                        | Description                                                                                           | Compatible Roles                     | Already Included in |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------- |
-| **Create Project**                | Allows the user to create a new project.                                                              | Developer                            | Owner, Member       |
+| **Create Project**                | Allows the user to create a new project.                                                              | Developer, Contributor               | Owner, Member       |
 | **Full Production Deployment**    | Deploy to production from CLI, rollback and promote any deployment.                                   | Developer                            | Owner, Member       |
 | **Usage Viewer**                  | Read-only usage team-wide including prices and invoices.                                              | Developer, Security, Member, Billing, Viewer | Owner               |
 | **Connector Manager**             | Create and manage team-wide connectors, project connections, installations, and tokens.               | Developer, Security, Billing, Viewer, Contributor | Owner, Member       |

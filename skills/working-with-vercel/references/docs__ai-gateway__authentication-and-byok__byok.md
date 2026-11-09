@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure your own provider keys with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "04916340a26ea1dd9f6115b429ab29ee33ded510141b621660576e15d87aabd7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4eedce387eeb8cb31e8f4889c510c21f1eb92df13abfb7cdcf4b205c00a85028"
 ---
 
 # Bring Your Own Key (BYOK) to AI Gateway
@@ -35,9 +35,9 @@ If a query using your credentials fails, AI Gateway will retry the query with it
 
 - [10x more capacity for Laguna S 2.1 on AI Gateway](https://vercel.com/changelog/10x-more-capacity-for-laguna-s-2-1-on-ai-gateway)
 - [AI Gateway adds Browserbase Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-browserbase-search-and-fetch-tools)
+- [AI Gateway adds DeepSeek Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-deepseek-search-and-fetch-tools)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
-- [Claude Sonnet 5 now available on Vercel AI Gateway](https://vercel.com/changelog/claude-sonnet-5-ai-gateway)
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Claude Code and Claude Agent SDK with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 - [AI Gateway Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
@@ -56,7 +56,7 @@ Provider credentials are scoped to be available throughout your Vercel team, so 
 > BYOK, your team needs purchased [AI Gateway
 > credits](/docs/ai-gateway/pricing).
 
-Spend through your own credentials isn't counted in [budgets](/docs/ai-gateway/observability-and-spend/budgets). It's metered separately and doesn't count toward a team, project, or API key limit, so a budget can't be used to cap BYOK spend.
+Spend through your own credentials isn't counted in [budgets](/docs/ai-gateway/observability-and-spend/budgets). It's metered separately and doesn't count toward a team, project, or API key limit, so a budget can't be used to cap BYOK spend. After a budget is exceeded, AI Gateway rejects every request in that budget's scope, including BYOK requests.
 
 ## Getting started
 
@@ -67,8 +67,7 @@ Spend through your own credentials isn't counted in [budgets](/docs/ai-gateway/o
   1. Go to the [AI Gateway Bring Your Own Key (BYOK) page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbyok\&title=AI+Gateway+BYOK) in your Vercel dashboard.
   2. Find your provider from the list and click **Add Key**.
   3. In the dialog that appears, enter the credentials you retrieved from the provider.
-  4. Ensure that the **Enabled** toggle is turned on so that the credentials are active.
-  5. Click **Test API Key** to validate and add your credentials.
+  4. Click **Test API Key** to validate and add your credentials. AI Gateway enables new credentials by default.
 
 - ### Use the credentials in your AI Gateway requests
   Once you add credentials, AI Gateway automatically includes them in your requests. You can now use these credentials to authenticate your requests.
@@ -84,7 +83,7 @@ Follow the walkthrough for your subscription to check eligibility, claim the gra
 
 After claiming the grant:
 
-1. Add the organization's OpenAI or Anthropic key using the steps above. For dashboard credentials, confirm that the key is enabled and marked **In Use**.
+1. Add the organization's OpenAI or Anthropic key using the steps above. For dashboard credentials, confirm that the key is enabled. If the provider has more than one key, also confirm that the dashboard marks this key **In Use**.
 2. Authenticate your application to AI Gateway with an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/api-keys) or [OIDC](/docs/ai-gateway/authentication-and-byok/oidc). These credentials authenticate to AI Gateway; the provider key authenticates to OpenAI or Anthropic.
 3. [Restrict the serving provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#restrict-providers-with-the-only-filter) to `openai` or `anthropic`, respectively. A provider restriction doesn't disable fallback to AI Gateway's system credentials if your key fails.
 4. Check the request's provider and credential source in [AI Gateway Logs](/docs/ai-gateway/observability-and-spend/logs), then confirm grant usage in the provider's billing dashboard. A successful response or key test doesn't establish that the grant funded the request.

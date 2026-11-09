@@ -11,12 +11,13 @@ prerequisites:
 related:
   - /docs/flags/vercel-flags/quickstart
   - /docs/flags/vercel-flags/dashboard/entities
+  - /docs/flags/vercel-flags/dashboard/feature-flag
   - /docs/flags/vercel-flags/sdks/flags-sdk
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "35b9431f00b9b7b29b57f0df527c66972038b05638cc8317a7ac63d029d05aa3"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ce8fd6af3154525875f7e5e2ddb0d4ce7a90cf9ebcc70576b3215abd9862a68e"
 ---
 
 # Using OpenFeature with Vercel Flags
@@ -120,7 +121,7 @@ const config = await client.getObjectValue('feature-config', {
 });
 ```
 
-The second argument is always the default value, returned when evaluation fails or no rules match.
+The second argument is always the default value, returned when the flag doesn't exist or evaluation fails.
 
 ## Passing evaluation context
 
@@ -129,8 +130,11 @@ To evaluate targeting rules based on user attributes, pass a context as the thir
 ```ts
 const context = {
   targetingKey: 'user-123',
-  email: 'user@example.com',
-  plan: 'premium',
+  user: {
+    id: 'user-123',
+    email: 'user@example.com',
+    plan: 'premium',
+  },
 };
 
 const showFeature = await client.getBooleanValue(
@@ -160,7 +164,7 @@ console.log({
 The `reason` field tells you how the value was determined:
 
 - `TARGETING_MATCH`: A targeting rule matched
-- `DEFAULT`: No rules matched, using the default value
+- `DEFAULT`: No rules matched, using the flag's [fallthrough outcome](/docs/flags/vercel-flags/dashboard/feature-flag#outcome)
 - `STATIC`: The flag is paused or disabled
 - `ERROR`: An error occurred during evaluation
 

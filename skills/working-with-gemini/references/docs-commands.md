@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/commands.md"
-fetched_at: "2026-10-12T11:44:59.166Z"
-sha256: "8e3c5433d6c96bcf53c8bc4504138c19e941cba7d5363fd9dac947c5647c4abf"
+fetched_at: "2026-11-09T12:36:42.699Z"
+sha256: "f0305d17efd8ccf060019968e9d63bf07e0ddf56750a373c0380ab12f43c7884"
 ---
 
 # CLI commands
@@ -454,6 +454,10 @@ Slash commands provide meta-level control over the CLI itself.
       counts and quota information.
   - **`tools`**:
     - **Description:** Show tool-specific usage statistics.
+  - **`heatmap`**:
+    - **Description:** Show a calendar heatmap of daily token usage across local
+      chat sessions, with an optional day breakdown.
+    - **Usage:** `/stats heatmap [today|yesterday|YYYY-MM-DD]`
 
 ### `/terminal-setup`
 

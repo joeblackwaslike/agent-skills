@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/large-codebases.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "d60127dad71a1fb40989539bd128db8af8f80f0c17a9f8e33d08e28866dfc4fc"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "0fb31217b99dea58320eddf89e374270d6900cdd8bb835c48dbbe463ead0b3de"
 ---
 
 > ## Documentation Index
@@ -102,7 +102,7 @@ Write database queries with the Knex query builder. Never put raw SQL strings in
 Never edit a migration after it has merged. Add a new migration instead.
 ```
 
-When you start Claude from `packages/api/`, it loads both `packages/api/CLAUDE.md` and the root `CLAUDE.md`. Claude sees the local instructions alongside the repository-wide rules, with no instructions from `packages/web/` in context. The same holds for any subdirectory in a non-monorepo tree. To confirm which files loaded, run `/context` and check the list under **Memory files**.
+When you start Claude from `packages/api/`, it loads both `packages/api/CLAUDE.md` and the root `CLAUDE.md`. Claude sees the local instructions alongside the repository-wide rules, with no instructions from `packages/web/` in context. The same holds for any subdirectory in a non-monorepo tree. To confirm which files loaded, run [`/context all`](https://code.claude.com/docs/en/commands#all-commands) and check the list under **Memory files**.
 
 A few ways to keep the files current as the codebase and models change:
 

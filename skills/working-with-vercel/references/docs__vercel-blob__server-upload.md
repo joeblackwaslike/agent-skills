@@ -16,8 +16,8 @@ related:
 summary: Learn how to upload files to Vercel Blob from server routes and Server Actions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c793b5e33af9822625ce0c4c2033d55d6dde252e62075dc583cbe17b6ea42020"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c85c2918c76afda5eddffc1e34f624eb4dc994ea2215ca04be7f1adaedfea103"
 ---
 
 # Server Uploads with Vercel Blob
@@ -40,11 +40,11 @@ In this guide, you'll learn how to do the following:
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
+- [View, upload, and delete Blob files in the dashboard](https://vercel.com/changelog/view-upload-and-delete-blob-files-in-the-dashboard)
+- [Introducing Vercel Blob](https://vercel.com/changelog/vercel-blob)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
-- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload) — POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ — POST /v2/:teamSlug/:projectSlug/:repositoryName/blob
-- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
 
 Full cross-link map for this page: [/docs/vercel-blob/server-upload.graph.md](/docs/vercel-blob/server-upload.graph.md)
 <!-- /docsgraph:related -->
@@ -97,9 +97,10 @@ uv add vercel "fastapi[standard]" python-dotenv
   1. Go to your project's [**Storage** section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fstores\&title=Go+to+Storage)
   2. Select **Create Storage**, then choose **Blob**
   3. Select **Continue**, then set the access to **Private** or **Public**
-  4. Use the name "Images" and select **Create a new Blob store**
-  5. Select the environments where you would like the read-write token to be included. **Production** and **Preview** are preselected; include **Development** if you plan to work with the store locally. You can also update the prefix of the Environment Variable in Advanced Options
-  Once created, you are taken to the Vercel Blob store page.
+  4. Use the name "Images"
+  5. If your code runs outside Vercel or generates client tokens for [browser uploads](/docs/vercel-blob/client-upload), select **Add a read-write token env var to this connection**. This option adds the `BLOB_READ_WRITE_TOKEN` variable to your project. You can also update the prefix of the Environment Variables in **Custom Environment Variable Prefix**
+  6. Select **Create**. The dashboard connects the store to your project's **Production** and **Preview** environments
+  Once created, you are taken to the Vercel Blob store page. The next step explains how to add **Development** if you plan to work with the store locally.
   #### CLI
   Run [`vercel blob create-store`](/docs/cli/blob#create-store) from your linked project directory. The `--access` flag is required and accepts `private` or `public`. The `--yes` flag connects the new store to the project in all environments, including **Development**, which `vercel env pull` reads from:
   ```bash filename="terminal"
@@ -113,7 +114,7 @@ uv add vercel "fastapi[standard]" python-dotenv
   By default, connected stores use OIDC-based authentication with short-lived, automatically rotated credentials:
   - `BLOB_STORE_ID`: Identifies your Blob store
   - `VERCEL_OIDC_TOKEN`: A short-lived token issued at runtime; rotated automatically
-  The following variable is also added as a fallback for code running outside Vercel or to generate client tokens for browser uploads:
+  The following variable is a fallback for code running outside Vercel or to generate client tokens for browser uploads. The dashboard adds it only if you select **Add a read-write token env var to this connection** when you create the store, or later in **Update Project Connection** on the store's **Projects** tab. The `vercel blob create-store` command adds it when it connects the store to your project:
   - `BLOB_READ_WRITE_TOKEN`: A long-lived static read-write token
   To use these Environment Variables locally, we recommend pulling them with the Vercel CLI:
   ```bash

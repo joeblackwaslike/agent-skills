@@ -1,8 +1,8 @@
 ---
 title: "Swizzling"
 source: "https://docusaurus.io/docs/swizzling"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "0ab0b1920adf67b19f9bb37e8bbf97ac487b2bc14cb52f90e89ebdcbfae5719b"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "58b206c2f1c193108270e88e372354cb1930071ee921bc1751fb8fe3b1b3750e"
 ---
 
 # Swizzling
@@ -268,4 +268,4 @@ src/theme/Root.js
 import React from 'react';// Default implementation, that you can customizeexport default function Root({children}) {  return <>{children}</>;}
 ```
 
-tipUse this component to render React Context providers.[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/swizzling.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+tipUse this component to render React Context providers.[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/swizzling.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

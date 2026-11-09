@@ -16,8 +16,8 @@ related:
 summary: Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "674128582acee375222023566fb18de31d8cc101161e82e720a22ed8524e0e94"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b38ca1db88889d090f80d019dc67c553233170ab6d8d2a584802cbd1d2fbc486"
 ---
 
 # Managing Global Configs with the Dashboard
@@ -32,10 +32,10 @@ You can create, view and update your [Global Configs](/docs/global-config), and 
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config)
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [@vercel/global-config](https://vercel.com/docs/global-config/global-config-sdk) — The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so
-- [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
 
 Full cross-link map for this page: [/docs/global-config/global-config-dashboard.graph.md](/docs/global-config/global-config-dashboard.graph.md)
 <!-- /docsgraph:related -->
@@ -50,9 +50,9 @@ To add a Global Config at the Hobby team or team level, follow these steps:
 
 2. Click on the **Storage** section in the sidebar
 
-3. Click the **Create Store** button
+3. Click the **Create Storage** button, select **Global Config**, and click **Continue**
 
-4. Type a name for your Global Config in the dialog and click **Create**. The name shouldn't exceed 32 characters and can only contain alphanumeric letters, "\_", and "-".
+4. Type a name for your Global Config in the dialog and click **Create**. The name shouldn't exceed 64 characters and can only contain alphanumeric letters, "\_", and "-".
 
 5. On creation, you are taken to the `my_global_config_id` config page. By default, a key-value pair of `"greeting": "hello world"` is created. On the detail page of the newly created Global Config you can:
    - View and manage stored items
@@ -67,9 +67,9 @@ Your Global Config is now ready to be used. You can also [create a Global Config
 
 ### At the project level
 
-1. Navigate to your [project](/docs/projects) page and click on the **Global Config** section in the sidebar
+1. Navigate to your [project](/docs/projects) page and open **Storage** in the sidebar
 
-2. Click **Create Project Store** and type a name slug for your Global Config in the dialog that opens. The name shouldn't exceed 32 characters and can only contain alphanumeric letters, "\_", and "-".
+2. Click **Create Storage**, select **Global Config**, and click **Continue**. Then type a name slug for your Global Config in the dialog that opens. The name shouldn't exceed 64 characters and can only contain alphanumeric letters, "\_", and "-".
 
 3. Click **Create**.
 
@@ -99,7 +99,7 @@ To delete the Global Config, select the **Settings** item in the sidebar, then s
 
 The default view of the Global Config's detail page shows the list of all items in the store. You will see an open accordion titled **Learn how to use this in code** if the Global Config is connected to at least one project. This accordion provides the steps with a code example on how to read your store items.
 
-To add, edit or delete any item in your store, edit the `json` object in the right panel and click **Save Items**.
+To add, edit or delete any item in your store, edit the `json` object in the right panel and click **Save**.
 
 ### Restoring Global Config backups
 
@@ -163,11 +163,11 @@ The following snippet is an example of a schema that allows you to set boolean f
 
 Click on **Projects** in the left panel of the Global Config detail page to open a view that shows the projects connected with this Global Config.
 
-To delete a connection, click on the vertical ellipsis  icon on the right hand side of the row and click **Delete environment variable** and confirm by clicking **Delete connection** in the dialog.
+To delete a connection, click on the vertical ellipsis  icon on the right hand side of the row and click **Remove Project Connection** and confirm by clicking **Remove Connection** in the dialog.
 
 Deleting a connection does not delete the underlying token used by that Connection String. To learn how to delete tokens, review [Managing read access tokens](#managing-read-access-tokens).
 
-To connect the Global Config with another project, click **Connect Project**, find the project from the drop-down in the dialog and click **Connect**. If you receive a warning that this project already has a `GLOBAL_CONFIG` environment variable, open the **Advanced Options** and change the environment variable name in the corresponding field to a name other than `GLOBAL_CONFIG`. The **Connect** button will be enabled once the new environment variable does not already exist in the project.
+To connect the Global Config with another project, click **Connect Project**, find the project from the drop-down in the dialog and click **Connect**. If you receive a warning that this project already has a `GLOBAL_CONFIG` environment variable, open the **Advanced Options** and change the environment variable name in the corresponding field to a name other than `GLOBAL_CONFIG`. Then click **Connect** again.
 
 ## Managing read access tokens
 

@@ -16,8 +16,8 @@ related:
 summary: Discover the essentials of our Shared Responsibility Model, outlining the key roles and responsibilities for customers, Vercel, and shared aspects in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/security/shared-responsibility.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d76ddcfdec74881bbb0ca593b6e67f9b6bd9a80b4cbe4fe499e00c93449b40d1"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "206444704d58b275f24d6ed504c64d4569567a6ad91140b59e82885202fe51fb"
 ---
 
 # Shared Responsibility Model
@@ -38,7 +38,7 @@ A shared responsibility model is a framework designed to split tasks and obligat
 - [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [Vercel supports HIPAA compliance](https://vercel.com/blog/vercel-supports-hipaa-compliance)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Introducing Vercel Firewall and Vercel Secure Compute](https://vercel.com/blog/vercel-security)
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers

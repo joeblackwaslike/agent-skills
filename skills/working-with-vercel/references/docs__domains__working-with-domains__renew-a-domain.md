@@ -14,8 +14,8 @@ related:
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6b90da6a134e4505d568540e58d452b5abe160d7543a86b19cf6b8b1bf64dd1e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "82ccd1bdaa6da3859e67f244ea005c7aeb9f28ac6c9dd10115be99a842190d10"
 ---
 
 # Managing Domain Renewals and Redemptions
@@ -68,8 +68,8 @@ To enable automatic renewal, use the dashboard or the Vercel CLI.
 Run [`vercel domains auto-renew`](/docs/cli/domains) to turn auto renewal on or off:
 
 ```bash filename="terminal"
-vercel domains auto-renew example.com on
-vercel domains auto-renew example.com off
+vercel domains auto-renew enable example.com
+vercel domains auto-renew disable example.com
 ```
 
 ### Auto renewal off
@@ -78,7 +78,7 @@ If auto renewal is off, Vercel will not try to re-register the Domain when it ex
 
 If the Domain enters the redemption period, you can attempt to manually recover it by selecting **Renew** in the [Domains tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+Domains). The option will appear if recovery is still possible.
 
-Vercel will send you three emails regarding the Domain before this happens. 24 and 14 days before the Domain is set to expire, you will be notified that auto renewal is off and the Domain will expire soon. A final email will notify you when the Domain expires.
+Vercel will send you three emails regarding the Domain before this happens. About 60 days and about 35 days before the Domain is set to expire, you will be notified that auto renewal is off and the Domain will expire soon. A final email will notify you when the Domain expires.
 
 ### Auto renewal on
 

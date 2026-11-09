@@ -13,8 +13,8 @@ related:
 summary: Prebuilt server actions and UI blocks you can install to speed up common platform tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "59779d2834905ee2397e7a20bbea34449fbce83519fbbfa5d29f66af0a5f70c8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "36ead5041c2a7cfac5fc3c8027aa67985964f68d517cf042273a27c61e571600"
 ---
 
 # Platform Elements
@@ -30,8 +30,8 @@ Platform Elements are prebuilt building blocks for platforms. Actions are server
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
-- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 - [Examples](https://vercel.com/docs/platforms/examples) — Clone working multi-tenant and multi-project starters to begin your platform build.
 

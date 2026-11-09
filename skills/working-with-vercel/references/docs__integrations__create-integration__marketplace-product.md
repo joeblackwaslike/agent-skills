@@ -17,8 +17,8 @@ related:
 summary: Learn how to create a product for your Vercel native integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-product.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a1edafe92f2c2e34b895e33d3abafd2984f50a15f48e1657992cefe43cbb63b2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "29f13ebe1101a2fffa23e9f1f951977100e2fec31ff0be5aaedb7928754b2f37"
 ---
 
 # Create a Native Integration
@@ -62,17 +62,17 @@ In this tutorial, you create a storage product for your native integration throu
   1. Select the team you would like to use from the team switcher.
   2. From your [dashboard](/dashboard), open [**Integrations**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations\&title=Go+to+Integrations) in the sidebar and then select the **Integrations Console** button.
   3. Select the integration you would like to use for the product.
-  4. Find the **base URL** field in the **Product** section and set it to the integration server URL.
+  4. Find the **Base URL** field in the **Marketplace Integration Settings** section and set it to the integration server URL.
   5. Select **Update**.
   You can use this [example Next.js application](https://github.com/vercel/example-marketplace-integration) as a guide to create your integration server
 
 - ### Add a new product
   1. Select the integration you would like to use for the product from the Integrations Console
-  2. Select **Create Product** from the **Products** card of the **Product** section
+  2. Select **Create Product** from the **Products** card of the **Marketplace Integration Settings** section
 
 - ### Complete the fields and save
   You should now see the **Create Product** form. Fill in the following fields:
-  1. Complete the **Name**, **URL Slug**, **Visibility** and **Short Description** fields
+  1. Complete the **Name**, **URL Slug**, and **Short Description** fields
   2. Optionally toggle **Disable Resource Renaming** to prevent customers from renaming resources after creation. By default, customers can rename resources. Enable this if your platform requires resource names to remain unchanged after provisioning.
   3. Optionally update the following in the [Metadata Schema](#metadata-schema) field:
   - Edit the `properties` of the JSON schema to match the options that you are making available through the integration server.
@@ -80,7 +80,7 @@ In this tutorial, you create a storage product for your native integration throu
   - Include the billing plan options that Vercel will send to your integration server when requesting the list of billing plans.
   - Use the **Preview Form** section to check your JSON schema as you update it.
   Review the data collection process shown in the [submit store creation flow](/docs/integrations/create-integration/marketplace-flows#submit-store-creation) to understand the impact of the metadata schema.
-  4. Select **Apply Changes**
+  4. Select **Create**
 
 - ### Update your integration server
   Add or update the [Billing](/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-product) endpoints in your integration server so that the appropriate plans are pulled from your backend when Vercel calls these endpoints. Review the [marketplace integration example](https://github.com/vercel/example-marketplace-integration/blob/main/app/v1/products/%5BproductId%5D/plans/route.ts) for a sample billing plan route.
@@ -123,8 +123,9 @@ See the endpoints for [Provision](/docs/integrations/create-integration/marketpl
 | `select`              | `string`        | Dropdown input                                                                                                                                                                                                     |
 | `radio-button`        | `string`        | Radio button group input                                                                                                                                                                                           |
 | `multi-select`        | `array`         | Dropdown with multi-select input. The items property of your array must have a type of string                                                                                                                      |
-| `vercel-region`       | `string`        | Vercel Region dropdown input. You can restrict the list of available regions by settings the acceptable regions in the enum property                                                                               |
-| `multi-vercel-region` | `array`         | Vercel Region dropdown with multi-select input. You can restrict the list of available regions by settings the acceptable regions in the enum property of your items. Your items property must have type of string |
+| `vercel-region`       | `string`        | Vercel Region dropdown input. List the available regions in the `ui:options` property                                                                               |
+| `multi-vercel-region` | `array`         | Vercel Region dropdown with multi-select input. List the available regions in the `ui:options` property. Your items property must have type of string |
+| `vercel-country`      | `string`        | Country dropdown input. List the available countries in the `ui:options` property |
 | `domain`              | `string`        | Domain name input                                                                                                                                                                                                  |
 | `git-namespace`       | `string`        | Git namespace selector                                                                                                                                                                                             |
 

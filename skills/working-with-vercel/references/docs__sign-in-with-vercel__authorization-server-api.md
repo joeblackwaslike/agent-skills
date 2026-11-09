@@ -9,15 +9,15 @@ prerequisites:
   - /docs/sign-in-with-vercel
 related:
   - /docs/sign-in-with-vercel/scopes-and-permissions
+  - /docs/sign-in-with-vercel/consent-page
   - /docs/sign-in-with-vercel/tokens
   - /docs/sign-in-with-vercel/manage-from-dashboard
   - /docs/oidc
-  - /docs/functions
 summary: Learn how to use the Authorization Server API
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7c5e19e42184a4819871695219dd34c216777f60ec567035170e4911b6fc5ea0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9a404edf831f902970a6d347330b0d409c33067b0d7b57305068abd4c69074b5"
 ---
 
 # Authorization Server API
@@ -30,13 +30,12 @@ The Authorization Server API exposes a set of endpoints which are used by your a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Getting started with Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/getting-started) — Learn how to get started with Sign in with Vercel
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
-- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
-- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
+- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
+- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/authorization-server-api.graph.md](/docs/sign-in-with-vercel/authorization-server-api.graph.md)
 <!-- /docsgraph:related -->
@@ -66,12 +65,13 @@ The Authorization Endpoint supports the following parameters:
 | Parameter               | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `client_id`             | **Yes**  | The ID of the App, located in the **Manage** page of the App.                                                                                                                                                                                                                                                                                                                                               |
-| `scope`                 | **No**   | A space-separated list of [scopes](/docs/sign-in-with-vercel/scopes-and-permissions) you're requesting: `openid`, `email`, `profile`, and `offline_access`. If you pass scopes that aren't configured in your app's **Manage** settings, they're filtered out. If you don't pass `scope`, all scopes configured in your app are included by default.                                                        |
+| `scope`                 | **No**   | A space-separated list of [scopes](/docs/sign-in-with-vercel/scopes-and-permissions) you're requesting: `openid`, `email`, `profile`, and `offline_access`. If you request `email` or `profile` and that scope isn't configured in your app's **Manage** settings, Vercel rejects the request. With the default `response_mode`, Vercel redirects to your `redirect_uri` with an `invalid_scope` error. If you request `offline_access` and it isn't configured, it's filtered out. If you don't pass `scope`, all scopes configured in your app are included by default.                                                        |
 | `redirect_uri`          | **Yes**  | The URL used to redirect users back to the application after granting authorization, located in the **Manage** page of the App under **Authorization Callback URLs**.                                                                                                                                                                                                                                       |
 | `response_type`         | **Yes**  | Must be `code`.                                                                                                                                                                                                                                                                                                                                                                                             |
-| `response_mode`         | **No**   | Specifies how the authorization response is delivered. Defaults to `query` (redirect with query parameters). Use `web_message.opener` for popup-based flows where the authorization response is sent via `postMessage` to the parent window instead of redirecting. For a full example of popup-based authentication, see the [reference app](https://github.com/vercel/sign-in-with-vercel-reference-app). |
+| `response_mode`         | **No**   | Specifies how the authorization response is delivered. If you omit this parameter, Vercel redirects to your `redirect_uri` with query parameters. The only value you can pass is `web_message.opener`. Vercel rejects any other value, including `query`, with an `invalid_request` error. Use `web_message.opener` for popup-based flows where the authorization response is sent via `postMessage` to the parent window instead of redirecting. For a full example of popup-based authentication, see the [reference app](https://github.com/vercel/sign-in-with-vercel-reference-app). |
 | `nonce`                 | No       | A random string generated by the application that is used to protect against replay attacks. The same value will be attached as a claim in the ID Token.                                                                                                                                                                                                                                                    |
 | `state`                 | No       | A random string generated by the application that is used to protect against [CSRF](# "What is CSRF?") attacks.                      |
+| `prompt`                | No       | Controls whether the user must sign in or consent again. Use `consent` to show the [consent page](/docs/sign-in-with-vercel/consent-page) even if the user already authorized your app. Use `login` to make the user sign in again before they continue. |
 | `code_challenge`        | **Yes**  | A random string generated by the application for additional protection, based on the [PKCE specification](https://datatracker.ietf.org/doc/html/rfc7636).                                                                                                                                                                                                                                                   |
 | `code_challenge_method` | **Yes**  | Must be `S256`.                                                                                                                                                                                                                                                                                                                                                                                             |
 
@@ -626,7 +626,7 @@ The endpoint returns a JSON response with consented OpenID claims:
   "email_verified": true,
   "name": "Timmy Triangle",
   "preferred_username": "timmy-triangle",
-  "picture": "https://api.vercel.com/www/avatar/avatar-42…"
+  "picture": "https://vercel.com/api/www/avatar/avatar-42…"
 }
 ```
 

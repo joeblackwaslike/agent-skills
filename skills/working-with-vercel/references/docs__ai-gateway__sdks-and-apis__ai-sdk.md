@@ -17,8 +17,8 @@ related:
 summary: Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2be83bec6c8c2346f3691616900e329865c3d26d43fbb3a8665c3150043b9d79"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2ed66d5ed28890c26cb1745811c4f4a9d23b53e4e09074feffeab33f8faee965"
 ---
 
 # AI SDK with AI Gateway
@@ -31,6 +31,7 @@ The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered Typ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI SDK 4.0](https://vercel.com/blog/ai-sdk-4-0)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
@@ -38,12 +39,16 @@ The [AI SDK](https://ai-sdk.dev/) is the recommended way to build AI-powered Typ
 - [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [Get started with GPT-5](https://ai-sdk.dev/cookbook/guides/gpt-5) — Get started with GPT-5 using the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk.graph.md)
 <!-- /docsgraph:related -->
 
 ## Installation
+
+> **💡 Note:** AI SDK 5 is deprecated on AI Gateway. AI Gateway stops accepting AI SDK 5
+> requests on January 8, 2027, and new features don't support it. Use AI SDK 6
+> or later. We recommend AI SDK 7, the latest version. See [Version
+> compatibility](#version-compatibility).
 
 See the [AI SDK getting-started guide](/kb/guide/ai-gateway-and-ai-sdk) for runtime and package setup.
 
@@ -263,7 +268,7 @@ Whether a given model accepts images or PDFs is a per-model question. Check the 
 
 ## Version compatibility
 
-The examples on this page use AI SDK 7, except tabs explicitly labeled AI SDK 6. AI Gateway supports both versions, but some client APIs differ:
+The examples on this page use AI SDK 7, except tabs explicitly labeled AI SDK 6. AI Gateway supports AI SDK 6 and 7 and recommends AI SDK 7. Some client APIs differ between them:
 
 | Feature | AI SDK 6 | AI SDK 7 |
 | --- | --- | --- |
@@ -274,6 +279,15 @@ The examples on this page use AI SDK 7, except tabs explicitly labeled AI SDK 6.
 | Top-level `reasoning` | Not supported | Supported |
 | Full event stream | `result.fullStream` | `result.stream` |
 | Image generation | `generateImage` or its experimental alias | `generateImage` |
+
+> **💡 Note:** AI SDK 5 (`ai` 5.x with `@ai-sdk/gateway` 2.x) is deprecated. AI Gateway stops
+> accepting AI SDK 5 requests on January 8, 2027. Until then, AI SDK 5 requests
+> return a deprecation warning, and teams new to AI Gateway can't use AI SDK 5.
+> New AI Gateway features don't support it. Upgrade to AI SDK 6 or later. We
+> recommend AI SDK 7, the latest version. Start with the [AI SDK 6 migration
+> guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0), then
+> continue with the [AI SDK 7 migration
+> guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0).
 
 AI SDK 7 requires Node.js 22 or later and ESM. Check your installed version with `pnpm list ai`. See the [AI SDK 7 migration guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0) before upgrading. The [AI SDK for Python beta](/docs/ai-gateway/sdks-and-apis/ai-sdk-python) uses a separate package and API.
 

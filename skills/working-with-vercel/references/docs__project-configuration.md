@@ -16,8 +16,8 @@ related:
 summary: Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control builds, routing, functions, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "97ae9e552d31a127b1d4422971a0a1f1bb98676679cf12cc8a3fb3f98dbb719d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6c3a86c7902a97b04796bafc0b21eaa79de09061486adc37bf386407b6e9b2a2"
 ---
 
 # Project Configuration
@@ -35,11 +35,11 @@ Vercel automatically detects your framework and sets sensible defaults for build
 - [Transform rules are now available in vercel.json](https://vercel.com/changelog/transform-rules-are-now-available-in-vercel-json)
 - [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts)
 - [Web Application Firewall control now available with vercel.json](https://vercel.com/changelog/web-application-firewall-control-now-available-with-vercel-json)
-- [Can I redirect from a subdomain to a subpath?](https://vercel.com/kb/guide/can-i-redirect-from-a-subdomain-to-a-subpath) — Learn how to redirect from your subdomain to a subpath on Vercel with a vercel.json file or with Next.js
 - [Can I route based on letter casing on Vercel?](https://vercel.com/kb/guide/can-i-route-based-on-letter-casing-on-vercel) — Information on whether or not it is possible to route based on letting casing with Vercel.
 - [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications) — Learn how to deploy a Ruby on Rails application on Vercel — either as a container image on Vercel Functions or as a head
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
-- [How do I perform Vercel redirects based on query strings?](https://vercel.com/kb/guide/how-do-i-perform-vercel-redirects-based-on-query-strings) — When using redirects with the \\`vercel.json\\` or \\`next.config.js\\` configuration file, your URL may contain query param
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 
@@ -59,7 +59,7 @@ Each method lets you control different aspects of your project.
 
 File-based configuration lives in your repository and gets version-controlled with your code. You can use [`vercel.json`](/docs/project-configuration/vercel-json) or [`vercel.toml`](/docs/project-configuration/vercel-toml) for static configuration, or [`vercel.ts`](/docs/project-configuration/vercel-ts) for programmatic configuration that runs at build time. The static formats support the same properties, while `vercel.ts` lets you generate configuration dynamically using environment variables, API calls, or other build-time logic. You can only use one configuration file per project.
 
-The table below shows all available configuration properties:
+The table below shows the main configuration properties. The `vercel.json` reference also documents [`proxy`](/docs/project-configuration/vercel-json#proxy), [`routes`](/docs/project-configuration/vercel-json#routes), and [`skipMiddlewareRequestBody`](/docs/project-configuration/vercel-json#skipmiddlewarerequestbody).
 
 | Property                    |                               vercel.json                               |                               vercel.ts                               | Description                                         |
 | --------------------------- | :---------------------------------------------------------------------: | :-------------------------------------------------------------------: | --------------------------------------------------- |
@@ -77,7 +77,7 @@ The table below shows all available configuration properties:
 | **images**                  |         [View](/docs/project-configuration/vercel-json#images)          |         [View](/docs/project-configuration/vercel-ts#images)          | Configure image optimization                        |
 | **installCommand**          |     [View](/docs/project-configuration/vercel-json#installcommand)      |     [View](/docs/project-configuration/vercel-ts#installcommand)      | Override the package install command                |
 | **outputDirectory**         |     [View](/docs/project-configuration/vercel-json#outputdirectory)     |     [View](/docs/project-configuration/vercel-ts#outputdirectory)     | Specify the build output directory                  |
-| **public**                  |         [View](/docs/project-configuration/vercel-json#public)          |         [View](/docs/project-configuration/vercel-ts#public)          | Make deployment logs and source publicly accessible |
+| **public**                  |         [View](/docs/project-configuration/vercel-json#public)          |         [View](/docs/project-configuration/vercel-ts#public)          | No longer supported. Remove this property           |
 | **redirects**               |        [View](/docs/project-configuration/vercel-json#redirects)        |        [View](/docs/project-configuration/vercel-ts#redirects)        | Redirect requests to different URLs                 |
 | **bulkRedirectsPath**       |    [View](/docs/project-configuration/vercel-json#bulkredirectspath)    |    [View](/docs/project-configuration/vercel-ts#bulkredirectspath)    | Point to a file with bulk redirects                 |
 | **regions**                 |         [View](/docs/project-configuration/vercel-json#regions)         |         [View](/docs/project-configuration/vercel-ts#regions)         | Deploy functions to specific regions                |
@@ -97,7 +97,7 @@ For detailed information about specific configuration areas, see:
 - [Project Settings](/docs/project-configuration/project-settings) - Overview of all project settings in the dashboard
 - [Git Configuration](/docs/project-configuration/git-configuration) - Configure Git through vercel.json and vercel.ts
 - [Git Settings](/docs/project-configuration/git-settings) - Manage Git connection, LFS, and deploy hooks
-- [Security settings](/docs/project-configuration/security-settings) - Attack Mode, logs protection, fork protection, OIDC, and retention policies
+- [Security settings](/docs/project-configuration/security-settings) - Attack Mode, logs protection, fork protection, OIDC, and recently deleted deployments
 
 
 ---

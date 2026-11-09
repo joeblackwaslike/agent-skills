@@ -4,8 +4,8 @@ description: Learn how to use Baseten with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/baseten.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "bd0b7e3a7628e7a962eebe2722155e04c7b79abd161dd8dbbef3e8df3745c0e4"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "c409ac9c18525885f56ad16f234ad9fd47f035c88bc09ee60e07d563d7656c9d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -151,6 +151,13 @@ const { text } = await generateText({
 
 Baseten language models can also be used in the `streamText` function
 (see [AI SDK Core](/docs/ai-sdk-core)).
+
+On Baseten Model APIs, `deepseek-ai/DeepSeek-V4-Pro-0813` can return an empty
+answer when JSON mode and reasoning are combined. When reasoning is enabled
+(the default), the provider puts JSON instructions and your schema in a system
+message and omits `response_format`. It emits a compatibility warning because
+the server does not constrain the output; `Output.object` still validates the
+result. Set `reasoning: 'none'` to use native JSON Schema enforcement instead.
 
 ## Dedicated Models
 
@@ -323,6 +330,24 @@ try {
 
 For more information about Baseten models and deployment options, see the
 [Baseten documentation](https://docs.baseten.co/).
+
+## Model Capabilities
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option             | Description                                                                                                                                                                                                    |
+| --------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| language  | `user`             | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| language  | `reasoningEffort`  | Reasoning effort for reasoning models. Defaults to `medium`. Set to `null` to send `"reasoning_effort": null`, for providers that treat an explicit `null` differently from an omitted field.                  |
+| language  | `textVerbosity`    | Controls the verbosity of the generated text. Defaults to `medium`.                                                                                                                                            |
+| language  | `strictJsonSchema` | Whether to use strict JSON schema validation. When true, the model uses constrained decoding to guarantee schema compliance. Only used when the provider supports structured outputs and a schema is provided. |
+| language  | `echo`             | Echo back the prompt in addition to the completion.                                                                                                                                                            |
+| language  | `logitBias`        | Modify the likelihood of specified tokens appearing in the completion. Accepts a JSON object that maps tokens (specified by their token ID in the GPT tokenizer) to an associated bias value from -100 to 100. |
+| language  | `suffix`           | The suffix that comes after a completion of inserted text.                                                                                                                                                     |
+| embedding | `dimensions`       | The number of dimensions the resulting output embeddings should have. Only supported in text-embedding-3 and later models.                                                                                     |
+| embedding | `user`             | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
 
 ---
 

@@ -4,8 +4,8 @@ description: API Reference for the WorkflowAgent class.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-10-19T09:44:40.101Z"
-sha256: "74c54062801ebf643de75ce22cf740a4e01084250b1ffcf35495e4843e71739f"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "a6314e8b2a62b403b12a9e221fcdda188f90413f8977dac1da1684987e2dbef3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -143,7 +143,7 @@ console.log(result.text);
 console.log(result.usage);
 ```
 
-Accepts `WorkflowAgentGenerateOptions`, sharing prompt/messages, instructions, generation settings, tools and runtime context, preparation, stopping, output, and lifecycle options with `stream()`. It does not accept `writable`, `includeRawChunks`, `experimental_transform`, `sendFinish`, or `preventClose`. Without a configured stop condition, generation stops after at most 20 steps. `stream()` retains its existing unbounded default.
+Accepts `WorkflowAgentGenerateOptions`, sharing prompt/messages, instructions, generation settings, tools and runtime context, preparation, stopping, output, and lifecycle options with `stream()`. It does not accept `writable`, `includeRawChunks`, `sendFinish`, or `preventClose`. Without a configured stop condition, generation stops after at most 20 steps. `stream()` retains its existing unbounded default.
 
 The `include` option accepts `requestBody`, `responseBody`, and `requestMessages` booleans, all defaulting to `false`. Enable them only when the additional request/response data is needed. Response IDs, timestamps, model IDs, headers, and provider metadata are retained when supplied by the model.
 
@@ -193,7 +193,6 @@ const result = await agent.stream({
 - `preventClose?` (`boolean`): Whether to prevent the writable stream from being closed after streaming completes. Default: false.
 - `includeRawChunks?` (`boolean`): Include raw, unprocessed chunks from the provider in the stream. Default: false.
 - `repairToolCall?` (`ToolCallRepairFunction`): Callback to attempt automatic recovery when a tool call cannot be parsed. Mark the function with 'use step' when used in a workflow.
-- `experimental_transform?` (`StreamTextTransform | Array<StreamTextTransform>`): Factories for stream transformations, applied in order to raw provider events before model processing and writable output. Each factory must return a TransformStream synchronously and maintain the stream structure. Mark each factory with 'use step' when used in a workflow.
 - `experimental_download?` (`DownloadFunction`): Custom download function for fetching files/URLs. Mark the function with 'use step' when used in a workflow.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Sandbox session passed to tool descriptions and execution as \`experimental\_sandbox\`, and exposed to \`prepareStep\`. Overrides the constructor default.
 - `experimental_toolApprovalSecret?` (`WorkflowToolApprovalSecret`): Workflow-safe reference to the environment variable containing the secret used to HMAC-sign tool approval requests and verify approved message history before tool execution. Only the environment variable name crosses workflow boundaries; the secret is read inside signing and verification steps. Overrides the constructor default.
@@ -238,48 +237,6 @@ error when it crosses this step boundary.
 The callback can be asynchronous. Return the repaired tool call, or `null`
 if the repair cannot be completed. See [tool call repair](/docs/ai-sdk-core/tools-and-tool-calling#tool-call-repair)
 for repair strategies.
-
-### `experimental_transform` in a workflow
-
-Pass a transform factory, or an array of factories, to `stream()`.
-Mark each factory with `'use step'` so Workflow can load it inside the model
-step. The factory must return a `TransformStream` synchronously. Keep any
-captured values serializable.
-
-```ts
-import type { LanguageModelV4StreamPart } from '@ai-sdk/provider';
-import { WorkflowAgent } from '@ai-sdk/workflow';
-import { getWritable } from 'workflow';
-
-function uppercaseText() {
-  'use step';
-
-  return new TransformStream<
-    LanguageModelV4StreamPart,
-    LanguageModelV4StreamPart
-  >({
-    transform(part, controller) {
-      controller.enqueue(
-        part.type === 'text-delta'
-          ? { ...part, delta: part.delta.toUpperCase() }
-          : part,
-      );
-    },
-  });
-}
-
-export async function uppercaseWorkflow() {
-  'use workflow';
-
-  const agent = new WorkflowAgent({ model: 'openai/gpt-5' });
-
-  return agent.stream({
-    messages: [{ role: 'user', content: 'Write a short greeting.' }],
-    writable: getWritable(),
-    experimental_transform: uppercaseText,
-  });
-}
-```
 
 ## Utilities
 

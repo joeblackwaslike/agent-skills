@@ -9,15 +9,15 @@ prerequisites:
   - /docs/networking
 related:
   - /docs/functions
-  - /docs/projects
   - /docs/networking/static-ips
+  - /docs/projects
   - /docs/builds
   - /docs/functions/configuring-functions/region
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "40947f5bd3446a02e8f4466cb528a83e2a04059ee5cd0ac1167816d89c0972e7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "eda59e7ecdef2524ed1c126e6cc8e093c83a6a05e8007c0d87921eb296e2680b"
 ---
 
 # Secure Compute
@@ -39,16 +39,16 @@ Secure Compute creates private connections between your [Vercel Functions](/docs
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Secure Compute is now self-serve](https://vercel.com/changelog/secure-compute-is-now-self-serve)
-- [Using Secure Compute with Sandbox](https://vercel.com/docs/sandbox/concepts/secure-compute) — You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and r
+- [Introducing Vercel Firewall and Vercel Secure Compute](https://vercel.com/blog/vercel-security)
 
 Full cross-link map for this page: [/docs/networking/secure-compute.graph.md](/docs/networking/secure-compute.graph.md)
 <!-- /docsgraph:related -->
 
-By default, Vercel deployments can come from [any IP address](/kb/guide/how-to-allowlist-deployment-ip-address). Secure Compute gives you dedicated static IPs, so you can tighten your backend's access controls to only allow traffic from your specific Vercel infrastructure.
+By default, Vercel deployments can come from [any IP address](/docs/networking/static-ips). Secure Compute gives you dedicated static IPs, so you can tighten your backend's access controls to only allow traffic from your specific Vercel infrastructure.
 
 When you enable Secure Compute on your [project](/docs/projects), your deployments and build container get their own [dedicated network with static IP addresses](#secure-compute-networks-and-dedicated-ip-addresses) in a [region you choose](#specific-region). Your traffic stays completely separate from other customers.
 
@@ -235,11 +235,7 @@ Secure Compute does not apply to [Routing Middleware](/docs/routing-middleware).
 
 ### Beta enhancements
 
-Most of the features of [Vercel Functions](/docs/functions/limitations) are fully supported on Secure Compute except for the following beta enhancements that are not yet available:
-
-- [**Extended max duration beta**](/docs/functions/configuring-functions/duration#extended-max-duration-beta): The standard maximum of 800 seconds applies on Pro and Enterprise plans.
-- [**Large Functions beta**](/docs/functions/limitations#large-functions-beta): The standard bundle size limit of 250 MB applies, with a 500 MB limit for Python.
-- [**Container Images beta**](/docs/functions/container-images): Standard function deployments are unaffected.
+The [Vercel Functions](/docs/functions/limitations) betas are fully supported on Secure Compute, including the [extended max duration beta](/docs/functions/configuring-functions/duration#extended-max-duration-beta), [large functions beta](/docs/functions/limitations#large-functions-beta), and [container images beta](/docs/functions/container-images). Each beta has the same requirements on Secure Compute as on any other project, including [fluid compute](/docs/fluid-compute) with Active CPU enabled.
 
 ### Max projects per network
 

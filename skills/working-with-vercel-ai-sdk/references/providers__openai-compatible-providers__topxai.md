@@ -4,8 +4,8 @@ description: Use the TopxAI OpenAI compatible API with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers/topxai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers/topxai.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "d4abcb97e03efbc25988c73bb6b03dc28f4fb5f7a64d1593ea98dc755e85c862"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "a164259da2d925dec7db896d48de6c1862b137ed79bc59a6f71f732f7971e590"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -104,7 +104,7 @@ authenticated [`GET /v1/models`](https://ai.topxea.com/v1/models) endpoint or
 the [TopxAI model and pricing catalog](https://ai.topxea.com/pricing) for the
 current model IDs.
 
-The `jev-1.13.0` model in the TopxAI catalog uses a separate System One
+The `jev-1.14.0` model in the TopxAI catalog uses a separate System One
 endpoint and is not available through this Chat Completions integration.
 
 Supported capabilities depend on the selected model and include:

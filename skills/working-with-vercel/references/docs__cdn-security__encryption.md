@@ -12,8 +12,8 @@ related:
 summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "05bf587891f90bdde81d5f020325dce6f5c51973bf3442528d9ae32a775f709b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "57b62830afab062c860a4b6705e31825a8ad78817c6c9426df08c6be884d4082"
 ---
 
 # Encryption and TLS
@@ -30,8 +30,7 @@ Every **deployment** on Vercel is served over an HTTPS connection. Vercel automa
 - [Encrypted Client Hello (ECH) is now supported on Vercel CDN](https://vercel.com/changelog/encrypted-client-hello-now-supported-on-vercel-cdn)
 - [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
 - [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
@@ -44,7 +43,7 @@ Full cross-link map for this page: [/docs/cdn-security/encryption.graph.md](/doc
 The CDN automatically forwards any HTTP requests to your **deployment** to HTTPS using the `308` status code:
 
 ```bash
-HTTP/1.1 308 Moved Permanently
+HTTP/1.1 308 Permanent Redirect
 Content-Type: text/plain
 Location: https://<your-deployment-host>
 ```
@@ -62,7 +61,7 @@ HTTPS redirection is an industry standard and can't be disabled. This ensures th
 
 ## TLS resumption
 
-​Vercel supports both Session Identifiers and Session Tickets for [TLS session resumption](https://hpbn.co/transport-layer-security-tls/#tls-session-resumption). This improves Time to First Byte (TTFB) for returning visitors.
+​Vercel supports Session Tickets for [TLS session resumption](https://hpbn.co/transport-layer-security-tls/#tls-session-resumption). This improves Time to First Byte (TTFB) for returning visitors.
 
 ## OCSP stapling
 

@@ -17,8 +17,8 @@ related:
 summary: Connect a TanStack AI app to OAuth-protected MCP servers with Vercel Connect, handle user consent, and manage MCP clients.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/tanstack-ai.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6abc8b8651c3f3261bd8100cf49d9859f5065bfaaeebc5ab933308b5bae19318"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7684da206da3d0498d7e46622737fddff48fa7ac23345e2ae7b8aa524b7bbc5e"
 ---
 
 # TanStack AI with Vercel Connect
@@ -35,10 +35,10 @@ Connect a TanStack AI chat route to Linear's Model Context Protocol (MCP) server
 
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [Add MCP Apps to your AI SDK application](https://vercel.com/kb/guide/ai-sdk-mcp-apps) — Build an MCP Apps host with the AI SDK using @ai-sdk/mcp and @ai-sdk/react to filter model-visible tools, read ui:// res
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
-- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
-- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
 Full cross-link map for this page: [/docs/connect/frameworks/tanstack-ai.graph.md](/docs/connect/frameworks/tanstack-ai.graph.md)
 <!-- /docsgraph:related -->
@@ -47,7 +47,7 @@ Full cross-link map for this page: [/docs/connect/frameworks/tanstack-ai.graph.m
 
 - A Next.js App Router project for the route example below
 - A Vercel project linked to your local directory
-- A Linear connector with the UID `oauth/linear`, linked to the project's Development environment
+- A Linear connector with the UID `mcp.linear.app/linear`, linked to the project's Development environment
 - A stable ID for each signed-in user
 
 Follow the [Vercel Connect quickstart](/docs/connect/quickstart) to create and link the connector. The Connect adapter also works in other server frameworks that support TanStack AI.
@@ -101,7 +101,7 @@ Follow the [Vercel Connect quickstart](/docs/connect/quickstart) to create and l
       mcpClient = await createMCPClient({
         transport: connectMCPTransport(
           { type: 'http', url: 'https://mcp.linear.app/mcp' },
-          'oauth/linear',
+          'mcp.linear.app/linear',
           {
             subject: { type: 'user', id: userId },
             scopes: ['read'],
@@ -160,7 +160,7 @@ Follow the [Vercel Connect quickstart](/docs/connect/quickstart) to create and l
       mcpClient = await createMCPClient({
         transport: connectMCPTransport(
           { type: 'http', url: 'https://mcp.linear.app/mcp' },
-          'oauth/linear',
+          'mcp.linear.app/linear',
           {
             subject: { type: 'user', id: userId },
             scopes: ['read'],

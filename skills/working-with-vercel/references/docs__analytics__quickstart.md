@@ -16,8 +16,8 @@ related:
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "14728039883cda2701f720e30aa78c4d147642de8e76c7daa6d51b132512f50c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "23fdfca62b6540eeb62b0918c29b36efdf3866fc93fdd58b2e8db7a68ef42900"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -34,6 +34,9 @@ This guide will help you get started with using Vercel Web Analytics on your pro
 - [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
+- [Nuxt Analytics on Vercel](https://vercel.com/blog/nuxt-analytics-on-vercel)
+- [Vercel Analytics for Gatsby](https://vercel.com/blog/gatsby-analytics)
+- [The Next.js SEO Playbook: Ranking higher with Next.js on Vercel](https://vercel.com/blog/nextjs-seo-playbook)
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability

@@ -9,12 +9,12 @@ prerequisites:
   - /docs/agent-resources/vercel-mcp/tools
   - /docs/agent-resources/vercel-mcp
 related:
-  []
+  - /docs/flags/vercel-flags/project-connections
 summary: Vercel MCP tools for feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "226adbc05e80d316596a6d7612f1b257deebdfec425bab197d636995f0ad88ec"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2d4130f2b7249f62d855bd3d97781f77094dfa2fe11be2c0f9bf7b4381d2090d"
 ---
 
 # Feature Flags
@@ -29,8 +29,8 @@ Read and update feature flags and their settings. Create SDK keys and list the k
 
 - [List all flags for a team](https://vercel.com/docs/rest-api/feature-flags/list-all-flags-for-a-team) — GET /v2/teams/{teamId}/feature-flags/flags — Retrieve all feature flags for a team across all projects. Returns an opaqu
 - [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags) — GET /v2/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. Returns an opaque cursor
-- [List team project flag settings](https://vercel.com/docs/rest-api/feature-flags/list-team-project-flag-settings) — GET /v1/teams/{teamId}/feature-flags/settings — Retrieve feature flag settings for projects in a team.
 - [Update a flag](https://vercel.com/docs/rest-api/feature-flags/update-a-flag) — PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Update an existing feature flag. This endpoint
+- [List team project flag settings](https://vercel.com/docs/rest-api/feature-flags/list-team-project-flag-settings) — GET /v1/teams/{teamId}/feature-flags/settings — Retrieve feature flag settings for projects in a team.
 - [List flag versions](https://vercel.com/docs/rest-api/feature-flags/list-flag-versions) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions — Lists flag versions for a given flag.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md)
@@ -277,6 +277,96 @@ Update project flag settings.
 | `teamId`          | string | No       | Team ID to use for this operation.                          |
 | `slug`            | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`     | object | No       | Request body for this tool.                                 |
+
+## `list_flags_project_connections`
+
+List the flag connections for a project within one team.
+
+Use `role: "source"` (the default) to list projects that can read this project's flags. Use `role: "consumer"` to list projects whose flags it can read. Connections apply across environments.
+
+On a project-scoped MCP connection, the selected project and team come from the route. Your OAuth grant must include that project, and you need permission to list its connections.
+
+## Example
+
+```json
+{
+  "teamId": "team_example",
+  "projectIdOrName": "prj_source",
+  "role": "source"
+}
+```
+
+The response contains a `data` array with the source and consumer project IDs, available names, and creation details.
+
+## Parameters
+
+| Parameter         | Type   | Required | Description                                                                                                           |
+| ----------------- | ------ | -------- | --------------------------------------------------------------------------------------------------------------------- |
+| `projectIdOrName` | string | Yes      | The project id or name                                                                                                |
+| `role`            | string | No       | List connections where this project is the source (default) or the consumer Allowed values: `"source"`, `"consumer"`. |
+| `teamId`          | string | No       | Team ID.                                                                                                              |
+| `slug`            | string | No       | Team slug.                                                                                                            |
+
+## `create_flags_project_connection`
+
+Connect two projects in the same team. The source owns the flags; the consumer receives read and evaluate access across environments. Your consumer project's OIDC token selects the environment. Connections do not permit flag changes.
+
+Set `projectIdOrName` to the source and `requestBody.consumerProjectId` to the consumer. Confirm both projects before creating the connection. On a project-scoped MCP connection, connect to the source project.
+
+## Example
+
+```json
+{
+  "teamId": "team_example",
+  "projectIdOrName": "prj_source",
+  "requestBody": {
+    "consumerProjectId": "prj_consumer"
+  }
+}
+```
+
+The response identifies both projects and the connection's creator and creation time. Read it back with `list_flags_project_connections`. An existing connection returns a conflict; inspect it before retrying.
+
+## Required permissions
+
+Your MCP OAuth grant must cover both projects. You need permission to manage connections on the source and view the consumer. See [Project Connections permissions](/docs/flags/vercel-flags/project-connections#required-permissions).
+
+## Parameters
+
+| Parameter         | Type   | Required | Description                 |
+| ----------------- | ------ | -------- | --------------------------- |
+| `projectIdOrName` | string | Yes      | The project id or name      |
+| `teamId`          | string | No       | Team ID.                    |
+| `slug`            | string | No       | Team slug.                  |
+| `requestBody`     | object | Yes      | Request body for this tool. |
+
+## `get_flags_project_disconnection_link`
+
+Get the source project's Flags Connections page, where you can disconnect the selected consumer. This tool checks the source project's team and returns `requires_user_action` with `mutationExecuted: false`. It does not revoke access.
+
+Set `projectIdOrName` to the source and `consumerProjectId` to the consumer. On a project-scoped MCP connection, connect to the source project.
+
+## Example
+
+```json
+{
+  "teamId": "team_example",
+  "projectIdOrName": "prj_source",
+  "consumerProjectId": "prj_consumer"
+}
+```
+
+Open the returned URL, find the consumer under projects that can read the source's flags, and select **Remove Connection**. This removes access across environments. Use `list_flags_project_connections` to verify removal.
+
+You need permission to manage connections on the source to complete this action. You don't need access to the consumer. See [Project Connections permissions](/docs/flags/vercel-flags/project-connections#required-permissions).
+
+## Parameters
+
+| Parameter           | Type   | Required | Description                       |
+| ------------------- | ------ | -------- | --------------------------------- |
+| `projectIdOrName`   | string | Yes      | The project id or name            |
+| `consumerProjectId` | string | Yes      | The connected consumer project id |
+| `teamId`            | string | Yes      | Team ID.                          |
 
 
 ---

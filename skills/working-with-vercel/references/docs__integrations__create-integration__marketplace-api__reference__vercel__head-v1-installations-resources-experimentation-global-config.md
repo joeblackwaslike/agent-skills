@@ -3,7 +3,7 @@ title: head-v1-installations-resources-experimentation-global-config
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/head-v1-installations-resources-experimentation-global-config
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/head-v1-installations-resources-experimentation-global-config"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about head-v1-installations-resources-experimentation-global-config on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/head-v1-installations-resources-experimentation-global-config.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "60e2874399af4d7b2b5f98b3855962baf0553c9723f450e82a41a9496fc0c937"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3b987d27988b105cc610a60dd4e5329a0b52b93cbf387df73fae409ce059c138"
 ---
 
 # Get the data of a user-provided Global Config

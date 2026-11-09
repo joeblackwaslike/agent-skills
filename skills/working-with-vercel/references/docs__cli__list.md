@@ -14,13 +14,13 @@ related:
 summary: Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/list.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cfe7f606f08660d4ff45c6e9f15e3b6c1fc60565cbd0a99e60cd4f7627c989da"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "789bc71603b1c63d375a8413274ccf2d12562aa5f0f324305f9f0f0d079af05d"
 ---
 
 # vercel list
 
-The `vercel list` command, which can be shortened to `vercel ls`, provides a list of recent deployments for the currently-linked Vercel Project.
+The `vercel list` command provides a list of recent deployments for the currently-linked Vercel Project. When the current directory is not linked to a Vercel Project, the command lists deployments across all projects in the current scope.
 
 
 <!-- docsgraph:related -->
@@ -31,8 +31,8 @@ The `vercel list` command, which can be shortened to `vercel ls`, provides a lis
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
 
 Full cross-link map for this page: [/docs/cli/list.graph.md](/docs/cli/list.graph.md)
 <!-- /docsgraph:related -->
@@ -82,10 +82,10 @@ These are options that only apply to the `vercel list` command.
 
 ### Meta
 
-The `--meta` option, shorthand `-m`, can be used to filter results based on Vercel deployment metadata. Repeat the flag to filter by multiple metadata pairs.
+The `--meta` option can be used to filter results based on Vercel deployment metadata. Repeat the flag to filter by multiple metadata pairs.
 
 ```bash filename="terminal"
-vercel list -m key1=value1 -m key2=value2
+vercel list --meta key1=value1 --meta key2=value2
 ```
 
 *Using the \`vercel list\` command with the
@@ -94,7 +94,7 @@ vercel list -m key1=value1 -m key2=value2
 A common use case is filtering by the Git commit SHA that created a deployment:
 
 ```bash filename="terminal"
-vercel ls -m githubCommitSha=de8b89f13b2bc164cf07e735921bf5513e17951d
+vercel list --meta githubCommitSha=de8b89f13b2bc164cf07e735921bf5513e17951d
 ```
 
 *Find deployments by Git commit SHA using the
@@ -105,30 +105,18 @@ vercel ls -m githubCommitSha=de8b89f13b2bc164cf07e735921bf5513e17951d
 
 ### Policy
 
-The `--policy` option, shorthand `-p`, can be used to display expiration based on [Vercel project deployment retention policy](/docs/deployment-retention).
+The `--policy` option can be used to display expiration based on [Vercel project deployment retention policy](/docs/deployment-retention).
 
 ```bash filename="terminal"
-vercel list --policy canceled=6m -p errored=6m -p preview=6m -p production=6m
+vercel list --policy canceled=6m --policy errored=6m --policy preview=6m --policy production=6m
 ```
 
 *Using the \`vercel list\` command with the
 \`--policy\` option.*
 
-### Yes
-
-The `--yes` option can be used to skip questions you are asked when setting up a new Vercel Project.
-The questions will be answered with the default scope and current directory for the Vercel Project name and location.
-
-```bash filename="terminal"
-vercel list --yes
-```
-
-*Using the \`vercel list\` command with the
-\`--yes\` option.*
-
 ### Status
 
-The `--status` option, shorthand `-s`, can be used to filter deployments by their status.
+The `--status` option can be used to filter deployments by their status.
 
 ```bash filename="terminal"
 vercel list --status READY
@@ -154,8 +142,9 @@ The supported status values are:
 - `QUEUED` - Deployments waiting to be built
 - `READY` - Successfully deployed and available
 - `CANCELED` - Deployments that were canceled before completion
+- `BLOCKED` - Deployments that Vercel blocked from building
 
-### environment
+### Environment
 
 Use the `--environment` option to list the deployments for a specific environment. This could be production, preview, or a [custom environment](/docs/deployments/environments#custom-environments).
 
@@ -163,9 +152,40 @@ Use the `--environment` option to list the deployments for a specific environmen
 vercel list my-app --environment=staging
 ```
 
+To list only production deployments, pass `production`:
+
+```bash filename="terminal"
+vercel list --environment production
+```
+
+*Using the \`vercel list\` command with the
+\`--environment\` option to show only production deployments.*
+
+### All
+
+Use the `--all` option to list deployments across all projects in the current scope, even when the current directory is linked to a Vercel Project:
+
+```bash filename="terminal"
+vercel list --all
+```
+
+*Using the \`vercel list\` command with the
+\`--all\` option.*
+
+### Limit
+
+Use the `--limit` option to change how many deployments the command lists. The default is `20` and the maximum is `100`:
+
+```bash filename="terminal"
+vercel list --limit 100
+```
+
+*Using the \`vercel list\` command with the
+\`--limit\` option.*
+
 ### Next
 
-The `--next` option enables pagination when listing deployments. Pass the timestamp (in milliseconds since the UNIX epoch) from a previous response to get the next page of results.
+The `--next` option enables pagination when listing deployments. When more deployments remain, the output ends with the command for the next page, which passes a cursor to `--next`:
 
 ```bash filename="terminal"
 vercel list --next 1584722256178
@@ -174,16 +194,18 @@ vercel list --next 1584722256178
 *Using the \`vercel list\` command with the
 \`--next\` option for pagination.*
 
-### Prod
+### JSON
 
-The `--prod` option filters the list to show only production deployments.
+Use the `--json` option to output the list as JSON, for example to read it in a script:
 
 ```bash filename="terminal"
-vercel list --prod
+vercel list --json
 ```
 
 *Using the \`vercel list\` command with the
-\`--prod\` option to show only production deployments.*
+\`--json\` option.*
+
+When more deployments remain, `pagination.next` in the JSON output has the cursor for [`--next`](#next).
 
 ## Global Options
 
@@ -197,7 +219,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

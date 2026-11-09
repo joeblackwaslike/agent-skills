@@ -17,8 +17,8 @@ related:
 summary: Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0677b430552618ff274a260dfc4b052242eb99db25e97b87fa83b9707e80430c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "90d142d66ca2c430955e3f36ee2f88685a7f69704db5bef28f358eb8bd7f2a50"
 ---
 
 # Restrict access to deployments with Vercel Authentication
@@ -44,9 +44,9 @@ Vercel Authentication lets you restrict access to your public and non-public dep
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [\<script type="text/llms.txt"\>](https://vercel.com/blog/a-proposal-for-inline-llm-instructions-in-html)
-- [Protecting Deployments](https://vercel.com/blog/security-controls-protected-preview-deployments-passwords)
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication.graph.md)
 <!-- /docsgraph:related -->
@@ -135,16 +135,17 @@ You can manage Vercel Authentication through the dashboard, API, or Terraform:
 
 You can manage Vercel Authentication using the Vercel API endpoint to [update an existing project](/docs/rest-api/projects/update-an-existing-project) with the following body. Set `deploymentType` to one of these values:
 
-- `prod_deployment_urls_and_all_previews`: Standard Protection
+- `all_except_custom_domains`: Standard Protection
+- `prod_deployment_urls_and_all_previews`: (Legacy) Standard Protection
 - `all`: All Deployments
-- `preview`: Only Preview Deployments
+- `preview`: (Legacy) Pre-Production Deployments
 
 To enable or update Vercel Authentication, send the `ssoProtection` object:
 
 ```json
 {
   "ssoProtection": {
-    "deploymentType": "prod_deployment_urls_and_all_previews"
+    "deploymentType": "all_except_custom_domains"
   }
 }
 ```

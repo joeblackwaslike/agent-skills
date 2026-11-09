@@ -13,8 +13,8 @@ related:
 summary: Vercel MCP tools for observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3cd09b4e783bab1ba06e500f6a0985434f9a37b8328460ff1018ca9583570e7a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b9d59dd2718851f9ed66d5680d4c94a8ed52abab58f33b2a7dc49a621d29aaab"
 ---
 
 # Observability
@@ -31,7 +31,7 @@ Investigate errors and request behavior in your projects with runtime logs and t
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [Lists disabled Observability Plus projects](https://vercel.com/docs/rest-api/observability/lists-disabled-observability-plus-projects) — GET /v1/observability/manage/configuration/projects — Lists the projects that are currently configured as disabled for O
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability.graph.md](/docs/agent-resources/vercel-mcp/tools/observability.graph.md)
 <!-- /docsgraph:related -->

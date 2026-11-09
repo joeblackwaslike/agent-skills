@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9c3e8e86bbb93079b8352b13e1c9ec7cfc7cc2c8905ce792b1a740566d96e011"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "49329c390a513f65e447df129160618f88aaae925ecb1ffd470d9aaf5ceddbd7"
 ---
 
 # Accessing Build Logs
@@ -37,11 +37,11 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [How do I resolve a 'module not found' error?](https://vercel.com/kb/guide/how-do-i-resolve-a-module-not-found-error) — Information on resolving a 'module not found' error.
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
 - [How Vercel Agent accesses production safely](https://vercel.com/blog/how-vercel-agent-accesses-production-safely)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [Logs](https://vercel.com/docs/logs) — Use logs to find information on deployment builds, function executions, and more.
+- [Why are my Build Logs loading infinitely and not showing up?](https://vercel.com/kb/guide/why-are-my-build-logs-loading-infinitely-and-not-showing-up) — How to mitigate the issue when build logs aren't showing up?
 - [Link and share Build Logs](https://vercel.com/changelog/link-and-share-build-logs)
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md)
 <!-- /docsgraph:related -->

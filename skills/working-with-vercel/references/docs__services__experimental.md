@@ -13,8 +13,8 @@ related:
 summary: The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/experimental.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b660c8ce8319ee913ce1b7010970e6936b0269b96e1382bda7770370ca3919ef"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9f3c17ac55c5faf7b533fd40c7e96badd5444617418030324f2da2886865b66b"
 ---
 
 # Experimental Services
@@ -23,7 +23,7 @@ sha256: "b660c8ce8319ee913ce1b7010970e6936b0269b96e1382bda7770370ca3919ef"
 
 > **💡 Note:** This page documents the earlier `experimentalServices` configuration model. New
 > projects should use the [`services`](/docs/services) model. The
-> `experimentalServices` model remains available while you migrate.
+> `experimentalServices` model remains available while you migrate, but only for projects created before July 6, 2026. Vercel rejects deployments that use `experimentalServices` in a project created on or after that date.
 
 Services let you deploy multiple backends and frontends within a single Vercel project. For example, a Next.js frontend and a FastAPI backend in the same repository deploy together with shared routing, environment variables, and a unique domain, replacing the need to split monorepos into separate Vercel projects.
 
@@ -37,9 +37,9 @@ Services let you deploy multiple backends and frontends within a single Vercel p
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
+- [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
@@ -149,10 +149,10 @@ If you define an environment variable with the same name in your project setting
 
 ## Local development
 
-Run all services together locally, without authenticating with the Vercel Cloud, by adding the `-L` flag (short for `--local`):
+Run all services together locally, without authenticating with the Vercel Cloud, by adding the `--local` flag:
 
 ```bash filename="Terminal"
-vercel dev -L
+vercel dev --local
 ```
 
 

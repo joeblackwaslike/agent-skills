@@ -9,13 +9,14 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/deployments/managing-deployments
+  - /docs/cli/deploy
   - /docs/deployments/environments
   - /docs/cli/global-options
 summary: Learn how to redeploy your project using the vercel redeploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/redeploy.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c860a3c79aa56bd277f6f9d65fb9887c6634a8b1896e84bbcff05db0acaabd14"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0fea5c4b5cb985bfea6bc15cf0a33a74dd93e479e19f9bf2ad448a134d78e96a"
 ---
 
 # vercel redeploy
@@ -28,11 +29,11 @@ The `vercel redeploy` command is used to rebuild and [redeploy an existing deplo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel remove](https://vercel.com/docs/cli/remove) — Learn how to remove a deployment using the vercel remove CLI command.
-- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and remove deploy hook URLs that trigger
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and delete deploy hook URLs that trigger
 
 Full cross-link map for this page: [/docs/cli/redeploy.graph.md](/docs/cli/redeploy.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,8 @@ vercel redeploy [deployment-id or url]
 
 *Using \`vercel redeploy\` will rebuild and deploys an
 existing deployment.*
+
+If you created the original deployment with [`vercel deploy --prebuilt`](/docs/cli/deploy#prebuilt), the redeploy reuses its prebuilt output and doesn't rebuild from source. To build with your latest environment variables and project settings, create a new deployment: run `vercel pull`, `vercel build`, and `vercel deploy --prebuilt`, each with the same `--environment` value.
 
 ## Standard output usage
 
@@ -96,12 +99,14 @@ vercel redeploy https://example-app-6vd6bhoqt.vercel.app --no-wait
 *Using the \`vercel redeploy\` command with the
 \`--no-wait\` option.*
 
-### target
+### Environment
 
-Use the `--target` option to define the environment you want to redeploy to. This could be production, preview, or a [custom environment](/docs/deployments/environments#custom-environments).
+Use the `--environment` option to define the environment you want to redeploy to. This could be production, preview, or a [custom environment](/docs/deployments/environments#custom-environments). Without this option, the command redeploys to the environment of the original deployment.
+
+The following example redeploys a preview deployment to a custom environment named `staging`:
 
 ```bash filename="terminal"
-vercel redeploy https://example-app-6vd6bhoqt.vercel.app --target=staging
+vercel redeploy https://example-app-6vd6bhoqt.vercel.app --environment=staging
 ```
 
 ## Global Options
@@ -116,7 +121,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

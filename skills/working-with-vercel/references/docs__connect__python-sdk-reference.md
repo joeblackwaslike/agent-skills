@@ -16,8 +16,8 @@ related:
 summary: API reference for vercel-connect, the Python SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/python-sdk-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2016ae4d5d5459dd894792bec7f963a1f579442415db02057b4cac5ecefdb108"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b888fb9226d75ea6140b875fc63276d5b755309f23a2d4100723009f2d2fac5a"
 ---
 
 # Python SDK Reference
@@ -219,7 +219,7 @@ async def start_authorization(
 | `subject`         | `ConnectTokenSubject`        | The subject to authorize, usually a `ConnectUserTokenSubject`.                                               |
 | `scopes`          | `list[str]`                  | Requested scopes. Omit for the connector's defaults.                                                        |
 | `installation_id` | `str`                        | Target one installation.                                                                                     |
-| `return_url`      | `str`                        | Where Vercel Connect redirects after consent. Must use `https://`, or `http://` on `localhost` or `127.0.0.1`. |
+| `return_url`      | `str`                        | Where Vercel Connect redirects after consent. Must use `https://`, or `http://` on `localhost`.              |
 | `webhook`         | `str`                        | An `https://` URL to notify.                                                                                 |
 | `device_code`     | `bool`                       | Return a device code instead of redirecting. Use for CLIs and headless processes.                            |
 | `expires_in`      | `int`, `float`, or `timedelta` | How long the authorization request stays valid. Numbers are seconds.                                       |
@@ -641,7 +641,7 @@ Every error inherits from `ConnectError`. Errors returned by the Connect API inh
 
 ## CLI parity
 
-Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The CLI supports `--subject`, `--installation-id`, and `--scopes`. The SDK additionally supports `resources` and `authorization_details`, which the CLI doesn't expose. The CLI supports `--triggers` on `vercel connect attach`, which has no SDK equivalent.
+Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The CLI supports `--subject`, `--installation`, and `--scopes`. The SDK additionally supports `resources` and `authorization_details`, which the CLI doesn't expose. The CLI supports `--triggers` on `vercel connect attach`, which has no SDK equivalent.
 
 ## Next steps
 

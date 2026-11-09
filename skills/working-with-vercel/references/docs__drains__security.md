@@ -15,8 +15,8 @@ related:
 summary: Learn how to secure your Drains endpoints with authentication and signature verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/drains/security.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "097bc8781084631a669c53ee5e21e7258802f0993c656b76e06b4004463639e7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "847e351112500674881b6114dc9094391734b971de2e1c163bedcb149fffc118"
 ---
 
 # Drains Security
@@ -139,7 +139,7 @@ export default async function handler(
   response.status(200).json({ success: true });
 }
 
-function sha1(data: Buffer, secret: string): string {
+function sha1(data, secret) {
   return crypto.createHmac('sha1', secret).update(data).digest('hex');
 }
 
@@ -222,7 +222,7 @@ export default async function handler(
   response.status(200).json({ success: true });
 }
 
-function sha1(data: Buffer, secret: string): string {
+function sha1(data, secret) {
   return crypto.createHmac('sha1', secret).update(data).digest('hex');
 }
 

@@ -3,7 +3,7 @@ title: get-invoice
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -13,8 +13,8 @@ related:
 summary: Learn about get-invoice on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5ac956792f804a80a9d6a63eac37f7c4cddbd154281d443b63938f410a464ea6"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0e8daf5dd4c9d08cb57479c04f673f3257e9b0f61ab45f0135492d9e66f3faae"
 ---
 
 # Get Invoice

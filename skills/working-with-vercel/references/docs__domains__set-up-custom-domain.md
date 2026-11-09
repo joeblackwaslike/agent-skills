@@ -16,8 +16,8 @@ related:
 summary: Add and configure a custom domain for your Vercel project using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/set-up-custom-domain.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4295a061218b5f94ed293b2cc525f5eb095f2567a4315e28478479a1bf353b5d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7a9fa7336b79e0af041c654a3a230277184d73783683a4df4823802804312bf5"
 ---
 
 # Setting up a custom domain
@@ -30,15 +30,11 @@ Use this guide to add a custom domain to your Vercel project from the CLI, confi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
-- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 
 Full cross-link map for this page: [/docs/domains/set-up-custom-domain.graph.md](/docs/domains/set-up-custom-domain.graph.md)
 <!-- /docsgraph:related -->
@@ -52,10 +48,10 @@ Use this block when you already know what you're doing and want the full command
 
 ```bash filename="terminal"
 # 1. Check your existing domains
-vercel domains ls
+vercel domains list
 
-# 2. Add the domain to your project (one arg when run from a linked project)
-vercel domains add example.com
+# 2. Add the domain to your project (pass the project name as the second argument)
+vercel domains add example.com my-site
 
 # 3. Check what DNS records are needed
 vercel domains verify example.com --project my-site
@@ -64,7 +60,7 @@ vercel domains verify example.com --project my-site
 vercel dns add example.com '@' A your_project_ip
 
 # 4b. OR add the subdomain to your project and configure DNS records (subdomain)
-vercel domains add www.example.com
+vercel domains add www.example.com my-site
 vercel domains verify www.example.com --project my-site
 vercel dns add example.com www CNAME your_project_cname_target
 
@@ -74,7 +70,7 @@ vercel domains verify example.com --project my-site
 # vercel domains verify www.example.com --project my-site
 
 # 6. Verify SSL certificate was provisioned
-vercel certs ls
+vercel certs list
 
 # 7. Test the domain
 vercel httpstat /
@@ -86,29 +82,31 @@ vercel curl /
 List the domains already configured on your team to avoid conflicts:
 
 ```bash filename="terminal"
-vercel domains ls
+vercel domains list
 ```
 
-This shows all domains across your projects, including their DNS status and verification state.
+This shows the domains on your team, including each domain's registrar, nameservers (Vercel or third party), expiration date, creator, and age.
 
 ## 2. Add the domain to your project
 
-Add your custom domain. From a linked project, `vercel domains add` takes a single argument (the domain). To target a different project (or when running outside of a linked directory), pass the project name as a second argument.
+Add your custom domain and pass your project name as the second argument:
 
 ```bash filename="terminal"
-vercel domains add example.com
+vercel domains add example.com my-site
 ```
+
+If you omit the project name, `vercel domains add` adds an apex domain to your team without assigning it to a project, and returns an error for a subdomain.
 
 If the domain is already assigned to another project in your team, use the `--force` flag to reassign it:
 
 ```bash filename="terminal"
-vercel domains add example.com --force
+vercel domains add example.com my-site --force
 ```
 
 For a `www` subdomain, add that separately:
 
 ```bash filename="terminal"
-vercel domains add www.example.com
+vercel domains add www.example.com my-site
 ```
 
 If you add both `example.com` and `www.example.com`, configure a redirect from one to the other in your [Vercel project settings](/docs/domains/working-with-domains/deploying-and-redirecting#redirecting-domains) to avoid duplicate content.
@@ -149,7 +147,7 @@ vercel dns add example.com www CNAME your_project_cname_target
 For Vercel-managed DNS, confirm that Vercel lists the records you added:
 
 ```bash filename="terminal"
-vercel dns ls
+vercel dns list
 ```
 
 ## 5. Verify DNS configuration
@@ -167,7 +165,7 @@ The command exits with a non-zero status when the domain is misconfigured or nee
 Vercel automatically provisions an SSL certificate after DNS verification succeeds. Check that the certificate was issued:
 
 ```bash filename="terminal"
-vercel certs ls
+vercel certs list
 ```
 
 Look for your domain in the output. The certificate typically provisions within a few minutes of DNS verification.
@@ -190,8 +188,8 @@ vercel curl /
 
 If your domain's nameservers point to an external DNS provider (like Cloudflare or Route 53), you can't use `vercel dns add` to configure records. Instead:
 
-1. Add the domain to your project with `vercel domains add example.com`
-2. Run `vercel domains verify example.com --project my-site` (replace `my-site` with your project name) or open your project's **Settings** → **Domains** to get the recommended records
+1. Add the domain to your project with `vercel domains add example.com my-site` (replace `my-site` with your project name)
+2. Run `vercel domains verify example.com --project my-site` or open your project's **Settings** → **Domains** to get the recommended records
 3. Add and save those records through your external DNS provider's interface
 4. After DNS propagation, run `vercel domains verify example.com --project my-site` again to check configuration and ownership verification status
 

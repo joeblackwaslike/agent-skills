@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-bitbucket.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fd899de78104b19076bc7e3f8fb9423be8cb6559a68d8c0307c021a9c45add1b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3de293548b1307c4837687a73b387892772ede021c72bf685074e0e0d7bef88e"
 ---
 
 # Deploying Bitbucket Projects with Vercel
@@ -30,8 +30,8 @@ Vercel for Bitbucket automatically deploys your Bitbucket projects with [Vercel]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Vercel for Bitbucket](https://vercel.com/blog/bitbucket)
+- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
@@ -141,18 +141,18 @@ VERCEL_GIT_COMMIT_MESSAGE=Add Timmy Triangle to about page
 
 ### `VERCEL_GIT_COMMIT_AUTHOR_LOGIN`
 
-The name of the commit author on Bitbucket.
+The Bitbucket nickname of the author of the commit that was deployed.
 
 ```bash
-VERCEL_GIT_COMMIT_AUTHOR_LOGIN=Timmy Triangle
+VERCEL_GIT_COMMIT_AUTHOR_LOGIN=timmytriangle
 ```
 
 ### `VERCEL_GIT_COMMIT_AUTHOR_NAME`
 
-Bitbucket profile URL of the commit author.
+The name of the commit author on Bitbucket.
 
 ```bash
-VERCEL_GIT_COMMIT_AUTHOR_NAME=https://bitbucket.org/%7B45585b19-b616-401e-89d3-1a47fddb7033%7D/
+VERCEL_GIT_COMMIT_AUTHOR_NAME=Timmy Triangle
 ```
 
 ### `VERCEL_GIT_PULL_REQUEST_ID`

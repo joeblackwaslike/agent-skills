@@ -9,15 +9,15 @@ prerequisites:
   - /docs/routing
 related:
   - /docs/project-configuration/vercel-json
+  - /docs/routing/redirects/configuration-redirects
   - /docs/headers/request-headers
   - /docs/environment-variables
   - /docs/caching/cache-control-headers
-  - /docs/caching/cdn-cache/purge
 summary: Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/rewrites.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "51f5395e13d6390680429b7bcb14a75cb75dd16c978ec773b6026ce526b39705"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "98e110d3cd45367578adb3dfebf922de07d93804f12ce4840f3cce08a6cc2506"
 ---
 
 # Rewrites on Vercel
@@ -34,14 +34,14 @@ A rewrite routes a request to a different destination without changing the URL i
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [rewrites](https://nextjs.org/docs/pages/api-reference/config/next-config-js/rewrites) — Add rewrites to your Next.js app.
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Redirects and rewrites now available in Observability](https://vercel.com/changelog/redirects-and-rewrites-now-available-in-observability)
 - [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
-- [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/routing/rewrites.graph.md](/docs/routing/rewrites.graph.md)
 <!-- /docsgraph:related -->
@@ -51,7 +51,7 @@ There are two main types:
 1. **Same-application rewrites** – Route requests to different pages within your Vercel project.
 2. **Rewrites to external origins** – Forward requests to an API or website outside your Vercel project.
 
-The [/.well-known](# "The /.well-known directory") path is reserved and cannot be redirected or rewritten. Only
+The [/.well-known/acme-challenge](# "The /.well-known directory") path is reserved and cannot be redirected or rewritten. Only
 Enterprise teams can configure custom SSL. [Contact sales](/contact/sales) to
 learn more.
 
@@ -116,6 +116,43 @@ Example: Route UK visitors to a UK-specific section:
 ```
 
 This routes a UK visitor requesting `/about` to `/uk/about`.
+
+### Rewrite a subdomain to a subpath
+
+To serve a section of your project from its own subdomain, such as `app.example.com` showing the content at `example.com/app`, add the subdomain to the project's **Settings** > **Domains**. Then match its hostname with a `has` condition of type `host`:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "app.example.com" }],
+      "destination": "/app/:path*"
+    }
+  ]
+}
+```
+
+A request to `app.example.com/settings` returns the content of `/app/settings`, and the browser keeps showing `app.example.com/settings`. Requests to other domains on the project don't match the rule. To send visitors to `example.com/app` and change the URL in the browser instead, use a [redirect](/docs/routing/redirects/configuration-redirects) with the same `has` condition.
+
+In Next.js, add the rule to `rewrites()` in `next.config.js` and return it in the `beforeFiles` array so it runs before Next.js matches pages. Because `beforeFiles` rewrites also run before static files, exclude `/_next/` from the source so the page's JavaScript and CSS still load, and exclude `/app/` so requests that already have the prefix aren't rewritten twice:
+
+```js filename="next.config.js"
+module.exports = {
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/:path((?!_next/|app/).*)',
+          has: [{ type: 'host', value: 'app.example.com' }],
+          destination: '/app/:path',
+        },
+      ],
+    };
+  },
+};
+```
 
 ## Rewrites to external origins
 
@@ -410,7 +447,7 @@ For more complex patterns, you can use regular expressions with capture groups:
 {
   "rewrites": [
     {
-      "source": "^/articles/(\\d{4})/(\\d{2})/(.+)$",
+      "source": "/articles/(\\d{4})/(\\d{2})/(.+)",
       "destination": "/archive?year=$1&month=$2&slug=$3"
     }
   ]
@@ -419,20 +456,20 @@ For more complex patterns, you can use regular expressions with capture groups:
 
 This converts `/articles/2023/05/hello-world` to `/archive?year=2023&month=05&slug=hello-world`.
 
-You can also use named capture groups:
+You can also name a capture group. Put the regular expression in parentheses after a named parameter:
 
 ```json
 {
   "rewrites": [
     {
-      "source": "^/products/(?<category>[a-z]+)/(?<id>\\d+)$",
-      "destination": "/shop?category=$category&item=$id"
+      "source": "/products/:category([a-z]+)/:id(\\d+)",
+      "destination": "/shop?category=:category&id=:id"
     }
   ]
 }
 ```
 
-This converts `/products/shirts/123` to `/shop?category=shirts&item=123`.
+This converts `/products/shirts/123` to `/shop?category=shirts&id=123`.
 
 ## When to use each type
 

@@ -17,8 +17,8 @@ related:
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "66b814decdce5b047eec8b30038f79d7d52e43e777d604d2cf40bf6bee9d72dd"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3e05b7612ab04af4ded2b8aa47c1d3ae0a15112e443f63ccc13eae00f4b518f6"
 ---
 
 # Native Integration Flows
@@ -35,8 +35,8 @@ As a Vercel integration provider, when you [create a native product integration]
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
-- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-flows.graph.md](/docs/integrations/create-integration/marketplace-flows.graph.md)
 <!-- /docsgraph:related -->
@@ -99,7 +99,7 @@ sequenceDiagram
     Vercel Dashboard->>User: Show Browse Storage Modal
     User->>Vercel Dashboard: Select Storage Provider and click Continue
     Vercel Dashboard->>User: Show Accept Terms Modal
-    Note over User,Vercel Dashboard: The Accept Terms Modal is shown only once. <br>Once the Terms are accepted and the account created,<br>it is skipped in future Create Store flows for this user.<br>Vercel sends an access_token to the Provider here<br>to enable the Provider to make requests<br> to the Vercel API on behalf of the installation.<br>Providers are expected to store this token<br> for future use as it does not expire
+    Note over User,Vercel Dashboard: The Accept Terms Modal is shown only once. <br>Once the Terms are accepted and the account created,<br>it is skipped in future Create Store flows for this user.<br>Vercel sends an access_token to the Provider here<br>to enable the Provider to make requests<br> to the Vercel API on behalf of the installation.<br>Providers store this token securely<br> for subsequent API requests
     User->>Vercel Dashboard: Click Accept and Continue
     Vercel Dashboard->>Vercel Platform: Create Account
     Vercel Platform->>Provider Integration: PUT /v1/installations/{installationId}
@@ -121,7 +121,7 @@ sequenceDiagram
     participant Provider Integration
     Vercel Dashboard->>User: Show Create Database Modal
     Vercel Dashboard->>Vercel Platform: Fetch Billing Plans
-    Vercel Platform->>Provider Integration: GET /v1/installations/{installationId}/plans
+    Vercel Platform->>Provider Integration: GET /v1/products/{productSlug}/plans
     Provider Integration->>Vercel Dashboard: 200 GetBillingPlans Response
     Note left of Vercel Dashboard: This response can contain installation <br>or resource level billing plans
     Vercel Dashboard->>User: Render Billing Plans in form inside Modal
@@ -129,7 +129,7 @@ sequenceDiagram
     loop Every time the user makes a change in an input field
         User->>Vercel Dashboard: Updates a form input field
         Vercel Dashboard->>Vercel Platform: Fetch Billing Plans
-        Vercel Platform->>Provider Integration: GET /v1/installations/{installationId}/plans
+        Vercel Platform->>Provider Integration: GET /v1/products/{productSlug}/plans
         Provider Integration->>Vercel Dashboard: 200 GetBillingPlans Response
         Vercel Dashboard->>User: Render billing plans in form inside Modal
     end
@@ -233,7 +233,7 @@ sequenceDiagram
     participant Vercel Platform
     participant Provider Integration
     User->>Provider Integration: Rotate Credentials
-    Provider Integration->>Vercel Platform: PUT /v1/installations/:id/product/:id/resource/:id/secrets<br>ResourceUpdatedEvent
+    Provider Integration->>Vercel Platform: PUT /v1/installations/:id/resources/:id/secrets<br>ResourceUpdatedEvent
     Vercel Platform->>Vercel Platform: Update Resource Projects’<br>Environment Variables
 ```
 
@@ -351,7 +351,7 @@ sequenceDiagram
     participant Vercel Platform
     participant Provider Integration
     User->>Provider Integration: Update Flag targeting
-    Provider Integration->>Vercel Platform: POST /v1/installations/<br>:integrationConfigurationId/resources/<br>:resourceId/experimentation/edge-config
+    Provider Integration->>Vercel Platform: PUT /v1/installations/<br>:integrationConfigurationId/resources/<br>:resourceId/experimentation/global-config
     SDK->>Vercel Platform: Read Flag data <br>through Global Config
 ```
 
@@ -410,7 +410,7 @@ sequenceDiagram
     Note over Claims Generator,Provider: Prerequisite: Resource provisioned <br> (either manually or as a result of a Provision Flow)
     Claims Generator->>Vercel: Create project transfer request
     Vercel->>Provider: CreateResourceTransfer
-    Note over Vercel,Provider: PUT /v1/installations/{installationId}/<br>resource-transfer-requests/{transferId}
+    Note over Vercel,Provider: POST /v1/installations/{installationId}/<br>resource-transfer-requests
     Provider->>Vercel: Provider Claim ID<br>(unique, generated by provider)
     Vercel->>Claims Generator: Claim Code<br>(unique, generated by Vercel)
 ```
@@ -471,15 +471,17 @@ Verify that the transfer is still valid. Check that:
 
 ```json
 {
-  "valid": true,
-  "billingPlan": {
+  "newBillingPlan": {
     "id": "plan_xyz",
-    "cost": 10.00
+    "type": "subscription",
+    "name": "Pro",
+    "description": "Pro plan with higher usage limits",
+    "cost": "$10.00/month"
   }
 }
 ```
 
-If the transfer requires a new billing plan for the target team, include it in the response.
+If the transfer requires a new billing plan for the target team, include it in the response as `newBillingPlan`. Otherwise, return an empty JSON object.
 
 **Step 2: Accept the transfer**
 
@@ -491,22 +493,11 @@ Complete the transfer by:
 - Linking resources to the target installation
 - Invalidating the provider claim ID
 
-**Request body:**
-
-```json
-{
-  "targetInstallationId": "icfg_target123",
-  "targetTeamId": "team_target456"
-}
-```
+The request has no body. The `installationId` path parameter is the ID of the target installation.
 
 **Response:**
 
-```json
-{
-  "success": true
-}
-```
+Return a successful status code, such as `204 No Content`. Vercel does not read the response body.
 
 ### Troubleshooting resource transfers
 

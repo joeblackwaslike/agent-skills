@@ -13,8 +13,8 @@ related:
 summary: Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/python/python-version.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5dc81237cf8366aa5b5e9600d87ca514a530187ee86c98997b3a55226f1f35a0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a03cdbecab92351425e677961bf889f3f11081a30fb320d54658bde7e722f899"
 ---
 
 # Set the Python version for your Vercel project
@@ -39,8 +39,8 @@ the default Python version.
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 - [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions) — Learn about the supported Node.js versions on Vercel.
 - [General settings](https://vercel.com/docs/project-configuration/general-settings) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
-- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Package Managers](https://vercel.com/docs/package-managers) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
+- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 
 Full cross-link map for this page: [/docs/functions/runtimes/python/python-version.graph.md](/docs/functions/runtimes/python/python-version.graph.md)
 <!-- /docsgraph:related -->

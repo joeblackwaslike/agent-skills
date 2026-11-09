@@ -11,12 +11,13 @@ related:
   - /docs/security/vercel-waf/managed-rulesets
   - /docs/vercel-firewall/vercel-waf/custom-rules
   - /docs/vercel-firewall/firewall-concepts
+  - /docs/drains/reference/logs
   - /docs/observability/log-drains
 summary: The request was blocked by the OWASP Core Ruleset managed ruleset because its cumulative anomaly score exceeded the configured threshold.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/anomaly_score_exceeded.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f4ad1d7a8ecf4b50281472dd0ac2f228a08979c5bad5f9b029b7ec7795beba74"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a49c599f4c0370c2e1d6e9f15ebddb8deee15ed828103c02b874307269f7bbdb"
 ---
 
 # ANOMALY_SCORE_EXCEEDED
@@ -53,32 +54,29 @@ You can also investigate and resolve `ANOMALY_SCORE_EXCEEDED` errors using the V
 Use the CLI to filter logs for blocked requests:
 
 ```bash
-vercel logs --status-code 403 --since 1h
+vercel logs requests --query 'httpStatus:403' --since 1h
 ```
 
-For JSON output with full request details:
+To show only the requests that the firewall denied, add a `wafAction` filter:
 
 ```bash
-vercel logs --status-code 403 --json
+vercel logs requests --query 'httpStatus:403 AND wafAction:deny' --since 1h
 ```
 
-Search for the specific error code:
+For JSON output with more request details:
 
 ```bash
-vercel logs --query "ANOMALY_SCORE_EXCEEDED" --since 1h
+vercel logs requests --query 'httpStatus:403' --json
 ```
 
-The JSON output includes firewall-specific fields in the `proxy` object:
-
-- `proxy.wafAction`: The action taken (`log`, `deny`, `challenge`, `bypass`, `rate_limit`)
-- `proxy.wafRuleId`: The ID of the firewall rule that matched
+The JSON output has one line for each request and ends with a summary line. Each request line has a `data` object with fields such as `requestHostname`, `requestMethod`, `requestPath`, `httpStatus`, and `wafAction`. A request that the firewall denied has `wafAction` set to `deny`. The output doesn't include the ID of the firewall rule that matched. To get the rule ID, use [Log Drains](/docs/drains/reference/logs), which include it in the `proxy.wafRuleId` field.
 
 ### Read firewall configuration
 
 Query your project's firewall config via the API:
 
 ```bash
-vercel api /v1/security/firewall/config?projectId=<project-id>
+vercel api "/v1/security/firewall/config?projectId=<project-id>"
 ```
 
 ### Update OWASP rules
@@ -86,7 +84,7 @@ vercel api /v1/security/firewall/config?projectId=<project-id>
 To switch a rule to Log mode, use a PATCH request:
 
 ```bash
-vercel api /v1/security/firewall/config?projectId=<project-id> -X PATCH \
+vercel api "/v1/security/firewall/config?projectId=<project-id>" -X PATCH \
   --input config.json
 ```
 
@@ -102,7 +100,7 @@ Where `config.json` contains:
 
 Available OWASP rule IDs: `sd` (scanner detection), `ma` (multipart attack), `lfi` (local file inclusion), `rfi` (remote file inclusion), `rce` (remote code execution), `php`, `gen` (generic), `xss`, `sqli` (SQL injection), `sf` (session fixation), `java`.
 
-To disable a rule entirely, set `"active": false` or use the `crs.disable` action.
+To disable a rule entirely, set `"active": false`. To disable all OWASP rules at once, use the `crs.disable` action.
 
 ### Create bypass rules via API
 
@@ -113,8 +111,13 @@ Add a bypass rule with `rules.insert`:
   "action": "rules.insert",
   "value": {
     "name": "Bypass for internal API",
-    "action": "bypass",
-    "conditions": [{ "type": "path", "op": "pre", "value": "/api/internal" }]
+    "active": true,
+    "conditionGroup": [
+      {
+        "conditions": [{ "type": "path", "op": "pre", "value": "/api/internal" }]
+      }
+    ],
+    "action": { "mitigate": { "action": "bypass" } }
   }
 }
 ```

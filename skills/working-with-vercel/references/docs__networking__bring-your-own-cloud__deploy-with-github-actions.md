@@ -17,8 +17,8 @@ related:
 summary: Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud (BYOC) deployments on every push.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "15f2f5b9f2acb14862445255a6f014cf59f46bb89dbc73549a3b7f835cd8cca8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ef7184beec66884c06240b2dad809ee9d855dc231db7d276a8e04eca31e570f6"
 ---
 
 # Deploying with BYOC from GitHub Actions
@@ -34,12 +34,12 @@ Keep the [Vercel Git integration](/docs/git) for a [Bring Your Own Cloud (BYOC)]
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
+- [Block Vercel deployment promotions with GitHub Actions](https://vercel.com/changelog/block-vercel-deployment-promotions-with-github-actions)
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
+- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
 - [Can I use GitHub Enterprise Server with Vercel?](https://vercel.com/kb/guide/can-i-use-github-enterprise-server-with-vercel) — You can use GitHub Enterprise Server and GitHub Actions to deploy your application to Vercel.
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
-- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/deploy-with-github-actions.graph.md](/docs/networking/bring-your-own-cloud/deploy-with-github-actions.graph.md)
 <!-- /docsgraph:related -->
@@ -53,7 +53,7 @@ With the BYOC Git flow turned on, Vercel doesn't build your pushes itself. Inste
 1. You push a commit, and the Vercel Git integration creates a BYOC deployment that waits for provisioning.
 2. Vercel sends the `deployment.build-requested` webhook to a webhook relay that you host. The relay can run on any service that can receive the webhook. The setup on this page deploys it as an AWS Lambda function in your AWS account.
 3. The relay verifies the webhook signature and starts your GitHub Actions workflow through a GitHub App.
-4. The workflow checks out the deployment's exact commit and runs the [CLI flow](/docs/networking/bring-your-own-cloud/deploy-with-cli) with the existing deployment ID: `vercel build --id`, `vercel deploy describe`, provisioning, and `vercel deploy continue`.
+4. The workflow checks out the deployment's exact commit and runs the [CLI flow](/docs/networking/bring-your-own-cloud/deploy-with-cli) with the existing deployment ID: `vercel build`, `vercel deploy describe`, provisioning, and `vercel deploy continue`.
 
 The workflow authenticates to Vercel and AWS with OpenID Connect (OIDC), which gives each run short-lived credentials without storing long-lived access keys for either service. Builds run separately from the AWS provisioning credentials.
 

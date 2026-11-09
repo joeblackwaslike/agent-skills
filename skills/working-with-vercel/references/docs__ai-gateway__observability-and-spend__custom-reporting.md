@@ -17,8 +17,8 @@ related:
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "61358a929235a4bf0415f904b5de87e857eeca7c6f115a4be2b39314e0160f5d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "91ddaf1301aaa3dd0dfcd151c0e3404c06690a9ca64494e6340487af2741bfbc"
 ---
 
 # AI Gateway Custom Reporting API
@@ -38,11 +38,11 @@ The Custom Reporting API gives you detailed visibility into your AI Gateway usag
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend)
 - [Custom reporting now available on AI Gateway](https://vercel.com/changelog/custom-reporting-ai-gateway)
+- [Open weight takes 71.5% of tokens and 23% of spend](https://vercel.com/blog/ai-gateway-production-index-october-2026)
+- [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026)
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 - [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
-- [vercel metrics](https://vercel.com/docs/cli/metrics) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md](/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md)
 <!-- /docsgraph:related -->
@@ -684,12 +684,10 @@ The API returns a JSON object with a `results` array. Each row contains the one 
       "user": "user_123",
       "tag": "production",
       "credential_type": "system",
-      "zero_data_retention": "false",
+      "zero_data_retention": "no-zdr-requested",
       "api_key_name": "Production key",
       "total_cost": 10.5,
       "market_cost": 12.0,
-      "surcharge_cost": 0.5,
-      "gateway_cost": 0,
       "input_tokens": 1000,
       "output_tokens": 500,
       "cached_input_tokens": 200,
@@ -716,7 +714,7 @@ Every row includes a single grouping field that depends on `group_by`, plus the 
 | `tag`                 | `group_by=tag`                               | string | A single tag value (one row per tag in the request)            |
 | `provider`            | `group_by=provider`                          | string | The provider that served the request                           |
 | `credential_type`     | `group_by=credential_type`                   | string | `byok` or `system`                                             |
-| `zero_data_retention` | `group_by=zero_data_retention`               | string | `true` or `false`                                              |
+| `zero_data_retention` | `group_by=zero_data_retention`               | string | `zdr-requested`, `no-zdr-requested`, or `unknown`              |
 | `api_key_name`        | `group_by=api_key_name`                      | string | The human-readable name of the API key that served the request |
 
 #### Metric fields
@@ -725,8 +723,6 @@ Every row includes a single grouping field that depends on `group_by`, plus the 
 | ----------------------------- | ------ | ------------------------------------------------------------------------------------- |
 | `total_cost`                  | number | Charged price in USD. Returns `0.00` for BYOK requests.                               |
 | `market_cost`                 | number | Market price of the request at the time it ran. Includes both BYOK and non-BYOK cost. |
-| `surcharge_cost`              | number | Surcharge portion of `total_cost` (for example, from add-on capabilities).            |
-| `gateway_cost`                | number | AI Gateway's own cost, separate from the provider rate.                               |
 | `input_tokens`                | number | Input tokens used                                                                     |
 | `output_tokens`               | number | Output tokens used                                                                    |
 | `cached_input_tokens`         | number | Cached input tokens                                                                   |

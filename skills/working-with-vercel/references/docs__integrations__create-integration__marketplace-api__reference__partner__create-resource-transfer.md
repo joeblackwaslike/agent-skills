@@ -3,7 +3,7 @@ title: create-resource-transfer
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/create-resource-transfer
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/create-resource-transfer"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ related:
 summary: Learn about create-resource-transfer on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/create-resource-transfer.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a39cc6af3fe82aa89c02dd00b7e29bf7bfa3c3baeb9e77e5117d8d3136594082"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c9874ed4eea1c906bef7b7c653c71710ab48fd4f5f599db84f202316b061ba09"
 ---
 
 # Create Resources Transfer Request

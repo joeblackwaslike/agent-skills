@@ -17,8 +17,8 @@ related:
 summary: Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5ca6ec4245480b3e0543fff9af866f29b8e5955822d075527b715d04563e822c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "daa2ae42b5222f9815bc6b2afbf41c1d37874507d12c4514aa82366d43bea9c7"
 ---
 
 # OpenAI Chat Completions Requests with AI Gateway
@@ -173,19 +173,21 @@ The chat completions endpoint supports the following parameters:
 - `stream` (boolean): Whether to stream the response. Defaults to `false`
 - `temperature` (number): Controls randomness in the output. Range: 0-2
 - `max_tokens` (integer): Maximum number of tokens to generate
+- `max_completion_tokens` (integer): Maximum number of tokens to generate. If you set both `max_tokens` and `max_completion_tokens`, AI Gateway uses `max_completion_tokens`
 - `top_p` (number): Nucleus sampling parameter. Range: 0-1
 - `frequency_penalty` (number): Penalty for frequent tokens. Range: -2 to 2
 - `presence_penalty` (number): Penalty for present tokens. Range: -2 to 2
 - `stop` (string or array): Stop sequences for the generation
 - `safety_identifier` (string): A non-empty, opaque ID for the end user. AI Gateway truncates values longer than 64 characters and maps the field to `providerOptions.gateway.safetyIdentifier`. See [Safety identifiers](/docs/ai-gateway/security-and-compliance/safety-identifiers) for examples and precedence
 - `tools` (array): Array of tool definitions for function calling
-- `tool_choice` (string or object): Controls which tools are called (`auto`, `none`, or specific function)
+- `tool_choice` (string or object): Controls which tools are called (`auto`, `none`, `required`, or specific function)
 - `providerOptions` (object): [Provider routing and configuration options](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced#provider-options)
 - `provider` (object): Shorthand for provider routing. Supports `sort` (`'cost'`, `'ttft'`, `'tps'`). Equivalent to setting `providerOptions.gateway.sort`. See [Provider sorting](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced#provider-sorting)
 - `response_format` (object): Controls the format of the model's response
   - For OpenAI standard format: `{ type: "json_schema", json_schema: { name, schema, strict?, description? } }`
   - For legacy format: `{ type: "json", schema?, name?, description? }`
   - For plain text: `{ type: "text" }`
+  - For JSON mode without a schema: `{ type: "json_object" }`
   - See [Structured outputs](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs) for detailed examples
 
 ### Message format

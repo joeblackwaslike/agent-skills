@@ -16,8 +16,8 @@ related:
 summary: "Vercel's Draft Mode enables you to view your unpublished headless CMS content on your site before publishing it."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/draft-mode.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9d229223995c1d009f302b2c629c5a10c3672076f34c823f171fa38877ebeb73"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0523aa2a64acc85f34b90dc0ff449a51a01d8d640e187e8c1e77c9bab1e1b2f3"
 ---
 
 # Draft Mode
@@ -40,8 +40,8 @@ Draft Mode lets you view your unpublished headless CMS content on your website r
 - [How to preview content with Preview Mode in Next.js](https://nextjs.org/docs/pages/guides/preview-mode) — Next.js has the preview mode for statically generated pages. You can learn how it works here.
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
 - [Partial prerendering: Building towards a new default rendering model for web applications](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
+- [Next.js 14 on Vercel](https://vercel.com/changelog/next-js-14)
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts) — Learn how draft flags work and how to promote them to Vercel Flags.
 
 Full cross-link map for this page: [/docs/draft-mode.graph.md](/docs/draft-mode.graph.md)
 <!-- /docsgraph:related -->

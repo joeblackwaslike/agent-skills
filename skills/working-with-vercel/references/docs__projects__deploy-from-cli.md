@@ -16,8 +16,8 @@ related:
 summary: Set up and deploy a Vercel project using the CLI, from linking to production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/projects/deploy-from-cli.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "aa49a27997c10151ca7bfceebcd8d7344c39d7f90421d84b761e6f80c49b06f2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7460cccea7115ffd55b65724206ffea0b186431348e5927bc1d9cc676a4c1932"
 ---
 
 # Deploying a project from the CLI
@@ -33,11 +33,13 @@ Use this guide to set up and deploy a Vercel project entirely from the CLI. You'
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
+- [How to Deploy a Jekyll Site with Vercel](https://vercel.com/kb/guide/deploying-jekyll-with-vercel) — Create a Jekyll website and deploy it live with Vercel.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/projects/deploy-from-cli.graph.md](/docs/projects/deploy-from-cli.graph.md)
 <!-- /docsgraph:related -->
@@ -61,21 +63,20 @@ vercel deploy
 
 # 5. Verify the preview
 vercel curl / --deployment <preview-url>
-vercel logs --deployment <preview-deployment-id> --level error
+vercel logs --deployment <preview-deployment-id> --query 'level:error'
 
 # 6. Deploy to production
 vercel deploy --prod
 
-# 7. Add a custom domain (if needed; one arg when run from the linked project)
-vercel domains add example.com
-# Replace my-site with your project name
+# 7. Add a custom domain (if needed; replace my-site with your project name)
+vercel domains add example.com my-site
 vercel domains verify example.com --project my-site
 # Apply the recommended records at your DNS provider, then verify again
 vercel domains verify example.com --project my-site
 
 # 8. Confirm production is live
 vercel curl / --deployment <production-url>
-vercel logs --environment production --level error --since 5m
+vercel logs --environment production --query 'level:error' --since 5m
 ```
 
 > Install the [Vercel plugin](/docs/agent-resources/vercel-plugin?from=docs-callout\&source_path=%2Fdocs%2Fprojects%2Fdeploy-from-cli) to run this deployment workflow with your coding agent.
@@ -114,13 +115,15 @@ This writes development environment variables to `.env.local`. If you need envir
 vercel env pull --environment=preview
 ```
 
-> **💡 Note:** If you're using `vercel dev` or `vercel build`, use `vercel pull` instead.
-> These commands read from the `.vercel/` directory rather than `.env` files.
+> **💡 Note:** If you're using `vercel build`, use `vercel pull` instead. `vercel build`
+> reads from the `.vercel/` directory rather than `.env` files. If you're using
+> `vercel dev`, you don't need to pull. `vercel dev` downloads your Development
+> environment variables automatically.
 
 To list all configured environment variables without downloading them:
 
 ```bash filename="terminal"
-vercel env ls
+vercel env list
 ```
 
 ## 3. Develop locally
@@ -173,7 +176,7 @@ vercel curl / --deployment <preview-url>
 Check for errors in the preview deployment's logs:
 
 ```bash filename="terminal"
-vercel logs --deployment <preview-deployment-id> --level error
+vercel logs --deployment <preview-deployment-id> --query 'level:error'
 ```
 
 ## 6. Deploy to production
@@ -188,16 +191,16 @@ This builds and deploys your project to the production environment, and the depl
 
 ## 7. Add a custom domain
 
-If you haven't configured a custom domain yet, add one. From a linked project, `vercel domains add` takes a single argument (the domain). Pass a project name as a second argument only when running outside of a linked directory:
+If you haven't configured a custom domain yet, add one. If you omit the project name, `vercel domains add` adds an apex domain to your team without assigning it to a project, and returns an error for a subdomain. To assign the domain to your project, pass the project name as the second argument:
 
 ```bash filename="terminal"
-vercel domains add example.com
+vercel domains add example.com my-site
 ```
 
 To see all domains currently configured:
 
 ```bash filename="terminal"
-vercel domains ls
+vercel domains list
 ```
 
 After adding a domain, check its DNS configuration and any recommended changes. Replace `my-site` with your project name to get project-scoped DNS recommendations:
@@ -219,7 +222,7 @@ vercel curl / --deployment <production-url>
 Check production logs for any unexpected errors:
 
 ```bash filename="terminal"
-vercel logs --environment production --level error --since 5m
+vercel logs --environment production --query 'level:error' --since 5m
 ```
 
 ## Ongoing workflow

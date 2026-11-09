@@ -15,8 +15,8 @@ related:
 summary: Configure your Vercel project with a TOML file using the same properties as vercel.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-toml.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b252c4e712a90796b302d5e922848f9f46f0d3bb0a9df9716b2d5b9d5b55a772"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "95803a4e65bb8d89a9f8a2e9692d0a8a9af4512d4dd0e941b2e8512e0a6b12d3"
 ---
 
 # Static Configuration with vercel.toml
@@ -29,11 +29,12 @@ The `vercel.toml` file lets you configure your Vercel project with [TOML](https:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Projects can now be configured with vercel.toml](https://vercel.com/changelog/projects-can-now-be-configured-with-vercel-toml)
 - [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts)
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration) — Learn how to configure Vercel CLI under your system user.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [General settings](https://vercel.com/docs/project-configuration/general-settings) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
-- [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration) — Learn how to configure Vercel CLI under your system user.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-toml.graph.md](/docs/project-configuration/vercel-toml.graph.md)

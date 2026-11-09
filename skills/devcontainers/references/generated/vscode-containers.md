@@ -1,8 +1,8 @@
 ---
 title: "VS Code Dev Containers guide"
 source: "https://code.visualstudio.com/docs/devcontainers/containers"
-fetched_at: "2026-11-02T12:01:15.657Z"
-sha256: "e24c522426ad1a5e148e50c84f0e8a3c56421ba4b209fc80e793ee532e18d6de"
+fetched_at: "2026-11-09T12:33:06.901Z"
+sha256: "305c3a68d46986ced7364699845e9b21c88f946d504c2bb6aba1378f2142fef8"
 ---
 
 # VS Code Dev Containers guide
@@ -829,7 +829,7 @@ See here for a list of active issues related to Containers.
 ### Docker limitations
 
 
-See the Docker troubleshooting guide for Windows or Mac for more information.
+See the Docker Desktop troubleshooting guide for more information.
 
 
 ### Container Tools Extension limitations
@@ -931,4 +931,4 @@ Check issue #8278 for a potential workaround.
 
                 
                 
-                10/28/2026
+                11/4/2026

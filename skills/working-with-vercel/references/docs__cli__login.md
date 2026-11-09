@@ -13,8 +13,8 @@ related:
 summary: Learn how to login into your Vercel account using the vercel login CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/login.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9078d1e2bb6d1ca0d965d399d86c5145c001f858433d8487745b68c1abb82883"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fd30cd78e75852cac619c24ab4141ebbb190bba0a663212a3f6f6915f71ea3a0"
 ---
 
 # vercel login
@@ -31,8 +31,8 @@ The `vercel login` command allows you to login to your Vercel account through Ve
 - [vercel logout](https://vercel.com/docs/cli/logout) — Learn how to logout from your Vercel account using the vercel logout CLI command.
 - [vercel whoami](https://vercel.com/docs/cli/whoami) — Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
 - [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
-- [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/login.graph.md](/docs/cli/login.graph.md)
 <!-- /docsgraph:related -->
@@ -59,7 +59,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--version`](/docs/cli/global-options#version)
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).

@@ -17,8 +17,8 @@ related:
 summary: Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache/debug-cache-issues.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "29f820d1c0187766b44ef8d8b0c2b254f2e51f26fd86e26187a912829ebc3890"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a2e82b917f1522a85a42372b0c24bd424d0343952f122c23345ed608f34d6e5b"
 ---
 
 # Diagnosing and fixing cache issues
@@ -32,15 +32,16 @@ Use this guide to diagnose and fix cache-related issues. You'll identify whether
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to troubleshoot stale content returned from the Vercel CDN when using an external proxy or CDN](https://vercel.com/kb/guide/how-to-troubleshoot-stale-content-returned-from-the-edge-network-when-using-an-external-proxy-or-cdn) — Learn how to diagnose and fix stale content issues when using external proxies or CDNs with Vercel. Understand troublesh
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
-- [How to Configure the Cache-Control Response Header in Vercel Projects](https://vercel.com/kb/guide/how-to-configure-the-cache-control-response-header-in-vercel-projects) — After reviewing this guide, you will be able to set a cache-control header of any value to be returned when a specific p
+- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Troubleshooting connectivity issues to Vercel Deployments](https://vercel.com/kb/guide/troubleshooting-connectivity-issues) — Learn how to troubleshoot network connectivity issues to your Vercel deployment.
+- [Manually purge the CDN cache](https://vercel.com/changelog/manually-purge-the-cdn-cache)
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
-- [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
+- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/caching/cdn-cache/debug-cache-issues.graph.md](/docs/caching/cdn-cache/debug-cache-issues.graph.md)
 <!-- /docsgraph:related -->
@@ -57,7 +58,7 @@ Use this block when you already know what you're doing and want the full command
 vercel httpstat /path-with-stale-content
 
 # 2. Search logs for cache-related issues
-vercel logs --environment production --query "cache" --since 1h --expand
+vercel logs --environment production --query "cache" --since 1h
 
 # 3. Identify the current deployment
 vercel inspect <deployment-url>
@@ -97,7 +98,7 @@ Run this two or three times in a row. If responses are consistently fast with si
 Check production logs for cache-related entries that might explain the stale content:
 
 ```bash filename="terminal"
-vercel logs --environment production --query "cache" --since 1h --expand
+vercel logs --environment production --query "cache" --since 1h
 ```
 
 Look for patterns like revalidation failures, cache key mismatches, or errors in your caching logic.

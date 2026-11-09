@@ -11,11 +11,12 @@ related:
   - /docs/projects
   - /docs/cli/deploy
   - /docs/cli/link
+  - /docs/cli/global-options
 summary: Learn how to link existing Vercel Projects with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/project-linking.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "811a98e8860fdd6470d630c83eb5d42863ca75ad3e5212ce9545e601e38fb1dd"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2aa7e6ee57e2f81ffcf015bbea25c0a926eb095ec9fc7ef3e6d64bb2d5ede0dd"
 ---
 
 # Linking Projects with Vercel CLI
@@ -34,45 +35,49 @@ want to [deploy](/docs/cli/deploy) your directory to. You can choose to either [
 - [Faster, predictable project linking in the Vercel CLI](https://vercel.com/changelog/faster-predictable-project-linking-in-the-vercel-cli)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
-- [Project links in Vercel Connect](https://vercel.com/docs/connect/concepts/project-links) — A project link binds a connector to a Vercel project, scoped to one or more environments. The link is what authorizes a
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/project-linking.graph.md](/docs/cli/project-linking.graph.md)
 <!-- /docsgraph:related -->
 
-After you pick a team, the CLI searches that team for an existing project that matches your local directory name (after slugifying). If it finds one, it offers to link to it directly. Otherwise it falls through to the manual selection flow shown later in this page.
+After you pick a team, the CLI searches that team for projects connected to your local Git repository. If it finds none, it searches for a project that matches your local directory name (after slugifying). The `Which project?` prompt lists the matches first, followed by options to search all projects or create a new project:
 
 ```bash filename="terminal"
 vercel
 
-  Set up "~/web/my-lovely-project"
-? Which team? My Awesome Team
-? Found project "awesome-team/my-lovely-project". Link to it? [Y/n] y
-  Linked      awesome-team/my-lovely-project
+  Directory       ~/web/my-lovely-project
+
+? Which team? My Awesome Team (awesome-team)
+? Which project? my-lovely-project (folder name)
+
+✓ Linked          awesome-team/my-lovely-project
 ```
 
 *Linking an auto-detected Vercel Project when the local directory name matches
 an existing project in the selected team.*
 
-If no project matches the directory name (or you choose not to link to the suggestion), the CLI falls back to a manual prompt:
+If no project matches (or you don't want the suggested project), select `Search all projects` and choose an existing project from the list:
 
 ```bash filename="terminal"
 vercel
 
-  Set up "~/web/release-notes"
-? Which team? My Awesome Team
-? Link to existing project? [y/N] y
-? Existing project name? marketing-site
-  Linked      awesome-team/marketing-site
+  Directory       ~/web/release-notes
+
+? Which team? My Awesome Team (awesome-team)
+? Which project? Search all projects
+? Which project? marketing-site
+
+✓ Linked          awesome-team/marketing-site
 ```
 
 *Linking an existing Vercel Project by name when no project matches the local
 directory name.*
 
-Once set up, a new `.vercel` directory is added to your directory. The `.vercel/project.json` file contains the `orgId` and `projectId` of your Vercel Project. To unlink your directory, remove the `.vercel` directory.
+Once set up, a new `.vercel` directory is added to your directory. The `.vercel/project.json` file contains the `orgId` and `projectId` of your Vercel Project. If you link a project that the CLI found through your Git repository, the CLI saves the link in `.vercel/repo.json` at the root of the repository instead. To unlink your directory, remove the `.vercel` directory.
 
-You can use the [`--yes` option](/docs/cli/deploy#yes) to skip these questions.
+You can use the [`--yes` option](/docs/cli/deploy#yes) to skip the project questions. The `--yes` option does not choose a team. If you belong to more than one team, also pass the [`--scope` option](/docs/cli/global-options#scope).
 
 ## Framework detection
 
@@ -81,12 +86,14 @@ When you create a new Vercel Project, Vercel CLI [links](/docs/cli/link) the Ver
 ```bash filename="terminal"
 vercel
 
-  Set up "~/web/my-new-project"
-? Which team? My Awesome Team
-? Link to existing project? [y/N] n
+  Directory       ~/web/my-new-project
+
+? Which team? My Awesome Team (awesome-team)
+? Which project? Create a new project
 ? Name? my-new-project
+
   Detected Next.js (Build Command: next build, Output Directory: Next.js default)
-? Customize settings? [y/N]
+? Customize settings? (y/N)
 ```
 
 *Creating a new Vercel Project with the \`vercel\`

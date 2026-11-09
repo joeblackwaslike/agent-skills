@@ -12,11 +12,12 @@ related:
   - /docs/flags/observability/web-analytics
   - /docs/flags/flags-explorer/getting-started
   - /docs/microfrontends
+  - /docs/environment-variables/system-environment-variables
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "82646312c9b35051e3a581f26966c74e599d8bd3356ad522178c3dc3690ae939"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9907593d0e33201886c9717bf7395561e5d76597f9213a819bff9d2ab15f2165"
 ---
 
 # Reference
@@ -31,13 +32,12 @@ The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next) — APIs for working with feature flags in Next.js.
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
 - [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js)
-- [Statsig](https://flags-sdk.dev/docs/providers/statsig)
-- [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag) — PUT /v1/projects/{projectIdOrName}/feature-flags/flags — Create a new feature flag for a project. The flag must have a u
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next) — APIs for working with feature flags in Next.js.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -87,7 +87,7 @@ See [Definitions properties](/docs/flags/flags-explorer/reference#definitions-pr
 
 We strongly recommend communicating your feature flag definitions through the [Flags Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint). In rare cases, it can be useful to communicate feature flag definitions through the HTML response. Vercel Toolbar will pick up any script tags included in the DOM which have a `data-flag-definitions` attribute.
 
-If you are using React or Next.js, use the [`FlagsDefinitions`](https://flags-sdk.dev/docs/api-reference/core/react#flagdefinitions) component. If you are using another framework or no framework at all you can render these script tags manually. The expected shape is:
+If you are using React or Next.js, use the [`FlagDefinitions`](https://flags-sdk.dev/docs/api-reference/core/react#flagdefinitions) component. If you are using another framework or no framework at all you can render these script tags manually. The expected shape is:
 
 ```ts
 type FlagDefinitionsType = Record<
@@ -123,10 +123,12 @@ This example shows how to communicate a feature flag definition through the DOM:
 You can also encrypt the definitions before emitting them to prevent leaking your feature flags through the DOM.
 
 ```js
-import { safeJsonStringify } from 'flags';
+import { encryptFlagDefinitions, safeJsonStringify } from 'flags';
+
+const encryptedDefinitions = await encryptFlagDefinitions(definitions);
 
 <script type="application/json" data-flag-definitions>
-  ${safeJsonStringify(definitions)}
+  ${safeJsonStringify(encryptedDefinitions)}
 </script>;
 ```
 
@@ -188,7 +190,7 @@ export default function Page() {
 ```tsx filename="app/page.tsx" framework=nextjs-app
 import { FlagValues } from 'flags/react';
 
-export function Page() {
+export default function Page() {
   return (
     <div>
       {/* Some other content */}
@@ -201,7 +203,7 @@ export function Page() {
 ```jsx filename="app/page.jsx" framework=nextjs-app
 import { FlagValues } from 'flags/react';
 
-export function Page() {
+export default function Page() {
   return (
     <div>
       {/* Some other content */}
@@ -211,7 +213,7 @@ export function Page() {
 }
 ```
 
-The approaches above will add the names and values of your feature flags to the DOM in plain text. Use the `encrypt` function to keep your feature flags confidential.
+The approaches above will add the names and values of your feature flags to the DOM in plain text. Use the `encryptFlagValues` function to keep your feature flags confidential.
 
 ```tsx filename="pages/index.tsx" framework=nextjs
 import type { GetServerSideProps, GetServerSidePropsContext } from 'next';
@@ -394,7 +396,7 @@ const encryptedFlagValues = await encryptFlagValues({
 
 This secret gates access to the Flags Discovery Endpoint, and optionally enables signing and encrypting feature flag overrides set by Vercel Toolbar. As described below, you can ensure that the request is authenticated in your [Flags Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint) by using [`verifyAccess`](https://flags-sdk.dev/docs/api-reference/core/core#verifyaccess).
 
-You can create this secret by following the instructions in the [Flags Explorer Quickstart](/docs/flags/flags-explorer/getting-started#adding-a-flags_secret). Alternatively, you can create the `FLAGS_SECRET` manually by following the instructions below. If using [microfrontends](/docs/microfrontends), you should use the same `FLAGS_SECRET` as the other projects in the microfrontends group.
+You can create this secret by following the instructions in the [Flags Explorer Quickstart](/docs/flags/flags-explorer/getting-started#adding-a-flags_secret). Alternatively, you can create the `FLAGS_SECRET` manually by following the instructions below. If using [microfrontends](/docs/microfrontends), you should use the same `FLAGS_SECRET` as the other projects in the microfrontends group, and enable [Automatically expose System Environment Variables](/docs/environment-variables/system-environment-variables) in each project's settings. Without them, Flags Explorer can't load the flags of child apps.
 
 **Manually creating the `FLAGS_SECRET`**
 
@@ -621,16 +623,16 @@ If you use the Flags SDK for Next.js or SvelteKit, the SDK will automatically ha
 
 **Manual setup**
 
-Read this cookie and use the `decrypt` function to decrypt the overrides and use them in your application. The decrypted value is a JSON object containing the name and override value of each overridden flag.
+Read this cookie and use the `decryptOverrides` function to decrypt the overrides and use them in your application. The decrypted value is a JSON object containing the name and override value of each overridden flag.
 
 ```ts filename="app/getFlags.ts" framework=nextjs
-import { decryptOverrides, type FlagOverridesType } from 'flags';
+import { decryptOverrides } from 'flags';
 import { type NextRequest } from 'next/server';
 
 async function getFlags(request: NextRequest) {
   const overrideCookie = request.cookies.get('vercel-flag-overrides')?.value;
   const overrides = overrideCookie
-    ? await decryptOverrides<FlagOverridesType>(overrideCookie)
+    ? await decryptOverrides(overrideCookie)
     : null;
 
   const flags = {
@@ -659,13 +661,13 @@ async function getFlags(request) {
 ```
 
 ```ts filename="app/getFlags.ts" framework=nextjs-app
-import { type FlagOverridesType, decryptOverrides } from 'flags';
+import { decryptOverrides } from 'flags';
 import { cookies } from 'next/headers';
 
 async function getFlags() {
-  const overrideCookie = cookies().get('vercel-flag-overrides')?.value;
+  const overrideCookie = (await cookies()).get('vercel-flag-overrides')?.value;
   const overrides = overrideCookie
-    ? await decryptOverrides<FlagOverridesType>(overrideCookie)
+    ? await decryptOverrides(overrideCookie)
     : null;
 
   return {
@@ -679,7 +681,7 @@ import { decryptOverrides } from 'flags';
 import { cookies } from 'next/headers';
 
 async function getFlags() {
-  const overrideCookie = cookies().get('vercel-flag-overrides')?.value;
+  const overrideCookie = (await cookies()).get('vercel-flag-overrides')?.value;
   const overrides = overrideCookie
     ? await decryptOverrides(overrideCookie)
     : null;

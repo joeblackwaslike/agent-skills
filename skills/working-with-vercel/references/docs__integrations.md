@@ -16,8 +16,8 @@ related:
 summary: "Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless content, commerce, and more."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "796f3df9b659f92e10f2374f468aa91b0cd6b1ecf8fb6a354e160e8d60c7bba5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3d0afd23a91792b9b002c954807b4f950cd93ec99373f909ce7e421cb2636415"
 ---
 
 # Vercel Integrations
@@ -109,6 +109,11 @@ When you add a connectable account integration through the Vercel dashboard, you
 - [Kubernetes](/docs/integrations/external-platforms/kubernetes)
 - [Lovable](/docs/integrations/lovable)
 
+## Related guides
+
+- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services): Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic's Chat SDK quickstart.
+- [Build Claude Managed Agents with Chat SDK](https://vercel.com/kb/guide/claude-managed-agents-chat-sdk): Ship a Slack research bot built on Claude Managed Agents and Chat SDK. One persistent session per thread, streamed briefs with sources, and no Slack credentials to manage.
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve): Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind durable approval, and reply to @mentions in issues and pull requests with no stored GitHub credentials.
 
 ---
 

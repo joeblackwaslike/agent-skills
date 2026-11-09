@@ -16,8 +16,8 @@ related:
 summary: Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4e1e57b8e1a16e215b2376009a0f50f0f0503a2e512a8707a0ba7e12f008bea7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f1f6c431c317e862d427b7176987ee9b1237c84451118f0eacf76d54a2989c2f"
 ---
 
 # Runtime Cache
@@ -35,15 +35,15 @@ Runtime cache is a regional, ephemeral cache you can use for storing and retriev
 - [Data Cache is moving to Runtime Cache](https://vercel.com/changelog/data-cache-is-moving-to-runtime-cache)
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel)
 - [Caching audits: Five antipatterns that cost you performance and money](https://vercel.com/kb/guide/caching-antipatterns) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
+- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
-- [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [cacheLife](https://nextjs.org/docs/app/api-reference/functions/cacheLife) — Learn how to use the cacheLife function to set the cache expiration time for a cached function or component.
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
-- [Caching and Revalidating (Previous Model)](https://nextjs.org/docs/app/guides/caching-without-cache-components) — Learn how to cache and revalidate data using fetch options, unstable_cache, and route segment configs for projects not u
 - [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
-- [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating) — Learn how to revalidate cached data using time-based and on-demand strategies.
+- [Caching and Revalidating (Previous Model)](https://nextjs.org/docs/app/guides/caching-without-cache-components) — Learn how to cache and revalidate data using fetch options, unstable_cache, and route segment configs for projects not u
+- [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api)
 
 Full cross-link map for this page: [/docs/caching/runtime-cache.graph.md](/docs/caching/runtime-cache.graph.md)
 <!-- /docsgraph:related -->
@@ -778,7 +778,7 @@ For the exact rate in a specific region, see [regional pricing](/docs/pricing/re
 
 ### Revalidation rate limit
 
-Tag-based purge calls made from your functions are rate limited per plan. This applies to `invalidateByTag()` and `dangerouslyDeleteByTag()` from `@vercel/functions`, and to `revalidateTag()`, `revalidatePath()`, `expireTag()`, and `updateTag()` from `next/cache`:
+Tag-based purge calls made from your functions are rate limited per plan. This applies to `invalidateByTag()`, `dangerouslyDeleteByTag()`, and `getCache().expireTag()` from `@vercel/functions`, and to `revalidateTag()`, `revalidatePath()`, and `updateTag()` from `next/cache`:
 
 | Plan       | Revalidation calls per second |
 | ---------- | ----------------------------- |
@@ -786,7 +786,15 @@ Tag-based purge calls made from your functions are rate limited per plan. This a
 | Pro        | 200 per team                  |
 | Enterprise | 500 per project               |
 
-The limit counts calls, not tags. An API that accepts several tags in one call, such as `invalidateByTag()` from `@vercel/functions`, uses one call for all of them. It's averaged over a 30-second window, so short bursts above it are allowed. When you exceed it, the call fails with an HTTP `429` response that includes a `retry-after` header, and the cache is left unchanged. Retry the call after that delay.
+The limit counts calls, not tags. An API that accepts several tags in one call, such as `invalidateByTag()` from `@vercel/functions`, uses one call for all of them. It's averaged over a 30-second window, so short bursts above it are allowed.
+
+When you exceed the limit, Vercel rejects the call and leaves the cache unchanged. What you see depends on the function that you called:
+
+- `invalidateByTag()` and `dangerouslyDeleteByTag()` throw an error. Its message includes the status code `429`. Catch the error and retry the call after a short delay.
+- `revalidateTag()`, `revalidatePath()`, and `updateTag()` don't throw. A rejected call logs a warning in your [runtime logs](/docs/logs/runtime). On Next.js 14 and below, the function instance then skips further revalidation calls for several seconds without a warning.
+- `getCache().expireTag()` doesn't throw. It resolves the same way as a call that succeeded.
+
+Your code can't detect a rejected call from the functions that don't throw, so keep those calls under the limit. For example, pass an array of tags to `getCache().expireTag()` to expire all of them in one call.
 
 > **💡 Note:** TTL and tag updates aren't reconciled between deployments. If you need to update cache behavior after a deployment, purge the runtime cache or modify the cache key. For which entries a new deployment can still read, see [how a new deployment affects cached data](#how-a-new-deployment-affects-cached-data).
 

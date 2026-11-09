@@ -13,8 +13,8 @@ related:
 summary: Learn how to manage your Git provider connections using the vercel git CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/git.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f1e0903eaaa4cbf917ffc168a84547fb1680957f97268a7a243207d7c0513be8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "813d1cfed7c719c885f7fbda146d2eaf8087e72c1e0b29a04d020268173fb372"
 ---
 
 # vercel git
@@ -30,9 +30,9 @@ enabling deployments to Vercel through Git.
 
 - [Git settings](https://vercel.com/docs/project-configuration/git-settings) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 - [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/git.graph.md](/docs/cli/git.graph.md)
 <!-- /docsgraph:related -->
@@ -51,6 +51,15 @@ vercel git connect
 *Using the \`vercel git\` command to connect a Git
 provider repository from your local Git config to a Vercel Project.*
 
+To connect a repository that isn't in your local Git config, or to connect from a directory that isn't a Git repository, pass the repository URL:
+
+```bash filename="terminal"
+vercel git connect https://github.com/user/repo.git
+```
+
+*Using the \`vercel git connect\` command with the URL of a Git provider
+repository.*
+
 ```bash filename="terminal"
 vercel git disconnect
 ```
@@ -64,7 +73,7 @@ These are options that only apply to the `vercel git` command.
 
 ### Yes
 
-The `--yes` option can be used to skip connect confirmation.
+The `--yes` option skips the confirmation prompts of `vercel git connect` and `vercel git disconnect`. For example, Vercel CLI asks before it replaces a repository that's already connected to the project, and before it disconnects a repository. To make the change without a prompt, add `--yes`:
 
 ```bash filename="terminal"
 vercel git connect --yes
@@ -72,6 +81,17 @@ vercel git connect --yes
 
 *Using the \`vercel git connect\` command with the
 \`--yes\` option.*
+
+### Project
+
+The `--project` option selects the Vercel Project by name or ID. Without it, `vercel git` uses the project linked to your current directory. Pass `--project` to manage the Git connection of a different project, or to run the command from a directory that isn't linked:
+
+```bash filename="terminal"
+vercel git connect --project my-project
+```
+
+*Using the \`vercel git connect\` command with the
+\`--project\` option.*
 
 ## Global Options
 
@@ -85,7 +105,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

@@ -17,8 +17,8 @@ related:
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "32fb2a76349796c33475c4ce164f76af872b92cba82e90412f89e5aac9e2ec3a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7b61d074638ad8a104ad0edce33d434b7dd820aa507eb44384b06786c6bd0936"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -43,8 +43,8 @@ sha256: "32fb2a76349796c33475c4ce164f76af872b92cba82e90412f89e5aac9e2ec3a"
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
 - [Vercel Flags starts 7x faster and no longer extends function duration](https://vercel.com/changelog/vercel-flags-starts-7x-faster-and-no-longer-extends-function-duration)
 - [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
-- [Efficiently manage database connection pools with Fluid compute](https://vercel.com/kb/guide/efficiently-manage-database-connection-pools-with-fluid-compute) — How to create high-performance database connection pools without leaking connections
 - [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
+- [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
 
@@ -237,7 +237,7 @@ metric('query.duration_ms', 100, { plan: 'pro' });
 
 #### Name and attribute requirements
 
-Metric names, attribute names, and attribute values must be non-empty and shorter than 64 bytes. They can contain ASCII letters (`A-Z`, `a-z`), digits (`0-9`), hyphens (`-`), underscores (`_`), periods (`.`), and slashes (`/`). Unsupported characters are automatically replaced with an underscore (`_`). For example, `data+summary` is stored as `data_summary`.
+Metric names, attribute names, and attribute values must be non-empty and shorter than 64 bytes. They can contain ASCII letters (`A-Z`, `a-z`), digits (`0-9`), hyphens (`-`), underscores (`_`), periods (`.`), and slashes (`/`). Unsupported characters are automatically replaced with an underscore (`_`). For example, `data+summary` is stored as `data_summary`. Metric names can't start with `vercel.`. Vercel reserves this prefix and doesn't record data points for metric names that use it.
 
 #### Emission limits
 
@@ -346,7 +346,7 @@ Learn more about [purging Vercel CDN cache](/docs/caching/cdn-cache/purge).
 
 | Name       | Type     | Description                                                                                                        |
 | :--------- | :------- | :----------------------------------------------------------------------------------------------------------------- |
-| `srcImage` | `string` | The source image to invalidate. Must exactly match how your app references the source image, including any query parameters. |
+| `srcImage` | `string` or `string[]` | The source image (or multiple source images) to invalidate. Must exactly match how your app references the source image, including any query parameters. |
 
 ```ts filename="api/example.ts"
 import { invalidateBySrcImage } from '@vercel/functions';
@@ -367,7 +367,7 @@ Learn more about [purging Vercel CDN cache](/docs/caching/cdn-cache/purge).
 
 | Name       | Type                                      | Description                                                                                                                                                                                                |
 | :--------- | :---------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `srcImage` | `string`                                  | The source image to dangerously delete. Must exactly match how your app references the source image, including any query parameters.                                                                                                                                                                    |
+| `srcImage` | `string` or `string[]`                    | The source image (or multiple source images) to dangerously delete. Must exactly match how your app references the source image, including any query parameters.                                                                                                                                                                    |
 | `options`  | `{ revalidationDeadlineSeconds: number }` | The time in seconds before the delete deadline. If a request is made before the deadline, it will revalidate in the background. Otherwise it will be dangerously deleted and revalidate in the foreground. |
 
 ```ts filename="api/example.ts"
@@ -664,8 +664,7 @@ const s3Client = new s3.S3Client({
 
 > **💡 Note:** This function has moved from `@vercel/functions/oidc` to `@vercel/oidc`.
 
-**Description**: Returns the OIDC token from the request context or the environment variable. This function first checks if the OIDC token is available in the environment variable
-`VERCEL_OIDC_TOKEN`. If it is not found there, it retrieves the token from the request context headers.
+**Description**: Returns the OIDC token from the request context, a token file, or the `VERCEL_OIDC_TOKEN` environment variable. This function first checks the request context headers for the OIDC token. If the token is not there, `@vercel/oidc` 4.0.0 and later reads the file at the path in the `VERCEL_OIDC_TOKEN_FILE` environment variable, when set. Otherwise, it reads the `VERCEL_OIDC_TOKEN` environment variable. You don't need to set `VERCEL_OIDC_TOKEN_FILE` for Vercel Functions. Vercel sets it on [Daemons](/docs/daemons#environment-variables-and-oidc), which receive the token in a [rotating token file](/docs/oidc#reading-a-rotated-token-file). For how the function reads each source, see the [OIDC reference](/docs/oidc/reference#other-cloud-providers).
 
 ```ts filename="api/example.ts"
 import { ClientAssertionCredential } from '@azure/identity';

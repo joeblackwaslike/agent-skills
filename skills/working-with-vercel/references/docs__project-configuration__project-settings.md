@@ -13,11 +13,11 @@ related:
   - /docs/functions/runtimes/node-js/node-js-versions
   - /docs/builds/managing-builds
   - /docs/deployments
-summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, cron jobs, project...
+summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, project members,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "92028114c15bf9186292c5b59706e8f4216e882cbc881e48ffae795e7efa7584"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "403a0634b52022fbb007f72430d3a357a7590301a655255b772879c3a55ba21f"
 ---
 
 # Project settings
@@ -30,12 +30,12 @@ From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Das
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use a non-default branch for production deployments on Vercel](https://vercel.com/kb/guide/can-i-use-a-non-default-branch-for-production) — Learn how to set a non-default branch for production on Vercel. Open the Production environment, change branch tracking,
 - [July 2020](https://vercel.com/blog/changelog-july-2020)
+- [June 2020](https://vercel.com/blog/changelog-june-2020)
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/project-configuration/project-settings.graph.md](/docs/project-configuration/project-settings.graph.md)
@@ -88,7 +88,7 @@ To ignore the build step:
 3. In the **Ignored Build Step** section, select the behavior you would like. This behavior provides a command that outputs a code, which tells Vercel whether to issue a new build or not. The command is executed within the [Root Directory](/docs/builds/configure-a-build#root-directory) and can access the [System Environment Variables](/docs/environment-variables/system-environment-variables) that are available at build time. Runtime-only variables, such as `VERCEL_REGION`, are not available:
    - **Automatic**: Each commit will issue a new build
    - **Only build production**: When the `VERCEL_ENV` is production, a new build will be issued
-   - **Only build preview**: When the `VERCEL_ENV` is preview, a new build will be issued
+   - **Only build pre-production**: When the `VERCEL_ENV` is preview, a new build will be issued
    - **Only build if there are changes**: A new build will be issued only when the Git diff contains changes
    - **Only build if there are changes in a folder**: A new build will be issued only when the Git diff contains changes in a folder that you specify
    - **Don't build anything**: A new build will never be issued
@@ -152,7 +152,7 @@ To learn more, see [Configuring Functions](/docs/functions/configuring-functions
 
 ## Cron Jobs
 
-You can enable and disable Cron Jobs for your project from the Project Settings. Configuring cron jobs is done in your codebase.
+Cron jobs have moved from the project settings to the **Cron Jobs** tab under **Schedules** in your project's sidebar, where you can view, enable, and disable them. Configuring cron jobs is done in your codebase.
 
 To learn more, see [Cron Jobs](/docs/cron-jobs).
 
@@ -176,7 +176,7 @@ To learn more, see the [Drains documentation](/docs/drains/using-drains).
 
 ## Security settings
 
-From your project's security settings you can enable or disable [Attack Mode](/docs/vercel-firewall/attack-mode), [Logs and Source Protection](/docs/project-configuration/security-settings#build-logs-and-source-protection), [Vercel Support Code Visibility](/docs/project-configuration/security-settings#vercel-support-code-visibility) [Git Fork Protection](/docs/project-configuration/security-settings#git-fork-protection), and set a [retention policy for your deployments](/docs/deployment-retention).
+From your project's security settings you can enable or disable [Attack Mode](/docs/vercel-firewall/attack-mode), [Logs and Source Protection](/docs/project-configuration/security-settings#build-logs-and-source-protection), [Vercel Support Code Visibility](/docs/project-configuration/security-settings#vercel-support-code-visibility), [Git Fork Protection](/docs/project-configuration/security-settings#git-fork-protection), and restore [recently deleted deployments](/docs/deployment-retention#restoring-a-deleted-deployment).
 
 To learn more, see [Security Settings](/docs/project-configuration/security-settings).
 

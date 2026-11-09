@@ -15,8 +15,8 @@ related:
 summary: Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/understanding-my-invoice.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "97f17acf6e8106b170d502d0c69a58d79c69e6df40784bc6aca31b0ca7c752b7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5b147a82784b62130539f566754f49b482274699a1323186d0d1944c8b962245"
 ---
 
 # Billing & Invoices
@@ -31,14 +31,14 @@ You can view your current invoice from the **Settings** section in your dashboar
 
 - [Threshold billing is now enabled for Pro teams](https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams)
 - [Updates to Legal Terms](https://vercel.com/changelog/updates-to-legal-terms-june-2026)
-- [Invoices are now available on a dedicated page](https://vercel.com/changelog/invoices-are-now-available-on-a-dedicated-page)
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
+- [Invoices are now available on a dedicated page](https://vercel.com/changelog/invoices-are-now-available-on-a-dedicated-page)
 - [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
-- [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
 
 Full cross-link map for this page: [/docs/pricing/understanding-my-invoice.graph.md](/docs/pricing/understanding-my-invoice.graph.md)
 <!-- /docsgraph:related -->

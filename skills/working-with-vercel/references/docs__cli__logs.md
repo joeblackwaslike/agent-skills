@@ -14,8 +14,8 @@ related:
 summary: View and filter runtime logs or CDN request records for your Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/logs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "98f63ada2f35431eb346ad32691f39ed9cdd98be9efe1a29d023a8e43a690b37"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "625412bbb4a48f0fe94d906b17909b4fb02c7a531cb7ce00af320082eda0f314"
 ---
 
 # vercel logs
@@ -145,7 +145,7 @@ vercel logs --limit 500
 
 ### Next
 
-The `--next` option, shorthand `-N`, continues a previous query. The cursor keeps the team, project, filter, and time window.
+The `--next` option continues a previous query. The cursor keeps the team, project, filter, and time window.
 
 When the query matches more records than the command returned, table output prints a `Next page:` command. With `--json`, pass the summary line's `pagination.next` value. You can change `--limit` on the next page. Passing `--next` together with `--project`, `--deployment`, `--environment`, `--query`, `--since`, or `--until` fails with a usage error.
 
@@ -155,7 +155,7 @@ vercel logs --next <cursor>
 
 ### JSON
 
-The `--json` option prints one JSON object per line. `-F json` prints the same output.
+The `--json` option prints one JSON object per line.
 
 - Each record uses `{"type":"log"|"request","data":<event>}`. Read fields under `.data`.
 - The last line is a `summary` with `recordsReturned`, `timeRange`, `pagination` (`hasMore` and `next`), and `excludedIntervals`.
@@ -172,7 +172,7 @@ vercel logs runtime --query 'level:error' --json | jq 'select(.type == "log") | 
 
 ## Removed and changed options
 
-If you pass a removed option, the command fails with a usage error and prints the replacement.
+The options and arguments in this table are from earlier versions. Use the replacement instead. If you pass one of them, the command prints the replacement.
 
 | Old usage                    | Replacement                                                              |
 | ---------------------------- | ------------------------------------------------------------------------ |
@@ -187,7 +187,9 @@ If you pass a removed option, the command fails with a usage error and prints th
 | `--expand`                   | Removed. The command shows full runtime messages by default.             |
 | `--no-follow`, `--no-branch` | Removed. The command runs a query for the time window you set.           |
 | Positional deployment, `-d`  | `--deployment`. The `-d` shorthand is now always `--debug`.              |
-| `-j` shorthand for JSON      | `--json` or `-F json`.                                                   |
+| `-j` shorthand for JSON      | `--json`.                                                                |
+
+`--search`, `--source`, `--branch`, `--expand`, and `-j` fail with a usage error. In v65.12.0 and later, the command still runs the other options and a positional deployment as their replacement, and prints a warning. A value or combination that the command can't convert, such as `--level` with `--status-code`, fails with a usage error.
 
 `--follow` is deprecated. The command prints a warning and returns the query results instead of streaming.
 
@@ -221,7 +223,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

@@ -12,8 +12,8 @@ related:
 summary: Vercel CLI collects telemetry data about general usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/about-telemetry.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "81181cb39f6cb091c229a541dab4282b604ddc69d561d69a7e90da9fa228881e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "11cc0b7e0d4043a370aaa5f7e3f246b485799c833d202f89e36432bda37d0609"
 ---
 
 # Telemetry
@@ -55,7 +55,7 @@ Vercel takes privacy and security seriously. Vercel CLI Telemetry tracks general
 You can view exactly what is being collected by setting the following environment variable: `VERCEL_TELEMETRY_DEBUG=1`.
 
 When this environment variable is set, data will **not be sent to Vercel**.
-The data will only be printed out to the [*stderr* stream](https://en.wikipedia.org/wiki/Standard_streams), prefixed with `[telemetry]`.
+The data will only be printed out to the [*stderr* stream](https://en.wikipedia.org/wiki/Standard_streams), after a `['telemetry']: Flushing Events` line.
 
 An example telemetry event looks like this:
 
@@ -63,10 +63,13 @@ An example telemetry event looks like this:
 {
   "id": "cf9022fd-e4b3-4f67-bda2-f02dba5b2e40",
   "eventTime": 1728421688109,
-  "key": "subcommand:ls",
-  "value": "ls",
+  "key": "subcommand:list",
+  "value": "list",
+  "sessionId": "e29b9b32-3edd-4599-92d2-f6886af005f6",
+  "invocationId": "0b6c1f3a-7d42-4e9b-8a15-3c9d2e7f4b60",
   "teamId": "team_9Cdf9AE0j9ef09FaSdEU0f0s",
-  "sessionId": "e29b9b32-3edd-4599-92d2-f6886af005f6"
+  "userId": "Uf8Kd02LmQ6pRt3VxZ7b1Nc5",
+  "projectId": "prj_4Kd8Fs2Lm6Qp0Rt3Vx7Zb1Nc5Hg9"
 }
 ```
 

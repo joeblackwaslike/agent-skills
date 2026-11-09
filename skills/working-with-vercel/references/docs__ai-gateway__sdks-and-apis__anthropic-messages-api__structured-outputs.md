@@ -13,8 +13,8 @@ related:
 summary: Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "dd8589648f2bb3adb7ea720730220e61b699ea4ef543a892324bb84ef31b1831"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "8a01cc701b4b153278508a94f95f09dc6299866633e1433eb51de1d7940c9ab5"
 ---
 
 # Anthropic Messages Structured Outputs with AI Gateway
@@ -31,8 +31,8 @@ Structured outputs constrain completed model responses to a JSON Schema. Check f
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 - [Output](https://ai-sdk.dev/docs/reference/ai-sdk-core/output) — API Reference for Output.
 - [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
+- [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
 - [OpenAI Responses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs) — Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
-- [AI Gateway Text Generation](https://vercel.com/docs/ai-gateway/modalities/text-generation) — Generate and stream text from 300+ models through AI Gateway, with tool calling and structured output.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs.graph.md)
 <!-- /docsgraph:related -->

@@ -11,13 +11,12 @@ related:
   - /docs/deployment-storage
   - /docs/cli/list
   - /docs/domains/working-with-domains/assign-domain-to-a-git-branch
-  - /docs/deployments/environments
   - /docs/errors/deployment_deleted
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c93c39a2e8c656417140a85c579fcf4a54c901fd19402174bbdee97251dabb47"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "43a783fdeb71b867289a12d996a9f5a66fc87045a32762c4d147c7cc19ea9739"
 ---
 
 # Deployment Retention
@@ -32,12 +31,12 @@ Deployment retention refers to the configured policies that determine how long d
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I delete an individual deployment?](https://vercel.com/kb/guide/how-do-i-delete-an-individual-deployment) — Information on deleting an individual deployment.
 - [Deleted deployments are permanently removed sooner](https://vercel.com/changelog/deleted-deployments-are-permanently-removed-sooner)
 - [Deployment retention policies now preserve active branch deployments](https://vercel.com/changelog/deployment-retention-policies-now-preserve-active-branch-deployments)
 - [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready)
 - [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams)
 - [Hobby projects now default to 30-day deployment retention](https://vercel.com/changelog/hobby-projects-now-default-to-30-day-deployment-retention)
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize) — Set retention periods, review remaining usage, and reduce deployment output size.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deployment Policies](https://vercel.com/docs/deployments/deployment-policy) — Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per
@@ -109,9 +108,9 @@ These recent deployment exceptions depend on your plan:
 These exceptions apply on every plan:
 
 - The deployment has a production alias assigned to it.
-- The deployment is the target of a [branch alias](/docs/domains/working-with-domains/assign-domain-to-a-git-branch) for a [custom environment](/docs/deployments/environments#custom-environments).
+- The deployment is the latest deployment in state Ready for a Git branch that has a [domain assigned to it](/docs/domains/working-with-domains/assign-domain-to-a-git-branch).
 - The deployment is a non-production deployment and has any custom alias assigned to it.
-- The deployment is the latest preview deployment for a Git branch that is still active. A branch is considered active when it has not been deleted and its associated pull request has not been merged or closed.
+- The deployment is the latest preview deployment for a Git branch that is still active. A branch is considered active when it has not been deleted and it has an open pull request. A branch that never had a pull request, or whose pull request was merged or closed, is not active.
 
 ## Restoring a deleted deployment
 
@@ -122,14 +121,14 @@ The length of the recovery period depends on how old the deployment is when it i
 - **Deleted at 30 days of age or older:** The recovery period is 30 days from deletion. This includes any deployment under a retention policy of 30 days or more.
 - **Deleted before reaching 30 days of age:** The recovery period is shorter. For a deployment deleted by a retention policy set to less than 30 days, the recovery period matches the retention policy, so a 7-day retention policy results in a 7-day recovery period. For a deployment deleted manually, the recovery period is determined by the deployment's age at deletion, down to a minimum of 1 day.
 
-This matches the recovery period to the deployment's age, so short retention policies do not leave large numbers of old deployments on the **Recently Deleted** page.
+This matches the recovery period to the deployment's age, so short retention policies do not leave large numbers of old deployments in the **Recently Deleted Deployments** section.
 
 These recovery periods apply to successfully built deployments. Unsuccessful deployments may be garbage collected sooner.
 
 To restore a deleted deployment, open **Settings** in the sidebar of your project:
 
 1. Select **Security** on the side panel of the project settings page
-2. Scroll down to the **Recently Deleted** section
+2. Scroll down to the **Recently Deleted Deployments** section
 3. Find the deployment that needs to be restored, and click on the dropdown menu item **Restore**
 4. Complete the modal
 

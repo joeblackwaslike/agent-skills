@@ -16,8 +16,8 @@ related:
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5bdf3349399cecbfcdee24809cf3577cf71d7d71f5469d3e9af510a4a990b44f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "29b89adef6f59eca4e78fe63296e0f7123276ab791f2a9fa1ab4e4028b5bcdbf"
 ---
 
 # Manage and optimize usage
@@ -36,14 +36,14 @@ There are three plans on Vercel: Hobby, Pro, and Enterprise. To see which plan y
 - [Lower pricing for Log Drains](https://vercel.com/changelog/lower-pricing-for-log-drains)
 - [One-click linking from Usage to Vercel Observability dashboards](https://vercel.com/changelog/one-click-linking-from-usage-to-vercel-observability-dashboards)
 - [Speed Insights usage can now be viewed by Project](https://vercel.com/changelog/speed-insights-usage-can-now-be-viewed-by-project)
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
+- [Visualize Team Usage With Sophisticated Usage Dashboard](https://vercel.com/blog/sophisticated-usage-dashboard)
 - [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/pricing/manage-and-optimize-usage.graph.md](/docs/pricing/manage-and-optimize-usage.graph.md)
 <!-- /docsgraph:related -->
@@ -67,10 +67,10 @@ To use the usage page:
 
 #### CLI
 
-Run [`vercel usage`](/docs/cli/usage) to see usage for the last 30 days by project. Use `--group-by region` to group by region instead.
+Run [`vercel billing usage`](/docs/cli/usage) to see usage for the last 30 days by project. Use `--group-by region` to group by region instead.
 
 ```bash filename="terminal"
-vercel usage --since 30d --group-by project
+vercel billing usage --since 30d --group-by project
 ```
 
 ## Usage alerts, notification, and spend management

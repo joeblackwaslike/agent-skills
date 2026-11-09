@@ -16,8 +16,8 @@ related:
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "bcfd327d6bdd4423bc63cee3ca3505490e8fddabf0f7b334d6a0b95fdf0472d8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "dca5f00f10ee9620cb77d4e0a3fb3942bf5afd4c784aba2627b09b61cdc516b2"
 ---
 
 # Vercel Primitives
@@ -35,12 +35,12 @@ These primitives are the "building blocks" that make up a Vercel Deployment.
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
 - [Build your own web framework](https://vercel.com/blog/build-your-own-web-framework)
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
-- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available)
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
-- [Environment variables](https://vercel.com/docs/environment-variables) — Learn more about environment variables on Vercel.
 
 Full cross-link map for this page: [/docs/build-output-api/primitives.graph.md](/docs/build-output-api/primitives.graph.md)
 <!-- /docsgraph:related -->
@@ -275,7 +275,7 @@ The `.vc-config.json` configuration file contains information related to how the
 type EdgeFunctionConfig = {
   runtime: 'edge';
   entrypoint: string;
-  envVarsInUse?: string[];
+  envVarsInUse?: string[]; // Vercel ignores this property
   regions?: 'all' | string | string[];
 };
 ```
@@ -284,7 +284,7 @@ type EdgeFunctionConfig = {
 | ---------------- | ----------------------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **runtime**      | ["edge"](/docs/rest-api#types)       | Yes      | The `runtime: "edge"` property is required to indicate that this directory represents a Function with Edge Runtime.                                                               |
 | **entrypoint**   | [String](/docs/rest-api#types)       | Yes      | Indicates the initial file where code will be executed for the Function with Edge Runtime.                                                                                         |
-| **envVarsInUse** | [String\[\]](/docs/rest-api#types)     | No       | List of environment variable names that will be available for the Function with Edge Runtime to utilize.                                                                           |
+| **envVarsInUse** | [String\[\]](/docs/rest-api#types)     | No       | Vercel ignores this property. You do not need to set it.                                                                           |
 | **regions**      | [String\[\]](/docs/rest-api#types)     | No       | List of regions or a specific region that the edge function will be available in, defaults to `all`. [View available regions](/docs/regions#region-list). |
 
 #### Function with Edge Runtime config example
@@ -294,8 +294,7 @@ This is what the `.vc-config.json` configuration file could look like in a real 
 ```json
 {
   "runtime": "edge",
-  "entrypoint": "index.js",
-  "envVarsInUse": ["DATABASE_API_KEY"]
+  "entrypoint": "index.js"
 }
 ```
 

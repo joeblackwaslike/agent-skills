@@ -15,8 +15,8 @@ related:
 summary: List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "19320df4ab4cf670a359b14f78ac1198332853a0c35ca2a944d29f1b8630104c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2691eeae318c39c15416a177fbf80a142a5ef61337c49590f0014a3e71aeb5eb"
 ---
 
 # vercel alerts
@@ -32,9 +32,9 @@ The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked p
 - [Pull anomaly alert details using the Vercel CLI](https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli)
 - [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and scope t
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts) — Configure alert rules and notification destinations for Vercel Observability alerts.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/alerts.graph.md](/docs/cli/alerts.graph.md)
 <!-- /docsgraph:related -->
@@ -64,7 +64,7 @@ These options only apply to the `vercel alerts` command.
 
 ### Project
 
-The `--project` option, shorthand `-p`, lists alerts for a specific project and overrides the linked project. Pass the project name (the name shown in the dashboard and `vercel project ls`) or its ID, for example `my-app` or `prj_abc123`.
+The `--project` option, shorthand `-p`, lists alerts for a specific project and overrides the linked project. Pass the project name (the name shown in the dashboard and `vercel project list`) or its ID, for example `my-app` or `prj_abc123`.
 
 ```bash filename="terminal"
 vercel alerts --project my-app
@@ -110,17 +110,18 @@ vercel alerts --ai
 
 ### Since
 
-The `--since` option, shorthand `-s`, sets the start of the time range. Use an ISO 8601 timestamp.
+The `--since` option, shorthand `-s`, sets the start of the time range. Use an ISO 8601 timestamp or a relative duration such as `1h` or `7d`. A relative duration counts back from the current time.
 
 If you don't pass `--since` or `--until`, the command defaults to the last 24 hours.
 
 ```bash filename="terminal"
+vercel alerts --since 7d
 vercel alerts --since 2026-03-01T00:00:00.000Z
 ```
 
 ### Until
 
-The `--until` option, shorthand `-u`, sets the end of the time range. Use an ISO 8601 timestamp.
+The `--until` option, shorthand `-u`, sets the end of the time range. It accepts the same values as `--since`.
 
 ```bash filename="terminal"
 vercel alerts --since 2026-03-01T00:00:00.000Z --until 2026-03-02T00:00:00.000Z
@@ -138,15 +139,15 @@ The supported range is 1 through 100.
 vercel alerts --limit 25
 ```
 
-### Format
+### JSON
 
-The `--format` option supports `json` output for scripting and automation.
+The `--json` option prints the alerts as JSON for scripting and automation:
 
 ```bash filename="terminal"
-vercel alerts --format json
+vercel alerts --json
 ```
 
-When you use `--format json`, the command returns a `groups` array with the alert group payload from the API.
+When you use `--json`, the command returns a `groups` array with the alert group payload from the API.
 
 ## List alert examples
 
@@ -177,7 +178,7 @@ vercel alerts --ai --since 2026-03-01T00:00:00.000Z --until 2026-03-02T00:00:00.
 Export alerts as JSON:
 
 ```bash filename="terminal"
-vercel alerts --format json
+vercel alerts --json
 ```
 
 ## Subcommands
@@ -200,7 +201,7 @@ vercel alerts inspect <groupId>
 
 | Option | Description |
 | --- | --- |
-| `--format` | Output format. Supports `json`. |
+| `--json` | Output the alert group as JSON. |
 | `-p, --project` | Project name or ID to filter by, for example `my-app` or `prj_abc123`. Overrides the auto-detected linked project. |
 | `-a, --all` | Use team-wide scope. Ignores linked project auto-scoping. |
 
@@ -215,7 +216,7 @@ vercel alerts inspect grp_abc123
 Inspect as JSON:
 
 ```bash filename="terminal"
-vercel alerts inspect grp_abc123 --format json
+vercel alerts inspect grp_abc123 --json
 ```
 
 ### `rules`
@@ -256,7 +257,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

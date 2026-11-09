@@ -17,8 +17,8 @@ related:
 summary: Add a Chat SDK bot to Hono, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/frameworks/hono.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "710cb699da08dced20cf6aa69afd266c6c7e8a380bbb69e4e9ea7e3f9ff9229a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "22a0dd34aef18730060a322a5e05d259bed118f8b50f5deef4a6b292c8667530"
 ---
 
 # Chat SDK with Hono
@@ -31,12 +31,12 @@ Use a Hono POST handler to receive Slack events and Vercel Functions to keep you
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Ship a GitHub code review bot with Hono and Redis](https://vercel.com/kb/guide/ship-a-github-code-review-bot-with-hono-and-redis) — This guide walks through building a GitHub bot that reviews pull requests on demand. When a user @mentions the bot on a
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
-- [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
-- [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
+- [Build with a Hono starter template](https://vercel.com/kb/guide/build-with-a-hono-starter-template) — Deploy a Hono app to Vercel from a starter template. Compare the Hono API starter, MCP server, AI SDK, Slack Bolt, Next.
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 
 Full cross-link map for this page: [/docs/chat-sdk/frameworks/hono.graph.md](/docs/chat-sdk/frameworks/hono.graph.md)
@@ -166,7 +166,7 @@ Ensure the integration supplies `REDIS_URL` in the project's **Production** envi
 Create a Slack connector and allow token requests from the project's Production and Development environments. Attach its trigger to your production webhook route:
 
 ```bash filename="Terminal"
-vercel connect create slack --name my-bot --triggers
+vercel connect create slack --name my-bot --triggers --trigger-path /api/webhooks/slack
 vercel connect attach slack/my-bot --environment production --environment development --triggers --trigger-path /api/webhooks/slack
 ```
 
@@ -183,6 +183,28 @@ Invite the bot to a Slack channel and mention it. It should reply with a greetin
 Vercel deployments receive `VERCEL_OIDC_TOKEN` automatically. For local outbound API calls, configure a development `REDIS_URL` and run `vercel env pull .env.local`. This supplies a Development OIDC token, which can access the connector because the attachment above enables Development.
 
 Connect forwards inbound events to deployed URLs, not `localhost`. To test inbound events before production, [attach the trigger to a Preview branch](/docs/cli/connect#vercel-connect-attach).
+
+## Frequently asked questions
+
+### How do I handle Slack webhooks in Hono?
+
+Register a `POST` route on your Hono app and pass `c.req.raw` to `bot.webhooks.slack`, along with `waitUntil` from `@vercel/functions`. Return the adapter's response from the handler. Chat SDK verifies the request, parses the event, and runs your handlers, so the route needs no Slack-specific code.
+
+### Why pass `c.req.raw` instead of the Hono request?
+
+`c.req.raw` is the original Web `Request`, which is the type Chat SDK adapters accept. The adapter reads the body itself to parse and verify the event, so the body must still be unread. See the [Hono request API](https://hono.dev/docs/api/request#raw).
+
+### Can I use Hono middleware with the webhook route?
+
+Yes, as long as the middleware doesn't read the request body. Middleware for logging, headers, or routing works as usual. Body parsers and validators that consume the body break the webhook, because the adapter can no longer read the event. Register the webhook route outside that middleware or skip the middleware for its path.
+
+### Where should the Hono entry point live for Vercel to deploy it?
+
+Export your Hono app as the default export from one of the files Vercel detects, such as `src/index.ts`, `src/app.ts`, `src/server.ts`, or `index.ts` at the project root. Vercel deploys that app as a function, and the webhook route runs inside it. See [Hono on Vercel](/docs/frameworks/backend/hono#exporting-the-hono-application) for every supported location.
+
+### Why does the Hono route use `waitUntil` from `@vercel/functions`?
+
+`waitUntil` keeps the Vercel invocation alive after Hono returns the response, so your bot can finish processing the event. The adapter acknowledges the webhook immediately, which keeps platforms like Slack from retrying, and your handlers continue in the background. Background work still counts toward the function's [maximum duration](/docs/functions/configuring-functions/duration).
 
 ## Next steps
 

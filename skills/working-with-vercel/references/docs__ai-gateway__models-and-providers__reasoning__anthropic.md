@@ -13,8 +13,8 @@ related:
 summary: Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4346c184d8a9e6c02b27faa275612ad923bcc7426551f88599d7624cc3805db2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ca9b076a4395df7b5479cf65e0b8f2bf72ed1d85e07b09e8bff04f389ee028a5"
 ---
 
 # AI Gateway Anthropic Reasoning
@@ -31,9 +31,10 @@ Anthropic Claude models support thinking, which lets the model reason through co
 - [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning) — Learn how to control reasoning across providers with the top-level reasoning parameter.
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Use Claude Opus 4.6 on AI Gateway](https://vercel.com/changelog/claude-opus-4.6-on-ai-gateway)
+- [Claude Opus 4.7 on AI Gateway](https://vercel.com/changelog/opus-4.7-on-ai-gateway)
+- [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
 - [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4) — Get started with Claude 4 using the AI SDK.
-- [Claude Opus 4.7 on AI Gateway](https://vercel.com/changelog/opus-4.7-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md](/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md)
 <!-- /docsgraph:related -->
@@ -59,7 +60,7 @@ Use [`GET /v1/models`](/docs/ai-gateway/models-and-providers/reasoning#discover-
 
 When you enable adaptive thinking, set `providerOptions.anthropic.effort` in the AI SDK or `output_config.effort` in the Messages API. Choose a value from the model's [catalog entry](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) that your client accepts. Don't assume a newer Claude model shares an older model's effort levels or default.
 
-Use the [shared effort option](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) for portable configuration. AI SDK 7's shorthand stops at `xhigh`; native Anthropic `max` requires a provider-specific option or an HTTP format that accepts it.
+Use the [shared effort option](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) for portable configuration. AI SDK 7's shorthand accepts `max` in version 7.0.129 or later. Earlier versions stop at `xhigh`, so native Anthropic `max` requires a provider-specific option or an HTTP format that accepts it.
 
 For more details, see the [Anthropic extended thinking docs](https://platform.claude.com/docs/en/build-with-claude/extended-thinking), [adaptive thinking docs](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking), and [effort parameter docs](https://platform.claude.com/docs/en/build-with-claude/effort).
 

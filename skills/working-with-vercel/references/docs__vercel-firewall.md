@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5586662d84dea009c5c60b705d63bfc5f3498456ab22fe1c3eaecf4f81e7ee8c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "efd1341f6cc18f38fa17f48130b4c9677cc6d475a2a8ed3c9130f750ba3e35bd"
 ---
 
 # Vercel Firewall
@@ -99,6 +99,11 @@ You can use the following tools to [monitor the internet traffic](/docs/vercel-f
 - [Firewall alerts](/docs/vercel-firewall/firewall-observability#firewall-alerts) allow you to react quickly to potential security threats.
 - Use [Drains](/docs/drains/using-drains) to send your application logs to a Security Information and Event Management (SIEM) system.
 
+## Related guides
+
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation): A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Monday traffic, from load testing to instant rollback.
+- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf): Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in security and regulatory frameworks, including PCI DSS, ISO 27001, SOC 2, and HIPAA.
+- [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide): Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 
 ---
 

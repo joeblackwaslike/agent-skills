@@ -1,8 +1,8 @@
 ---
 title: "Classic Theme"
 source: "https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic"
-fetched_at: "2026-10-19T09:38:00.847Z"
-sha256: "ed5ce3038866b0a590fa1e777b1af2f18739c44a85e663b614cb7fcac05757c0"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "b8d5a81f20c415ae09c96cb8c16ef9630c5f80bfa264e44678f76bba8d6aa8e3"
 ---
 
 # Classic Theme
@@ -55,4 +55,4 @@ If you are using a standalone plugin, provide options directly to the plugin:doc
 ```
 module.exports = {  plugins: [    [      '@docusaurus/theme-classic',      {        customCss: './src/css/custom.css',      },    ],  ],};
 ```
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/api/themes/theme-classic.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/api/themes/theme-classic.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

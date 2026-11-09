@@ -4,8 +4,8 @@ description: Learn how to use Fireworks with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fireworks.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "6a90c0f4b987a72e870b0e6b4df35768f5d54dd76dc3c74780bd0bcaf24c638c"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "8574b47711b150470299c9dcf8415faa8b9e8396a94b1eda2e9b328bfe03ddc8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -340,16 +340,14 @@ const model = fireworks.completionModel(
 
 | Model                                                      | Image Input | Object Generation | Tool Usage | Tool Streaming |
 | ---------------------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
-| `accounts/fireworks/models/firefunction-v1`                | ✗           | ✓                 | ✓          | ✓              |
-| `accounts/fireworks/models/deepseek-r1`                    | ✗           | ✓                 | ✗          | ✗              |
 | `accounts/fireworks/models/deepseek-v3`                    | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/llama-v3p3-70b-instruct`        | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/llama-v3p2-3b-instruct`         | ✗           | ✓                 | ✓          | ✗              |
 | `accounts/fireworks/models/llama-v3p1-405b-instruct`       | ✗           | ✓                 | ✓          | ✓              |
 | `accounts/fireworks/models/llama-v3p1-8b-instruct`         | ✗           | ✓                 | ✓          | ✗              |
-| `accounts/fireworks/models/llama-v3p2-3b-instruct`         | ✗           | ✓                 | ✓          | ✗              |
-| `accounts/fireworks/models/llama-v3p3-70b-instruct`        | ✗           | ✓                 | ✓          | ✗              |
 | `accounts/fireworks/models/mixtral-8x7b-instruct`          | ✗           | ✓                 | ✓          | ✗              |
-| `accounts/fireworks/models/mixtral-8x7b-instruct-hf`       | ✗           | ✓                 | ✓          | ✗              |
 | `accounts/fireworks/models/mixtral-8x22b-instruct`         | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/mixtral-8x7b-instruct-hf`       | ✗           | ✓                 | ✓          | ✗              |
 | `accounts/fireworks/models/qwen2p5-coder-32b-instruct`     | ✗           | ✓                 | ✓          | ✗              |
 | `accounts/fireworks/models/qwen2p5-72b-instruct`           | ✗           | ✓                 | ✓          | ✗              |
 | `accounts/fireworks/models/qwen-qwq-32b-preview`           | ✗           | ✓                 | ✗          | ✗              |
@@ -361,6 +359,8 @@ const model = fireworks.completionModel(
 | `accounts/fireworks/models/kimi-k2-thinking`               | ✗           | ✓                 | ✓          | ✗              |
 | `accounts/fireworks/models/kimi-k2p6`                      | ✓           | ✓                 | ✓          | ✗              |
 | `accounts/fireworks/models/minimax-m2`                     | ✗           | ✓                 | ✓          | ✗              |
+| `accounts/fireworks/models/firefunction-v1`                | ✗           | ✓                 | ✓          | ✓              |
+| `accounts/fireworks/models/deepseek-r1`                    | ✗           | ✓                 | ✗          | ✗              |
 
 The table above lists popular models. Please see the [Fireworks models
 page](https://fireworks.ai/models) for a full list of available models.
@@ -525,10 +525,10 @@ For all models supporting size, the following sizes are supported:
 
 | Model                                                        | Dimensions Specification | Image Editing |
 | ------------------------------------------------------------ | ------------------------ | ------------- |
-| `accounts/fireworks/models/flux-kontext-pro`                 | Aspect Ratio             | ✓             |
-| `accounts/fireworks/models/flux-kontext-max`                 | Aspect Ratio             | ✓             |
 | `accounts/fireworks/models/flux-1-dev-fp8`                   | Aspect Ratio             | ✗             |
 | `accounts/fireworks/models/flux-1-schnell-fp8`               | Aspect Ratio             | ✗             |
+| `accounts/fireworks/models/flux-kontext-pro`                 | Aspect Ratio             | ✓             |
+| `accounts/fireworks/models/flux-kontext-max`                 | Aspect Ratio             | ✓             |
 | `accounts/fireworks/models/playground-v2-5-1024px-aesthetic` | Size                     | ✗             |
 | `accounts/fireworks/models/japanese-stable-diffusion-xl`     | Size                     | ✗             |
 | `accounts/fireworks/models/playground-v2-1024px-aesthetic`   | Size                     | ✗             |
@@ -543,11 +543,40 @@ Fireworks also presents several Stability AI models backed by Stability AI API
 keys and endpoint. The AI SDK Fireworks provider does not currently include
 support for these models:
 
-| Model ID                               |
+| Model                                  |
 | -------------------------------------- |
 | `accounts/stability/models/sd3-turbo`  |
 | `accounts/stability/models/sd3-medium` |
 | `accounts/stability/models/sd3`        |
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option                | Description                                                                                                                                                                                                    |
+| --------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| language  | `user`                | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| language  | `reasoningEffort`     | Reasoning effort for reasoning models. Defaults to `medium`. Set to `null` to send `"reasoning_effort": null`, for providers that treat an explicit `null` differently from an omitted field.                  |
+| language  | `textVerbosity`       | Controls the verbosity of the generated text. Defaults to `medium`.                                                                                                                                            |
+| language  | `strictJsonSchema`    | Whether to use strict JSON schema validation. When true, the model uses constrained decoding to guarantee schema compliance. Only used when the provider supports structured outputs and a schema is provided. |
+| language  | `echo`                | Echo back the prompt in addition to the completion.                                                                                                                                                            |
+| language  | `logitBias`           | Modify the likelihood of specified tokens appearing in the completion. Accepts a JSON object that maps tokens (specified by their token ID in the GPT tokenizer) to an associated bias value from -100 to 100. |
+| language  | `suffix`              | The suffix that comes after a completion of inserted text.                                                                                                                                                     |
+| language  | `promptCacheKey`      | A stable key for routing requests with shared prompt prefixes to the same prompt cache.                                                                                                                        |
+| language  | `serviceTier`         | Use Fireworks Priority serving path for higher reliability during peak traffic.                                                                                                                                |
+| language  | `thinking`            | thinking                                                                                                                                                                                                       |
+| language  | `reasoningHistory`    | reasoningHistory                                                                                                                                                                                               |
+| embedding | `dimensions`          | The number of dimensions the resulting output embeddings should have. Only supported in text-embedding-3 and later models.                                                                                     |
+| embedding | `user`                | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| image     | `guidance_scale`      | Classifier-free guidance scale for the image diffusion process.                                                                                                                                                |
+| image     | `num_inference_steps` | Number of denoising steps for the image generation process.                                                                                                                                                    |
+| image     | `output_format`       | Desired output image format.                                                                                                                                                                                   |
+| image     | `webhook_url`         | URL to receive webhook notifications for async Kontext requests.                                                                                                                                               |
+| image     | `webhook_secret`      | Secret for webhook signature verification.                                                                                                                                                                     |
+| image     | `prompt_upsampling`   | Whether Fireworks should automatically modify the prompt for more creative generation.                                                                                                                         |
+| image     | `safety_tolerance`    | Moderation tolerance level for inputs and outputs.                                                                                                                                                             |
+| image     | `cfg_scale`           | Guidance scale for legacy image\_generation models.                                                                                                                                                            |
+| image     | `steps`               | Number of generation steps for legacy image\_generation models.                                                                                                                                                |
 
 ---
 

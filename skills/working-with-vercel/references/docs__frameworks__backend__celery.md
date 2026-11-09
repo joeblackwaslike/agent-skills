@@ -17,8 +17,8 @@ related:
 summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without a long-lived worker process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f2a136d148949949901fd1077461d1b27fc1ed2a95a60d1e4476b73200357fae"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6aad6646200557c215448e964c73e76fbdb83f96b83f88a53a4178db15621f37"
 ---
 
 # Run background tasks with Celery on Vercel
@@ -328,15 +328,19 @@ Each queue name gets the `queue_name_prefix`, which defaults to
 | `emails`     | `celery-celery-on-vercel-emails`  |
 | `reports`    | `celery-celery-on-vercel-reports` |
 
-Filter each subscriber by those topic names:
+Filter each subscriber by those topic names. Each subscriber needs its own
+entrypoint, because Vercel names a subscriber after its entrypoint and the
+build fails when two subscribers share a name. Create one worker module for
+each function, for example `emails_worker.py` and `reports_worker.py`, with the
+same contents as `worker.py`:
 
 ```toml filename="pyproject.toml"
 [[tool.vercel.subscribers]]
-entrypoint = "worker:app"
+entrypoint = "emails_worker:app"
 topics = ["celery-celery-on-vercel-emails"]
 
 [[tool.vercel.subscribers]]
-entrypoint = "worker:app"
+entrypoint = "reports_worker:app"
 topics = ["celery-celery-on-vercel-reports"]
 ```
 

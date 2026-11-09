@@ -15,8 +15,8 @@ related:
 summary: Server action for programmatically deploying files to Vercel on behalf of platform users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/platform-elements/actions/deploy-files.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f4c18ce2bd7e8b592755deb6461bc519654c0a2aab067ff086daa8aa55e2e970"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "638e621b3e534d65a3f016bd38e78c5638b807adfae908a98c903cb95e3d3b07"
 ---
 
 # Deploy Files
@@ -31,6 +31,7 @@ The Deploy Files action is a server-side utility that allows platforms to progra
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Upload Deployment Files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files) — POST /v2/files — Before you create a deployment you need to upload the required files for that deployment. To do it, you
 - [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.

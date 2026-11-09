@@ -12,12 +12,13 @@ related:
   - /docs/cli/dev
   - /docs/routing/redirects/bulk-redirects/getting-started
   - /docs/project-configuration/vercel-json
-  - /docs/plans
+  - /docs/functions
+  - /docs/routing/redirects/configuration-redirects
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fd0cf1c8ac6ff291084d0fcfac917a5b73564a313c4cf4c81f1eb729cc11817f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "27fe8bba0f949c5d1c7028836167a4eea3335c7557659e0056487f0ac937aca5"
 ---
 
 # Bulk Redirects
@@ -33,14 +34,14 @@ With bulk redirects, you can handle thousands of simple path-to-path or path-to-
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Bulk redirects are now generally available](https://vercel.com/changelog/bulk-redirects-are-now-generally-available)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Bulk redirects UI, API, and CLI now generally available](https://vercel.com/changelog/bulk-redirects-ui-api-and-cli-now-generally-available)
 - [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel)
-- [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
+- [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Gets project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/gets-project-level-redirects) — GET /v1/bulk-redirects — Get the version history for a project's bulk redirects
-- [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
+- [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
+- [Stages new redirects for a project.](https://vercel.com/docs/rest-api/bulk-redirects/stages-new-redirects-for-a-project) — PUT /v1/bulk-redirects — Stages new redirects for a project and returns the new version.
 
 Full cross-link map for this page: [/docs/routing/redirects/bulk-redirects.graph.md](/docs/routing/redirects/bulk-redirects.graph.md)
 <!-- /docsgraph:related -->
@@ -80,6 +81,77 @@ To improve space efficiency, all boolean values can be the single characters `t`
 We recommend using status code `307` or `308` to avoid the ambiguity of non `GET` methods, which is necessary when your application needs to redirect a public API.
 
 For complete configuration details and advanced options, see the [`bulkRedirectsPath` configuration reference](/docs/project-configuration/vercel-json#bulkredirectspath).
+
+## Redirects from a function
+
+If you're on the Hobby plan, or your redirects need logic that bulk redirects don't support, handle them in a [Vercel Function](/docs/functions). A function can read redirect rules from any source, such as a file, a database, or an API, and has no limit on the number of rules. Keep rules that need wildcards or header matching in [configuration redirects](/docs/routing/redirects/configuration-redirects), and send the remaining paths to the function as a fallback.
+
+First, rewrite the paths the function handles. This rule sends every request under `/campaign/` to the function and passes the rest of the path as the `slug` query parameter:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/campaign/:slug*", "destination": "/api/redirects?slug=:slug*" }
+  ]
+}
+```
+
+Then create the function. It looks up the slug, returns a `308` redirect when it finds a match, and returns a `404` otherwise:
+
+**api/redirects.ts**
+
+```ts filename="api/redirects.ts" framework=other
+const redirects = new Map<string, string>([
+  ['spring', '/sale'],
+  ['summer/2026', '/sale/summer'],
+]);
+
+export function GET(request: Request) {
+  const slug = new URL(request.url).searchParams.get('slug') ?? '';
+  const destination = redirects.get(slug);
+
+  if (!destination) {
+    return new Response('Not found', { status: 404 });
+  }
+
+  return new Response(null, {
+    status: 308,
+    headers: {
+      Location: destination,
+      'Cache-Control': 's-maxage=600',
+    },
+  });
+}
+```
+
+**api/redirects.js**
+
+```js filename="api/redirects.js" framework=other
+const redirects = new Map([
+  ['spring', '/sale'],
+  ['summer/2026', '/sale/summer'],
+]);
+
+export function GET(request) {
+  const slug = new URL(request.url).searchParams.get('slug') ?? '';
+  const destination = redirects.get(slug);
+
+  if (!destination) {
+    return new Response('Not found', { status: 404 });
+  }
+
+  return new Response(null, {
+    status: 308,
+    headers: {
+      Location: destination,
+      'Cache-Control': 's-maxage=600',
+    },
+  });
+}
+```
+
+A request to `/campaign/spring` now redirects to `/sale`. The `Cache-Control` header lets Vercel's [CDN cache](/docs/caching/cdn-cache) the redirect for 10 minutes, so repeat requests for the same path don't invoke the function. For a Next.js version that splits redirects between `next.config.js` and a catch-all route handler, see the [redirect with fallback example](https://github.com/vercel/examples/tree/main/app-directory/redirect-with-fallback).
 
 ## Limits and pricing
 

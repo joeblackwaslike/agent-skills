@@ -16,8 +16,8 @@ related:
 summary: Learn how to stream responses from Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/streaming-functions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ff32d27163a13a460d982a0340f2f6b04ca2b9c0188962731fe10c8449580939"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ee4536e43828803e6ec68c2cf98104b1916637fc587577c39a13e7d56211afee"
 ---
 
 # Streaming
@@ -39,8 +39,8 @@ AI providers can be slow when producing responses, but many make their responses
 - [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
 - [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications)
 - [Building a GPT-3 app with Next.js and streaming (historical)](https://vercel.com/blog/gpt-3-app-next-js-vercel-edge-functions)
-- [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web)
 - [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
+- [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web)
 - [How streaming helps build faster web applications](https://vercel.com/blog/how-streaming-helps-build-faster-web-applications)
 
 Full cross-link map for this page: [/docs/functions/streaming-functions.graph.md](/docs/functions/streaming-functions.graph.md)

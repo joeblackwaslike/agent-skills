@@ -16,8 +16,8 @@ related:
 summary: Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit top-ups and spending budgets.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "544f2d93834bc7676dbbbec69a785f1eccd4ae9068c9d9e01ec560c3d6a09a5e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0c8400fd6c838d8f3a7c515bc44fa77357efd14c052aefd5e9b47afb9972fb1d"
 ---
 
 # AI Gateway Pricing
@@ -35,7 +35,8 @@ sha256: "544f2d93834bc7676dbbbec69a785f1eccd4ae9068c9d9e01ec560c3d6a09a5e"
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
+- [Budgets for API keys on AI Gateway](https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway)
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing) — Understand Vercel Agent pricing and how to track costs
@@ -119,10 +120,12 @@ The [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allow
 
 [Zero Data Retention (ZDR)](/docs/ai-gateway/security-and-compliance/zdr) routes requests to providers that have agreed not to retain or train on prompt data.
 
-| Option                          | Cost                     | Availability       |
-| ------------------------------- | ------------------------ | ------------------ |
-| Per-request zero data retention | No additional cost       | Pro and Enterprise |
-| Team-wide zero data retention   | $0.10 per 1,000 requests | Pro and Enterprise |
+| Option                          | Cost                     | Availability                          |
+| ------------------------------- | ------------------------ | ------------------------------------- |
+| Per-request zero data retention | No additional cost       | Pro, Enterprise, or purchased credits |
+| Team-wide zero data retention   | $0.10 per 1,000 requests | Pro, Enterprise, or purchased credits |
+
+Teams on a Pro trial need [purchased credits](#top-up-your-ai-gateway-credits) to use ZDR. Free credits don't count.
 
 ## Trace Drains
 
@@ -169,11 +172,11 @@ To enable auto top-up:
 
 1. Go to the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in your Vercel dashboard sidebar.
 2. In the upper right corner, click on the button that shows your AI Gateway Credits balance.
-3. Click the **Change** button next to auto top-up (disabled by default).
-4. Configure your preferred threshold and top-up amount.
+3. Click the **Change** button next to the **Auto-reload** status (disabled by default).
+4. Turn on auto-reload, then set **When balance falls below** and **Reload to target balance**.
 5. Click **Save** to apply your settings.
 
-When your balance drops below the threshold, AI Gateway automatically charges your payment method and adds the configured amount to your balance.
+When your balance drops below the threshold, AI Gateway automatically charges your payment method and restores your balance to the target balance that you set.
 
 
 ---

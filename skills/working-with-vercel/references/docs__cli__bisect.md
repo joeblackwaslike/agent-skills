@@ -12,8 +12,8 @@ related:
 summary: Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/bisect.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "20fde73cf047294ccfade41aeaf7b27f5d846414aac98e6da3507decf7db9a8e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "e16bee5a7eeacd868ab0b76c4679e58a293864b92677d58b85755e2a5b16632c"
 ---
 
 # vercel bisect
@@ -26,7 +26,6 @@ The `vercel bisect` command can be used to perform a [binary search](https://wik
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel CLI v24 is now available](https://vercel.com/changelog/vercel-cli-v24)
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
@@ -50,7 +49,7 @@ vercel bisect
 ```
 
 *Using the \`vercel bisect\` command will initiate an
-interactive prompt where you specify a good deployment, followed by a bad
+interactive prompt where you specify a bad deployment, followed by a good
 deployment and step through the deployments in between to find the first bad
 deployment.*
 
@@ -60,7 +59,7 @@ These are options that only apply to the `vercel bisect` command.
 
 ### Good
 
-The `--good` option, shorthand `-g`, can be used to specify the initial "good" deployment from the command line. When this option is present, the prompt will be skipped at the beginning of the bisect session. A production alias URL may be specified for convenience.
+The `--good` option can be used to specify the initial "good" deployment from the command line. When this option is present, the prompt will be skipped at the beginning of the bisect session. A production alias URL may be specified for convenience.
 
 ```bash filename="terminal"
 vercel bisect --good https://example.com
@@ -71,7 +70,7 @@ vercel bisect --good https://example.com
 
 ### Bad
 
-The `--bad` option, shorthand `-b`, can be used to specify the "bad" deployment from the command line. When this option is present, the prompt will be skipped at the beginning of the bisect session. A production alias URL may be specified for convenience.
+The `--bad` option can be used to specify the "bad" deployment from the command line. When this option is present, the prompt will be skipped at the beginning of the bisect session. A production alias URL may be specified for convenience.
 
 ```bash filename="terminal"
 vercel bisect --bad https://example-s93n1nfa.vercel.app
@@ -82,7 +81,7 @@ vercel bisect --bad https://example-s93n1nfa.vercel.app
 
 ### Path
 
-The `--path` option, shorthand `-p`, can be used to specify a subpath of the deployment where the issue occurs. The subpath will be appended to each URL during the bisect session.
+The `--path` option can be used to specify a subpath of the deployment where the issue occurs. The subpath will be appended to each URL during the bisect session.
 
 ```bash filename="terminal"
 vercel bisect --path /blog/first-post
@@ -93,7 +92,7 @@ vercel bisect --path /blog/first-post
 
 ### Open
 
-The `--open` option, shorthand `-o`, will attempt to automatically open each deployment URL in your browser window for convenience.
+The `--open` option will attempt to automatically open each deployment URL in your browser window for convenience.
 
 ```bash filename="terminal"
 vercel bisect --open
@@ -104,7 +103,7 @@ vercel bisect --open
 
 ### Run
 
-The `--run` option, shorthand `-r`, provides the ability for the bisect session to be automated using a shell script or command that will be invoked for each deployment URL. The shell script can run an automated test (for example, using the `curl` command to check the exit code) which the bisect command will use to determine whether each URL is good (exit code 0), bad (exit code non-0), or should be skipped (exit code 125).
+The `--run` option provides the ability for the bisect session to be automated using a shell script that will be invoked for each deployment URL. Pass the path to an executable script file. The script receives the deployment URL as its first argument. The shell script can run an automated test (for example, using the `curl` command to check the exit code) which the bisect command will use to determine whether each URL is good (exit code 0), bad (exit code non-0), or should be skipped (exit code 125).
 
 ```bash filename="terminal"
 vercel bisect --run ./test.sh
@@ -125,7 +124,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

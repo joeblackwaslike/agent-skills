@@ -10,11 +10,12 @@ prerequisites:
 related:
   - /docs/rbac/access-roles
   - /docs/cli/project
+  - /docs/plans/pro-plan/trials
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rbac/managing-team-members.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b01f4e42c17c458255a8037ad0ba2a621225c76a9b55323b3cc339bb1daab5c9"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5f1bebdb44c63c5fa8903a5616287e852d265ea5ebd5a819dbdf3518452fafa3"
 ---
 
 # Managing Team Members
@@ -28,12 +29,11 @@ As the team owner, you have the ability to manage your team's composition and th
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Set per-user budgets on AI Gateway](https://vercel.com/changelog/set-per-user-budgets-on-ai-gateway)
-- [How do I transfer ownership of a Vercel team?](https://vercel.com/kb/guide/how-do-i-transfer-ownership-of-a-vercel-team) — Learn how to transfer ownership of a Vercel team, including the exact dashboard steps to promote a new Owner and remove
 - [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
-- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
 - [Directory Sync \\(SCIM\\)](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
 
 Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/docs/rbac/managing-team-members.graph.md)
 <!-- /docsgraph:related -->
@@ -89,6 +89,25 @@ Run [`vercel project members add`](/docs/cli/project#members), where `<role>` is
 ```bash filename="terminal"
 vercel project members add <project> <email> --role <role>
 ```
+
+## Transferring team ownership
+
+> Changing team roles is available on Enterprise and Pro plans
+>
+> Those with the owner role can access this feature
+
+A team can have more than one [Owner](/docs/rbac/access-roles#owner-role), so you transfer ownership in two steps: promote the new Owner, then demote or remove the original Owner. A team must always have at least one Owner, so complete the steps in this order.
+
+1. From the dashboard, select your team from the team switcher, open **Settings** in the sidebar, and go to [**Members**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fmembers\&title=Go+to+Members+settings)
+2. Promote the new Owner:
+   - If they're already on the team, select **Manage Role** next to their current role, choose **Owner**, and confirm
+   - If they aren't on the team, [invite them](#adding-team-members-and-assigning-roles) with the **Owner** role, and wait for them to accept the invitation
+3. Confirm that the new Owner appears in the **Team Members** list with the **Owner** role
+4. The new Owner, or any other Owner, then updates the original Owner's account:
+   - To keep them on the team without team-level control, select **Manage Role** next to their name and choose a different [role](/docs/rbac/access-roles), such as **Member**
+   - To remove them from the team, follow the steps to [delete a member](#delete-a-member)
+
+Teams on a [Pro trial](/docs/plans/pro-plan/trials) can have only one Owner, and you can't change Owners during the trial. To transfer ownership of a trial team, upgrade it to a paid Pro plan first.
 
 ## Delete a member
 

@@ -16,8 +16,8 @@ related:
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f8077b46212b360bc964c37a8d5d9dc8ab0df133bb03e3f00e8505d610bf25ad"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "1f29c8c3ffdbaa7213f8114937b7866dda61833bd5854aaf40a11e85f89b0d0c"
 ---
 
 # Configuring a Build
@@ -39,9 +39,9 @@ When you make a [deployment](/docs/deployments), Vercel **builds** your project.
 - [Migrate Fly.io worker processes to Vercel Daemons](https://vercel.com/kb/guide/migrate-fly-io-workers-to-vercel-daemons) — Migrate Fly.io workers to Vercel Daemons with your existing Dockerfile. Map process settings, preserve queue state, and
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
 - [Advanced Project Settings](https://vercel.com/blog/advanced-project-settings)
+- [New configuration overrides available per-deployment](https://vercel.com/changelog/new-configuration-overrides-available-per-deployment)
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
-- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/builds/configure-a-build.graph.md](/docs/builds/configure-a-build.graph.md)
 <!-- /docsgraph:related -->
@@ -61,7 +61,7 @@ The **Build and Deployment** section of the Settings tab offers the following op
 ## Framework Settings
 
 If you'd like to override the settings or specify a different framework, you can do so from
-the **Build & Development Settings** section.
+the **Framework Settings** section.
 
 ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/build-step/framework-settings-light.png)
 
@@ -274,7 +274,24 @@ version 7.5.1*
 
 The Install Command defined in the Project Settings will be used for front-end frameworks that support Vercel functions for APIs.
 
-If you're using [Vercel functions](/docs/functions) defined in the natively supported `api` directory, a different Install Command will be used depending on the language of the Vercel Function. You cannot customize this Install Command.
+If you're using [Vercel functions](/docs/functions) defined in the natively supported `api` directory, a different Install Command will be used depending on the language of the Vercel Function.
+
+For Node.js functions, you can replace this Install Command in `vercel.json`. Add the `installCommand` property to the [`functions`](/docs/project-configuration/vercel-json#functions) entry whose glob pattern matches your functions. An empty string skips the install. You cannot customize the Install Command for other runtimes.
+
+For example, this configuration installs dependencies with `pnpm install` for the JavaScript functions in the `api` directory:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/**/*.js": {
+      "installCommand": "pnpm install"
+    }
+  }
+}
+```
+
+This property is separate from the top-level [`installCommand`](/docs/project-configuration/vercel-json#installcommand) property, which overrides the Install Command in Project Settings.
 
 ### Development Command
 
@@ -308,7 +325,7 @@ In some projects, the top-level directory of the repository may not be the root 
 
 For such cases, you can specify the project Root Directory. If you do so, please note the following:
 
-- Your app will not be able to access files outside of that directory. You also cannot use `..` to move up a level
+- By default, your build can access files outside of that directory, and your commands can use `..` to move up a level. If you turn off **Include files outside the root directory in the Build Step** in the **Root Directory** settings, your build cannot access files outside of that directory
 - This setting also applies to [Vercel CLI](/docs/cli). Instead of running `vercel <directory-name>` to deploy, specify `<directory-name>` here so you can just run `vercel`
 
 To configure the Root Directory:

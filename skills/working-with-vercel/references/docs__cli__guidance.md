@@ -12,8 +12,8 @@ related:
 summary: Enable or disable guidance messages in the Vercel CLI using the vercel guidance command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/guidance.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e82c81943354484e0ef8c8309c357b1411dce8a3b76a422704edb92b7143ed37"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "581e7e4c8cab2962061a4449c9d6dc68e1d99c678d2914b9543c356b2ad7b763"
 ---
 
 # vercel guidance
@@ -30,7 +30,7 @@ The `vercel guidance` command allows you to enable or disable guidance messages.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel upgrade](https://vercel.com/docs/cli/upgrade) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/guidance.graph.md](/docs/cli/guidance.graph.md)
 <!-- /docsgraph:related -->
@@ -110,7 +110,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

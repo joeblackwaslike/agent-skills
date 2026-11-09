@@ -14,8 +14,8 @@ related:
 summary: Keep AI Gateway conversations on the provider that holds their prompt cache, using session IDs, fingerprinting, and pin lifetimes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/session-affinity.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "17587cf1700f764e692fe4c81c510327bc6feee22450e83d4a72fc31cf581110"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "deba84c29fa8ac4e0559279023b79a880836e5375f6f7a60a702df9d72ebb2ab"
 ---
 
 # AI Gateway Session Affinity
@@ -32,8 +32,8 @@ A provider's prompt cache lives on the provider account that served your request
 - [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
-- [AI Gateway Regional Inference](https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference) — Route AI Gateway inference to the region you choose and control where providers store data, for data residency and compl
-- [AI Gateway App Attribution](https://vercel.com/docs/ai-gateway/ecosystem/app-attribution) — Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/session-affinity.graph.md](/docs/ai-gateway/models-and-providers/session-affinity.graph.md)
 <!-- /docsgraph:related -->
@@ -287,19 +287,16 @@ const response = await openai.chat.completions.create({
 });
 ```
 
-The request can still carry a session ID, but AI Gateway doesn't write pins or reorder providers for it. The response reports the outcome `skipped_mode_off`.
+The request can still carry a session ID, but AI Gateway doesn't write pins or reorder providers for it.
 
 ## Read session details from responses
 
-AI Gateway reports the session and what it did in `providerMetadata.gateway.routing` in the AI SDK, or in `provider_metadata.gateway.routing` on Chat Completions, OpenAI Responses, and Anthropic Messages responses.
+AI Gateway reports the session it used in `providerMetadata.gateway.routing` in the AI SDK, or in `provider_metadata.gateway.routing` on Chat Completions, OpenAI Responses, and Anthropic Messages responses.
 
-| Field                        | Description                                                                                                                                                          |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `clientSessionId`            | The session ID AI Gateway used.                                                                                                                                      |
-| `clientSessionIdSource`      | `explicit` for IDs you send, including `prompt_cache_key`. `agent` for the Claude Code header. `fingerprint` for IDs AI Gateway derived.                              |
-| `affinity.outcome`           | What session affinity did for this request. See the outcomes below.                                                                                                  |
-| `affinity.pinnedProvider`    | The provider the session's pin named.                                                                                                                                |
-| `affinity.displacedProvider` | The provider AI Gateway would have tried first without the pin. It appears only when the pin moved a different provider to the front.                                |
+| Field                   | Description                                                                                                                             |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `clientSessionId`       | The session ID AI Gateway used.                                                                                                         |
+| `clientSessionIdSource` | `explicit` for IDs you send, including `prompt_cache_key`. `agent` for the Claude Code header. `fingerprint` for IDs AI Gateway derived. |
 
 ```json
 {
@@ -308,30 +305,14 @@ AI Gateway reports the session and what it did in `providerMetadata.gateway.rout
       "routing": {
         "clientSessionId": "sess_8f3KQ2vXr9mT",
         "clientSessionIdSource": "explicit",
-        "affinity": {
-          "outcome": "promoted",
-          "pinnedProvider": "anthropic",
-          "displacedProvider": "bedrock"
-        }
+        "finalProvider": "anthropic"
       }
     }
   }
 }
 ```
 
-The `affinity.outcome` field has one of these values. AI Gateway can add values over time, so handle unknown values as "no change".
-
-| Outcome                    | Meaning                                                                                  |
-| -------------------------- | ---------------------------------------------------------------------------------------- |
-| `promoted`                 | AI Gateway moved the pinned provider ahead of the provider it would have tried first.    |
-| `confirmed`                | The pinned provider already came first, so nothing moved.                                |
-| `no_pin`                   | The session has no pin for this model yet.                                               |
-| `pin_expired`              | The session had a pin for this model, but it expired. The provider's cache is likely cold. |
-| `skipped_not_in_plan`      | Your routing settings removed the pinned provider from this request.                     |
-| `skipped_health_down`      | The pinned provider is unhealthy, so AI Gateway didn't promote it.                       |
-| `skipped_below_min_prefix` | The prompt is below the minimum cacheable size.                                          |
-| `not_cache_capable`        | AI Gateway identified the session itself, and the model doesn't support prompt caching.  |
-| `skipped_mode_off`         | You set `sessionAffinity: false`.                                                        |
+`finalProvider` names the provider that served the request. To check that a session stays on one provider, compare `finalProvider` across responses that share a `clientSessionId`.
 
 
 ---

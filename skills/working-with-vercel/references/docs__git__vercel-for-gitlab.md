@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain updates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-gitlab.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a5b0d626f16d44acb872594961ea7b7f185dc9e0635954367136be29bd156f9b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "40908abfff4d560c20990bffcd28ae49da6f5643463171decead5329be10a5e3"
 ---
 
 # Deploying GitLab Projects with Vercel
@@ -32,12 +32,13 @@ Vercel for GitLab automatically deploys your GitLab projects with [Vercel](/), p
 
 - [Introducing `vercel dev`: Serverless, on localhost](https://vercel.com/blog/vercel-dev)
 - [September 2020](https://vercel.com/blog/changelog-september-2020)
-- [July 2020](https://vercel.com/blog/changelog-july-2020)
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [Git settings](https://vercel.com/docs/project-configuration/git-settings) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/git/vercel-for-gitlab.graph.md](/docs/git/vercel-for-gitlab.graph.md)
 <!-- /docsgraph:related -->
@@ -178,7 +179,7 @@ Then, restart the Vercel [signup process](/signup).
 
 ## Missing Git repository
 
-When importing or connecting a GitLab repository, we require that you have **Maintainer** access to the corresponding repository, so that we can configure a webhook and automatically deploy pushed commits. If your repository belongs to a [Gitlab group](https://docs.gitlab.com/ee/user/group/), you need to have **Maintainer** access to the group as well. You can use the [Group and project access requests API](https://docs.gitlab.com/ee/api/access_requests.html#valid-access-levels) to find the access levels for a group.
+When importing or connecting a GitLab repository, we require that you have **Maintainer** access to the corresponding repository, so that we can configure a webhook and automatically deploy pushed commits. If your repository belongs to a [Gitlab group](https://docs.gitlab.com/ee/user/group/), **Maintainer** access to the group also meets this requirement. You can use the [Group and project access requests API](https://docs.gitlab.com/ee/api/access_requests.html#valid-access-levels) to find the access levels for a group.
 
 If a repository is missing when you try to import or connect it, make sure that you have [Maintainer access configured for the repository](https://docs.gitlab.com/ee/user/project/members/).
 

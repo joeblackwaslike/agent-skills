@@ -14,8 +14,8 @@ related:
 summary: Send bugs, friction, and feature requests to the Vercel team using the vercel feedback CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/feedback.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "da7fddb67ec39e4b41e1cc21a5a96eb77c43f2562c496a21a5f90f2205d5a58b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c18551f472c4713540bc398d9cd516b4c967705aad09183e5326f37c8858361b"
 ---
 
 # vercel feedback
@@ -34,7 +34,7 @@ Use `vercel feedback` to report bugs, friction, and feature requests to the Verc
 - [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
 
 Full cross-link map for this page: [/docs/cli/feedback.graph.md](/docs/cli/feedback.graph.md)
 <!-- /docsgraph:related -->
@@ -64,29 +64,29 @@ Running `vercel feedback` without a note or fields displays help without submitt
 Pass `-` as the note to read the complete UTF-8 input from stdin:
 
 ```bash filename="terminal"
-printf '%s\n' "The deployment error didn't explain how to fix the issue" | vercel feedback - -f product=cli
+printf '%s\n' "The deployment error didn't explain how to fix the issue" | vercel feedback - --field product=cli
 ```
 
 You can also pipe a file with `cat notes.md | vercel feedback -`.
 
 ### Include context with named fields
 
-Use repeatable `--field` options, or the `-f` shorthand, to describe the task and the result:
+Use repeatable `--field` options to describe the task and the result:
 
 ```bash filename="terminal"
 vercel feedback "The error did not explain the correct command" \
-  -f product=cli \
-  -f task="deploy a preview" \
-  -f expected="Create a Preview deployment" \
-  -f actual="Unknown option: --preview" \
-  -f type=bug \
-  -f impact="Time spent finding the correct syntax"
+  --field product=cli \
+  --field task="deploy a preview" \
+  --field expected="Create a Preview deployment" \
+  --field actual="Unknown option: --preview" \
+  --field type=bug \
+  --field impact="Time spent finding the correct syntax"
 ```
 
 A note is optional when you provide at least one named field:
 
 ```bash filename="terminal"
-vercel feedback -f product=cli -f type=feature -f expected="Explain how to fix deployment errors"
+vercel feedback --field product=cli --field type=feature --field expected="Explain how to fix deployment errors"
 ```
 
 ### Submit feedback as an agent
@@ -95,18 +95,18 @@ Agents can also use `vercel feedback` to report issues they encounter while comp
 
 ```bash filename="terminal"
 vercel feedback "The error did not explain the correct command" \
-  -f product=cli -f model="your_model_name" \
-  -f task="deploy a preview" \
-  -f expected="Create a Preview deployment" \
-  -f actual="Unknown option: --preview" \
-  -f type=bug
+  --field product=cli --field model="your_model_name" \
+  --field task="deploy a preview" \
+  --field expected="Create a Preview deployment" \
+  --field actual="Unknown option: --preview" \
+  --field type=bug
 ```
 
 ## Unique options
 
 ### Field
 
-The `--field` option, shorthand `-f`, accepts `key=value` pairs. Keys must be non-empty, and all values are strings. If you repeat a key, the last value wins.
+The `--field` option accepts `key=value` pairs. Keys must be non-empty, and all values are strings. If you repeat a key, the last value wins.
 
 You can use any field name. The following fields are recommended and optional:
 
@@ -120,7 +120,7 @@ You can use any field name. The following fields are recommended and optional:
 | `actual`   | What happened, including the error text.                     |
 | `impact`   | Time spent, retries, or workarounds used.                    |
 
-Use one positional note (including `-` for stdin) or `-f note=...`. Combining both causes an error. Repeated `-f note=...` fields use the last value.
+Use one positional note (including `-` for stdin) or `--field note=...`. Combining both causes an error. Repeated `--field note=...` fields use the last value.
 
 ## Submission details
 
@@ -140,7 +140,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

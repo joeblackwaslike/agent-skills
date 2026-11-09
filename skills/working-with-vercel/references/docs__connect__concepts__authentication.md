@@ -13,12 +13,12 @@ related:
   - /docs/connect/concepts/project-links
   - /docs/rest-api
   - /docs/connect/ts-sdk-reference
-  - /docs/connect/concepts/installations
+  - /docs/environment-variables/system-environment-variables
 summary: "Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/authentication.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "401cae9af088f41579692a0b4f7a1583f79ecbd04fa5e9e2cad89b565e7b4dcb"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "1b6ce3b3904d1dab99518d2708e2e780952447570ab55b02628d26c8993830b9"
 ---
 
 # Authentication in Vercel Connect
@@ -33,13 +33,13 @@ Vercel Connect sits between your code and a provider. Each token request has two
 
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 - [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 
 Full cross-link map for this page: [/docs/connect/concepts/authentication.graph.md](/docs/connect/concepts/authentication.graph.md)
 <!-- /docsgraph:related -->
@@ -50,7 +50,7 @@ How does Vercel Connect know who's calling? The Vercel Connect SDKs (`@vercel/co
 
 ### Vercel OIDC token (recommended)
 
-A running Vercel deployment authenticates with its [OIDC token](/docs/oidc). The token's claims identify the team, project, and environment the deployment belongs to. Vercel Connect checks those claims against the [project links](/docs/connect/concepts/project-links) on the requested connector. If there's no link for the calling project, or the link doesn't include the calling environment, the request is rejected with `ClientNotLinkedToProjectError` or `ClientNotEnabledForEnvironmentError` in TypeScript, or `ConnectApiError` in Python.
+A running Vercel deployment authenticates with its [OIDC token](/docs/oidc). The token's claims identify the team, project, and environment the deployment belongs to. Vercel Connect checks those claims against the [project links](/docs/connect/concepts/project-links) on the requested connector. If there's no link for the calling project, or the link doesn't include the calling environment, Vercel Connect rejects the request with a `403` response. The TypeScript SDK throws a `ConnectError` with the code `forbidden`, and the Python SDK raises `ConnectApiError`. To fix either case, see [Troubleshooting auth failures](#troubleshooting-auth-failures).
 
 On Vercel, the SDK reads `VERCEL_OIDC_TOKEN` from the environment automatically. For local development, run `vercel link` followed by `vercel env pull` to download a development token into `.env.local`. The token expires after about 12 hours; re-run `vercel env pull` if you see authentication errors.
 
@@ -102,7 +102,7 @@ Dashboard requests and `vercel connect` CLI requests authenticate with your Verc
 
 ### What's on the wire
 
-Every token request is a `POST` to `https://api.vercel.com/v1/connect/token/:connector` with a Bearer header and a JSON body that mirrors [`ConnectTokenParams`](/docs/connect/ts-sdk-reference#connecttokenparams). The connector `uid` is a single URL-encoded path segment, so a `uid` like `slack/acme-slack` becomes `slack%2Facme-slack` on the wire:
+Every token request is a `POST` to `/v1/connect/token/:connector` on the Vercel API with a Bearer header and a JSON body that mirrors [`ConnectTokenParams`](/docs/connect/ts-sdk-reference#connecttokenparams). The default host is `api.vercel.com`. When the [`VERCEL_REGION`](/docs/environment-variables/system-environment-variables#VERCEL_REGION) system environment variable is set, the TypeScript SDK sends the request to that region's host instead, `api-<region>.vercel.com`. To send the request to a different region, pass the `region` option in the TypeScript SDK's [`ConnectOptions`](/docs/connect/ts-sdk-reference#connectoptions), for example `{ region: 'sfo1' }`. The connector `uid` is a single URL-encoded path segment, so a `uid` like `slack/acme-slack` becomes `slack%2Facme-slack` on the wire:
 
 ```http
 POST /v1/connect/token/slack%2Facme-slack HTTP/1.1
@@ -150,13 +150,13 @@ Custom OAuth connectors also support the **client-credentials** grant, where Ver
 
 The Connect API surfaces auth failures as typed errors on the SDK side. The most common cases:
 
-| Error class                                  | Cause                                                                                                 | Fix                                                                                                                            |
+| Error                                        | Cause                                                                                                 | Fix                                                                                                                            |
 | -------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `ClientNotLinkedToProjectError`              | The connector exists, but there's no [project link](/docs/connect/concepts/project-links) for the calling project. | Attach the connector in the dashboard or run `vercel connect attach`.                                                          |
-| `ClientNotEnabledForEnvironmentError`        | The link exists, but the requesting environment isn't on its `environments` list.                     | Add the environment to the link (`vercel connect attach <connector> --environment <environment>`) or use a separate connector for that environment. |
+| `ConnectError` with status `403` and the message `Connector is not linked to this project` | The connector exists, but there's no [project link](/docs/connect/concepts/project-links) for the calling project. | Attach the connector in the dashboard or run `vercel connect attach`.                                                          |
+| `ConnectError` with status `403` and the message `Connector is not enabled for this environment` | The link exists, but the requesting environment isn't on its `environments` list.                     | Add the environment to the link in the dashboard, or run [`vercel connect attach`](/docs/cli/connect#vercel-connect-attach) with an `--environment` option for every environment that needs access, for example `vercel connect attach slack/acme-slack --environment production --environment preview`. The command replaces the link's environment list, so include the environments that are already on the link. You can also use a separate connector for that environment. |
 | `ConnectorInstallationRequiredError`         | No [installation](/docs/connect/concepts/installations) has consented for the requested tenant yet.   | Walk the user through the install flow, or pass an `installationId` that already exists.                                       |
 | `UserAuthorizationRequiredError`             | A `user` subject was requested but that user hasn't authorized the connector.                         | Trigger the user-consent flow for that user, then retry.                                                                       |
-| `ConnectorNotFoundError`                     | No Connect client is registered for the connector UID under this team.                                | Create the connector (`vercel connect`) before requesting a token.                                                             |
+| `ConnectError` with status `404` and the code `not_found` | No Connect client is registered for the connector UID under this team.                                | Create the connector (`vercel connect`) before requesting a token.                                                             |
 
 The Python SDK raises `ConnectorInstallationRequiredError`, `UserAuthorizationRequiredError`, and `ConnectNotFoundError` for these cases, and `ConnectApiError` for project link failures. See the [TypeScript SDK Reference](/docs/connect/ts-sdk-reference#errors) or the [Python SDK Reference](/docs/connect/python-sdk-reference#errors) for the full error class list.
 

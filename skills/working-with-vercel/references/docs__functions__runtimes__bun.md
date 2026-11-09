@@ -17,8 +17,8 @@ related:
 summary: Learn how to use the Bun runtime with Vercel Functions to create fast, efficient functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8ea27e9c01afdedb6001b899439924cee91bf0008bab1cb69c68a82019d437f4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b1dc98d2c4c5354ac2d41b20f283c3da2381bd2d4f81193e192da81547a69c71"
 ---
 
 # Using the Bun Runtime with Vercel Functions
@@ -67,7 +67,7 @@ Once you configure the runtime version, Vercel manages the patch versions automa
 }
 ```
 
-> **💡 Note:** Vercel manages the Bun minor versions automatically. `1.4.x` and `1.x` are the
+> **💡 Note:** Vercel manages the Bun patch versions automatically. `1.4.x` and `1.x` are the
 > only valid values currently.
 
 ## Deploy with the Bun framework preset

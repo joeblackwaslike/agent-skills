@@ -8,8 +8,8 @@ tags:
   - json
   - structured-outputs
 source: "https://ai-sdk.dev/cookbook/node/repair-json-with-jsonrepair.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "df0a4fe56e820bf464283f9808e5911ed5562ab9648f59904ef9fdd038dbd9f8"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "01ca98e35dccd42a8af052366b4676131ec07d6bac76b3f230949f674ccf2ac0"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -61,7 +61,7 @@ const result = await generateText({
 });
 
 const repairedText = jsonrepair(result.text);
-const parseResult = safeParseJSON({ text: repairedText });
+const parseResult = await safeParseJSON({ text: repairedText });
 
 if (!parseResult.success) {
   throw parseResult.error;

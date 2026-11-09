@@ -16,8 +16,8 @@ related:
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c06a46e309aed4a577073f33cf3bf1ce19cdc4a10c7260f1462ee108e2085385"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "969a56eff59759ebc1883ce6554c910904ea2693bdbcd2a8dc0ed082b50ef134"
 ---
 
 # Build Output Configuration
@@ -30,9 +30,10 @@ sha256: "c06a46e309aed4a577073f33cf3bf1ce19cdc4a10c7260f1462ee108e2085385"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
-- [Image](https://nextjs.org/docs/pages/api-reference/components/image) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
 - [Image Component](https://nextjs.org/docs/app/api-reference/components/image) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
+- [Image](https://nextjs.org/docs/pages/api-reference/components/image) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
 - [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy) — Backwards compatible Image Optimization with the Legacy Image component.
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
@@ -538,6 +539,7 @@ This value is used for display purposes only.
 
 ```ts
 type Framework = {
+  slug: string;
   version: string;
 };
 ```
@@ -546,6 +548,7 @@ type Framework = {
 
 ```json
   "framework": {
+    "slug": "my-framework",
     "version": "1.2.3"
   }
 ```
@@ -557,6 +560,16 @@ type Framework = {
 <br />
 
 The optional `crons` property is an object describing the [cron jobs](/docs/cron-jobs) for the production deployment of a project.
+
+Cron Jobs are a legacy feature and will be migrated to
+
+Schedules
+
+in the future. Schedules include timezones, private function and queue targets. You can also create schedules at runtime.
+
+Migrate your Cron Jobs to Schedules
+
+.
 
 ```ts
 type Cron = {
@@ -715,6 +728,7 @@ type DaemonsConfig = Record<string, Record<string, never>>;
   },
   "cache": [".cache/**", "node_modules/**"],
   "framework": {
+    "slug": "my-framework",
     "version": "1.2.3"
   },
   "crons": [

@@ -16,8 +16,8 @@ related:
 summary: Learn how Vercel routes public requests to services and how each service handles its own routes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/services/routing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "dd8497586690ff738697884e5ef0fd478d5443fd532bdb8bc29f43a938be1ddf"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9adb5fc802a0f885bc358728833a9d96a057ae594405853be393fe3c79f339bb"
 ---
 
 # Services routing
@@ -39,7 +39,6 @@ owner. For how services are defined and built, see [Services](/docs/services).
 - [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.

@@ -15,8 +15,8 @@ related:
 summary: "Learn how to use the Deploy Button's callback parameters to redirect users to your application after a successful deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deploy-button/callback.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "17eaa0bffb71a9c56ea716931c7fc2716f8b67860e59d13c213b150f4323dc2d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "32eb5f3ac433b32ce2b2cbc90d8ec8782e75c1ed72b9eaa5a906479a579919b5"
 ---
 
 # Using Callbacks with the Deploy Button
@@ -31,13 +31,15 @@ The Redirect URL parameter allows you to define a URL, other than the newly crea
 
 This parameter is helpful if you are sending a user from an application, to deploy a project with Vercel, but want the user to continue with your application with a project created and deployed.
 
-The example below shows a Deploy Button source URL using the Redirect URL parameter:
+To use the Redirect URL parameter, also set the [Developer ID](#developer-id) parameter. Vercel offers the redirect only when the Redirect URL uses HTTPS and its hostname matches the hostname in your Integration's website field, or is a subdomain of that hostname.
+
+The example below shows a Deploy Button source URL using the Redirect URL and Developer ID parameters:
 
 ```bash filename="redirect url"
-https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&redirect-url=https%3A%2F%2Fmy-headless-application.com
+https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&redirect-url=https%3A%2F%2Fmy-headless-application.com&developer-id=oac_7rUTiCMow23Gyfao9RQQ3Es2
 ```
 
-Provide a custom name and logo for the redirect UI by using the [Developer ID](#developer-id) parameter.
+The Developer ID parameter also adds your Integration's name and logo to the redirect UI.
 
 ### Callback Parameters
 
@@ -50,6 +52,7 @@ Vercel additionally attaches some "Callback Parameters" to the defined Redirect 
 | `deployment-dashboard-url`                                 | The URL to view the Deployment that was created through the Project creation flow on the Vercel Dashboard.                                                                                   |
 | `deployment-url`                                           | The URL of the deployment that was created through the Project creation flow. This contains the default production domain that was automatically generated for the project that was created. |
 | `repository-url`                                           | The URL of the Git repository that was created through the Project creation flow, within the user's selected Git account (GitHub, GitLab, or Bitbucket).                                     |
+| `external-id` ([conditional](#external-id)) | The value of [the `external-id` parameter](#external-id). Vercel attaches it only when the Deploy Button source URL sets it. |
 | `production-deploy-hook-url` ([conditional](#deploy-hook)) | The URL of a Deploy Hook. Requires [the `production-deploy-hook` parameter](#deploy-hook).                                                                                                   |
 
 ## Developer ID
@@ -103,12 +106,12 @@ The value of this parameter should be the name of the [Deploy Hook](/docs/deploy
 
 When redirected back to your application upon a successful deployment for the user, you will get the `production-deploy-hook-url` callback parameter in addition to [the default callback parameters](#callback-parameters).
 
-This parameter requires the [Redirect URL](#redirect-url) parameter to also be set.
+This parameter requires the [Redirect URL](#redirect-url) parameter to also be set. Set the [Developer ID](#developer-id) parameter too, because Vercel redirects the user only when the Redirect URL matches your Integration.
 
-The example below shows a Deploy Button source URL using the Redirect URL and production Deploy Hook URL parameters:
+The example below shows a Deploy Button source URL using the Redirect URL, Developer ID, and production Deploy Hook URL parameters:
 
 ```bash filename="deploy hook"
-https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&redirect-url=https%3A%2F%2Fmy-headless-application.com&production-deploy-hook=MyHeadlessProject
+https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&redirect-url=https%3A%2F%2Fmy-headless-application.com&developer-id=oac_7rUTiCMow23Gyfao9RQQ3Es2&production-deploy-hook=MyHeadlessProject
 ```
 
 

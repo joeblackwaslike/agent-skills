@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the xAI native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/xai.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "60064b9b68b2ab0a58fb513aa227d54ffe21702618bb1b9818b18908d4094893"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9ae24b234faa7e40f92f75107a962f4135dc92e51c544a45888fbf6c4b865d3b"
 ---
 
 # Vercel xAI Integration
@@ -31,6 +31,7 @@ chat and vision AI capabilities with integrated billing through Vercel.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [xAI joins the Vercel Marketplace ](https://vercel.com/changelog/xai-joins-the-vercel-marketplace)
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.

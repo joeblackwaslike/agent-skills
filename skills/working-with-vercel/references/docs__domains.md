@@ -16,8 +16,8 @@ related:
 summary: Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4e185e8535ed78dd3e3d5fb06a440fc1d003add1b7643c3937499396abc034af"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0f8c8bea52c9c4d8dae20d99c1abec8873018dca3e1419d5518c9f8c758b4d73"
 ---
 
 # Domains Overview
@@ -32,16 +32,16 @@ A **domain** is a user-friendly way of referring to the address access a website
 
 - [Custom domain](https://v0.app/docs/custom-domains) — Add custom domains to your v0 deployments to give your applications a professional, branded URL.
 - [Improved experience for managing project domains](https://vercel.com/changelog/improved-experience-for-managing-project-domains)
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
 - [Accessing Vercel-hosted sites from mainland China](https://vercel.com/kb/guide/accessing-vercel-hosted-sites-from-mainland-china) — Understand why Vercel-hosted sites may be slow or inaccessible in mainland China, and explore steps to improve performan
-- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [How to Deploy a Jekyll Site with Vercel](https://vercel.com/kb/guide/deploying-jekyll-with-vercel) — Create a Jekyll website and deploy it live with Vercel.
+- [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
+- [How to fix a domain suspended by serverHold or clientHold](https://vercel.com/kb/guide/how-to-fix-a-domain-suspended-by-serverhold-or-clienthold) — What serverHold and clientHold mean, why they happen, and how to resolve them.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 - [Get a Domain's configuration](https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration) — GET /v6/domains/{domain}/config — Get a Domain's configuration.
+- [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
-- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 
 Full cross-link map for this page: [/docs/domains.graph.md](/docs/domains.graph.md)
 <!-- /docsgraph:related -->
@@ -93,6 +93,11 @@ This is where, as a developer, you may have to configure the DNS settings to tel
 - [Manage domains programmatically with the registrar API](/docs/domains/registrar-api)
 - [Troubleshooting domains](/docs/domains/troubleshooting)
 
+## Related guides
+
+- [How to fix a domain suspended by serverHold or clientHold](https://vercel.com/kb/guide/how-to-fix-a-domain-suspended-by-serverhold-or-clienthold): What serverHold and clientHold mean, why they happen, and how to resolve them.
+- [Lifecycle of a domain](https://vercel.com/kb/guide/lifecycle-of-a-domain): Understand the states a .com domain passes through from registration to deletion, and how to renew or recover it at each stage.
+- [Accessing Vercel-hosted sites from mainland China](https://vercel.com/kb/guide/accessing-vercel-hosted-sites-from-mainland-china): Understand why Vercel-hosted sites may be slow or inaccessible in mainland China, and explore steps to improve performance for users in the region
 
 ---
 

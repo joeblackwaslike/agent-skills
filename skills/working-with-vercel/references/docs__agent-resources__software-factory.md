@@ -16,8 +16,8 @@ related:
 summary: Build repeatable agent workflows that investigate issues, test changes, and prepare pull requests for human review.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/software-factory.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "86dcdc5d0f37bd12233ff8463be20daf23b3e12d6cfa3eac0c4372e4ed70f383"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c097d1d4a3e297aabad06027e2ee46ff5e8f64b19834ea04396a5b244e8aa62f"
 ---
 
 # Software Factories on Vercel
@@ -30,12 +30,15 @@ Software factories organize AI agents into repeatable development workflows that
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
+- [Choosing between eve, AI SDK agents, and \\`WorkflowAgent\\`](https://vercel.com/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) — Compare eve, \\`ToolLoopAgent\\`, and \\`WorkflowAgent\\` by durability, approvals, channels, and setup to choose an agent f
+- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [You can just ship agents](https://vercel.com/blog/you-can-just-ship-agents)
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [Vercel Ship AI 2025 recap](https://vercel.com/blog/ship-ai-2025-recap)
 - [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
-- [Flue with Vercel](https://vercel.com/docs/frameworks/agents/flue) — Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.
 
 Full cross-link map for this page: [/docs/agent-resources/software-factory.graph.md](/docs/agent-resources/software-factory.graph.md)
 <!-- /docsgraph:related -->
@@ -146,6 +149,8 @@ Store a run's repository, issue number, base commit, branch, current stage, and 
 Before publishing, collect the actual diff, commands and exit codes, and any checks that couldn't run. Tie approval to the reviewed commit so subsequent edits require another review. On a retry, look for an existing branch or pull request for the run before creating another. Durable execution can replay an interrupted operation; it doesn't make every GitHub write idempotent.
 
 ## Explore software factory implementations
+
+Use the [software factories reference architecture](/kb/architecture/software-factories) to explore working factories and templates, then choose how to run, review, and improve the work.
 
 These resources put the concepts into practice:
 

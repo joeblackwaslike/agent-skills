@@ -14,8 +14,8 @@ related:
 summary: Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect (OIDC) or a Personal Access Token (PAT).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "22dc53057a0f2031bd1282f9f9d2c637e18be3a769320a86b7949d411d2e89d5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a86a5f487a0065b6bb6c02c34445b88f3a09b38354f663942d3c4324ada666d5"
 ---
 
 # Use Remote Caching from External CI/CD
@@ -33,8 +33,8 @@ You can use [Vercel Remote Cache](/docs/monorepos/remote-caching) with Turborepo
 - [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
 - [GitLab CI](https://turborepo.dev/docs/guides/ci-vendors/gitlab-ci) — Configure GitLab CI pipelines to run Turborepo tasks with Remote Caching.
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
-- [Continuous Integration](https://turborepo.dev/docs/guides/ci-vendors) — Browse CI provider recipes for using Turborepo with Remote Caching in your pipelines.
-- [Caching](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching) — Vercel MCP tools for caching.
+- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
+- [Turbocharging Next.js: How Remote Caching decreased publish times by 80%](https://vercel.com/blog/turborepo-remote-cache-nextjs-publish-times-80-percent)
 
 Full cross-link map for this page: [/docs/monorepos/remote-caching/external-ci-cd.graph.md](/docs/monorepos/remote-caching/external-ci-cd.graph.md)
 <!-- /docsgraph:related -->

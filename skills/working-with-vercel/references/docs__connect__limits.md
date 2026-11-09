@@ -15,8 +15,8 @@ related:
 summary: Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/limits.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ce30b1011426166caffbdf03489ad5b1c4db7edbd6796017a36b5e25cec3cbad"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b2a7494f855b926e676d938bdfd3bbff7d22f0f986d1b0c5a2faee7862de82d7"
 ---
 
 # Vercel Connect Limits
@@ -31,8 +31,8 @@ The following limits apply. Contact your account team if you need higher limits.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 - [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token) — POST /v1/connect/token/{connector} — Get an access token for a connector identified by the path parameter and scoped to
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
@@ -78,7 +78,7 @@ Dashboard reads (viewing connectors, project links, installations, observability
 | `vercel connect attach` | [CLI](/docs/cli/connect#vercel-connect-attach) | Link a project to a connector |
 | `vercel connect detach` | [CLI](/docs/cli/connect#vercel-connect-detach) | Unlink a project from a connector |
 | `vercel connect update` | [CLI](/docs/cli/connect#vercel-connect-update) | Update connector branding |
-| `vercel connect remove` | [CLI](/docs/cli/connect#vercel-connect-remove) | Delete a connector |
+| `vercel connect delete` | [CLI](/docs/cli/connect#vercel-connect-delete) | Delete a connector |
 
 Manual Vercel Connect Dashboard write operations (creating, updating, or deleting connectors, managing project links, and starting authorization or installation flows) also count against these limits.
 

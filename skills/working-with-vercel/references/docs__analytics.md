@@ -16,8 +16,8 @@ related:
 summary: "With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top referrers, and demographics."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/analytics.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d2cd9f9d040e4c9330dd52c3ca4e5c9542aef267c10366f84185221b396e396d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d58be29bf9481242845234e5480082d3e360624ad6d72555ce6eca7d89fea6de"
 ---
 
 # Vercel Web Analytics
@@ -45,7 +45,7 @@ sha256: "d2cd9f9d040e4c9330dd52c3ca4e5c9542aef267c10366f84185221b396e396d"
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [How Core Web Vitals Will Impact Google Rankings in 2021](https://vercel.com/blog/core-web-vitals)
 
 Full cross-link map for this page: [/docs/analytics.graph.md](/docs/analytics.graph.md)

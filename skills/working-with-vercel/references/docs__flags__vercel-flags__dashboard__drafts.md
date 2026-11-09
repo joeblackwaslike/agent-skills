@@ -16,8 +16,8 @@ related:
 summary: Learn how draft flags work and how to promote them to Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/drafts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cd6e159a09caeede22b9c27b490db3f552db596f3b1d4b792f1a73b3e79bcef2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "580ceef0184c08f7777b12c878b69a4500fb047cff3b0309c4a016c11b9ae736"
 ---
 
 # Draft Flags
@@ -34,10 +34,11 @@ Drafts are flags that Vercel detects in your code but haven't been created in th
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
+- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
-- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/drafts.graph.md](/docs/flags/vercel-flags/dashboard/drafts.graph.md)
 <!-- /docsgraph:related -->
@@ -97,7 +98,7 @@ When you promote a draft, Vercel pre-fills the flag configuration with informati
 
 - **Description**: From the `description` property in your flag definition
 - **Options/Variants**: From the `options` array in your flag definition
-- **Type**: Inferred from your default value or options
+- **Type**: Inferred from the values in your `options` array, or Boolean when your flag definition has no `options`
 
 After promotion, the flag is managed by the dashboard and you can configure environments, add targeting rules, and track changes.
 
@@ -113,7 +114,7 @@ Vercel detects drafts through your application's Flags Discovery Endpoint, typic
 If you're using the Flags SDK, use `getProviderData` to generate this information automatically:
 
 ```ts filename="app/.well-known/vercel/flags/route.ts"
-import { createFlagsDiscoveryEndpoint, verifyAccess } from 'flags/next';
+import { createFlagsDiscoveryEndpoint } from 'flags/next';
 import { getProviderData } from '@flags-sdk/vercel';
 import * as flags from '../../../../flags';
 

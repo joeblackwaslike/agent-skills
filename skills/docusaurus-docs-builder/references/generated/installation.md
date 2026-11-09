@@ -1,8 +1,8 @@
 ---
 title: "Installation"
 source: "https://docusaurus.io/docs/installation"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "4580006ad756a50c87e5e80aee0252327f32ca164e377fd46efc505e3085cc7a"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "51de16ad84e0c6b254e8b1a31d9415aac8c33c25c78639eeaa19685959a0615a"
 ---
 
 # Installation
@@ -205,4 +205,4 @@ tipUse new unreleased features of Docusaurus with the [@canary npm dist tag](htt
 
 ## Problems?[​](https://docusaurus.io/docs/installation#problems)
 
-Ask for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/docusaurus), on our [GitHub repository](https://github.com/facebook/docusaurus), our [Discord server](https://discordapp.com/invite/docusaurus), or [X](https://x.com/docusaurus).[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/installation.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+Ask for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/docusaurus), on our [GitHub repository](https://github.com/facebook/docusaurus), our [Discord server](https://discordapp.com/invite/docusaurus), or [X](https://x.com/docusaurus).[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/installation.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

@@ -4,8 +4,8 @@ description: Learn how to set up the Luma provider and check AI Gateway availabi
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/luma"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/luma.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "dc46366138957c16fe8dd75797a4dc7f7c7eb8cfb6046d6bcee1d3005a9941fa"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "25a2c8180233914fd25f4b67bff0bef55048f613fa9f164ffb920cffed9bb985"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -170,10 +170,10 @@ Since Luma processes images through an asynchronous queue system, these settings
 
 Luma offers two main models:
 
-| Model            | Description                                                      |
-| ---------------- | ---------------------------------------------------------------- |
-| `photon-1`       | High-quality image generation with superior prompt understanding |
-| `photon-flash-1` | Faster generation optimized for speed while maintaining quality  |
+| Model            | Description                                                      | Sizes                                                             | Image Editing | Mask Input | Max Images Per Call |
+| ---------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------- | ------------- | ---------- | ------------------- |
+| `photon-1`       | High-quality image generation with superior prompt understanding | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
+| `photon-flash-1` | Faster generation optimized for speed while maintaining quality  | Accepted size or aspect ratio depends on the model and operation. | ✓             | ✗          | 1                   |
 
 Both models support the following aspect ratios:
 
@@ -301,6 +301,17 @@ await generateImage({
 ```
 
 Learn more at [https://docs.lumalabs.ai/docs/image-generation#character-reference](https://docs.lumalabs.ai/docs/image-generation#character-reference)
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option               | Description                                                                                                                                                                                                                                                                                                                                           |
+| --------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| image     | `referenceType`      | The type of image reference to use when providing input images. - `image`: Guide generation using reference images (up to 4). Default. - `style`: Apply a specific style from reference image(s). - `character`: Create consistent characters from reference images (up to 4). - `modify_image`: Transform a single input image with prompt guidance. |
+| image     | `images`             | Per-image configuration array. Each entry corresponds to an image in `prompt.images`. Allows setting individual weights for each reference image.                                                                                                                                                                                                     |
+| image     | `pollIntervalMillis` | Override the polling interval in milliseconds (default 500).                                                                                                                                                                                                                                                                                          |
+| image     | `maxPollAttempts`    | Override the maximum number of polling attempts (default 120).                                                                                                                                                                                                                                                                                        |
 
 ---
 

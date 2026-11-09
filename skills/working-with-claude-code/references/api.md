@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/mods/api.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "6b125c4bfc154487f551e8e0e1920d981f17a3ddbc3d05d17ffde3d1d09de9be"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "b64550f6fce51563796e5a54fa1e5eb2c66734fb59669f6e1736daa3e001a545"
 ---
 
 > ## Documentation Index
@@ -262,7 +262,7 @@ When a background job finds something that needs Claude's attention, it can star
 
 ### Stop background work
 
-Timers stop when the module reloads. For long-running work inside a hook, [`next.signal`](https://code.claude.com/docs/en/plugins/mods/reference#the-hook-function) is an `AbortSignal` that aborts when the event your hook is handling is abandoned, for example when the user interrupts, so pass it to anything long-running.
+Timers stop after the module reloads. For long-running work inside a hook, [`next.signal`](https://code.claude.com/docs/en/plugins/mods/reference#the-hook-function) is an `AbortSignal` that aborts when the event your hook is handling is abandoned, for example when the user interrupts. Pass it to anything long-running.
 
 ### Calls and background work after the user interrupts a turn
 

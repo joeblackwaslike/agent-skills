@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/koalaman/shellcheck/master/README.md"
-fetched_at: "2026-10-19T09:38:26.830Z"
-sha256: "7bb0c6431e2f8a1702ad9a1bc1665953f0218256a2511e87e24d6ccd480032c7"
+fetched_at: "2026-11-09T12:33:49.565Z"
+sha256: "be69ca34f3b506c9d3736054a9420942f1c27b026508dec24d0fc53fa6c43721"
 ---
 
 [![Build Status](https://github.com/koalaman/shellcheck/actions/workflows/build.yml/badge.svg)](https://github.com/koalaman/shellcheck/actions/workflows/build.yml)
@@ -415,7 +415,7 @@ time --format=%s sleep 10         # Passing time(1) flags to time builtin
 while read h; do ssh "$h" uptime  # Commands eating while loop input
 alias archive='mv $1 /backup'     # Defining aliases with arguments
 tr -cd '[a-zA-Z0-9]'              # [] around ranges in tr
-exec foo; echo "Done!"            # Misused 'exec'
+exec foo; bar                     # Misused 'exec'
 find -name \*.bak -o -name \*~ -delete  # Implicit precedence in find
 # find . -exec foo > bar \;       # Redirections in find
 f() { whoami; }; sudo f           # External use of internal functions
@@ -454,7 +454,7 @@ cd dir; process *; cd ..;         # Use subshells instead
 echo $[1+2]                       # Use standard $((..)) instead of old $[]
 echo $(($RANDOM % 6))             # Don't use $ on variables in $((..))
 echo "$(date)"                    # Useless use of echo
-cat file | grep foo               # Useless use of cat
+cat file | grep foo               # Useless use of cat (optional check)
 ```
 
 ### Data and typing errors

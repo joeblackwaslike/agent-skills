@@ -4,8 +4,8 @@ description: Learn how to use Cerebras with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cerebras.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "d1f08b58c32b06cb62580b937f3f15124f52824c3be52cda84b5217cfd71fc97"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "46fe2f26c7d6625a5740d92fda97da44ed9984baa99bd1e64dbc3e036c8c872b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -196,7 +196,15 @@ The following optional provider options are available for Cerebras language mode
 
 - **serviceTier** *'auto' | 'default' | 'flex' | 'priority'*
 
-  Controls request priority. Availability depends on your account and endpoint.
+  Controls request priority on a dedicated endpoint with service tiers enabled through Cerebras private preview. Service tiers are not available with Shared Inference on the Developer Tier. `default` uses standard priority, `flex` uses the lowest priority, `auto` starts at standard priority and falls back to `flex` when needed, and `priority` requests the highest configured priority.
+
+  See the [Cerebras service tiers documentation](https://inference-docs.cerebras.ai/capabilities/service-tiers).
+
+  When the API returns `service_tier`, the effective tier is surfaced on `result.providerMetadata.cerebras.serviceTier` (or the awaited stream metadata). For example, an `auto` request can return `flex`, and a `priority` request can return `auto`. The metadata field is omitted when the response field is missing or `null`; it is never inferred from the requested tier.
+
+- **queueThreshold** *number*
+
+  Maximum acceptable queue time, in integer milliseconds, for `flex`/`auto` requests on a supported endpoint. If the expected queue time exceeds the threshold, the request is rejected instead of queued. Sent as the `queue_threshold` header, taking precedence over a custom header with that name. Valid range: `50`–`20000` (inclusive).
 
 - **reasoningEffort** *'none' | 'low' | 'medium' | 'high'*
 

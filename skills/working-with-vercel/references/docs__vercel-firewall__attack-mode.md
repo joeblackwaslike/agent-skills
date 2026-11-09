@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Attack Mode to help control who has access to your site when it's under attack."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/attack-mode.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "aa8564ee9179a6bebd9a32c1186463031d2b7c1ea812590e921825aee2836f79"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3869b696f2070d4e8ca6e1cf73623a31b30c01b0c1a2ec55f88cc75b9c422c4a"
 ---
 
 # Attack Mode
@@ -37,14 +37,14 @@ Attack Mode is a security feature that protects your site during DDoS attacks. W
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
 - [Prevent malicious traffic with Attack Challenge Mode for the Vercel Firewall](https://vercel.com/changelog/prevent-malicious-traffic-with-attack-challenge-mode-for-vercel-firewall)
 - [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
-- [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
-- [How to block bots from OpenAI GPTBot](https://vercel.com/kb/guide/how-to-block-bots-openai-gptbot) — Learn how to use the Vercel WAF to block, rate limit, or challenge traffic from OpenAI GPTBot.
 - [Attack Challenge Mode now allows verified bots and Vercel cron jobs](https://vercel.com/changelog/attack-challenge-mode-now-allows-verified-bots-and-vercel-cron-jobs)
-- [How to Utilize Vercel’s Bot Management Features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
+- [Mitigating Denial of Wallet risks with Vercel](https://vercel.com/blog/mitigating-denial-of-wallet-risks-with-vercel)
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
+- [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Vercel WAF upgrade brings persistent actions, rate limiting, and API control](https://vercel.com/blog/vercel-waf-upgrade-brings-persistent-actions-rate-limiting-and-api-control)
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Update Attack Challenge mode](https://vercel.com/docs/rest-api/security/update-attack-challenge-mode) — POST /v1/security/attack-mode — Update the setting for determining if the project has Attack Challenge mode enabled.
+- [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-firewall/attack-mode.graph.md](/docs/vercel-firewall/attack-mode.graph.md)
@@ -86,8 +86,9 @@ To enable:
 
 1. Select your project from the [Dashboard](/dashboard).
 2. Open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall\&title=Go+to+Firewall) in the sidebar.
-3. Click **Bot Management**.
-4. Under **Attack Mode**, select **Enable**.
+3. Select the **⋯** menu on the top right of the Firewall overview page.
+4. Select **Enable Attack Mode**.
+5. In the dialog, select **Enable for 1 Hour**. To keep Attack Mode on for longer, open the menu next to this button and select **Enable for 6 Hours** or **Enable for 24 Hours**.
 
 All traffic initiated by web browsers, including API traffic, is supported. For example, a Next.js frontend calling a Next.js API in the same project will work properly.
 
@@ -98,7 +99,7 @@ All traffic initiated by web browsers, including API traffic, is supported. For 
 
 ## How long to keep it enabled
 
-Attack Mode can be safely used for extended periods without affecting search engine indexing or webhook functionality. However, since Vercel's Firewall already provides automatic DDoS protection, we recommend using it primarily when facing highly targeted attacks rather than as a permanent setting.
+When you enable Attack Mode from the dashboard or the CLI, you choose how long it stays on: 1 hour, 6 hours, or 24 hours. Attack Mode turns off automatically when this period ends. If the attack continues, you can enable Attack Mode again. Attack Mode does not affect search engine indexing or webhook functionality. Because Vercel's Firewall already provides automatic DDoS protection, use Attack Mode primarily when you face highly targeted attacks.
 
 ## Disabling Attack Mode
 
@@ -106,8 +107,8 @@ When you no longer need the additional protection:
 
 1. Select your project from the [Dashboard](/dashboard)
 2. Open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall\&title=Go+to+Firewall) in the sidebar.
-3. Click **Bot Management**.
-4. Under **Attack Mode**, select **Disable**.
+3. Select the **⋯** menu on the top right of the Firewall overview page.
+4. Select **Disable Attack Mode**, then confirm in the dialog.
 
 ## Challenging with custom rules
 

@@ -17,8 +17,8 @@ related:
 summary: Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "65f0ee13bc9574dd1898e9f5455bd39dbdb51492fd87872baf446e16593ae1e6"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "d4677070ef42b20c9e8b3fc147d85d79bdca5eb317f5ee1663a1b2eae68826a4"
 ---
 
 # AI Gateway Routing Rules
@@ -34,11 +34,11 @@ Routing rules let you control how AI Gateway handles your team's requests at the
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [DeepSeek V4.1 Flash 1017 now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-now-available-on-ai-gateway)
+- [DeepSeek V4.1 Flash 1017 Ultrafast now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-ultrafast-now-available-on-ai-gateway)
 - [DeepSeek V4.1 Flash now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway)
-- [Elorian AI's Glimpse now available on AI Gateway](https://vercel.com/changelog/elorian-ai-glimpse-now-available-on-ai-gateway)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules) — GET /ai-gateway/rules — List the authenticated team's routing rules, oldest first. Without \\`limit\\` or \\`cursor\\`, retu
 - [Create rule](https://vercel.com/docs/rest-api/ai-gateway/create-rule) — POST /ai-gateway/rules — Create a routing rule
+- [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules) — GET /ai-gateway/rules — List the authenticated team's routing rules, oldest first. Without \\`limit\\` or \\`cursor\\`, retu
 - [Update rule](https://vercel.com/docs/rest-api/ai-gateway/update-rule) — PATCH /ai-gateway/rules — Update a routing rule \\(enabled, action, or description\\)
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 - [Delete rule](https://vercel.com/docs/rest-api/ai-gateway/delete-rule) — DELETE /ai-gateway/rules — Delete a routing rule \\(soft delete\\)
@@ -57,7 +57,7 @@ Each rule is scoped to a single team. You can attach an optional reason to a rul
 
 ## Manage rules with the CLI
 
-You manage routing rules with the [`vercel ai-gateway rules`](/docs/cli/ai-gateway#rules) command. Target a team with the global `--scope` flag, or use your currently selected team. Every subcommand supports `--format json` for scripting.
+You manage routing rules with the [`vercel ai-gateway rules`](/docs/cli/ai-gateway#rules) command. Target a team with the global `--scope` flag, or use your currently selected team. Every subcommand supports `--json` for scripting.
 
 ```bash filename="terminal"
 vercel ai-gateway rules list --scope your-team
@@ -98,11 +98,11 @@ A request for a denied model returns a `403`:
 Update a rule by its ID. You can change the destination, reason, or description, or toggle the rule on and off:
 
 ```bash filename="terminal"
-vercel ai-gateway rules edit rule_123 --destination anthropic/claude-sonnet-5
+vercel ai-gateway rules update rule_123 --destination anthropic/claude-sonnet-5
 ```
 
 ```bash filename="terminal"
-vercel ai-gateway rules edit rule_123 --disable
+vercel ai-gateway rules update rule_123 --no-enable
 ```
 
 A disabled rule stays in your configuration but stops applying to requests. To include disabled rules in the list, pass `--include-disabled`.
@@ -137,7 +137,7 @@ For example, if `vmc/abc-123` points at `openai/gpt-6-astra`, that rewrite sends
 
 Each [fallback](/docs/ai-gateway/models-and-providers/model-fallbacks) selection goes through routing rules before AI Gateway tries it. Rewrites change the fallback destination. Deny rules prevent the matched fallback from executing, including when a virtual model resolves to it.
 
-AI Gateway skips denied fallback candidates and can continue to another allowed model. If every candidate is denied, the request returns `403`. If a deny matches the model you request directly, the request returns `403` immediately, even with fallbacks configured. A deny that matches only the model behind a requested virtual model skips that attempt and continues to the next fallback.
+AI Gateway skips denied fallback candidates and can continue to another allowed model. If every candidate is denied, the request returns `403`. If a deny matches the model you request directly, AI Gateway skips that model and tries your configured fallbacks. Without fallbacks, the request returns `403`. A deny that matches only the model behind a requested virtual model skips that attempt and continues to the next fallback.
 
 When an allowed model reaches a provider and fails, and every remaining candidate is denied, the request returns that failure. A candidate that never reaches a provider, for example when no provider matches its `only` filter, leaves the deny as the most specific result, so the request returns `403`.
 

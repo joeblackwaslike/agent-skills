@@ -17,8 +17,8 @@ related:
 summary: Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1a672296beadcfb27a6ad4255740c8ade83709ef1c44c10cc1a734ab815ea7ac"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9d22cdfd50ba5dadf576a6afd4668cdce2f778a525e44827bb033f8d7e30e6a3"
 ---
 
 # OpenResponses API with AI Gateway
@@ -35,8 +35,8 @@ AI Gateway supports the [OpenResponses API](https://openresponses.org) specifica
 - [Open Responses](https://ai-sdk.dev/providers/ai-sdk-providers/open-responses) — Learn how to use Open Responses with AI Gateway and the direct provider.
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
+- [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
-- [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation) — Generate text responses with the OpenAI Responses API through AI Gateway.
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses.graph.md)
@@ -156,7 +156,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
 ### Required parameters
 
 - `model` (string): The model ID in `provider/model` format (e.g., `openai/gpt-6-astra`, `anthropic/claude-opus-5`)
-- `input` (array): Array of message objects containing `type`, `role`, and `content` fields
+- `input` (string or array): A text string, or an array of message objects containing `type`, `role`, and `content` fields
 
 ### Optional parameters
 
@@ -165,7 +165,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
 - `top_p` (number): Nucleus sampling. Range: 0-1
 - `max_output_tokens` (integer): Maximum tokens to generate
 - `tools` (array): Tool definitions for function calling
-- `tool_choice` (string): Tool selection mode: `auto`, `required`, or `none`
+- `tool_choice` (string or object): Tool selection mode: `auto`, `required`, `none`, or an object that names a specific function
 - `reasoning` (object): Reasoning configuration with `effort` level
 - `providerOptions` (object): Provider-specific options for gateway configuration
 
@@ -223,10 +223,8 @@ When an error occurs, the API returns a JSON object with details about what went
 ```json
 {
   "error": {
-    "message": "Invalid request: missing required parameter 'model'",
     "type": "invalid_request_error",
-    "param": "model",
-    "code": "missing_parameter"
+    "message": "At least one user message is required in the input"
   }
 }
 ```

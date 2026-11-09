@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6e7bdf254c0bda5bb9f7e34b418a58cbcb817bbc25d894d4d01c7f94e3f56c76"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "316a89d64fc9712ff91ef6ffbf5bb19651ded6cd587c45a929acc3adb5565029"
 ---
 
 # AI Gateway Image Generation via Chat Completions
@@ -28,12 +28,12 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
 - [MAI-Image-2.6 and MAI-Image-2.6-Flash now available on AI Gateway](https://vercel.com/changelog/mai-image-2-6-and-mai-image-2-6-flash-now-available-on-ai-gateway)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
-- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
+- [GPT Image 2.5 Flare and Sunburst now available on AI Gateway](https://vercel.com/changelog/gpt-image-2-5-flare-and-sunburst-now-available-on-ai-gateway)
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
-- [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/openai.graph.md](/docs/ai-gateway/modalities/image-generation/openai.graph.md)
 <!-- /docsgraph:related -->
@@ -313,9 +313,9 @@ def main():
             with open(output_file, "wb") as f:
                 f.write(image_bytes)
 
-    if hasattr(result, "provider_metadata"):
+    if hasattr(result, "providerMetadata"):
         print("\nProvider metadata:")
-        print(json.dumps(result.provider_metadata, indent=2))
+        print(json.dumps(result.providerMetadata, indent=2))
 
 if __name__ == "__main__":
     main()
@@ -609,8 +609,8 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/images/edits \
   -F "mask=@mask.png"
 ```
 
-> **💡 Note:** Not every model supports masks. Models without mask support return a warning
-> in the response and apply the prompt to the whole image.
+> **💡 Note:** Not every model supports masks. A model without mask support either returns
+> an error or ignores the mask and applies the prompt to the whole image.
 
 ### Reference images by URL
 

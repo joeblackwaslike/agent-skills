@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow code and code patterns through string and regular expression matches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-code.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "18044135b5b70a719150ad0906c2e3e1c10cd2a6717a087120366f293439db03"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "97dd964c23a606f6442b20dc1c2861f36e1c31df454e24816556b3686bd4bb85"
 ---
 
 # forbidden-code
@@ -46,7 +46,7 @@ required properties:
 | `categories`   | `("nextjs" \| "performance" \| "security" \| "code-health")[]` (optional) | The custom rule's categories. Default is `["code-health"]`.                                           |
 | `errorMessage` | `string`                                                                  | The error message, which is shown to users when they encounter this rule.                             |
 | `errorLink`    | `string` (optional)                                                       | An optional link to show alongside the error message.                                                 |
-| `description`  | `string` (optional)                                                       | The rule description, which is shown in the Vercel Compass dashboard and included in allowlist files. |
+| `description`  | `string` (optional)                                                       | The rule description, which is included in allowlist files. |
 | `severity`     | `"major" \| "minor"` (optional)                                           | The rule severity added to the allowlists and used to calculate a project's conformance score.        |
 | `patterns`     | `(string \| { pattern: string, flags: string })[]`                        | An array of regular expression patterns to match against.                                             |
 | `strings`      | `string[]`                                                                | An array of exact string to match against (case sensitive).                                           |

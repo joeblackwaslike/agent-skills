@@ -9,13 +9,15 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/project-configuration/global-configuration
+  - /docs/cli/switch
+  - /docs/cli/login
   - /docs/cli/link
   - /docs/cli/inspect
 summary: "Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options here."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-options.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ad9512490e6eb4556ea3ad230c2f6050211afe5c603debb329a07fa0e97a85ea"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a68a212161cc984839e83598a175f275170cb33280c62cc835d29320fadb3110"
 ---
 
 # Vercel CLI Global Options
@@ -28,11 +30,11 @@ Global options are commonly available to use with multiple Vercel CLI commands.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/cli/global-options.graph.md](/docs/cli/global-options.graph.md)
 <!-- /docsgraph:related -->
@@ -103,7 +105,7 @@ vercel --local-config /path-to/vercel.json
 
 ## Scope
 
-The `--scope` option, shorthand `-S`, can be used to execute Vercel CLI commands from a scope that’s not currently active.
+The `--scope` option, shorthand `-S`, runs a Vercel CLI command against a specific team without [switching your current team](/docs/cli/switch). [`vercel login`](/docs/cli/login) is the exception: it saves that team as your current team. Pass the team's slug or ID:
 
 ```bash filename="terminal"
 vercel --scope my-team-slug
@@ -117,7 +119,7 @@ vercel --scope my-team-slug
 You can specify which Vercel Project to use for a CLI command in three ways:
 
 1. **`--project` flag**: Pass a project name or ID directly to the command
-2. **`VERCEL_PROJECT_ID` environment variable**: Set the project ID as an environment variable
+2. **`VERCEL_PROJECT_ID` environment variable**: Set the project ID as an environment variable, together with `VERCEL_ORG_ID` (the ID of the team that owns the project)
 3. **Project linking**: Use the `.vercel` directory created by [`vercel link`](/docs/cli/link)
 
 If you provide multiple options, the CLI uses this precedence order (highest to lowest):
@@ -133,13 +135,13 @@ vercel deploy --project my-project
 # Using the --project flag with a project ID
 vercel deploy --project prj_abc123
 
-# Using the environment variable
-VERCEL_PROJECT_ID=prj_abc123 vercel deploy
+# Using the environment variables
+VERCEL_ORG_ID=team_abc123 VERCEL_PROJECT_ID=prj_abc123 vercel deploy
 ```
 
 *Different ways to specify the project for a Vercel CLI command.*
 
-The `--project` flag and `VERCEL_PROJECT_ID` both accept a project name or project ID. When using CI/CD pipelines or non-interactive environments, set `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` as environment variables to skip project linking. See [using Vercel CLI for custom workflows](/kb/guide/using-vercel-cli-for-custom-workflows) for more details.
+The `--project` flag and `VERCEL_PROJECT_ID` both accept a project name or project ID. When using CI/CD pipelines or non-interactive environments, set `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` as environment variables to skip project linking. If you set only one of them and don't pass `--project`, commands that need a project, such as `vercel deploy`, exit with an error. See [using Vercel CLI for custom workflows](/kb/guide/using-vercel-cli-for-custom-workflows) for more details.
 
 ## Token
 
@@ -177,24 +179,6 @@ vercel login --no-color
 *Using the \`vercel\` command with the
 \`--no-color\` option.*
 
-## Team
-
-The `--team` option, shorthand `-T`, can be used to specify a team slug or ID for the command. This is useful when you need to run a command against a specific team without switching scope.
-
-```bash filename="terminal"
-vercel list --team my-team-slug
-```
-
-*Using the \`vercel\` command with the
-\`--team\` option.*
-
-```bash filename="terminal"
-vercel deploy -T team_abc123def
-```
-
-*Using the \`vercel\` command with the
-\`-T\` shorthand to specify a team by ID.*
-
 ## Version
 
 The `--version` option, shorthand `-v`, outputs the current version number of Vercel CLI.
@@ -229,7 +213,9 @@ Use the CLI's exit code to distinguish success, operational failures, and usage 
 
 `--help` and bare command groups print help to stdout and exit `0`. Help for a command path that doesn't exist exits `2`.
 
-Some commands define additional exit codes. For example, [`vercel inspect --wait`](/docs/cli/inspect#wait) exits `124` when its wait times out while the deployment is still in progress.
+Some commands return other exit codes. For example, `vercel env run` exits with the exit code of the command that it runs.
+
+[`vercel inspect --wait`](/docs/cli/inspect#wait) exits `1` when its wait times out while the deployment is still in progress.
 
 
 ---

@@ -17,8 +17,8 @@ related:
 summary: These actions allow integration providers to set up automated tasks with Vercel deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/deployment-integration-action.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "54734b0ee3189e1028a7977c2ef61c9cf30c1241da4fd2407ccbc9eaf424d669"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9e44bc0b8d1e038ba1f26723d8b7c9044ddec9646da5a5bb2636a791261d8f61"
 ---
 
 # Deployment integration actions
@@ -113,7 +113,7 @@ As an integration provider, to allow your integration users to add deployment ac
   You can retrieve additional deployment details using the [Get a deployment by ID or URL](https://vercel.com/docs/rest-api#tag/deployments/get-a-deployment-by-id-or-url) endpoint:
   ```bash
   curl https://api.vercel.com/v13/deployments/dpl_568301234 \
-    -H "Authorization: {access_token}"
+    -H "Authorization: Bearer {access_token}"
   ```
   You can create your `access_token` from [Vercel's account settings](/docs/rest-api#creating-an-access-token).
 

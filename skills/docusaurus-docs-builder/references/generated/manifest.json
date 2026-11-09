@@ -1,45 +1,45 @@
 {
-  "generated_at": "2026-11-02T12:01:44.834Z",
+  "generated_at": "2026-11-09T12:33:26.922Z",
   "docs": [
     {
       "slug": "installation",
       "title": "Installation",
       "url": "https://docusaurus.io/docs/installation",
       "file": "installation.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "4580006ad756a50c87e5e80aee0252327f32ca164e377fd46efc505e3085cc7a"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "51de16ad84e0c6b254e8b1a31d9415aac8c33c25c78639eeaa19685959a0615a"
     },
     {
       "slug": "configuration",
       "title": "Configuration",
       "url": "https://docusaurus.io/docs/configuration",
       "file": "configuration.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "f634ba79162c388144882d98df771bb12f81ee0a2dbbe44a5b19c88fd1b80161"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "8d52d39b8cab74cbe34b639d94d7cec410d10cb2ceccda55cceac041bb6aaf72"
     },
     {
       "slug": "docs-introduction",
       "title": "Docs Introduction",
       "url": "https://docusaurus.io/docs/docs-introduction",
       "file": "docs-introduction.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "679c1367ccc1f1191727f25eb790c70aaea4029f007520c3bea8030f7c94cca4"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "385a56fa2945bfc1e11265875d82986ccebf36854464f04eac6c238d68901365"
     },
     {
       "slug": "docs-create-doc",
       "title": "Create Docs",
       "url": "https://docusaurus.io/docs/create-doc",
       "file": "docs-create-doc.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "6a7d3d52240ae0825b421bd94f02f9a940801e3769e53b87233c90968ebb426f"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "c4413fd319b3d61eb98afaf52f34ccd95efccf4a84944b9bac5e3cbcd4b10484"
     },
     {
       "slug": "docs-multi-instance",
       "title": "Docs Multi-instance",
       "url": "https://docusaurus.io/docs/docs-multi-instance",
       "file": "docs-multi-instance.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "0910dfd52e321a28c7dc3907fa0dd214d244e3206714b52e83a20f9c91db3a36"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "b7de05390a196a2eb6e820d6180e641d37a32b77da61f8174976a4a8cf48f93a"
     },
     {
       "slug": "sidebar",
@@ -54,168 +54,168 @@
       "title": "Versioning",
       "url": "https://docusaurus.io/docs/versioning",
       "file": "versioning.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "68566f9595e73ca9c4fd637ad358d264ed2a58f4dbac44b68f8f822ce1fa6e31"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "17fc2fddb66e570ab1a3bc8dd0d5d52af6f84c83ac261cc236961e6bbe38ec30"
     },
     {
       "slug": "markdown-features",
       "title": "Markdown Features",
       "url": "https://docusaurus.io/docs/markdown-features",
       "file": "markdown-features.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "c331cd80e304e5b8d8b0c8f8460da4d70545bc4abd52890a8d49d716b3c73ff9"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "71928e06ee3effcb57952dab9665dca0c18164864959986a4b255160c317aa85"
     },
     {
       "slug": "markdown-front-matter",
       "title": "Markdown Front Matter",
       "url": "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter",
       "file": "markdown-front-matter.md",
-      "fetched_at": "2026-10-19T09:38:00.847Z",
-      "sha256": "2e506ba06c0d1a3cad4327a29fc8ebe11415c311678f052a62a703178f86fe17"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "db56de4332af44f30e1c3e5f88c590f17d711de5548d05a80e4db0cae0532878"
     },
     {
       "slug": "markdown-links",
       "title": "Markdown Links",
       "url": "https://docusaurus.io/docs/markdown-features/links",
       "file": "markdown-links.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "c80c10bed559f4dabcf112368a662a10693f0c2679ff2d6db562e3a000de25d1"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "3b49d8c4b422991d9b4c36fdf5adc848cf138bf11f8a338babb6912e109b7309"
     },
     {
       "slug": "markdown-assets",
       "title": "Markdown Assets",
       "url": "https://docusaurus.io/docs/markdown-features/assets",
       "file": "markdown-assets.md",
-      "fetched_at": "2026-10-19T09:38:00.847Z",
-      "sha256": "d9c653ad71617ef035675ad3b39b1ddea98324e0a6a7a263ac9f65be9f715a31"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "4e0d8e74dcf4901275d44f827a918d38c7069c8ee58cc016f47511dfaaa8ea72"
     },
     {
       "slug": "markdown-toc",
       "title": "Markdown Table of Contents",
       "url": "https://docusaurus.io/docs/markdown-features/toc",
       "file": "markdown-toc.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "16bad1836964486a1fd2d003d5a108a1dcb1d47ed1ed8ea26992ac8258f009ac"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "fd91eafb3cad54d582984b4d9ecf93f72cc9151b1a2461d5574a10b7baaae6e5"
     },
     {
       "slug": "markdown-code-blocks",
       "title": "Markdown Code Blocks",
       "url": "https://docusaurus.io/docs/markdown-features/code-blocks",
       "file": "markdown-code-blocks.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "d3e996249d54a5ee1da74ccbc722845ace169e040d48129a348f1fc73ebad9b7"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "fa5ee5b252ab7bb54746c5553006f45c09a6dbc5f0c5736617c34c2febefed18"
     },
     {
       "slug": "markdown-admonitions",
       "title": "Markdown Admonitions",
       "url": "https://docusaurus.io/docs/markdown-features/admonitions",
       "file": "markdown-admonitions.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "f9f51c58dd9b9260bfb0acf4ce02c2f85d672f0ecf32617f080cc28492113801"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "bb5fe00f0422b4e2d87e223236e9533169d5ec0de1fae906d655ceb6794e5f96"
     },
     {
       "slug": "markdown-tabs",
       "title": "Markdown Tabs",
       "url": "https://docusaurus.io/docs/markdown-features/tabs",
       "file": "markdown-tabs.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "d7640a4424ba5b3547be93bbcfc2a7a13671f936b198c546270aaec4a417156c"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "789c1867f84226d3aaedb475a16e101b75b7b72043ec6b45f7cbd8467011da76"
     },
     {
       "slug": "markdown-diagrams",
       "title": "Markdown Diagrams",
       "url": "https://docusaurus.io/docs/markdown-features/diagrams",
       "file": "markdown-diagrams.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "d6d95dab11b0b77d29d834d570c80eeed107cc255e924dbae37b9f784946df44"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "bd57dc5e6662cfbf4d0cc6a19f52fe73b5031d0d3080bf1d41592acdc50f7778"
     },
     {
       "slug": "mdx-plugins",
       "title": "MDX Plugins",
       "url": "https://docusaurus.io/docs/markdown-features/plugins",
       "file": "mdx-plugins.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "351366584e111852cdb334658353532cf748ed933510a1310455ea3cb973ba40"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "0b14e394f4e5ebb1be95d2facde69b491b7a22e67f06247118aa97fec6ae5fdb"
     },
     {
       "slug": "styling-layout",
       "title": "Styling and Layout",
       "url": "https://docusaurus.io/docs/styling-layout",
       "file": "styling-layout.md",
-      "fetched_at": "2026-10-19T09:38:00.847Z",
-      "sha256": "983d87b1074360a8325f5343d14660a6c92165f769e3913e07c5a3303a019e36"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "1c2b06d5d00fd760e9b9b3b67ce79cc2934f83fefed666b5ec4be50bdb224379"
     },
     {
       "slug": "swizzling",
       "title": "Swizzling",
       "url": "https://docusaurus.io/docs/swizzling",
       "file": "swizzling.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "0ab0b1920adf67b19f9bb37e8bbf97ac487b2bc14cb52f90e89ebdcbfae5719b"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "58b206c2f1c193108270e88e372354cb1930071ee921bc1751fb8fe3b1b3750e"
     },
     {
       "slug": "theme-classic",
       "title": "Classic Theme",
       "url": "https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic",
       "file": "theme-classic.md",
-      "fetched_at": "2026-10-19T09:38:00.847Z",
-      "sha256": "ed5ce3038866b0a590fa1e777b1af2f18739c44a85e663b614cb7fcac05757c0"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "b8d5a81f20c415ae09c96cb8c16ef9630c5f80bfa264e44678f76bba8d6aa8e3"
     },
     {
       "slug": "plugin-content-docs",
       "title": "Docs Plugin",
       "url": "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs",
       "file": "plugin-content-docs.md",
-      "fetched_at": "2026-10-19T09:38:00.847Z",
-      "sha256": "5fed4aba49c92a3e3ca8d23398ccd60d470841f67aef316d0720d2a8c24f9ca7"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "e7139588adbc01d86fb9a9d8eefee5bab9112838b250808b4f19a38c8d9e4609"
     },
     {
       "slug": "plugin-content-pages",
       "title": "Pages Plugin",
       "url": "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages",
       "file": "plugin-content-pages.md",
-      "fetched_at": "2026-10-19T09:38:00.847Z",
-      "sha256": "2821f62833f486a73552475e8ecb5185c5f3c4686edc7302b86db482643bb652"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "cbef0ef4e686356fc45b647de3f02e8835741a4e3e5be8a641e5773fdda87ce1"
     },
     {
       "slug": "plugin-content-blog",
       "title": "Blog Plugin",
       "url": "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog",
       "file": "plugin-content-blog.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "5d697f1ce5aacfce5ec09bec5f250708b36563d4f5cfdc75a550d2a008fe9dd1"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "2e27b08561458ccb796694cf66be840f8b89eeff55fed9862be6a61b4662ceaf"
     },
     {
       "slug": "search",
       "title": "Search",
       "url": "https://docusaurus.io/docs/search",
       "file": "search.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "85a1039e9c4adcd856e83fa23a279cfbeb5353f4a95547420153e882a457dc5d"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "a1eda9a684efc03d8afcc7c8eac9a8567ca59de5985ed8dddfba9c9fbb1377bc"
     },
     {
       "slug": "seo",
       "title": "SEO",
       "url": "https://docusaurus.io/docs/seo",
       "file": "seo.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "5979c37306279921ab1fec12365cc4b9b3283893c5c79513d9f1a051c634a59a"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "50cf94115f621b05e73149169347112dc1127725bd5d01de3dc8f53664269509"
     },
     {
       "slug": "i18n",
       "title": "Internationalization",
       "url": "https://docusaurus.io/docs/i18n/introduction",
       "file": "i18n.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "389340da2cc9168f126d55948f0a794b43acccb2bc5ec06d0101a1243ad4059c"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "30ce6671f8c841bb51de66e2623e988b58458dfff45f18fe019516ed04813524"
     },
     {
       "slug": "deployment",
       "title": "Deployment",
       "url": "https://docusaurus.io/docs/deployment",
       "file": "deployment.md",
-      "fetched_at": "2026-08-24T04:43:10.282Z",
-      "sha256": "301a3ce94b2ae9dd98c6d023b86a8610da6c836d865ec1a07e0bfbf892674c16"
+      "fetched_at": "2026-11-09T12:33:24.119Z",
+      "sha256": "0b5126995e2fd5b5704e2297fa9e5eb5e99cb048ce4d81e2e56202c455a4f2b0"
     }
   ]
 }

@@ -4,8 +4,8 @@ description: Learn how to use Perplexity with AI Gateway and the direct provider
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/perplexity.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "cad7909c1cb222a3c8a023c8ac7ead25f86f3073bbb56928216c25c4e47eaae9"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "d16b4b68ea258cb12fccd9ae35b6d03400bdb51ea7f2113a854c217edf8c7a2d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -194,6 +194,11 @@ Supported native tools are `web_search`, `fetch_url`, `people_search`,
 `finance_search`, `sandbox`, `mcp`, and `connector`. Agent API presets include
 preconfigured tools that remain enabled; the `tools` option can add explicit
 tools or supply tools when using a direct model ID.
+
+Set the top-level `toolChoice` option to `'none'` to disable all tools. This
+omits AI SDK function tools and native tools from the request, including MCP
+and connector configurations, and sets `max_tool_calls: 0` to disable preset
+tools. This overrides `providerOptions.perplexity.max_tool_calls`.
 
 Search and fetch results are exposed as AI SDK sources. Other native tool traces,
 including finance, sandbox, and MCP results, are available in `response.body`
@@ -602,6 +607,19 @@ Decision models have no Perplexity-specific provider options. Entries passed in
 `providerOptions.perplexity` produce unsupported-option warnings and are not sent
 to the API. Use the standard `abortSignal`, `headers`, and `maxRetries` options on
 `decide` for cancellation, request headers, and retries.
+
+### Decision Model Capabilities
+
+| Model                                  | Boolean | Choice | Score | Box | Image Input | Reasoning | Max Output Tokens |
+| -------------------------------------- | ------- | ------ | ----- | --- | ----------- | --------- | ----------------- |
+| `pplx-decider-v1.2`                    | ✓       | ✓      | ✓     | ✗   | ✓           | ✗         | ✗                 |
+| `pplx-decider-flash-v1.2`              | ✓       | ✓      | ✓     | ✗   | ✓           | ✗         | ✗                 |
+| `pplx-decider-latest`                  | ✓       | ✓      | ✓     | ✗   | ✓           | ✗         | ✗                 |
+| `pplx-decider-flash-latest`            | ✓       | ✓      | ✓     | ✗   | ✓           | ✗         | ✗                 |
+| `perplexity/pplx-decider-latest`       | ✓       | ✓      | ✓     | ✗   | ✓           | ✗         | ✗                 |
+| `perplexity/pplx-decider-flash-latest` | ✓       | ✓      | ✓     | ✗   | ✓           | ✗         | ✗                 |
+| `pplx-decider-v1.1-27b`                | ✓       | ✓      | ✓     | ✗   | ✓           | ✗         | ✗                 |
+| `pplx-decider-v1-27b`                  | ✓       | ✓      | ✓     | ✗   | ✓           | ✗         | ✗                 |
 
 ## Model Capabilities
 

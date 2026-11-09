@@ -13,8 +13,8 @@ related:
 summary: Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/examples/oss-coding-agent.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b2fb72f1d75dacbc028340212b452818df099013b4f35bd0fab60f208820c78c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2060c99d3c98501694ca6fa80e0230d05266e856511ff0eb507cca37b8bd3151"
 ---
 
 # OSS AI Vibe Coding Platform
@@ -27,14 +27,13 @@ The AI Vibe Coding Platform represents a new paradigm in development environment
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel collaborates with OpenAI for GPT-5 launch](https://vercel.com/blog/vercel-collaborates-with-openai-for-gpt-5-launch)
-- [Build your own AI app builder with the v0 Platform API](https://vercel.com/blog/build-your-own-ai-app-builder-with-the-v0-platform-api)
-- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [What you need to know about vibe coding](https://vercel.com/blog/what-you-need-to-know-about-vibe-coding)
-- [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications)
+- [Vercel collaborates with OpenAI for GPT-5 launch](https://vercel.com/blog/vercel-collaborates-with-openai-for-gpt-5-launch)
+- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [v0: vibe coding, securely](https://vercel.com/blog/v0-vibe-coding-securely)
+- [Build your own AI app builder with the v0 Platform API](https://vercel.com/blog/build-your-own-ai-app-builder-with-the-v0-platform-api)
+- [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications)
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/platforms/examples/oss-coding-agent.graph.md](/docs/platforms/examples/oss-coding-agent.graph.md)
 <!-- /docsgraph:related -->
@@ -155,7 +154,9 @@ export const generateFiles = tool({
     const sandbox = getSandbox(sandboxId);
 
     for (const file of files) {
-      await sandbox.writeFile(file.path, file.content);
+      await sandbox.writeFiles([
+        { path: file.path, content: Buffer.from(file.content) },
+      ]);
     }
 
     return `Generated ${files.length} files`;
@@ -174,7 +175,7 @@ export const runCommand = tool({
     const sandbox = getSandbox(sandboxId);
     const result = await sandbox.runCommand({ cmd: command });
 
-    return result.stdout;
+    return await result.stdout();
   },
 });
 ```

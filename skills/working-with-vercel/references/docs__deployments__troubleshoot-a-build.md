@@ -16,8 +16,8 @@ related:
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "84377a4999ff52826e79dcd5179ea8a9570d7776c2fcd8a67b2e4e61d4d3c01b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "dedfc412efa1a4086fb64fd7cec5b7fa595b4e7121b2678b0e489d9b85d197c3"
 ---
 
 # Troubleshooting Build Errors
@@ -37,11 +37,11 @@ You can troubleshoot build errors that occur during the Build step of your deplo
 - [More detailed report on out of memory or disk space errors on builds](https://vercel.com/changelog/report-on-out-of-memory-or-disk-space)
 - [Yarn 2+ dependency caching now supported](https://vercel.com/changelog/yarn-2-dependency-caching-now-supported)
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md)
 <!-- /docsgraph:related -->
@@ -137,9 +137,9 @@ This report helps you detect hidden Out of Memory (OOM) events, and provides ins
 
 | Resource         | Allocation  | Description                                                                                                                                                    |
 | ---------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Memory           | 8192 MB     | Fixed memory allocation. Builds exceeding this limit will be cancelled                                                                                         |
-| CPUs             | 4           | Number of CPUs allocated for build processing                                                                                                                  |
-| Disk Space       | 32 GB       | Fixed disk space allocation. Builds exceeding this limit will be cancelled                                                                                     |
+| Memory           | Varies      | Depends on the [build machine type](/docs/builds/managing-builds#build-machine-types). Builds exceeding this limit will be cancelled                           |
+| CPUs             | Varies      | Number of CPUs allocated for build processing. Depends on the [build machine type](/docs/builds/managing-builds#build-machine-types)                           |
+| Disk Space       | Varies      | Depends on the [build machine type](/docs/builds/managing-builds#build-machine-types). Builds exceeding this limit will be cancelled                           |
 | System Report    | Conditional | Generated in [Build logs](/docs/deployments/logs) when memory or disk space limits are reached. Available by default                                           |
 | Forced Reporting | Optional    | Set `VERCEL_BUILD_SYSTEM_REPORT=1` as an [environment variable](/docs/environment-variables#creating-environment-variables) to enable reporting for all builds |
 
@@ -208,7 +208,7 @@ Let's say that under your account `MyTeam`, you have a project `MySite` that is 
 
 If you create a new Git branch in `MyCode` and make a commit to it, there is no cache for that specific branch. In this case, the last [production Deployment](/docs/deployments/environments#production-environment) cache is used to create a preview deployment and a new branch cache is created for subsequent commits to the new branch.
 
-If you use [Vercel functions](/docs/functions) to process HTTP requests in your project, each Vercel Function is built separately in the Build step and has its own cache, based on the [Runtime](/docs/functions/runtimes) used. Therefore, the number and size of Vercel functions will affect your Build time. For Next.js projects, Vercel functions are bundled to optimize Build resources as described [here](/docs/functions/configuring-functions/advanced-configuration#bundling-vercel-functions).
+If you use [Vercel functions](/docs/functions) to process HTTP requests in your project, each Vercel Function is built separately in the Build step. All functions share the same Build cache, and the [Runtime](/docs/functions/runtimes) of each function can add files to it. Therefore, the number and size of Vercel functions will affect your Build time. For Next.js projects, Vercel functions are bundled to optimize Build resources as described [here](/docs/functions/configuring-functions/advanced-configuration#bundling-vercel-functions).
 
 When you use pnpm, Vercel points pnpm's cache directory at `.vercel/cache/pnpm` in the repository root by setting the `pnpm_config_cache_dir` environment variable on pnpm 11 and later, and `npm_config_cache_dir` on older pnpm versions. A value you set yourself for those variables, or for `PNPM_CONFIG_CACHE_DIR` or `NPM_CONFIG_CACHE_DIR`, takes precedence. From that directory, only `lockfile-verified.jsonl`, pnpm's record of a successful lockfile verification, is kept in the Build cache. The registry metadata, `dlx` installs, and runtime checksums that pnpm also writes there are dropped. pnpm decides whether a stored verdict is still valid, so changing the lockfile or a relevant setting re-runs verification. Keeping this file lets a subsequent build skip re-verifying an unchanged lockfile, which shortens the [Install Command](/docs/builds/configure-a-build#install-command).
 

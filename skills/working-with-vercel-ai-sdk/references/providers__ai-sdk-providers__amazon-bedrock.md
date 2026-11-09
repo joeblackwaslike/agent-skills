@@ -4,8 +4,8 @@ description: Learn how to use Amazon Bedrock with AI Gateway and the direct prov
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "c53ee2dbf3d34704641a01d799a47c239bde6641743cd011021de109ff5ecdcf"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "733f39a25ec0ed07f41052c843d09fddb83702fc9184be75608417fc0e315968"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -302,6 +302,17 @@ choose how Amazon Bedrock generates structured outputs:
 - `"jsonTool"`: Use a special `json` tool with required tool choice.
 - `"auto"`: Use native structured output when supported and otherwise fall
   back to the JSON tool. This is the default.
+
+In `"auto"` mode, supported Claude 5 models use native output for compatible
+schemas. Recursive references, open objects, and schemas with more than ten
+optional properties fall back to the JSON tool, or JSON instructions for models
+that reject forced tool use.
+
+The JSON-tool fallback limits which application tools are available:
+`toolChoice: 'none'` sends only the internal JSON response tool, and a named tool
+choice sends only that application tool alongside the JSON response tool. The
+fallback can produce a JSON response without calling the named application tool;
+verify the selected call if your application requires it.
 
 In `"auto"` mode, Claude Sonnet 4.6 and Claude Haiku 4.5 use the JSON tool
 fallback because native structured output can be unreliable across workloads
@@ -985,63 +996,63 @@ These tools can be used in conjunction with the `anthropic.claude-3-5-sonnet-202
 | ---------------------------------------------- | ----------- | ----------------- | ---------- | -------------- |
 | `amazon.titan-tg1-large`                       | ✗           | ✗                 | ✗          | ✗              |
 | `amazon.titan-text-express-v1`                 | ✗           | ✗                 | ✗          | ✗              |
-| `amazon.titan-text-lite-v1`                    | ✗           | ✗                 | ✗          | ✗              |
-| `us.amazon.nova-premier-v1:0`                  | ✓           | ✓                 | ✓          | ✓              |
-| `us.amazon.nova-pro-v1:0`                      | ✓           | ✓                 | ✓          | ✓              |
-| `us.amazon.nova-lite-v1:0`                     | ✓           | ✓                 | ✓          | ✓              |
-| `us.amazon.nova-micro-v1:0`                    | ✗           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-haiku-4-5-20251001-v1:0`     | ✓           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-sonnet-4-20250514-v1:0`      | ✓           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-sonnet-4-5-20250929-v1:0`    | ✓           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-opus-4-20250514-v1:0`        | ✓           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-opus-4-1-20250805-v1:0`      | ✓           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-3-5-sonnet-20241022-v2:0`    | ✓           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-3-5-sonnet-20240620-v1:0`    | ✓           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-3-opus-20240229-v1:0`        | ✓           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-3-sonnet-20240229-v1:0`      | ✓           | ✓                 | ✓          | ✓              |
-| `anthropic.claude-3-haiku-20240307-v1:0`       | ✓           | ✓                 | ✓          | ✓              |
-| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | ✓           | ✓                 | ✓          | ✓              |
-| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | ✓           | ✓                 | ✓          | ✓              |
-| `us.anthropic.claude-opus-4-20250514-v1:0`     | ✓           | ✓                 | ✓          | ✓              |
-| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | ✓           | ✓                 | ✓          | ✓              |
-| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | ✓           | ✓                 | ✓          | ✓              |
-| `us.anthropic.claude-3-5-sonnet-20240620-v1:0` | ✓           | ✓                 | ✓          | ✓              |
-| `us.anthropic.claude-3-sonnet-20240229-v1:0`   | ✓           | ✓                 | ✓          | ✓              |
-| `us.anthropic.claude-3-opus-20240229-v1:0`     | ✓           | ✓                 | ✓          | ✓              |
-| `us.anthropic.claude-3-haiku-20240307-v1:0`    | ✓           | ✓                 | ✓          | ✓              |
 | `anthropic.claude-v2`                          | ✗           | ✗                 | ✗          | ✗              |
 | `anthropic.claude-v2:1`                        | ✗           | ✗                 | ✗          | ✗              |
 | `anthropic.claude-instant-v1`                  | ✗           | ✗                 | ✗          | ✗              |
+| `anthropic.claude-haiku-4-5-20251001-v1:0`     | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-sonnet-4-5-20250929-v1:0`    | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-sonnet-4-20250514-v1:0`      | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-opus-4-20250514-v1:0`        | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-opus-4-1-20250805-v1:0`      | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-5-sonnet-20240620-v1:0`    | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-5-sonnet-20241022-v2:0`    | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-sonnet-20240229-v1:0`      | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-haiku-20240307-v1:0`       | ✓           | ✓                 | ✓          | ✓              |
+| `anthropic.claude-3-opus-20240229-v1:0`        | ✓           | ✓                 | ✓          | ✓              |
 | `cohere.command-text-v14`                      | ✗           | ✗                 | ✗          | ✗              |
 | `cohere.command-light-text-v14`                | ✗           | ✗                 | ✗          | ✗              |
 | `cohere.command-r-v1:0`                        | ✗           | ✗                 | ✓          | ✗              |
 | `cohere.command-r-plus-v1:0`                   | ✗           | ✗                 | ✓          | ✗              |
-| `us.deepseek.r1-v1:0`                          | ✗           | ✓                 | ✓          | ✓              |
-| `meta.llama3-8b-instruct-v1:0`                 | ✗           | ✗                 | ✗          | ✗              |
 | `meta.llama3-70b-instruct-v1:0`                | ✗           | ✗                 | ✗          | ✗              |
-| `meta.llama3-1-8b-instruct-v1:0`               | ✗           | ✗                 | ✗          | ✗              |
-| `meta.llama3-1-70b-instruct-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-8b-instruct-v1:0`                 | ✗           | ✗                 | ✗          | ✗              |
 | `meta.llama3-1-405b-instruct-v1:0`             | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-1-70b-instruct-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-1-8b-instruct-v1:0`               | ✗           | ✗                 | ✗          | ✗              |
+| `meta.llama3-2-11b-instruct-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
 | `meta.llama3-2-1b-instruct-v1:0`               | ✗           | ✗                 | ✗          | ✗              |
 | `meta.llama3-2-3b-instruct-v1:0`               | ✗           | ✗                 | ✗          | ✗              |
-| `meta.llama3-2-11b-instruct-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
 | `meta.llama3-2-90b-instruct-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
-| `us.meta.llama3-2-1b-instruct-v1:0`            | ✗           | ✓                 | ✓          | ✓              |
-| `us.meta.llama3-2-3b-instruct-v1:0`            | ✗           | ✓                 | ✓          | ✓              |
-| `us.meta.llama3-2-11b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
-| `us.meta.llama3-2-90b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
-| `us.meta.llama3-1-8b-instruct-v1:0`            | ✗           | ✓                 | ✓          | ✓              |
-| `us.meta.llama3-1-70b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
-| `us.meta.llama3-3-70b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
-| `us.meta.llama4-scout-17b-instruct-v1:0`       | ✗           | ✓                 | ✓          | ✓              |
-| `us.meta.llama4-maverick-17b-instruct-v1:0`    | ✗           | ✓                 | ✓          | ✓              |
 | `mistral.mistral-7b-instruct-v0:2`             | ✗           | ✗                 | ✗          | ✗              |
 | `mistral.mixtral-8x7b-instruct-v0:1`           | ✗           | ✗                 | ✗          | ✗              |
 | `mistral.mistral-large-2402-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
 | `mistral.mistral-small-2402-v1:0`              | ✗           | ✗                 | ✗          | ✗              |
-| `us.mistral.pixtral-large-2502-v1:0`           | ✓           | ✓                 | ✓          | ✓              |
 | `openai.gpt-oss-120b-1:0`                      | ✗           | ✓                 | ✓          | ✓              |
 | `openai.gpt-oss-20b-1:0`                       | ✗           | ✓                 | ✓          | ✓              |
+| `amazon.titan-text-lite-v1`                    | ✗           | ✗                 | ✗          | ✗              |
+| `us.amazon.nova-premier-v1:0`                  | ✓           | ✓                 | ✓          | ✓              |
+| `us.amazon.nova-pro-v1:0`                      | ✓           | ✓                 | ✓          | ✓              |
+| `us.amazon.nova-micro-v1:0`                    | ✗           | ✓                 | ✓          | ✓              |
+| `us.amazon.nova-lite-v1:0`                     | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-sonnet-20240229-v1:0`   | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-opus-20240229-v1:0`     | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-haiku-20240307-v1:0`    | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-5-sonnet-20240620-v1:0` | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-3-5-sonnet-20241022-v2:0` | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-sonnet-4-5-20250929-v1:0` | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-sonnet-4-20250514-v1:0`   | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-opus-4-20250514-v1:0`     | ✓           | ✓                 | ✓          | ✓              |
+| `us.anthropic.claude-opus-4-1-20250805-v1:0`   | ✓           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-2-11b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-2-3b-instruct-v1:0`            | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-2-90b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-2-1b-instruct-v1:0`            | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-1-8b-instruct-v1:0`            | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-1-70b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama3-3-70b-instruct-v1:0`           | ✗           | ✓                 | ✓          | ✓              |
+| `us.deepseek.r1-v1:0`                          | ✗           | ✓                 | ✓          | ✓              |
+| `us.mistral.pixtral-large-2502-v1:0`           | ✓           | ✓                 | ✓          | ✓              |
+| `us.meta.llama4-scout-17b-instruct-v1:0`       | ✗           | ✓                 | ✓          | ✓              |
+| `us.meta.llama4-maverick-17b-instruct-v1:0`    | ✗           | ✓                 | ✓          | ✓              |
 
 The table above lists popular models. Please see the [Amazon Bedrock
 docs](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html)
@@ -1189,6 +1200,7 @@ const { embeddings } = await embedMany({
 | `amazon.nova-embed-text-v2:0`  | 1024               | ✓                 |
 | `cohere.embed-english-v3`      | 1024               | ✗                 |
 | `cohere.embed-multilingual-v3` | 1024               | ✗                 |
+| `cohere.embed-v4:0`            | 1536               | ✓                 |
 
 ## Reranking Models
 
@@ -1255,10 +1267,10 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                  |
-| ---------------------- |
-| `amazon.rerank-v1:0`   |
-| `cohere.rerank-v3-5:0` |
+| Model                  | Text Documents | Object Documents | Top N |
+| ---------------------- | -------------- | ---------------- | ----- |
+| `amazon.rerank-v1:0`   | ✓              | ✓                | ✓     |
+| `cohere.rerank-v3-5:0` | ✓              | ✓                | ✓     |
 
 ## Image Models
 
@@ -1516,9 +1528,9 @@ The Amazon Nova Canvas model supports custom sizes with constraints as follows:
 For more, see [Image generation access and
 usage](https://docs.aws.amazon.com/nova/latest/userguide/image-gen-access.html).
 
-| Model                     | Sizes                                                                                                 |
-| ------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `amazon.nova-canvas-v1:0` | Custom sizes: 320-4096px per side (must be divisible by 16), aspect ratio 1:4 to 4:1, max 4.2M pixels |
+| Model                     | Sizes                                                                                            | Image Editing | Mask Input | Max Images Per Call |
+| ------------------------- | ------------------------------------------------------------------------------------------------ | ------------- | ---------- | ------------------- |
+| `amazon.nova-canvas-v1:0` | 320–4096 pixels per side, divisible by 16; aspect ratio 1:4 to 4:1; fewer than 4,194,304 pixels. | ✓             | ✓          | 5                   |
 
 ## Response Headers
 
@@ -2071,6 +2083,36 @@ you were using the `bedrockOptions` object, you should now use the `region`,
 `accessKeyId`, `secretAccessKey`, and `sessionToken` settings directly instead.
 
 Static IAM user keys do not require `sessionToken`.
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option                         | Description                                                            |
+| --------- | ------------------------------ | ---------------------------------------------------------------------- |
+| language  | `structuredOutputMode`         | Select native structured output or JSON tools.                         |
+| language  | `additionalModelRequestFields` | Additional model-specific inference fields.                            |
+| language  | `reasoningConfig`              | Thinking mode, budget, effort, and display.                            |
+| language  | `anthropicBeta`                | Anthropic beta features to enable.                                     |
+| language  | `serviceTier`                  | Request service tier.                                                  |
+| language  | `requestMetadata`              | Invocation logging and cost attribution metadata.                      |
+| embedding | `dimensions`                   | Titan v2 output dimensions.                                            |
+| embedding | `normalize`                    | Normalize Titan v2 embeddings.                                         |
+| embedding | `embeddingDimension`           | Nova output dimensions.                                                |
+| embedding | `embeddingPurpose`             | Nova embedding purpose.                                                |
+| embedding | `inputType`                    | Cohere embedding input type.                                           |
+| embedding | `truncate`                     | Cohere or Nova truncation mode.                                        |
+| embedding | `outputDimension`              | Cohere v4 output dimensions.                                           |
+| image     | `quality`                      | Image quality.                                                         |
+| image     | `negativeText`                 | Content to avoid.                                                      |
+| image     | `cfgScale`                     | Prompt adherence scale.                                                |
+| image     | `style`                        | Image generation style.                                                |
+| image     | `taskType`                     | Generation, variation, inpainting, outpainting, or background removal. |
+| image     | `maskPrompt`                   | Text describing the region to mask.                                    |
+| image     | `outPaintingMode`              | Outpainting mode.                                                      |
+| image     | `similarityStrength`           | Similarity to reference images.                                        |
+| reranking | `nextToken`                    | Pagination token.                                                      |
+| reranking | `additionalModelRequestFields` | Additional model-specific reranking fields.                            |
 
 ---
 

@@ -4,8 +4,8 @@ description: Learn how to use the Deep Agents harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "022911d251c9e46f38b91676238f8c3fb89a42daa916c7f0ac573501c0e23b06"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "29b22bc28dec2d3489aa1a514bed8ab736d7bb3e788dbbaf02b1acc73c26f26b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -107,6 +107,11 @@ Settings:
 - `recursionLimit`: maximum LangGraph super-steps per turn. When omitted, the
   Deep Agents default applies.
 - `startupTimeoutMs`: maximum time to wait for the bridge to start.
+- `hostDisconnectTimeoutMs`: aborts a running turn when the host disconnects
+  and no host reconnects within this many milliseconds. A suspended turn is
+  not aborted. When unset, a turn keeps running in the sandbox after its host
+  disconnects, including when the host process is gone for good, until the
+  turn finishes or the sandbox stops.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.
@@ -205,12 +210,24 @@ The adapter exposes these Deep Agents built-ins through `agent.tools`:
 - `read`
 - `write`
 - `edit`
+- `delete`
 - `bash`
 - `grep`
 - `glob`
 - `ls`
 - `task`
 - `write_todos`
+
+## Built-in Tool Approvals
+
+With `permissionMode: 'allow-reads'` or `'allow-edits'`, file reads are
+automatically approved only within the session workdir or an active skill's
+directory. `allow-edits` automatically approves file changes only within the
+workdir. Paths outside those directories, including symlink targets, and paths
+that cannot be resolved require host approval through Deep Agents' native
+human-in-the-loop interrupts. Native absolute paths keep their original meaning.
+`allow-all` remains unrestricted. These approval rules are not a filesystem
+sandbox, and approved shell commands can access paths outside the workdir.
 
 ## Known Limitations
 

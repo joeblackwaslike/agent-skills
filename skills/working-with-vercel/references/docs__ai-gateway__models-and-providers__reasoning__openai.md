@@ -14,8 +14,8 @@ related:
 summary: Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "09a89c367793dda60264cf3851e46bb98cd74e79ebfde29d02c77b3ea6092f3c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bbdb271065c011de7e0a2ddbeb6965d44ec9a591b61af9033d582eca6814e033"
 ---
 
 # AI Gateway OpenAI Reasoning
@@ -46,7 +46,7 @@ To see the current list of OpenAI reasoning models, use the **Reasoning** filter
 
 Use [`GET /v1/models`](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) to find the model's `reasoning_options` entry with `type: "effort"` and read its `values`. This includes new model variants without relying on a family-wide support table. The catalog doesn't expose a structured default; consult the [OpenAI model documentation](https://developers.openai.com/api/docs/models) when leaving effort unset.
 
-Check the [API-format mapping](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) before passing a catalog value to a client. In particular, AI SDK 7's top-level `reasoning` option doesn't accept `max`, even when the catalog lists it for the model.
+Check the [API-format mapping](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels) before passing a catalog value to a client. In particular, AI SDK 7's top-level `reasoning` option accepts `max` only in version 7.0.129 or later, even when the catalog lists it for the model.
 
 ## Getting started
 

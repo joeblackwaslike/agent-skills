@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/accounts/access-tokens
   - /docs/rest-api/projects/retrieve-a-list-of-projects
+  - /docs/accounts
   - /docs/rest-api/errors
   - /docs/limits
-  - /docs/rest-api/sdk/projects/retrieve-a-list-of-projects
 summary: Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/getting-started.md"
-fetched_at: "2026-11-02T12:08:33.177Z"
-sha256: "da34d833924b8410c6f0432a05b4ceeaa359b390f8478344b0ea07fbb7d8e3d8"
+fetched_at: "2026-11-09T12:41:17.654Z"
+sha256: "91efb63eb5c07ae5316189b05b35a7849736bcc856a546e83ab4688f64d4fb9e"
 ---
 
 # Make Your First Vercel API Request
@@ -30,7 +30,6 @@ Use a Vercel access token to call the Vercel REST API with `curl`, then make the
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
@@ -155,7 +154,7 @@ The token scope determines which projects `GET /v10/projects` can return:
 
 | Token scope | Request target | `teamId` or `slug` behavior |
 | --- | --- | --- |
-| Full Account | Your personal account by default, or a team you belong to | Omit both for personal projects. Pass either value to target a team. |
+| Full Account | Your [default team](/docs/accounts#default-team) by default, or another team you belong to | Omit both to target your default team. Pass either value to target another team. |
 | Team | Projects in the token's team | Omit both. Vercel infers the team from the token. |
 | Project | The token's single project | Omit both. Vercel infers the team and project from the token. |
 
@@ -165,8 +164,8 @@ A project-scoped token denies requests for user-level resources, team-level reso
 
 | Status | Cause | What to check |
 | --- | --- | --- |
-| `401 Unauthorized` | The API did not accept the authentication details. | Confirm that `VERCEL_TOKEN` is set and the header uses `Authorization: Bearer <token>`. |
-| `403 Forbidden` | The token does not have permission to access the requested resource. | Check the token's expiration and scope. For a full-account token targeting a team, pass `teamId` or `slug`. |
+| `401 Unauthorized` | The request does not specify a team and your account has no default team. | Pass `teamId` or `slug`, or set a [default team](/docs/accounts#default-team). |
+| `403 Forbidden` | The request has no Bearer token, the token is invalid or expired, or the token does not have permission to access the requested resource. | Confirm that `VERCEL_TOKEN` is set and the header uses `Authorization: Bearer <token>`. Check the token's expiration and scope. For a full-account token targeting a team, pass `teamId` or `slug`. |
 | `429 Too Many Requests` | A platform-wide API rate limit rejected the request. | Reduce the request rate and retry after the limit resets. |
 
 See [REST API errors](/docs/rest-api/errors) for error payloads and [API rate limits](/docs/limits#rate-limits) for limit scopes and reset behavior.

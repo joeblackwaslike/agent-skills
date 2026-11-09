@@ -17,8 +17,8 @@ related:
 summary: Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/integrations/passport.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b2286fd29fac377c30ae307b55d9b82e1b11db9cbd8dbee14d860ae875f82520"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7b15a59c64451f10dbd675fb7fa69c27e6d3a83860faf3ad90c71af7acf9bc91"
 ---
 
 # Chat SDK with Vercel Passport
@@ -31,9 +31,9 @@ Use [Vercel Passport](/docs/passport) to identify signed-in users of a browser c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
@@ -284,6 +284,28 @@ A local request without a real Passport token returns HTTP 401 from the Web Adap
 Passport does not automatically connect a browser identity to a Slack, Teams, or Discord account. Before returning the same history key for another adapter, establish a verified account link and store the platform, workspace or tenant, and platform user ID alongside the Passport issuer and subject. Resolve that mapping on the server; do not match accounts by display name or an unverified email.
 
 The example returns `null` for adapters other than `web`. A missing history key skips user-history persistence; it does not reject an event. Authenticate platform webhooks separately, and keep personal history out of shared-channel replies where other members could see it.
+
+## Frequently asked questions
+
+### How do I identify signed-in users in a Chat SDK web chat?
+
+Resolve the user in the Web Adapter's `getUser` function. In this guide, `getUser` calls `getIdentity` from `@vercel/passport`, rejects missing or unverified identities by returning `null`, and returns a stable ID built from the Passport issuer and subject. The Web Adapter uses that ID as the message author, so the browser can't choose whose history it reads. Returning `null` rejects the request with HTTP 401.
+
+### Why does the example base64url-encode the Passport issuer and subject?
+
+The Web Adapter rejects user IDs that contain a colon, and an issuer such as an `https://` URL contains one. Base64url encoding combines the issuer and subject into one ID without colons. The encoding doesn't encrypt anything, so treat the ID as an identifier, not a secret. Avoid email addresses and session IDs as keys, because they can change.
+
+### How long does Chat SDK keep each user's conversation history?
+
+As long as you configure. This example keeps up to 200 entries per user with a 30-day `retention`. The retention period is an inactivity timeout for the user's whole history list, and each append resets it, so active users keep their history. It isn't a maximum age for each message. See the [Chat SDK History API](https://chat-sdk.dev/docs/history).
+
+### Can a user's history follow them from the web chat to Slack?
+
+Not automatically. Passport doesn't link a browser identity to a Slack, Microsoft Teams, or Discord account. To share history, establish a verified account link, store the platform user ID with the Passport issuer and subject, and resolve that mapping on the server. Don't match accounts by display name or an unverified email address.
+
+### Why does my local chat request return a 401 error?
+
+The example turns off Passport's unverified development identity with `getIdentity(request, { development: false })`, so a local request without a real Passport token has no user, and the Web Adapter returns HTTP 401. Test the flow on a deployment where Passport is enabled. On a protected deployment, Passport sends unauthenticated browsers to sign in before requests reach your function.
 
 ## Next steps
 

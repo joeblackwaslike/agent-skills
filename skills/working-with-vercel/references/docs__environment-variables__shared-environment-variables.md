@@ -14,8 +14,8 @@ related:
 summary: Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can link to multiple projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/shared-environment-variables.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f6b8b208b5662d56d5cfe383fea58edc26179e2b8f6d6eb89db900510d7457b8"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f4505d7d2959199383da9eae4a50fbe79cb2fc404331eb735d640b7c462aa28f"
 ---
 
 # Shared environment variables
@@ -31,7 +31,6 @@ sha256: "f6b8b208b5662d56d5cfe383fea58edc26179e2b8f6d6eb89db900510d7457b8"
 - [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
 - [v0 now reads npm credentials from shared environment variables](https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables)
 - [Vercel Agent now installs private packages from npm and custom registries](https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries)
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
 - [Share environment variables across your Team and Projects](https://vercel.com/changelog/share-environment-variables-across-your-team-and-projects)
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)

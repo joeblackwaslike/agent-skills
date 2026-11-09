@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/org.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "e5b28bec090cafa81a43c83e2e847127edf40878fc1b9252ab64c40ee9bcd475"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "61b2a26b374a30fc4e39c14afe43966ec2cce7cf3f354d81f35a53e22b5c2b3d"
 ---
 
 > ## Documentation Index
@@ -345,7 +345,7 @@ To stop Claude Code's own updates but keep plugin auto-update, add `"FORCE_AUTOU
 To run stable and early-access channels, host two marketplaces that point at different refs of the same plugins. Then give each user group its own marketplace through either separate endpoint-managed settings or a gateway policy. Server-managed settings from the admin console [apply to every user in your organization](https://code.claude.com/docs/en/server-managed-settings.md#current-limitations), so they can't assign different settings to different groups.
 
 * Deploy separate [endpoint-managed settings](https://code.claude.com/docs/en/managed-settings.md#delivery-mechanisms), such as a managed settings file or an MDM profile, to each group's devices. To check whether the per-group file or profile applies on a device that also has an organization-wide source, see [How Claude Code combines managed sources](https://code.claude.com/docs/en/managed-settings.md#precedence-within-the-managed-tier).
-* Define one [Claude apps gateway policy](https://code.claude.com/docs/en/claude-apps-gateway-config.md#managed) per group. The gateway applies the first policy whose match rule fits a user, so order the policies so that each user reaches their group's policy. That policy's `extraKnownMarketplaces` map doesn't merge with any other policy's, so list every marketplace the group needs in it, not only its channel marketplace.
+* Define one [Claude apps gateway policy](https://code.claude.com/docs/en/claude-apps-gateway-config.md#managed) per group. By default, the gateway applies the first policy whose match rule fits a user, so order the policies so that each user reaches their group's policy. That policy's `extraKnownMarketplaces` map doesn't merge with any other policy's, so list every marketplace the group needs in it, not only its channel marketplace.
 
 With either mechanism, the stable group receives this configuration:
 

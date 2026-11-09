@@ -15,8 +15,8 @@ related:
 summary: Learn how to set the memory / CPU of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/memory.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "755375aca6c09139add614d3aae6a2a6a5134dc97cdb072021ff14010f250df9"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c660b00a87772e466220e5912ee29d39a46978fe4108e6315952f64bbf39a5d5"
 ---
 
 # Configuring Memory and CPU for Vercel Functions
@@ -37,10 +37,10 @@ The memory configuration of a function determines how much memory and CPU a func
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Higher defaults and limits for Vercel Functions running Fluid compute](https://vercel.com/changelog/higher-defaults-and-limits-for-vercel-functions-running-fluid-compute)
-- [Troubleshooting Build Error: "Serverless Function has exceeded the unzipped maximum size of 250 MB"](https://vercel.com/kb/guide/troubleshooting-function-250mb-limit) — Learn how to troubleshoot builds failing due to exceeding the maximum function size limit on Vercel.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Managing Builds](https://vercel.com/docs/builds/managing-builds) — Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
+- [vercel project](https://vercel.com/docs/cli/project) — Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, renam
 - [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
-- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/memory.graph.md](/docs/functions/configuring-functions/memory.graph.md)
 <!-- /docsgraph:related -->
@@ -61,7 +61,7 @@ To change the default function memory size:
 1. Choose the appropriate project from your [dashboard](/dashboard)
 2. Open **Settings** in the sidebar
 3. Scroll to [**Functions**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Ffunctions\&title=Go+to+Functions+Settings)
-4. Select **Advanced Settings**
+4. Scroll to the **Function CPU** section
 5. In the **Function CPU** section, select your preferred memory size option:
 
 ![The Function CPU setting in a Vercel project's dashboard](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/functions/configure-mem-light.png)

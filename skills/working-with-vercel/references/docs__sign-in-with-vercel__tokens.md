@@ -13,8 +13,8 @@ related:
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sign-in-with-vercel/tokens.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3ac66374da1a31ac8d2e4d8a775d5f06c7eb46936add379693c70ab0b670acd2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "5924ab4a19d86ab0893464865b9c5fa20456142b71c28236b7b4484a49471e60"
 ---
 
 # Tokens
@@ -28,13 +28,11 @@ There are three tokens your application will work with when using Sign in with V
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing new token formats and secret scanning](https://vercel.com/changelog/new-token-formats-and-secret-scanning)
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
-- [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
+- [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
+- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
-- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/tokens.graph.md](/docs/sign-in-with-vercel/tokens.graph.md)
 <!-- /docsgraph:related -->
@@ -58,7 +56,7 @@ The ID Token is a signed JWT that contains information about the user who is sig
   "jti": "50e67781-c8b6-4391-98d1-89d755bb095a",
   "name": "Timmy Triangle",
   "preferred_username": "timmy-triangle",
-  "picture": "https://api.vercel.com/www/avatar/00159aa4c88348dedc91a456b457d1baa48df6d",
+  "picture": "https://vercel.com/api/www/avatar/00159aa4c88348dedc91a456b457d1baa48df6d",
   "email": "user@example.com",
   "nonce": "a4a522fa63f9cea6eeb1"
 }
@@ -106,7 +104,7 @@ Depending on the scopes requested the following claims will be included in the I
 | --------- | -------------------- | ----------------------------------------------------------- | ------------------------------------------------ |
 | `profile` | `name`               | The user's full display name                                | `"Timmy Triangle"`                               |
 | `profile` | `preferred_username` | The user's username on Vercel                               | `"timmy-triangle"`                               |
-| `profile` | `picture`            | URL to the user's avatar image (only if user has an avatar) | `"https://api.vercel.com/www/avatar/avatar-42…"` |
+| `profile` | `picture`            | URL to the user's avatar image (only if user has an avatar) | `"https://vercel.com/api/www/avatar/avatar-42…"` |
 | `email`   | `email`              | The user's email address                                    | `"user@example.com"`                             |
 
 ## Access Token

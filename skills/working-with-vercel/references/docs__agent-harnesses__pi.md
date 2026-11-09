@@ -16,8 +16,8 @@ related:
 summary: Make a Pi agent durable on Vercel so a crashed turn resumes in a new function instead of starting over.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/pi.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "483ef91bc8281e2184c9b9535529f45cf31aec595f460f0326bf51a0b5e4b841"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "47dada0a44e8b505f57815029af9743f06312b9a3ea1401b11b1b437ddffc12c"
 ---
 
 # Running Pi Durably on Vercel
@@ -30,14 +30,14 @@ sha256: "483ef91bc8281e2184c9b9535529f45cf31aec595f460f0326bf51a0b5e4b841"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [useEveAgent Reference](https://eve.dev/docs/guides/frontend/use-eve-agent) — Every value, option, and behavior of useEveAgent, shared by the React, Vue, and Svelte bindings.
+- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
 - [Build AI agents in Python with the AI SDK](https://vercel.com/kb/guide/python-and-ai-sdk) — Stream model responses, get typed output, and build tool-using agents in Python on Vercel.
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
+- [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
 

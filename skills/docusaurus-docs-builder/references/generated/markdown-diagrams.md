@@ -1,8 +1,8 @@
 ---
 title: "Markdown Diagrams"
 source: "https://docusaurus.io/docs/markdown-features/diagrams"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "d6d95dab11b0b77d29d834d570c80eeed107cc255e924dbae37b9f784946df44"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "bd57dc5e6662cfbf4d0cc6a19f52fe73b5031d0d3080bf1d41592acdc50f7778"
 ---
 
 # Markdown Diagrams
@@ -98,4 +98,4 @@ The `dagre` layout engine is supported by default in Docusaurus.
 ```mermaid---config:  layout: elk---graph TD;    A-->B;    A-->C;    B-->D;    C-->D;```
 ```
 
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-diagrams.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-diagrams.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

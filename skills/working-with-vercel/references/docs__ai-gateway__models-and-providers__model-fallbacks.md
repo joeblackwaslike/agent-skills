@@ -17,8 +17,8 @@ related:
 summary: Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and combine it with provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4a3d5183bfea1e30b0762489ab8de8ff1f3d8fbe9e69311e1bf9b1ae4f302fb5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f0845b6ede6ba6860384f008efdaf599c75232c42772133999df19f8d6bdbc14"
 ---
 
 # AI Gateway Model Fallbacks
@@ -371,52 +371,47 @@ When processing a request with model fallbacks:
 
 The Python beta can omit routing details from its normalized message metadata. To confirm which model served a request, inspect the raw AI Gateway response or the [request logs](/docs/ai-gateway/observability-and-spend/logs).
 
-When model fallbacks occur, the `modelAttempts` array in the provider metadata shows each model that was tried. Each attempt carries two identifiers: `canonicalSlug` is AI Gateway's normalized model name (always `creator/model-name`), while `modelId` is the provider's own internal ID for that model on that provider (`provider:model`). These identifiers differ. The same `canonicalSlug` can be tried via several providers, each reporting its own `modelId`. Failed models include error details in their `providerAttempts`, while the successful model includes its provider attempt details:
+When model fallbacks occur, the `modelAttempts` array in the provider metadata shows each model that was tried. Each attempt identifies its model by `canonicalSlug`, which is AI Gateway's normalized model name (always `creator/model-name`). AI Gateway can try the same `canonicalSlug` through several providers, and each entry in `providerAttempts` names its provider in the `provider` field. Failed models include error details in their `providerAttempts`, while the successful model includes its provider attempt details:
 
 ```json
 "modelAttempts": [
   {
-    "modelId": "vertex:gemini-3.1-pro-preview",
     "canonicalSlug": "google/gemini-3.1-pro-preview",
     "success": false,
     "providerAttemptCount": 2,
     "providerAttempts": [
       {
-        "attemptNumber": 1,
         "provider": "vertex",
-        "modelId": "vertex:gemini-3.1-pro-preview",
-        "success": false,
         "credentialType": "system",
-        "responseTimeMs": 15679.64,
-        "error": "Internal error encountered.",
-        "statusCode": 500
+        "success": false,
+        "error": "Service temporarily unavailable",
+        "startTime": 1754639042520,
+        "endTime": 1754639058200,
+        "statusCode": 503
       },
       {
-        "attemptNumber": 2,
         "provider": "google",
-        "modelId": "google:gemini-3.1-pro-preview",
-        "success": false,
         "credentialType": "system",
-        "responseTimeMs": 284.30,
-        "error": "Internal error encountered.",
-        "statusCode": 500
+        "success": false,
+        "error": "Service temporarily unavailable",
+        "startTime": 1754639058200,
+        "endTime": 1754639058484,
+        "statusCode": 503
       }
     ]
   },
   {
-    "modelId": "anthropic:claude-opus-5",
     "canonicalSlug": "anthropic/claude-opus-5",
     "success": true,
     "providerAttemptCount": 1,
     "providerAttempts": [
       {
-        "attemptNumber": 1,
         "provider": "anthropic",
-        "modelId": "anthropic:claude-opus-5",
-        "success": true,
         "credentialType": "system",
+        "success": true,
+        "startTime": 1754639058484,
+        "endTime": 1754639063006,
         "statusCode": 200,
-        "responseTimeMs": 4521.78,
         "providerResponseId": "msg_01ABCDEFGhJKLmnOpQrStUv"
       }
     ]

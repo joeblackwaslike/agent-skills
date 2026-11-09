@@ -10,12 +10,13 @@ prerequisites:
 related:
   - /docs/domains/working-with-domains/transfer-your-domain
   - /docs/cli/certs
+  - /docs/domains/troubleshooting
   - /docs/domains/managing-dns-records
 summary: test
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/pre-generating-ssl-certs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ca0172caa06bcfe6aca91adc6b15f4b3b2756039714837ac8ceb14f9cba80e02"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3eb127343cb4a696aca191d137d7f865ed3f0bbda3ccf4ef6eea9367873be458"
 ---
 
 # Pre-Generate SSL Certificates
@@ -38,13 +39,11 @@ DNS changes.
 - [Pre-generate SSL certs, now in the Domains dashboard](https://vercel.com/changelog/pre-generate-domain-ssl-certs-now-in-dashboard)
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
-- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
+- [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt)
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 
 Full cross-link map for this page: [/docs/domains/pre-generating-ssl-certs.graph.md](/docs/domains/pre-generating-ssl-certs.graph.md)
@@ -81,10 +80,10 @@ so if it doesn't work immediately, it's worth waiting for the records to propaga
 To check whether the TXT records have propagated, you can use the following command in a terminal of your choice:
 
 ```bash filename="terminal"
-nslookup -type=TXT example.com
+nslookup -type=TXT _acme-challenge.example.com
 ```
 
-*Looking up the TXT records for example.com*
+*Looking up the TXT records for \_acme-challenge.example.com*
 
 Once TXT records have propagated, you can click "Verify" to issue the SSL certificates.
 
@@ -108,12 +107,22 @@ curl https://example.com --resolve example.com:443:76.76.21.21 -I
 *curl command that sends a request directly to Vercel, ignoring the DNS
 configuration of the domain.*
 
-If the request is successful, the certificate is working and you can proceed with the migration.
+Replace `76.76.21.21` with the `A` record value shown in your project's **Settings** > **Domains**. If the request is successful, the certificate is working and you can proceed with the migration.
 
 ## Finishing connecting your domain to Vercel
 
-To migrate your deployment to Vercel, add the provided A or CNAME record from your project’s Domain Settings page to your DNS configuration so your domain points to Vercel webservers.
-See [this detailed guide](/kb/guide/a-record-and-caa-with-vercel) on using domains with **A** records for more information.
+Before you change the record, check its current TTL. Resolvers can keep returning the old value until the TTL expires, so the TTL sets how long the switch takes. The TTL in seconds is the second column of the `dig` output:
+
+```bash filename="terminal"
+dig A example.com +noall +answer
+```
+
+*A TTL of 300 means most visitors reach the new record within about 5 minutes.*
+
+If the TTL is longer than you want to wait, lower it at your DNS provider and wait for the old TTL to expire before you continue.
+
+To migrate your deployment to Vercel, add the provided A or CNAME record from your project’s Domain Settings page to your DNS configuration so your domain points to Vercel webservers. Turn off any proxy on the record, such as Cloudflare's proxy, so traffic goes directly to Vercel.
+See [Records for an apex domain and `www`](/docs/domains/troubleshooting#records-for-an-apex-domain-and-www) for the records to add and how to check them.
 
 For more details on performing a migration, see [this guide](/docs/domains/managing-dns-records#migrating-dns-records-from-an-external-registrar).
 

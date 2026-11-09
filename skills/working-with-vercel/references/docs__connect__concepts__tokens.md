@@ -17,8 +17,8 @@ related:
 summary: Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation, scopes, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/concepts/tokens.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b0b2755eaa525b881e17bdabdbcf07fdf1fd50850bf8e13e9699eb8db4444b84"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bb6c146b143fcf99dd50a370d77e9e894bc6fb4a9b907aa429e5151a4c5c2be7"
 ---
 
 # Provider tokens in Vercel Connect
@@ -31,11 +31,11 @@ A token is a short-lived credential that Vercel Connect issues against a provide
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Vercel Connect adds 100+ preset connectors](https://vercel.com/changelog/vercel-connect-preset-connectors)
 - [Call third-party APIs from Python with Vercel Connect](https://vercel.com/kb/guide/python-and-vercel-connect) — Call Slack and Linear APIs from Python with Vercel Connect. Request app and user tokens, handle consent, and verify prov
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
@@ -170,7 +170,9 @@ If a provider rejects a cached token, evict it and retry instead of forcing a re
 
 Revoking a token tells the provider to invalidate it at the source. Whether revocation actually invalidates the token depends on the provider. If the provider exposes a revocation endpoint, Vercel Connect calls it. If not, Vercel Connect marks the token for deletion in its own store, but the underlying provider credential may continue to work until it expires naturally.
 
-You can revoke from the dashboard, from the CLI (`vercel connect token revoke …`), with the SDK's [`revokeToken`](/docs/connect/ts-sdk-reference#revoketoken) or [`revoke_token()`](/docs/connect/python-sdk-reference#revoke_token) function, or through the REST API.
+You can revoke from the dashboard, from the CLI (`vercel connect revoke-tokens <connector>`), with the SDK's [`revokeToken`](/docs/connect/ts-sdk-reference#revoketoken) or [`revoke_token()`](/docs/connect/python-sdk-reference#revoke_token) function, or through the REST API.
+
+The CLI command takes the connector's `uid`, such as `slack/acme-slack`, and asks whether to revoke only your own tokens for that connector or every token for all users and installations. To skip the prompts, pass `--my-tokens` or `--all-tokens` to choose the tokens, and `--yes` to confirm.
 
 ## Errors
 
@@ -179,7 +181,7 @@ Token requests can fail with structured errors:
 - `UserAuthorizationRequiredError`: the requested user subject has not yet authorized the connector. Surface a "connect your account" UI.
 - `ConnectorInstallationRequiredError`: the connector type supports installations but none matches the request. Surface an install link.
 - `NoValidTokenError`: the connector exists but cannot produce a token for this request (for example, the underlying grant was revoked). Treat as a recoverable user-facing state.
-- `ClientNotLinkedToProjectError` / `ClientNotEnabledForEnvironmentError` (`ConnectApiError` in Python): the calling project isn't linked to this connector, or the project link doesn't include the calling environment. See [Project links](/docs/connect/concepts/project-links).
+- `ConnectError` with status `403` and code `forbidden` (`ConnectApiError` in Python): the calling project isn't linked to this connector, or the project link doesn't include the calling environment. This case has no error class of its own. Check the error's `status` and `code` properties in TypeScript, or its `status_code` and `code` attributes in Python. To link the project or add the environment, see [Project links](/docs/connect/concepts/project-links).
 
 Each SDK exports its error classes, so you can match on `instanceof` in TypeScript or `except` in Python. See the [TypeScript](/docs/connect/ts-sdk-reference#errors) and [Python](/docs/connect/python-sdk-reference#errors) error lists for details.
 

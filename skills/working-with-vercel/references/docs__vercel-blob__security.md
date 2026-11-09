@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/vercel-blob/private-storage
   - /docs/functions
+  - /docs/cdn-security/security-headers
   - /docs/vercel-firewall
   - /docs/vercel-firewall/vercel-waf
-  - /docs/vercel-firewall/vercel-waf/custom-rules
 summary: Learn how your Vercel Blob store is secured
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/security.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a215f4b7356624a4dc59bac3d8cde6ae34b92995fabccd75e3e85f608b639e50"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b1bc5268f13ace04461025500c7bec2ea999f0a78ae1f37910fa0fb12bf09d6c"
 ---
 
 # Security
@@ -39,13 +39,14 @@ For files that require authentication, use [private storage](/docs/vercel-blob/p
 - [Vercel WAF for Blob is now generally available](https://vercel.com/changelog/vercel-waf-for-blob-is-now-generally-available)
 - [Vercel WAF for Blob is now in beta](https://vercel.com/changelog/vercel-waf-for-blob-is-now-in-beta)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available)
+- [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
+- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 
 Full cross-link map for this page: [/docs/vercel-blob/security.graph.md](/docs/vercel-blob/security.graph.md)
 <!-- /docsgraph:related -->
@@ -59,10 +60,9 @@ Vercel Blob URLs, although publicly accessible, are unique and hard to guess whe
 > in Google Docs. You should ensure that the URLs are only shared to authorized
 > users
 
-Headers that enhance security by preventing unauthorized downloads, blocking external content from being embedded, and protecting against malicious file type manipulation, are enforced on each blob. They are:
+Headers that enhance security by preventing unauthorized downloads, blocking a blob from loading external content, and protecting against malicious file type manipulation, are enforced on each blob. They are:
 
-- `content-security-policy`: `default-src "none"`
-- `x-frame-options`: `DENY`
+- [`content-security-policy`](/docs/cdn-security/security-headers): `default-src 'none'; media-src 'self'; style-src 'unsafe-inline'; img-src 'self'`
 - `x-content-type-options`: `nosniff`
 - `content-disposition`: `inline; filename="filename.extension"` or `attachment; filename="filename.extension"`
 

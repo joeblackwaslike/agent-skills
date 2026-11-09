@@ -1,8 +1,8 @@
 ---
 title: "Markdown Front Matter"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter"
-fetched_at: "2026-10-19T09:38:00.847Z"
-sha256: "2e506ba06c0d1a3cad4327a29fc8ebe11415c311678f052a62a703178f86fe17"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "db56de4332af44f30e1c3e5f88c590f17d711de5548d05a80e4db0cae0532878"
 ---
 
 # Markdown Front Matter
@@ -163,4 +163,4 @@ Read the [i18n introduction](https://docusaurus.io/docs/i18n/introduction) first
 ```
 website/i18n/[locale]/docusaurus-plugin-content-docs││ # translations for website/docs├── current│   ├── api│   │   └── config.md│   └── getting-started.md├── current.json││ # translations for website/versioned_docs/version-1.0.0├── version-1.0.0│   ├── api│   │   └── config.md│   └── getting-started.md└── version-1.0.0.json
 ```
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/api/plugins/plugin-content-docs.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/api/plugins/plugin-content-docs.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

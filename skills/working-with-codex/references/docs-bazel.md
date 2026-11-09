@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/docs/bazel.md"
-fetched_at: "2026-10-12T11:42:58.685Z"
-sha256: "121d2c89c0fe5110e392ee3fbb682f59fed110bfbac30f6d0bd7eac3ff535bd9"
+fetched_at: "2026-11-09T12:34:38.952Z"
+sha256: "c52802031fb8f37937e5924f4e2166008d0da13fb65f22da6e49a0d93e0496bb"
 ---
 
 # Bazel in codex-rs
@@ -82,20 +82,7 @@ configurations.
 
 ### All remote configurations
 
-GitHub Actions routes Bazel build and output-resolution commands through
-`.github/scripts/run_bazel_with_buildbuddy.py`. Higher-level helpers such as
-`.github/scripts/run-bazel-ci.sh` and `.github/scripts/rusty_v8_bazel.py`
-delegate remote configuration selection to that wrapper. The wrapper reads the
-GitHub Actions repository and event payload rather than relying on workflow
-files to duplicate tenant-selection logic. It also normalizes GitHub Actions
-startup options so all Bazel launches in a job reuse the same server and
-in-memory analysis cache. Target-discovery and lockfile helpers delegate to the
-same wrapper so their callers do not need to select CI-specific startup options.
-
-Loading-phase target-discovery `bazel query` commands run locally because they
-only enumerate labels and do not need remote caches or execution.
-
-The `Cache/BES` host is also used for remote downloads.
+CI executes Bazel actions on its runners. The following configurations are available for explicit local use.
 
 | Invocation/config                           | Key Required | Cache/BES              | Build exec | Test exec |
 | ------------------------------------------- | ------------ | ---------------------- | ---------- | --------- |
@@ -104,42 +91,6 @@ The `Cache/BES` host is also used for remote downloads.
 | `bazel ... --config=buildbuddy-generic-rbe` | Yes          | `remote.buildbuddy.io` | Remote     | Remote    |
 | `bazel ... --config=buildbuddy-openai`      | Yes          | `openai.buildbuddy.io` | Local      | Local     |
 | `bazel ... --config=buildbuddy-openai-rbe`  | Yes          | `openai.buildbuddy.io` | Remote     | Remote    |
-
-Without an API key, the wrapper removes remote CI configurations and runs
-locally. With a key, workflows choose the host as follows:
-
-| Run                                              | Key | Uses OpenAI BuildBuddy Host |
-| ------------------------------------------------ | --- | --------------------------- |
-| Push to `main` in `openai/codex`                 | Yes | Yes                         |
-| `workflow_dispatch` in `openai/codex`            | Yes | Yes                         |
-| Same-repository pull request in `openai/codex`   | Yes | Yes                         |
-| Fork pull request into `openai/codex`            | No  | No; local                   |
-| Push or `workflow_dispatch` in a fork with a key | Yes | No; generic host            |
-| Pull request run in a fork repository with a key | Yes | No; generic host            |
-
-CI configurations determine whether builds and tests execute remotely:
-
-| CI config           | Remote config | Build exec  | Test exec   |
-| ------------------- | ------------- | ----------- | ----------- |
-| `ci-linux`          | `*-rbe`       | Remote host | Remote host |
-| `ci-v8`             | `*-rbe`       | Remote host | Remote host |
-| `ci-macos`          | `*-rbe`       | Remote host | Local       |
-| `ci-windows-cross`  | `*-rbe`       | Remote host | Local       |
-| `ci-windows`        | non-RBE       | Local       | Local       |
-| Keyless CI fallback | none          | Local       | Local       |
-
-To exercise the generic remote configuration with your key:
-
-```bash
-BUILDBUDDY_API_KEY=... GITHUB_REPOSITORY=my-fork/codex \
-  ./.github/scripts/run_bazel_with_buildbuddy.py \
-  build --config=ci-linux //codex-rs/cli:codex
-```
-
-The wrapper selects the OpenAI host only inside GitHub Actions for a trusted
-run in `openai/codex`. A missing or malformed pull request event
-payload fails closed to the generic host. For local OpenAI host access, use
-the `user.bazelrc` configuration above.
 
 ## Evolving the setup
 

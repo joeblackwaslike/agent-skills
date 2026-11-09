@@ -16,8 +16,8 @@ related:
 summary: Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/debug-slow-functions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "90bdf7c57760d10426a6b3d8fdf667d918d661ed171378b5a993ab11acf53a2f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4936f177c095a0af1e8c8fd180ccf1ce63fd673b8ea3926fb9cf78ad97e08215"
 ---
 
 # Debugging slow Vercel Functions
@@ -32,9 +32,10 @@ Use this guide to diagnose and fix slow Vercel Functions. You'll identify which 
 
 - [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
 - [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
+- [Vercel Functions are now faster—and powered by Rust](https://vercel.com/blog/vercel-functions-are-now-faster-and-powered-by-rust)
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
@@ -51,18 +52,18 @@ Use this block when you already know what you're doing and want the full command
 
 ```bash filename="terminal"
 # 1. List recent function requests from production logs
-vercel logs --environment production --source serverless --since 1h --json \
-  | jq '{path: .requestPath, statusCode: .responseStatusCode}'
+vercel logs --environment production --query 'source:function' --since 1h --json \
+  | jq 'select(.type == "log") | .data | {path: .requestPath, level: .level}'
 
 # 2. Measure endpoint timing (server processing = time in your function)
 vercel httpstat /api/slow-endpoint
 
 # 3. Check function configuration (memory, region, max duration)
-vercel inspect <deployment-url>
+vercel inspect <deployment-url> --json
 
 # IF server processing time is high, check external API latency:
-vercel logs --environment production --query "timeout" --since 1h --expand
-vercel logs --environment production --query "ECONNREFUSED" --since 1h --expand
+vercel logs --environment production --query "timeout" --since 1h
+vercel logs --environment production --query "ECONNREFUSED" --since 1h
 
 # IF first request is slow but subsequent requests are fast, check cold starts:
 vercel httpstat /api/slow-endpoint    # first request (potentially cold)
@@ -76,25 +77,25 @@ vercel curl /api/slow-endpoint --deployment <preview-url>
 
 # 5. Ship to production and monitor
 vercel deploy --prod
-vercel logs --environment production --source serverless --since 5m
+vercel logs --environment production --query 'source:function' --since 5m
 ```
 
 ## 1. Identify the slow functions
 
-Start by listing recent function requests in your production logs. The JSON output includes each request's `requestPath` and `responseStatusCode`, but not its duration:
+Start by listing recent function requests in your production logs. Each JSON record holds the log entry under `data`, with fields such as `requestPath` and `level`, but not the request's status code or duration:
 
 ```bash filename="terminal"
-vercel logs --environment production --source serverless --since 1h --json \
-  | jq '{path: .requestPath, statusCode: .responseStatusCode}'
+vercel logs --environment production --query 'source:function' --since 1h --json \
+  | jq 'select(.type == "log") | .data | {path: .requestPath, level: .level}'
 ```
 
 To see the full log output with expanded messages:
 
 ```bash filename="terminal"
-vercel logs --environment production --source serverless --since 1h --expand
+vercel logs --environment production --query 'source:function' --since 1h
 ```
 
-The `--source serverless` filter limits results to Vercel Functions, excluding static assets and CDN requests.
+The `source:function` query limits results to log entries from Vercel Functions.
 
 > **💡 Note:** To find high-latency routes, check the **Vercel Functions** tab in
 > [Observability](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fobservability\&title=Open+Observability)
@@ -118,10 +119,10 @@ vercel httpstat /api/slow-endpoint --deployment <deployment-url>
 
 ## 3. Check function configuration
 
-Inspect the current deployment to see what configuration your functions are running with:
+Inspect the current deployment to see what configuration your functions are running with. The default output does not show function memory or max duration. Add `--json` to see each function's memory size (`memorySize`), regions (`deployedTo`), and max duration (`timeout`):
 
 ```bash filename="terminal"
-vercel inspect <deployment-url>
+vercel inspect <deployment-url> --json
 ```
 
 Key things to check:
@@ -137,11 +138,11 @@ See [configuring functions](/docs/functions/configuring-functions) for how to ad
 Slow functions are often caused by slow external API calls rather than slow function code. Check for timeout-related errors:
 
 ```bash filename="terminal"
-vercel logs --environment production --query "timeout" --since 1h --expand
+vercel logs --environment production --query "timeout" --since 1h
 ```
 
 ```bash filename="terminal"
-vercel logs --environment production --query "ECONNREFUSED" --since 1h --expand
+vercel logs --environment production --query "ECONNREFUSED" --since 1h
 ```
 
 If you find timeout or connection errors, the issue is likely with an upstream dependency rather than your function itself.
@@ -211,7 +212,7 @@ vercel deploy --prod
 Monitor the production logs after deploying to confirm the latency improvement holds under real traffic:
 
 ```bash filename="terminal"
-vercel logs --environment production --source serverless --since 5m
+vercel logs --environment production --query 'source:function' --since 5m
 ```
 
 ## Related

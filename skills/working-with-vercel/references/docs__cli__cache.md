@@ -11,12 +11,13 @@ related:
   - /docs/caching/cdn-cache
   - /docs/caching/runtime-cache
   - /docs/caching/cdn-cache/purge
-  - /docs/cli/global-options
+  - /docs/caching/runtime-cache/data-cache
+  - /docs/cli/project-linking
 summary: Learn how to manage cache for your project using the vercel cache CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/cache.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "945b559f2ab6a8c29c0b67e65d0311904b4357906cd41ccdae12aea4ff27d9de"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f7a9d27ba179bb810c47a3af82f393b587500ba7ae7fba4da02ca2e7211c3c91"
 ---
 
 # vercel cache
@@ -36,9 +37,9 @@ The `vercel cache` command is used to manage the cache for your project, such as
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [vercel blob](https://vercel.com/docs/cli/blob) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/cache.graph.md](/docs/cli/cache.graph.md)
 <!-- /docsgraph:related -->
@@ -52,7 +53,9 @@ vercel cache purge
 ```
 
 *Using the \`vercel cache purge\` command to purge the CDN
-cache and Data cache for the current project.*
+cache, Runtime cache, and Data cache for the current project.*
+
+On some plans, the projects in your team share one Runtime cache or Data cache. Purging a shared cache deletes the cached data of every project in your team. See storage scope by plan for [Runtime cache](/docs/caching/runtime-cache#storage-scope-by-plan) and [Data cache](/docs/caching/runtime-cache/data-cache#storage-scope-by-plan).
 
 ## Extended Usage
 
@@ -68,7 +71,7 @@ vercel cache purge --type data
 ```
 
 *Using the \`vercel cache purge --type data\` command to
-purge the Data cache for the current project.*
+purge the Runtime cache and Data cache for the current project.*
 
 ```bash filename="terminal"
 vercel cache invalidate --tag blog-posts
@@ -86,7 +89,7 @@ vercel cache dangerously-delete --tag blog-posts
 *Using the \`vercel cache dangerously-delete --tag blog-posts\`
 command to dangerously delete the cached content associated with tag "blog-posts" for
 the current project. Subsequent requests for this cached content will serve
-MISS and therefore block while revalidating.*
+REVALIDATED and therefore block while revalidating.*
 
 ```bash filename="terminal"
 vercel cache invalidate --srcimg /api/avatar/1
@@ -104,7 +107,7 @@ vercel cache dangerously-delete --srcimg /api/avatar/1
 *Using the \`vercel cache dangerously-delete --srcimg /api/avatar/1\`
 command to dangerously delete all cached content associated with the source image "/api/avatar/1" for
 the current project. Subsequent requests for this cached content will serve
-MISS and therefore block while revalidating.*
+REVALIDATED and therefore block while revalidating.*
 
 ```bash filename="terminal"
 vercel cache dangerously-delete --srcimg /api/avatar/1 --revalidation-deadline-seconds 604800
@@ -144,7 +147,7 @@ vercel cache invalidate --srcimg /api/avatar/1
 
 ### revalidation-deadline-seconds
 
-The `--revalidation-deadline-seconds` option specifies the revalidation deadline in seconds. When used with `dangerously-delete`, cached content will only be deleted if it hasn't been accessed within the specified time period.
+The `--revalidation-deadline-seconds` option sets a deadline, in seconds, before `dangerously-delete` deletes the cached content. If a request for the content arrives before the deadline, Vercel serves the stale content and revalidates it in the background. If no request arrives before the deadline, Vercel deletes the content. Use this option only with the `dangerously-delete` subcommand:
 
 ```bash filename="terminal"
 vercel cache dangerously-delete --tag blog-posts --revalidation-deadline-seconds 3600
@@ -152,9 +155,20 @@ vercel cache dangerously-delete --tag blog-posts --revalidation-deadline-seconds
 
 *Using the \`vercel cache dangerously-delete\` command with a 1-hour (3600 seconds) revalidation deadline.*
 
+### Project
+
+By default, `vercel cache` acts on the project that the current directory is [linked](/docs/cli/project-linking) to. To purge, invalidate, or delete the cache of another project, pass its name or ID with the [`--project`](/docs/cli/global-options#project) option, shorthand `-p`:
+
+```bash filename="terminal"
+vercel cache purge --project my-project
+```
+
+*Using the \`vercel cache purge\` command with the
+\`--project\` option.*
+
 ### Yes
 
-The `--yes` option can be used to bypass the confirmation prompt when purging the cache or dangerously deleting cached content.
+The `--yes` option can be used to bypass the confirmation prompt when purging the cache, invalidating cached content, or dangerously deleting cached content. In non-interactive environments like CI, the command can't prompt and exits without changing the cache, so pass `--yes`:
 
 ```bash filename="terminal"
 vercel cache purge --yes
@@ -175,7 +189,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

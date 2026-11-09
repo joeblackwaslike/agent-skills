@@ -16,8 +16,8 @@ related:
 summary: Connect Mistral Vibe to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/vibe.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c0c75543dd3b775da2445317917af307795fc6e5e87bc89599dce0ca32435626"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a6a73ffda7645daf14345d72f0a31b9100974e4a0e5d164a3269b49dd5d35ae5"
 ---
 
 # Mistral Vibe with AI Gateway
@@ -31,11 +31,11 @@ sha256: "c0c75543dd3b775da2445317917af307795fc6e5e87bc89599dce0ca32435626"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Mistral Large 4 now available on AI Gateway](https://vercel.com/changelog/mistral-large-4-now-available-on-ai-gateway)
+- [Mistral Large 4 updated weights and lower pricing on AI Gateway](https://vercel.com/changelog/mistral-large-4-updated-weights-and-lower-pricing-on-ai-gateway)
+- [Mistral Large 3 now available on Vercel AI Gateway](https://vercel.com/changelog/mistral-large-3-now-available-on-vercel-ai-gateway)
 - [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/vibe.graph.md](/docs/ai-gateway/coding-agents/vibe.graph.md)
 <!-- /docsgraph:related -->

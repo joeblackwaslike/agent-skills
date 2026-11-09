@@ -16,8 +16,8 @@ related:
 summary: Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d038f15ab26ed17d7ed6b22521a568f5e1c9922047e0a010d9edad8e8bb8b65d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "cbb11e70741c4587b8dd2ea24970e7567ebb49f07dca6dd3cff6e07fd9e7a463"
 ---
 
 # Deploying to Vercel
@@ -35,15 +35,15 @@ Create preview and production deployments from Git, Vercel CLI, or the REST API.
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Resources tab allows instant searching and filtering of functions, middleware, and static assets](https://vercel.com/changelog/resources-tab-allows-instant-searching-and-filtering-of-functions-middleware)
-- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
+- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/deployments.graph.md](/docs/deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -59,7 +59,7 @@ vercel deploy
 ```bash filename="terminal"
 # Replace these values with the URL and ID printed by vercel deploy
 vercel curl / --deployment your_preview_url_here
-vercel logs --deployment your_preview_deployment_id_here --level error
+vercel logs --deployment your_preview_deployment_id_here --query 'level:error'
 ```
 
 #### Deploy to production

@@ -14,8 +14,8 @@ related:
 summary: Create blob stores, upload files, list contents, and manage storage using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/manage-blob-storage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b0940a7456a27ff7e4d7413e35d97bba0349750d1ab1e1c668363a23507d01be"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "28de166bd5843acd405f4bd482c2f7c037dc6da120b943e70968d0e4dcf3663f"
 ---
 
 # Managing Vercel Blob storage from the CLI
@@ -29,21 +29,22 @@ Use this guide to manage Vercel Blob storage from the CLI. You'll create a store
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
-- [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available)
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
+- [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 - [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store) — DELETE /storage/stores/blob/{id} — Delete a Blob store
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Storage](https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage) — Vercel MCP tools for storage.
-- [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 
 Full cross-link map for this page: [/docs/vercel-blob/manage-blob-storage.graph.md](/docs/vercel-blob/manage-blob-storage.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** This guide assumes a [linked Vercel project](/docs/cli/project-linking). Run
 > `vercel link` in your project directory if you haven't already. The CLI also
-> accepts an explicit `--rw-token` (or `--oidc-token`) together with `--store-id`
+> accepts an explicit `--rw-token` (or `--oidc-token`) together with `--store`
 > if you cannot link the project locally.
 
 ## Quick reference
@@ -65,7 +66,7 @@ vercel blob list --prefix images/ --limit 20
 vercel blob copy images/logo.png images/logo-backup.png --access public
 
 # 5. Delete a blob
-vercel blob del images/old-logo.png
+vercel blob delete images/old-logo.png
 
 # 6. Inspect a store
 vercel blob get-store <store-id>
@@ -105,10 +106,10 @@ To control cache behavior:
 vercel blob put ./assets/hero.jpg --pathname images/hero.jpg --cache-control-max-age 86400 --access public
 ```
 
-If a file already exists at the target pathname, use `--allow-overwrite` to replace it:
+If a file already exists at the target pathname, use `--force` to replace it:
 
 ```bash filename="terminal"
-vercel blob put ./assets/logo-v2.png --pathname images/logo.png --allow-overwrite --access public
+vercel blob put ./assets/logo-v2.png --pathname images/logo.png --force --access public
 ```
 
 To add a random suffix to the filename (useful for avoiding collisions with user uploads):
@@ -134,7 +135,7 @@ vercel blob list --prefix images/ --limit 20
 For paginated results, use the cursor from the previous response:
 
 ```bash filename="terminal"
-vercel blob list --prefix images/ --limit 10 --cursor <cursor-value>
+vercel blob list --prefix images/ --limit 10 --next <cursor-value>
 ```
 
 ## 4. Copy blobs
@@ -154,7 +155,7 @@ Remove a blob you no longer need:
 > **💡 Note:** This action is permanent and cannot be undone.
 
 ```bash filename="terminal"
-vercel blob del images/old-logo.png
+vercel blob delete images/old-logo.png
 ```
 
 ## 6. Manage stores

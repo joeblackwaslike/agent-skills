@@ -16,8 +16,8 @@ related:
 summary: "Learn how to use Vercel's features with Gatsby."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/frameworks/frontend/gatsby.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "18053db1d35a0c6548c55bf44d0a618ff4b783c49e58b7b400a76b82ececa47d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3f3a93be0f57c4e2aa8b2d4965cbac500d67d62f5ff6052e30ec5f3c55bda52e"
 ---
 
 # Gatsby on Vercel
@@ -43,7 +43,7 @@ Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[gene
 
 To deploy your Gatsby site to Vercel, **do not** install the `@vercel/gatsby-plugin-vercel-builder` plugin yourself, or add it to your `gatsby-config.js` file.
 
-[Gatsby v5](https://www.gatsbyjs.com/gatsby-5/) sites require Node.js 20 or higher.
+[Gatsby v5](https://www.gatsbyjs.com/gatsby-5/) sites require Node.js 22 or higher on Vercel.
 
 Vercel persists your Gatsby project's `.cache` directory across builds.
 
@@ -61,7 +61,7 @@ To server-render a Gatsby page, you must export an `async` function called `getS
 
 The following example demonstrates a server-rendered Gatsby page using `getServerData`:
 
-```js filename="pages/example.jsx" framework=all
+```js filename="src/pages/example.jsx" framework=all
 const Page = ({ serverData }) => {
   const { name } = serverData;
   return <div>Hello, {name}</div>;
@@ -85,7 +85,7 @@ export async function getServerData(props) {
 export default Page;
 ```
 
-```ts filename="pages/example.tsx" framework=all
+```ts filename="src/pages/example.tsx" framework=all
 import type { GetServerDataProps, GetServerDataReturn } from 'gatsby';
 
 type ServerDataProps = {
@@ -122,7 +122,7 @@ export default Page;
 - Scales to zero when not in use
 - Scales automatically with traffic increases
 - Has zero-configuration support for [`Cache-Control` headers](/docs/cdn-cache), including `stale-while-revalidate`
-- Framework-aware infrastructure enables switching rendering between Edge/Node.js runtimes
+- Framework-aware infrastructure enables automatic creation of Functions for SSR
 
 [Learn more about SSR](https://www.gatsbyjs.com/docs/how-to/rendering-options/using-server-side-rendering/)
 
@@ -132,7 +132,7 @@ Deferred Static Generation (DSG) allows you to defer the generation of static pa
 
 To use DSG, you must set the `defer` option to `true` in the `createPages()` function in your `gatsby-node` file.
 
-```js filename="pages/index.jsx" framework=all
+```js filename="gatsby-node.js" framework=all
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
@@ -147,7 +147,8 @@ exports.createPages = async ({ actions }) => {
 };
 ```
 
-```ts filename="pages/index.tsx" framework=all
+```ts filename="gatsby-node.ts" framework=all
+import path from 'path';
 import type { GatsbyNode } from 'gatsby';
 
 export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
@@ -155,7 +156,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
   createPage({
     defer: true,
     path: '/using-dsg',
-    component: require.resolve('./src/templates/using-dsg.js'),
+    component: path.resolve('./src/templates/using-dsg.js'),
     context: {},
   });
 };
@@ -267,7 +268,7 @@ To use Gatsby's Dynamic API routes on Vercel, you must:
    }
    ```
 
-> **💡 Note:** Although typically you'd access the dynamic parameter with `request.param`
+> **💡 Note:** Although typically you'd access the dynamic parameter with `request.params`
 > when using Gatsby, you must use `request.query` on Vercel.
 
 ### Splat API routes
@@ -331,7 +332,7 @@ To use Gatsby's splat API routes on Vercel, you must:
 
 Gatsby does not have native framework support for using [Routing Middleware](/docs/routing-middleware).
 
-However, you can still use Routing Middleware with your Gatsby site by creating a `middeware.js` or `middeware.ts` file in your project's root directory.
+However, you can still use Routing Middleware with your Gatsby site by creating a `middleware.js` or `middleware.ts` file in your project's root directory.
 
 The following example demonstrates middleware that adds security headers to responses sent to users who visit the `/example` route in your Gatsby application:
 
@@ -383,19 +384,14 @@ export default function middleware(request: Request): Response {
 
 - Executes before a request is processed on a site, allowing you to modify responses to user requests
 - Runs on *all* requests, but can be scoped to specific paths [through a `matcher` config](/docs/routing-middleware/js-reference#match-paths-based-on-custom-matcher-config)
-- Uses our lightweight Edge Runtime to keep costs low and responses fast
 
 [Learn more about Routing Middleware](/docs/routing-middleware)
 
 ## Speed Insights
 
-[Core Web Vitals](/docs/speed-insights) are supported for Gatsby v4+ projects with no initial configuration necessary.
+To track [Core Web Vitals](/docs/speed-insights) for your Gatsby site, use the `@vercel/speed-insights` package. Follow the [Speed Insights quickstart](/docs/speed-insights/quickstart) to install the package, add it to your app, and deploy.
 
-When you deploy a Gatsby v4+ site on Vercel, we automatically install the `@vercel/gatsby-plugin-vercel-analytics` package and add it to the `plugins` array in your `gatsby-config.js` file.
-
-**We do not recommend installing the Gatsby analytics plugin yourself**.
-
-To access your Core Web Vitals data, you must enable Vercel analytics in your project's dashboard. [See our quickstart guide to do so now](/docs/analytics/quickstart).
+After visitors load your deployed site, open your project in the dashboard and select **Speed Insights** to view the data.
 
 **To summarize, using Speed Insights with Gatsby on Vercel:**
 

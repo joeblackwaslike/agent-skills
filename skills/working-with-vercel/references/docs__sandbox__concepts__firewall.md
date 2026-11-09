@@ -13,12 +13,12 @@ related:
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/functions
   - /docs/functions/functions-api-reference
-  - /docs/sandbox/concepts
+  - /docs/sandbox/sdk-reference
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "be43f527b551b06a2cbdc683fc3462f9e3c173c4b3cfe02a50e6330d7bb07f36"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "8090abec63c5381c9b1d5deea4d6d4f2652423b839a54bef08cff5207e6ab6de"
 ---
 
 # Sandbox firewall
@@ -39,10 +39,10 @@ Network firewall allows users to restrict egress traffic from their sandbox. It 
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
 - [How v0 authenticates to Snowflake without exposing the user's OAuth token](https://vercel.com/blog/how-v0-authenticates-to-snowflake-without-exposing-the-users-oauth-token)
-- [Vercel Sandbox firewall now supports request proxying and filtering](https://vercel.com/changelog/vercel-sandbox-firewall-now-supports-request-proxying-and-filtering)
 - [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox)
-- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
+- [Vercel Sandbox firewall now supports request proxying and filtering](https://vercel.com/changelog/vercel-sandbox-firewall-now-supports-request-proxying-and-filtering)
 - [Safely inject credentials in HTTP headers with Vercel Sandbox](https://vercel.com/changelog/safely-inject-credentials-in-http-headers-with-vercel-sandbox)
+- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 
 Full cross-link map for this page: [/docs/sandbox/concepts/firewall.graph.md](/docs/sandbox/concepts/firewall.graph.md)
 <!-- /docsgraph:related -->
@@ -82,9 +82,9 @@ User-defined policies deny traffic by default and let you allow specific destina
 The firewall makes two separate decisions:
 
 1. **Access**: the three lists above decide whether traffic gets through at all.
-2. **Handling**: rules on an allowed domain decide what happens to the requests they match, either [credentials brokering](#credentials-brokering) through `transform` or [requests proxying](#requests-proxying) through `forwardURL`. A rule defines one or the other.
+2. **Handling**: rules on an allowed domain choose one action for matching requests: [credentials brokering](#credentials-brokering), [requests proxying](#requests-proxying), or a [direct response](#direct-responses). Each rule defines exactly one action.
 
-A rule never changes whether a request is allowed.
+Matchers alone do not block traffic. A direct-response rule can reject a request to an allowed domain without contacting the destination.
 
 A domain wildcard must replace an entire DNS label. You can place wildcard labels anywhere in a domain pattern. Partial-label wildcards such as `api*.example.com` are not supported.
 
@@ -113,7 +113,7 @@ Domain-based rules identify traffic by the hostname negotiated during the TLS ha
 
 HTTPS traffic is matched using the [SNI (Server Name Indication)](/docs/glossary#sni-server-name-indication) extension sent at the start of the TLS handshake. Plain-text HTTP cannot be filtered by domain, and must be allowed by [IP range](#user-defined) instead.
 
-Domain matching reads the hostname from the SNI extension, which travels unencrypted at the start of the handshake. For an ordinary allowed domain the firewall matches this hostname and forwards the connection without terminating TLS, so it never decrypts the request and never inspects the HTTP `Host` header inside the encrypted connection. TLS is terminated only for domains with `transform` or `forwardURL` rules; see [TLS termination](#tls-termination).
+Domain matching reads the hostname from the SNI extension, which travels unencrypted at the start of the handshake. For an ordinary allowed domain the firewall matches this hostname and forwards the connection without terminating TLS, so it never decrypts the request and never inspects the HTTP `Host` header inside the encrypted connection. The firewall terminates TLS only for domains with transformation, forwarding, or direct-response rules; see [TLS termination](#tls-termination).
 
 Because matching happens on the SNI alone, a client inside the sandbox can send an allowlisted hostname as the SNI while sending a different hostname in the HTTP `Host` header, a technique known as domain fronting. When the destination server or CDN accepts requests whose `Host` header differs from the SNI, the request can reach a different virtual host behind the same infrastructure than the one you allowed. Many providers reject mismatched requests, but the firewall does not prevent the mismatch by default. Traffic still only flows to endpoints that serve the allowlisted SNI; a domain allowlist constrains which hostname a connection negotiates, not which application behind that endpoint ultimately serves the request.
 
@@ -192,7 +192,7 @@ On the other hand, allowing access to a domain can allow data exfiltration if no
 
 Credentials brokering injects credentials into egressing traffic. The secrets never enter the sandbox, so code running inside it cannot exfiltrate them.
 
-Each rule can define [matchers](#matchers) on the path, method, query parameters, and headers. When defined, only matching requests are transformed. A request that matches no rule still reaches the domain: it is sent unchanged, without the injected credential. Matchers select requests for transformation. They never block a request.
+Each rule can define [matchers](#matchers) on the path, method, query parameters, and headers. When defined, only matching requests are transformed. A request that matches no rule still reaches the domain unchanged, without the injected credential. Matchers select requests for an action. To reject other requests, add a final [direct-response rule](#direct-responses).
 
 Brokering relies on the client sending an [SNI (Server Name Indication)](/docs/glossary#sni-server-name-indication). When a policy combines a catch-all (`*`) rule with per-domain transforms, connections without a detectable domain pass through unmodified. Examples are TLS without SNI, or non-TLS protocols such as SSH. Use a restrictive allowlist without a catch-all if you need domain-less traffic to be denied.
 
@@ -217,11 +217,10 @@ const sandbox = await Sandbox.create({
   }
 });
 
-// Sandbox no longer has Internet or secure-compute access.
-// Credential brokering is deactivated.
+// Apply deny-all to an eligible attached session, then save it for future sessions.
 await sandbox.update({ networkPolicy: 'deny-all' });
 
-// Reallow traffic only to ai-gateway, and use the same key.
+// Apply and save an AI Gateway-only policy with the same key.
 await sandbox.update({
   networkPolicy: {
     allow: {
@@ -271,12 +270,12 @@ async def main() -> None:
         )
     )
 
-    # Remove Internet access and disable credential brokering.
-    await box.update_network_policy(NetworkPolicy.deny_all())
+    # Apply deny-all to an eligible attached session, then save it.
+    await box.update(network_policy=NetworkPolicy.deny_all())
 
-    # Allow AI Gateway again with the same brokered credential.
-    await box.update_network_policy(
-        policy_for(
+    # Apply and save an AI Gateway-only policy with the same key.
+    await box.update(
+        network_policy=policy_for(
             "ai-gateway.vercel.sh",
             os.environ["AI_GATEWAY_TOKEN"],
         )
@@ -292,7 +291,7 @@ Requests proxying allows forwarding traffic toward specific domains to a proxy y
 
 The `forwardURL` field must be a URL pointing to an HTTP/1.1-capable server and must not include a query string or fragment. Each rule can define [matchers](#matchers) on the path, method, query parameters, and headers. When defined, only matching requests are forwarded. A request that matches no rule is not forwarded: it goes directly to the destination as ordinary allowed traffic.
 
-Forwarding is also how you restrict a domain to specific paths. Allow the domain with a `forwardURL` rule that has no `match`. A rule without `match` applies to every request, so all traffic to the domain routes through your proxy, and you reject the requests you don't want there. Adding a `match` would let non-matching requests skip the proxy and reach the destination directly.
+To restrict a domain to specific paths, use matched rules followed by a [direct-response rejection rule](#direct-responses). You can also use a forwarding rule without matchers to send every request through your proxy and reject unwanted requests there. A matched forwarding rule alone lets non-matching requests reach the destination directly.
 
 Like brokering, forwarding is SNI-dependent. Under a catch-all (`*`) policy, domain-less traffic passes through unforwarded. Use a restrictive allowlist without a catch-all to deny it.
 
@@ -381,18 +380,49 @@ export default {
 }
 ```
 
+## Direct responses
+
+Direct-response rules return a response from the network proxy without contacting the destination. To restrict paths on an allowed domain, place rules for accepted paths first and a rejection rule without matchers last. The first matching rule handles each request.
+
+This policy injects a credential for `POST` requests to `/v1/` paths and returns `403` for all other requests to `api.example.com`:
+
+```json filename="network-policy.json"
+{
+  "allow": {
+    "api.example.com": [
+      {
+        "match": {
+          "path": { "startsWith": "/v1/" },
+          "method": ["POST"]
+        },
+        "transform": [
+          { "headers": { "x-api-key": "your_api_key_here" } }
+        ]
+      },
+      { "response": { "statusCode": 403 } }
+    ]
+  }
+}
+```
+
+A direct response requires an integer status code from 200 through 599. You can include response headers and a string body. Header names must be unique, ignoring case. A body requires an explicit, nonempty content type, even for an empty string or when the headers include `Content-Type`. Omit the body for status codes 204, 205, and 304.
+
+The proxy manages `connection`, `content-length`, `keep-alive`, `proxy-connection`, `trailer`, `transfer-encoding`, and `upgrade`. You cannot set these response headers, regardless of capitalization.
+
+See the [TypeScript](/docs/sandbox/sdk-reference#response) and [Python](/docs/sandbox/python-sdk-reference#return-a-direct-response) SDK references for complete policy examples and response fields.
+
 ## Matchers
 
 The firewall makes two separate decisions:
 
 1. **Access**: the domain list decides whether a request gets through at all.
-2. **Handling**: matchers decide which of those requests get the rule's `transform` or `forwardURL`.
+2. **Handling**: matchers select requests for credentials brokering, forwarding, or a direct response.
 
-With `match` set, the rule applies to the subset of requests that match every dimension you include. Without `match`, the rule applies to every request to the domain. A request the rule does not apply to is still allowed. It goes directly to the domain, with no forwarding and no injected headers.
+With matchers set, the rule applies to the subset of requests that match every dimension you include. Without matchers, the rule applies to every request to the domain. If a rule does not match, evaluation continues with the next rule. A request that matches no rule goes directly to the allowed domain, with no forwarding and no injected headers.
 
-When multiple rules target the same domain, they are evaluated in order and the first match wins; a rule without `match` matches every request and shadows later rules for the same domain.
+When multiple rules target the same domain, the firewall evaluates them in order and the first match wins. A rule without matchers matches every request and shadows later rules for the same domain.
 
-**Matchers never block traffic.** To allow only certain paths on a domain, define a `forwardURL` rule without `match` for the domain and reject unwanted requests in your proxy; see [requests proxying](#requests-proxying).
+**Matchers alone never block traffic.** To restrict an allowed domain to specific paths, put rules for those paths first, followed by a direct-response rejection rule without matchers. The final rule rejects requests that earlier rules did not handle; see [direct responses](#direct-responses).
 
 The domain is not a match dimension. It is the key the rule is defined under, and it has already matched by the time rules are evaluated.
 
@@ -513,7 +543,7 @@ asyncio.run(main())
 
 ## TLS termination
 
-To apply transformation and forwarding rules within requests, the firewall needs to terminate TLS connections. Only connections targeting domains with `transform` or `forwardURL` rules are terminated in the proxy.
+To apply transformation, forwarding, and direct-response rules, the firewall terminates TLS connections. It only terminates connections to domains with these rules.
 
 A unique, per-sandbox CA is added to the system certificates. Standard environment variables are configured automatically to ensure compatibility with most clients. If your application uses a custom CA bundle, configure it to trust the mounted certificate. See [Proxy CA certificates](/docs/sandbox/concepts#proxy-ca-certificates).
 
@@ -590,10 +620,19 @@ asyncio.run(main())
 
 ## Live updates
 
-Policies can be updated on running sandboxes, allowing for incremental restrictions.
+You can replace a sandbox's network policy without restarting its running session. A sandbox-level update applies the policy to an eligible attached session first, then saves it for future sessions. It never resumes a stopped sandbox. If no session is attached, or the cached session status is stopped, stopping, aborted, or failed, the update only saves the policy.
 
-For instance start by installing needed packages, downloading data, and then run untrusted code on it.
-Without live updates the entire run would have to get Internet access (creating exfiltration risk), or multiple steps and sandboxes would be needed.
+Live and saved updates are not atomic. If applying the live policy fails, the update stops before saving configuration and tags. If saving fails afterward, the running session can retain the new policy.
+
+Each supplied policy replaces the previous policy in full. Use the [allow-all mode](#allow-all) to remove restrictions. Omitting the policy leaves it unchanged. Keep the original policy separately for updates: policy readback is sanitized and incomplete, so it cannot reconstruct the policy you supplied.
+
+For workloads that must start with a restricted policy, [configure the policy at creation](#sandbox-creation). To require a successful live update on a specific session before submitting work, acquire a handle for that session, update its policy, then run the workload through the same handle. Acquiring a session may resume a stopped sandbox. Subsequent operations on a pinned session propagate errors instead of resuming a replacement session.
+
+A session-level update also saves the policy for future sessions when the target is still the sandbox's current session. Updating an older session does not replace the current saved policy. The sandbox handle's cached policy can remain stale after a session-level update.
+
+See the [TypeScript](/docs/sandbox/sdk-reference#sandbox.update) and [Python](/docs/sandbox/python-sdk-reference#update-a-running-session) SDK references for update methods and session behavior, including deprecated methods that can auto-resume a sandbox. See [TypeScript policy readback](/docs/sandbox/sdk-reference#policy-readback) and [Python policy metadata](/docs/sandbox/python-sdk-reference#inspect-policy-metadata) for readback details.
+
+The following examples install dependencies and download data, then request a restrictive policy:
 
 **terminal.sh**
 
@@ -605,11 +644,8 @@ sandbox exec my-sandbox -- npm install
 # Download data
 sandbox exec my-sandbox -- aws s3 cp s3://my-bucket/dataset .
 
-# Lockdown Internet access
+# Update the network policy
 sandbox config network-policy my-sandbox --network-policy deny-all
-
-# Run untrusted workload, without exfiltration risk
-sandbox exec my-sandbox -- ./agent
 ```
 
 **index.ts**
@@ -624,11 +660,8 @@ const sandbox = await Sandbox.create();
 await sandbox.runCommand('npm', ['install']);
 await sandbox.runCommand('aws', ['s3', 'cp', 's3://my-bucket/dataset', '.']);
 
-// Lockdown Internet access
+// Update the eligible live session, then save the policy.
 await sandbox.update({ networkPolicy: 'deny-all' });
-
-// Run untrusted workload, without exfiltration risk
-await sandbox.runCommand('./agent', []);
 ```
 
 **main.py**
@@ -645,18 +678,15 @@ async def main() -> None:
     box = await sandbox.create_sandbox()
 
     # Install dependencies, download data, and configure the environment.
-    await box.run_process("npm", ["install"], check=True)
-    await box.run_process(
+    await box.run_command("npm", ["install"], check=True)
+    await box.run_command(
         "aws",
         ["s3", "cp", "s3://my-bucket/dataset", "."],
         check=True,
     )
 
-    # Remove Internet access.
-    await box.update_network_policy(NetworkPolicy.deny_all())
-
-    # Run the untrusted workload without exfiltration risk.
-    await box.run_process("./agent", check=True)
+    # Update the eligible live session, then save the policy.
+    await box.update(network_policy=NetworkPolicy.deny_all())
 
 
 asyncio.run(main())

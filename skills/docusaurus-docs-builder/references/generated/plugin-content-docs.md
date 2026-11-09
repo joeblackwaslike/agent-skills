@@ -1,8 +1,8 @@
 ---
 title: "Docs Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs"
-fetched_at: "2026-10-19T09:38:00.847Z"
-sha256: "5fed4aba49c92a3e3ca8d23398ccd60d470841f67aef316d0720d2a8c24f9ca7"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "e7139588adbc01d86fb9a9d8eefee5bab9112838b250808b4f19a38c8d9e4609"
 ---
 
 # Docs Plugin
@@ -163,4 +163,4 @@ Read the [i18n introduction](https://docusaurus.io/docs/i18n/introduction) first
 ```
 website/i18n/[locale]/docusaurus-plugin-content-docs││ # translations for website/docs├── current│   ├── api│   │   └── config.md│   └── getting-started.md├── current.json││ # translations for website/versioned_docs/version-1.0.0├── version-1.0.0│   ├── api│   │   └── config.md│   └── getting-started.md└── version-1.0.0.json
 ```
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/api/plugins/plugin-content-docs.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/api/plugins/plugin-content-docs.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

@@ -16,8 +16,8 @@ related:
 summary: "View and override your application's feature flags from the Vercel Toolbar"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fb8a6681ca10a3daeecfe06e0bfa4412507f55c78cd7c9328a3f6f0b89b85a55"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "955d102b8ad6be2f6f61463c0a0d076e7ffe6f52576b2a928c019919eb657db1"
 ---
 
 # Flags Explorer
@@ -37,13 +37,13 @@ The Flags Explorer is a feature of the [Vercel Toolbar](/docs/vercel-toolbar) th
 - [Providers](https://flags-sdk.dev/docs/providers) — Combine your feature flag provider with the Flags SDK using an adapter.
 - [Flagsmith](https://flags-sdk.dev/docs/providers/flagsmith) — Evaluate Flagsmith flags with the Flags SDK.
 - [GrowthBook](https://flags-sdk.dev/docs/providers/growthbook)
+- [Flags Explorer redesigned for easier override sharing](https://vercel.com/changelog/flags-explorer-redesigned-for-easier-override-sharing)
 - [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
 - [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available)
+- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
 - [View and override feature flags from the Vercel Toolbar](https://vercel.com/changelog/view-and-override-feature-flags-from-the-vercel-toolbar)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 
 Full cross-link map for this page: [/docs/flags/flags-explorer.graph.md](/docs/flags/flags-explorer.graph.md)
 <!-- /docsgraph:related -->
@@ -52,7 +52,7 @@ Quickly override feature flags for your current session without signing into you
 
 Team members can access the Flags Explorer once they have activated the toolbar. The Flags Explorer is available in all environments your team has [enabled the toolbar for](/docs/vercel-toolbar/in-production-and-localhost).
 
-![Flags Explorer](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/feature-flags/flags-explorer-overview-filter-light.png)
+![Flags Explorer](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/workflow-collaboration/light-flags-explorer1.png)
 
 ## View and override flags in the toolbar
 

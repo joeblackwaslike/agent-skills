@@ -15,8 +15,8 @@ related:
 summary: Ask predicate, choice, and score questions with the OpenAI-compatible /decisions endpoint through Vercel AI Gateway, using any decision model.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-decisions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3e7a58ff2009a5d438c62c6311a9dcbe52e2178db44882b88751d612fcccb703"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "00f8504e0b5bb3d2703b7509ef14bc89e915eb3ae22c793873b82bba435e0f3f"
 ---
 
 # OpenAI-Compatible Decisions API with AI Gateway
@@ -34,7 +34,7 @@ Ask typed questions about shared input and get back probabilities, choices, and 
 - [Perplexity's Decider V1.2 models now available on AI Gateway](https://vercel.com/changelog/perplexity-decider-v1-2-models-now-available-on-ai-gateway)
 - [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
 - [TypeSafe API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe) — Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One decision requests through i
-- [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
+- [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-decisions.graph.md](/docs/ai-gateway/sdks-and-apis/openai-decisions.graph.md)
@@ -237,7 +237,34 @@ Set `model` to any decision model slug, such as `openai/gpt-6-luna-decisions` or
 
 ## Input
 
-`input` accepts a string, or an array of user messages. Each message's content is a string or an ordered list of `input_text` and `input_image` parts, and every question is asked against the whole input.
+`input` accepts a string, or an array of user messages. Each message's content is a string or an ordered list of `input_text`, `input_json`, and `input_image` parts, and every question is asked against the whole input.
+
+To send structured data, add an `input_json` part. Set its `data` field to a JSON object or a non-empty array of JSON objects:
+
+```json
+{
+  "model": "openai/gpt-6-luna-decisions",
+  "input": [
+    {
+      "role": "user",
+      "content": [
+        { "type": "input_text", "text": "Review this order." },
+        {
+          "type": "input_json",
+          "data": { "order": { "id": "A-1", "total": 42.5, "status": "refunded" } }
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "type": "predicate",
+      "name": "refunded",
+      "instructions": "Is the order refunded?"
+    }
+  ]
+}
+```
 
 Images must be base64-encoded data URLs. External URLs and file IDs aren't supported, and a request can include at most 128 images. Set `detail` to `low`, `high`, `auto`, or `original` to choose an image's detail level:
 

@@ -13,8 +13,8 @@ related:
 summary: Find documentation, use the CLI, and share feedback with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b6429d27a49a90fae377759ec6a1c4c39660f3029683c17a8cafcb0e960a1355"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b547f2017fe008370ec4cd2cab75574f783c87399259b72c6b529c2f5c953b98"
 ---
 
 # Documentation, CLI, and Feedback
@@ -30,8 +30,8 @@ Find Vercel documentation for a task and get guidance on the Vercel CLI commands
 - [Send feedback from the Vercel MCP](https://vercel.com/changelog/send-feedback-from-vercel-mcp)
 - [Send feedback from the Vercel CLI](https://vercel.com/changelog/send-feedback-from-vercel-cli)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 

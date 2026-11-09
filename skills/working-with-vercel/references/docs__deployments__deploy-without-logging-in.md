@@ -16,8 +16,8 @@ related:
 summary: Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/deploy-without-logging-in.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3026817570d75fd2b87e32975b44df83a89450e2a7a752f17716fd9159c3757f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "583d29f0ada4811a2d197b51888dd511cff11b0a545165ed6d9e497e01d8e18c"
 ---
 
 # Deploying to Vercel Without Logging In
@@ -30,12 +30,12 @@ You can deploy to Vercel without an account and get a live URL in one step. Both
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Deploy without an account using Vercel CLI](https://vercel.com/changelog/deploy-without-an-account-using-vercel-cli)
 - [Deploy with Vercel Drop without an account](https://vercel.com/changelog/deploy-with-vercel-drop-without-an-account)
 - [Vercel Drop vs Netlify Drop](https://vercel.com/kb/guide/vercel-drop-vs-netlify-drop) — Compare Vercel Drop and Netlify Drop for drag-and-drop deployment: framework builds, static sites, updates, size limits,
-- [How to debug 404 errors](https://vercel.com/kb/guide/how-to-debug-404-errors) — Learn the systematic steps to identify and resolve 404 issues.
+- [Vercel Drop vs Cloudflare Direct Upload](https://vercel.com/kb/guide/vercel-drop-vs-cloudflare-direct-upload) — Compare Vercel Drop and Cloudflare Direct Upload: framework builds, browser vs CLI workflows, file limits, Git integrati
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
@@ -73,7 +73,7 @@ Accountless drops have size limits:
 
 Larger drops require an account. Each accountless drop creates a new project.
 
-When the deployment is ready, Vercel shows the live URL alongside a **Claim your project** button and a countdown to expiry. The claim link is available on that success page in the browser you deployed from.
+When the deployment is ready, Vercel shows the live URL alongside a **Claim Project** button and a countdown to expiry. The claim link is available on that success page in the browser you deployed from.
 
 ## Deploy with the CLI
 
@@ -101,7 +101,7 @@ Both paths target production, return a claim URL, and expire after a server-set 
 
 ## Claiming to keep your deployment
 
-Claiming transfers the project to your Vercel account so it stops counting down and stays live. Open the claim URL from the CLI output or the **Claim your project** button in Vercel Drop, then follow the steps in [Claim a temporary deployment](/docs/deployments/claim-deployments#claim-a-temporary-deployment).
+Claiming transfers the project to your Vercel account so it stops counting down and stays live. Open the claim URL from the CLI output or the **Claim Project** button in Vercel Drop, then follow the steps in [Claim a temporary deployment](/docs/deployments/claim-deployments#claim-a-temporary-deployment).
 
 After claiming, log in to keep deploying the project. For CLI workflows, run [`vercel login`](/docs/cli/login).
 

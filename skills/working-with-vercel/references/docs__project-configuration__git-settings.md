@@ -15,8 +15,8 @@ related:
 summary: Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/git-settings.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "bd5bae4cdc8092896865113745b35c4e77bbcd735e0f6067ed956513dc7e0911"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "11a1050518159d459dc9042046cab9e9dbc530325e5c9a2c3df83992acdd9960"
 ---
 
 # Git settings
@@ -37,8 +37,8 @@ Once you have [connected a Git repository](/docs/git#deploying-a-git-repository)
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Logs and Source Protection, Vercel Support Code Visibilit
-- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and delete deploy hook URLs that trigger
 
 Full cross-link map for this page: [/docs/project-configuration/git-settings.graph.md](/docs/project-configuration/git-settings.graph.md)
 <!-- /docsgraph:related -->
@@ -75,7 +75,7 @@ To enable verified commits:
 
 1. From the Vercel dashboard, select your project
 2. Open **Settings** in the sidebar and select [**Git**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fgit\&title=Go+to+Git+settings)
-3. Under **Require Verified Commits**, select the **Enable** checkbox
+3. In the **Git Commits** section, set **Require Verified Commits** to **Enabled**
 
 When enabled, Vercel will only create deployments for commits that have been verified by GitHub. For all other commits, the deployment will be automatically canceled.
 

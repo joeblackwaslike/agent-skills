@@ -12,8 +12,8 @@ related:
 summary: Learn how to set custom rules to disallow packages from being listed as dependencies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-packages.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5f64ce37613c0f0deeb913d9298fbba9d9d9c4062fc8625671227ca839b354b0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c2a95bdde7f222afbd510cc91f10eb15c47e0b156344ddb0f2c280fcabab0532"
 ---
 
 # forbidden-packages
@@ -48,7 +48,7 @@ required properties:
 | `categories`      | `("nextjs" \| "performance" \| "security" \| "code-health")[]` (optional) | The custom rule's categories. Default is `["code-health"]`.                                                                                       |
 | `errorMessage`    | `string`                                                                  | The error message, which is shown to users when they encounter this rule.                                                                         |
 | `errorLink`       | `string` (optional)                                                       | An optional link to show alongside the error message.                                                                                             |
-| `description`     | `string` (optional)                                                       | The rule description, which is shown in the Vercel Compass dashboard and included in allowlist files.                                             |
+| `description`     | `string` (optional)                                                       | The rule description, which is included in allowlist files.                                             |
 | `severity`        | `"major" \| "minor"` (optional)                                           | The rule severity added to the allowlists and used to calculate a project's conformance score.                                                    |
 | `packageNames`    | `string[]`                                                                | An array of exact package names or glob expressions.                                                                                              |
 | `packageVersions` | `string[]` (optional)                                                     | **Added in Conformance `1.8.0`.** An optional array of exact package versions or [semver](https://docs.npmjs.com/cli/v6/using-npm/semver) ranges. |

@@ -11,13 +11,13 @@ related:
   - /docs/deployment-protection
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
   - /docs/cli
-  - /docs/cli/traces
   - /docs/cli/global-options
+  - /docs/cli/traces
 summary: Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel curl CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "25fbc816a13c403b743b6374139cb5fc302d17b0505fac75d603d636f44ad478"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "42a93a23267d75208d351ef77cb0895473bf33f72c7ca474a4fd0bcbb0995e08"
 ---
 
 # vercel curl
@@ -87,7 +87,7 @@ vercel curl https://my-app-abc123.vercel.app/api/hello
 Pass curl flags directly to send a POST request with JSON data:
 
 ```bash filename="terminal"
-vercel curl /api/users -X POST -H "Content-Type: application/json" -d '{"name":"John"}'
+vercel curl /api/users -X POST -H "Content-Type: application/json" --data '{"name":"John"}'
 ```
 
 *Making a POST request with JSON data to create a new user. Any flag that is not a \`vercel curl\` option is passed through to \`curl\`.*
@@ -99,6 +99,8 @@ vercel curl /api/users -- --json '{"name":"John"}'
 ```
 
 *Using the \`--\` separator so curl's own \`--json\` flag is passed through instead of being read as a \`vercel curl\` option.*
+
+Some short curl flags are also the short forms of Vercel CLI [global options](/docs/cli/global-options). For example, Vercel CLI reads `-d` as `--debug`, so use curl's long form `--data`, or place `-d` after `--`.
 
 ### Request specific deployment
 
@@ -131,18 +133,18 @@ vercel curl --trace /api/hello
 
 *Using the \`--trace\` option to capture a request trace.*
 
-After the request completes, the command prints a `vercel traces get` command you can run to inspect the trace. See [`vercel traces`](/docs/cli/traces) for details.
+After the request completes, the command prints a `vercel traces inspect` command you can run to inspect the trace. See [`vercel traces`](/docs/cli/traces) for details.
 
 ## How it works
 
 When you run `vercel curl`:
 
-1. The CLI finds your linked project (or you can specify one with [`--project`](/docs/cli/global-options#project))
+1. The CLI finds your linked project
 2. It gets the latest production deployment URL (or uses the deployment you specified)
 3. It retrieves or generates a deployment protection bypass token
 4. It runs the system `curl` command with the bypass token in the `x-vercel-protection-bypass` header
 
-When you pass a full URL or bare hostname, the CLI resolves the deployment's owning project from the URL to source the protection bypass token, so a linked project is not required.
+When you pass a full URL, a bare hostname, or the `--deployment` option, the CLI resolves the deployment's owning project to source the protection bypass token, so a linked project is not required.
 
 The CLI selects the bypass token in the following priority order:
 
@@ -150,7 +152,16 @@ The CLI selects the bypass token in the following priority order:
 2. The `VERCEL_AUTOMATION_BYPASS_SECRET` environment variable
 3. An existing or newly created automation bypass token from the project's settings
 
-Any flag you pass that is not one of `vercel curl`'s own options is passed through to the underlying `curl`, so you don't need the `--` separator for most curl flags. Use `--` only when a curl flag collides with a `vercel curl` option: `--deployment`, `--protection-bypass`, `--yes`, `--trace`, `--json`, `--help`, or `--url`. Everything after `--` is always passed to `curl`.
+With `--deployment`, the CLI creates a new token only when the deployment belongs to your linked project. Otherwise, it uses the project's existing token, so [create one manually](#failed-to-get-deployment-protection-bypass-token) if the project has none.
+
+Any flag you pass that is not one of `vercel curl`'s own options is passed through to the underlying `curl`, so you don't need the `--` separator for most curl flags. Place a curl flag after `--` when it has the same name as one of the following:
+
+- A `vercel curl` option: `--deployment`, `--protection-bypass`, `--yes`, `--trace`, `--json`, `--help`, or `--url`.
+- The short form of a [global option](/docs/cli/global-options): `-d`, `-h`, `-A`, `-Q`, `-S`, `-t`, or `-T`.
+
+Everything after `--` is passed to `curl`.
+
+In Vercel CLI 65.12.0 and later, when the command sends a bypass token, curl doesn't follow redirects, even if you pass `-L`. This keeps the token from reaching another host. For the same reason, these versions don't support curl's `--next`, `--config`, or `-K` flags.
 
 The command requires `curl` to be installed on your system.
 
@@ -189,7 +200,7 @@ vercel curl /api/hello
 
 ### Yes
 
-The `--yes` option, shorthand `-y`, skips the confirmation prompt when linking is required. Use it in non-interactive environments like CI, or run [`vercel link`](/docs/cli/link) ahead of time to link your project and avoid the prompt entirely.
+The `--yes` option skips the confirmation prompt when linking is required. Use it in non-interactive environments like CI, or run [`vercel link`](/docs/cli/link) ahead of time to link your project and avoid the prompt entirely.
 
 ```bash filename="terminal"
 vercel curl /api/hello --yes
@@ -243,7 +254,7 @@ choco install curl
 
 *Installing curl on different operating systems.*
 
-### No deployment found for the project
+### No deployment URL found for the project
 
 Make sure you're in a directory with a linked Vercel project and that the project has at least one deployment:
 
@@ -263,7 +274,7 @@ If automatic token creation fails, you can create a bypass secret manually in th
 
 1. Go to your project's **Settings** → **Deployment Protection**
 2. Find "Protection Bypass for Automation"
-3. Click "Create" or "Generate" to create a new secret
+3. Click "Add Secret", then click "Add Bypass" to generate a new secret
 4. Copy the generated secret
 5. Use it with the `--protection-bypass` flag or [`VERCEL_AUTOMATION_BYPASS_SECRET`](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation#using-protection-bypass-for-automation) environment variable
 
@@ -272,7 +283,7 @@ If automatic token creation fails, you can create a bypass secret manually in th
 When using `--deployment`, verify that:
 
 - The deployment ID or URL is correct
-- The deployment belongs to your linked project
+- The deployment belongs to a team that you can access. If you pass `--scope`, the deployment must belong to that team.
 - The deployment hasn't been deleted
 
 ## Global Options
@@ -287,7 +298,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

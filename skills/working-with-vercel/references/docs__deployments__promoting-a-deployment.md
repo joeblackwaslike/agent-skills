@@ -15,8 +15,8 @@ related:
 summary: Learn how to promote deployments to production on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/deployments/promoting-a-deployment.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2d022b3288fe117ee016af4523d6fa909aae8ffd95a4b11627509536a88bc848"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "0daf81720d170437a19b1d8d9b7abf9825392980f7140e8db10e57ce430485ac"
 ---
 
 # Promoting Deployments
@@ -29,18 +29,17 @@ By default, when you merge to or make commits to your production branch (often `
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
+- [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production)
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
-- [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production)
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [New deployment promotion event](https://vercel.com/changelog/new-webhook-for-promotion-events)
+- [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 - [vercel promote](https://vercel.com/docs/cli/promote) — Learn how to promote an existing deployment using the vercel promote CLI command.
-- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
-- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 
 Full cross-link map for this page: [/docs/deployments/promoting-a-deployment.graph.md](/docs/deployments/promoting-a-deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +103,10 @@ Your production deployments could be in one of three states:
 - **Staged** – This means that a commit has been pushed to `main`, but a domain has not been auto-assigned to the deployment. This type of a deployment can be promoted to **Current**
 - **Promoted** – This production deployment has been [promoted](#staging-and-promoting-a-production-deployment) from staging. If a deployment has already been promoted in the past, you can't promote it again. If you want to use a previously promoted deployment, you must do a rollback to it
 - **Current** – This is the production deployment that is aliased to your domain and the one that is currently being served to your users
+
+## Promotions and rollbacks run one at a time
+
+Promoting or rolling back reassigns your production domains in a background job, and only one such job runs per project at a time. A new promotion supersedes one that is still in progress, a new rollback is rejected until the current job finishes, and a job that has not finished within 3 minutes is treated as stale. For details and how to check for an in-progress job through the API, see [Rollbacks and promotions run one at a time](/docs/instant-rollback#rollbacks-and-promotions-run-one-at-a-time).
 
 
 ---

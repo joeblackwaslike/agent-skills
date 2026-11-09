@@ -11,11 +11,12 @@ prerequisites:
 related:
   - /docs/workflows
   - /docs/chat-sdk/quickstart
+  - /docs/workflows/pricing
 summary: Use Vercel Workflows to pause Chat SDK tasks for human approval, resume after a decision, and inspect runs in the Vercel dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/integrations/workflows.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "620e39f947d1ef6be6849f463e75d6dd169f3459a78a0708bd873d8ff942bf16"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "423b531a66e3fa8ef0d8999b956bd5582227886df997a37d4d0e67cb5c2095f6"
 ---
 
 # Chat SDK with Vercel Workflows
@@ -29,15 +30,15 @@ Use [Vercel Workflows](/docs/workflows) to pause a task from a chat message unti
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Pause workflows for approval with Chat SDK](https://vercel.com/changelog/chat-sdk-durable-approvals)
-- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
-- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [Chat SDK now supports callback URLs on buttons and modals](https://vercel.com/changelog/chat-sdk-now-supports-callback-urls-on-buttons-and-modals)
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
-- [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
+- [Ship a GitHub code review bot with Hono and Redis](https://vercel.com/kb/guide/ship-a-github-code-review-bot-with-hono-and-redis) — This guide walks through building a GitHub bot that reviews pull requests on demand. When a user @mentions the bot on a
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
-- [Chat SDK with Vercel Sandbox](https://vercel.com/docs/chat-sdk/integrations/sandbox) — Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/chat-sdk/integrations/workflows.graph.md](/docs/chat-sdk/integrations/workflows.graph.md)
 <!-- /docsgraph:related -->
@@ -427,6 +428,28 @@ Deploy the app to Vercel. The workflows defined with Workflow SDK run on Vercel 
 - A user outside `CHAT_APPROVER_IDS` should be unable to resolve the approval.
 
 Open your project in the Vercel dashboard and use [Vercel Workflows observability](/docs/workflows#observability) to inspect the run, its steps, and logs. Before replacing the final message with an external write, make that step idempotent so retries do not repeat the action.
+
+## Frequently asked questions
+
+### What's the difference between Workflow SDK and Vercel Workflows?
+
+Workflow SDK is the open-source library you use to write durable workflows in JavaScript or TypeScript, with directives such as `'use workflow'` and `'use step'`. Vercel Workflows is the managed service that runs those workflows on Vercel, persists their state, and shows runs, steps, and logs in the dashboard. You write the approval flow with the SDK and deploy the bot to run it on Vercel Workflows.
+
+### Does a pending approval keep a Vercel Function running?
+
+No. The wait doesn't keep a function running. Vercel Workflows persists the run, and when someone clicks a button, Chat SDK forwards the verified event to the workflow's webhook URL and the run resumes. The mention handler can finish as soon as `await start(...)` persists the run.
+
+### How long can a Chat SDK approval wait?
+
+The workflow can wait as long as you need, but each approval card's buttons stop working after seven days. The example times out after 24 hours with `sleep('24h')`, and you can change that value. Vercel Workflows has no maximum `sleep` duration or run duration, as listed in [Workflow run limits](/docs/workflows/pricing#workflow-run-limits). Chat SDK keeps each card's callback URL for seven days, so a click after that can't resume the run. For approvals that stay open longer, post a new approval card before the old one expires.
+
+### How do I restrict who can approve a request in Slack?
+
+Store the allowed Slack user IDs in the `CHAT_APPROVER_IDS` environment variable and pass them to the workflow when it starts. The workflow compares each click's verified user ID with that list. When someone outside the list clicks, the workflow posts a notice and a replacement card, because callback buttons work only once, and the approval stays pending. Don't build the approver list from the incoming message.
+
+### Is there a simpler way to add approvals to a Chat SDK bot?
+
+Yes. Chat SDK's [`requestApproval` helper](https://chat-sdk.dev/docs/approvals) provides the same pattern with less workflow code. It requires that your application registers and initializes a `Chat` singleton in each step's runtime. This guide uses explicit steps and thread IDs instead, which gives you control over initialization across Next.js server bundles.
 
 ## Next steps
 

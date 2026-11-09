@@ -12,8 +12,8 @@ related:
 summary: Understand how Vercel CI usage is billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ci/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9b12c12be8a13a6f6d1dd10d4c573800c188fa85208c15090ddf027ccbdb977e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fac1e017b33325ba822a3bfa49a68d19b5f87d0bed447487eece160e75383e3b"
 ---
 
 # Vercel CI Pricing
@@ -24,6 +24,7 @@ Vercel CI bills for the compute your runs use, measured in CPU minutes. A CPU mi
 
 | Plan | Price |
 | --- | --- |
+| Hobby | 200 CPU minutes per month included |
 | Pro | $0.0035 per CPU minute |
 | Enterprise | Custom |
 

@@ -17,8 +17,8 @@ related:
 summary: Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/runtime-cache/data-cache.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "42853c669ee9ec5c63fa726f958a0e56a540ca5df8f9463c29fd50ba38640448"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "508ba78b6aa309b3a5dc1dfda68cc7d4473003bb82d57c755aedf3ab7c93a252"
 ---
 
 # Data Cache for Next.js
@@ -37,16 +37,16 @@ Data cache is a specialized, granular cache introduced with Next.js 13 for stori
 
 - [Data Cache is moving to Runtime Cache](https://vercel.com/changelog/data-cache-is-moving-to-runtime-cache)
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
-- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
-- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
+- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
+- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
 
 Full cross-link map for this page: [/docs/caching/runtime-cache/data-cache.graph.md](/docs/caching/runtime-cache/data-cache.graph.md)
 <!-- /docsgraph:related -->
@@ -348,7 +348,7 @@ You can also track data cache usage per request in [**Logs**](https://vercel.com
 
 ### Revalidation rate limit
 
-On-demand revalidation calls made from your functions, such as `revalidateTag()`, `revalidatePath()`, and `expireTag()`, are rate limited per plan:
+On-demand revalidation calls made from your functions, such as `revalidateTag()` and `revalidatePath()` from `next/cache`, and [`getCache().expireTag()`](/docs/functions/functions-api-reference/vercel-functions-package#getcache) from `@vercel/functions`, are rate limited per plan:
 
 | Plan       | Revalidation calls per second |
 | ---------- | ----------------------------- |
@@ -356,7 +356,7 @@ On-demand revalidation calls made from your functions, such as `revalidateTag()`
 | Pro        | 200 per team                  |
 | Enterprise | 500 per project               |
 
-The limit counts calls, not tags. It's averaged over a 30-second window, so short bursts above it are allowed. When you exceed it, the call fails with an HTTP `429` response that includes a `retry-after` header, and the cache is left unchanged. Retry the call after that delay.
+The limit counts calls, not tags. It's averaged over a 30-second window, so short bursts above it are allowed. When you exceed it, Vercel rejects the call with an HTTP `429` status and leaves the cache unchanged. These three calls don't throw, so your code can't detect a rejected call. Instead, `revalidateTag()` and `revalidatePath()` log a warning with the `429` status in your [runtime logs](/docs/logs/runtime). If you see this warning, lower your call rate and make the call again. On Next.js 14 and earlier, wait at least 10 seconds first, and also repeat your other recent revalidation calls. After a rejected call, these versions skip `revalidateTag()` and `revalidatePath()` calls on that function instance for 10 seconds without logging a warning. `getCache().expireTag()` resolves the same way as a call that succeeded, so keep those calls under the limit.
 
 ### Storage scope by plan
 

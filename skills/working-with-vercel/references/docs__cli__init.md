@@ -13,8 +13,8 @@ related:
 summary: Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/init.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "80ff135f2cd27210c6cf801889b873db66b7fba55eaf983d50e32f3e5fc27557"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4e16557a21bf630b0694bf480edb394514c352c7c9467c6524df219df635f9f2"
 ---
 
 # vercel init
@@ -32,11 +32,11 @@ The `vercel init` command is used to initialize [Vercel supported framework](/do
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code and Codex, and connect your
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
 - [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
+- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 
 Full cross-link map for this page: [/docs/cli/init.graph.md](/docs/cli/init.graph.md)
 <!-- /docsgraph:related -->
@@ -74,7 +74,7 @@ These are options that only apply to the `vercel init` command.
 
 ### Force
 
-The `--force` option, shorthand `-f`, is used to forcibly replace an existing local directory.
+By default, `vercel init` stops with an error when the directory for the example already exists and is not empty. With the `--force` option, the command overwrites files that are also part of the example and keeps all other files. To initialize the example in that directory anyway, add `--force`:
 
 ```bash filename="terminal"
 vercel init --force
@@ -102,7 +102,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

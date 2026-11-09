@@ -1,0 +1,106 @@
+---
+title: Parallel
+description: Learn how to use Parallel Decisions with the AI SDK.
+url: "https://ai-sdk.dev/providers/ai-sdk-providers/parallel"
+docs_index: /llms.txt
+source: "https://ai-sdk.dev/providers/ai-sdk-providers/parallel.md"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "1e557bc22d951c92283fd9aabec9a5883fb91dede30d1309ab9b5c3fecd167d7"
+---
+
+> For an index of all documentation, see [/llms.txt](/llms.txt).
+
+The [Parallel](https://parallel.ai) provider supports web-grounded decisions.
+It retrieves evidence from the live web and answers boolean, choice, and score
+questions against that shared evidence.
+
+## Setup
+
+Install the provider:
+
+```sh
+pnpm add @ai-sdk/parallel
+```
+
+Set the `PARALLEL_API_KEY` environment variable, or create an instance:
+
+```ts
+import { createParallel } from '@ai-sdk/parallel';
+
+const parallel = createParallel({ apiKey: 'your-api-key' });
+```
+
+`createParallel` also accepts `baseURL` (default `https://api.parallel.ai/v1`),
+`headers`, and a custom `fetch` implementation.
+
+## Decision Models
+
+```ts
+import { parallel } from '@ai-sdk/parallel';
+import { experimental_decide as decide } from 'ai';
+
+const result = await decide({
+  model: parallel.decisionModel('fast'),
+  state: { company: 'Parallel', website: 'https://parallel.ai' },
+  questions: {
+    hasSearch: {
+      type: 'boolean',
+      instructions: 'Does this company offer a web search API?',
+    },
+    availability: {
+      type: 'choice',
+      instructions: 'Is its search API publicly available?',
+      criteria: {
+        available: 'Public documentation establishes availability.',
+        unavailable: 'Public documentation establishes unavailability.',
+        unknown: 'The evidence is insufficient.',
+      },
+    },
+  },
+});
+```
+
+`fast` is currently the only documented mode. The mode argument is required; other mode strings are forwarded to Parallel for validation so newly released modes can be used without an SDK update. It is sent as `mode`, not `model`, to Parallel.
+Parallel accepts 1–100 related questions, 2–255 choice options, and 2–10 score
+levels. Scores are zero-based probability-weighted means and can be fractional.
+Boolean values represent estimated probability of truth, not confidence in an answer.
+File inputs and box questions are unsupported.
+
+### Citations and Provider Metadata
+
+`result.providerMetadata.parallel` contains:
+
+- `citations`: source objects with `url`, optional/nullable `title`, and `excerpts`.
+- `decisionId`: the provider's decision identifier.
+- `mode`: the execution mode.
+- `confidence`: native confidence, keyed by question ID when supplied.
+- `legend`: score level descriptions, keyed by question ID.
+
+Citations apply to the whole request. Parallel provides no per-answer source
+mapping. Empty citations and empty excerpt arrays are preserved.
+The package exports `ParallelDecisionProviderMetadata` for typed metadata access.
+
+Evidence excerpts are included by default. To omit them from the response:
+
+```ts
+providerOptions: {
+  parallel: {
+    includeExcerpts: false,
+  },
+},
+```
+
+This retains URLs and available titles. It does not change the evidence used
+to make decisions. Parallel refusal answers are preserved by the model adapter;
+`decide` applies the AI SDK's standard refusal handling.
+
+The provider supports synchronous decision calls. It does not implement language
+generation or streaming.
+
+---
+
+For a semantic overview of all documentation, see [/sitemap.md](/sitemap.md)
+
+For an index of all available documentation, see [/llms.txt](/llms.txt)
+
+For agent-facing discovery, including API and MCP surfaces, see [/agents.md](/agents.md)

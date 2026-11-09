@@ -4,8 +4,8 @@ description: Learn how to use HeyGen with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/heygen"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/heygen.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "b0951ae6dd5e1284fe809dae86774b6763e4520ce10da64ecf9527c2e3f79659"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "ba622926982c902b2ec92efbc14daeb9595920336e0e14440fe0dc2f870ebed4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -241,6 +241,26 @@ Pass an `Idempotency-Key` through the standard `headers` option when retrying th
 Submission and in-progress operation metadata exposes `videoId`, `mode`, and `resolution` directly under `providerMetadata.heygen`. Failed or cancelled operations also expose `failureCode` when HeyGen reports it.
 
 The current HeyGen video endpoint does not document token counts or credit consumption in its generation response. The provider returns the reported duration and dimensions without estimating those quantities. Reported inference timing is preserved per video.
+
+## Model Capabilities
+
+| Model            | Image Input | First Frame | Last Frame | Reference Images | Reference Video | Audio                                                                | Aspect Ratio                                            | Resolution                                              | Duration | FPS                           | Seed |
+| ---------------- | ----------- | ----------- | ---------- | ---------------- | --------------- | -------------------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | -------- | ----------------------------- | ---- |
+| `heygen-video-1` | ✓           | ✓           | ✗          | ✓                | ✓               | Conditional: Audio is always generated; disabling it is unsupported. | Conditional: Supported outside reference-to-video mode. | Conditional: Supported outside reference-to-video mode. | ✓        | Conditional: Fixed at 24 fps. | ✓    |
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option              | Description                                                                                |
+| --------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| video     | `mode`              | Inferred from the supplied image and references when omitted.                              |
+| video     | `resolution`        | Output size class. Takes precedence over the standard resolution option.                   |
+| video     | `promptEnhancement` | Defaults to quality. Use disabled to preserve the original prompt.                         |
+| video     | `image`             | First frame, including an existing HeyGen asset. Cannot be combined with a standard image. |
+| video     | `referenceImages`   | Additional references, appended after standard inputReferences of the same kind.           |
+| video     | `referenceVideos`   | referenceVideos                                                                            |
+| video     | `referenceAudio`    | referenceAudio                                                                             |
 
 ---
 

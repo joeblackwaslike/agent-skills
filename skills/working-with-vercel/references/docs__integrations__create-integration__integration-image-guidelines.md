@@ -13,8 +13,8 @@ related:
 summary: Guidelines for creating images for integrations, including layout, content, visual assets, descriptions, and design standards.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/create-integration/integration-image-guidelines.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3d7c55cff7cab889f3fb10c0d8681db79d944c5261b3316d7c81340746af2477"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7389eb6d5b290e6c59b94d0c98f9f22e98d53e303154fa17ff41d7cea01076a7"
 ---
 
 # Integration Image Guidelines
@@ -27,6 +27,7 @@ These guidelines help ensure consistent, high-quality previews for integrations 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Easily access Vercel Brand Assets and Guidelines](https://vercel.com/changelog/easily-access-vercel-brand-assets-and-guidelines)
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Vercel CMS Integrations](https://vercel.com/docs/integrations/cms) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt

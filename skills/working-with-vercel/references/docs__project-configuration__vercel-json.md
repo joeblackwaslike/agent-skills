@@ -12,12 +12,12 @@ related:
   - /docs/functions
   - /docs/routing-middleware
   - /docs/functions/runtimes/edge
-  - /docs/incremental-static-regeneration
+  - /docs/functions/runtimes/node-js/node-js-versions
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "308980a4f0d46b942b6595424401d7f9f6455e24547249a8260392dc28845afd"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "97948c58fb875b64c084b5db6d49a8937bf154a04aa8f987af55a8617a1d6c9f"
 ---
 
 # Static Configuration with vercel.json
@@ -32,16 +32,16 @@ The `vercel.json` file lets you configure, and override the default behavior of 
 
 - [Server-Timing response headers will pass through to the client](https://vercel.com/changelog/server-timing-header)
 - [Skip sending request bodies to Routing Middleware](https://vercel.com/changelog/skip-sending-request-bodies-to-routing-middleware)
-- [Are Vercel Preview Deployments indexed by search engines?](https://vercel.com/kb/guide/are-vercel-preview-deployment-indexed-by-search-engines) — Vercel Preview Deployments aren't indexed by default. Learn how the noindex header works, how to confirm it, and the cus
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
+- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers) — Add custom HTTP headers to your Next.js app.
-- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
-- [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
+- [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
+- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-json.graph.md](/docs/project-configuration/vercel-json.graph.md)
 <!-- /docsgraph:related -->
@@ -117,6 +117,8 @@ The `bunVersion` property configures your project to use the Bun runtime instead
 > **💡 Note:** Vercel manages the Bun minor versions automatically. `1.4.x` and `1.x` are the
 > only valid values currently.
 
+If the `engines` field of your `package.json` sets a Node.js version and no Bun version, `package.json` takes precedence over `bunVersion`. The build logs a warning, and your functions run on Node.js. To run on Bun, remove [`engines.node`](/docs/functions/runtimes/node-js/node-js-versions#version-overrides-in-package.json) from `package.json`.
+
 When using Next.js with [ISR](/docs/incremental-static-regeneration) (Incremental Static Regeneration), you must also update your `build` and `dev` commands in `package.json`:
 
 ```json filename="package.json"
@@ -154,6 +156,16 @@ If you are using Next.js and running `vercel dev`, you will get a 404 error when
 ## crons
 
 Used to configure [cron jobs](/docs/cron-jobs) for the production deployment of a project.
+
+Cron Jobs are a legacy feature and will be migrated to
+
+Schedules
+
+in the future. Schedules include timezones, private function and queue targets. You can also create schedules at runtime.
+
+Migrate your Cron Jobs to Schedules
+
+.
 
 **Type**: `Array` of cron `Object`.
 
@@ -206,7 +218,7 @@ The `devCommand` property can be used to override the Development Command in the
 
 This value allows you to enable [Fluid compute](/docs/fluid-compute) programmatically.
 
-**Type:** `boolean | null`
+**Type:** `boolean`
 
 The `fluid` property allows you to test Fluid compute on a per-deployment or per [custom environment](/docs/deployments/environments#custom-environments) basis when using branch tracking, without needing to enable Fluid in production.
 
@@ -1073,7 +1085,6 @@ or destination path. For example, `/about-our-company.html` would be
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `source`      | A pattern that matches each incoming pathname (excluding querystring).                                                                                                                                                                                                     |
 | `destination` | A location destination defined as an absolute pathname or external URL.                                                                                                                                                                                                    |
-| `permanent`   | A boolean to toggle between permanent and temporary redirect (default true). When `true`, the status code is [308](https://developer.mozilla.org/docs/Web/HTTP/Status/308). When `false` the status code is [307](https://developer.mozilla.org/docs/Web/HTTP/Status/307). |
 | `has`         | An optional array of `has` objects with the `type`, `key` and `value` properties. Used for conditional rewrites based on the **presence** of specified properties.                                                                                                         |
 | `missing`     | An optional array of `missing` objects with the `type`, `key` and `value` properties. Used for conditional rewrites based on the **absence** of specified properties.                                                                                                      |
 
@@ -1680,7 +1691,7 @@ With `routes`, you use [PCRE-compatible regular expression](https://en.wikipedia
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "routes": [{ "src": "/(?!maintenance)", "dest": "/maintenance" }]
+  "routes": [{ "src": "/(?!maintenance).*", "dest": "/maintenance" }]
 }
 ```
 
@@ -1697,7 +1708,7 @@ With [`rewrites`](/docs/project-configuration/vercel-json#rewrites), the regex n
 
 #### Case sensitivity
 
-With `routes`, the `src` property is case-insensitive, so multiple request paths with different cases serve the same page, creating duplicate content.
+With `routes`, the `src` property is case-insensitive by default, so multiple request paths with different cases serve the same page, creating duplicate content. If the same configuration also sets `rewrites`, `redirects`, or `headers`, `src` matching is case-sensitive.
 
 With [`rewrites`](/docs/project-configuration/vercel-json#rewrites) / [`redirects`](/docs/project-configuration/vercel-json#redirects) / [`headers`](/docs/project-configuration/vercel-json#headers), the `source` property is case-sensitive so you don't accidentally create duplicate content.
 
@@ -1797,9 +1808,9 @@ The `name` property has been deprecated in favor of [Project Linking](/docs/cli/
 
 **Limits**:
 
-- A maximum length of 52 characters
-- Only lower case alphanumeric characters or hyphens are allowed
-- Cannot begin or end with a hyphen, or contain multiple consecutive hyphens
+- A maximum length of 100 characters
+- Only lowercase letters, digits, and the characters `.`, `_`, and `-` are allowed
+- Cannot contain the sequence `---`
 
 The prefix for all new deployment instances. Vercel CLI usually generates this field automatically based on the name of the directory. But if you'd like to define it explicitly, this is the way to go.
 
@@ -1818,7 +1829,7 @@ The `version` property should not be used anymore.
 
 **Type**: `Number`.
 
-**Valid values**: `1`, `2`.
+**Valid values**: `2`.
 
 Specifies the Vercel Platform version the deployment should use.
 
@@ -1837,7 +1848,7 @@ The `alias` property should not be used anymore. To assign a custom Domain to yo
 
 **Valid values**: [domain names](/docs/domains/working-with-domains/add-a-domain) (optionally including subdomains) added to the account, or a string for a suffixed URL using `.vercel.app` or a Custom Deployment Suffix ([available on the Enterprise plan](/pricing)).
 
-**Limit**: A maximum of 64 aliases in the array.
+**Limit**: A maximum of 50 aliases in the array.
 
 The alias or aliases are applied automatically using [Vercel for GitHub](/docs/git/vercel-for-github), [Vercel for GitLab](/docs/git/vercel-for-gitlab), or [Vercel for Bitbucket](/docs/git/vercel-for-bitbucket) when merging or pushing to the [Production Branch](/docs/git#production-branch).
 
@@ -1860,7 +1871,7 @@ The `scope` property has been deprecated in favor of [Project Linking](/docs/cli
 
 This property determines the scope ([Hobby team](/docs/accounts) or [team](/docs/accounts#creating-a-team)) under which the project will be deployed by [Vercel CLI](/cli).
 
-It also affects any other actions that the user takes within the directory that contains this configuration (e.g. listing [environment variables](/docs/environment-variables) using `vercel secrets ls`).
+It also affects any other actions that the user takes within the directory that contains this configuration (e.g. listing [projects](/docs/projects) using `vercel project ls`).
 
 ```json filename="vercel.json"
 {
@@ -1908,9 +1919,11 @@ The following example will pass the `MY_KEY` environment variable to all [Builds
 ```json filename="vercel.json"
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "env": {
-    "MY_KEY": "this is the value",
-    "SECRET": "@my-secret-name"
+  "build": {
+    "env": {
+      "MY_KEY": "this is the value",
+      "SECRET": "@my-secret-name"
+    }
   }
 }
 ```

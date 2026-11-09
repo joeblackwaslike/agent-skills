@@ -4,8 +4,8 @@ description: Learn how to use Kling AI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/klingai.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "55dc4025b33c99a7b73cdc50dea8bfa4df83cfafa5f256ab37ffcaf06ea80de4"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "41a474e5421aa450e4a90490e7f43b7c7c55d9a4bec96271ee757468dc38db6f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -421,38 +421,64 @@ following it.
 
 #### Text-to-Video
 
-| Model                   | Description                                           |
-| ----------------------- | ----------------------------------------------------- |
-| `kling-v3.0-t2v`        | Latest v3.0, multi-shot, voice control, sound (3-15s) |
-| `kling-v2.6-t2v`        | V2.6, sound in pro mode                               |
-| `kling-v2.5-turbo-t2v`  | Optimized for speed, std and pro                      |
-| `kling-v2.1-master-t2v` | High-quality generation, pro only                     |
-| `kling-v2-master-t2v`   | Master-quality generation                             |
-| `kling-v1.6-t2v`        | V1.6 generation, std and pro                          |
-| `kling-v1-t2v`          | Original V1 model, supports camera control (std)      |
+| Model                   | Description                                           | Image Input | First Frame | Last Frame | Reference Images | Reference Video | Audio                                                     | Aspect Ratio | Resolution | Duration | FPS | Seed |
+| ----------------------- | ----------------------------------------------------- | ----------- | ----------- | ---------- | ---------------- | --------------- | --------------------------------------------------------- | ------------ | ---------- | -------- | --- | ---- |
+| `kling-v1-t2v`          | Original V1 model, supports camera control (std)      | ✗           | ✗           | ✗          | ✗                | ✗               | Conditional: Requires a sound-capable model and API mode. | ✓            | ✗          | ✓        | ✗   | ✗    |
+| `kling-v1.6-t2v`        | V1.6 generation, std and pro                          | ✗           | ✗           | ✗          | ✗                | ✗               | Conditional: Requires a sound-capable model and API mode. | ✓            | ✗          | ✓        | ✗   | ✗    |
+| `kling-v2-master-t2v`   | Master-quality generation                             | ✗           | ✗           | ✗          | ✗                | ✗               | Conditional: Requires a sound-capable model and API mode. | ✓            | ✗          | ✓        | ✗   | ✗    |
+| `kling-v2.1-master-t2v` | High-quality generation, pro only                     | ✗           | ✗           | ✗          | ✗                | ✗               | Conditional: Requires a sound-capable model and API mode. | ✓            | ✗          | ✓        | ✗   | ✗    |
+| `kling-v2.5-turbo-t2v`  | Optimized for speed, std and pro                      | ✗           | ✗           | ✗          | ✗                | ✗               | Conditional: Requires a sound-capable model and API mode. | ✓            | ✗          | ✓        | ✗   | ✗    |
+| `kling-v2.6-t2v`        | V2.6, sound in pro mode                               | ✗           | ✗           | ✗          | ✗                | ✗               | Conditional: Requires a sound-capable model and API mode. | ✓            | ✗          | ✓        | ✗   | ✗    |
+| `kling-v3.0-t2v`        | Latest v3.0, multi-shot, voice control, sound (3-15s) | ✗           | ✗           | ✗          | ✗                | ✗               | Conditional: Requires a sound-capable model and API mode. | ✓            | ✗          | ✓        | ✗   | ✗    |
 
 #### Image-to-Video
 
-| Model                   | Description                                                   |
-| ----------------------- | ------------------------------------------------------------- |
-| `kling-v3.0-i2v`        | Latest v3.0, multi-shot, element/voice control, sound (3-15s) |
-| `kling-v2.6-i2v`        | V2.6, sound and end-frame in pro mode                         |
-| `kling-v2.5-turbo-i2v`  | Optimized for speed, end-frame in pro                         |
-| `kling-v2.1-master-i2v` | High-quality generation, pro only                             |
-| `kling-v2.1-i2v`        | V2.1 generation, end-frame in pro                             |
-| `kling-v2-master-i2v`   | Master-quality generation                                     |
-| `kling-v1.6-i2v`        | V1.6 generation, end-frame in pro                             |
-| `kling-v1.5-i2v`        | V1.5 generation, end-frame and motion brush in pro            |
-| `kling-v1-i2v`          | Original V1 model, end-frame and motion brush in std/pro      |
+| Model                   | Description                                                   | Image Input | First Frame | Last Frame                                                     | Reference Images | Reference Video | Audio                                                     | Aspect Ratio                                              | Resolution | Duration | FPS | Seed |
+| ----------------------- | ------------------------------------------------------------- | ----------- | ----------- | -------------------------------------------------------------- | ---------------- | --------------- | --------------------------------------------------------- | --------------------------------------------------------- | ---------- | -------- | --- | ---- |
+| `kling-v1-i2v`          | Original V1 model, end-frame and motion brush in std/pro      | ✓           | ✓           | Conditional: Requires an end-frame-capable model and API mode. | ✓                | ✗               | Conditional: Requires a sound-capable model and API mode. | Conditional: Supported for multi-image-to-video requests. | ✗          | ✓        | ✗   | ✗    |
+| `kling-v1.5-i2v`        | V1.5 generation, end-frame and motion brush in pro            | ✓           | ✓           | Conditional: Requires an end-frame-capable model and API mode. | ✓                | ✗               | Conditional: Requires a sound-capable model and API mode. | Conditional: Supported for multi-image-to-video requests. | ✗          | ✓        | ✗   | ✗    |
+| `kling-v1.6-i2v`        | V1.6 generation, end-frame in pro                             | ✓           | ✓           | Conditional: Requires an end-frame-capable model and API mode. | ✓                | ✗               | Conditional: Requires a sound-capable model and API mode. | Conditional: Supported for multi-image-to-video requests. | ✗          | ✓        | ✗   | ✗    |
+| `kling-v2-master-i2v`   | Master-quality generation                                     | ✓           | ✓           | Conditional: Requires an end-frame-capable model and API mode. | ✓                | ✗               | Conditional: Requires a sound-capable model and API mode. | Conditional: Supported for multi-image-to-video requests. | ✗          | ✓        | ✗   | ✗    |
+| `kling-v2.1-i2v`        | V2.1 generation, end-frame in pro                             | ✓           | ✓           | Conditional: Requires an end-frame-capable model and API mode. | ✓                | ✗               | Conditional: Requires a sound-capable model and API mode. | Conditional: Supported for multi-image-to-video requests. | ✗          | ✓        | ✗   | ✗    |
+| `kling-v2.1-master-i2v` | High-quality generation, pro only                             | ✓           | ✓           | Conditional: Requires an end-frame-capable model and API mode. | ✓                | ✗               | Conditional: Requires a sound-capable model and API mode. | Conditional: Supported for multi-image-to-video requests. | ✗          | ✓        | ✗   | ✗    |
+| `kling-v2.5-turbo-i2v`  | Optimized for speed, end-frame in pro                         | ✓           | ✓           | Conditional: Requires an end-frame-capable model and API mode. | ✓                | ✗               | Conditional: Requires a sound-capable model and API mode. | Conditional: Supported for multi-image-to-video requests. | ✗          | ✓        | ✗   | ✗    |
+| `kling-v2.6-i2v`        | V2.6, sound and end-frame in pro mode                         | ✓           | ✓           | Conditional: Requires an end-frame-capable model and API mode. | ✓                | ✗               | Conditional: Requires a sound-capable model and API mode. | Conditional: Supported for multi-image-to-video requests. | ✗          | ✓        | ✗   | ✗    |
+| `kling-v3.0-i2v`        | Latest v3.0, multi-shot, element/voice control, sound (3-15s) | ✓           | ✓           | Conditional: Requires an end-frame-capable model and API mode. | ✓                | ✗               | Conditional: Requires a sound-capable model and API mode. | Conditional: Supported for multi-image-to-video requests. | ✗          | ✓        | ✗   | ✗    |
 
 #### Motion Control
 
-| Model                       | Description                                                  |
-| --------------------------- | ------------------------------------------------------------ |
-| `kling-v3.0-motion-control` | Latest v3.0, enhanced facial consistency via element binding |
-| `kling-v2.6-motion-control` | Transfers motion from a reference video to a character image |
+| Model                       | Description                                                  | Image Input | First Frame | Last Frame | Reference Images | Reference Video | Audio | Aspect Ratio | Resolution | Duration | FPS | Seed |
+| --------------------------- | ------------------------------------------------------------ | ----------- | ----------- | ---------- | ---------------- | --------------- | ----- | ------------ | ---------- | -------- | --- | ---- |
+| `kling-v2.6-motion-control` | Transfers motion from a reference video to a character image | ✓           | ✗           | ✗          | ✗                | ✗               | ✗     | ✗            | ✗          | ✗        | ✗   | ✗    |
+| `kling-v3.0-motion-control` | Latest v3.0, enhanced facial consistency via element binding | ✓           | ✗           | ✗          | ✗                | ✗               | ✗     | ✗            | ✗          | ✗        | ✗   | ✗    |
 
 You can also pass any available provider model ID as a string if needed.
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option                 | Description                                                                                                                                                                                                                                                                                                                                              |
+| --------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| video     | `mode`                 | Video generation mode. - `'std'`: Standard mode — cost-effective. - `'pro'`: Professional mode — higher quality but longer generation time.                                                                                                                                                                                                              |
+| video     | `pollIntervalMs`       | Polling interval in milliseconds for checking task status. Default: 5000 (5 seconds).                                                                                                                                                                                                                                                                    |
+| video     | `pollTimeoutMs`        | Maximum time in milliseconds to wait for video generation. Default: 600000 (10 minutes).                                                                                                                                                                                                                                                                 |
+| video     | `negativePrompt`       | Negative text prompt to specify what to avoid. Cannot exceed 2500 characters.                                                                                                                                                                                                                                                                            |
+| video     | `sound`                | Whether to generate sound simultaneously when generating videos. Only V2.6 and subsequent versions support this parameter, and requires `mode: 'pro'`.                                                                                                                                                                                                   |
+| video     | `cfgScale`             | Flexibility in video generation. The higher the value, the lower the model's flexibility, and the stronger the relevance to the user's prompt. Value range: \[0, 1]. Kling-v2.x models do not support this parameter.                                                                                                                                    |
+| video     | `cameraControl`        | Camera movement control. If not specified, the model will intelligently match based on the input text/images.                                                                                                                                                                                                                                            |
+| video     | `imageTail`            | End frame image for I2V start+end frame control. Supports image URL or raw base64-encoded image data. Requires `mode: 'pro'` for most models.                                                                                                                                                                                                            |
+| video     | `staticMask`           | Static brush mask image for I2V motion brush. Supports image URL or raw base64-encoded image data.                                                                                                                                                                                                                                                       |
+| video     | `dynamicMasks`         | Dynamic brush configurations for I2V motion brush. Up to 6 groups, each with a mask and motion trajectories.                                                                                                                                                                                                                                             |
+| video     | `multiShot`            | Enable multi-shot video generation (Kling v3.0+). When true, the video is split into up to 6 storyboard shots with individual prompts and durations. When multiShot is true with shotType 'customize', multiPrompt is required. When multiShot is true, the main prompt parameter is ignored by the API.                                                 |
+| video     | `shotType`             | Storyboard method for multi-shot video generation (Kling v3.0+). Required when multiShot is true. - `'customize'`: User-defined shots via multiPrompt. - `'intelligence'`: Model auto-segments based on the main prompt.                                                                                                                                 |
+| video     | `multiPrompt`          | Per-shot details for multi-shot video generation (Kling v3.0+). Required when multiShot is true and shotType is 'customize'. Up to 6 shots. Each shot has an index, prompt (max 512 chars), and duration in seconds. Shot durations must sum to the total duration.                                                                                      |
+| video     | `elementList`          | Reference elements for element control (Kling v3.0+). Supports video character elements and multi-image elements. - I2V: Up to 3 reference elements. Cannot coexist with voiceList. - Motion Control: Currently only 1 element supported. When referencing an element, the generated video can only refer to the orientation of the person in the video. |
+| video     | `voiceList`            | Voice references for voice control (Kling v3.0+). Up to 2 voice references. Referenced via `<<<voice_1>>>` template syntax in the prompt. When voiceList is used and the prompt references voice IDs, sound must be set to 'on'. Cannot coexist with elementList on the I2V endpoint.                                                                    |
+| video     | `watermarkEnabled`     | Whether to generate watermarked results simultaneously.                                                                                                                                                                                                                                                                                                  |
+| video     | `videoUrl`             | URL of the reference video. The character actions in the generated video are consistent with the reference video. Supports .mp4/.mov, max 100MB, side lengths 340px–3850px, duration 3–30 seconds (depends on `characterOrientation`).                                                                                                                   |
+| video     | `characterOrientation` | Orientation of the characters in the generated video. - `'image'`: Same orientation as the person in the image. Reference video duration max 10 seconds. - `'video'`: Same orientation as the person in the video. Reference video duration max 30 seconds.                                                                                              |
+| video     | `keepOriginalSound`    | Whether to keep the original sound of the reference video. Default: `'yes'`.                                                                                                                                                                                                                                                                             |
 
 ---
 

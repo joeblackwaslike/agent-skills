@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/sandbox.md"
-fetched_at: "2026-10-26T09:50:01.171Z"
-sha256: "2c97b1fbc92c33fa9f045669a5fe93f5690ee8a8c2ae839418d350ae78d6d0e5"
+fetched_at: "2026-11-09T12:36:42.699Z"
+sha256: "7fdd6ce9a804456b24cb6c079f0e4ca7f1a56d04d5e6e128b93bc62a8319cc74"
 ---
 
 # Sandboxing in Gemini CLI
@@ -421,8 +421,14 @@ $env:SANDBOX_FLAGS="--flag1 --flag2=value"
 
 ### Linux UID/GID handling
 
-The sandbox automatically handles user permissions on Linux. Override these
-permissions with:
+Gemini CLI automatically handles user permissions in container sandboxes on
+Linux. When the sandbox runs as your host UID/GID (the default on supported
+Linux distributions) and you use rootless Podman, Gemini CLI also passes
+`--userns=keep-id`. This keeps files that the sandbox creates in mounted
+directories owned by your host user. To use a different user namespace mode, add
+your own `--userns` option to `SANDBOX_FLAGS`.
+
+Override the default Linux UID/GID mapping behavior with:
 
 **macOS/Linux**
 

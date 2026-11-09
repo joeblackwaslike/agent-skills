@@ -13,12 +13,12 @@ related:
   - /docs/flags/vercel-flags/project-connections
   - /docs/flags/vercel-flags/dashboard/sdk-keys
   - /docs/flags/vercel-flags/dashboard/entities
-  - /docs/functions/limitations
+  - /docs/flags/vercel-flags/dashboard/feature-flag
 summary: Use the Vercel Flags core evaluation library directly for custom setups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/core.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a637e580dd8d60c7585d69a2f086ea19db37e71c8766f04a35190c02582599ff"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "75a2ae7382446be1eae148e7065a7f8e9064cf2052696e2facf8f5fe10855097"
 ---
 
 # Using the Core Library
@@ -31,13 +31,13 @@ The `@vercel/flags-core` library provides direct access to the Vercel Flags eval
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
-- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/core.graph.md](/docs/flags/vercel-flags/sdks/core.graph.md)
 <!-- /docsgraph:related -->
@@ -215,7 +215,7 @@ switch (result.reason) {
     // A targeting rule matched
     break;
   case Reason.FALLTHROUGH:
-    // No rules matched, using default
+    // No rules matched, using the fallthrough outcome
     break;
   case Reason.PAUSED:
     // Flag is paused/disabled
@@ -226,6 +226,8 @@ switch (result.reason) {
     break;
 }
 ```
+
+With `Reason.FALLTHROUGH`, the value comes from the flag's fallthrough [outcome](/docs/flags/vercel-flags/dashboard/feature-flag#outcome), which the flag serves when no target or rule matches. It isn't the default value that you pass to `evaluate`.
 
 ## Data source fallback chain
 
@@ -251,8 +253,8 @@ At runtime (the default, or when `buildStep: false` is set), the client uses rea
 Key behaviors:
 
 - The client never streams and polls at the same time
-- If the stream disconnects, the client starts polling (if enabled)
-- If the stream reconnects while polling, polling stops
+- If the stream disconnects, the client keeps serving the definitions it has in memory and tries to reconnect
+- If the stream still can't connect after repeated attempts, the client starts polling (if enabled)
 - If in-memory data already exists, the client serves it immediately while background updates happen
 
 ### Overriding build step detection
@@ -284,7 +286,7 @@ When you deploy to Vercel, the build process fetches your latest flag definition
 - **Runtime resilience**: If the Vercel Flags service is temporarily unreachable at runtime, the SDK falls back to the embedded snapshot instead of returning hardcoded default values. Because the snapshot preserves your full configuration, including targeting rules, segments, and percentages, your flags continue to evaluate accurately. Since the snapshot is from build time, users may see slightly outdated values until the service recovers.
 
 > **💡 Note:** You can opt out of embedding by setting
-> `VERCEL_FLAGS_DISABLE_DEFINITION_EMBEDDING=1` in your project's environment
+> `VERCEL_FLAGS_EMBED_DEFINITIONS=force-off` in your project's environment
 > variables.
 
 Because the flag definitions are bundled into your deployment, they count toward the [function bundle size limit](/docs/functions/limitations#bundle-size-limits).
@@ -297,7 +299,7 @@ When your application exits, shut down the client to clean up resources:
 await client.shutdown();
 ```
 
-This outputs detailed information about the client's data source connections, fallback behavior, and evaluation steps.
+This stops streaming and polling, and sends any pending [evaluation metrics](/docs/flags/vercel-flags/evaluation-metrics).
 
 ## Next steps
 

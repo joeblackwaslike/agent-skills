@@ -13,8 +13,8 @@ related:
 summary: Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e0d332f382214ce2acf78e6e4fabeee7c00599c0f0b45afc0be6e009c123fdc5"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9c2e66d2669704d17656237b36be1c34a973a7bfc377c8ee85f511b3ac270ff8"
 ---
 
 # AI Gateway Image Generation with AI SDK
@@ -34,6 +34,7 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [GPT Image 2 on AI Gateway](https://vercel.com/changelog/gpt-image-2-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md](/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md)
 <!-- /docsgraph:related -->

@@ -4,8 +4,8 @@ description: Learn how to use Hugging Face with AI Gateway and the direct provid
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/huggingface.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "1f3fd7c0f00a36ec97aa2873280f94fa1de49e402097fc0956f0968bbb600757"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "5232954aec299ebe96fb5f01d0e9ab0eaeede24a9627f87c30b00bab3b210ff1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -280,6 +280,17 @@ the [Hugging Face Inference Models](https://huggingface.co/inference/models)
 page. The capabilities depend on the specific model you're using. Check the
 model documentation on Hugging Face Hub for detailed information about each
 model's features.
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option             | Description      |
+| --------- | ------------------ | ---------------- |
+| language  | `metadata`         | metadata         |
+| language  | `instructions`     | instructions     |
+| language  | `strictJsonSchema` | strictJsonSchema |
+| language  | `reasoningEffort`  | reasoningEffort  |
 
 ---
 

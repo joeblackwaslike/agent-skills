@@ -11,13 +11,13 @@ related:
   - /docs/cli/deploy
   - /docs/deployments/environments
   - /docs/deployments/claim-deployments
+  - /docs/cli/global-options
   - /docs/cli/promote
-  - /docs/cli/pull
 summary: Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/deploying-from-cli.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ae37d02988909a8e8541a3db398b7e58421a406bc9bedaf78e90eadfc94457fa"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a260fc431127272c9f68f70182a7a9a6af28d1e8f8a7c752bd182bb07e863585"
 ---
 
 # Deploying Projects from Vercel CLI
@@ -83,7 +83,7 @@ command to a text file.*
 
 ## Deploying without logging in
 
-The `--temporary` flag creates a temporary deployment without logging in. It applies only when Vercel CLI has no credentials. If you're already logged in, `vercel deploy` creates a normal deployment instead. The CLI builds the project locally and deploys it to production.
+The `--temporary` flag creates a temporary deployment without logging in. The CLI builds the project locally and deploys it to production:
 
 ```bash filename="terminal"
 vercel deploy --temporary
@@ -93,6 +93,8 @@ vercel deploy --temporary
 authentication.*
 
 After deploying, Vercel CLI prints a claim URL and how long until the deployment expires. [Claim](/docs/deployments/claim-deployments#claim-a-temporary-deployment) the deployment to keep it live, then run `vercel login` to keep deploying the project.
+
+The `--temporary` flag applies only when Vercel CLI has no credentials. If you're already logged in, the CLI prints a warning and creates a normal deployment. In [non-interactive mode](/docs/cli/global-options#non-interactive), the command fails instead, so remove the flag when you're logged in.
 
 For details, see [`vercel deploy`](/docs/cli/deploy#temporary).
 

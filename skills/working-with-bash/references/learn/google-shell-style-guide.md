@@ -1,7 +1,7 @@
 ---
 source: "https://google.github.io/styleguide/shellguide.html"
-fetched_at: "2026-10-26T09:46:43.925Z"
-sha256: "75620638a7362768738f2081c261bcaae3fd19520d7f003fdd49c68282935e39"
+fetched_at: "2026-11-09T12:33:49.565Z"
+sha256: "bf0a5a119eef1c81b428ca0861b9ffe38d5e5a5342588421d3f3a8a7b40c2c01"
 ---
 
 Google Style Guides | Style guides for Google-originated open-source projects
@@ -247,7 +247,7 @@ when you create a TODO, it is almost always your name that is given.
 
 Examples:
 
-# TODO(mrmonkey): Handle the unlikely edge cases (bug ####)
+# TODO(username): Handle the unlikely edge cases (bug ####)
 
 Formatting
 

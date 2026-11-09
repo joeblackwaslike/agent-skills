@@ -17,8 +17,8 @@ related:
 summary: Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming, tool calling, and embeddings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d5990692aa89546ac83b25051761c61fc6322325c1a65ebd720dc9e32039600e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ed2a9df927cb9fd244bd62bada395e995ce56b9568be6ded7aabbf4693ca01df"
 ---
 
 # OpenAI Chat Completions API with AI Gateway
@@ -317,7 +317,7 @@ The API returns standard HTTP status codes and error responses:
     "message": "Invalid request: missing required parameter 'model'",
     "type": "invalid_request_error",
     "param": "model",
-    "code": "missing_parameter"
+    "code": "invalid_request_error"
   }
 }
 ```

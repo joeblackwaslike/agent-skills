@@ -16,8 +16,8 @@ related:
 summary: Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service tiers through AI Gateway,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f0ac6bb5eb14b204393bc352fedd27fc3b5162e3d3028f83fae56525ea281427"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f6b7c7f4237a49e8ee616708d99dfee1a5cb2211b9b5e8770c646f62262bf854"
 ---
 
 # AI Gateway Service Tiers
@@ -32,8 +32,8 @@ OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI offer different process
 
 - [OpenAI Ultrafast mode now available on AI Gateway](https://vercel.com/changelog/openai-ultrafast-mode-now-available-on-ai-gateway)
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway)
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
+- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [OpenAI Compatible Providers](https://ai-sdk.dev/providers/openai-compatible-providers) — Use OpenAI compatible providers with the AI SDK.
 - [AI SDK 7](https://vercel.com/blog/ai-sdk-7)
 

@@ -1,8 +1,8 @@
 ---
 title: "Pages Plugin"
 source: "https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages"
-fetched_at: "2026-10-19T09:38:00.847Z"
-sha256: "2821f62833f486a73552475e8ecb5185c5f3c4686edc7302b86db482643bb652"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "cbef0ef4e686356fc45b647de3f02e8835741a4e3e5be8a641e5773fdda87ce1"
 ---
 
 # Pages Plugin
@@ -101,4 +101,4 @@ Read the [i18n introduction](https://docusaurus.io/docs/i18n/introduction) first
 ```
 website/i18n/[locale]/docusaurus-plugin-content-pages││ # translations for website/src/pages├── first-markdown-page.md└── second-markdown-page.md
 ```
-[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/api/plugins/plugin-content-pages.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/api/plugins/plugin-content-pages.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

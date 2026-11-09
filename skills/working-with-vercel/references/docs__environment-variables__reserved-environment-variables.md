@@ -13,8 +13,8 @@ related:
 summary: Reserved environment variables are reserved by Vercel Vercel Function runtimes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/reserved-environment-variables.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a9499862c2902157cca1010bc1b23a40268052cba2f2f4c3880a25a72d2815cc"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "9d5446fd359f3439fe5757453f4f7a7c5bbce4060ac2022e1e54e007263d8206"
 ---
 
 # Reserved environment variables
@@ -27,7 +27,6 @@ The following [environment variable](/docs/environment-variables) names are [res
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 - [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
@@ -48,6 +47,11 @@ Full cross-link map for this page: [/docs/environment-variables/reserved-environ
 - `TZ`
 - `LAMBDA_TASK_ROOT`
 - `LAMBDA_RUNTIME_DIR`
+- `_HANDLER`
+- `AWS_ACCESS_KEY`
+- `PATH`
+- `HOME`
+- `TEMP`
 
 ## Allowed environment variables
 

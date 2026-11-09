@@ -4,8 +4,8 @@ description: Use OpenAI compatible providers with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "274f2b28ae59717eba3224de14a74154b5ec934265721f28b575a9250091114d"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "6963c3b5aad78ded520288cde62ae6527095832dbff9a7469b778cb0107b7a8b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -161,6 +161,28 @@ const provider = createOpenAICompatible({
 Only enable `supportsMultiPartToolContent` when the provider accepts content
 arrays for messages with the `tool` role. The default stringifies multi-part
 tool results for compatibility with the OpenAI Chat Completions API.
+
+### Refusals
+
+Some OpenAI-compatible providers, including OpenAI itself, can return a
+`refusal` instead of content when the model declines a request. The refusal
+explanation is surfaced as text in both `generateText` and `streamText`. When a
+non-empty refusal is received and the provider reports a `stop` finish reason,
+the finish reason is `content-filter`:
+
+```ts
+const { text, finishReason } = await generateText({
+  model: provider('model-id'),
+  prompt: '...',
+});
+
+if (finishReason === 'content-filter') {
+  // `text` contains the model's refusal explanation
+}
+```
+
+When a response contains both content and a refusal, the content text is emitted
+first, followed by the refusal text.
 
 ### Example
 
@@ -777,6 +799,27 @@ console.log(providerMetadata.myProvider.customMetrics);
 ```
 
 This allows you to access provider-specific information while maintaining a consistent interface across different providers.
+
+## Provider Option Reference
+
+The following option definitions are generated from the provider catalog.
+
+| Operation | Option               | Description                                                                                                                                                                                                    |
+| --------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| language  | `user`               | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| language  | `reasoningEffort`    | Reasoning effort for reasoning models. Defaults to `medium`. Set to `null` to send `"reasoning_effort": null`, for providers that treat an explicit `null` differently from an omitted field.                  |
+| language  | `textVerbosity`      | Controls the verbosity of the generated text. Defaults to `medium`.                                                                                                                                            |
+| language  | `strictJsonSchema`   | Whether to use strict JSON schema validation. When true, the model uses constrained decoding to guarantee schema compliance. Only used when the provider supports structured outputs and a schema is provided. |
+| language  | `echo`               | Echo back the prompt in addition to the completion.                                                                                                                                                            |
+| language  | `logitBias`          | Modify the likelihood of specified tokens appearing in the completion. Accepts a JSON object that maps tokens (specified by their token ID in the GPT tokenizer) to an associated bias value from -100 to 100. |
+| language  | `suffix`             | The suffix that comes after a completion of inserted text.                                                                                                                                                     |
+| embedding | `dimensions`         | The number of dimensions the resulting output embeddings should have. Only supported in text-embedding-3 and later models.                                                                                     |
+| embedding | `user`               | A unique identifier representing your end-user, which can help providers to monitor and detect abuse.                                                                                                          |
+| image     | `size`               | Dimensions of the generated image. Supported values depend on the provider and model.                                                                                                                          |
+| image     | `quality`            | Quality of the generated image. Supported values depend on the provider and model.                                                                                                                             |
+| image     | `output_format`      | File format of the generated image. Supported values depend on the provider and model.                                                                                                                         |
+| image     | `output_compression` | Compression level for JPEG and WebP images.                                                                                                                                                                    |
+| image     | `background`         | Background behavior for the generated image. Supported values depend on the provider and model.                                                                                                                |
 
 ---
 

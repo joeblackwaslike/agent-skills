@@ -12,17 +12,17 @@ related:
 summary: This error occurs when a request for a static file in a project fails.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/errors/internal_static_request_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9dae0a7d45554ffef0577463bbf7e4499f0af8af1f2612c0c92bbea381042fe7"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bf446f91dd54f0c189abe7d480b0c540b55a718c25158c3987b2318105096478"
 ---
 
 # INTERNAL_STATIC_REQUEST_FAILED
 
 The `INTERNAL_STATIC_REQUEST_FAILED` error is encountered when a request for a static file within the project cannot be completed. This can happen due to issues with the existence, deployment, or path of the static files.
 
-**Error Code:** `500`
+**Error Code:** `502`
 
-**Name:** Internal Server Error
+**Name:** Bad Gateway
 
 ## Troubleshoot
 

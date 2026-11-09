@@ -16,8 +16,8 @@ related:
 summary: Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d223540f5d947d810390b44f256f22116f503281a93bceb12fa330aadebf99c9"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c5546c364196d2b511b7a7be3ac0bcc587ad1108f4ec22a061794c0017ee307b"
 ---
 
 # Query Reference
@@ -36,8 +36,8 @@ In Query, you first select an event type, then a metric from that event type. Fo
 - [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 
 Full cross-link map for this page: [/docs/query/reference.graph.md](/docs/query/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -75,7 +75,7 @@ For the corresponding CLI metric names, see [available metrics for `vercel metri
 
 | **Event type**            | **Metrics**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **AI Gateway Requests**   | Count, Audio Duration, Audio Input Tokens, Audio Output Tokens, Cache Creation 1h Input Tokens, Cache Creation Tokens, Cached Input Tokens, Cost, Duration, Gateway Cost, Gateway Tool Call Cost, Gateway Tool Calls, Google Maps Search Calls, Image Count, Image Input Tokens, Input Tokens, Model Allowlist Cost, Output Tokens, Provider Allowlist Cost, Quota Write Cost, Realtime Client Messages, Realtime Session Duration, Region Pinning Cost, Reporting Write Cost, Reranking Query Count, Surcharge Cost, Time to First Token, Video Count, Video Duration, Video FPS, Video Input Tokens, Web Search Calls, ZDR Cost |
+| **AI Gateway Requests**   | Count, Audio Duration, Audio Input Tokens, Audio Output Tokens, Cache Creation 1h/12h Input Tokens, Cache Creation Tokens, Cached Input Tokens, Cost, Duration, Gateway Cost, Gateway Tool Call Cost, Gateway Tool Calls, Google Maps Search Calls, Image Count, Image Input Tokens, Input Tokens, Model Allowlist Cost, Output Tokens, Provider Allowlist Cost, Quota Write Cost, Realtime Client Messages, Realtime Session Duration, Region Pinning Cost, Reporting Write Cost, Reranking Query Count, Surcharge Cost, Time to First Token, Video Count, Video Duration, Video FPS, Video Input Tokens, Web Search Calls, ZDR Cost |
 
 ### Security metrics
 
@@ -91,7 +91,7 @@ For the corresponding CLI metric names, see [available metrics for `vercel metri
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **Web Analytics Page Views**      | Count, Visitors                                                                                                                           |
 | **Web Analytics Custom Events**   | Count, Visitors                                                                                                                           |
-| **Speed Insights**                | Time to First Byte, Cumulative Layout Shift, First Contentful Paint, First Input Delay, Interaction to Next Paint, Largest Contentful Paint |
+| **Speed Insights**                | Time to First Byte, Cumulative Layout Shift, First Contentful Paint, Interaction to Next Paint, Largest Contentful Paint |
 
 ### Custom metrics
 

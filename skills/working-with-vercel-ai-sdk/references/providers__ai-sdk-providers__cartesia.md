@@ -4,8 +4,8 @@ description: Learn how to set up the Cartesia provider and check AI Gateway avai
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "49092dcafe3a9cbe31a56c2f906ec7b6a3524c9226e3ba562722e2771c15e652"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "d6dd47fab7e65c5cad6481de1f70457845475dc1dcbadac3815c71b6027ff414"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -187,9 +187,47 @@ The following provider options are available:
   Controls the speed of the generated speech between `0.6` and `1.5`.
   Optional.
 
+- **volume** *number*
+
+  Volume of the generated speech between `0.5` and `2`. Defaults to `1`.
+  Requires Sonic 3 or newer.
+  Optional.
+
+- **emotion** *string*
+
+  Emotion of the generated speech, for example `calm` or `sad`. This option is in beta and works best with English.
+  Requires Sonic 3 or newer.
+  See the [Cartesia docs](https://docs.cartesia.ai/build-with-cartesia/capability-guides/volume-speed-emotion#emotion-controls-beta) for the list of values.
+  Optional.
+
 - **language** *string*
 
   The language to generate speech in (ISO 639-1 code).
+  Optional.
+
+- **locale** *string*
+
+  A regional locale such as `en-GB` or `es-MX`. Regional locales require Sonic 3.6
+  or later. Optional.
+
+  Cannot be combined with `providerOptions.cartesia.language`. When a generic
+  `language` call option is also set, `locale` takes precedence and the ignored
+  generic option produces an unsupported warning.
+
+- **normalization** *string*
+
+  Controls how written text is prepared for speech. Use `auto` (the default),
+  `off`, or a language or locale code such as `en-IN` to select reading
+  conventions independently of the speech language. Optional.
+
+  Cartesia validates the supported values. See the
+  [text normalization guide](https://docs.cartesia.ai/build-with-cartesia/capability-guides/text-normalization).
+
+- **pronunciationDictionaryId** *string*
+
+  ID of a [pronunciation dictionary](https://docs.cartesia.ai/api-reference/pronunciation-dicts/create) to apply to the text.
+  Dictionaries are created with the Cartesia API, not with this provider.
+  Sonic 3 and newer.
   Optional.
 
 ### Model Capabilities
@@ -305,14 +343,38 @@ const result = streamTranscribe({
 });
 ```
 
+To bias recognition toward product names or jargon, pass up to 100 terms
+(up to 1,200 characters in total) in `providerOptions.cartesia.streaming.keyterms`
+([keyterm prompting](https://docs.cartesia.ai/use-the-api/stt/keyterms)). Turn detection can be tuned with
+`turnStartThreshold`, `turnEagerEndThreshold`, `turnEndThreshold` and
+`turnEndTimeoutMs`; these are ignored, with a warning, when `turnDetection` is
+`false`. See the [Cartesia turn detection docs](https://docs.cartesia.ai/use-the-api/stt/turns)
+for the accepted ranges.
+
+```ts
+const result = streamTranscribe({
+  model: cartesia.transcription('ink-2'),
+  audio,
+  inputAudioFormat: { type: 'audio/pcm', rate: 24000 },
+  providerOptions: {
+    cartesia: {
+      streaming: {
+        keyterms: ['Cartesia', 'Sonic'],
+        turnEndTimeoutMs: 800,
+      },
+    },
+  },
+});
+```
+
 See [Transcription](/docs/ai-sdk-core/transcription) for more information about
 streaming transcription.
 
 ### Model Capabilities
 
-| Model   | Streaming Transcription | Turn Detection |
-| ------- | ----------------------- | -------------- |
-| `ink-2` | ✓                       | ✓              |
+| Model   | Streaming Transcription | Turn Detection | Keyterms |
+| ------- | ----------------------- | -------------- | -------- |
+| `ink-2` | ✓                       | ✓              | ✓        |
 
 ## Batch Transcription Models
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets.md"
-fetched_at: "2026-10-19T09:44:08.178Z"
-sha256: "d82485ab362777656c5559bb781a5958e4d366013c9025e538f7d157287e5f08"
+fetched_at: "2026-11-09T12:39:02.495Z"
+sha256: "0ec8508c2218a4c651ffa9e572574893b6950b2bc52158f93af2b3a84cd60009"
 ---
 
 You can create branch or tag rulesets to control how users can interact with selected branches and tags in a repository. You can also create push rulesets to block pushes to a private or internal repository and that repository's entire fork network.
@@ -66,6 +66,12 @@ You can configure various settings for your merge queue rule.
 {% endif %}
 
 You can require that changes are successfully deployed to specific environments before a branch can be merged. For example, you can use this rule to ensure that changes are successfully deployed to a staging environment before the changes merge to your default branch.
+
+{% ifversion pr-stacks %}
+
+{% data reusables.pull_requests.pr-stack-required-deployments %}
+
+{% endif %}
 
 ## Require signed commits
 

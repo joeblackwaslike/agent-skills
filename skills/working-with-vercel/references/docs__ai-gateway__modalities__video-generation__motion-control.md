@@ -14,8 +14,8 @@ related:
 summary: Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "19b5df1473dd10fc733b6d262fad4350864b373dd5f88906d3a8556f87f962f1"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ca0f0fbc1d65a45fa36fcc553852f37b087c90a84547bf58bbf6644ac0fab8f1"
 ---
 
 # AI Gateway Motion Control Video Generation
@@ -28,12 +28,14 @@ Transfer motion from a reference video to a character in an image. The model ana
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
-- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
+- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
+- [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/motion-control.graph.md](/docs/ai-gateway/modalities/video-generation/motion-control.graph.md)
 <!-- /docsgraph:related -->
@@ -56,7 +58,7 @@ KlingAI's motion control models transfer motion from a reference video to a char
 | `providerOptions.klingai.characterOrientation` | `'image'` \| `'video'` | Yes      | `'image'` matches image orientation (max 10s video). `'video'` matches video orientation (max 30s). |
 | `providerOptions.klingai.mode`                 | `'std'` \| `'pro'`     | Yes      | `'std'` for standard quality. `'pro'` for professional quality.                                     |
 | `providerOptions.klingai.keepOriginalSound`    | `'yes'` \| `'no'`      | No       | Keep audio from reference video. Defaults to `'yes'`.                                               |
-| `providerOptions.klingai.watermarkInfo`        | `object`               | No       | Set `{ enabled: true }` to generate watermarked result.                                             |
+| `providerOptions.klingai.watermarkEnabled`     | `boolean`              | No       | Set to `true` to generate a watermarked result.                                             |
 | `providerOptions.klingai.pollIntervalMs`       | `number`               | No       | How often to check task status. Defaults to `5000`.                                                 |
 | `providerOptions.klingai.pollTimeoutMs`        | `number`               | No       | Maximum wait time. Defaults to `600000` (10 minutes).                                               |
 

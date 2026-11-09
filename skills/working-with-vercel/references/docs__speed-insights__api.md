@@ -12,8 +12,8 @@ related:
 summary: Learn how to use Speed Insights in Vercel with any frontend framework or project through the Speed Insights intake API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/speed-insights/api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9151ce2944bf7d07fc4a9fa84dd5417895037520e5622d46f38b011baf787b89"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "999182e146d5f4beaee5196766f6899187438ba8c961cc1998cb3b9f1211cf74"
 ---
 
 # Speed Insights Intake API
@@ -22,7 +22,7 @@ sha256: "9151ce2944bf7d07fc4a9fa84dd5417895037520e5622d46f38b011baf787b89"
 > [@vercel/speed-insights](/docs/speed-insights/package) framework agnostic
 > package instead.
 
-Vercel Speed Insights supports Next.js, Nuxt, and Gatsby with zero configuration through build plugins. You can use Speed Insights with any frontend framework or project through the Speed Insights API as shown below.
+You can use Speed Insights with any frontend framework or project through the Speed Insights API as shown below.
 
 ## Getting Started
 

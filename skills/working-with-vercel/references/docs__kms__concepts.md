@@ -16,8 +16,8 @@ related:
 summary: Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "497f541a60741e79410f35ac279f44eaf1f4200633e7186d45bfa3d5ed29ef61"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3a650f4f014e301253420ffb0b56405a8924d226212d5bb59d7fa3a2d24594ff"
 ---
 
 # Vercel KMS Concepts
@@ -30,6 +30,7 @@ These pages explain the parts of Vercel KMS you configure once and rely on over 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel

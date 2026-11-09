@@ -16,8 +16,8 @@ related:
 summary: Build bots for Slack and other chat platforms with Chat SDK, and deploy them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1458ea319756fdfcd95c85c1ee469b4d7d8e8166196de44fe3fcabc8624553a6"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "65e9fbcf69e08aaae15828531384eafa4e2af25688c48eecd75e63bbac5b61c2"
 ---
 
 # Chat SDK
@@ -32,12 +32,12 @@ Build bots for Slack, Teams, and more with one TypeScript API, and deploy them o
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
+- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [Introducing npm i chat – One codebase, every chat platform](https://vercel.com/changelog/chat-sdk)
 - [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
@@ -246,6 +246,28 @@ See the [plugin setup guide](/docs/agent-resources/vercel-plugin#getting-started
 ## Start with a template
 
 Deploy a [Slack research bot with Claude Managed Agents](/templates/next.js/claude-managed-agents-chat-sdk), a [knowledge bot with Nuxt](/templates/nuxt/chat-sdk-knowledge-agent), or a [community bot with Next.js](/templates/next.js/chat-sdk-community-agent):
+
+## Frequently asked questions
+
+### What is Chat SDK?
+
+Chat SDK is an open-source TypeScript library from Vercel for building chat bots that run on several platforms from one codebase. You write event handlers once, and platform adapters translate them for Slack, Microsoft Teams, Google Chat, Discord, Telegram, WhatsApp, GitHub, Linear, and other services. Install the `chat` package from npm, then add an adapter for each platform your bot uses. See [Chat SDK adapters](/docs/chat-sdk/adapters) for the options.
+
+### Is Chat SDK free and open source?
+
+Yes. Chat SDK is open source under the MIT license, and its code is in the [vercel/chat](https://github.com/vercel/chat) repository on GitHub. The library has no fee. You pay for the infrastructure your bot uses, such as [Vercel Functions](/docs/functions/usage-and-pricing), a Redis or PostgreSQL database for state, and model usage through [AI Gateway](/docs/ai-gateway/pricing).
+
+### Can I use Chat SDK without Vercel?
+
+Yes. Chat SDK's webhook handlers accept a standard Web `Request` and return a `Response`, and you pass your platform's background-task function as the `waitUntil` option. Vercel Connect is also optional. Without it, adapters read credentials such as `SLACK_BOT_TOKEN` and `SLACK_SIGNING_SECRET` from environment variables. When you deploy on Vercel, you can add [Vercel Connect](/docs/chat-sdk/integrations/connect) for managed credentials and provision a state database from the [Marketplace](/marketplace/category/storage).
+
+### Do I need an AI model to build a bot with Chat SDK?
+
+No. Chat SDK handles messages, threads, cards, and button clicks, so you can build a bot that answers slash commands, posts notifications, or follows fixed rules without a language model. To add AI responses, pass a model stream to `thread.post()`. Chat SDK accepts any `AsyncIterable<string>` and detects AI SDK and TanStack AI streams automatically. See [Chat SDK with AI Gateway](/docs/chat-sdk/integrations/ai-gateway).
+
+### How do I stream AI responses into Slack with Chat SDK?
+
+Pass the stream from AI SDK's `streamText()` to `thread.post()`, and await the call so the handler stays active until the stream finishes. In Slack, Chat SDK uses Slack's native streaming API to update the message as text arrives. On Discord and Google Chat, it posts a message and edits it as chunks arrive, throttling the edits to avoid rate limits. Adapters such as GitHub and WhatsApp wait for the whole stream and post one final message. See [streaming responses](https://chat-sdk.dev/docs/streaming).
 
 ## Next steps
 

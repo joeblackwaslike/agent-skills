@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches.md"
-fetched_at: "2026-09-14T09:42:34.465Z"
-sha256: "bcda073d7a0ba61235df3fcc7269d0d10ad1796f997cb78e4e191849357c656a"
+fetched_at: "2026-11-09T12:39:02.495Z"
+sha256: "f1163ac021c66e2058baeea46d4ddef4cf8869234ea154c7519ef778af2daf53"
 ---
 
 ## About branch protection rules
@@ -122,6 +122,12 @@ Before you can require a linear commit history, your repository must allow squas
 ### Require deployments to succeed before merging
 
 You can require that changes are successfully deployed to specific environments before a branch can be merged. For example, you can use this rule to ensure that changes are successfully deployed to a staging environment before the changes merge to your default branch.
+
+{% ifversion pr-stacks %}
+
+{% data reusables.pull_requests.pr-stack-required-deployments %}
+
+{% endif %}
 
 ### Lock branch
 

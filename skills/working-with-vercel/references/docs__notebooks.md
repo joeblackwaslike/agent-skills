@@ -9,11 +9,12 @@ prerequisites:
   []
 related:
   - /docs/observability/observability-plus
+  - /docs/rbac/access-roles
 summary: Learn more about Notebooks and how they allow you to organize and save your queries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/notebooks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f1db64a1026ce3370b0edf144a8e2658eb1bb188a85c72345a1a64eb68a54c6c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "15af0028f069142666c92c8890b814512111a90b53f514a9ac2cd3659e14fd3c"
 ---
 
 # Notebooks
@@ -32,11 +33,12 @@ sha256: "f1db64a1026ce3370b0edf144a8e2658eb1bb188a85c72345a1a64eb68a54c6c"
 - [Query and visualize workflow data in Vercel Observability](https://vercel.com/changelog/query-and-visualize-workflow-data-in-vercel-observability)
 - [Run and share custom queries in Observability Plus](https://vercel.com/changelog/run-and-share-custom-queries-in-observability-plus)
 - [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
+- [New custom visualization in Vercel Observability](https://vercel.com/changelog/new-custom-visualization-in-vercel-observability)
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Monitoring Quickstart](https://vercel.com/docs/query/monitoring/quickstart) — In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your
-- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 
 Full cross-link map for this page: [/docs/notebooks.graph.md](/docs/notebooks.graph.md)
 <!-- /docsgraph:related -->
@@ -63,13 +65,13 @@ You can use notebooks to organize and save your queries. Each notebook is a coll
 2. Click the + icon to open the query builder and build your query
 3. Edit the query name by clicking the pencil icon on the top left of the default query title
 4. Select the most appropriate view for your query: line chart, volume chart, table or big number
-5. Once you're happy with your query results, save it by clicking **Save Query**
+5. Once you're happy with your query results, save it by clicking **Save**
 6. Your query is now available in your notebook
 
 ### Delete a query
 
 1. From the **Notebooks** page, select an existing **Notebook**
-2. Click the three-dot menu on the top-right corner of a query, and select **Delete**. This action is permanent and cannot be undone.
+2. Click the three-dot menu on the top-right corner of a query, and select **Delete Query**. This action is permanent and cannot be undone.
 
 ### Delete a notebook
 
@@ -80,12 +82,12 @@ You can use notebooks to organize and save your queries. Each notebook is a coll
 
 You can create 2 types of notebooks.
 
-- Personal Notebooks: Only the creator and owner can view them.
-- Team Notebooks: All team members can view them and they share ownership.
+- Personal Notebooks: Only the creator can view them.
+- Team Notebooks: All team members can view them, except members with the [Billing](/docs/rbac/access-roles#billing-role) or [Pro Viewer](/docs/rbac/access-roles#pro-viewer-role) role.
 
-When created, notebooks are personal by default. You can use the **Share** button to turn them to Team Notebooks for collaboration. When shared, all team members have full access to modify, add, or remove content within the notebook.
+When created, notebooks are personal by default. You can use the **Share with team** button to turn them to Team Notebooks for collaboration. When shared, team members with the [Owner](/docs/rbac/access-roles#owner-role), [Member](/docs/rbac/access-roles#member-role), or [Developer](/docs/rbac/access-roles#developer-role) role can modify, add, or remove content within the notebook. Team members with other roles can't change a Team Notebook.
 
-As a Notebook owner, you have complete control over your notebook. You can add new queries, edit existing ones, remove individual queries, or delete the entire notebook if it's no longer needed.
+With the Owner, Member, or Developer role, you have complete control over your Personal Notebooks and your team's Team Notebooks. You can add new queries, edit existing ones, remove individual queries, or delete the entire notebook if it's no longer needed.
 
 
 ---

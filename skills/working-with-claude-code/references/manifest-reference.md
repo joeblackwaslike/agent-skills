@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/manifest-reference.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "a10a371d18d571e769f99720d4402f3ec13ceb668561266f57145cfa940fa4ed"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "b0f8e2f9c1e5c05b3fd975f15a6c85fb9bae15cc81b07b90137b065af09b7fce"
 ---
 
 > ## Documentation Index
@@ -577,7 +577,7 @@ In each plugin component, `${...}` references resolve inline in specific fields,
 | :- | :- | :- |
 | Hook commands | Anywhere in `command` and `args` | `CLAUDE_PLUGIN_ROOT`, `CLAUDE_PLUGIN_DATA`, `CLAUDE_PROJECT_DIR`, and `CLAUDE_PLUGIN_OPTION_<KEY>` |
 | Monitor commands | Anywhere in `command` | Not exported |
-| MCP `stdio` servers | `command`, `args`, `env` | `CLAUDE_PLUGIN_ROOT`, `CLAUDE_PLUGIN_DATA` |
+| MCP `stdio` servers | `command`, `args`, `env` | `CLAUDE_PLUGIN_ROOT`, `CLAUDE_PLUGIN_DATA`, `CLAUDE_PROJECT_DIR` |
 | MCP `http`, `sse`, `ws` servers | `url`, `headers`, `headersHelper` | Not applicable |
 | LSP servers | `command`, `args`, `env`, `workspaceFolder` | `CLAUDE_PLUGIN_ROOT`, `CLAUDE_PLUGIN_DATA`, `CLAUDE_PROJECT_DIR` |
 | Skill, command, and agent content | Anywhere in the Markdown body | Not applicable |

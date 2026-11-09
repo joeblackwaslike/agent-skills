@@ -13,8 +13,8 @@ related:
 summary: Use get_storage_stores_by_id with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage/get_storage_stores_by_id.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "598926792f7129e8922a581b36742b6d740d89c591966de7296f9d35da8e38a1"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f3283e1c2a2a22e4cc7a62f9d2ce7527d3e3e1bd141bc566f062df4e3024a71e"
 ---
 
 # get_storage_stores_by_id
@@ -30,8 +30,8 @@ Get a store.
 - [Get a store](https://vercel.com/docs/rest-api/storage/get-a-store) — GET /storage/stores/{id} — Get a store
 - [create_storage_stores_blob](https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage/create_storage_stores_blob) — Use create_storage_stores_blob with Vercel MCP.
 - [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store) — DELETE /storage/stores/blob/{id} — Delete a Blob store
+- [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
 - [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
-- [get_cert_by_id](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_cert_by_id) — Use get_cert_by_id with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/storage/get_storage_stores_by_id.graph.md](/docs/agent-resources/vercel-mcp/tools/storage/get_storage_stores_by_id.graph.md)
 <!-- /docsgraph:related -->

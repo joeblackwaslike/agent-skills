@@ -17,8 +17,8 @@ related:
 summary: Save a model with its provider routing, fallbacks, regional inference, zero data retention, and provider options under one vmc/ model ID. Your code,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/virtual-models.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6c102d5a5b0f731adad59e85c22855c5b7ae83816ba4e1db0fccc7a5b270d8e2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "7491c6ce0baa068750c6bf05f484696cd0443d66237639119942fc343ec46bf8"
 ---
 
 # AI Gateway Virtual Models for Reusable Model Configurations
@@ -126,7 +126,7 @@ Each dashboard setting maps to a flag or a `--config` key:
 
 `sort`, `serviceTier`, `caching`, and `providerTimeouts` also accept `"@default"`, described in [Unset, `@default`, and cleared settings](#unset-default-and-cleared-settings). For a decision model's conditional fallback, see [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks#store-the-fallback-policy-in-a-virtual-model).
 
-Add `--format json` (or `--json`) to any `virtual-models` subcommand for machine-readable output.
+Add `--json` to any `virtual-models` subcommand for machine-readable output.
 
 ## Using a virtual model with Claude Code, Codex, and other coding agents
 
@@ -139,13 +139,13 @@ vercel ai-gateway setup
 
 AI Gateway lists your team's virtual models in the model catalogs it serves to coding agents, so the slug appears next to the catalog models:
 
-- **Claude Code**: the `/model` picker lists `claude-code/vmc/<slug>`, with a `[1m]` suffix when the underlying model has a context window of 1M tokens or more.
+- **Claude Code**: the `/model` picker lists `claude-code/vmc/<slug>`, with a `[1m]` suffix when the underlying model accepts a 1M-token prompt.
 - **Codex**: pick the slug from `/model`, pass `codex --model vmc/<slug>`, or set `model = "vmc/<slug>"` in `~/.codex/config.toml`.
 - **Other agents**: use `vmc/<slug>` anywhere the agent accepts an AI Gateway model ID.
 
 AI Gateway lists only virtual models that point at a language model. If a running agent doesn't show a new slug yet, restart it so it reloads the model list.
 
-Each agent stores only the slug, so editing the virtual model changes the configuration for every developer at once. For example, `vercel ai-gateway virtual-models edit coding-agent --model anthropic/claude-fable-5.1` moves every agent using `vmc/coding-agent` to Fable 5.1 for new requests within a few minutes.
+Each agent stores only the slug, so editing the virtual model changes the configuration for every developer at once. For example, `vercel ai-gateway virtual-models update coding-agent --model anthropic/claude-fable-5.1` moves every agent using `vmc/coding-agent` to Fable 5.1 for new requests within a few minutes.
 
 ## Using a virtual model in your app
 
@@ -448,7 +448,7 @@ const { answers } = await decide({
 });
 ```
 
-The same slugs work in the HTTP endpoints for each model type, such as `/v1/embeddings`, `/v1/images/generations`, `/v2/rerank`, and `/v1/evaluate`. In the AI SDK, `providerMetadata.gateway.virtualModelConfig.modelId` on the result names the virtual model that served the request.
+The same slugs work in the HTTP endpoints for each model type, such as `/v1/embeddings`, `/v1/images/generations`, `/v2/rerank`, and `/v1/decisions`. In the AI SDK, `providerMetadata.gateway.virtualModelConfig.modelId` on the result names the virtual model that served the request.
 
 A few things to keep in mind:
 
@@ -468,6 +468,8 @@ Your team's AI Gateway settings apply to every request, including requests throu
 | [Team-wide zero data retention](/docs/ai-gateway/security-and-compliance/zdr#team-wide-zero-data-retention) | Stays on for virtual model traffic. A virtual model can turn on ZDR for its own traffic, but it can't turn off the team setting. |
 | [Budgets](/docs/ai-gateway/observability-and-spend/budgets) | A request through a virtual model counts toward every budget in scope for how it authenticates, the same as a direct request. |
 | [BYOK credentials](/docs/ai-gateway/authentication-and-byok/byok) | A virtual model's inference region applies only to attempts on AI Gateway's system credentials, not to attempts on your team's own credentials. |
+
+[Team-wide disallow prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training#team-wide-disallow-prompt-training) works the same way as team-wide ZDR. It stays on for virtual model traffic, and a virtual model can't turn it off.
 
 ## How virtual model settings interact with request options
 
@@ -567,24 +569,24 @@ Show every field set on a virtual model:
 vercel ai-gateway virtual-models inspect coding-agent-eu
 ```
 
-`edit` takes the same flags and `--config` keys as `create`, except `--kind`, and needs at least one of them. Fields you leave out keep their current values. Set a field to `null` to clear it, or to `"@default"` to drop the caller's value in favor of the system default. To clear model fallbacks, set `models` to `[]`:
+`update` takes the same flags and `--config` keys as `create`, except `--kind`, and needs at least one of them. Fields you leave out keep their current values. Set a field to `null` to clear it, or to `"@default"` to drop the caller's value in favor of the system default. To clear model fallbacks, set `models` to `[]`:
 
 ```bash filename="terminal"
-vercel ai-gateway virtual-models edit coding-agent-eu --model anthropic/claude-sonnet-5.5
-vercel ai-gateway virtual-models edit coding-agent-eu --config '{"caching":"auto","serviceTier":"@default"}'
-vercel ai-gateway virtual-models edit coding-agent-eu --config '{"inferenceRegion":null,"models":[]}'
+vercel ai-gateway virtual-models update coding-agent-eu --model anthropic/claude-sonnet-5.5
+vercel ai-gateway virtual-models update coding-agent-eu --config '{"caching":"auto","serviceTier":"@default"}'
+vercel ai-gateway virtual-models update coding-agent-eu --config '{"inferenceRegion":null,"models":[]}'
 ```
 
-`remove` runs without a confirmation prompt. Requests to the slug stop resolving, and the virtual model no longer appears in `list`, even with `--include-archived`. AI Gateway keeps its configuration, so `restore` brings it back as it was:
+`delete` runs without a confirmation prompt. Requests to the slug stop resolving, and the virtual model no longer appears in `list`, even with `--include-archived`. AI Gateway keeps its configuration, so `restore` brings it back as it was:
 
 ```bash filename="terminal"
-vercel ai-gateway virtual-models remove coding-agent-eu
+vercel ai-gateway virtual-models delete coding-agent-eu
 vercel ai-gateway virtual-models restore coding-agent-eu
 ```
 
-Removing is separate from archiving in the dashboard. An archived virtual model still appears in `list --include-archived`, labeled `archived`.
+Deleting is separate from archiving in the dashboard. An archived virtual model still appears in `list --include-archived`, labeled `archived`.
 
-`vercel ai-gateway models ls` lists your team's virtual models alongside the catalog models. Add `--virtual` to show only virtual models. See the [`vercel ai-gateway virtual-models` reference](/docs/cli/ai-gateway#virtual-models) for every option.
+`vercel ai-gateway models list` lists your team's virtual models alongside the catalog models. Add `--virtual` to show only virtual models. See the [`vercel ai-gateway virtual-models` reference](/docs/cli/ai-gateway#virtual-models) for every option.
 
 ## Permissions
 

@@ -13,8 +13,8 @@ related:
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f7943e328642d9e0f57b368bf75b53d2fb61e61c2fbe735089c93a7b8680a902"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3e1b824dcbf3496e9c3ead38b497d2dd68dd2a583b077c3147edca6e2a8b1638"
 ---
 
 # Build Queues
@@ -27,16 +27,17 @@ Build queueing is when a build must wait for resources to become available befor
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Why are my Vercel builds queued?](https://vercel.com/kb/guide/why-are-my-vercel-builds-queued) — Learn about why your Vercel builds may be getting queued and how to resolve this.
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
+- [Limit on-demand concurrent builds to one build per branch](https://vercel.com/changelog/limit-on-demand-concurrent-builds-to-one-build-per-branch)
+- [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting)
 - [Pro customers can now deploy faster without build queues](https://vercel.com/changelog/pro-customers-can-now-deploy-faster-with-on-demand-concurrency-builds)
 - [No build queues: On-demand concurrent builds now on by default](https://vercel.com/changelog/no-build-queues-on-demand-concurrent-builds-now-on-by-default)
-- [Limit on-demand concurrent builds to one build per branch](https://vercel.com/changelog/limit-on-demand-concurrent-builds-to-one-build-per-branch)
-- [Enterprise teams can now ship faster without build queues](https://vercel.com/changelog/enterprise-teams-can-now-ship-faster-without-build-queues)
-- [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting)
+- [Bulk enable on-demand concurrent builds across projects ](https://vercel.com/changelog/bulk-enable-on-demand-concurrent-builds-across-projects)
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Vercel Queues](https://vercel.com/docs/queues) — Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-o
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 
 Full cross-link map for this page: [/docs/builds/build-queues.graph.md](/docs/builds/build-queues.graph.md)
 <!-- /docsgraph:related -->
@@ -72,11 +73,10 @@ This queue manages how many builds can run in parallel based on the number of [c
 
 Concurrent build slots are the key factor in concurrent build queuing. They control how many builds can run at the same time and ensure efficient use of resources while prioritizing the latest changes.
 
-Each account plan includes a number of build slots that apply only when On-Demand Concurrent Builds is disabled:
+When On-Demand Concurrent Builds is disabled, builds use the team's concurrency limit:
 
-- Hobby accounts allow one build at a time.
-- Pro accounts include 3 concurrent build slots by default. The first build slot is included, and standard build minutes within it are not billed.
-- Enterprise accounts can have [custom limits](/docs/builds/managing-builds#on-demand-concurrent-builds) based on their plan.
+- Hobby teams can run one build at a time by default.
+- Pro and Enterprise teams use their team's configured [concurrency limit](/docs/builds/managing-builds#on-demand-concurrent-builds).
 
 ## Git branch queue
 
@@ -88,8 +88,8 @@ Builds are handled sequentially. If new commits are pushed while a build is in p
 
 This means that commits in between the current build and most recent commit will not produce builds.
 
-> **💡 Note:** Enterprise users can use [Urgent On-Demand
-> Concurrency](/docs/builds/managing-builds#force-an-on-demand-build)
+> **💡 Note:** Pro and Enterprise teams can [force an on-demand
+> build](/docs/builds/managing-builds#force-an-on-demand-build)
 > to skip the Git branch queue for specific builds.
 
 

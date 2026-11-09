@@ -9,15 +9,15 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/global-config
-  - /docs/global-config/migration-guide
   - /docs/rest-api/global-config/update-global-config-items-in-batch
   - /docs/global-config/global-config-dashboard
   - /docs/rest-api/global-config
-summary: "Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, and backups."
+  - /docs/cli/global-options
+summary: "Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/global-config.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e7bb92eea99b320e08b436f44a7cb85181e1492a845cfb508bf7144f3d7a701b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ad66c2014606d4934dc1142940a866c791fc84625e54a9ea767c39f9f55ad9e2"
 ---
 
 # vercel global-config
@@ -32,16 +32,12 @@ The `vercel global-config` command manages [Global Config](/docs/global-config) 
 
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config) — Learn how to use Global Configs in your projects.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
+- [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
 - [vercel blob](https://vercel.com/docs/cli/blob) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
-- [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
 
 Full cross-link map for this page: [/docs/cli/global-config.graph.md](/docs/cli/global-config.graph.md)
 <!-- /docsgraph:related -->
-
-> **💡 Note:** `vercel edge-config` continues to work as an alias for `vercel global-config`
-> following the [rename from Edge Config to Global
-> Config](/docs/global-config/migration-guide).
 
 ## Usage
 
@@ -53,27 +49,27 @@ vercel global-config [subcommand]
 
 ## Commands
 
-### list (ls)
+### list
 
 Lists Global Config stores for the current team. Running `vercel global-config` with no subcommand runs `list`.
 
 ```bash filename="terminal"
 vercel global-config
 vercel global-config list
-vercel global-config list --format json
+vercel global-config list --json
 ```
 
-*List stores. Use \`--format json\` for machine-readable output.*
+*List stores. Use \`--json\` for machine-readable output.*
 
 #### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 
 ### create
 
-`add` is a supported alias.
+`add` remains a supported alias, but prints a deprecation warning. Use `create` for new commands.
 
 Creates a new Global Config store with the given slug. Optionally seeds it with initial items.
 
@@ -95,7 +91,7 @@ vercel global-config create flags --items '{"betaUiEnabled":true,"region":"sfo1"
 | Option | Type | Description |
 | --- | --- | --- |
 | `--items <JSON>` | String | Optional JSON object of initial items (`{ "key": <value>, ... }`) |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 
 ### inspect
 
@@ -105,7 +101,7 @@ Shows metadata for a Global Config store. Accepts either the store ID (starts wi
 
 ```bash filename="terminal"
 vercel global-config inspect flags
-vercel global-config inspect ecfg_abc123 --format json
+vercel global-config inspect ecfg_abc123 --json
 ```
 
 *Inspect a store by ID or slug.*
@@ -120,7 +116,7 @@ vercel global-config inspect ecfg_abc123 --format json
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 
 ### update
 
@@ -145,14 +141,14 @@ vercel global-config update flags --patch '{"items":[{"operation":"upsert","key"
 | --- | --- | --- |
 | `--slug <SLUG>` | String | New slug for the store |
 | `--patch <JSON>` | String | Batch items payload (`{"items":[...]}` or a bare array). Each item needs `operation` (`create`, `update`, `upsert`, or `delete`), `key`, and usually `value` |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 
-### remove (rm, delete)
+### delete
 
 Deletes a Global Config store.
 
 ```bash filename="terminal"
-vercel global-config remove flags --yes
+vercel global-config delete flags --yes
 ```
 
 *Delete a store. Use \`--yes\` to skip the confirmation prompt.*
@@ -168,7 +164,7 @@ vercel global-config remove flags --yes
 | Option | Type | Description |
 | --- | --- | --- |
 | `-y, --yes` | Boolean | Skip the confirmation prompt |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 
 ### items
 
@@ -191,8 +187,8 @@ vercel global-config items flags --key betaUiEnabled
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `-k, --key <KEY>` | String | When set, fetch a single item by key |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--key <KEY>` | String | When set, fetch a single item by key |
+| `--json` | Boolean | Output as JSON |
 
 ### tokens
 
@@ -219,7 +215,7 @@ vercel global-config tokens flags --remove tok_abc123 --yes
 | `--add <LABEL>` | String | Create a new read token with this label (1-52 characters) |
 | `--remove <ID_OR_TOKEN>` | String\[] | Revoke one or more tokens by ID or plaintext token (repeatable). Requires `--yes` in non-interactive mode |
 | `-y, --yes` | Boolean | Skip the confirmation prompt |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 
 ### backups
 
@@ -227,7 +223,7 @@ Lists backups for a Global Config store, fetches a single backup version with `-
 
 ```bash filename="terminal"
 vercel global-config backups flags
-vercel global-config backups flags --backup-version backup_version_abc123 --format json
+vercel global-config backups flags --backup-version backup_version_abc123 --json
 vercel global-config backups flags --restore backup_version_abc123 --yes
 ```
 
@@ -251,7 +247,7 @@ vercel global-config backups flags --restore backup_version_abc123 --yes
 | `--limit <NUMBER>` | Number | Maximum number of backups to list (`0` to `50`) |
 | `--next <CURSOR>` | String | Pagination cursor from a previous backup list response |
 | `-y, --yes` | Boolean | Skip the confirmation prompt when restoring |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 
 ## Examples
 
@@ -284,14 +280,6 @@ vercel global-config tokens flags --add "Production read"
 *Create a labeled read token. The CLI prints the plaintext token (and its ID)
 once; capture it before it scrolls away.*
 
-### Restore a backup
-
-```bash filename="terminal"
-vercel global-config backups flags --restore backup_version_abc123 --yes
-```
-
-*Restore \`flags\` from a backup version and skip the confirmation prompt.*
-
 The Global Config SDK reads from a `GLOBAL_CONFIG` environment variable (falling back to `EDGE_CONFIG`) that contains a full **connection string**, not just the token. The connection string format is:
 
 ```text filename="connection string"
@@ -299,6 +287,14 @@ https://global-config.vercel.com/<globalConfigId>?token=<token>
 ```
 
 Use `vercel global-config inspect <id-or-slug>` to look up the Global Config ID, then combine it with the token. See [Global Config dashboard](/docs/global-config/global-config-dashboard) for details on the connection string format.
+
+### Restore a backup
+
+```bash filename="terminal"
+vercel global-config backups flags --restore backup_version_abc123 --yes
+```
+
+*Restore \`flags\` from a backup version and skip the confirmation prompt.*
 
 ## Related
 
@@ -317,7 +313,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

@@ -11,12 +11,14 @@ prerequisites:
 related:
   - /docs/oidc
   - /docs/kms/concepts/connect-grants
+  - /docs/deployments/environments
+  - /docs/rest-api
   - /docs/kms/concepts/authentication
 summary: How a project grant authorizes a Vercel deployment to sign with a KMS issuer using its OIDC token, scoped to a team, project, and environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/concepts/project-grants.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "60e4d842e608dba2564c2a89a6a6a79cbd965a44a5906b929c8a73ce581466c0"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "72bd4d8531bdac228f4d9fcdc8599061a3080757283741ecbfa7572d5f6ac657"
 ---
 
 # Vercel KMS Project Grants
@@ -32,9 +34,9 @@ A project grant is an issuer policy (`project-grant`) that lets a Vercel deploym
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
 - [Vercel KMS Claims](https://vercel.com/docs/kms/concepts/claims) — How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
+- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 - [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
-- [Update an issuer policy](https://vercel.com/docs/rest-api/kms/update-an-issuer-policy) — PATCH /v1/kms/issuers/{issuerId}/policies/{kind}/{policyKey} — Update an existing KMS issuer policy's environments or to
 
 Full cross-link map for this page: [/docs/kms/concepts/project-grants.graph.md](/docs/kms/concepts/project-grants.graph.md)
 <!-- /docsgraph:related -->
@@ -49,7 +51,9 @@ A project grant confers signing access and nothing more. A deployment whose OIDC
 | -------------- | --------------------------------------------------------------------------------- |
 | `teamId`       | The team that owns both the issuer and the project.                               |
 | `projectId`    | The project whose deployments may sign.                                           |
-| `environments` | The deployment environments allowed to sign, for example `production`, `preview`. |
+| `environments` | The deployment environments allowed to sign. Each entry is `production`, `preview`, `development`, or the ID of a [Custom Environment](/docs/deployments/environments#custom-environments), which starts with `env_`. |
+
+To allow a Custom Environment from the dashboard, select it by name under **Environments** when you add or edit the grant. The dashboard saves its ID. To find the ID yourself, call `GET /v9/projects/<project-id-or-name>/custom-environments` in the [REST API](/docs/rest-api). Each environment in the response has an `id`.
 
 ## How KMS verifies a project grant
 
@@ -57,7 +61,7 @@ When a deployment signs, KMS verifies its Vercel OIDC token, issued by `https://
 
 - `owner_id` matches both the issuer's owning team and the grant's `teamId`.
 - `project_id` matches the grant's `projectId`.
-- `environment` is one of the grant's `environments`.
+- `environment` is one of the grant's `environments`. For a deployment to a Custom Environment, KMS checks the `custom_environment_id` claim, which holds the Custom Environment ID, instead of `environment`.
 
 If any check fails, KMS rejects the signing request. Because Vercel mints the OIDC token per deployment, you manage no credentials. See [Authentication](/docs/kms/concepts/authentication) and [OIDC federation](/docs/oidc).
 

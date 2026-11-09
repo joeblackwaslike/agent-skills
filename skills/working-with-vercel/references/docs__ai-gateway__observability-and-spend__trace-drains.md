@@ -17,8 +17,8 @@ related:
 summary: Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain billing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9fa0d39776ad981a7bf3614f1a2ce5739f4b064ef051e7134f8d458bec196370"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f3abf43580380532703d1b152d98ed7cf4b232425c97a7c52c13d6d79a055cf4"
 ---
 
 # AI Gateway Trace Drains
@@ -34,11 +34,12 @@ AI Gateway produces an [OpenTelemetry](https://opentelemetry.io/docs/concepts/si
 - [Export AI Gateway traces with Vercel Drains](https://vercel.com/changelog/export-ai-gateway-traces-with-vercel-drains)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
+- [Introducing Trace Drains on the Vercel Marketplace](https://vercel.com/changelog/introducing-trace-drains-on-the-vercel-marketplace)
 - [Tracing](https://vercel.com/docs/tracing) — Learn how to trace your application to understand performance and infrastructure details.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
+- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/trace-drains.graph.md](/docs/ai-gateway/observability-and-spend/trace-drains.graph.md)
 <!-- /docsgraph:related -->
@@ -120,7 +121,7 @@ Each AI Gateway request produces a single trace with the resource attributes `se
 | ------------------------------------------ | -------- | ---------------------------------------------------------------------------------------------------- |
 | `<operation> <model>` (root)               | Server   | The full request: model, token usage, cost, latency, and response status                              |
 | `vercel.ai_gateway.routing`                | Internal | Model resolution and provider ordering, including any custom provider filters                         |
-| `vercel.ai_gateway.model_attempt <model>`  | Internal | One per model attempt, when [fallback models](/docs/ai-gateway/models-and-providers/provider-options) run |
+| `vercel.ai_gateway.model_attempt <model>`  | Internal | One per model attempt. A request with [fallback models](/docs/ai-gateway/models-and-providers/provider-options) can have more than one |
 | `<model> (<provider>)`                     | Client   | One per upstream provider call, so a request that fails over shows every attempt in order             |
 
 The root span's `<operation>` reflects the request type: `chat`, `embeddings`, `generate_content` for image and video models, or `retrieval` for reranking.
@@ -184,15 +185,18 @@ The routing span records how AI Gateway chose a provider, and each model attempt
 
 | Attribute                                              | Type    | Description                                        |
 | ------------------------------------------------------ | ------- | -------------------------------------------------- |
-| `vercel.ai_gateway.vmc.id`                             | string  | The Vercel Managed Credential used, if any         |
-| `vercel.ai_gateway.vmc.used`                           | boolean | Whether a Vercel Managed Credential was used       |
-| `vercel.ai_gateway.routing.provider_only_filter`       | string  | The `only` provider filter, if you set one         |
-| `vercel.ai_gateway.routing.custom_provider_order`      | string  | The `order` provider preference, if you set one    |
+| `vercel.ai_gateway.vmc.id`                             | string  | The slug of the [virtual model](/docs/cli/ai-gateway#virtual-models) the request used, if any         |
+| `vercel.ai_gateway.vmc.used`                           | boolean | Whether the request used a virtual model       |
+| `vercel.ai_gateway.routing.provider_only_filter`       | string  | The `only` provider filter of the virtual model the request used, if you set one         |
+| `vercel.ai_gateway.routing.custom_provider_order`      | string  | The custom provider order applied to the request, when the request used a virtual model    |
+| `vercel.ai_gateway.routing.inference_geo_region`       | string  | The geographic region of the provider endpoint that the request used (for example, `us` or `eu`), if the endpoint has one |
 | `vercel.ai_gateway.model_attempt.index`                | int     | This model's position in the fallback chain        |
 | `vercel.ai_gateway.model_attempt.total`                | int     | Total models attempted                             |
 | `vercel.ai_gateway.model_attempt.is_last`              | boolean | Whether this was the last model attempted          |
 | `vercel.ai_gateway.model_attempt.success`              | boolean | Whether this model attempt succeeded               |
 | `vercel.ai_gateway.model_attempt.provider_attempt_count` | int   | Provider attempts made for this model              |
+
+A virtual model is a reusable model configuration that you call with the model ID `vmc/<slug>`. It stores a model and its routing settings, such as the provider order and the `only` provider filter.
 
 ### Provider attempt attributes
 
@@ -202,8 +206,10 @@ Each provider attempt span records one upstream call:
 | -------------------------------------------------- | ------- | ------------------------------------------------------------ |
 | `gen_ai.provider.name`                             | string  | The provider, mapped to OTel well-known values                |
 | `gen_ai.request.model`                             | string  | The canonical model slug for this attempt                     |
+| `gen_ai.response.model`                            | string  | The canonical model slug for this attempt                     |
 | `http.response.status_code`                        | int     | The provider's response status                                |
 | `error.type`                                       | string  | The provider error, on failed attempts                        |
+| `vercel.ai_gateway.provider`                       | string  | The exact gateway provider slug for this attempt              |
 | `vercel.ai_gateway.attempt.id`                     | string  | The attempt ID                                                |
 | `vercel.ai_gateway.attempt.number`                 | int     | This attempt's position within its model attempt              |
 | `vercel.ai_gateway.attempt.total_in_request`       | int     | Total provider attempts across the request                    |

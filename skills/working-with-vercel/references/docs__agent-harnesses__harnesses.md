@@ -16,8 +16,8 @@ related:
 summary: Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the agent instead of losing its...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/harnesses.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c4b042762fb193cb97426ba60082e7840232629e7f4cbeb37740406a68abe68e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b9fcae6330c081b9507db08ef341702be2516874e5e5e44aee2e0aa6dbbc0ee9"
 ---
 
 # Agent Harnesses You Can Run Durably on Vercel
@@ -32,9 +32,9 @@ Each guide gets one harness running durably on Vercel: the agent, a chat route, 
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Program Claude Code, Codex, Pi and other agent harnesses with AI SDK](https://vercel.com/changelog/program-agent-harnesses-with-ai-sdk)
+- [Scheduling Work for Agents](https://vercel.com/docs/schedules/agents) — Give an agent a tool that creates dynamic schedules, so it can do work for a user later or on a recurring basis.
 - [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 
 Full cross-link map for this page: [/docs/agent-harnesses/harnesses.graph.md](/docs/agent-harnesses/harnesses.graph.md)
 <!-- /docsgraph:related -->

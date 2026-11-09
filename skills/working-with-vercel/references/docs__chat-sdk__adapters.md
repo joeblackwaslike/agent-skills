@@ -16,8 +16,8 @@ related:
 summary: Choose platform and state adapters for a Chat SDK bot on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/chat-sdk/adapters.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f528b9b77790fce9799f51d3dc81d6140040fdb1abd5f9d78e7e32db41dfc04d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "98717f000bfe81bef58c4050a89bf40863a1c2c72528a69344e14a7569750c66"
 ---
 
 # Chat SDK Adapters
@@ -31,11 +31,12 @@ Chat SDK uses **platform adapters** to receive events and deliver messages, and 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
-- [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
-- [State Adapters](https://chat-sdk.dev/docs/state-adapters) — State adapters store thread subscriptions, distributed locks, and cached data for your bot.
-- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Chat SDK now has an adapter directory](https://vercel.com/changelog/chat-sdk-adapter-directory)
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
+- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
+- [State Adapters](https://chat-sdk.dev/docs/state-adapters) — State adapters store thread subscriptions, distributed locks, and cached data for your bot.
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Dae
 
@@ -105,6 +106,28 @@ The CLI generates the adapter configuration and webhook routes. Complete each pl
 For supported adapters, [Vercel Connect](/docs/connect/frameworks/chat-sdk) supplies provider credentials at runtime. Trigger-capable connectors also verify provider events and forward them to a deployed webhook route.
 
 Connect support varies by adapter. In particular, Notion and Telegram use Connect for outbound credentials while retaining their native inbound verification. See the [Connect capability table](/docs/connect/frameworks/chat-sdk#check-platform-capabilities) before configuring a new platform.
+
+## Frequently asked questions
+
+### Which chat platforms does Chat SDK support?
+
+Vercel maintains official adapters for Slack, Microsoft Teams, Google Chat, Discord, Telegram, WhatsApp, Messenger, Instagram, X, GitHub, GitLab, Linear, Notion, Gmail, Twilio, Twitch, and browser chat through the Web adapter. Platform vendors maintain adapters for services such as Resend, Linq, and Liveblocks, and community developers maintain others. The [adapter directory](https://chat-sdk.dev/adapters) lists every adapter and its maintainer.
+
+### Can one Chat SDK bot run on Slack, Teams, and Discord at the same time?
+
+Yes. Register each platform adapter in the same `Chat` instance, and your event handlers run for events from all of them. Each adapter gets its own webhook handler at `bot.webhooks.<name>`, such as `bot.webhooks.slack` and `bot.webhooks.teams`, which you expose as separate routes. Check the [platform feature matrix](https://chat-sdk.dev/docs/platform-adapters) before you rely on a feature, because cards, streaming, and message editing vary by platform.
+
+### Which state adapter should I use in production on Vercel?
+
+Use Redis, ioredis, or PostgreSQL. These adapters share subscriptions, locks, and cached data across function instances and keep them across restarts. The Memory adapter holds state in one process, so it loses state on restart and two instances can process the same thread at once. You can provision Upstash Redis, Redis Cloud, Neon, Supabase, Prisma Postgres, or Nile from the [Vercel Marketplace](/marketplace/category/storage).
+
+### Why doesn't my Discord bot receive regular messages?
+
+Discord delivers slash commands and button clicks to your webhook, but regular messages and reactions only arrive over its Gateway WebSocket connection. When you select Discord, `create-chat-sdk` generates a Gateway listener route and a cron job that keeps the connection alive and forwards events to your webhook. The generated cron runs every nine minutes, which requires a [Pro or Enterprise plan](/docs/schedules/cron-jobs/usage-and-pricing). See [HTTP interactions vs. Gateway](https://chat-sdk.dev/adapters/official/discord#http-interactions-vs-gateway).
+
+### Can I build my own Chat SDK adapter?
+
+Yes. Implement the `Adapter` interface exported from `chat` to connect a new platform, or implement `StateAdapter` to store state in another database. To change how an official adapter behaves without forking it, subclass the adapter and override its `protected` members. Those members can change in minor releases, so pin the adapter version. See [Building an adapter](https://chat-sdk.dev/docs/contributing/building).
 
 ## Next steps
 

@@ -17,8 +17,8 @@ related:
 summary: Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2adba92018af0bbd0f87f817a73f0a65f0ec8898e122d9fd9a779e1c09c9b60e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "dfa1c6ab07e30cd35a57b0b57046a3295e7c361b37a889ced59b3e28471158d6"
 ---
 
 # AI SDK and MCP with Vercel Connect
@@ -38,7 +38,7 @@ This tutorial connects an AI SDK route to Linear's Model Context Protocol (MCP) 
 - [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [eve with Vercel Connect](https://vercel.com/docs/connect/frameworks/eve) — Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, an
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [TanStack AI with MCP](https://vercel.com/docs/mcp/integrations/tanstack-ai) — Connect TanStack AI to a Model Context Protocol server on Vercel and call its tools with models served through AI Gatewa
 
 Full cross-link map for this page: [/docs/connect/frameworks/ai-sdk-and-mcp.graph.md](/docs/connect/frameworks/ai-sdk-and-mcp.graph.md)
 <!-- /docsgraph:related -->
@@ -47,7 +47,7 @@ Full cross-link map for this page: [/docs/connect/frameworks/ai-sdk-and-mcp.grap
 
 - A Next.js App Router project
 - A Vercel project linked to your local directory
-- A Linear connector with the UID `oauth/linear`, linked to the project's Development environment
+- A Linear connector with the UID `mcp.linear.app/linear`, linked to the project's Development environment
 - A stable ID for each signed-in user
 
 Follow the [Vercel Connect quickstart](/docs/connect/quickstart) if you haven't created and linked the connector.
@@ -99,7 +99,7 @@ Follow the [Vercel Connect quickstart](/docs/connect/quickstart) if you haven't 
           type: 'http',
           url: 'https://mcp.linear.app/mcp',
           authProvider: connectAuthProvider(
-            'oauth/linear',
+            'mcp.linear.app/linear',
             {
               subject: { type: 'user', id: userId },
               scopes: ['read'],
@@ -162,7 +162,7 @@ Follow the [Vercel Connect quickstart](/docs/connect/quickstart) if you haven't 
           type: 'http',
           url: 'https://mcp.linear.app/mcp',
           authProvider: connectAuthProvider(
-            'oauth/linear',
+            'mcp.linear.app/linear',
             {
               subject: { type: 'user', id: userId },
               scopes: ['read'],
@@ -229,7 +229,7 @@ The subject controls whose provider identity the MCP tools use:
 For app-level access, change the provider call:
 
 ```js
-const authProvider = connectAuthProvider('oauth/linear', {
+const authProvider = connectAuthProvider('mcp.linear.app/linear', {
   subject: { type: 'app' },
   scopes: ['read'],
 });

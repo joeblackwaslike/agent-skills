@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your application."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "87ab5d3011d77374f9003cc0e7f05de37ec379b7e7d9f52088b97a7478d60caf"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f833c56d8e7c9e65c0aa59c84eeefffcbc0691688073348d4326c33ae6f825a5"
 ---
 
 # Routing
@@ -32,7 +32,6 @@ Vercel's CDN evaluates routing rules on every request before checking any cache 
 
 - [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules)
 - [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment)
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Services routing](https://vercel.com/docs/services/routing) — Learn how Vercel routes public requests to services and how each service handles its own routes.
 - [Routing Middleware](https://vercel.com/docs/routing-middleware) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a

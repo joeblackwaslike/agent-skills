@@ -8,12 +8,13 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/accounts/access-tokens
   - /docs/cli/global-options
-summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and remove access tokens for use with the Vercel API and Vercel CLI."
+summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9f40f9be55b2069e79db5faea119948997647d6c8382e4e46b38bc0ef65c0948"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bcbfdc52357a80288bd1fcd7835f60050900eb65b4c16bfc374332278af0ef4e"
 ---
 
 # vercel tokens
@@ -26,13 +27,12 @@ The `vercel tokens` command manages your personal authentication tokens. Tokens 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How do I use a Vercel API Access Token?](https://vercel.com/kb/guide/how-do-i-use-a-vercel-api-access-token) — Create a Vercel API access token, scope it to your account, a team, or a project, and use it to authenticate Vercel REST
 - [Why is Vercel CLI asking me to log in? ](https://vercel.com/kb/guide/why-is-vercel-cli-asking-me-to-log-in) — Information on why you may be getting prompted to log in to Vercel CLI.
-- [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, remove, and manage items, read tokens, a
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/cli/tokens.graph.md](/docs/cli/tokens.graph.md)
 <!-- /docsgraph:related -->
@@ -52,30 +52,29 @@ When called without a subcommand, \`vercel tokens\` runs \`list\`.*
 
 ## Commands
 
-### list (ls)
+### list
 
 Lists your personal authentication tokens. This is the default subcommand, so `vercel tokens` and `vercel tokens list` are equivalent.
 
 ```bash filename="terminal"
 vercel tokens
 vercel tokens list
-vercel tokens ls --format json
+vercel tokens list --json
 ```
 
-*List your tokens. Use \`--format json\` for machine-readable output.*
+*List your tokens. Use \`--json\` for machine-readable output.*
 
 #### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 | `--limit <NUMBER>` | Number | Maximum number of tokens to return (default 20, range 1-100) |
+| `--next <CURSOR>` | String | Show the next page of results, using the cursor from the previous page. When more tokens exist, the output ends with the command for the next page. With `--json`, the cursor is in `pagination.next`. |
 
 ### create
 
-`add` is a supported alias.
-
-Creates a new personal authentication token with the given name. The plaintext token is printed to stdout; capture it before it scrolls away.
+Creates a new personal authentication token with the given name. The command prints the plaintext token once, so copy it before it scrolls away. To capture the token in a script, pass `--json` and read the `bearerToken` field.
 
 ```bash filename="terminal"
 vercel tokens create "CI deploy"
@@ -84,12 +83,18 @@ vercel tokens create "CI deploy"
 *Create a new token named \`CI deploy\`. The plaintext value is printed once.*
 
 > **💡 Note:** Creating tokens with this command requires a **classic personal access
-> token** with account-level scope. OAuth sessions created by `vercel login`
-> cannot mint new tokens, and team-only or project-only tokens (some `vcp_…`
-> values) will also be rejected. If you don't already have a classic token,
-> create one from the [Account Tokens
+> token**. OAuth sessions created by `vercel login` cannot mint new tokens,
+> and project-scoped tokens (some `vcp_…` values) will also be rejected. If
+> you don't already have a classic token, create one from the [Account Tokens
 > page](/account/tokens) in the dashboard, then set `VERCEL_TOKEN` (or pass
 > `--token`) to that value and re-run the command.
+
+The [scope](/docs/accounts/access-tokens#token-scoping-levels) that the classic token needs depends on whether you pass `--project`:
+
+| To create | Authenticate the CLI with |
+| --- | --- |
+| A full-account token (no `--project`) | A token with the **Full Account** scope. The command rejects a team-scoped token. |
+| A project-scoped token (`--project`) | A token scoped to the team that owns the project. The command rejects a **Full Account** token. |
 
 #### Arguments
 
@@ -101,30 +106,33 @@ vercel tokens create "CI deploy"
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
 | `--project <PROJECT_ID>` | String | Optional project ID to scope the token to a single project. The CLI forwards this value directly to the API; project names are not resolved. |
 
-### remove (rm, delete)
+### revoke
 
-Removes a personal authentication token by ID. Use `vercel tokens list` first to find the token ID.
+Revokes a personal authentication token by ID. Use `vercel tokens list` first to find the token ID.
 
 ```bash filename="terminal"
-vercel tokens rm tok_abc123
+vercel tokens revoke tok_abc123
 ```
 
 *Revoke the token with ID \`tok\_abc123\`.*
+
+In a terminal, the command asks you to confirm, because anything that uses the token stops working. To skip the prompt, for example in a script, pass `--yes`. With `--json`, the command revokes the token without asking.
 
 #### Arguments
 
 | Argument | Required | Description |
 | --- | --- | --- |
-| `id` | Yes | ID of the token to remove |
+| `id` | Yes | ID of the token to revoke |
 
 #### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `-F, --format <FORMAT>` | String | Output format (`json`) |
+| `--json` | Boolean | Output as JSON |
+| `-y, --yes` | Boolean | Skip the confirmation prompt |
 
 ## Examples
 
@@ -134,10 +142,12 @@ vercel tokens rm tok_abc123
 vercel tokens create "GitHub Actions deploy"
 ```
 
-*Capture the plaintext value from stdout and set it as \`VERCEL\_TOKEN\` in your
+*Copy the plaintext value from the output and set it as \`VERCEL\_TOKEN\` in your
 CI environment.*
 
 ### Scope a token to a single project
+
+Authenticate the CLI with a token that is scoped to the team that owns the project (see [`create`](#create)), then pass the project ID:
 
 ```bash filename="terminal"
 vercel tokens create "Preview deploy bot" --project prj_abc123
@@ -149,7 +159,7 @@ if the token leaks.*
 ### List tokens as JSON
 
 ```bash filename="terminal"
-vercel tokens ls --format json
+vercel tokens list --json
 ```
 
 *Useful for scripts that need to inspect or reconcile tokens.*
@@ -157,10 +167,10 @@ vercel tokens ls --format json
 ### Revoke a token
 
 ```bash filename="terminal"
-vercel tokens rm tok_abc123
+vercel tokens revoke tok_abc123
 ```
 
-*Remove a token by ID.*
+*Revoke a token by ID.*
 
 ## Related
 
@@ -180,7 +190,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

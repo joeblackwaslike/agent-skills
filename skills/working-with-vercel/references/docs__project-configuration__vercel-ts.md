@@ -12,12 +12,12 @@ related:
   - /docs/functions
   - /docs/routing-middleware
   - /docs/functions/runtimes/edge
-  - /docs/incremental-static-regeneration
+  - /docs/functions/runtimes/node-js/node-js-versions
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "bad551486e42fef2394a236b555145a9f0e22830e62c44f0b69bda669c8d89fc"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "35d693ed6ea1443d9718c1e608b6c95039820b8407ac52dc2d7407aaff6fc4b1"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -32,15 +32,14 @@ The `vercel.ts` file lets you configure and override the default behavior of Ver
 
 - [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts)
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers) — Add custom HTTP headers to your Next.js app.
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
-- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md)
 <!-- /docsgraph:related -->
@@ -256,6 +255,8 @@ export const config: VercelConfig = {
 > **💡 Note:** Vercel manages the Bun minor versions automatically. `1.4.x` and `1.x` are the
 > only valid values currently.
 
+If your `package.json` sets [`engines.node`](/docs/functions/runtimes/node-js/node-js-versions#version-overrides-in-package.json), remove it to run on Bun. If you keep it, `engines.node` can take precedence over `bunVersion`: the build logs a warning, and your functions run on Node.js.
+
 When using Next.js with [ISR](/docs/incremental-static-regeneration) (Incremental Static Regeneration), you must also update your `build` and `dev` commands in `package.json`:
 
 ```json filename="package.json"
@@ -348,7 +349,7 @@ export const config: VercelConfig = {
 
 This value allows you to enable [Fluid compute](/docs/fluid-compute) programmatically.
 
-**Type:** `boolean | null`
+**Type:** `boolean`
 
 The `fluid` property allows you to test Fluid compute on a per-deployment or per [custom environment](/docs/deployments/environments#custom-environments) basis when using branch tracking, without needing to enable Fluid in production.
 
@@ -683,20 +684,9 @@ export const config: VercelConfig = {
 
 ## public
 
-**Type**: `Boolean`.
+The `public` property is no longer supported and can cause deployment failures. Remove it from the `config` export in your `vercel.ts`.
 
-**Default Value**: `false`.
-
-This option is deprecated and no longer enables public access to deployment source or build logs.
 Deployments always keep [source view](/docs/builds/build-features#source-view) and [logs view](/docs/builds/build-features#logs-view) protected behind authentication.
-
-```typescript filename="vercel.ts"
-import type { VercelConfig } from '@vercel/config/v1';
-
-export const config: VercelConfig = {
-  public: false,
-};
-```
 
 ## redirects
 
@@ -1101,7 +1091,6 @@ or destination path. For example, `/about-our-company.html` would be
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `source`      | A pattern that matches each incoming pathname (excluding querystring).                                                                                                                                                                                                     |
 | `destination` | A location destination defined as an absolute pathname or external URL.                                                                                                                                                                                                    |
-| `permanent`   | A boolean to toggle between permanent and temporary redirect (default true). When `true`, the status code is [308](https://developer.mozilla.org/docs/Web/HTTP/Status/308). When `false` the status code is [307](https://developer.mozilla.org/docs/Web/HTTP/Status/307). |
 | `has`         | An optional array of `has` objects with the `type`, `key` and `value` properties. Used for conditional rewrites based on the **presence** of specified properties.                                                                                                         |
 | `missing`     | An optional array of `missing` objects with the `type`, `key` and `value` properties. Used for conditional rewrites based on the **absence** of specified properties.                                                                                                      |
 

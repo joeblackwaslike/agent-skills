@@ -3,7 +3,7 @@ title: Vercel SDK Reference
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-11-02
+last_updated: 2026-11-09
 type: reference
 prerequisites:
   []
@@ -16,8 +16,8 @@ related:
 summary: Interact programmatically with your Vercel account using the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-11-02T12:08:33.177Z"
-sha256: "2316fd77e78e29674217909a8b31db76b8bf207a53c89dd357b8f8ee0c903e07"
+fetched_at: "2026-11-09T12:41:17.654Z"
+sha256: "62d8b57a03a68bec775262f605e5660045c031d700bbe6f43363a619a6033d0d"
 ---
 
 # Vercel SDK Reference
@@ -148,6 +148,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/sdk/connect/get-a-connector-project-connection.md) | Get a connector project connection |
 | **POST** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/sdk/connect/create-or-update-a-connector-project-connection.md) | Create or update a connector project connection |
 | **DELETE** | [`/v1/connect/connectors/{connector}/projects/{projectId}`](/docs/rest-api/sdk/connect/disconnect-a-connector-from-a-project.md) | Disconnect a connector from a project |
+| **DELETE** | [`/v1/connect/connectors/{connector}/projects/{projectId}/environments/{environment}`](/docs/rest-api/sdk/connect/disconnect-a-connector-from-a-project-environment.md) | Disconnect a connector from a project environment |
 | **GET** | [`/v2/connect/projects/{projectId}/connectors`](/docs/rest-api/sdk/connect/list-connectors-for-a-project.md) | List connectors for a project |
 | **POST** | [`/v1/connect/token/{connector}`](/docs/rest-api/sdk/connect/get-a-connect-token.md) | Get a Connect token |
 | **POST** | [`/v1/connect/authorize/{connector}`](/docs/rest-api/sdk/connect/create-a-connect-authorization-request.md) | Create a Connect authorization request |
@@ -331,6 +332,9 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/sdk-keys`](/docs/rest-api/sdk/feature-flags/get-all-sdk-keys.md) | Get all SDK keys |
 | **PUT** | [`/v1/projects/{projectIdOrName}/feature-flags/sdk-keys`](/docs/rest-api/sdk/feature-flags/create-an-sdk-key.md) | Create an SDK key |
 | **DELETE** | [`/v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey}`](/docs/rest-api/sdk/feature-flags/delete-an-sdk-key.md) | Delete an SDK key |
+| **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/connections`](/docs/rest-api/sdk/feature-flags/list-flags-project-connections.md) | List flags project connections |
+| **PUT** | [`/v1/projects/{projectIdOrName}/feature-flags/connections`](/docs/rest-api/sdk/feature-flags/connect-a-project-to-the-flags-of-this-project.md) | Connect a project to the flags of this project |
+| **DELETE** | [`/v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId}`](/docs/rest-api/sdk/feature-flags/disconnect-a-project-from-the-flags-of-this-project.md) | Disconnect a project from the flags of this project |
 
 ## Integrations
 
@@ -565,6 +569,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **DELETE** | [`/v1/security/firewall/bypass`](/docs/rest-api/sdk/security/remove-system-bypass-rule.md) | Remove System Bypass Rule |
 | **GET** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/sdk/security/get-conditional-firewall-bypasses.md) | Get conditional firewall bypasses |
 | **POST** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/sdk/security/create-conditional-firewall-bypass.md) | Create conditional firewall bypass |
+| **PUT** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/sdk/security/update-conditional-firewall-bypass.md) | Update conditional firewall bypass |
 | **DELETE** | [`/v1/security/firewall/bypass/rules`](/docs/rest-api/sdk/security/delete-conditional-firewall-bypass.md) | Delete conditional firewall bypass |
 | **GET** | [`/v1/security/firewall/events`](/docs/rest-api/sdk/security/read-firewall-actions-by-project.md) | Read Firewall Actions by Project |
 | **GET** | [`/v1/security/firewall/events/summary`](/docs/rest-api/sdk/security/read-firewall-actions-summary-by-project.md) | Read Firewall Actions Summary by Project |

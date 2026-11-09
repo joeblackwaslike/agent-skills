@@ -16,8 +16,8 @@ related:
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1a7f10c91c3c803ca4bc5d498178dedddf124a0cf69a6c3a1e7c9c8a8d29d49a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a7b5b4d6b0c57e6a4c7925e62e1c7fd7e7af4e05f5e8c3d6f9c413717acb189a"
 ---
 
 # Performing a rolling release deployment
@@ -34,8 +34,8 @@ Use this guide to gradually roll out a new production deployment using rolling r
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
+- [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
 
 Full cross-link map for this page: [/docs/rolling-releases/rolling-release-deployment.graph.md](/docs/rolling-releases/rolling-release-deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -50,26 +50,27 @@ Use this block when you already know what you're doing and want the full command
 
 ```bash filename="terminal"
 # 1. Configure rolling release stages
-vercel rolling-release configure --cfg '{"enabled":true,"advancementType":"automatic","stages":[{"targetPercentage":10,"duration":5},{"targetPercentage":50,"duration":10},{"targetPercentage":100}]}'
+vercel rolling-release update --cfg '{"enabled":true,"advancementType":"automatic","stages":[{"targetPercentage":10,"duration":5},{"targetPercentage":50,"duration":10},{"targetPercentage":100}]}'
 
 # 2. Deploy to production (starts the rolling release automatically if the project auto-assigns custom domains)
 vercel deploy --prod
 
 # 3. Start the rolling release (idempotent if step 2 already started it)
-vercel rolling-release start --dpl <deployment-url>
+vercel rolling-release start --deployment <deployment-url>
 
 # 4. Monitor the release
-vercel rolling-release fetch
-vercel logs --environment production --level error --since 5m
+vercel rolling-release inspect
+vercel logs --environment production --query 'level:error' --since 5m
 
 # 5. Advance to the next stage (if manual approval is configured)
-vercel rolling-release approve --dpl <deployment-url> --currentStageIndex 0
+vercel rolling-release approve --deployment <deployment-url> --currentStageIndex 0
 
-# IF errors spike during the release:
-vercel rolling-release abort --dpl <deployment-url>
+# IF errors spike during the release (pass the previous production deployment, not the new one).
+# The first command in step 4 lists that deployment as currentDeployment:
+vercel rolling-release abort --deployment <previous-production-deployment-url>
 
 # 6. Complete the release (100% traffic)
-vercel rolling-release complete --dpl <deployment-url>
+vercel rolling-release complete --deployment <deployment-url>
 ```
 
 ## 1. Configure rolling release stages
@@ -77,7 +78,7 @@ vercel rolling-release complete --dpl <deployment-url>
 Set up the traffic stages for your rolling release. Each stage defines what percentage of traffic goes to the new deployment and how long to wait before advancing:
 
 ```bash filename="terminal"
-vercel rolling-release configure --cfg '{"enabled":true,"advancementType":"automatic","stages":[{"targetPercentage":10,"duration":5},{"targetPercentage":50,"duration":10},{"targetPercentage":100}]}'
+vercel rolling-release update --cfg '{"enabled":true,"advancementType":"automatic","stages":[{"targetPercentage":10,"duration":5},{"targetPercentage":50,"duration":10},{"targetPercentage":100}]}'
 ```
 
 This configuration sends 10% of traffic to the new deployment for five minutes, then 50% for 10 minutes, then 100%. Adjust the percentages and durations based on your traffic volume and risk tolerance.
@@ -85,7 +86,7 @@ This configuration sends 10% of traffic to the new deployment for five minutes, 
 To disable rolling releases later:
 
 ```bash filename="terminal"
-vercel rolling-release configure --cfg 'disable'
+vercel rolling-release update --no-enable
 ```
 
 ## 2. Deploy to production
@@ -103,7 +104,7 @@ Save the deployment URL from the output for use in the following steps.
 Begin the rolling release to start shifting traffic to the new deployment:
 
 ```bash filename="terminal"
-vercel rolling-release start --dpl <deployment-url>
+vercel rolling-release start --deployment <deployment-url>
 ```
 
 This starts at the first stage (10% of traffic in the example configuration above). The start command is idempotent. If your project [auto-assigns custom domains](/docs/project-configuration/project-settings#custom-domains), the production deployment already started the rolling release, and this command returns its current state. See [Starting and completing via the API](/docs/rolling-releases#starting-and-completing-via-the-api).
@@ -115,19 +116,19 @@ To send 100% of traffic to the canary, run [`vercel rolling-release complete`](/
 Check the current stage, traffic split, and overall progress:
 
 ```bash filename="terminal"
-vercel rolling-release fetch
+vercel rolling-release inspect
 ```
 
 While the rolling release is in progress, monitor production logs for errors coming from the new deployment:
 
 ```bash filename="terminal"
-vercel logs --environment production --level error --since 5m
+vercel logs --environment production --query 'level:error' --since 5m
 ```
 
 To filter for specific error patterns:
 
 ```bash filename="terminal"
-vercel logs --environment production --level error --query "TypeError" --since 5m --expand
+vercel logs --environment production --query 'level:error AND TypeError' --since 5m
 ```
 
 Run these checks periodically between stage transitions. If your stages have automatic durations, the rolling release advances on its own. If you configured manual approval stages, you'll need to explicitly approve each one.
@@ -137,7 +138,7 @@ Run these checks periodically between stage transitions. If your stages have aut
 If your configuration includes stages that require manual approval, advance to the next stage after confirming the current stage is healthy:
 
 ```bash filename="terminal"
-vercel rolling-release approve --dpl <deployment-url> --currentStageIndex <stage-index>
+vercel rolling-release approve --deployment <deployment-url> --currentStageIndex <stage-index>
 ```
 
 The `--currentStageIndex` flag specifies which stage you're approving. Stage indexes start at 0.
@@ -147,27 +148,27 @@ The `--currentStageIndex` flag specifies which stage you're approving. Stage ind
 After all stages pass, complete the rolling release to send 100% of traffic to the new deployment:
 
 ```bash filename="terminal"
-vercel rolling-release complete --dpl <deployment-url>
+vercel rolling-release complete --deployment <deployment-url>
 ```
 
 Verify that production is healthy after the full rolling release:
 
 ```bash filename="terminal"
-vercel logs --environment production --level error --since 5m
+vercel logs --environment production --query 'level:error' --since 5m
 ```
 
 ## When you need to abort
 
-If you see a spike in errors during any stage, abort the rolling release immediately. This reverts all traffic back to the previous deployment:
+If you see a spike in errors during any stage, abort the rolling release immediately. Aborting reverts all traffic back to the previous production deployment, so the abort command takes that deployment, not the new deployment that you saved in step 2. To find it, check the progress of the rolling release again, as in step 4. The output lists the previous production deployment as `currentDeployment` and the new deployment as `canaryDeployment`. Copy the `url` of `currentDeployment` into the abort command:
 
 ```bash filename="terminal"
-vercel rolling-release abort --dpl <deployment-url>
+vercel rolling-release abort --deployment <previous-production-deployment-url>
 ```
 
 After aborting, investigate the errors and fix them before attempting another rolling release:
 
 ```bash filename="terminal"
-vercel logs --environment production --level error --since 30m --expand
+vercel logs --environment production --query 'level:error' --since 30m
 ```
 
 ## Related

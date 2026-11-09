@@ -16,8 +16,8 @@ related:
 summary: "Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you can fix issues quickly."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9fea18fd2867d6c89037872d587c80a558bf6a610caf1b2c93f514f38d1e5d82"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c68e1a85b097337b589fc45ec954c070002b398aea813d47daafeb0fc009b8d4"
 ---
 
 # Alerts
@@ -60,7 +60,7 @@ Vercel-defined minimum activity thresholds reduce low-volume noise and are not c
 | Alert Type        | Triggered when                                                                                                                                                                                                                                                                             | Grouping                 |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
 | **Error Anomaly** | Fires when a route's five-minute error count is unusually high compared to its recent baseline and passes Vercel's minimum activity checks. By default, error anomalies track **5xx** status codes, but monitors can be configured for **4xx** detections.                              | Route, HTTP status group |
-| **Usage Anomaly** | Fires when your 5-minute usage is more than 4 standard deviations above your 24-hour average and crosses Vercel's minimum activity threshold. For Function invocations, Function duration, and Function CPU duration, usage combines metrics from Vercel Functions and Routing Middleware. | Metric                   |
+| **Usage Anomaly** | Fires when your 15-minute usage is more than 4 standard deviations above both your 24-hour and 7-day averages and crosses Vercel's minimum activity threshold. For Function invocations, Function duration, and Function CPU duration, usage combines metrics from Vercel Functions and Routing Middleware. | Metric                   |
 
 Beyond these built-in alert types, [custom monitors](/docs/alerts/configure-alerts#configure-custom-rules) let you define project-scoped detection logic with Observability metric or ratio queries, triggering when a value crosses a threshold or becomes anomalous for the selected alert window. Custom monitors are available only with [Observability Plus](/docs/observability/observability-plus).
 
@@ -82,12 +82,12 @@ Usage anomaly alerts support these metrics:
 
 ## Observability Plus activation period
 
-Alerts only use data collected while [Observability Plus](/docs/observability/observability-plus) was active. After you enable or re-enable Observability Plus, Vercel holds back alerts until it has enough data, which avoids false positives:
+Alerts only use data collected while [Observability Plus](/docs/observability/observability-plus) was active. After you enable or re-enable Observability Plus for your team, Vercel holds back alerts until it has enough data, which avoids false positives:
 
 - **Error anomalies**, including external API failure insights, start after Observability Plus has been active for 24 hours.
-- **Usage anomalies** start after Observability Plus has been active for 3 days.
+- **Usage anomalies** start after Observability Plus has been active for 3 days. Until it has been active for 7 days, the 7-day average uses the data collected so far.
 
-If you disable Observability Plus for your team or for a project, alerts stop for that scope. When you re-enable it, the activation periods start again.
+If you disable Observability Plus for your team or for a project, alerts stop for that scope. When you re-enable it for your team, the activation periods start again. When you re-enable it for a project, that project's alerts resume without a new activation period.
 
 ## Configure alerts
 

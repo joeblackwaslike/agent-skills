@@ -15,8 +15,8 @@ related:
 summary: Learn how to set up Static IPs for your Vercel projects to connect to IP-restricted backend services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/networking/static-ips/getting-started.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cbda1d8c3b8d0aa00c6e4e66319ca92bd7fe605d862ea219234de603aa0f526c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6f852f9418ffd393ccd6200b701e1c7e04ba5b77f1a7e7f6c404e8a946009697"
 ---
 
 # Getting Started with Static IPs
@@ -31,16 +31,15 @@ This guide walks you through setting up Static IPs so you can access backend ser
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
-- [How can I allowlist IP addresses for a deployment?](https://vercel.com/kb/guide/how-to-allowlist-deployment-ip-address) — Vercel deployments use dynamic outbound IPs by default. Learn how to allowlist IP addresses for a deployment with Static
 - [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips)
+- [How can I use Vercel with GitHub IP restrictions?](https://vercel.com/kb/guide/use-vercel-with-github-ip-restrictions) — This guide will describe how you can use Vercel even when you have an IP allowlist configured in GitHub.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Serving Static Files](https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files) — Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
+- [Secure Compute](https://vercel.com/docs/networking/secure-compute) — Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 - [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
 - [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/networking/static-ips/getting-started.graph.md](/docs/networking/static-ips/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -65,7 +64,7 @@ Before you dive in, make sure you have:
   3. Click the **Networking** section
 
 - ### Configure your region
-  1. Click **Manage Active Regions**
+  1. Turn on **Advanced Networking**, click **Static IPs**, and then click **Configure Regions**
   2. Pick a **region** close to your backend services to keep latency down. You can pick up to 3 regions
   3. Your project gets assigned static IPs within a shared VPC for each configured region
 

@@ -16,8 +16,8 @@ related:
 summary: Learn how long Vercel Workflows keeps run data, when Vercel deletes it, where Vercel stores it, and how to delete it sooner.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/retention.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a480003c5efaf2be2a7e5e2399e549b3555454834f5e0677077d5829656b570c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "8d6c7e87189c472f7977daf14616520fda69bd4447dd97bfa83cf7f2b0c90cee"
 ---
 
 # Workflow Data Retention
@@ -32,10 +32,10 @@ Vercel Workflows stores the inputs, outputs, event log, and streams of every wor
 
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
-- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
+- [The best workflow engine is a programming language](https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language)
+- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 - [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize) — Set retention periods, review remaining usage, and reduce deployment output size.
@@ -114,7 +114,7 @@ After a run's `expiredAt` passes, you can't read its payloads through the dashbo
 | A run whose run record Vercel has deleted       | Returns HTTP 404 (`WorkflowRunNotFoundError` in the SDK)                                                                           |
 | A run you don't have access to                  | Returns HTTP 401 or 403, regardless of expiry                                                                                      |
 
-**Rerun on latest** needs the run's original input, which isn't available once the run's payloads expire. Retrying a read doesn't bring expired payloads back.
+**Replay on Same Deployment** and **Replay on Latest Deployment** need the run's original input, which isn't available once the run's payloads expire. Retrying a read doesn't bring expired payloads back.
 
 ## Where Vercel stores run data
 
@@ -173,7 +173,7 @@ Every finished run records when its payloads expire in its `expiredAt` field. Yo
 To see when a run's payloads expire in the dashboard:
 
 1. Open your project in the [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows).
-2. Select **Observability**, then **Workflows**.
+2. Select **Workflows** in the sidebar.
 3. Select the run.
 
 The **Expiry** field in the run details shows how long until the run's payloads expire, or how long ago they expired. Hover over the value to see the exact time. The dashboard shows encrypted payloads as locked until you select **Decrypt**, so viewing the run details doesn't decrypt them.
@@ -185,6 +185,8 @@ To print a run's record, including `expiredAt`, run the following command from y
 ```bash filename="Terminal"
 npx workflow inspect run your_run_id_here --backend vercel
 ```
+
+To look up a run in a different project, add `--project` and `--team`. These flags take precedence over the linked project. For other CLI options, see [CLI and Web UI](https://workflow-sdk.dev/docs/configuration/cli-and-web-ui) in the Workflow SDK docs.
 
 Add `--json` to get the run record as JSON. Without the `--decrypt` flag, the CLI doesn't decrypt payloads. When the run's payloads have expired, the CLI prints a warning that the run's data has expired and shows its payloads as `<data expired>`.
 

@@ -4,8 +4,8 @@ description: Learn how to upgrade AI SDK 6.x to 7.0.
 url: "https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "cd14241e8bfe8a0f29871caf25200cc35b84a75c398cfa8fb07cbbb8d7fcda79"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "b687e5925b92949aec8ad343288f2d2b2ccbc4999af32dbfb2d367aa51482cfe"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -70,40 +70,40 @@ changes manually.
 
 ## Codemod Table
 
-| Codemod Name                                                        | Description                                                                                         |
-| ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `remove-experimental-custom-provider`                               | Replaces `experimental_customProvider` with `customProvider`                                        |
-| `remove-experimental-generate-image`                                | Replaces `experimental_generateImage` and `Experimental_GenerateImageResult` with stable names      |
-| `replace-experimental-output-with-output`                           | Replaces `experimental_output` options and result access with `output`                              |
-| `remove-experimental-prepare-step`                                  | Replaces `experimental_prepareStep` with `prepareStep`                                              |
-| `replace-cached-input-tokens`                                       | Replaces `usage.cachedInputTokens` with `usage.inputTokenDetails.cacheReadTokens`                   |
-| `replace-reasoning-tokens`                                          | Replaces `usage.reasoningTokens` with `usage.outputTokenDetails.reasoningTokens`                    |
-| `remove-experimental-active-tools`                                  | Replaces `experimental_activeTools` with `activeTools`                                              |
-| `remove-tool-call-options-type`                                     | Replaces the removed `ToolCallOptions` type with `ToolExecutionOptions`                             |
-| `remove-is-tool-or-dynamic-tool-uipart`                             | Replaces `isToolOrDynamicToolUIPart` with `isToolUIPart`                                            |
-| `remove-media-content-part-type`                                    | Replaces tool result content parts with `type: 'media'` with `type: 'file-data'`                    |
-| `replace-anthropic-cache-creation-input-tokens`                     | Replaces Anthropic `cacheCreationInputTokens` metadata access with standard usage fields            |
-| `rename-experimental-transcribe`                                    | Renames `experimental_transcribe` and `Experimental_TranscriptionResult` to stable names            |
-| `rename-experimental-generate-speech`                               | Renames `experimental_generateSpeech` and `Experimental_SpeechResult` to stable names               |
-| `rename-call-settings-type`                                         | Replaces `CallSettings` with `LanguageModelCallOptions & Omit<RequestOptions, 'timeout'>`           |
-| `rename-step-count-is`                                              | Renames `stepCountIs` to `isStepCount`                                                              |
-| `rename-system-to-instructions`                                     | Renames `system` prompt options, lifecycle fields, and repair-tool-call fields to `instructions`    |
-| `rename-experimental-on-start-to-on-start`                          | Renames `experimental_onStart` to `onStart`                                                         |
-| `rename-experimental-on-step-start-to-on-step-start`                | Renames `experimental_onStepStart` to `onStepStart`                                                 |
-| `rename-on-finish-to-on-end`                                        | Renames `onFinish` callbacks to `onEnd`                                                             |
-| `rename-on-step-finish-to-on-step-end`                              | Renames `onStepFinish` callbacks to `onStepEnd`                                                     |
-| `rename-experimental-on-finish-to-on-end`                           | Renames `experimental_onFinish` callbacks to `onEnd`                                                |
-| `rename-experimental-telemetry-to-telemetry`                        | Renames `experimental_telemetry` options to `telemetry`                                             |
-| `rename-on-rerank-finish-to-on-rerank-end`                          | Renames telemetry `onRerankFinish` callbacks to `onRerankEnd`                                       |
-| `rename-on-embed-finish-to-on-embed-end`                            | Renames telemetry `onEmbedFinish` callbacks to `onEmbedEnd`                                         |
-| `rename-full-stream-to-stream`                                      | Renames `streamText` result `fullStream` access to `stream`                                         |
-| `move-include-raw-chunks-to-include`                                | Moves `includeRawChunks` into `include.rawChunks`                                                   |
-| `rename-experimental-include-to-include`                            | Renames `experimental_include` to `include`                                                         |
-| `rename-experimental-on-tool-call-start-to-on-tool-execution-start` | Renames `experimental_onToolCallStart` to `onToolExecutionStart`                                    |
-| `rename-experimental-on-tool-call-finish-to-on-tool-execution-end`  | Renames `experimental_onToolCallFinish` to `onToolExecutionEnd`                                     |
-| `rename-experimental-context-to-context`                            | Renames tool callback `experimental_context` access to `context`                                    |
-| `rename-google-generative-ai-to-google`                             | Renames Google provider types, classes, and functions that include `GoogleGenerativeAI` to `Google` |
-| `replace-image-message-part-with-file`                              | Replaces image message parts with file parts using `mediaType: 'image'`                             |
+| Codemod Name                                                        | Description                                                                                                            |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `remove-experimental-custom-provider`                               | Replaces `experimental_customProvider` with `customProvider`                                                           |
+| `remove-experimental-generate-image`                                | Replaces `experimental_generateImage` and `Experimental_GenerateImageResult` with stable names                         |
+| `replace-experimental-output-with-output`                           | Replaces `experimental_output` options and result access with `output`                                                 |
+| `remove-experimental-prepare-step`                                  | Replaces `experimental_prepareStep` with `prepareStep`                                                                 |
+| `replace-cached-input-tokens`                                       | Replaces `usage.cachedInputTokens` with `usage.inputTokenDetails.cacheReadTokens`                                      |
+| `replace-reasoning-tokens`                                          | Replaces `usage.reasoningTokens` with `usage.outputTokenDetails.reasoningTokens`                                       |
+| `remove-experimental-active-tools`                                  | Replaces `experimental_activeTools` with `activeTools`                                                                 |
+| `remove-tool-call-options-type`                                     | Replaces the removed `ToolCallOptions` type with `ToolExecutionOptions`                                                |
+| `remove-is-tool-or-dynamic-tool-uipart`                             | Replaces `isToolOrDynamicToolUIPart` with `isToolUIPart`                                                               |
+| `remove-media-content-part-type`                                    | Replaces tool result content parts with `type: 'media'` with `type: 'file-data'`                                       |
+| `replace-anthropic-cache-creation-input-tokens`                     | Replaces Anthropic `cacheCreationInputTokens` metadata access with standard usage fields                               |
+| `rename-experimental-transcribe`                                    | Renames `experimental_transcribe` and `Experimental_TranscriptionResult` to stable names                               |
+| `rename-experimental-generate-speech`                               | Renames `experimental_generateSpeech` and `Experimental_SpeechResult` to stable names                                  |
+| `rename-call-settings-type`                                         | Replaces `CallSettings` with `LanguageModelCallOptions & Omit<RequestOptions, 'timeout'>`                              |
+| `rename-step-count-is`                                              | Renames `stepCountIs` to `isStepCount`                                                                                 |
+| `rename-system-to-instructions`                                     | Renames `system` prompt options, lifecycle fields, and repair-tool-call fields to `instructions`                       |
+| `rename-experimental-on-start-to-on-start`                          | Renames `experimental_onStart` to `onStart`                                                                            |
+| `rename-experimental-on-step-start-to-on-step-start`                | Renames `experimental_onStepStart` to `onStepStart`                                                                    |
+| `rename-on-finish-to-on-end`                                        | Renames `onFinish` callbacks to `onEnd`                                                                                |
+| `rename-on-step-finish-to-on-step-end`                              | Renames `onStepFinish` callbacks to `onStepEnd`                                                                        |
+| `rename-experimental-on-finish-to-on-end`                           | Renames `experimental_onFinish` callbacks to `onEnd`                                                                   |
+| `rename-experimental-telemetry-to-telemetry`                        | Renames `experimental_telemetry` options to `telemetry`                                                                |
+| `rename-on-rerank-finish-to-on-rerank-end`                          | Renames telemetry `onRerankFinish` callbacks to `onRerankEnd`                                                          |
+| `rename-on-embed-finish-to-on-embed-end`                            | Renames telemetry `onEmbedFinish` callbacks to `onEmbedEnd`                                                            |
+| `rename-full-stream-to-stream`                                      | Renames `streamText` result `fullStream` access to `stream`                                                            |
+| `move-include-raw-chunks-to-include`                                | Moves `includeRawChunks` into `include.rawChunks`                                                                      |
+| `rename-experimental-include-to-include`                            | Renames `experimental_include` to `include`                                                                            |
+| `rename-experimental-on-tool-call-start-to-on-tool-execution-start` | Renames `experimental_onToolCallStart` to `onToolExecutionStart`                                                       |
+| `rename-experimental-on-tool-call-finish-to-on-tool-execution-end`  | Renames `experimental_onToolCallFinish` to `onToolExecutionEnd`                                                        |
+| `rename-experimental-context-to-context`                            | Renames tool callback `experimental_context` access to `context`                                                       |
+| `rename-google-generative-ai-to-google`                             | Migrates named Google imports and re-exports to the new API names while preserving local and exported names as aliases |
+| `replace-image-message-part-with-file`                              | Replaces image message parts with file parts using `mediaType: 'image'`                                                |
 
 ## All Packages
 
@@ -1881,6 +1881,8 @@ If you need the raw Anthropic-shaped usage payload (including `cache_creation_in
 Every type, class, and function in `@ai-sdk/google` that contained `GoogleGenerativeAI` has been renamed to use simply `Google` — for example, `createGoogleGenerativeAI` → `createGoogle` and `GoogleGenerativeAIProvider` → `GoogleProvider`.
 
 The old names still work as deprecated aliases, but you should migrate to the new names, if you currently reference them.
+
+The `rename-google-generative-ai-to-google` codemod updates named imports and direct re-exports to the new API names. It preserves local binding names and application export names as aliases, so wrappers, property names, and shadowed variables keep working. Namespace member access remains unchanged.
 
 The main entry point the `google` constant, remains unchanged, so if that's all you use from the provider, no changes are required.
 

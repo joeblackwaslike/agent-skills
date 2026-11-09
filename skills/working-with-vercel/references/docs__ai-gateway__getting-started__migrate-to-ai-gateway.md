@@ -17,8 +17,8 @@ related:
 summary: "Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use today."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8055b3b5c359274f0a45dd5c098df9356a07cca5073c4da1d43c00dd5411d7c2"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "26897f17e3c2cd27fdc6ef39dcd8fc6ceb555ad19fe08828f8e8c581ae1cba3d"
 ---
 
 # Migrate to AI Gateway Using Your Coding Agent
@@ -31,12 +31,15 @@ AI Gateway puts one endpoint and one API key in front of 400+ models, and layers
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [How I use OpenCode with Vercel AI Gateway to build features fast](https://vercel.com/kb/guide/how-i-use-opencode-with-vercel-ai-gateway-to-build-features-fast) — How to route different AI models to different coding tasks automatically, cutting token costs by ~70% without losing qua
-- [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
+- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [How to migrate from DurableAgent to WorkflowAgent](https://vercel.com/kb/guide/durableagent-to-workflowagent) — Switch your app from \\`DurableAgent\\` \\(@workflow/ai\\) to \\`WorkflowAgent\\` \\(@ai-sdk/workflow\\) by updating imports, st
+- [Why all application migrations should be incremental ](https://vercel.com/blog/incremental-migrations)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [Migrate AI SDK 6.x to 7.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0) — Learn how to upgrade AI SDK 6.x to 7.0.
+- [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/migrate-to-ai-gateway.graph.md](/docs/ai-gateway/getting-started/migrate-to-ai-gateway.graph.md)
@@ -91,6 +94,8 @@ Keep the format the app already speaks. Migrating a format to itself is the smal
 | AI SDK without AI Gateway | AI SDK with AI Gateway | model IDs become `creator/model` |
 
 In every case the model ID becomes a `creator/model` slug and the credential becomes `AI_GATEWAY_API_KEY`. The Anthropic Messages surface also accepts the key in `x-api-key`, so the Anthropic SDK's own auth convention keeps working.
+
+If the app uses AI SDK 5 (`ai` 5.x or `@ai-sdk/gateway` 2.x), upgrade it to AI SDK 6 or later as part of the migration. Prefer AI SDK 7, the latest version. AI Gateway stops accepting AI SDK 5 requests on January 8, 2027, and teams new to AI Gateway can't use AI SDK 5. Follow the migration guides at https://ai-sdk.dev/docs/migration-guides.
 
 The wire format is independent of which provider serves the request. AI Gateway maps parameters across formats, so an Anthropic-format request can be served by an OpenAI model and the reverse. Never rewrite a working integration into a different format to reach a different model.
 
@@ -243,6 +248,8 @@ If your app calls video or realtime models from Python, the agent reports it rat
   | AI SDK without AI Gateway | AI SDK with AI Gateway | model IDs become `creator/model` |
 
   In every case the model ID becomes a `creator/model` slug and the credential becomes `AI_GATEWAY_API_KEY`. The Anthropic Messages surface also accepts the key in `x-api-key`, so the Anthropic SDK's own auth convention keeps working.
+
+  If the app uses AI SDK 5 (`ai` 5.x or `@ai-sdk/gateway` 2.x), upgrade it to AI SDK 6 or later as part of the migration. Prefer AI SDK 7, the latest version. AI Gateway stops accepting AI SDK 5 requests on January 8, 2027, and teams new to AI Gateway can't use AI SDK 5. Follow the migration guides at https://ai-sdk.dev/docs/migration-guides.
 
   The wire format is independent of which provider serves the request. AI Gateway maps parameters across formats, so an Anthropic-format request can be served by an OpenAI model and the reverse. Never rewrite a working integration into a different format to reach a different model.
 

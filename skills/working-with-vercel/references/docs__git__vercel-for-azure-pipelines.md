@@ -16,8 +16,8 @@ related:
 summary: ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/git/vercel-for-azure-pipelines.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "00ed5cf94d29f9367bc20b3b16937afe38896e97fb04439d0fb374a299b018a4"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "be7f54674663ee31ddfd2c66d12fe01d07f2088bb60aea3b61c84938cfe05811"
 ---
 
 # Deploying from Azure DevOps with Vercel
@@ -31,13 +31,15 @@ The [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?ite
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel extension for Azure DevOps now available](https://vercel.com/changelog/vercel-extension-for-azure-devops-now-available)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
+- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [Integrations for Comments](https://vercel.com/docs/comments/integrations) — Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack
 
 Full cross-link map for this page: [/docs/git/vercel-for-azure-pipelines.graph.md](/docs/git/vercel-for-azure-pipelines.graph.md)
 <!-- /docsgraph:related -->
@@ -73,10 +75,10 @@ Once you have the Vercel Deployment extension set up, you only need to modify yo
 
 To create an empty Vercel project:
 
-1. Use the [Vercel CLI](/docs/cli/project) with the `add` command, passing the project name
+1. Use the [Vercel CLI](/docs/cli/project) with the `create` command, passing the project name
 
 ```bash filename="terminal"
-vercel project add <project-name>
+vercel project create <project-name>
 ```
 
 2. Or through the [dashboard](/docs/projects/managing-projects#creating-a-project) and then disconnect the [Git integration](/docs/project-configuration/project-settings#git) that you would have set up
@@ -244,7 +246,7 @@ Here, you can find a list of available properties for each of the available task
 | `vercelToken`     | No       | string  | A [Vercel personal access token](/docs/rest-api#creating-an-access-token) with deploy permissions for your Vercel Project. It can alternatively be set as the environment variable `VERCEL_TOKEN`                                                   |
 | `vercelCWD`       | No       | string  | The working directory where the Vercel deployment task will run. When omitted, the task will run in the current directory (default value is `System.DefaultWorkingDirectory`). It can alternatively be set as the environment variable `VERCEL_CWD` |
 | `production`      | No       | boolean | Boolean value specifying if the task should create a production deployment. When omitted or set to `false`, the task will create preview deployments                                                                                                |
-| `target`          | No       | string  | Option to define the environment you want to deploy to. This could be production, preview, or a custom environment. This is equivalent to passing the `--target` flag when deploying using the Vercel CLI.                                          |
+| `target`          | No       | string  | Option to define the environment you want to deploy to. This could be production, preview, or a custom environment. This is equivalent to passing the `--environment` flag when deploying using the Vercel CLI.                                     |
 | `archive`         | No       | boolean | Enables the `--archive=tgz` flag for the internal Vercel CLI operations                                                                                                                                                                             |
 | `env`             | No       | string  | Adding environment variables at runtime using the Vercel CLI's `--env` option                                                                                                                                                                       |
 | `buildEnv`        | No       | string  | Adding build environment variables to the build step using the Vercel CLI's `--build-env` option                                                                                                                                                    |

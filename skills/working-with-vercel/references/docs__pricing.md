@@ -16,8 +16,8 @@ related:
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d9a7ea0e09d20fc8fabb0b0eba66ce07fa00835166fe51bcf604b715c1b0c16e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "077d517698ff3b5d9a4ce744eb86054b15704b94db8a6dde45d8952ee68c5820"
 ---
 
 # Pricing on Vercel
@@ -32,7 +32,8 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 
 - [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines)
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms)
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
+- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
@@ -207,13 +208,17 @@ You can purchase more custom environments from each project's environment settin
 
 #### [Builds](/docs/builds/managing-builds)
 
-Basic build machines are included with Hobby. For paid teams, Basic is priced at $0.007 per build minute, based on 2 vCPUs at $0.0035 per CPU minute.
+Basic build machines are included with Hobby. For paid teams, build usage starts at $0.0035 per CPU minute.
 
-Other build usage is priced at $0.0035 per CPU Minute. The duration of the build is rounded up to the nearest minute and then multiplied by the number of CPUs on the machine type. For example, if a build took 2 minutes and 34 seconds and used the Enhanced machine type, it will be priced at $0.084 (3 minutes x 8 CPUs x $0.0035).
+Billable duration includes build and post-build time and is rounded up to the next whole minute.
 
-Builds on Standard build machines are only billed when on-demand concurrency is enabled or Elastic build machines are selected.
+| Build machine type | Starting price per CPU minute |
+| --- | --- |
+| Basic (included with Hobby) | $0.0035 |
+| Standard | $0.0035 |
+| Enhanced | $0.0035 |
+| Turbo | $0.0035 |
 
-<!-- COPPER_ERROR: BuildsPricingTable — Could not find matrix pricing for buildCpuMinutes -->
 
 #### Pro plan add-ons
 

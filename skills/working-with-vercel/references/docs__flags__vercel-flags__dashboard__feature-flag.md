@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure individual feature flags in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "df1e4f8ed5891bf53983bff805188e2c2b0fe326c1ba98eb32ecfc7fb128b49e"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "73f478336ea860439b95fd6945f4c11346aecfa95d90ce07d6045567311dfb1a"
 ---
 
 # Feature Flag Configuration
@@ -33,9 +33,9 @@ When you select a flag from the Flags overview, you can configure how it behaves
 
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
@@ -205,14 +205,14 @@ Once you've configured one environment, you can reuse that configuration in othe
 
 ### Reusing configuration from another environment
 
-Lower environments (Development and Preview) can reuse the configuration from higher environments:
+Development and Preview can reuse the configuration of another environment:
 
 - Development can reuse Preview or Production
-- Preview can reuse Production
+- Preview can reuse Production or Development
 
 This is useful when you want consistent behavior across environments without duplicating configuration.
 
-> **💡 Note:** Configuration linking only works from lower to higher environments. Production cannot reuse Development or Preview. This prevents accidentally affecting production when changing development settings.
+> **💡 Note:** Production cannot reuse Development or Preview. This prevents accidentally affecting production when changing development settings. Development and Preview cannot reuse each other at the same time.
 
 To reuse configuration:
 

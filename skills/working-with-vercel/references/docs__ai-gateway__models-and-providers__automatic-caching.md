@@ -17,8 +17,8 @@ related:
 summary: Enable automatic prompt caching and session affinity with AI Gateway to reduce costs and latency.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e499bdb0eb4e98579f7a3e63350b9ebd4c19bbd5796d3e4cd466f36e11d69416"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4cea49158bd779f0786bcff9e3e4fd985ac72b2e6cba0e78dda13501ba4bdf5e"
 ---
 
 # AI Gateway Automatic Prompt Caching
@@ -74,7 +74,7 @@ body: JSON.stringify({
 }),
 ```
 
-The field accepts `5m` (five minutes) or `1h` (one hour). AI Gateway applies the selected lifetime to every automatic breakpoint, including a breakpoint created by `cache_anchor_items`. The field has no effect unless you also set `caching: 'auto'`.
+The field accepts `5m` (five minutes) or `1h` (one hour). AI Gateway applies the selected lifetime to every automatic breakpoint, including a breakpoint created by `cache_anchor_items`. The field has no effect unless you also set `caching: 'auto'` at the top level of the same request, as in the example above. AI Gateway ignores `cache_ttl` when you set caching only through `providerOptions.gateway.caching`.
 
 Anthropic charges different cache-write rates for each lifetime:
 
@@ -95,7 +95,7 @@ A one-hour entry costs an additional 0.75× base input to write. One read after 
         {
           "type": "unsupported",
           "feature": "cache_ttl",
-          "details": "Unsupported cache_ttl; the default cache lifetime was used."
+          "details": "Unsupported cache_ttl; the hint was ignored."
         }
       ]
     }
@@ -126,7 +126,7 @@ body: JSON.stringify({
 
 The anchor is advisory. Values that can't be used (not a positive integer, past the end of the prompt, or colliding with a marker that's already placed) are ignored, and caching degrades to the two-marker behavior above. An unusable anchor never causes a request to fail.
 
-The anchor only applies when `caching: 'auto'` is set, and like the other markers it only modifies requests to explicit-caching providers.
+The anchor only applies when you set `caching: 'auto'` at the top level of the same request. AI Gateway ignores the anchor when you set caching only through `providerOptions.gateway.caching`. Like the other markers, the anchor only modifies requests to explicit-caching providers.
 
 ## Improve cache hits with session affinity
 

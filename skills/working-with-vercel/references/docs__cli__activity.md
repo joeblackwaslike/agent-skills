@@ -13,8 +13,8 @@ related:
 summary: View activity events for your Vercel project or team, filtered by type, date range, and project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/activity.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e6755338fe08afc75487d25b5b2ad4d18ba9798941c1b6c876e9d9f986f5d846"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "3c1cdde85e10e97788735819ba5c792a18b6615eb07e8cfc47dd2055822dc53c"
 ---
 
 # vercel activity
@@ -27,8 +27,8 @@ The `vercel activity` command displays [activity events](/docs/activity-log) for
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
@@ -36,20 +36,19 @@ The `vercel activity` command displays [activity events](/docs/activity-log) for
 Full cross-link map for this page: [/docs/cli/activity.graph.md](/docs/cli/activity.graph.md)
 <!-- /docsgraph:related -->
 
-By default, running `vercel activity` shows events scoped to the linked project. Use `--all` to see all events across your team, or `--project` to target a specific project.
+By default, running `vercel activity` shows events scoped to the linked project. Use `--all` to see all events across your team, or `--project` to target a specific project. The output shows which project or team the events are for.
 
 ## Usage
 
 ```bash filename="terminal"
 # List events for the linked project
 vercel activity
-vercel activity ls
 
 # List all team events from the last 30 days
-vercel activity ls --all --since 30d
+vercel activity --all --since 30d
 
 # Filter by event type
-vercel activity ls --type deployment --since 7d
+vercel activity --type deployment --since 7d
 ```
 
 *Using the \`vercel activity\` command to view activity events.*
@@ -124,33 +123,21 @@ The `--next` option paginates through results. After each page, the command prin
 vercel activity --next 1706140800000
 ```
 
-### Format
+### JSON
 
-The `--format` option controls the output format. Set it to `json` to output structured JSON, which makes it easier to pipe to other tools like [jq](https://jqlang.github.io/jq/).
+The `--json` option prints the events as JSON, which makes it easier to pipe to other tools like [jq](https://jqlang.github.io/jq/):
 
 ```bash filename="terminal"
-vercel activity --format json | jq '.events[]'
+vercel activity --json | jq '.events[]'
+```
+
+The JSON output also includes a `scope` object that shows which project or team the events are for. It has the `teamSlug` and, when the events are for one project, the `projectName` and `projectIds`:
+
+```bash filename="terminal"
+vercel activity --json | jq '.scope'
 ```
 
 ## Subcommands
-
-### `vercel activity ls`
-
-Lists activity events. This is the default subcommand when running `vercel activity` without arguments.
-
-```bash filename="terminal"
-vercel activity ls
-vercel activity ls --all
-vercel activity ls --project my-app
-```
-
-The output includes a scope header showing whether you're viewing team-wide events (via `--all`) or project-specific events (via `--project`).
-
-When using `--format json`, the response includes a `scope` object with `teamSlug` and `projectIds` to indicate the scope of the results:
-
-```bash filename="terminal"
-vercel activity ls --format json | jq '.scope'
-```
 
 ### `vercel activity types`
 
@@ -158,7 +145,7 @@ Lists all available event types with descriptions. Use this to find valid values
 
 ```bash filename="terminal"
 vercel activity types
-vercel activity types --format json
+vercel activity types --json
 ```
 
 ## Examples
@@ -172,7 +159,7 @@ vercel activity --type deployment --since 7d
 List all team events and output as JSON:
 
 ```bash filename="terminal"
-vercel activity --all --format json | jq '.events[] | {type, text: .text}'
+vercel activity --all --json | jq '.events[] | {type, text: .text}'
 ```
 
 Paginate through results:
@@ -195,7 +182,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

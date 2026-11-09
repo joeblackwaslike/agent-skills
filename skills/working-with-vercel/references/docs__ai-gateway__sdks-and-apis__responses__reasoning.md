@@ -15,8 +15,8 @@ related:
 summary: Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7eb9237496fa63f57f1d8b3488e735cd391e241d07211649bd5cb05460d09443"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "30c11fd9c9d6d43ed526aeadbf2b2e0e06f421c5277cb714de9ed1619eefa490"
 ---
 
 # OpenAI Responses Reasoning with AI Gateway
@@ -101,7 +101,7 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
 
 Use [catalog discovery](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) to find the selected model's `reasoning_options`. The HTTP request schema accepts `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, and `max`, but each model supports its own subset. Don't infer defaults from a model family.
 
-OpenAI models can use [native Responses routing](/docs/ai-gateway/sdks-and-apis/responses); other models use [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses). Cross-provider translation can map effort to a different native level or a token budget. AI SDK 7's shorthand doesn't accept `max`; see the [format mapping](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels).
+OpenAI models can use [native Responses routing](/docs/ai-gateway/sdks-and-apis/responses); other models use [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses). Cross-provider translation can map effort to a different native level or a token budget. AI SDK 7's shorthand accepts `max` in version 7.0.129 or later; see the [format mapping](/docs/ai-gateway/models-and-providers/reasoning#reasoning-levels).
 
 To inspect reasoning, check returned usage and reasoning items where available. A successful answer or an echoed `reasoning.effort` value alone doesn't prove the provider applied that exact level.
 

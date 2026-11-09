@@ -16,8 +16,8 @@ related:
 summary: Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/continue.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2d8f39809ebdb3100a1e795865f2ec1b60ca76f7b6b22715a90570e7166ec007"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "849cc9b1235353d792a5c1fff1d947206a5247a891f95bbce7837971b27d205e"
 ---
 
 # Continue CLI with AI Gateway
@@ -30,7 +30,6 @@ sha256: "2d8f39809ebdb3100a1e795865f2ec1b60ca76f7b6b22715a90570e7166ec007"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a

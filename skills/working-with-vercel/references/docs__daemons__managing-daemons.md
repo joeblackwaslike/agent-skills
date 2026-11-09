@@ -16,8 +16,8 @@ related:
 summary: Deploy, scale, stop, and monitor Vercel Daemons with vercel.json and the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/daemons/managing-daemons.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b4b7e43943b8872d69feb8ba020ba088a576e207d8a746b8108563e1e6c8778d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "6686a1bd3b8451af206eac84b373bb71acdb7becef53d7f7bc37efa07961cdb9"
 ---
 
 # Managing Daemons
@@ -34,12 +34,11 @@ You declare daemons with the `daemons` key in `vercel.json`. Changes to daemon c
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
-- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
+- [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
 - [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Override a project daemon's instance counts](https://vercel.com/docs/rest-api/daemons/override-a-project-daemon-s-instance-counts) — PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances — Override the instance counts of a daemon in the given regio
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 
 Full cross-link map for this page: [/docs/daemons/managing-daemons.graph.md](/docs/daemons/managing-daemons.graph.md)
 <!-- /docsgraph:related -->
@@ -51,7 +50,7 @@ Vercel updates daemons when a deployment becomes your production deployment. Thi
 - **New instances**: Vercel starts new instances of every daemon in the new production deployment right away.
 - **Out-of-date instances**: Vercel sends `SIGTERM` to the instances from the previous production deployment, then stops them after the shutdown grace period.
 - **Removed daemons**: When the new production deployment doesn't declare a daemon, Vercel stops all of that daemon's instances.
-- **Scaling overrides**: When a daemon has a [scaling override](#scaling-from-the-dashboard), Vercel keeps the override's counts instead of the `instances` from the new production deployment.
+- **Scaling overrides**: When a daemon has a [scaling override](#scaling-from-the-dashboard), Vercel keeps the override's count in each overridden region. Regions without an override use the `instances` from the new production deployment. An override from the dashboard covers every region, and an override from the [CLI](#scaling-from-the-cli) covers only the regions you name.
 
 For a short time during a rollout, both versions of a daemon run at once: the old instances finish their current work during the grace period while the new ones start. When an old instance receives `SIGTERM`, it should stop taking new work immediately and only finish the work in progress. Make sure both versions can run side by side, for example by processing messages from the same queue and by keeping database migrations compatible with the previous version. See [Graceful shutdown](/docs/daemons#graceful-shutdown) for how to handle `SIGTERM`.
 
@@ -86,7 +85,7 @@ To override a daemon's instance counts without a new deployment:
 2. Select **Scale**.
 3. Set the number of instances in each region, then select **Scale Daemon**.
 
-The counts you set are a scaling override. Vercel uses them instead of the `instances` from your production deployment, and they stay in place when you deploy again, so changes to `instances` in `vercel.json` don't take effect while an override is set. To go back to the counts from your production deployment, select **Scale**, then **Clear scaling overrides**.
+The counts you set are a scaling override. The dashboard sets an override in every region, including regions whose count you don't change. Vercel uses these counts instead of the `instances` from your production deployment, and they stay in place when you deploy again, so changes to `instances` in `vercel.json` don't take effect while the override is set. To go back to the counts from your production deployment, select **Scale**, then **Clear scaling overrides**.
 
 You need permission to update the project to set scaling overrides.
 

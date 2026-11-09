@@ -16,8 +16,8 @@ related:
 summary: Connect Goose to AI Gateway with the Vercel CLI or a custom OpenAI-compatible provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents/goose.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cc9e88a3c2a95c5b03d57305b483778b3f16ef29c15c78cda73dcb75684726df"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c99f2baa08d3dfad8dc8d9987e92bfcc84fab44fb10a6bf8678e0d5b525da83a"
 ---
 
 # Goose with AI Gateway
@@ -47,7 +47,7 @@ Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for Goose:
 npx vercel@latest ai-gateway setup --agent goose
 ```
 
-The command writes a declarative provider JSON into `~/.config/goose/custom_providers/` that shadows Goose's built-in `vercel_ai_gateway` definition, sets the default provider and model in `config.yaml`, and records context sizes for the top gateway models from the gateway catalog. Re-run it to refresh the context sizes.
+The command writes a declarative provider JSON into `~/.config/goose/custom_providers/` that shadows Goose's built-in `vercel_ai_gateway` definition, sets the default provider and model in `config.yaml`, and records context sizes from the gateway catalog for the gateway language models that support tool use. Re-run it to refresh the context sizes.
 
 ## Configuring Goose
 

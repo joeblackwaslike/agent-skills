@@ -8,12 +8,15 @@ type: conceptual
 prerequisites:
   - /docs/workflows
 related:
-  []
+  - /docs/functions/limitations
+  - /docs/workflows/pricing
+  - /docs/chat-sdk
+  - /docs/frameworks/agents/eve
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b8efd9204d75a34c5f6eeaacd76c34c16a848c6405ae0d626873882397491493"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b70ba5d9d9ee4681d2b5e020bbcc9ac2db4a70a2803f879a73ff13a233bc7f03"
 ---
 
 # Workflow Concepts
@@ -30,13 +33,14 @@ You write async/await code as usual, and the framework handles queues, retry log
 - [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
-- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
+- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Python](https://workflow-sdk.dev/docs/getting-started/python) — Set up the Workflow Python SDK in your Python application.
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
-- [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps) — Understand the two function types that make up a workflow.
-- [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
+- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
 - [The best workflow engine is a programming language](https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language)
+- [Next.js](https://workflow-sdk.dev/docs/getting-started/next) — Set up Workflow SDK in a Next.js app.
+- [Workflow SDK adds idempotent starts](https://vercel.com/changelog/atomic-start-hooks-in-the-workflow-sdk)
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/workflows/concepts.graph.md](/docs/workflows/concepts.graph.md)
@@ -76,6 +80,8 @@ Under the hood, the workflow function compiles into a route that orchestrates ex
 All inputs and outputs are recorded in an event log. If a deploy or crash happens,
 the system replays execution deterministically from where it stopped.
 
+To learn how workflows suspend and resume, and how to structure workflow files, see [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps) in the Workflow SDK docs.
+
 ## Step
 
 A step is a stateless function that runs a unit of durable work inside a workflow.
@@ -113,6 +119,8 @@ Each step compiles into an isolated API route. While the step executes,
 the workflow suspends without consuming resources. When the step
 completes, the workflow resumes automatically right where it left off.
 
+To learn how to customize retries, throw errors that skip retrying, and roll back failed steps, see [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries) in the Workflow SDK docs.
+
 ## Sleep
 
 Sleep pauses a workflow for a specified duration without consuming compute resources.
@@ -138,6 +146,8 @@ export async function aiRefineWorkflow(draftId: string) {
 ```
 
 The sleep call will pause the workflow and consume no resources, resuming automatically when the time expires.
+
+To sleep until a specific date instead of for a duration, see [`sleep()`](https://workflow-sdk.dev/docs/api-reference/workflow/sleep) in the Workflow SDK docs.
 
 ## Hook
 
@@ -196,6 +206,8 @@ export async function POST(req: Request) {
 
 When a hook receives data, the workflow resumes automatically. You don't need polling, message queues, or manual state management.
 
+To learn about custom tokens, webhooks, timeouts, and securing hook resumes, see [Hooks](https://workflow-sdk.dev/docs/foundations/hooks) in the Workflow SDK docs.
+
 For human review, authenticate the reviewer and check their authority for the specific action before resuming the workflow. Confirm that the request still matches the version they reviewed, and record the approval separately from execution. See [Designing human review for enterprise AI decisions](/i/human-review-enterprise-ai-decisions) for review patterns that account for changed requests and failed actions.
 
 ## Skew Protection
@@ -206,6 +218,30 @@ Workflows without affecting existing runs.
 The same pinning means a rollback does not stop runs on the deployment you rolled back from. A run whose steps keep failing on that deployment is retried there, and each retry is a function invocation on it, until the run fails or is cancelled.
 
 To stop runs on a deployment you no longer want executing, cancel them from the [Workflows observability tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows) or the CLI. Deleting the deployment also stops its functions from being invoked, but runs pinned to a deleted deployment never complete or fail on their own, so cancel them as well. To see which deployments are consuming compute, open the Observability **Query** tab with [function duration grouped by deployment](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fquery%3Fmetric%3DserverlessFunctionInvocation.functionDurationGbhr%26aggregation%3Dsum%26by%3DdeploymentId\&title=Function+duration+by+deployment).
+
+To learn how to fix in-flight runs or move a run onto newer code, see [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) in the Workflow SDK docs.
+
+## Frequently asked questions
+
+### What's the difference between a workflow and a step?
+
+A workflow function, marked with `'use workflow'`, orchestrates the run. It calls steps, sleeps, and waits on hooks. It runs in a sandbox without full Node.js access and must be deterministic, because it replays from the event log each time it resumes. A step function, marked with `'use step'`, does the work, such as calling an API or writing to a database, with full Node.js and npm access. Vercel records each step's result, and a failed step retries automatically. See [Workflows and Steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps).
+
+### How many times does a step retry by default?
+
+A step that throws an error retries up to three times by default, for four attempts in total. Set `maxRetries` on the step function to change the count, throw `FatalError` to fail without retrying, or throw `RetryableError` with `retryAfter` to set the delay before the next attempt. A step can run more than once, so make side effects such as payments and emails idempotent. See [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries).
+
+### How long can a workflow run or sleep?
+
+Vercel doesn't limit how long a run lasts or how long `sleep()` waits. A suspended workflow uses no compute while it sleeps or waits on a hook. Each step still runs inside a function invocation, so it must finish within your [Vercel Functions duration limit](/docs/functions/limitations). See [Workflow run limits](/docs/workflows/pricing#workflow-run-limits) for the caps on events, payload size, and storage per run.
+
+### What happens to running workflows when I deploy new code?
+
+Each run stays on the deployment that created it, so a new deployment doesn't change the code that in-progress runs execute. Runs you start after the deployment use the new code. A rollback doesn't stop runs on the deployment you rolled back from, so cancel those runs from the Workflows dashboard or the CLI if they shouldn't continue. See [Skew Protection](#skew-protection).
+
+### How do I pause a workflow for human approval?
+
+Create a hook or webhook in the workflow and await it. The workflow suspends until your app calls `resumeHook()` with the hook's token, or an HTTP request reaches the webhook's URL. A token routes the payload to the right run but doesn't authenticate the sender, so authorize the reviewer before you resume the run. For approvals in Slack and other chat platforms, use [`requestApproval`](https://chat-sdk.dev/docs/approvals) from [Chat SDK](/docs/chat-sdk). It posts the approval card, creates the webhook, and verifies each click for you. In [eve](/docs/frameworks/agents/eve), add `approval: always()` to a tool definition, and the agent's session waits for a decision before the tool runs.
 
 
 ---

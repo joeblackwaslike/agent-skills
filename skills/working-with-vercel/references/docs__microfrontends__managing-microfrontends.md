@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "74495e4c2bfd600fd214ca55f2b41df8db05ad45019fc40fc7f52aa04fdd317c"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "1dac402c6167ac98b8613630fc8b3b0f5320c7feb26a679de307751528bd6885"
 ---
 
 # Managing microfrontends
@@ -66,7 +66,7 @@ vercel microfrontends add-to-group
 To pre-fill the group and default route, pass them as flags. A billing confirmation prompt will still be required:
 
 ```bash filename="terminal"
-vercel mf add-to-group --group="My Group" --default-route=/docs
+vercel microfrontends add-to-group --group="My Group" --default-route=/docs
 ```
 
 **Using the dashboard:**
@@ -120,12 +120,12 @@ vercel microfrontends delete-group
 To delete a group without prompts, pass the group and confirmation flags together:
 
 ```bash filename="terminal"
-vercel mf delete-group --group="My Group" --yes
+vercel microfrontends delete-group --group="My Group" --yes
 ```
 
 **Using the dashboard:**
 
-Remove all projects from the group first, then the option to delete the group becomes available in the group's settings.
+From the **Microfrontends** page in your team **Settings**, or from the **Microfrontends** settings of the default application's project, open the menu for the group and select **Delete Group**. You don't need to remove the projects first. Vercel removes all projects from the group when it deletes the group.
 
 ## Fallback environment
 
@@ -145,7 +145,7 @@ There are three options for the fallback environment setting:
 - `Same Environment` - Requests to microfrontends not built for that commit will fall back to a deployment for the other microfrontend project in the same environment.
   - For example, in the `Preview` environment, requests to a microfrontend that was not built for that commit would fallback to the `Preview` environment of that other microfrontend. If in a custom environment, the request would instead fallback to the custom environment with the same name in the other microfrontend project.
   - When this setting is used, Vercel will generate `Preview` deployments on the production branch for each microfrontend project automatically.
-- `Production` - Requests to microfrontends not built for this commit will fall back to the promoted Production deployment for that other microfrontend project.
+- `Production` - Requests to microfrontends not built for this commit will fall back to the promoted Production deployment for that other microfrontend project. In a custom environment, requests fall back to Production only when the other project has no custom environment with the same name.
 - A specific [custom environment](/docs/deployments/environments#custom-environments) - Requests to microfrontends not built for this commit will fall back to a deployment in a custom environment with the specified name.
 
 This table illustrates the different fallback scenarios that could arise:
@@ -156,7 +156,7 @@ This table illustrates the different fallback scenarios that could arise:
 | `Preview`                    | `Production`                 | `Preview`                         | `Production`                              |
 | `Preview`                    | `staging` Custom Environment | `Preview`                         | `staging` Custom Environment              |
 | `staging` Custom Environment | `Same Environment`           | `staging` Custom Environment      | `staging` Custom Environment              |
-| `staging` Custom Environment | `Production`                 | `staging` Custom Environment      | `Production`                              |
+| `staging` Custom Environment | `Production`                 | `staging` Custom Environment      | `staging` Custom Environment if the project has one, otherwise `Production` |
 | `staging` Custom Environment | `staging` Custom Environment | `staging` Custom Environment      | `staging` Custom Environment              |
 
 If the current environment is `Production`, requests will always be routed to the `Production` environment of the other project.

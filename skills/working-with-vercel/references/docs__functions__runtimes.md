@@ -16,8 +16,8 @@ related:
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "70dca2022eafb064a23ab835f125139ed32798ac1063c769883fff02bbd38028"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "fafa66e0a5b8dfb60e45f0dda9aee1d73295c0712a0a47195d35e292eec6868e"
 ---
 
 # Runtimes
@@ -41,7 +41,7 @@ Vercel supports multiple runtimes for your functions. Each runtime has its own s
 - [Billions of dollars, billions of requests: Black Friday-Cyber Monday 2024](https://vercel.com/blog/black-friday-cyber-monday-2024-recap)
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Fluid compute](https://vercel.com/docs/fluid-compute) — Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to ru
 
 Full cross-link map for this page: [/docs/functions/runtimes.graph.md](/docs/functions/runtimes.graph.md)
 <!-- /docsgraph:related -->
@@ -99,7 +99,7 @@ Filesystem support refers to a function's ability to read and write to the files
 Vercel Functions are archived when they are not invoked:
 
 - **Within 2 weeks** for [Production Deployments](/docs/deployments)
-- **Within 48 hours** for [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production)
+- **Within 3 days** for [Preview Deployments](/docs/deployments/environments#preview-environment-pre-production)
 
 Archived functions will be unarchived when they're invoked, which can make the initial [cold start](/docs/fundamentals/what-is-compute#cold-and-hot-boots "Cold start") time at least 1 second longer than usual.
 
@@ -111,14 +111,7 @@ When using other [frameworks](/docs/frameworks), or Vercel Functions [directly w
 
 ## Caching data
 
-A runtime can retain an archive of up to **100 MB** of the filesystem at build time. The cache key is generated as a combination of:
-
-- Project name
-- [Team ID](/docs/accounts#find-your-team-id) or User ID
-- Entrypoint path (e.g., `api/users/index.go`)
-- Runtime identifier including version (e.g.: `@vercel/go@0.0.1`)
-
-The cache will be invalidated if any of those items changes. You can bypass the cache by running `vercel -f`.
+A runtime can keep files from a build in the Build cache. To learn which data makes up the Build cache key, see [Caching process](/docs/deployments/troubleshoot-a-build#caching-process). To learn the maximum size of the Build cache, see [Build cache maximum size](/docs/limits#build-cache-maximum-size). You can bypass the cache by running `vercel --force`.
 
 ## Environment variables
 

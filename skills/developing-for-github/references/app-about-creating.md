@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps.md"
-fetched_at: "2026-07-20T06:45:20.604Z"
-sha256: "57828e1f300810f37f2bf45a3ed91a0fc5cb5e50cce63112bdd676c88a552be9"
+fetched_at: "2026-11-09T12:33:11.176Z"
+sha256: "32542998d7a9304590454a9ade4f116b36f2860d4b1b07fa17a292acb352f2c5"
 ---
 
 ## About {% data variables.product.prodname_github_apps %}
@@ -36,7 +36,7 @@ To use your {% data variables.product.prodname_github_app %}, you need to instal
 
 * If your {% data variables.product.prodname_github_app %} is **private**, you can only install it on the account that owns the app.
 * If your {% data variables.product.prodname_github_app %} is **public**, other accounts can also install it.{% ifversion enterprise-apps-public-beta %}
-* If your {% data variables.product.prodname_github_app %} is owned by an **enterprise**, you can install it on {% ifversion enterprise-installed-apps %}the enterprise itself or {% endif %}any organization within that enterprise.{% endif %}{% ifversion restrictive-app-authz %} Only members of the enterprise can sign in to it.{% endif %}
+* If your {% data variables.product.prodname_github_app %} is owned by an **enterprise**, you can install it on {% ifversion enterprise-installed-apps %}the enterprise itself or {% endif %}any organization within that enterprise.{% endif %} Only members of the enterprise can sign in to it.
 
 For more information, see [AUTOTITLE](/apps/using-github-apps/installing-your-own-github-app) and [AUTOTITLE](/apps/sharing-github-apps/sharing-your-github-app).
 

@@ -4,8 +4,8 @@ description: Learn how to use TypeSafe with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "6046dacf67c41e46129819b61ceaa91284f434996dab9be7142806bc7b99cfab"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "801ff31a8a86a9ccf0172e74bc62fff726144129fcc8f2d9daaed406f9233ed5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -155,16 +155,24 @@ The provider includes these model IDs and aliases:
 | `jev-latest`  | Alias for the latest stable release.              |
 | `jev-preview` | Alias for the latest release, including previews. |
 
-| Question  | Native TypeSafe primitive | Limits and semantics                                                  |
-| --------- | ------------------------- | --------------------------------------------------------------------- |
-| `choice`  | Choice                    | 1–255 options; selected option and full probabilities.                |
-| `score`   | Score                     | 2–10 ordered rubric levels; fractional score and full probabilities.  |
-| `box`     | Box                       | Four normalized image edges; requires Jev 1.14 or later and an image. |
-| `boolean` | Noul                      | Required model-estimated probability of true.                         |
+| Question  | Native TypeSafe primitive | Limits and semantics                                                          |
+| --------- | ------------------------- | ----------------------------------------------------------------------------- |
+| `choice`  | Choice                    | 1–255 options; selected option and full probabilities.                        |
+| `score`   | Score                     | 1–10 non-null ordered rubric levels; fractional score and full probabilities. |
+| `box`     | Box                       | Four normalized image edges; requires Jev 1.14 or later and an image.         |
+| `boolean` | Noul                      | Required model-estimated probability of true.                                 |
 
 State, instructions, and descriptions accept JSON objects and arrays in addition
-to strings. Descriptions may be `null`. Boolean true/false criteria are optional.
+to strings. Choice descriptions and Boolean true/false descriptions may be `null`;
+Score levels must be non-null. Boolean criteria are optional and may be `null`.
 The SDK uses the neutral name `boolean` and maps it to TypeSafe's `noul` field.
+Instructions may be omitted or `null` for every question type. A Boolean question
+without instructions still needs at least one non-null true/false description.
+
+A single Score level returns score `0` with probability `1`.
+Primitive values in JSON state parts, such as `{ type: 'json', value: true }`,
+are serialized as JSON text. A single string, object, or array JSON state part is
+sent as its native value.
 
 ### Box questions
 
@@ -175,6 +183,9 @@ questions: {
   target: { type: 'box', instructions: 'The cat in the image' },
 }
 ```
+
+Instructions are optional and may be `null`; include them to specify the target
+when the state does not make it clear.
 
 Send an image in `state` as shown below. The answer has
 `type: 'box'` and a `box` object with `top`, `bottom`, `left`, and `right`.
@@ -300,9 +311,14 @@ checking distribution sums and weighted means. The returned values are preserved
 unchanged; rounding means probabilities may not add up to exactly one.
 
 Confidence is a separate TypeSafe statistic, available under
-`result.providerMetadata.typesafe.confidence[questionId]` for Choice and Score
+`result.providerMetadata.typesafe.confidence[questionId]` for Choice, Score, and Box
 answers. Boolean probability always means P(true), not confidence in either
 outcome. Choose decision thresholds in application code.
+
+Score legends are available at
+`result.providerMetadata?.typesafe?.legend[questionId]`. Each legend maps
+zero-based level indices to their descriptions, preserving structured JSON
+objects and arrays. Missing or null legends are omitted from the metadata map.
 
 ### Errors and retries
 

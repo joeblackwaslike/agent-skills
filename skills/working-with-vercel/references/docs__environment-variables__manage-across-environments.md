@@ -16,8 +16,8 @@ related:
 summary: Add, sync, and verify environment variables across development, preview, production, and custom environments using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4f99956c339e08ba3bdfb1f8b6df3c0889f90d8e3fd57d0221a8ad6a367e1254"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bd519aa75960c41cac8b55453c26f97b7547a12f545e902812a5e18ad5778558"
 ---
 
 # Managing environment variables across environments
@@ -31,8 +31,10 @@ Use this guide to manage environment variables across multiple environments. You
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [How to add and manage environment variables on Vercel](https://vercel.com/kb/guide/how-to-add-vercel-environment-variables) — Add environment variables to Vercel through the dashboard, CLI, or REST API, scope them to each environment, and pull th
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
+- [Environments Variables per Git branch](https://vercel.com/changelog/environments-variables-per-git-branch)
+- [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types)
+- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Environments](https://vercel.com/docs/deployments/environments) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
@@ -51,22 +53,22 @@ Use this block when you already know what you're doing and want the full command
 
 ```bash filename="terminal"
 # 1. List available environments (including custom ones)
-vercel target list
+vercel environments list
 
 # 2. Audit existing variables per environment
-vercel env ls production
-vercel env ls preview
-vercel env ls development
+vercel env list --environment production
+vercel env list --environment preview
+vercel env list --environment development
 
 # 3. Add variables to specific environments
-vercel env add DATABASE_URL production
-vercel env add DATABASE_URL preview
+vercel env add DATABASE_URL --environment production
+vercel env add DATABASE_URL --environment preview
 
 # 4. Add a Secret variable (write-only after saving)
-vercel env add API_SECRET production --sensitive
+vercel env add API_SECRET --environment production --sensitive
 
 # 5. Add a branch-specific preview variable
-vercel env add DATABASE_URL preview feature-branch
+vercel env add DATABASE_URL --environment preview --git-branch feature-branch
 
 # 6. Pull environment variables locally to verify
 vercel pull --environment=production
@@ -88,7 +90,7 @@ vercel env run -e production -- npm run build
 Check which environments are available for your project. This includes the default environments (production, preview, development) and any custom environments:
 
 ```bash filename="terminal"
-vercel target list
+vercel environments list
 ```
 
 Custom environments let you create additional targets like `staging` or `qa` with their own environment variables.
@@ -98,21 +100,21 @@ Custom environments let you create additional targets like `staging` or `qa` wit
 Review what's currently configured in each environment to identify gaps or mismatches:
 
 ```bash filename="terminal"
-vercel env ls production
+vercel env list --environment production
 ```
 
 ```bash filename="terminal"
-vercel env ls preview
+vercel env list --environment preview
 ```
 
 ```bash filename="terminal"
-vercel env ls development
+vercel env list --environment development
 ```
 
 To check variables for a custom environment:
 
 ```bash filename="terminal"
-vercel env ls staging
+vercel env list --environment staging
 ```
 
 Compare the output across environments. Missing variables are a common cause of deployment failures where a preview works but production doesn't, or vice versa.
@@ -122,20 +124,20 @@ Compare the output across environments. Missing variables are a common cause of 
 Add a variable to a single environment. The CLI reads the value from stdin, so it prompts you to enter it:
 
 ```bash filename="terminal"
-vercel env add DATABASE_URL production
+vercel env add DATABASE_URL --environment production
 ```
 
 To pipe a value in without the prompt:
 
 ```bash filename="terminal"
-echo "postgres://user:pass@host/db" | vercel env add DATABASE_URL production
+echo "postgres://user:pass@host/db" | vercel env add DATABASE_URL --environment production
 ```
 
 To add the same variable to multiple environments, run the command for each one:
 
 ```bash filename="terminal"
-vercel env add DATABASE_URL preview
-vercel env add DATABASE_URL development
+vercel env add DATABASE_URL --environment preview
+vercel env add DATABASE_URL --environment development
 ```
 
 ## 4. Add Secret variables
@@ -143,13 +145,13 @@ vercel env add DATABASE_URL development
 For credentials like API keys and tokens, use `--sensitive` or `--type secret`. Secret values are write-only after saving in the dashboard.
 
 ```bash filename="terminal"
-vercel env add API_SECRET production --sensitive --yes
+vercel env add API_SECRET --environment production --sensitive --yes
 ```
 
 Secrets are now allowed in Development. This reverses the earlier rule that limited Sensitive variables to Production and Preview.
 
 ```bash filename="terminal"
-vercel env add DEV_API_SECRET development --sensitive --yes
+vercel env add DEV_API_SECRET --environment development --sensitive --yes
 ```
 
 For non-sensitive configuration that stays readable after saving, use `--no-sensitive` or `--type config`. See [Config and Secret environment variables](/docs/environment-variables/sensitive-environment-variables) for type behavior and team policies.
@@ -159,7 +161,7 @@ For non-sensitive configuration that stays readable after saving, use `--no-sens
 For preview deployments, you can set variables that only apply to a specific Git branch. This is useful for testing against a different database or API endpoint on a feature branch:
 
 ```bash filename="terminal"
-vercel env add DATABASE_URL preview feature-branch
+vercel env add DATABASE_URL --environment preview --git-branch feature-branch
 ```
 
 This variable only applies to preview deployments triggered from the `feature-branch` branch. Other preview deployments use the default preview variable.
@@ -169,13 +171,13 @@ This variable only applies to preview deployments triggered from the `feature-br
 To change the value of an existing variable:
 
 ```bash filename="terminal"
-vercel env update DATABASE_URL production
+vercel env update DATABASE_URL --environment production
 ```
 
 You can also pipe the new value:
 
 ```bash filename="terminal"
-cat ~/.npmrc | vercel env update NPM_RC preview
+cat ~/.npmrc | vercel env update NPM_RC --environment preview --yes
 ```
 
 ## 7. Pull and verify locally
@@ -217,20 +219,20 @@ vercel env run -e preview --git-branch feature-branch -- npm run dev
 To remove an environment variable from a specific environment:
 
 ```bash filename="terminal"
-vercel env rm DATABASE_URL production
+vercel env remove DATABASE_URL --environment production
 ```
 
 This prompts for confirmation. Use `--yes` to skip the prompt in automated workflows:
 
 ```bash filename="terminal"
-vercel env rm DATABASE_URL production --yes
+vercel env remove DATABASE_URL --environment production --yes
 ```
 
 ## Related
 
 - [vercel env](/docs/cli/env)
 - [vercel pull](/docs/cli/pull)
-- [vercel target](/docs/cli/target)
+- [vercel environments](/docs/cli/target)
 - [Environment variables overview](/docs/environment-variables)
 - [Deploying a project from the CLI](/docs/projects/deploy-from-cli)
 

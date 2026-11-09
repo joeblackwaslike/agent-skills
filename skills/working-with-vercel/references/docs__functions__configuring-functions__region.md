@@ -17,8 +17,8 @@ related:
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2024c5c3eab54dd6deb9ee26d9e551c18cf078584f1caaa6d360f97e7252a785"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "18a74f5e9673b7f9483bc7be32795a14bb1677f86a7348b870449f80cf4636eb"
 ---
 
 # Configuring regions for Vercel Functions
@@ -154,7 +154,7 @@ To automatically failover to the closest region in the event of an outage:
 
 1. Select your project from your team's [dashboard](/dashboard)
 2. Open **Settings** in the sidebar and select [**Functions**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Ffunctions\&title=Go+to+Functions+Settings)
-3. Enable the **Function Failover** toggle:
+3. If your project uses [fluid compute](/docs/fluid-compute), select **Advanced Settings**. Then enable the **Function Failover** toggle:
 
    ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/functions/function-failover-light.png)
 

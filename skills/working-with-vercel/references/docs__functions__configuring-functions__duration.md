@@ -17,8 +17,8 @@ related:
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d7e123b6b9fda2d1be38c443b39ee379a5ea3ed86428093161e1c3ddc30aa08b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f2a354e81e510822890904b132cf17680a19434515a8814bcadf6b0cbc41cf51"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
@@ -339,7 +339,7 @@ Extended max duration is supported for the following runtimes during the beta:
 - `python3.13`
 - `python3.14`
 
-[Secure Compute](/docs/networking/secure-compute) and [Static IPs](/docs/networking/static-ips) do not support durations above 800 seconds during the beta.
+Extended max duration is supported for projects using [Secure Compute](/docs/networking/secure-compute) or [Static IPs](/docs/networking/static-ips). [BYOC](/docs/networking/bring-your-own-cloud) does not support durations above 800 seconds during the beta.
 
 > **💡 Note:** For long-running request handlers that keep a client connection open over
 > HTTP/2, Vercel sends connection-level HTTP/2 `PING` frames while the response
@@ -379,7 +379,7 @@ While Vercel specifies [defaults](/docs/functions/limitations#max-duration) for 
 ### Dashboard
 
 1. From your [dashboard](/dashboard), select your project and open **Settings** in the sidebar.
-2. From the left side, open [**Functions**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Ffunctions\&title=Go+to+Functions+Settings) in the sidebar and scroll to the **Function Max Duration** section.
+2. From the left side, open [**Functions**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Ffunctions\&title=Go+to+Functions+Settings) in the sidebar. If your project uses [fluid compute](/docs/fluid-compute), select **Advanced Settings**. Then scroll to the **Function Max Duration** section.
 3. Update the **Default Max Duration** field value and select **Save**.
 
 The dashboard sets the project default. During the extended max duration beta, use [per-function configuration](#extended-max-duration-beta) for durations above 800 seconds.

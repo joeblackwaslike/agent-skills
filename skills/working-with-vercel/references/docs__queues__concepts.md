@@ -9,15 +9,15 @@ prerequisites:
   - /docs/queues
 related:
   - /docs/workflows
+  - /docs/background-workers
   - /docs/queues/pricing
   - /docs/queues/api
   - /docs/regions
-  - /docs/queues/poll-mode
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5978a9e3d2fb3fa2cbfafd3037f19f0d476b76de0bd98c837e22633769705f48"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "85b057475bf01333ff09a7af70f5c69273be760d40cb0287c4d0fb0fa2b39346"
 ---
 
 # Queues concepts
@@ -30,15 +30,17 @@ Vercel Queues is a durable event streaming system for asynchronous workloads. Yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
-- [How to run background jobs in Next.js](https://vercel.com/kb/guide/how-to-run-background-jobs-in-nextjs-on-vercel) — Learn the durable way to run background jobs in Next.js on Vercel with the Workflow SDK, and when to reach for Queues or
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
+- [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations) — Build a custom framework integration using the Workflow SDK compiler and combined runtime handler.
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
+- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
+- [Schedules Concepts](https://vercel.com/docs/schedules/concepts) — Learn how Vercel Schedules handles environments, deployments, jitter, one-time schedules, late runs, and duplicate deliv
 
 Full cross-link map for this page: [/docs/queues/concepts.graph.md](/docs/queues/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -69,7 +71,7 @@ Vercel Queues and [Vercel Workflows](/docs/workflows) solve related but differen
 
 Use Queues when you want direct control over event ingestion and delivery. Use Workflow when you want a higher-level programming model for long-running business processes.
 
-For a broader comparison that includes `waitUntil`, Cron Jobs, and continuously running Daemons, see [Running background workers on Vercel](/kb/guide/background-workers-on-vercel). The guide includes examples and guidance on retries, duplicate jobs, and worker shutdown.
+Compare [background worker options](/docs/background-workers) for workloads that also need scheduled triggers, continuous processes, or work after a response. For examples covering retries, duplicate jobs, and worker shutdown, see [Running background workers on Vercel](/kb/guide/background-workers-on-vercel).
 
 ## How Vercel Queues works
 
@@ -269,8 +271,9 @@ The `vercel.json` queue trigger supports these options for JavaScript and TypeSc
 | `type`                | `string` | -            | Trigger type. Use `queue/v2beta`                            |
 | `topic`               | `string` | -            | Topic name to consume. Supports wildcards (e.g., `order-*`) |
 | `retryAfterSeconds`   | `number` | 60 seconds   | Time before a failed message is retried                     |
-| `initialDelaySeconds` | `number` | Zero seconds | Delay before the consumer starts processing after deploy    |
+| `initialDelaySeconds` | `number` | Zero seconds | Delay before a newly published message is first delivered to this consumer |
 | `maxDeliveries`       | `number` | Unlimited    | Deliveries after which a message is no longer retried. See [Retries](#retries) |
+| `maxConcurrency`      | `number` | Unlimited    | Maximum number of messages in flight at the same time for this consumer group. See [Concurrency control](#concurrency-control-push-mode) |
 
 Multiple route files with the same topic create separate consumer groups, each receiving a copy of every message.
 
@@ -286,7 +289,7 @@ You can delay a message's visibility by setting a delay when publishing. The mes
 
 This is useful for scheduling future work, such as sending a reminder email in 30 minutes or retrying an external API call after a cooldown period.
 
-> **💡 Note:** Messages cannot be consumed after their TTL expires. If a message's delay would extend beyond its TTL, the message will expire before it becomes visible and will never be delivered.
+> **💡 Note:** Messages cannot be consumed after their TTL expires. If you set a delay that is longer than the message's TTL, the publish request fails with a `400` error.
 
 #### Delays longer than 7 days
 
@@ -304,7 +307,7 @@ In practice, this means:
 - **Push and poll mode consumers** never receive the duplicate message. It's filtered out before delivery. The original message is unaffected.
 - **ReceiveMessageById** returns a `409` response with the `originalMessageId` if you try to receive a duplicate by its ID. This lets you follow the redirect to the original message.
 
-The deduplication window is the message's retention period, capped at 24 hours: `min(retention, 24 hours)`. Within that window, any republish with the same idempotency key is deduplicated. A message with a retention period shorter than 24 hours is deduplicated for its full retention period. A message with a longer retention period (up to 7 days) is only deduplicated for the first 24 hours.
+The deduplication window lasts for the full retention period of the original message. Within that window, Vercel deduplicates any republish with the same idempotency key, whether the retention period is 60 seconds or 7 days.
 
 This is useful when your producer might retry a publish (for example, after a network timeout) and you need to guarantee exactly-once publishing.
 

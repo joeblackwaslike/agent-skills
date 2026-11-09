@@ -1,8 +1,8 @@
 ---
 title: "VS Code API"
 source: "https://code.visualstudio.com/api/references/vscode-api"
-fetched_at: "2026-10-19T09:38:05.422Z"
-sha256: "625d3f68849a9f3515edb084daabae629549f19bba6e0c4d27fd300e4b0aa288"
+fetched_at: "2026-11-09T12:33:26.963Z"
+sha256: "ae969aa0e2e554ea1e8b99d3256f46d5cd0d5143257500b17ddde7b7ae4b7eb6"
 ---
 
 # VS Code API
@@ -3533,6 +3533,53 @@ ParameterDescription
 scheme: stringThe uri-scheme to register for.
 
 provider: [TextDocumentContentProvider](https://code.visualstudio.com/api/references/vscode-api#TextDocumentContentProvider)A content provider.
+
+ReturnsDescription
+[Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
+
+registerTimelineProvider(id: string, label: string, scheme: string | readonly string[], provider: [TimelineProvider](https://code.visualstudio.com/api/references/vscode-api#TimelineProvider)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+
+Register a provider for the timelines of files and folders.
+
+Multiple providers can be registered. In that case, providers are asked in parallel and the results
+are merged. A failing provider (rejected promise or exception) will not cause a failure of the whole
+operation.
+
+To activate your extension when the Timeline view is shown, use the `onView:timeline` activation event.
+
+ParameterDescription
+id: stringA unique identifier for this provider. It is passed to commands and used to filter the Timeline view.
+Registering two timeline providers with the same id fails. A [WorkspaceTimelineProvider](https://code.visualstudio.com/api/references/vscode-api#WorkspaceTimelineProvider) registered by
+the same extension can use the same id, in which case both are shown as one source of the Timeline view.
+
+label: stringA human-readable name for this provider, shown when filtering the Timeline view.
+
+scheme: string &#124; readonly string[]A scheme or schemes of the resources this provider provides timelines for. Use `*` to
+target all resources.
+
+provider: [TimelineProvider](https://code.visualstudio.com/api/references/vscode-api#TimelineProvider)A timeline provider.
+
+ReturnsDescription
+[Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
+
+registerWorkspaceTimelineProvider(id: string, label: string, provider: [WorkspaceTimelineProvider](https://code.visualstudio.com/api/references/vscode-api#WorkspaceTimelineProvider)): [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)
+
+Register a provider for the workspace timeline.
+
+Multiple providers can be registered. In that case, providers are asked in parallel and the results
+are merged. A failing provider (rejected promise or exception) will not cause a failure of the whole
+operation.
+
+To activate your extension when the Timeline view is shown, use the `onView:timeline` activation event.
+
+ParameterDescription
+id: stringA unique identifier for this provider. It is passed to commands and used to filter the Timeline view.
+Registering two workspace timeline providers with the same id fails. A [TimelineProvider](https://code.visualstudio.com/api/references/vscode-api#TimelineProvider) registered by
+the same extension can use the same id, in which case both are shown as one source of the Timeline view.
+
+label: stringA human-readable name for this provider, shown when filtering the Timeline view.
+
+provider: [WorkspaceTimelineProvider](https://code.visualstudio.com/api/references/vscode-api#WorkspaceTimelineProvider)A workspace timeline provider.
 
 ReturnsDescription
 [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable)A [Disposable](https://code.visualstudio.com/api/references/vscode-api#Disposable) that unregisters this provider when being disposed.
@@ -21581,6 +21628,221 @@ id: string
 
 The id of the icon. The available icons are listed in [https://code.visualstudio.com/api/references/icons-in-labels#icon-listing](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).
 
+### Timeline
+
+A set of timeline items returned by a [TimelineProvider](https://code.visualstudio.com/api/references/vscode-api#TimelineProvider) or a [WorkspaceTimelineProvider](https://code.visualstudio.com/api/references/vscode-api#WorkspaceTimelineProvider).
+
+#### Properties
+
+cursor?: string
+
+A provider-defined cursor for requesting the items that come after the ones returned, see
+[TimelineOptions.cursor](https://code.visualstudio.com/api/references/vscode-api#TimelineOptions.cursor). Omit when there are no more items.
+
+items: readonly [TimelineItem](https://code.visualstudio.com/api/references/vscode-api#TimelineItem)[]
+
+The timeline items, ordered from newest to oldest.
+
+### TimelineItem
+
+An entry in a timeline, such as a commit or a saved version of a file.
+
+#### Constructors
+
+TimelineItem(label: string, timestamp: number): [TimelineItem](https://code.visualstudio.com/api/references/vscode-api#TimelineItem)
+
+ParameterDescription
+label: stringA human-readable string describing the timeline item.
+
+timestamp: numberWhen the item occurred, in milliseconds since 1 January 1970 00:00:00 UTC.
+
+ReturnsDescription
+[TimelineItem](https://code.visualstudio.com/api/references/vscode-api#TimelineItem)
+
+TimelineItem(resourceUri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), timestamp: number): [TimelineItem](https://code.visualstudio.com/api/references/vscode-api#TimelineItem)
+
+ParameterDescription
+resourceUri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)The [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) of the resource's content as of this item, see [TimelineItem.resourceUri](https://code.visualstudio.com/api/references/vscode-api#TimelineItem.resourceUri).
+
+timestamp: numberWhen the item occurred, in milliseconds since 1 January 1970 00:00:00 UTC.
+
+ReturnsDescription
+[TimelineItem](https://code.visualstudio.com/api/references/vscode-api#TimelineItem)
+
+#### Properties
+
+accessibilityInformation?: [AccessibilityInformation](https://code.visualstudio.com/api/references/vscode-api#AccessibilityInformation)
+
+Accessibility information used when screen reader interacts with this timeline item.
+
+command?: [Command](https://code.visualstudio.com/api/references/vscode-api#Command)
+
+The [Command](https://code.visualstudio.com/api/references/vscode-api#Command) that should be executed when the timeline item is opened.
+
+For an item that changes multiple resources, such as a commit in a folder or workspace timeline,
+use the `vscode.changes` command to show all of its changes.
+
+contextValue?: string
+
+Context value of the timeline item. This can be used to contribute specific actions to the item.
+For example, a timeline item is given a context value as `commit`. When contributing actions to `timeline/item/context`
+using `menus` extension point, you can specify context value for key `timelineItem` in `when` expression like `timelineItem == commit`.
+
+
+```
+"contributes": {
+        "menus": {
+            "timeline/item/context": [
+                {
+                    "command": "extension.copyCommitId",
+                    "when": "timelineItem == commit &#x26;&#x26; !listMultiSelection"
+                }
+            ]
+        }
+    }
+```
+
+This will show the `extension.copyCommitId` action only for items where `contextValue` is `commit`,
+and only when a single item is selected.
+
+Commands contributed to `timeline/item/context` are run with the following arguments:
+
+- The [TimelineItem](https://code.visualstudio.com/api/references/vscode-api#TimelineItem) the command was run on.
+
+- The [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) of the file or folder whose timeline is shown, or `undefined` for the workspace timeline.
+
+- The id that the provider of the item was registered with, see [workspace.registerTimelineProvider](https://code.visualstudio.com/api/references/vscode-api#workspace.registerTimelineProvider).
+
+- If the item is part of a multi-selection, all selected items from the same provider, including the
+first argument. Otherwise `undefined`.
+
+Commands contributed by other extensions receive read-only copies of the items, with all properties
+except [command](https://code.visualstudio.com/api/references/vscode-api#TimelineItem.command). The extension that provided the items receives the
+original objects.
+
+description?: string
+
+A human-readable string describing less prominent details of the timeline item.
+
+iconPath?: [IconPath](https://code.visualstudio.com/api/references/vscode-api#IconPath)
+
+The icon path or [ThemeIcon](https://code.visualstudio.com/api/references/vscode-api#ThemeIcon) for the timeline item.
+
+When [label](https://code.visualstudio.com/api/references/vscode-api#TimelineItem.label) is `falsy` and [resourceUri](https://code.visualstudio.com/api/references/vscode-api#TimelineItem.resourceUri) is set,
+the icon is derived from the current file icon theme when `iconPath` is `falsy` or set to
+[ThemeIcon.File](https://code.visualstudio.com/api/references/vscode-api#ThemeIcon.File) or [ThemeIcon.Folder](https://code.visualstudio.com/api/references/vscode-api#ThemeIcon.Folder).
+
+id?: string
+
+Optional id for the timeline item. It must be unique across all the timeline items provided by its provider.
+
+If not provided, the item is identified by its timestamp. Set an id when two items can have the same timestamp.
+
+label?: string
+
+A human-readable string describing the timeline item. When `falsy`, it is derived from [resourceUri](https://code.visualstudio.com/api/references/vscode-api#TimelineItem.resourceUri).
+
+resourceUri?: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)
+
+The [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) of the resource's content as of this item, for example a `git:` uri for a commit
+or the uri of a saved version of a file.
+
+When set, two selected items can be compared, including items from different providers.
+Leave it `undefined` when the item does not represent a single version of a resource, for example
+a commit in a folder or workspace timeline.
+
+When [label](https://code.visualstudio.com/api/references/vscode-api#TimelineItem.label) is `falsy`, the item represents the resource itself, and all of
+the following are derived from this property:
+
+- **Label**: Derived from the resource's file name.
+
+- **Icon**: Derived from the current file icon theme when [iconPath](https://code.visualstudio.com/api/references/vscode-api#TimelineItem.iconPath) is `falsy`
+or set to [ThemeIcon.File](https://code.visualstudio.com/api/references/vscode-api#ThemeIcon.File) or [ThemeIcon.Folder](https://code.visualstudio.com/api/references/vscode-api#ThemeIcon.Folder).
+
+- **Decorations**: The resource's [file decorations](https://code.visualstudio.com/api/references/vscode-api#FileDecoration) are shown.
+
+When `label` is set, the label, icon, and decorations are not derived from this property.
+
+timestamp: number
+
+When the item occurred, in milliseconds since 1 January 1970 00:00:00 UTC.
+
+tooltip?: string | [MarkdownString](https://code.visualstudio.com/api/references/vscode-api#MarkdownString)
+
+The tooltip text when you hover over the timeline item.
+
+### TimelineOptions
+
+Options for a timeline request.
+
+#### Properties
+
+cursor?: string
+
+A [cursor](https://code.visualstudio.com/api/references/vscode-api#Timeline.cursor) from a previous result, to request the items that come after it.
+`undefined` requests the newest items.
+
+limit?: number
+
+The number of items requested. Returning more or fewer items is allowed; return a
+[cursor](https://code.visualstudio.com/api/references/vscode-api#Timeline.cursor) when there are more. `undefined` requests all items.
+
+When a timeline changes, the newest items are requested again, with a `limit` of at least the
+number of items already loaded.
+
+triggerKind: [TimelineTriggerKind](https://code.visualstudio.com/api/references/vscode-api#TimelineTriggerKind)
+
+Why the timeline is requested.
+
+### TimelineProvider
+
+Provides the timelines of files and folders.
+
+Commands contributed to the `timeline/title` menu are run with the [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) of the file or folder whose
+timeline is shown, or `undefined` for the workspace timeline. Use the `timelineForWorkspace` context key in
+their `when` clauses to tell whether the workspace timeline is shown.
+
+#### Events
+
+onDidChangeTimeline?: [Event](https://code.visualstudio.com/api/references/vscode-api#Event<T>)<[Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) | [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)[]>
+
+An optional event to signal that timelines from this provider have changed. Fire the [uris](https://code.visualstudio.com/api/references/vscode-api#Uri)
+of the files or folders whose timelines changed, or `undefined` to signal that all of them changed.
+
+Items that are already shown are requested again, so changed and removed items are updated.
+
+#### Methods
+
+provideTimeline(uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri), options: [TimelineOptions](https://code.visualstudio.com/api/references/vscode-api#TimelineOptions), token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): [ProviderResult](https://code.visualstudio.com/api/references/vscode-api#ProviderResult<T>)<[Timeline](https://code.visualstudio.com/api/references/vscode-api#Timeline)>
+
+Provide [timeline items](https://code.visualstudio.com/api/references/vscode-api#TimelineItem) for a file or folder.
+
+ParameterDescription
+uri: [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri)The [Uri](https://code.visualstudio.com/api/references/vscode-api#Uri) of the file or folder to provide the timeline for.
+
+options: [TimelineOptions](https://code.visualstudio.com/api/references/vscode-api#TimelineOptions)Options for this request.
+
+token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)A cancellation token.
+
+ReturnsDescription
+[ProviderResult](https://code.visualstudio.com/api/references/vscode-api#ProviderResult<T>)<[Timeline](https://code.visualstudio.com/api/references/vscode-api#Timeline)>A [Timeline](https://code.visualstudio.com/api/references/vscode-api#Timeline) or a thenable that resolves to such. The lack of a result can be
+signaled by returning `undefined` or `null`.
+
+### TimelineTriggerKind
+
+The reason a timeline is requested.
+
+#### Enumeration Members
+
+Invoke: 1
+
+The user explicitly refreshed the timeline. Providers that cache results should fetch fresh data.
+
+Automatic: 2
+
+The timeline was requested automatically, for example because the active editor changed,
+the provider signaled a change, or the user loaded more items.
+
 ### TreeCheckboxChangeEvent<T>
 
 An event describing the change in a tree item's checkbox state.
@@ -23535,6 +23797,36 @@ token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-a
 ReturnsDescription
 [ProviderResult](https://code.visualstudio.com/api/references/vscode-api#ProviderResult<T>)<T>The resolved symbol or a thenable that resolves to that. When no result is returned,
 the given `symbol` is used.
+
+### WorkspaceTimelineProvider
+
+Provides the timeline of the whole workspace, for example the history of the workspace's repositories.
+In a multi-root workspace, the timeline covers all workspace folders.
+
+While the workspace timeline is shown, the `timelineForWorkspace` context key is `true`.
+
+#### Events
+
+onDidChangeWorkspaceTimeline?: [Event](https://code.visualstudio.com/api/references/vscode-api#Event<T>)<void>
+
+An optional event to signal that the workspace timeline from this provider has changed.
+
+Items that are already shown are requested again, so changed and removed items are updated.
+
+#### Methods
+
+provideWorkspaceTimeline(options: [TimelineOptions](https://code.visualstudio.com/api/references/vscode-api#TimelineOptions), token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)): [ProviderResult](https://code.visualstudio.com/api/references/vscode-api#ProviderResult<T>)<[Timeline](https://code.visualstudio.com/api/references/vscode-api#Timeline)>
+
+Provide [timeline items](https://code.visualstudio.com/api/references/vscode-api#TimelineItem) for the whole workspace.
+
+ParameterDescription
+options: [TimelineOptions](https://code.visualstudio.com/api/references/vscode-api#TimelineOptions)Options for this request.
+
+token: [CancellationToken](https://code.visualstudio.com/api/references/vscode-api#CancellationToken)A cancellation token.
+
+ReturnsDescription
+[ProviderResult](https://code.visualstudio.com/api/references/vscode-api#ProviderResult<T>)<[Timeline](https://code.visualstudio.com/api/references/vscode-api#Timeline)>A [Timeline](https://code.visualstudio.com/api/references/vscode-api#Timeline) or a thenable that resolves to such. The lack of a result can be
+signaled by returning `undefined` or `null`.
 
 ## API Patterns
 

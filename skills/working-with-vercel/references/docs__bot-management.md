@@ -16,8 +16,8 @@ related:
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2b4b04c607957bf809e93ac309e361b195524f5292d5e05781878d3e8d0c6546"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "197ddd2ccea0a40f53aa6694b99fb998bfe8214b0aab5c241226f44b969c79ff"
 ---
 
 # Bot Management
@@ -37,7 +37,7 @@ Bots generate nearly half of all internet traffic. While many bots serve legitim
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
-- [How to Effectively Load Test Your Vercel Application](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
 - [Bot Protection: One-click managed ruleset now in public beta](https://vercel.com/blog/one-click-bot-protection-now-in-public-beta)
@@ -321,6 +321,14 @@ Bingbot is Microsoft's web crawler used for indexing websites for Bing Search.
 
 View
 
+bingpreview
+
+preview
+
+BingPreview renders pages to build the page snapshots and rich captions shown alongside Bing search results. It has desktop and mobile variants and is published by Microsoft as one of the Bing crawlers.
+
+View
+
 brightbot
 
 monitor
@@ -446,6 +454,14 @@ cookiebot
 monitor
 
 Cookiebot automates compliance with cookie laws and helps you manage your cookie consent preferences.
+
+View
+
+cookietractor
+
+monitor
+
+An automated scanner that analyzes websites for cookies and tracking technologies to help meet GDPR and other privacy compliance obligations.
 
 View
 
@@ -769,6 +785,14 @@ Crawling preferences addressed to the Google-InspectionTool user agent affect Se
 
 View
 
+google-lens
+
+user\_initiated
+
+Google Lens fetches webpages in response to visual searches initiated by users.
+
+View
+
 google-pagerenderer
 
 preview
@@ -846,6 +870,14 @@ gptbot
 ai\_crawler
 
 Crawls web content to improve OpenAI's generative AI models and ChatGPT; respects 'robots.txt' directives to exclude sites from training data.
+
+View
+
+grove
+
+feed\_fetcher
+
+Fetches RSS and Atom feeds subscribed to by Grove users and checks directory feeds for publication recency.
 
 View
 
@@ -1009,6 +1041,14 @@ Marfeel's crawler used for social experiences (Facebook, X/Twitter, Telegram, Re
 
 View
 
+mediavine-bot
+
+advertising
+
+Fetches enrolled publishers' ads.txt files, homepages, privacy policies, and page metadata for Mediavine ad management and Grow by Mediavine.
+
+View
+
 meta-externalads
 
 advertising
@@ -1038,6 +1078,14 @@ meta-webindexer
 ai\_crawler
 
 Crawls web content to provide search results for Meta AI users.
+
+View
+
+microsoft-skypebotapi
+
+webhook
+
+Delivers Microsoft Teams and Skype bot activities from the Azure Bot Service channel connector to the messaging endpoint a bot registers. Egresses from the same Microsoft Teams endpoint set as Teams link previews.
 
 View
 
@@ -1521,27 +1569,11 @@ System-initiated requests made from Vercel's build container during a build
 
 View
 
-vercel-favicon-bot
-
-preview
-
-Vercel Favicon Bot
-
-View
-
 vercelflags
 
 monitor
 
 vercel flags
-
-View
-
-vercel-screenshot-bot
-
-preview
-
-Vercel Screenshot Bot
 
 View
 

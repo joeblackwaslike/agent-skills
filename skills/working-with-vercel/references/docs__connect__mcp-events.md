@@ -16,8 +16,8 @@ related:
 summary: Use MCP events with Vercel Connect to react to changes, receive verified webhook deliveries, and manage subscription lifecycles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/connect/mcp-events.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7371303e678959440e5a84b0889541fc180557a9601e2c3122423dc14ca8bc89"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "ae344a6c57df57c49c2e4a8dfd1e94a2e1d62edbeb90da9f6ce23bac54654677"
 ---
 
 # MCP Events
@@ -36,11 +36,11 @@ polling for updates.
 - [Receive MCP Webhook Events](https://ai-sdk.dev/cookbook/node/mcp-events) — Subscribe to MCP events and receive verified webhooks with AI SDK.
 - [MCP Events support in Vercel Connect is now in public beta](https://vercel.com/changelog/mcp-events-support-in-vercel-connect-is-now-in-public-beta)
 - [MCP Events](https://ai-sdk.dev/docs/ai-sdk-core/mcp-events) — Understand the MCP webhook events contract and the AI SDK APIs for subscribing, verifying, and receiving events.
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
 - [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
-- [eve with Vercel Connect](https://vercel.com/docs/connect/frameworks/eve) — Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, an
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 

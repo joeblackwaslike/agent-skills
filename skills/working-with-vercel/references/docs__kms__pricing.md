@@ -13,8 +13,8 @@ related:
 summary: How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/kms/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8ffb0e1672ee50c1ef280d5bdef2cf46f298fd6dced2d4901e892027c79409ba"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "2cecc3c8c5f7b4822bfb152fe9de9b0f2bc5d4605a47fad7486e64c8c63d3884"
 ---
 
 # Vercel KMS Pricing and Limits
@@ -27,6 +27,7 @@ KMS is billed per signing operation. A signing operation is a single `signJWT` o
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.

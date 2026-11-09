@@ -15,8 +15,8 @@ related:
 summary: Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3a05f878f2466b34d6f0aa9ce8a331fabcf0f95aa260309939fc2cdf1d52833f"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "53e8edffaf6370812bb48504c15e7ee872d1ccb90b040d783afcb4f3df57b2b2"
 ---
 
 # AI Gateway Model Allowlist
@@ -69,7 +69,7 @@ When a request targets a disabled model, AI Gateway returns:
 
 ```json
 {
-  "error": "Your team has restricted access to this model. Contact the owner of the account for more details.",
+  "error": "Your team has restricted access to this model. Team owners can edit AI Gateway Settings (https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fsettings&title=AI+Gateway+Settings) to enable this model in Model Allowlist. Model: example/model-name",
   "type": "no_providers_available",
   "statusCode": 403
 }

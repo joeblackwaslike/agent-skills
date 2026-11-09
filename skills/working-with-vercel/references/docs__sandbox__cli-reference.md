@@ -10,14 +10,14 @@ prerequisites:
 related:
   - /docs/sandbox/sdk-reference
   - /docs/sandbox/python-sdk-reference
+  - /docs/accounts/access-tokens
   - /docs/project-configuration/general-settings
   - /docs/sandbox/concepts/images
-  - /docs/sandbox/concepts/persistent-sandboxes
 summary: Use the Sandbox CLI to run coding agents, manage sandboxes, execute commands, and copy files from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "11be105143e7aab85f8a5fc7157be56221bd72c0605f75f6209d51e40282cb0d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "16327fe349511fa29e4b1c02d3648d3182caf700a583042392542e45596793aa"
 ---
 
 # Sandbox CLI Reference
@@ -36,8 +36,7 @@ Use the Sandbox CLI to [run coding agents](#run-a-coding-agent), manage sandboxe
 - [Use and manage Vercel Sandbox directly from the Vercel CLI](https://vercel.com/changelog/use-vercel-sandbox-directly-within-vercel-cli)
 - [How to use Vercel Drives with an eve agent](https://vercel.com/kb/guide/vercel-drives-eve-agent) — Mount Vercel Drives in an eve agent's sandbox to give each user a persistent workspace and share read-only reference dat
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking)
-- [How to use snapshots for faster sandbox startup](https://vercel.com/kb/guide/how-to-use-snapshots-for-faster-sandbox-startup) — Learn how to save sandbox state with snapshots and skip installation on future runs.
-- [How to reconnect to a running Sandbox](https://vercel.com/kb/guide/how-to-reconnect-to-a-running-sandbox) — Learn how to use \\`Sandbox.get\\(\\)\\` to reconnect to an existing sandbox from a different process or after a script rest
+- [Run untrusted Python code safely with Vercel Sandbox](https://vercel.com/kb/guide/python-and-vercel-sandbox) — Execute untrusted and AI-generated code from Python in isolated microVMs, with files, processes, network policies, and s
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
@@ -116,7 +115,7 @@ sandbox <subcommand>
 - [`copy`](#sandbox-copy): Copy files between your local filesystem and a remote sandbox. \[alias: `cp`]
 - [`stop`](#sandbox-stop): Stop the current session of one or more sandboxes.
 - [`extend`](#sandbox-extend): Add time to a running session without changing its default timeout.
-- [`remove`](#sandbox-remove): Permanently delete one or more sandboxes and all their sessions.
+- [`remove`](#sandbox-remove): Permanently delete one or more sandboxes and all their sessions. \[alias: `rm`]
 - [`config`](#sandbox-config): View and update sandbox configuration (resources, timeout, persistence, snapshot retention, network policy, drive mounts, tags).
 - [`sessions`](#sandbox-sessions): Inspect VM sessions for a sandbox.
 - [`snapshot`](#sandbox-snapshot): Take a snapshot of the filesystem of a sandbox.
@@ -152,7 +151,7 @@ sandbox list --project my-nextjs-app
 sandbox list --name-prefix ci- --sort-by name --sort-order asc
 
 # Filter by tag
-sandbox list --tag env=staging --limit 100
+sandbox list --tag env=staging --limit 20
 
 # Page through results using the cursor reported by the previous page
 sandbox list --cursor <token>
@@ -162,13 +161,13 @@ sandbox list --cursor <token>
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 | `--name-prefix <p>`   | -        | Filter sandboxes whose name starts with this prefix. Forces `--sort-by name`.                                                                                    |
 | `--sort-by <field>`   | -        | Sort by `createdAt` (default), `name`, or `statusUpdatedAt`.                                                                                                     |
 | `--sort-order <ord>`  | -        | Sort direction. `asc` or `desc` (default).                                                                                                                       |
-| `--tag <key=value>`   | -        | Filter sandboxes by tag. Repeatable, but `Sandbox.list` currently filters on a single tag.                                                                       |
+| `--tag <key=value>`   | -        | Filter sandboxes by tag. You can filter on one tag only. If you repeat this option with different keys, the command fails.                                                                       |
 | `--limit <n>`         | -        | Maximum number of sandboxes per page. Default 50.                                                                                                                |
 | `--cursor <token>`    | -        | Pagination cursor from a previous page.                                                                                                                          |
 
@@ -221,8 +220,8 @@ sandbox create pi --name my-agent --scope my-team --project my-project
 ```
 
 The CLI selects the [universal image](/docs/sandbox/concepts/images#vercel-managed-images)
-with the agents preinstalled. Omit `--image`, `--runtime`, and `--snapshot` when
-using an agent shortcut.
+with the agents preinstalled. Omit `--image` and `--snapshot` when using an agent
+shortcut.
 
 Exiting the agent leaves the sandbox running. Unless you pass `--silent`, the
 CLI prints commands to reconnect to the agent or stop the sandbox. Use the
@@ -289,12 +288,13 @@ sandbox create --mount cache:/data:snapshot
 
 | Option                              | Alias    | Description                                                                                                                                                      |
 | ----------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`                   | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`                   | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>`               | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`                    | `--team` | The team you want to use with this command.                                                                                                                      |
 | `--name <name>`                     | -        | Sandbox name (unique per project). Generated if omitted. Names cannot be changed after creation.                                                                 |
 | `--image <image>`                   | -        | A Vercel Container Registry (VCR) [image](/docs/sandbox/concepts/images) name and optional tag or sha to start the sandbox from (e.g. my-repo, my-repo:v1).      |
 | `--timeout <duration>`              | -        | How long the sandbox can run before we automatically stop it. Examples: '5m', '1h'. We'll stop it after 5 minutes by default.                                    |
+| `--vcpus <count>`                   | -        | Number of vCPUs to allocate. Each vCPU includes 2048 MB of memory. Defaults to 2.                                                                                |
 | `--publish-port <port>`             | `-p`     | Make a port from your sandbox accessible via a public URL. Repeatable.                                                                                           |
 | `--snapshot <snapshot_id>`          | `-s`     | Create the sandbox from a previously saved snapshot. To fork from another sandbox by name, use [`sandbox fork`](#sandbox-fork) instead.                          |
 | `--env <key=value>`                 | `-e`     | Default environment variables for sandbox commands. Repeatable.                                                                                                  |
@@ -333,7 +333,7 @@ A persistent sandbox snapshots its filesystem every time a session stops, so its
 
 Fork an existing sandbox into a new one. The fork is seeded from the source sandbox's current snapshot and inherits its config. Any option you pass overrides the copied value. If the source has no current snapshot, the fork falls back to creating a fresh sandbox with the source's image plus the copied config.
 
-`env` is **not** copied (encrypted server-side); pass `--env` to set environment variables on the fork. Tags passed via `--tag` fully replace the source's tags (no per-key merge).
+The fork copies the source's environment variables. Variables you pass with `--env` fully replace the copied set (no per-key merge). Tags passed via `--tag` fully replace the source's tags (no per-key merge).
 
 The fork runs in the source sandbox's [region](/docs/sandbox/concepts/regions) unless you pass `--region`. The fork also inherits the source's failover regions. Pass `--failover-regions` to replace them. If the source has a snapshot, that snapshot must be available in the target region.
 
@@ -349,7 +349,7 @@ sandbox fork [OPTIONS] <source>
 # Fork with every supported field copied from the source
 sandbox fork my-source
 
-# Override the name and bump vCPUs; env vars must be re-supplied
+# Override the name, bump vCPUs, and replace the copied environment variables
 sandbox fork my-source --name my-forked-sandbox --vcpus 4 --env FOO=1
 ```
 
@@ -357,14 +357,14 @@ sandbox fork my-source --name my-forked-sandbox --vcpus 4 --env FOO=1
 
 | Option                              | Alias    | Description                                                                                                                                                      |
 | ----------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`                   | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`                   | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>`               | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`                    | `--team` | The team you want to use with this command.                                                                                                                      |
 | `--name <name>`                     | -        | Name for the forked sandbox. Must be unique per project. Generated if omitted.                                                                                   |
 | `--timeout <duration>`              | -        | Override the session timeout inherited from the source.                                                                                                          |
 | `--vcpus <count>`                   | -        | Override the vCPU count. Each vCPU includes 2048 MB of memory.                                                                                                   |
 | `--publish-port <port>`             | `-p`     | Publish a port. Repeatable. Replaces the inherited port list if provided.                                                                                        |
-| `--env <key=value>`                 | `-e`     | Environment variables for the fork. Not copied from the source. Repeatable.                                                                                      |
+| `--env <key=value>`                 | `-e`     | Environment variables for the fork. Repeatable. When provided, fully replaces the environment variables copied from the source.                                                                                      |
 | `--tag <key=value>`                 | `-t`     | Tag the fork. Repeatable. When provided, fully replaces the tags copied from the source.                                                                         |
 | `--region <region>`                 | -        | Override the [region](/docs/sandbox/concepts/regions) copied from the source. If the source has a snapshot, it must be available in this region.                 |
 | `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the fork can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
@@ -407,11 +407,11 @@ sandbox config <subcommand> <name> [VALUE | OPTIONS]
 | :----------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
 | `sandbox config list <name>`                                 | Print the current configuration of a sandbox.                                                                |
 | `sandbox config vcpus <name> <count>`                        | Update vCPU allocation. Each vCPU includes 2048 MB RAM.                                                      |
-| `sandbox config timeout <name> <duration>`                   | Update the session timeout (e.g. `5m`, `1h`).                                                                |
+| `sandbox config timeout <name> <duration>`                   | Set the saved timeout for future sessions (e.g. `5m`, `1h`). A higher value also extends a running session; a lower value leaves its deadline unchanged.                                                                |
 | `sandbox config persistent <name> <true\|false>`             | Enable or disable filesystem persistence between sessions.                                                   |
 | `sandbox config failover-regions <name> <region,...\|none>`  | Replace the [failover regions](/docs/sandbox/concepts/regions#failover-regions). Pass `none` to remove them. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
 | `sandbox config snapshot-expiration <name> <duration\|none>` | Update the default snapshot TTL.                                                                             |
-| `sandbox config keep-last-snapshots <name> <count>`          | Keep only the N (1–10) most recent snapshots of this sandbox.                                                |
+| `sandbox config keep-last-snapshots <name> <count>`          | Keep only the N (1–10) most recent snapshots of this sandbox. Pass `0` to remove the retention policy.                                                |
 | `sandbox config keep-last-snapshots-for <name> <dur\|none>`  | Expiration applied to kept snapshots.                                                                        |
 | `sandbox config delete-evicted-snapshots <name> <bool>`      | Whether evicted snapshots are deleted immediately.                                                           |
 | `sandbox config current-snapshot <name> <snapshot-id>`       | Roll back the sandbox to a specific snapshot. New sessions resume from it.                                   |
@@ -420,6 +420,8 @@ sandbox config <subcommand> <name> [VALUE | OPTIONS]
 | `sandbox config ports <name> [-p PORT ...]`                  | Replace the exposed port list. Omit `-p` to clear all ports.                                                 |
 | `sandbox config mounts <name> [OPTIONS]`                     | Replace the mounted drives for new sessions. Omit `--mount` to remove all mounts.                           |
 | `sandbox config tags <name> [--tag key=value ...]`           | Replace the tag set. Omit `--tag` to clear all tags.                                                         |
+
+`sandbox config timeout` saves a default, while `sandbox extend` adds to the current deadline. If the configured value exceeds the running session's timeout, the SDK extends that session by the difference. Lowering the saved value doesn't shorten the live deadline. Configuration changes don't resume a stopped sandbox.
 
 ### Sandbox config example
 
@@ -431,8 +433,13 @@ sandbox config list my-sandbox
 sandbox config network-id my-sandbox 3k9x7m2p5q8w1z4n
 sandbox config network-id my-sandbox none
 
-# Update vCPUs and timeout
+# Update vCPUs for future sessions
 sandbox config vcpus my-sandbox 4
+
+# Save a default for future sessions without resuming a stopped sandbox
+sandbox config timeout stopped-sandbox 10m
+
+# If the running session has a 5-minute timeout, add 25 minutes
 sandbox config timeout my-sandbox 30m
 
 # Toggle persistence
@@ -468,7 +475,7 @@ sandbox config current-snapshot my-sandbox snap_abc123
 sandbox config network-policy my-sandbox --network-policy deny-all
 
 # Update the sandbox firewall to allow all egress traffic
-sandbox config network-policy my-sandbox --mode allow-all
+sandbox config network-policy my-sandbox --network-policy allow-all
 
 # Update the sandbox firewall to specific rules
 sandbox config network-policy my-sandbox --allowed-domain vercel.com --allowed-domain ai-gateway.vercel.sh
@@ -478,7 +485,7 @@ sandbox config network-policy my-sandbox --allowed-domain vercel.com --allowed-d
 
 | Option                      | Alias    | Description                                                                                                                                   |
 | --------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--network-policy <mode>`   | `--mode` | Base network mode to update the sandbox to ('allow-all' - default, 'deny-all'). Leave unset if using more specific rules.                     |
+| `--network-policy <mode>`   | `--mode` | Base network mode to update the sandbox to ('allow-all' or 'deny-all'). Leave unset if using more specific rules. You must set a mode or at least one rule option.                     |
 | `--allowed-domain <domain>` | -        | List of domains (or pattern) to allow access to (only applicable in 'custom' mode). Use wildcard `*` to match multiple domains or subdomains. |
 | `--allowed-cidr <cidr>`     | -        | List of address ranges to allow access to (only applicable in 'custom' mode). Traffic to those addresses will bypass domain matching.         |
 | `--denied-cidr <cidr>`      | -        | List of address ranges to deny access to (only applicable in 'custom' mode). Those take precedence over allowed domains and addresses.        |
@@ -515,7 +522,9 @@ sandbox config network-policy my-sandbox --allowed-domain vercel.com --allowed-d
 
 ## `sandbox copy`
 
-Copy a file between your local filesystem and a remote sandbox. The command transfers one file per invocation, and the destination is the full target path, not a directory.
+Copy files between your local filesystem and a remote sandbox. By default, the command copies one file, and the destination is the full target path, not a directory. To copy a directory and everything in it, in either direction, pass `--recursive`. The contents of the source directory end up inside the destination directory.
+
+The command writes sandbox files as the sandbox's default user, so choose a destination that this user can write to. In [Vercel Managed Images](/docs/sandbox/concepts/images#vercel-managed-images), including the default image, use a path under `/vercel`, the default [working directory](/docs/sandbox/sdk-reference#environment-defaults).
 
 ```bash filename="terminal"
 sandbox copy [OPTIONS] <SOURCE> <DESTINATION>
@@ -525,32 +534,37 @@ sandbox copy [OPTIONS] <SOURCE> <DESTINATION>
 
 ```bash filename="terminal"
 # Copy file from local to sandbox
-sandbox copy ./local-file.txt my-sandbox:/app/remote-file.txt
+sandbox copy ./local-file.txt my-sandbox:/vercel/remote-file.txt
 
 # Copy file from sandbox to local
-sandbox copy my-sandbox:/app/output.log ./output.log
+sandbox copy my-sandbox:/vercel/output.log ./output.log
+
+# Copy a local directory and everything in it to the sandbox
+# ./my-project/package.json becomes /vercel/app/package.json
+sandbox copy --recursive ./my-project my-sandbox:/vercel/app
 ```
 
 ### Sandbox copy options
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 
 ### Sandbox copy flags
 
-| Flag     | Short | Description               |
-| -------- | ----- | ------------------------- |
-| `--help` | `-h`  | Display help information. |
+| Flag          | Short | Description                            |
+| ------------- | ----- | -------------------------------------- |
+| `--recursive` | `-r`  | Copy a directory and everything in it. |
+| `--help`      | `-h`  | Display help information.              |
 
 ### Sandbox copy arguments
 
-| Argument        | Description                                                                  |
-| --------------- | ---------------------------------------------------------------------------- |
-| `<SOURCE>`      | Source path. Either a local file, or `<name>:<path>` for a sandbox file.     |
-| `<DESTINATION>` | Destination path. Either a local file, or `<name>:<path>` for a sandbox file. |
+| Argument        | Description                                                                                                                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<SOURCE>`      | Source path. Either a local file, or `<name>:<path>` for a sandbox file. With `--recursive`, the source can also be a directory.                                                        |
+| `<DESTINATION>` | Destination path. Either a local file, or `<name>:<path>` for a sandbox file. When the source is a directory, the destination is a directory that receives the contents of the source. |
 
 ## `sandbox exec`
 
@@ -573,7 +587,7 @@ sandbox exec --env DEBUG=true my-sandbox -- npm test
 sandbox exec --interactive --sudo my-sandbox -- sh
 
 # Run command in specific working directory
-sandbox exec --workdir /app my-sandbox -- python script.py
+sandbox exec --workdir /vercel/app my-sandbox -- python script.py
 
 # Kill the command if it runs longer than 30 seconds
 sandbox exec --timeout 30s my-sandbox -- npm test
@@ -587,15 +601,16 @@ cat data.csv | sandbox exec --stdin my-sandbox -- wc -l
 # Start detached with stdin kept open for later writes
 sandbox exec --detach --stdin my-sandbox -- cat
 
-# Stop the current session after the command exits
-sandbox exec --stop my-sandbox -- npm build
+# Run a command, then stop the current session
+sandbox exec my-sandbox -- npm run build
+sandbox stop my-sandbox
 ```
 
 ### Sandbox exec options
 
 | Option                  | Alias    | Description                                                                                                                                                      |
 | ----------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`       | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`       | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>`   | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`        | `--team` | The team you want to use with this command.                                                                                                                      |
 | `--workdir <directory>` | `-w`     | Set the directory where you want the command to run.                                                                                                             |
@@ -610,8 +625,8 @@ sandbox exec --stop my-sandbox -- npm build
 | `--interactive` | `-i`  | Run the command in an interactive shell.                                                                     |
 | `--detach`      | -     | Start the command and print its command ID without waiting for it to finish. Cannot be combined with `--interactive`. |
 | `--stdin`       | -     | Forward local stdin to the command, or keep a detached command's stdin open for later writes. Cannot be combined with `--interactive`. |
+| `--no-extend-timeout` | -     | Do not extend the sandbox timeout while running an interactive command. Only affects interactive executions. |
 | `--tty`         | `-t`  | Enable terminal features for interactive commands.                                                           |
-| `--stop`        | -     | Stop the current session when the command exits.                                                             |
 | `--help`        | `-h`  | Display help information.                                                                                    |
 
 ### Sandbox exec arguments
@@ -670,7 +685,7 @@ sandbox connect [OPTIONS] <name>
 sandbox connect my-sandbox
 
 # Connect with a specific working directory
-sandbox connect --workdir /app my-sandbox
+sandbox connect --workdir /vercel/app my-sandbox
 
 # Connect with environment variables and sudo
 sandbox connect --env DEBUG=true --sudo my-sandbox
@@ -680,7 +695,7 @@ sandbox connect --env DEBUG=true --sudo my-sandbox
 
 | Option                  | Alias    | Description                                                                                                                                                      |
 | ----------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`       | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`       | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>`   | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`        | `--team` | The team you want to use with this command.                                                                                                                      |
 | `--workdir <directory>` | `-w`     | Set the directory where you want the command to run.                                                                                                             |
@@ -725,7 +740,7 @@ sandbox stop --project my-project my-sandbox
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 
@@ -744,7 +759,7 @@ sandbox stop --project my-project my-sandbox
 
 ## `sandbox extend`
 
-Add time to the current running session of a sandbox without changing its default timeout. The sandbox must have a running session. To change the timeout for future sessions, use [`sandbox config timeout`](#sandbox-config).
+Add time to the current running session of a sandbox without changing its saved default timeout. The duration is additive. The sandbox must have a running session; this command doesn't resume a stopped one. To change the saved timeout, use [`sandbox config timeout`](#sandbox-config). See [runtime limits](/docs/sandbox/pricing#runtime-limits) for plan maximums.
 
 ```bash filename="terminal"
 sandbox extend [OPTIONS] <name> <duration>
@@ -760,11 +775,13 @@ sandbox extend my-sandbox 30m
 sandbox extend my-sandbox 1h
 ```
 
+After a successful extension, the CLI prints `✔ Extended my-sandbox by 1h`. If the sandbox has stopped, the command fails with `Sandbox my-sandbox has no running session to extend.` Resume it before extending, or change its saved timeout for future sessions with `sandbox config timeout`.
+
 ### Sandbox extend options
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 
@@ -785,7 +802,7 @@ sandbox extend my-sandbox 1h
 
 Permanently delete one or more sandboxes, along with all of their sessions. Once removed, a sandbox cannot be recovered. Use this instead of `sandbox stop` when you no longer need the sandbox at all.
 
-Removing a sandbox keeps its snapshots by default, because several sandboxes can start from the same snapshot. Pass `--delete-orphan-snapshots` to also delete the sandbox's snapshots that no other sandbox uses, or delete them separately with [`sandbox snapshots delete`](#sandbox-snapshots-delete).
+Removing a sandbox keeps its snapshots by default, because several sandboxes can start from the same snapshot. Pass `--delete-orphan-snapshots` to also request asynchronous deletion of the sandbox's snapshots that no other sandbox uses, or delete them separately with [`sandbox snapshots delete`](#sandbox-snapshots-delete). Snapshots referenced by another sandbox remain available, and command completion doesn't mean orphan deletion has finished.
 
 ```bash filename="terminal"
 sandbox remove [OPTIONS] <name> [...name]
@@ -808,7 +825,7 @@ sandbox remove my-sandbox --delete-orphan-snapshots
 
 | Flag                        | Short | Description                                                                      |
 | --------------------------- | ----- | -------------------------------------------------------------------------------- |
-| `--delete-orphan-snapshots` | -     | Also delete the snapshots of the sandbox that are not used by any other sandbox. |
+| `--delete-orphan-snapshots` | -     | Request asynchronous deletion of snapshots no other sandbox uses. Defaults to off. |
 | `--help`                    | `-h`  | Display help information.                                                        |
 
 ### Sandbox remove arguments
@@ -842,13 +859,13 @@ sandbox run --interactive --publish-port 3000 --tty -- npm run dev
 sandbox run --name my-sandbox -- npm test
 
 # Stop the current session when the command exits
-sandbox run --name my-sandbox --stop -- npm build
+sandbox run --name my-sandbox --stop -- npm run build
 
 # Permanently delete the sandbox after the command exits
 sandbox run --rm -- python3 script.py
 
 # Run a command with a drive mounted for read-write access
-sandbox run --mount cache:/data -- npm build
+sandbox run --mount cache:/data -- npm run build
 
 # Run a command with a point-in-time, read-only snapshot of a drive
 sandbox run --mount cache:/data:snapshot -- ls /data
@@ -856,7 +873,7 @@ sandbox run --mount cache:/data:snapshot -- ls /data
 
 ### Sandbox run options
 
-`sandbox run` accepts every option from [`sandbox create`](#sandbox-create) plus every option from [`sandbox exec`](#sandbox-exec). The most common are repeated below.
+`sandbox run` accepts every option from [`sandbox create`](#sandbox-create) plus every option from [`sandbox exec`](#sandbox-exec), except the `sandbox exec` options `--timeout`, `--detach`, and `--stdin`. In `sandbox run`, `--timeout` sets the sandbox timeout. The most common are repeated below.
 
 | Option                        | Alias    | Description                                                                                                                                                        |
 | ----------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -872,10 +889,9 @@ sandbox run --mount cache:/data:snapshot -- ls /data
 | `--region <region>`           | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in (when creating a new sandbox).                                                                   |
 | `--failover-regions <region,...>` | -    | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. |
 | `--mount <drive:path[:mode]>` | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `snapshot`. See [Drives](/docs/sandbox/concepts/drives).                     |
+| `--token <token>`             | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 
 ### Sandbox run flags
-
-| `--token <token>`             | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
 
 | Flag               | Short | Description                                                                              |
 | ------------------ | ----- | ---------------------------------------------------------------------------------------- |
@@ -919,7 +935,7 @@ sandbox snapshot my-sandbox --stop --expiration 0
 
 | Option                      | Alias    | Description                                                                                                                                                      |
 | --------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`           | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`           | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>`       | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`            | `--team` | The team you want to use with this command.                                                                                                                      |
 | `--expiration <expiration>` | -        | The snapshot [expiration period](/docs/sandbox/concepts/snapshots#snapshot-limits) since the snapshot was last used. Examples: `1d`, `14d`. The default is 30 days.                        |
@@ -981,7 +997,7 @@ sandbox snapshots list --limit 50 --cursor <token>
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 | `--name <name>`       | -        | Filter snapshots by the sandbox they belong to.                                                                                                                  |
@@ -1017,7 +1033,7 @@ sandbox snapshots get --project my-project snap_1234567890
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 
@@ -1055,7 +1071,7 @@ sandbox snapshots delete --project my-project snap_1234567890 snap_0987654321
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 
@@ -1083,11 +1099,11 @@ sandbox snapshots tree [OPTIONS] <name>
 ### Sandbox snapshots tree example
 
 ```bash filename="terminal"
-# Walk ancestors of the sandbox's current snapshot (default)
+# Show the ancestors and descendants of the sandbox's current snapshot (default)
 sandbox snapshots tree my-sandbox
 
-# Walk descendants
-sandbox snapshots tree my-sandbox --sort-order asc
+# Walk descendants from a specific snapshot
+sandbox snapshots tree my-sandbox --sort-order asc --cursor snap_abc123
 
 # Continue from a specific snapshot
 sandbox snapshots tree my-sandbox --cursor snap_abc123
@@ -1097,10 +1113,10 @@ sandbox snapshots tree my-sandbox --cursor snap_abc123
 
 | Option                | Alias    | Description                                                                                                |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| `--sort-order <ord>`  | -        | `desc` (default) walks ancestors; `asc` walks descendants.                                                 |
+| `--sort-order <ord>`  | -        | Requires `--cursor`. `desc` (default) walks ancestors; `asc` walks descendants. Without `--cursor`, the command shows both directions from the sandbox's current snapshot.                                                 |
 | `--cursor <token>`    | -        | Snapshot ID to start walking from. Defaults to the sandbox's current snapshot.                             |
-| `--limit <n>`         | -        | Maximum number of nodes per page.                                                                          |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token).                      |
+| `--limit <n>`         | -        | Maximum number of nodes per page, from 1 to 10. Default 10.                                                                          |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens).                      |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use.         |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                |
 
@@ -1140,7 +1156,7 @@ sandbox sessions list my-sandbox
 sandbox sessions list my-sandbox --all
 
 # Sort and paginate
-sandbox sessions list my-sandbox --sort-order asc --limit 100
+sandbox sessions list my-sandbox --sort-order asc --limit 20
 ```
 
 ### Sandbox sessions list options
@@ -1150,7 +1166,7 @@ sandbox sessions list my-sandbox --sort-order asc --limit 100
 | `--sort-order <ord>`  | -        | Sort direction. `asc` or `desc` (default).                                           |
 | `--limit <n>`         | -        | Maximum number of sessions per page. Default 50.                                     |
 | `--cursor <token>`    | -        | Pagination cursor from a previous page.                                              |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). |
 | `--project <project>` | -        | The project to use.                                                                  |
 | `--scope <team>`      | `--team` | The team to use with this command.                                                   |
 
@@ -1199,7 +1215,7 @@ sandbox drives list
 sandbox drives list --name-prefix cache- --sort-order asc
 
 # Page through results using the cursor reported by the previous page
-sandbox drives list --limit 100 --cursor <token>
+sandbox drives list --limit 20 --cursor <token>
 ```
 
 ### Sandbox drives list options
@@ -1210,7 +1226,7 @@ sandbox drives list --limit 100 --cursor <token>
 | `--sort-order <ord>`  | -        | Sort direction. `asc` or `desc` (default).                                                                                                                       |
 | `--limit <n>`         | -        | Maximum number of drives per page. Default 50.                                                                                                                   |
 | `--cursor <token>`    | -        | Pagination cursor from a previous page.                                                                                                                          |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 
@@ -1247,7 +1263,7 @@ sandbox drives get-or-create cache --region sfo1
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--max-size <bytes>`  | -        | Maximum drive size in bytes. Defaults to 1 TiB when omitted. The default maximum quota is 16 TiB.       |
 | `--region <region>`   | -        | [Region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive is created, defaults to `iad1`. A drive's region can't change after creation.        |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 
@@ -1287,7 +1303,7 @@ sandbox drives fork cache cache-fork
 
 | Option                | Alias    | Description                                                                                                                                                  |
 | --------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you omit it, the CLI uses a stored token or prompts you to log in.       |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you omit it, the CLI uses a stored token or prompts you to log in.       |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) that owns the source drive and the fork.                                   |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                  |
 
@@ -1326,7 +1342,7 @@ sandbox drives delete cache build-artifacts
 
 | Option                | Alias    | Description                                                                                                                                                      |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--token <token>`     | -        | Your [Vercel authentication token](/kb/guide/how-do-i-use-a-vercel-api-access-token). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
 | `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
 | `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
 
@@ -1420,15 +1436,19 @@ sandbox run echo "Hello Sandbox!"
 You'll see output like:
 
 ```
-Creating sandbox... ✓
-Running command...
+✅ Sandbox <name> created.
+   │ team: <team>
+   │ region: iad1
+   ╰ project: <project>
+$ echo Hello Sandbox!
 Hello Sandbox!
-Sandbox stopped.
 ```
+
+The sandbox keeps running until its timeout. To stop the session when the command exits, pass `--stop`. To delete the sandbox when the command exits, pass `--rm`.
 
 ### Create a long-running sandbox
 
-For interactive work, create a named sandbox that stays running:
+For interactive work, create a sandbox that stays running:
 
 ```bash
 sandbox create --name my-sandbox --timeout 30m
@@ -1458,13 +1478,13 @@ Test local code in the sandbox:
 
 ```bash
 # Copy your code to the sandbox
-sandbox copy ./my-app.js my-sandbox:/home/sandbox/my-app.js
+sandbox copy ./my-app.js my-sandbox:/vercel/my-app.js
 
 # Run it
-sandbox exec my-sandbox -- node /home/sandbox/my-app.js
+sandbox exec my-sandbox -- node /vercel/my-app.js
 
 # Copy results back
-sandbox copy my-sandbox:/home/sandbox/output.json ./results.json
+sandbox copy my-sandbox:/vercel/output.json ./results.json
 ```
 
 ### Interactive shell access
@@ -1496,14 +1516,14 @@ sandbox stop my-sandbox
 
 ```bash
 # Create a named sandbox
-NAME=$(sandbox create --name "ai-test-$(date +%s)" --timeout 15m --silent)
+NAME=$(sandbox create --name "ai-test-$(date +%s)" --timeout 15m)
 
 # Copy AI-generated code
-sandbox copy ./ai-generated.js $NAME:/app/
+sandbox copy ./ai-generated.js $NAME:/vercel/ai-generated.js
 
 # Test it interactively
 sandbox exec --interactive --tty $NAME -- bash
-# Now inside: cd /app && node ai-generated.js
+# Now inside: cd /vercel && node ai-generated.js
 
 # Clean up (remove permanently)
 sandbox remove $NAME
@@ -1512,14 +1532,14 @@ sandbox remove $NAME
 ### Debug a failing build
 
 ```bash
-# Create a named sandbox with more time
+# Create a sandbox with more time
 sandbox create --name debug-build --timeout 1h
 
 # Copy your project
-sandbox copy ./my-project/ debug-build:/app/
+sandbox copy --recursive ./my-project debug-build:/vercel/app
 
 # Try building
-sandbox exec --workdir /app debug-build -- npm run build
+sandbox exec --workdir /vercel/app debug-build -- npm run build
 
 # If it fails, debug interactively
 sandbox exec -it debug-build -- bash
@@ -1531,8 +1551,11 @@ sandbox exec -it debug-build -- bash
 # Create with port exposure
 sandbox create --name dev --timeout 30m --publish-port 3000
 
+# Copy your project
+sandbox copy --recursive ./my-project dev:/vercel/app
+
 # Start your dev server
-sandbox exec --workdir /app dev -- npm run dev
+sandbox exec --workdir /vercel/app dev -- npm run dev
 
 # Access at the provided URL (printed by `sandbox create`)
 # Visit: https://<random-id>.vercel.run

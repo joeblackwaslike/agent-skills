@@ -4,8 +4,8 @@ description: Learn how to use xAI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/xai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/xai.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "49ad34f147324bf1097d37f225364581e044a026c474fa5b4d440567dfc68e95"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "e410ce2b92340b34662e4807e9894a7b05285f391783f3497911f4ec3d414bd5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -212,6 +212,8 @@ request you sent is the tier you got. Omitting the option is equivalent to
 docs](https://docs.x.ai/developers/advanced-api-usage/priority-processing).
 
 ## Realtime Models
+
+Trusted [server-owned connections](/docs/ai-sdk-core/realtime#server-owned-connections) use `getServerWebSocketConfig()` with resolved credential headers and the selected model in the URL. Only the conversation intent is supported. Provider-reported gross totals, available modality/cache counts and transcription duration are exposed as normalized usage when present.
 
 Realtime is an experimental feature.
 
@@ -893,6 +895,13 @@ const result = await transcribe({
 });
 ```
 
+Word timings returned by xAI are exposed in the optional `result.words`
+array, including when no timing option is set. `result.segments` continues to
+contain those same word timings for compatibility. The shared
+`timestampGranularities: ['word']` option requires no additional xAI control.
+xAI does not provide separate caption segments and warns if `'segment'` is
+requested.
+
 ### Provider Options
 
 You can pass xAI-specific controls using `providerOptions.xai`:
@@ -1461,6 +1470,48 @@ You can validate the provider options using the `XaiVideoModelOptions` type.
   `1080p` requires the `grok-imagine-video-1.5` model and is available for
   text-to-video and image-to-video; reference-to-video is capped at `720p`
   (a `1080p` request is downgraded with a warning).
+
+- **output** *object*
+
+  Deliver the completed video directly to caller-managed storage. Supported for
+  generation, editing, and extension. Set **output.uploadUrl** to a signed HTTPS
+  PUT URL, for example an S3/GCS presigned URL or Azure Blob SAS URL. The URL must
+  permit `Content-Type: video/mp4`; Azure Blob hosts also receive
+  `x-ms-blob-type: BlockBlob`. Allow enough time for generation and upload before
+  the signature expires. URLs with userinfo or fragments are rejected before the
+  request starts.
+
+  xAI performs the upload; the SDK continues polling for completion and does not
+  download the destination, even if xAI also returns a video URL. The result has
+  `uploadedVideos: 1` and `videos: []`. Accessing `result.video` in an upload-only
+  result throws `NoVideoGeneratedError`; use `result.uploadedVideos` instead.
+  Without `output`, the existing downloadable video behavior is unchanged.
+
+  `storageOptions` independently persists a copy in xAI Files. Both request
+  fields are forwarded when supplied together. Files metadata and errors remain
+  available in `providerMetadata.xai.fileOutput` and `storageError`, and Files URLs
+  are not downloaded in upload mode.
+
+  Treat signed URLs as credentials. The direct xAI provider persists only an
+  upload-delivery flag in its operation reference and redacts upload request
+  failures. Avoid logging provider options, custom fetch requests, or raw provider
+  diagnostics. Completion means xAI reported the operation as done; it is not an
+  independent verification of storage durability. Confirm the destination object exists before relying on it.
+
+```ts
+const result = await generateVideo({
+  model: xai.video('grok-imagine-video-1.5'),
+  prompt: 'A blue ball rolls across a white surface.',
+  providerOptions: {
+    xai: {
+      output: { uploadUrl: signedPutUrl },
+      // For editing, also set mode: 'edit-video' and videoUrl: sourceVideoUrl.
+    } satisfies XaiVideoModelOptions,
+  },
+});
+
+console.log('Videos delivered by xAI:', result.uploadedVideos);
+```
 
 - **user** *string*
 

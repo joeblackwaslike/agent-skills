@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/deep-links.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "10a72f52aee835373c14c7b7ad718b7370d9e3ee5f961fc8c4a0b14e69dab85e"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "9a2ba767a17696ddcfe7f1cc0b6d3f8da82882922555fd605045b6e18eeb3f8f"
 ---
 
 > ## Documentation Index
@@ -110,7 +110,7 @@ The example below adds an investigation entry point to an incident runbook for a
 3. Post initial findings in #incident.
 ```
 
-To use this in your own runbook, replace `acme/web-gateway` with your service's repository slug. Before engineers click step 2, they must have [sent a prompt in an interactive Claude Code session](#registration-and-supported-platforms) on their machine and opened Claude Code in their local clone.
+To use this in your own runbook, replace `acme/web-gateway` with your service's repository slug. Before engineers click step 2, their machine must have the [`claude-cli://` handler registered](#registration-and-supported-platforms), and they must have run `claude` in their local clone or worktree.
 
 ### Open a link from the shell
 

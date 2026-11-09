@@ -16,8 +16,8 @@ related:
 summary: Learn how to add the Groq native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/groq.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "773c908241075e589e23813d6289944d88d5e62c97634ec9595c5eb336b7054d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b721633bcf9d9eb8cf9fcca6b3b0f95f804e7f3e432e4db8bd33ca8fb648655a"
 ---
 
 # Vercel Groq Integration
@@ -35,9 +35,9 @@ applications requiring low latency.
 
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
+- [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
-- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/groq.graph.md](/docs/agent-resources/integrations-for-models/groq.graph.md)
 <!-- /docsgraph:related -->

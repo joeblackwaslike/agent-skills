@@ -11,19 +11,19 @@ prerequisites:
 related:
   - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
   - /docs/ai-gateway/authentication-and-byok/byok
+  - /docs/ai-gateway/pricing
+  - /docs/ai-gateway/token-pass
   - /docs/ai-gateway/sdks-and-apis
-  - /docs/ai-gateway/models-and-providers/automatic-caching
-  - /docs/ai-gateway/models-and-providers/web-search
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "de98eec625d489706c190249b26105187fc56e7bea8813cbedd6694f9660f493"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "bfd1b2ac3dee0c9bd4df08a2371123aa45f0ff06d4a81652f73bbeeada2ca926"
 ---
 
 # AI Gateway Zero Data Retention (ZDR)
 
-Zero data retention (ZDR) is available for Pro and Enterprise users on AI Gateway. There are two ways to enforce ZDR:
+Zero data retention (ZDR) is available on AI Gateway for Pro and Enterprise teams and for any team that has purchased AI Gateway credits. See [Availability](#availability) for details. There are two ways to enforce ZDR:
 
 
 <!-- docsgraph:related -->
@@ -31,12 +31,12 @@ Zero data retention (ZDR) is available for Pro and Enterprise users on AI Gatewa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
+- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Vercel Ship 2026 recap](https://vercel.com/blog/vercel-ship-2026-recap)
 - [GPT-Live](https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live) — Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
@@ -61,12 +61,30 @@ ZDR is a superset of [disallowing prompt training](/docs/ai-gateway/security-and
 
 ## Pricing
 
-| Option                          | Cost                     | Availability       |
-| ------------------------------- | ------------------------ | ------------------ |
-| Per-request zero data retention | No additional cost       | Pro and Enterprise |
-| Team-wide zero data retention   | $0.10 per 1,000 requests | Pro and Enterprise |
+| Option                          | Cost                     |
+| ------------------------------- | ------------------------ |
+| Per-request zero data retention | No additional cost       |
+| Team-wide zero data retention   | $0.10 per 1,000 requests |
 
 Team-wide ZDR is only charged on successful responses that return usage data. Requests that fail or return errors are not charged.
+
+## Availability
+
+Per-request and team-wide ZDR both require a paid account, which means a Pro or Enterprise plan or purchased AI Gateway credits. Hobby teams and teams on a Pro trial can use ZDR once they [purchase credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits). Free credits don't count.
+
+With an active [Token Pass](/docs/ai-gateway/token-pass), you can also use per-request ZDR for as long as the pass is active, even after you've used its monthly credit. Turning on team-wide ZDR in the dashboard still requires a Pro or Enterprise plan or purchased AI Gateway credits.
+
+If you request ZDR from a team that isn't eligible, AI Gateway returns a `403`:
+
+```json
+{
+  "error": "Zero Data Retention (ZDR) requires a paid account. Current plan: hobby. Please purchase AI Gateway credits at https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dtop-up or upgrade your plan at https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling to access this feature. If you purchased credits in the last few minutes, retry shortly.",
+  "type": "permission_denied",
+  "statusCode": 403
+}
+```
+
+AI Gateway checks your payment status again before it returns this error, so a credit purchase usually applies to your next request. If you purchased credits in the last few minutes and still get a `403`, retry shortly.
 
 ## Vercel
 
@@ -79,12 +97,12 @@ AI Gateway has agreements in place to offer ZDR with specific providers. A provi
 By default, AI Gateway does not route based on the data retention policy of providers.
 
 > **💡 Note:** If we do not know a provider's ZDR stance or have not yet established an
-> agreement with them, they are treated as not being ZDR-compliant. If ZDR is enabled
-> for a request, it will not be routed through this provider.
+> agreement with them, they are treated as not being ZDR-compliant. If ZDR is
+> enabled for a request, it will not be routed through this provider.
 
 ## Team-wide zero data retention
 
-Pro and Enterprise customers can enable ZDR globally for all requests from the [AI Gateway Dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway).
+Pro and Enterprise teams, and teams that have purchased AI Gateway credits, can enable ZDR globally for all requests from the [AI Gateway Dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway). If your team isn't eligible, you can't turn on the toggle, and the settings page links to buying AI Gateway credits. If your team stops being eligible while team-wide ZDR is on, for example after downgrading from Pro, you can still turn it off.
 
 To enable team-wide ZDR:
 
@@ -94,31 +112,46 @@ To enable team-wide ZDR:
 
 Once enabled, team-wide ZDR applies to all requests through the Vercel team you configured it for. For how team-wide ZDR interacts with [BYOK](/docs/ai-gateway/authentication-and-byok/byok) keys, see [BYOK](#byok).
 
+Team-wide ZDR and [team-wide disallow prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training#team-wide-disallow-prompt-training) are separate settings, and turning on one doesn't turn on the other. To enforce both for your team, turn on both the **Zero Data Retention** and **Disallow Prompt Training** toggles. Team-wide disallow prompt training has no additional cost.
+
 ## Per-request zero data retention
 
 You can enforce ZDR on individual requests using the `zeroDataRetention` parameter in `providerOptions.gateway`. Set `zeroDataRetention` to `true` to route the request only through providers that have zero data retention agreements with Vercel AI Gateway.
 
-If no ZDR-compliant providers are available for the requested model, the request fails with an error:
+If your team isn't eligible for ZDR, the request fails with a `403` (see [Availability](#availability)). If no ZDR-compliant providers are available for the requested model, the request fails with an error:
 
 ```json
 {
-  "error": "No ZDR (Zero Data Retention) providers available for model: example/model-name. Providers considered: provider-a, provider-b",
-  "type": "no_providers_available",
+  "error": "No ZDR (Zero Data Retention) providers or ZDR-attested BYOK credentials available for model: example/model-name. Providers considered: provider-a, provider-b",
+  "type": "no_zdr_providers_available",
   "statusCode": 400
 }
 ```
 
-When ZDR is enabled, the routing metadata in successful responses shows how AI Gateway filtered providers. The `planningReasoning` field indicates which providers were considered:
+When ZDR is enabled, successful responses include `enabledZeroDataRetention: true` in the gateway metadata. The `routing.skippedProviderAttempts` array lists each provider AI Gateway removed for ZDR, with the reason:
 
 ```json
 {
   "gateway": {
     "routing": {
-      "planningReasoning": "ZDR requested: 5 attempts → 2 ZDR attempts. ZDR execution order: anthropic(system) → bedrock(system)"
-    }
+      "skippedProviderAttempts": [
+        {
+          "provider": "provider-c",
+          "credentialType": "system",
+          "reason": "zdr_not_supported"
+        }
+      ]
+    },
+    "enabledZeroDataRetention": true
   }
 }
 ```
+
+| Reason                 | Meaning                                                                           |
+| ---------------------- | --------------------------------------------------------------------------------- |
+| `zdr_not_supported`    | The provider doesn't offer ZDR for this model.                                    |
+| `zdr_not_attested`     | Your BYOK key for this provider isn't marked as ZDR-compliant. See [BYOK](#byok). |
+| `zdr_ineligible_model` | The model retains data, so no provider can serve it with ZDR.                     |
 
 ZDR enforcement also applies to any fallback providers. For how per-request ZDR interacts with [BYOK](/docs/ai-gateway/authentication-and-byok/byok) keys, see [BYOK](#byok).
 
@@ -402,7 +435,7 @@ When ZDR is enabled, AI Gateway filters the routing set for each model to ZDR-co
 
 1. If you have BYOK keys for a ZDR-compliant provider that you marked as ZDR, AI Gateway tries those keys first.
 2. If those BYOK keys fail or are unavailable, AI Gateway falls back to AI Gateway system credentials for the ZDR-compliant providers in the routing set.
-3. If no ZDR-compliant providers are available for the model, the request fails with a `no_providers_available` error.
+3. If no ZDR-compliant providers are available for the model, the request fails with a `no_zdr_providers_available` error.
 
 ### Example
 
@@ -445,7 +478,7 @@ When you use [prompt caching](/docs/ai-gateway/models-and-providers/automatic-ca
 
 The following providers currently offer ZDR on AI Gateway. Please review each provider's ZDR policy and terms carefully. A provider's default policy may not match with the status that AI Gateway has in place due to negotiated agreements. We are constantly coordinating and revising agreements to be able to enforce stricter retention policies for customers. The full terms of service are available for each provider on the [model pages](/ai-gateway/models).
 
-All ZDR-compliant providers also disallow prompt training, since ZDR is a superset of [disallowing prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training). In some cases, certain models or functionalities may be excluded from a provider's ZDR policy. AI Gateway will not fail these requests if zero data retention is enabled, so review the provider's policy in the table below to understand the nuances of specific tools and how they affect data retention.
+All ZDR-compliant providers also disallow prompt training, since ZDR is a superset of [disallowing prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training). In some cases, certain models or functionalities may be excluded from a provider's ZDR policy. AI Gateway will not fail these requests if zero data retention is enabled, so review the provider's policy in the table below to understand the nuances of specific tools and how they affect data retention. However, when a model is ineligible for ZDR on every provider, a request for that model with ZDR enabled fails.
 
 > **💡 Note:** Tool calls may not be covered by a provider's ZDR policy. When a model invokes
 > a provider-executed tool, such as a provider-side [web

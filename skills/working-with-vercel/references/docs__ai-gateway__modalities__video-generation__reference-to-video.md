@@ -17,8 +17,8 @@ related:
 summary: Generate videos featuring characters from reference images or videos using Google Veo, KlingAI, Wan, Seedance, or Grok Imagine Video through AI...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/reference-to-video.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a559d95a0ab51f7e96c149dd1910ccfef6211bed2267b90c7b848e988c778fbc"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a404060f018272d64c3bb9dd3c3e2540713a79e63debf9d59fbfd3a5aebdb948"
 ---
 
 # AI Gateway Reference-to-Video Generation
@@ -33,12 +33,13 @@ Generate a completely new video scene featuring characters from reference media.
 
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
+- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
-- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
+- [Grok Imagine Video 1.5 on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway)
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
-- [Seedance 2.5 now available on Vercel AI Gateway](https://vercel.com/changelog/seedance-2-5-now-available-on-vercel-ai-gateway)
-- [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
+- [Grok Imagine Video 1.5 Lite on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-lite-on-ai-gateway)
+- [Seedance 2.0 Video Generation on AI Gateway](https://vercel.com/changelog/seedance-2.0-video-now-available-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/reference-to-video.graph.md)
 <!-- /docsgraph:related -->
@@ -87,7 +88,7 @@ Veo 3.1 can incorporate reference images into a generated video. The references 
 | Parameter                                 | Type          | Required | Description                                                                                    |
 | ----------------------------------------- | ------------- | -------- | ---------------------------------------------------------------------------------------------- |
 | `prompt`                                  | `string`      | Yes      | Scene description for the generated video                                                      |
-| `inputReferences`                         | `Array<image>` | No       | Reference images as base64-encoded strings or Buffers that guide assets and style in the scene. HTTPS URLs are not supported |
+| `inputReferences`                         | `Array<image>` | No       | Reference images as HTTPS URLs, base64-encoded strings, or Buffers that guide assets and style in the scene |
 | `duration`                                | `4` \| `6` \| `8` | No   | Video length in seconds. Defaults to 8                                                         |
 | `aspectRatio`                             | `string`      | No       | Aspect ratio (`'16:9'`, `'9:16'`). Defaults to `'16:9'`                                        |
 | `resolution`                              | `string`      | No       | Resolution (`'1280x720'` for 720p, `'1920x1080'` for 1080p). Defaults to 720p                                         |
@@ -122,8 +123,9 @@ const result = await generateVideo({
 fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 ```
 
-> **💡 Note:** Veo reference images must be base64-encoded strings or Buffers. An HTTPS URL
-> reference is ignored with a warning.
+> **💡 Note:** Veo reference images can be HTTPS URLs, base64-encoded strings, or Buffers.
+> AI Gateway downloads each URL reference before it sends the request to Veo,
+> so make sure the URL is publicly reachable over HTTPS. URLs that start with `https://storage.googleapis.com/` are the exception: AI Gateway does not download them, and Veo ignores them with a warning. Pass those images as base64-encoded strings or Buffers.
 
 If you omit `inputReferences`, you can still pass references through the legacy `providerOptions.vertex.referenceImages` key.
 
@@ -271,8 +273,10 @@ To edit or extend an existing video instead, see [Video editing](/docs/ai-gatewa
 
 [Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=spacexai) on the AI Gateway Models page.
 
+The model ID starts with `spacexai/`, but the provider options key is `xai`. Set Grok video options under `providerOptions.xai`.
+
 > **💡 Note:** Reference-to-video requires `spacexai/grok-imagine-video`. Set
-> `providerOptions.spacexai.mode: 'reference-to-video'`, or pass `inputReferences`
+> `providerOptions.xai.mode: 'reference-to-video'`, or pass `inputReferences`
 > alone to select reference-to-video mode automatically. Edit, extension, and
 > reference-to-video modes are mutually exclusive.
 
@@ -284,11 +288,11 @@ To edit or extend an existing video instead, see [Video editing](/docs/ai-gatewa
 | `inputReferences`                             | `Array<image>`         | No       | Reference images. URLs or buffers. Passing them selects reference-to-video mode            |
 | `duration`                                    | `number`               | No       | Video length in seconds (1-15)                                                             |
 | `aspectRatio`                                 | `string`               | No       | Aspect ratio (`'16:9'`, `'9:16'`, `'1:1'`, and others)                                     |
-| `providerOptions.spacexai.mode`               | `'reference-to-video'` | No       | Selects reference-to-video mode explicitly. Auto-selected when `inputReferences` is passed |
-| `providerOptions.spacexai.referenceImageUrls` | `string[]`             | No       | Legacy alternative to `inputReferences`. Used when `inputReferences` is omitted            |
-| `providerOptions.spacexai.resolution`         | `'480p'` \| `'720p'`   | No       | Video resolution. Defaults to `'480p'`                                                     |
-| `providerOptions.spacexai.pollIntervalMs`     | `number`               | No       | How often to check task status. Defaults to `5000`                                         |
-| `providerOptions.spacexai.pollTimeoutMs`      | `number`               | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                       |
+| `providerOptions.xai.mode`                    | `'reference-to-video'` | No       | Selects reference-to-video mode explicitly. Auto-selected when `inputReferences` is passed |
+| `providerOptions.xai.referenceImageUrls`      | `string[]`             | No       | Legacy alternative to `inputReferences`. Used when `inputReferences` is omitted            |
+| `providerOptions.xai.resolution`              | `'480p'` \| `'720p'`   | No       | Video resolution. Defaults to `'480p'`                                                     |
+| `providerOptions.xai.pollIntervalMs`          | `number`               | No       | How often to check task status. Defaults to `5000`                                         |
+| `providerOptions.xai.pollTimeoutMs`           | `number`               | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                       |
 
 ### Grok example
 
@@ -309,7 +313,7 @@ const result = await generateVideo({
   duration: 8,
   aspectRatio: '16:9',
   providerOptions: {
-    spacexai: {
+    xai: {
       pollTimeoutMs: 600000,
     },
   },
@@ -318,7 +322,7 @@ const result = await generateVideo({
 fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 ```
 
-If you omit `inputReferences`, you can still pass references through `providerOptions.spacexai.referenceImageUrls` with `providerOptions.spacexai.mode: 'reference-to-video'`.
+If you omit `inputReferences`, you can still pass references through `providerOptions.xai.referenceImageUrls` with `providerOptions.xai.mode: 'reference-to-video'`.
 
 > **💡 Note:** Video generation can take several minutes. Set `pollTimeoutMs` to at least 10
 > minutes (600000ms) for reliable operation.

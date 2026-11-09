@@ -16,8 +16,8 @@ related:
 summary: See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and control which content it...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/agent-harnesses/observability.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5a410b0f9507b2592aff31c3e80308e074ca6a8299c88f11540b03ebf7fb127d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "82531e9b122e96ae3c19352ed9e952eda1ce19674757aca4d18f0f20059aaf5a"
 ---
 
 # Observability for Durable Agent Harnesses
@@ -49,7 +49,7 @@ Here's a Pi session in Agent Runs. Select a span to see its timing, tokens, inpu
 *A Pi session in Agent Runs, with made-up values. Its second model call was
 interrupted when its function died, and ran again on a new function.*
 
-Agent Runs usage is billed at [Always-on Tracing rates](/docs/tracing/always-on-tracing#usage-and-pricing) during beta.
+Vercel bills Agent Runs usage at [Tracing rates](/docs/tracing/configure-tracing#usage-and-pricing) during beta.
 
 ## Set up Agent Runs
 

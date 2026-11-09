@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-11-02T12:01:15.657Z"
-sha256: "a82f770ce2a97ac3674f2146bd9220708a11ad2e497491de9693b4141ceb7d9f"
+fetched_at: "2026-11-09T12:33:06.901Z"
+sha256: "a6ec3215298c0f93e3d8aba114f129e648494d7343bf5423a1df9da1c6740668"
 ---
 
 # Available templates index
@@ -120,8 +120,8 @@ Templates
 | Alpine | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/alpine:3.5.0` | `3.5.0` |
 | Anaconda (Python 3) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/anaconda:2.0.2` | `2.0.2` |
 | Anaconda (Python 3) & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/anaconda-postgres:2.0.2` | `2.0.2` |
-| C++ | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/cpp:4.1.1` | `4.1.1` |
-| C++ & MariaDB | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/cpp-mariadb:4.1.0` | `4.1.0` |
+| C++ | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/cpp:4.1.2` | `4.1.2` |
+| C++ & MariaDB | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/cpp-mariadb:4.1.1` | `4.1.1` |
 | Debian | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/debian:4.0.2` | `4.0.2` |
 | Existing Docker Compose (Extend) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-existing-docker-compose:1.2.3` | `1.2.3` |
 | Existing Dockerfile | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/docker-existing-dockerfile:1.3.2` | `1.3.2` |
@@ -136,9 +136,9 @@ Templates
 | Go & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/go-postgres:6.0.1` | `6.0.1` |
 | Java | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/java:5.0.0` | `5.0.0` |
 | Java & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/java-postgres:5.0.0` | `5.0.0` |
-| Node.js & JavaScript | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/javascript-node:6.0.2` | `6.0.2` |
-| Node.js & Mongo DB | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/javascript-node-mongo:6.0.2` | `6.0.2` |
-| Node.js & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/javascript-node-postgres:6.0.2` | `6.0.2` |
+| Node.js & JavaScript | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/javascript-node:6.0.3` | `6.0.3` |
+| Node.js & Mongo DB | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/javascript-node-mongo:6.0.3` | `6.0.3` |
+| Node.js & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/javascript-node-postgres:6.0.3` | `6.0.3` |
 | Jekyll | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/jekyll:2.2.4` | `2.2.4` |
 | Kubernetes - Local Configuration | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/kubernetes-helm:1.4.4` | `1.4.4` |
 | Kubernetes - Minikube-in-Docker | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/kubernetes-helm-minikube:2.2.5` | `2.2.5` |
@@ -147,22 +147,22 @@ Templates
 | Miniconda & PostgreSQL (Python 3) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/miniconda-postgres:2.0.2` | `2.0.2` |
 | PHP | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/php:4.4.1` | `4.4.1` |
 | PHP & MariaDB | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/php-mariadb:4.4.1` | `4.4.1` |
-| Python 3 & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/postgres:3.0.1` | `3.0.1` |
+| Python 3 & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/postgres:3.0.2` | `3.0.2` |
 | Powershell | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/powershell:1.2.3` | `1.2.3` |
-| Python 3 | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/python:6.0.0` | `6.0.0` |
+| Python 3 | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/python:6.0.1` | `6.0.1` |
 | Ruby | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/ruby:6.0.4` | `6.0.4` |
 | Ruby on Rails & Postgres | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/ruby-rails-postgres:6.0.4` | `6.0.4` |
 | Rust | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/rust:5.0.2` | `5.0.2` |
 | Rust & PostgreSQL | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/rust-postgres:5.0.2` | `5.0.2` |
-| Node.js & TypeScript | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/typescript-node:6.0.2` | `6.0.2` |
+| Node.js & TypeScript | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/typescript-node:6.0.3` | `6.0.3` |
 | Ubuntu | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/ubuntu:3.0.0` | `3.0.0` |
 | Default Linux Universal | Dev Container Spec Maintainers | `ghcr.io/devcontainers/templates/universal:2.0.1` | `2.0.1` |
 | .NET and Azure SQL | Azure SQL Developer Experiences Team | `ghcr.io/microsoft/azuresql-devcontainers/dotnet:2.0.0` | `2.0.0` |
 | .NET with Aspire and Azure SQL | Azure SQL Developer Experiences Team | `ghcr.io/microsoft/azuresql-devcontainers/dotnet-aspire:2.0.0` | `2.0.0` |
 | Node.js and Azure SQL | Azure SQL Developer Experiences Team | `ghcr.io/microsoft/azuresql-devcontainers/javascript-node:2.0.0` | `2.0.0` |
 | Python and Azure SQL | Azure SQL Developer Experiences Team | `ghcr.io/microsoft/azuresql-devcontainers/python:2.0.0` | `2.0.0` |
-| R (rocker/r-ver base) | Rocker Project | `ghcr.io/rocker-org/devcontainer-templates/r-ver:1.1.2` | `1.1.2` |
-| R (r2u and bspm configured) | Rocker Project | `ghcr.io/rocker-org/devcontainer-templates/r2u:0.3.1` | `0.3.1` |
+| R (rocker/r-ver base) | Rocker Project | `ghcr.io/rocker-org/devcontainer-templates/r-ver:1.1.3` | `1.1.3` |
+| R (r2u and bspm configured) | Rocker Project | `ghcr.io/rocker-org/devcontainer-templates/r2u:1.0.0` | `1.0.0` |
 | Node.js | csutter | `ghcr.io/csutter/devcontainer-templates/barebones-nodejs:0.1.0` | `0.1.0` |
 | Barebones Ruby | csutter | `ghcr.io/csutter/devcontainer-templates/barebones-ruby:0.1.0` | `0.1.0` |
 | Basic Ruby application | csutter | `ghcr.io/csutter/devcontainer-templates/basic-ruby:1.0.0` | `1.0.0` |
@@ -206,19 +206,19 @@ Templates
 | Rust & Typescript | Pablo Ulloa | `ghcr.io/prulloac/devcontainer-templates/rust_typescript:1.1.0` | `1.1.0` |
 | Zig & Typescript | Pablo Ulloa | `ghcr.io/prulloac/devcontainer-templates/zig_typescript:1.1.0` | `1.1.0` |
 | Qiskit | Mohd Shukri Hasan | `ghcr.io/hsm207/devcontainer-templates/qiskit:0.0.1` | `0.0.1` |
-| Azure Functions (.NET) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-dotnet:2.0.7` | `2.0.7` |
-| Azure Functions (Go) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-go:1.0.2` | `1.0.2` |
-| Azure Functions (Java) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-java:2.0.7` | `2.0.7` |
-| Azure Functions (Node.js) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-node:2.0.7` | `2.0.7` |
-| Azure Functions (PowerShell) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-powershell:2.0.7` | `2.0.7` |
-| Azure Functions (Python) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-python:2.0.7` | `2.0.7` |
+| Azure Functions (.NET) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-dotnet:2.1.0` | `2.1.0` |
+| Azure Functions (Go) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-go:1.1.0` | `1.1.0` |
+| Azure Functions (Java) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-java:2.1.0` | `2.1.0` |
+| Azure Functions (Node.js) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-node:2.1.0` | `2.1.0` |
+| Azure Functions (PowerShell) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-powershell:2.1.0` | `2.1.0` |
+| Azure Functions (Python) | Tatsuro Shibamura | `ghcr.io/shibayan/devcontainers/azure-functions-python:2.1.0` | `2.1.0` |
 | Deno | RSM HCD Engineering | `ghcr.io/rsm-hcd/devcontainer-templates/deno:0.4.0` | `0.4.0` |
 | Deno & PostgreSQL | RSM HCD Engineering | `ghcr.io/rsm-hcd/devcontainer-templates/deno-postgres:0.4.0` | `0.4.0` |
 | .NET (C#), Node.js (TypeScript) & MS SQL | RSM HCD Engineering | `ghcr.io/rsm-hcd/devcontainer-templates/dotnet-node-mssql:0.1.0` | `0.1.0` |
 | Bun | Marcos Gomes Neto | `ghcr.io/marcosgomesneto/bun-devcontainers/basic-bun:0.0.6` | `0.0.6` |
 | Bun & MariaDB | Marcos Gomes Neto | `ghcr.io/marcosgomesneto/bun-devcontainers/bun-mariadb:0.0.4` | `0.0.4` |
 | Bun & PostgreSQL | Marcos Gomes Neto | `ghcr.io/marcosgomesneto/bun-devcontainers/bun-postgresql:0.0.3` | `0.0.3` |
-| Weik.io Integration Developer | Mikael Koskinen | `ghcr.io/weikio/devcontainer-templates/weikio-integration-developer:1.1.1` | `1.1.1` |
+| Weik.io Integration Developer | Mikael Koskinen | `ghcr.io/weikio/devcontainer-templates/weikio-integration-developer:2.0.0` | `2.0.0` |
 | ESP-IDF | johnluicn | `ghcr.io/johnluicn/devcontainer-templates/esp-idf:0.2.0` | `0.2.0` |
 | Idris 2 | joshuanianji | `ghcr.io/joshuanianji/devcontainer-templates/idris2:0.1.0` | `0.1.0` |
 | Node.js & EdgeDB | joshuanianji | `ghcr.io/joshuanianji/devcontainer-templates/javascript-node-edgedb:0.0.3` | `0.0.3` |
@@ -265,10 +265,10 @@ Templates
 | SAP BTP CAP Dev Stack | Navin Krishnan | `ghcr.io/navinkrishnan/devcontainer-templates-btp/btp-cap-dev-stack:1.0.2` | `1.0.2` |
 | EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.5` | `0.0.5` |
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
-| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:8.4.1` | `8.4.1` |
-| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:8.4.1` | `8.4.1` |
-| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:8.4.1` | `8.4.1` |
-| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:8.4.1` | `8.4.1` |
+| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:9.0.0` | `9.0.0` |
+| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:9.0.0` | `9.0.0` |
+| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:9.0.0` | `9.0.0` |
+| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:9.0.0` | `9.0.0` |
 | Pretalx | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx:0.0.1` | `0.0.1` |
 | Pretalx Plugin | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx-plugin:0.0.1` | `0.0.1` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |

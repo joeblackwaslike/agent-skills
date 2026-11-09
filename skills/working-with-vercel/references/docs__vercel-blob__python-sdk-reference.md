@@ -16,8 +16,8 @@ related:
 summary: Reference for the Vercel Blob Python SDK, including uploads, streaming and multipart uploads, downloads, metadata, listing, copying, deletion,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-blob/python-sdk-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a2e5b3f9b335e24c318e5048b06fade0e85ceed73acf1bc91e15b082f3138017"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "058f335f63d5d3ff7e068927a431262c4cd20c01c67218caca05c28a03fc5e50"
 ---
 
 # Python SDK Reference
@@ -37,10 +37,9 @@ Use the Vercel Blob Python SDK to upload, download, inspect, list, copy, and del
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
-- [How to process user-uploaded files with Vercel Sandbox and Vercel Blob](https://vercel.com/kb/guide/user-uploaded-files-vercel-sandbox-and-blob) — Learn how to upload files to Vercel Blob, process them safely with FFmpeg in an isolated Vercel Sandbox, and store the r
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 
 Full cross-link map for this page: [/docs/vercel-blob/python-sdk-reference.graph.md](/docs/vercel-blob/python-sdk-reference.graph.md)

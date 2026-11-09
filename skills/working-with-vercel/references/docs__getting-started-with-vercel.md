@@ -16,8 +16,8 @@ related:
 summary: Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/getting-started-with-vercel.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0046903cdbef802ffaef296e95ab1098497a91c6e829be8e5726c32dae4ac96a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a45a7b490f12497a8db4df9ac8c96fb500e005753af9b70822e69923d3e8926d"
 ---
 
 # Getting started with Vercel
@@ -30,14 +30,17 @@ Install the Vercel CLI and deploy your app. If you use an AI coding agent, add a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Vercel Deployment Guide](https://ai-sdk.dev/docs/advanced/vercel-deployment-guide) — Learn how to deploy an AI application to production on Vercel
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
+- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
+- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 
 Full cross-link map for this page: [/docs/getting-started-with-vercel.graph.md](/docs/getting-started-with-vercel.graph.md)
 <!-- /docsgraph:related -->
@@ -51,7 +54,7 @@ Help me get set up with Vercel. Based on my project, do the following: 1. Instal
 ## Prerequisites
 
 - A [Vercel account](/signup)
-- [Node.js 18+](https://nodejs.org/)
+- [Node.js 20+](https://nodejs.org/)
 
 ## Install the Vercel CLI
 
@@ -152,7 +155,7 @@ vercel install supabase
 Add `--help` to any command to see integration-specific products, metadata options, and billing plans. For non-interactive flows, pass options as flags:
 
 ```bash
-vercel install neon --name my-database --plan free -e production -e preview
+vercel install neon --name my-database --billing-plan free -e production -e preview
 ```
 
 See [Storage on Vercel Marketplace](/docs/marketplace-storage) for the full list of storage integrations.
@@ -168,9 +171,11 @@ You can also deploy without the CLI. Go to the [New Project](/new) page, connect
 - [Set up environment variables](/docs/environment-variables)
 - [Add a custom domain](/docs/domains/set-up-custom-domain)
 - [Explore supported frameworks](/docs/frameworks)
+- [Explore reference architectures](/kb/architecture): Choose a stack and plan how your application uses Vercel services
 - [Vercel Functions](/docs/functions) – Run server-side code on demand
 - [Storage on Vercel Marketplace](/docs/marketplace-storage) – Provision Postgres, Redis, NoSQL, and more with `vercel install`
 - [Agent resources](/docs/agent-resources) – Documentation access, skills, and CLI workflows for AI agents
+- [Build with prompts](/kb/prompts): Build an app, extend an agent, or improve your project with a coding agent
 
 
 ---

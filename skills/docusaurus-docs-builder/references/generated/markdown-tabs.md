@@ -1,8 +1,8 @@
 ---
 title: "Markdown Tabs"
 source: "https://docusaurus.io/docs/markdown-features/tabs"
-fetched_at: "2026-08-24T04:43:10.282Z"
-sha256: "d7640a4424ba5b3547be93bbcfc2a7a13671f936b198c546270aaec4a417156c"
+fetched_at: "2026-11-09T12:33:24.119Z"
+sha256: "789c1867f84226d3aaedb475a16e101b75b7b72043ec6b45f7cbd8467011da76"
 ---
 
 # Markdown Tabs
@@ -120,4 +120,4 @@ tip`queryString` can be used together with `groupId`.For convenience, when the `
 ```
 <Tabs groupId="current-os" queryString>  <TabItem value="android" label="Android">    Android  </TabItem>  <TabItem value="ios" label="iOS">    iOS  </TabItem></Tabs>
 ```
-http://localhost:3000AndroidiOSAndroidiOSWhen the page loads, the tab query string choice will be restored in priority over the `groupId` choice (using `localStorage`).[Edit this page](https://github.com/facebook/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-tabs.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber
+http://localhost:3000AndroidiOSAndroidiOSWhen the page loads, the tab query string choice will be restored in priority over the `groupId` choice (using `localStorage`).[Edit this page](https://github.com/meta/docusaurus/edit/main/website/docs/guides/markdown-features/markdown-features-tabs.mdx)Last updated on Jul 10, 2026 by Sébastien Lorber

@@ -16,8 +16,8 @@ related:
 summary: Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0b0d589b6b00736acd8c5eb2e4646c2df7f0c445eafdbc89b6cc34a3d3f49abe"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "66b5d633a0dd47490735fc0f644797d5a22e7b41334cf4750193671e8160eee1"
 ---
 
 # Configuring Custom Domains
@@ -32,16 +32,11 @@ If you plan on offering subdomains like `*.acme.com`, add a wildcard domain to y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use my domain on Vercel with A records?](https://vercel.com/kb/guide/a-record-and-caa-with-vercel) — Point your apex domain to Vercel with an A record \\(76.76.21.21 or your domain card's value\\), pair it with a www CNAME,
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
-- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
-- [How can I migrate a site to Vercel without downtime?](https://vercel.com/kb/guide/zero-downtime-migration) — Information about how to assign a Vercel deployment to a domain without downtime.
 - [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
+- [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md](/docs/platforms/multi-tenant-platforms/configuring-domains.graph.md)
 <!-- /docsgraph:related -->
@@ -68,6 +63,8 @@ Submit the domain that sits directly above each tenant name:
 - For `<tenant>.sites.acme.com`, submit `sites.acme.com`
 
 After receiving the PSL update, browsers treat each tenant subdomain as a separate site. Browsers also block tenant attempts to set cookies for the shared domain. You don't need to submit custom domains that tenants own.
+
+`vercel.app` is on the PSL for this reason, so a deployment on `your-project.vercel.app` can't set a cookie with `Domain=vercel.app`. Browsers reject it. To share cookies across subdomains, use a custom domain that isn't on the PSL, such as `app.example.com` and `www.example.com` with `Domain=example.com`.
 
 #### Submitting your suffix
 
@@ -209,6 +206,7 @@ await Promise.all([
     domain: 'customacmesite.com',
   }),
   domainsDeleteDomain(vercel, {
+    teamId: 'team_1234',
     domain: 'customacmesite.com',
   }),
 ]);
@@ -228,7 +226,7 @@ After pointing your nameservers to Vercel or adding CNAME records, changes can t
 
 If you add a tenant's domain but never verify it (e.g., by adding a `TXT` record or using Vercel nameservers), SSL certificates won't be issued. Always check the domain's status in your Vercel project or with the SDK.
 
-### Wildcard domain requires Vercel nameservers
+### Wildcard domain requires DNS challenge access
 
 For `*.acme.com`, Vercel needs access to DNS challenges to issue and renew the wildcard certificate. Check that the apex domain uses Vercel's nameservers, or follow [Use wildcard domains with an external DNS provider](/docs/domains/working-with-domains/add-a-domain#use-wildcard-domains-with-an-external-dns-provider) to delegate `_acme-challenge` to Vercel.
 

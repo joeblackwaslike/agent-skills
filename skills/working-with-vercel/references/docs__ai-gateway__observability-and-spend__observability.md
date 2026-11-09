@@ -9,13 +9,12 @@ prerequisites:
   - /docs/ai-gateway/observability-and-spend
   - /docs/ai-gateway
 related:
-  - /docs/observability/observability-plus
   - /docs/ai-gateway/observability-and-spend/logs
 summary: Monitor AI Gateway requests in the Vercel dashboard. Inspect token usage, latency, spend, and logs at team, project, and API key scopes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ce0d1af0f690d2daf70d648f56ee2006e6213b89e5dc13bea34efc9a1e3a7ea6"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "a311a1d88bbd52dc039204e7311ca1e5fe979630a1160e5e5463adb90a68e244"
 ---
 
 # AI Gateway Observability
@@ -34,9 +33,8 @@ The AI Gateway logs spend, model usage, and observability metrics related to you
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs)
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts)
-- [Observability added to AI Gateway alpha](https://vercel.com/changelog/observability-added-to-ai-gateway-alpha)
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 - [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations) — Connect Flue, LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gatewa
 - [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
@@ -56,7 +54,7 @@ You can view these metrics in two ways:
 
 ## Usage
 
-The **Usage** section displays four metrics to help you monitor your AI Gateway activity. For extended timeframes and further retention, you need [Observability Plus](/docs/observability/observability-plus).
+The **Usage** section displays four metrics to help you monitor your AI Gateway activity. You can look back at most 36 days.
 
 ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/ai-gateway/overview-observability/graphs-light.png)
 
@@ -66,11 +64,11 @@ The **Requests by Model** chart shows the number of requests made to each model 
 
 ### Time to first token (TTFT)
 
-The **Time to First Token** chart shows the average time it takes for the AI Gateway to return the first token of a response. This can help you understand the latency of your requests and identify any performance issues.
+The **P50 TTFT** chart shows the median (P50) time it takes for the AI Gateway to return the first token of a response. This can help you understand the latency of your requests and identify any performance issues.
 
 ### Input/output token counts
 
-The **Input/Output Token Counts** chart shows the number of input and output tokens for each request. This can help you understand the size of the requests being made and the responses being returned.
+The **All Tokens** chart shows the number of input and output tokens for each request. This can help you understand the size of the requests being made and the responses being returned.
 
 ### Spend
 
@@ -78,7 +76,7 @@ The **Spend** chart shows the total amount spent on AI Gateway requests over tim
 
 ## Requests
 
-The **Requests** section displays summaries by project, API key, and a detailed log of all requests. Each summary includes request count, average tokens, P75 duration, P75 TTFT, and cost for the specified time frame.
+The **Requests** section displays summaries by project, API key, and a detailed log of all requests. Each summary includes request count, average tokens per second, P50 duration, P50 TTFT, and cost for the specified time frame.
 
 ### Projects
 

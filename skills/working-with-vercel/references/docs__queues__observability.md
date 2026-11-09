@@ -15,8 +15,8 @@ related:
 summary: Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/queues/observability.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d77825f16bc444a821d305ebd635113c0c259dbf8eb0f3f1cc6195b558e83bfa"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "c3d4c99f56d92ada9430a35052317e29bace2345d15984c336670a3c9781b6b4"
 ---
 
 # Queues Observability
@@ -89,7 +89,7 @@ When you click on a specific queue, you can see detailed charts and breakdowns:
 | Column             | Description                                                        |
 | ------------------ | ------------------------------------------------------------------ |
 | **Consumer Group** | Name of the consumer group                                         |
-| **Processed/s**    | Messages processed per second by this consumer group               |
+| **Received/s**     | Messages received per second by this consumer group                |
 | **Received**       | Total messages received with sparkline chart                       |
 | **Deleted**        | Total messages successfully deleted with sparkline chart           |
 | **Redeliveries**   | Receives by this consumer group beyond a message's first attempt   |
@@ -114,7 +114,7 @@ Both metrics are also available under **Queue Actions** on the Observability **Q
 
 A rising Retry Depth is the earliest sign that a consumer is failing every delivery. Because [messages stay pinned to the deployment that published them](/docs/queues/concepts#stopping-deliveries-to-a-deployment), a rolled-back deployment can keep failing and retrying for the full message retention period without showing up in production traffic.
 
-For projects with [Observability Plus](/docs/observability/observability-plus) enabled, teams can create a [custom monitor](/docs/alerts/configure-alerts#configure-custom-rules) on Retry Depth. The **Queue Retry Depth** preset in the monitor wizard sets this up: it triggers when the maximum Retry Depth in the project exceeds 5 within a 5-minute window, which a message reaches within minutes under the default retry delay when its consumer fails every time.
+For projects with [Observability Plus](/docs/observability/observability-plus) enabled, teams can create a [custom monitor](/docs/alerts/configure-alerts#configure-custom-rules) on Retry Depth. The **Queue Retry Depth** preset in the monitor wizard sets this up: it triggers when the maximum Retry Depth in the project exceeds 5 within a 15-minute window, which a message reaches within minutes under the default retry delay when its consumer fails every time.
 
 When the alert fires, open the queue's **Consumers** table to find the consumer group, then check [function duration grouped by deployment](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fquery%3Fmetric%3DserverlessFunctionInvocation.functionDurationGbhr%26aggregation%3Dsum%26by%3DdeploymentId\&title=Function+duration+by+deployment) on the **Query** tab to see which deployment the retries are running on and what they cost. See [Cost of failed deliveries](/docs/queues/concepts#cost-of-failed-deliveries) for what to do next.
 

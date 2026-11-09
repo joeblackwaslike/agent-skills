@@ -17,8 +17,8 @@ related:
 summary: Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authentication.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "18f8b200f879f40b2bf30051f41b42010cd716f7206016f47efd511cf3db694b"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "dcd678e372a238b8f3937824436a0bfb8a7842c81f38461852e3fa94f0f3844d"
 ---
 
 # Flue with AI Gateway
@@ -31,7 +31,8 @@ sha256: "18f8b200f879f40b2bf30051f41b42010cd716f7206016f47efd511cf3db694b"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build an agent with Vercel and Flue](https://vercel.com/kb/guide/build-an-agent-with-vercel-and-flue) — Build and deploy an agent with Flue, Vercel Sandbox, and AI Gateway
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [Build a Software Factory with Flue](https://vercel.com/docs/agent-resources/software-factory/flue) — Use Flue with AI Gateway, Vercel Sandbox, and explicit GitHub tool adapters for investigated and reviewed code changes.
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto

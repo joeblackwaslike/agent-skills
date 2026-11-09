@@ -16,8 +16,8 @@ related:
 summary: Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/agent-runs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b96a00e9dfece9bcf07bb8b68e7ae43827fa5db059652fcb5a3cd89dd434d775"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f6acb1da5748f47121a569da606101c035b419abbbbddbbcc73f3bda8ebff170"
 ---
 
 # vercel agent-runs
@@ -30,13 +30,14 @@ The `vercel agent-runs` command reads [Agent Runs](/docs/agent-runs) data from y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Trace and debug eve agent runs](https://vercel.com/kb/guide/trace-and-debug-eve-agent-runs) — Inspect eve traces in Vercel Agent Runs, control captured content, export OpenTelemetry spans, and test fixes with regre
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/agent-runs.graph.md](/docs/cli/agent-runs.graph.md)
 <!-- /docsgraph:related -->
@@ -69,7 +70,7 @@ vercel agent-runs projects --environment preview --json
 
 ### List runs
 
-`vercel agent-runs list` (alias `ls`) lists runs for a project. Filter by time or title, and limit the number of results per page:
+`vercel agent-runs list` lists runs for a project. Filter by time or title, and limit the number of results per page:
 
 ```bash filename="terminal"
 vercel agent-runs list --environment preview --since 1d
@@ -133,7 +134,7 @@ These options apply to all four subcommands unless noted:
 | Option | Description |
 | --- | --- |
 | `--environment <ENVIRONMENT>`, `-e` | Query `production` or `preview`. Defaults to `production`. |
-| `--since <TIME>`, `-s` | Start of the time window, as an ISO 8601 timestamp or a relative value such as `1h` or `7d`. |
+| `--since <TIME>`, `-s` | Start of the time window, as an ISO 8601 timestamp or a relative value such as `1h` or `7d`. Without it, `list` and `projects` cover the last 12 hours. |
 | `--until <TIME>`, `-u` | End of the time window. Requires `--since` and defaults to now. Accepts the same formats as `--since`. |
 | `--project <NAME\|ID>`, `-p` | Override the linked project. Applies to `list`, `inspect`, and `trace`. |
 | `--json` | Print the API response as JSON to standard output. Trace strings still respect `--max-field-length`. |
@@ -146,7 +147,7 @@ vercel agent-runs list --since 7d --until 1d
 
 ## Use output in scripts and coding agents
 
-Every subcommand supports `--json`. Without `--json`, the CLI renders recognized conversation turns as Markdown, including when you pipe or redirect output. If it can't find turns to render, it prints the response as JSON instead. This lets a coding agent inspect traces through shell commands without an MCP connection:
+Every subcommand supports `--json`. Without `--json`, `trace` renders recognized conversation turns as Markdown, including when you pipe or redirect output. If it can't find turns to render, it prints the response as JSON instead. This lets a coding agent inspect traces through shell commands without an MCP connection:
 
 ```bash filename="terminal"
 vercel agent-runs list --json
@@ -168,7 +169,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

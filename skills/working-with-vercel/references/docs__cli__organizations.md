@@ -14,13 +14,13 @@ related:
 summary: Create and manage organizations and their child teams with the vercel organizations CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/organizations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "be05bad2da1245c7452ee9f318065bdff1925d00704a6632de89107f537d8f70"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "26672886f23aaf98d6dcc5fa14287f595c73535f172a01dad6b64f4ed62a96a8"
 ---
 
 # vercel organizations
 
-Use the `vercel organizations` command to create and manage [organizations](/docs/organizations) from the terminal. An organization groups several Vercel teams under one billing team, and the billing team pays for every team in the organization.
+Use the `vercel organizations` command to create and manage [organizations](/docs/organizations) from the terminal. An organization groups several Vercel teams under one billing team, and the billing team pays for every team in the organization. In its output, the command calls the billing team the root team.
 
 
 <!-- docsgraph:related -->
@@ -28,10 +28,10 @@ Use the `vercel organizations` command to create and manage [organizations](/doc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, sell, transfer, and manage your domains using the vercel domains CLI command.
-- [vercel budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
+- [vercel billing budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
+- [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, transfer, and manage your domains using the vercel domains CLI command.
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [Create or Add Team to Organization](https://vercel.com/docs/rest-api/organizations/create-or-add-team-to-organization) — POST /v1/organizations/{organizationId}/teams — Create a new team under an organization, or add an existing team. \\`mode
 
 Full cross-link map for this page: [/docs/cli/organizations.graph.md](/docs/cli/organizations.graph.md)
@@ -39,7 +39,7 @@ Full cross-link map for this page: [/docs/cli/organizations.graph.md](/docs/cli/
 
 > Organizations are available in Private Beta to Enterprise plans with Flexible Commitment (Flex) billing. Contact your account team to request access.
 
-`vercel organization` is an alias for the same command. The command is available in `vercel@65.2.0` and later.
+The command is available in `vercel@65.2.0` and later.
 
 ## Usage
 
@@ -83,7 +83,7 @@ vercel --scope acme-web organizations inspect
 
 ## vercel organizations list
 
-Use `vercel organizations list` to list the organizations you can view. The `ls` alias runs the same command.
+Use `vercel organizations list` to list the organizations you can view.
 
 ```bash filename="terminal"
 vercel organizations list
@@ -121,7 +121,7 @@ vercel organizations inspect acme
 
 ## vercel organizations create
 
-Use `vercel organizations create` to create an organization from the active team. The active team becomes the billing team of the organization, and you become the owner of the organization. The billing team must be an Enterprise team with Flexible Commitment (Flex) billing.
+Use `vercel organizations create` to create an organization from the active team. The active team becomes the billing team of the organization, and you get Organization Admin access to the organization. The billing team must be an Enterprise team with Flexible Commitment (Flex) billing.
 
 ```bash filename="terminal"
 vercel --scope acme organizations create --slug acme --name "Acme Inc"
@@ -158,7 +158,7 @@ vercel organizations update org_aBcD1234EfGh5678IjKl9012 --slug acme-corp
 
 ## vercel organizations teams list
 
-Use `vercel organizations teams list` to list the teams in an organization, including the billing team. The `teams` subcommand also has the `team` alias, and `list` has the `ls` alias.
+Use `vercel organizations teams list` to list the teams in an organization, including the billing team.
 
 ```bash filename="terminal"
 $ vercel organizations teams list acme
@@ -182,7 +182,7 @@ The **Billing Plan** column shows how Vercel bills each child team. The billing 
 
 ## vercel organizations teams create
 
-Use `vercel organizations teams create` to create a new child team in an organization. You become an owner of the new team, and the billing team of the organization pays for its usage.
+Use `vercel organizations teams create` to create a new child team in an organization. You must be an Organization Admin. The billing team of the organization pays for the new team's usage.
 
 Before the command creates the team, it shows the team, its billing plan, and the billing change, then asks you to confirm.
 
@@ -270,7 +270,7 @@ Without `--json`, the `create`, `update`, `teams create`, and `teams add` subcom
 
 ```bash filename="terminal"
 team=$(vercel organizations teams create acme --slug acme-web --name "Acme Web" --yes)
-vercel --scope "$team" project ls
+vercel --scope "$team" project list
 ```
 
 *Creating a child team and listing its projects in a script*
@@ -293,7 +293,6 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 - [`--no-color`](/docs/cli/global-options#no-color)
 - [`--non-interactive`](/docs/cli/global-options#non-interactive)
 - [`--scope`](/docs/cli/global-options#scope)
-- [`--team`](/docs/cli/global-options#team)
 - [`--token`](/docs/cli/global-options#token)
 - [`--version`](/docs/cli/global-options#version)
 

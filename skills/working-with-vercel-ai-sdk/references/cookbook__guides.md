@@ -4,8 +4,8 @@ description: Learn how to build AI applications with the AI SDK
 url: "https://ai-sdk.dev/cookbook/guides"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/cookbook/guides.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "1d9fe82ea27c6969f5e63fa49d4a0c44ca25a800c49d13f8ad33af896c2d5da0"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "cf1e22376554ee4c81932608e9dd5d837bc06bb6016c7e43b58d8f66e482780e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -39,6 +39,10 @@ Extend your agent with specialized capabilities loaded at runtime from markdown 
 #### [Compact Agent Context](/cookbook/guides/agent-context-compaction)
 
 Compact agent context by mutating message state between steps with prepareStep.
+
+#### [Meal-Planning Agent with Redis Memory](/cookbook/guides/redis-agent-memory)
+
+Build an agent that remembers preferences and meal feedback across conversations with Redis Agent Memory.
 
 #### [Get started with Gemini 2.5](/cookbook/guides/gemini-2-5)
 

@@ -16,8 +16,8 @@ related:
 summary: "Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/caching/cdn-cache.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a2082d0e8a7c171581fad26fcec7e55462de34b82764f4370aaf99ef8febb38d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "87d824988faea1ce4bde67463196466ff14625892ce54ad7281b8f6053012acb"
 ---
 
 # Vercel CDN Cache
@@ -37,11 +37,11 @@ Vercel's CDN caches your content (including pages, API responses, and static ass
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
-- [Simpler Pricing](https://vercel.com/blog/simpler-pricing)
 - [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
-- [use cache: remote](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote) — Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
-- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components) — Learn how to migrate from route segment configs to Cache Components in Next.js.
-- [cacheLife](https://nextjs.org/docs/app/api-reference/functions/cacheLife) — Learn how to use the cacheLife function to set the cache expiration time for a cached function or component.
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/caching/cdn-cache.graph.md](/docs/caching/cdn-cache.graph.md)
 <!-- /docsgraph:related -->
@@ -103,8 +103,6 @@ export async function GET() {
     status: 200,
     headers: {
       'Cache-Control': 'public, s-maxage=1',
-      'CDN-Cache-Control': 'public, s-maxage=60',
-      'Vercel-CDN-Cache-Control': 'public, s-maxage=3600',
     },
   });
 }
@@ -118,8 +116,6 @@ export async function GET() {
     status: 200,
     headers: {
       'Cache-Control': 'public, s-maxage=1',
-      'CDN-Cache-Control': 'public, s-maxage=60',
-      'Vercel-CDN-Cache-Control': 'public, s-maxage=3600',
     },
   });
 }
@@ -802,10 +798,9 @@ The `Cache-Control` field is an HTTP header specifying caching rules for client 
 For server responses to be successfully cached with Vercel's CDN, the following criteria must be met:
 
 - Request uses `GET` or `HEAD` method.
-- Request doesn't contain `Range` header.
 - Request doesn't contain `Authorization` header.
 - Response uses `200`, `404`, `410`, `301`, `302`, `307` or `308` status code.
-- Response doesn't exceed `10MB` in content length (`20MB` for streaming [Vercel Function](/docs/functions) responses, see [Limits](#limits)).
+- Response doesn't exceed `10MB` in content length (see [Limits](#limits)).
 - Response doesn't contain the `set-cookie` header.
 - Response doesn't contain the `private`, `no-cache` or `no-store` directives in the `Cache-Control` header.
 - Response doesn't contain `Vary: *` header, which is treated as equivalent to `Cache-Control: private`.
@@ -827,9 +822,7 @@ See [our headers docs](/docs/headers/response-headers#x-vercel-cache) to learn m
 
 Vercel's CDN Cache is segmented [by region](/docs/regions). The following caching limits apply to [Vercel Function](/docs/functions) responses:
 
-- Max cacheable response size:
-  - Streaming functions: **20MB**
-  - Non-streaming functions: **10MB**
+- Max cacheable response size: **10MB**
 - Max cache time: **1 year**
   - `s-maxage`
   - `max-age`

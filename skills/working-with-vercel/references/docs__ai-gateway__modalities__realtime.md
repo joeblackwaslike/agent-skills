@@ -16,8 +16,8 @@ related:
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5d3e44c822614be11cd42ea5cdcc86497829ff1a02a8e72507622f66e4123cff"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "803c1ad73df71ad5cc140bbb8b1264c04ebb2d0e8040aa667c089d52a52e15d0"
 ---
 
 # Realtime Voice with AI Gateway
@@ -31,13 +31,13 @@ Build voice agents that listen and respond in real time. With the AI SDK, you st
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [Grok Voice Think Fast 2.0 now available on AI Gateway](https://vercel.com/changelog/grok-voice-think-fast-2-0-now-available-on-ai-gateway)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
+- [Grok Voice Think Fast 2.0 now available on AI Gateway](https://vercel.com/changelog/grok-voice-think-fast-2-0-now-available-on-ai-gateway)
 - [WebSocket support is now generally available](https://vercel.com/changelog/websocket-support-is-now-generally-available)
 - [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
-- [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
 - [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
+- [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md)
 <!-- /docsgraph:related -->
@@ -171,7 +171,7 @@ AI Gateway enforces these limits on the realtime sessions described on this page
 | Maximum session duration | 25 minutes | The session closes gracefully                                   |
 | Idle timeout             | 5 minutes  | The session closes if nothing is sent or received               |
 | First client message     | 30 seconds | The session closes if the client sends nothing after connecting |
-| Maximum message size     | 256 KB     | The message is rejected                                         |
+| Maximum message size     | 256 KB     | The session closes                                              |
 
 Teams also have a limit on concurrent realtime sessions. Additional connection attempts beyond the limit are rejected until a session ends.
 

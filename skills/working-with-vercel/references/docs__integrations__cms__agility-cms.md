@@ -13,8 +13,8 @@ related:
 summary: Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the integration for flexible and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/integrations/cms/agility-cms.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "aac1c10fb6302f35d9dcc7730ad356bdf4815df03fe396f63d8a2e1f3756536d"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4eaf7f8525df01a41fc0dafbc59c88dfd8ed2008f09ab43db79b8ff133cfc317"
 ---
 
 # Vercel Agility CMS Integration
@@ -27,6 +27,7 @@ Agility CMS is a headless content management system designed for flexibility and
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing

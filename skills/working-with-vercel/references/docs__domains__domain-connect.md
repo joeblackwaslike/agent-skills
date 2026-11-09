@@ -14,8 +14,8 @@ related:
 summary: Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS records for your users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/domains/domain-connect.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "03c14c88aad098669fa9e5cfc24d96aac5d2a37dcfabec1eebae59dbe15075f6"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "f238854aa51cef9501c00f59a882c9bad6febdf836f8680aa6c51a5a8bb8cd40"
 ---
 
 # Domain Connect
@@ -29,10 +29,8 @@ sha256: "03c14c88aad098669fa9e5cfc24d96aac5d2a37dcfabec1eebae59dbe15075f6"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel now supports Domain Connect as a DNS Provider](https://vercel.com/changelog/vercel-now-supports-domain-connect-as-a-dns-provider)
-- [How can I manage my Vercel DNS records?](https://vercel.com/kb/guide/how-to-manage-vercel-dns-records) — Add, edit, and delete Vercel DNS records from the dashboard, CLI, or REST API, and fix the Invalid Configuration error o
 - [Automated DNS configuration with Domain Connect](https://vercel.com/changelog/automated-dns-configuration-with-domain-connect)
-- [How to set up email with your Vercel domain](https://vercel.com/kb/guide/set-up-email-with-your-vercel-domain) — Set up email on your Vercel domain by adding your provider's MX and TXT records in Vercel DNS, and send transactional em
-- [Why is my Vercel domain not verified?](https://vercel.com/kb/guide/why-is-my-vercel-domain-unverified) — Information on why a Vercel domain may not be verified and how to verify it.
+- [DNS Records UI](https://vercel.com/blog/dns-records-ui)
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
@@ -122,7 +120,7 @@ Construct the apply URL using the `urlSyncUX` prefix from the settings response,
 | -------------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `domain`       | Yes      | The root domain being configured (for example, `example.com`).                                                          |
 | `host`         | No       | The subdomain to apply the template to. Omit for the root domain.                                                       |
-| `redirect_uri` | Yes      | Where Vercel redirects the user after the flow completes. Must be HTTPS and match your template's `syncRedirectDomain`. |
+| `redirect_uri` | No       | Where Vercel redirects the user after the flow completes. Must be HTTPS and match your template's `syncRedirectDomain`. If you omit it, the user stays on the domain's page in the Vercel dashboard. |
 | `state`        | No       | An opaque string passed back on the redirect.                                                                           |
 | `groupId`      | No       | Comma-separated list of group IDs from your template. If omitted, all record groups are applied.                        |
 | `sig`          | Yes      | RSA-SHA256 signature of the query string (excluding `sig` and `key` parameters), base64-encoded and URL-encoded.        |

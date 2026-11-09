@@ -16,8 +16,8 @@ related:
 summary: Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/coding-agents.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d6b11e0aa2fc8c9fbb57ee90e943aee850f1074261785d198ebcc8d133d35b47"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "37ca5f93f87a701a463606a3d8d536d4a6d0c00c0c0bc3d38491e1f07cddce4b"
 ---
 
 # Coding Agents and Chat Platforms with AI Gateway
@@ -103,7 +103,7 @@ Configuring an agent by hand means telling it where the gateway is. Unless the a
 https://ai-gateway.vercel.sh/coding-agent/v1
 ```
 
-That URL passes straight through to the standard `/v1` handlers, so auth, routing, billing, and errors are identical to the gateway's bare `/v1` surface. Prefer it anyway because it marks the traffic as coming from a coding agent. Behavior shared across harnesses can also land there without requiring another config edit. For a client that speaks the Anthropic protocol and appends `/v1/messages` itself, drop the `/v1` and use `https://ai-gateway.vercel.sh/coding-agent`.
+That URL passes straight through to the standard `/v1` handlers, so auth, routing, billing, and errors are identical to the gateway's bare `/v1` surface. The exception is the model list: `/coding-agent/v1/models` leaves out models that can't produce the text responses a coding agent needs, such as embedding, image, and video models, so they don't appear in your agent's model picker. Prefer the coding agent surface over bare `/v1` for that list. Behavior shared across harnesses can also land there without requiring another config edit. For a client that speaks the Anthropic protocol and appends `/v1/messages` itself, drop the `/v1` and use `https://ai-gateway.vercel.sh/coding-agent`.
 
 Three agents have a dedicated endpoint, because each needs something the generic surface doesn't do:
 
@@ -144,7 +144,7 @@ export ANTHROPIC_AUTH_TOKEN="your-ai-gateway-api-key"
 export CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1
 ```
 
-Once configured, Claude Code works exactly as before, but requests route through the gateway. `/claude-code` is Claude Code's own compatibility endpoint, and the discovery variable puts every gateway model in its `/model` picker.
+Once configured, Claude Code works exactly as before, but requests route through the gateway. `/claude-code` is Claude Code's own compatibility endpoint, and the discovery variable puts the gateway models that Claude Code can use in its `/model` picker.
 
 See the [Claude Code documentation](/docs/ai-gateway/coding-agents/claude-code) for the dedicated Claude Code compatibility endpoint, model discovery, and advanced configuration.
 
@@ -171,7 +171,7 @@ codex
 codex --model openai/gpt-5.5-pro
 ```
 
-Codex reads the gateway catalog from `/codex/v1/models` at startup, so `/model` inside a session lists every gateway model.
+Codex reads the gateway catalog from `/codex/v1/models` at startup, so `/model` inside a session lists the gateway models that Codex can use.
 
 For full configuration options, including the dedicated Codex compatibility endpoint and profiles, see [Configure OpenAI Codex](/docs/ai-gateway/coding-agents/openai-codex).
 
@@ -273,7 +273,7 @@ Chatbox and Open WebUI require manual configuration. OpenClaw works with `npx ve
 
 ## Getting started
 
-1. **Run the CLI**: `npx vercel@latest ai-gateway setup` creates a key and configures every agent it supports. Skip to step 4 when it finishes
+1. **Run the CLI**: `npx vercel@latest ai-gateway setup` creates a key and configures the supported agents you select. It pre-selects the agents it detects on your machine. Skip to step 4 when it finishes
 2. **Get an API key**: to configure a tool by hand, create a key in the [AI Gateway page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=AI+Gateway)
 3. **Configure the connection**: point the tool at the endpoint named on its setup page
 4. **Start using the tool**: requests now route through AI Gateway

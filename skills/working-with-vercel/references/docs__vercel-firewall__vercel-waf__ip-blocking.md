@@ -14,8 +14,8 @@ related:
 summary: Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "95df586951baba3f531a79d08b672967247f9c7d5a84d1e9deb1ad23466ffeaf"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "aa42213ef5b2132175b9d6c0d1c19ed3862c2b10b6fe6a1fc4b54486bd178fb8"
 ---
 
 # WAF IP Blocking
@@ -29,17 +29,17 @@ You can create custom rules to block a specific IP address or multiple IP addres
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
-- [Can I get a fixed IP address for my Vercel deployments?](https://vercel.com/kb/guide/can-i-get-a-fixed-ip-address) — Vercel deployments use dynamic IPs by default. Learn how Static IPs, Secure Compute, and AWS PrivateLink give you a fixe
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
 - [Custom firewall rules for IP blocking](https://vercel.com/changelog/custom-firewall-rules-for-ip-blocking)
-- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
-- [Limit Abuse with Rate Limiting](https://vercel.com/kb/guide/limit-abuse-with-rate-limiting) — Learn how to protect your authentication endpoints against abuse.
-- [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall)
 - [Restrict access with IP blocking by CIDR range](https://vercel.com/changelog/restrict-access-with-ip-blocking-by-cidr-range)
+- [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall)
+- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
+- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 - [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 - [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/ip-blocking.graph.md](/docs/vercel-firewall/vercel-waf/ip-blocking.graph.md)
 <!-- /docsgraph:related -->
@@ -67,11 +67,11 @@ To block an IP address, open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5
 1. Select **Configure** on the top right of the Firewall overview page
 2. Scroll down to the **IP Blocking** section
 3. Select the **+ Add IP** button
-4. Complete the required **IP Address Or CIDR** and **Host** fields in the **Configure New Domain Protection** modal
+4. Complete the required **IP Address Or CIDR** and **Host** fields in the **Add IP Block Rule** modal
    - The host is the domain name of the site you want to block the IP address from accessing. It should match the domain(s) associated with your project
    - You can copy this value from the URL of the site you want to block **without the `https` prefix**
-   - It must match the exact domain you want to block, for example `my-site.com`, `www.my-site.com` or `docs.my-site.com`
-   - You should add an entry for all subdomains that you wish block, such as `blog.my-site.com` and `docs.my-site.com`
+   - To block the IP address on one domain, enter the exact domain, for example `my-site.com`, `www.my-site.com`, or `docs.my-site.com`
+   - To block the IP address on every subdomain of a domain, enter a wildcard such as `*.my-site.com`. To block it on every domain of your project, enter `*`
 5. Select the **Add IP Block Rule** button
 6. Apply the changes:
    - When you make any change, you will see a **Review Changes** button appear or update on the top right with the number of changes requested

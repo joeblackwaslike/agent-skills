@@ -13,8 +13,8 @@ related:
 summary: Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "25c4fc42885d3d86629afb3ae5ba2e21cdbfa7afcdb5f7221e10ead86916e68a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "56516f69174d753e3d7f3cb39d24d32d6dccccc3ccdd737d1712a334c75fc2e0"
 ---
 
 # OpenAI Chat Completions Structured Outputs with AI Gateway
@@ -30,9 +30,9 @@ Generate structured JSON responses that conform to a specific schema, ensuring p
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
 - [Reflection AI's Beam now available on AI Gateway for free](https://vercel.com/changelog/reflection-ai-beam-now-available-on-ai-gateway-for-free)
+- [Tencent Hy4 now available on AI Gateway](https://vercel.com/changelog/tencent-hy4-now-available-on-ai-gateway)
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 - [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
-- [OpenAI Responses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs) — Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.graph.md)
 <!-- /docsgraph:related -->
@@ -283,6 +283,7 @@ The response contains structured JSON that conforms to your specified schema:
   - **`name`** (required): Name of the response schema
   - **`description`** (optional): Human-readable description of the expected output
   - **`schema`** (required): Valid JSON Schema object defining the structure
+  - **`strict`** (optional): Set to `true` to turn on strict schema adherence for OpenAI models. Defaults to `false`
 
 #### Legacy JSON format (alternative)
 

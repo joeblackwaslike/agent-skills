@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/auto-mode-classifier-billing.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "f9d543da13e8fcc094141761123cab051ada562b86160f4399bad62429b9137d"
+fetched_at: "2026-11-09T12:34:10.263Z"
+sha256: "8c45c7cfac5da17547f6d935c924030b837cb672ad8e3cecc06483a93e921f73"
 ---
 
 > ## Documentation Index
@@ -35,7 +35,12 @@ Where the notice can't wait for an answer, Claude Code reports the same text and
 
 ## Make the session eligible
 
-If a gateway is the cause, ask your company's admin or your gateway provider to pass requests and replies through unchanged. That means forwarding request headers and body fields as they are, including ones the gateway doesn't recognize such as the `safeguards` request field, and returning responses and streaming events without dropping keys such as the `safeguard_results` field or rewriting tool-use IDs, as the [gateway compatibility guide](https://code.claude.com/docs/en/llm-gateway-protocol.md#feature-pass-through) describes. A gateway that passes traffic through this way keeps working with this feature and with future ones. New sessions then use the server's checks again.
+If a gateway keeps auto mode's server-side checks from reaching your sessions and you don't run it, send the requirements below to your company's admin or your gateway provider. Where [the upstream accepts the format that the gateway receives](https://code.claude.com/docs/en/llm-gateway-protocol.md#format-mismatch-with-the-upstream), Claude Code expects the gateway to pass requests and responses through unchanged, as the [gateway compatibility guide](https://code.claude.com/docs/en/llm-gateway-protocol.md#feature-pass-through) describes:
+
+* **Requests**: to let the checks through, the gateway forwards both the `anthropic-beta` header and the `safeguards` body field unchanged, because [the two travel as a pair](https://code.claude.com/docs/en/llm-gateway-protocol.md#beta-header-and-body-field-pairs). On the [Amazon Bedrock InvokeModel format](https://code.claude.com/docs/en/llm-gateway-protocol.md#api-formats), it forwards the `anthropic_beta` body field in place of the header.
+* **Responses**: the gateway returns responses and streaming events without dropping fields or rewriting tool-use IDs. To let the checks' results through, it keeps the `safeguard_results` field.
+
+A gateway that passes traffic through this way keeps working with this feature and with future ones. New sessions then use the server's checks again.
 
 If you already know that your gateway can't provide the server's checks, tell Claude Code not to ask for them there by setting `CLAUDE_CODE_AUTO_MODE_SERVER` to `0` before you start the session, in your shell or in the [`env` settings key](https://code.claude.com/docs/en/settings-reference#env):
 

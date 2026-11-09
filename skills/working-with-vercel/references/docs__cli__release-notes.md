@@ -13,8 +13,8 @@ related:
 summary: Browse release notes for Vercel CLI versions, including major, minor, and patch changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/cli/release-notes.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1356a4b0cdf67cb9d0b3bbbb8e56dd56d2ecece33e3f9587cb9477da00ea9e30"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "4638cff1067bd13cde13cdebc0f25c092607c5f5c78e1a37ca34abffc3402f4f"
 ---
 
 # Vercel CLI Release Notes
@@ -27,7 +27,72 @@ Release notes for [Vercel CLI](/docs/cli) and its related packages. Each release
 
 To update to the latest version, see [updating Vercel CLI](/docs/cli#updating-vercel-cli) or run [`vercel upgrade`](/docs/cli/upgrade).
 
-vercel@65.9.0Published 2026-10-31 Minor changes- ece8d46:  
+vercel@65.12.1Published 2026-11-06 Patch changes- f9ab751:  
+- 72dbe4c:  
+- 1dd1bc5:  
+- cb2655a:  vercel@65.12.0Published 2026-11-05 Minor changes- 37ce068:  
+- 1de7fbf:  
+- 39b4888:  
+- e29c83e:  
+- e12f8c7:  
+- 392a7ba:  Patch changes- 11b258c:  
+- a995013:  
+- 3ef5594:  
+- bf4efcb:  
+- c32a5a9:  
+- 30921b6:  
+- 2ee5e2b:  
+- b6b9884:  
+- 503f5fa:  
+- 42b9011:  
+- 0bccc79:  
+- 8962bf1:  
+- 1ce8316:  
+- 1e40241:  
+- 77fe7c7:  
+- 1942e01:  
+- 0bb27d9:  
+- 36bcf42:  
+- e3e9c32:  
+- 6ecfb34:  
+- e9320e2:  
+- d15cca2:  
+- beb2885:  
+- c80cb17:  
+- c95a810:  
+- a7f771b:  
+- eadbab8:  
+- 805c84f:  
+- 5adc77c:  
+- 8bf649b:  vercel@65.11.0Published 2026-11-03 Minor changes- cb3fe7e:  
+- 26fb1d2:  
+- 330dab9:  
+- 9a99232:  
+- 3a07b00:  
+- 31a5191:  Patch changes- e0f2e7b:  
+- 30113a4:  
+- 34ad5f5:  
+- a377137:  vercel@65.10.0Published 2026-11-03 Minor changes- 02e1731:  
+- c78d569:  
+- 47ea897:  
+- e922974:  
+- b0bb99d:  
+- baeed0f:  
+- 3af484d:  
+- a1a9f2d:  Patch changes- f21db51:  
+- 6b5cb30:  
+- c9cb831:  
+- b96fed8:  
+- 90bd9f3:  
+- 19ded4f:  
+- 88b1126:  
+- fd5c909:  
+- e922974:  
+- 7371760:  
+- f275d9f:  
+- f275d9f:  
+- 5552445:  
+- a07e547:  vercel@65.9.0Published 2026-10-31 Minor changes- ece8d46:  
 - 0900c8f:  
 - c0fb918:  
 - 0d3d20d:  

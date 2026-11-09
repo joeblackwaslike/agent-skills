@@ -15,8 +15,8 @@ related:
 summary: Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern matching, and geolocation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/routing/redirects/configuration-redirects.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "024089c40cd86fa03f9663b3aa90795f84f1498087686706594060ab490a7482"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "b5ae0fbe5965386690f5e4caa1e75b4371af63cce2e9f16e56c27c0624ee4704"
 ---
 
 # Configuration Redirects
@@ -29,16 +29,15 @@ Configuration redirects define routing rules that Vercel evaluates at build time
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Redirecting Domains](https://vercel.com/blog/redirecting-domains)
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/kb/guide/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel) — Instructions on how to use Serverless Functions to handle redirects on Vercel.
-- [How do I perform Vercel redirects based on query strings?](https://vercel.com/kb/guide/how-do-i-perform-vercel-redirects-based-on-query-strings) — When using redirects with the \\`vercel.json\\` or \\`next.config.js\\` configuration file, your URL may contain query param
-- [Can I redirect from a subdomain to a subpath?](https://vercel.com/kb/guide/can-i-redirect-from-a-subdomain-to-a-subpath) — Learn how to redirect from your subdomain to a subpath on Vercel with a vercel.json file or with Next.js
-- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
+- [redirects](https://nextjs.org/docs/pages/api-reference/config/next-config-js/redirects) — Add redirects to your Next.js app.
+- [redirects](https://nextjs.org/docs/app/api-reference/config/next-config-js/redirects) — Add redirects to your Next.js app.
+- [Emergency Redirect](https://vercel.com/kb/guide/emergency-redirect) — Learn how to implement an emergency redirect without re-deploying your site.
 - [Bulk Redirects](https://vercel.com/docs/routing/redirects/bulk-redirects) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
+- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Getting Started](https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
-- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 
 Full cross-link map for this page: [/docs/routing/redirects/configuration-redirects.graph.md](/docs/routing/redirects/configuration-redirects.graph.md)
 <!-- /docsgraph:related -->
@@ -136,9 +135,33 @@ Use `vercel.json`, see above.
 
 When deployed, these redirect rules will be deployed to every [region](/docs/regions) in Vercel's CDN.
 
+## Redirect based on a query string
+
+The `source` pattern matches only the path, so you can't match a query string in `source`. To redirect based on a query parameter, add a `has` condition with `type` set to `query`:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/specific/:path*",
+      "has": [{ "type": "query", "key": "page", "value": "home" }],
+      "destination": "/another/:path*",
+      "permanent": false
+    }
+  ]
+}
+```
+
+A request to `/specific/mypath?page=home&id=1000` redirects to `/another/mypath?page=home&id=1000` with a `307` status. A request to `/specific/mypath?page=about` doesn't match, so no redirect happens. Use `missing` instead of `has` to redirect only when a parameter is absent.
+
+The request's query string passes through to the destination. If the destination has its own query parameters, Vercel combines them. For example, a rule with `"source": "/"` and `"destination": "/new?path=foo"` redirects `/?baz=10` to `/new?baz=10&path=foo`.
+
+For all `has` and `missing` options, see the [redirects reference](/docs/project-configuration/vercel-json#redirects). In Next.js, `redirects()` in `next.config.js` accepts the same `has` syntax.
+
 ## Limits
 
-The [/.well-known](# "The /.well-known directory") path is reserved and cannot be redirected or rewritten. Only
+The [/.well-known/acme-challenge](# "The /.well-known directory") path is reserved and cannot be redirected or rewritten. Only
 Enterprise teams can configure custom SSL. [Contact sales](/contact/sales) to
 learn more.
 

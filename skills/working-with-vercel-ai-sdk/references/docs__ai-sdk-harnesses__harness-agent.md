@@ -4,8 +4,8 @@ description: Create and run AI SDK HarnessAgent sessions.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "80aeebb16ee3567317227669ec0c522cb8556bfa7a7a8683ae7b484b2056e12e"
+fetched_at: "2026-11-09T12:39:36.677Z"
+sha256: "962502796e69979c2d54c77cd50eb38e7ab83f65ef02a87cce0d02498a18f5cb"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -585,6 +585,61 @@ default working directory and is used as the session working directory. Set it
 to `'.'` to use the sandbox's default working directory itself. When omitted,
 regular sessions use the default `<harnessId>-<sessionId>` directory, while
 `onBootstrap` receives the sandbox's default working directory.
+
+When the harness declares a sandbox bootstrap recipe, as Claude Code and Codex
+do, `createSession()` runs the session's sandbox setup before the harness
+starts: it runs `onBootstrap` when its marker is missing, creates the session
+working directory, and calls `onSession`. For any other harness, such as Pi,
+the setup runs on the first file, exec, or spawn operation that the harness or
+a host tool performs on the sandbox. A session whose turns never touch the
+sandbox then makes no setup calls. If the setup fails, the operation that
+triggered it rejects, and the next operation runs the setup again. A sandbox
+session without `defaultWorkingDirectory` still answers one `pwd` in
+`createSession()`, because the session working directory is derived from it.
+When the sandbox comes from the `sandbox` provider setting instead of
+`sandboxSession`, the provider runs `onBootstrap` when it creates a new
+sandbox, which happens in `createSession()`.
+
+## Start the Sandbox on First Use
+
+Deferring the setup does not defer the sandbox itself: a session you pass to
+`createSession()` already exists. To defer the sandbox as well, pass
+`defaultWorkingDirectory` and a `createSandboxSession` function instead. With
+a harness that has no sandbox bootstrap recipe, such as Pi, `createSession()`
+returns without calling `createSandboxSession`, and the first file, exec, or
+spawn operation calls it, so a turn that only chats never starts the sandbox.
+For any other harness, `createSession()` calls it right away.
+
+```ts
+import { HarnessAgent } from '@ai-sdk/harness/agent';
+import { pi } from '@ai-sdk/harness-pi';
+import { createVercelNetworkSandboxSessionFromNativeSandbox } from '@ai-sdk/sandbox-vercel';
+import { Sandbox } from '@vercel/sandbox';
+
+const agent = new HarnessAgent({ harness: pi });
+
+const session = await agent.createSession({
+  sessionId: chatId,
+  resumeFrom: resumeState,
+  sandboxSession: {
+    defaultWorkingDirectory: '/vercel/sandbox',
+    createSandboxSession: async () =>
+      createVercelNetworkSandboxSessionFromNativeSandbox(
+        await Sandbox.getOrCreate({
+          name: `chat-${chatId}`,
+          runtime: 'node24',
+        }),
+      ),
+  },
+});
+```
+
+The harness needs the working directory before the sandbox exists, so
+`defaultWorkingDirectory` must match the one the sandbox reports. Because the
+sandbox is looked up by name, the same call works for the first turn and for
+every later one. A failed `createSandboxSession` or setup is retried on the
+next operation. You own the sandbox lifecycle, as with any session you pass to
+`createSession()`.
 
 ## Prepare Reusable Sandboxes
 

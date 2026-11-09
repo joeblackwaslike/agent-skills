@@ -16,8 +16,8 @@ related:
 summary: Run long-running background workers, such as queue consumers and workflow workers, next to your app with Vercel Daemons.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 source: "https://vercel.com/docs/daemons.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "72f94b282dcb9dc1455035967b206e2a16f189d126c5fa10ddf1441eff9d332a"
+fetched_at: "2026-11-09T12:41:22.042Z"
+sha256: "52c5610622861f0e14d74e892c07c1060e8c3f9cf592ed0c0700467ad63545cb"
 ---
 
 # Daemons
@@ -32,18 +32,18 @@ Vercel Daemons run long-running background processes from container images, such
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 - [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons)
 - [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
-- [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
-- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
+- [Capture AI SDK token usage, tool calls, and cost with evlog](https://vercel.com/kb/guide/ai-sdk-and-evlog) — Record AI SDK usage with evlog, add cost estimates and request context, and investigate expensive or failed requests.
 - [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [Backends on Vercel: Python, containers, and Daemons](https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons)
+- [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
-- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
-- [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 
 Full cross-link map for this page: [/docs/daemons.graph.md](/docs/daemons.graph.md)
 <!-- /docsgraph:related -->
@@ -62,7 +62,7 @@ Use a daemon when your process owns a continuous loop to retrieve work. Common e
 
 Daemons complement other primitives, such as [Vercel Functions](/docs/functions) to serve HTTP traffic, [Vercel Workflows](/docs/workflows) for durable execution, and [Vercel Queues](/docs/queues) for serverless message processing with preview deployment support. Use [Cron Jobs](/docs/cron-jobs) to run code on a schedule, [Vercel Sandbox](/docs/sandbox) to run untrusted code in isolation, and [Services](/docs/services) to define multiple apps in a single project.
 
-For a comparison with request-based tasks, scheduled jobs, and durable workflows, see [Running background workers on Vercel](/kb/guide/background-workers-on-vercel). Choose an approach based on what starts the work, how long it runs, and how it recovers from failures.
+Compare [background worker options](/docs/background-workers) to choose between continuous processes, queued jobs, and durable workflows. For detailed examples and migrations, see [Running background workers on Vercel](/kb/guide/background-workers-on-vercel).
 
 ## How daemons work
 
@@ -449,7 +449,7 @@ It uses the Provisioned Memory quota, and it uses the Active CPU quota only whil
 
 ### Can I build daemons with `vercel build` on my machine?
 
-Yes. During the beta, set `VERCEL_ENABLE_DAEMONS_BOA=1` when you run `vercel build` locally.
+Yes. [Vercel CLI](/docs/cli) 65.6.0 or later builds daemons when you run `vercel build` locally.
 
 ## Guides and migrations
 
