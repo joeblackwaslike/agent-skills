@@ -28,6 +28,9 @@ For repo conventions and the curated entry points, see [AGENTS.md](AGENTS.md) �
 | `working-with-github` | GitHub the platform — gh CLI (pinned), REST + GraphQL APIs, rate limits/efficiency, tokens, PRs, code review, issues, releases & assets, branch protection/rulesets, GitHub flow, multi-branch release, Dependabot/CodeQL config |
 | `developing-for-github` | Building on GitHub — GitHub Apps, OAuth apps, webhooks (signature verification), and the Octokit JS/TS SDKs (app auth: JWT → installation token) |
 | `git-github-workflows` | Git/GitHub router — selects the right action or reference skill for any git/GitHub task; invoke at the start of any git/GitHub operation |
+| `commit` | Stage and commit changes as Conventional Commits, splitting into atomic commits when warranted |
+| `commit-push-pr` | Commit, push, and open a PR in one pass |
+| `git-cleanup` | Remove landed worktrees and merged local branches, prune stale refs (run from the main checkout) |
 | `devcontainers` | Building, using, modifying, developing, or distributing dev containers |
 | `docusaurus-docs-builder` | Building or updating Docusaurus documentation sites |
 | `github-readme-overhaul` | Writing or overhauling a GitHub README |
