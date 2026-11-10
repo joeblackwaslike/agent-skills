@@ -1,6 +1,5 @@
 ---
-name: git-cleanup
-description: Use when removing landed worktrees and merged local branches, pruning stale refs, "clean up branches", "reap worktrees". Run from the main checkout, never inside a worktree.
+description: Remove landed worktrees and merged local branches, prune stale refs
 argument-hint: "[--dry-run]"
 ---
 

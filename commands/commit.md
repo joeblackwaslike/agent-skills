@@ -1,6 +1,5 @@
 ---
-name: commit
-description: Use when staging and committing changes as Conventional Commits, "commit this", "commit my changes", or before pushing. Splits the diff into atomic commits when warranted.
+description: Stage and commit changes as Conventional Commits, splitting into atomic commits when warranted
 argument-hint: "[--no-verify] [--style=simple|full] [--type=<type>]"
 ---
 

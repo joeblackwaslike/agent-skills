@@ -1,6 +1,5 @@
 ---
-name: commit-push-pr
-description: Use when taking staged or working-tree changes through commit, push and pull request in one pass, "commit push and open a PR", "ship this branch".
+description: Commit, push, and open a PR
 allowed-tools: Bash(git checkout --branch:*), Bash(git add:*), Bash(git status:*), Bash(git push:*), Bash(git commit:*), Bash(gh pr create:*)
 ---
 
