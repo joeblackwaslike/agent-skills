@@ -2,20 +2,21 @@
 
 Step 1 of the [self-review runbook](self-review.md) runs the project's own automated checks before any reviewer reads the diff. This page says how to find those checks, in what order to run them, on how much of the project, and where to keep what you found.
 
-Discover once per branch, then reuse. Do not assume a `justfile`.
+Discover once per worktree, then reuse it for as long as the hash below still matches. Do not assume a `justfile`.
 
 ## 1. Check the cache
 
-The cache lives in the branch's own git directory, so it is per worktree, never committed, and removed with the worktree:
+The cache lives in the branch's own git directory, so it is per worktree (each branch gets its own worktree), never committed, and removed with the worktree:
 
 ```sh
+cd "$(git rev-parse --show-toplevel)" || exit 1
 GATE_DIR="$(git rev-parse --git-dir)/self-review"
-HASH=$({ printf '%s\n' CLAUDE.md AGENTS.md justfile Makefile package.json pyproject.toml Cargo.toml tox.ini noxfile.py .pre-commit-config.yaml lefthook.yml; find .github/workflows -type f | sort; } | while read -r f; do [ -f "$f" ] && git hash-object "$f"; done | shasum | cut -d' ' -f1)
-STORED=$(jq -r .inputs_hash "$GATE_DIR/gate.json")
+HASH=$(git ls-files -co --exclude-standard -- CLAUDE.md AGENTS.md justfile Makefile pyproject.toml Cargo.toml go.mod tox.ini noxfile.py .pre-commit-config.yaml lefthook.yml .github .gitlab-ci.yml '*package.json' '*CLAUDE.md' '*AGENTS.md' '*tsconfig*.json' '*ruff.toml' '*eslint.config.*' '*biome.json*' '*vitest.config.*' '*jest.config.*' | while read -r f; do [ -f "$f" ] && git hash-object "$f"; done | shasum | cut -d' ' -f1)
+STORED=$(jq -r '.inputs_hash // empty' "$GATE_DIR/gate.json" 2>/dev/null)
 [ "$HASH" = "$STORED" ] && echo "cache valid" || echo "discover"
 ```
 
-The loop skips files the project does not have, so a missing `justfile` does not break the hash. If it prints `cache valid`, load `checks` and `gaps` from `gate.json` and go to step 3. If it prints `discover`, the file is missing or stale: do step 2 and rewrite the file. A branch that adds a linter changes the hash, so it is picked up.
+`git ls-files` lists only the files that exist, so a project without a `justfile` is fine, and the pathspecs cover nested manifests and common tool configs, new untracked files included. If it prints `cache valid`, load `checks` and `gaps` from `gate.json` and go to step 3. If it prints `discover`, the file is missing or stale: do step 2 and rewrite the file. A branch that adds a linter through one of these files changes the hash, so it is picked up. If your project keeps its check configuration somewhere else, add that path to the list.
 
 ## 2. Discover
 
@@ -65,7 +66,7 @@ Within a group, run checks that share no state in parallel. Stop at the first re
 
 ## 4. Choose the scope
 
-While iterating, run each check on the changed files when `changed_cmd` exists. Get the list with `git diff --name-only --diff-filter=d $BASE`. If the project defines `check-changed` or `test-changed` recipes, use those.
+While iterating, run each check on the changed files when `changed_cmd` exists. Get the list with `git diff --name-only --diff-filter=d "$BASE"`, where `BASE` is the merge base from step 0 of the runbook. If the project defines `check-changed` or `test-changed` recipes, use those.
 
 Tools that take a file list:
 
@@ -73,7 +74,7 @@ Tools that take a file list:
 | --- | --- |
 | Ruff, ESLint, Biome, Prettier, ShellCheck, shfmt, SQLFluff | Pass the files as arguments |
 | pre-commit | `pre-commit run --files <files>` |
-| Vitest | `vitest related <files>` |
+| Vitest | `vitest related --run <files>` |
 | Jest | `jest --findRelatedTests <files>` |
 | pytest | The test files for the changed modules, or the changed test files |
 | mypy | Pass the files, but a whole-project run is the real check |
@@ -84,4 +85,4 @@ Before reporting READY, run every check in `gate.json` once on the whole project
 
 ## 5. Report
 
-Pass each command you ran to `report.ts` as `--check "<command>=<exit code>"`. Put every entry from `gaps` in `--gate-gaps`, with the reason. A project with no checks at all is a gap in every kind, and the report says so.
+Pass each command you ran to `report.ts` as `--check "<command>=<exit code>"`. Put every entry from `gaps` in `--gate-gaps`, with the reason. When `gaps` is empty, pass `--gate-gaps "none"`: `report.ts` only accepts READY without it when the checks are literally `just check` and `just test`. A project with no checks at all is a gap in every kind, and the report says so.

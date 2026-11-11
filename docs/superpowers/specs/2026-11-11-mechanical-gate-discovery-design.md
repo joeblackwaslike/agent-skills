@@ -11,7 +11,7 @@ Step 1 of `skills/reviewing-code/references/self-review.md` assumes a `justfile`
 - The agent works out what the project enforces: type checkers, each linter and formatter (a project can have several), and each kind of test (unit, functional, e2e, smoke, browser).
 - It orders those checks sensibly and runs them.
 - It chooses, per check, whether to run on the changed files or on the whole project.
-- The result is derived once per branch and reused.
+- The result is derived once per worktree and reused while the hash of its inputs is unchanged.
 
 ## Non-goals
 
@@ -45,7 +45,7 @@ Move to B only if agents keep getting discovery wrong in practice.
 **Cache.** Stored at `$(git rev-parse --git-dir)/self-review/gate.json`. In a worktree that is the worktree's own git directory, so it is per branch, never committed, and removed with the worktree. It holds the check list above plus `inputs_hash`, computed over the discovery sources that exist:
 
 ```sh
-git hash-object CLAUDE.md AGENTS.md justfile Makefile package.json pyproject.toml Cargo.toml .pre-commit-config.yaml .github/workflows/* 2>/dev/null | shasum
+git ls-files -co --exclude-standard -- CLAUDE.md AGENTS.md justfile Makefile pyproject.toml .github '*package.json' ... | while read -r f; do [ -f "$f" ] && git hash-object "$f"; done | shasum
 ```
 
 If the hash differs from the stored one, re-discover. A branch that adds a linter therefore picks it up.
