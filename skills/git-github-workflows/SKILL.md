@@ -2,7 +2,7 @@
 name: git-github-workflows
 description: Git and GitHub workflow router. Selects the right skill for any git or GitHub operation — committing, PR creation, CI debugging, review comment handling, and more. Invoke at the start of any git/GitHub task.
 metadata:
-  last_updated: "2026-08-23"
+  last_updated: "2026-11-10"
 ---
 
 # Git & GitHub Workflows
@@ -13,11 +13,11 @@ There are two kinds of targets below: **action skills** (do a specific operation
 
 ## Routing Table
 
-| Operation | Skill |
+| Operation | Skill or command |
 |---|---|
-| Stage and commit changes | `commit-commands:commit` |
-| Commit → push → open PR | `commit-commands:commit-push-pr` |
-| Prune merged/deleted branches | `commit-commands:clean_gone` |
+| Stage and commit changes | `agent-skills:commit` |
+| Commit → push → open PR | `agent-skills:commit-push-pr` |
+| Remove landed worktrees and merged branches, prune stale refs | `agent-skills:git-cleanup` |
 | Branch strategy, PR creation, merge flow | `git-pr-workflows:git-workflow` |
 | Failing CI / GitHub Actions checks | `gh-fix-ci` |
 | **Driving a PR to approval + merge — review loop, required reviewers, merge gate** | `agent-skills:working-with-github` → `references/howto/driving-a-pr-to-approval.md` |
@@ -33,15 +33,15 @@ There are two kinds of targets below: **action skills** (do a specific operation
 
 ### Committing
 
-Staging files and generating a well-formed commit message from the diff. Invoke `commit-commands:commit`.
+Staging files and generating a well-formed commit message from the diff. Invoke `agent-skills:commit`.
 
 ### Commit → Push → PR
 
-Full flow from staged changes to an open pull request. Invoke `commit-commands:commit-push-pr`.
+Full flow from staged changes to an open pull request. Invoke `agent-skills:commit-push-pr`.
 
 ### Clean Merged Branches
 
-Prune local branches whose remote tracking ref is gone (merged and deleted upstream). Invoke `commit-commands:clean_gone`.
+Remove worktrees whose PR is merged, delete their local branches, and prune stale refs. Invoke `agent-skills:git-cleanup`.
 
 ### PR Creation and Branch Strategy
 
