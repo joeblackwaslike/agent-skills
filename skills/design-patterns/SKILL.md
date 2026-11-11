@@ -1,7 +1,7 @@
 ---
 name: design-patterns
 description: >-
-  Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Python and TypeScript. Not for whether to abstract at all (use engineering-principles), SOLID or god-class refactors (use solid-principles), aggregates, CQRS or event sourcing (use domain-driven-design).
+  Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Python and TypeScript. Not for whether to abstract at all (use engineering-principles), SOLID refactors (use solid-principles), aggregates, CQRS or event sourcing (use domain-driven-design).
 metadata:
   last_updated: "2026-11-11"
 ---

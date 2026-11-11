@@ -62,7 +62,7 @@ Name `design-patterns` follows the capability-name archetype (like `domain-drive
 
 **SKILL.md** frontmatter description (under 400 chars, trigger first, with exclusions in both directions):
 
-> Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Python and TypeScript. Not for whether to abstract at all (use engineering-principles), SOLID or god-class refactors (use solid-principles), aggregates, CQRS or event sourcing (use domain-driven-design).
+> Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Python and TypeScript. Not for whether to abstract at all (use engineering-principles), SOLID refactors (use solid-principles), aggregates, CQRS or event sourcing (use domain-driven-design).
 
 Body: a "What to load" table mapping problem to pattern file (same shape as `engineering-principles/SKILL.md`), a short "Default to no pattern" paragraph, and Related skills.
 
