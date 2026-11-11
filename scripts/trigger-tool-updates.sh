@@ -3,9 +3,10 @@
 # Refreshes each tool's local plugin cache so skill changes propagate without a manual reinstall.
 # Never silent: prints PASS/FAIL per tool and macOS-notifies on any failure.
 set -uo pipefail
-# Hooks export the committing repo's GIT_DIR and GIT_INDEX_FILE. The plugin updaters below run git
-# in their own clones, and with these inherited they rewrite this repo's index instead.
-unset GIT_DIR GIT_INDEX_FILE GIT_WORK_TREE GIT_PREFIX
+# Hooks export GIT_INDEX_FILE (and GIT_DIR in a linked worktree). The plugin updaters below run git
+# in their own clones; with those inherited, or from this repo's cwd, they rewrite this repo's index.
+unset $(git rev-parse --local-env-vars)
+cd "$HOME" || exit 1
 FAILURES=()
 
 echo "→ Claude Code: refreshing marketplace + plugin cache"
