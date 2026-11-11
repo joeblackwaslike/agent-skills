@@ -83,7 +83,8 @@ const rejected: [string, string[], string][] = [
   ["failing check on READY", ["--verdict", "ready", "--intent", "x", "--check", "just check=0", "--check", "just test=1", "--behavior-skipped", "d"], "just test exit 1"],
   ["READY without behavior evidence", ["--verdict", "ready", "--intent", "x", "--check", "just check=0", "--check", "just test=0"], "--behavior-cmd"],
   ["READY without both just recipes or gate gaps", ["--verdict", "ready", "--intent", "x", "--check", "just check=0", "--behavior-skipped", "d"], "--gate-gaps"],
-  ["counts that do not add up", [...ok, "--findings", "3", "--fixed", "1"], "must equal"],
+  ["READY with findings that have no disposition", [...ok, "--findings", "3", "--fixed", "1"], "no disposition"],
+  ["more dispositions than findings", [...ok, "--findings", "1", "--fixed", "2"], "less than"],
   ["open major finding on READY", [...ok, "--open-major", "1"], "blocker or major"],
   ["READY without --open-major", ["--verdict", "ready", "--intent", "x", "--check", "just check=0", "--check", "just test=0", "--behavior-skipped", "docs only"], "--open-major"],
   ["re-review without last findings", [...ok, "--rereviews", "1"], "--last-rereview-findings"],
@@ -118,4 +119,16 @@ test.each(rejected)("exit 2 and empty stdout: %s", (_name, args, needle) => {
   expect(r.code).toBe(2);
   expect(r.out).toBe("");
   expect(r.err).toContain(needle);
+});
+
+test("not-ready reports findings that are still open", () => {
+  const r = run("--verdict", "not-ready", "--intent", "x", "--check", "just check=0", "--findings", "2", "--fixed", "1", "--open-major", "1", "--no-rereview-reason", "none");
+  expect(r.code).toBe(0);
+  expect(r.out).toContain("Review: 2 findings -> 1 fixed, 0 declined, 0 deferred, 1 open");
+});
+
+test("exit 2: more open blockers or majors than undispositioned findings", () => {
+  const r = run("--verdict", "not-ready", "--intent", "x", "--check", "just check=0", "--findings", "1", "--fixed", "1", "--open-major", "1", "--no-rereview-reason", "none");
+  expect(r.code).toBe(2);
+  expect(r.err).toContain("open-major");
 });

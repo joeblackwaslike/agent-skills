@@ -15,7 +15,8 @@ Options:
   --behavior-cmd CMD               The command that exercised the change.
   --behavior-out TEXT              What it printed. Required with --behavior-cmd.
   --behavior-skipped REASON        Use instead of the two above (example: "docs only").
-  --findings N                     Total findings from the reviewers (default: 0).
+  --findings N                     Total findings from the reviewers (default: 0). Any not fixed,
+                                   declined or deferred count as open, which only not-ready allows.
   --fixed N                        Findings fixed (default: 0).
   --declined "ID=REASON"           Repeatable. Example: --declined "F3=matches git blame (src/x:41)"
   --deferred "ID=ISSUE"            Repeatable. Example: --deferred "F5=bd-123"
@@ -136,17 +137,20 @@ const findings = num("findings", v.findings);
 const fixed = num("fixed", v.fixed);
 const declined = (v.declined ?? []).map((d) => pair("declined", d));
 const deferred = (v.deferred ?? []).map((d) => pair("deferred", d));
-if (fixed + declined.length + deferred.length !== findings) {
-  die(`findings (${findings}) must equal fixed (${fixed}) + declined (${declined.length}) + deferred (${deferred.length}).`);
+const open = findings - (fixed + declined.length + deferred.length);
+if (open < 0) {
+  die(`findings (${findings}) is less than fixed (${fixed}) + declined (${declined.length}) + deferred (${deferred.length}).`);
 }
 
 const rereviews = num("rereviews", v.rereviews, 2);
 const openMajor = num("open-major", v["open-major"]);
+if (!ready && open < openMajor) die(`open-major (${openMajor}) is more than the findings with no disposition (${open}).`);
 const disagreements = num("disagreements", v.disagreements);
 
 if (ready) {
   const failed = checks.filter((c) => c.exit !== 0);
   if (failed.length) die(`READY with a failing check: ${failed.map((c) => `${c.cmd} exit ${c.exit}`).join(", ")}. Fix it or report not-ready.`);
+  if (open > 0) die(`findings (${findings}) has ${open} with no disposition. READY needs each one fixed, declined or deferred; otherwise report not-ready.`);
   if (v["open-major"] === undefined) die("READY needs --open-major N: the number of blocker or major findings still open (0 if none).");
   if (openMajor > 0) die(`READY with ${openMajor} blocker or major finding(s) still open. Fix them or report not-ready.`);
 }
@@ -170,7 +174,7 @@ console.log(
     `Checks: ${checks.map((c) => `${c.cmd} exit ${c.exit}`).join(", ")}`,
     `Gate gaps: ${gateGaps ?? "none"}`,
     `Behavior: ${behavior}`,
-    `Review: ${findings} findings -> ${fixed} fixed, ${declined.length} declined, ${deferred.length} deferred`,
+    `Review: ${findings} findings -> ${fixed} fixed, ${declined.length} declined, ${deferred.length} deferred${open > 0 ? `, ${open} open` : ""}`,
     `Re-reviews: ${rereviewLine}`,
     `Declined: ${list(declined, "")}`,
     `Deferred: ${list(deferred, "-> ")}`,
