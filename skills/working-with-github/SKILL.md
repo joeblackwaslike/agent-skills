@@ -1,6 +1,6 @@
 ---
 name: working-with-github
-description: "Use when you need to know how GitHub the platform works: gh commands and flags, REST and GraphQL, rate limits, tokens, review and checks API calls, rulesets, issues, release endpoints, Dependabot and CodeQL config. Not for how we drive PRs, reviews and releases (git-github-workflows), raw git (working-with-git), workflow YAML (working-with-github-actions), or Apps (developing-for-github)."
+description: "Use when you need to know how GitHub the platform works: gh commands and flags, REST and GraphQL, rate limits, tokens, rulesets, issues, release endpoints, Dependabot and CodeQL config. Not for how we drive PRs, reviews and releases (git-github-workflows), raw git (working-with-git), workflow YAML and its Dependabot or CodeQL cookbooks (working-with-github-actions), or Apps (developing-for-github)."
 metadata:
   last_updated: "2026-11-10"
 ---

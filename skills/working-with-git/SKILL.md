@@ -1,6 +1,6 @@
 ---
 name: working-with-git
-description: "Use when you need to know how Git itself works: a command's flags, concepts, internals, Pro Git, and guides for rewriting history, bisect, recovering lost commits, conflicts, Git servers. Not for how we use git (commits, PRs, worktrees, review loops: git-github-workflows) or GitHub and gh (working-with-github)."
+description: "Use when you need to know how Git itself works: command flags (including worktree and branch), concepts, internals, Pro Git, and guides for rewriting history, bisect, recovering lost commits, conflicts, Git servers. Not for how we use git (commits, PRs, worktrees, review loops: git-github-workflows), GitHub and gh (working-with-github), CI or Apps."
 metadata:
   last_updated: "2026-11-10"
 ---
