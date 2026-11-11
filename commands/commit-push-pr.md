@@ -69,7 +69,7 @@ If the diff passes 200,000 characters (the review bot's `REVIEW_DIFF_BUDGET_CHAR
 
 Skip with `--no-review`.
 
-1. Run `/self-review <base>` (needs the `personal-agent-skills` plugin; if it isn't installed, say so and skip to step 4): load `personal-agent-skills:writing-and-reviewing-code` and follow `references/self-review.md`, sections 0 to 5 (freeze the scope, mechanical gate, fresh reviewers, triage, fix, re-review, at most two re-reviews). Stop at its section 6 verdict. Don't use its "open the PR" steps: steps 6 to 8 here own the push, the PR, and the loop.
+1. Run `/self-review <base>`: load the `writing-and-reviewing-code` skill and follow `references/self-review.md` through its section 6 report (freeze the scope, mechanical gate, fresh reviewers, triage, fix, at most two re-reviews, report). Steps 6 to 8 here own the push, the PR, and the loop.
 2. **NOT READY** (a blocker or major is still open): stop and report. Don't push.
 3. **READY**: put its remaining minors and nits in the PR body under "Known follow-ups".
 4. If the branch fetches URLs or handles secrets, also run the `typescript-reviewer` and `security-reviewer` agents in parallel, each with an explicit `model: sonnet`.
