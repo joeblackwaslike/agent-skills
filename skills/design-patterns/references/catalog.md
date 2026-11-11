@@ -9,9 +9,9 @@ Every pattern with a one-line summary and how often it appears in production cod
 | Factory | A function or registry that picks and builds an implementation from a name or config | common | [factory.md](creational/factory.md) |
 | Builder | Step-by-step construction of an object with many optional parts | occasional | [builder.md](creational/builder.md) |
 | Dependency Injection | Pass collaborators in, wire them once at a composition root | common | [dependency-injection.md](creational/dependency-injection.md) |
-| Singleton | One shared instance; in Python and TS a module-level object or injected value does it | common | [singleton.md](creational/singleton.md) |
+| Singleton | One shared instance; in Python and TS a module-level object or injected value does it | common (as a module-level object) | [singleton.md](creational/singleton.md) |
 | Abstract Factory | A family of related factories | rare | catalog-only: you probably want one plain factory function, or DI |
-| Prototype | Create objects by cloning an existing one | rare | catalog-only: you probably want `dataclasses.replace` or object spread |
+| Prototype | Create objects by cloning an existing one | rare | catalog-only: you probably want `copy.copy`, `dataclasses.replace` or object spread |
 
 ## Structural
 
@@ -22,7 +22,7 @@ Every pattern with a one-line summary and how often it appears in production cod
 | Proxy | A stand-in that controls access: lazy load, caching, permission, remote call | occasional | [proxy.md](structural/proxy.md) |
 | Bridge | Split an abstraction from its implementation so each varies independently | rare | catalog-only: you probably want Strategy or DI |
 | Composite | Treat a tree of objects and a single object through one interface | rare | catalog-only: you probably want a recursive function or a plain tree type |
-| Flyweight | Share fine-grained immutable objects to save memory | rare | catalog-only: you probably want interning, `functools.cache`, or a plain shared constant |
+| Flyweight | Share fine-grained immutable objects to save memory | rare | catalog-only: you probably want interning (`sys.intern`) or a plain shared constant |
 
 ## Behavioral
 
