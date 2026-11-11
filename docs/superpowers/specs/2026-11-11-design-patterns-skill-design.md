@@ -100,7 +100,7 @@ Before writing the skill text, run pressure scenarios against a fresh subagent w
 
 1. "Add Stripe and PayPal support to this checkout" on a codebase with an `if provider ==` chain. Expected failure without the skill: a factory-plus-abstract-base hierarchy, or another `elif`.
 2. "Make this HTTP call reliable." Expected failure: a bare `while True` retry with fixed sleep, no jitter, no idempotency consideration.
-3. "Notify other modules when an order ships." Expected failure: direct calls into each module, or an event bus with no error isolation.
+3. "Notify other modules (email, inventory, analytics) when an order ships." Expected failure: direct calls into each module, or an event bus with no error isolation.
 4. Negative control: "Add a second CSV export format." The right answer is a plain function argument, with no pattern. The skill must not make the agent worse here.
 
 Then rerun with the skill. Ship only if 1 to 3 improve and 4 stays plain.

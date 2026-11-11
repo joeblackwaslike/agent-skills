@@ -104,6 +104,7 @@
 - [ ] **Step 3:** Rerun Task 0 scenarios 1 to 4 with fresh Sonnet subagents. Give each the worktree paths to `SKILL.md` and `references/` to read first (the plugin cache only has the skill after merge); compare to `red-baseline.md`. Expected: 1 to 3 improve, 4 stays a plain function argument. If 4 regresses, tighten "Default to no pattern" in `SKILL.md` and rerun.
 - [ ] **Step 4:** Prose pass, commit `feat(design-patterns): data-access and resilience references`.
 - [ ] **Step 5:** `/self-review`, fix, open PR 4, `/pr-loop`.
+
 ### Task 5: Release confirmation
 
 - [ ] **Step 1:** After the last merge, load `marketplace-publishing` and run its "After pushing" cache refresh.

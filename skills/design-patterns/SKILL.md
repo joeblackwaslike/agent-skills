@@ -12,7 +12,7 @@ A catalog of the patterns that show up in production code, with one reference pe
 
 ## Default to no pattern
 
-Start with a plain function, a dict of functions, or an `if`. A second CSV export format is a function argument. Reach for a pattern when the plain version has already hurt: the third `elif` on a provider name, a retry loop copied into four callers, a module that cannot be tested without the database.
+Start with a plain function, a dict of functions, or an `if`. A second CSV export format is a function argument. Reach for a pattern when the plain version has already hurt: the third `elif` on a provider name, a notification call copied into four callers, a module that cannot be tested without the database.
 
 If the request names a variant-selection pattern (Strategy, Factory, Observer, State, Command, Chain of Responsibility), count the real variants or callers today. With fewer than three, write the plain version and say so in one line. Resilience and data-access patterns (Retry, Circuit Breaker, Idempotency key, Outbox, Unit of Work) are triggered by a failure mode, not a count: one call site that can double-charge or lose an event already needs them.
 
