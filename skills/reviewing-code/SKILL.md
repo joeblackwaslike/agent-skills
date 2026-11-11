@@ -1,19 +1,19 @@
 ---
-name: writing-and-reviewing-code
+name: reviewing-code
 description: >-
   Use before opening a PR or sharing finished work, to self-review your own diff
-  as a reviewer who didn't write it. Triggers on "about to open a PR",
-  "self-review", "polish this before I share it", "is this ready for review",
-  or before `gh pr create`. Not for reviewing someone else's PR. Not for
-  opening the PR, driving it to merge or answering review feedback
-  (use git-github-workflows).
+  as a reviewer who didn't write it. Triggers on "/self-review", "about to open
+  a PR", "polish this before I share it", "is my diff ready", or before
+  `gh pr create`. Not for reviewing someone else's PR. Not for writing or
+  designing code (use engineering-principles). Not for opening the PR, driving
+  it to merge or answering review feedback (use git-github-workflows).
 ---
 
-# Writing and Reviewing Code
+# Reviewing Code
 
 Stop before the PR. Read your own diff the way a reviewer who didn't write it would, and fix what they would find. Agent-written code tends to carry shortcuts, speculative abstractions and stale docs that the author can't see anymore. The aim is a PR you'd be glad to have your name on.
 
-The guide behind this skill was written for reviewing, but each principle also says how to apply it when writing. Use it both ways: write to it, then check the diff against it.
+The principles the review applies live in the `engineering-principles` skill, which also covers writing code. Load it for step 3. This skill is the process: how to read the diff, what to run, which playbooks and reviewer agents to bring in.
 
 ## Procedure
 
@@ -21,14 +21,14 @@ Do the steps in order. Fix problems as you find them, then re-run step 2 when yo
 
 1. **Size and intent.** State the change's intent in one sentence, taken from the spec, plan or bead. If you can't, stop and find out. Check the diff size. Past about 400 hand-written lines (or 200,000 diff characters), split along a seam into stacked PRs. Put mechanical edits (renames, moves, formatting) in their own commits.
 2. **Mechanical gate.** Run `just check`, then `just test`, and run the changed behavior once on a real input (skip for docs-only changes). If the repo has no justfile or lacks a recipe, run its own equivalents and say what is missing under "Gate gaps". It costs no LLM tokens. Fix every red result before reading further. Detail: [references/self-review.md](references/self-review.md).
-3. **Read the diff in the guide's order.** Scope first (KISS, YAGNI, DRY, Rule of Three), then design (SOLID, separation of concerns, coupling, Law of Demeter, Tell Don't Ask, composition, command-query separation), then correctness (fail fast, parse don't validate, least privilege, Hyrum's Law), then readability (least astonishment, Chesterton's Fence, Boy Scout Rule). Accept a speed change only with a measurement. If scope or design is wrong, fix that before any line-level cleanup. Detail: [references/guide-principles.md](references/guide-principles.md).
+3. **Read the diff in the principles' order.** Load the `engineering-principles` skill and read its `references/principles.md`. Scope first (KISS, YAGNI, DRY, Rule of Three), then design (SOLID, separation of concerns, coupling, Law of Demeter, Tell Don't Ask, composition, command-query separation), then correctness (fail fast, parse don't validate, least privilege, Hyrum's Law), then readability (least astonishment, Chesterton's Fence, Boy Scout Rule). Accept a speed change only with a measurement. If scope or design is wrong, fix that before any line-level cleanup. How to run and write up a review: [references/review-guide.md](references/review-guide.md).
 4. **Check what the diff can't show.**
    - For every removed or changed symbol, find its callers and sibling code paths (`find_referencing_symbols` or Go to References).
    - Run `git blame` on anything removed (Chesterton's Fence).
    - List the new public surface: names, endpoints, config keys, migrations, error text. Each one becomes a contract.
 5. **Tests.** Would they fail if the behavior broke? Confirm every new or changed test was seen failing first (write the test, watch it fail, then make it pass). If you can't show the red output, revert the fix, watch the test fail, restore.
 6. **Docs and README.** When a feature is added or changed, update the README, docs, config reference and examples in the same branch. Grep the docs for the old name or flag of anything renamed or removed.
-7. **Matching playbooks.** Name the kinds of change in the diff (endpoint, migration, auth, Dockerfile, shell, skill or instruction file, new dependency, LLM prompt, and so on). Open [references/playbooks.md](references/playbooks.md), use its opening table to pick the matching playbooks, and apply each one on top of steps 3-6.
+7. **Matching playbooks.** Name the kinds of change in the diff (endpoint, migration, auth, Dockerfile, shell, skill or instruction file, new dependency, LLM prompt, and so on). Open [references/playbooks/index.md](references/playbooks/index.md), use its table to pick the matching playbooks, open only those files, and apply each one on top of steps 3-6.
 8. **Reviewer agents.** Dispatch the agents whose trigger matches, up to the cap of 6 at the end of this step, in parallel with step 7, each with `model: sonnet`, and fold their findings into your fixes. These are custom installed agents, not built-ins. Most come from [everything-claude-code](https://github.com/affaan-m/everything-claude-code). If one isn't installed, dispatch a `general-purpose` agent with the same task and the reviewer's role in one line.
 
 | Agent | Dispatch when the diff… |
@@ -60,13 +60,16 @@ When the pass is done, re-run the mechanical gate from step 2. The pass ends the
 
 ## Runbook
 
-To run the whole pass with fresh-eyes reviewers, use `/self-review`, or follow [references/self-review.md](references/self-review.md). It turns steps 1-8 into a procedure: freeze the scope, run the gate, dispatch a new reviewer that reads the guide, triage and fix its findings, re-review the fixes (at most twice), and report. Use the procedure above as the checklist and the runbook as how to execute it.
+To run the whole pass with fresh-eyes reviewers, use `/self-review`, or follow [references/self-review.md](references/self-review.md). It turns steps 1-8 into a procedure: freeze the scope, run the gate, dispatch a new reviewer that reads the principles, triage and fix its findings, re-review the fixes (at most twice), and report. Use the procedure above as the checklist and the runbook as how to execute it.
 
 ## References
 
-Load only what the step needs. All three are verbatim snapshots of `ai-review-bot/docs/Code-Review-Guide-and-Playbooks.md`, refreshed by hand. Each file's header names the source commit.
+Load only what the step needs.
 
 - [references/self-review.md](references/self-review.md): the `/self-review` runbook, including the reviewer prompt. Run it before opening a PR.
-- [references/guide-principles.md](references/guide-principles.md): principles, review process, the four sections, worked example, checklist, PR description template. Steps 1, 3, 5.
-- [references/playbooks.md](references/playbooks.md): one playbook per kind of change. Step 7.
-- [references/language-notes.md](references/language-notes.md): Python, TypeScript, shell and SQL idioms and smells. Load when the diff is in one of those languages.
+- [references/review-guide.md](references/review-guide.md): how to run a review of your own diff and how to write up the findings. Steps 1 and 3.
+- [references/playbooks/index.md](references/playbooks/index.md): the table of playbooks, one file per kind of change. Step 7.
+- [references/checklist.md](references/checklist.md): the condensed checklist. Use it for the final pass.
+- [references/worked-example.md](references/worked-example.md): one complete review, for calibrating tone and content.
+- [references/pr-description-template.md](references/pr-description-template.md): the PR body template. Use it when you write the description.
+- The `engineering-principles` skill: `references/principles.md` for step 3, `references/language-notes.md` when the diff is in Python, TypeScript, shell or SQL.

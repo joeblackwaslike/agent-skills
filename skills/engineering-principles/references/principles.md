@@ -1,15 +1,10 @@
-# Part 1: Code Review Guide
+# Engineering Principles
 
-> Snapshot of [Code-Review-Guide-and-Playbooks.md](https://github.com/joeblackwaslike/ai-review-bot/blob/main/docs/Code-Review-Guide-and-Playbooks.md) in ai-review-bot, copied verbatim on 2026-11-07 (last source commit 6ea9ab3). Edit the source, not this copy.
->
-> The guide is written for reviewing code, but every principle also says how to apply it when writing code. Use it in both directions: write to it, then read your own diff against it.
+> This repo is the source for this file. To check a finished diff against these principles, use the `reviewing-code` skill.
 
+A small set of principles covers most of what makes code good. Apply them while you write and design, then again when you read your own diff. Sections 1 to 4 each take one group and turn it into what to aim for, what a violation looks like, and what to do instead. The principles are language-neutral; the examples are mostly Python, with TypeScript alongside where the two differ. Language-specific toolchains, idioms and smells are in [language-notes.md](language-notes.md). Per-kind-of-change checks (an endpoint, a migration, a Dockerfile) live in the `reviewing-code` skill's playbooks.
 
-Nov 4, 2026 · @Joe Black
-
-Code review is a small set of principles applied to someone else's change. The guide states the principles once. Sections 1 to 4 each take one group and turn it into what to look for in any diff, what a violation looks like, and what to suggest instead. The principles are language-neutral; the examples are mostly Python, with TypeScript alongside where the two differ. Section 5 points to Part 2, with playbooks for specific kinds of change such as an endpoint, a React component, a migration, a Dockerfile or a skill file. Part 3 covers Python, TypeScript, shell and SQL: tooling, package management, idioms and smells. The checklist at the end condenses all of it.
-
-The review process follows the same rules as the code it checks: confirm the change is what was asked for and as small as it can be, get the design right before the details, and hand anything a rule can state to a tool.
+The same rules apply to the process around the code: confirm the change is what was asked for and as small as it can be, get the design right before the details, and hand anything a rule can state to a tool.
 
 ## Principles
 
@@ -116,7 +111,7 @@ The principles fall into four groups. Each one says what it means and how to app
 - **Means:** Behavior should be visible at the call site, not hidden in magic.
 - **Apply:** Prefer explicit dependency injection over global registries, and avoid import-time side effects and monkey-patching.
 
-### Readability and review
+### Readability and tests
 
 **Principle of Least Astonishment (POLA)**
 
@@ -142,111 +137,6 @@ The principles fall into four groups. Each one says what it means and how to app
 
 - **Means:** System structure mirrors the communication structure of the organization that built it.
 - **Apply:** If service boundaries don't match team boundaries, expect friction. Use it deliberately when drawing bounded contexts.
-
-## How to run a review
-
-A review is a small system of its own, and the principles apply to it directly. Gall's Law says to size the change before reading it. Beck's order says what to look at first. Explicit is better than implicit says the mechanical rules belong in tooling, not in a reviewer's head.
-
-### Size the change before reading it
-
-Gall's Law holds for pull requests as much as for systems: a working change grows out of a smaller working change, and a large one built in a single step can't be reviewed or bisected. Before opening the diff:
-
-- **Restate the intent in one sentence.** Read the linked spec, plan or ticket first, so you know what was meant before seeing what was built. If there's no stated intent, the first comment is a question, not a note on line 40.
-- **Let CI go first.** Tests, linters and type checks pass before a person spends time on the diff. A red build is the author's to fix, not the reviewer's to read around.
-- **Check the size.** Past a few hundred changed lines, review quality drops sharply. Ask for a split along a seam: refactor vs. behavior change, schema vs. code, new module vs. call-site migration.
-- **Separate mechanical edits.** The Boy Scout Rule is welcome, but renames, moves and formatting go in their own commits so the behavior change stays legible.
-- **Read the tests first.** They are the author's statement of what "it works" means, and they tell you what the code is supposed to promise.
-- **List the new public surface.** Names, endpoints, config keys, migrations, events, error messages. By Hyrum's Law each becomes a contract the moment it ships, so these get the closest look.
-- **Pick the playbooks.** Note which kinds of change the diff contains (an endpoint, a migration, a config file) and use the matching playbooks in section 5 alongside the general pass.
-
-### Review in the order of make it work, make it right, make it fast
-
-Beck's order for writing code is also the order for reviewing it, weighted by how expensive each kind of problem is to fix after merge:
-
-1. **Scope.** Is this the smallest change that solves the problem? (Simplicity and scope.)
-2. **Design.** Are the boundaries, models and contracts right? This is the hardest thing to change later. (Design and structure.)
-3. **Correctness.** Does it work, including on failure paths? (Correctness and safety.)
-4. **Readability.** Can the next person understand and change it? (Readability and review.)
-5. **Speed.** Only with a measurement in hand.
-
-If scope or design is wrong, stop and say so before leaving line-level comments. Detailed feedback on code that is about to be restructured wastes both people's time. A large change can be reviewed in two rounds: scope and design first, then everything else once those are settled.
-
-### Review locally, not only in the browser
-
-The web diff shows changed lines and a few lines of context, and that often isn't the whole story. A diff that removes five lines doesn't show what called them, what they protected, or what else depends on them. Checking the branch out lets you read the change as code, with navigation, search and the test suite.
-
-**Checking out a PR in VS Code**
-
-With the [GitHub Pull Requests extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github) ([docs](https://code.visualstudio.com/docs/sourcecontrol/github)):
-
-1. Commit or stash your own work. Open the **Pull Requests** view and select the PR to open its **Description**.
-2. Select **Checkout**. The extension switches to the PR's branch and enters review mode. **Changes in Pull Request** lists the changed files and commits.
-3. Select a file there to see its diff and comment on lines, or use **Open File** to open the working copy with full language support.
-4. Install the branch's dependencies (`uv sync`), or pnpm install, npm ci or bun install in Node projects, so navigation and tests reflect the PR, not your previous branch. Installing runs code from the PR (package install scripts, build hooks), and so do its tests. For a contributor you don't already trust, do this in a disposable, isolated environment (a dev container or VM) with no host credentials, no sensitive mounts and no privileged access, not in your authenticated workspace.
-5. Submit comments and your verdict from the **Description**, then select **Exit Review Mode** to return to the branch you were on.
-
-From a terminal, `gh pr checkout <number>` checks out the same branch for any editor.
-
-**Navigating the change**
-
-Shortcuts are for macOS; on Windows and Linux, Ctrl replaces Cmd. Function keys may need `fn`.
-
-| Action | Shortcut | Use it to |
-| --- | --- | --- |
-| Go to Definition | Cmd+click, or F12 | Jump from a call to the code it runs |
-| Open Definition to the Side | Cmd+Option+click | Read caller and callee side by side |
-| Peek Definition | Option+F12 | Check a definition inline without losing your place |
-| Go to Implementation | Cmd+F12 | Find the concrete classes behind a `Protocol` or ABC |
-| Go to References | Shift+F12 | See every caller of a changed or removed symbol |
-| Show Call Hierarchy | Shift+Option+H | Trace callers transitively, up to the entry points |
-| Go to Symbol in File / in Workspace | Cmd+Shift+O / Cmd+T | Jump to a class or function by name |
-| Search across files | Cmd+Shift+F | Find strings references can't: event names, config keys, SQL, templates |
-| Go Back / Go Forward | Ctrl+- / Ctrl+Shift+- | Return after following a chain of definitions |
-
-**Example: five lines removed**
-
-The browser shows this, with a PR description that says "simplify charge":
-
-```diff
-     def charge(self, invoice: Invoice) -> Payment:
--        if invoice.status is InvoiceStatus.PAID:
--            raise InvoiceAlreadyPaid(invoice.id)
--        if invoice.total.amount_minor <= 0:
--            log.info("zero_invoice_skipped", invoice_id=invoice.id)
--            return Payment.skipped(invoice.id)
-         return self._gateway.charge(invoice.customer.payment_method, invoice.total)
-```
-
-Checked out locally, the questions the diff can't answer take a minute each:
-
-1. **Was the guard moved or dropped?** Search the branch for `InvoiceAlreadyPaid` (Cmd+Shift+F). If nothing raises it anymore, find what used to catch it; that handler is now dead code.
-2. **Who relied on it?** Go to References on `charge` (Shift+F12). A retrying job that calls `charge` twice for one invoice would now charge the customer twice.
-3. **What happens to zero amounts now?** Cmd+click `self._gateway.charge` through to the gateway client. If the provider rejects zero, a skip has become an error.
-4. **What's left orphaned?** Go to References on `Payment.skipped`. If this was its only caller, the PR should delete it; if not, other callers still expect skips to exist.
-5. **Why was it there?** Chesterton's Fence: open the file's Timeline or Git blame for the removed lines to find the commit and issue that added them.
-6. **Is it tested?** Run the billing tests (`uv run pytest tests/billing`). If they still pass, the removed behavior was never tested. The comment is a `blocker`: restore the guards, or show where they now live and add a test for double payment.
-
-**Run things, don't just read them.** Run the tests for the packages the PR touches. Start the app and call the new endpoint. Run the migration's upgrade and downgrade against a local database. Reproduce the bug the PR claims to fix, before and after. When a question is quicker to answer by trying than by asking, try it, and put what you found in the comment.
-
-### Hand the mechanical rules to tools
-
-A rule a linter can state is better made explicit in configuration than enforced by whoever happens to review. Linters, type checkers and formatters apply the standard the same way to everyone, and free human attention for design. If reviewers keep commenting on something a tool could catch, the config is the bug.
-
-| Principle | What the tool catches | Python | TypeScript | Shell |
-| --- | --- | --- | --- | --- |
-| KISS | Functions that are too complex | Ruff `C901` | ESLint `complexity` | Keep scripts short |
-| KISS | Too many branches, statements or nesting | `PLR0912`, `PLR0915` | `max-depth`, `max-statements` | n/a |
-| Separation of concerns (a missing model) | Too many parameters | `PLR0913` | `max-params` | n/a |
-| Least astonishment | Boolean positional parameters | `FBT001`, `FBT002` | Review by hand | n/a |
-| Least astonishment | Mutable default arguments | `B006` | n/a | n/a |
-| Fail fast | Swallowed errors and unhandled async failures | `E722`, `BLE001` | `no-empty`, `@typescript-eslint/no-floating-promises` | ShellCheck, `set -euo pipefail` |
-| Law of Demeter | Reaching into another object's private members | `SLF001` | `private` and `#private`, enforced by `tsc` | n/a |
-| Explicit over implicit | Missing or loose types | `ANN`, `mypy --strict` | `tsc --strict`, `@typescript-eslint/no-explicit-any` | n/a |
-| Explicit over implicit | Unquoted expansions | n/a | n/a | ShellCheck `SC2086` |
-| Idiomatic code | Non-idiomatic constructs and outdated syntax | `SIM`, `PERF`, `C4`, `PTH`, `UP` | typescript-eslint `strict-type-checked` | ShellCheck |
-| Formatting | Layout and style | `ruff format` | Prettier or Biome | `shfmt` |
-
-Leave magic-number rules (`PLR2004`, ESLint `no-magic-numbers`) off or loosely configured. They push self-explanatory literals into constants, which the next section treats as an anti-pattern. Each language's full toolchain and recommended settings are in Part 3. Some rules are preview-only or version-specific, so check them against the versions your project pins.
 
 ## 1. Simplicity and scope
 
@@ -621,7 +511,7 @@ Concurrency bugs are the hardest to reproduce, so look for them on paper. The co
 
 ### Data models that can't hold illegal states
 
-Parse, Don't Validate applies to the schema as well as to request bodies. Column types, constraints and relationship shapes should make an illegal row impossible, whichever code path writes it, so an invariant enforced only in Python is a finding. The data modeling, queries and migrations playbooks in section 5 cover how to review each in detail.
+Parse, Don't Validate applies to the schema as well as to request bodies. Column types, constraints and relationship shapes should make an illegal row impossible, whichever code path writes it, so an invariant enforced only in Python is a finding. The data modeling, queries and migrations playbooks in the `reviewing-code` skill cover how to review each in detail.
 
 ### Least privilege and trust boundaries
 
@@ -629,7 +519,7 @@ Parse, Don't Validate applies to the schema as well as to request bodies. Column
 - **Scope.** API tokens limited to what the code needs, read-only database roles for query paths, a service account per service, and no god-object `Context` that grants access to everything.
 - **Secrets and personal data.** None in code, logs, error messages or fixtures. Logs carry ids, not payloads or tokens.
 - **Dependencies.** A new package runs with your application's privileges, so it is a security decision as much as a design one.
-- **Deeper passes.** Input validation, authentication and authorization, configuration, and new dependencies each have a playbook in section 5.
+- **Deeper passes.** Input validation, authentication and authorization, configuration, and new dependencies each have a playbook in the `reviewing-code` skill's `references/playbooks/`.
 
 ### Compatibility: Hyrum's Law
 
@@ -645,9 +535,9 @@ Risky changes go behind a flag, and rollback stays possible.
 
 Knuth's rule cuts both ways in review. Ask for a measurement before accepting an optimization that costs readability, and still flag work clearly in the wrong place: queries in loops, unbounded result sets without pagination, repeated parsing, large objects held in memory. Fail Fast extends to production too: failures produce a log line or metric someone will see, with enough structured context to diagnose without a debugger.
 
-## 4. Readability and review
+## 4. Readability and tests
 
-The principle of least astonishment is readability in one line: code should behave the way its name and shape suggest. In practice that means writing the idiom a developer in that language expects, keeping behavior visible at the call site, and treating tests as the executable statement of intent. The same principles then govern how the review itself is written.
+The principle of least astonishment is readability in one line: code should behave the way its name and shape suggest. In practice that means writing the idiom a developer in that language expects, keeping behavior visible at the call site, and treating tests as the executable statement of intent.
 
 ### Least astonishment
 
@@ -689,7 +579,7 @@ When several idioms are acceptable, the one chosen should reflect how the behavi
 
 Idioms can also be overdone. A comprehension or a chain of array methods stops being idiomatic once it needs re-reading, and a plain loop is clearer.
 
-The idiom tables for each language, including which construct fits which intent, are in Part 3.
+The idiom tables for each language, including which construct fits which intent, are in [language-notes.md](language-notes.md).
 
 ### Tests: make it work, provably
 
@@ -699,191 +589,5 @@ Beck's "make it work" means a test proves the behavior before anything is refact
 - **Does it test behavior, not implementation?** Assertions on private calls and mock interactions break on every refactor and pass when behavior is wrong. Heavy patching of your own modules is a coupling finding, not a testing technique.
 - **Is it obviously correct?** Test code has no logic of its own to get wrong, and its expected values are literals.
 
-The two test playbooks in section 5 cover test levels, coverage, TDD, fixtures and helpers.
+The two test playbooks in the `reviewing-code` skill and the `test-driven-development` skill cover test levels, coverage, TDD, fixtures and helpers.
 
-### Writing the review
-
-The principles apply to the comments too. Keep feedback simple and unambiguous, respect what you don't yet understand, and improve the code without holding it hostage.
-
-Label every comment, so the author knows at once what blocks the merge:
-
-| Label | Meaning | Blocks merge |
-| --- | --- | --- |
-| `blocker` | Bug, security issue, broken contract, or a design problem that will be expensive later | Yes |
-| `issue` | Real problem; expect a fix or a good reason not to | Usually |
-| `suggestion` | A better approach, with the reasoning. The author decides. | No |
-| `question` | You don't understand something; it may reveal a bug or a missing explanation | Until answered |
-| `nit` | Minor preference; skip it if a linter could enforce it | No |
-| `praise` | Something done well, so the author keeps doing it | No |
-
-- **Chesterton's Fence applies to your own suggestions.** Ask before asserting when you may lack context: "What happens if `items` is empty here?" lands better than "This breaks on empty input," and is right more often.
-- **Name the principle and the cost.** "This couples billing to the HTTP client, so changing vendors touches every call site" is actionable; "too coupled" is not.
-- **Offer a concrete alternative** for design comments, ideally a short snippet.
-- **Critique the code, not the person.** Say "this function" and "we", not "you".
-- **Group findings.** One comment on a pattern with the other occurrences listed, not the same remark eight times.
-- **Take design disagreements out of the thread.** A short call settles in minutes what a comment chain can't in days. Conway's Law is a hint here: disputes about where a boundary goes are often about which team owns it, so involve the owners.
-- **Approve improvements, not perfection.** Approve when the change makes the codebase better and has no open blockers, even if you'd have written it differently. Request changes only for blockers and issues, and say which ones. Cleanups the Boy Scout Rule suggests can become a follow-up ticket.
-- **Respond promptly.** A review within a few hours is worth more than a more thorough one a day later.
-
-Authors apply the same principles before asking for review: re-read your own diff, keep the change small, write a description that states intent and what you chose not to do, and point reviewers at the parts you're least sure about.
-
-### Worked example
-
-A PR adds refunds: `POST /v1/orders/{order_id}/refunds`, a `refunds` table and its migration. The linked spec says support staff can issue full or partial refunds, never more than was paid, with an audit trail of who refunded what and why. An abridged excerpt:
-
-```python
-@router.post("/v1/orders/{order_id}/refunds", status_code=201)
-async def create_refund(
-    order_id: int,
-    body: dict,
-    session: AsyncSession = Depends(get_session),
-    user: User = Depends(current_user),
-) -> dict:
-    order = await session.get(Order, order_id)
-    if body["amount"] > order.total - order.refunded_total:
-        raise HTTPException(400, "too much")
-    refund = Refund(
-        order_id=order_id,
-        amount=body["amount"],
-        reason=body.get("reason"),
-        notify_customer=body.get("notify_customer", True),
-    )
-    session.add(refund)
-    order.refunded_total += body["amount"]
-    await session.commit()
-    await payments.refund(order.payment_id, body["amount"])
-    return refund.__dict__
-```
-
-```python
-def upgrade() -> None:
-    op.create_table(
-        "refunds",
-        sa.Column("id", sa.BigInteger, primary_key=True),
-        sa.Column("order_id", sa.BigInteger, sa.ForeignKey("orders.id")),
-        sa.Column("amount", sa.Float, nullable=False),
-        sa.Column("reason", sa.Text),
-        sa.Column("notify_customer", sa.Boolean),
-        sa.Column("created_at", sa.DateTime),
-    )
-```
-
-The review follows the guide's order: intent, scope and design, then correctness, then the rest. It opens with a summary, so the author knows what matters before reading individual comments.
-
-**Summary comment**
-
-> The happy path matches the spec, and the migration being its own commit made this easy to follow. Three blockers before this can merge: there's no authorization check, money is stored as a float, and the payment call runs after the commit, so a gateway failure leaves a refund recorded that never happened. Two spec gaps (audit trail, input validation) are marked `issue`. The `notify_customer` question is about scope. Happy to pair on the transaction part.
-
-**Line comments**
-
-- `blocker` on `user: User = Depends(current_user)`: Any logged-in user can refund any order. The spec limits refunds to support staff, and the order lookup isn't scoped to the caller's tenant. Suggest `Depends(require_role(Role.SUPPORT))` and a tenant-scoped query, plus tests for a customer, a support user from another tenant, and an anonymous caller.
-- `blocker` on `order.refunded_total += ...` through `payments.refund(...)`: If the gateway call fails, the database already says the order was refunded. Two concurrent refunds can also both pass the limit check, because the read-modify-write isn't atomic. Suggest: accept an `Idempotency-Key` header and store it on the refund under a unique constraint, so a client or proxy retry returns the existing refund instead of creating a second one. Then reserve the amount in one transaction, inserting the refund as `pending` and applying the total with a guarded update (`UPDATE orders SET refunded_total = refunded_total + :amount WHERE id = :id AND refunded_total + :amount <= total`), and stop if no row was updated. Only then call the gateway, with an idempotency key derived from that stored refund. On success mark the refund `succeeded` and record the gateway's refund id; on a definite failure mark it `failed` and release the reservation; on an uncertain outcome such as a timeout, leave it `pending` and resolve it later by retrying the gateway call with the same idempotency key, which returns the original result instead of refunding twice.
-- `blocker` on `sa.Column("amount", sa.Float, ...)`: Money as a float will accumulate rounding errors. `orders.total` uses `Numeric(12, 2)`; this column should match.
-- `issue` on `body: dict`: A missing `amount` raises `KeyError` and returns a 500, and a negative amount passes the limit check. Suggest a `RefundRequest` model with a positive `Money` amount, a length-limited `reason`, and `extra="forbid"`.
-- `issue` on `await session.get(Order, order_id)`: A missing order raises `AttributeError` on the next line. Return a 404 (or 404 for other tenants' orders too, so ids can't be probed).
-- `issue` on the migration's `order_id` and `created_at`: `order_id` should be `nullable=False` and indexed, since PostgreSQL doesn't index the referencing side and every "refunds for this order" query will scan. `created_at` should be `DateTime(timezone=True)` with `server_default=sa.func.now()`.
-- `issue` on the PR as a whole: The spec requires an audit trail of who issued each refund and why. I can't find one in the diff. A non-null `created_by` column and a required `reason` would cover it.
-- `question` on `notify_customer`: The spec doesn't mention customer notifications. Is this needed for this release? If not, please leave it for a separate PR so this one matches the spec, no more and no less.
-- `issue` on `return refund.__dict__`: This exposes every column plus SQLAlchemy's internal `_sa_instance_state`. Suggest a `RefundResponse` model declared as the route's `response_model`.
-- `praise` on the migration's `downgrade`: Clean and complete, thanks.
-
-**Verdict:** Request changes, naming the three blockers and the five issues as required. Everything else is the author's call.
-
-Notice what the review doesn't contain: no comments on formatting or import order (the linter owns those), no rewrite of working code into the reviewer's style, and nothing about lines the PR didn't change.
-
-## 5. Playbooks for specific kinds of change
-
-Sections 1 to 4 apply to every diff. Some kinds of change also have their own failure modes and get a dedicated pass, using the playbooks in Part 2. They cover intent (code against its spec, design specs and plans), APIs (endpoints, schema changes and versioning, input validation, authentication and authorization), frontend (React components, Next.js, accessibility, CSS, HTML artifacts), data (modeling, queries and indexes, SQL files, migrations), runtime (the critical path, background jobs and events, logging), infrastructure (shell scripts, Dockerfiles, infrastructure as code, configuration), tests (levels, coverage and TDD, test code itself), supporting changes (documentation and Markdown, new dependencies), and agent and AI tooling (LLM prompts, skills and instruction files, rules files and subagents, hooks and commands, agent workflows, AI-generated code). Part 2 opens with an index of which playbook to use when. Use every playbook that matches the diff, on top of the general review.
-
-## Checklist
-
-The short version, in the same four groups and in review order.
-
-**Simplicity and scope** (KISS, YAGNI, DRY, Rule of Three, Gall's Law)
-
-- [ ] I can state the intent in one sentence, and the change implements its spec: every requirement covered, nothing extra.
-- [ ] CI is green, the change is small enough to review, and mechanical edits are in separate commits.
-- [ ] Every abstraction, layer, option and hook has a current user.
-- [ ] Related code lives together; nothing moved to `utils` or a constants file only for reuse.
-- [ ] Deduplication targets shared knowledge, readable literals stay literal, and no shared helper carries mode flags.
-- [ ] Any optimization comes with a measurement.
-
-**Design and structure** (SOLID, separation of concerns, cohesion and coupling, Demeter, Tell Don't Ask, composition, CQS)
-
-- [ ] Each layer handles one concern, and the model comes from the domain, not the schema.
-- [ ] No missing model is hiding in an argument cluster, a dict, or a meaningful primitive.
-- [ ] Objects are valid once constructed, with collaborators injected.
-- [ ] Dependencies point the right way, with no cycles and no reach-through chains.
-- [ ] Objects enforce their own invariants, and the public surface is minimal.
-- [ ] Interfaces are narrow, owned by their consumers, and don't leak.
-- [ ] Inheritance is a true is-a, and subclasses substitute cleanly.
-- [ ] Branching on type or tag that crosses a boundary is an explicit contract.
-- [ ] Each method is a command or a query, and signatures are narrow and typed.
-
-**Correctness and safety** (Fail Fast, Parse Don't Validate, least privilege, explicit over implicit, Hyrum's Law)
-
-- [ ] Input is parsed into typed models at the boundary and trusted inside.
-- [ ] Edge cases, failure paths and partial failure are handled; exceptions are caught narrowly.
-- [ ] Async code doesn't block, tasks are owned, outbound calls have timeouts, and retries are idempotent.
-- [ ] Concurrent writes can't lose updates or create duplicates.
-- [ ] Schema types and relationship shapes match the data and its dominant queries.
-- [ ] Access is scoped, and no secrets reach code or logs.
-- [ ] Changes to observable behavior are intended and backward compatible.
-
-**Readability and review** (least astonishment, explicit over implicit, Chesterton's Fence, Boy Scout Rule)
-
-- [ ] Names and behavior match, and a newcomer could use the API from its signatures.
-- [ ] The code is idiomatic for its language, with constructs chosen to fit the intended use.
-- [ ] The tests would fail if the behavior broke.
-- [ ] Docs, config and migrations changed along with the code that needs them.
-- [ ] I've used the section 5 playbook for each kind of change in the diff.
-- [ ] I know why anything I'm suggesting to remove was there.
-- [ ] Every comment is labeled, and I've said which ones block.
-
-## Appendix: pull request description template
-
-Authors fill this in; reviewers use it as the map for the review. Delete the sections that don't apply. The requirements table is what makes reviewing against the spec quick.
-
-```markdown
-## What and why
-
-One or two sentences: the problem, and how this change solves it.
-
-Spec / ticket: <link>
-
-## Requirements → implementation → tests
-
-| Requirement (from the spec) | Where it's implemented | Test that proves it |
-| --- | --- | --- |
-| Support staff can refund up to the amount paid | `refunds/service.py::issue_refund` | `tests/refunds/test_service.py::test_refund_capped_at_paid` |
-
-## Out of scope
-
-What this PR deliberately doesn't do, and where that work is tracked.
-
-## Public surface changes
-
-New or changed endpoints, schemas, events, config keys and CLI flags.
-Breaking change: no / yes (plan: ...)
-
-## Data and migrations
-
-Step: expand / backfill / read new / contract
-Runtime and locks on production-sized data:
-Rollback:
-
-## Rollout
-
-Feature flag, metrics to watch, and how to turn it off.
-
-## How to review
-
-Where to start, what I'm least sure about, and how to run it locally.
-
-## Checklist
-
-- [ ] Tests added or updated, and they fail without this change
-- [ ] Docs and config updated
-- [ ] New dependencies justified above, or none added
-- [ ] Written with AI assistance: yes / no (I've reviewed every line)
-```
