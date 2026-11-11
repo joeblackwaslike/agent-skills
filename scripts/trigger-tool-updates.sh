@@ -5,6 +5,7 @@
 set -uo pipefail
 # Hooks export GIT_INDEX_FILE (and GIT_DIR in a linked worktree). The plugin updaters below run git
 # in their own clones; with those inherited, or from this repo's cwd, they rewrite this repo's index.
+# shellcheck disable=SC2046 # one variable name per word is the point
 unset GIT_DIR GIT_INDEX_FILE $(git rev-parse --local-env-vars 2>/dev/null)
 cd / || exit 1
 FAILURES=()
