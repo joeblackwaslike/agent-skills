@@ -1,0 +1,17 @@
+# Review Playbooks
+
+> This repo is the source for these files. The general principles are in the `engineering-principles` skill; language notes are in its `language-notes.md`.
+
+These playbooks are the companion to the principles. The principles and their four groups apply to every diff; some kinds of change also have their own failure modes and deserve a dedicated pass. Each playbook names the principles it leans on most, then lists what to check. Open only the playbooks that match the diff: a pull request that adds an endpoint, a table and a migration gets three passes on top of the general review.
+
+| Group | Playbooks | Use when the diff |
+| --- | --- | --- |
+| Intent | [Reviewing code against its spec](reviewing-code-against-its-spec.md) · [Design specs and plans](design-specs-and-plans.md) | Implements a spec, plan or ticket (nearly always), or is itself a spec |
+| APIs | [New API endpoints](new-api-endpoints.md) · [Endpoint schema changes, versioning and deprecation](endpoint-schema-changes-versioning-and-deprecation.md) · [Code that validates user input](code-that-validates-user-input.md) · [Authentication and authorization](authentication-and-authorization.md) | Adds or changes an endpoint, a request or response model, a validator, or anything touching identity and permissions |
+| Frontend | [React components (JSX and TSX)](react-components-jsx-and-tsx.md) · [Next.js](next-js.md) · [Accessibility](accessibility.md) · [CSS and styling](css-and-styling.md) · [HTML artifacts](html-artifacts.md) | Adds or changes UI components, pages, styles, or standalone HTML files |
+| Data | [Data modeling](data-modeling-tables-relationships-and-domain-objects.md) · [Queries and indexes](queries-and-indexes.md) · [SQL files and raw queries](sql-files-and-raw-queries.md) · [Migrations and deployment sequencing](migrations-and-deployment-sequencing.md) | Adds or changes tables, ORM models, queries, `.sql` files, indexes or migrations |
+| Runtime | [Code on the critical path](code-on-the-critical-path.md) · [Background jobs, queues and events](background-jobs-queues-and-events.md) · [Logging and error logging](logging-and-error-logging.md) | Touches a hot or business-critical path, asynchronous work, or what gets logged |
+| Infrastructure | [Shell scripts (Bash and zsh)](shell-scripts-bash-and-zsh.md) · [Dockerfiles and container images](dockerfiles-and-container-images.md) · [Infrastructure as code](infrastructure-as-code.md) · [Configuration files](configuration-files.md) | Changes scripts, container images, Terraform, Kubernetes, Compose, CI or application config |
+| Tests | [Tests: levels, coverage, gaps and TDD](tests-levels-coverage-gaps-and-tdd.md) · [Test code itself](test-code-itself-helpers-fixtures-and-fakes.md) | Adds or changes tests, fixtures or test helpers |
+| Supporting changes | [Documentation and Markdown](documentation-and-markdown.md) · [New dependencies](new-dependencies.md) | Changes docs or Markdown files, `package.json`, `pyproject.toml` or a lockfile |
+| Agent and AI tooling | [LLM prompts](llm-prompts.md) · [Skills and instruction files](skills-and-instruction-files.md) · [Agent rules files and subagents](agent-rules-files-and-subagents.md) · [Hooks and commands](hooks-and-commands.md) · [Agent workflows](agent-workflows.md) · [AI-generated and AI-assisted code](ai-generated-and-ai-assisted-code.md) | Changes prompts, `SKILL.md` files, `AGENTS.md` or `CLAUDE.md`, subagent definitions, hooks, commands or agent orchestration, or was largely written with an AI tool |

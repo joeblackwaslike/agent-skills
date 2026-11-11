@@ -1,9 +1,9 @@
-# Part 3: Language Notes
+# Language Notes
 
-> Snapshot of [Code-Review-Guide-and-Playbooks.md](https://github.com/joeblackwaslike/ai-review-bot/blob/main/docs/Code-Review-Guide-and-Playbooks.md) in ai-review-bot, copied verbatim on 2026-11-07 (last source commit 6ea9ab3). Edit the source, not this copy.
+> This repo is the source for this file.
 
 
-The guide and the playbooks apply to any language. This part holds what differs between Python, TypeScript, shell (Bash and zsh) and SQL: the toolchain that enforces the mechanical rules, how packages are managed, how the principles show up in each language, and the idioms and smells specific to it. Review a diff against the guide first, then against the section for its language.
+The principles apply to any language. This file holds what differs between Python, TypeScript, shell (Bash and zsh) and SQL: the toolchain that enforces the mechanical rules, how packages are managed, how the principles show up in each language, and the idioms and smells specific to it. Write to the principles first, then check the section for your language.
 
 ## Quick map
 
