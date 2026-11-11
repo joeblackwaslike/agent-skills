@@ -32,7 +32,12 @@ class EventBus[E]:
 
     def subscribe(self, handler: Callable[[E], None]) -> Callable[[], None]:
         self._handlers.append(handler)
-        return lambda: self._handlers.remove(handler)
+
+        def unsubscribe() -> None:
+            if handler in self._handlers:
+                self._handlers.remove(handler)
+
+        return unsubscribe
 
     def publish(self, event: E) -> None:
         for handler in list(self._handlers):
@@ -55,6 +60,7 @@ unsubscribe = bus.subscribe(lambda e: seen.append(e.order_id))
 bus.publish(OrderPaid("o-1", 500))
 assert seen == ["o-1"]
 
+unsubscribe()
 unsubscribe()
 bus.publish(OrderPaid("o-2", 700))
 assert seen == ["o-1"]
@@ -110,6 +116,8 @@ console.assert(seen[0] === "o-1");
 ```
 
 A rejected promise from an async handler is caught separately, because `try/catch` around a call does not see it. Forgetting that half is the usual way isolation is broken in TypeScript.
+
+`publish` is fire-and-forget. It returns before async handlers finish, and nothing cancels a handler that is still running. If the caller must wait for handlers, `await Promise.allSettled` over their results; if handlers must survive a restart, move to a queue.
 
 ## In production
 

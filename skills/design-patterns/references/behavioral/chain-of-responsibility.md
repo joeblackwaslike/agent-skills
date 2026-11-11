@@ -131,7 +131,7 @@ void main();
 ## In production
 
 - Express: a middleware receives `req`, `res` and `next`. If it does not end the response it must call `next()`, or the request hangs. Error-handling middleware is recognized by its four-argument signature `(err, req, res, next)`.
-- Koa: middleware are async functions that `await next()`. Control goes downstream through the stack, then back upstream, which is what makes `timing` above possible. Express's `next()` only moves forward.
+- Koa: middleware are async functions that `await next()`. Control goes downstream through the stack, then back upstream, which is what makes `timing` above possible. Express's `next()` does not await downstream work.
 - ASGI (Starlette, FastAPI): a pure ASGI middleware is itself an ASGI app that wraps another one, called with `scope`, `receive` and `send`. It is the same wrapping shape as the Python example, with a different call signature.
 
 ## Smells and misuse

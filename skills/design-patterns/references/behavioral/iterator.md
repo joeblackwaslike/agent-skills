@@ -12,7 +12,8 @@ You almost never write an iterator class. Return a list when the data is small a
 
 ```python
 import asyncio
-from collections.abc import AsyncIterator, Iterable, Iterator
+from collections.abc import AsyncGenerator, Iterable, Iterator
+from contextlib import aclosing
 from dataclasses import dataclass
 from itertools import batched
 from typing import Protocol
@@ -33,7 +34,7 @@ class OrdersApi(Protocol):
     async def list_orders(self, cursor: str | None) -> Page: ...
 
 
-async def iter_orders(api: OrdersApi) -> AsyncIterator[Order]:
+async def iter_orders(api: OrdersApi) -> AsyncGenerator[Order, None]:
     cursor: str | None = None
     while True:
         page = await api.list_orders(cursor)
@@ -62,10 +63,11 @@ class FakeApi:
 async def main() -> None:
     api = FakeApi()
     ids: list[str] = []
-    async for order in iter_orders(api):
-        ids.append(order.id)
-        if len(ids) == 2:
-            break
+    async with aclosing(iter_orders(api)) as orders:
+        async for order in orders:
+            ids.append(order.id)
+            if len(ids) == 2:
+                break
     assert api.calls == 1
 
     ids = [o.id async for o in iter_orders(FakeApi())]
@@ -76,7 +78,7 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-The loop that hits the API is hidden inside `iter_orders`. Callers see a flat stream, and breaking out early means later pages are never fetched.
+The loop that hits the API is hidden inside `iter_orders`. Callers see a flat stream, and stopping early means later pages are never fetched. `break` does not close an async generator; Python leaves that to garbage collection. Wrap the loop in `contextlib.aclosing` when the generator holds a connection or cursor, so cleanup runs at once.
 
 ## TypeScript
 
@@ -120,7 +122,7 @@ async function main(): Promise<void> {
 void main();
 ```
 
-Breaking out of a `for await` loop calls the generator's `return()`, so `finally` blocks inside it run and any open connection or cursor is released.
+In TypeScript, leaving a `for await` loop early (`break` or a throw) calls the generator's `return()`, so `finally` blocks inside it run and any open connection or cursor is released.
 
 ## In production
 
@@ -128,7 +130,7 @@ Breaking out of a `for await` loop calls the generator's `return()`, so `finally
 - File reads: iterating over a file object yields one line at a time.
 - AWS SDK paginators and Octokit's `paginate.iterator` wrap cursor or page-number APIs behind an async iterator.
 - Node streams, and the web `ReadableStream`, are async iterables.
-- `itertools` and `Array.from` pipelines compose small lazy steps.
+- `itertools` chains small lazy steps.
 
 ## Smells and misuse
 

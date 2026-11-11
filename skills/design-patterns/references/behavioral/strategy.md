@@ -42,7 +42,9 @@ TAX_RULES: dict[str, TaxRule] = {
 
 
 def total(order: Order, tax: TaxRule | None = None) -> Decimal:
-    rule = tax or TAX_RULES.get(order.country, no_tax)
+    rule = tax or TAX_RULES.get(order.country)
+    if rule is None:
+        raise ValueError(f"no tax rule for {order.country}")
     return order.subtotal + rule(order)
 
 
@@ -84,15 +86,14 @@ assert checkout(order, BankGateway("acct-9")).startswith("bank:")
 type Order = { id: string; subtotalCents: number; country: string };
 type TaxRule = (order: Order) => number;
 
-const noTax: TaxRule = () => 0;
-
 const taxRules: Record<string, TaxRule> = {
   US: (o) => Math.round(o.subtotalCents * 0.0875),
   DE: (o) => Math.round(o.subtotalCents * 0.19),
 };
 
 export function totalCents(order: Order, tax?: TaxRule): number {
-  const rule = tax ?? taxRules[order.country] ?? noTax;
+  const rule = tax ?? taxRules[order.country];
+  if (rule === undefined) throw new Error(`no tax rule for ${order.country}`);
   return order.subtotalCents + rule(order);
 }
 
@@ -125,7 +126,7 @@ A closure over `apiKey` replaces the class. TypeScript's structural typing means
 - One-method class with no state, used once. It should be a function.
 - A strategy chosen by an `if` right next to the call site, with the strategies themselves still branching on type. The branching moved; it did not go away.
 - A Protocol with many methods so that every implementer stubs half of them. Split it, or you are looking at a different pattern.
-- Strategy picked by a string key from user input with no allow-list. The dict lookup needs a default or an explicit error.
+- Strategy picked by a string key from user input with no allow-list. The dict lookup needs an explicit error for unknown keys, as `total` raises when a country has no rule.
 - Class hierarchy for the strategies when a dict of lambdas fit on one screen.
 
 ## Related
