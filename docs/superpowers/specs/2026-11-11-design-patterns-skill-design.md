@@ -22,13 +22,13 @@ This skill gives a catalog of the patterns that show up in real codebases, plus 
 ## Non-goals and anti-goals
 
 - No academic taxonomy debates, UML, or all 23 GoF patterns at full depth.
-- Not a push to use patterns. Anti-goal: the skill makes an agent add a Factory or Strategy where a function call would do. Every reference opens with "do you need this" and names the plain alternative. This is the same stance as `solid-principles`, and the two skills link to each other.
+- Not a push to use patterns. Anti-goal: the skill makes an agent add a Factory or Strategy where a function call would do. Every reference has an early "Do you need this?" section that names the plain alternative. This is the same stance as `solid-principles`, and the two skills link to each other.
 - No framework tutorials (Django, NestJS). Framework mentions only show where a pattern already exists ("Express middleware is Chain of Responsibility").
 - No architecture-level material (hexagonal, CQRS, event sourcing). That stays in `domain-driven-design`; this skill points to it.
 
 ## Pattern inventory
 
-**Full reference (22):**
+**Full reference (24 patterns, 22 files):**
 
 | Category | Patterns |
 |---|---|
@@ -85,7 +85,7 @@ Target 80 to 150 lines per file. Examples are complete enough to run, small enou
 - `solid-principles` SKILL.md: add `design-patterns` to Related skills.
 - `engineering-principles` SKILL.md: add `design-patterns` to Related skills.
 - `SKILLS.md` and `README.md`: add a row to each (trigger text, with "Not for" in both directions).
-- Descriptions of `engineering-principles`, `solid-principles` and `domain-driven-design`: append one "Not for choosing or implementing a named pattern (use design-patterns)" clause so the exclusion runs both ways.
+- Descriptions of `engineering-principles`, `solid-principles` and `domain-driven-design`: append one "Not for ... (use design-patterns)" clause so the exclusion runs both ways. `solid-principles`: "a specific pattern like Strategy or Observer". `domain-driven-design`: "standalone Repository, Unit of Work or Outbox mechanics outside an aggregate". `engineering-principles`: "choosing or implementing a named pattern".
 - No edits to `principles.md` or other references.
 
 ## Sourcing and verification

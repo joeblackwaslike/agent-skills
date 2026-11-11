@@ -8,8 +8,8 @@ description: >
   sourcing, aggregates, bounded contexts, domain modeling — AND implicitly whenever an
   agent is building a non-trivial domain with real invariants, even if the user never
   names a pattern. Teaches strategic + tactical DDD, CQRS, and event sourcing with
-  framework-agnostic examples in both TypeScript and Python. Not for generic
-  pattern mechanics outside a domain model (use design-patterns).
+  framework-agnostic examples in both TypeScript and Python. Not for standalone
+  Repository, Unit of Work or Outbox mechanics outside an aggregate (use design-patterns).
 metadata:
   last_updated: "2026-06-10"
 ---

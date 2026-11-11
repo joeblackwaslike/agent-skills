@@ -17,7 +17,7 @@
 - `metadata.last_updated: "2026-11-11"`. No `version` field anywhere (CI guard).
 - Python 3.12+ (`Protocol`, `dataclass`, type hints); TypeScript with structural types, no class where a function and closure do. Examples run, one running domain (orders/payments).
 - Per-pattern template, in this order: What it is and Problem it solves; Do you need this?; Python; TypeScript; In production; Smells and misuse; Related. Target 80 to 150 lines per file.
-- Every reference opens by naming the plain alternative. No ASCII banner comments, no inline comments unless unavoidable.
+- Every reference names the plain alternative in an early "Do you need this?" section. No ASCII banner comments, no inline comments unless unavoidable.
 - Library claims (tenacity, pybreaker, cockatiel, p-retry, SQLAlchemy `Session`, Express/Koa middleware) verified against current docs (Ref or context7) before they are written. Pin no versions.
 - Prose passes `no-ai-slop` then `humanizer`; flagged tics: colon-reveal lead-ins, `load-bearing` as metaphor, `quietly`.
 - Do not edit the modified `skills/working-with-opencode/references/docs-AGENTS.md` in the main checkout. Work only in `.worktrees/design-patterns`.
@@ -44,11 +44,11 @@
 - [ ] **Step 2:** Write each subagent's output summary and the failure it shows (or "no failure") to `red-baseline.md`.
 - [ ] **Step 3:** Run: `ls skills/design-patterns 2>&1`. Expected: no such directory (confirms baseline ran without the skill).
 
-### Task 1: Scaffold, router and catalog (PR 1 part A)
+### Task 1: Scaffold, router and catalog (PR 1)
 
 **Files:**
 - Create: `skills/design-patterns/SKILL.md`, `skills/design-patterns/references/catalog.md`
-- Modify: `SKILLS.md` (new row), `skills/solid-principles/SKILL.md` and `skills/engineering-principles/SKILL.md` (add `design-patterns` to Related skills)
+- Modify: `SKILLS.md` (new row), `README.md` (new row), `skills/domain-driven-design/SKILL.md` (description clause), `skills/solid-principles/SKILL.md` and `skills/engineering-principles/SKILL.md` (add `design-patterns` to Related skills)
 - Create (scratchpad, uncommitted): `<scratchpad>/verify-blocks.ts`
 
 **Interfaces:**
@@ -62,7 +62,7 @@
 - [ ] **Step 5:** Run: `make lint-descriptions`. Expected: exit 0, no FAIL for `design-patterns`.
 - [ ] **Step 6:** Commit: `feat(design-patterns): scaffold skill router and catalog`.
 
-### Task 2: Behavioral patterns (PR 1 part B)
+### Task 2: Behavioral patterns (PR 2)
 
 **Files:**
 - Create: `skills/design-patterns/references/behavioral/{strategy,observer,command,chain-of-responsibility,state,template-method,iterator}.md`
@@ -75,9 +75,9 @@
 - [ ] **Step 2:** Run: `bun <scratchpad>/verify-blocks.ts skills/design-patterns/references/behavioral/*.md`. Expected: exit 0.
 - [ ] **Step 3:** Run `no-ai-slop` then `humanizer` on the prose of the seven files.
 - [ ] **Step 4:** Commit: `feat(design-patterns): behavioral pattern references`.
-- [ ] **Step 5:** Run the `/self-review` command, fix real findings, then open PR 1 and drive it with `/pr-loop`.
+- [ ] **Step 5:** Run the `/self-review` command, fix real findings, then open PR 2 (stacked on PR 1) and drive it with `/pr-loop`.
 
-### Task 3: Creational, structural, value modeling (PR 2)
+### Task 3: Creational, structural, value modeling (PR 3)
 
 **Files:**
 - Create: `references/creational/{factory,builder,dependency-injection,singleton}.md`, `references/structural/{adapter,decorator,proxy}.md`, `references/value-modeling/result-option.md` (all under `skills/design-patterns/`). Facade folds into `adapter.md` and Null Object into `result-option.md` unless either exceeds 40 lines of real content on its own.
@@ -85,12 +85,12 @@
 **Interfaces:**
 - Consumes: Task 1 conventions. If a pattern was merged, update its `SKILL.md` and `catalog.md` links in this task so the Review Focus link check passes.
 
-- [ ] **Step 1:** Branch from PR 1's branch. Write the files per the template. Singleton recommends module-level instance or DI; Decorator covers both the wrapper object and Python/TS decorator syntax.
+- [ ] **Step 1:** Branch from PR 2's branch. Write the files per the template. Singleton recommends module-level instance or DI; Decorator covers both the wrapper object and Python/TS decorator syntax.
 - [ ] **Step 2:** Run the verify script on the new files, then a link check (for each of `SKILL.md` and `references/catalog.md`, extract every `](…md)` link target with `rg -o '\]\(([^)#]+\.md)\)' -r '$1'` and `test -f` each one relative to that file's own directory). Expected: exit 0, no missing paths.
 - [ ] **Step 3:** Prose pass (`no-ai-slop`, `humanizer`), commit `feat(design-patterns): creational, structural and value-modeling references`.
-- [ ] **Step 4:** `/self-review`, fix, open PR 2, `/pr-loop`.
+- [ ] **Step 4:** `/self-review`, fix, open PR 3, `/pr-loop`.
 
-### Task 4: Data access, resilience, GREEN check (PR 3)
+### Task 4: Data access, resilience, GREEN check (PR 4)
 
 **Files:**
 - Create: `references/data-access/{repository,unit-of-work,dto-mapper}.md`, `references/resilience/{retry-backoff,circuit-breaker,idempotency-key,outbox}.md` (under `skills/design-patterns/`)
@@ -103,10 +103,9 @@
 - [ ] **Step 2:** Run the verify script and link check as in Task 3. Expected: exit 0.
 - [ ] **Step 3:** Rerun Task 0 scenarios 1 to 4 with fresh Sonnet subagents. Give each the worktree paths to `SKILL.md` and `references/` to read first (the plugin cache only has the skill after merge); compare to `red-baseline.md`. Expected: 1 to 3 improve, 4 stays a plain function argument. If 4 regresses, tighten "Default to no pattern" in `SKILL.md` and rerun.
 - [ ] **Step 4:** Prose pass, commit `feat(design-patterns): data-access and resilience references`.
-- [ ] **Step 5:** `/self-review`, fix, open PR 3, `/pr-loop`.
-
+- [ ] **Step 5:** `/self-review`, fix, open PR 4, `/pr-loop`.
 ### Task 5: Release confirmation
 
 - [ ] **Step 1:** After the last merge, load `marketplace-publishing` and run its "After pushing" cache refresh.
 - [ ] **Step 2:** Run: `grep -c design-patterns ~/.claude/plugins/cache/agent-marketplace/agent-skills/*/SKILLS.md`. Expected: at least one match in the newest SHA directory.
-- [ ] **Step 3:** Run `wt-reap design-patterns` from the main checkout once all three PRs are `MERGED`.
+- [ ] **Step 3:** Run `wt-reap design-patterns` from the main checkout once all four PRs are `MERGED`.
