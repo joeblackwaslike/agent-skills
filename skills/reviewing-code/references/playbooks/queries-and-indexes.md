@@ -1,7 +1,5 @@
 # Queries and indexes
 
-> Use when the diff: Adds or changes tables, ORM models, queries, `.sql` files, indexes or migrations
-
 *Leans on: premature optimization (measure), Fail Fast (catch it before production), explicit over implicit.*
 
 A missing index rarely fails a test. It fails in production, when the table is large and a page or a job does a sequential scan under load. Review every new query against the data it will meet, not the test fixtures.

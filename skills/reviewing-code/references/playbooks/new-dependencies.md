@@ -1,7 +1,5 @@
 # New dependencies
 
-> Use when the diff: Changes docs or Markdown files, `package.json`, `pyproject.toml` or a lockfile
-
 *Leans on: YAGNI, KISS, least privilege.*
 
 A new package is code you didn't write, running with your application's privileges, maintained on someone else's schedule. Each one should earn its place.

@@ -1,7 +1,5 @@
 # Next.js
 
-> Use when the diff: Adds or changes UI components, pages, styles, or standalone HTML files
-
 *Leans on: least privilege, separation of concerns, Parse Don't Validate, explicit over implicit.*
 
 In the App Router, the line between server and client runs through the component tree, and the most serious Next.js bugs are data crossing it the wrong way. Review where each file runs before what it does. The [Next.js data security guide](https://nextjs.org/docs/app/guides/data-security) is the reference.

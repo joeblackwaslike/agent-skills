@@ -1,7 +1,5 @@
 # Accessibility
 
-> Use when the diff: Adds or changes UI components, pages, styles, or standalone HTML files
-
 *Leans on: least astonishment, Fail Fast, KISS.*
 
 Accessibility bugs rarely show up in a screenshot, so review the markup and the interaction, not just the look. Target [WCAG 2.2](https://www.w3.org/TR/WCAG22/) level AA unless the project states otherwise.

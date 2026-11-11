@@ -1,7 +1,5 @@
 # Authentication and authorization
 
-> Use when the diff: Adds or changes an endpoint, a request or response model, a validator, or anything touching identity and permissions
-
 *Leans on: least privilege, Fail Fast (fail closed), explicit over implicit, KISS.*
 
 Authentication proves who the caller is; authorization decides what they may do with a specific resource. Most real incidents are authorization bugs, so review that half hardest.

@@ -1,7 +1,5 @@
 # Code that validates user input
 
-> Use when the diff: Adds or changes an endpoint, a request or response model, a validator, or anything touching identity and permissions
-
 *Leans on: Parse Don't Validate, Fail Fast, least privilege, KISS.*
 
 Validation code should run once, at the boundary, and produce a type the rest of the code can trust. Review where it happens as much as what it checks.

@@ -1,7 +1,5 @@
 # Migrations and deployment sequencing
 
-> Use when the diff: Adds or changes tables, ORM models, queries, `.sql` files, indexes or migrations
-
 *Leans on: Hyrum's Law, Gall's Law (small steps), Fail Fast, Chesterton's Fence.*
 
 During a deploy, old and new code run against the same database at the same time, and a migration that locks a busy table takes the site down with it. Review a migration as an operation on production, not as a diff to a schema file.

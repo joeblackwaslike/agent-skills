@@ -1,7 +1,5 @@
 # Data modeling: tables, relationships and domain objects
 
-> Use when the diff: Adds or changes tables, ORM models, queries, `.sql` files, indexes or migrations
-
 *Leans on: make illegal states unrepresentable, separation of concerns, high cohesion, YAGNI.*
 
 A schema outlives the code that first used it, so it gets the most careful design review of anything in a PR. Review the tables and the Python objects that represent them together, because mismatches between the two are where bugs live.

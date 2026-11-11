@@ -1,7 +1,5 @@
 # Shell scripts (Bash and zsh)
 
-> Use when the diff: Changes scripts, container images, Terraform, Kubernetes, Compose, CI or application config
-
 *Leans on: Fail Fast, KISS, least privilege, explicit over implicit.*
 
 Shell scripts run with full user privileges, often unattended, and fail in quiet ways. The `engineering-principles` skill's `language-notes.md` covers shell idioms and the differences between Bash and zsh; this is the review pass.

@@ -1,7 +1,5 @@
 # LLM prompts
 
-> Use when the diff: Changes prompts, `SKILL.md` files, `AGENTS.md` or `CLAUDE.md`, subagent definitions, hooks, commands or agent orchestration, or was largely written with an AI tool
-
 *Leans on: explicit over implicit, Parse Don't Validate, least privilege, make it work (with evidence).*
 
 A prompt that ships in a product or pipeline is code: behavior changes when its text changes, and nothing type-checks it. Review it with the same rigor and ask for evidence that it still works.

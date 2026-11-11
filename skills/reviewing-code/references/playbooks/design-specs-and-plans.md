@@ -1,7 +1,5 @@
 # Design specs and plans
 
-> Use when the diff: Implements a spec, plan or ticket (nearly always), or is itself a spec
-
 *Leans on: Gall's Law, YAGNI, KISS, Conway's Law, Chesterton's Fence.*
 
 Reviewing a spec before code exists is the cheapest review there is: a wrong boundary costs a comment instead of a rewrite. Apply the same four groups, one level up.

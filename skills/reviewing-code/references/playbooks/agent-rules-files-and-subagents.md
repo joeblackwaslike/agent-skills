@@ -1,7 +1,5 @@
 # Agent rules files and subagents
 
-> Use when the diff: Changes prompts, `SKILL.md` files, `AGENTS.md` or `CLAUDE.md`, subagent definitions, hooks, commands or agent orchestration, or was largely written with an AI tool
-
 *Leans on: KISS, least astonishment, least privilege, DRY (for knowledge).*
 
 `AGENTS.md`, `CLAUDE.md`, editor rules files and subagent definitions shape every action an agent takes in a repository. They're standing configuration for a non-deterministic collaborator, and deserve the review a CI configuration gets.

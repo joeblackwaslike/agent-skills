@@ -1,7 +1,5 @@
 # Hooks and commands
 
-> Use when the diff: Changes prompts, `SKILL.md` files, `AGENTS.md` or `CLAUDE.md`, subagent definitions, hooks, commands or agent orchestration, or was largely written with an AI tool
-
 *Leans on: Fail Fast, least privilege, explicit over implicit, KISS.*
 
 Hooks in Claude Code and Codex are commands (and, in Claude Code, HTTP calls, tools or prompts) that run automatically at points in an agent's lifecycle: before or after a tool call, when a prompt is submitted, when the agent stops. They run with your permissions and environment, without asking. Review them as production scripts with a trigger attached. References: [Claude Code hooks](https://code.claude.com/docs/en/hooks), [Codex hooks](https://learn.chatgpt.com/docs/hooks).

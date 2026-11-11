@@ -1,7 +1,5 @@
 # Logging and error logging
 
-> Use when the diff: Touches a hot or business-critical path, asynchronous work, or what gets logged
-
 *Leans on: Fail Fast (failures are visible), least privilege (logs leak), KISS, explicit over implicit.*
 
 Logs exist for the person debugging production at the worst possible moment. Review each log line by asking whether that person would want it, could find it, and could act on it, and whether it leaks something it shouldn't.

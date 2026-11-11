@@ -1,7 +1,5 @@
 # Configuration files
 
-> Use when the diff: Changes scripts, container images, Terraform, Kubernetes, Compose, CI or application config
-
 *Leans on: explicit over implicit, Fail Fast, least privilege, YAGNI.*
 
 Configuration changes deploy behavior without changing code, and they often skip the tests that code gets. Review them with that in mind: a one-character change in a YAML file can take production down.

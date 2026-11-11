@@ -1,7 +1,5 @@
 # Agent workflows
 
-> Use when the diff: Changes prompts, `SKILL.md` files, `AGENTS.md` or `CLAUDE.md`, subagent definitions, hooks, commands or agent orchestration, or was largely written with an AI tool
-
 *Leans on: Gall's Law, Fail Fast, separation of concerns, least privilege, make it work (with evidence).*
 
 Multi-step agent workflows (a lead agent fanning out to subagents, pipelines of model calls and tools, scheduled agent runs) are distributed systems built from non-deterministic parts. Review them like a background-job system, and then some.

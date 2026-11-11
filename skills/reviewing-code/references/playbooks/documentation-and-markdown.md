@@ -1,7 +1,5 @@
 # Documentation and Markdown
 
-> Use when the diff: Changes docs or Markdown files, `package.json`, `pyproject.toml` or a lockfile
-
 *Leans on: least astonishment, KISS, Hyrum's Law, DRY (for knowledge).*
 
 Documentation is reviewed like an interface: for whether a reader can act on it correctly. Wrong documentation is worse than none, because it is trusted.

@@ -1,7 +1,5 @@
 # CSS and styling
 
-> Use when the diff: Adds or changes UI components, pages, styles, or standalone HTML files
-
 *Leans on: KISS, high cohesion, least astonishment, explicit over implicit.*
 
 - **Follow the system.** Colors, spacing, type and radii come from design tokens or the theme, not hard-coded hex values and pixel numbers. A new one-off value is a question.

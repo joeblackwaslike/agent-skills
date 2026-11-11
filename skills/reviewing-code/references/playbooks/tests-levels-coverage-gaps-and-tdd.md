@@ -1,7 +1,5 @@
 # Tests: levels, coverage, gaps and TDD
 
-> Use when the diff: Adds or changes tests, fixtures or test helpers
-
 *Leans on: make it work, make it right, make it fast; Fail Fast; KISS.*
 
 Review tests for what they would catch, not for how many there are. Each level of test answers a different question, and a gap usually means a question nobody asked.

@@ -1,7 +1,5 @@
 # Reviewing code against its spec
 
-> Use when the diff: Implements a spec, plan or ticket (nearly always), or is itself a spec
-
 *Leans on: YAGNI and KISS (no more), Fail Fast (no less), Chesterton's Fence, least astonishment.*
 
 The diff shows what was built; the spec, plan, ticket or design doc shows what was meant. A review without the spec can check that code is well written, but not that it is the right code. The standard is that what was specified is what was written: no more and no less.

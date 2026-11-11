@@ -1,7 +1,5 @@
 # HTML artifacts
 
-> Use when the diff: Adds or changes UI components, pages, styles, or standalone HTML files
-
 *Leans on: KISS, least privilege, explicit over implicit.*
 
 Standalone HTML files (generated reports, dashboards, docs pages, one-off tools, pages an AI agent produced) are shared widely and reviewed lightly. Review them as small web apps.

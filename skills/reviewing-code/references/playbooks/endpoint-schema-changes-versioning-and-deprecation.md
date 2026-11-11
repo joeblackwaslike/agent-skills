@@ -1,7 +1,5 @@
 # Endpoint schema changes, versioning and deprecation
 
-> Use when the diff: Adds or changes an endpoint, a request or response model, a validator, or anything touching identity and permissions
-
 *Leans on: Hyrum's Law above all, then least astonishment and Chesterton's Fence.*
 
 The question for any change to an existing endpoint's request or response is: does every client that works today still work after deploy, without changing? Classify the change first, then review accordingly.

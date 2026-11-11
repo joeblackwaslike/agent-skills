@@ -1,7 +1,5 @@
 # React components (JSX and TSX)
 
-> Use when the diff: Adds or changes UI components, pages, styles, or standalone HTML files
-
 *Leans on: separation of concerns, make illegal states unrepresentable, least astonishment, KISS.*
 
 A component is a function from props and state to UI. Most component bugs come from state that lives in the wrong place, effects that shouldn't exist, and props that promise more than the component needs.

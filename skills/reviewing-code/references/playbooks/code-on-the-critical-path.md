@@ -1,7 +1,5 @@
 # Code on the critical path
 
-> Use when the diff: Touches a hot or business-critical path, asynchronous work, or what gets logged
-
 *Leans on: premature optimization (measure), Fail Fast, KISS, Gall's Law.*
 
 Critical-path code is anything that sits in every request, in checkout or login, or in a job the business depends on. The bar is higher: the change must not make the path slower, less available, or harder to roll back, and the reviewer should be able to say how they know.

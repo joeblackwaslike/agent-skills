@@ -1,7 +1,5 @@
 # SQL files and raw queries
 
-> Use when the diff: Adds or changes tables, ORM models, queries, `.sql` files, indexes or migrations
-
 *Leans on: Parse Don't Validate, Fail Fast, explicit over implicit, least privilege.*
 
 SQL shows up as `.sql` files (migrations, views, functions, seed data, reporting queries), as raw strings inside application code, and as query-builder chains. Review it as code that runs against production data, often with more privilege than the application has. The SQL section of the `engineering-principles` skill's `language-notes.md` has the idioms; this is the review pass.

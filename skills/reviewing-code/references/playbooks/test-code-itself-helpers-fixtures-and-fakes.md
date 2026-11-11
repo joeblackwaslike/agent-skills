@@ -1,7 +1,5 @@
 # Test code itself: helpers, fixtures and fakes
 
-> Use when the diff: Adds or changes tests, fixtures or test helpers
-
 *Leans on: KISS above all, then high cohesion, Rule of Three, explicit over implicit.*
 
 Test code is held to a different standard from production code, and confusing the two is a common source of bad test suites. Production code is optimized for change over years; test code is optimized for being obviously correct at a glance. Nobody tests the tests, so a test must be simple enough that it can't plausibly be wrong.

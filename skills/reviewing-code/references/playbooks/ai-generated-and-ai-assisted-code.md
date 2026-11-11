@@ -1,7 +1,5 @@
 # AI-generated and AI-assisted code
 
-> Use when the diff: Changes prompts, `SKILL.md` files, `AGENTS.md` or `CLAUDE.md`, subagent definitions, hooks, commands or agent orchestration, or was largely written with an AI tool
-
 *Leans on: KISS, YAGNI, reviewing code against its spec, Chesterton's Fence.*
 
 Code written with an AI tool is held to exactly the same standard as any other code, and the author owns every line of it: they should be able to explain any part when asked. What changes is where to look, because generated code fails in characteristic ways and tends to arrive in larger diffs.

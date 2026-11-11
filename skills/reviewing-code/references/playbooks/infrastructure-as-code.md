@@ -1,7 +1,5 @@
 # Infrastructure as code
 
-> Use when the diff: Changes scripts, container images, Terraform, Kubernetes, Compose, CI or application config
-
 *Leans on: least privilege, Gall's Law, Chesterton's Fence, Hyrum's Law, explicit over implicit.*
 
 Terraform or OpenTofu, Kubernetes manifests, Helm charts and Compose files change production directly. Review the plan, not only the diff.

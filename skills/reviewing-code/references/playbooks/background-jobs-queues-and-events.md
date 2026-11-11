@@ -1,7 +1,5 @@
 # Background jobs, queues and events
 
-> Use when the diff: Touches a hot or business-critical path, asynchronous work, or what gets logged
-
 *Leans on: Fail Fast, Hyrum's Law, explicit over implicit, Gall's Law.*
 
 Asynchronous work fails differently from a request. Nobody is waiting for the response, so failures are silent unless someone made them loud, and most queues deliver at least once, so every message may arrive twice, late or out of order.

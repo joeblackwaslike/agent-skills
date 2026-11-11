@@ -1,7 +1,5 @@
 # New API endpoints
 
-> Use when the diff: Adds or changes an endpoint, a request or response model, a validator, or anything touching identity and permissions
-
 *Leans on: Hyrum's Law, least astonishment, separation of concerns, Parse Don't Validate, least privilege.*
 
 An endpoint is a contract the moment a client calls it, so review it as an interface first and as code second. Start from the request and response schemas, not the handler body.

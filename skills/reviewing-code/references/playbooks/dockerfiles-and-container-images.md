@@ -1,7 +1,5 @@
 # Dockerfiles and container images
 
-> Use when the diff: Changes scripts, container images, Terraform, Kubernetes, Compose, CI or application config
-
 *Leans on: least privilege, KISS, explicit over implicit, Fail Fast.*
 
 - **Pinned base image.** A specific version tag at minimum, a digest (`@sha256:...`) for reproducible builds, and a slim or distroless base where it works. `latest` is a finding.
