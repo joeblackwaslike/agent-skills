@@ -101,6 +101,7 @@ Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode
 | `domain-driven-design` | Aggregates, entities, value objects, domain events, repositories, CQRS |
 | `solid-principles` | Designing and refactoring classes, modules, and interfaces |
 | `senior-engineering-best-practices` | Career-built senior-engineer judgment — due diligence, root-cause discipline, blast-radius/dependency/observability judgment |
+| `writing-and-reviewing-code` | Self-review your own diff before a PR with fresh-eyes reviewer agents; ships the `/self-review` command |
 
 ### Vercel
 
