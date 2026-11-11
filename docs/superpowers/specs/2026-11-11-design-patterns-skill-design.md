@@ -39,7 +39,7 @@ This skill gives a catalog of the patterns that show up in real codebases, plus 
 | Resilience | Retry with backoff, Circuit Breaker, Idempotency key, Outbox |
 | Value modeling | Result/Option, Null Object |
 
-That is 25 rows if each is counted. Anything that turns out to be under about 40 lines of real content gets merged into a neighbor during writing (likely Null Object into Result/Option, Facade into Adapter). The final count is whatever survives that test, not a target.
+That is 24 candidates. Facade and Null Object are too small for a file each (under about 40 lines of real content), so they become sections inside `adapter.md` and `result-option.md`, which leaves 22 files. Any other pattern that turns out that small gets merged the same way during writing.
 
 **Catalog line only** (name, one sentence, "you probably want X instead"): Abstract Factory, Prototype, Bridge, Composite, Flyweight, Memento, Mediator, Visitor, Interpreter.
 
@@ -62,7 +62,7 @@ Name `design-patterns` follows the capability-name archetype (like `domain-drive
 
 **SKILL.md** frontmatter description (under 400 chars, trigger first, with exclusions in both directions):
 
-> Use when a design calls for a named pattern or you are choosing between them: swapping behavior at runtime, wrapping or adapting a service, decoupling producers and consumers, hiding persistence, or making calls resilient (retry, circuit breaker, outbox). Not for deciding whether to abstract at all (engineering-principles), SOLID depth (solid-principles), or DDD architecture (domain-driven-design).
+> Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Python and TypeScript. Not for whether to abstract at all (use engineering-principles), SOLID or god-class refactors (use solid-principles), aggregates, CQRS or event sourcing (use domain-driven-design).
 
 Body: a "What to load" table mapping problem to pattern file (same shape as `engineering-principles/SKILL.md`), a short "Default to no pattern" paragraph, and Related skills.
 
@@ -84,7 +84,8 @@ Target 80 to 150 lines per file. Examples are complete enough to run, small enou
 
 - `solid-principles` SKILL.md: add `design-patterns` to Related skills.
 - `engineering-principles` SKILL.md: add `design-patterns` to Related skills.
-- `SKILLS.md`: add a row (trigger text, with "Not for" in both directions).
+- `SKILLS.md` and `README.md`: add a row to each (trigger text, with "Not for" in both directions).
+- Descriptions of `engineering-principles`, `solid-principles` and `domain-driven-design`: append one "Not for choosing or implementing a named pattern (use design-patterns)" clause so the exclusion runs both ways.
 - No edits to `principles.md` or other references.
 
 ## Sourcing and verification
@@ -112,11 +113,12 @@ Then rerun with the skill. Ship only if 1 to 3 improve and 4 stays plain.
 
 ## Delivery
 
-Per repo convention: worktree `.worktrees/design-patterns`, spec as first commit, then plan, then content, all on one branch. The content is around 2,500 lines of Markdown, well past the roughly 400-line PR size gate. Proposal: three stacked PRs from the same branch lineage, split by category.
+Per repo convention: worktree `.worktrees/design-patterns`, spec as first commit, then plan, then content, all on one branch. The content is around 2,500 lines of Markdown, well past the roughly 400-line PR size gate. The gate is about reviewer attention, and the hard limit is the review bot's 200,000-character budget. Reference prose is therefore split into stacked PRs of one category group each, kept well under that budget.
 
-1. Scaffold: `SKILL.md`, `catalog.md`, SKILLS.md row, cross-links, behavioral patterns.
-2. Creational, structural, value modeling.
-3. Data access, resilience.
+1. Spec, plan, scaffold (`SKILL.md`, `catalog.md`), SKILLS.md and README.md rows, cross-links.
+2. Behavioral patterns.
+3. Creational, structural, value modeling.
+4. Data access, resilience.
 
 Each PR goes through `/self-review` and `/pr-loop`. Because skills ship by commit SHA, no version bump is needed; after the last push, refresh the cache per `marketplace-publishing` and grep the cache directory to confirm it landed.
 
@@ -129,5 +131,5 @@ Exact pattern merges (see inventory note), example domains (pick one running dom
 1. `make lint-descriptions` passes.
 2. Extraction script reports zero type errors across all Python and TS blocks.
 3. Link check: every path in `SKILL.md` and `catalog.md` exists.
-4. Pressure scenarios 1 to 4 behave as stated above, run in a fresh subagent with the skill installed from the plugin cache.
+4. Pressure scenarios 1 to 4 behave as stated above, run in fresh subagents given the worktree's `SKILL.md` and `references/` paths (the plugin cache only receives the skill after merge).
 5. `grep design-patterns ~/.claude/plugins/cache/agent-marketplace/agent-skills/<sha>/SKILLS.md` returns the new row.

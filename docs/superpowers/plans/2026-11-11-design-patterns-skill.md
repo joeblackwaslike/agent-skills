@@ -58,7 +58,7 @@
 - [ ] **Step 1:** Write `verify-blocks.ts` (Bun). Self-check: run it on a temp file with one valid and one invalid block per language and confirm exit 1 naming the invalid blocks, then exit 0 with only valid ones.
 - [ ] **Step 2:** Write `SKILL.md` with frontmatter (name, description from the spec, `metadata.last_updated`), a "Default to no pattern" paragraph, a "What to load" table (problem to file, same shape as `skills/engineering-principles/SKILL.md`), and Related skills (`engineering-principles`, `solid-principles`, `domain-driven-design`).
 - [ ] **Step 3:** Write `catalog.md`: one table per category with columns Pattern, What it is (one line), Prevalence (common/occasional/rare), Link or "catalog-only". Include the nine catalog-only entries from the spec, each with "you probably want X instead".
-- [ ] **Step 4:** Add the SKILLS.md row; add the Related skills line to the two sibling SKILL.md files.
+- [ ] **Step 4:** Add the SKILLS.md and README.md rows; add the Related skills line to the two sibling SKILL.md files; append the "Not for choosing or implementing a named pattern (use design-patterns)" clause to the descriptions of `engineering-principles`, `solid-principles` and `domain-driven-design`.
 - [ ] **Step 5:** Run: `make lint-descriptions`. Expected: exit 0, no FAIL for `design-patterns`.
 - [ ] **Step 6:** Commit: `feat(design-patterns): scaffold skill router and catalog`.
 
@@ -86,7 +86,7 @@
 - Consumes: Task 1 conventions. If a pattern was merged, update its `SKILL.md` and `catalog.md` links in this task so the Review Focus link check passes.
 
 - [ ] **Step 1:** Branch from PR 1's branch. Write the files per the template. Singleton recommends module-level instance or DI; Decorator covers both the wrapper object and Python/TS decorator syntax.
-- [ ] **Step 2:** Run the verify script on the new files, then a link check (`rg -o 'references/[a-z/-]+\.md' skills/design-patterns/SKILL.md skills/design-patterns/references/catalog.md` and confirm each path exists). Expected: exit 0, no missing paths.
+- [ ] **Step 2:** Run the verify script on the new files, then a link check (for each of `SKILL.md` and `references/catalog.md`, extract every `](…md)` link target with `rg -o '\]\(([^)#]+\.md)\)' -r '$1'` and `test -f` each one relative to that file's own directory). Expected: exit 0, no missing paths.
 - [ ] **Step 3:** Prose pass (`no-ai-slop`, `humanizer`), commit `feat(design-patterns): creational, structural and value-modeling references`.
 - [ ] **Step 4:** `/self-review`, fix, open PR 2, `/pr-loop`.
 
@@ -101,7 +101,7 @@
 
 - [ ] **Step 1:** Write the seven files per the template. Retry covers jitter and idempotency; Outbox covers the dual-write problem and a polling relay; Unit of Work uses SQLAlchemy `Session` and a TS transaction wrapper.
 - [ ] **Step 2:** Run the verify script and link check as in Task 3. Expected: exit 0.
-- [ ] **Step 3:** Rerun Task 0 scenarios 1 to 4 with fresh Sonnet subagents that have the skill loaded; compare to `red-baseline.md`. Expected: 1 to 3 improve, 4 stays a plain function argument. If 4 regresses, tighten "Default to no pattern" in `SKILL.md` and rerun.
+- [ ] **Step 3:** Rerun Task 0 scenarios 1 to 4 with fresh Sonnet subagents. Give each the worktree paths to `SKILL.md` and `references/` to read first (the plugin cache only has the skill after merge); compare to `red-baseline.md`. Expected: 1 to 3 improve, 4 stays a plain function argument. If 4 regresses, tighten "Default to no pattern" in `SKILL.md` and rerun.
 - [ ] **Step 4:** Prose pass, commit `feat(design-patterns): data-access and resilience references`.
 - [ ] **Step 5:** `/self-review`, fix, open PR 3, `/pr-loop`.
 

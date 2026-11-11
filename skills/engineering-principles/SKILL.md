@@ -7,7 +7,8 @@ description: >-
   Triggers on "how should I structure this", "is this too complex", "should I
   abstract this". Not for checking a finished diff before a PR (use
   reviewing-code). Not for deep SOLID, TDD or DDD (use solid-principles,
-  test-driven-development, domain-driven-design).
+  test-driven-development, domain-driven-design). Not for choosing or
+  implementing a named pattern (use design-patterns).
 metadata:
   last_updated: "2026-11-11"
 ---
