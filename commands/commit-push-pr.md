@@ -1,4 +1,5 @@
 ---
+name: commit-push-pr
 description: Verify, commit, self-review, push, and open a PR from the repo's template, then hand it to /pr-loop
 argument-hint: "[--draft] [--base <branch>] [--bd <id>] [--no-verify] [--no-review] [--no-loop] [--direct]"
 allowed-tools: Bash(git:*), Bash(gh:*), Bash(bd:*), Bash(jq:*), Bash(wc:*)
@@ -97,7 +98,7 @@ Fill `.github/pull_request_template.md` (Context, Summary, Test plan). Delete th
 
 Run the `humanizer` skill in embedded mode on the body before posting. Not `no-ai-slop`.
 
-First check for an existing PR: `gh pr list --head "$(git branch --show-current)" --state open`. If one exists, report its URL and skip creation; the push already updated it.
+First check for an existing PR: `gh pr list --head "$(git branch --show-current)" --state open`. If one exists, report its URL and skip creation; the push already updated it. If the `gh` call itself fails (network, auth), stop and report that error. Don't try to create the PR.
 
 ```bash
 gh pr create --base <base> --assignee @me --title "<title>" --body-file <file> [--draft]
@@ -108,5 +109,5 @@ Set the assignee. A PR with no assignee is in nobody's queue. Don't add the inte
 ## 8. Hand off
 
 1. If `--no-loop` wasn't passed, run `/pr-loop <number>` now. Load `agent-skills:working-with-github`, `references/howto/driving-a-pr-to-approval.md`, first. It owns thread triage, replies, reactions, resolution, the merge gate, and merge. This command doesn't restate it.
-2. After the PR merges, remove the worktree in the same turn with `wt-reap <name>` from the main checkout, and refresh the plugin cache if the repo ships as a plugin. If `wt-reap` fails, report the error and the worktree path. Don't force-remove.
+2. After the PR merges, remove the worktree in the same turn with `wt-reap <name>` from the main checkout, and refresh the plugin cache if the repo ships as a plugin. If `wt-reap` fails, report the error and the worktree path. Don't force-remove. If `wt-reap` isn't on the path, report that and the worktree path, and stop there.
 3. Report: PR URL and number, what's included, what the step 2 checks and the self-review found, what wasn't run, and any cleanup error.
