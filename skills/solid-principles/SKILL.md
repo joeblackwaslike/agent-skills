@@ -129,3 +129,7 @@ Before considering a class/module design done:
   `new`-ed inside.
 - Every abstraction you introduced is **justified by real, expected change** — not a
   speculative interface around a thing with one forever-implementation.
+
+## Related skills
+
+- `design-patterns`: the named patterns (Strategy, Adapter, Repository, Circuit Breaker and others) with Python and TypeScript references, each starting from the plain alternative.

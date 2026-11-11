@@ -44,3 +44,4 @@ The one-paragraph summaries at the top of `principles.md` ("Principles") are eno
 - `domain-driven-design`: aggregates, value objects, CQRS and event sourcing.
 - `senior-engineering-best-practices`: verifying docs before a workaround, root-cause discipline, blast radius, dependency judgment.
 - `reviewing-code`: the process for checking a finished diff against these principles, with per-change-type playbooks (endpoints, migrations, auth, Dockerfiles and so on).
+- `design-patterns`: the catalog of named patterns, with a reference per pattern. Use it once you have decided an abstraction is warranted.
