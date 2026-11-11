@@ -25,7 +25,7 @@ Beck's order for writing code is also the order for reviewing it, weighted by ho
 1. **Scope.** Is this the smallest change that solves the problem? (Simplicity and scope.)
 2. **Design.** Are the boundaries, models and contracts right? This is the hardest thing to change later. (Design and structure.)
 3. **Correctness.** Does it work, including on failure paths? (Correctness and safety.)
-4. **Readability.** Can the next person understand and change it? (Readability and review.)
+4. **Readability.** Can the next person understand and change it? (Readability and tests.)
 5. **Speed.** Only with a measurement in hand.
 
 If scope or design is wrong, stop and say so before leaving line-level comments. Detailed feedback on code that is about to be restructured wastes both people's time. A large change can be reviewed in two rounds: scope and design first, then everything else once those are settled.

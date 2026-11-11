@@ -34,7 +34,7 @@ The short version, in the same four groups and in review order.
 - [ ] Access is scoped, and no secrets reach code or logs.
 - [ ] Changes to observable behavior are intended and backward compatible.
 
-**Readability and review** (least astonishment, explicit over implicit, Chesterton's Fence, Boy Scout Rule)
+**Readability and tests** (least astonishment, explicit over implicit, Chesterton's Fence, Boy Scout Rule)
 
 - [ ] Names and behavior match, and a newcomer could use the API from its signatures.
 - [ ] The code is idiomatic for its language, with constructs chosen to fit the intended use.
