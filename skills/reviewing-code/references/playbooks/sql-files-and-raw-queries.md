@@ -2,7 +2,7 @@
 
 *Leans on: Parse Don't Validate, Fail Fast, explicit over implicit, least privilege.*
 
-SQL shows up as `.sql` files (migrations, views, functions, seed data, reporting queries), as raw strings inside application code, and as query-builder chains. Review it as code that runs against production data, often with more privilege than the application has. The SQL section of the `engineering-principles` skill's `language-notes.md` has the idioms; this is the review pass.
+SQL shows up as `.sql` files (migrations, views, functions, seed data, reporting queries), as raw strings inside application code, and as query-builder chains. Review it as code that runs against production data, often with more privilege than the application has. The `engineering-principles` skill's `language-notes/sql.md` has the idioms; this is the review pass.
 
 - **Parameters, never interpolation.** Values reach the query as bound parameters. Identifiers that must be dynamic (a sort column, a table name) come from an allowlist and are quoted with the driver's identifier quoting, never from raw user input.
 - **Read it against the schema.** Check join conditions against the actual keys: a missing or wrong condition multiplies rows, and `DISTINCT` added to hide duplicates is a sign of it. Check `NULL` handling in comparisons, `NOT IN`, outer joins and aggregates.

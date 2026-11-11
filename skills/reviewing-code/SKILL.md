@@ -72,4 +72,4 @@ Load only what the step needs.
 - [references/checklist.md](references/checklist.md): the condensed checklist. Use it for the final pass.
 - [references/worked-example.md](references/worked-example.md): one complete review, for calibrating tone and content.
 - [references/pr-description-template.md](references/pr-description-template.md): the PR body template. Use it when you write the description.
-- The `engineering-principles` skill: `references/principles.md` for step 3, `references/language-notes.md` when the diff is in Python, TypeScript, shell or SQL.
+- The `engineering-principles` skill: `references/principles.md` for step 3, `references/language-notes/index.md`, then the file for each language in the diff.

@@ -1,6 +1,6 @@
 # Review Playbooks
 
-> This repo is the source for these files. The general principles are in the `engineering-principles` skill; language notes are in its `language-notes.md`.
+> This repo is the source for these files. The general principles are in the `engineering-principles` skill; language notes are in its `language-notes/` directory.
 
 These playbooks are the companion to the principles. The principles and their four groups apply to every diff; some kinds of change also have their own failure modes and deserve a dedicated pass. Each playbook names the principles it leans on most, then lists what to check. Open only the playbooks that match the diff: a pull request that adds an endpoint, a table and a migration gets three passes on top of the general review.
 

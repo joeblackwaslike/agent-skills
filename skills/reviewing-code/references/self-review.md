@@ -4,7 +4,7 @@ This is the runbook behind the `/self-review` command and the eight-step checkli
 
 - `engineering-principles` `references/principles.md`: the principles, in review order
 - [playbooks/index.md](playbooks/index.md): one playbook file per kind of change
-- `engineering-principles` `references/language-notes.md`: Python, TypeScript, shell and SQL idioms
+- `engineering-principles` `references/language-notes/index.md` and the per-language files it links: idioms and smells
 
 Run this before opening a PR. A fresh reviewer who never saw your reasoning reads your diff, you verify what it finds, and you fix what is real. You do not review your own diff alone, because you carry the intent and the excuses that made each shortcut look fine.
 
@@ -53,7 +53,7 @@ Kinds of change: <KINDS, e.g. "REST endpoint, migration, README">
 Setup:
 1. Run `git diff <BASE> --stat` and then read the full diff with `git diff <BASE>`. For a large diff, read it file by file.
 2. Read the principles at <PRINCIPLES_DIR>/principles.md. Read <GUIDE_DIR>/playbooks/index.md and open only the playbook files that match the kinds of change above.
-3. Read <PRINCIPLES_DIR>/language-notes.md and for every language in the diff apply the language-specific checks: idioms and code smells. This is required, not optional.
+3. Read <PRINCIPLES_DIR>/language-notes/index.md, then the file it links for every language in the diff, and apply the language-specific checks: idioms and code smells. This is required, not optional.
 4. The diff is not enough. For every function, class, flag, route or config key that the diff removes, renames or changes, search the repo for its callers and sibling code paths and read them. Run `git blame` on removed code to find out why it existed. List every new public name, endpoint, config key, migration and error message, since each is a contract.
 
 Review in this order and do not skip ahead. Do the later groups only after you have judged the earlier ones.
