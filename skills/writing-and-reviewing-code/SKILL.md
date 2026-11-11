@@ -5,7 +5,8 @@ description: >-
   as a reviewer who didn't write it. Triggers on "about to open a PR",
   "self-review", "polish this before I share it", "is this ready for review",
   or before `gh pr create`. Not for reviewing someone else's PR. Not for
-  handling feedback on your PR (use superpowers:receiving-code-review).
+  opening the PR, driving it to merge or answering review feedback
+  (use git-github-workflows).
 ---
 
 # Writing and Reviewing Code
