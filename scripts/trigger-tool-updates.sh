@@ -5,8 +5,8 @@
 set -uo pipefail
 # Hooks export GIT_INDEX_FILE (and GIT_DIR in a linked worktree). The plugin updaters below run git
 # in their own clones; with those inherited, or from this repo's cwd, they rewrite this repo's index.
-unset $(git rev-parse --local-env-vars)
-cd "$HOME" || exit 1
+unset GIT_DIR GIT_INDEX_FILE $(git rev-parse --local-env-vars 2>/dev/null)
+cd / || exit 1
 FAILURES=()
 
 echo "→ Claude Code: refreshing marketplace + plugin cache"
