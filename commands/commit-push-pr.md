@@ -1,7 +1,7 @@
 ---
-description: Verify, commit, review locally, push, and open a PR from the repo's template, then hand it to /pr-loop
+description: Verify, commit, self-review, push, and open a PR from the repo's template, then hand it to /pr-loop
 argument-hint: "[--draft] [--base <branch>] [--bd <id>] [--no-verify] [--no-review] [--no-loop] [--direct]"
-allowed-tools: Bash(git:*), Bash(gh:*), Bash(bd:*), Bash(ai-review:*), Bash(jq:*), Bash(wc:*)
+allowed-tools: Bash(git:*), Bash(gh:*), Bash(bd:*), Bash(jq:*), Bash(wc:*)
 ---
 
 Take the current changes from working tree to an open PR, then start the review loop. Run it
@@ -20,7 +20,7 @@ start to finish without check-ins. Stop only where a step below says to.
 - `--base <branch>` targets that branch instead of the default (release branches, stacked PRs).
 - `--bd <id>` is the beads issue this PR closes. Without it, use the id in the branch name or commit messages if there is one.
 - `--no-verify` skips the step 2 checks. Say so in the Test plan.
-- `--no-review` skips the local AI review in step 5. Say so in the Test plan.
+- `--no-review` skips the self-review in step 5. Say so in the Test plan.
 - `--no-loop` stops after the PR is open instead of starting `/pr-loop`.
 - `--direct` is for a repo whose convention is committing straight to its default branch, with no PRs: run steps 1 to 4, push to the default branch, and stop.
 
@@ -50,8 +50,8 @@ Mechanics:
 
 1. Stage by path. Read `git diff --cached` first. Split into atomic commits when the diff mixes types, concerns, or dependency bumps with features.
 2. No secrets or personal data in the diff. Check for `.env`, key files, tokens.
-3. Don't stage generated review reports (`docs/code-reviews/*`) or tool state unless the repo tracks them.
-4. After every commit, run `git show --stat HEAD`. If it lists deletions or files you didn't touch, the index was stale: `git reset -q`, restage by path, and recommit before anything is pushed. Wrong: a commit made right after `ai-review` deleted nine files from the PR branch and was pushed before anyone looked.
+3. Don't stage generated reports or tool state unless the repo tracks them.
+4. After every commit, run `git show --stat HEAD`. If it lists deletions or files you didn't touch, the index was stale: `git reset -q`, restage by path, and recommit before anything is pushed. Wrong: a commit made right after a review tool ran deleted nine files from the PR branch and was pushed before anyone looked.
 
 ## 4. Size the branch
 
@@ -63,14 +63,15 @@ git diff origin/<base>...HEAD -- . ':(exclude)*.lock' ':(exclude)*-lock.*' | wc 
 
 If the diff passes 200,000 characters (the review bot's `REVIEW_DIFF_BUDGET_CHARS`) or about 400 changed lines of hand-written code, don't open it as one PR. Split along seams into stacked PRs, lowest first, each branched off the previous with `--base` set to it, per the runbook's size gate. One file over the budget can't be split by path: say so in the PR body and freeze it. A mechanical change (formatter, rename, codemod) gets its own PR.
 
-## 5. Review locally, twice at most
+## 5. Self-review
 
 Skip with `--no-review`.
 
-1. Run `ai-review review --full` once before the first push. Check each finding against the code before acting: the bot re-raises declined findings and is often wrong (Anthropic-side findings were right 9 of 42 times, OpenAI-side 39 of 47). Fix the real ones.
-2. If the branch fetches URLs or handles secrets, also run the `typescript-reviewer` and `security-reviewer` agents in parallel, each with an explicit `model: sonnet`.
-3. Run `ai-review review --full` once more on the fix batch, passing what you decided via `--extra`. Then stop. It never goes quiet, so don't loop until it does.
-4. Re-run step 3's `git show --stat HEAD` check and the step 2 checks after the fixes.
+1. Run `/self-review <base>`: load `personal-agent-skills:writing-and-reviewing-code` and follow `references/self-review.md`, sections 0 to 5 (freeze the scope, mechanical gate, fresh reviewers, triage, fix, re-review, at most two re-reviews). Stop at its section 6 verdict. Don't use its "open the PR" steps: steps 6 to 8 here own the push, the PR, and the loop.
+2. **NOT READY** (a blocker or major is still open): stop and report. Don't push.
+3. **READY**: put its remaining minors and nits in the PR body under "Known follow-ups".
+4. If the branch fetches URLs or handles secrets, also run the `typescript-reviewer` and `security-reviewer` agents in parallel, each with an explicit `model: sonnet`.
+5. After any fixes, re-run the `git show --stat HEAD` check from step 3 and the step 2 checks.
 
 ## 6. Push
 
