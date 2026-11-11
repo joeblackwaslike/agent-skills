@@ -13,7 +13,7 @@ The diff shows what was built; the spec, plan, ticket or design doc shows what w
 
 **Check conformance: no less**
 
-- **Trace each requirement.** Go through the spec's requirements or acceptance criteria and find, for each, the code that implements it and the test that proves it. The requirements table in the guide's PR description template makes this quick for both author and reviewer.
+- **Trace each requirement.** Go through the spec's requirements or acceptance criteria and find, for each, the code that implements it and the test that proves it. The requirements table in the [PR description template](../pr-description-template.md) makes this quick for both author and reviewer.
 - **Edge cases and errors the spec names.** Specs often state behavior for invalid input, limits, permissions and failure. These are the easiest parts to skip in implementation.
 - **Non-functional requirements.** Latency targets, data retention, audit logging, rate limits and access rules are requirements too.
 

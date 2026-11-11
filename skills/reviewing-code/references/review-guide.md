@@ -105,7 +105,7 @@ A rule a linter can state is better made explicit in configuration than enforced
 | Idiomatic code | Non-idiomatic constructs and outdated syntax | `SIM`, `PERF`, `C4`, `PTH`, `UP` | typescript-eslint `strict-type-checked` | ShellCheck |
 | Formatting | Layout and style | `ruff format` | Prettier or Biome | `shfmt` |
 
-Leave magic-number rules (`PLR2004`, ESLint `no-magic-numbers`) off or loosely configured. They push self-explanatory literals into constants, which the next section treats as an anti-pattern. Each language's full toolchain and recommended settings are in the `engineering-principles` skill's `language-notes.md`. Some rules are preview-only or version-specific, so check them against the versions your project pins.
+Leave magic-number rules (`PLR2004`, ESLint `no-magic-numbers`) off or loosely configured. They push self-explanatory literals into constants, which the "Constants for self-explanatory literals" discussion in the `engineering-principles` skill's `principles.md` treats as an anti-pattern. Each language's full toolchain and recommended settings are in the `engineering-principles` skill's `language-notes.md`. Some rules are preview-only or version-specific, so check them against the versions your project pins.
 
 ### Writing the review
 

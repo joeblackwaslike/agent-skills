@@ -537,7 +537,7 @@ Knuth's rule cuts both ways in review. Ask for a measurement before accepting an
 
 ## 4. Readability and tests
 
-The principle of least astonishment is readability in one line: code should behave the way its name and shape suggest. In practice that means writing the idiom a developer in that language expects, keeping behavior visible at the call site, and treating tests as the executable statement of intent. The same principles then govern how the review itself is written.
+The principle of least astonishment is readability in one line: code should behave the way its name and shape suggest. In practice that means writing the idiom a developer in that language expects, keeping behavior visible at the call site, and treating tests as the executable statement of intent.
 
 ### Least astonishment
 
