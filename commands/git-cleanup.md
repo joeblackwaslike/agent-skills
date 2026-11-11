@@ -1,4 +1,5 @@
 ---
+name: git-cleanup
 description: Remove landed worktrees and merged local branches, prune stale refs
 argument-hint: "[--dry-run]"
 ---

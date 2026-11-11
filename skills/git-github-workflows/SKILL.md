@@ -15,9 +15,9 @@ There are two kinds of targets below: **action skills** (do a specific operation
 
 | Operation | Skill or command |
 |---|---|
-| Stage and commit changes | `/agent-skills:commit` |
-| Commit → push → open PR | `/agent-skills:commit-push-pr` |
-| Remove landed worktrees and merged branches, prune stale refs | `/agent-skills:git-cleanup` |
+| Stage and commit changes | `agent-skills:commit` |
+| Commit → push → open PR | `agent-skills:commit-push-pr` |
+| Remove landed worktrees and merged branches, prune stale refs | `agent-skills:git-cleanup` |
 | Branch strategy, PR creation, merge flow | `git-pr-workflows:git-workflow` |
 | Failing CI / GitHub Actions checks | `gh-fix-ci` |
 | **Driving a PR to approval + merge — review loop, required reviewers, merge gate** | `agent-skills:working-with-github` → `references/howto/driving-a-pr-to-approval.md` |
@@ -33,15 +33,15 @@ There are two kinds of targets below: **action skills** (do a specific operation
 
 ### Committing
 
-Staging files and generating a well-formed commit message from the diff. Invoke `/agent-skills:commit`.
+Staging files and generating a well-formed commit message from the diff. Invoke `agent-skills:commit`.
 
 ### Commit → Push → PR
 
-Full flow from staged changes to an open pull request. Invoke `/agent-skills:commit-push-pr`.
+Full flow from staged changes to an open pull request. Invoke `agent-skills:commit-push-pr`.
 
 ### Clean Merged Branches
 
-Remove worktrees whose PR is merged, delete their local branches, and prune stale refs. Invoke `/agent-skills:git-cleanup`.
+Remove worktrees whose PR is merged, delete their local branches, and prune stale refs. Invoke `agent-skills:git-cleanup`.
 
 ### PR Creation and Branch Strategy
 

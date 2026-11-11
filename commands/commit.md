@@ -1,4 +1,5 @@
 ---
+name: commit
 description: Stage and commit changes as Conventional Commits, splitting into atomic commits when warranted
 argument-hint: "[--no-verify] [--style=simple|full] [--type=<type>]"
 ---
