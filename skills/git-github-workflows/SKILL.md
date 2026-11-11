@@ -1,82 +1,57 @@
 ---
 name: git-github-workflows
-description: Git and GitHub workflow router. Selects the right skill for any git or GitHub operation — committing, PR creation, CI debugging, review comment handling, and more. Invoke at the start of any git/GitHub task.
+description: "Use when doing any git or GitHub task: committing, opening a PR, driving it to merge, answering reviewer and AI-bot feedback, worktrees, releases, branch cleanup. Holds the runbooks and the commit, commit-push-pr and git-cleanup commands. Not for git or gh command flags (working-with-git, working-with-github), CI workflow YAML (working-with-github-actions), or GitHub Apps (developing-for-github)."
 metadata:
   last_updated: "2026-11-10"
 ---
 
 # Git & GitHub Workflows
 
-Identify the current operation and invoke the appropriate skill. Never ask the user which skill to use — routing is automatic.
+This skill owns every process for getting work done with git and GitHub: the commands, the runbooks, and the order to do things in. Open the matching runbook and follow it. Don't ask which one to use.
 
-There are two kinds of targets below: **action skills** (do a specific operation) and **reference skills** (look up how something works). For a "do X now" task, route to an action skill; for a "what is / how does / which flag" question, route to a reference skill.
+## What this skill is not
 
-## Routing Table
+- **Not the git manual.** What a git command does, its flags, how rebase or bisect works: `agent-skills:working-with-git`.
+- **Not the GitHub manual.** What a `gh` command does, REST and GraphQL calls, rate limits, tokens, branch protection settings: `agent-skills:working-with-github`.
+- **Not CI.** Workflow YAML, Actions, OIDC deploys, fixing a red check: `agent-skills:working-with-github-actions`.
+- **Not app development.** GitHub Apps, OAuth apps, webhook consumers, Octokit bots: `agent-skills:developing-for-github`.
 
-| Operation | Skill or command |
+The two reference skills answer "how does this tool work". This one answers "what do we do, and in what order".
+
+## Commands
+
+Run these instead of improvising the sequence.
+
+| Operation | Command |
 |---|---|
 | Stage and commit changes | `agent-skills:commit` |
-| Commit → push → open PR | `agent-skills:commit-push-pr` |
+| Verify, commit, self-review, push, open the PR, start the review loop | `agent-skills:commit-push-pr` |
 | Remove landed worktrees and merged branches, prune stale refs | `agent-skills:git-cleanup` |
-| Branch strategy, PR creation, merge flow | `git-pr-workflows:git-workflow` |
-| Failing CI / GitHub Actions checks | `gh-fix-ci` |
-| **Driving a PR to approval + merge — review loop, required reviewers, merge gate** | `agent-skills:working-with-github` → `references/howto/driving-a-pr-to-approval.md` |
-| Addressing comments on an open PR — reply, react, resolve threads | `agent-skills:working-with-github` (mechanics) + `gh-address-comments` |
-| Processing and responding to received review feedback | `superpowers:receiving-code-review` (**evaluate** the claim) **and** `agent-skills:working-with-github` (**act** on it: reply, react, resolve, reviewer authority) |
-| **Any git command/flag, rewriting history, bisect, conflicts, reflog recovery, git servers** | `agent-skills:working-with-git` |
-| **Setting up worktree isolation for feature work or parallel/subagent work** | `agent-skills:working-with-git` → `references/howto/worktree-conventions.md` |
-| **gh CLI, REST/GraphQL API, rate limits, tokens, PRs, code review, issues, releases & assets, branch protection, Dependabot/CodeQL config** | `agent-skills:working-with-github` |
-| **Building a GitHub App / OAuth app / webhook consumer / Octokit bot** | `agent-skills:developing-for-github` |
-| **Writing/debugging CI workflow YAML, Actions, OIDC deploys** | `agent-skills:working-with-github-actions` |
 
-## Routing Details
+## Runbooks
 
-### Committing
+| Situation | Read |
+|---|---|
+| A PR is open and needs to reach approval and merge: review threads, required reviewers, the merge gate | [references/pull-requests/driving-a-pr-to-approval.md](references/pull-requests/driving-a-pr-to-approval.md) |
+| Reply to, react to, or resolve reviewer comments | the same runbook (steps 6 to 9), plus `superpowers:receiving-code-review` to judge whether a finding is real |
+| Rate an AI reviewer's findings (👍, 👎, 😕) | [references/pull-requests/giving-feedback-on-ai-reviews.md](references/pull-requests/giving-feedback-on-ai-reviews.md) |
+| Read that feedback and tune the reviewer | [references/pull-requests/tuning-the-ai-reviewer.md](references/pull-requests/tuning-the-ai-reviewer.md) |
+| Post reviews, inline comments, suggestions or check results through the API | [references/pull-requests/code-review-via-api.md](references/pull-requests/code-review-via-api.md) |
+| Feature work in an isolated worktree, parallel or subagent work, removing a worktree | [references/worktree-conventions.md](references/worktree-conventions.md) |
+| Which branching model to use; the branch, PR, merge loop in general | [references/github-flow.md](references/github-flow.md) |
+| Drive a PR through review, merge and release | [references/releases/pr-to-release.md](references/releases/pr-to-release.md) |
+| Cut a release, upload assets, write the changelog | [references/releases/releases-and-assets.md](references/releases/releases-and-assets.md) |
+| Release from several branches with environments | [references/releases/multi-branch-release.md](references/releases/multi-branch-release.md) |
 
-Staging files and generating a well-formed commit message from the diff. Invoke `agent-skills:commit`.
+Evaluating a review comment and acting on it are two jobs. `superpowers:receiving-code-review` covers evaluation only. It says nothing about which reviewers gate the merge, where to reply, how to resolve a thread, or how to leave the reaction an internal review bot learns from. Use it together with the pull-requests runbook, or an agent triages correctly and then merges past a required reviewer it never counted.
 
-### Commit → Push → PR
+## Reference skills
 
-Full flow from staged changes to an open pull request. Invoke `agent-skills:commit-push-pr`.
+Reach for these when you need the tool's own behavior, not a process.
 
-### Clean Merged Branches
-
-Remove worktrees whose PR is merged, delete their local branches, and prune stale refs. Invoke `agent-skills:git-cleanup`.
-
-### PR Creation and Branch Strategy
-
-Planning a pull request — base branch selection, PR description, reviewer assignment, branch naming. Invoke `git-pr-workflows:git-workflow`.
-
-### Failing CI
-
-GitHub Actions checks are failing. Fetch logs, diagnose the failure, plan and implement a fix. Invoke `gh-fix-ci`.
-
-### Addressing Review Comments
-
-A reviewer has left comments on an open PR that need to be addressed or resolved. Invoke `gh-address-comments`.
-
-### Responding to Review Feedback
-
-You have received a code review and need to process the feedback, decide what to apply, and respond thoughtfully. Invoke `superpowers:receiving-code-review`.
-
-**That skill covers evaluation, not GitHub mechanics — you need both.** `receiving-code-review` tells you how to judge whether a finding is real; it says nothing about which reviewers gate the merge, how to reply on a thread versus top-level, how to resolve a thread, or how to leave the reaction feedback an internal review bot learns from. For all of that, also invoke `agent-skills:working-with-github` and follow `references/howto/driving-a-pr-to-approval.md` (steps 6–11). Routing to evaluation alone is how an agent triages correctly and then merges past a required reviewer it never enumerated.
-
-## Reference Skills (look-ups, not actions)
-
-When the task is "how does X work" / "what's the flag for Y" rather than "do Z now", route to the matching reference skill:
-
-### Git itself
-
-Any `git` command or flag, version-control concepts, rewriting history (rebase/`filter-repo`/amend), `bisect`, recovering from mistakes (reflog, `reset` vs `revert` vs `restore`, dropped stashes/commits), merges & conflict resolution, remotes, hooks, submodules, or hosting/connecting to Git servers. Invoke `agent-skills:working-with-git` (AsciiDoc reference pinned to a known Git version + the Pro Git book + how-to playbooks).
-
-### GitHub the platform
-
-The `gh` CLI, REST API, GraphQL API (rate limits, REST-vs-GraphQL, request efficiency), tokens/auth, pull requests, code review, issues, releases (assets/binaries/changelogs), branch protection & rulesets, GitHub flow, multi-branch release with environments, and Dependabot + CodeQL **security config**. Invoke `agent-skills:working-with-github`.
-
-### Building on GitHub
-
-Creating GitHub Apps, OAuth apps, webhook consumers, or Octokit JS/TS bots/integrations — app auth (JWT → installation token), webhook signature verification, SDK usage. Invoke `agent-skills:developing-for-github`.
-
-### CI/CD
-
-Authoring or debugging GitHub Actions workflow YAML, OIDC cloud deploys, runners, the Dependabot/CodeQL **workflow** cookbooks. Invoke `agent-skills:working-with-github-actions`.
+| Question | Skill |
+|---|---|
+| A git command or flag, history rewriting, bisect, reflog recovery, merges and conflicts, git servers | `agent-skills:working-with-git` |
+| A `gh` command or flag, REST or GraphQL, rate limits, tokens, rulesets, issues, Dependabot and CodeQL config | `agent-skills:working-with-github` |
+| Workflow YAML, Actions, runners, OIDC cloud deploys, release-please wiring | `agent-skills:working-with-github-actions` |
+| A GitHub App, OAuth app, webhook consumer or Octokit bot | `agent-skills:developing-for-github` |

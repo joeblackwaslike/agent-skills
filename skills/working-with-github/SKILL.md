@@ -1,22 +1,22 @@
 ---
 name: working-with-github
-description: "Use when working with GitHub itself (not Git, not GitHub Actions) — the gh CLI, the REST API, the GraphQL API, tokens and authentication, pull requests, code review, issues, releases (including uploading assets/binaries and changelogs), branch protection and rulesets, GitHub flow, multi-branch release with environments, and Dependabot + CodeQL security configuration. Invoke for any gh command/flag lookup, REST-vs-GraphQL decision, rate-limit/efficiency question, or 'how do I do X on GitHub' that isn't a raw git operation or a CI workflow. The gh CLI reference is generated verbatim from a pinned gh binary; the guides are fetched from docs.github.com. For raw git, use working-with-git; for CI/workflow YAML (incl. the Dependabot/CodeQL Actions cookbooks), use working-with-github-actions; for building Apps/SDKs, use developing-for-github."
+description: "Use when you need to know how GitHub the platform works: gh commands and flags, REST and GraphQL, rate limits, tokens, review and checks API calls, rulesets, issues, release endpoints, Dependabot and CodeQL config. Not for how we drive PRs, reviews and releases (git-github-workflows), raw git (working-with-git), workflow YAML (working-with-github-actions), or Apps (developing-for-github)."
 metadata:
-  last_updated: "2026-08-23"
+  last_updated: "2026-11-10"
 ---
 
 # Working with GitHub
 
 Reference for using **GitHub the platform** — the `gh` CLI, the REST and GraphQL APIs, and the web/repo features (PRs, review, issues, releases, branch protection, security config). The CLI pages in [`references/cli/`](references/cli/) are generated verbatim from a **pinned `gh`** binary (see [`PINNED_VERSION`](PINNED_VERSION) and [`references/VERSIONS.md`](references/VERSIONS.md)); the topic guides in `references/` are fetched from the `github/docs` repo. Every fetched/generated file carries `source`/`fetched_at`/`sha256` frontmatter.
 
-## Scope / where to go instead
+## What this skill is not
 
-| You need… | Skill |
+| If you need… | Go to |
 |---|---|
+| How we get work done: commit, open and drive a PR, review loop, AI-reviewer feedback, worktrees, releases | `git-github-workflows` (all runbooks live there) |
 | Raw git (commits, rebase, bisect, conflicts, history) | `working-with-git` |
 | CI/CD workflow YAML, Actions, OIDC deploys, the Dependabot/CodeQL **Actions cookbooks** | `working-with-github-actions` |
 | Build a GitHub App / OAuth app / webhook consumer / Octokit bot | `developing-for-github` |
-| Pick which downstream skill/command to run for a task | `git-github-workflows` (router) |
 | **Everything else GitHub** (this skill) | continue below |
 
 ## Quick reference
@@ -29,15 +29,9 @@ Reference for using **GitHub the platform** — the `gh` CLI, the REST and Graph
 | REST basics / auth / pagination | `references/rest-getting-started.md`, `references/rest-authentication.md`, `references/rest-pagination.md` |
 | GraphQL basics / forming calls | `references/graphql-intro.md`, `references/graphql-forming-calls.md` |
 | Tokens (classic vs fine-grained PAT) | `references/tokens-personal-access.md`, `references/rest-credentials-secure.md` |
-| Open / review / merge a PR (human/UI) | `references/pr-*.md`, `references/review-*.md` |
-| **Review a PR programmatically** (post reviews, inline comments, suggestions, check annotations, statuses) | `references/howto/code-review-via-api.md`; API ref: `references/api-pr-reviews.md`, `api-pr-review-comments.md`, `api-checks-runs.md`, `api-commit-statuses.md` |
-| **Agent runbook: drive a PR branch → PR → review loop → all-approved** | `references/howto/driving-a-pr-to-approval.md` |
-| **Rate a first-party AI reviewer's findings** (👍/👎/😕, why 😕 needs a reply) | `references/howto/giving-feedback-on-ai-reviews.md` |
-| **Read that feedback and act on it** (trends, thresholds, fix surfaces) | `references/howto/tuning-the-ai-reviewer.md` |
-| Resolve review threads / read `reviewDecision` (GraphQL-only) | `references/howto/code-review-via-api.md`, `references/graphql-forming-calls.md` |
-| Cut a release + upload assets/changelog | `references/howto/releases-and-assets.md`, `references/releases-*.md` |
-| Drive a PR → review → merge → release | `references/howto/pr-to-release.md` |
-| Multi-branch release with environments | `references/howto/multi-branch-release.md` |
+| PR and review features (UI) | `references/pr-*.md`, `references/review-*.md` |
+| Review-related API calls (reviews, inline comments, check annotations, statuses) | `references/api-pr-reviews.md`, `api-pr-review-comments.md`, `api-checks-runs.md`, `api-commit-statuses.md`. The runbook that uses them is in `git-github-workflows`. |
+| Release and asset endpoints | `references/releases-*.md`. The release runbooks are in `git-github-workflows`. |
 | Branch protection / rulesets / merge methods | `references/protected-branches.md`, `references/rulesets-*.md`, `references/merge-methods.md` |
 | Issues (create, link, sub-issues, assign) | `references/issues-*.md` |
 | Dependabot config (`.github/dependabot.yml`) | `references/dependabot-*.md` |
@@ -46,7 +40,7 @@ Reference for using **GitHub the platform** — the `gh` CLI, the REST and Graph
 ## How to use this skill
 
 1. **Exact CLI usage** — read `references/cli/gh.md` for the command tree, then the specific `gh__<command>__<subcommand>.md` page. These are the literal `gh <cmd> --help` output at the pinned version; trust the live binary if it disagrees and surface the drift.
-2. **A "how do I" question** — start with the matching `references/howto/*.md` (hand-written, opinionated), then drill into the fetched `references/*.md` for the official detail.
+2. **An API-usage question** (REST vs GraphQL, request efficiency) — start with `references/howto/` (two hand-written guides). For process questions (driving a PR, review loops, releases) use `git-github-workflows` instead, then drill into the fetched `references/*.md` for the official detail.
 3. **Uncertain topic** — `grep -ri <term> references/` to locate the right page.
 
 ## Behavioral guidance
