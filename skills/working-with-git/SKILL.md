@@ -1,20 +1,21 @@
 ---
 name: working-with-git
-description: "Use when working with Git itself — any git command or flag, version control concepts, rewriting history (rebase/filter-repo/amend), bisect, recovering from mistakes (reflog, reset vs revert vs restore, dropped commits/stashes), merges and resolving conflicts, branching models, remotes, submodules, hooks, and setting up or connecting to Git servers (bare repos, SSH, git daemon, self-hosting). The command/concept reference is the AsciiDoc straight from git/git pinned to a Homebrew-resolved Git version, plus the full Pro Git book; opinionated how-to guides cover the operations people get wrong. Invoke for any 'git <command>' question or git troubleshooting. For GitHub-specific things (gh CLI, PRs, the API), use working-with-github."
+description: "Use when you need to know how Git itself works: command flags (including worktree and branch), concepts, internals, Pro Git, and guides for rewriting history, bisect, recovering lost commits, conflicts, Git servers. Not for how we use git (commits, PRs, worktrees, review loops: git-github-workflows), GitHub and gh (working-with-github), CI or Apps."
 metadata:
-  last_updated: "2026-08-23"
+  last_updated: "2026-11-10"
 ---
 
 # Working with Git
 
 Offline reference for **Git the version-control system**, pinned to a known Git release (see [`PINNED_VERSION`](PINNED_VERSION) / [`references/VERSIONS.md`](references/VERSIONS.md), resolved via Homebrew). Command and concept pages in [`references/cli/`](references/cli/) are the **AsciiDoc sources from `git/git`** at the pinned tag; the full **Pro Git** book (2nd ed.) is in [`references/book/`](references/book/); opinionated how-to guides are in [`references/howto/`](references/howto/). Fetched files carry `source`/`fetched_at`/`sha256` frontmatter; the how-to guides are hand-written.
 
-## Scope / where to go instead
+## What this skill is not
 
-- **GitHub** (gh CLI, PRs, REST/GraphQL, releases, issues) → `working-with-github`
-- **CI/CD workflows** → `working-with-github-actions`
-- **Building GitHub Apps / Octokit** → `developing-for-github`
-- **This skill** = raw git only.
+- **Not our process.** Committing, opening PRs, worktree conventions, review loops, releases: `git-github-workflows`.
+- **Not GitHub.** The gh CLI, PRs on the platform, REST/GraphQL: `working-with-github`.
+- **Not CI.** Workflow YAML and Actions: `working-with-github-actions`.
+- **Not app development.** GitHub Apps and Octokit: `developing-for-github`.
+- **This skill** = how raw git behaves.
 
 ## Quick reference
 
@@ -28,7 +29,7 @@ Offline reference for **Git the version-control system**, pinned to a known Git 
 | Undo / recover (reflog, reset/revert/restore, lost commits) | `references/howto/fixing-mistakes.md` |
 | Merge vs rebase, resolve conflicts, rerere | `references/howto/merging-and-conflicts.md` |
 | Host or connect to a Git server | `references/howto/git-servers.md` |
-| Worktree conventions for feature/parallel-agent work | `references/howto/worktree-conventions.md` |
+| Worktree conventions for feature or parallel-agent work | `git-github-workflows` → `references/worktree-conventions.md` |
 
 ## How to use this skill
 

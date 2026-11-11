@@ -1,6 +1,6 @@
 # Code Review via the GitHub API
 
-The API mechanics for doing code review programmatically — fetching diffs, posting a batched review with inline comments, replying to and resolving threads, requesting reviewers, reporting results via the Checks/Statuses APIs, and reading review state. This is the building-block reference. The *agent loop* that strings these together (triage → fix → reply → poll) lives in `howto/driving-a-pr-to-approval.md`, and a complete LLM reviewer bot lives in the `developing-for-github` skill's `references/howto/llm-pr-reviewer.md`. This guide does not duplicate either — it's the primitives both build on.
+The API mechanics for doing code review programmatically — fetching diffs, posting a batched review with inline comments, replying to and resolving threads, requesting reviewers, reporting results via the Checks/Statuses APIs, and reading review state. This is the building-block reference. The *agent loop* that strings these together (triage → fix → reply → poll) lives in `./driving-a-pr-to-approval.md`, and a complete LLM reviewer bot lives in the `developing-for-github` skill's `references/howto/llm-pr-reviewer.md`. This guide does not duplicate either — it's the primitives both build on.
 
 Examples use `gh api` (gh 2.94) and Octokit (`@octokit/rest` v5 / the `octokit` v4 umbrella). All REST calls assume the version header `X-GitHub-Api-Version: 2022-11-28` (gh sends it automatically). Writing **check runs** requires a GitHub App token — OAuth/user tokens can read check runs but not create them; for those, use commit **statuses** instead (see §5).
 
@@ -382,5 +382,5 @@ This is a state-changing, hard-to-reverse-looking action but is not actually des
 
 ## See also
 
-- `howto/driving-a-pr-to-approval.md` — the agent workflow loop that orchestrates these primitives: triage incoming review comments, implement fixes, reply, re-request review, and poll review/CI state to approval.
+- `./driving-a-pr-to-approval.md` — the agent workflow loop that orchestrates these primitives: triage incoming review comments, implement fixes, reply, re-request review, and poll review/CI state to approval.
 - `developing-for-github` skill → `references/howto/llm-pr-reviewer.md` — a complete LLM-backed reviewer bot wiring these calls together (model-generated findings → batched review + suggestions + check-run annotations + thread resolution).

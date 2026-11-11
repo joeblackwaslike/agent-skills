@@ -108,6 +108,6 @@ Set the assignee. A PR with no assignee is in nobody's queue. Don't add the inte
 
 ## 8. Hand off
 
-1. If `--no-loop` wasn't passed, run `/pr-loop <number>` now. Load `agent-skills:working-with-github`, `references/howto/driving-a-pr-to-approval.md`, first. It owns thread triage, replies, reactions, resolution, the merge gate, and merge. This command doesn't restate it.
+1. If `--no-loop` wasn't passed, run `/pr-loop <number>` now. Load `agent-skills:git-github-workflows`, `references/pull-requests/driving-a-pr-to-approval.md`, first. It owns thread triage, replies, reactions, resolution, the merge gate, and merge. This command doesn't restate it.
 2. After the PR merges, remove the worktree in the same turn with `wt-reap <name>` from the main checkout, and refresh the plugin cache if the repo ships as a plugin. If `wt-reap` fails, report the error and the worktree path. Don't force-remove. If `wt-reap` isn't on the path, report that and the worktree path, and stop there.
 3. Report: PR URL and number, what's included, what the step 2 checks and the self-review found, what wasn't run, and any cleanup error.
