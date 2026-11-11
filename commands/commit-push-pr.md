@@ -1,7 +1,7 @@
 ---
 description: Verify, commit, review locally, push, and open a PR from the repo's template, then hand it to /pr-loop
 argument-hint: "[--draft] [--base <branch>] [--bd <id>] [--no-verify] [--no-review] [--no-loop] [--direct]"
-allowed-tools: Bash(git:*), Bash(gh:*), Bash(bd:*), Bash(ai-review:*), Bash(bash gates/verify.sh:*), Bash(jq:*), Bash(wc:*)
+allowed-tools: Bash(git:*), Bash(gh:*), Bash(bd:*), Bash(ai-review:*), Bash(jq:*), Bash(wc:*)
 ---
 
 Take the current changes from working tree to an open PR, then start the review loop. Run it
@@ -13,14 +13,13 @@ start to finish without check-ins. Stop only where a step below says to.
 - Branch: !`git branch --show-current`
 - Default branch: !`gh repo view --json defaultBranchRef -q .defaultBranchRef.name`
 - Template: !`ls .github/pull_request_template.md 2>&1`
-- Gate script: !`ls gates/verify.sh 2>&1`
 
 ## Flags
 
 - `--draft` opens the PR as a draft.
 - `--base <branch>` targets that branch instead of the default (release branches, stacked PRs).
 - `--bd <id>` is the beads issue this PR closes. Without it, use the id in the branch name or commit messages if there is one.
-- `--no-verify` skips the gate in step 2. Say so in the Test plan.
+- `--no-verify` skips the step 2 checks. Say so in the Test plan.
 - `--no-review` skips the local AI review in step 5. Say so in the Test plan.
 - `--no-loop` stops after the PR is open instead of starting `/pr-loop`.
 - `--direct` is for a repo whose convention is committing straight to its default branch, with no PRs: run steps 1 to 4, push to the default branch, and stop.
@@ -34,11 +33,11 @@ start to finish without check-ins. Stop only where a step below says to.
 
 ## 2. Verify
 
-Run `bash gates/verify.sh`, or the project's lint and test commands if it has no gate. Judge by exit code, never by grepping output for "error". A change that only passes static checks isn't done.
+Run the project's lint, type-check, and test commands (its justfile, `package.json` scripts, or pre-commit config). Judge by exit code, never by grepping output for "error". A change that only passes static checks isn't done.
 
 For a bug fix or a new behavior, the test must have failed before the fix. If the fix already exists, revert it, confirm the test goes red, restore it, and keep the red output for the Test plan. Green alone proves nothing.
 
-Don't commit code that fails the gate. Three failed fixes in a row: stop and name the assumption that looks wrong.
+Don't commit code that fails these checks. Three failed fixes in a row: stop and name the assumption that looks wrong.
 
 ## 3. Commit
 
@@ -71,7 +70,7 @@ Skip with `--no-review`.
 1. Run `ai-review review --full` once before the first push. Check each finding against the code before acting: the bot re-raises declined findings and is often wrong (Anthropic-side findings were right 9 of 42 times, OpenAI-side 39 of 47). Fix the real ones.
 2. If the branch fetches URLs or handles secrets, also run the `typescript-reviewer` and `security-reviewer` agents in parallel, each with an explicit `model: sonnet`.
 3. Run `ai-review review --full` once more on the fix batch, passing what you decided via `--extra`. Then stop. It never goes quiet, so don't loop until it does.
-4. Re-run step 3's `git show --stat HEAD` check and the step 2 gate after the fixes.
+4. Re-run step 3's `git show --stat HEAD` check and the step 2 checks after the fixes.
 
 ## 6. Push
 
@@ -106,4 +105,4 @@ Set the assignee. A PR with no assignee is in nobody's queue. Don't add the inte
 
 1. If `--no-loop` wasn't passed, run `/pr-loop <number>` now. Load `agent-skills:working-with-github`, `references/howto/driving-a-pr-to-approval.md`, first. It owns thread triage, replies, reactions, resolution, the merge gate, and merge. This command doesn't restate it.
 2. After the PR merges, remove the worktree in the same turn with `wt-reap <name>` from the main checkout, and refresh the plugin cache if the repo ships as a plugin.
-3. Report: PR URL and number, what's included, what the gate and the local review found, and what wasn't run.
+3. Report: PR URL and number, what's included, what the step 2 checks and the local review found, and what wasn't run.
