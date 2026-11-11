@@ -85,7 +85,7 @@ Target 80 to 150 lines per file. Examples are complete enough to run, small enou
 - `solid-principles` SKILL.md: add `design-patterns` to Related skills.
 - `engineering-principles` SKILL.md: add `design-patterns` to Related skills.
 - `SKILLS.md` and `README.md`: add a row to each (trigger text, with "Not for" in both directions).
-- Descriptions of `engineering-principles`, `solid-principles` and `domain-driven-design`: append one "Not for ... (use design-patterns)" clause so the exclusion runs both ways. `solid-principles`: "a specific pattern like Strategy or Observer". `domain-driven-design`: "standalone Repository, Unit of Work or Outbox mechanics outside an aggregate". `engineering-principles`: "choosing or implementing a named pattern".
+- Descriptions of `engineering-principles`, `solid-principles` and `domain-driven-design`: append one "Not for ... (use design-patterns)" clause so the exclusion runs both ways. `solid-principles`: "specific patterns". `domain-driven-design`: "standalone Repository, Unit of Work or Outbox mechanics outside an aggregate". `engineering-principles`: "choosing or implementing a named pattern".
 - No edits to `principles.md` or other references.
 
 ## Sourcing and verification
