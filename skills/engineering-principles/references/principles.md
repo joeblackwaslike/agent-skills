@@ -2,7 +2,7 @@
 
 > This repo is the source for this file. To check a finished diff against these principles, use the `reviewing-code` skill.
 
-A small set of principles covers most of what makes code good. Apply them while you write and design, then again when you read your own diff. Sections 1 to 4 each take one group and turn it into what to aim for, what a violation looks like, and what to do instead. The principles are language-neutral; the examples are mostly Python, with TypeScript alongside where the two differ. Language-specific toolchains, idioms and smells are in [language-notes.md](language-notes.md). Per-kind-of-change checks (an endpoint, a migration, a Dockerfile) live in the `reviewing-code` skill's playbooks.
+A small set of principles covers most of what makes code good. Apply them while you write and design, then again when you read your own diff. Sections 1 to 4 each take one group and turn it into what to aim for, what a violation looks like, and what to do instead. The principles are language-neutral; the examples are mostly Python, with TypeScript alongside where the two differ. Language-specific toolchains, idioms and smells are in [language-notes/index.md](language-notes/index.md). Per-kind-of-change checks (an endpoint, a migration, a Dockerfile) live in the `reviewing-code` skill's playbooks.
 
 The same rules apply to the process around the code: confirm the change is what was asked for and as small as it can be, get the design right before the details, and hand anything a rule can state to a tool.
 
@@ -579,7 +579,7 @@ When several idioms are acceptable, the one chosen should reflect how the behavi
 
 Idioms can also be overdone. A comprehension or a chain of array methods stops being idiomatic once it needs re-reading, and a plain loop is clearer.
 
-The idiom tables for each language, including which construct fits which intent, are in [language-notes.md](language-notes.md).
+The idiom tables for each language, including which construct fits which intent, are in [language-notes/index.md](language-notes/index.md).
 
 ### Tests: make it work, provably
 

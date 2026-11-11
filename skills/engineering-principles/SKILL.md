@@ -33,7 +33,7 @@ Open only what the task needs.
 | Structuring modules, classes, interfaces, dependencies | [principles.md](references/principles.md), "2. Design and structure" |
 | Handling input, errors, concurrency, data models, permissions, performance | [principles.md](references/principles.md), "3. Correctness and safety" |
 | Naming, clarity, idioms, writing tests | [principles.md](references/principles.md), "4. Readability and tests" |
-| Writing Python, TypeScript or JavaScript, shell or SQL | [language-notes.md](references/language-notes.md), the section for that language |
+| Writing Python, TypeScript or JavaScript, shell or SQL | [language-notes/index.md](references/language-notes/index.md), then the one file for that language |
 
 The one-paragraph summaries at the top of `principles.md` ("Principles") are enough for a quick decision. Read the detailed section when the summary doesn't settle it.
 

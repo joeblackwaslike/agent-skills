@@ -9,7 +9,7 @@ Load the `reviewing-code` skill and the `engineering-principles` skill, then fol
 The review standard is the principles plus the playbooks. Reviewers read them directly:
 
 - [principles.md](../skills/engineering-principles/references/principles.md)
-- [language-notes.md](../skills/engineering-principles/references/language-notes.md)
+- [language-notes/index.md](../skills/engineering-principles/references/language-notes/index.md)
 - [playbooks/index.md](../skills/reviewing-code/references/playbooks/index.md)
 
 Base branch: `$ARGUMENTS` if given, otherwise `main`.

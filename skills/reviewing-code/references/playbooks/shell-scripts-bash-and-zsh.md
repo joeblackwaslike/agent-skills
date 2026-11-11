@@ -2,7 +2,7 @@
 
 *Leans on: Fail Fast, KISS, least privilege, explicit over implicit.*
 
-Shell scripts run with full user privileges, often unattended, and fail in quiet ways. The `engineering-principles` skill's `language-notes.md` covers shell idioms and the differences between Bash and zsh; this is the review pass.
+Shell scripts run with full user privileges, often unattended, and fail in quiet ways. The `engineering-principles` skill's `language-notes/shell.md` covers shell idioms and the differences between Bash and zsh; this is the review pass.
 
 - **Should it be shell?** Glue around commands is fine. Past roughly a hundred lines, or once it needs data structures, JSON handling beyond `jq` one-liners, or careful error recovery, ask for Python or TypeScript.
 - **Interpreter and strict mode.** A shebang for the shell the script is written for (`#!/usr/bin/env bash`, `#!/bin/zsh`), and strict mode at the top (`set -euo pipefail`). Know its gaps: `set -e` is ignored inside a function called from `if`, `&&` or `||`, and `local x=$(cmd)` hides a failed command.
