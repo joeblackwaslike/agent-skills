@@ -6,7 +6,7 @@ This guide focuses on the *review-bot-specific* layers: the LLM review pipeline,
 
 - **App auth + installation clients:** [`building-a-github-app.md`](./building-a-github-app.md)
 - **Webhook delivery + signature verification:** [`webhooks.md`](./webhooks.md)
-- **The exact GitHub review/comment API call mechanics:** the sibling **`working-with-github`** skill's `references/howto/code-review-via-api.md` (Reviews API, inline comment anchoring, GraphQL review threads)
+- **The exact GitHub review/comment API call mechanics:** the sibling **`git-github-workflows`** skill's `references/pull-requests/code-review-via-api.md` (Reviews API, inline comment anchoring, GraphQL review threads)
 - **AI SDK specifics** (`generateObject`, providers, prompt caching, reasoning options): the **`working-with-vercel-ai-sdk`** skill — grep its `references/` for `generateObject`, `@ai-sdk/anthropic`, `@ai-sdk/openai`
 
 The patterns below are distilled from a real two-provider review bot running on Vercel. Versions are current as of 2026: `ai@^6`, `@ai-sdk/anthropic@^3`, `@ai-sdk/openai@^3`, `octokit@^4`, `zod@^4`.
@@ -520,5 +520,5 @@ const ReviewerOctokit = Octokit.plugin(throttling, retry);
 - [`building-a-github-app.md`](./building-a-github-app.md) — App registration, JWT/installation auth, `App` client
 - [`webhooks.md`](./webhooks.md) — HMAC verification, raw-body handling, serverless delivery
 - [`octokit-bot-example.md`](./octokit-bot-example.md) — minimal end-to-end bot scaffold
-- **`working-with-github`** → `references/howto/code-review-via-api.md` — Reviews API, inline anchoring, GraphQL review threads (the API call mechanics this guide references)
+- **`git-github-workflows`** → `references/pull-requests/code-review-via-api.md` — Reviews API, inline anchoring, GraphQL review threads (the API call mechanics this guide references)
 - **`working-with-vercel-ai-sdk`** → `references/` — `generateObject`, provider options, prompt caching, reasoning (`grep` for `generateObject`, `@ai-sdk/anthropic`, `@ai-sdk/openai`)

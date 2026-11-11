@@ -6,7 +6,7 @@ argument-hint: "[--dry-run]"
 
 Routine git housekeeping. Run it from the **main checkout**, never from inside a worktree.
 
-**Follow the `working-with-git` skill's `references/howto/worktree-conventions.md`.** It defines
+**Follow the `git-github-workflows` skill's `references/worktree-conventions.md`.** It defines
 what "landed" means (the PR is `MERGED`, not "ancestor of main", because squash merges never
 make the branch an ancestor), and the `wt-reap` classes. This file only sequences those rules.
 Never use `--force` on a worktree and never delete anything the steps below classify as

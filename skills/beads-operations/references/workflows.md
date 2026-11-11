@@ -32,8 +32,8 @@ A bead with good notes survives a context reset. A bead with just a title does n
 Beads is local/Dolt-backed — invisible to outside OSS contributors reading a merged
 PR, and to any review bot that only sees the PR itself. When a branch closes a bead,
 pull the bead's context into the PR body instead of leaving a bare `bd-<id>`
-reference; the fallback-to-`notes` mechanics live in `working-with-github`'s
-[`driving-a-pr-to-approval.md`](../../working-with-github/references/howto/driving-a-pr-to-approval.md#pr-bodies-must-be-self-contained-for-bd-tracked-work)
+reference; the fallback-to-`notes` mechanics live in `git-github-workflows`'s
+[`driving-a-pr-to-approval.md`](../../git-github-workflows/references/pull-requests/driving-a-pr-to-approval.md#pr-bodies-must-be-self-contained-for-bd-tracked-work)
 — this is the other end of the same loop, not a separate rule.
 
 This works better the more a bead has beyond its title. It's not a requirement, but

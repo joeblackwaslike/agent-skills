@@ -86,7 +86,7 @@ gh pr merge 42 --disable-auto              # cancel it
 
 ## Merge queue (brief)
 
-For busy `main` branches where PRs that pass CI individually can still break when combined, enable a **merge queue** (repo setting / ruleset). The queue serially re-tests each PR against the latest target before merging, so you get "always-green main" without serializing developers. With a queue enabled, `--auto` adds the PR to the queue rather than merging directly. See `pr-merge-queue.md` in this skill's references.
+For busy `main` branches where PRs that pass CI individually can still break when combined, enable a **merge queue** (repo setting / ruleset). The queue serially re-tests each PR against the latest target before merging, so you get "always-green main" without serializing developers. With a queue enabled, `--auto` adds the PR to the queue rather than merging directly. See `working-with-github`'s `references/pr-merge-queue.md` in this skill's references.
 
 ## Scaling up: Conventional Commits → automated versioning
 
