@@ -9,14 +9,14 @@ Discover once per worktree, then reuse it for as long as the hash below still ma
 The cache lives in the branch's own git directory, so it is per worktree (each branch gets its own worktree), never committed, and removed with the worktree:
 
 ```sh
-cd "$(git rev-parse --show-toplevel)" || exit 1
+cd "$(git rev-parse --show-toplevel)" || return 1
 GATE_DIR="$(git rev-parse --git-dir)/self-review"
-HASH=$(git ls-files -co --exclude-standard -- CLAUDE.md AGENTS.md justfile Makefile pyproject.toml Cargo.toml go.mod tox.ini noxfile.py .pre-commit-config.yaml lefthook.yml .github .gitlab-ci.yml '*package.json' '*CLAUDE.md' '*AGENTS.md' '*tsconfig*.json' '*ruff.toml' '*eslint.config.*' '*biome.json*' '*vitest.config.*' '*jest.config.*' | while read -r f; do [ -f "$f" ] && git hash-object "$f"; done | shasum | cut -d' ' -f1)
+HASH=$(git ls-files -co --exclude-standard -- CLAUDE.md AGENTS.md .pre-commit-config.yaml lefthook.yml .gitlab-ci.yml .github/workflows .github/actions '*justfile' '*Makefile' '*pyproject.toml' '*Cargo.toml' '*go.mod' '*tox.ini' '*noxfile.py' '*package.json' '*CLAUDE.md' '*AGENTS.md' '*tsconfig*.json' '*ruff.toml' '*eslint.config.*' '*biome.json*' '*vitest.config.*' '*jest.config.*' | while read -r f; do [ -f "$f" ] && git hash-object "$f"; done | shasum | cut -d' ' -f1)
 STORED=$(jq -r '.inputs_hash // empty' "$GATE_DIR/gate.json" 2>/dev/null)
 [ "$HASH" = "$STORED" ] && echo "cache valid" || echo "discover"
 ```
 
-`git ls-files` lists only the files that exist, so a project without a `justfile` is fine, and the pathspecs cover nested manifests and common tool configs, new untracked files included. If it prints `cache valid`, load `checks` and `gaps` from `gate.json` and go to step 3. If it prints `discover`, the file is missing or stale: do step 2 and rewrite the file. A branch that adds a linter through one of these files changes the hash, so it is picked up. If your project keeps its check configuration somewhere else, add that path to the list.
+`git ls-files` lists only the files that exist, so a project without a `justfile` is fine, and the pathspecs cover manifests and common tool configs at any depth (a monorepo's `services/api/pyproject.toml` counts), new untracked files included. The snippet starts by changing to the repo root, so the hash is the same from any subdirectory, and it leaves your shell there. If it prints `cache valid`, load `checks` and `gaps` from `gate.json` and go to step 3. If it prints `discover`, the file is missing or stale: do step 2 and rewrite the file. A branch that adds a linter through one of these files changes the hash, so it is picked up. If your project keeps its check configuration somewhere else, add that path to the list.
 
 ## 2. Discover
 
