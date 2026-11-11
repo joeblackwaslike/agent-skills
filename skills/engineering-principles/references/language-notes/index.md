@@ -1,5 +1,7 @@
 # Language Notes
 
+> This repo is the source for these files.
+
 The principles apply to any language. These files hold what differs between Python, TypeScript, Rust, shell (Bash and zsh) and SQL: the toolchain that enforces the mechanical rules, how packages are managed, how the principles show up in each language, and the idioms and smells specific to it. Write to the principles first, then check the file for your language.
 
 Open the file for the language you are writing:
