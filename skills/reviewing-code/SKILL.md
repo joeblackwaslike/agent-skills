@@ -20,7 +20,7 @@ The principles the review applies live in the `engineering-principles` skill, wh
 Do the steps in order. Fix problems as you find them, then re-run step 2 when you finish.
 
 1. **Size and intent.** State the change's intent in one sentence, taken from the spec, plan or bead. If you can't, stop and find out. Check the diff size. Past about 400 hand-written lines (or 200,000 diff characters), split along a seam into stacked PRs. Put mechanical edits (renames, moves, formatting) in their own commits.
-2. **Mechanical gate.** Run `just check`, then `just test`, and run the changed behavior once on a real input (skip for docs-only changes). If the repo has no justfile or lacks a recipe, run its own equivalents and say what is missing under "Gate gaps". It costs no LLM tokens. Fix every red result before reading further. Detail: [references/self-review.md](references/self-review.md).
+2. **Mechanical gate.** Find what the project enforces (formatters, every linter, type checking, each kind of test) from its `CLAUDE.md`/`AGENTS.md`, manifests and CI, run the checks cheapest first, and run the changed behavior once on a real input (skip for docs-only changes). Discovery runs once per worktree and is cached. Say what the project lacks under "Gate gaps". It costs no LLM tokens. Fix every red result before reading further. Detail: [references/mechanical-gate.md](references/mechanical-gate.md).
 3. **Read the diff in the principles' order.** Load the `engineering-principles` skill and read its `references/principles.md`. Scope first (KISS, YAGNI, DRY, Rule of Three), then design (SOLID, separation of concerns, coupling, Law of Demeter, Tell Don't Ask, composition, command-query separation), then correctness (fail fast, parse don't validate, least privilege, Hyrum's Law), then readability (least astonishment, Chesterton's Fence, Boy Scout Rule). Accept a speed change only with a measurement. If scope or design is wrong, fix that before any line-level cleanup. How to run and write up a review: [references/review-guide.md](references/review-guide.md).
 4. **Check what the diff can't show.**
    - For every removed or changed symbol, find its callers and sibling code paths (`find_referencing_symbols` or Go to References).
@@ -67,6 +67,7 @@ To run the whole pass with fresh-eyes reviewers, use `/self-review`, or follow [
 Load only what the step needs.
 
 - [references/self-review.md](references/self-review.md): the `/self-review` runbook, including the reviewer prompt. Run it before opening a PR.
+- [references/mechanical-gate.md](references/mechanical-gate.md): how to discover the project's checks, order them, scope them to the changes, and cache the result. Step 2.
 - [references/review-guide.md](references/review-guide.md): how to run a review of your own diff and how to write up the findings. Steps 1 and 3.
 - [references/playbooks/index.md](references/playbooks/index.md): the table of playbooks, one file per kind of change. Step 7.
 - [references/checklist.md](references/checklist.md): the condensed checklist. Use it for the final pass.
