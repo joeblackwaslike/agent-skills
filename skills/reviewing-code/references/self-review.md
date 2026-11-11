@@ -20,9 +20,13 @@ You own the whole procedure: dispatch, triage, fix, re-review, report. Do not st
 
 ## 1. Mechanical gate
 
-Each repo should have a `justfile` with two recipes. `check` runs the type checker and every linter. `test` runs each test suite the repo has (unit, functional, e2e, smoke, browser). Run `just check`, then `just test`, and fix every red result before dispatching a reviewer. If the repo has no justfile or lacks a recipe, run the repo's own lint, type-check and test commands instead, and list what is missing under "Gate gaps" in the report.
+Work out what this project enforces, then run it. Follow [mechanical-gate.md](mechanical-gate.md), which covers:
 
-While iterating, use `just check-changed` and `just test-changed` if the repo defines them. Before reporting READY, run the full checks once: `just check` and `just test`, or the fallback commands in a repo without them.
+- **Discovery.** Read the repo's `CLAUDE.md` and `AGENTS.md`, its task runners and manifests, its hook config, and its CI workflows, to find every formatter, linter, type checker and kind of test. A `justfile` is one source among several, not an assumption. When the docs and CI disagree, CI wins.
+- **Cache.** Discovery runs once per branch. The result is stored in the worktree's git directory and rebuilt when the files it was derived from change.
+- **Order and scope.** Cheap checks first (format, lint, typecheck, then tests from fastest to slowest). While iterating, run checks on the changed files where the tool allows it.
+
+Fix every red result before dispatching a reviewer. Before reporting READY, run every discovered check once on the whole project. Anything the project lacks, or that cannot run here, goes under "Gate gaps" in the report with the reason.
 
 Then run the changed behavior once for real, on a real input, and put the command and its output in the report and the PR's Test plan (`--behavior-cmd` and `--behavior-out`). Skip this for docs-only changes (`--behavior-skipped "docs only"`).
 
