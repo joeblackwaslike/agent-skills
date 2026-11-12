@@ -4,9 +4,10 @@ description: >-
   Use when designing or refactoring classes, modules, or interfaces and the user mentions SOLID,
   SRP, OCP, LSP, ISP, DIP or dependency injection, or code shows a god class, a growing type-tag
   switch, a subclass that throws "not supported", or a fat interface. TypeScript and Python
-  examples. Skip throwaway scripts and simple CRUD glue.
+  examples. Skip throwaway scripts and simple CRUD glue. Not for specific
+  patterns (use design-patterns).
 metadata:
-  last_updated: "2026-06-25"
+  last_updated: "2026-11-11"
 ---
 
 # SOLID Principles
@@ -129,3 +130,7 @@ Before considering a class/module design done:
   `new`-ed inside.
 - Every abstraction you introduced is **justified by real, expected change** — not a
   speculative interface around a thing with one forever-implementation.
+
+## Related skills
+
+- `design-patterns`: the named patterns (Strategy, Adapter, Repository, Circuit Breaker and others) with Python and TypeScript references, each starting from the plain alternative.
