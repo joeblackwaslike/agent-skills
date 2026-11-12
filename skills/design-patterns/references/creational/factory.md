@@ -8,7 +8,7 @@ A factory is a function (or a registry of functions) that turns a name or a conf
 
 Not if one place builds the object. Call the constructor there.
 
-The signal is a second call site that has to make the same choice, or a name that arrives from outside (an environment variable, a request field, a config file) and has to be mapped to an implementation. Until then a direct `CardGateway(key)` is clearer, and your IDE can follow it.
+The signal is a third provider or a third call site that makes the same choice, or a name that arrives from outside (an environment variable, a request field, a config file) and has to be mapped to an implementation. With two providers and one call site, an `if` next to the constructor is clearer, and your IDE can follow it.
 
 The plain version of a factory is a dict from name to constructor plus one lookup function. A `GatewayFactory` class, an abstract factory, or a factory of factories adds nothing at that size.
 
@@ -16,57 +16,43 @@ The plain version of a factory is a dict from name to constructor plus one looku
 
 ```python
 from collections.abc import Callable
-from dataclasses import dataclass
 from decimal import Decimal
-from typing import Protocol
+
+ChargeFn = Callable[[str, Decimal], str]
 
 
-class Gateway(Protocol):
-    def charge(self, order_id: str, amount: Decimal) -> str: ...
+def card_gateway(api_key: str) -> ChargeFn:
+    if not api_key:
+        raise ValueError("card gateway needs an api key")
 
-
-@dataclass(frozen=True)
-class CardGateway:
-    api_key: str
-
-    def charge(self, order_id: str, amount: Decimal) -> str:
+    def charge(order_id: str, amount: Decimal) -> str:
         return f"card:{order_id}:{amount}"
 
-
-@dataclass(frozen=True)
-class BankGateway:
-    account: str
-
-    def charge(self, order_id: str, amount: Decimal) -> str:
-        return f"bank:{self.account}:{order_id}:{amount}"
+    return charge
 
 
-GATEWAYS: dict[str, Callable[[str], Gateway]] = {
-    "card": CardGateway,
-    "bank": BankGateway,
+def bank_gateway(account: str) -> ChargeFn:
+    def charge(order_id: str, amount: Decimal) -> str:
+        return f"bank:{account}:{order_id}:{amount}"
+
+    return charge
+
+
+GATEWAYS: dict[str, Callable[[str], ChargeFn]] = {
+    "card": card_gateway,
+    "bank": bank_gateway,
 }
 
 
-def make_gateway(provider: str, credential: str) -> Gateway:
+def make_gateway(provider: str, credential: str) -> ChargeFn:
     build = GATEWAYS.get(provider)
     if build is None:
         raise ValueError(f"unknown provider {provider!r}, expected one of {sorted(GATEWAYS)}")
     return build(credential)
 
 
-ChargeFn = Callable[[str, Decimal], str]
-
-
-def stub_charge(prefix: str) -> ChargeFn:
-    return lambda order_id, amount: f"{prefix}:{order_id}:{amount}"
-
-
-CHARGERS: dict[str, Callable[[str], ChargeFn]] = {"card": stub_charge, "bank": lambda account: stub_charge(f"bank:{account}")}
-
-assert make_gateway("card", "sk_test").charge("o-1", Decimal("5.00")) == "card:o-1:5.00"
-assert make_gateway("bank", "acct-9").charge("o-1", Decimal("5.00")).startswith("bank:acct-9")
-assert CHARGERS["card"]("card")("o-1", Decimal("5.00")) == "card:o-1:5.00"
-assert CHARGERS["bank"]("acct-9")("o-1", Decimal("5.00")) == "bank:acct-9:o-1:5.00"
+assert make_gateway("card", "sk_test")("o-1", Decimal("5.00")) == "card:o-1:5.00"
+assert make_gateway("bank", "acct-9")("o-1", Decimal("5.00")) == "bank:acct-9:o-1:5.00"
 try:
     make_gateway("crypto", "sk_live_secret")
 except ValueError as err:
@@ -75,7 +61,7 @@ else:
     raise AssertionError("unknown provider must raise")
 ```
 
-The two dataclasses are there to show a registry of classes. When the implementations are stateless apart from a credential, the function version at the bottom (`ChargeFn` plus a closure) is what this skill recommends: no class, same registry, same lookup. The error names the provider and the allowed keys, and never echoes the credential.
+Each entry is a function that returns a function, so there is no class to write. Adding a provider is one dict entry. The lookup fails with the provider name and the allowed keys, and never echoes the credential. If the implementations carry several methods or state, return a `Protocol` object from the same registry; a dataclass holding a secret should declare it with `field(repr=False)` so it stays out of logs.
 
 ## TypeScript
 
@@ -86,7 +72,10 @@ type Gateway = { charge(orderId: string, amountCents: number): string };
 type GatewayFactory = (credential: string) => Gateway;
 
 const gateways = new Map<string, GatewayFactory>([
-  ["card", (apiKey) => ({ charge: (id, cents) => `card:${id}:${cents}:${apiKey.length}` })],
+  ["card", (apiKey) => {
+    if (apiKey === "") throw new Error("card gateway needs an api key");
+    return { charge: (id, cents) => `card:${id}:${cents}` };
+  }],
   ["bank", (account) => ({ charge: (id, cents) => `bank:${account}:${id}:${cents}` })],
 ]);
 
@@ -98,12 +87,13 @@ export function makeGateway(provider: string, credential: string): Gateway {
   return build(credential);
 }
 
+assert.equal(makeGateway("card", "sk_test").charge("o-1", 500), "card:o-1:500");
 assert.equal(makeGateway("bank", "acct-9").charge("o-1", 500), "bank:acct-9:o-1:500");
 assert.throws(() => makeGateway("constructor", "x"), /unknown provider/);
 assert.throws(() => makeGateway("crypto", "sk_live_secret"), (err: Error) => !err.message.includes("sk_live_secret"));
 ```
 
-Each entry is a function returning an object literal, so no class is involved. The registry is a `Map` because a plain object would answer `"constructor"` or `"__proto__"` with something inherited from `Object.prototype` instead of failing.
+The registry is a `Map` because a plain object would answer `"constructor"` or `"__proto__"` with something inherited from `Object.prototype` instead of failing.
 
 ## In production
 

@@ -18,7 +18,10 @@ The signal that a global instance is hurting you is a test that has to reset it,
 import os
 from collections.abc import Mapping
 from dataclasses import dataclass
-from functools import cache
+
+
+class SettingsError(ValueError):
+    pass
 
 
 @dataclass(frozen=True)
@@ -28,30 +31,56 @@ class Settings:
 
 
 def load_settings(env: Mapping[str, str]) -> Settings:
-    return Settings(
-        currency=env.get("CURRENCY", "USD"),
-        max_charge_cents=int(env.get("MAX_CHARGE_CENTS", "100000")),
-    )
+    raw = env.get("MAX_CHARGE_CENTS", "100000")
+    if not (raw.isascii() and raw.isdigit()):
+        raise SettingsError(f"MAX_CHARGE_CENTS must be a non-negative integer, got {raw!r}")
+    return Settings(currency=env.get("CURRENCY", "USD"), max_charge_cents=int(raw))
 
 
-@cache
-def get_settings() -> Settings:
-    return load_settings(os.environ)
+settings = load_settings(os.environ)
 
 
 def can_charge(amount_cents: int, settings: Settings) -> bool:
     return 0 < amount_cents <= settings.max_charge_cents
 
 
-assert get_settings() is get_settings()
-
 test_settings = load_settings({"MAX_CHARGE_CENTS": "500"})
 assert can_charge(500, test_settings)
 assert not can_charge(501, test_settings)
 assert can_charge(501, load_settings({}))
+for bad in ("", "abc", "-1", "1_000"):
+    try:
+        load_settings({"MAX_CHARGE_CENTS": bad})
+    except SettingsError as err:
+        assert "MAX_CHARGE_CENTS" in str(err)
+    else:
+        raise AssertionError(f"{bad!r} must be rejected")
 ```
 
-`get_settings` builds the object on first call, so importing the module does no work, and `functools.cache` returns the same one afterwards. `can_charge` takes the settings as a parameter and never calls `get_settings` itself. The entry point calls `get_settings()` once and passes the result down, so tests build their own `Settings` and need no reset. The cache keeps the value alive for the life of the process; if a test must rebuild it, `get_settings.cache_clear()` does that, but passing the value in avoids needing it.
+`settings` is the singleton: one object, created when the module is first imported. `can_charge` takes it as a parameter and never imports it, so the entry point passes `settings` down and tests pass their own. A missing variable gets a documented default, since the cap has a safe one. A present but malformed value raises an error that names the variable, so a typo cannot silently refuse every charge. Secrets with no safe default should fail on a missing key instead, as in [Dependency Injection](dependency-injection.md).
+
+When creation is expensive or unsafe at import time (opening a pool, reading a file), build it on first use:
+
+```python
+import os
+from dataclasses import dataclass
+from functools import cache
+
+
+@dataclass(frozen=True)
+class Pool:
+    url: str
+
+
+@cache
+def get_pool() -> Pool:
+    return Pool(os.environ.get("DATABASE_URL", "postgres://localhost/orders"))
+
+
+assert get_pool() is get_pool()
+```
+
+`functools.cache` keeps the first result for the life of the process. Tests that need a fresh one call `get_pool.cache_clear()`, or better, receive the pool as a parameter.
 
 ## TypeScript
 
@@ -61,44 +90,56 @@ import assert from "node:assert/strict";
 type Settings = { readonly currency: string; readonly maxChargeCents: number };
 
 export function loadSettings(env: Record<string, string | undefined>): Settings {
-  return {
-    currency: env["CURRENCY"] ?? "USD",
-    maxChargeCents: Number(env["MAX_CHARGE_CENTS"] ?? "100000"),
-  };
+  const raw = env["MAX_CHARGE_CENTS"] ?? "100000";
+  const cents = Number(raw);
+  if (!/^\d+$/.test(raw) || !Number.isSafeInteger(cents)) {
+    throw new Error(`MAX_CHARGE_CENTS must be a non-negative integer, got "${raw}"`);
+  }
+  return { currency: env["CURRENCY"] ?? "USD", maxChargeCents: cents };
 }
 
-let cached: Settings | undefined;
-export function getSettings(): Settings {
-  return (cached ??= loadSettings(process.env));
-}
+export const settings = loadSettings(process.env);
 
 export function canCharge(amountCents: number, settings: Settings): boolean {
   return amountCents > 0 && amountCents <= settings.maxChargeCents;
 }
 
-assert.equal(getSettings(), getSettings());
-
 const testSettings = loadSettings({ MAX_CHARGE_CENTS: "500" });
 assert.ok(canCharge(500, testSettings));
 assert.ok(!canCharge(501, testSettings));
 assert.ok(canCharge(501, loadSettings({})));
+for (const bad of ["", "abc", "-1", "1.5"]) {
+  assert.throws(() => loadSettings({ MAX_CHARGE_CENTS: bad }), /MAX_CHARGE_CENTS/);
+}
 ```
 
-A top-level `export const settings = loadSettings(process.env)` is simpler when loading is cheap and cannot fail. The lazy getter is for values that are expensive or that should not run at import time. In both cases `canCharge` receives its settings and stays testable.
+An ES module is evaluated once and its exports are shared, so `export const` is the singleton. For a value that is expensive or unsafe to build at import, use a lazy getter:
+
+```typescript
+import assert from "node:assert/strict";
+
+type Pool = { readonly url: string };
+
+let pool: Pool | undefined;
+export function getPool(): Pool {
+  return (pool ??= { url: process.env["DATABASE_URL"] ?? "postgres://localhost/orders" });
+}
+
+assert.equal(getPool(), getPool());
+```
 
 ## In production
 
 - Python's `logging.getLogger(name)` returns the same logger object for the same name each time, so modules share loggers without a singleton class.
 - Database engines and HTTP client sessions are created once per process, then shared. The shared part is the pool; each request still gets its own connection or session.
-- An ES module is evaluated once per realm and its exports are shared, which is what makes `export const` work as a singleton.
 - In `functools.cache`, a call from two threads at once can run the wrapped function more than once before the first result lands, so a lazy singleton with side effects needs its own lock or should be created at startup.
 
 ## Smells and misuse
 
 - A `Singleton` metaclass, decorator, or `__new__` trick. A module-level object does the same job with less to read.
 - Mutable global state that many modules write to. Reads of immutable settings are fine; shared mutable state is where bugs come from.
-- Business code that calls `get_settings()` or `getDb()` directly, so the function cannot be tested with other values.
-- Work at import time: opening a connection, reading env vars, calling a remote service. Import should be cheap and safe.
+- Business code that imports `settings` or calls `get_pool()` itself, so the function cannot be tested with other values.
+- Slow or failing work at import time, such as opening a connection or calling a remote service. Parsing validated env vars is fine.
 - A test suite with a "reset the singleton" fixture in every file. That is the injection point you skipped.
 
 ## Related

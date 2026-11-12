@@ -6,17 +6,16 @@ A function or class receives the things it depends on (a gateway, a clock, a dat
 
 ## Do you need this?
 
-You already do this whenever a function takes a parameter. The question is only whether a dependency should be a parameter or an import.
+You already do this whenever a function takes a parameter. Use the plain version first: add an argument. Reach for a container or framework only if you can name the wiring that hurts, such as dozens of services whose construction order you keep getting wrong. If you cannot, a hand-written `build_app()` function is the whole mechanism.
 
-Use the plain version first: add an argument. Reach for a container or framework only if you can name the wiring that hurts, such as dozens of services whose construction order you keep getting wrong. If you cannot, a hand-written `build_app()` function is the whole mechanism.
-
-The signal that you need injection at all is a test that needs `mock.patch` on a module path, a monkeypatched environment variable, or a real network call to run. That is a dependency that should have been an argument.
+The signal is a test that needs `mock.patch` on a module path, a monkeypatched environment variable, or a real network call. That dependency should have been an argument, and a clock or ID generator passed in is the usual fix for time- or randomness-dependent tests.
 
 ## Python
 
 ```python
 from collections.abc import Callable, Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from datetime import UTC, datetime
 from decimal import Decimal
 from typing import Protocol
 
@@ -27,7 +26,7 @@ class Gateway(Protocol):
 
 @dataclass(frozen=True)
 class StripeLikeGateway:
-    api_key: str
+    api_key: str = field(repr=False)
 
     def charge(self, order_id: str, amount: Decimal) -> str:
         return f"live:{order_id}:{amount}"
@@ -53,15 +52,27 @@ class CheckoutService:
         return f"{self.now()} {self.gateway.charge(order_id, amount)}"
 
 
+class MissingConfig(Exception):
+    pass
+
+
 def compose(env: Mapping[str, str]) -> CheckoutService:
+    api_key = env.get("PAYMENT_API_KEY")
+    if not api_key:
+        raise MissingConfig("PAYMENT_API_KEY is required")
     return CheckoutService(
-        gateway=StripeLikeGateway(env["PAYMENT_API_KEY"]),
-        now=lambda: "2026-11-11T00:00:00Z",
+        gateway=StripeLikeGateway(api_key),
+        now=lambda: datetime.now(UTC).isoformat(),
     )
 
 
 service = compose({"PAYMENT_API_KEY": "sk_test_1"})
 assert service.pay("o-1", Decimal("5.00")).endswith("live:o-1:5.00")
+assert "sk_test_1" not in repr(service)
+try:
+    compose({})
+except MissingConfig as err:
+    assert "PAYMENT_API_KEY" in str(err)
 
 fake = FakeGateway(charges=[])
 test_service = CheckoutService(gateway=fake, now=lambda: "T0")
@@ -69,7 +80,7 @@ assert test_service.pay("o-2", Decimal("9.00")) == "T0 fake:o-2"
 assert fake.charges == [("o-2", Decimal("9.00"))]
 ```
 
-`compose` is the composition root and the only place that reads the environment and names `StripeLikeGateway`. The test builds `CheckoutService` with a `FakeGateway` and a fixed clock directly. Nothing is patched. The `Protocol` means the fake needs no base class.
+`compose` is the composition root and the only place that reads the environment and names `StripeLikeGateway`. The test builds `CheckoutService` with a `FakeGateway` and a fixed clock directly. Nothing is patched. The `Protocol` means the fake needs no base class, and `field(repr=False)` keeps the key out of logs.
 
 ## TypeScript
 
@@ -90,9 +101,9 @@ export function makeCheckout({ gateway, now }: Deps) {
 
 function compose(env: Record<string, string | undefined>) {
   const apiKey = env["PAYMENT_API_KEY"];
-  if (apiKey === undefined) throw new Error("PAYMENT_API_KEY is required");
-  const gateway: Gateway = { charge: async (id, cents) => `live:${id}:${cents}:${apiKey.length}` };
-  return makeCheckout({ gateway, now: () => "2026-11-11T00:00:00Z" });
+  if (apiKey === undefined || apiKey === "") throw new Error("PAYMENT_API_KEY is required");
+  const gateway: Gateway = { charge: async (id, cents) => `live:${id}:${cents}` };
+  return makeCheckout({ gateway, now: () => new Date().toISOString() });
 }
 
 async function main(): Promise<void> {
@@ -125,21 +136,15 @@ main().catch((err) => {
 ## In production
 
 - FastAPI's `Depends` injects request-scoped dependencies into route functions, and `app.dependency_overrides` swaps them in tests by mapping the original callable to a replacement.
-- Wiring by hand in a `main.ts` or `server.ts`, as above, is a common way to build TypeScript services. Check that a container solves a wiring problem you have before adding one.
-- Passing a clock and an ID generator as arguments is the common fix for tests that depend on the current time or on random IDs.
-- Constructor arguments with Protocol or structural types are enough to let a test double stand in with no inheritance.
+- Hand wiring in a `main.ts`, as above, is a common way to build TypeScript services. Check that a container solves a wiring problem you have before adding one.
 
 ## Smells and misuse
 
 - Service locator: a function that calls `container.get("gateway")` from inside business code. The dependency is hidden again, and the container is now a global.
-- Injecting everything, including pure helpers and constants. Inject things with I/O, time, randomness, or several implementations.
-- Wiring spread across many modules, so nobody can say what the app consists of. Keep it in one root.
-- Constructors that do work (open connections, read env). Build objects cheaply and do the work in the root or an explicit `start()`.
-- A mock framework that patches module attributes to compensate for hard-coded imports.
+- Injecting pure helpers and constants. Inject things with I/O, time, randomness, or several implementations.
+- Wiring spread across many modules, or constructors that open connections or read env. Keep wiring in one root and do the work in an explicit `start()`.
 
 ## Related
 
 - [Singleton](singleton.md) is usually what you wanted when you reached for a global; inject one shared instance instead.
-- [Factory](factory.md) is a function the composition root calls to pick an implementation from config.
-- [Strategy](../behavioral/strategy.md) is the shape of most injected collaborators.
-- `solid-principles` covers the dependency inversion principle behind this.
+- [Factory](factory.md) is a function the composition root calls to pick an implementation from config. [Strategy](../behavioral/strategy.md) is the shape of most injected collaborators.
