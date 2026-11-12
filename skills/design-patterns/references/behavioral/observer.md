@@ -129,7 +129,7 @@ assert.deepEqual(seen, ["o-1"]);
 assert.equal(errors.length, 2);
 ```
 
-A rejected promise from an async handler is caught separately, because `try/catch` around a call does not see it. Forgetting that half is the usual way isolation is broken in TypeScript. The error callback gets its own guard too, so a failing reporter cannot stop the remaining handlers or surface as an unhandled rejection. `publish` is fire-and-forget. It returns before async handlers finish, and nothing cancels a handler that is still running. `publishAsync` returns a promise that resolves once every handler has settled. If handlers must survive a restart, move to a queue.
+A rejected promise from an async handler is caught separately, because `try/catch` around a call does not see it. Forgetting that half is the usual way isolation is broken in TypeScript. The error callback gets its own guard too, so a throwing reporter cannot stop the remaining handlers or surface as an unhandled rejection. `publish` is fire-and-forget. It returns before async handlers finish, and nothing cancels a handler that is still running. `publishAsync` returns a promise that resolves once every handler has settled. If handlers must survive a restart, move to a queue.
 
 ## In production
 
