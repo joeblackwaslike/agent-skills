@@ -34,13 +34,12 @@ def call_with_retry[T](
     rng: random.Random, budget: list[int], on_retry: Callable[[int, Exception, float], None],
     max_attempts: int = 4, base: float = 0.1, cap: float = 5.0,
 ) -> T:
-    if not idempotent:
-        return op()
-    for attempt in range(1, max_attempts + 1):
+    attempts = max_attempts if idempotent else 1
+    for attempt in range(1, attempts + 1):
         try:
             return op()
         except TransientError as err:
-            if attempt == max_attempts or budget[0] <= 0:
+            if attempt == attempts or budget[0] <= 0:
                 raise
             budget[0] -= 1
             delay = max(rng.uniform(0, min(cap, base * 2 ** (attempt - 1))), min(err.retry_after or 0.0, cap))
@@ -92,11 +91,11 @@ assert isinstance(out_of_attempts, TransientError) and isinstance(out_of_budget,
 assert (len(slept), len(short)) == (3, 1)
 ```
 
-The fake gateway records the charge before it fails, the dangerous case where the work ran and only the response was lost. Retrying with the same key charges once. With `idempotent=False` the call runs once. The shared `budget` caps retries across calls, and `on_retry` keeps each intermediate error visible.
+The fake gateway records the charge before it fails, the dangerous case where the work ran and only the response was lost. Retrying with the same key charges once. With `idempotent=False` the loop allows one attempt and skips the backoff. The shared `budget` caps retries across calls, and `on_retry` keeps each intermediate error visible.
 
 ## TypeScript
 
-`op` receives an `AbortSignal` that fires when the caller cancels or when the per-attempt timeout elapses. `sleep` takes the caller's signal too, so cancelling stops the wait. The tests use a fake sleep that records delays, apart from the cancellation checks. A timed-out attempt counts as transient and is retried. The timer comes in through `deps.timeout`; production passes `AbortSignal.timeout`.
+`op` receives an `AbortSignal` that fires when the caller cancels or when the per-attempt timeout elapses. `sleep` takes the caller's signal too, so cancelling stops the wait. The tests use a fake sleep that records delays, apart from the cancellation checks. A timed-out attempt counts as transient and is retried when the call is idempotent. A non-idempotent call gets the same per-attempt timeout but only one attempt, so a timeout fails it and nothing is retried. The timer comes in through `deps.timeout`; production passes `AbortSignal.timeout`.
 
 ```typescript
 import assert from "node:assert/strict";
@@ -126,8 +125,8 @@ type Deps = {
 type Opts = { idempotent: boolean; signal?: AbortSignal; attemptTimeoutMs?: number; maxAttempts?: number; baseMs?: number; capMs?: number };
 
 export async function callWithRetry<T>(op: (signal?: AbortSignal) => Promise<T>, opts: Opts, deps: Deps): Promise<T> {
-  if (!opts.idempotent) return op(opts.signal);
-  const { maxAttempts = 4, baseMs = 100, capMs = 5000 } = opts;
+  const { baseMs = 100, capMs = 5000 } = opts;
+  const maxAttempts = opts.idempotent ? (opts.maxAttempts ?? 4) : 1;
   for (let attempt = 1; ; attempt++) {
     opts.signal?.throwIfAborted();
     const timer = opts.attemptTimeoutMs === undefined ? undefined : deps.timeout(opts.attemptTimeoutMs);
@@ -195,6 +194,16 @@ async function main(): Promise<void> {
   await assert.rejects(stopped, /stopped/);
   assert.ok(new DependencyError("x") instanceof TransientError);
 
+  timers.length = 0;
+  let stuckCalls = 0;
+  const stuck = (signal?: AbortSignal) => new Promise<string>((_, reject) => {
+    stuckCalls++;
+    signal?.addEventListener("abort", () => reject(signal.reason));
+    queueMicrotask(() => timers[0]?.abort(new Error("timer fired")));
+  });
+  await assert.rejects(callWithRetry(stuck, { idempotent: false, attemptTimeoutMs: 1000 }, deps), /timed out/);
+  assert.deepEqual([stuckCalls, timers.length, delays.length], [1, 1, 1]);
+
   const once = gateway([new TransientError("down")]);
   await assert.rejects(callWithRetry(() => once.charge("k", 1), { idempotent: false }, deps), TransientError);
   assert.equal(delays.length, 1);
@@ -224,6 +233,7 @@ The gateway fake records the charge before it fails, as in the Python version. `
 ## Smells and misuse
 
 - Retrying non-idempotent calls without a key, which double-charges and double-sends.
+- Skipping the attempt timeout when retries are off. Turning retries off should limit a call to one attempt, and the attempt still needs its deadline, or a hung payment request waits forever.
 - Retrying errors that will never succeed (400, 401, validation). Retry only the transient class.
 - No cap on attempts or total time, so a dead dependency holds requests forever.
 - Fixed delays with no jitter, which makes clients retry in lockstep.

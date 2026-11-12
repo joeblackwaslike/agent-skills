@@ -12,12 +12,13 @@ You need the outbox when a lost event leaves the system wrong: an order saved bu
 
 ## Python
 
-`sqlite3` stands in for any database. `place_order` writes both rows and leaves the commit to the caller. The relay publishes and marks each row in one transaction on outbox rows only, so a row stays locked for exactly one publish. A failure records `attempts` and `last_error`, logs the row id, and the loop moves on, so one poison row cannot block the rest.
+`sqlite3` stands in for a database here, with a temporary file so two relays can compete. `place_order` writes both rows and leaves the commit to the caller. The relay runs on its own autocommit connection (`isolation_level=None`) and wraps each row in an explicit `BEGIN IMMEDIATE`. That statement takes SQLite's write lock before anything is read or published, so a second relay cannot start its own write transaction until the first commits. The relay rechecks the row inside the transaction, publishes, marks it and commits. SQLite has no per-row locks, so the lock is database-wide. A failure rolls back, records `attempts` and `last_error`, logs the row id, and the loop moves on, so one poison row cannot block the rest.
 
 ```python
 import json
 import logging
 import sqlite3
+import tempfile
 from collections.abc import Callable
 
 MAX_ATTEMPTS = 3
@@ -36,42 +37,59 @@ def place_order(conn: sqlite3.Connection, order_id: str, total_cents: int) -> No
     conn.execute("INSERT INTO outbox (topic, payload) VALUES (?, ?)", ("order.placed", event))
 
 
+def relay_connection(path: str) -> sqlite3.Connection:
+    return sqlite3.connect(path, isolation_level=None, timeout=0)
+
+
 def relay_once(conn: sqlite3.Connection, publish: Callable[[Message], None], batch: int = 10) -> int:
-    rows: list[Message] = conn.execute(
-        "SELECT id, topic, payload FROM outbox WHERE published = 0 AND attempts < ? ORDER BY id LIMIT ?",
-        (MAX_ATTEMPTS, batch),
+    ids: list[tuple[int]] = conn.execute(
+        "SELECT id FROM outbox WHERE published = 0 AND attempts < ? ORDER BY id LIMIT ?", (MAX_ATTEMPTS, batch)
     ).fetchall()
     sent = 0
-    for row in rows:
+    for (row_id,) in ids:
         try:
-            with conn:
+            conn.execute("BEGIN IMMEDIATE")
+        except sqlite3.OperationalError:
+            continue
+        try:
+            row: Message | None = conn.execute(
+                "SELECT id, topic, payload FROM outbox WHERE id = ? AND published = 0 AND attempts < ?",
+                (row_id, MAX_ATTEMPTS),
+            ).fetchone()
+            if row is not None:
                 publish(row)
-                conn.execute("UPDATE outbox SET published = 1 WHERE id = ?", (row[0],))
-            sent += 1
+                conn.execute("UPDATE outbox SET published = 1 WHERE id = ?", (row_id,))
+                sent += 1
+            conn.execute("COMMIT")
         except Exception as err:
-            log.warning("outbox row %s failed: %s", row[0], err)
-            with conn:
-                conn.execute("UPDATE outbox SET attempts = attempts + 1, last_error = ? WHERE id = ?", (str(err), row[0]))
+            if conn.in_transaction:
+                conn.execute("ROLLBACK")
+            log.warning("outbox row %s failed: %s", row_id, err)
+            conn.execute("UPDATE outbox SET attempts = attempts + 1, last_error = ? WHERE id = ?", (str(err), row_id))
     return sent
 
 
 COUNTS = "SELECT (SELECT COUNT(*) FROM orders), (SELECT COUNT(*) FROM outbox)"
-conn = sqlite3.connect(":memory:")
-conn.executescript(SCHEMA)
+tmp = tempfile.TemporaryDirectory()
+db = f"{tmp.name}/shop.db"
+shop = sqlite3.connect(db)
+shop.executescript(SCHEMA)
 try:
-    with conn:
-        place_order(conn, "o-1", 1999)
+    with shop:
+        place_order(shop, "o-1", 1999)
         raise RuntimeError("crash before commit")
 except RuntimeError:
     pass
-assert conn.execute(COUNTS).fetchone() == (0, 0)
+assert shop.execute(COUNTS).fetchone() == (0, 0)
 
-with conn:
+with shop:
     for order_id in ("o-1", "o-2", "o-3"):
-        place_order(conn, order_id, 100)
-assert conn.execute(COUNTS).fetchone() == (3, 3)
+        place_order(shop, order_id, 100)
+assert shop.execute(COUNTS).fetchone() == (3, 3)
 
+relay, rival = relay_connection(db), relay_connection(db)
 delivered: list[int] = []
+rival_sent: list[int] = []
 seen: set[int] = set()
 handled: list[str] = []
 crashes = [True]
@@ -84,6 +102,8 @@ def consume(message: Message) -> None:
 
 
 def publish(message: Message) -> None:
+    assert relay.in_transaction
+    rival_sent.append(relay_once(rival, lambda _: None))
     if message[0] == 2:
         raise ConnectionError("broker rejects this payload")
     delivered.append(message[0])
@@ -93,16 +113,20 @@ def publish(message: Message) -> None:
         raise ConnectionError("relay died after the broker accepted the message")
 
 
-assert [relay_once(conn, publish) for _ in range(4)] == [1, 1, 0, 0]
+assert [relay_once(relay, publish) for _ in range(4)] == [1, 1, 0, 0]
+assert rival_sent and set(rival_sent) == {0}
 assert delivered == [1, 3, 1] and len(handled) == 2
-assert conn.execute("SELECT id, attempts FROM outbox WHERE published = 0").fetchall() == [(2, 3)]
+assert shop.execute("SELECT id, attempts FROM outbox WHERE published = 0").fetchall() == [(2, 3)]
+for connection in (shop, relay, rival):
+    connection.close()
+tmp.cleanup()
 ```
 
-The rollback test shows both rows disappear together. Row 1 reaches the broker, the relay "crashes" before marking it, and the next pass sends it again. That is at-least-once delivery, visible as `delivered == [1, 3, 1]`. Row 2 fails three times and then stays unpublished for an operator, while row 3 goes out on the first pass. The `seen` set stands in for consumer dedupe. A real consumer records the event id in its own database, in the same transaction as its side effect.
+The rollback test shows both rows disappear together. Inside `publish` the relay's transaction is open (`relay.in_transaction`), and a rival relay trying to claim a row at that moment gets nothing (`rival_sent` is all zeros) because its `BEGIN IMMEDIATE` fails. Row 1 reaches the broker, the relay "crashes" before marking it, and the next pass sends it again. That is at-least-once delivery, visible as `delivered == [1, 3, 1]`. Row 2 fails three times and then stays unpublished for an operator, while row 3 goes out on the first pass. The `seen` set stands in for consumer dedupe. A real consumer records the event id in its own database, in the same transaction as its side effect.
 
 ## TypeScript
 
-`transaction` is a toy for synchronous work. It swaps a copy in only if `work` returns, and it would not roll back work that awaits.
+`transaction` is a toy for synchronous work. It swaps a copy in only if `work` returns, and it would not roll back work that awaits. It covers the write side only. The TypeScript relay takes no lock, so it is safe for a single relay and shows the publish-then-mark order; several relays need the claim step from the Python sample or the Postgres notes below.
 
 ```typescript
 import assert from "node:assert/strict";
@@ -168,7 +192,7 @@ main().catch((err: unknown) => {
 
 ## In production
 
-- With several relays on Postgres there are two ways to claim rows. The first is `SELECT ... FOR UPDATE SKIP LOCKED` in a transaction that touches only outbox rows. That transaction holds the lock across exactly one publish (the sample above does the same per row), so cap the batch and set a publish timeout. The trade-off is a pinned connection and row lock for as long as the broker is slow, and a crashed relay releases the lock at once. The second is to claim by setting `locked_until` in a quick transaction, publish with no transaction open, then mark the row in a second quick one. The transactions stay short, but a relay that dies mid-publish leaves the row hidden until the lease expires, and the retry may duplicate the message. Either way, keep the relay's transaction apart from any business transaction.
+- Postgres locks per row, unlike the SQLite sample, which takes a database-wide write lock. With several relays, claim rows with `SELECT ... FOR UPDATE SKIP LOCKED` in a transaction that touches only outbox rows. That transaction holds the row lock across exactly one publish, as the Python sample does for the whole database, so cap the batch and set a publish timeout. The trade-off is a pinned connection and row lock for as long as the broker is slow, and a crashed relay releases the lock at once. The alternative is to claim by setting `locked_until` in a quick transaction, publish with no transaction open, then mark the row in a second quick one. The transactions stay short, but a relay that dies mid-publish leaves the row hidden until the lease expires, and the retry may duplicate the message. Either way, keep the relay's transaction apart from any business transaction.
 - Delivery is at-least-once and ordering can break across retries. Consumers dedupe by event id or are idempotent by nature (see [Idempotency key](idempotency-key.md)).
 - Delete or archive published rows on a schedule. Alert on the age of the oldest unpublished row and on rows past `MAX_ATTEMPTS`, since a stuck relay looks healthy everywhere else.
 - Publish with [retry](retry-backoff.md) and [circuit breaker](circuit-breaker.md) policies, because the relay is where broker outages land.
