@@ -59,8 +59,12 @@ class IdempotentConsumer:
     async def handle(self, message_id: str, payload: dict) -> bool:
         if message_id in self._seen:
             return False
-        await self._handler(payload)
-        self._seen.add(message_id)
+        self._seen.add(message_id)  # claim the id before any await, so a concurrent duplicate is skipped
+        try:
+            await self._handler(payload)
+        except Exception:
+            self._seen.discard(message_id)  # let the broker redeliver a message that failed
+            raise
         return True
 
 
@@ -87,8 +91,13 @@ class IdempotentConsumer<T> {
 
   async handle(messageId: string, payload: T): Promise<boolean> {
     if (this.seen.has(messageId)) return false;
-    await this.handler(payload);
-    this.seen.add(messageId);
+    this.seen.add(messageId); // claim the id before any await, so a concurrent duplicate is skipped
+    try {
+      await this.handler(payload);
+    } catch (err) {
+      this.seen.delete(messageId); // let the broker redeliver a message that failed
+      throw err;
+    }
     return true;
   }
 }
@@ -102,7 +111,7 @@ await consumer.handle("evt-1", { amount: 5 });
 assert.equal(total, 5);
 ```
 
-In production the processed-id record and the handler's effects must commit in the same transaction. Otherwise a crash between the two reproduces the duplicate, as it does in this in-memory sketch, and two concurrent deliveries of the same id can both pass the check, so enforce uniqueness with a database constraint or a lock. See [idempotency-key.md](../../../design-patterns/references/resilience/idempotency-key.md).
+The id is claimed before the handler runs and released if the handler fails, so concurrent duplicates are skipped and failed messages can be redelivered. This still only protects one process and loses its memory on restart. In production, record the id in the same transaction as the handler's effects, with a unique constraint on the id, so a crash between the two cannot leave one without the other. See [idempotency-key.md](../../../design-patterns/references/resilience/idempotency-key.md).
 
 ## Ordering
 
