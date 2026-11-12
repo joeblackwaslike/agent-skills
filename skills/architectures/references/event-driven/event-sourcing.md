@@ -234,7 +234,7 @@ product catalog as boring CRUD.
 
 ## Worked example: event-sourced repository in Python
 
-> Uses the Orders & Fulfillment types from [python-examples.md](../../../domain-driven-design/references/python-examples.md).
+> Uses the Ordering types from [python-examples.md](../../../domain-driven-design/references/python-examples.md).
 
 
 Same aggregate, store events instead of state. The application handlers in

@@ -189,7 +189,7 @@ truth and the feed for projections — but neither requires the other. See
 
 ## Worked example: the read side in Python
 
-> Uses the Orders & Fulfillment types from [python-examples.md](../../../domain-driven-design/references/python-examples.md).
+> Uses the Ordering types from [python-examples.md](../../../domain-driven-design/references/python-examples.md).
 
 
 ```python

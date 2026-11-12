@@ -1,6 +1,6 @@
 # Anti-Patterns: Architecture Gone Wrong
 
-## 7. CQRS / event-sourcing cargo-culting
+## 1. CQRS / event-sourcing cargo-culting
 
 **The tell:** A brand-new CRUD app already has separate command and query buses, an event
 store, projections, and eventual consistency — for a domain whose read shape is identical to
@@ -16,7 +16,7 @@ bugs, event-versioning toil). Adopt them where they earn it:
 
 "It's the proper/rigorous way" is not a justification. Match the pattern to the problem.
 
-## 8. Premature bounded contexts (distributed monolith)
+## 2. Premature bounded contexts (distributed monolith)
 
 **The tell:** A two-person team splits a greenfield system into eight microservices /
 bounded contexts on day one, before the domain is even understood. The "boundaries" are
@@ -29,7 +29,7 @@ learn the domain. Extract a context into its own service only when there's a rea
 (independent scaling, separate team ownership, isolation). Boundaries are cheap to move
 inside a monolith and brutal to move across services. See [strategic-design.md](../../domain-driven-design/references/strategic-design.md).
 
-## 9. Read concerns polluting the write model
+## 3. Read concerns polluting the write model
 
 **The tell:** The `Order` aggregate grows getters for every field, DTO-shaped methods, and
 denormalized data "so the UI can render it." The write model's encapsulation erodes to serve
