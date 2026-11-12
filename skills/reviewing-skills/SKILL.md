@@ -50,7 +50,7 @@ flowchart TD
 | pipeline | the skill dispatches agents | roles, models, handoffs, verdict words, round caps, escalation |
 | claim verifier | any reviewer handed off a claim | a quoted check result for each external or runtime claim, or a stated failed attempt |
 
-A skill with more than 4 reference files gets the content reviewer as shards of at most 4 files each, every shard also reading SKILL.md. Shards hand external claims off to a separate claim verifier that runs the checks and quotes the results. Shards and verifier are one role, so they use one slot of the 6-reviewer cap in `/self-review`; findings are merged and de-duplicated by location. Every reviewer ends with a `coverage:` line, and any unread file is a gap. Without a subagent tool, run the roles one after another in one session and reread the files for each. The runbook has the dispatch rules per platform and the fallback.
+A skill with more than 4 reference files gets the content reviewer as shards of at most 4 files each, every shard also reading SKILL.md. Shards hand external claims off to a separate claim verifier that runs the checks and quotes the results. When the content role ran, shards and verifier are one role, so they use one slot of the 6-reviewer cap in `/self-review`; findings are merged and de-duplicated by location. Every reviewer ends with a `coverage:` line, and any unread file is a gap. Without a subagent tool, run the roles one after another in one session and reread the files for each. The runbook has the dispatch rules per platform and the fallback.
 
 ## Red flags
 
@@ -73,7 +73,7 @@ Stop and go back to the step if you catch yourself thinking any of these.
 - The instruction-quality reviewer is always kept, at the same priority as `code-reviewer`. The content reviewer runs when references or scripts changed, or a code block in SKILL.md changed. The routing reviewer runs when a description changed or a skill was added. The pipeline reviewer runs only when the skill dispatches agents.
 - The 20-line count covers lines changed under `skills/**`, excluding the registry files (`SKILLS.md`, `README.md`). Below 20 lines, run only the gate and the instruction-quality reviewer, plus the routing reviewer when a description changed. A changed description overrides the 20-line count and runs the routing reviewer.
 - When the cap forces drops, drop these after `agent-evaluator` and `type-design-analyzer` and before the language reviewers, in this order: pipeline, routing, content.
-- A dropped content slot also drops the claim verifier, and its rows are reported as unchecked claims.
+- A dropped content slot also drops the claim verifier, and its rows are reported as unchecked claims. When the content role did not run but another reviewer returned HANDOFF rows, the claim verifier still runs and takes one slot of the cap. If the cap forces a drop, drop the verifier and report its rows as unchecked claims.
 - Pressure scenarios stay off unless asked. Say in the report that behavior is untested.
 
 ## References

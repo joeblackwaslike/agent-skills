@@ -27,5 +27,6 @@ Hunt for these defect classes. Each line gives the class and a generic example o
 - A prose description of branches and loops with no diagram.
 - Two files that disagree on a role, a cap or a verdict word.
 
-The role name in SUMMARY is pipeline.
+Put any external claim you cannot settle from the files in a HANDOFF section, as the instruction-quality role does. Your role adds that HANDOFF section after FINDINGS. The role name in SUMMARY is pipeline.
+The shared rules, finding format and output contract (common.md) follow this text.
 ````

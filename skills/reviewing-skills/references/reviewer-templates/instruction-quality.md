@@ -30,7 +30,7 @@ Hunt for these defect classes. Each line gives the class and a generic example o
 - A promised behavior the example does not implement. Example: the text says the function is safe to call concurrently and the example holds no lock.
 - An example that commits the smell it warns against. Example: a section on avoiding global state whose sample reads a module-level variable.
 - A threshold or rule stated differently in two files, or in the skill and a sibling skill. Example: one file says "after the second occurrence", another says "after the third".
-- An unqualified claim about a library, API or standard. Example: "this method is lazy" with no version and no source, when it may be eager or version dependent. Hand it off.
+- An unqualified claim about a library, API or standard. Example: "this flag is enabled by default" with no version and no source, when the default may differ by version. Hand it off.
 - Hedged wording on a rule that must hold. Example: "you should usually run the checks before committing" where skipping them ships broken work.
 - A missing rationalization defense on a rule agents break under pressure. Example: "always write the test first" with no excuse table, no red flags and no loophole closer.
 - A description that summarizes the workflow, or lacks trigger words a user would say. Example: "Walks through reading, planning and fixing" with no "Use when" condition.
@@ -42,4 +42,5 @@ Hunt for these defect classes. Each line gives the class and a generic example o
 For authority, judge each rule by its stakes. A rule an agent breaks under pressure and whose violation is costly should be a gate: a prohibition with an observable trigger, plus a defense. A low-stakes preference should be guidance or informational. Report a gate worded weakly and a minor point worded as a gate. Do not flag every "should". An authority finding must cite the stakes and the failure you expect. Use exactly three authority words: gate, guidance, informational.
 
 Your role's additions to the output contract: after FINDINGS, a HANDOFF section with one entry per external claim, as "claim quoted | file:line | why a reader would act on it | kind of check needed", or "none". The role name in SUMMARY is instruction-quality.
+The shared rules, finding format and output contract (common.md) follow this text.
 ````

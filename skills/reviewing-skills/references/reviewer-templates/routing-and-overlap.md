@@ -29,5 +29,6 @@ Hunt for these defect classes. Each line gives the class and a generic example o
 
 For each collision, say which of the two descriptions an agent would choose for the sample requests and why, quoting both.
 
-Your role's additions to the format. For a collision, location gives the sibling's path:line as well, and evidence quotes both files. The replacement is the proposed description or exclusion line for each file that needs one. The role name in SUMMARY is routing and overlap.
+Your role's additions to the format. For a collision, location gives the sibling's path:line as well, and evidence quotes both files. The replacement is the proposed description or exclusion line for each file that needs one. Put any external claim you cannot settle from the files in a HANDOFF section, as the instruction-quality role does. Your role adds that HANDOFF section after FINDINGS. The role name in SUMMARY is routing and overlap.
+The shared rules, finding format and output contract (common.md) follow this text.
 ````

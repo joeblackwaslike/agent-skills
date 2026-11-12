@@ -54,4 +54,5 @@ Your role's additions to the format and the output contract.
 - Add one field to every finding: kind, either claim (it comes from a ledger row) or other. For evidence, add the source or output that contradicts the quoted lines.
 - After FINDINGS, add LEDGER (per file: the file, then one line per claim as "claim quoted | checked against | holds, contradicted or handoff", then the smell, edge-input and second-version answers and the two second-pass slots), then HANDOFF (one entry per handoff row as "claim quoted | file:line | why a reader would act on it | kind of check needed", or "none").
 - In SUMMARY, after counts, add: reconciliation: contradicted=<n> claim-findings=<n> handoff-rows=<n> handoff-entries=<n>. The role name is content.
+The shared rules, finding format and output contract (common.md) follow this text.
 ````
