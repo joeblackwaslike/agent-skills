@@ -1,6 +1,6 @@
 # Architecture catalog
 
-Every architecture and style with a one-line summary and where it is covered. "Link" rows have a full reference. "Not yet written" rows are named so you recognize them; no reference file exists, so answer from the signal table in SKILL.md. "Catalog-only" rows say what you probably want instead. Default to a layered monolith until it hurts; see [SKILL.md](../SKILL.md).
+Every architecture and style with a one-line summary and where it is covered. "Link" rows have a full reference. "Catalog-only" rows say what you probably want instead. Default to a layered monolith until it hurts; see [SKILL.md](../SKILL.md).
 
 ## Application architecture
 
@@ -26,10 +26,10 @@ Every architecture and style with a one-line summary and where it is covered. "L
 
 | Architecture | What it is | Link |
 | --- | --- | --- |
-| Modular monolith | One deployable, strict internal module boundaries | not yet written |
-| Microservices | Independently deployable services that own their data | not yet written |
-| Service communication | Synchronous calls versus messaging, contracts, versioning | not yet written |
-| Distributed data and consistency | Eventual consistency, no distributed transactions | not yet written |
+| Modular monolith | One deployable, strict internal module boundaries | [monolith-vs-microservices.md](distributed/monolith-vs-microservices.md) |
+| Microservices | Independently deployable services that own their data | [microservices.md](distributed/microservices.md) |
+| Service communication | Synchronous calls versus messaging, contracts, versioning | [service-communication.md](distributed/service-communication.md) |
+| Distributed data and consistency | Eventual consistency, no distributed transactions | [distributed-data.md](distributed/distributed-data.md) |
 | Serverless | Functions and managed services instead of long-running servers | catalog-only: you probably want the platform's own docs, such as `working-with-vercel` |
 | Space-based | In-memory data grids to scale stateful workloads | catalog-only: you probably want a cache plus read replicas |
 | Two-phase commit | Atomic commit across several databases | catalog-only: sagas and the outbox are not atomic across databases either; a saga gives eventual consistency with compensation, the outbox makes one database's write and event atomic. Keep data that must change together in one database |

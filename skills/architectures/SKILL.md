@@ -1,14 +1,14 @@
 ---
 name: architectures
 description: >-
-  Use when choosing or structuring how a system is built: hexagonal, clean or onion layering, CQRS, event sourcing, event-driven design, sagas, distributed transactions, or whether to split a monolith into microservices. Not for aggregates and bounded contexts (use domain-driven-design), named code-level patterns (design-patterns), or whether to abstract at all (engineering-principles).
+  Use when choosing or structuring how a system is built: hexagonal layering, CQRS, event sourcing, event-driven design, sagas, microservices vs monolith, strangler-fig migration, service timeouts and contracts, CAP and eventual consistency. Not for aggregates or bounded contexts (domain-driven-design), one retry, breaker or outbox (design-patterns), or whether to abstract (engineering-principles).
 metadata:
   last_updated: "2026-11-11"
 ---
 
 # Architectures
 
-How a system is divided into parts, how those parts talk, and what each choice costs. This skill covers application architecture (layers, ports and adapters, CQRS), event-driven architecture (event sourcing, events and commands, delivery guarantees, sagas), and the decision of when a system should be split into services. Microservices, service communication, the modular monolith and distributed data have no reference yet; the catalog lists them. Examples are in TypeScript and Python and continue the Orders and Fulfillment domain from `domain-driven-design`.
+How a system is divided into parts, how those parts talk, and what each choice costs. This skill covers application architecture (layers, ports and adapters, CQRS), event-driven architecture (event sourcing, events and commands, delivery guarantees, sagas), and distributed architecture (monolith or microservices, boundaries, service communication, consistency). Examples are in TypeScript and Python and continue the Orders and Fulfillment domain from `domain-driven-design`.
 
 ## Default to the simplest shape that works
 
@@ -22,6 +22,7 @@ A single deployable with clean internal layers handles most systems. Each step b
 | Parts must react to each other without importing each other | Domain events, then a broker only if they cross processes |
 | Several teams must deploy on their own schedules | Separate services, along bounded-context lines |
 | "Microservices are modern" | Stay with a modular monolith |
+| Atomic writes needed across services | Keep that data in one service; otherwise a saga |
 
 If the answer is a plain layered monolith, say so and stop. Adopting CQRS, event sourcing or services to look rigorous is the failure `references/anti-patterns.md` catalogs.
 
@@ -37,9 +38,11 @@ Open only the file the task needs. [catalog.md](references/catalog.md) lists eve
 | Storing events as the source of truth, rebuilding state from a stream, snapshots, upcasting | [event-sourcing.md](references/event-driven/event-sourcing.md) |
 | Publishing and reacting to events: events vs commands, choreography vs orchestration, at-least-once delivery, idempotent consumers, ordering, dead letters, schema evolution | [event-driven-architecture.md](references/event-driven/event-driven-architecture.md) |
 | A business transaction across services: compensations, the pivot step, orchestration vs choreography, isolation countermeasures | [sagas.md](references/event-driven/sagas.md) |
-| Recognizing and fixing CQRS and event-sourcing cargo-culting, premature service splits, read concerns in the write model, events that are really commands, sagas without a pivot or compensations | [anti-patterns.md](references/anti-patterns.md) |
-
-Microservices, service communication and distributed data have no reference file yet. For those, answer from the signal table above and the bounded contexts from `domain-driven-design`, and say plainly that deeper guidance is not written yet.
+| Deciding between a modular monolith and microservices, what justifies a split, how to spot a distributed monolith | [monolith-vs-microservices.md](references/distributed/monolith-vs-microservices.md) |
+| Drawing service boundaries, database per service, gateway or BFF, strangler-fig migration | [microservices.md](references/distributed/microservices.md) |
+| Sync vs async calls, timeouts and retries, contracts, versioning, chatty services | [service-communication.md](references/distributed/service-communication.md) |
+| Consistency models, CAP and PACELC, why not distributed transactions, read-your-writes | [distributed-data.md](references/distributed/distributed-data.md) |
+| Recognizing and fixing CQRS and event-sourcing cargo-culting, premature service splits, read concerns in the write model, events that are really commands, sagas without a pivot or compensations, chatty services, shared databases | [anti-patterns.md](references/anti-patterns.md) |
 
 ## Related skills
 
@@ -62,4 +65,5 @@ Microservices, service communication and distributed data have no reference file
 - If you chose ports and adapters, every external dependency sits behind a port, wired in one composition root.
 - Where CQRS or event sourcing was added, the cost was justified against the table at the top.
 - Where events or sagas were added, consumers are idempotent, each compensable step has an idempotent compensation, and the pivot is named.
+- Where a service was split out, the split answered a problem you can name, the service owns its data, and every remote call has a timeout and is safe to retry.
 - Any code blocks you wrote parse and run.
