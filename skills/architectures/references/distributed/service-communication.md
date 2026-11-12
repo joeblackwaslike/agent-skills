@@ -51,6 +51,13 @@ v1 = {"id": "o-1", "total_minor": 1500}
 v2 = {"id": "o-1", "total_minor": 1500, "currency": "EUR", "loyalty_tier": "gold"}
 assert read_order_summary(v1)["currency"] == "USD"
 assert read_order_summary(v2) == {"id": "o-1", "total_minor": 1500, "currency": "EUR"}
+
+try:
+    read_order_summary({"total_minor": 1500})
+except KeyError:
+    pass
+else:
+    raise AssertionError("a missing required field must fail")
 ```
 
 ```ts
