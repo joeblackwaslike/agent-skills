@@ -91,7 +91,7 @@ The fake gateway records the charge before it fails, the dangerous case where th
 
 ## TypeScript
 
-`op` and `sleep` both receive the caller's `AbortSignal`, so cancelling stops the in-flight attempt and the wait.
+`op` receives an `AbortSignal` that fires when the caller cancels or when the per-attempt timeout elapses. `sleep` takes the caller's signal too, so cancelling stops the wait. A timed-out attempt counts as transient and is retried. The timer comes in through `deps.timeout`; production passes `AbortSignal.timeout`.
 
 ```typescript
 import assert from "node:assert/strict";
@@ -100,17 +100,26 @@ class TransientError extends Error {
   constructor(message: string, readonly retryAfterMs?: number) { super(message); }
 }
 
-type Deps = { sleep(ms: number, signal?: AbortSignal): Promise<void>; random(): number; budget: { tokens: number };
-  onRetry?(attempt: number, err: Error, delayMs: number): void };
-type Opts = { idempotent: boolean; signal?: AbortSignal; maxAttempts?: number; baseMs?: number; capMs?: number };
+type Deps = {
+  sleep(ms: number, signal?: AbortSignal): Promise<void>;
+  random(): number;
+  timeout(ms: number): AbortSignal;
+  budget: { tokens: number };
+  onRetry?(attempt: number, err: Error, delayMs: number): void;
+};
+type Opts = { idempotent: boolean; signal?: AbortSignal; attemptTimeoutMs?: number; maxAttempts?: number; baseMs?: number; capMs?: number };
 
 export async function callWithRetry<T>(op: (signal?: AbortSignal) => Promise<T>, opts: Opts, deps: Deps): Promise<T> {
   if (!opts.idempotent) return op(opts.signal);
   const { maxAttempts = 4, baseMs = 100, capMs = 5000 } = opts;
   for (let attempt = 1; ; attempt++) {
+    opts.signal?.throwIfAborted();
+    const timer = opts.attemptTimeoutMs === undefined ? undefined : deps.timeout(opts.attemptTimeoutMs);
+    const signal = opts.signal && timer ? AbortSignal.any([opts.signal, timer]) : (opts.signal ?? timer);
     try {
-      return await op(opts.signal);
-    } catch (err) {
+      return await op(signal);
+    } catch (raw) {
+      const err = timer?.aborted && !opts.signal?.aborted ? new TransientError("attempt timed out") : raw;
       if (!(err instanceof TransientError) || attempt >= maxAttempts || deps.budget.tokens <= 0) throw err;
       deps.budget.tokens -= 1;
       const jittered = deps.random() * Math.min(capMs, baseMs * 2 ** (attempt - 1));
@@ -136,14 +145,41 @@ function gateway(script: TransientError[]) {
 
 async function main(): Promise<void> {
   const delays: number[] = [];
-  const deps: Deps = { sleep: async (ms) => void delays.push(ms), random: () => 0.5, budget: { tokens: 10 } };
+  const timers: AbortController[] = [];
+  const deps: Deps = {
+    sleep: async (ms, signal) => { signal?.throwIfAborted(); delays.push(ms); },
+    random: () => 0.5,
+    timeout: () => { const ctl = new AbortController(); timers.push(ctl); return ctl.signal; },
+    budget: { tokens: 10 },
+  };
+
   const gw = gateway([new TransientError("timeout"), new TransientError("busy", 3_600_000)]);
   const result = await callWithRetry(() => gw.charge("order-1", 1999), { idempotent: true }, deps);
   assert.deepEqual([result, gw.charges.size, delays], ["ch_order-1", 1, [50, 5000]]);
 
-  const down = gateway([new TransientError("down")]);
-  await assert.rejects(callWithRetry(() => down.charge("k", 1), { idempotent: false }, deps), TransientError);
-  assert.equal(delays.length, 2);
+  delays.length = 0;
+  let tries = 0;
+  const hung = (signal?: AbortSignal) => new Promise<string>((resolve, reject) => {
+    if (++tries > 1) return resolve("ok");
+    signal?.addEventListener("abort", () => reject(signal.reason));
+    queueMicrotask(() => timers[0]?.abort(new Error("timer fired")));
+  });
+  assert.equal(await callWithRetry(hung, { idempotent: true, attemptTimeoutMs: 1000 }, deps), "ok");
+  assert.deepEqual([tries, delays], [2, [50]]);
+
+  const ctl = new AbortController();
+  const cancelling: Deps = { ...deps, onRetry: () => ctl.abort(new Error("cancelled")) };
+  const flaky = gateway([new TransientError("down"), new TransientError("down")]);
+  await assert.rejects(callWithRetry(() => flaky.charge("k", 1), { idempotent: true, signal: ctl.signal }, cancelling), /cancelled/);
+  assert.equal(delays.length, 1);
+
+  const once = gateway([new TransientError("down")]);
+  await assert.rejects(callWithRetry(() => once.charge("k", 1), { idempotent: false }, deps), TransientError);
+  assert.equal(delays.length, 1);
+
+  const dead = gateway(Array.from({ length: 4 }, () => new TransientError("down")));
+  await assert.rejects(callWithRetry(() => dead.charge("k", 1), { idempotent: true }, deps), TransientError);
+  assert.equal(delays.length, 4);
 }
 
 main().catch((err: unknown) => {
@@ -152,21 +188,31 @@ main().catch((err: unknown) => {
 });
 ```
 
+The gateway fake records the charge before it fails, as in the Python version. The cancelled run shows the wait stopping on the caller's signal. One backoff was recorded, then `sleep` threw the abort reason before a second one.
+
 ## In production
 
 - Python's tenacity provides `stop_after_attempt`, `retry_if_exception_type` and a pluggable `sleep`, so tests can pass a fake as above.
-- p-retry takes `retries`, `factor`, `minTimeout`, `maxTimeout` and a `shouldRetry` callback. Its `randomize` option multiplies each delay by a factor between 1 and 2, which adds spread but is not full jitter. cockatiel has a retry policy with `ExponentialBackoff`.
-- HTTP clients and cloud SDKs often retry by default, so stacking your loop on theirs multiplies attempts (3 x 3 = 9). Retry at one layer only, and call any [circuit breaker](circuit-breaker.md) from inside the loop, as `retry(breaker(op))`.
+- p-retry takes `retries`, `factor`, `minTimeout`, `maxTimeout` and a `shouldRetry` callback, and accepts an `AbortSignal`. Its `randomize` option multiplies each delay by a factor between 1 and 2, which adds spread but is not full jitter. cockatiel has a retry policy with `ExponentialBackoff`.
+- HTTP clients and cloud SDKs often retry by default, so stacking your loop on theirs multiplies attempts (3 x 3 = 9). Turn one off.
+- Retry at one layer only. Retries at every layer of a call chain amplify load during an outage. If a [circuit breaker](circuit-breaker.md) is present, call it from inside the loop, as `retry(breaker(op))`, and treat `CircuitOpen` as final.
+- `Retry-After` on 429 and 503 says when to come back. Waiting less is rude and often counterproductive, and waiting longer than your own cap hands control of your latency to the server, which is why the code caps it.
+- Stripe's SDKs can generate idempotency keys and retry automatically. If you retry across separate calls or restarts, persist the key (see [Idempotency key](idempotency-key.md)).
 
 ## Smells and misuse
 
 - Retrying non-idempotent calls without a key, which double-charges and double-sends.
 - Retrying errors that will never succeed (400, 401, validation). Retry only the transient class.
-- No cap on attempts, fixed delays with no jitter, or trusting a huge `Retry-After`.
-- No per-attempt timeout (for example `AbortSignal.timeout`), so one hung attempt stalls the loop.
-- A retry loop inside a database transaction.
+- No cap on attempts or total time, so a dead dependency holds requests forever.
+- Fixed delays with no jitter, which makes clients retry in lockstep.
+- Trusting a huge `Retry-After` without a ceiling.
+- No per-attempt timeout, so one hung attempt stalls the whole loop. Give each attempt its own `AbortSignal.timeout` and make the timeout a retryable failure, as the TypeScript version does.
+- A retry loop inside a database transaction, or retries stacked on top of the SDK's own.
+- Only the last error reported, so a flapping dependency looks like a single failure. Log every attempt.
+- Real `sleep` in tests, which makes the suite slow and the timing assertions flaky.
 
 ## Related
 
 - [Idempotency key](idempotency-key.md) makes repeating a write safe.
 - [Circuit Breaker](circuit-breaker.md) stops retries once the dependency is clearly down.
+- [Decorator](../structural/decorator.md) is how retry usually wraps a call.

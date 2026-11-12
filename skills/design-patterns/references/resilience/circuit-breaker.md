@@ -12,7 +12,7 @@ Add a breaker when a slow or dead dependency ties up your threads or connections
 
 ## Python
 
-Closed passes calls and counts consecutive `DependencyError`s. Open rejects calls until `reset_after` seconds pass. Half-open admits one probe while everyone else gets `CircuitOpen`; any exception from the probe reopens the circuit, so callers must map timeouts into `DependencyError` or let them through as they are. The clock is injected.
+Closed passes calls and counts consecutive `DependencyError`s. Open rejects calls until `reset_after` seconds pass. Half-open admits one probe while everyone else gets `CircuitOpen`, and any exception from the probe reopens the circuit. In the closed state only `DependencyError` counts, so map timeouts into it before they reach the breaker. The clock is injected.
 
 ```python
 from collections.abc import Callable
@@ -183,18 +183,23 @@ The late success from the slow call is ignored because the circuit opened after 
 
 - pybreaker has `fail_max`, `reset_timeout` and `success_threshold` (consecutive successes needed in half-open), can exclude business exceptions, and is documented as thread-safe.
 - cockatiel's `circuitBreaker(policy, { halfOpenAfter, breaker })` takes a `ConsecutiveBreaker`, `CountBreaker` or `SamplingBreaker` and throws `BrokenCircuitError` while open. Its docs say to reuse one breaker across requests.
-- Keep one breaker per dependency, created once and shared. State is per process. Alert on state changes.
+- Keep one breaker per dependency, created once and shared. State is per process, so many instances each trip on their own, which is usually fine. Alert on state changes and log the reason each time the circuit opens.
 - Build it as a decorator-style wrapper around the client (see [Decorator](../structural/decorator.md)) and put the retry loop outside it, as `retry(breaker(op))`, so each attempt is counted and `CircuitOpen` is treated as final.
 
 ## Smells and misuse
 
-- Counting client errors (400, validation) as dependency failures.
+- Counting client errors (400, validation) as dependency failures, which lets one bad caller open the circuit for everyone.
 - Retrying `CircuitOpen`, or putting the breaker outside the retry loop so a whole retried call counts as one failure.
-- No timeout on the call, so a hung probe holds the half-open gate forever.
-- A breaker built per request or per call site, so failures never accumulate.
-- Open with no fallback, such as a cached value, so users only see faster errors.
+- No timeout on the call, so a hung probe holds the half-open gate forever. Map the timeout into a dependency failure.
+- One breaker shared by unrelated dependencies, so a flaky email provider blocks payments. Or one built per request or call site, so failures never accumulate.
+- Open with no fallback, such as a cached value or a queued retry, so users only see faster errors.
+- Thresholds and reset times guessed once and never checked against real traffic. A threshold of 3 on a low-volume endpoint flaps; a window that is too long keeps a healthy dependency out.
+- Closing on a single probe success when the dependency is only partly back. Require several probe successes (pybreaker's `success_threshold`) if one lucky call is not enough.
+- No signal when the state changes, so an open circuit is discovered from user complaints.
 
 ## Related
 
 - [Retry with backoff](retry-backoff.md) handles brief blips; the breaker handles sustained outages.
 - [Decorator](../structural/decorator.md) and [Proxy](../structural/proxy.md) are the wrapper shapes the breaker takes.
+- [State](../behavioral/state.md) has the same shape, with transitions driven by failures and time.
+- [Idempotency key](idempotency-key.md) matters for the probe too, because a probe that charges must be safe to repeat.

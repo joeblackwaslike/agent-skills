@@ -2,7 +2,7 @@
 
 ## What it is and Problem it solves
 
-The outbox pattern stores an event in an `outbox` table inside the same transaction as the data change, and a separate relay publishes it afterwards. It fixes the dual-write problem: saving an order and publishing `order.placed` touch two systems, and if the process dies between them you either lose the event or announce an order that was rolled back.
+The outbox pattern stores an event in an `outbox` table inside the same transaction as the data change, and a separate relay publishes it afterwards. It fixes the dual-write problem. Saving an order and publishing `order.placed` touch two systems, and if the process dies between them you either lose the event or announce an order that was rolled back.
 
 ## Do you need this?
 
@@ -177,10 +177,15 @@ main().catch((err: unknown) => {
 
 - Publishing to the broker inside the business transaction. It holds those locks while waiting on the network and still is not atomic.
 - Marking a row published before the broker confirms, which turns at-least-once into at-most-once.
-- A consumer that assumes exactly-once and has no dedupe, or a relay that retries a poison row forever and blocks the rows behind it.
-- Large or secret payloads in the outbox row. Store ids instead.
+- A consumer that assumes exactly-once and has no dedupe.
+- A relay that retries a poison row forever, or fails without logging the row id, so one bad message blocks or hides the ones behind it.
+- Large or secret payloads in the outbox row. Store ids and let consumers fetch.
+- Ordering assumed across rows when several relays or retries can reorder them. Carry a sequence number if consumers need order.
+- An outbox table nobody prunes, or nobody alerts on, so a stuck relay shows up as a growing table weeks later.
+- Using the outbox where the event is not tied to a database write, or where losing it is harmless.
 
 ## Related
 
 - [Unit of Work](../data-access/unit-of-work.md) provides the transaction that holds both writes.
 - [Observer](../behavioral/observer.md) is the in-process version; the outbox is the durable one.
+- [domain-driven-design](../../../domain-driven-design/SKILL.md) for domain events and where they are raised.

@@ -12,7 +12,7 @@ Add one when the external shape differs from what the domain wants (strings to `
 
 ## Python
 
-One function at the boundary turns `object` into a domain `Order` or raises. Nothing past it handles raw dicts.
+Parse at the boundary. One function turns `object` into a domain `Order` or raises. Nothing past that function handles raw dicts.
 
 ```python
 from dataclasses import dataclass
@@ -123,7 +123,7 @@ for (const bad of [null, [], { id: "o-2" }, { id: "o-2", total_cents: 1.5, statu
 assert.throws(() => parseOrder({ id: "o-2", total_cents: 1, status: "toString" }));
 ```
 
-The status check searches a fixed array, so a payload value like `"toString"` or `"__proto__"` is simply unknown. Destructuring reads only the keys the mapper names. `JSON.parse` throws on malformed text, so callers wrap it and treat that as a bad request. Libraries such as Zod generate this parser from a schema.
+The status check searches a fixed array, so a payload value like `"toString"` or `"__proto__"` is simply unknown. Destructuring reads only the keys the mapper names. `JSON.parse` throws on malformed text, so callers wrap it and treat that as a bad request. A schema library such as Zod lets you declare the shape once and parse unknown input against it.
 
 ## In production
 
@@ -137,7 +137,7 @@ The status check searches a fixed array, so a payload value like `"toString"` or
 - A DTO that mirrors the domain class field for field, with a mapper that copies each one, in an app where both sides are trusted.
 - Domain objects serialized directly to JSON, so every new field and internal note becomes public.
 - Mapping scattered through handlers instead of one parse function per boundary.
-- Parsing that silently coerces (`"abc"` to `0`) rather than rejecting.
+- Parsing that silently coerces (`"abc"` to `0`) instead of rejecting.
 - Mapper logic that makes business decisions. It converts shapes; rules live in the domain.
 
 ## Related
