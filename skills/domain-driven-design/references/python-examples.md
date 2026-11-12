@@ -374,6 +374,6 @@ class SqlAlchemyOrderRepository:  # implements OrderRepository (structurally)
 ```
 
 The transaction (commit/rollback) belongs to the application layer's unit of work, not the
-repository — see [application-architecture.md](../../architectures/references/application/application-architecture.md). Validation belongs at the boundary
+repository — see [application-architecture.md](../../code-architectures/references/application/application-architecture.md). Validation belongs at the boundary
 (FastAPI + Pydantic request models parse untrusted input into a `PlaceOrder` command before
 it reaches the handler); the domain trusts the command it receives.

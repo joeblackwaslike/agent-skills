@@ -1,7 +1,7 @@
 ---
 name: domain-driven-design
 description: >-
-  Use when modeling a business domain: aggregates, entities, value objects, domain events, repositories, bounded contexts, ubiquitous language. Also when an agent builds a non-trivial domain with real invariants. Not for layering, CQRS, event sourcing, sagas, event-driven design or services (use architectures), or Repository, Unit of Work, Outbox mechanics (use design-patterns).
+  Use when modeling a business domain: aggregates, entities, value objects, domain events, repositories, bounded contexts, ubiquitous language. Also when an agent builds a non-trivial domain with real invariants. Not for layering, CQRS, event sourcing, sagas, event-driven design or services (use code-architectures), or Repository, Unit of Work, Outbox mechanics (use design-patterns).
 metadata:
   last_updated: "2026-11-11"
 ---
@@ -12,7 +12,7 @@ Use this skill to model a business domain *well* — so the code reads like the 
 invariants are enforced in one place, and the architecture survives change. It covers
 strategic DDD (carving the problem into bounded contexts) and tactical DDD (the building
 blocks you write code with). Layering, CQRS, event sourcing and service boundaries live in
-the `architectures` skill.
+the `code-architectures` skill.
 
 **Core principle:** the domain model is the asset. Everything else — the database, the web
 framework, the message bus — is a detail that plugs into the model, never the other way
@@ -34,8 +34,8 @@ integrations, not the business logic.
 | "It's just forms over data" — store it, show it, edit it | Plain CRUD / active record |
 | One team, one database, simple lifecycle | Tactical DDD without bounded-context ceremony |
 | Multiple teams, multiple meanings of the same word ("order" means different things to sales vs. fulfillment) | Strategic DDD — draw bounded contexts first |
-| Reads and writes have wildly different shapes or scale | CQRS (see the `architectures` skill) |
-| You need a full audit trail or to rebuild state from history | Event sourcing (see the `architectures` skill) |
+| Reads and writes have wildly different shapes or scale | CQRS (see the `code-architectures` skill) |
+| You need a full audit trail or to rebuild state from history | Event sourcing (see the `code-architectures` skill) |
 
 If the answer is "plain CRUD," say so and stop. Misapplied DDD is worse than no DDD.
 
@@ -95,9 +95,9 @@ HTTP / CLI / queue            ← adapter (infrastructure)
 ```
 
 The layering around the aggregate (ports, adapters, transaction boundaries) is covered in
-[application-architecture.md](../architectures/references/application/application-architecture.md),
+[application-architecture.md](../code-architectures/references/application/application-architecture.md),
 and splitting reads from writes in
-[cqrs.md](../architectures/references/application/cqrs.md), both in the `architectures` skill.
+[cqrs.md](../code-architectures/references/application/cqrs.md), both in the `code-architectures` skill.
 
 ## Red flags — stop and reconsider
 
@@ -109,7 +109,7 @@ and splitting reads from writes in
 - "I'll update three aggregates in one transaction to keep them consistent." → use eventual
   consistency via domain events instead.
 - "Let's add CQRS and event sourcing because it's the proper way." → check the
-  `architectures` skill first; both carry a real cost.
+  `code-architectures` skill first; both carry a real cost.
 
 ## Completion criteria
 

@@ -166,5 +166,5 @@ boundaries between policy and volatile detail; stay concrete in the stable inter
   split produces.
 - `references/typescript-examples.md` / `references/python-examples.md` — a dispatcher depending
   only on `Notifier`/`Formatter`/`DeliveryLog` abstractions, wired in a composition root.
-- `architectures` — DIP is the engine of hexagonal/ports-and-adapters architecture:
+- `code-architectures` — DIP is the engine of hexagonal/ports-and-adapters architecture:
   domain owns the ports, infrastructure implements them, dependencies point inward.
