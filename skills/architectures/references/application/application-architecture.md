@@ -113,16 +113,17 @@ export class PlaceOrderHandler {
   ) {}
 
   async handle(cmd: PlaceOrder): Promise<{ orderId: string }> {
-    return this.uow.run(async () => {       // transaction boundary lives in the app layer
+    const { orderId, events } = await this.uow.run(async () => {  // transaction boundary lives in the app layer
       const order = Order.start(new CustomerId(cmd.customerId));
       for (const line of cmd.items) {
         order.addItem(new ProductId(line.productId), Money.fromMinor(line.unitPriceMinor, "USD"), Quantity.of(line.qty));
       }
       order.place();                         // domain enforces "no empty orders", etc.
       await this.orders.save(order);
-      await this.events.publishAll(order.pullEvents());
-      return { orderId: order.id.value };
+      return { orderId: order.id.value, events: order.pullEvents() };
     });
+    await this.events.publishAll(events);    // only after the commit succeeded
+    return { orderId };
   }
 }
 ```

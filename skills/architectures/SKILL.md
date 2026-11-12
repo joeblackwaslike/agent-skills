@@ -8,7 +8,7 @@ metadata:
 
 # Architectures
 
-How a system is divided into parts, how those parts talk, and what each choice costs. This skill covers application architecture (layers, ports and adapters, CQRS), event-driven architecture (event sourcing, sagas), and distributed architecture (services, messaging, consistency). Examples are in TypeScript and Python and continue the Orders and Fulfillment domain from `domain-driven-design`.
+How a system is divided into parts, how those parts talk, and what each choice costs. This skill covers application architecture (layers, ports and adapters, CQRS), event sourcing, and the decision of when a system should be split into services. Event-driven design, sagas and distributed data are coming and are listed in the catalog. Examples are in TypeScript and Python and continue the Orders and Fulfillment domain from `domain-driven-design`.
 
 ## Default to the simplest shape that works
 
@@ -57,6 +57,6 @@ Event-driven design, sagas, microservices, service communication and distributed
 
 - The chosen architecture answers a problem you can state in one sentence.
 - Dependencies point inward: domain and use cases import only their own types and ports.
-- Every external dependency sits behind a port, wired in one composition root.
+- If you chose ports and adapters, every external dependency sits behind a port, wired in one composition root.
 - Where CQRS or event sourcing was added, the cost was justified against the table at the top.
 - Any code blocks you wrote parse and run.
