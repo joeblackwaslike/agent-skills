@@ -36,8 +36,8 @@ def no_tax(order: Order) -> Decimal:
 
 
 TAX_RULES: dict[str, TaxRule] = {
-    "US": lambda o: o.subtotal * Decimal("0.0875"),
-    "DE": lambda o: o.subtotal * Decimal("0.19"),
+    "US": lambda o: (o.subtotal * Decimal("0.0875")).quantize(Decimal("0.01")),
+    "DE": lambda o: (o.subtotal * Decimal("0.19")).quantize(Decimal("0.01")),
 }
 
 

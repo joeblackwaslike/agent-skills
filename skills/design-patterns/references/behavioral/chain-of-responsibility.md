@@ -141,7 +141,7 @@ await assert.rejects(compose([twice, pay])(ctx), /multiple times/);
 
 ## Smells and misuse
 
-- Order bugs. Authentication after the rate limiter, or error handling registered last so it never sees earlier errors. Keep the order visible in one place.
+- Order bugs. Authentication after the rate limiter, or Express error handling registered before the routes, so it never sees their errors. `user` must be set by authentication earlier in the chain, never taken from client input. Keep the order visible in one place.
 - Forgetting to call `next()` and leaving the request open, or calling it twice and running the rest of the chain twice.
 - Business logic in middleware, or a fixed chain of five that is just a function with five steps.
 
