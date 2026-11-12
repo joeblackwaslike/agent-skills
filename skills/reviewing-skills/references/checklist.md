@@ -34,7 +34,7 @@ The short version of the [procedure](../SKILL.md), in review order. Use it for t
 - [ ] Examples vary enough not to overfit.
 - [ ] Each file has a promise ledger: every behavioral claim holds, is contradicted, or is marked unverified with the check to run.
 - [ ] Every reviewer ended with a coverage line and listed any unread file as a gap.
-- [ ] Ledger rows reconcile with findings: each contradicted or actionable-unverified claim is a finding, and "unverified" came only after a named check failed.
+- [ ] Ledger rows reconcile with findings, and every handoff claim went to the claim verifier, which returned a quoted check result for each row.
 
 **Flow and pipelines**
 

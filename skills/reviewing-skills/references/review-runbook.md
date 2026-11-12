@@ -44,8 +44,11 @@ Pick the roles:
 | content | references or scripts changed, or the skill ships code blocks |
 | routing and overlap | a description changed, or a skill was added |
 | pipeline | the skill dispatches agents |
+| claim verifier | the other reviewers produced any HANDOFF entry (counts as part of the content slot) |
 
-**Sharding the content role.** When a skill has more than 6 reference files, dispatch the content reviewer as shards of at most 6 files each. Every shard reads SKILL.md for routing context, and `<SCOPE_FILES>` lists that shard's files. Shards are one role, so they count as one slot toward the 6-reviewer cap in `/self-review`. Merge the shards' findings and de-duplicate by location. In the sequential fallback, process one shard at a time, rereading its files fresh.
+**Sharding the content role.** When a skill has more than 4 reference files, dispatch the content reviewer as shards of at most 4 files each, to keep depth per file. Every shard reads SKILL.md for routing context, and `<SCOPE_FILES>` lists that shard's files. Shards and the claim verifier are one role, so together they use one slot toward the 6-reviewer cap in `/self-review`. Merge the shards' findings and de-duplicate by location. In the sequential fallback, process one shard at a time, rereading its files fresh.
+
+**Claim verifier.** Reading and verifying are separate jobs, and one agent does not reliably do both. After every other reviewer has finished, dispatch the claim verifier with the merged HANDOFF entries from the content shards and the instruction-quality reviewer. It is a fresh agent on `model: sonnet`. Skip it only when no HANDOFF entry exists. Its template is below.
 
 Inside `/self-review`, the cap, the drop order and the 20-line rule are in [SKILL.md](../SKILL.md#inside-self-review). Per-language review of code in the skill is not done here. The calling session dispatches the language reviewers from the `reviewing-code` table whose triggers match.
 
@@ -71,7 +74,8 @@ Without a subagent tool, one session plays every role in turn. Fresh eyes are th
 2. For each role that applies, in this order: instruction-quality, content, routing and overlap, pipeline. Take its template and treat it as the only instruction. Set aside your memory of the earlier roles and your intent sentence.
 3. Reread every file the template names from disk before reviewing, even if you read it a minute ago. Quote from the fresh read.
 4. Write that role's findings in the output contract before starting the next role.
-5. Merge the lists only after the last role. A finding two roles share is one finding.
+5. Run the claim verifier last, in the same session, on the merged HANDOFF entries, as if it were a new agent: reread each cited file, then run each check yourself and quote the result.
+6. Merge the lists only after the verifier. A finding two roles share is one finding.
 
 The fallback is weaker than separate agents because one context sees all roles. Say so in the report when you used it.
 
@@ -103,7 +107,7 @@ Cross-file consistency pass. Do this as its own pass after reading every file, n
 - Compare the skill's routing and its numbers against the sibling skills on the same topic. Search the sibling skills directory for the topic's key terms and read what you find.
 - Report each mismatch as a finding that quotes both sides.
 
-External claims. Every claim in the files about a named library, framework, SDK, service, database, standard or language behavior, including its version scope, is checked before you may call it unverified. Language or runtime behavior is checked by running a one-line check (`node`, `bun` or `python3`) and quoting the output. Library, service and standard claims are checked against current docs (Context7 MCP, Ref, or the docs the project links) or the installed package source. "Unverified" is allowed only after a named attempt failed, and the line names the attempt. "No source opened" is not a verdict. A claim that is wrong is a finding. An unverified claim that a reader would act on is a minor finding, and its replacement names the check to run. List each claim with its check and result under "could not check" or in your findings; none may be left out.
+External claims. Do not resolve a claim about a named library, framework, SDK, service, database, standard or language behavior, including its version scope, yourself, and never write "unverified". Put each such claim in the HANDOFF section: the claim quoted, file:line, one sentence on why a reader would act on it, and the kind of check needed. A separate claim verifier runs the check. A claim you can see is wrong from the files alone is a normal finding.
 
 Hunt for these defect classes. Each line gives the class and a generic example of the shape. Look for the shape, not the example.
 - Prose that disagrees with the code or table in the same file. Example: the text says "retries three times" and the snippet below loops twice.
@@ -139,6 +143,8 @@ You are read-only: do not edit files, commit, or post anywhere.
 Output contract. End with exactly this, in this order. The coverage line is the last line of your output and nothing may follow it. An unread file in scope is listed under gaps, never skipped silently.
 FINDINGS
 <the findings, ranked by severity, or "none">
+HANDOFF
+<one entry per external claim: claim quoted | file:line | why a reader would act on it | kind of check needed, or "none">
 SUMMARY
 role: instruction-quality
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
@@ -167,10 +173,10 @@ Setup:
 
 Promise ledger. Build one per file before moving to the next file. For every behavioral claim the prose makes about its own example, or about a language, library or standard, write one ledger line: the file, the claim quoted, where it is checked, and a verdict. Claims look like "is lazy", "covers the same ground", "keeps the invariants in X", "allows Y before Z", "also offers a settle-all variant", "abortable", "the short version does the same lookup", "safe to call concurrently".
 - Check a claim about the file's own example against the code in that file, line by line, not against what the example appears to intend.
-- Verify before you mark anything unverified. A claim about language or runtime behavior is checked by running a one-line check in that language (`node`, `bun` or `python3`) and quoting its output. A claim about a library, framework, SDK, service, database or standard, including its version scope, is checked against current docs (Context7 MCP, Ref, or the docs the project links) or the installed package source. Write the check and its quoted result in the ledger line.
-- Verdicts are exactly: holds, contradicted, unverified. "Unverified" is allowed only after a named attempt failed, and the line names the attempt and why it failed. "No source opened" is not a verdict.
-- Promotion. Every row with verdict contradicted becomes a finding: major when it teaches wrong behavior an agent will copy, minor otherwise. Every unverified row that a reader would act on becomes a minor finding whose replacement names the check to run. Do not leave an actionable row out of the findings.
-- Reconcile before you finish: the count of contradicted rows plus actionable unverified rows must equal the count of findings with kind: claim. State both numbers in the summary.
+- Two kinds of claim. A claim about the file's own example is yours: check it against the code and give it a verdict of holds or contradicted. A claim about a language, library, framework, SDK, service, database or standard, including its version scope, is not yours to resolve. Give it the verdict handoff and put it in the HANDOFF section. A separate claim verifier runs the check. Never write "unverified".
+- Verdicts are exactly: holds, contradicted, handoff.
+- Promotion. Every contradicted row becomes a finding: major when it teaches wrong behavior an agent will copy, minor otherwise. Every handoff row appears in HANDOFF with the row quoted, the file and line, and one sentence on why a reader would act on it.
+- Reconcile before you finish: the count of contradicted rows must equal the count of findings with kind: claim, and the count of handoff rows must equal the entries in HANDOFF. State both numbers in the summary.
 
 Per file, also answer each of these and record the answers in the ledger.
 - Smells. List each smell, anti-pattern or mistake the file warns about. Check the file's own example against each one.
@@ -193,7 +199,7 @@ Hunt for these defect classes. Each line gives the class and a generic example o
 - An example that cannot run as written. Example: an import that does not exist, an unclosed block, a stale flag.
 - A "function version" or "short version" that claims to cover the same ground as the main one and omits a guard, validation or error path.
 
-Judge each claim by what the evidence supports, not by what sounds right. A claim you could not verify after a named attempt goes under "could not check" with that attempt, and is promoted as the ledger rules above say.
+Judge each claim by what the evidence supports, not by what sounds right. A claim about something outside the files goes to HANDOFF, not to your own judgment.
 
 Do not report taste or anything a formatter or linter already enforces. Do not review the code for language-specific style; the calling session dispatches the language reviewers. Do not praise. Do not invent findings to look thorough.
 
@@ -215,11 +221,13 @@ Output contract. End with exactly this, in this order. The coverage line is the 
 FINDINGS
 <the findings, ranked by severity, or "none">
 LEDGER
-<per file: the file, then one line per claim checked: claim quoted | checked against | holds, contradicted or unverified; then the smell, edge-input and second-version answers>
+<per file: the file, then one line per claim checked: claim quoted | checked against | holds, contradicted or handoff; then the smell, edge-input and second-version answers>
+HANDOFF
+<one entry per handoff row: claim quoted | file:line | why a reader would act on it | kind of check needed (runtime behavior, library or service docs, standard), or "none">
 SUMMARY
 role: content
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
-reconciliation: contradicted=<n> actionable-unverified=<n> claim-findings=<n>
+reconciliation: contradicted=<n> claim-findings=<n> handoff-rows=<n> handoff-entries=<n>
 checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
 coverage: <files you read in full>; gaps: <files in scope not read in full, with the reason, or "none">
@@ -336,6 +344,55 @@ checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
 coverage: <files you read in full>; gaps: <files in scope not read in full, with the reason, or "none">
 ````
+
+### Claim verifier
+
+The claim verifier runs after the other reviewers, on their merged HANDOFF entries. It reads nothing else and judges nothing else. Its job is to run checks and quote what came back. Fill `<HANDOFF_ROWS>` with the merged entries, de-duplicated by claim and location.
+
+````text
+You are verifying claims that other reviewers could not settle by reading. You did not write the skill and have no stake in it. For every row below you must run a check and quote the result. You are not asked for opinions.
+
+Target skill directory: <SKILL_DIR>
+
+Rows to verify:
+<HANDOFF_ROWS>
+
+For each row, in order:
+1. Open the cited file at the cited line and quote the claim as written.
+2. Run the check that fits the claim.
+   - Language or runtime behavior: run a one-line check in that language (`node`, `bun` or `python3`) and paste its stdout.
+   - Library, framework, SDK, service, database or standard, including the version scope the claim states: read current docs (Context7 MCP, Ref, or the official documentation URL) or the installed package source, and quote the passage that decides it. Name the version.
+   - A claim about what code in the file does: point to the lines and state what the code does instead.
+3. Write the row in the format below. A row without a quoted check result is invalid, and you must redo it. If a check truly cannot be run, write the attempt you made and why it failed under "could not check". "No source opened" is not an attempt.
+4. Choose the final verdict.
+   - confirmed defect: the check shows the claim is wrong, overstated or true only in a narrower scope than stated.
+   - claim holds: the check supports the claim as written.
+   - could not check: every check you tried failed, and the row says which and why.
+
+Do not review anything outside the rows. Do not praise. Do not invent rows.
+
+Row format. For each row, report exactly:
+- claim: quoted
+- location: path:line
+- check run: the command, or the doc URL or package path
+- quoted result: stdout, or the quoted passage, or the quoted lines of code
+- verdict: confirmed defect, claim holds, or could not check (with why)
+- for a confirmed defect, also: severity (major when an agent will copy wrong behavior, otherwise minor), failure mode ("an agent will <do X> when <Y>"), and the replacement text, ready to paste
+- for could not check, also: whether a reader would act on the claim (yes or no) and the check to run
+
+You are read-only: do not edit files, commit, or post anywhere.
+
+Output contract. End with exactly this, in this order. The coverage line is the last line of your output and nothing may follow it.
+ROWS
+<one block per input row, in the row format above>
+SUMMARY
+role: claim verifier
+counts: rows=<n> confirmed-defect=<n> claim-holds=<n> could-not-check=<n>
+rows without a quoted result: 0
+coverage: <files you opened>; gaps: <input rows you did not complete, or "none">
+````
+
+Triage keeps only the rows with verdict confirmed defect, and the could not check rows where a reader would act on the claim. Both become findings of kind claim. Rows with verdict claim holds are dropped. A row with no quoted result is discarded and sent back to the verifier once.
 
 ## 3. Triage every finding
 
