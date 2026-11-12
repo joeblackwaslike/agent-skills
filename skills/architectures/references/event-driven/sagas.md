@@ -38,62 +38,78 @@ Start orchestrated once a saga has more than about three steps. A choreographed 
 
 ## A worked example
 
-This is an illustration, not a pattern copied from a reference implementation. An order moves through four services. Each step before the pivot has a compensation. The step after it has none and is retried instead.
+This is an illustration, not a pattern copied from a reference implementation. An order moves through four services. Steps before the pivot each have a compensation. The pivot is the point of no return: if it fails, the earlier steps are compensated, and once it commits nothing is undone. The step after it is retried until it succeeds.
 
 | Step | Action | Compensation |
 | --- | --- | --- |
 | 1 | Create the order as pending | Cancel the order |
 | 2 | Charge the payment | Refund the payment |
-| 3 | Reserve stock (the pivot: after this, the order will ship) | Release the stock |
-| 4 | Approve the order | None, retried until it succeeds |
+| 3 | Reserve stock | Release the stock |
+| 4 | Book the carrier (the pivot: after this the order ships) | None |
+| 5 | Approve the order | None, retried until it succeeds |
 
-An orchestrator runs the steps in order. On a failure it runs the compensations of the completed steps in reverse. The participants below are in-memory fakes so the example runs on its own.
+An orchestrator runs the steps in order. On a failure before or at the pivot it runs the compensations of the steps it started, in reverse, including the failed one, since a timeout leaves its outcome unknown and an idempotent compensation is safe to run anyway. Retries back off and apply only to transient errors. The participants below are in-memory fakes so the example runs on its own, and the stock reservation is keyed by an order id so a redelivered command changes nothing.
 
 ```python
 import asyncio
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 
+Action = Callable[[], Awaitable[None]]
+
+
+class TransientError(Exception):
+    pass
+
 
 @dataclass
 class Step:
     name: str
-    action: Callable[[], Awaitable[None]]
-    compensate: Callable[[], Awaitable[None]] | None = None
-    retries: int = 0  # more than 0 marks a retryable step after the pivot
+    action: Action
 
 
-async def attempt(step: Step) -> None:
-    for tries in range(step.retries + 1):
+@dataclass
+class Compensable(Step):
+    compensate: Action  # must be idempotent
+
+
+async def retry(action: Action, attempts: int = 3, base_delay: float = 0.1) -> None:
+    attempts = max(1, attempts)
+    for i in range(attempts):
         try:
-            await step.action()
-            return
-        except Exception:
-            if tries == step.retries:
+            return await action()
+        except TransientError:
+            if i == attempts - 1:
                 raise
+            await asyncio.sleep(base_delay * 2**i)  # add jitter in production
 
 
-async def run_saga(steps: list[Step]) -> dict:
-    done: list[Step] = []
-    for step in steps:
-        try:
-            await attempt(step)
-        except Exception as exc:
-            if step.retries:
-                raise  # past the pivot: never compensate, escalate to an operator
-            for prev in reversed(done):
-                if prev.compensate:
-                    await prev.compensate()
-            return {"status": "compensated", "failed_at": step.name, "error": str(exc)}
-        done.append(step)
+async def run_saga(before: list[Compensable], pivot: Step, after: list[Step]) -> dict:
+    done: list[Compensable] = []
+    current = ""
+    try:
+        for step in before:
+            current = step.name
+            done.append(step)  # compensate it too: its outcome is unknown if the call times out
+            await step.action()
+        current = pivot.name
+        await pivot.action()
+    except Exception:
+        for prev in reversed(done):
+            await prev.compensate()
+        return {"status": "compensated", "failed_at": current}
+    for step in after:
+        await retry(step.action)  # raises when exhausted: escalate, never compensate
     return {"status": "completed"}
 
 
 class World:
-    def __init__(self, stock: int, approve_failures: int = 0) -> None:
-        self.stock = stock
+    def __init__(self, capacity: int, carrier_up: bool = True, approve_failures: int = 0) -> None:
+        self.capacity = capacity
+        self.carrier_up = carrier_up
         self.order = "none"
         self.paid = False
+        self.reserved: set[str] = set()
         self._approve_failures = approve_failures
 
     async def create_order(self) -> None: self.order = "pending"
@@ -102,41 +118,55 @@ class World:
     async def refund(self) -> None: self.paid = False
 
     async def reserve(self) -> None:
-        if self.stock < 1:
+        if "order-1" in self.reserved:
+            return  # redelivery of the same command
+        if len(self.reserved) >= self.capacity:
             raise RuntimeError("out of stock")
-        self.stock -= 1
+        self.reserved.add("order-1")
 
-    async def release(self) -> None: self.stock += 1
+    async def release(self) -> None: self.reserved.discard("order-1")
+
+    async def book_carrier(self) -> None:
+        if not self.carrier_up:
+            raise RuntimeError("carrier rejected the booking")
 
     async def approve(self) -> None:
         if self._approve_failures:
             self._approve_failures -= 1
-            raise RuntimeError("approval service unavailable")
+            raise TransientError("approval service unavailable")
         self.order = "approved"
 
 
-def order_saga(w: World) -> list[Step]:
-    return [
-        Step("create_order", w.create_order, w.cancel_order),
-        Step("charge_payment", w.charge, w.refund),
-        Step("reserve_stock", w.reserve, w.release),  # the pivot
-        Step("approve_order", w.approve, retries=3),
-    ]
+def order_saga(w: World) -> tuple[list[Compensable], Step, list[Step]]:
+    return (
+        [
+            Compensable("create_order", w.create_order, w.cancel_order),
+            Compensable("charge_payment", w.charge, w.refund),
+            Compensable("reserve_stock", w.reserve, w.release),
+        ],
+        Step("book_carrier", w.book_carrier),  # the pivot
+        [Step("approve_order", w.approve)],
+    )
 
 
 async def main() -> None:
-    ok = World(stock=1)
-    assert (await run_saga(order_saga(ok)))["status"] == "completed"
-    assert ok.order == "approved" and ok.paid and ok.stock == 0
+    ok = World(capacity=1)
+    assert (await run_saga(*order_saga(ok)))["status"] == "completed"
+    assert ok.order == "approved" and ok.paid and ok.reserved == {"order-1"}
 
-    flaky = World(stock=1, approve_failures=2)
-    assert (await run_saga(order_saga(flaky)))["status"] == "completed"
-    assert flaky.order == "approved" and flaky.stock == 0
+    flaky = World(capacity=1, approve_failures=2)
+    assert (await run_saga(*order_saga(flaky)))["status"] == "completed"
+    assert flaky.order == "approved" and flaky.reserved == {"order-1"}
 
-    short = World(stock=0)
-    result = await run_saga(order_saga(short))
+    short = World(capacity=0)
+    result = await run_saga(*order_saga(short))
     assert result["failed_at"] == "reserve_stock"
     assert short.order == "cancelled" and not short.paid
+
+    refused = World(capacity=1, carrier_up=False)
+    result = await run_saga(*order_saga(refused))
+    assert result["failed_at"] == "book_carrier"
+    assert refused.order == "cancelled" and not refused.paid and not refused.reserved
 
 
 asyncio.run(main())
@@ -145,83 +175,101 @@ asyncio.run(main())
 ```ts
 import assert from "node:assert/strict";
 
-type Step = {
-  name: string;
-  action: () => Promise<void>;
-  compensate?: () => Promise<void>;
-  retries?: number; // above 0 marks a retryable step after the pivot
-};
+type Action = () => Promise<void>;
+type Step = { name: string; action: Action };
+type Compensable = Step & { compensate: Action }; // compensate must be idempotent
+type SagaResult = { status: "completed" } | { status: "compensated"; failedAt: string };
 
-async function attempt(step: Step) {
-  const retries = step.retries ?? 0;
-  for (let tries = 0; tries <= retries; tries++) {
+class TransientError extends Error {}
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function retry(action: Action, attempts = 3, baseDelayMs = 100) {
+  const total = Math.max(1, attempts);
+  for (let i = 0; i < total; i++) {
     try {
-      return await step.action();
+      return await action();
     } catch (err) {
-      if (tries === retries) throw err;
+      if (!(err instanceof TransientError) || i === total - 1) throw err;
+      await sleep(baseDelayMs * 2 ** i); // add jitter in production
     }
   }
 }
 
-async function runSaga(steps: Step[]) {
-  const done: Step[] = [];
-  for (const step of steps) {
-    try {
-      await attempt(step);
-    } catch (err) {
-      if (step.retries) throw err; // past the pivot: never compensate, escalate to an operator
-      for (const prev of [...done].reverse()) await prev.compensate?.();
-      return { status: "compensated", failedAt: step.name, error: String(err) };
+async function runSaga(before: Compensable[], pivot: Step, after: Step[]): Promise<SagaResult> {
+  const done: Compensable[] = [];
+  let current = "";
+  try {
+    for (const step of before) {
+      current = step.name;
+      done.push(step); // compensate it too: its outcome is unknown if the call times out
+      await step.action();
     }
-    done.push(step);
+    current = pivot.name;
+    await pivot.action();
+  } catch {
+    for (const prev of [...done].reverse()) await prev.compensate();
+    return { status: "compensated", failedAt: current };
   }
+  for (const step of after) await retry(step.action); // throws when exhausted: escalate, never compensate
   return { status: "completed" };
 }
 
 class World {
   order = "none";
   paid = false;
-  constructor(public stock: number, private approveFailures = 0) {}
+  reserved = new Set<string>();
+  constructor(private capacity: number, private carrierUp = true, private approveFailures = 0) {}
   createOrder = async () => { this.order = "pending"; };
   cancelOrder = async () => { this.order = "cancelled"; };
   charge = async () => { this.paid = true; };
   refund = async () => { this.paid = false; };
   reserve = async () => {
-    if (this.stock < 1) throw new Error("out of stock");
-    this.stock -= 1;
+    if (this.reserved.has("order-1")) return; // redelivery of the same command
+    if (this.reserved.size >= this.capacity) throw new Error("out of stock");
+    this.reserved.add("order-1");
   };
-  release = async () => { this.stock += 1; };
+  release = async () => { this.reserved.delete("order-1"); };
+  bookCarrier = async () => {
+    if (!this.carrierUp) throw new Error("carrier rejected the booking");
+  };
   approve = async () => {
     if (this.approveFailures > 0) {
       this.approveFailures -= 1;
-      throw new Error("approval service unavailable");
+      throw new TransientError("approval service unavailable");
     }
     this.order = "approved";
   };
 }
 
-const orderSaga = (w: World): Step[] => [
-  { name: "create_order", action: w.createOrder, compensate: w.cancelOrder },
-  { name: "charge_payment", action: w.charge, compensate: w.refund },
-  { name: "reserve_stock", action: w.reserve, compensate: w.release }, // the pivot
-  { name: "approve_order", action: w.approve, retries: 3 },
+const orderSaga = (w: World): [Compensable[], Step, Step[]] => [
+  [
+    { name: "create_order", action: w.createOrder, compensate: w.cancelOrder },
+    { name: "charge_payment", action: w.charge, compensate: w.refund },
+    { name: "reserve_stock", action: w.reserve, compensate: w.release },
+  ],
+  { name: "book_carrier", action: w.bookCarrier }, // the pivot
+  [{ name: "approve_order", action: w.approve }],
 ];
 
 const ok = new World(1);
-assert.equal((await runSaga(orderSaga(ok))).status, "completed");
-assert.ok(ok.order === "approved" && ok.paid && ok.stock === 0);
+assert.equal((await runSaga(...orderSaga(ok))).status, "completed");
+assert.ok(ok.order === "approved" && ok.paid && ok.reserved.has("order-1"));
 
-const flaky = new World(1, 2);
-assert.equal((await runSaga(orderSaga(flaky))).status, "completed");
-assert.ok(flaky.order === "approved" && flaky.stock === 0);
+const flaky = new World(1, true, 2);
+assert.equal((await runSaga(...orderSaga(flaky))).status, "completed");
+assert.ok(flaky.order === "approved" && flaky.reserved.has("order-1"));
 
 const short = new World(0);
-const result = await runSaga(orderSaga(short));
-assert.equal(result.failedAt, "reserve_stock");
+assert.deepEqual(await runSaga(...orderSaga(short)), { status: "compensated", failedAt: "reserve_stock" });
 assert.ok(short.order === "cancelled" && !short.paid);
+
+const refused = new World(1, false);
+assert.deepEqual(await runSaga(...orderSaga(refused)), { status: "compensated", failedAt: "book_carrier" });
+assert.ok(refused.order === "cancelled" && !refused.paid && refused.reserved.size === 0);
 ```
 
-Two things this sketch leaves out that a real saga needs. The orchestrator's progress has to be stored, so a crash resumes instead of restarting. And a compensation that throws needs a retry policy, because it must run to completion. A retryable step that exhausts its retries is escalated to an operator, never compensated.
+Three things this sketch leaves out that a real saga needs. The orchestrator's progress has to be stored, so a crash resumes instead of restarting. A compensation that throws needs a retry policy, because it must run to completion. And the result carries only the failed step's name: keep the exception text in logs under a correlation id, not in anything returned to a caller. A retryable step that exhausts its retries is escalated to an operator, never compensated.
 
 ## Writing compensations
 

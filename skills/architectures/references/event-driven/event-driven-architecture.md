@@ -93,11 +93,13 @@ class IdempotentConsumer<T> {
   }
 }
 
+import assert from "node:assert/strict";
+
 let total = 0;
 const consumer = new IdempotentConsumer<{ amount: number }>(async (p) => { total += p.amount; });
 await consumer.handle("evt-1", { amount: 5 });
 await consumer.handle("evt-1", { amount: 5 });
-console.assert(total === 5);
+assert.equal(total, 5);
 ```
 
 In production the processed-id record and the handler's effects must commit in the same transaction. Otherwise a crash between the two reproduces the duplicate, as it does in this in-memory sketch, and two concurrent deliveries of the same id can both pass the check, so enforce uniqueness with a database constraint or a lock. See [idempotency-key.md](../../../design-patterns/references/resilience/idempotency-key.md).
@@ -117,7 +119,7 @@ Brokers order events within a partition, not across the whole topic. Choose the 
 
 Published events are a contract with consumers you may not know.
 
-- Adding an optional field with a default is compatible. So is removing an optional field.
+- Adding an optional field with a default is compatible in Avro, and so is removing one. JSON Schema with a closed content model (`additionalProperties: false`) rejects unknown fields, so adding a field breaks old consumers and removing one breaks reading historical events. Check your format's rules in the registry docs.
 - Never rename a field or change its type in place. Add a new field, migrate consumers, and remove the old one later.
 - Know your compatibility mode. Backward-compatible means new consumers can read old events, so upgrade consumers first. Forward-compatible means old consumers can read new events, so upgrade producers first. Full compatibility lets you upgrade either side first.
 - For stored events, use upcasters. See [event-sourcing.md](event-sourcing.md).
