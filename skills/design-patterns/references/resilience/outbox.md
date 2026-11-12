@@ -12,7 +12,7 @@ You need the outbox when a lost event leaves the system wrong: an order saved bu
 
 ## Python
 
-`sqlite3` stands in for a database here, with a temporary file so two relays can compete. `place_order` writes both rows and leaves the commit to the caller. The relay runs on its own autocommit connection (`isolation_level=None`) and wraps each row in an explicit `BEGIN IMMEDIATE`. That statement takes SQLite's write lock before anything is read or published, so a second relay cannot start its own write transaction until the first commits. The relay rechecks the row inside the transaction, publishes, marks it and commits. SQLite has no per-row locks, so the lock is database-wide. A failure rolls back, records `attempts` and `last_error`, logs the row id, and the loop moves on, so one poison row cannot block the rest.
+`sqlite3` stands in for a database here, with a temporary file so two relays can compete. `place_order` writes both rows and leaves the commit to the caller. The relay runs on its own autocommit connection (`isolation_level=None`) and wraps each row in an explicit `BEGIN IMMEDIATE`. That statement takes SQLite's write lock before anything is read or published, so a second relay cannot start its own write transaction until the first commits. The relay rechecks the row inside the transaction, publishes, marks it and commits. SQLite has no per-row locks, so the lock is database-wide. `timeout=0` exists only so the demo's rival relay fails fast. A real relay uses a non-zero busy timeout. Only lock contention counts as "someone else has it", and any other `OperationalError` is re-raised. A failure rolls back, then records `attempts` and `last_error` on a best-effort basis: if the database is locked at that moment, the relay logs the row id and moves on, and the next pass records the failure. So one poison row cannot block the rest.
 
 ```python
 import json
@@ -49,7 +49,10 @@ def relay_once(conn: sqlite3.Connection, publish: Callable[[Message], None], bat
     for (row_id,) in ids:
         try:
             conn.execute("BEGIN IMMEDIATE")
-        except sqlite3.OperationalError:
+        except sqlite3.OperationalError as err:
+            if "database is locked" not in str(err):
+                raise
+            log.info("outbox row %s is being relayed by someone else", row_id)
             continue
         try:
             row: Message | None = conn.execute(
@@ -65,7 +68,10 @@ def relay_once(conn: sqlite3.Connection, publish: Callable[[Message], None], bat
             if conn.in_transaction:
                 conn.execute("ROLLBACK")
             log.warning("outbox row %s failed: %s", row_id, err)
-            conn.execute("UPDATE outbox SET attempts = attempts + 1, last_error = ? WHERE id = ?", (str(err), row_id))
+            try:
+                conn.execute("UPDATE outbox SET attempts = attempts + 1, last_error = ? WHERE id = ?", (str(err), row_id))
+            except sqlite3.OperationalError as bookkeeping:
+                log.warning("could not record failure for row %s: %s", row_id, bookkeeping)
     return sent
 
 
@@ -117,16 +123,43 @@ assert [relay_once(relay, publish) for _ in range(4)] == [1, 1, 0, 0]
 assert rival_sent and set(rival_sent) == {0}
 assert delivered == [1, 3, 1] and len(handled) == 2
 assert shop.execute("SELECT id, attempts FROM outbox WHERE published = 0").fetchall() == [(2, 3)]
+
+
+class LockOut(logging.Handler):
+    def emit(self, record: logging.LogRecord) -> None:
+        text = record.getMessage()
+        if text.startswith("outbox row 4 failed"):
+            rival.execute("BEGIN IMMEDIATE")
+        elif text.startswith("could not record failure"):
+            rival.execute("ROLLBACK")
+
+
+def publish_batch_two(message: Message) -> None:
+    if message[0] == 4:
+        raise ConnectionError("bad payload")
+
+
+with shop:
+    place_order(shop, "o-4", 100)
+    place_order(shop, "o-5", 100)
+lock_out = LockOut()
+log.addHandler(lock_out)
+assert relay_once(relay, publish_batch_two) == 1
+assert shop.execute("SELECT attempts FROM outbox WHERE id = 4").fetchone() == (0,)
+assert shop.execute("SELECT published FROM outbox WHERE id = 5").fetchone() == (1,)
+log.removeHandler(lock_out)
+assert relay_once(relay, publish_batch_two) == 0
+assert shop.execute("SELECT attempts FROM outbox WHERE id = 4").fetchone() == (1,)
 for connection in (shop, relay, rival):
     connection.close()
 tmp.cleanup()
 ```
 
-The rollback test shows both rows disappear together. Inside `publish` the relay's transaction is open (`relay.in_transaction`), and a rival relay trying to claim a row at that moment gets nothing (`rival_sent` is all zeros) because its `BEGIN IMMEDIATE` fails. Row 1 reaches the broker, the relay "crashes" before marking it, and the next pass sends it again. That is at-least-once delivery, visible as `delivered == [1, 3, 1]`. Row 2 fails three times and then stays unpublished for an operator, while row 3 goes out on the first pass. The `seen` set stands in for consumer dedupe. A real consumer records the event id in its own database, in the same transaction as its side effect.
+The rollback test shows both rows disappear together. Inside `publish` the relay's transaction is open (`relay.in_transaction`), and a rival relay trying to claim a row at that moment gets nothing (`rival_sent` is all zeros) because its `BEGIN IMMEDIATE` fails. Row 1 reaches the broker, the relay "crashes" before marking it, and the next pass sends it again. That is at-least-once delivery, visible as `delivered == [1, 3, 1]`. Row 2 fails three times and then stays unpublished for an operator, while row 3 goes out on the first pass. The last block holds the write lock from a rival connection just as the relay tries to record row 4's failure, using a log handler as the hook. The bookkeeping is skipped and logged, row 5 still goes out, and the next pass records the attempt. The `seen` set stands in for consumer dedupe. A real consumer records the event id in its own database, in the same transaction as its side effect.
 
 ## TypeScript
 
-`transaction` is a toy for synchronous work. It swaps a copy in only if `work` returns, and it would not roll back work that awaits. It covers the write side only. The TypeScript relay takes no lock, so it is safe for a single relay and shows the publish-then-mark order; several relays need the claim step from the Python sample or the Postgres notes below.
+`transaction` is a toy for synchronous work. It swaps a copy in only if `work` returns, and it would not roll back work that awaits. It covers the write side only. The TypeScript relay takes no lock, so it is safe for a single relay and shows the publish-then-mark order; several relays need the claim step from the Python sample or the Postgres notes below. Its failure bookkeeping is an in-memory write that cannot be locked out. Against a real database, treat that write as best effort too, as the Python relay does.
 
 ```typescript
 import assert from "node:assert/strict";
