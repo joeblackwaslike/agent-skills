@@ -70,7 +70,7 @@ class Order(DeclarativeBase):
 **The fix:** Keep domain classes pure (no framework imports) and map them to storage with a
 separate mapper or SQLAlchemy's imperative mapping. The repository adapter does the
 translation. The cost of a mapper is small; the payoff is a domain that doesn't know
-Postgres exists. See `application-architecture.md`.
+Postgres exists. See [application-architecture.md](../../architectures/references/application/application-architecture.md).
 
 ## 3. God aggregate
 
@@ -115,47 +115,7 @@ bypassing the `Order` root and its invariants.
 **The fix:** One repository **per aggregate root**, only. You load and save whole aggregates.
 Internal entities are reached through the root's methods, never fetched independently.
 
-## 7. CQRS / event-sourcing cargo-culting
-
-**The tell:** A brand-new CRUD app already has separate command and query buses, an event
-store, projections, and eventual consistency — for a domain whose read shape is identical to
-its write shape and whose hardest invariant is "name is required." Months of infrastructure,
-zero payoff, and every junior dev is lost.
-
-**The fix:** These patterns have real, ongoing costs (cognitive load, eventual-consistency
-bugs, event-versioning toil). Adopt them where they earn it:
-- **CQRS** when read and write shapes genuinely diverge or reads must scale independently —
-  and even then, start with plain read-only queries before full projections (`cqrs.md`).
-- **Event sourcing** when the event history is itself valuable (audit, temporal queries,
-  compliance), often for a *subset* of aggregates, not the whole system (`event-sourcing.md`).
-
-"It's the proper/rigorous way" is not a justification. Match the pattern to the problem.
-
-## 8. Premature bounded contexts (distributed monolith)
-
-**The tell:** A two-person team splits a greenfield system into eight microservices /
-bounded contexts on day one, before the domain is even understood. The "boundaries" are
-guesses; they're wrong; and now every feature requires a cross-service, cross-network change
-— a distributed monolith with all the cost of microservices and none of the autonomy.
-
-**The fix:** Start with a **modular monolith** — bounded contexts as modules in one
-deployable, with clean interfaces between them. Let the boundaries prove themselves as you
-learn the domain. Extract a context into its own service only when there's a real driver
-(independent scaling, separate team ownership, isolation). Boundaries are cheap to move
-inside a monolith and brutal to move across services. See `strategic-design.md`.
-
-## 9. Read concerns polluting the write model
-
-**The tell:** The `Order` aggregate grows getters for every field, DTO-shaped methods, and
-denormalized data "so the UI can render it." The write model's encapsulation erodes to serve
-reads.
-
-**The fix:** That's exactly what read models are for. Let the write model stay focused on
-behavior and invariants; build a separate read model / projection shaped for the screen.
-Even a lightweight read-only query against the same DB keeps the aggregate clean. See
-`cqrs.md`.
-
-## 10. Domain services as a dumping ground
+## 7. Domain services as a dumping ground
 
 **The tell:** Every piece of logic lands in a `*Service`, and the entities are anemic (see
 #1). "Domain service" became the place to put code nobody bothered to put on an aggregate.
@@ -167,6 +127,10 @@ rare, deliberate choice, not the default home for logic.
 
 ---
 
+## Moved to the architectures skill
+
+CQRS/event-sourcing cargo-culting, premature bounded contexts (the distributed monolith) and read concerns polluting the write model now live in [architectures anti-patterns](../../architectures/references/anti-patterns.md).
+
 ## Quick review heuristics
 
 When reviewing domain code, these questions surface most problems fast:
@@ -176,5 +140,5 @@ When reviewing domain code, these questions surface most problems fast:
 - Does the domain layer **import** anything from infrastructure? (→ dependency rule)
 - How many aggregates does this transaction touch? (Should be one.)
 - Is this aggregate a **consistency** boundary, or did it become a containment dumping ground?
-- Did we add CQRS/ES because the problem needed it, or because it sounded right?
+- Did we add CQRS/ES because the problem needed it, or because it sounded right? See [architectures anti-patterns](../../architectures/references/anti-patterns.md).
 - Would a **domain expert** recognize the names in this code?

@@ -146,7 +146,7 @@ export class GetOrderSummaryHandler {
 
 Python mirrors this exactly: a `@dataclass` (or Pydantic model) for `OrderSummaryView`, an
 `async def on(self, event)` projection that `match`es on event type, and a query handler
-that reads the store. See `python-examples.md` for the assembled version.
+that reads the store. See the Python worked example at the end of this file.
 
 ## Synchronous vs. asynchronous projections
 
@@ -175,7 +175,7 @@ view.
   overhead — you've doubled the code for nothing.
 - The team is small and the consistency reasoning isn't worth the cognitive load.
 - You're adding it because it sounds architecturally serious. That's cargo-culting; see
-  `anti-patterns.md`.
+  [anti-patterns.md](../anti-patterns.md).
 
 A pragmatic middle path: keep one rich write model, and for reads just run **plain
 read-only queries** (raw SQL / a thin query object) that bypass the aggregate, against the
@@ -185,4 +185,62 @@ Escalate to full projections only when scale or shape demands it.
 
 CQRS composes naturally with event sourcing — events are both your write-side source of
 truth and the feed for projections — but neither requires the other. See
-`event-sourcing.md`.
+[event-sourcing.md](../event-driven/event-sourcing.md).
+
+## Worked example: the read side in Python
+
+> Uses the Ordering types from [python-examples.md](../../../domain-driven-design/references/python-examples.md).
+
+
+```python
+from __future__ import annotations
+from dataclasses import dataclass
+from typing import Protocol
+
+from ..domain.events import OrderEvent, OrderPaid, OrderPlaced, OrderShipped
+
+
+@dataclass
+class OrderSummaryView:
+    order_id: str
+    status: str
+    total_minor: int
+    currency: str
+    placed_at: str
+
+
+class OrderSummaryStore(Protocol):
+    async def upsert(self, view: OrderSummaryView) -> None: ...
+    async def set_status(self, order_id: str, status: str) -> None: ...
+    async def find_by_id(self, order_id: str) -> OrderSummaryView | None: ...
+
+
+class OrderSummaryProjection:
+    def __init__(self, views: OrderSummaryStore) -> None:
+        self._views = views
+
+    async def on(self, event: OrderEvent) -> None:
+        match event:
+            case OrderPlaced():
+                await self._views.upsert(OrderSummaryView(
+                    order_id=event.order_id,
+                    status="placed",
+                    total_minor=event.total_minor,
+                    currency=event.currency,
+                    placed_at=event.occurred_at,
+                ))
+            case OrderPaid():
+                await self._views.set_status(event.order_id, "paid")
+            case OrderShipped():
+                await self._views.set_status(event.order_id, "shipped")
+
+
+class GetOrderSummaryHandler:
+    """Reads the denormalized view directly — never loads an aggregate."""
+
+    def __init__(self, views: OrderSummaryStore) -> None:
+        self._views = views
+
+    async def get(self, order_id: str) -> OrderSummaryView | None:
+        return await self._views.find_by_id(order_id)
+```

@@ -184,7 +184,7 @@ export class EventSourcedOrderRepository implements OrderRepository {
 
 Notice the application layer **doesn't change**: it still calls `repo.findById`, an
 aggregate method, and `repo.save`. ES is hidden behind the repository port — that's the
-payoff of keeping persistence behind an interface (`application-architecture.md`).
+payoff of keeping persistence behind an interface ([application-architecture.md](../application/application-architecture.md)).
 
 ## Snapshots
 
@@ -231,3 +231,45 @@ projection, you rebuild it from scratch from the events. The write side never ha
 event history is itself valuable — often a *subset* of a system, not the whole thing. It's
 perfectly normal to event-source the `Order` and `Account` aggregates while keeping the
 product catalog as boring CRUD.
+
+## Worked example: event-sourced repository in Python
+
+> Uses the Ordering types from [python-examples.md](../../../domain-driven-design/references/python-examples.md).
+
+
+Same aggregate, store events instead of state. The application handlers in
+[python-examples.md](../../../domain-driven-design/references/python-examples.md) are
+**unchanged** — persistence stays behind the `OrderRepository` port. The aggregate gains a
+`version`, a `from_history` classmethod, and `_apply` methods that fold events into state
+with no validation (reused on replay).
+
+```python
+from typing import Protocol
+from .domain.events import OrderEvent
+from .domain.order import Order
+
+
+class EventStore(Protocol):
+    async def append(self, stream_id: str, events: list[OrderEvent], expected_version: int) -> None: ...
+    async def read(self, stream_id: str) -> list[OrderEvent]: ...
+
+
+class EventSourcedOrderRepository:
+    """Adapts the event store to the same OrderRepository port."""
+
+    def __init__(self, store: EventStore) -> None:
+        self._store = store
+
+    async def find_by_id(self, order_id: str) -> Order | None:
+        events = await self._store.read(order_id)
+        return Order.from_history(events) if events else None  # type: ignore[attr-defined]
+
+    async def save(self, order: Order) -> None:
+        new_events = order.pull_events()
+        if not new_events:
+            return
+        version = getattr(order, "version", len(new_events))
+        await self._store.append(order.id, new_events, version - len(new_events))
+```
+
+See the sections above for the full decide/apply `Order` shape, snapshots, and upcasting.

@@ -1,12 +1,11 @@
 # TypeScript: A Complete Bounded Context
 
 One complete **Ordering** bounded context in plain TypeScript, assembled end to end:
-value objects → aggregate → domain events → repository port → application service →
-read-model projection → an event-sourced variant. It's framework-agnostic (no Nest, no
-Express) so the patterns are visible; a note at the end shows where Zod and a web framework
-plug in.
+value objects → aggregate → domain events → repository port → application service.
+It's framework-agnostic (no Nest, no Express) so the patterns are visible; a note at the end
+shows where Zod and a web framework plug in.
 
-The code is organized as it would be on disk (see `application-architecture.md`), but reads
+The code is organized as it would be on disk (see [application-architecture.md](../../architectures/references/application/application-architecture.md)), but reads
 top-to-bottom as one coherent example. Everything here is self-consistent and type-checks
 under `strict`.
 
@@ -279,61 +278,14 @@ export class InMemoryOrderRepository implements OrderRepository {
 }
 ```
 
-## `infrastructure/order-summary-projection.ts` — the read side (CQRS)
-
-```ts
-export interface OrderSummaryView {
-  orderId: string;
-  status: OrderStatus;
-  totalMinor: number;
-  currency: string;
-  placedAt: string;
-}
-
-export interface OrderSummaryStore {
-  upsert(view: OrderSummaryView): Promise<void>;
-  setStatus(orderId: string, status: OrderStatus): Promise<void>;
-  findById(orderId: string): Promise<OrderSummaryView | null>;
-}
-
-export class OrderSummaryProjection {
-  constructor(private readonly views: OrderSummaryStore) {}
-
-  async on(event: DomainEvent): Promise<void> {
-    if (event instanceof OrderPlaced) {
-      await this.views.upsert({
-        orderId: event.orderId.value,
-        status: "placed",
-        totalMinor: event.total.amountMinor,
-        currency: event.total.currency,
-        placedAt: event.occurredAt,
-      });
-    } else if (event instanceof OrderPaid) {
-      await this.views.setStatus(event.orderId.value, "paid");
-    } else if (event instanceof OrderShipped) {
-      await this.views.setStatus(event.orderId.value, "shipped");
-    }
-  }
-}
-
-// Query handler — reads the denormalized view directly, never an aggregate.
-export class GetOrderSummaryHandler {
-  constructor(private readonly views: OrderSummaryStore) {}
-  get(orderId: string): Promise<OrderSummaryView | null> {
-    return this.views.findById(orderId);
-  }
-}
-```
-
 ## Wiring it together
 
 ```ts
 async function demo(): Promise<void> {
   const orders = new InMemoryOrderRepository();
-  const projection = new OrderSummaryProjection(/* a real OrderSummaryStore */ makeStore());
   const publisher: EventPublisher = {
     async publishAll(events) {
-      for (const e of events) await projection.on(e);
+      for (const e of events) console.log("event:", e.constructor.name);
     },
   };
 
@@ -348,41 +300,6 @@ async function demo(): Promise<void> {
   await ship.handle({ orderId }).catch((e) => console.log("blocked:", e.message)); // "cannot ship an unpaid order"
 }
 ```
-
-## Event-sourced variant
-
-Same aggregate, different persistence: store the events instead of the state. Only the
-aggregate's internals (decide/apply split) and the repository change — the application
-handlers above are **untouched**, because persistence stays behind the `OrderRepository`
-port.
-
-```ts
-export interface EventStore {
-  append(streamId: string, events: OrderEvent[], expectedVersion: number): Promise<void>;
-  read(streamId: string): Promise<OrderEvent[]>;
-}
-
-// The repository adapts the event store to the same OrderRepository port.
-export class EventSourcedOrderRepository implements OrderRepository {
-  constructor(private readonly store: EventStore) {}
-
-  async findById(id: OrderId): Promise<Order | null> {
-    const events = await this.store.read(id.value);
-    return events.length ? Order.fromHistory(events) : null;
-  }
-
-  async save(order: Order): Promise<void> {
-    const newEvents = order.pullEvents();
-    if (newEvents.length === 0) return;
-    await this.store.append(order.id.value, newEvents, order.version - newEvents.length);
-  }
-}
-```
-
-For this to work, `Order` gains `version`, a `fromHistory(events)` factory, and private
-`apply(event)` methods that fold each event into state with no validation (reused on
-replay). See `event-sourcing.md` for that full shape — it's the same `Order`, refactored so
-state transitions go through events.
 
 ## Where Zod and a web framework plug in
 
