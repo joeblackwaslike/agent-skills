@@ -81,7 +81,11 @@ export function createBus<E>(onError: (err: unknown, event: E) => void = console
   const handlers = new Set<Handler<E>>();
 
   const report = (err: unknown, event: E): void => {
-    try { onError(err, event); } catch { return; }
+    try {
+      onError(err, event);
+    } catch {
+      return;
+    }
   };
 
   const run = (handler: Handler<E>, event: E): Promise<void> => {
@@ -135,12 +139,15 @@ A rejected promise from an async handler is caught separately, because `try/catc
 
 - Node's `EventEmitter` and the DOM's `addEventListener` are both Observer. Note that `EventEmitter` calls listeners synchronously and an exception in one propagates to `emit`'s caller, so isolation is your job.
 - Django signals (`post_save` and friends) with `send_robust`, which catches receiver exceptions and returns them instead of raising.
+- Redux and Zustand stores notify subscribers after state changes; RxJS and signals libraries are Observer with operators.
+- Webhooks are Observer across a network boundary.
 
 ## Smells and misuse
 
 - A handler that must succeed for the publisher to be correct. If the order is not valid without the inventory update, that is a call, not an event.
 - Ceiling of the in-process version. Handlers run inline on the publisher's thread, so one slow handler slows every publish, and an event is lost if the process dies before handlers finish. When you need retries, durability, or handlers in other services, put a queue or an [outbox](../resilience/outbox.md) between them.
 - Handlers that publish events that trigger the first handler. Cycles show up as stack overflows or silent loops.
+- Event names as bare strings scattered over the codebase. Use one typed event per class or type.
 - Never unsubscribing. Long-lived buses hold references to short-lived objects.
 
 ## Related
@@ -148,3 +155,4 @@ A rejected promise from an async handler is caught separately, because `try/catc
 - [Outbox](../resilience/outbox.md) is the durable version when the event must not be lost.
 - [Command](command.md) captures a request to act; Observer announces a fact that already happened.
 - [Chain of Responsibility](chain-of-responsibility.md) passes one request through ordered handlers; Observer fans one event out to all of them.
+- Mediator (see the [catalog](../catalog.md)) centralizes interaction when many objects talk to each other.
