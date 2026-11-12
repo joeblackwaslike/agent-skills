@@ -62,7 +62,7 @@ class IdempotentConsumer:
         self._seen.add(message_id)  # claim the id before any await, so a concurrent duplicate is skipped
         try:
             await self._handler(payload)
-        except Exception:
+        except BaseException:  # includes asyncio.CancelledError, which Exception does not
             self._seen.discard(message_id)  # let the broker redeliver a message that failed
             raise
         return True
