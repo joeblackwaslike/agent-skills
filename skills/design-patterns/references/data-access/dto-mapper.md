@@ -16,13 +16,16 @@ One function at the boundary turns `object` into a domain `Order` or raises. Not
 
 ```python
 from dataclasses import dataclass
-from decimal import Decimal, InvalidOperation
+import re
+from decimal import Decimal
 from enum import StrEnum
 from typing import cast
+
 
 class Status(StrEnum):
     PENDING = "pending"
     PAID = "paid"
+
 
 @dataclass(frozen=True)
 class Order:
@@ -30,6 +33,7 @@ class Order:
     total: Decimal
     status: Status
     internal_note: str = ""
+
 
 def parse_order(raw: object) -> Order:
     if not isinstance(raw, dict):
@@ -40,14 +44,9 @@ def parse_order(raw: object) -> Order:
     status_text = data.get("status")
     if not isinstance(order_id, str) or not order_id:
         raise ValueError("id must be a non-empty string")
-    if not isinstance(total_text, str):
-        raise ValueError("total must be a decimal string")
-    try:
-        total = Decimal(total_text)
-    except InvalidOperation:
-        raise ValueError("total must be a decimal string") from None
-    if not total.is_finite() or total < 0:
-        raise ValueError("total must be a non-negative number")
+    if not isinstance(total_text, str) or not re.fullmatch(r"[0-9]+(\.[0-9]{1,2})?", total_text):
+        raise ValueError("total must be a plain decimal string with at most two places")
+    total = Decimal(total_text)
     if not isinstance(status_text, str):
         raise ValueError("status must be a string")
     try:
@@ -56,8 +55,10 @@ def parse_order(raw: object) -> Order:
         raise ValueError(f"unknown status {status_text!r}") from None
     return Order(order_id, total, status)
 
+
 def to_wire(order: Order) -> dict[str, str]:
-    return {"id": order.id, "total": str(order.total), "status": order.status.value}
+    return {"id": order.id, "total": format(order.total, "f"), "status": order.status.value}
+
 
 order = parse_order({"id": "o-1", "total": "19.99", "status": "paid", "extra": 1})
 assert order.total == Decimal("19.99") and order.status is Status.PAID
@@ -65,8 +66,11 @@ assert order.total == Decimal("19.99") and order.status is Status.PAID
 wire = to_wire(Order("o-2", Decimal("5"), Status.PENDING, internal_note="vip"))
 assert wire == {"id": "o-2", "total": "5", "status": "pending"}
 
-for bad in [None, {"id": "o-3"}, {"id": "o-3", "total": "NaN", "status": "paid"},
-            {"id": "o-3", "total": "1", "status": "refunded"}]:
+assert to_wire(Order("o-4", Decimal("1E+3"), Status.PAID))["total"] == "1000"
+bad_totals = ["NaN", "1E+3", "1_0", " 5", "1.234", "-1"]
+for bad in [None, {"id": "o-3"}, {"id": "o-3", "total": "1", "status": "refunded"}] + [
+    {"id": "o-3", "total": t, "status": "paid"} for t in bad_totals
+]:
     try:
         parse_order(bad)
     except ValueError:
@@ -74,7 +78,7 @@ for bad in [None, {"id": "o-3"}, {"id": "o-3", "total": "NaN", "status": "paid"}
     raise AssertionError(f"accepted {bad!r}")
 ```
 
-`to_wire` lists the fields it exposes, so `internal_note` cannot reach the client by accident. Adding a field to `Order` changes nothing on the wire until you edit the mapper. Pydantic models do the parse step with less code, and the boundary keeps the same shape.
+The regex runs before `Decimal`, which would otherwise accept exponent forms, underscores and padding, and `to_wire` formats without an exponent. `to_wire` lists the fields it exposes, so `internal_note` cannot reach the client by accident. Adding a field to `Order` changes nothing on the wire until you edit the mapper. Pydantic models do the parse step with less code, and the boundary keeps the same shape.
 
 ## TypeScript
 
@@ -119,7 +123,7 @@ for (const bad of [null, [], { id: "o-2" }, { id: "o-2", total_cents: 1.5, statu
 assert.throws(() => parseOrder({ id: "o-2", total_cents: 1, status: "toString" }));
 ```
 
-The status check searches a fixed array, so a payload value like `"toString"` or `"__proto__"` is simply unknown. Destructuring reads only the three keys the mapper names. Libraries such as Zod generate this parser from a schema.
+The status check searches a fixed array, so a payload value like `"toString"` or `"__proto__"` is simply unknown. Destructuring reads only the keys the mapper names. `JSON.parse` throws on malformed text, so callers wrap it and treat that as a bad request. Libraries such as Zod generate this parser from a schema.
 
 ## In production
 
