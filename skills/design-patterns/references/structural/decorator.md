@@ -85,7 +85,7 @@ assert calls == ["call refund"]
 assert refund.__name__ == "refund" and refund.__doc__ == "Refund an order."
 ```
 
-`AuditedGateway` is the wrapper object. It implements the same `Protocol` as the thing it wraps, so it can be stacked. It logs the attempt, then the result or the failure, and re-raises so callers still see the error. `refund` shows the syntax form for a single sync function; for `async def`, write an `async def wrapper` that awaits `fn`, or the sync wrapper logs and returns an un-awaited coroutine. The same trap exists in TypeScript. Applied to the async `Gateway` in the adapter file, the sync `audited` in the TypeScript example would log "charged" with a pending `Promise` before it settles, and its `catch` would never see a rejection. `auditedAsync` is the awaited form: the wrapper is `async` and awaits the inner call inside the `try`, so a rejection is logged as a failure. `functools.wraps` copies the name and docstring, so tracebacks and `help()` still describe `refund` instead of `wrapper`, and the `ParamSpec` generics keep the original signature visible to the type checker.
+`AuditedGateway` is the wrapper object. It implements the same `Protocol` as the thing it wraps, so it can be stacked. It logs the attempt, then the result or the failure, and re-raises so callers still see the error. `refund` shows the syntax form for a single sync function; for `async def`, write an `async def wrapper` that awaits `fn`, or the sync wrapper logs and returns an un-awaited coroutine. `functools.wraps` copies the name and docstring, so tracebacks and `help()` still describe `refund` instead of `wrapper`, and the `ParamSpec` generics keep the original signature visible to the type checker.
 
 ## TypeScript
 
@@ -180,7 +180,7 @@ assert.equal(new Refunds().refund("o-1"), "refund:o-1");
 assert.deepEqual(methodCalls, ["call refund"]);
 ```
 
-A higher-order function plays the role of the decorator and needs no `@` syntax. The `@logged` form at the bottom is TypeScript's decorator syntax, which applies to classes and their members and not to a free function or an object literal, so the example needs a class only to have somewhere to put it. Reach for it when a framework you already use expects it. Otherwise wrap with a function. TypeScript 5 decorators like `@logged` are the standard form and need `experimentalDecorators` off; with it on you get the older legacy form, whose function signatures differ, so this `logged` would not compile.
+A higher-order function plays the role of the decorator and needs no `@` syntax. The sync `audited` has the same async trap as the Python wrapper. Applied to an async gateway like the one in the adapter file, it would log "charged" with a pending `Promise` before it settles, and its `catch` would never see a rejection. `auditedAsync` is the awaited form: the wrapper is `async` and awaits the inner call inside the `try`, so a rejection is logged as a failure. The `@logged` form at the bottom is TypeScript's decorator syntax, which applies to classes and their members and not to a free function or an object literal, so the example needs a class only to have somewhere to put it. Reach for it when a framework you already use expects it. Otherwise wrap with a function. TypeScript 5 decorators like `@logged` are the standard form and need `experimentalDecorators` off; with it on you get the older legacy form, whose function signatures differ, so this `logged` would not compile.
 
 ## In production
 
