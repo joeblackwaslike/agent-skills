@@ -8,7 +8,7 @@ A unit of work tracks the changes made during one business operation and writes 
 
 Usually the database transaction you already have is enough. If a request does one write, there is nothing to coordinate. If it does several, open one transaction around them and commit at the end.
 
-A separate class is warranted only when several repositories must share a transaction and the callers should not manage it by hand. The signal is a bug report with half-written data: an order with no payment row, or the reverse.
+A separate class is warranted only when several repositories must share a transaction and the callers should not manage it by hand. The signal is a bug report about half-written data, such as an order with no payment row.
 
 ## Python
 
@@ -64,7 +64,7 @@ The failed call added both rows to the session, then raised before commit, so ne
 
 ## TypeScript
 
-Most TypeScript drivers give you `BEGIN` and `COMMIT` and nothing else, so a small wrapper does the job. It is a function that takes the work as an argument, not a class.
+Most TypeScript drivers give you `BEGIN` and `COMMIT` and nothing else, so a small function that takes the work as an argument does the job.
 
 ```typescript
 import assert from "node:assert/strict";

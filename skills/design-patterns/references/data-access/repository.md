@@ -125,10 +125,10 @@ The rows live in a `Map`, so a lookup for `"constructor"` returns `undefined` in
 
 ## In production
 
-- SQLAlchemy's `Session` is already repository-like. Wrapping it pays off at the domain boundary, not around every query.
+- SQLAlchemy's `Session` is already repository-like. Wrap it only at the domain boundary.
 - A SQL repository maps rows to domain objects inside its methods (see [DTO and Mapper](dto-mapper.md)) and takes its session or connection from the caller, so one [Unit of Work](unit-of-work.md) can span several repositories.
 - Tests run the same contract against the fake and the real implementation, so the fake cannot drift.
-- Read-heavy screens often skip the repository and run a dedicated query. A repository serves writes and rule checks, not reports.
+- Read-heavy screens often skip the repository and run a dedicated query. A repository earns its place on writes and rule checks.
 
 ## Smells and misuse
 

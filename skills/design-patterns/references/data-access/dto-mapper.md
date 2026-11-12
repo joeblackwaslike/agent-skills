@@ -12,7 +12,7 @@ Add one when the external shape differs from what the domain wants (strings to `
 
 ## Python
 
-Parse at the boundary: one function turns `object` into a domain `Order` or raises. Nothing past that function handles raw dicts.
+One function at the boundary turns `object` into a domain `Order` or raises. Nothing past it handles raw dicts.
 
 ```python
 from dataclasses import dataclass
@@ -74,7 +74,7 @@ for bad in [None, {"id": "o-3"}, {"id": "o-3", "total": "NaN", "status": "paid"}
     raise AssertionError(f"accepted {bad!r}")
 ```
 
-`to_wire` lists the fields it exposes, so `internal_note` cannot reach the client by accident. Adding a field to `Order` changes nothing on the wire until you edit the mapper. Pydantic models do the parse step for you with less code; the shape of the boundary stays the same.
+`to_wire` lists the fields it exposes, so `internal_note` cannot reach the client by accident. Adding a field to `Order` changes nothing on the wire until you edit the mapper. Pydantic models do the parse step with less code, and the boundary keeps the same shape.
 
 ## TypeScript
 

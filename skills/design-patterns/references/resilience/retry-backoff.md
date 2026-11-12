@@ -135,7 +135,7 @@ main().catch((err: unknown) => void (console.error(err), process.exit(1)));
 
 - Python: tenacity provides `stop_after_attempt`, `retry_if_exception_type` and a pluggable `sleep`, so tests can pass a fake as above.
 - TypeScript: p-retry takes `retries`, `factor`, `minTimeout`, `maxTimeout` and a `shouldRetry` callback. Its `randomize` option multiplies each delay by a factor between 1 and 2, which adds spread but is not full jitter. cockatiel has a retry policy with `ExponentialBackoff`.
-- HTTP clients and cloud SDKs often retry by default. Stacking your loop on theirs multiplies attempts (3 x 3 = 9), so turn one off. Retry at one layer only, or load amplifies during an outage.
+- HTTP clients and cloud SDKs often retry by default. Stacking your loop on theirs multiplies attempts (3 x 3 = 9), so turn one off. Retry at one layer only, because stacked loops amplify load during an outage.
 - `Retry-After` on 429 and 503 is the server saying when to come back. Stripe's SDKs can generate idempotency keys and retry automatically (see [Idempotency key](idempotency-key.md)).
 
 ## Smells and misuse

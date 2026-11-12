@@ -146,5 +146,5 @@ main().catch((err: unknown) => void (console.error(err), process.exit(1)));
 
 ## Related
 
-- [Retry with backoff](retry-backoff.md) handles brief blips; the breaker handles sustained outages.
+- [Retry with backoff](retry-backoff.md) covers brief blips. The breaker covers sustained outages.
 - [Decorator](../structural/decorator.md) is the usual way to wrap a client with a breaker.
