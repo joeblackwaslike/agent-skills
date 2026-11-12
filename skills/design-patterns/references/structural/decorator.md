@@ -10,6 +10,8 @@ Not for behavior used in one place. Call `log(...)` inside the function.
 
 The signal is the same cross-cutting step copied into three or more functions (every gateway call logs, times and audits), or a behavior you need to switch on and off per environment without editing the code. Wrapping is better than a base-class method when the behaviors combine in different ways: audit plus timing in one place, timing alone in another.
 
+A wrapper stack on a request handler is Chain of Responsibility with the same shape.
+
 ## Python
 
 ```python
@@ -25,6 +27,8 @@ class Gateway(Protocol):
 
 class CardGateway:
     def charge(self, order_id: str, amount: Decimal) -> str:
+        if amount <= 0:
+            raise ValueError("amount must be positive")
         return f"card:{order_id}:{amount}"
 
 
@@ -35,7 +39,11 @@ class AuditedGateway:
 
     def charge(self, order_id: str, amount: Decimal) -> str:
         self._log.append(f"charge {order_id} {amount}")
-        result = self._inner.charge(order_id, amount)
+        try:
+            result = self._inner.charge(order_id, amount)
+        except Exception as err:
+            self._log.append(f"failed {order_id} {type(err).__name__}")
+            raise
         self._log.append(f"charged {order_id} {result}")
         return result
 
@@ -65,13 +73,19 @@ log: list[str] = []
 gateway: Gateway = AuditedGateway(CardGateway(), log)
 assert gateway.charge("o-1", Decimal("5.00")) == "card:o-1:5.00"
 assert log == ["charge o-1 5.00", "charged o-1 card:o-1:5.00"]
+try:
+    gateway.charge("o-9", Decimal("0"))
+except ValueError:
+    assert log[-2:] == ["charge o-9 0", "failed o-9 ValueError"]
+else:
+    raise AssertionError("the error must propagate")
 
 assert refund("o-1", Decimal("5.00")) == "refund:o-1:5.00"
 assert calls == ["call refund"]
 assert refund.__name__ == "refund" and refund.__doc__ == "Refund an order."
 ```
 
-`AuditedGateway` is the wrapper object. It implements the same `Protocol` as the thing it wraps, so it can be stacked. It logs the attempt and the result; if the inner call raises, the second line never appears, so wrap it in `try/except` if failures must be logged. `refund` shows the syntax form for a single sync function; for `async def`, write an `async def wrapper` that awaits `fn`, or the sync wrapper logs and returns an un-awaited coroutine. `functools.wraps` copies the name and docstring, so tracebacks and `help()` still describe `refund` instead of `wrapper`, and the `ParamSpec` generics keep the original signature visible to the type checker.
+`AuditedGateway` is the wrapper object. It implements the same `Protocol` as the thing it wraps, so it can be stacked. It logs the attempt, then the result or the failure, and re-raises so callers still see the error. `refund` shows the syntax form for a single sync function; for `async def`, write an `async def wrapper` that awaits `fn`, or the sync wrapper logs and returns an un-awaited coroutine. `functools.wraps` copies the name and docstring, so tracebacks and `help()` still describe `refund` instead of `wrapper`, and the `ParamSpec` generics keep the original signature visible to the type checker.
 
 ## TypeScript
 
@@ -83,7 +97,14 @@ type Gateway = { charge(orderId: string, amountCents: number): string };
 export const audited = (inner: Gateway, log: string[]): Gateway => ({
   charge(orderId, amountCents) {
     log.push(`charge ${orderId} ${amountCents}`);
-    return inner.charge(orderId, amountCents);
+    try {
+      const result = inner.charge(orderId, amountCents);
+      log.push(`charged ${orderId} ${result}`);
+      return result;
+    } catch (err) {
+      log.push(`failed ${orderId} ${err instanceof Error ? err.name : "unknown"}`);
+      throw err;
+    }
   },
 });
 
@@ -99,9 +120,16 @@ export function withLog<A extends unknown[], R>(
 }
 
 const log: string[] = [];
-const base: Gateway = { charge: (id, cents) => `card:${id}:${cents}` };
+const base: Gateway = {
+  charge(id, cents) {
+    if (cents <= 0) throw new RangeError("amount must be positive");
+    return `card:${id}:${cents}`;
+  },
+};
 assert.equal(audited(base, log).charge("o-1", 500), "card:o-1:500");
-assert.deepEqual(log, ["charge o-1 500"]);
+assert.deepEqual(log, ["charge o-1 500", "charged o-1 card:o-1:500"]);
+assert.throws(() => audited(base, log).charge("o-9", 0), RangeError);
+assert.deepEqual(log.slice(-2), ["charge o-9 0", "failed o-9 RangeError"]);
 
 const calls: string[] = [];
 const refund = withLog((id: string, cents: number) => `refund:${id}:${cents}`, calls, "refund");
@@ -136,6 +164,8 @@ A higher-order function plays the role of the decorator and needs no `@` syntax.
 ## In production
 
 - Python's `functools.cache` is a decorator in the standard library, and web frameworks use them to register routes and attach permission checks. A cache decorator needs an expiry or a clear path, because it serves stale values for the life of the process.
+- HTTP clients wrapped to add retries, timeouts, tracing or auth headers around a base client with the same call signature.
+- A caching layer around a repository or gateway that keeps the same interface.
 - Middleware in Express, Koa and ASGI apps wraps the next handler, which is the decorator shape applied to requests. See [Chain of Responsibility](../behavioral/chain-of-responsibility.md).
 
 ## Smells and misuse
@@ -143,8 +173,13 @@ A higher-order function plays the role of the decorator and needs no `@` syntax.
 - A decorator that changes the signature or return type. Then it is an adapter, and callers cannot swap the wrapped and unwrapped versions.
 - Forgetting `functools.wraps`, so logs and tracebacks say `wrapper`.
 - Invisible order. Write `retry(breaker(op))` so each attempt counts toward the breaker; the reverse counts a whole retried call as one failure. Audit outside both logs the final result, inside logs every attempt. Define the stack in one place.
-- Five stacked decorators on one function, or a wrapper that swallows exceptions.
+- Five stacked decorators on one function, so nobody can read what runs. Inline the logic, or compose them in one named function.
+- A wrapper that swallows exceptions to be helpful.
+- Stateful decorators with module-level state shared across calls, such as a cache that never expires.
 
 ## Related
 
-- [Proxy](proxy.md) has the same shape to control access to the object, where a decorator adds behavior. [Retry with backoff](../resilience/retry-backoff.md) and [Circuit Breaker](../resilience/circuit-breaker.md) are usually applied as decorators. [Chain of Responsibility](../behavioral/chain-of-responsibility.md) is a stack of them on a request; [Adapter](adapter.md) changes the interface instead.
+- [Proxy](proxy.md) has the same shape and a different purpose: it controls access to the object, where a decorator adds behavior.
+- [Adapter](adapter.md) changes the interface.
+- [Retry with backoff](../resilience/retry-backoff.md) and [Circuit Breaker](../resilience/circuit-breaker.md) are usually applied as decorators.
+- [Chain of Responsibility](../behavioral/chain-of-responsibility.md) is a stack of them on a request.

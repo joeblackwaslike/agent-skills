@@ -6,9 +6,11 @@ A function or class receives the things it depends on (a gateway, a clock, a dat
 
 ## Do you need this?
 
-You already do this whenever a function takes a parameter. Use the plain version first: add an argument. Reach for a container or framework only if you can name the wiring that hurts, such as dozens of services whose construction order you keep getting wrong. If you cannot, a hand-written `build_app()` function is the whole mechanism.
+You already do this whenever a function takes a parameter. The question is only whether a dependency should be a parameter or an import.
 
-The signal is a test that needs `mock.patch` on a module path, a monkeypatched environment variable, or a real network call. That dependency should have been an argument, and a clock or ID generator passed in is the usual fix for time- or randomness-dependent tests.
+Use the plain version first: add an argument. Reach for a container or framework only if you can name the wiring that hurts, such as dozens of services whose construction order you keep getting wrong. If you cannot, a hand-written `build_app()` function is the whole mechanism.
+
+The signal that you need injection at all is a test that needs `mock.patch` on a module path, a monkeypatched environment variable, or a real network call to run. That is a dependency that should have been an argument.
 
 ## Python
 
@@ -73,6 +75,8 @@ try:
     compose({})
 except MissingConfig as err:
     assert "PAYMENT_API_KEY" in str(err)
+else:
+    raise AssertionError("missing key must fail at startup")
 
 fake = FakeGateway(charges=[])
 test_service = CheckoutService(gateway=fake, now=lambda: "T0")
@@ -137,14 +141,20 @@ main().catch((err) => {
 
 - FastAPI's `Depends` injects request-scoped dependencies into route functions, and `app.dependency_overrides` swaps them in tests by mapping the original callable to a replacement.
 - Hand wiring in a `main.ts`, as above, is a common way to build TypeScript services. Check that a container solves a wiring problem you have before adding one.
+- Passing a clock and an ID generator as arguments is the common fix for tests that depend on the current time or on random IDs.
+- Constructor arguments with Protocol or structural types are enough to let a test double stand in with no inheritance.
 
 ## Smells and misuse
 
 - Service locator: a function that calls `container.get("gateway")` from inside business code. The dependency is hidden again, and the container is now a global.
-- Injecting pure helpers and constants. Inject things with I/O, time, randomness, or several implementations.
-- Wiring spread across many modules, or constructors that open connections or read env. Keep wiring in one root and do the work in an explicit `start()`.
+- Injecting everything, including pure helpers and constants. Inject things with I/O, time, randomness, or several implementations.
+- Wiring spread across many modules, so nobody can say what the app consists of. Keep it in one root.
+- Constructors that do work (open connections, read env). Build objects cheaply and do the work in the root or an explicit `start()`.
+- A mock framework that patches module attributes to compensate for hard-coded imports.
 
 ## Related
 
 - [Singleton](singleton.md) is usually what you wanted when you reached for a global; inject one shared instance instead.
-- [Factory](factory.md) is a function the composition root calls to pick an implementation from config. [Strategy](../behavioral/strategy.md) is the shape of most injected collaborators.
+- [Factory](factory.md) is a function the composition root calls to pick an implementation from config.
+- [Strategy](../behavioral/strategy.md) is the shape of most injected collaborators.
+- `solid-principles` covers the dependency inversion principle behind this.

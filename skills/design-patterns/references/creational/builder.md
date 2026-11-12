@@ -2,7 +2,7 @@
 
 ## What it is and Problem it solves
 
-A builder assembles an object across several calls and checks it is complete in a final `build()` step. It helps when parts accumulate (line items, headers, query clauses) or when validity depends on several fields together.
+A builder assembles an object across several calls and checks that it is complete in a final `build()` step. It helps when an object has many optional parts, when parts accumulate (line items, headers, query clauses), or when validity depends on several fields together and you want that check in one place.
 
 ## Do you need this?
 
@@ -130,6 +130,9 @@ assert.equal(withShipping.shippingCents, 500);
 assert.equal(plain.shippingCents, 0);
 assert.throws(() => orderBuilder().coupon("SPRING").build(), /at least one item/);
 assert.throws(() => orderBuilder().add("tee", 1.5, 100), /whole number/);
+assert.throws(() => orderBuilder().add("tee", Number.NaN, 100), /whole number/);
+assert.throws(() => orderBuilder().add("tee", 1, -1), /non-negative/);
+assert.throws(() => orderBuilder().shipping(-5), /non-negative/);
 assert.ok(Object.isFrozen(withShipping.items) && Object.isFrozen(withShipping.items[0]));
 ```
 
@@ -137,14 +140,21 @@ Each call returns a new builder over a copied draft, so `base` can be branched w
 
 ## In production
 
-- SQL query builders chain clauses such as `.where()`. Test data builders (`an_order().with_coupon("X").build()`) give each test a valid default to override.
+- SQL query builders chain clauses such as `.where()` and produce the statement at the end.
+- Test data builders (`an_order().with_coupon("X").build()`) give tests a valid default and let each test override one field.
+- Request construction in HTTP clients, where headers, params and body are added in separate steps.
+- Config objects assembled from defaults, environment and flags.
 
 ## Smells and misuse
 
 - A builder for a type with three fields. Use keyword arguments.
-- `build()` that never validates, so the invalid object appears later, far from the cause. Or a reused mutable builder that shares state; copy on `build()`.
-- A "director" class that calls the builder in a fixed order, or setters whose result depends on call order.
+- `build()` that never validates. Then the builder is a bag of setters and the invalid object appears later, far from the cause.
+- Reusing one mutable builder across calls and getting shared state. Copy on `build()` or return fresh builders.
+- A "director" class that calls the builder in a fixed order. That is a function.
+- Setters that can be called in the wrong order with different results. Make order not matter or enforce it with types.
 
 ## Related
 
-- [Factory](factory.md) picks which type to make; Builder fills in one type. [Result / Option](../value-modeling/result-option.md) is an alternative to raising from `build()`.
+- [Factory](factory.md) picks which type to make; Builder fills in one type.
+- [Result / Option](../value-modeling/result-option.md) is an alternative to raising from `build()` when invalid input is expected.
+- [Dependency Injection](dependency-injection.md) often wires builders into services; the builder itself should stay free of I/O.

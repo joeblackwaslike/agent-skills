@@ -6,7 +6,11 @@ An adapter wraps something with the wrong interface so your code can use it thro
 
 ## Do you need this?
 
-Not for a one-off call. If a single function calls the vendor once, convert the arguments inline and move on. The signal is a second call site, or a vendor type leaking into your domain (dict keys like `"state"`, cents as strings, vendor exceptions in your handlers). If you may swap the vendor, or you want tests that run without it, the adapter is also where the fake plugs in. A plain function `to_domain(vendor_response)` is an adapter. Skip the Facade when callers use only one of the subsystems, or when the "simple" call would need as many options as the parts it hides.
+Not for a one-off call. If a single function calls the vendor once, convert the arguments inline and move on.
+
+The signal is a second call site, or a vendor type leaking into your domain (dict keys like `"state"`, cents as strings, vendor exceptions in your handlers). If you may swap the vendor, or you want tests that run without it, the adapter is also where the fake plugs in. A plain function `to_domain(vendor_response)` is an adapter; use a class only when it holds a client or configuration.
+
+Skip the Facade when callers use only one of the subsystems, or when the "simple" call would need as many options as the parts it hides.
 
 ## Python
 
@@ -87,7 +91,11 @@ def place_order(reserve: Callable[[str], bool], release: Callable[[str], None], 
 
 released: list[str] = []
 assert place_order(lambda _id: True, released.append, gateway, "o-5", Decimal("5.00")) == "confirmed"
-assert place_order(lambda _id: True, released.append, gateway, "o-6", Decimal("0")) == "payment_declined" and released == ["o-6"]
+assert place_order(lambda _id: True, released.append, gateway, "o-6", Decimal("0")) == "payment_declined"
+assert released == ["o-6"]
+assert place_order(lambda _id: True, released.append, gateway, "o-8", Decimal("0.01")) == "payment_pending"
+assert place_order(lambda _id: False, released.append, gateway, "o-7", Decimal("5")) == "out_of_stock"
+assert released == ["o-6"]
 ```
 
 `vendor_gateway` is the adapter, a closure over the client. The vendor's states are mapped one by one, so a pending charge is not reported as failed and no caller retries it into a double charge. An unknown state raises, and a vendor outage becomes `GatewayError` instead of a vendor exception in your handlers. Money converts exactly or fails: `Decimal("0.295")` is rejected, not truncated to 29 cents. `place_order` is the Facade, one call over stock and payment. It releases the stock when the charge is declined and leaves it reserved when the outcome is pending or an exception was raised, because the charge may still land.
@@ -103,6 +111,7 @@ type VendorClient = { createCharge(args: { amount: number; ref: string }): Promi
 
 export const vendorGateway = (client: VendorClient): Gateway => ({
   async charge(orderId, amountCents) {
+    if (!Number.isSafeInteger(amountCents) || amountCents < 0) throw new RangeError("amountCents must be a non-negative integer");
     const res = await client.createCharge({ amount: amountCents, ref: orderId }).catch((cause: unknown) => {
       throw new Error("payment vendor unreachable", { cause });
     });
@@ -131,20 +140,45 @@ assert.deepEqual(await gateway.charge("o-2", 0), { status: "declined", detail: "
 assert.deepEqual(await gateway.charge("o-3", 1), { status: "pending", detail: "ch_o-3" });
 await assert.rejects(gateway.charge("o-4", 2), /unreachable/);
 await assert.rejects(gateway.charge("o-4", 3), /unmapped vendor state "frozen"/);
+await assert.rejects(gateway.charge("o-4", 12.5), RangeError);
+
+type Subsystems = { reserveStock(id: string): boolean; releaseStock(id: string): void; gateway: Gateway };
+
+export async function placeOrder(s: Subsystems, orderId: string, amountCents: number): Promise<string> {
+  if (!s.reserveStock(orderId)) return "out_of_stock";
+  const outcome = await s.gateway.charge(orderId, amountCents);
+  if (outcome.status === "declined") s.releaseStock(orderId);
+  return { paid: "confirmed", pending: "payment_pending", declined: "payment_declined" }[outcome.status];
+}
+
+const released: string[] = [];
+const subsystems: Subsystems = { reserveStock: () => true, releaseStock: (id) => void released.push(id), gateway };
+assert.equal(await placeOrder(subsystems, "o-5", 1250), "confirmed");
+assert.equal(await placeOrder(subsystems, "o-6", 0), "payment_declined");
+assert.deepEqual(released, ["o-6"]);
+assert.equal(await placeOrder(subsystems, "o-8", 1), "payment_pending");
+assert.equal(await placeOrder({ ...subsystems, reserveStock: () => false }, "o-9", 500), "out_of_stock");
+assert.deepEqual(released, ["o-6"]);
 ```
+
+A closure over the client is the whole adapter, and any object with a matching `createCharge` satisfies `VendorClient`, including the test fake. `placeOrder` is the same Facade as in Python: it releases the stock on a decline and keeps it for a pending charge. The lookup by `outcome.status` is safe because the type restricts it to three known keys.
 
 ## In production
 
 - `requests` transport adapters are mounted on a `Session` for a URL prefix, and requests whose URLs start with that prefix go through the adapter. `HTTPAdapter` is the one it ships with.
+- An anti-corruption layer in domain-driven design is an adapter at a system boundary.
 - Wrapping a vendor SDK for payments, email or storage, so swapping the vendor changes one file.
 
 ## Smells and misuse
 
 - Vendor types in your domain signatures, or a catch-all mapping (`state != "ok"` means failed) that erases pending and declined reasons.
-- Business rules inside the adapter, or adapting something you control. Keep it a translator.
-- A Facade that becomes the only way in, or hides a failure the caller must handle. Lossy conversion (float money, truncated cents) with no test pinning the mapping.
+- Business rules inside the adapter (discounts, retries). Keep it a translator.
+- Adapting something you control. Change the interface instead.
+- A Facade that becomes the only way in, so callers who need one subsystem cannot reach it, or one that hides a failure the caller must handle.
+- Lossy conversion (float money, truncated cents) with no test pinning the mapping.
 
 ## Related
 
 - [Decorator](decorator.md) keeps the same interface and adds behavior; [Proxy](proxy.md) keeps it to control access. Adapter changes the interface.
-- [DTO and Mapper](../data-access/dto-mapper.md) is the same translation for stored and wire shapes. [Dependency Injection](../creational/dependency-injection.md) delivers the adapter to its callers.
+- [DTO and Mapper](../data-access/dto-mapper.md) is the same translation for stored and wire shapes.
+- [Dependency Injection](../creational/dependency-injection.md) is how the adapter reaches the code that uses it.

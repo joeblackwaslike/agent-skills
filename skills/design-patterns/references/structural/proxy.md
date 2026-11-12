@@ -131,8 +131,9 @@ JavaScript has a built-in `Proxy` that intercepts property access with a handler
 
 ## In production
 
-- Lazy loading of related rows in ORMs, where accessing an attribute triggers the query. Remote stubs (gRPC, RPC clients) are proxies that make a network call.
+- Lazy loading of related rows in ORMs: accessing an attribute triggers the query, and the caller sees an ordinary object.
 - Vue 3's `reactive()` objects are JavaScript Proxies that intercept property reads and writes to track dependencies.
+- Remote stubs (gRPC and RPC clients) are proxies with a local interface that make a network call.
 - Caching proxies in front of a slow lookup. Give the cache an expiry or an invalidation path, since a proxy that serves stale prices or balances looks identical to a fresh one.
 
 ## Smells and misuse
@@ -140,7 +141,8 @@ JavaScript has a built-in `Proxy` that intercepts property access with a handler
 - A proxy that changes the contract. `RoleGatedGateway` raises `PermissionDenied`, which `Gateway` does not declare, so callers must know to handle it; declare it or return a result type.
 - Security enforced only in the proxy while the real object is still reachable by import. The check protects nothing if someone can get the unwrapped one.
 - Lazy creation under concurrency. With threads (`LazyGateway`) or an async factory, two first calls can both build the object; guard it with a lock or a shared promise, or create it at startup. The synchronous `lazy` above cannot race in single-threaded JavaScript.
-- Traps that hide errors (returning `undefined` for a missing method), or proxying when a plain guard would do.
+- `Proxy` traps that hide errors, such as returning `undefined` for a missing method instead of failing.
+- Proxying when a function call would do. Prefer the plain guard until the control must be impossible to forget.
 
 ## Related
 

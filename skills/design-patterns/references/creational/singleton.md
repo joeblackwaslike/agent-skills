@@ -77,7 +77,10 @@ def get_pool() -> Pool:
     return Pool(os.environ.get("DATABASE_URL", "postgres://localhost/orders"))
 
 
-assert get_pool() is get_pool()
+first = get_pool()
+assert get_pool() is first
+get_pool.cache_clear()
+assert get_pool() is not first
 ```
 
 `functools.cache` keeps the first result for the life of the process. Tests that need a fresh one call `get_pool.cache_clear()`, or better, receive the pool as a parameter.
@@ -131,6 +134,7 @@ assert.equal(getPool(), getPool());
 ## In production
 
 - Python's `logging.getLogger(name)` returns the same logger object for the same name each time, so modules share loggers without a singleton class.
+- An ES module is evaluated once and its exports are shared, which is what makes `export const` work as a singleton.
 - Database engines and HTTP client sessions are created once per process, then shared. The shared part is the pool; each request still gets its own connection or session.
 - In `functools.cache`, a call from two threads at once can run the wrapped function more than once before the first result lands, so a lazy singleton with side effects needs its own lock or should be created at startup.
 
