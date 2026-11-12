@@ -103,7 +103,7 @@ Cross-file consistency pass. Do this as its own pass after reading every file, n
 - Compare the skill's routing and its numbers against the sibling skills on the same topic. Search the sibling skills directory for the topic's key terms and read what you find.
 - Report each mismatch as a finding that quotes both sides.
 
-External claims. Every claim in the files about a named library, framework, SDK, service, database or standard, including its version scope, is listed with the source you checked it against or marked unverified. Do not accept a claim because it sounds right. An unverified claim that a reader would act on is a minor finding, and its replacement names the check to run.
+External claims. Every claim in the files about a named library, framework, SDK, service, database, standard or language behavior, including its version scope, is checked before you may call it unverified. Language or runtime behavior is checked by running a one-line check (`node`, `bun` or `python3`) and quoting the output. Library, service and standard claims are checked against current docs (Context7 MCP, Ref, or the docs the project links) or the installed package source. "Unverified" is allowed only after a named attempt failed, and the line names the attempt. "No source opened" is not a verdict. A claim that is wrong is a finding. An unverified claim that a reader would act on is a minor finding, and its replacement names the check to run. List each claim with its check and result under "could not check" or in your findings; none may be left out.
 
 Hunt for these defect classes. Each line gives the class and a generic example of the shape. Look for the shape, not the example.
 - Prose that disagrees with the code or table in the same file. Example: the text says "retries three times" and the snippet below loops twice.
@@ -134,16 +134,17 @@ Finding format. For each finding, report exactly:
 - for a rationalization-risk finding, also: the missing defense (rationalization table, red flags list, loophole closer or predicate) and the drafted table row as "| Excuse | Reality |"
 - confidence: high, medium or low
 
-Output contract. End with exactly this, in this order, and nothing after it:
+You are read-only: do not edit files, commit, or post anywhere.
+
+Output contract. End with exactly this, in this order. The coverage line is the last line of your output and nothing may follow it. An unread file in scope is listed under gaps, never skipped silently.
 FINDINGS
 <the findings, ranked by severity, or "none">
 SUMMARY
 role: instruction-quality
-coverage: <every file you read in full; every file in scope you did not read in full, listed as GAP with the reason. Never skip a file silently.>
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
 checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
-You are read-only: do not edit files, commit, or post anywhere.
+coverage: <files you read in full>; gaps: <files in scope not read in full, with the reason, or "none">
 ````
 
 ### Content reviewer
@@ -166,15 +167,20 @@ Setup:
 
 Promise ledger. Build one per file before moving to the next file. For every behavioral claim the prose makes about its own example, or about a language, library or standard, write one ledger line: the file, the claim quoted, where it is checked, and a verdict. Claims look like "is lazy", "covers the same ground", "keeps the invariants in X", "allows Y before Z", "also offers a settle-all variant", "abortable", "the short version does the same lookup", "safe to call concurrently".
 - Check a claim about the file's own example against the code in that file, line by line, not against what the example appears to intend.
-- Check a claim about a language, library, framework, SDK, service, database or standard, including its version scope, against a named source (installed version, official docs, the project's source). Write the source in the ledger line. Do not accept a claim because it sounds right.
-- Verdicts are exactly: holds, contradicted, unverified.
-- A contradicted claim is a finding: major when it teaches wrong behavior an agent will copy, minor otherwise.
-- An unverified claim that a reader would act on is a minor finding, and its replacement names the check to run.
+- Verify before you mark anything unverified. A claim about language or runtime behavior is checked by running a one-line check in that language (`node`, `bun` or `python3`) and quoting its output. A claim about a library, framework, SDK, service, database or standard, including its version scope, is checked against current docs (Context7 MCP, Ref, or the docs the project links) or the installed package source. Write the check and its quoted result in the ledger line.
+- Verdicts are exactly: holds, contradicted, unverified. "Unverified" is allowed only after a named attempt failed, and the line names the attempt and why it failed. "No source opened" is not a verdict.
+- Promotion. Every row with verdict contradicted becomes a finding: major when it teaches wrong behavior an agent will copy, minor otherwise. Every unverified row that a reader would act on becomes a minor finding whose replacement names the check to run. Do not leave an actionable row out of the findings.
+- Reconcile before you finish: the count of contradicted rows plus actionable unverified rows must equal the count of findings with kind: claim. State both numbers in the summary.
 
 Per file, also answer each of these and record the answers in the ledger.
 - Smells. List each smell, anti-pattern or mistake the file warns about. Check the file's own example against each one.
 - Edge inputs. For the edges the file implies (empty input, an unknown key, a concurrent call, a failure after the effect has happened), trace the example by hand and say what it does.
 - Second versions. When the file gives a second version (a function form, an alternate language, a short form), compare it to the first and list any guard, validation or error path it drops.
+
+Second pass, required after the ledger for each file. Fill both slots for every file, even when the answer is none.
+- Prose versus code. For each code block, list what the prose says it does that the code does not do (a guarantee, option, parameter, abort or cancel path, error path, return type, ordering). One line per mismatch, or the words "none found".
+- Smell check. For each smell the file lists, state whether its own example commits it, yes or no, with the line.
+Each mismatch and each "yes" is a finding.
 
 Hunt for these defect classes. Each line gives the class and a generic example of the shape. Look for the shape, not the example.
 - Prose that disagrees with the code or table in the same file. Example: the text says "the helper rejects empty input" and the helper returns an empty result.
@@ -187,7 +193,7 @@ Hunt for these defect classes. Each line gives the class and a generic example o
 - An example that cannot run as written. Example: an import that does not exist, an unclosed block, a stale flag.
 - A "function version" or "short version" that claims to cover the same ground as the main one and omits a guard, validation or error path.
 
-Judge each claim by what the evidence supports, not by what sounds right. If you cannot verify a claim, list it under "could not check" and give it a finding only when it is stated with more confidence than your sources allow.
+Judge each claim by what the evidence supports, not by what sounds right. A claim you could not verify after a named attempt goes under "could not check" with that attempt, and is promoted as the ledger rules above say.
 
 Do not report taste or anything a formatter or linter already enforces. Do not review the code for language-specific style; the calling session dispatches the language reviewers. Do not praise. Do not invent findings to look thorough.
 
@@ -200,20 +206,23 @@ Finding format. For each finding, report exactly:
 - authority: current <gate|guidance|informational>, recommended <gate|guidance|informational> (write "unchanged" if the wording is right)
 - replacement: the proposed replacement text or code, ready to paste
 - for a rationalization-risk finding, also: the missing defense and the drafted table row as "| Excuse | Reality |"
+- kind: claim (from a ledger row) or other
 - confidence: high, medium or low
 
-Output contract. End with exactly this, in this order, and nothing after it:
+You are read-only: do not edit files, commit, or post anywhere.
+
+Output contract. End with exactly this, in this order. The coverage line is the last line of your output and nothing may follow it. An unread file in scope is listed under gaps, never skipped silently.
 FINDINGS
 <the findings, ranked by severity, or "none">
 LEDGER
 <per file: the file, then one line per claim checked: claim quoted | checked against | holds, contradicted or unverified; then the smell, edge-input and second-version answers>
 SUMMARY
 role: content
-coverage: <every file you read in full; every file in scope you did not read in full, listed as GAP with the reason. Never skip a file silently.>
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
+reconciliation: contradicted=<n> actionable-unverified=<n> claim-findings=<n>
 checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
-You are read-only: do not edit files, commit, or post anywhere.
+coverage: <files you read in full>; gaps: <files in scope not read in full, with the reason, or "none">
 ````
 
 ### Routing and overlap reviewer
@@ -260,16 +269,17 @@ Finding format. For each finding, report exactly:
 - for a rationalization-risk finding, also: the missing defense and the drafted table row as "| Excuse | Reality |"
 - confidence: high, medium or low
 
-Output contract. End with exactly this, in this order, and nothing after it:
+You are read-only: do not edit files, commit, or post anywhere.
+
+Output contract. End with exactly this, in this order. The coverage line is the last line of your output and nothing may follow it. An unread file in scope is listed under gaps, never skipped silently.
 FINDINGS
 <the findings, ranked by severity, or "none">
 SUMMARY
 role: routing and overlap
-coverage: <every file you read in full; every file in scope you did not read in full, listed as GAP with the reason. Never skip a file silently.>
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
 checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
-You are read-only: do not edit files, commit, or post anywhere.
+coverage: <files you read in full>; gaps: <files in scope not read in full, with the reason, or "none">
 ````
 
 ### Pipeline reviewer
@@ -314,16 +324,17 @@ Finding format. For each finding, report exactly:
 - for a rationalization-risk finding, also: the missing defense and the drafted table row as "| Excuse | Reality |"
 - confidence: high, medium or low
 
-Output contract. End with exactly this, in this order, and nothing after it:
+You are read-only: do not edit files, commit, or post anywhere.
+
+Output contract. End with exactly this, in this order. The coverage line is the last line of your output and nothing may follow it. An unread file in scope is listed under gaps, never skipped silently.
 FINDINGS
 <the findings, ranked by severity, or "none">
 SUMMARY
 role: pipeline
-coverage: <every file you read in full; every file in scope you did not read in full, listed as GAP with the reason. Never skip a file silently.>
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
 checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
-You are read-only: do not edit files, commit, or post anywhere.
+coverage: <files you read in full>; gaps: <files in scope not read in full, with the reason, or "none">
 ````
 
 ## 3. Triage every finding

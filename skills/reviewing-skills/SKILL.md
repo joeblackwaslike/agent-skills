@@ -47,7 +47,7 @@ flowchart TD
 | routing and overlap | a description changed or a skill was added | trigger precision, sibling collisions, reverse exclusions, registry rows |
 | pipeline | the skill dispatches agents | roles, models, handoffs, verdict words, round caps, escalation |
 
-A skill with more than 6 reference files gets the content reviewer as shards of at most 6 files each, every shard also reading SKILL.md. Shards are one role, so they use one slot of the 6-reviewer cap in `/self-review`; their findings are merged and de-duplicated by location. Without a subagent tool (Codex, Gemini), run the roles one after another in a single session and reread the files for each. The runbook has the dispatch line for each platform and the fallback.
+A skill with more than 6 reference files gets the content reviewer as shards of at most 6 files each, every shard also reading SKILL.md. Shards are one role, so they use one slot of the 6-reviewer cap in `/self-review`; their findings are merged and de-duplicated by location. Every reviewer ends with a `coverage:` line, and any unread file is a gap. Without a subagent tool (Codex, Gemini), run the roles one after another in a single session and reread the files for each. The runbook has the dispatch line for each platform and the fallback.
 
 ## Red flags
 
