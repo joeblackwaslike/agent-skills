@@ -6,11 +6,13 @@ Retry repeats a call that failed for a transient reason, such as a timeout, a 50
 
 ## Do you need this?
 
-Only for calls that can fail transiently and are safe to repeat. A call you can let fail, surface to the user, or re-run from a queue needs no retry loop. Try the retry setting your HTTP client already has, or one immediate retry for connection resets. Write a backoff loop when failures cluster (deploys, rate limits) and fixed retries make them worse. A call that charges, sends or creates must carry an [idempotency key](idempotency-key.md) before it is retried, because a timeout does not tell you whether the first attempt ran.
+Skip it when the call can fail loudly, be surfaced to the user, or be re-run from a queue. Try the retry setting your HTTP client already has before writing a loop.
+
+Write one when your logs show clusters of 429s or 503s, or connection resets during deploys, and the caller has no other way to recover. A call that charges, sends or creates must carry an [idempotency key](idempotency-key.md) first, because a timeout does not say whether the first attempt ran.
 
 ## Python
 
-Time and randomness are injected, so the asserts run instantly. Delays use full jitter: a random value between zero and the capped exponential.
+Time and randomness are injected, so the asserts run instantly. Delays use full jitter, a random value between zero and the capped exponential, and `Retry-After` sets a floor that is itself capped.
 
 ```python
 import random
@@ -25,7 +27,8 @@ class TransientError(Exception):
 
 def call_with_retry[T](
     op: Callable[[], T], *, idempotent: bool, sleep: Callable[[float], None],
-    rng: random.Random, budget: list[int], max_attempts: int = 4, base: float = 0.1, cap: float = 5.0,
+    rng: random.Random, budget: list[int], on_retry: Callable[[int, Exception, float], None],
+    max_attempts: int = 4, base: float = 0.1, cap: float = 5.0,
 ) -> T:
     if not idempotent:
         return op()
@@ -36,11 +39,15 @@ def call_with_retry[T](
             if attempt == max_attempts or budget[0] <= 0:
                 raise
             budget[0] -= 1
-            delay = rng.uniform(0, min(cap, base * 2 ** (attempt - 1)))
-            sleep(max(delay, err.retry_after or 0.0))
+            delay = max(rng.uniform(0, min(cap, base * 2 ** (attempt - 1))), min(err.retry_after or 0.0, cap))
+            on_retry(attempt, err, delay)
+            sleep(delay)
     raise AssertionError("unreachable")
 
+
 charges: dict[str, int] = {}
+retries: list[tuple[int, str, float]] = []
+
 
 def flaky_charge(script: list[TransientError]) -> Callable[[str, int], str]:
     def charge(key: str, cents: int) -> str:
@@ -51,31 +58,40 @@ def flaky_charge(script: list[TransientError]) -> Callable[[str, int], str]:
     return charge
 
 
-def run(script: list[TransientError], *, idempotent: bool = True, tokens: int = 10) -> tuple[str, list[float]]:
+def run(script: list[TransientError], *, idempotent: bool = True, tokens: int = 10) -> tuple[str | Exception, list[float]]:
     charges.clear()
+    retries.clear()
     delays: list[float] = []
     charge = flaky_charge(script)
     try:
-        result = call_with_retry(
-            lambda: charge("order-1", 1999), idempotent=idempotent,
-            sleep=delays.append, rng=random.Random(1), budget=[tokens],
+        result: str | Exception = call_with_retry(
+            lambda: charge("order-1", 1999), idempotent=idempotent, sleep=delays.append, rng=random.Random(1),
+            budget=[tokens], on_retry=lambda attempt, err, delay: retries.append((attempt, str(err), delay)),
         )
-    except TransientError:
-        result = "failed"
+    except TransientError as err:
+        result = err
     return result, delays
 
 
-result, delays = run([TransientError("timeout")] * 2)
-assert result == "ch_order-1" and len(charges) == 1
+outcome, delays = run([TransientError("timeout")] * 2)
+assert outcome == "ch_order-1" and len(charges) == 1
 assert 0 <= delays[0] <= 0.1 and 0 <= delays[1] <= 0.2
+assert [r[:2] for r in retries] == [(1, "timeout"), (2, "timeout")]
 assert run([TransientError("busy", retry_after=2.0)])[1] == [2.0]
-assert run([TransientError("down")] * 3, idempotent=False) == ("failed", [])
-assert run([TransientError("down")] * 3, tokens=1)[0] == "failed"
+assert run([TransientError("pinned", retry_after=3600.0)])[1] == [5.0]
+once, slept = run([TransientError("down")] * 3, idempotent=False)
+assert isinstance(once, TransientError) and slept == []
+out_of_attempts, slept = run([TransientError("down")] * 4)
+out_of_budget, short = run([TransientError("down")] * 4, tokens=1)
+assert isinstance(out_of_attempts, TransientError) and isinstance(out_of_budget, TransientError)
+assert (len(slept), len(short)) == (3, 1)
 ```
 
-The fake gateway records the charge before it fails, which is the dangerous case, since the work ran and only the response was lost. Retrying with the same key charges once. With `idempotent=False` the call runs once with no sleeping. The shared `budget` caps total retries across calls, so one bad dependency cannot multiply traffic. `Retry-After` sets a floor under the jittered delay.
+The fake gateway records the charge before it fails, the dangerous case where the work ran and only the response was lost. Retrying with the same key charges once. With `idempotent=False` the call runs once. The shared `budget` caps retries across calls, and `on_retry` keeps each intermediate error visible.
 
 ## TypeScript
+
+`op` and `sleep` both receive the caller's `AbortSignal`, so cancelling stops the in-flight attempt and the wait.
 
 ```typescript
 import assert from "node:assert/strict";
@@ -84,23 +100,23 @@ class TransientError extends Error {
   constructor(message: string, readonly retryAfterMs?: number) { super(message); }
 }
 
-type Deps = { sleep(ms: number): Promise<void>; random(): number; budget: { tokens: number } };
+type Deps = { sleep(ms: number, signal?: AbortSignal): Promise<void>; random(): number; budget: { tokens: number };
+  onRetry?(attempt: number, err: Error, delayMs: number): void };
+type Opts = { idempotent: boolean; signal?: AbortSignal; maxAttempts?: number; baseMs?: number; capMs?: number };
 
-export async function callWithRetry<T>(
-  op: () => Promise<T>,
-  opts: { idempotent: boolean; maxAttempts?: number; baseMs?: number; capMs?: number },
-  deps: Deps,
-): Promise<T> {
-  if (!opts.idempotent) return op();
+export async function callWithRetry<T>(op: (signal?: AbortSignal) => Promise<T>, opts: Opts, deps: Deps): Promise<T> {
+  if (!opts.idempotent) return op(opts.signal);
   const { maxAttempts = 4, baseMs = 100, capMs = 5000 } = opts;
   for (let attempt = 1; ; attempt++) {
     try {
-      return await op();
+      return await op(opts.signal);
     } catch (err) {
       if (!(err instanceof TransientError) || attempt >= maxAttempts || deps.budget.tokens <= 0) throw err;
       deps.budget.tokens -= 1;
       const jittered = deps.random() * Math.min(capMs, baseMs * 2 ** (attempt - 1));
-      await deps.sleep(Math.max(jittered, err.retryAfterMs ?? 0));
+      const delay = Math.max(jittered, Math.min(err.retryAfterMs ?? 0, capMs));
+      deps.onRetry?.(attempt, err, delay);
+      await deps.sleep(delay, opts.signal);
     }
   }
 }
@@ -121,28 +137,34 @@ function gateway(script: TransientError[]) {
 async function main(): Promise<void> {
   const delays: number[] = [];
   const deps: Deps = { sleep: async (ms) => void delays.push(ms), random: () => 0.5, budget: { tokens: 10 } };
-  const gw = gateway([new TransientError("timeout"), new TransientError("busy", 2000)]);
+  const gw = gateway([new TransientError("timeout"), new TransientError("busy", 3_600_000)]);
   const result = await callWithRetry(() => gw.charge("order-1", 1999), { idempotent: true }, deps);
-  assert.deepEqual([result, gw.charges.size, delays], ["ch_order-1", 1, [50, 2000]]);
+  assert.deepEqual([result, gw.charges.size, delays], ["ch_order-1", 1, [50, 5000]]);
+
   const down = gateway([new TransientError("down")]);
-  await assert.rejects(callWithRetry(() => down.charge("k", 1), { idempotent: false }, deps), /down/);
+  await assert.rejects(callWithRetry(() => down.charge("k", 1), { idempotent: false }, deps), TransientError);
+  assert.equal(delays.length, 2);
 }
 
-main().catch((err: unknown) => void (console.error(err), process.exit(1)));
+main().catch((err: unknown) => {
+  console.error(err);
+  process.exit(1);
+});
 ```
 
 ## In production
 
-- Python: tenacity provides `stop_after_attempt`, `retry_if_exception_type` and a pluggable `sleep`, so tests can pass a fake as above.
-- TypeScript: p-retry takes `retries`, `factor`, `minTimeout`, `maxTimeout` and a `shouldRetry` callback. Its `randomize` option multiplies each delay by a factor between 1 and 2, which adds spread but is not full jitter. cockatiel has a retry policy with `ExponentialBackoff`.
-- HTTP clients and cloud SDKs often retry by default. Stacking your loop on theirs multiplies attempts (3 x 3 = 9), so turn one off. Retry at one layer only, because stacked loops amplify load during an outage.
-- `Retry-After` on 429 and 503 is the server saying when to come back. Stripe's SDKs can generate idempotency keys and retry automatically (see [Idempotency key](idempotency-key.md)).
+- Python's tenacity provides `stop_after_attempt`, `retry_if_exception_type` and a pluggable `sleep`, so tests can pass a fake as above.
+- p-retry takes `retries`, `factor`, `minTimeout`, `maxTimeout` and a `shouldRetry` callback. Its `randomize` option multiplies each delay by a factor between 1 and 2, which adds spread but is not full jitter. cockatiel has a retry policy with `ExponentialBackoff`.
+- HTTP clients and cloud SDKs often retry by default, so stacking your loop on theirs multiplies attempts (3 x 3 = 9). Retry at one layer only, and call any [circuit breaker](circuit-breaker.md) from inside the loop, as `retry(breaker(op))`.
 
 ## Smells and misuse
 
 - Retrying non-idempotent calls without a key, which double-charges and double-sends.
 - Retrying errors that will never succeed (400, 401, validation). Retry only the transient class.
-- No cap on attempts, fixed delays with no jitter, real `sleep` in tests, or a retry loop inside a database transaction.
+- No cap on attempts, fixed delays with no jitter, or trusting a huge `Retry-After`.
+- No per-attempt timeout (for example `AbortSignal.timeout`), so one hung attempt stalls the loop.
+- A retry loop inside a database transaction.
 
 ## Related
 
