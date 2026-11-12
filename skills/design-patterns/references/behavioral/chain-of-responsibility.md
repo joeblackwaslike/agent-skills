@@ -82,13 +82,17 @@ Each middleware takes the next handler and returns a new one, so the first in `s
 ## TypeScript
 
 ```typescript
+import assert from "node:assert/strict";
+
 type Ctx = { user: string | null; amountCents: number; status: number; body: string };
-type Next = () => Promise<void>;
-type Middleware = (ctx: Ctx, next: Next) => Promise<void>;
+type Middleware = (ctx: Ctx, next: () => Promise<void>) => Promise<void>;
 
 function compose(stack: Middleware[]): (ctx: Ctx) => Promise<void> {
   return (ctx) => {
+    let last = -1;
     const dispatch = async (i: number): Promise<void> => {
+      if (i <= last) throw new Error("next() called multiple times");
+      last = i;
       const middleware = stack[i];
       if (middleware) await middleware(ctx, () => dispatch(i + 1));
     };
@@ -106,8 +110,11 @@ const requireUser: Middleware = async (ctx, next) => {
 
 const timing: Middleware = async (ctx, next) => {
   const start = Date.now();
-  await next();
-  ctx.body += ` (${Date.now() - start}ms)`;
+  try {
+    await next();
+  } finally {
+    ctx.body += ` (${Date.now() - start}ms)`;
+  }
 };
 
 const pay: Middleware = async (ctx) => {
@@ -117,20 +124,18 @@ const pay: Middleware = async (ctx) => {
 
 const app = compose([timing, requireUser, pay]);
 
-async function main(): Promise<void> {
-  const ctx: Ctx = { user: "ada", amountCents: 500, status: 0, body: "" };
-  await app(ctx);
-  console.assert(ctx.status === 200);
-}
-
-void main();
+const ctx: Ctx = { user: "ada", amountCents: 500, status: 0, body: "" };
+await app(ctx);
+assert.equal(ctx.status, 200);
+const twice: Middleware = async (_c, next) => { await next(); await next(); };
+await assert.rejects(compose([twice, pay])(ctx), /multiple times/);
 ```
 
-`timing` runs code before `await next()` on the way in and after it on the way out. A middleware that returns without calling `next` stops everything downstream, as `requireUser` does.
+`timing` runs code before `await next()` on the way in and after it on the way out. The `finally` records the time even when something downstream throws, and `compose` rejects a second `next()` call the way Koa's compose does. A middleware that returns without calling `next` stops everything downstream, as `requireUser` does.
 
 ## In production
 
-- Express: a middleware receives `req`, `res` and `next`. If it does not end the response it must call `next()`, or the request hangs. Error-handling middleware is recognized by its four-argument signature `(err, req, res, next)`.
+- Express: a middleware receives `req`, `res` and `next`. If it does not end the response it must call `next()`, or the request hangs. Error-handling middleware has the four-argument signature `(err, req, res, next)`, and Express 5 forwards a rejected promise from an async handler to it as if `next(err)` had been called.
 - Koa: middleware are async functions that `await next()`. Control goes downstream through the stack, then back upstream, which is what makes `timing` above possible. Express's `next()` does not await downstream work.
 - ASGI (Starlette, FastAPI): a pure ASGI middleware is itself an ASGI app that wraps another one, called with `scope`, `receive` and `send`. It is the same wrapping shape as the Python example, with a different call signature.
 
@@ -138,13 +143,8 @@ void main();
 
 - Order bugs. Authentication after the rate limiter, or error handling registered last so it never sees earlier errors. Keep the order visible in one place.
 - Forgetting to call `next()` and leaving the request open, or calling it twice and running the rest of the chain twice.
-- Handlers that mutate shared request state in ways later handlers silently depend on.
-- A chain of five where the handlers always run in the same fixed order. That is a function with five steps.
-- Business logic in middleware. Keep middleware to cross-cutting concerns.
+- Business logic in middleware, or a fixed chain of five that is just a function with five steps.
 
 ## Related
 
 - [Decorator](../structural/decorator.md) is the same wrapping idea applied to one function; middleware is a decorator stack on the request handler.
-- [Observer](observer.md) notifies every subscriber; a chain can stop at any handler.
-- [Command](command.md) is often what travels down the chain.
-- [Template Method](template-method.md) fixes the order of steps in a base class; a chain lets the caller assemble them.

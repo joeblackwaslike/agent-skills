@@ -8,7 +8,7 @@ Template Method fixes the order of an algorithm in one place and lets variants f
 
 Most of the time, pass the steps in. A function that takes callbacks (or an object of callbacks with defaults) does the same job without inheritance, and the variants stay independent of the base class.
 
-Inheritance-based Template Method fits when a framework owns the skeleton and users plug in, and when the steps share a lot of state. If you find yourself writing a base class for two subclasses, write a function with two arguments.
+Inheritance-based Template Method fits when a framework owns the skeleton and users plug in, and when the steps share collaborators the framework supplies, such as a connection or a request. If you find yourself writing a base class for two subclasses, write a function with two arguments.
 
 ## Python
 
@@ -16,6 +16,7 @@ Inheritance-based Template Method fits when a framework owns the skeleton and us
 from abc import ABC, abstractmethod
 from collections.abc import Callable
 from dataclasses import dataclass
+from typing import final
 
 
 @dataclass(frozen=True)
@@ -24,7 +25,13 @@ class Payment:
     cents: int
 
 
+def default_validate(payment: Payment) -> None:
+    if payment.cents <= 0:
+        raise ValueError("amount must be positive")
+
+
 class PaymentProcessor(ABC):
+    @final
     def process(self, payment: Payment) -> str:
         self.validate(payment)
         reference = self.charge(payment)
@@ -32,8 +39,7 @@ class PaymentProcessor(ABC):
         return reference
 
     def validate(self, payment: Payment) -> None:
-        if payment.cents <= 0:
-            raise ValueError("amount must be positive")
+        default_validate(payment)
 
     @abstractmethod
     def charge(self, payment: Payment) -> str: ...
@@ -49,7 +55,7 @@ class CardProcessor(PaymentProcessor):
 
 class BankProcessor(PaymentProcessor):
     def validate(self, payment: Payment) -> None:
-        super().validate(payment)
+        default_validate(payment)
         if payment.cents > 1_000_000:
             raise ValueError("bank transfers are capped")
 
@@ -60,7 +66,7 @@ class BankProcessor(PaymentProcessor):
 def process(
     payment: Payment,
     charge: Callable[[Payment], str],
-    validate: Callable[[Payment], None] = lambda p: None,
+    validate: Callable[[Payment], None] = default_validate,
 ) -> str:
     validate(payment)
     return charge(payment)
@@ -68,13 +74,22 @@ def process(
 
 assert CardProcessor().process(Payment("o-1", 500)) == "card-o-1"
 assert process(Payment("o-1", 500), lambda p: f"card-{p.order_id}") == "card-o-1"
+
+try:
+    BankProcessor().process(Payment("o-1", 2_000_000))
+except ValueError:
+    pass
+else:
+    raise AssertionError("the bank cap must apply")
 ```
 
-`process` on the class is the template and subclasses never override it. The function version at the bottom covers the same ground with no hierarchy.
+`process` on the class is the template and subclasses never override it. Two subclasses are here for illustration. The function version at the bottom has the same skeleton with fewer steps, and it is what you would ship for two variants.
 
 ## TypeScript
 
 ```typescript
+import assert from "node:assert/strict";
+
 type Payment = { orderId: string; cents: number };
 
 type Steps = {
@@ -104,8 +119,9 @@ const card = (payment: Payment) =>
     },
   });
 
-console.assert(card({ orderId: "o-1", cents: 500 }) === "card-o-1");
-console.assert(recorded.length === 1);
+assert.equal(card({ orderId: "o-1", cents: 500 }), "card-o-1");
+assert.equal(recorded.length, 1);
+assert.throws(() => card({ orderId: "o-2", cents: -5 }));
 ```
 
 The skeleton lives in `processPayment`. Required steps are required properties; optional ones have defaults.
@@ -114,12 +130,11 @@ The skeleton lives in `processPayment`. Required steps are required properties; 
 
 - Test frameworks: `unittest.TestCase` runs `setUp`, the test, then `tearDown` in a fixed order.
 - Django class-based views call `dispatch`, then a method per HTTP verb, and expose hooks such as `get_queryset`.
-- Abstract base classes in data pipelines (`extract`, `transform`, `load`).
 - React class components' lifecycle methods were Template Method; hooks replaced it with functions.
 
 ## Smells and misuse
 
-- Subclasses that override the template method itself. Mark it final in languages that can, and document it where they cannot.
+- Subclasses that override the template method itself. Mark it `@final`; Python type checkers reject overrides of a final method, though nothing stops it at runtime.
 - Many small hook methods, most no-ops, so no one can tell the real order from reading one subclass.
 - Deep hierarchies, with a subclass of a subclass overriding one step.
 - Steps that rely on state set by an earlier step in `self`. Pass values between steps as arguments.

@@ -12,10 +12,9 @@ You almost never write an iterator class. Return a list when the data is small a
 
 ```python
 import asyncio
-from collections.abc import AsyncGenerator, Iterable, Iterator
+from collections.abc import AsyncGenerator
 from contextlib import aclosing
 from dataclasses import dataclass
-from itertools import batched
 from typing import Protocol
 
 
@@ -45,10 +44,6 @@ async def iter_orders(api: OrdersApi) -> AsyncGenerator[Order, None]:
         cursor = page.next_cursor
 
 
-def chunks(orders: Iterable[Order], size: int) -> Iterator[tuple[Order, ...]]:
-    return batched(orders, size)
-
-
 class FakeApi:
     def __init__(self) -> None:
         self.calls = 0
@@ -72,7 +67,6 @@ async def main() -> None:
 
     ids = [o.id async for o in iter_orders(FakeApi())]
     assert ids == ["o-0", "o-1", "o-2", "o-3", "o-4"]
-    assert [len(c) for c in chunks([Order("a"), Order("b"), Order("c")], 2)] == [2, 1]
 
 
 asyncio.run(main())
@@ -83,6 +77,8 @@ The loop that hits the API is hidden inside `iter_orders`. Callers see a flat st
 ## TypeScript
 
 ```typescript
+import assert from "node:assert/strict";
+
 type Order = { id: string };
 type Page = { items: Order[]; nextCursor: string | null };
 type ListOrders = (cursor: string | null) => Promise<Page>;
@@ -114,12 +110,9 @@ const fakeList: ListOrders = async (cursor) => {
   return { items, nextCursor: start + 2 < 5 ? String(start + 2) : null };
 };
 
-async function main(): Promise<void> {
-  const firstTwo = await take(iterOrders(fakeList), 2);
-  console.assert(firstTwo.length === 2 && calls === 1);
-}
-
-void main();
+const firstTwo = await take(iterOrders(fakeList), 2);
+assert.equal(firstTwo.length, 2);
+assert.equal(calls, 1);
 ```
 
 In TypeScript, leaving a `for await` loop early (`break` or a throw) calls the generator's `return()`, so `finally` blocks inside it run and any open connection or cursor is released.
@@ -128,9 +121,9 @@ In TypeScript, leaving a `for await` loop early (`break` or a throw) calls the g
 
 - Database drivers: server-side cursors (`psycopg` named cursors, SQLAlchemy `yield_per`) stream rows instead of loading them.
 - File reads: iterating over a file object yields one line at a time.
-- AWS SDK paginators and Octokit's `paginate.iterator` wrap cursor or page-number APIs behind an async iterator.
+- AWS SDK for JavaScript v3 paginators and Octokit's `paginate.iterator` wrap cursor or page-number APIs behind an async iterator.
 - Node streams, and the web `ReadableStream`, are async iterables.
-- `itertools` chains small lazy steps.
+- `itertools.islice` and `itertools.chain` compose lazily over any iterable.
 
 ## Smells and misuse
 

@@ -53,7 +53,8 @@ class CommandRunner:
 
     def undo_last(self) -> None:
         if self.done:
-            self.done.pop().undo()
+            self.done[-1].undo()
+            self.done.pop()
 
 
 ledger = Ledger()
@@ -65,11 +66,13 @@ runner.undo_last()
 assert ledger.balances["o-1"] == 500
 ```
 
-The runner knows nothing about charges. It only calls `execute` and `undo`, so a new command type is a new class and no change to the runner.
+The toy ledger is a derived sum, so subtracting is a true inverse. The runner knows nothing about charges. It only calls `execute` and `undo`, so a new command type is a new class and no change to the runner.
 
 ## TypeScript
 
 ```typescript
+import assert from "node:assert/strict";
+
 type Command = { name: string; execute(): void; undo(): void };
 
 function charge(balances: Map<string, number>, orderId: string, cents: number): Command {
@@ -90,7 +93,10 @@ function createRunner() {
       done.push(command);
     },
     undoLast(): void {
-      done.pop()?.undo();
+      const last = done.at(-1);
+      if (last === undefined) return;
+      last.undo();
+      done.pop();
     },
     log: (): string[] => done.map((c) => c.name),
   };
@@ -101,8 +107,8 @@ const runner = createRunner();
 runner.run(charge(balances, "o-1", 500));
 runner.run(charge(balances, "o-1", 250));
 runner.undoLast();
-console.assert(balances.get("o-1") === 500);
-console.assert(runner.log().length === 1);
+assert.equal(balances.get("o-1"), 500);
+assert.equal(runner.log().length, 1);
 ```
 
 A closure replaces the class. If commands need to cross a process boundary, switch to plain data (`{ type: "charge", orderId, cents }`) and a handler map that interprets it, because functions do not serialize.
@@ -111,14 +117,13 @@ A closure replaces the class. If commands need to cross a process boundary, swit
 
 - Job queues (Celery tasks, BullMQ jobs) are Commands: a named action plus arguments, executed later by a worker.
 - Editors and design tools keep an undo stack of command objects.
-- CQRS command handlers receive `PlaceOrder` or `RefundPayment` records and are the only code that changes state.
+- CQRS command handlers receive `PlaceOrder` or `RefundPayment` records and are where the write-side decision is made.
 - Database migrations are commands with `up` and `down`.
-- Redux actions are data describing a request; reducers are the handlers.
 
 ## Smells and misuse
 
 - A command class that wraps one function call and is never queued, logged or undone.
-- `undo` that is not a true inverse, such as refunding by creating a new charge with a negative amount while the original still shows. For payments, undo usually means a compensating action, and some actions (an email sent, a card charged at a third party) cannot be undone at all.
+- `undo` that is not a true inverse. The toy ledger above can subtract, but a real payments ledger is append-only, so undo appends a compensating entry (a refund) and the original stays visible. Some actions (an email sent, a card charged at a third party) cannot be undone at all.
 - Commands that hold live objects (database sessions, clients) and so cannot be serialized or replayed.
 - Replaying a log without idempotency. A retried `Charge` double-charges unless it carries an [idempotency key](../resilience/idempotency-key.md).
 - A command that returns data the caller depends on. Commands change state; queries read it.

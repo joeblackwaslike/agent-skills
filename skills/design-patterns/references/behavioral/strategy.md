@@ -42,7 +42,7 @@ TAX_RULES: dict[str, TaxRule] = {
 
 
 def total(order: Order, tax: TaxRule | None = None) -> Decimal:
-    rule = tax or TAX_RULES.get(order.country)
+    rule = tax if tax is not None else TAX_RULES.get(order.country)
     if rule is None:
         raise ValueError(f"no tax rule for {order.country}")
     return order.subtotal + rule(order)
@@ -83,16 +83,18 @@ assert checkout(order, BankGateway("acct-9")).startswith("bank:")
 ## TypeScript
 
 ```typescript
+import assert from "node:assert/strict";
+
 type Order = { id: string; subtotalCents: number; country: string };
 type TaxRule = (order: Order) => number;
 
-const taxRules: Record<string, TaxRule> = {
-  US: (o) => Math.round(o.subtotalCents * 0.0875),
-  DE: (o) => Math.round(o.subtotalCents * 0.19),
-};
+const taxRules = new Map<string, TaxRule>([
+  ["US", (o) => Math.round(o.subtotalCents * 0.0875)],
+  ["DE", (o) => Math.round(o.subtotalCents * 0.19)],
+]);
 
 export function totalCents(order: Order, tax?: TaxRule): number {
-  const rule = tax ?? taxRules[order.country];
+  const rule = tax ?? taxRules.get(order.country);
   if (rule === undefined) throw new Error(`no tax rule for ${order.country}`);
   return order.subtotalCents + rule(order);
 }
@@ -100,7 +102,10 @@ export function totalCents(order: Order, tax?: TaxRule): number {
 type Gateway = { charge(order: Order, amountCents: number): string };
 
 export const cardGateway = (apiKey: string): Gateway => ({
-  charge: (order, amountCents) => `card:${apiKey.slice(0, 4)}:${order.id}:${amountCents}`,
+  charge(order, amountCents) {
+    if (!apiKey.startsWith("sk_")) throw new Error("invalid api key");
+    return `card:${order.id}:${amountCents}`;
+  },
 });
 
 export function checkout(order: Order, gateway: Gateway): string {
@@ -108,15 +113,16 @@ export function checkout(order: Order, gateway: Gateway): string {
 }
 
 const order: Order = { id: "o-1", subtotalCents: 10_000, country: "DE" };
-console.assert(totalCents(order) === 11_900);
-console.assert(checkout(order, cardGateway("sk_test_1")).startsWith("card:"));
+assert.equal(totalCents(order), 11_900);
+assert.equal(checkout(order, cardGateway("sk_test_1")), "card:o-1:11900");
+assert.throws(() => totalCents({ ...order, country: "constructor" }));
 ```
 
-A closure over `apiKey` replaces the class. TypeScript's structural typing means any object with a matching `charge` is a `Gateway`, so no interface declaration is needed on the implementers.
+A closure over `apiKey` replaces the class. The tax rules sit in a `Map` because a plain object would answer `"constructor"` with an inherited function instead of failing. TypeScript's structural typing means any object with a matching `charge` is a `Gateway`, so no interface declaration is needed on the implementers.
 
 ## In production
 
-- `sorted(key=...)` and `Array.prototype.sort(compareFn)` take a strategy for ordering.
+- `Array.prototype.sort(compareFn)` takes an ordering strategy, and so does `functools.cmp_to_key` in Python.
 - Passport.js strategies (local, OAuth, JWT) are interchangeable authenticators behind one `authenticate` contract.
 - Django REST framework's authentication and permission classes are listed in settings and called through one interface.
 - Payment code that supports several processors usually has a `Gateway` Protocol with one adapter per processor, chosen by config or by the order's region.

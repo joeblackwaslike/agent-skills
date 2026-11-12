@@ -2,13 +2,13 @@
 
 ## What it is and Problem it solves
 
-State models something whose allowed behavior depends on where it is in a lifecycle. An order can be shipped only after it is paid, and cancelled only before it ships. Without an explicit model, those rules end up as scattered `if order.status == ...` checks that drift apart.
+State models something whose allowed behavior depends on where it is in a lifecycle. An order can be shipped only after it is paid, and cancelled only while it is pending (after payment it is refunded). Without an explicit model, those rules end up as scattered `if order.status == ...` checks that drift apart.
 
 ## Do you need this?
 
 If there are two or three statuses and one or two rules, a status field and an `if` is enough.
 
-The first upgrade is a transition table: a dict from current status to allowed next statuses. It is data, so it is easy to read, test and print as a diagram. Only when each state has meaningfully different behavior (not just different permissions) do state classes or objects earn their keep. Most order and payment lifecycles never need them.
+The first upgrade is a transition table: a dict from current status to allowed next statuses. It is data, so it is easy to read, test and print as a diagram. State classes or objects earn their keep when you branch on status inside three or more methods and the branches have different bodies, not just different permissions. Most order and payment lifecycles never need them.
 
 ## Python
 
@@ -54,10 +54,10 @@ class Order:
     status: Status = Status.PENDING
 
     def apply(self, event: Event) -> "Order":
-        try:
-            return replace(self, status=TRANSITIONS[(self.status, event)])
-        except KeyError:
-            raise IllegalTransition(self.status, event) from None
+        next_status = TRANSITIONS.get((self.status, event))
+        if next_status is None:
+            raise IllegalTransition(self.status, event)
+        return replace(self, status=next_status)
 
 
 order = Order("o-1").apply(Event.PAY).apply(Event.SHIP)
@@ -76,6 +76,8 @@ Everything the lifecycle allows is in `TRANSITIONS`. Anything not in the table r
 ## TypeScript
 
 ```typescript
+import assert from "node:assert/strict";
+
 type Status = "pending" | "paid" | "shipped" | "cancelled" | "refunded";
 type Event = "pay" | "ship" | "cancel" | "refund";
 
@@ -95,26 +97,24 @@ export class IllegalTransition extends Error {
     readonly event: Event,
   ) {
     super(`cannot ${event} an order that is ${status}`);
+    this.name = "IllegalTransition";
   }
 }
 
 export function apply(order: Order, event: Event): Order {
-  const next = transitions[order.status][event];
+  const row = Object.hasOwn(transitions, order.status) ? transitions[order.status] : undefined;
+  const next = row !== undefined && Object.hasOwn(row, event) ? row[event] : undefined;
   if (next === undefined) throw new IllegalTransition(order.status, event);
   return { ...order, status: next };
 }
 
 const shipped = apply(apply({ id: "o-1", status: "pending" }, "pay"), "ship");
-console.assert(shipped.status === "shipped");
-
-try {
-  apply(shipped, "cancel");
-} catch (err) {
-  console.assert(err instanceof IllegalTransition);
-}
+assert.equal(shipped.status, "shipped");
+assert.throws(() => apply(shipped, "cancel"), IllegalTransition);
+assert.throws(() => apply(shipped, "toString" as Event), IllegalTransition);
 ```
 
-The `Record<Status, ...>` type makes the compiler complain if you add a status and forget its row. A discriminated union (`{ status: "shipped"; trackingId: string }`) is the next step when some statuses carry data that others do not.
+Lookups use `Object.hasOwn` so a key like `"toString"` cannot pick up an inherited function. The `Record<Status, ...>` type makes the compiler complain if you add a status and forget its row. A discriminated union (`{ status: "shipped"; trackingId: string }`) is the next step when some statuses carry data that others do not.
 
 ## In production
 
