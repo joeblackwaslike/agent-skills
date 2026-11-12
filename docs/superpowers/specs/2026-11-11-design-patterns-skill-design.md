@@ -78,7 +78,7 @@ Every file uses the same sections, so an agent can skim for one:
 6. **Smells and misuse.**
 7. **Related**: neighbors and sibling skills.
 
-Target 80 to 150 lines per file. Examples are complete enough to run, small enough to read in one screen each.
+Aim for roughly 80 to 150 lines per file; go longer when the pattern needs a second example or a failure mode spelled out. Examples are complete enough to run, small enough to read in one screen each.
 
 ## Cross-skill changes (small, in scope)
 
