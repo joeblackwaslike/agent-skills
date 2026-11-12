@@ -237,4 +237,4 @@ test("formats, sends, and records a notification", async () => {
 - Input validation (Zod) belongs at the boundary that builds the `Notification`, before
   `dispatch()` — keeping the core types clean.
 - This is the same dependency-direction discipline as hexagonal architecture in
-  `domain-driven-design`: the policy owns the ports; infrastructure implements them.
+  `architectures`: the policy owns the ports; infrastructure implements them.

@@ -1,9 +1,15 @@
 # Application Architecture
 
-DDD's building blocks only pay off if the codebase is laid out so the **domain stays pure**.
-This file covers the layering that makes that structural — hexagonal / ports & adapters,
-clean, and onion architecture (three names for the same core idea) — plus where each block
-lives, how use cases orchestrate, and where transactions belong.
+Business rules last longer than the frameworks and databases around them, so the codebase
+needs a layout that keeps the **domain pure**. This file covers that layering (hexagonal,
+ports and adapters, clean and onion architecture are three names for one idea), where each
+block lives, how use cases orchestrate, where transactions belong, how to migrate an existing
+service toward it, and how to test each boundary. The domain objects themselves
+(aggregates, value objects) are in the
+[domain-driven-design](../../../domain-driven-design/SKILL.md) skill.
+
+The migration and testing sections adapt the hexagonal-architecture skill from
+[Everything Claude Code](https://github.com/affaan-m/ECC) (MIT).
 
 ## The one rule everything follows: dependencies point inward
 
@@ -107,16 +113,17 @@ export class PlaceOrderHandler {
   ) {}
 
   async handle(cmd: PlaceOrder): Promise<{ orderId: string }> {
-    return this.uow.run(async () => {       // transaction boundary lives in the app layer
+    const { orderId, events } = await this.uow.run(async () => {  // transaction boundary lives in the app layer
       const order = Order.start(new CustomerId(cmd.customerId));
       for (const line of cmd.items) {
         order.addItem(new ProductId(line.productId), Money.fromMinor(line.unitPriceMinor, "USD"), Quantity.of(line.qty));
       }
       order.place();                         // domain enforces "no empty orders", etc.
       await this.orders.save(order);
-      await this.events.publishAll(order.pullEvents());
-      return { orderId: order.id.value };
+      return { orderId: order.id.value, events: order.pullEvents() };
     });
+    await this.events.publishAll(events);    // only after the commit succeeded
+    return { orderId };
   }
 }
 ```
@@ -205,3 +212,38 @@ may import both. A quick lint rule or import-linter check enforces it mechanical
 
 See the fully assembled version of this layout in [typescript-examples.md](../../../domain-driven-design/references/typescript-examples.md) and
 [python-examples.md](../../../domain-driven-design/references/python-examples.md).
+
+## Migrating an existing service
+
+Do it one vertical slice at a time. A big-bang rewrite throws away behavior nobody wrote down.
+
+1. Pick one endpoint or job that changes often and would hurt little if it broke.
+2. Write characterization tests that pin its current behavior.
+3. Extract a use case with explicit input and output types. Transport details (`req`, a queue
+   message wrapper) stay outside it.
+4. Define an outbound port for each side effect the slice has: persistence, external calls,
+   the clock, id generation. A port names a capability (`PaymentGateway.authorize`), not a
+   technology (`StripeClient`).
+5. Move orchestration out of the controller or service class into the use case. Leave the old
+   entry point in place and make it delegate.
+6. Wire the adapters in one composition root so new dependencies cannot leak inward.
+7. Keep a route switch or flag per migrated slice until production behavior matches, then
+   repeat with the next slice.
+
+When the legacy code is too tangled to reach a port directly, wrap it in a facade first
+(see [adapter.md](../../../design-patterns/references/structural/adapter.md)) and replace the
+inside later.
+
+## Testing at each boundary
+
+| Layer | Test with | What it proves |
+| --- | --- | --- |
+| Domain | Plain unit tests, no mocks, no framework | Business rules hold |
+| Use case | In-memory fakes for the outbound ports | The orchestration and its outcomes |
+| Outbound adapter | One contract suite per port, run against every adapter (fake and real) | Each adapter honors the port |
+| Inbound adapter | Protocol in, use-case input out, and errors mapped back | Mapping, status codes, validation at the edge |
+| Adapter integration | Real database, API or queue | Serialization, queries, retries, timeouts |
+| End to end | A few critical journeys through all layers | The wiring works |
+
+The contract suite is the part teams skip. Without it, the in-memory fake and the Postgres
+adapter drift apart, and use-case tests pass against behavior production does not have.

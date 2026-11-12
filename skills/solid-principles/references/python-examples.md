@@ -271,5 +271,5 @@ async def test_formats_sends_and_records() -> None:
   never imports it.
 - Input validation (Pydantic) belongs at the boundary that builds the `Notification`, before
   `dispatch()` — keeping the core dataclass clean.
-- Same dependency direction as hexagonal architecture in `domain-driven-design`: the policy owns
+- Same dependency direction as hexagonal architecture in `architectures`: the policy owns
   the ports; infrastructure implements them; dependencies point inward.

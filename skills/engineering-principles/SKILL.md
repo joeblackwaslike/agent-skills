@@ -8,7 +8,8 @@ description: >-
   abstract this". Not for checking a finished diff before a PR (use
   reviewing-code). Not for deep SOLID, TDD or DDD (use solid-principles,
   test-driven-development, domain-driven-design). Not for choosing or
-  implementing a named pattern (use design-patterns).
+  implementing a named pattern (use design-patterns). Not for system-level
+  layering, CQRS or service splits (use architectures).
 metadata:
   last_updated: "2026-11-11"
 ---
@@ -42,7 +43,8 @@ The one-paragraph summaries at the top of `principles.md` ("Principles") are eno
 
 - `solid-principles`: the full SRP/OCP/LSP/ISP/DIP treatment with bad-to-good examples.
 - `test-driven-development`: the red-green-refactor discipline and test doubles.
-- `domain-driven-design`: aggregates, value objects, CQRS and event sourcing.
+- `domain-driven-design`: aggregates, value objects and bounded contexts.
+- `architectures`: layering, CQRS, event sourcing, event-driven design and service boundaries.
 - `senior-engineering-best-practices`: verifying docs before a workaround, root-cause discipline, blast radius, dependency judgment.
 - `reviewing-code`: the process for checking a finished diff against these principles, with per-change-type playbooks (endpoints, migrations, auth, Dockerfiles and so on).
 - `design-patterns`: the catalog of named patterns, with a reference per pattern. Use it once you have decided an abstraction is warranted.
