@@ -70,7 +70,7 @@ class Order(DeclarativeBase):
 **The fix:** Keep domain classes pure (no framework imports) and map them to storage with a
 separate mapper or SQLAlchemy's imperative mapping. The repository adapter does the
 translation. The cost of a mapper is small; the payoff is a domain that doesn't know
-Postgres exists. See [application-architecture.md](../../architectures/references/application/application-architecture.md).
+Postgres exists. See [application-architecture.md](../../code-architectures/references/application/application-architecture.md).
 
 ## 3. God aggregate
 
@@ -127,9 +127,9 @@ rare, deliberate choice, not the default home for logic.
 
 ---
 
-## Moved to the architectures skill
+## Moved to the code-architectures skill
 
-CQRS/event-sourcing cargo-culting, premature bounded contexts (the distributed monolith) and read concerns polluting the write model now live in [architectures anti-patterns](../../architectures/references/anti-patterns.md).
+CQRS/event-sourcing cargo-culting, premature bounded contexts (the distributed monolith) and read concerns polluting the write model now live in [code-architectures anti-patterns](../../code-architectures/references/anti-patterns.md).
 
 ## Quick review heuristics
 
@@ -140,5 +140,5 @@ When reviewing domain code, these questions surface most problems fast:
 - Does the domain layer **import** anything from infrastructure? (→ dependency rule)
 - How many aggregates does this transaction touch? (Should be one.)
 - Is this aggregate a **consistency** boundary, or did it become a containment dumping ground?
-- Did we add CQRS/ES because the problem needed it, or because it sounded right? See [architectures anti-patterns](../../architectures/references/anti-patterns.md).
+- Did we add CQRS/ES because the problem needed it, or because it sounded right? See [code-architectures anti-patterns](../../code-architectures/references/anti-patterns.md).
 - Would a **domain expert** recognize the names in this code?

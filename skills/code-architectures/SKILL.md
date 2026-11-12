@@ -1,12 +1,12 @@
 ---
-name: architectures
+name: code-architectures
 description: >-
   Use when choosing or structuring how a system is built: hexagonal layering, CQRS, event sourcing, event-driven design, sagas, microservices vs monolith, strangler-fig migration, service timeouts and contracts, CAP and eventual consistency. Not for aggregates or bounded contexts (domain-driven-design), one retry, breaker or outbox (design-patterns), or whether to abstract (engineering-principles).
 metadata:
   last_updated: "2026-11-11"
 ---
 
-# Architectures
+# Code Architectures
 
 How a system is divided into parts, how those parts talk, and what each choice costs. This skill covers application architecture (layers, ports and adapters, CQRS), event-driven architecture (event sourcing, events and commands, delivery guarantees, sagas), and distributed architecture (monolith or microservices, boundaries, service communication, consistency). Examples are in TypeScript and Python and continue the Orders and Fulfillment domain from `domain-driven-design`.
 
@@ -47,7 +47,7 @@ Open only the file the task needs. [catalog.md](references/catalog.md) lists eve
 ## Related skills
 
 - `domain-driven-design`: bounded contexts, aggregates, value objects and domain events. Read it first to find the boundaries these architectures divide along.
-- `design-patterns`: the code-level patterns architectures lean on, including dependency injection, outbox, retry, circuit breaker and idempotency key.
+- `design-patterns`: the code-level patterns this skill leans on, including dependency injection, outbox, retry, circuit breaker and idempotency key.
 - `solid-principles`: dependency inversion, the rule that makes ports and adapters work.
 - `engineering-principles`: whether to abstract at all, and how much.
 

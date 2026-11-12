@@ -5,7 +5,7 @@ value objects → aggregate → domain events → repository port → applicatio
 It's framework-agnostic (no Nest, no Express) so the patterns are visible; a note at the end
 shows where Zod and a web framework plug in.
 
-The code is organized as it would be on disk (see [application-architecture.md](../../architectures/references/application/application-architecture.md)), but reads
+The code is organized as it would be on disk (see [application-architecture.md](../../code-architectures/references/application/application-architecture.md)), but reads
 top-to-bottom as one coherent example. Everything here is self-consistent and type-checks
 under `strict`.
 

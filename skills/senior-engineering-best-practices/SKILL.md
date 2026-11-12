@@ -18,7 +18,7 @@ senior engineer makes by reflex, plus a router to the skills that already cover 
 home elsewhere.
 
 **This skill does not duplicate what already exists.** If a situation is already covered by
-`test-driven-development`, `solid-principles`, `domain-driven-design`, `architectures`, or a `superpowers` skill,
+`test-driven-development`, `solid-principles`, `domain-driven-design`, `code-architectures`, or a `superpowers` skill,
 route there — see [Route to an existing skill](#route-to-an-existing-skill) below. This skill's
 own `references/` hold only instincts that had no home before it existed.
 
@@ -54,7 +54,7 @@ Don't duplicate — these situations already have a home:
 | Receiving code review feedback | `superpowers:receiving-code-review` |
 | Class/interface/module design | `agent-skills:solid-principles` |
 | Domain modeling | `agent-skills:domain-driven-design` |
-| System architecture (layers, CQRS, event sourcing, services) | `agent-skills:architectures` |
+| System architecture (layers, CQRS, event sourcing, services) | `agent-skills:code-architectures` |
 | Auth/crypto/input-validation/secrets/external APIs | `security-review` |
 | Editing an existing skill, runbook, or instruction file (`SKILL.md`, `AGENTS.md`, `CLAUDE.md`) | `agent-skills:agent-instructions` (`references/editing-discipline.md`) |
 | Creating a brand-new skill from nothing | `superpowers:writing-skills` |
