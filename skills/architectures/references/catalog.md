@@ -18,8 +18,8 @@ Every architecture and style with a one-line summary and where it is covered. "L
 | Architecture | What it is | Link |
 | --- | --- | --- |
 | Event sourcing | Store the sequence of events as the source of truth, derive state by replay | [event-sourcing.md](event-driven/event-sourcing.md) |
-| Event-driven architecture | Parts communicate by publishing and reacting to events | not yet written |
-| Saga | A long-running business transaction as local steps with compensations | not yet written |
+| Event-driven architecture | Parts communicate by publishing and reacting to events | [event-driven-architecture.md](event-driven/event-driven-architecture.md) |
+| Saga | A long-running business transaction as local steps with compensations | [sagas.md](event-driven/sagas.md) |
 | Outbox | Write state and event in one transaction, publish afterward | `design-patterns` [outbox.md](../../design-patterns/references/resilience/outbox.md) |
 
 ## Distributed architecture
