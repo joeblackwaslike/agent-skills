@@ -32,7 +32,8 @@ The short version of the [procedure](../SKILL.md), in review order. Use it for t
 - [ ] Prose agrees with the code and tables beside it.
 - [ ] Examples run, do what the prose promises, and do not commit the smell they warn about.
 - [ ] Examples vary enough not to overfit.
-- [ ] Each claim about a library, API or standard was checked against a current source.
+- [ ] Each file has a promise ledger: every behavioral claim holds, is contradicted, or is marked unverified with the check to run.
+- [ ] Every reviewer reported coverage, and no file was left unread.
 
 **Flow and pipelines**
 

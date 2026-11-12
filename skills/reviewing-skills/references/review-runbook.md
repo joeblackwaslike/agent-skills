@@ -45,6 +45,8 @@ Pick the roles:
 | routing and overlap | a description changed, or a skill was added |
 | pipeline | the skill dispatches agents |
 
+**Sharding the content role.** When a skill has more than 6 reference files, dispatch the content reviewer as shards of at most 6 files each. Every shard reads SKILL.md for routing context, and `<SCOPE_FILES>` lists that shard's files. Shards are one role, so they count as one slot toward the 6-reviewer cap in `/self-review`. Merge the shards' findings and de-duplicate by location. In the sequential fallback, process one shard at a time, rereading its files fresh.
+
 Inside `/self-review`, the cap, the drop order and the 20-line rule are in [SKILL.md](../SKILL.md#inside-self-review). Per-language review of code in the skill is not done here. The calling session dispatches the language reviewers from the `reviewing-code` table whose triggers match.
 
 Every reviewer is a new agent. Never resume one and never fork yourself, because either carries your context. Run them in parallel in one message. Each runs on `model: sonnet` where the platform lets you choose a model.
@@ -75,7 +77,7 @@ The fallback is weaker than separate agents because one context sees all roles. 
 
 ### Filling the templates
 
-Replace each angle-bracket placeholder. Keep the template text otherwise unchanged, because the wording is what makes the reviewer behave. The four templates end in an identical output contract. Edit all four together.
+`<SCOPE_FILES>` in the content template is the absolute list of files that reviewer must read in full. Replace each angle-bracket placeholder. Keep the template text otherwise unchanged, because the wording is what makes the reviewer behave. The four templates end in an identical output contract. Edit all four together.
 
 ### Instruction-quality reviewer
 
@@ -94,6 +96,14 @@ Setup:
 3. List the sibling skills in <SKILLS_DIR> and read the SKILL.md of any whose name or description overlaps with this skill's subject.
 
 Read in this order: description and routing, then authority, then rationalization risk, then specificity and contradictions, then examples, then diagrams.
+
+Cross-file consistency pass. Do this as its own pass after reading every file, not as you go.
+- For each rule, threshold or number stated in SKILL.md, find every place each reference restates it, and compare the wording and the value. List the pairs you compared.
+- For each "when to use" gate in a router and the references it routes to, compare the gate in the router with the gate each reference states for itself.
+- Compare the skill's routing and its numbers against the sibling skills on the same topic. Search the sibling skills directory for the topic's key terms and read what you find.
+- Report each mismatch as a finding that quotes both sides.
+
+External claims. Every claim in the files about a named library, framework, SDK, service, database or standard, including its version scope, is listed with the source you checked it against or marked unverified. Do not accept a claim because it sounds right. An unverified claim that a reader would act on is a minor finding, and its replacement names the check to run.
 
 Hunt for these defect classes. Each line gives the class and a generic example of the shape. Look for the shape, not the example.
 - Prose that disagrees with the code or table in the same file. Example: the text says "retries three times" and the snippet below loops twice.
@@ -129,7 +139,7 @@ FINDINGS
 <the findings, ranked by severity, or "none">
 SUMMARY
 role: instruction-quality
-files read: <every path you read>
+coverage: <every file you read in full; every file in scope you did not read in full, listed as GAP with the reason. Never skip a file silently.>
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
 checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
@@ -147,11 +157,24 @@ Gate output: <GATE_OUTPUT>
 
 You are given paths only. You are not told the author's intent or reasoning, and you must not guess at it. Read the files from disk. Every finding must quote the file.
 
+Files in scope: <SCOPE_FILES>. Read SKILL.md for routing context, then every file listed. Read each file in full, one at a time. Do not sample, skim or stop at the first defect in a file.
+
 Setup:
-1. List every file under <SKILL_DIR>. Read SKILL.md, every file under references/, and every script, command or fixture it ships.
+1. List every file under <SKILL_DIR>. Confirm <SCOPE_FILES> against it, and read every script, command or fixture the files in scope depend on.
 2. Read <PRINCIPLES_DIR>/principles.md, principles 3 and 7 especially.
 3. For every example, code block or command, work out what it does by reading it. Where it is cheap and safe, run it or check it (a parse, a type check, a dry run). Say what you ran.
-4. For every claim about a library, API, command flag, standard or version, find the current authoritative source (installed version, official docs, the project's own source) and compare. Record the source you used.
+
+Promise ledger. Build one per file before moving to the next file. For every behavioral claim the prose makes about its own example, or about a language, library or standard, write one ledger line: the file, the claim quoted, where it is checked, and a verdict. Claims look like "is lazy", "covers the same ground", "keeps the invariants in X", "allows Y before Z", "also offers a settle-all variant", "abortable", "the short version does the same lookup", "safe to call concurrently".
+- Check a claim about the file's own example against the code in that file, line by line, not against what the example appears to intend.
+- Check a claim about a language, library, framework, SDK, service, database or standard, including its version scope, against a named source (installed version, official docs, the project's source). Write the source in the ledger line. Do not accept a claim because it sounds right.
+- Verdicts are exactly: holds, contradicted, unverified.
+- A contradicted claim is a finding: major when it teaches wrong behavior an agent will copy, minor otherwise.
+- An unverified claim that a reader would act on is a minor finding, and its replacement names the check to run.
+
+Per file, also answer each of these and record the answers in the ledger.
+- Smells. List each smell, anti-pattern or mistake the file warns about. Check the file's own example against each one.
+- Edge inputs. For the edges the file implies (empty input, an unknown key, a concurrent call, a failure after the effect has happened), trace the example by hand and say what it does.
+- Second versions. When the file gives a second version (a function form, an alternate language, a short form), compare it to the first and list any guard, validation or error path it drops.
 
 Hunt for these defect classes. Each line gives the class and a generic example of the shape. Look for the shape, not the example.
 - Prose that disagrees with the code or table in the same file. Example: the text says "the helper rejects empty input" and the helper returns an empty result.
@@ -182,9 +205,11 @@ Finding format. For each finding, report exactly:
 Output contract. End with exactly this, in this order, and nothing after it:
 FINDINGS
 <the findings, ranked by severity, or "none">
+LEDGER
+<per file: the file, then one line per claim checked: claim quoted | checked against | holds, contradicted or unverified; then the smell, edge-input and second-version answers>
 SUMMARY
 role: content
-files read: <every path you read>
+coverage: <every file you read in full; every file in scope you did not read in full, listed as GAP with the reason. Never skip a file silently.>
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
 checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
@@ -240,7 +265,7 @@ FINDINGS
 <the findings, ranked by severity, or "none">
 SUMMARY
 role: routing and overlap
-files read: <every path you read>
+coverage: <every file you read in full; every file in scope you did not read in full, listed as GAP with the reason. Never skip a file silently.>
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
 checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
@@ -294,7 +319,7 @@ FINDINGS
 <the findings, ranked by severity, or "none">
 SUMMARY
 role: pipeline
-files read: <every path you read>
+coverage: <every file you read in full; every file in scope you did not read in full, listed as GAP with the reason. Never skip a file silently.>
 counts: blocker=<n> major=<n> minor=<n> nit=<n>
 checked and clean: <each defect class you checked and found nothing for>
 could not check: <anything you could not verify, with the reason>
