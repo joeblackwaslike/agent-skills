@@ -92,6 +92,7 @@ function lazy<T extends object>(create: () => T): T {
   let real: T | undefined;
   return new Proxy({} as T, {
     get(_target, prop) {
+      if (prop === "then") return undefined;
       real ??= create();
       const value: unknown = Reflect.get(real, prop, real);
       return typeof value === "function" ? value.bind(real) : value;
@@ -115,31 +116,35 @@ assert.equal(built, 0);
 assert.equal(gateway.charge("o-1", 500), "card:o-1:500");
 gateway.charge("o-2", 100);
 assert.equal(built, 1);
+const idle = lazy<Gateway>(() => {
+  built += 1;
+  return gateway;
+});
+assert.equal(await idle, idle);
+assert.equal(built, 1);
 
 assert.throws(() => roleGated(gateway, new Set(["viewer"])).charge("o-3", 500), /cashier/);
 assert.equal(roleGated(gateway, new Set(["cashier"])).charge("o-4", 200), "card:o-4:200");
 ```
 
-JavaScript has a built-in `Proxy` that intercepts property access with a handler such as `get`, and `Reflect.get` forwards the lookup to the real object. That makes a generic lazy proxy a few lines, as `lazy` shows. The explicit closure in `roleGated` is simpler when you only need to guard one or two methods, and it type-checks without a cast.
+JavaScript has a built-in `Proxy` that intercepts property access with a handler such as `get`, and `Reflect.get` forwards the lookup to the real object. `lazy` traps only `get`, so it suits method-only interfaces: property writes, `in` and `Object.keys` would hit the empty stand-in, so add `set`, `has` and `ownKeys` traps before proxying data objects. It returns `undefined` for `then`, so `await`ing the proxy does not build the real object. The explicit closure in `roleGated` is simpler when you only guard a few methods, and it type-checks without a cast.
 
 ## In production
 
-- Lazy loading of related rows in ORMs: accessing an attribute triggers the query, and the caller sees an ordinary object.
+- Lazy loading of related rows in ORMs, where accessing an attribute triggers the query. Remote stubs (gRPC, RPC clients) are proxies that make a network call.
 - Vue 3's `reactive()` objects are JavaScript Proxies that intercept property reads and writes to track dependencies.
-- Remote stubs (gRPC and RPC clients) are proxies with a local interface that make a network call.
-- Caching proxies in front of a slow lookup, and API gateways that check authentication before forwarding to a service.
+- Caching proxies in front of a slow lookup. Give the cache an expiry or an invalidation path, since a proxy that serves stale prices or balances looks identical to a fresh one.
 
 ## Smells and misuse
 
-- A proxy that changes the contract (new exceptions, different return types). Callers then must know about it.
+- A proxy that changes the contract. `RoleGatedGateway` raises `PermissionDenied`, which `Gateway` does not declare, so callers must know to handle it; declare it or return a result type.
 - Security enforced only in the proxy while the real object is still reachable by import. The check protects nothing if someone can get the unwrapped one.
-- Lazy creation that is not safe under concurrency. In async code or threads, two first calls can both build the object; guard it with a lock, a promise, or create it at startup.
-- `Proxy` traps that hide errors, such as returning `undefined` for a missing method instead of failing.
-- Proxying when a function call would do. Prefer the plain guard until the control must be impossible to forget.
+- Lazy creation under concurrency. With threads (`LazyGateway`) or an async factory, two first calls can both build the object; guard it with a lock or a shared promise, or create it at startup. The synchronous `lazy` above cannot race in single-threaded JavaScript.
+- Traps that hide errors (returning `undefined` for a missing method), or proxying when a plain guard would do.
 
 ## Related
 
 - [Decorator](decorator.md) wraps with the same interface to add behavior.
 - [Adapter](adapter.md) changes the interface.
 - [Singleton](../creational/singleton.md) covers lazily created shared instances without a proxy.
-- [Circuit Breaker](../resilience/circuit-breaker.md) is often implemented as a proxy around a remote call.
+- [Circuit Breaker](../resilience/circuit-breaker.md) is usually built as a decorator-style wrapper around the client; it controls access to a remote call, which is the proxy's job.

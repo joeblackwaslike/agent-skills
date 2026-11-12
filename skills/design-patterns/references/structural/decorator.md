@@ -35,7 +35,9 @@ class AuditedGateway:
 
     def charge(self, order_id: str, amount: Decimal) -> str:
         self._log.append(f"charge {order_id} {amount}")
-        return self._inner.charge(order_id, amount)
+        result = self._inner.charge(order_id, amount)
+        self._log.append(f"charged {order_id} {result}")
+        return result
 
 
 def audited[**P, R](log: list[str]) -> Callable[[Callable[P, R]], Callable[P, R]]:
@@ -62,14 +64,14 @@ def refund(order_id: str, amount: Decimal) -> str:
 log: list[str] = []
 gateway: Gateway = AuditedGateway(CardGateway(), log)
 assert gateway.charge("o-1", Decimal("5.00")) == "card:o-1:5.00"
-assert log == ["charge o-1 5.00"]
+assert log == ["charge o-1 5.00", "charged o-1 card:o-1:5.00"]
 
 assert refund("o-1", Decimal("5.00")) == "refund:o-1:5.00"
 assert calls == ["call refund"]
 assert refund.__name__ == "refund" and refund.__doc__ == "Refund an order."
 ```
 
-`AuditedGateway` is the wrapper object. It implements the same `Protocol` as the thing it wraps, so it can be stacked. `refund` shows the syntax form for a single function. `functools.wraps` copies the name and docstring, so tracebacks and `help()` still describe `refund` instead of `wrapper`, and the `ParamSpec` generics keep the original signature visible to the type checker.
+`AuditedGateway` is the wrapper object. It implements the same `Protocol` as the thing it wraps, so it can be stacked. It logs the attempt and the result; if the inner call raises, the second line never appears, so wrap it in `try/except` if failures must be logged. `refund` shows the syntax form for a single sync function; for `async def`, write an `async def wrapper` that awaits `fn`, or the sync wrapper logs and returns an un-awaited coroutine. `functools.wraps` copies the name and docstring, so tracebacks and `help()` still describe `refund` instead of `wrapper`, and the `ParamSpec` generics keep the original signature visible to the type checker.
 
 ## TypeScript
 
@@ -129,22 +131,20 @@ assert.equal(new Refunds().refund("o-1"), "refund:o-1");
 assert.deepEqual(methodCalls, ["call refund"]);
 ```
 
-A higher-order function plays the role of the decorator and needs no `@` syntax. The `@logged` form at the bottom is TypeScript's decorator syntax, which applies to classes and their members and not to a free function or an object literal, so the example needs a class only to have somewhere to put it. Reach for it when a framework you already use expects it. Otherwise wrap with a function.
+A higher-order function plays the role of the decorator and needs no `@` syntax. The `@logged` form at the bottom is TypeScript's decorator syntax, which applies to classes and their members and not to a free function or an object literal, so the example needs a class only to have somewhere to put it. Reach for it when a framework you already use expects it. Otherwise wrap with a function. TypeScript 5 decorators like `@logged` are the standard form and need `experimentalDecorators` off; with it on you get the older legacy form, whose function signatures differ, so this `logged` would not compile.
 
 ## In production
 
-- Python's `functools.cache` is a decorator in the standard library, and web frameworks use them to register routes and attach permission checks.
-- HTTP clients wrapped to add retries, timeouts or auth headers with the same call signature.
+- Python's `functools.cache` is a decorator in the standard library, and web frameworks use them to register routes and attach permission checks. A cache decorator needs an expiry or a clear path, because it serves stale values for the life of the process.
 - Middleware in Express, Koa and ASGI apps wraps the next handler, which is the decorator shape applied to requests. See [Chain of Responsibility](../behavioral/chain-of-responsibility.md).
 
 ## Smells and misuse
 
 - A decorator that changes the signature or return type. Then it is an adapter, and callers cannot swap the wrapped and unwrapped versions.
 - Forgetting `functools.wraps`, so logs and tracebacks say `wrapper`.
-- Order that matters but is invisible. Retry outside of a circuit breaker and retry inside it behave differently; make the order explicit in one place.
-- Five stacked decorators on one function, a wrapper that swallows exceptions, or a stateful one (a cache that never expires) shared across callers.
+- Invisible order. Write `retry(breaker(op))` so each attempt counts toward the breaker; the reverse counts a whole retried call as one failure. Audit outside both logs the final result, inside logs every attempt. Define the stack in one place.
+- Five stacked decorators on one function, or a wrapper that swallows exceptions.
 
 ## Related
 
-- [Proxy](proxy.md) has the same shape and a different purpose: it controls access to the object, where a decorator adds behavior.
-- [Retry with backoff](../resilience/retry-backoff.md) and [Circuit Breaker](../resilience/circuit-breaker.md) are usually applied as decorators. [Chain of Responsibility](../behavioral/chain-of-responsibility.md) is a stack of them on a request; [Adapter](adapter.md) changes the interface instead.
+- [Proxy](proxy.md) has the same shape to control access to the object, where a decorator adds behavior. [Retry with backoff](../resilience/retry-backoff.md) and [Circuit Breaker](../resilience/circuit-breaker.md) are usually applied as decorators. [Chain of Responsibility](../behavioral/chain-of-responsibility.md) is a stack of them on a request; [Adapter](adapter.md) changes the interface instead.
