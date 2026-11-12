@@ -148,7 +148,7 @@ main().catch((err: unknown) => {
 });
 ```
 
-`withTransaction` rolls back when `work` throws and rethrows the original error, so the caller still sees it. If the rollback itself fails, that failure rides along as `cause` instead of replacing the error. When the original has a `cause` already, or is not an `Error` at all, an `AggregateError` carries both so neither is lost. A failed `COMMIT` surfaces as it is, with no `ROLLBACK` after it: on Postgres an erroring `COMMIT` leaves the transaction ended, so there is nothing to roll back. Check your driver.
+`withTransaction` rolls back when `work` throws and rethrows the original error, so the caller still sees it. If the rollback itself fails, that failure rides along as `cause` instead of replacing the error. When the original has a `cause` already, or is not an `Error` at all, an `AggregateError` carries both so neither is lost. A failed `COMMIT` surfaces as it is, with no `ROLLBACK` after it. Whether the connection is still inside a transaction after a failed `COMMIT` depends on the database and driver, so the helper does not guess. Check yours.
 
 ## In production
 
