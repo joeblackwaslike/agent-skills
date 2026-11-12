@@ -10,6 +10,8 @@ metadata:
 
 A catalog of the patterns that show up in production code, with one reference per pattern in Python and TypeScript. Most are a function, a closure or a `Protocol` in these languages, not a class hierarchy.
 
+Python examples assume 3.12 or later.
+
 ## Default to no pattern
 
 Start with a plain function, a dict of functions, or an `if`. A second CSV export format is a function argument. Reach for a pattern when the plain version has already hurt: the third `elif` on a provider name, a notification call copied into four callers, a module that cannot be tested without the database.
