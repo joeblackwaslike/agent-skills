@@ -1,15 +1,7 @@
 ---
 name: domain-driven-design
 description: >
-  Use when modeling a business domain or structuring a backend around business rules —
-  designing aggregates, entities, value objects, domain events, repositories; separating
-  reads from writes (CQRS); event sourcing; bounded contexts and ubiquitous language; or
-  hexagonal/clean/onion architecture. Triggers on explicit mentions of DDD, CQRS, event
-  sourcing, aggregates, bounded contexts, domain modeling — AND implicitly whenever an
-  agent is building a non-trivial domain with real invariants, even if the user never
-  names a pattern. Teaches strategic + tactical DDD, CQRS, and event sourcing with
-  framework-agnostic examples in both TypeScript and Python. Not for standalone
-  Repository, Unit of Work or Outbox mechanics outside an aggregate (use design-patterns).
+  Use when modeling a business domain: aggregates, entities, value objects, domain events, repositories, bounded contexts, ubiquitous language. Triggers on DDD and domain modeling, and whenever an agent builds a non-trivial domain with real invariants. Not for layering, CQRS, event sourcing or services (use architectures), or Repository, Unit of Work, Outbox mechanics (use design-patterns).
 metadata:
   last_updated: "2026-11-11"
 ---
@@ -18,9 +10,9 @@ metadata:
 
 Use this skill to model a business domain *well* — so the code reads like the business,
 invariants are enforced in one place, and the architecture survives change. It covers
-strategic DDD (carving the problem into bounded contexts), tactical DDD (the building
-blocks you write code with), CQRS (splitting reads from writes), and event sourcing
-(storing facts instead of state).
+strategic DDD (carving the problem into bounded contexts) and tactical DDD (the building
+blocks you write code with). Layering, CQRS, event sourcing and service boundaries live in
+the `architectures` skill.
 
 **Core principle:** the domain model is the asset. Everything else — the database, the web
 framework, the message bus — is a detail that plugs into the model, never the other way
@@ -42,9 +34,7 @@ integrations, not the business logic.
 | "It's just forms over data" — store it, show it, edit it | Plain CRUD / active record |
 | One team, one database, simple lifecycle | Tactical DDD without bounded-context ceremony |
 | Multiple teams, multiple meanings of the same word ("order" means different things to sales vs. fulfillment) | Strategic DDD — draw bounded contexts first |
-| Reads and writes have wildly different shapes/scale | Add CQRS |
-| You need a full audit trail, temporal queries, or "why is it in this state?" | Consider event sourcing |
-| You reached for CQRS/ES because they sound rigorous | Stop — read [architectures anti-patterns](../architectures/references/anti-patterns.md) |
+| Reads and writes have wildly different shapes/scale, or you need a full audit trail | See the `architectures` skill (CQRS, event sourcing) |
 
 If the answer is "plain CRUD," say so and stop. Misapplied DDD is worse than no DDD.
 
@@ -56,9 +46,6 @@ Pick the reference that matches the task. Read the most specific one first.
 | --- | --- |
 | Carving the problem into bounded contexts, ubiquitous language, subdomains, context mapping, integrating with other teams/systems | `references/strategic-design.md` |
 | Writing the building blocks — entities, value objects, aggregates, domain events, domain services, factories, repositories | `references/tactical-patterns.md` |
-| Splitting reads from writes, command handlers, read models, projections | [cqrs.md](../architectures/references/application/cqrs.md) |
-| Storing events as the source of truth, rebuilding state from a stream, snapshots, projections | [event-sourcing.md](../architectures/references/event-driven/event-sourcing.md) |
-| Layering the codebase — hexagonal / ports & adapters / clean / onion, where each block lives, transaction boundaries | [application-architecture.md](../architectures/references/application/application-architecture.md) |
 | A complete, copy-paste-ready bounded context in TypeScript | `references/typescript-examples.md` |
 | A complete, copy-paste-ready bounded context in Python | `references/python-examples.md` |
 | Recognizing and fixing DDD gone wrong — anemic models, ORM leakage, god aggregates, primitive obsession | `references/anti-patterns.md` |
@@ -106,9 +93,10 @@ HTTP / CLI / queue            ← adapter (infrastructure)
   ← returns an id / DTO, never the aggregate itself
 ```
 
-Reads skip the aggregate entirely (that's CQRS): a query goes straight to a **read model**
-shaped for the screen that needs it. Writes go through the domain; reads come from
-projections built off the events. See [cqrs.md](../architectures/references/application/cqrs.md).
+The layering around the aggregate (ports, adapters, transaction boundaries) is covered in
+[application-architecture.md](../architectures/references/application/application-architecture.md),
+and splitting reads from writes in
+[cqrs.md](../architectures/references/application/cqrs.md), both in the `architectures` skill.
 
 ## Red flags — stop and reconsider
 
@@ -119,10 +107,8 @@ projections built off the events. See [cqrs.md](../architectures/references/appl
   boundaries and split. Reference other aggregates by id.
 - "I'll update three aggregates in one transaction to keep them consistent." → use eventual
   consistency via domain events instead.
-- "Let's use CQRS and event sourcing because it's the proper way." → justify the cost
-  against the table at the top, or don't.
-- "The read model and the domain model are the same class." → reads and writes have
-  different shapes; conflating them is why both get awkward.
+- "Let's add CQRS and event sourcing because it's the proper way." → check the
+  `architectures` skill first; both carry a real cost.
 
 ## Completion criteria
 
@@ -134,5 +120,4 @@ Before considering domain work done:
 - Domain objects import nothing from infrastructure (ORM, web, broker).
 - Each transaction modifies exactly one aggregate; cross-aggregate consistency is eventual.
 - Value objects are immutable and self-validating; illegal states are hard to construct.
-- If CQRS/ES were used, the cost was justified, not cargo-culted.
 - Examples (the code you wrote) actually compile/parse — the model is the product.
