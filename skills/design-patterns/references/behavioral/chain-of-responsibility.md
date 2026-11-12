@@ -85,7 +85,8 @@ Each middleware takes the next handler and returns a new one, so the first in `s
 import assert from "node:assert/strict";
 
 type Ctx = { user: string | null; amountCents: number; status: number; body: string };
-type Middleware = (ctx: Ctx, next: () => Promise<void>) => Promise<void>;
+type Next = () => Promise<void>;
+type Middleware = (ctx: Ctx, next: Next) => Promise<void>;
 
 function compose(stack: Middleware[]): (ctx: Ctx) => Promise<void> {
   return (ctx) => {
@@ -127,7 +128,11 @@ const app = compose([timing, requireUser, pay]);
 const ctx: Ctx = { user: "ada", amountCents: 500, status: 0, body: "" };
 await app(ctx);
 assert.equal(ctx.status, 200);
-const twice: Middleware = async (_c, next) => { await next(); await next(); };
+const twice: Middleware = async (_ctx, next) => {
+  await next();
+  await next();
+};
+
 await assert.rejects(compose([twice, pay])(ctx), /multiple times/);
 ```
 
@@ -138,13 +143,18 @@ await assert.rejects(compose([twice, pay])(ctx), /multiple times/);
 - Express: a middleware receives `req`, `res` and `next`. If it does not end the response it must call `next()`, or the request hangs. Error-handling middleware has the four-argument signature `(err, req, res, next)`, and Express 5 forwards a rejected promise from an async handler to it as if `next(err)` had been called.
 - Koa: middleware are async functions that `await next()`. Control goes downstream through the stack, then back upstream, which is what makes `timing` above possible. Express's `next()` does not await downstream work.
 - ASGI (Starlette, FastAPI): a pure ASGI middleware is itself an ASGI app that wraps another one, called with `scope`, `receive` and `send`. It is the same wrapping shape as the Python example, with a different call signature.
+- Django and Rack middleware follow the same wrap-the-next-callable form.
 
 ## Smells and misuse
 
 - Order bugs. Authentication after the rate limiter, or Express error handling registered before the routes, so it never sees their errors. `user` must be set by authentication earlier in the chain, never taken from client input. Keep the order visible in one place.
 - Forgetting to call `next()` and leaving the request open, or calling it twice and running the rest of the chain twice.
-- Business logic in middleware, or a fixed chain of five that is just a function with five steps.
+- Handlers that mutate shared request state in ways later handlers silently depend on.
+- A chain of five where the handlers always run in the same fixed order. That is a function with five steps.
+- Business logic in middleware. Keep middleware to cross-cutting concerns.
 
 ## Related
 
 - [Decorator](../structural/decorator.md) is the same wrapping idea applied to one function; middleware is a decorator stack on the request handler.
+- [Observer](observer.md) notifies every subscriber; a chain can stop at any handler.
+- [Template Method](template-method.md) fixes the order of steps in a base class; a chain lets the caller assemble them.
