@@ -13,7 +13,7 @@ Ten principles cover most of what makes a skill's instructions work. Apply them 
 1. **Authority matches stakes.** Pick the device by failure type: a prohibition plus a rationalization table for rules broken under pressure, a positive recipe for wrong output shape, a template slot for omitted elements, a predicate for conditional behavior. Ration MUST and NEVER. No nuance clauses.
 2. **Instructions survive rationalization.** Excuse and reality tables, Red Flags lists, loophole closers, built from excuses seen in testing.
 3. **Specific and consistent.** One threshold per rule, one owner, an observable trigger per condition, no contradictions across files.
-4. **The description is a trigger.** "Use when...", third person, conditions only, never the workflow. Exclusions point both ways.
+4. **The description is a trigger.** "Use when...", third person, conditions only. Never list, order or enumerate steps or contents, even after "Covers" or "Walks". Exclusions point both ways.
 5. **Progressive disclosure.** A short body that routes, references loaded on demand, no `@path` force-loads.
 6. **Flow made visible.** A diagram for non-obvious decisions and early-exit loops, none for reference or linear steps.
 7. **Examples teach.** One excellent example, paired good and bad, runnable and checked.

@@ -53,7 +53,7 @@ Choose the device by the kind of failure you are preventing, then ration the str
 | An element gets omitted | A required slot in a template |
 | Behavior depends on a condition | A predicate the agent can evaluate |
 
-MUST, NEVER and the heavy gates (an "Iron Law" section, a HARD-GATE block) cost attention every time they appear. Superpowers observed that its best skills use between zero and two of them, which is an observation about those skills, not a rule here. Reserve a heavy gate for a rule whose violation is expensive. Do not add nuance clauses that let the agent talk itself out of a gate.
+MUST, NEVER and the heavy gates (an "Iron Law" section, a HARD-GATE block) cost attention every time they appear. Ration them. Superpowers reserves its Iron Law (`writing-skills/SKILL.md`) and HARD-GATE (`brainstorming/SKILL.md`) blocks for rules whose violation is expensive, and this standard does the same. Do not add nuance clauses that let the agent talk itself out of a gate.
 
 **Wrong**
 
@@ -120,7 +120,7 @@ The exception is a predicate, stated once, and the rule it modifies names it.
 
 ## 4. The description is a trigger
 
-The `description` frontmatter field decides whether the skill loads. Write it as conditions under which to use the skill: "Use when...", third person, with triggers the user or situation actually produces. Never summarize what the skill does step by step. Superpowers found that when a description outlines the workflow, agents follow the description and skip the body. Add "Not for X (use Y)" exclusions that point to sibling skills, and make the sibling's description point back. This repo caps descriptions at 400 characters (`make lint-descriptions`).
+The `description` frontmatter field decides whether the skill loads. Write it as conditions under which to use the skill: "Use when...", third person, with triggers the user or situation actually produces. A description never lists, orders or enumerates steps, phases or contents, not even after "Covers", "Walks" or "Includes". A colon-led list inside a description is the same defect. Superpowers reports (`writing-skills/references/discovery.md`) that when a description outlines the workflow, agents follow the description and skip the body. Test: if deleting the description's second sentence loses no trigger, delete it. Add "Not for X (use Y)" exclusions that point to sibling skills, and make the sibling's description point back. This repo caps descriptions at 400 characters (`make lint-descriptions`).
 
 **Wrong**
 
@@ -129,7 +129,7 @@ description: Walks the agent through read, reproduce, hypothesize, test and fix
   phases to debug a failing test.
 ```
 
-It summarizes the workflow, names no trigger, and has no exclusions.
+It summarizes the workflow, names no trigger, and has no exclusions. A lighter version is just as wrong: "Covers the order: read the failing test, reproduce, hypothesize, write a regression test, fix, run the full suite."
 
 **Right**
 
@@ -140,7 +140,7 @@ description: Use when a test fails or behavior is unexpected, before proposing a
 
 ## 5. Progressive disclosure
 
-The body of `SKILL.md` is read on every load, so keep it short and make it route: "read X when Y." Put detail in `references/` for on-demand reading. Do not force-load files with `@path` imports, which pull the whole file into context whether it is needed or not. Keep `SKILL.md` well under 20,000 bytes. Do not set line-count targets for references; write what the content needs, since line count is only a rough proxy for complexity. Every reference should be reachable from a link in `SKILL.md` or another routed file, or nothing will ever open it.
+The body of `SKILL.md` is read on every load, so keep it short and make it route: "read X when Y." Put detail in `references/` for on-demand reading. Do not force-load files with `@path` imports, which pull the whole file into context whether it is needed or not. Keep the body short enough that routing is its main job. `make lint-descriptions` is the only cap enforced here. Do not set line-count targets for references; write what the content needs, since line count is only a rough proxy for complexity. Every reference should be reachable from a link in `SKILL.md` or another routed file, or nothing will ever open it.
 
 **Wrong**
 
@@ -199,7 +199,7 @@ Test a skill the way you test code. Run a fresh agent on a pressure scenario wit
 
 **Right**
 
-"Baseline agent summarized the workflow in its description. With the skill loaded, three of three scenarios produced a trigger-only description. The control scenario did not load the skill."
+Example: "Baseline agent summarized the workflow in its description. With the skill loaded, three of three scenarios produced a trigger-only description. The control scenario did not load the skill."
 
 ## 9. Agent pipelines are specified
 
