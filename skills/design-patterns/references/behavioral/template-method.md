@@ -2,7 +2,7 @@
 
 ## What it is and Problem it solves
 
-Template Method fixes the order of an algorithm in one place and lets variants fill in specific steps. A base class defines `process()` as validate, charge, record, notify, and subclasses override the steps that differ. It stops each variant from re-implementing, and subtly reordering, the shared skeleton.
+Template Method fixes the order of an algorithm in one place and lets variants fill in specific steps. A base class defines `process()` as validate, charge, record, and subclasses override the steps that differ. It stops each variant from re-implementing, and subtly reordering, the shared skeleton.
 
 ## Do you need this?
 
