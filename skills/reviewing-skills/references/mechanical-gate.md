@@ -45,7 +45,7 @@ When a checker is missing (pyright, tsc, bash), the block prints `SKIPPED (not c
 1. Fix every FAIL before reading further. A FAIL for a link or registry row is cheap and a reviewer should not spend a finding on it.
 2. A WARN is a prompt to look, not an order. Open the file and judge it. A missing-diagram WARN on a skill whose steps are linear is declined with that reason. A missing-defense WARN on a discipline skill is usually a real finding for the instruction-quality reviewer.
 3. Count SKIPPED results. Pass the count to `report.ts --gate-skipped` and name each one in `--gate-gaps`. READY with a skipped check needs the gap explained.
-4. A link FAIL for a file this skill's own plan says is coming (a playbook another task writes) is expected during a multi-part build. Note it and do not call the skill READY until it resolves.
+4. A link FAIL for a file the change itself says arrives later in the same PR is expected; do not report READY until it resolves.
 5. Outside a git repo or plugin the script cannot find the registry. It then prints `SKIPPED` for the registry and overlap checks and states why. Those are gate gaps too.
 
 ## What the gate cannot see

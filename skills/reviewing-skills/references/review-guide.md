@@ -64,6 +64,9 @@ Every finding has the same fields.
 | failure mode | "an agent will <do X> when <Y>" |
 | authority | Current and recommended: gate, guidance or informational |
 | replacement | Text ready to paste |
+| confidence | high, medium or low |
+| kind | claim when it comes from a promise-ledger row, otherwise other (content reviewer) |
+| rationalization risk | When the finding is one, also the missing defense (table, red flags list, loophole closer or predicate) and the drafted "Excuse and Reality" row |
 
 Severity:
 

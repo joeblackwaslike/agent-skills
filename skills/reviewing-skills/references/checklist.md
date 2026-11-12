@@ -32,7 +32,7 @@ The short version of the [procedure](../SKILL.md), in review order. Use it for t
 - [ ] Prose agrees with the code and tables beside it.
 - [ ] Examples run, do what the prose promises, and do not commit the smell they warn about.
 - [ ] Examples vary enough not to overfit.
-- [ ] Each file has a promise ledger: every behavioral claim holds, is contradicted, or is marked unverified with the check to run.
+- [ ] Each file has a promise ledger; every claim is holds, contradicted or handoff; every handoff row went to the claim verifier.
 - [ ] Every reviewer ended with a coverage line and listed any unread file as a gap.
 - [ ] Ledger rows reconcile with findings, and every handoff claim went to the claim verifier, which returned a quoted check result for each row.
 

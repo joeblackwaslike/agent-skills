@@ -12,7 +12,7 @@ Scenarios cost real tokens. They are off inside `/self-review` and on in `/revie
 | negative control | Does a realistic request that is not this skill's job leave it unloaded? | control |
 | adversarial | Does the rule hold under combined pressure (time, sunk cost, authority)? | baseline, skill |
 
-A skill with no rule an agent could break (a doc-wrapper, a catalog) gets a baseline versus skill scenario that asks a question the docs answer, plus the negative control. Pick scenarios from the rules the instruction-quality reviewer rated gate.
+A skill with no rule an agent could break (a doc-wrapper, a catalog) gets a baseline versus skill scenario that asks a question the docs answer, plus the negative control. Pick scenarios from the rules your own step-3 read marks as gates, then add any gate the instruction-quality reviewer rates later. Run scenarios in parallel with the reviewers.
 
 ## Writing a scenario
 
