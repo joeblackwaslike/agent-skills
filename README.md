@@ -99,7 +99,7 @@ Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode
 | --- | --- |
 | `test-driven-development` | Test-first for TypeScript and Python — red-green-refactor, applied to features and bugfixes |
 | `domain-driven-design` | Aggregates, entities, value objects, domain events, repositories, bounded contexts |
-| `architectures` | Hexagonal/clean layering, CQRS, event sourcing, event-driven design, sagas, monolith vs microservices decisions |
+| `architectures` | Hexagonal/clean layering, CQRS, event sourcing, event-driven design, sagas, microservices, service communication, distributed data |
 | `solid-principles` | Designing and refactoring classes, modules, and interfaces |
 | `senior-engineering-best-practices` | Career-built senior-engineer judgment — due diligence, root-cause discipline, blast-radius/dependency/observability judgment |
 | `reviewing-code` | Self-review your own diff before a PR with fresh-eyes reviewer agents; ships the `/self-review` command |
