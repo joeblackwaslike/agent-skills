@@ -85,7 +85,7 @@ assert calls == ["call refund"]
 assert refund.__name__ == "refund" and refund.__doc__ == "Refund an order."
 ```
 
-`AuditedGateway` is the wrapper object. It implements the same `Protocol` as the thing it wraps, so it can be stacked. It logs the attempt, then the result or the failure, and re-raises so callers still see the error. `refund` shows the syntax form for a single sync function; for `async def`, write an `async def wrapper` that awaits `fn`, or the sync wrapper logs and returns an un-awaited coroutine. `functools.wraps` copies the name and docstring, so tracebacks and `help()` still describe `refund` instead of `wrapper`, and the `ParamSpec` generics keep the original signature visible to the type checker.
+`AuditedGateway` is the wrapper object. It implements the same `Protocol` as the thing it wraps, so it can be stacked. It logs the attempt, then the result or the failure, and re-raises so callers still see the error. `refund` shows the syntax form for a single sync function; for `async def`, write an `async def wrapper` that awaits `fn`, or the sync wrapper logs and returns an un-awaited coroutine. The same trap exists in TypeScript. Applied to the async `Gateway` in the adapter file, the sync `audited` in the TypeScript example would log "charged" with a pending `Promise` before it settles, and its `catch` would never see a rejection. `auditedAsync` is the awaited form: the wrapper is `async` and awaits the inner call inside the `try`, so a rejection is logged as a failure. `functools.wraps` copies the name and docstring, so tracebacks and `help()` still describe `refund` instead of `wrapper`, and the `ParamSpec` generics keep the original signature visible to the type checker.
 
 ## TypeScript
 
@@ -130,6 +130,27 @@ assert.equal(audited(base, log).charge("o-1", 500), "card:o-1:500");
 assert.deepEqual(log, ["charge o-1 500", "charged o-1 card:o-1:500"]);
 assert.throws(() => audited(base, log).charge("o-9", 0), RangeError);
 assert.deepEqual(log.slice(-2), ["charge o-9 0", "failed o-9 RangeError"]);
+
+type AsyncGateway = { charge(orderId: string, amountCents: number): Promise<string> };
+
+export const auditedAsync = (inner: AsyncGateway, log: string[]): AsyncGateway => ({
+  async charge(orderId, amountCents) {
+    log.push(`charge ${orderId} ${amountCents}`);
+    try {
+      const result = await inner.charge(orderId, amountCents);
+      log.push(`charged ${orderId} ${result}`);
+      return result;
+    } catch (err) {
+      log.push(`failed ${orderId} ${err instanceof Error ? err.name : "unknown"}`);
+      throw err;
+    }
+  },
+});
+
+const asyncLog: string[] = [];
+const remote: AsyncGateway = { charge: async (id) => Promise.reject(new RangeError(`declined ${id}`)) };
+await assert.rejects(auditedAsync(remote, asyncLog).charge("o-7", 500), RangeError);
+assert.deepEqual(asyncLog, ["charge o-7 500", "failed o-7 RangeError"]);
 
 const calls: string[] = [];
 const refund = withLog((id: string, cents: number) => `refund:${id}:${cents}`, calls, "refund");

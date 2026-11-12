@@ -43,6 +43,8 @@ class VendorClient:
 
 
 def to_minor(amount: Decimal) -> int:
+    if amount < 0:
+        raise ValueError(f"{amount} is negative")
     minor = amount * 100
     if minor != minor.to_integral_exact():
         raise ValueError(f"{amount} has sub-cent precision")
@@ -72,7 +74,7 @@ gateway = vendor_gateway(VendorClient())
 assert gateway("o-1", Decimal("12.50")) == Outcome("paid", "ch_o-1")
 assert gateway("o-2", Decimal("0")) == Outcome("declined", "card_declined")
 assert gateway("o-3", Decimal("0.01")) == Outcome("pending", "ch_o-3")
-for amount, message in ((Decimal("0.02"), "unreachable"), (Decimal("0.03"), "unmapped"), (Decimal("0.295"), "sub-cent")):
+for amount, message in ((Decimal("0.02"), "unreachable"), (Decimal("0.03"), "unmapped"), (Decimal("0.295"), "sub-cent"), (Decimal("-5"), "negative")):
     try:
         gateway("o-4", amount)
         raise AssertionError("must raise")
@@ -83,7 +85,11 @@ for amount, message in ((Decimal("0.02"), "unreachable"), (Decimal("0.03"), "unm
 def place_order(reserve: Callable[[str], bool], release: Callable[[str], None], gw: Gateway, order_id: str, amount: Decimal) -> str:
     if not reserve(order_id):
         return "out_of_stock"
-    outcome = gw(order_id, amount)
+    try:
+        outcome = gw(order_id, amount)
+    except ValueError:
+        release(order_id)
+        raise
     if outcome.status == "declined":
         release(order_id)
     return {"paid": "confirmed", "pending": "payment_pending", "declined": "payment_declined"}[outcome.status]
@@ -93,12 +99,18 @@ released: list[str] = []
 assert place_order(lambda _id: True, released.append, gateway, "o-5", Decimal("5.00")) == "confirmed"
 assert place_order(lambda _id: True, released.append, gateway, "o-6", Decimal("0")) == "payment_declined"
 assert released == ["o-6"]
+try:
+    place_order(lambda _id: True, released.append, gateway, "o-10", Decimal("0.295"))
+except ValueError:
+    assert released == ["o-6", "o-10"]
+else:
+    raise AssertionError("sub-cent amounts must be rejected")
 assert place_order(lambda _id: True, released.append, gateway, "o-8", Decimal("0.01")) == "payment_pending"
 assert place_order(lambda _id: False, released.append, gateway, "o-7", Decimal("5")) == "out_of_stock"
-assert released == ["o-6"]
+assert released == ["o-6", "o-10"]
 ```
 
-`vendor_gateway` is the adapter, a closure over the client. The vendor's states are mapped one by one, so a pending charge is not reported as failed and no caller retries it into a double charge. An unknown state raises, and a vendor outage becomes `GatewayError` instead of a vendor exception in your handlers. Money converts exactly or fails: `Decimal("0.295")` is rejected, not truncated to 29 cents. `place_order` is the Facade, one call over stock and payment. It releases the stock when the charge is declined and leaves it reserved when the outcome is pending or an exception was raised, because the charge may still land.
+`vendor_gateway` is the adapter, a closure over the client. The vendor's states are mapped one by one, so a pending charge is not reported as failed and no caller retries it into a double charge. An unknown state raises, and a vendor outage becomes `GatewayError` instead of a vendor exception in your handlers. Money converts exactly or raises, so `Decimal("0.295")` and negative amounts are rejected instead of becoming 29 cents or a refund. `place_order` is the Facade, one call over stock and payment. It releases the stock when the charge is declined or rejected as invalid, since nothing reached the vendor. It leaves the stock reserved when the outcome is pending or an exception comes after the vendor call, because the charge may still land.
 
 ## TypeScript
 
@@ -146,7 +158,10 @@ type Subsystems = { reserveStock(id: string): boolean; releaseStock(id: string):
 
 export async function placeOrder(s: Subsystems, orderId: string, amountCents: number): Promise<string> {
   if (!s.reserveStock(orderId)) return "out_of_stock";
-  const outcome = await s.gateway.charge(orderId, amountCents);
+  const outcome = await s.gateway.charge(orderId, amountCents).catch((err: unknown) => {
+    if (err instanceof RangeError) s.releaseStock(orderId);
+    throw err;
+  });
   if (outcome.status === "declined") s.releaseStock(orderId);
   return { paid: "confirmed", pending: "payment_pending", declined: "payment_declined" }[outcome.status];
 }
@@ -158,10 +173,11 @@ assert.equal(await placeOrder(subsystems, "o-6", 0), "payment_declined");
 assert.deepEqual(released, ["o-6"]);
 assert.equal(await placeOrder(subsystems, "o-8", 1), "payment_pending");
 assert.equal(await placeOrder({ ...subsystems, reserveStock: () => false }, "o-9", 500), "out_of_stock");
-assert.deepEqual(released, ["o-6"]);
+await assert.rejects(placeOrder(subsystems, "o-10", 12.5), RangeError);
+assert.deepEqual(released, ["o-6", "o-10"]);
 ```
 
-A closure over the client is the whole adapter, and any object with a matching `createCharge` satisfies `VendorClient`, including the test fake. `placeOrder` is the same Facade as in Python: it releases the stock on a decline and keeps it for a pending charge. The lookup by `outcome.status` is safe because the type restricts it to three known keys.
+A closure over the client is the whole adapter, and any object with a matching `createCharge` satisfies `VendorClient`, including the test fake. `placeOrder` is the same Facade as in Python: it releases the stock on a decline or an invalid amount and keeps it for a pending charge. The lookup by `outcome.status` is safe because the type restricts it to three known keys.
 
 ## In production
 

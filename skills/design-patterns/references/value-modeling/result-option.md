@@ -103,7 +103,7 @@ assert isinstance(none, Ok) and none.value(1000) == 1000
 assert typo == Err("unknown_coupon")
 ```
 
-`read_balance` is the boundary: the database call raises, and the `except` turns the one failure the caller can handle into a value. Inside, `charge` never raises for a declined card, and the `match` in `describe_error` ends in `assert_never`, so the type checker flags a new variant and a missed one fails loudly at runtime. `parse_cents` validates the untrusted text up front, because `int()` also accepts `"1_000"`, `" 5 "` and non-ASCII digits. Its error is a closed `Literal`. Option needs no type of its own. `COUPONS.get(code)` returns `Discount | None`, and the checker forces the `is not None` check.
+`read_balance` sits at the boundary. The database call raises, and the `except` turns the one failure the caller can handle into a value. Inside, `charge` never raises for a declined card, and the `match` in `describe_error` ends in `assert_never`, so the type checker flags a new variant and a missed one fails loudly at runtime. `parse_cents` validates the untrusted text up front, because `int()` also accepts `"1_000"`, `" 5 "` and non-ASCII digits. Its error is a closed `Literal`. Option needs no type of its own. `COUPONS.get(code)` returns `Discount | None`, and the checker forces the `is not None` check.
 
 Null Object is the `no_discount` function. It is a real `Discount` that returns the price unchanged, so a checkout with no coupon code needs no `if discount is None`. Use it when absence has an obvious neutral behavior (no code given, a logger that discards). A code the customer typed that matches nothing is different. `discount_for` returns `Err("unknown_coupon")` for it, because the caller should react.
 

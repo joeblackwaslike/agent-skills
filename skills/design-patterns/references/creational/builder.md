@@ -15,7 +15,7 @@ The signal is accumulation or ordering. If callers add parts one at a time acros
 ```python
 from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Self
+from typing import Any, Self
 
 
 @dataclass(frozen=True)
@@ -43,8 +43,8 @@ class OrderBuilder:
         self._shipping_cents = 0
 
     def add(self, sku: str, qty: int, unit_cents: int) -> Self:
-        if qty < 1:
-            raise ValueError("qty must be at least 1")
+        if type(qty) is not int or qty < 1:
+            raise ValueError("qty must be a whole number of at least 1")
         if unit_cents < 0:
             raise ValueError("unit_cents must not be negative")
         self._items.append(LineItem(sku, qty, unit_cents))
@@ -78,7 +78,8 @@ except ValueError as err:
     assert "at least one item" in str(err)
 else:
     raise AssertionError("empty order must not build")
-bad_steps: list[Callable[[OrderBuilder], object]] = [lambda b: b.add("tee", 0, 100), lambda b: b.add("tee", 1, -1), lambda b: b.shipping(-5)]
+fractional: Any = 1.5
+bad_steps: list[Callable[[OrderBuilder], object]] = [lambda b: b.add("tee", fractional, 100), lambda b: b.add("tee", 0, 100), lambda b: b.add("tee", 1, -1), lambda b: b.shipping(-5)]
 for step in bad_steps:
     try:
         step(OrderBuilder())

@@ -8,7 +8,7 @@ A singleton is one shared instance that the whole program uses: a settings objec
 
 Start with a module-level object. A module is executed once and cached, so `settings = load_settings()` at module scope in Python, or `export const settings = ...` in TypeScript, is the singleton. Callers import it.
 
-The better default is one step further: create the instance once at the composition root and pass it to whoever needs it (see [Dependency Injection](dependency-injection.md)). Then the instance is shared in production and replaceable in tests.
+The better default goes one step further. Create the instance once at the composition root and pass it to whoever needs it (see [Dependency Injection](dependency-injection.md)). Then the instance is shared in production and replaceable in tests.
 
 The signal that a global instance is hurting you is a test that has to reset it, a test order that changes results, or an import that opens a connection. Do not write a `Singleton` base class, a metaclass, or a `__new__` override to prevent a second instance. Nobody was going to create one.
 
