@@ -16,7 +16,7 @@ Python examples assume 3.12 or later.
 
 Start with a plain function, a dict of functions, or an `if`. A second CSV export format is a function argument. Reach for a pattern when the plain version has already hurt: the third `elif` on a provider name, a notification call copied into four callers, a module that cannot be tested without the database.
 
-If the request names a variant-selection pattern (Strategy, Factory, Observer, State, Command, Chain of Responsibility), count the real variants or callers, including any this change adds. With fewer than three, write the plain version and say so in one line. Resilience and data-access patterns (Retry, Circuit Breaker, Idempotency key, Outbox, Unit of Work) are triggered by a failure mode, not a count: one call site that can double-charge or lose an event already needs them.
+If the request names a variant-selection pattern (Strategy, Factory, State, Command, Chain of Responsibility), count the real variants or callers, including any this change adds. With fewer than three, write the plain version and say so in one line. Resilience and data-access patterns (Retry, Circuit Breaker, Idempotency key, Outbox, Unit of Work) are triggered by a failure mode, not a count: one call site that can double-charge or lose an event already needs them. Observer is triggered by a coupling boundary, not a count: subscribers the publisher should not import.
 
 Every reference has an early "Do you need this?" section that names the plain alternative and the signal that tips you over. If you cannot point at that signal, skip the pattern.
 
