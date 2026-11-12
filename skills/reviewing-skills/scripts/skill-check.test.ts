@@ -358,3 +358,18 @@ test("site-absolute links are not checked but are counted", () => {
   expect(all(r, "link").filter((c) => c.status === "fail")).toEqual([]);
   expect(find(r, "links")?.detail).toContain("2 site-absolute links not checked");
 });
+
+test("fetched reference files are exempt from link and orphan checks and counted", () => {
+  const fetched = "---\nsource: https://example.com/a\nfetched_at: 2026-01-01\nsha256: abc\n---\n[img](../missing.png)\n";
+  const { dir } = make({ body: "[h](references/hand.md)\n", files: { "references/hand.md": "[img](../missing.png)\n", "references/fetched.md": fetched, "references/fetched2.md": fetched } });
+  const r = checkSkill(dir, opts());
+  const fails = r.checks.filter((c) => c.status === "fail").map((c) => c.id);
+  expect(fails).toEqual(["link:references/hand.md:../missing.png"]);
+  expect(r.checks.some((c) => c.status === "warn" && c.id.includes("fetched"))).toBe(false);
+  expect(find(r, "fetched")?.detail).toBe("2 fetched reference files exempt from link/orphan checks");
+});
+
+test("a hand-written unlinked reference still warns as an orphan", () => {
+  const { dir } = make({ body: "x\n", files: { "references/hand.md": "# h\n" } });
+  expect(find(checkSkill(dir, opts()), "orphan:references/hand.md")?.status).toBe("warn");
+});

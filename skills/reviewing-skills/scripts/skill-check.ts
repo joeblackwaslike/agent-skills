@@ -136,6 +136,11 @@ function linkTargets(file: string): string[] {
   });
 }
 
+const isFetched = (file: string) => {
+  const fm = splitFrontmatter(readFileSync(file, "utf8")).fm;
+  return fm !== undefined && /^source:/m.test(fm) && /^fetched_at:/m.test(fm);
+};
+
 function checkLinks(dir: string, files: string[], checks: Check[]) {
   let total = 0;
   let broken = 0;
@@ -156,8 +161,8 @@ function checkLinks(dir: string, files: string[], checks: Check[]) {
   if (!broken) add(checks, "links", "pass", `${total} relative links resolve${absolute ? `; ${absolute} site-absolute links not checked` : ""}`);
 }
 
-function checkOrphans(dir: string, files: string[], checks: Check[]) {
-  const refs = files.filter((f) => relative(dir, f).startsWith("references"));
+function checkOrphans(dir: string, files: string[], checks: Check[], exempt: string[]) {
+  const refs = files.filter((f) => relative(dir, f).startsWith("references") && !exempt.includes(f));
   const linked = new Set(files.flatMap((f) => linkTargets(f).filter((t) => !t.startsWith("/")).map((t) => resolve(dirname(f), t))));
   const mentioned = (r: string) => {
     const path = new RegExp(`(^|[^\\w./-])${relative(dir, r).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|[^\\w-])`);
@@ -395,8 +400,10 @@ export function checkSkill(skillDir: string, opts: Options = {}): Report {
 
   checkDescription(dir, name, repo, checks, gaps);
   const files = [skillMd, ...mdFiles(join(dir, "references"))];
-  checkLinks(dir, files, checks);
-  checkOrphans(dir, files, checks);
+  const fetched = files.filter((f) => f !== skillMd && isFetched(f));
+  if (fetched.length) add(checks, "fetched", "pass", `${fetched.length} fetched reference files exempt from link/orphan checks`);
+  checkLinks(dir, files.filter((f) => !fetched.includes(f)), checks);
+  checkOrphans(dir, files, checks, fetched);
   checkRegistry(name, repo, checks);
   checkOverlap(name, fm && descriptionOf(fm), repo, checks);
   checkHeuristics(detectKind(fm ?? "", name, body), body, checks);
