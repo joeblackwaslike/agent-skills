@@ -2,7 +2,8 @@ import { afterAll, expect, test } from "bun:test";
 import { mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
-import { type BlockChecker, type Report, checkSkill } from "./skill-check";
+import { readFileSync } from "node:fs";
+import { type BlockChecker, type Report, checkSkill, deps } from "./skill-check";
 
 const roots: string[] = [];
 afterAll(() => roots.forEach((r) => rmSync(r, { recursive: true, force: true })));
@@ -322,4 +323,38 @@ test("a checker returning the wrong number of results is skipped, not a crash", 
   const { dir } = make({ body: fence("python", "x = 1") });
   const r = checkSkill(dir, { blocks: true, runBlocks: () => [] });
   expect(find(r, "block:python")?.status).toBe("skipped");
+});
+
+test("a timed-out tool is skipped with a timeout detail and listed in gaps", () => {
+  const { dir } = make({ body: fence("bash", "echo hi") });
+  const real = deps.spawn;
+  deps.spawn = (() => ({ error: Object.assign(new Error("spawnSync timed out"), { code: "ETIMEDOUT" }), status: null, stdout: "", stderr: "" })) as unknown as typeof real;
+  try {
+    const r = checkSkill(dir, { blocks: true });
+    expect(find(r, "block:bash")?.status).toBe("skipped");
+    expect(find(r, "block:bash")?.detail).toContain("timed out after 120s");
+    expect(find(r, "description")?.detail).toContain("timed out after 120s");
+    expect(r.gaps.join()).toContain("timed out after 120s");
+  } finally {
+    deps.spawn = real;
+  }
+});
+
+test("block ids use the opening fence line", () => {
+  const { dir } = make({ body: fence("python", "x = 1") });
+  const open = readFileSync(join(dir, "SKILL.md"), "utf8").split("\n").findIndex((l) => l.startsWith("```python")) + 1;
+  const r = checkSkill(dir, { blocks: true, runBlocks: errChecker });
+  expect(r.checks.some((c) => c.id === `block:SKILL.md:${open}`)).toBe(true);
+});
+
+test("a backtick line with a backtick in its info string does not open a fence", () => {
+  const { dir } = make({ body: "```foo```\n[bad](nope.md)\n" });
+  expect(all(checkSkill(dir, opts()), "link").some((c) => c.status === "fail" && c.detail.includes("nope.md"))).toBe(true);
+});
+
+test("site-absolute links are not checked but are counted", () => {
+  const { dir } = make({ body: "[a](/docs/foo) [b](/x/y) [c](references/z.md)\n", files: { "references/z.md": "# z\n" } });
+  const r = checkSkill(dir, opts());
+  expect(all(r, "link").filter((c) => c.status === "fail")).toEqual([]);
+  expect(find(r, "links")?.detail).toContain("2 site-absolute links not checked");
 });

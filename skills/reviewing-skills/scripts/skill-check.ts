@@ -6,7 +6,7 @@
  * Exit 0 when no check is red (fail), 1 otherwise, 2 on bad usage.
  *
  * Skill kind, which decides whether the advisory heuristics run:
- *   1. `metadata.kind` in the frontmatter wins (discipline, workflow, doc-wrapper, catalog, router, ...).
+ *   1. `metadata.kind` in the frontmatter wins (discipline, workflow, doc-wrapper, reference-catalog, router, ...).
  *   2. Otherwise a name starting `working-with-` or `developing-` is a doc-wrapper.
  *   3. Otherwise 3+ numbered-step lines or a Procedure/Steps/Workflow heading is a workflow.
  *   4. Otherwise MUST/NEVER/ALWAYS/Iron Law in the body is a discipline.
@@ -40,6 +40,10 @@ const STOPWORDS = new Set("a an and are as at be by for from has have how in is 
 const LANG_TAGS: Record<string, Lang> = { python: "python", py: "python", typescript: "typescript", ts: "typescript", bash: "bash", sh: "bash", shell: "bash", json: "json" };
 const LINT_SCRIPT = "scripts/lint-descriptions.py";
 const TIMEOUT_MS = 120_000;
+const TIMED_OUT = `timed out after ${TIMEOUT_MS / 1000}s`;
+const timedOut = (r: { error?: Error }) => (r.error as NodeJS.ErrnoException | undefined)?.code === "ETIMEDOUT";
+
+export const deps = { spawn: spawnSync };
 
 const add = (checks: Check[], id: string, status: Check["status"], detail: string) => checks.push({ id, status, detail });
 
@@ -87,12 +91,13 @@ function scanFences(text: string): { prose: string; fences: Fence[] } {
   const prose: string[] = [];
   const fences: Fence[] = [];
   for (let i = 0; i < lines.length; i++) {
-    const open = lines[i].match(/^\s*(`{3,}|~{3,})(.*)$/);
+    const open = lines[i].match(/^\s*(?:(`{3,})([^`]*)|(~{3,})(.*))$/);
     if (!open) {
       prose.push(lines[i]);
       continue;
     }
-    const [ch, len] = [open[1][0], open[1].length];
+    const marker = open[1] ?? open[3];
+    const [ch, len] = [marker[0], marker.length];
     const body: string[] = [];
     const start = i + 1;
     prose.push("");
@@ -101,7 +106,7 @@ function scanFences(text: string): { prose: string; fences: Fence[] } {
       if (close && close[1][0] === ch && close[1].length >= len) break;
       body.push(lines[i]);
     }
-    fences.push({ info: open[2].trim().split(/\s+/)[0] ?? "", body, line: start + 1 });
+    fences.push({ info: (open[2] ?? open[4]).trim().split(/\s+/)[0] ?? "", body, line: start });
   }
   return { prose: prose.join("\n"), fences };
 }
@@ -134,8 +139,13 @@ function linkTargets(file: string): string[] {
 function checkLinks(dir: string, files: string[], checks: Check[]) {
   let total = 0;
   let broken = 0;
+  let absolute = 0;
   for (const f of files) {
     for (const target of linkTargets(f)) {
+      if (target.startsWith("/")) {
+        absolute++;
+        continue;
+      }
       total++;
       if (!existsSync(resolve(dirname(f), target))) {
         broken++;
@@ -143,12 +153,12 @@ function checkLinks(dir: string, files: string[], checks: Check[]) {
       }
     }
   }
-  if (!broken) add(checks, "links", "pass", `${total} relative links resolve`);
+  if (!broken) add(checks, "links", "pass", `${total} relative links resolve${absolute ? `; ${absolute} site-absolute links not checked` : ""}`);
 }
 
 function checkOrphans(dir: string, files: string[], checks: Check[]) {
   const refs = files.filter((f) => relative(dir, f).startsWith("references"));
-  const linked = new Set(files.flatMap((f) => linkTargets(f).map((t) => resolve(dirname(f), t))));
+  const linked = new Set(files.flatMap((f) => linkTargets(f).filter((t) => !t.startsWith("/")).map((t) => resolve(dirname(f), t))));
   const mentioned = (r: string) => {
     const path = new RegExp(`(^|[^\\w./-])${relative(dir, r).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|[^\\w-])`);
     return files.some((f) => f !== r && path.test(stripFences(readFileSync(f, "utf8"))));
@@ -167,10 +177,14 @@ function checkDescription(dir: string, name: string, repo: string | undefined, c
   const tmp = mkdtempSync(join(tmpdir(), "skill-lint-"));
   try {
     symlinkSync(dir, join(tmp, name));
-    const r = spawnSync("python3", ["-I", candidates[0], "--skills-dir", tmp], { encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
+    const r = deps.spawn("python3", ["-I", candidates[0], "--skills-dir", tmp], { encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
     const lines = (r.stdout ?? "").split("\n");
     const fails = lines.filter((l) => l.startsWith("FAIL "));
     const warns = lines.filter((l) => l.startsWith("WARN "));
+    if (timedOut(r)) {
+      gaps.push(`description thresholds (${TIMED_OUT})`);
+      return add(checks, "description", "skipped", `SKIPPED (not checked): python3 ${TIMED_OUT}`);
+    }
     if (r.error || (!fails.length && !warns.length && r.status !== 0)) {
       gaps.push("description thresholds (python3 or pyyaml unavailable)");
       return add(checks, "description", "skipped", `SKIPPED (not checked): ${r.error?.message ?? (r.stderr || "lint failed").trim().split("\n").pop()}`);
@@ -243,7 +257,7 @@ function extractBlocks(dir: string, files: string[]): { blocks: Block[]; fragmen
 const OFFLINE_HINT = "bunx needs the network on first use; are you offline?";
 
 function runTool(cmd: string[], cwd: string) {
-  const r = spawnSync(cmd[0], cmd.slice(1), { cwd, encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
+  const r = deps.spawn(cmd[0], cmd.slice(1), { cwd, encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
   return { ...r, text: `${r.stdout ?? ""}${r.stderr ?? ""}` };
 }
 
@@ -259,6 +273,7 @@ function pyright(codes: string[]): BlockResult[] {
       parsed = JSON.parse(r.stdout ?? "");
       if (!parsed?.generalDiagnostics) throw new Error("no diagnostics");
     } catch {
+      if (timedOut(r)) return codes.map(() => ({ status: "missing", detail: `pyright ${TIMED_OUT}` }));
       return codes.map(() => ({ status: "missing", detail: `pyright unavailable (${OFFLINE_HINT})` }));
     }
     return codes.map((_, n) => {
@@ -281,12 +296,14 @@ function tsc(codes: string[]): BlockResult[] {
     }));
     codes.forEach((c, n) => writeFileSync(join(dir, `b${n}.ts`), `${c}export {};\n`));
     const install = runTool(["bun", "add", "-d", "typescript", "@types/node"], dir);
+    if (timedOut(install)) return missing(TIMED_OUT);
     if (install.status !== 0) return missing(OFFLINE_HINT);
     const r = runTool([join(dir, "node_modules/.bin/tsc"), "--noEmit", "-p", "."], dir);
     const errors = r.text.split("\n").flatMap((l) => {
       const m = l.match(/^(b\d+)\.ts\((\d+),\d+\): error (.*)$/);
       return m ? [{ n: Number(m[1].slice(1)), msg: `line ${m[2]}: ${m[3]}` }] : [];
     });
+    if (timedOut(r)) return missing(TIMED_OUT);
     if (r.status !== 0 && !errors.length) return missing(r.text.trim().split("\n")[0] ?? "tsc failed");
     return codes.map((_, n) => {
       const mine = errors.filter((e) => e.n === n);
@@ -299,7 +316,8 @@ function tsc(codes: string[]): BlockResult[] {
 
 function bashSyntax(codes: string[]): BlockResult[] {
   return codes.map((c) => {
-    const r = spawnSync("bash", ["-n"], { input: c, encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
+    const r = deps.spawn("bash", ["-n"], { input: c, encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
+    if (timedOut(r)) return { status: "missing", detail: `bash ${TIMED_OUT}` };
     if (r.error) return { status: "missing", detail: "bash not found" };
     return r.status === 0 ? { status: "ok", detail: "" } : { status: "error", detail: r.stderr.trim().split("\n")[0] };
   });
