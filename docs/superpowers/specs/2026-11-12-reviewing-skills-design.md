@@ -98,7 +98,7 @@ commands/review-skill.md       on-demand entry point (/review-skill <name|path>)
 **Procedure** (the eight steps, adapted):
 
 1. **Size and intent.** State in one sentence what behavior the skill should change and for whom; name the kind of skill. A skill that cannot be summarized this way is not ready.
-2. **Mechanical gate** (`skill-check.ts`, no LLM tokens). Frontmatter present and exact; `name` equals directory; description thresholds (reuse `make lint-descriptions`, do not reimplement); `SKILL.md` byte size; every relative link resolves; orphan references (files nothing routes to); registry rows in `SKILLS.md` and `README.md`; description overlap with sibling skills (token overlap, advisory only); fenced code blocks extracted and type-checked or run (the `verify-blocks` prototype from the design-patterns work, promoted); advisory heuristics for a branching or looping flow with no diagram, and for large skills with no rationalization table, Red Flags list, example pair or verification step. Fix every red result before reading further.
+2. **Mechanical gate** (`skill-check.ts`, no LLM tokens). Frontmatter present and exact; `name` equals directory; description thresholds (reuse `make lint-descriptions`, do not reimplement); `SKILL.md` byte size; every relative link resolves; orphan references (files nothing routes to); registry rows in `SKILLS.md` and `README.md`; description overlap with sibling skills (token overlap, advisory only); fenced code blocks extracted and checked (the `verify-blocks` prototype from the design-patterns work, committed beside this spec as `verify-blocks.prototype.ts`, promoted). Python and TypeScript blocks are type-checked, bash blocks get `bash -n`, JSON blocks are parsed. A block whose first line is `# fragment` or `// fragment` is skipped, and `skill-principles` documents that marker. When a language's checker is missing (pyright, tsc), the gate warns and checks syntax only; it never fails for a missing tool; advisory heuristics for a branching or looping flow with no diagram, and for large skills with no rationalization table, Red Flags list, example pair or verification step. Fix every red result before reading further.
 3. **Read against `skill-principles`** in order: routing and description first, then authority, rationalization, specificity and contradictions, examples, diagrams, pipelines.
 4. **Check what the files cannot show.** Sibling skills with overlapping triggers, project rules the skill contradicts, commands and scripts it calls, versions and library claims (verified against current docs).
 5. **Pressure scenarios.** Three kinds per skill, recorded to a results file: baseline versus skill (what changed in behavior), a negative control (a realistic request that must not trigger the skill), and an adversarial scenario with combined pressure (time, sunk cost, authority). Fresh Sonnet agents, scenario prompts that name the skill path to read first. Default off inside `/self-review` for cost, on in `/review-skill` with `--scenarios`; a scenario cap defaults to 8.
@@ -114,21 +114,32 @@ commands/review-skill.md       on-demand entry point (/review-skill <name|path>)
 
 ### Wiring
 
-- `reviewing-code/SKILL.md` step 8 table: add `reviewing-skills` for diffs that add or edit any file under `skills/` (not only `SKILL.md`), marked always-keep like `code-reviewer`. The existing `skill-reviewer` row points here and stays for back-compat.
-- `reviewing-code/references/self-review.md`: when the diff touches `skills/`, step 1 also runs `skill-check`, and step 2 dispatches the `reviewing-skills` reviewers alongside `code-reviewer`. The instruction-quality reviewer counts toward the cap of 6 at the same priority as `code-reviewer`.
+- `reviewing-code/SKILL.md` step 8 table: add `reviewing-skills` for diffs that add or edit any file under `skills/` (not only `SKILL.md`), marked always-keep like `code-reviewer`. The existing `skill-reviewer` row stays as a lightweight fallback, but is not dispatched for a diff that already triggers `reviewing-skills`.
+- `reviewing-code/references/self-review.md`: when the diff touches `skills/`, step 1 also runs `skill-check`, and step 2 dispatches the `reviewing-skills` reviewers alongside `code-reviewer`. They count toward the cap of 6. The instruction-quality reviewer is always kept, at the same priority as `code-reviewer`. The content reviewer runs when references or scripts changed. The routing reviewer runs when a description changed or a skill was added. The pipeline reviewer runs only when the skill dispatches agents. When the diff changes fewer than 20 lines under `skills/`, only the gate and the instruction-quality reviewer run. In the drop order, pipeline goes first, then routing, then content.
 - `reviewing-code/references/playbooks/skills-and-instruction-files.md` (17 lines today) keeps its short role and links to `reviewing-skills` for depth. `agent-workflows.md` and `llm-prompts.md` stay, linked from the pipeline playbook.
 - Related-skills links added to `authoring-agent-skills`, `agent-instructions` and `reviewing-code`, plus rows in `SKILLS.md` and `README.md`.
+
+### Operating details
+
+- `report.ts` in `reviewing-skills` is a self-contained fork of the one in `reviewing-code`, with the same severity model and READY or NOT READY rule. Codex links skills individually, so a relative import across skill folders would break there. The duplication is accepted.
+- `skill-check` runs with `bun` and finds the repo root by walking up from the skill path to the nearest `.claude-plugin` directory or git root. Given a skill outside any repo, it skips the registry-row and sibling-overlap checks and says so in its output.
+- The portable entry point is the skill itself, invoked by name in Claude Code, Codex and Gemini. `/review-skill` is a thin Claude Code wrapper around it. The runbook states that reviewers and scenario agents run on Sonnet where the platform lets you choose a model.
 
 ## Acceptance (how we know it works)
 
 The reviewer is tested like a skill. Pass criteria, all recorded in `worked-example.md`:
 
-1. **Recall on a known set.** Run it on the design-patterns files as they stood before the review fixes (commit 2a3ed18d). Score it against the roughly 100 findings the six reviewers produced, captured in the worked example with their classes (prose and code disagree, unsafe example, contradiction, missing defense). It should find the majors and most minors in the instruction and example classes without the language-specific reviewers' help.
-2. **Quiet on strong skills.** Run it on three Superpowers skills (`test-driven-development`, `verification-before-completion`, `systematic-debugging`). It should return few, low-severity findings. A noisy result is a failure.
-3. **Loud on weak skills.** Run it on two ECC stubs (`nanoclaw-repl`, `orch-fix-defect`). It should flag the missing trigger, examples and verification.
-4. **Mutation test.** Take a strong skill, delete a rationalization-table row and soften a gate to "should". The reviewer should flag both.
-5. **Dogfood.** Run it on its own two skills as part of the PR's `/self-review`.
-6. `skill-check.test.ts` and `report.test.ts` pass; `make lint-descriptions` passes; every relative link resolves.
+All five runs gate the PR. The builder iterates the reviewer prompts and playbooks until each passes, up to three rounds per criterion; if one still fails after that, the PR reports it NOT READY with the numbers rather than lowering the bar. Results are recorded in `worked-example.md`.
+
+1. **Recall on a known set.** Run it on the design-patterns files as they stood before the review fixes (commits `2e8f239d`, `d15e9b3a` and `2a3ed18d`, one per slice). Score it against the ground-truth list committed with this spec, `docs/superpowers/specs/2026-11-12-reviewing-skills-fixtures/design-patterns-findings.md`: 48 distinct issues after merging the duplicates among the six reviewers' roughly 100 raw findings. Of the 36 issues in the classes a skill reviewer should find without language-specific help (everything but class C), it must find at least 80% of the majors and 50% of the rest.
+2. **Quiet on strong skills.** Run it on three Superpowers skills (`test-driven-development`, `verification-before-completion`, `systematic-debugging`, Superpowers 7.0.1 in the plugin cache). It must return no majors and at most three findings of minor severity or above per skill.
+3. **Loud on weak skills.** Run it on two ECC stubs (`nanoclaw-repl`, `orch-fix-defect`, ECC commit `d2ef2680`). It must flag at least three of: missing trigger, missing examples, missing verification, missing rationalization defense.
+4. **Mutation test.** Take a strong skill, delete one rationalization-table row and soften one gate to "should". The reviewer must flag both.
+5. **Dogfood.** Run it on its own two skills as part of the PR's `/self-review`; no open majors.
+
+Also required: `skill-check.test.ts` and `report.test.ts` pass, `make lint-descriptions` passes, every relative link resolves.
+
+The third-party fixtures are not vendored. The runs read them from the local Superpowers cache and ECC checkout, and `worked-example.md` records the versions and paths used so a rerun can reproduce them. These runs are done by the builder on this machine and are not part of CI.
 
 ## Delivery
 
