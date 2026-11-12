@@ -146,7 +146,7 @@ export class GetOrderSummaryHandler {
 
 Python mirrors this exactly: a `@dataclass` (or Pydantic model) for `OrderSummaryView`, an
 `async def on(self, event)` projection that `match`es on event type, and a query handler
-that reads the store. See [python-examples.md](../../../domain-driven-design/references/python-examples.md) for the assembled version.
+that reads the store. See the Python worked example at the end of this file.
 
 ## Synchronous vs. asynchronous projections
 
