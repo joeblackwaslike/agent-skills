@@ -47,7 +47,7 @@ Open only the file the task needs. [catalog.md](references/catalog.md) lists eve
 ## Related skills
 
 - `domain-driven-design`: bounded contexts, aggregates, value objects and domain events. Read it first to find the boundaries these architectures divide along.
-- `design-patterns`: the code-level patterns code architectures lean on, including dependency injection, outbox, retry, circuit breaker and idempotency key.
+- `design-patterns`: the code-level patterns this skill leans on, including dependency injection, outbox, retry, circuit breaker and idempotency key.
 - `solid-principles`: dependency inversion, the rule that makes ports and adapters work.
 - `engineering-principles`: whether to abstract at all, and how much.
 
