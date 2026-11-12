@@ -16,7 +16,7 @@
 - Description under 400 characters, trigger first, "Not for X (use Y)" exclusions in both directions.
 - `metadata.last_updated: "2026-11-11"`. No `version` field anywhere (CI guard).
 - Python 3.12+ (`Protocol`, `dataclass`, type hints); TypeScript with structural types, no class where a function and closure do. Examples run, one running domain (orders/payments).
-- Per-pattern template, in this order: What it is and Problem it solves; Do you need this?; Python; TypeScript; In production; Smells and misuse; Related. Target there is no length target (ECC reference files: median 80 lines, 90th percentile 229); line count is a rough proxy for complexity, so never cut a behavior, an example or a failure mode to reach a number.
+- Per-pattern template, in this order: What it is and Problem it solves; Do you need this?; Python; TypeScript; In production; Smells and misuse; Related. Target there is no length target (ECC reference files: median 77 lines, 90th percentile 189; SKILL.md median 188, 90th percentile 551); line count is a rough proxy for complexity, so never cut a behavior, an example or a failure mode to reach a number.
 - Every reference names the plain alternative in an early "Do you need this?" section. No ASCII banner comments, no inline comments unless unavoidable.
 - Library claims (tenacity, pybreaker, cockatiel, p-retry, SQLAlchemy `Session`, Express/Koa middleware) verified against current docs (Ref or context7) before they are written. Pin no versions.
 - Prose passes `no-ai-slop` then `humanizer`; flagged tics: colon-reveal lead-ins, `load-bearing` as metaphor, `quietly`.

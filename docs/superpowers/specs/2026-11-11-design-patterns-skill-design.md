@@ -78,7 +78,7 @@ Every file uses the same sections, so an agent can skim for one:
 6. **Smells and misuse.**
 7. **Related**: neighbors and sibling skills.
 
-There is no length target. For scale, the ECC skills run 34 to 888 lines (SKILL.md median 183, 90th percentile 511) and their reference files have a median of 80 and a 90th percentile of 229. Line count is a rough proxy for complexity: write what the pattern needs, and never cut a behavior, an example or a failure mode to reach a number. Examples are complete enough to run, small enough to read in one screen each.
+There is no length target. For scale, the 314 skills in the ECC repo (affaan-m/ECC) run 34 to 950 lines (SKILL.md median 188, 90th percentile 551) and its 122 reference files have a median of 77 and a 90th percentile of 189. Line count is a rough proxy for complexity: write what the pattern needs, and never cut a behavior, an example or a failure mode to reach a number. Examples are complete enough to run, small enough to read in one screen each.
 
 ## Cross-skill changes (small, in scope)
 
