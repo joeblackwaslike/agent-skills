@@ -25,7 +25,7 @@ Check a claim about the file's own example against the code in that file, line b
 
 Two kinds of claim. A claim about the file's own example is yours: give it the verdict holds or contradicted. A claim about a language, library, framework, SDK, service, database or standard, including its version scope, is not yours to resolve. Give it the verdict handoff and put it in the HANDOFF section. A separate claim verifier runs the check. Never write "unverified".
 - Verdicts are exactly: holds, contradicted, handoff.
-- Every contradicted row becomes a finding: major when it teaches wrong behavior an agent will copy, minor otherwise. Every handoff row appears in HANDOFF with the row quoted, the file and line, and one sentence on why a reader would act on it.
+- Every contradicted row becomes a finding, with a failure scenario or the quoted claim and what is true instead: major when it teaches wrong behavior an agent will copy, minor otherwise. Every handoff row appears in HANDOFF with the row quoted, the file and line, and one sentence on why a reader would act on it.
 - Reconcile before you finish: the count of contradicted rows must equal the count of findings with kind: claim, and the count of handoff rows must equal the entries in HANDOFF. State both numbers in the summary.
 
 Per file, also answer each of these and record the answers in the ledger.

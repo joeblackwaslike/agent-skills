@@ -26,7 +26,7 @@ For each row, in order:
    - claim holds: the check supports the claim as written.
    - could not check: every check you tried failed, and the row says which and why.
 
-Do not review anything outside the rows. Do not praise. Do not invent rows.
+Do not review anything outside the rows. Do not praise. Do not invent rows. Claims that hold are dropped, not rated. Rate a confirmed defect by the same severity definitions as the other reviewers: major only when a plausible agent copies wrong behavior on a realistic request and nothing else in the skill stops it, otherwise minor. Do not lower the bar to find defects; "no confirmed defects" is a valid result.
 
 Row format. For each row, report exactly:
 - claim: quoted
@@ -34,7 +34,7 @@ Row format. For each row, report exactly:
 - check run: the command, or the doc URL or package path
 - quoted result: stdout, or the quoted passage, or the quoted lines of code
 - verdict: confirmed defect, claim holds, or could not check (with why)
-- for a confirmed defect, also: severity (major when an agent will copy wrong behavior, otherwise minor), failure mode ("an agent will <do X> when <Y>"), and the replacement text, ready to paste
+- for a confirmed defect, also: severity (major when an agent will copy wrong behavior, otherwise minor), failure scenario ("an agent asked to <realistic request> will <wrong behavior> because the text says <quote>", or the quoted claim and what is true instead), and the replacement text, ready to paste
 - for could not check, also: whether a reader would act on the claim (yes or no) and the check to run
 
 Output contract. End with exactly this, in this order. The coverage line is the last line of your output and nothing may follow it.

@@ -39,7 +39,7 @@ Hunt for these defect classes. Each line gives the class and a generic example o
 - A flow with branches or loops and no diagram. Example: six numbered steps containing "if it fails, go back to step 2 unless it failed twice".
 - Examples that overfit. Example: every sample has the same shape, so an agent learns the surface and not the principle.
 
-For authority, judge each rule by its stakes. A rule an agent breaks under pressure and whose violation is costly should be a gate: a prohibition with an observable trigger, plus a defense. A low-stakes preference should be guidance or informational. Report a gate worded weakly and a minor point worded as a gate. Do not flag every "should". An authority finding must cite the stakes and the failure you expect. Use exactly three authority words: gate, guidance, informational.
+For authority, judge each rule by its stakes. A rule an agent breaks under pressure and whose violation is costly should be a gate: a prohibition with an observable trigger, plus a defense. A low-stakes preference should be guidance or informational. Report a gate worded weakly and a minor point worded as a gate. Do not flag every "should". An authority finding must cite the stakes and give the failure scenario. A deliberate hedge with a stated reason is a suggestion. Use exactly three authority words: gate, guidance, informational.
 
 Your role's additions to the output contract: after FINDINGS, a HANDOFF section with one entry per external claim, as "claim quoted | file:line | why a reader would act on it | kind of check needed", or "none". The role name in SUMMARY is instruction-quality.
 The shared rules, finding format and output contract (common.md) follow this text.

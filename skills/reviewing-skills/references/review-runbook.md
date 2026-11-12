@@ -96,7 +96,7 @@ Reviewers are wrong often enough that you verify before you apply. For each find
    - **Fix.** Real, and the proposed replacement or a better one is right here.
    - **Decline.** Wrong, already handled, or contradicted by another file. Cite `file:line` as the proof. "Not needed" is not a reason.
    - **Defer.** Real but outside this change. File a follow-up issue or bead and cite it.
-3. Check authority findings against the stakes. A finding that recommends a gate for a low-stakes preference, or that has no stated failure mode, is declined as noise.
+3. Check authority findings against the stakes. A finding that recommends a gate for a low-stakes preference, or that has no failure scenario, is declined as noise.
 4. Findings from two reviewers that disagree are signal. Resolve them from the files. If still unsure, cross-check with a different model (`codex:codex-rescue`) and report what remains disputed as a count in the summary.
 5. Blockers go first. A finding with confidence low needs your own reproduction before you act.
 
@@ -133,7 +133,7 @@ Stop rules, so the loop ends.
 
 ## 8. Report
 
-Rerun the gate after the last fix. Then print the block with `bun <base directory>/scripts/report.ts`. Run it with `--help` for the flags and an example. Pass each gate command as `--check "<command>=<exit code>"`, the count of SKIPPED gate checks as `--gate-skipped`, the scenario table as `--scenarios` (or leave it off), and the count of open blocker or major findings as `--open-major` (required for READY). It exits 2 and prints nothing when the inputs are invalid or inconsistent, for example READY with open majors. On exit 2, fix the flag named on stderr and rerun. Do not write the block by hand. Return the script's output unedited.
+Rerun the gate after the last fix. Then print the block with `bun <base directory>/scripts/report.ts`. Run it with `--help` for the flags and an example. Pass each gate command as `--check "<command>=<exit code>"`, the count of SKIPPED gate checks as `--gate-skipped`, the scenario table as `--scenarios` (or leave it off), and the count of open blocker or major findings as `--open-major` (required for READY). It exits 2 and prints nothing when the inputs are invalid or inconsistent, for example READY with open majors. On exit 2, fix the flag named on stderr and rerun. Do not write the block by hand. The counts you pass are findings only, never suggestions; add a short suggestions appendix only when the caller asks. Return the script's output unedited.
 
 ## Rules that keep this honest
 

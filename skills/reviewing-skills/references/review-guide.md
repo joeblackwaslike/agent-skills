@@ -61,24 +61,28 @@ Every finding has the same fields.
 | severity | blocker, major, minor or nit |
 | location | `path:line` |
 | evidence | The exact lines, quoted |
-| failure mode | "an agent will <do X> when <Y>" |
+| failure scenario | "an agent asked to <realistic request> will <wrong behavior> because the text says <quote>", or for a false claim the quoted claim and what is true instead |
 | authority | Current and recommended: gate, guidance or informational |
 | replacement | Text ready to paste |
 | confidence | high, medium or low |
 | kind | claim when it comes from a promise-ledger row, otherwise other (content reviewer) |
 | rationalization risk | When the finding is one, also the missing defense (table, red flags list, loophole closer or predicate) and the drafted "Excuse and Reality" row |
 
-Severity:
+Severity is anchored on the failure scenario.
 
-- **blocker**: the skill misleads agents or cannot be loaded. Do not ship.
-- **major**: a defect agents will hit in normal use.
-- **minor**: a real but low-impact defect.
-- **nit**: taste. Skip it unless it is free.
+- **blocker**: the text makes an agent do something destructive or unsafe, or the skill cannot work. Do not ship.
+- **major**: a plausible agent following the text does the wrong thing on a realistic request, and nothing else in the skill stops it.
+- **minor**: the wrong thing needs an unusual request, or another part of the skill mostly covers it, or a reader is misled about a fact in a way that does not change what they do.
+- **nit**: wording or a typo with no behavior consequence. Listed, never counted.
+
+A design choice that is debatable (a deliberate tradeoff, or a stated hedge with a stated reason) is a suggestion unless it contradicts something else in the skill. Before rating anything major, check whether the skill already has a defense the finding ignores (a table row, a red flag, a gate elsewhere, a verification step). If it does, rate it minor or drop it. A well defended skill should yield few findings, and "no findings of severity major or above" is a valid result.
+
+Improvements with no failure scenario go in a separate SUGGESTIONS list. They carry no severity, are not counted, and appear in the report only as a short appendix on request.
 
 Rules for the write-up.
 
 - **Quote, do not paraphrase.** A finding without a quoted line cannot be verified and is dropped at triage.
-- **Name the failure.** "Unclear" is not a failure. "An agent will open the PR before review when it is told the review is optional in an emergency, with no definition of emergency" is.
+- **Name the failure.** "Unclear" is not a failure. "An agent asked to open a hotfix PR will skip review because the text says review is optional in an emergency and defines no emergency" is. No scenario, no finding.
 - **Give the stronger wording.** The point of the review is that the reviewed skill ends up better than its author would have made it. A finding with no replacement is half done.
 - **For a rationalization risk, draft the row.** Name the defense that is missing (table, red flags list, loophole closer or predicate) and write the row.
 
@@ -97,7 +101,7 @@ A good finding:
 ```text
 F2 major  references/flow.md:31
 evidence: "Reviewers should check the diff size before dispatching."
-failure mode: an agent will dispatch reviewers on an oversized diff when it is busy, since "should" lets it skip the check and no size is given.
+failure scenario: an agent asked to review a 2,000-line change will dispatch reviewers on it anyway, because the text says "should" and gives no size, so "should" lets it skip the check and no size is given.
 authority: current guidance, recommended gate
 replacement: "Before dispatching, run `git diff --shortstat`. Past 400 changed lines, split the change first. Do not dispatch on a diff above that."
 ```

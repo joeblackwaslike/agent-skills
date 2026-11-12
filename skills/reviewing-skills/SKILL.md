@@ -50,6 +50,8 @@ flowchart TD
 | pipeline | the skill dispatches agents | roles, models, handoffs, verdict words, round caps, escalation |
 | claim verifier | any reviewer handed off a claim | a quoted check result for each external or runtime claim, or a stated failed attempt |
 
+Findings need a concrete failure scenario and are rated by it (blocker, major, minor, nit). Improvements with no failure scenario go in a SUGGESTIONS list that is never counted, and the report counts only findings. A well defended skill should yield few findings. The definitions are in [references/reviewer-templates/common.md](references/reviewer-templates/common.md).
+
 A skill with more than 4 reference files gets the content reviewer as shards of at most 4 files each, every shard also reading SKILL.md. Shards hand external claims off to a separate claim verifier that runs the checks and quotes the results. When the content role ran, shards and verifier are one role, so they use one slot of the 6-reviewer cap in `/self-review`; findings are merged and de-duplicated by location. Every reviewer ends with a `coverage:` line, and any unread file is a gap. Without a subagent tool, run the roles one after another in one session and reread the files for each. The runbook has the dispatch rules per platform and the fallback.
 
 ## Red flags
