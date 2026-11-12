@@ -7,7 +7,7 @@ description: >-
   examples. Skip throwaway scripts and simple CRUD glue. Not for specific
   patterns (use design-patterns).
 metadata:
-  last_updated: "2026-06-25"
+  last_updated: "2026-11-11"
 ---
 
 # SOLID Principles

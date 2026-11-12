@@ -1,7 +1,7 @@
 ---
 name: design-patterns
 description: >-
-  Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Python and TypeScript. Not for whether to abstract at all (use engineering-principles), SOLID refactors (use solid-principles), aggregates, CQRS or event sourcing (use domain-driven-design).
+  Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Dependency injection, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Not for whether to abstract at all (use engineering-principles), SOLID refactors (use solid-principles), aggregates, CQRS or event sourcing (use domain-driven-design).
 metadata:
   last_updated: "2026-11-11"
 ---
@@ -14,7 +14,7 @@ A catalog of the patterns that show up in production code, with one reference pe
 
 Start with a plain function, a dict of functions, or an `if`. A second CSV export format is a function argument. Reach for a pattern when the plain version has already hurt: the third `elif` on a provider name, a notification call copied into four callers, a module that cannot be tested without the database.
 
-If the request names a variant-selection pattern (Strategy, Factory, Observer, State, Command, Chain of Responsibility), count the real variants or callers today. With fewer than three, write the plain version and say so in one line. Resilience and data-access patterns (Retry, Circuit Breaker, Idempotency key, Outbox, Unit of Work) are triggered by a failure mode, not a count: one call site that can double-charge or lose an event already needs them.
+If the request names a variant-selection pattern (Strategy, Factory, Observer, State, Command, Chain of Responsibility), count the real variants or callers, including any this change adds. With fewer than three, write the plain version and say so in one line. Resilience and data-access patterns (Retry, Circuit Breaker, Idempotency key, Outbox, Unit of Work) are triggered by a failure mode, not a count: one call site that can double-charge or lose an event already needs them.
 
 Every reference has an early "Do you need this?" section that names the plain alternative and the signal that tips you over. If you cannot point at that signal, skip the pattern.
 

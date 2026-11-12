@@ -11,7 +11,7 @@ description: >
   framework-agnostic examples in both TypeScript and Python. Not for standalone
   Repository, Unit of Work or Outbox mechanics outside an aggregate (use design-patterns).
 metadata:
-  last_updated: "2026-06-10"
+  last_updated: "2026-11-11"
 ---
 
 # Domain-Driven Design
