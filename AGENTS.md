@@ -76,7 +76,7 @@ The full skill catalog — one row per skill with when-to-invoke triggers — li
 
 **Release automation:** `working-with-release-please` for setting up release-please (new or existing repo), changelog/version/GitHub-release mechanics, the `release-please-action@v5` CI wiring, and cookbooks for shipping npm/pip/VS Code releases. Pairs with `working-with-github` (raw release/asset commands) and `working-with-github-actions` (general CI YAML).
 
-**Domain modeling:** `domain-driven-design` for strategic + tactical DDD, with complete TypeScript and Python examples. **System architecture:** `architectures` for hexagonal/clean layering, CQRS, event sourcing, event-driven design, sagas, microservices, service communication, and distributed data.
+**Domain modeling:** `domain-driven-design` for strategic + tactical DDD, with complete TypeScript and Python examples. **System architecture:** `architectures` for hexagonal/clean layering, CQRS, event sourcing, event-driven design, sagas, monolith-vs-microservices decisions, service communication, and distributed data.
 
 **Object-oriented design principles:** `solid-principles` for SRP/OCP/LSP/ISP/DIP with bad→good TypeScript + Python examples, an anti-pattern catalog, and one notification-dispatcher refactored to honor all five — the per-class companion to `architectures`' architecture-level guidance. **Use when** designing or refactoring classes/modules/interfaces, taming a god class or a growing type-`switch`, breaking up a fat interface, or deciding where a dependency seam belongs. **Skip for** throwaway scripts, genuinely simple CRUD paths, and one-off glue where adding an interface per dependency is pure ceremony — misapplied SOLID is needless indirection.
 

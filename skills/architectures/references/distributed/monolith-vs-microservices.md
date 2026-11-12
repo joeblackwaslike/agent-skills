@@ -4,12 +4,12 @@ Start with a monolith whose inside is well divided. Move a part into its own ser
 
 ## Why monolith first
 
-Fowler's observation is that almost all the successful microservice stories began as a monolith that grew too big and was then broken up. His advice is not to start a new project with microservices, even when you are sure it will grow big enough to justify them. Two reasons stand out.
+Fowler observes that almost all the successful microservice stories began as a monolith that grew too big and was then broken up. He reports that many colleagues argue against starting a new project with microservices, even when you are sure it will grow big enough to justify them. His own view is more tentative: avoid them unless the team has built a microservices system before. Two reasons stand out.
 
 - Microservices carry a premium: the cost of running and coordinating a suite of services. It slows a team down, and early on speed and short feedback cycles matter more.
 - Boundaries are hard to get right before you understand the domain. Moving functionality between services is much harder than moving it between modules in one codebase. A monolith lets you find the right boundaries first.
 
-Sam Newman makes the same point from the other side: wrong service boundaries cause more cross-service changes and tightly coupled components, and can leave you worse off than a single monolith. Teams new to a domain struggle most.
+Sam Newman makes the same point from the other side: wrong service boundaries cause more cross-service changes and tightly coupled components, and can leave you worse off than a single monolith.
 
 ## A modular monolith is not an unstructured one
 
@@ -26,7 +26,7 @@ Azure's list of what microservices buy you maps to the real reasons to split.
 | Teams need to ship on their own schedules | Is one team blocked by another team's release? |
 | Parts scale very differently | Does one part need ten times the capacity of the rest? |
 | A failure should not spread | Does an outage in one part take the rest down today? |
-| Data must be isolated | Do different parts have different compliance or access needs? |
+| Data must be isolated | Do schema changes in one part keep breaking another? |
 | Different technology is needed | Does one part need a runtime the rest cannot use? |
 
 If you cannot answer yes to one of these with a real example from your system, stay in the monolith.

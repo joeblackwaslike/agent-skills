@@ -21,9 +21,9 @@ Prefer asynchronous messaging for anything the user is not waiting on. See [even
 A call across a network can hang, fail, or succeed and still lose the reply. For each one:
 
 - Set a timeout. AWS's rule is to put a timeout on any remote call, since a call without one can hold a thread forever.
-- Retry only transient faults, a bounded number of times. Retries are selfish: when every layer retries independently the load multiplies. AWS's worked example multiplies the load on the database 243 times.
+- Retry only transient faults, a bounded number of times. Retries are selfish: a retrying client spends more of the server's time to improve its own odds. When every layer retries independently the load multiplies, and AWS's worked example multiplies the load on the database 243 times, so retry at one point in the stack.
 - Back off with jitter. Use capped exponential backoff and add randomness so clients do not all retry at the same moment.
-- Make the operation safe to repeat. GET, PUT and DELETE are idempotent by the HTTP specification and POST is not guaranteed to be, so give a retried POST an idempotency key.
+- Make the operation safe to repeat. GET, PUT and DELETE are idempotent by the HTTP specification, POST is not guaranteed to be, and Azure advises against retrying POST or PATCH, so give a retried POST an idempotency key.
 - Stop calling a dependency that is failing. A circuit breaker (closed, open, half-open) rejects calls that are likely to fail, and retries must stop when the breaker opens.
 
 The mechanics are in `design-patterns`: [retry-backoff.md](../../../design-patterns/references/resilience/retry-backoff.md), [circuit-breaker.md](../../../design-patterns/references/resilience/circuit-breaker.md) and [idempotency-key.md](../../../design-patterns/references/resilience/idempotency-key.md).
@@ -34,9 +34,9 @@ Treat an API as a contract. A consumer can only rely on what the provider promis
 
 - Consumer-driven contracts. Each consumer states what it uses, and the provider validates against the union of those contracts, which gives fast feedback on whether a change breaks anyone.
 - Tolerant reader. Be conservative in what you send and liberal in what you accept. A consumer reads only the fields it needs and ignores the rest, so a provider can add fields freely.
-- Backward-compatible changes first. Adding a field is safe, and removing or renaming one is not. For a breaking change, publish a new version and keep the old one running until its consumers move.
+- Backward-compatible changes first. Adding an optional field is safe if the service still accepts requests from older clients that omit it. Removing or renaming a field is not, and neither is adding a required one. For a breaking change, publish a new version and keep the old one running until its consumers move.
 
-A tolerant reader takes the fields it needs and nothing else:
+A tolerant reader takes the fields it needs, defaults the optional ones, ignores the rest, and still fails loudly when a required field is missing:
 
 ```python
 def read_order_summary(payload: dict) -> dict:
@@ -59,15 +59,16 @@ import assert from "node:assert/strict";
 type OrderSummary = { id: string; totalMinor: number; currency: string };
 
 function readOrderSummary(payload: Record<string, unknown>): OrderSummary {
-  return {
-    id: String(payload.id),
-    totalMinor: Number(payload.total_minor),
-    currency: typeof payload.currency === "string" ? payload.currency : "USD",
-  };
+  const { id, total_minor: totalMinor, currency } = payload;
+  if (typeof id !== "string" || typeof totalMinor !== "number") {
+    throw new Error("order summary is missing id or total_minor");
+  }
+  return { id, totalMinor, currency: typeof currency === "string" ? currency : "USD" };
 }
 
 assert.equal(readOrderSummary({ id: "o-1", total_minor: 1500 }).currency, "USD");
 assert.equal(readOrderSummary({ id: "o-1", total_minor: 1500, currency: "EUR", loyalty_tier: "gold" }).currency, "EUR");
+assert.throws(() => readOrderSummary({ total_minor: 1500 }));
 ```
 
 The same discipline applies to event schemas; see the schema evolution section of the event-driven reference.

@@ -9,11 +9,11 @@ Pick the weakest model your feature can tolerate, since stronger ones cost avail
 | Model | What it promises | Notes |
 | --- | --- | --- |
 | Linearizable (strong) | Every operation appears atomic, in an order consistent with real time | Cannot stay available during a network partition |
-| Causal | Operations that are causally related appear in the same order to everyone | Can stay available during a partition |
+| Causal | Operations that are causally related appear in the same order to everyone | Sticky available: stays available during a partition only if each client keeps talking to the same server |
 | Read your writes | A process's later read sees its own earlier write | Holds if the client stays on the same server |
 | Eventual | Replicas converge if updates stop | Reads may be stale in the meantime |
 
-A read replica is eventual by nature. It can lag the primary, so a user who saves a record and immediately reads from a replica may not see it. Fix that with read-your-writes: route a user's reads to the primary shortly after they write, or pin them to one server.
+A read replica is eventual by nature. It can lag the primary, so a user who saves a record and immediately reads from a replica may not see it. Fix that with read-your-writes: route a user's reads to the primary shortly after they write, or to a replica that has applied their write. Pinning a user to a replica alone is not enough, because that replica can still lag.
 
 ## CAP and PACELC, read correctly
 

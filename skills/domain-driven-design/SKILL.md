@@ -1,6 +1,6 @@
 ---
 name: domain-driven-design
-description: >
+description: >-
   Use when modeling a business domain: aggregates, entities, value objects, domain events, repositories, bounded contexts, ubiquitous language. Also when an agent builds a non-trivial domain with real invariants. Not for layering, CQRS, event sourcing, sagas, event-driven design or services (use architectures), or Repository, Unit of Work, Outbox mechanics (use design-patterns).
 metadata:
   last_updated: "2026-11-11"

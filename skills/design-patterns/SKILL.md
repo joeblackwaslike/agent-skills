@@ -1,7 +1,7 @@
 ---
 name: design-patterns
 description: >-
-  Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Dependency injection, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Not for whether to abstract at all (use engineering-principles), SOLID refactors (use solid-principles), aggregates (use domain-driven-design), CQRS, event sourcing, sagas or event-driven design (use architectures).
+  Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Dependency injection, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Not for whether to abstract at all (use engineering-principles), SOLID refactors (use solid-principles), aggregates (use domain-driven-design), CQRS, event sourcing, sagas, event-driven design, service boundaries or service-to-service communication (use architectures).
 metadata:
   last_updated: "2026-11-11"
 ---

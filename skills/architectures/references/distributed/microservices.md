@@ -39,7 +39,7 @@ When the new service must talk to legacy code, put an anti-corruption layer betw
 
 ## What you need in place first
 
-Fowler lists the operational prerequisites: extensive use of infrastructure automation, and real-time monitoring. Services must also be designed to tolerate the failure of the services they call, which is the subject of [service-communication.md](service-communication.md). Without automated deployment and monitoring, each new service adds work faster than it adds value.
+Fowler observes that teams running microservices make extensive use of infrastructure automation and real-time monitoring. Services must also be designed to tolerate the failure of the services they call, which is the subject of [service-communication.md](service-communication.md). Without automated deployment and monitoring, each new service adds work faster than it adds value.
 
 ## Sources
 
@@ -50,5 +50,6 @@ Fowler lists the operational prerequisites: extensive use of infrastructure auto
 - [Backends for frontends (Sam Newman)](https://samnewman.io/patterns/architectural/bff/)
 - [StranglerFigApplication (Martin Fowler)](https://martinfowler.com/bliki/StranglerFigApplication.html)
 - [Strangler fig (AWS Prescriptive Guidance)](https://docs.aws.amazon.com/prescriptive-guidance/latest/modernization-decomposing-monoliths/strangler-fig.html)
+- [Gateway Routing pattern (Azure)](https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-routing)
 - [Strangler Fig pattern (Azure)](https://learn.microsoft.com/en-us/azure/architecture/patterns/strangler-fig)
 - [Anti-corruption layer pattern (Azure)](https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer)

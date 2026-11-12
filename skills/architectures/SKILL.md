@@ -1,7 +1,7 @@
 ---
 name: architectures
 description: >-
-  Use when choosing or structuring how a system is built: hexagonal, clean or onion layering, CQRS, event sourcing, event-driven design, sagas, distributed transactions, microservices, or service-to-service communication. Not for aggregates and bounded contexts (use domain-driven-design), named code-level patterns (design-patterns), or whether to abstract at all (engineering-principles).
+  Use when choosing or structuring how a system is built: hexagonal layering, CQRS, event sourcing, event-driven design, sagas, microservices vs monolith, strangler-fig migration, service timeouts and contracts, CAP and eventual consistency. Not for aggregates or bounded contexts (domain-driven-design), one retry, breaker or outbox (design-patterns), or whether to abstract (engineering-principles).
 metadata:
   last_updated: "2026-11-11"
 ---
@@ -22,6 +22,7 @@ A single deployable with clean internal layers handles most systems. Each step b
 | Parts must react to each other without importing each other | Domain events, then a broker only if they cross processes |
 | Several teams must deploy on their own schedules | Separate services, along bounded-context lines |
 | "Microservices are modern" | Stay with a modular monolith |
+| Atomic writes needed across services | Keep that data in one service; otherwise a saga |
 
 If the answer is a plain layered monolith, say so and stop. Adopting CQRS, event sourcing or services to look rigorous is the failure `references/anti-patterns.md` catalogs.
 
