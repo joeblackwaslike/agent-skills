@@ -12,7 +12,7 @@ You need the outbox when a lost event leaves the system wrong: an order saved bu
 
 ## Python
 
-`sqlite3` stands in for any database. `place_order` writes both rows and leaves the commit to the caller. The relay publishes and marks each row in one short transaction on outbox rows only. A failure records `attempts` and `last_error`, logs the row id, and the loop moves on, so one poison row cannot block the rest.
+`sqlite3` stands in for any database. `place_order` writes both rows and leaves the commit to the caller. The relay publishes and marks each row in one transaction on outbox rows only, so a row stays locked for exactly one publish. A failure records `attempts` and `last_error`, logs the row id, and the loop moves on, so one poison row cannot block the rest.
 
 ```python
 import json
@@ -168,14 +168,14 @@ main().catch((err: unknown) => {
 
 ## In production
 
-- With several relays on Postgres, claim rows with `SELECT ... FOR UPDATE SKIP LOCKED` inside a short transaction that touches only outbox rows, publish while holding the lock, then mark the rows published and commit. The claim and the update share one transaction, and a crashed relay releases its locks. Keep that transaction apart from any business transaction and never hold it across slow work. A `locked_until` lease column does the same job without a long lock.
+- With several relays on Postgres there are two ways to claim rows. The first is `SELECT ... FOR UPDATE SKIP LOCKED` in a transaction that touches only outbox rows. That transaction holds the lock across exactly one publish (the sample above does the same per row), so cap the batch and set a publish timeout. The trade-off is a pinned connection and row lock for as long as the broker is slow, and a crashed relay releases the lock at once. The second is to claim by setting `locked_until` in a quick transaction, publish with no transaction open, then mark the row in a second quick one. The transactions stay short, but a relay that dies mid-publish leaves the row hidden until the lease expires, and the retry may duplicate the message. Either way, keep the relay's transaction apart from any business transaction.
 - Delivery is at-least-once and ordering can break across retries. Consumers dedupe by event id or are idempotent by nature (see [Idempotency key](idempotency-key.md)).
 - Delete or archive published rows on a schedule. Alert on the age of the oldest unpublished row and on rows past `MAX_ATTEMPTS`, since a stuck relay looks healthy everywhere else.
 - Publish with [retry](retry-backoff.md) and [circuit breaker](circuit-breaker.md) policies, because the relay is where broker outages land.
 
 ## Smells and misuse
 
-- Publishing to the broker inside the business transaction. It holds those locks while waiting on the network and still is not atomic.
+- Publishing to the broker inside the business transaction. It holds locks on business rows while waiting on the network and still is not atomic. The relay's own per-row transaction touches only outbox rows.
 - Marking a row published before the broker confirms, which turns at-least-once into at-most-once.
 - A consumer that assumes exactly-once and has no dedupe.
 - A relay that retries a poison row forever, or fails without logging the row id, so one bad message blocks or hides the ones behind it.

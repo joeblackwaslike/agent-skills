@@ -116,7 +116,7 @@ Only `NotExecuted`, which `work` raises before it acts, releases the key. Any ot
 
 ## TypeScript
 
-The TypeScript version follows the same rules, with account scoping, a fingerprint over method, path and body, an in-flight lease, a stored failure that replays, and `NotExecuted` as the only release.
+The TypeScript version follows the same rules, with account scoping, a fingerprint over method, path and body, an in-flight lease, a stored failure that replays as `ReplayedFailure`, and `NotExecuted` as the only release.
 
 ```typescript
 import assert from "node:assert/strict";
@@ -125,6 +125,7 @@ type Rec = { fingerprint: string; expiresAt: number; response?: string; error?: 
 export class InFlight extends Error {}
 export class KeyReuse extends Error {}
 export class NotExecuted extends Error {}
+export class ReplayedFailure extends Error {}
 const TTL_MS = 24 * 3600 * 1000;
 const LEASE_MS = 30_000;
 
@@ -137,7 +138,7 @@ export function idempotencyStore(now: () => number) {
       const rec = records.get(slot);
       if (rec !== undefined && rec.expiresAt > now()) {
         if (rec.fingerprint !== fingerprint) throw new KeyReuse("key reused with another request");
-        if (rec.error !== undefined) throw new Error(`replayed failure: ${rec.error}`);
+        if (rec.error !== undefined) throw new ReplayedFailure(rec.error);
         if (rec.response === undefined) throw new InFlight("original request still running");
         return { response: rec.response, replayed: true };
       }
@@ -170,7 +171,7 @@ async function main(): Promise<void> {
   await assert.rejects(run("k1", charge, 1999, "/refunds"), KeyReuse);
   await store.execute("a", "k2", ["POST", "/charges", { cents: 1999 }], async () => (await assert.rejects(run("k2"), InFlight), "ch_x"));
   await assert.rejects(run("k3", timedOut), /timeout/);
-  await assert.rejects(run("k3"), /replayed failure/);
+  await assert.rejects(run("k3"), ReplayedFailure);
   assert.equal(runs, 2);
   await assert.rejects(run("k4", invalid), NotExecuted);
   assert.equal(await run("k4"), false);

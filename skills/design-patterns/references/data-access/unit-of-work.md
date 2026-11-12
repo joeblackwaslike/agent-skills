@@ -77,11 +77,16 @@ import assert from "node:assert/strict";
 
 type Conn = { exec(sql: string): Promise<void> };
 
-async function rollback(conn: Conn, original: unknown): Promise<void> {
+async function rollback(conn: Conn, original: unknown): Promise<unknown> {
   try {
     await conn.exec("ROLLBACK");
+    return original;
   } catch (rollbackErr) {
-    if (original instanceof Error) original.cause = rollbackErr;
+    if (original instanceof Error && original.cause === undefined) {
+      original.cause = rollbackErr;
+      return original;
+    }
+    return new AggregateError([original, rollbackErr], "work failed and rollback failed");
   }
 }
 
@@ -91,8 +96,7 @@ export async function withTransaction<T>(conn: Conn, work: (conn: Conn) => Promi
   try {
     result = await work(conn);
   } catch (err) {
-    await rollback(conn, err);
-    throw err;
+    throw await rollback(conn, err);
   }
   await conn.exec("COMMIT");
   return result;
@@ -128,6 +132,11 @@ async function main(): Promise<void> {
   await assert.rejects(withTransaction(brokenRollback, (c) => placeOrder(c, 500, 1999)), (err: Error) =>
     /does not match/.test(err.message) && /ROLLBACK failed/.test(String(err.cause)));
 
+  await assert.rejects(
+    withTransaction(recordingConn("ROLLBACK"), () => Promise.reject("plain string")),
+    (err: AggregateError) => err.errors.length === 2 && err.errors[0] === "plain string",
+  );
+
   const brokenCommit = recordingConn("COMMIT");
   await assert.rejects(withTransaction(brokenCommit, (c) => placeOrder(c, 1999, 1999)), /COMMIT failed/);
   assert.ok(!brokenCommit.log.includes("ROLLBACK"));
@@ -139,13 +148,12 @@ main().catch((err: unknown) => {
 });
 ```
 
-`withTransaction` rolls back when `work` throws and rethrows the original error, so the caller still sees it. If the rollback itself fails, that failure rides along as `cause` instead of replacing the error. A failed `COMMIT` surfaces as it is, with no `ROLLBACK` after it.
+`withTransaction` rolls back when `work` throws and rethrows the original error, so the caller still sees it. If the rollback itself fails, that failure rides along as `cause` instead of replacing the error. When the original has a `cause` already, or is not an `Error` at all, an `AggregateError` carries both so neither is lost. A failed `COMMIT` surfaces as it is, with no `ROLLBACK` after it: on Postgres an erroring `COMMIT` leaves the transaction ended, so there is nothing to roll back. Check your driver.
 
 ## In production
 
-- SQLAlchemy `Session` (above), with `session.begin()` as the commit-or-rollback scope. Use one session per request, never one shared by concurrent tasks.
+- SQLAlchemy `Session` (above), with `session.begin()` as the commit-or-rollback scope. Use one session per request. Sharing a session across concurrent tasks interleaves their changes.
 - Nested units of work need savepoints. A wrapper that always issues `BEGIN` fails or commits early inside another one, so pass the open connection down.
-- Async code holds one session per request. Sharing a session across concurrent tasks interleaves their changes.
 - Keep the transaction short. Do not call an external API between `BEGIN` and `COMMIT`, since the locks stay held while you wait. Use an [Outbox](../resilience/outbox.md) for the follow-up call.
 
 ## Smells and misuse
