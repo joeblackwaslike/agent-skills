@@ -37,9 +37,10 @@ Every text flag except --behavior-out and --scenarios must be a single line.
 Exit codes: 0 report printed, 2 invalid or inconsistent input.
 
 Example:
-  bun run scripts/report.ts --verdict ready --intent "mdlink accepts ranges" \\
-    --check "just check=0" --check "just test=0" \\
-    --behavior-cmd "mdlink a.md:1-2" --behavior-out "[a.md:1-2](a.md#L1-L2)" \\
+  bun run scripts/report.ts --verdict ready --intent "tighten the deploy skill description" \\
+    --check "skill-check=0" --gate-gaps "no just recipes in this repo" \\
+    --scenarios "S1 | skill | PASS | ran the checklist" \\
+    --behavior-skipped "docs only" \\
     --findings 2 --fixed 2 --rereviews 1 --last-rereview-findings 0 --open-major 0`;
 
 const die = (msg: string): never => {
@@ -127,7 +128,8 @@ if (ready && !covered && !gateGaps) die('READY needs --check for both "just chec
 
 const gateSkipped = num("gate-skipped", v["gate-skipped"]);
 if (ready && gateSkipped > 0 && !gateGaps) die(`READY with ${gateSkipped} skipped gate check(s) needs --gate-gaps explaining them.`);
-const scenarios = v.scenarios === undefined ? "off" : v.scenarios.trim();
+const scenariosRaw = v.scenarios === undefined ? "off" : v.scenarios.trim();
+const scenarios = scenariosRaw.toLowerCase() === "off" ? "off" : scenariosRaw;
 if (!scenarios) die('--scenarios must be a results table or "off", not blank.');
 
 const behaviorCmd = line("behavior-cmd", v["behavior-cmd"]);

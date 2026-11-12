@@ -82,6 +82,12 @@ test("--scenarios and --gate-skipped appear in the report", () => {
   expect(r.out).toContain("Scenarios: S1 | baseline | FAIL | \"skipped step\"\n           S2 | skill | PASS | \"ran it\"\n");
 });
 
+test("--scenarios off prints as off in any case", () => {
+  for (const raw of ["OFF", " Off "]) {
+    expect(run(...ok, "--scenarios", raw).out).toContain("Scenarios: off\n");
+  }
+});
+
 test("--help prints usage and exits 0", () => {
   const r = run("--help");
   expect(r.code).toBe(0);
