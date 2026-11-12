@@ -78,7 +78,7 @@ Every file uses the same sections, so an agent can skim for one:
 6. **Smells and misuse.**
 7. **Related**: neighbors and sibling skills.
 
-Expect roughly 120 to 250 lines per file; the files written so far run 117 to 200. Line count is a rough proxy for complexity, not a target: write what the pattern needs, and never cut a behavior, an example or a failure mode to reach a number. Examples are complete enough to run, small enough to read in one screen each.
+There is no length target. For scale, the ECC skills run 34 to 888 lines (SKILL.md median 183, 90th percentile 511) and their reference files have a median of 80 and a 90th percentile of 229. Line count is a rough proxy for complexity: write what the pattern needs, and never cut a behavior, an example or a failure mode to reach a number. Examples are complete enough to run, small enough to read in one screen each.
 
 ## Cross-skill changes (small, in scope)
 
