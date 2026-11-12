@@ -1,14 +1,14 @@
 ---
 name: architectures
 description: >-
-  Use when choosing or structuring how a system is built: hexagonal, clean or onion layering, CQRS, event sourcing, event-driven design, sagas, or whether to split a monolith into microservices. Not for aggregates and bounded contexts (use domain-driven-design), named code-level patterns (design-patterns), or whether to abstract at all (engineering-principles).
+  Use when choosing or structuring how a system is built: hexagonal, clean or onion layering, CQRS, event sourcing, event-driven design, sagas, distributed transactions, or whether to split a monolith into microservices. Not for aggregates and bounded contexts (use domain-driven-design), named code-level patterns (design-patterns), or whether to abstract at all (engineering-principles).
 metadata:
   last_updated: "2026-11-11"
 ---
 
 # Architectures
 
-How a system is divided into parts, how those parts talk, and what each choice costs. This skill covers application architecture (layers, ports and adapters, CQRS), event-driven architecture (event sourcing, events and commands, delivery guarantees, sagas), and the decision of when a system should be split into services. Microservices and distributed data are coming and are listed in the catalog. Examples are in TypeScript and Python and continue the Orders and Fulfillment domain from `domain-driven-design`.
+How a system is divided into parts, how those parts talk, and what each choice costs. This skill covers application architecture (layers, ports and adapters, CQRS), event-driven architecture (event sourcing, events and commands, delivery guarantees, sagas), and the decision of when a system should be split into services. Microservices, service communication, the modular monolith and distributed data have no reference yet; the catalog lists them. Examples are in TypeScript and Python and continue the Orders and Fulfillment domain from `domain-driven-design`.
 
 ## Default to the simplest shape that works
 
@@ -37,7 +37,7 @@ Open only the file the task needs. [catalog.md](references/catalog.md) lists eve
 | Storing events as the source of truth, rebuilding state from a stream, snapshots, upcasting | [event-sourcing.md](references/event-driven/event-sourcing.md) |
 | Publishing and reacting to events: events vs commands, choreography vs orchestration, at-least-once delivery, idempotent consumers, ordering, dead letters, schema evolution | [event-driven-architecture.md](references/event-driven/event-driven-architecture.md) |
 | A business transaction across services: compensations, the pivot step, orchestration vs choreography, isolation countermeasures | [sagas.md](references/event-driven/sagas.md) |
-| Recognizing and fixing CQRS and event-sourcing cargo-culting, premature service splits, read concerns in the write model | [anti-patterns.md](references/anti-patterns.md) |
+| Recognizing and fixing CQRS and event-sourcing cargo-culting, premature service splits, read concerns in the write model, events that are really commands, sagas without a pivot or compensations | [anti-patterns.md](references/anti-patterns.md) |
 
 Microservices, service communication and distributed data have no reference file yet. For those, answer from the signal table above and the bounded contexts from `domain-driven-design`, and say plainly that deeper guidance is not written yet.
 
@@ -53,7 +53,7 @@ Microservices, service communication and distributed data have no reference file
 - "Let's use CQRS and event sourcing because it's the proper way." Justify each against the table above or skip it.
 - "We'll split it into services now and sort out the boundaries later." Boundaries drawn wrong across a network are far costlier to move than inside a process.
 - "The domain imports the ORM." The dependency rule is broken; see the application-architecture reference.
-- "This handler updates three aggregates in one transaction." Use events and eventual consistency instead.
+- "This handler updates three aggregates in one transaction." Use events and eventual consistency instead, and a saga when the aggregates live in different services (see sagas.md).
 
 ## Completion criteria
 
@@ -61,4 +61,5 @@ Microservices, service communication and distributed data have no reference file
 - Dependencies point inward: domain and use cases import only their own types and ports.
 - If you chose ports and adapters, every external dependency sits behind a port, wired in one composition root.
 - Where CQRS or event sourcing was added, the cost was justified against the table at the top.
+- Where events or sagas were added, consumers are idempotent, each compensable step has an idempotent compensation, and the pivot is named.
 - Any code blocks you wrote parse and run.

@@ -1,6 +1,6 @@
 # Event-Driven Architecture
 
-In an event-driven system, parts communicate by publishing facts about what happened and reacting to the ones they care about. The publisher does not know who is listening. That removes direct dependencies between parts, and it moves the flow of control out of the code, where you can no longer read it.
+In an event-driven system, parts communicate by publishing facts about what happened and reacting to the ones they care about. The publisher does not know who is listening. That removes direct dependencies, but the flow of control is no longer readable in the code.
 
 ## Do you need it?
 
@@ -14,7 +14,7 @@ It pays off when several subsystems react to the same event, when work arrives i
 | You need to trace exactly what happens after a request | Orchestration, or a direct call |
 | The reaction can lag the cause by seconds without harm | Events |
 
-If every event has exactly one consumer and the publisher waits on the result, that is a call wearing an event's name.
+If every event has exactly one consumer and the publisher waits on the result, it is a call.
 
 ## Four things people mean by "event-driven"
 
@@ -100,7 +100,7 @@ await consumer.handle("evt-1", { amount: 5 });
 console.assert(total === 5);
 ```
 
-In production the processed-id record and the handler's effects must commit in the same transaction. Otherwise a crash between the two reproduces the duplicate, as it does in this in-memory sketch. See [idempotency-key.md](../../../design-patterns/references/resilience/idempotency-key.md).
+In production the processed-id record and the handler's effects must commit in the same transaction. Otherwise a crash between the two reproduces the duplicate, as it does in this in-memory sketch, and two concurrent deliveries of the same id can both pass the check, so enforce uniqueness with a database constraint or a lock. See [idempotency-key.md](../../../design-patterns/references/resilience/idempotency-key.md).
 
 ## Ordering
 
@@ -109,7 +109,7 @@ Brokers order events within a partition, not across the whole topic. Choose the 
 ## When processing fails
 
 - Retry with backoff for transient failures. See [retry-backoff.md](../../../design-patterns/references/resilience/retry-backoff.md).
-- After a bounded number of attempts, move the message to a dead-letter queue so one bad message does not block the partition. In SQS this is the `maxReceiveCount` setting.
+- After a bounded number of attempts, move the message to a dead-letter queue so one bad message does not block the queue or partition. In SQS this is the `maxReceiveCount` setting. Kafka has no built-in dead-letter queue, so consumers publish failed messages to a separate topic.
 - Alert on dead-letter depth, and keep dead messages longer than the source queue keeps live ones so you can inspect and redrive them.
 - A dead-letter queue breaks strict ordering for the messages it takes. Don't use one on a queue where exact order is the point.
 
