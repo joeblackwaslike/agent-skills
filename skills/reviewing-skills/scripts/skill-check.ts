@@ -11,13 +11,14 @@
  *   3. Otherwise 3+ numbered-step lines or a Procedure/Steps/Workflow heading is a workflow.
  *   4. Otherwise MUST/NEVER/ALWAYS/Iron Law in the body is a discipline.
  *   5. Otherwise "other".
- * The diagram and defense heuristics run only for discipline and workflow skills.
+ * The diagram heuristic is off only for doc-wrapper and reference-catalog kinds.
+ * The defense (rationalization) heuristic fires only for discipline and workflow kinds.
  *
  * A code checker that is missing yields status "skipped" and an entry in `gaps`;
  * it never fails the gate and never counts as a pass.
  */
 import { spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, realpathSync, rmSync, statSync, symlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readdirSync, readFileSync, realpathSync, rmSync, statSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { basename, dirname, join, relative, resolve } from "node:path";
 import { parseArgs } from "node:util";
@@ -38,6 +39,7 @@ const OVERLAP_THRESHOLD = 0.4;
 const STOPWORDS = new Set("a an and are as at be by for from has have how in is it its not of on or the this that to use used using when with you your into than then them they their will can per via only any all out".split(" "));
 const LANG_TAGS: Record<string, Lang> = { python: "python", py: "python", typescript: "typescript", ts: "typescript", bash: "bash", sh: "bash", shell: "bash", json: "json" };
 const LINT_SCRIPT = "scripts/lint-descriptions.py";
+const TIMEOUT_MS = 120_000;
 
 const add = (checks: Check[], id: string, status: Check["status"], detail: string) => checks.push({ id, status, detail });
 
@@ -78,7 +80,33 @@ function jaccard(a: Set<string>, b: Set<string>): number {
   return union ? inter / union : 0;
 }
 
-const stripFences = (text: string) => text.replace(/^```[^\n]*\n[\s\S]*?^```[^\n]*$/gm, "");
+type Fence = { info: string; body: string[]; line: number };
+
+function scanFences(text: string): { prose: string; fences: Fence[] } {
+  const lines = text.split("\n");
+  const prose: string[] = [];
+  const fences: Fence[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    const open = lines[i].match(/^\s*(`{3,}|~{3,})(.*)$/);
+    if (!open) {
+      prose.push(lines[i]);
+      continue;
+    }
+    const [ch, len] = [open[1][0], open[1].length];
+    const body: string[] = [];
+    const start = i + 1;
+    prose.push("");
+    for (i = start; i < lines.length; i++) {
+      const close = lines[i].match(/^\s*(`+|~+)\s*$/);
+      if (close && close[1][0] === ch && close[1].length >= len) break;
+      body.push(lines[i]);
+    }
+    fences.push({ info: open[2].trim().split(/\s+/)[0] ?? "", body, line: start + 1 });
+  }
+  return { prose: prose.join("\n"), fences };
+}
+
+const stripFences = (text: string) => scanFences(text).prose;
 
 function detectKind(fm: string, name: string, body: string): string {
   const explicit = fm.match(/^\s+kind:\s*["']?([\w-]+)/m)?.[1];
@@ -90,13 +118,24 @@ function detectKind(fm: string, name: string, body: string): string {
   return "other";
 }
 
+function linkTargets(file: string): string[] {
+  const prose = stripFences(readFileSync(file, "utf8")).replace(/`[^`\n]*`/g, "");
+  return [...prose.matchAll(/\[[^\]]*\]\(([^)\s]+)\)/g)].flatMap((m) => {
+    const raw = m[1].split("#")[0];
+    if (!raw || /^[a-z][a-z0-9+.-]*:/i.test(raw)) return [];
+    try {
+      return [decodeURIComponent(raw)];
+    } catch {
+      return [raw];
+    }
+  });
+}
+
 function checkLinks(dir: string, files: string[], checks: Check[]) {
   let total = 0;
   let broken = 0;
   for (const f of files) {
-    for (const m of stripFences(readFileSync(f, "utf8")).matchAll(/\[[^\]]*\]\(([^)\s]+)\)/g)) {
-      const target = m[1].split("#")[0];
-      if (!target || /^[a-z][a-z0-9+.-]*:/i.test(target)) continue;
+    for (const target of linkTargets(f)) {
       total++;
       if (!existsSync(resolve(dirname(f), target))) {
         broken++;
@@ -109,15 +148,17 @@ function checkLinks(dir: string, files: string[], checks: Check[]) {
 
 function checkOrphans(dir: string, files: string[], checks: Check[]) {
   const refs = files.filter((f) => relative(dir, f).startsWith("references"));
-  const orphans = refs.filter((r) => {
-    const base = basename(r);
-    return !files.some((f) => f !== r && readFileSync(f, "utf8").includes(base));
-  });
+  const linked = new Set(files.flatMap((f) => linkTargets(f).map((t) => resolve(dirname(f), t))));
+  const mentioned = (r: string) => {
+    const path = new RegExp(`(^|[^\\w./-])${relative(dir, r).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}($|[^\\w-])`);
+    return files.some((f) => f !== r && path.test(stripFences(readFileSync(f, "utf8"))));
+  };
+  const orphans = refs.filter((r) => !linked.has(r) && !mentioned(r));
   if (!orphans.length) return add(checks, "orphan", "pass", "every reference is routed to");
   for (const o of orphans) add(checks, `orphan:${relative(dir, o)}`, "warn", `${relative(dir, o)} is not linked from SKILL.md or any other doc`);
 }
 
-function checkDescription(dir: string, repo: string | undefined, checks: Check[], gaps: string[]) {
+function checkDescription(dir: string, name: string, repo: string | undefined, checks: Check[], gaps: string[]) {
   const candidates = [repo && join(repo, LINT_SCRIPT), join(import.meta.dir, "../../..", LINT_SCRIPT)].filter((p): p is string => !!p && existsSync(p));
   if (!candidates.length) {
     gaps.push("description thresholds (lint-descriptions.py not found)");
@@ -125,8 +166,8 @@ function checkDescription(dir: string, repo: string | undefined, checks: Check[]
   }
   const tmp = mkdtempSync(join(tmpdir(), "skill-lint-"));
   try {
-    symlinkSync(dir, join(tmp, basename(dir)));
-    const r = spawnSync("python3", ["-I", candidates[0], "--skills-dir", tmp], { encoding: "utf8" });
+    symlinkSync(dir, join(tmp, name));
+    const r = spawnSync("python3", ["-I", candidates[0], "--skills-dir", tmp], { encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
     const lines = (r.stdout ?? "").split("\n");
     const fails = lines.filter((l) => l.startsWith("FAIL "));
     const warns = lines.filter((l) => l.startsWith("WARN "));
@@ -144,10 +185,10 @@ function checkDescription(dir: string, repo: string | undefined, checks: Check[]
 
 function checkRegistry(name: string, repo: string | undefined, checks: Check[]) {
   if (!repo) return add(checks, "registry", "skipped", "no repo found; registry rows not checked");
-  for (const file of ["SKILLS.md", "README.md"]) {
-    const p = join(repo, file);
-    if (!existsSync(p)) continue;
-    const row = readFileSync(p, "utf8").split("\n").some((l) => l.startsWith("|") && l.includes(`\`${name}\``));
+  const present = ["SKILLS.md", "README.md"].filter((f) => existsSync(join(repo, f)));
+  if (!present.length) return add(checks, "registry", "skipped", `no SKILLS.md or README.md in ${repo}; registry rows not checked`);
+  for (const file of present) {
+    const row = readFileSync(join(repo, file), "utf8").split("\n").some((l) => l.startsWith("|") && l.split("|")[1]?.replace(/`/g, "").trim() === name);
     add(checks, `registry:${file}`, row ? "pass" : "fail", row ? `row found in ${file}` : `no row for \`${name}\` in ${file}`);
   }
 }
@@ -170,13 +211,12 @@ function checkOverlap(name: string, description: string | undefined, repo: strin
 }
 
 function checkHeuristics(kind: string, body: string, checks: Check[]) {
-  if (kind !== "discipline" && kind !== "workflow") return;
   const prose = stripFences(body);
   const branching = prose.split("\n").filter((l) => /\b(if|otherwise|repeat|until)\b/i.test(l)).length;
-  if (branching >= 3 && !/^```(mermaid|dot)\b/m.test(body)) {
+  if (kind !== "doc-wrapper" && kind !== "reference-catalog" && branching >= 3 && !/^\s*(`{3,}|~{3,})(mermaid|dot)\b/m.test(body)) {
     add(checks, "heuristic:diagram", "warn", `${branching} branching lines and no mermaid or dot block (advisory)`);
   }
-  if (!/^#+\s.*(Red Flags|Rationalization|Excuse)/im.test(prose)) {
+  if ((kind === "discipline" || kind === "workflow") && !/^#+\s.*(Red Flags|Rationalization|Excuse)/im.test(prose)) {
     add(checks, "heuristic:defense", "warn", "no Red Flags, Rationalization or Excuse heading (advisory)");
   }
 }
@@ -187,20 +227,14 @@ function extractBlocks(dir: string, files: string[]): { blocks: Block[]; fragmen
   const blocks: Block[] = [];
   let fragments = 0;
   for (const f of files) {
-    const lines = readFileSync(f, "utf8").split("\n");
-    for (let i = 0; i < lines.length; i++) {
-      const m = lines[i].match(/^```(\w+)\s*$/);
-      if (!m) continue;
-      const lang = LANG_TAGS[m[1].toLowerCase()];
-      const start = i + 1;
-      const body: string[] = [];
-      for (i = start; i < lines.length && !lines[i].startsWith("```"); i++) body.push(lines[i]);
+    for (const fence of scanFences(readFileSync(f, "utf8")).fences) {
+      const lang = LANG_TAGS[fence.info.toLowerCase()];
       if (!lang) continue;
-      if (/^\s*(#|\/\/)\s*fragment\b/.test(body[0] ?? "")) {
+      if (/^\s*(#|\/\/)\s*fragment\b/.test(fence.body[0] ?? "")) {
         fragments++;
         continue;
       }
-      blocks.push({ file: relative(dir, f), line: start, lang, code: `${body.join("\n")}\n` });
+      blocks.push({ file: relative(dir, f), line: fence.line, lang, code: `${fence.body.join("\n")}\n` });
     }
   }
   return { blocks, fragments };
@@ -209,7 +243,7 @@ function extractBlocks(dir: string, files: string[]): { blocks: Block[]; fragmen
 const OFFLINE_HINT = "bunx needs the network on first use; are you offline?";
 
 function runTool(cmd: string[], cwd: string) {
-  const r = spawnSync(cmd[0], cmd.slice(1), { cwd, encoding: "utf8" });
+  const r = spawnSync(cmd[0], cmd.slice(1), { cwd, encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
   return { ...r, text: `${r.stdout ?? ""}${r.stderr ?? ""}` };
 }
 
@@ -218,11 +252,12 @@ function pyright(codes: string[]): BlockResult[] {
   try {
     writeFileSync(join(dir, "pyrightconfig.json"), JSON.stringify({ pythonVersion: "3.12", typeCheckingMode: "basic", include: ["*.py"] }));
     codes.forEach((c, n) => writeFileSync(join(dir, `b${n}.py`), c));
-    const cmd = Bun.which("pyright") ? ["pyright"] : ["bunx", "pyright"];
+    const cmd = Bun.which("pyright", { PATH: process.env.PATH }) ? ["pyright"] : ["bunx", "pyright"];
     const r = runTool([...cmd, "--outputjson"], dir);
     let parsed: { generalDiagnostics: { file: string; severity: string; message: string; range: { start: { line: number } } }[] };
     try {
-      parsed = JSON.parse(r.stdout);
+      parsed = JSON.parse(r.stdout ?? "");
+      if (!parsed?.generalDiagnostics) throw new Error("no diagnostics");
     } catch {
       return codes.map(() => ({ status: "missing", detail: `pyright unavailable (${OFFLINE_HINT})` }));
     }
@@ -264,7 +299,7 @@ function tsc(codes: string[]): BlockResult[] {
 
 function bashSyntax(codes: string[]): BlockResult[] {
   return codes.map((c) => {
-    const r = spawnSync("bash", ["-n"], { input: c, encoding: "utf8" });
+    const r = spawnSync("bash", ["-n"], { input: c, encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
     if (r.error) return { status: "missing", detail: "bash not found" };
     return r.status === 0 ? { status: "ok", detail: "" } : { status: "error", detail: r.stderr.trim().split("\n")[0] };
   });
@@ -290,7 +325,10 @@ function checkBlocks(dir: string, files: string[], run: BlockChecker, checks: Ch
   for (const lang of ["python", "typescript", "bash", "json"] as const) {
     const mine = blocks.filter((b) => b.lang === lang);
     if (!mine.length) continue;
-    const results = run(lang, mine.map((b) => b.code));
+    const returned = run(lang, mine.map((b) => b.code));
+    const results: BlockResult[] = returned.length === mine.length
+      ? returned
+      : mine.map(() => ({ status: "missing", detail: `checker returned ${returned.length} results for ${mine.length} blocks` }));
     const skipped = results.filter((r) => r.status === "missing");
     mine.forEach((b, i) => {
       const r = results[i];
@@ -309,7 +347,7 @@ export function checkSkill(skillDir: string, opts: Options = {}): Report {
   const checks: Check[] = [];
   const gaps: string[] = [];
   const dir = realpathSync(resolve(skillDir));
-  const name = basename(dir);
+  const name = basename(resolve(skillDir));
   const skillMd = join(dir, "SKILL.md");
   if (!existsSync(skillMd)) {
     add(checks, "frontmatter", "fail", "SKILL.md not found (the filename must be uppercase)");
@@ -337,7 +375,7 @@ export function checkSkill(skillDir: string, opts: Options = {}): Report {
   const size = statSync(skillMd).size;
   add(checks, "size", size > SIZE_LIMIT ? "fail" : "pass", `SKILL.md is ${size} bytes (limit ${SIZE_LIMIT})`);
 
-  checkDescription(dir, repo, checks, gaps);
+  checkDescription(dir, name, repo, checks, gaps);
   const files = [skillMd, ...mdFiles(join(dir, "references"))];
   checkLinks(dir, files, checks);
   checkOrphans(dir, files, checks);
@@ -348,15 +386,21 @@ export function checkSkill(skillDir: string, opts: Options = {}): Report {
   return { checks, gaps };
 }
 
+function usage(msg: string): never {
+  console.error(`${msg}; usage: bun skill-check.ts <skill-dir> [--json] [--repo <path>] [--no-blocks]`);
+  process.exit(2);
+}
+
 function main() {
-  const { values, positionals } = parseArgs({
-    allowPositionals: true,
-    options: { json: { type: "boolean" }, repo: { type: "string" }, "no-blocks": { type: "boolean" } },
-  });
-  if (positionals.length !== 1) {
-    console.error("usage: bun skill-check.ts <skill-dir> [--json] [--repo <path>] [--no-blocks]");
-    process.exit(2);
+  let parsed: ReturnType<typeof parseArgs<{ allowPositionals: true; options: { json: { type: "boolean" }; repo: { type: "string" }; "no-blocks": { type: "boolean" } } }>>;
+  try {
+    parsed = parseArgs({ allowPositionals: true, options: { json: { type: "boolean" }, repo: { type: "string" }, "no-blocks": { type: "boolean" } } });
+  } catch (e) {
+    usage((e as Error).message.split("\n")[0]);
   }
+  const { values, positionals } = parsed;
+  if (positionals.length !== 1) usage("expected exactly one skill directory");
+  if (!existsSync(positionals[0]) || !statSync(positionals[0]).isDirectory()) usage(`not a directory: ${positionals[0]}`);
   const report = checkSkill(positionals[0], { repo: values.repo, blocks: !values["no-blocks"] });
   if (values.json) {
     console.log(JSON.stringify(report, null, 2));

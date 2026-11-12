@@ -1,5 +1,5 @@
 import { afterAll, expect, test } from "bun:test";
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { type BlockChecker, type Report, checkSkill } from "./skill-check";
@@ -62,12 +62,15 @@ test("broken relative link fails, good link passes", () => {
   expect(links.some((c) => c.detail.includes("a.md") && c.status === "fail")).toBe(false);
 });
 
-test("orphan reference warns", () => {
-  const { dir } = make({ body: "[a](references/a.md)\n", files: { "references/a.md": "# a\n", "references/lonely.md": "# l\n" } });
+test("orphan detection matches link targets, not substrings", () => {
+  const { dir } = make({ body: "[d](references/data.md)\n", files: { "references/a.md": "# a\n", "references/data.md": "# d\n" } });
   const orphan = all(checkSkill(dir, opts()), "orphan");
-  expect(orphan.map((c) => c.detail).join()).toContain("lonely.md");
-  expect(orphan.every((c) => c.status === "warn")).toBe(true);
-  expect(orphan.map((c) => c.detail).join()).not.toContain("a.md\n");
+  expect(orphan.map((c) => [c.id, c.status])).toEqual([["orphan:references/a.md", "warn"]]);
+});
+
+test("a reference linked from another reference is not an orphan", () => {
+  const { dir } = make({ body: "[a](references/a.md)\n", files: { "references/a.md": "[b](b.md)\n", "references/b.md": "# b\n" } });
+  expect(find(checkSkill(dir, opts()), "orphan")?.status).toBe("pass");
 });
 
 test("SKILL.md over 20,000 bytes fails", () => {
@@ -171,8 +174,8 @@ test("diagram and defense heuristics fire for discipline and workflow skills", (
   }
 });
 
-test("heuristics stay silent for doc-wrappers and catalogs", () => {
-  for (const kind of ["doc-wrapper", "catalog"]) {
+test("heuristics stay silent for doc-wrappers and reference catalogs", () => {
+  for (const kind of ["doc-wrapper", "reference-catalog"]) {
     const { dir } = make({ fm: KINDS(kind), body: BRANCHY });
     expect(all(checkSkill(dir, opts()), "heuristic")).toEqual([]);
   }
@@ -197,4 +200,126 @@ test("okChecker passes blocks", () => {
   const { dir } = make({ body: fence("python", "x = 1") });
   const r = checkSkill(dir, { blocks: true, runBlocks: okChecker });
   expect(find(r, "blocks")?.status).toBe("pass");
+});
+
+const cli = (...args: string[]) => {
+  const p = Bun.spawnSync([process.execPath, "run", `${import.meta.dir}/skill-check.ts`, ...args]);
+  return { code: p.exitCode, out: p.stdout.toString(), err: p.stderr.toString() };
+};
+
+test("nonexistent skill dir and unknown flag exit 2 with one line", () => {
+  for (const args of [[join(tmpdir(), "no-such-skill-dir")], [make().dir, "--bogus"], []]) {
+    const r = cli(...args);
+    expect(r.code).toBe(2);
+    expect(r.err.trim().split("\n")).toHaveLength(1);
+  }
+});
+
+test("a symlinked skill is checked under the link name; trailing slash is harmless", () => {
+  const { dir, root } = make();
+  const link = join(root, "skills", "linked");
+  symlinkSync(dir, link);
+  expect(find(checkSkill(link, opts()), "name")?.detail).toContain("linked");
+  expect(find(checkSkill(`${dir}/`, opts()), "name")?.status).toBe("pass");
+});
+
+test("links are percent-decoded; code spans and fences are ignored", () => {
+  const { dir } = make({
+    body: "[sp](references/my%20file.md) `[x](nope.md)`\n\n```md\n[y](nope2.md)\n```\n",
+    files: { "references/my file.md": "# m\n" },
+  });
+  expect(all(checkSkill(dir, opts()), "link").filter((c) => c.status === "fail")).toEqual([]);
+});
+
+test("registry counts only the first table cell, backticked or plain", () => {
+  const { dir, root } = make({ repo: true });
+  writeFileSync(join(root, "SKILLS.md"), "| other | mentions `demo` here |\n");
+  writeFileSync(join(root, "README.md"), "| demo | plain |\n");
+  const r = checkSkill(dir, opts({ repo: root }));
+  expect(find(r, "registry:SKILLS.md")?.status).toBe("fail");
+  expect(find(r, "registry:README.md")?.status).toBe("pass");
+});
+
+test("a repo with no SKILLS.md or README.md skips the registry with a reason", () => {
+  const { dir } = make();
+  const empty = mkdtempSync(join(tmpdir(), "skill-check-empty-"));
+  roots.push(empty);
+  const c = find(checkSkill(dir, opts({ repo: empty })), "registry");
+  expect(c?.status).toBe("skipped");
+  expect(c?.detail).toContain("SKILLS.md");
+});
+
+test("diagram heuristic runs for other kinds; defense heuristic does not", () => {
+  const { dir } = make({ body: BRANCHY });
+  const r = checkSkill(dir, opts());
+  expect(find(r, "heuristic:diagram")?.status).toBe("warn");
+  expect(find(r, "heuristic:defense")).toBeUndefined();
+});
+
+test("kind is inferred from numbered steps, MUST/NEVER and a working-with- name", () => {
+  const steps = make({ body: `1. if a\n2. otherwise b\n3. repeat until done\n` });
+  const sr = checkSkill(steps.dir, opts());
+  expect(find(sr, "heuristic:defense")?.status).toBe("warn");
+  const must = make({ body: `You MUST obey. If a, then b. Otherwise c. Repeat.\n` });
+  expect(find(checkSkill(must.dir, opts()), "heuristic:defense")?.status).toBe("warn");
+  const wrapper = make({ name: "working-with-x", body: `1. if a\n2. otherwise b\n3. repeat until done\n` });
+  expect(all(checkSkill(wrapper.dir, opts()), "heuristic")).toEqual([]);
+});
+
+test("a description over 1000 characters fails", () => {
+  const { dir } = make({ fm: `name: demo\ndescription: Use when testing. ${"word ".repeat(210)}` });
+  expect(find(checkSkill(dir, opts()), "description")?.status).toBe("fail");
+});
+
+function withEmptyPath<T>(fn: () => T): T {
+  const empty = mkdtempSync(join(tmpdir(), "skill-check-path-"));
+  roots.push(empty);
+  const saved = process.env.PATH;
+  process.env.PATH = empty;
+  try {
+    return fn();
+  } finally {
+    process.env.PATH = saved;
+  }
+}
+
+test("with no tools on PATH every checker is skipped and listed in gaps", () => {
+  const { dir } = make({ body: fence("python", "x = 1") + fence("typescript", "const a = 1;") + fence("bash", "echo hi") });
+  const r = withEmptyPath(() => checkSkill(dir, { blocks: true }));
+  for (const id of ["block:python", "block:typescript", "block:bash"]) expect(find(r, id)?.status).toBe("skipped");
+  expect(find(r, "description")?.status).toBe("skipped");
+  expect(r.checks.some((c) => c.status === "pass" && c.id.startsWith("block"))).toBe(false);
+  expect(r.checks.some((c) => c.status === "fail")).toBe(false);
+  expect(r.gaps.length).toBeGreaterThanOrEqual(4);
+});
+
+test("overlap fires at exactly Jaccard 0.4 and not below", () => {
+  const sibling = (root: string, desc: string) => {
+    mkdirSync(join(root, "skills", "twin"), { recursive: true });
+    writeFileSync(join(root, "skills", "twin", "SKILL.md"), `---\nname: twin\ndescription: ${desc}\n---\n`);
+  };
+  const at = make({ repo: true, fm: "name: demo\ndescription: alpha bravo charlie delta" });
+  sibling(at.root, "alpha bravo echo");
+  expect(find(checkSkill(at.dir, opts({ repo: at.root })), "overlap")?.status).toBe("warn");
+  const below = make({ repo: true, fm: "name: demo\ndescription: alpha bravo charlie delta" });
+  sibling(below.root, "alpha bravo echo foxtrot");
+  expect(find(checkSkill(below.dir, opts({ repo: below.root })), "overlap")?.status).toBe("pass");
+});
+
+test("a fence nested in a longer outer fence is not extracted; later blocks keep their line", () => {
+  const body = "````markdown\n```python\nx: int = 'a'\n```\n````\n\n" + fence("python", "y = 1");
+  const { dir } = make({ body });
+  const seen: string[][] = [];
+  const spy: BlockChecker = (_l, codes) => {
+    seen.push(codes);
+    return codes.map(() => ({ status: "ok", detail: "" }));
+  };
+  checkSkill(dir, { blocks: true, runBlocks: spy });
+  expect(seen).toEqual([["y = 1\n"]]);
+});
+
+test("a checker returning the wrong number of results is skipped, not a crash", () => {
+  const { dir } = make({ body: fence("python", "x = 1") });
+  const r = checkSkill(dir, { blocks: true, runBlocks: () => [] });
+  expect(find(r, "block:python")?.status).toBe("skipped");
 });
