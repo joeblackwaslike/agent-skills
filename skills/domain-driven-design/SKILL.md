@@ -44,7 +44,7 @@ integrations, not the business logic.
 | Multiple teams, multiple meanings of the same word ("order" means different things to sales vs. fulfillment) | Strategic DDD — draw bounded contexts first |
 | Reads and writes have wildly different shapes/scale | Add CQRS |
 | You need a full audit trail, temporal queries, or "why is it in this state?" | Consider event sourcing |
-| You reached for CQRS/ES because they sound rigorous | Stop — read `references/anti-patterns.md` |
+| You reached for CQRS/ES because they sound rigorous | Stop — read [architectures anti-patterns](../architectures/references/anti-patterns.md) |
 
 If the answer is "plain CRUD," say so and stop. Misapplied DDD is worse than no DDD.
 
@@ -61,7 +61,7 @@ Pick the reference that matches the task. Read the most specific one first.
 | Layering the codebase — hexagonal / ports & adapters / clean / onion, where each block lives, transaction boundaries | [application-architecture.md](../architectures/references/application/application-architecture.md) |
 | A complete, copy-paste-ready bounded context in TypeScript | `references/typescript-examples.md` |
 | A complete, copy-paste-ready bounded context in Python | `references/python-examples.md` |
-| Recognizing and fixing DDD gone wrong — anemic models, ORM leakage, god aggregates, CQRS/ES cargo-cult | `references/anti-patterns.md` |
+| Recognizing and fixing DDD gone wrong — anemic models, ORM leakage, god aggregates, primitive obsession | `references/anti-patterns.md` |
 
 ## The universal mental model
 

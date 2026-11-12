@@ -2,7 +2,8 @@
 
 The same **Ordering** bounded context as `typescript-examples.md`, in idiomatic modern
 Python (3.11+): Pydantic v2 for value objects, plain classes for the aggregate, `Protocol`
-for ports, `async` application services, and a note on async SQLAlchemy mapping. Framework-agnostic so the patterns stay visible.
+for ports, `async` application services, and a note on async
+SQLAlchemy mapping. Framework-agnostic so the patterns stay visible.
 
 Organized by module, but reads top-to-bottom as one coherent example. It's
 `py_compile`-clean and type-annotated.
@@ -317,11 +318,11 @@ from .infrastructure.in_memory_order_repository import InMemoryOrderRepository
 
 async def demo() -> None:
     orders = InMemoryOrderRepository()
-    published: list[OrderEvent] = []
 
     class _Publisher:
         async def publish_all(self, events: Sequence[OrderEvent]) -> None:
-            published.extend(events)
+            for e in events:
+                print("event:", type(e).__name__)
 
     publisher = _Publisher()
 

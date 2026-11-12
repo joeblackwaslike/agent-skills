@@ -2,9 +2,8 @@
 
 One complete **Ordering** bounded context in plain TypeScript, assembled end to end:
 value objects → aggregate → domain events → repository port → application service.
-It's framework-agnostic (no Nest, no
-Express) so the patterns are visible; a note at the end shows where Zod and a web framework
-plug in.
+It's framework-agnostic (no Nest, no Express) so the patterns are visible; a note at the end
+shows where Zod and a web framework plug in.
 
 The code is organized as it would be on disk (see [application-architecture.md](../../architectures/references/application/application-architecture.md)), but reads
 top-to-bottom as one coherent example. Everything here is self-consistent and type-checks
@@ -284,10 +283,9 @@ export class InMemoryOrderRepository implements OrderRepository {
 ```ts
 async function demo(): Promise<void> {
   const orders = new InMemoryOrderRepository();
-  const published: DomainEvent[] = [];
   const publisher: EventPublisher = {
     async publishAll(events) {
-      published.push(...events);
+      for (const e of events) console.log("event:", e.constructor.name);
     },
   };
 

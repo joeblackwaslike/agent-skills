@@ -187,55 +187,6 @@ CQRS composes naturally with event sourcing — events are both your write-side 
 truth and the feed for projections — but neither requires the other. See
 [event-sourcing.md](../event-driven/event-sourcing.md).
 
-## Worked example: the read side in TypeScript
-
-> Uses the Orders & Fulfillment types from [typescript-examples.md](../../../domain-driven-design/references/typescript-examples.md).
-
-
-```ts
-export interface OrderSummaryView {
-  orderId: string;
-  status: OrderStatus;
-  totalMinor: number;
-  currency: string;
-  placedAt: string;
-}
-
-export interface OrderSummaryStore {
-  upsert(view: OrderSummaryView): Promise<void>;
-  setStatus(orderId: string, status: OrderStatus): Promise<void>;
-  findById(orderId: string): Promise<OrderSummaryView | null>;
-}
-
-export class OrderSummaryProjection {
-  constructor(private readonly views: OrderSummaryStore) {}
-
-  async on(event: DomainEvent): Promise<void> {
-    if (event instanceof OrderPlaced) {
-      await this.views.upsert({
-        orderId: event.orderId.value,
-        status: "placed",
-        totalMinor: event.total.amountMinor,
-        currency: event.total.currency,
-        placedAt: event.occurredAt,
-      });
-    } else if (event instanceof OrderPaid) {
-      await this.views.setStatus(event.orderId.value, "paid");
-    } else if (event instanceof OrderShipped) {
-      await this.views.setStatus(event.orderId.value, "shipped");
-    }
-  }
-}
-
-// Query handler — reads the denormalized view directly, never an aggregate.
-export class GetOrderSummaryHandler {
-  constructor(private readonly views: OrderSummaryStore) {}
-  get(orderId: string): Promise<OrderSummaryView | null> {
-    return this.views.findById(orderId);
-  }
-}
-```
-
 ## Worked example: the read side in Python
 
 > Uses the Orders & Fulfillment types from [python-examples.md](../../../domain-driven-design/references/python-examples.md).
