@@ -246,11 +246,3 @@ inside later.
 
 The contract suite is the part teams skip. Without it, the in-memory fake and the Postgres
 adapter drift apart, and use-case tests pass against behavior production does not have.
-
-## Layout checklist
-
-- Domain and use-case code imports only its own types and ports.
-- Every external dependency is behind an outbound port.
-- Validation happens at the inbound adapter, and invariants are enforced by the domain.
-- Infrastructure errors are translated to application errors at the adapter, not leaked.
-- The composition root is one file you can read top to bottom.

@@ -1,7 +1,7 @@
 ---
 name: architectures
 description: >-
-  Use when choosing or structuring how a system is built: hexagonal, clean or onion layering, CQRS, event sourcing, event-driven design, sagas, or whether to split a monolith into services. Not for aggregates and bounded contexts (use domain-driven-design), named code-level patterns (design-patterns), or whether to abstract at all (engineering-principles).
+  Use when choosing or structuring how a system is built: hexagonal, clean or onion layering, CQRS, event sourcing, or whether to split a monolith into microservices. Not for aggregates and bounded contexts (use domain-driven-design), named code-level patterns (design-patterns), or whether to abstract at all (engineering-principles).
 metadata:
   last_updated: "2026-11-11"
 ---
@@ -37,7 +37,7 @@ Open only the file the task needs. [catalog.md](references/catalog.md) lists eve
 | Storing events as the source of truth, rebuilding state from a stream, snapshots, upcasting | [event-sourcing.md](references/event-driven/event-sourcing.md) |
 | Recognizing and fixing CQRS and event-sourcing cargo-culting, premature service splits, read concerns in the write model | [anti-patterns.md](references/anti-patterns.md) |
 
-Event-driven design, sagas, microservices, service communication and distributed data are listed in the catalog as planned. Until those references land, use the catalog row and the related skills below.
+Event-driven design, sagas, microservices, service communication and distributed data have no reference file yet. For those, answer from the signal table above and the bounded contexts from `domain-driven-design`, and say plainly that deeper guidance is not written yet.
 
 ## Related skills
 

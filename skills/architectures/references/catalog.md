@@ -1,6 +1,6 @@
 # Architecture catalog
 
-Every architecture and style with a one-line summary and where it is covered. "Link" rows have a full reference. "Planned" rows are named so you recognize them, with the skill or file that will cover them. "Catalog-only" rows say what you probably want instead. Default to a layered monolith until it hurts; see [SKILL.md](../SKILL.md).
+Every architecture and style with a one-line summary and where it is covered. "Link" rows have a full reference. "Not yet written" rows are named so you recognize them; no reference file exists, so answer from the signal table in SKILL.md. "Catalog-only" rows say what you probably want instead. Default to a layered monolith until it hurts; see [SKILL.md](../SKILL.md).
 
 ## Application architecture
 
@@ -18,18 +18,18 @@ Every architecture and style with a one-line summary and where it is covered. "L
 | Architecture | What it is | Link |
 | --- | --- | --- |
 | Event sourcing | Store the sequence of events as the source of truth, derive state by replay | [event-sourcing.md](event-driven/event-sourcing.md) |
-| Event-driven architecture | Parts communicate by publishing and reacting to events | planned |
-| Saga | A long-running business transaction as local steps with compensations | planned |
+| Event-driven architecture | Parts communicate by publishing and reacting to events | not yet written |
+| Saga | A long-running business transaction as local steps with compensations | not yet written |
 | Outbox | Write state and event in one transaction, publish afterward | `design-patterns` [outbox.md](../../design-patterns/references/resilience/outbox.md) |
 
 ## Distributed architecture
 
 | Architecture | What it is | Link |
 | --- | --- | --- |
-| Modular monolith | One deployable, strict internal module boundaries | planned |
-| Microservices | Independently deployable services that own their data | planned |
-| Service communication | Synchronous calls versus messaging, contracts, versioning | planned |
-| Distributed data and consistency | Eventual consistency, no distributed transactions | planned |
+| Modular monolith | One deployable, strict internal module boundaries | not yet written |
+| Microservices | Independently deployable services that own their data | not yet written |
+| Service communication | Synchronous calls versus messaging, contracts, versioning | not yet written |
+| Distributed data and consistency | Eventual consistency, no distributed transactions | not yet written |
 | Serverless | Functions and managed services instead of long-running servers | catalog-only: you probably want the platform's own docs, such as `working-with-vercel` |
 | Space-based | In-memory data grids to scale stateful workloads | catalog-only: you probably want a cache plus read replicas |
 | Two-phase commit | Atomic commit across several databases | catalog-only: you probably want a saga or the outbox pattern |

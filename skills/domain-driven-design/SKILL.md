@@ -34,7 +34,8 @@ integrations, not the business logic.
 | "It's just forms over data" — store it, show it, edit it | Plain CRUD / active record |
 | One team, one database, simple lifecycle | Tactical DDD without bounded-context ceremony |
 | Multiple teams, multiple meanings of the same word ("order" means different things to sales vs. fulfillment) | Strategic DDD — draw bounded contexts first |
-| Reads and writes have wildly different shapes/scale, or you need a full audit trail | See the `architectures` skill (CQRS, event sourcing) |
+| Reads and writes have wildly different shapes or scale | CQRS (see the `architectures` skill) |
+| You need a full audit trail or to rebuild state from history | Event sourcing (see the `architectures` skill) |
 
 If the answer is "plain CRUD," say so and stop. Misapplied DDD is worse than no DDD.
 

@@ -8,7 +8,8 @@ description: >-
   abstract this". Not for checking a finished diff before a PR (use
   reviewing-code). Not for deep SOLID, TDD or DDD (use solid-principles,
   test-driven-development, domain-driven-design). Not for choosing or
-  implementing a named pattern (use design-patterns).
+  implementing a named pattern (use design-patterns). Not for system-level
+  layering, CQRS or service splits (use architectures).
 metadata:
   last_updated: "2026-11-11"
 ---
