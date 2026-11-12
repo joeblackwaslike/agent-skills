@@ -246,7 +246,7 @@ class OrderShipped:
 
 > Naming matters: events are **facts that already happened**, so past tense. A present-tense
 > name (`ShipOrder`) is a *command* — an instruction that can be rejected — which is a
-> different thing (see `cqrs.md`). Mixing the two up muddles the model.
+> different thing (see [cqrs.md](../../architectures/references/application/cqrs.md)). Mixing the two up muddles the model.
 
 ## Domain Services
 
@@ -326,7 +326,7 @@ class OrderRepository(Protocol):
 ```
 
 The Postgres/Mongo/in-memory implementations of these interfaces belong in the
-infrastructure layer and are wired in at the edge — see `application-architecture.md`.
+infrastructure layer and are wired in at the edge — see [application-architecture.md](../../architectures/references/application/application-architecture.md).
 
 ## Putting the blocks together
 

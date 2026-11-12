@@ -170,7 +170,7 @@ between them with a dedicated mapper (or your ORM's classical-mapping facility).
 
 Resist the lure of letting an ORM entity *be* your domain aggregate (a base class, public
 columns-as-fields, lazy-loaded relations). That welds persistence to the domain and is the
-fast track to an anemic model — see `anti-patterns.md`. The small cost of a mapper buys you
+fast track to an anemic model — see [anti-patterns.md](../../../domain-driven-design/references/anti-patterns.md). The small cost of a mapper buys you
 a domain that doesn't know Postgres exists.
 
 > In Python, async SQLAlchemy supports "imperative (classical) mapping" — you keep plain
@@ -203,5 +203,5 @@ The dependency rule shows up as an import rule: `domain/` imports nothing from
 `application/` or `infrastructure/`; `application/` imports only `domain/`; `infrastructure/`
 may import both. A quick lint rule or import-linter check enforces it mechanically.
 
-See the fully assembled version of this layout in `typescript-examples.md` and
-`python-examples.md`.
+See the fully assembled version of this layout in [typescript-examples.md](../../../domain-driven-design/references/typescript-examples.md) and
+[python-examples.md](../../../domain-driven-design/references/python-examples.md).

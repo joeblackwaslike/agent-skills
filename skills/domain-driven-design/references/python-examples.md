@@ -2,8 +2,7 @@
 
 The same **Ordering** bounded context as `typescript-examples.md`, in idiomatic modern
 Python (3.11+): Pydantic v2 for value objects, plain classes for the aggregate, `Protocol`
-for ports, `async` application services, an event-sourced variant, and a note on async
-SQLAlchemy mapping. Framework-agnostic so the patterns stay visible.
+for ports, `async` application services, and a note on async SQLAlchemy mapping. Framework-agnostic so the patterns stay visible.
 
 Organized by module, but reads top-to-bottom as one coherent example. It's
 `py_compile`-clean and type-annotated.
@@ -304,61 +303,6 @@ class InMemoryOrderRepository:
         self._store[order.id] = order
 ```
 
-## `infrastructure/order_summary_projection.py` — the read side (CQRS)
-
-```python
-from __future__ import annotations
-from dataclasses import dataclass
-from typing import Protocol
-
-from ..domain.events import OrderEvent, OrderPaid, OrderPlaced, OrderShipped
-
-
-@dataclass
-class OrderSummaryView:
-    order_id: str
-    status: str
-    total_minor: int
-    currency: str
-    placed_at: str
-
-
-class OrderSummaryStore(Protocol):
-    async def upsert(self, view: OrderSummaryView) -> None: ...
-    async def set_status(self, order_id: str, status: str) -> None: ...
-    async def find_by_id(self, order_id: str) -> OrderSummaryView | None: ...
-
-
-class OrderSummaryProjection:
-    def __init__(self, views: OrderSummaryStore) -> None:
-        self._views = views
-
-    async def on(self, event: OrderEvent) -> None:
-        match event:
-            case OrderPlaced():
-                await self._views.upsert(OrderSummaryView(
-                    order_id=event.order_id,
-                    status="placed",
-                    total_minor=event.total_minor,
-                    currency=event.currency,
-                    placed_at=event.occurred_at,
-                ))
-            case OrderPaid():
-                await self._views.set_status(event.order_id, "paid")
-            case OrderShipped():
-                await self._views.set_status(event.order_id, "shipped")
-
-
-class GetOrderSummaryHandler:
-    """Reads the denormalized view directly — never loads an aggregate."""
-
-    def __init__(self, views: OrderSummaryStore) -> None:
-        self._views = views
-
-    async def get(self, order_id: str) -> OrderSummaryView | None:
-        return await self._views.find_by_id(order_id)
-```
-
 ## Wiring it together
 
 ```python
@@ -369,17 +313,15 @@ from .application.place_order import PlaceOrder, PlaceOrderHandler, PlaceOrderIt
 from .application.ship_order import ShipOrder, ShipOrderHandler
 from .domain.events import OrderEvent
 from .infrastructure.in_memory_order_repository import InMemoryOrderRepository
-from .infrastructure.order_summary_projection import OrderSummaryProjection
 
 
-async def demo(store) -> None:  # `store` implements OrderSummaryStore
+async def demo() -> None:
     orders = InMemoryOrderRepository()
-    projection = OrderSummaryProjection(store)
+    published: list[OrderEvent] = []
 
     class _Publisher:
         async def publish_all(self, events: Sequence[OrderEvent]) -> None:
-            for e in events:
-                await projection.on(e)
+            published.extend(events)
 
     publisher = _Publisher()
 
@@ -398,46 +340,8 @@ async def demo(store) -> None:  # `store` implements OrderSummaryStore
 
 
 if __name__ == "__main__":
-    ...  # asyncio.run(demo(SomeStore()))
+    asyncio.run(demo())
 ```
-
-## Event-sourced variant
-
-Same aggregate, store events instead of state. The application handlers above are
-**unchanged** — persistence stays behind the `OrderRepository` port. The aggregate gains a
-`version`, a `from_history` classmethod, and `_apply` methods that fold events into state
-with no validation (reused on replay).
-
-```python
-from typing import Protocol
-from .domain.events import OrderEvent
-from .domain.order import Order
-
-
-class EventStore(Protocol):
-    async def append(self, stream_id: str, events: list[OrderEvent], expected_version: int) -> None: ...
-    async def read(self, stream_id: str) -> list[OrderEvent]: ...
-
-
-class EventSourcedOrderRepository:
-    """Adapts the event store to the same OrderRepository port."""
-
-    def __init__(self, store: EventStore) -> None:
-        self._store = store
-
-    async def find_by_id(self, order_id: str) -> Order | None:
-        events = await self._store.read(order_id)
-        return Order.from_history(events) if events else None  # type: ignore[attr-defined]
-
-    async def save(self, order: Order) -> None:
-        new_events = order.pull_events()
-        if not new_events:
-            return
-        version = getattr(order, "version", len(new_events))
-        await self._store.append(order.id, new_events, version - len(new_events))
-```
-
-See `event-sourcing.md` for the full decide/apply `Order` shape, snapshots, and upcasting.
 
 ## async SQLAlchemy mapping note
 
@@ -469,6 +373,6 @@ class SqlAlchemyOrderRepository:  # implements OrderRepository (structurally)
 ```
 
 The transaction (commit/rollback) belongs to the application layer's unit of work, not the
-repository — see `application-architecture.md`. Validation belongs at the boundary
+repository — see [application-architecture.md](../../architectures/references/application/application-architecture.md). Validation belongs at the boundary
 (FastAPI + Pydantic request models parse untrusted input into a `PlaceOrder` command before
 it reaches the handler); the domain trusts the command it receives.

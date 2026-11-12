@@ -56,9 +56,9 @@ Pick the reference that matches the task. Read the most specific one first.
 | --- | --- |
 | Carving the problem into bounded contexts, ubiquitous language, subdomains, context mapping, integrating with other teams/systems | `references/strategic-design.md` |
 | Writing the building blocks — entities, value objects, aggregates, domain events, domain services, factories, repositories | `references/tactical-patterns.md` |
-| Splitting reads from writes, command handlers, read models, projections | `references/cqrs.md` |
-| Storing events as the source of truth, rebuilding state from a stream, snapshots, projections | `references/event-sourcing.md` |
-| Layering the codebase — hexagonal / ports & adapters / clean / onion, where each block lives, transaction boundaries | `references/application-architecture.md` |
+| Splitting reads from writes, command handlers, read models, projections | [cqrs.md](../architectures/references/application/cqrs.md) |
+| Storing events as the source of truth, rebuilding state from a stream, snapshots, projections | [event-sourcing.md](../architectures/references/event-driven/event-sourcing.md) |
+| Layering the codebase — hexagonal / ports & adapters / clean / onion, where each block lives, transaction boundaries | [application-architecture.md](../architectures/references/application/application-architecture.md) |
 | A complete, copy-paste-ready bounded context in TypeScript | `references/typescript-examples.md` |
 | A complete, copy-paste-ready bounded context in Python | `references/python-examples.md` |
 | Recognizing and fixing DDD gone wrong — anemic models, ORM leakage, god aggregates, CQRS/ES cargo-cult | `references/anti-patterns.md` |
@@ -108,7 +108,7 @@ HTTP / CLI / queue            ← adapter (infrastructure)
 
 Reads skip the aggregate entirely (that's CQRS): a query goes straight to a **read model**
 shaped for the screen that needs it. Writes go through the domain; reads come from
-projections built off the events. See `references/cqrs.md`.
+projections built off the events. See [cqrs.md](../architectures/references/application/cqrs.md).
 
 ## Red flags — stop and reconsider
 
