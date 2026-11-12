@@ -29,16 +29,16 @@ A reference catalog is authored material, one file per topic, picked from a tabl
 
 > With fewer than three, write the plain version and say so in one line.
 
-It separates patterns triggered by a count (variant selection) from those triggered by a failure mode (Retry, Outbox) or a coupling boundary (Observer), and says "If you cannot point at that signal, skip the pattern." That is the pattern to look for. The catalog argues against its own contents until the situation earns them. Its table also opens with the reader's situation ("Tempted by a global instance") rather than the pattern name.
+It separates entries triggered by a count from those triggered by a failure mode or a coupling boundary, and says "If you cannot point at that signal, skip the pattern." That is the pattern to look for. The catalog argues against its own contents until the situation earns them. Most rows in its table start with the reader's situation (for example "Tempted by a global instance") and not the pattern name.
 
 The weakness to look for is the description. It is a colon-led list of thirteen pattern names. Principle 4 calls a colon-led list inside a description the same defect as an outline. The counter-argument is that the names are exactly what a user types, so they are trigger vocabulary and not contents. A reviewer should decide which side it falls on by testing whether the list adds a trigger the first clause lacks, and say the reasoning in the finding.
 
 ## Stronger wording
 
 ```text
-Wrong: Use the Strategy pattern whenever behavior varies.
+Wrong: Use a lookup helper whenever behavior varies.
 
-Right: Use a Strategy when three or more callers pick an algorithm at runtime.
+Right: Use a lookup helper when three or more callers pick a variant at runtime.
   With fewer, pass a function. If you cannot name the third caller, skip it.
 ```
 

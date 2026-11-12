@@ -1,6 +1,6 @@
 # Skill Playbooks
 
-The ten principles in [skill-principles](../../../skill-principles/references/principles.md) apply to every skill, with the exceptions in its "Which principles apply" paragraph. Some kinds of skill also have failure modes of their own and deserve a dedicated pass. Each playbook says which principles it leans on, which it does not, what to check, and what the files cannot show you. Open only the playbook for the kind you named in step 6 of the runbook.
+The ten principles in [skill-principles](../../../skill-principles/references/principles.md) apply to every skill, with the exceptions in its "Which principles apply" paragraph. Some kinds of skill also have failure modes of their own and deserve a dedicated pass. Each playbook says which principles it leans on, which it does not, what to check, and what the files cannot show you. Open the playbook for each kind you named in step 6 of the runbook (two for a hybrid, see below). A skill that fits no row gets the principles alone.
 
 | Kind of skill | Playbook | Use when |
 | --- | --- | --- |

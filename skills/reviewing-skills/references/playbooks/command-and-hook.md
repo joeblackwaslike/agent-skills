@@ -1,6 +1,6 @@
 # Commands and hooks
 
-*Leans on principles 3, 4 (for a command's description), 10 and 1. Does not apply: 2, 5 and 8 unless the command loads a skill with a discipline in it. Principle 9 applies if the command dispatches agents.*
+*Leans on principles 3, 4 (a command's description) and 10. Principle 5 applies when the command loads references. Principles 1, 2 and 8 apply only if it loads a discipline or workflow skill; 9 if it dispatches agents. Not applicable: 6.*
 
 A command is a saved prompt a user or agent invokes by name. A hook is a script the harness runs on an event, with no agent deciding. Both ship in the plugin beside the skills and act on the user's machine. They are small, so defects hide in what they permit and in what they do when something goes wrong. Review each as a thin entry point. The principles are in [principles.md](../../../skill-principles/references/principles.md). For the code-side checks on a hook script, see [hooks-and-commands.md](../../../reviewing-code/references/playbooks/hooks-and-commands.md).
 
@@ -27,7 +27,7 @@ A command is a saved prompt a user or agent invokes by name. A hook is a script 
 
 ## Example from this repo
 
-`commands/self-review.md` is the pattern for a command. Its body is two short paragraphs that load two skills and link the runbook:
+`commands/self-review.md` is the pattern for a command. Its body is one paragraph that loads two skills and links the runbook, a three-link bullet list of the standard files, and a base-branch line:
 
 > Load the `reviewing-code` skill and the `engineering-principles` skill, then follow the runbook end to end.
 
@@ -39,10 +39,9 @@ For a hook, `.claude-plugin/hooks/auto-update.sh` has a documented opt-out (`AGE
 
 ```text
 Wrong: allowed-tools: Bash, Write, Edit, Read
-  Run the review and fix whatever you find.
+  (a command that only reads and reports)
 
-Right: allowed-tools: Agent, Read, Grep, Glob, Skill, Bash(git:*), Edit
-  Run the review. Edit files only in the fix step.
+Right: allowed-tools: Read, Grep, Glob, Skill, Bash(git diff:*), Bash(git log:*)
 ```
 
-The right version grants what the steps use and says when the write tools may be used, so a reader can tell a deliberate grant from a default.
+The right version grants only what a read-and-report command uses and narrows `Bash` to the git commands it runs, so a reader can tell a deliberate grant from a default.

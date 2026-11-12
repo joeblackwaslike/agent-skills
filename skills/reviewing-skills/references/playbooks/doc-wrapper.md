@@ -1,6 +1,6 @@
 # Doc-wrapper skills
 
-*Leans on principles 3, 4, 5, 7 and 10. Does not apply: 1, 2, 8 and 9. A doc-wrapper is not flagged for a missing rationalization table, and it has no pipeline to specify.*
+*Leans on principles 3, 4, 5, 7 and 10. Does not apply: 1, 2, 6, 8 and 9. A doc-wrapper is not flagged for a missing rationalization table, and it has no pipeline to specify.*
 
 A doc-wrapper (`working-with-X`, `developing-X`) puts a tool's official documentation where an agent can load it on demand. The agent trusts what it reads. The main risk is that the content is stale, and a stale copy looks identical to a fresh one. The principles are in [principles.md](../../../skill-principles/references/principles.md).
 
@@ -29,7 +29,7 @@ A doc-wrapper (`working-with-X`, `developing-X`) puts a tool's official document
 
 > CLI pages are version-EXACT. ... Website docs are a SNAPSHOT, not a version pin.
 
-That is the pattern to look for. It tells the agent how far to trust each directory and how to check ("verify version-specific behavior against the live binary"). Every file carries `source`, `fetched_at` and `sha256`, so freshness can be audited.
+That is the pattern to look for. It tells the agent how far to trust each directory and how to check ("verify version-specific behavior against the live binary"). Every fetched file carries `source`, `fetched_at` and `sha256`, so freshness can be audited. Authored files such as `references/beads-integration.md` are exempt.
 
 The weakness is the description, which lists the content. After the trigger it says the skill "Covers the full `dolt` CLI (init, sql, sql-server, branch, merge, diff, ...)" and names system tables and hosted products. That is principle 4's inventory defect. It also hides the one exclusion that matters, `beads-operations`, at the very end of a long paragraph.
 

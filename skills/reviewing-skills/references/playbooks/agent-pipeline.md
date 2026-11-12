@@ -13,14 +13,9 @@ What follows is what a skill author gets wrong that those do not catch.
 
 ## What to check
 
-- **Each role is named with a model.** An agent will inherit the session's model when the skill says nothing, so a fleet launched from an expensive session runs expensive. Every dispatch line names a role and a model, or says why it inherits.
-- **The verdict vocabulary is fixed.** The parent branches on the child's result. If a template says "report your findings" the parent parses free text. Look for a closed set (READY or NOT READY; confirmed, claim holds, could not check) used identically in the template, the parent's branch and the report.
-- **Handoff files are named.** Who writes what, to which path, in which format, and who reads it next. A handoff that says "pass along the findings" depends on whatever the parent remembers.
-- **Re-review is scoped.** A second pass that re-reads everything finds new nits forever. The skill says what is re-checked (only the fixed items), how many rounds are allowed, and what ends the loop, with the report listing what stayed open.
-- **A cap and a drop order exist.** Number of parallel children, number of rounds, and what is dropped first when the cap bites. Without them, a large input fans out unboundedly.
-- **Children do not dispatch.** Workers do not spawn further agents, and the parent owns collection. A child told to "delegate if needed" orphans results when its turn ends.
+The pipeline reviewer template covers the basics (a named model per role, named handoff files, a fixed verdict vocabulary, round caps, scoped re-review, workers that do not dispatch, anchoring); read [pipeline.md](../reviewer-templates/pipeline.md) for them. This playbook adds only what it does not:
+
 - **Templates are self-contained.** The template is the child's whole instruction. Check that every placeholder is defined and filled by the parent, and that nothing in it says "as discussed" or refers to a file the child is not given.
-- **Anchoring is prevented.** A reviewer handed the author's intent, doubts or favored parts agrees with the author. The skill says what to withhold.
 - **Read-only is enforced where it can be.** If a role should not edit files, the strongest control is the agent type's tool list. A prompt rule alone is weak, and the skill should say how the parent checks afterwards (a `git status` after the child returns).
 - **Fallbacks are stated.** What happens on a platform with no subagent tool, or when a dispatch fails? An unstated fallback becomes improvisation.
 - **Disagreement has a rule.** Two children contradict each other. The skill says who resolves it, and from what evidence.
@@ -38,7 +33,7 @@ What follows is what a skill author gets wrong that those do not catch.
 
 `skills/reviewing-code/references/self-review.md` specifies its loop in the way principle 9 asks for:
 
-> Stop after 2 re-reviews even if findings remain. List remaining minors and nits under "Known follow-ups" in the report.
+> Stop after 2 re-reviews even if findings remain. List remaining minors and nits under "Known follow-ups" in the report. ...
 
 It names a model for the reviewers (`model: "sonnet"`), a cap of 6 per round, a report script that refuses inconsistent inputs, and a rule that disagreement between reviewers is settled from the code and cross-checked with a different model before it is ever sent to the user. That is the pattern to look for.
 
