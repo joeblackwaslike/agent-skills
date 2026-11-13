@@ -36,7 +36,7 @@ The name says what the fixture is, not how it is built.
 | `mock1` | `email_sender_mock` |
 | `setup_db` | `empty_order_repository` |
 
-Name stubs for the thing they stand for and mocks with a `_mock` suffix. A reader then knows from the signature which objects the test asserts on and which only supply data. This matters more when a fixture lives outside the test: a good name is the only context the reader gets.
+House convention: name stubs for the thing they stand for and mocks with a `_mock` suffix. A reader then knows from the signature which objects the test asserts on and which only supply data. This matters more when a fixture lives outside the test: a good name is the only context the reader gets.
 
 ## Fixtures house mocks and stubs
 

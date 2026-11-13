@@ -59,9 +59,9 @@ Fowler's "Mocks Aren't Stubs" prefers state verification where it is practical, 
 
 ## Never nest separately created mocks
 
-Do not assign one independently created mock as an attribute of another. Each mock records only its own calls, so the parent sees nothing that happened on the nested child. You lose the ability to check ordering across them, and "nothing else was called" holds for the parent while the child is unchecked.
+Do not assign one independently created mock as an attribute of another. This is house style. In some libraries a parent does not record a child's calls, so ordering and "nothing else was called" checks can silently miss them.
 
-Build the whole collaborator once, from one description of the real object, and let that one object own its attributes. If the code reaches through two levels, treat that as a signal that the seam is too deep and move it closer (see `patches.md`).
+Build the whole collaborator once, from one description of the real object, and let that one object own its attributes. If the code reaches through two hops, treat that as a signal that the seam is too deep and move it closer (see `patches.md`).
 
 ## Check doubles against the real thing
 
