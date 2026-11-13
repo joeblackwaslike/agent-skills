@@ -1,7 +1,7 @@
 ---
 name: testing-code
 description: >-
-  Use when writing tests for code ("write tests for X", "write a failing test first", "red green refactor this", flaky or slow tests): pick the kind, write the test body, build fixtures and doubles, run it, and diagnose flaky or slow suites. Not for reviewing a diff (use reviewing-code). Not for deciding what a good test is (use testing-principles; read it first for the standard).
+  Use when writing tests ("write tests for X", "add a test for this", "write a failing test first", "red green refactor this"), or when a test is flaky or the suite is slow. Not for reviewing a diff (use reviewing-code). Not for deciding what a good test is (use testing-principles; read it first for the standard).
 metadata:
   last_updated: "2026-11-13"
 ---
@@ -27,7 +27,7 @@ The steps for writing a test and getting it green. The standard it must meet liv
 |---|---|
 | Writing any test body | [test-body-template.md](references/test-body-template.md) |
 | Checking a test you wrote or found | [code-smells.md](references/code-smells.md) |
-| Writing a unit, integration, contract, functional, end-to-end, acceptance, behavioral or property-based test | [runbooks/unit.md](references/runbooks/unit.md), [runbooks/integration.md](references/runbooks/integration.md), [runbooks/contract.md](references/runbooks/contract.md), [runbooks/functional.md](references/runbooks/functional.md), [runbooks/end-to-end.md](references/runbooks/end-to-end.md), [runbooks/acceptance.md](references/runbooks/acceptance.md), [runbooks/behavioral.md](references/runbooks/behavioral.md), [runbooks/property-based.md](references/runbooks/property-based.md) |
+| Writing a test of one kind | The runbook for that kind, listed below |
 | Judging a suite with mutation testing | [runbooks/mutation-testing.md](references/runbooks/mutation-testing.md) |
 | Designing fixtures | [runbooks/fixtures.md](references/runbooks/fixtures.md) |
 | Patching safely, or refactoring code to take an injected dependency | [runbooks/patching.md](references/runbooks/patching.md) |
@@ -35,6 +35,17 @@ The steps for writing a test and getting it green. The standard it must meet liv
 | Chasing a flaky test | [flakes/triage.md](references/flakes/triage.md), then [flakes/tracking.md](references/flakes/tracking.md) and [flakes/quarantine.md](references/flakes/quarantine.md) |
 | Speeding up a suite | [slow-tests.md](references/slow-tests.md) |
 | Needing tool mechanics for a language | [languages/index.md](references/languages/index.md), then [languages/python.md](references/languages/python.md), [languages/typescript.md](references/languages/typescript.md), [languages/rust.md](references/languages/rust.md), [languages/shell.md](references/languages/shell.md) or [languages/sql.md](references/languages/sql.md) |
+
+Kind runbooks:
+
+- [unit](references/runbooks/unit.md)
+- [integration](references/runbooks/integration.md)
+- [contract](references/runbooks/contract.md)
+- [functional](references/runbooks/functional.md)
+- [end-to-end](references/runbooks/end-to-end.md)
+- [acceptance](references/runbooks/acceptance.md)
+- [behavioral](references/runbooks/behavioral.md)
+- [property-based](references/runbooks/property-based.md)
 
 ## Standard to load
 

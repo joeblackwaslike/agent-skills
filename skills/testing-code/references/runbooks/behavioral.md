@@ -38,7 +38,7 @@ Use another kind when it fits better. Pure logic with a plain input and output r
 - Each variation of the When that should not trigger the outcome.
 - The failure outcomes the rule names: the rejection, the message, nothing changed.
 - Boundaries in the Given that the rule cares about: the exact due date, the last allowed attempt.
-- Not here: scenarios for implementation steps. If the Then cannot be observed from outside, it is not behavior.
+- Scenarios for implementation steps stay out. A Then that cannot be observed from outside is not behavior.
 
 ## Doubles and patches
 

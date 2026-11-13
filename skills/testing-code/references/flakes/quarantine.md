@@ -55,7 +55,7 @@ A check in CI that lists markers past their dated deadline turns the cap into so
 A test leaves quarantine in one of two ways.
 
 1. **Fixed.** The cause is named and repaired, and the test has run clean over N consecutive runs while in the non-gating state. Choose N from the failure rate in the tracking record: a test that failed 1 in 20 needs enough clean runs that a still-broken test would very probably have failed; a rarer flake needs many more. The [triage](triage.md) verification step explains the reasoning. Then remove the marker, restore it to the gating run, and keep the record open as "fixed and watching" for a further stretch.
-2. **Deleted.** The behavior it checks is covered elsewhere, or no longer exists, or it cannot be made reliable at this kind of test. Delete it, with the reason in the commit and the record. A test you will never fix is not better quarantined than deleted.
+2. **Deleted.** The behavior it checks is covered elsewhere, or no longer exists, or it cannot be made reliable at this kind of test. Delete it, with the reason in the commit and the record.
 
 An unexpected pass is not an exit. A flaky test passes sometimes.
 

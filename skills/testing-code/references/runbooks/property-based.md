@@ -38,7 +38,7 @@ Use another kind when it fits better. An exact, arbitrary business answer, such 
 - The edges the generator must reach: empty, single element, maximum size, duplicates, boundary values, non-ASCII text.
 - The invalid-input property, where the rule says how bad input fails: the error and nothing else.
 - Each reduced failure from the past, kept as an example.
-- Not here: the examples that document intent. Keep those as unit tests next to the properties.
+- Examples that document intent stay out. Keep those as unit tests next to the properties.
 
 ## Doubles and patches
 

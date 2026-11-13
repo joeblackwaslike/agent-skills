@@ -9,7 +9,7 @@ How to make a suite faster without making it flaky. The reasons suites slow down
 3. Run it again. If two runs differ a lot, the noise is bigger than most fixes, so find that first (it is often a flake or a shared resource).
 4. Keep the numbers. They are the "before" for step 6.
 
-Do not start a change until you have this record. Guesses about slow tests are often wrong.
+Do not start a change until you have this record.
 
 ## 2. Find the outliers
 
@@ -32,7 +32,7 @@ Match the outlier to a row, apply the fix, and measure again before moving on.
    1. Put a double at the boundary and keep a contract test on it (P8, P11, P14).
    2. Use an in-memory or temp-dir stand-in for storage when the behavior under test is not the storage itself.
 3. **Sleeps and fixed waits.** Replace each with an event, a callback, or a poll with a timeout; or inject the clock. Never shorten a sleep to save time, because that turns a slow test into a flaky one (P14).
-4. **Serial work that can run in parallel.** Check the preconditions in [performance](../../testing-principles/references/performance.md#preconditions-for-parallelism) first: order independence, per-worker resources, unique names, no process-wide state. Then raise the worker count. A suite that fails after you do has an isolation problem to fix, not a parallelism problem; see [triage](flakes/triage.md).
+4. **Serial work that can run in parallel.** Check the preconditions in [performance](../../testing-principles/references/performance.md#preconditions-for-parallelism) first: order independence, per-worker resources, unique names, no process-wide state. Then raise the worker count. A suite that fails after you do has an isolation problem to fix; see [triage](flakes/triage.md).
 5. **Oversized setup.** A test builds a whole scenario to check one branch.
    1. Build only the state the test names.
    2. Move the check to the narrowest kind of test that still proves what you need (P5: the kind follows from what the check must prove). Several narrow tests are usually faster than one broad one.

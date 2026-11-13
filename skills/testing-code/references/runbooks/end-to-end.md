@@ -40,7 +40,7 @@ For each meaningful feature, one happy path plus edge cases and errors (P6).
 - Error paths a user can reach: invalid input, a rejected payment, a missing permission, an expired session. Check the message the user sees and that nothing was stored.
 - Third-party failure: the doubled provider fails or times out, and what the user is told.
 - Recovery: the user retries, goes back, or reloads mid-journey and the system stays consistent.
-- Not here: every input combination and every internal branch. Those belong in lower kinds, which run faster and point at the cause.
+- Every input combination and every internal branch stay out. Those belong in lower kinds, which run faster and point at the cause.
 
 ## Doubles and patches
 

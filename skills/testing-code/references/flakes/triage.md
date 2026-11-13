@@ -61,7 +61,7 @@ You cannot prove a flaky test is fixed. You can collect evidence that is stronge
 
 1. Run the repaired test alone many times, then the original failing order, then shuffled, then in parallel. Use the conditions that failed in step 2.
 2. Pick the run count from the failure rate you measured before the fix. A test that failed 3 runs in 10 needs far fewer clean runs to be convincing than one that failed 1 in 500. If you never measured a rate, measure it first on the broken version.
-3. Judge by this: the number of clean runs should make it unlikely that a test with the old failure rate would have passed every time. If the old rate was 1 in 20, twenty clean runs would still happen about a third of the time with the defect present. Sixty would happen under 5% of the time.
+3. The number of clean runs should make it unlikely that a test with the old failure rate would have passed every time. If the old rate was 1 in 20, twenty clean runs would still happen about a third of the time with the defect present. Sixty would happen under 5% of the time.
 4. Confirm the fix is the cause. Revert it or reintroduce the defect on purpose (a slower dependency, a fixed clock at midnight, a shuffled order) and see the test fail. A fix you cannot make fail again is a guess.
 5. After merging, watch the next stretch of real CI runs. If the test fails again, reopen the record from [tracking](tracking.md).
 

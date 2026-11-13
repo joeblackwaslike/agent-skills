@@ -2,7 +2,7 @@
 
 ## What it proves
 
-That the system meets a requirement in the stakeholder's own words. It answers "does this do what we agreed it should do?" (P5). Unit tests written by the developer who wrote the code can share that developer's misreading of the requirement; an acceptance test is anchored to the agreed criterion instead, so it checks that the system works as intended and not only as implemented. See [test kinds](../../../testing-principles/references/test-kinds.md): acceptance is anchored to a requirement, where [behavioral](behavioral.md) is anchored to a scenario format, and one test can be both.
+That the system meets a requirement in the stakeholder's own words. It answers "does this do what we agreed it should do?" (P5). Unit tests written by the developer who wrote the code can share that developer's misreading of the requirement; an acceptance test is anchored to the agreed criterion instead, so it checks that the system works as intended. See [test kinds](../../../testing-principles/references/test-kinds.md): acceptance is anchored to a requirement, where [behavioral](behavioral.md) is anchored to a scenario format, and one test can be both.
 
 ## When to write it
 
@@ -38,7 +38,7 @@ An end-to-end test is defined by how far it reaches, the whole running system. A
 - Each boundary the criterion names: the limit, the cutoff date, the last allowed item.
 - The error behavior the criterion promises, such as the message and the stored outcome.
 - Criteria that were agreed after a defect, so the fix stays fixed.
-- Not here: behavior nobody asked for. Extra assurance belongs in the unit, integration and property-based tests around it.
+- Behavior nobody asked for stays out of this kind. Extra assurance belongs in the unit, integration and property-based tests around it.
 
 ## Doubles and patches
 

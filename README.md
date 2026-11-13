@@ -36,7 +36,7 @@ Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode
 
 ## Skills
 
-42 skills, grouped by what you're doing. Invoke by name — `skill("working-with-github")` in Codex syntax, or via the Skill tool in Claude Code.
+47 skills, grouped by what you're doing. Invoke by name — `skill("working-with-github")` in Codex syntax, or via the Skill tool in Claude Code.
 
 ### Agentic development
 

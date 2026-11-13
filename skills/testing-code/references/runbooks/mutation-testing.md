@@ -1,6 +1,6 @@
 # Mutation testing runbook
 
-Mutation testing is a technique for judging tests and is not itself a kind of test (P7). It shows whether the tests you have would notice if behavior broke. The nine headings below follow the standard shape, and where one does not apply, a line says why. See [mutation testing](../../../testing-principles/references/mutation.md) for what it does, what a score means and when it pays off.
+Mutation testing is a technique for judging tests and is not itself a kind of test (P7). It shows whether the tests you have would notice if behavior broke. See [mutation testing](../../../testing-principles/references/mutation.md) for what it does, what a score means and when it pays off.
 
 ## What it proves
 
