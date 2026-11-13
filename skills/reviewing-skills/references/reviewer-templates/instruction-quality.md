@@ -39,6 +39,15 @@ Hunt for these defect classes. Each line gives the class and a generic example o
 - A flow with branches or loops and no diagram. Example: six numbered steps containing "if it fails, go back to step 2 unless it failed twice".
 - Examples that overfit. Example: every sample has the same shape, so an agent learns the surface and not the principle.
 
+Missing parts. For a discipline, workflow or agent-pipeline skill, a part the principles require that the skill lacks is a finding, not a suggestion. Check each of these and report each one that is absent, quoting the rule or step that is left bare and listing the section headings you found.
+- A rule an agent breaks under pressure with no excuse table, red flags list or loophole closer, and no exception for the case where the rule cannot be followed (minor, major when violating it is costly).
+- A procedure with no observable check that a step worked. Example: a rule to reproduce a bug as a failing test, with nothing saying what output shows it failed for the right reason, or what shows the fix turned it green (minor).
+- A procedure with no example of an invocation or of the output the agent should produce (minor).
+- Phase numbers, gate names or tiers used as if defined, when they are defined only in another skill or nowhere (minor).
+- A delegation to another agent that does not say who decides, which handoff, how many rounds, or when to stop (minor).
+- Guidance such as "keep sessions focused" or "compact after major milestones" with no observable trigger and no test for whether it was followed (minor).
+The failure scenario for these is the step the agent skips or misjudges with no way to tell. The evidence is the quoted bare rule and the section list, so no run is needed. Do not report a missing part that another part of the same skill supplies.
+
 For authority, judge each rule by its stakes. A rule an agent breaks under pressure and whose violation is costly should be a gate: a prohibition with an observable trigger, plus a defense. A low-stakes preference should be guidance or informational. Report a gate worded weakly and a minor point worded as a gate. Do not flag every "should". An authority finding must cite the stakes and give the failure scenario. A deliberate hedge with a stated reason is a suggestion. Use exactly three authority words: gate, guidance, informational.
 
 Your role's additions to the output contract: after FINDINGS, a HANDOFF section with one entry per external claim, as "claim quoted | file:line | why a reader would act on it | kind of check needed", or "none". The role name in SUMMARY is instruction-quality.
