@@ -39,6 +39,9 @@ const OVERLAP_THRESHOLD = 0.4;
 const STOPWORDS = new Set("a an and are as at be by for from has have how in is it its not of on or the this that to use used using when with you your into than then them they their will can per via only any all out".split(" "));
 const LANG_TAGS: Record<string, Lang> = { python: "python", py: "python", typescript: "typescript", ts: "typescript", bash: "bash", sh: "bash", shell: "bash", json: "json" };
 const LINT_SCRIPT = "scripts/lint-descriptions.py";
+// Pinned so a new release cannot change which blocks pass; both were published well before 2026-11-13. Bump deliberately.
+export const TYPESCRIPT_VERSION = "7.0.2";
+export const PYRIGHT_VERSION = "1.1.414";
 const TIMEOUT_MS = 120_000;
 const TIMED_OUT = `timed out after ${TIMEOUT_MS / 1000}s`;
 const timedOut = (r: { error?: Error }) => (r.error as NodeJS.ErrnoException | undefined)?.code === "ETIMEDOUT";
@@ -86,17 +89,20 @@ function jaccard(a: Set<string>, b: Set<string>): number {
 
 type Fence = { info: string; body: string[]; line: number };
 
+const dedent = (line: string, indent: number) => line.slice(Math.min(indent, line.length - line.trimStart().length));
+
 function scanFences(text: string): { prose: string; fences: Fence[] } {
   const lines = text.split("\n");
   const prose: string[] = [];
   const fences: Fence[] = [];
   for (let i = 0; i < lines.length; i++) {
-    const open = lines[i].match(/^\s*(?:(`{3,})([^`]*)|(~{3,})(.*))$/);
+    const open = lines[i].match(/^(\s*)(?:(`{3,})([^`]*)|(~{3,})(.*))$/);
     if (!open) {
       prose.push(lines[i]);
       continue;
     }
-    const marker = open[1] ?? open[3];
+    const marker = open[2] ?? open[4];
+    const indent = open[1].length;
     const [ch, len] = [marker[0], marker.length];
     const body: string[] = [];
     const start = i + 1;
@@ -104,9 +110,9 @@ function scanFences(text: string): { prose: string; fences: Fence[] } {
     for (i = start; i < lines.length; i++) {
       const close = lines[i].match(/^\s*(`+|~+)\s*$/);
       if (close && close[1][0] === ch && close[1].length >= len) break;
-      body.push(lines[i]);
+      body.push(dedent(lines[i], indent));
     }
-    fences.push({ info: (open[2] ?? open[4]).trim().split(/\s+/)[0] ?? "", body, line: start });
+    fences.push({ info: (open[3] ?? open[5]).trim().split(/\s+/)[0] ?? "", body, line: start });
   }
   return { prose: prose.join("\n"), fences };
 }
@@ -259,6 +265,7 @@ function extractBlocks(dir: string, files: string[]): { blocks: Block[]; fragmen
   return { blocks, fragments };
 }
 
+const UNRESOLVED_TS = /^TS(2307|2792|2868)\b/;
 const OFFLINE_HINT = "bunx needs the network on first use; are you offline?";
 
 function runTool(cmd: string[], cwd: string) {
@@ -269,9 +276,11 @@ function runTool(cmd: string[], cwd: string) {
 function pyright(codes: string[]): BlockResult[] {
   const dir = mkdtempSync(join(tmpdir(), "skill-pyright-"));
   try {
-    writeFileSync(join(dir, "pyrightconfig.json"), JSON.stringify({ pythonVersion: "3.12", typeCheckingMode: "basic", include: ["*.py"] }));
+    writeFileSync(join(dir, "pyrightconfig.json"), JSON.stringify({
+      pythonVersion: "3.12", typeCheckingMode: "basic", include: ["*.py"], reportMissingImports: "none", reportMissingModuleSource: "none",
+    }));
     codes.forEach((c, n) => writeFileSync(join(dir, `b${n}.py`), c));
-    const cmd = Bun.which("pyright", { PATH: process.env.PATH }) ? ["pyright"] : ["bunx", "pyright"];
+    const cmd = Bun.which("pyright", { PATH: process.env.PATH }) ? ["pyright"] : ["bunx", `pyright@${PYRIGHT_VERSION}`];
     const r = runTool([...cmd, "--outputjson"], dir);
     let parsed: { generalDiagnostics: { file: string; severity: string; message: string; range: { start: { line: number } } }[] };
     try {
@@ -300,16 +309,17 @@ function tsc(codes: string[]): BlockResult[] {
       include: ["*.ts"],
     }));
     codes.forEach((c, n) => writeFileSync(join(dir, `b${n}.ts`), `${c}export {};\n`));
-    const install = runTool(["bun", "add", "-d", "typescript", "@types/node"], dir);
+    const install = runTool(["bun", "add", "-d", `typescript@${TYPESCRIPT_VERSION}`, "@types/node"], dir);
     if (timedOut(install)) return missing(TIMED_OUT);
     if (install.status !== 0) return missing(OFFLINE_HINT);
     const r = runTool([join(dir, "node_modules/.bin/tsc"), "--noEmit", "-p", "."], dir);
-    const errors = r.text.split("\n").flatMap((l) => {
+    const diagnostics = r.text.split("\n").flatMap((l) => {
       const m = l.match(/^(b\d+)\.ts\((\d+),\d+\): error (.*)$/);
-      return m ? [{ n: Number(m[1].slice(1)), msg: `line ${m[2]}: ${m[3]}` }] : [];
+      return m ? [{ n: Number(m[1].slice(1)), msg: `line ${m[2]}: ${m[3]}`, unresolved: UNRESOLVED_TS.test(m[3]) }] : [];
     });
+    const errors = diagnostics.filter((e) => !e.unresolved);
     if (timedOut(r)) return missing(TIMED_OUT);
-    if (r.status !== 0 && !errors.length) return missing(r.text.trim().split("\n")[0] ?? "tsc failed");
+    if (r.status !== 0 && !diagnostics.length) return missing(r.text.trim().split("\n")[0] || "tsc failed");
     return codes.map((_, n) => {
       const mine = errors.filter((e) => e.n === n);
       return mine.length ? { status: "error", detail: mine.map((e) => e.msg).join("; ") } : { status: "ok", detail: "" };
@@ -324,7 +334,7 @@ function bashSyntax(codes: string[]): BlockResult[] {
     const r = deps.spawn("bash", ["-n"], { input: c, encoding: "utf8", timeout: TIMEOUT_MS, env: process.env });
     if (timedOut(r)) return { status: "missing", detail: `bash ${TIMED_OUT}` };
     if (r.error) return { status: "missing", detail: "bash not found" };
-    return r.status === 0 ? { status: "ok", detail: "" } : { status: "error", detail: r.stderr.trim().split("\n")[0] };
+    return r.status === 0 ? { status: "ok", detail: "" } : { status: "error", detail: (r.stderr ?? "").trim().split("\n")[0] };
   });
 }
 

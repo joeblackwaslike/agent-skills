@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { readFileSync } from "node:fs";
-import { type BlockChecker, type Report, checkSkill, deps } from "./skill-check";
+import { PYRIGHT_VERSION, type BlockChecker, type Report, TYPESCRIPT_VERSION, checkSkill, deps } from "./skill-check";
 
 const roots: string[] = [];
 afterAll(() => roots.forEach((r) => rmSync(r, { recursive: true, force: true })));
@@ -374,4 +374,85 @@ test("fetched reference files are exempt from link and orphan checks and counted
 test("a hand-written unlinked reference still warns as an orphan", () => {
   const { dir } = make({ body: "x\n", files: { "references/hand.md": "# h\n" } });
   expect(find(checkSkill(dir, opts()), "orphan:references/hand.md")?.status).toBe("warn");
+});
+
+type SpawnFn = (cmd: string, args: string[], o: { cwd?: string; input?: string }) => Record<string, unknown>;
+
+function withSpawn<T>(fake: SpawnFn, fn: () => T): T {
+  const real = deps.spawn;
+  deps.spawn = ((cmd: string, args: string[], o: { cwd?: string; input?: string }) => fake(cmd, args, o)) as unknown as typeof real;
+  try {
+    return fn();
+  } finally {
+    deps.spawn = real;
+  }
+}
+
+const pyJson = (...diags: { file: string; message: string }[]) =>
+  JSON.stringify({ generalDiagnostics: diags.map((d) => ({ ...d, severity: "error", range: { start: { line: 0 } } })) });
+
+test("pyright runs with missing-import reports turned off", () => {
+  const { dir } = make({ body: fence("python", "import requests") });
+  let config = "";
+  withSpawn((_c, args, o) => {
+    if (args.includes("--outputjson")) config = readFileSync(join(o.cwd!, "pyrightconfig.json"), "utf8");
+    return { status: 0, stdout: pyJson(), stderr: "" };
+  }, () => checkSkill(dir, { blocks: true }));
+  const parsed = JSON.parse(config);
+  expect(parsed.reportMissingImports).toBe("none");
+  expect(parsed.reportMissingModuleSource).toBe("none");
+});
+
+const tscSpawn = (tscText: string, installStatus = 0): SpawnFn => (cmd, args) => {
+  if (cmd === "bun") return { status: installStatus, stdout: "", stderr: "" };
+  if (cmd.endsWith("/tsc")) return { status: 2, stdout: tscText, stderr: "" };
+  return { status: 0, stdout: "", stderr: "", args };
+};
+
+test("tsc ignores unresolved-module and Bun-global diagnostics but keeps real type errors", () => {
+  const { dir } = make({ body: fence("typescript", "import x from 'zod';\nconst n: number = 'a';") + fence("typescript", "Bun.file('a');") });
+  const text = [
+    "b0.ts(1,15): error TS2307: Cannot find module 'zod' or its corresponding type declarations.",
+    "b0.ts(2,7): error TS2322: Type 'string' is not assignable to type 'number'.",
+    "b1.ts(1,1): error TS2868: Cannot find name 'Bun'. Do you need to install type definitions for Bun?",
+    "b1.ts(2,1): error TS2792: Cannot find module 'bun'. Did you mean to set the 'moduleResolution' option to 'nodenext'?",
+  ].join("\n");
+  const r = withSpawn(tscSpawn(text), () => checkSkill(dir, { blocks: true }));
+  const fails = r.checks.filter((c) => c.id.startsWith("block:") && c.status === "fail");
+  expect(fails).toHaveLength(1);
+  expect(fails[0].detail).toContain("TS2322");
+  expect(fails[0].detail).not.toContain("TS2307");
+  expect(find(r, "blocks")?.status).toBe("pass");
+});
+
+test("a python block nested in an indented list item is dedented before checking", () => {
+  const { dir } = make({ body: "1. Step\n\n   ```python\n   def f():\n       return 1\n   ```\n" });
+  const seen: string[][] = [];
+  checkSkill(dir, { blocks: true, runBlocks: (_l, codes) => (seen.push(codes), codes.map(() => ({ status: "ok", detail: "" }))) });
+  expect(seen).toEqual([["def f():\n    return 1\n"]]);
+});
+
+test("the gate pins typescript and pyright versions", () => {
+  const { dir } = make({ body: fence("python", "x = 1") + fence("typescript", "const a = 1;") });
+  const calls: string[][] = [];
+  withEmptyPath(() => withSpawn((c, args) => {
+    calls.push([c, ...args]);
+    return { status: 0, stdout: pyJson(), stderr: "" };
+  }, () => checkSkill(dir, { blocks: true })));
+  expect(calls.some((c) => c.includes(`pyright@${PYRIGHT_VERSION}`))).toBe(true);
+  expect(calls.some((c) => c[0] === "bun" && c.includes(`typescript@${TYPESCRIPT_VERSION}`))).toBe(true);
+});
+
+test("bash -n with null stderr and a silent killed tsc do not crash", () => {
+  const { dir } = make({ body: fence("bash", "echo hi") + fence("typescript", "const a = 1;") });
+  const r = withSpawn((c) => (c === "bash" ? { status: 1, stdout: "", stderr: null } : c.endsWith("/tsc") ? { status: null, stdout: "", stderr: "" } : { status: 0, stdout: "", stderr: "" }), () => checkSkill(dir, { blocks: true }));
+  expect(find(r, "block:SKILL.md")?.status).toBe("fail");
+  expect(find(r, "block:typescript")?.detail).toBe("SKIPPED (not checked): 1 typescript block(s); tsc unavailable (tsc failed)");
+});
+
+test("a typescript block whose only diagnostics are unresolved imports passes", () => {
+  const { dir } = make({ body: fence("typescript", "import x from 'zod';") });
+  const r = withSpawn(tscSpawn("b0.ts(1,15): error TS2307: Cannot find module 'zod' or its corresponding type declarations."), () => checkSkill(dir, { blocks: true }));
+  expect(find(r, "blocks")?.status).toBe("pass");
+  expect(find(r, "block:typescript")).toBeUndefined();
 });
