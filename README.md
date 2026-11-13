@@ -45,6 +45,8 @@ Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode
 | `best-practices-for-agentic-development` | Design patterns for agents, agentic workflows, MCP servers, tool interfaces, and subagent systems |
 | `authoring-agent-skills` | Create and maintain skills in this repo — especially `working-with-X` skills that wrap official docs |
 | `agent-instructions` | Write CLAUDE.md / AGENTS.md / GEMINI.md at the right scope, with scope diagnosis and precedence rules |
+| `skill-principles` | The standard for the instructions inside a skill: rule strength, trigger descriptions, rationalization defenses, examples, diagrams, agent pipelines |
+| `reviewing-skills` | Review a skill before it ships with a mechanical gate, fresh-eyes reviewer agents and optional pressure scenarios; ships the `/review-skill` command |
 | `multi-provider-plugins` | Make a Claude Code plugin work across Codex, OpenCode, Cursor, and Gemini CLI |
 | `interactive-system-docs` | Build a self-contained interactive HTML explainer for a complex system — D3 graphs, data flows, state machines |
 | `recovering-session-context` | Reconstruct prior sessions from transcripts and surface everything raised but never resolved |

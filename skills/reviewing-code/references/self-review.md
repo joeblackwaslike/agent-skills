@@ -26,6 +26,8 @@ Work out what this project enforces, then run it. Follow [mechanical-gate.md](me
 - **Cache.** Discovery runs once per worktree. The result is stored in the worktree's git directory and rebuilt when the files it was derived from change.
 - **Order and scope.** Cheap checks first (format, lint, typecheck, then tests from fastest to slowest). While iterating, run checks on the changed files where the tool allows it.
 
+For a diff that touches `skills/`, also run `bun <reviewing-skills base directory>/scripts/skill-check.ts skills/<name>` on each touched skill (Claude-only wiring; see [reviewing-skills](../../reviewing-skills/SKILL.md)). Gaps it lists go under "Gate gaps".
+
 Fix every red result before dispatching a reviewer. Before reporting READY, run every discovered check once on the whole project. Anything the project lacks, or that cannot run here, goes under "Gate gaps" in the report with the reason.
 
 Then run the changed behavior once for real, on a real input, and put the command and its output in the report and the PR's Test plan (`--behavior-cmd` and `--behavior-out`). Skip this for docs-only changes (`--behavior-skipped "docs only"`).
@@ -35,7 +37,10 @@ Then run the changed behavior once for real, on a real input, and put the comman
 Dispatch with the Agent tool. Every reviewer is a new agent: never resume one, never fork yourself, because either carries your context.
 
 - **Always:** the general reviewer, `code-reviewer` (`subagent_type: "code-reviewer"`), using the prompt template below. Set `model: "sonnet"`. For an architectural change, run this round-1 reviewer on `model: "opus"` instead; the re-reviews in step 5 stay on Sonnet, and the Opus run counts as round 1, not as an extra round.
-- **When it applies, in parallel in the same message:** every other agent whose trigger matches in the reviewer table in [SKILL.md](../SKILL.md) step 8, each on `model: "sonnet"`. That step also has the report-only prefix for the agents that can edit files, the cap of 6 per round, the drop order, and the `general-purpose` fallback for an agent that isn't installed.
+- **When it applies, in parallel in the same message:** every other agent whose trigger matches in the reviewer table in [SKILL.md](../SKILL.md) step 8, each on `model: "sonnet"`.
+- **When the diff adds or edits any file under `skills/`:** the `reviewing-skills` roles, each as a `general-purpose` agent told to load `reviewing-skills` and run one role, on `model: "sonnet"`. They count toward the cap of 6, and `code-reviewer` still runs on a skills-only diff. Which roles run, the 20-line rule and its description override, and the drop order are in the "Inside /self-review" section of the [reviewing-skills SKILL.md](../../reviewing-skills/SKILL.md). This wiring is Claude-only.
+
+Step 8 of the reviewing-code SKILL.md also has the report-only prefix for the agents that can edit files, the cap of 6 per round, the drop order, and the `general-purpose` fallback for an agent that isn't installed.
 
 What to give a reviewer, and what to withhold:
 

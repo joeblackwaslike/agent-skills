@@ -47,14 +47,14 @@ Do the steps in order. Fix problems as you find them, then re-run step 2 when yo
 | `performance-optimizer` | claims a speedup or changes a hot path |
 | `code-simplifier` | adds a new module or more than about 200 lines of new code |
 | `refactor-cleaner` | refactors or removes code |
-| `skill-reviewer` | adds or edits a `SKILL.md` |
+| `reviewing-skills` roles | adds or edits any file under `skills/`. Dispatch a `general-purpose` agent told to load `reviewing-skills` and run one role. The instruction-quality role is always kept; content, routing and pipeline follow the trigger table in that skill's "Inside /self-review" section. |
 | `plugin-validator` | changes a plugin's manifests, hooks, commands, agents, mcp, or skill layout |
 | `agent-evaluator` | is mainly prose written for a reader: a spec, plan, design doc, report or runbook. It scores accuracy, completeness, clarity, actionability and conciseness. |
 | `doc-updater` | changes code that docs describe, so the docs need checking |
 
 `code-simplifier`, `performance-optimizer`, `refactor-cleaner` and `doc-updater` can edit files. Start their prompt with "Report findings only. Do not edit files, commit, or post anywhere."
 
-Send at most 6 in one round. Always keep `code-reviewer`, and `pr-test-analyzer` and `security-reviewer` when they apply. Drop the others in this order until 6 remain: `code-simplifier`, `comment-analyzer`, `doc-updater`, `refactor-cleaner`, `performance-optimizer`, `agent-evaluator`, `type-design-analyzer`, `python-reviewer` when `fastapi-reviewer` runs, `silent-failure-hunter`, then, one at a time, the remaining reviewer whose trigger matches the fewest changed lines. Count each reviewer's matching changed lines once, before dropping any.
+Send at most 6 in one round. Always keep `code-reviewer`, the `reviewing-skills` instruction-quality role, and `pr-test-analyzer` and `security-reviewer` when they apply. Drop the others in this order until 6 remain: `code-simplifier`, `comment-analyzer`, `doc-updater`, `refactor-cleaner`, `performance-optimizer`, `agent-evaluator`, `type-design-analyzer`, the `reviewing-skills` pipeline, routing and content roles (in that order), `python-reviewer` when `fastapi-reviewer` runs, `silent-failure-hunter`, then, one at a time, the remaining reviewer whose trigger matches the fewest changed lines. Count each reviewer's matching changed lines once, before dropping any.
 
 When the pass is done, re-run the mechanical gate from step 2. The pass ends there.
 
@@ -74,3 +74,4 @@ Load only what the step needs.
 - [references/worked-example.md](references/worked-example.md): one complete review, for calibrating tone and content.
 - [references/pr-description-template.md](references/pr-description-template.md): the PR body template. Use it when you write the description.
 - The `engineering-principles` skill: `references/principles.md` for step 3, `references/language-notes/index.md`, then the file for each language in the diff.
+- [reviewing-skills](../reviewing-skills/SKILL.md): the review process for diffs under `skills/`. Step 8 dispatches its roles.

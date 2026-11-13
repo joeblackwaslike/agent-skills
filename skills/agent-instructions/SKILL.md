@@ -164,3 +164,8 @@ for the full decision matrix. Quick summary:
   `claude-extras.md`, and set `CLAUDE.md` = `@AGENTS.md` + `@claude-extras.md` so the shared
   `AGENTS.md` stays universal. Prefer symlinks from a canonical source over copies; see
   `references/multi-tool-compat.md`.
+
+## Related skills
+
+- `skill-principles`: wording rules for a `SKILL.md` specifically (authority, descriptions, defenses).
+- `reviewing-skills`: review a changed skill or runbook before it ships.
