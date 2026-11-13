@@ -31,10 +31,10 @@ The devices in principle 1 (prohibition, positive recipe, template slot, predica
 
 Findings use blocker, major, minor or nit, the same words as `reviewing-code`.
 
-- **blocker**: the skill misleads agents or cannot be loaded; do not ship.
-- **major**: a defect agents will hit in normal use.
-- **minor**: a real but low-impact defect.
-- **nit**: taste, optional.
+- **blocker**: the text makes an agent do something destructive or unsafe, or the skill cannot work; do not ship.
+- **major**: a plausible agent following the text does the wrong thing on a realistic request, and nothing else in the skill stops it.
+- **minor**: the wrong thing needs an unusual request, or a reader is misled about a fact in a way that does not change what they do.
+- **nit**: wording or a typo with no behavior consequence.
 
 ## The `fragment` marker
 
@@ -53,7 +53,7 @@ Choose the device by the kind of failure you are preventing, then ration the str
 | An element gets omitted | A required slot in a template |
 | Behavior depends on a condition | A predicate the agent can evaluate |
 
-MUST, NEVER and the heavy gates (an "Iron Law" section, a HARD-GATE block) cost attention every time they appear. Ration them. Superpowers reserves its Iron Law (`writing-skills/SKILL.md`) and HARD-GATE (`brainstorming/SKILL.md`) blocks for rules whose violation is expensive, and this standard does the same. Do not add nuance clauses that let the agent talk itself out of a gate.
+MUST, NEVER and the heavy gates (an "Iron Law" section, a HARD-GATE block) cost attention every time they appear. Ration them. Superpowers puts an Iron Law (`writing-skills/SKILL.md`, `test-driven-development`, `systematic-debugging`, `verification-before-completion`) or a HARD-GATE (`brainstorming/SKILL.md`) in 5 of its 15 skills, on rules whose violation is costly. It states no rationing rule; this standard rations them the same way. Do not add nuance clauses that let the agent talk itself out of a gate.
 
 **Wrong**
 
@@ -120,7 +120,7 @@ The exception is a predicate, stated once, and the rule it modifies names it.
 
 ## 4. The description is a trigger
 
-The `description` frontmatter field decides whether the skill loads. Write it as conditions under which to use the skill: "Use when...", third person, with triggers the user or situation actually produces. A description never lists, orders or enumerates steps, phases or contents, not even after "Covers", "Walks" or "Includes". A colon-led list inside a description is the same defect. Superpowers reports (`writing-skills/references/discovery.md`) that when a description outlines the workflow, agents follow the description and skip the body. Test: if deleting the description's second sentence loses no trigger, delete it. Add "Not for X (use Y)" exclusions that point to sibling skills, and make the sibling's description point back. This repo caps descriptions at 400 characters (`make lint-descriptions`).
+The `description` frontmatter field decides whether the skill loads. Write it as conditions under which to use the skill: "Use when...", third person, with triggers the user or situation actually produces. A description never lists, orders or enumerates steps, phases or contents, not even after "Covers", "Walks" or "Includes". A colon-led list inside a description is the same defect. Superpowers reports (`writing-skills/references/discovery.md`) that when a description outlines the workflow, agents follow the description and skip the body. Test: if deleting the description's second sentence loses no trigger, delete it. Add "Not for X (use Y)" exclusions that point to sibling skills, and make the sibling's description point back. This repo warns at 400 characters and fails at 1000 (`make lint-descriptions`); a WARN does not change the exit code. Aim for 400 or fewer.
 
 **Wrong**
 
@@ -140,7 +140,7 @@ description: Use when a test fails or behavior is unexpected, before proposing a
 
 ## 5. Progressive disclosure
 
-The body of `SKILL.md` is read on every load, so keep it short and make it route: "read X when Y." Put detail in `references/` for on-demand reading. Do not force-load files with `@path` imports, which pull the whole file into context whether it is needed or not. Keep the body short enough that routing is its main job. `make lint-descriptions` is the only cap enforced here. Do not set line-count targets for references; write what the content needs, since line count is only a rough proxy for complexity. Every reference should be reachable from a link in `SKILL.md` or another routed file, or nothing will ever open it.
+The body of `SKILL.md` is read on every load, so keep it short and make it route: "read X when Y." Put detail in `references/` for on-demand reading. Do not force-load files with `@path` imports, which pull the whole file into context whether it is needed or not. Keep the body short enough that routing is its main job. `make lint-descriptions` limits the description, and the `reviewing-skills` gate fails a SKILL.md over 20,000 bytes. Do not set line-count targets for references; write what the content needs, since line count is only a rough proxy for complexity. Every reference should be reachable from a link in `SKILL.md` or another routed file, or nothing will ever open it.
 
 **Wrong**
 
@@ -191,7 +191,7 @@ One checked snippet in the language the skill's users write, with a bad version 
 
 ## 8. Evidence over belief
 
-Test a skill the way you test code. Run a fresh agent on a pressure scenario without the skill (RED) and record how it fails. Write the skill to address those failures. Run it again with the skill (GREEN) and confirm each failure changed. Then run a combined-pressure scenario to look for new loopholes, and a control scenario that should not trigger the skill, to catch over-triggering. This is the loop in `superpowers:writing-skills` and `testing-skills-with-subagents.md`; `reviewing-skills` carries the scenario format.
+Test a skill the way you test code. Run a fresh agent on a pressure scenario without the skill (RED) and record how it fails. Write the skill to address those failures. Run it again with the skill (GREEN) and confirm each failure changed. Then run a combined-pressure scenario to look for new loopholes, and a control scenario that should not trigger the skill, to catch over-triggering. The RED, GREEN and combined-pressure steps are the loop in `superpowers:writing-skills` and `testing-skills-with-subagents.md`; the over-triggering control scenario is this standard's addition. `reviewing-skills` carries the scenario format.
 
 **Wrong**
 
