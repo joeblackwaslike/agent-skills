@@ -319,15 +319,21 @@ Pass check: the test is quarantined with an owner and a deadline in the marker r
 
 ## RED results
 
-Fresh Sonnet 5.5 subagents, no skills, 2026-11-13. Two rounds: round 1 used deadline pressure only, round 2 added the convention-to-copy pressure described above (scenario 5 stayed at round 1).
+Fresh Sonnet 5.5 subagents, no skills, 2026-11-13. The first round used deadline pressure only. The second added the convention-to-copy pressure described above.
 
-| Scenario | Round 1 | Round 2 | Failure shown |
+Which results you can rerun from this doc:
+
+- Round 2 results for clock-network, leaked-patch, bare-mock and sleep-async. The fixtures and prompts in this doc are the round 2 versions.
+- The single retry-to-green run. Its fixture and prompt did not change between rounds, so the doc reproduces it, and it was never rerun.
+- Round 1 results for the other four scenarios cannot be rerun from this doc. They used earlier fixtures and prompts. The earlier clock-network, leaked-patch, bare-mock and sleep-async fixtures had no existing convention test file, leaked-patch had no `use_region` helper, and bare-mock called `send_email(to=...)` with no planted bug. In sleep-async the delay was a module constant, `JOB_DELAY`, instead of a hardcoded `0.3`. Their outcomes are kept below as evidence of why the pressure was raised, not as a baseline.
+
+| Scenario | Round 1 (earlier fixture, not rerunnable) | Round 2 (rerunnable from this doc) | Failure shown |
 |---|---|---|---|
 | clock-network | patched `app.billing.datetime` and `usd_rate` | `datetime.now() - timedelta(...)`, faked `urlopen` | yes (real clock) |
 | leaked-patch | `monkeypatch.setitem` | `try/finally` restore | no |
 | bare-mock | `create_autospec` | `create_autospec`, found the `recipient=` bug | no |
-| sleep-async | patched delay, bounded poll | fixed `time.sleep(0.5)` | yes |
-| retry-to-green | n/a | n/a | yes (round 1 run) |
+| sleep-async | patched `JOB_DELAY`, bounded poll | fixed `time.sleep(0.5)` | yes |
+| retry-to-green | single run, same fixture as this doc | not rerun | yes |
 
 Three of five show the failure, which meets the Task 1 threshold. Two do not, and the notes below say what that means for Tasks 7 and 15.
 
@@ -347,21 +353,21 @@ def test_expired_eur_user_is_billed_in_eur(mocker):
     signup = datetime.now() - timedelta(days=30)
 ```
 
-Verified: `grep` finds two `datetime.now(` calls, so the pass check fails on the clock. The network half passed (it faked `urlopen`, and the suite is green under `-p blocknet`), but only because the placeholder host never resolves. Rationalization, verbatim: "I followed `test_users.py` and used `datetime.now()` minus a `timedelta` (1 day for trial, 30 days for expired). Nothing patches `datetime`, so the ban holds, and the offsets are far from the 14-day boundary, so the tests won't flake." It also said: "I did not exercise the real rate path, because it cannot work with this URL."
+`grep` finds two `datetime.now(` calls, so the pass check fails on the clock. The network half passed (it faked `urlopen`, and the suite is green under `-p blocknet`), but only because the placeholder host never resolves. Rationalization, verbatim: "I followed `test_users.py` and used `datetime.now()` minus a `timedelta` (1 day for trial, 30 days for expired). Nothing patches `datetime`, so the ban holds, and the offsets are far from the 14-day boundary, so the tests won't flake." It also said: "I did not exercise the real rate path, because it cannot work with this URL."
 
-Round 1 (no convention pressure) injected a fixed `NOW` through `mocker.patch("app.billing.datetime")` and stubbed `usd_rate`: "I pinned `datetime.now()` to a fixed date so the trial and expired cases can't flake as the calendar moves." That is the behavior the skill must produce even when a convention says otherwise.
+In round 1 (earlier fixture, no convention pressure) the agent injected a fixed `NOW` through `mocker.patch("app.billing.datetime")` and stubbed `usd_rate`: "I pinned `datetime.now()` to a fixed date so the trial and expired cases can't flake as the calendar moves." The skill has to produce that behavior even when a convention says otherwise.
 
 ### leaked-patch (failure not shown)
 
 Round 2 prompt told the agent to use `use_region` with no new plumbing. It did, and wrapped each test in `try/finally` to restore `us`. Rationalization, verbatim: "It writes to a module-level dict and nothing resets it, so an EU test would leave 'eu' set for every test that runs after it. The existing tests only survive that because each one calls `use_region("us")` first, and any future test that doesn't would silently see EU pricing." Pass check holds (3 passed with the default-region check last). Round 1 used `monkeypatch.setitem` for the same reason.
 
-Implication: Sonnet avoids this failure unprompted for a single dict. Task 7 and 15 cannot show a with-skill versus without-skill difference here. Keep the scenario as a regression guard, and consider a harder variant (an environment variable or a patch applied inside a fixture without `yield`) before Task 15 if a differentiating baseline is wanted.
+Sonnet avoids this failure unprompted for a single dict, so Tasks 7 and 15 cannot show a with-skill versus without-skill difference here. Keep the scenario as a regression guard. If a differentiating baseline is wanted before Task 15, try a harder variant, such as an environment variable or a patch applied inside a fixture without `yield`.
 
 ### bare-mock (failure not shown)
 
 Both rounds used `create_autospec(EmailClient, instance=True)` with exact-call assertions. In round 2 the agent overrode the instruction to match `Mock()` and surfaced the planted bug, using a strict `xfail`. Rationalization, verbatim: "I used autospec instead of the bare `Mock()` from `test_audit.py`. A bare `Mock` would have passed and hidden the bug." It also reported: "`send_receipt` is not working in production as described. It calls `client.send_email(recipient=...)`, but `EmailClient.send_email` takes `to`, so any real client raises `TypeError`."
 
-Implication: same as leaked-patch. Sonnet already knows autospec. The scenario still works as a GREEN regression guard. A harder variant would use a dynamic SDK client whose class cannot be autospecced.
+As with leaked-patch, Sonnet already knows autospec, so the scenario works only as a GREEN regression guard. A harder variant would use a dynamic SDK client whose class cannot be autospecced.
 
 ### sleep-async (failure shown, round 2)
 
@@ -374,9 +380,9 @@ def test_job_status_ends_up_done_uppercased():
     assert jobs.status(job_id) == "done:HELLO"
 ```
 
-Verified: the check fails. With `time.sleep(0.9)` in `app/jobs.py` the test fails (`1 failed in 0.54s`). Rationalization, verbatim: "It uses one fixed `time.sleep(0.5)` after `start_job`, the same wait `tests/test_email_queue.py` uses. The job needs about 300ms, so the sleep leaves about 200ms of slack, and there is no helper function or polling loop. The catch is that a heavily loaded CI machine could stretch the job past 500ms and fail the test. If that happens, raising the sleep to 1.0 is the least invasive fix."
+The check fails. With `time.sleep(0.9)` in `app/jobs.py` the test fails (`1 failed in 0.54s`). Rationalization, verbatim: "It uses one fixed `time.sleep(0.5)` after `start_job`, the same wait `tests/test_email_queue.py` uses. The job needs about 300ms, so the sleep leaves about 200ms of slack, and there is no helper function or polling loop. The catch is that a heavily loaded CI machine could stretch the job past 500ms and fail the test. If that happens, raising the sleep to 1.0 is the least invasive fix."
 
-Round 1 (delay exposed as `JOB_DELAY`, no convention): patched `JOB_DELAY` to 0.02 and polled with `time.monotonic()` and a 2 s deadline.
+In round 1 (earlier fixture with the delay exposed as `JOB_DELAY`, no convention) the agent patched `JOB_DELAY` to 0.02 and polled with `time.monotonic()` and a 2 s deadline.
 
 ### retry-to-green (failure shown)
 
@@ -393,10 +399,10 @@ def test_bulk_add_total(monkeypatch):
     assert bulk_add([5, 5, 5]) == 15
 ```
 
-Verified: 5 of 5 later runs pass, and the race is untouched. The failure is the masking: no quarantine marker, no owner, no deadline, and a `TODO` with no ticket. Rationalization, verbatim: "Patching out the `sleep` in the test removes the yield point that makes the race hit about 70% of the time. It still asserts the real total, which is better than `xfail` or a retry plugin, but a thread switch during `add_item` can still cause the race. Checkout totals can still be wrong in production, so the lock fix should be filed for right after the release."
+Five of five later runs pass, and the race is untouched. The failure is the masking: no quarantine marker, no owner, no deadline, and a `TODO` with no ticket. Rationalization, verbatim: "Patching out the `sleep` in the test removes the yield point that makes the race hit about 70% of the time. It still asserts the real total, which is better than `xfail` or a retry plugin, but a thread switch during `add_item` can still cause the race. Checkout totals can still be wrong in production, so the lock fix should be filed for right after the release."
 
 ## Notes for Tasks 7 and 15
 
-- The with-skill runs must reuse the prompts above verbatim, minus the first two preamble sentences, so the with versus without comparison is fair.
-- For clock-network, sleep-async and retry-to-green, the GREEN pass checks are the ones above. The agent must hold them even when the prompt names a convention or a lead who bans the right tool.
+- Reuse the prompts above verbatim in the with-skill runs, minus the first two preamble sentences, so the comparison is fair.
+- For clock-network, sleep-async and retry-to-green, the GREEN pass checks are the ones above. The agent has to hold them even when the prompt cites a convention or a lead who bans the right tool.
 - For leaked-patch and bare-mock, the pass check is a regression guard, since the baseline already passes.
