@@ -81,18 +81,20 @@ Every stub the helper writes appends its name and its arguments to one calls fil
 
 ```bash
 make_stub() {
-  local name=$1 status=${2:-0} out=${3:-}
+  local name=$1 status=${2:-0} out=${3:-} quoted_name quoted_out
+  printf -v quoted_name '%q' "$name"
+  printf -v quoted_out '%q' "$out"
   cat >"$STUBS/$name" <<STUB
 #!/usr/bin/env bash
-{ printf '%s' '$name'; printf ' %q' "\$@"; printf '\n'; } >>"$CALLS"
-printf '%s' '$out'
+{ printf '%s' $quoted_name; printf ' %q' "\$@"; printf '\n'; } >>"$CALLS"
+printf '%s' $quoted_out
 exit $status
 STUB
   chmod +x "$STUBS/$name"
 }
 ```
 
-`printf %q` writes each argument shell-quoted, so an argument with a space stays one visible unit and the expected text in the test is unambiguous.
+`printf %q` writes each argument shell-quoted, so an argument with a space stays one visible unit and the expected text in the test is unambiguous. The helper also quotes the canned output with `printf -v ... '%q'` before writing it into the stub, so a response such as `it's ready` stays data and cannot break the generated script.
 
 The script under test, `bin/notify.sh`:
 

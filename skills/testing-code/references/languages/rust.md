@@ -327,7 +327,7 @@ For databases:
 - **Rollback per test**: open a transaction at the start of the test, run the code against it, and drop it without committing. In sqlx a transaction that is dropped uncommitted rolls back. This was not run for this page, so confirm it for your driver. It works only when the code under test uses the connection or transaction you pass in.
 - **Truncate or recreate** when the code opens its own connections. A throwaway database per test (created from a template, dropped at the end) is slower but isolates fully; nextest's process-per-test makes the cleanup easy to keep per test.
 - Run migrations once per test run, against a throwaway database, then rely on rollback or truncate per test.
-- Mark expensive database tests `#[ignore = "needs database"]` only if the default run must stay fast, and run them in their own job with `cargo test -- --ignored` or, under nextest, `cargo nextest run --run-ignored only`. Use a different reason prefix from a quarantine, so the two jobs select different tests.
+- Mark expensive database tests `#[ignore = "needs database"]` only if the default run must stay fast, and run them in their own job with `cargo test -- --ignored` or, under nextest, `cargo nextest run --run-ignored only`. The ignore reason does not select anything: `cargo test -- --ignored` runs every ignored test, database and quarantined alike. Put database tests in a `database` module and quarantined tests in a `quarantine` module, then select by name (`cargo test -- --ignored database`, run on cargo 1.99.1 on 2026-11-13).
 
 The [integration runbook](../runbooks/integration.md) has the steps.
 
@@ -366,7 +366,7 @@ fn worker_publishes_event() {
 - `--run-ignored all` (nextest) or `--include-ignored` (cargo test) runs everything together, for a full local run.
 - That arrangement is the runbook's "separate non-gating run": the test keeps running and reporting, just not in the gate.
 - Put the owner, the date and the tracking link in the reason string so a search finds them.
-- Use a different reason prefix (`flaky:` versus `needs database:`) so each job selects the tests it means to.
+- Select quarantined tests by name, not by reason: keep them in a `quarantine` module and run `cargo test -- --ignored quarantine` (checked on cargo 1.99.1, 2026-11-13), where `--ignored` alone also runs every other ignored test. Under nextest the same split is a filterset such as `-E 'test(~quarantine)'` (not run for this page).
 - nextest's `--retries <N>` reruns a failing test. It hides a flake rather than quarantining it, so the runbook's tracking still applies.
 
 ## Further reading
