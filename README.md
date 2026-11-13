@@ -97,7 +97,6 @@ Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode
 
 | Skill | What it does |
 | --- | --- |
-| `test-driven-development` | Test-first for TypeScript and Python — red-green-refactor, applied to features and bugfixes |
 | `domain-driven-design` | Aggregates, entities, value objects, domain events, repositories, bounded contexts |
 | `code-architectures` | Hexagonal/clean layering, CQRS, event sourcing, event-driven design, sagas, monolith vs microservices, service communication, distributed data |
 | `solid-principles` | Designing and refactoring classes, modules, and interfaces |
