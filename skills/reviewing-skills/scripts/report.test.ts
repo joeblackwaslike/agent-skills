@@ -133,7 +133,6 @@ const rejected: [string, string[], string][] = [
   ["flag with no value", ["--verdict"], "verdict"],
   ["last-rereview-findings with no re-reviews", [...ok, "--last-rereview-findings", "0"], "--last-rereview-findings"],
   ["no-rereview-reason with re-reviews", [...ok, "--rereviews", "1", "--last-rereview-findings", "0", "--no-rereview-reason", "why"], "--no-rereview-reason"],
-  ["last-rereview-findings above findings", [...ok, "--findings", "1", "--fixed", "1", "--rereviews", "1", "--last-rereview-findings", "2"], "--last-rereview-findings"],
   ["same id declined and deferred", [...ok, "--findings", "2", "--declined", "F1=why", "--deferred", "F1=bd-1"], "F1"],
 ];
 

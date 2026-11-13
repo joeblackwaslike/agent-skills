@@ -433,6 +433,13 @@ test("a python block nested in an indented list item is dedented before checking
   expect(seen).toEqual([["def f():\n    return 1\n"]]);
 });
 
+test("dedenting never strips non-space characters from a body line indented less than its fence", () => {
+  const { dir } = make({ body: "1. Step\n\n   ```python\n x = 1\n   ```\n" });
+  const seen: string[][] = [];
+  checkSkill(dir, { blocks: true, runBlocks: (_l, codes) => (seen.push(codes), codes.map(() => ({ status: "ok", detail: "" }))) });
+  expect(seen).toEqual([["x = 1\n"]]);
+});
+
 test("the gate pins typescript and pyright versions", () => {
   const { dir } = make({ body: fence("python", "x = 1") + fence("typescript", "const a = 1;") });
   const calls: string[][] = [];

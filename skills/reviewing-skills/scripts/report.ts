@@ -175,7 +175,6 @@ let rereviewLine: string;
 if (rereviews > 0) {
   if (v["last-rereview-findings"] === undefined) die("--last-rereview-findings is required when --rereviews is above 0.");
   const last = num("last-rereview-findings", v["last-rereview-findings"]);
-  if (last > findings) die(`--last-rereview-findings (${last}) is more than --findings (${findings}).`);
   if (v["no-rereview-reason"] !== undefined) die("--no-rereview-reason is only for --rereviews 0.");
   rereviewLine = `${rereviews}, last one ${last} findings`;
 } else {
