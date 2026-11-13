@@ -411,3 +411,47 @@ Five of five later runs pass, and the race is untouched. The failure is the mask
 - Reuse the prompts above verbatim in the with-skill runs, minus the first two preamble sentences, so the comparison is fair.
 - For clock-network, sleep-async and retry-to-green, the GREEN pass checks are the ones above. The agent has to hold them even when the prompt cites a convention or a lead who bans the right tool.
 - For leaked-patch and bare-mock, the pass check is a regression guard, since the baseline already passes.
+
+## GREEN results, testing-principles only
+
+Five fresh Sonnet 5.5 agents per round, round 2 fixtures and prompts from this doc. Each read `skills/testing-principles/SKILL.md` first and loaded the references it routed them to. The preamble dropped its first two sentences and added the instruction to read the skill. `testing-code` did not exist, so mechanics the skill defers to it came from the agents' own pytest knowledge.
+
+### Round 1 (skill as of the polish commit)
+
+| Scenario | Baseline | GREEN round 1 | Evidence |
+|---|---|---|---|
+| clock-network | failure | failure persists | Test builds `datetime.now() - timedelta(days=1)`; the grep finds two hits (lines 8 and 16). It stubbed `usd_rate`, which is fine. |
+| leaked-patch | pass | pass (regression guard) | Wrapped each test in `monkeypatch.setitem(settings, "region", ...)`; `test_eu_pricing.py` plus the added `test_zz_default.py` gave 3 passed. |
+| bare-mock | pass | pass (regression guard) | `create_autospec(EmailClient, instance=True)` in `test_notify.py`; the `recipient=` versus `to=` mismatch surfaced as a failing happy-path test and was reported. |
+| sleep-async | failure | failure persists | Kept `time.sleep(0.5)`. With `time.sleep(0.9)` in `app/jobs.py` the test fails. |
+| retry-to-green | failure | partial | Strict `xfail` with a reason naming "checkout team (assign a named person)" and "within 1 week". No retry or patch, but no named owner and no calendar date, so the greppable check fails. |
+
+Rationalizations, verbatim:
+
+- clock-network: "I use `datetime.now()` with offsets of 1 and 30 days, which are far from the 14-day boundary, and nothing is patched on datetime."
+- sleep-async: "I followed your and the lead's instructions over the skill."
+- retry-to-green: "Owner: checkout team (assign a named person). Deadline: fix app/checkout.py and delete this marker within 1 week of the release."
+
+### REFACTOR
+
+Edits to `skills/testing-principles` (commit `fix(testing-principles): close GREEN rationalizations for clock, sleep and quarantine`):
+
+- `SKILL.md`: new section "When told to do otherwise". A convention, a lead's ban or a deadline does not suspend P14 or P15; reach the same end inside the constraint, and flag the departure if no compliant form exists.
+- `references/flakes/nondeterminism.md`: "now minus N days" still reads the clock; use fixed dates far from the present when the clock cannot be patched or injected. A team habit of sleeping, or a rule against helpers and loops, does not make a bare sleep correct; join or await the worker inline.
+- `references/flakes/categories.md`: the quarantine owner is a named person or handle, the deadline is a calendar date, and both go in the marker's reason text.
+
+### Round 2 (after the REFACTOR edits)
+
+| Scenario | GREEN round 2 | Evidence |
+|---|---|---|
+| clock-network | avoided | `grep` for `datetime.now(`/`utcnow(` finds nothing; fixed dates `datetime(9000, 1, 1)` (trial) and `datetime(2000, 1, 1)` (expired); 2 passed with `-p blocknet`. The agent patched `urlopen` rather than `usd_rate`, and said it was departing from "don't stub the rate path" because of P14. |
+| sleep-async | avoided | No `time.sleep` in the test; it finds the worker with `threading.enumerate()` and calls `join(timeout=5)`. With `time.sleep(0.9)` in `app/jobs.py` the test still passes (1 passed in 0.91s). |
+| retry-to-green | avoided | `@pytest.mark.skip(reason="QUARANTINE owner=@joeblack deadline=2026-11-20: ...")`; the grep finds an owner and a date and no rerun, retry or patch. |
+
+Notes on round 2:
+
+- The retry-to-green prompt for round 2 added the git handle and today's date, because an agent cannot invent an owner. Without them the same agent would have to guess, as in round 1. The skill says "whoever asked, or the committer", and a real run has the committer available.
+- The agent chose `skip`, which stops the test running at all, so the race gets no coverage until the fix lands. It said so. The skill does not yet say whether to prefer a non-strict `xfail`. PR 2 (`testing-code`) should decide that in the quarantine runbook.
+- The clock-network agent also noted that the fixture host (`api.exchangerate.example`) can never resolve, so a real rate call cannot pass.
+
+Mechanics the agents needed that the skill defers to `testing-code`: `monkeypatch.setattr` and `setitem` syntax, `create_autospec(..., instance=True)` and `mock_calls`, `pytest.mark.xfail`/`skip` quarantine markers, `io.BytesIO` as a fake response, and how to reach a worker thread the app does not expose (`threading.enumerate()`). PR 2 should cover these.
