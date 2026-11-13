@@ -44,6 +44,10 @@ Nineteen principles say what a good test and a good suite are. Cite them by ID (
 - **P18.** Review, refactor and test your test infrastructure like production code. Build code to be testable, with seams and thin facades over third-party calls.
 - **P19.** Red before green: see a new test fail for the intended reason first (see `test-driven-development.md`).
 
+## When told to do otherwise
+
+A team convention to copy, a lead's ban on a tool, or a release deadline does not suspend P14 or P15. Reach the same end inside the constraint: fixed values instead of a patched clock, an inline wait on the worker instead of a helper, a dated quarantine instead of a retry. If no compliant form exists, say which principle you broke and why, in the first lines of your reply. Flag the departure even when everyone does it or you were told to.
+
 ## What to load
 
 Open only what the task needs. All files sit in `references/`.

@@ -20,4 +20,4 @@ A flaky test passes and fails with no change to code, tests, or environment. It 
 - Sleeping longer slows the suite and leaves the cause in place (see `nondeterminism.md`).
 - Rerunning a failure until it passes hides the defect from the signal the suite exists to give (P15).
 - Order and parallelism expose isolation flakes. Run the suite shuffled to surface them.
-- A flake that cannot be fixed immediately is quarantined with an owner and a deadline (P15). The mechanics are in the `testing-code` quarantine runbook.
+- A flake that cannot be fixed immediately is quarantined with an owner and a deadline (P15). The owner is a named person or handle (whoever asked, or the committer), never a team name. The deadline is a calendar date, not a duration. Both go in the marker's reason text so a grep finds them. The mechanics are in the `testing-code` quarantine runbook.

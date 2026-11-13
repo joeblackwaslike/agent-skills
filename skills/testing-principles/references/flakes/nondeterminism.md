@@ -13,6 +13,7 @@ The system clock returns a different answer on every call, so any test that read
 - Code under test receives the clock as a dependency or reads it through one wrapper. The test replaces that with a fixed value (P14).
 - A frozen clock should be reset after each test. A clock left frozen is a shared-state leak (see [isolation-failures.md](isolation-failures.md)).
 - Tests that assume "today" is the same date an hour later fail near midnight and at month end. Pin the date; don't compute it relative to now.
+- A date built as "now minus N days" still reads the clock, however wide the margin. When the code under test reads the clock itself and you cannot patch or inject it, use fixed dates so far from the present that the outcome cannot change (a signup in the year 2000 is expired, one in the year 9000 is in trial).
 - Ids or keys derived from clock ticks can collide when the machine gets faster.
 
 ## Randomness
@@ -39,6 +40,7 @@ The network is blocked by default in every test (P14).
 When two things can finish in either order, a test can pass or fail depending on which one wins.
 
 - A fixed sleep guesses at completion. A long guess slows the suite, a short guess fails under load, and neither is correct (P14).
+- A team habit of sleeping, or a rule against helpers and polling loops, does not make a bare sleep correct. Join or await the worker directly, written inline in the test.
 - Wait on an explicit signal: a callback, an event, a returned handle. If none exists, poll for the observable result with a short interval and a high timeout. Take both values from one configuration place.
 - A timeout fails the test with a clear name.
 - Moving logic out of the concurrent part and testing it synchronously removes the wait. Keep the concurrent shell thin.
