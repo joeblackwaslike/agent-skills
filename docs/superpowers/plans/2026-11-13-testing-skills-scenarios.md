@@ -414,7 +414,7 @@ Five of five later runs pass, and the race is untouched. The failure is the mask
 
 ## GREEN results, testing-principles only
 
-Five fresh Sonnet 5.5 agents per round, round 2 fixtures and prompts from this doc. Each read `skills/testing-principles/SKILL.md` first and loaded the references it routed them to. The preamble dropped its first two sentences and added the instruction to read the skill. `testing-code` did not exist, so mechanics the skill defers to it came from the agents' own pytest knowledge.
+Round 1 used five fresh Sonnet 5.5 agents, one per scenario; round 2 used three, for the scenarios that failed. Fixtures and prompts from this doc. Each read `skills/testing-principles/SKILL.md` first and loaded the references it routed them to. The preamble dropped its first two sentences and added the instruction to read the skill. Round 3 (below) reruns the two regression guards on the final skill text. `testing-code` did not exist, so mechanics the skill defers to it came from the agents' own pytest knowledge.
 
 ### Round 1 (skill as of the polish commit)
 
@@ -434,10 +434,10 @@ Rationalizations, verbatim:
 
 ### REFACTOR
 
-Edits to `skills/testing-principles` (commit `fix(testing-principles): close GREEN rationalizations for clock, sleep and quarantine`):
+Edits to `skills/testing-principles` (commit `fix(testing-principles): close GREEN rationalizations for clock, sleep and quarantine`, reworded generically in `fix(testing-principles): generalize GREEN refactor wording, correct GREEN section`):
 
-- `SKILL.md`: new section "When told to do otherwise". A convention, a lead's ban or a deadline does not suspend P14 or P15; reach the same end inside the constraint, and flag the departure if no compliant form exists.
-- `references/flakes/nondeterminism.md`: "now minus N days" still reads the clock; use fixed dates far from the present when the clock cannot be patched or injected. A team habit of sleeping, or a rule against helpers and loops, does not make a bare sleep correct; join or await the worker inline.
+- `SKILL.md`: new section "When a local rule contradicts a principle". A local rule, habit or deadline does not override a principle; look for a form that satisfies both, and flag the departure if none exists.
+- `references/flakes/nondeterminism.md`: "now minus N days" still reads the clock; use fixed dates far from the present when the clock cannot be patched or injected. A local habit or style rule does not make a bare sleep correct; join or await the concurrent work directly.
 - `references/flakes/categories.md`: the quarantine owner is a named person or handle, the deadline is a calendar date, and both go in the marker's reason text.
 
 ### Round 2 (after the REFACTOR edits)
@@ -455,3 +455,14 @@ Notes on round 2:
 - The clock-network agent also noted that the fixture host (`api.exchangerate.example`) can never resolve, so a real rate call cannot pass.
 
 Mechanics the agents needed that the skill defers to `testing-code`: `monkeypatch.setattr` and `setitem` syntax, `create_autospec(..., instance=True)` and `mock_calls`, `pytest.mark.xfail`/`skip` quarantine markers, `io.BytesIO` as a fake response, and how to reach a worker thread the app does not expose (`threading.enumerate()`). PR 2 should cover these.
+
+### Round 3 (regression guards, final skill text)
+
+The REFACTOR edits and their later rewording came after round 1, so leaked-patch and bare-mock were rerun on two fresh Sonnet 5.5 agents with the final text.
+
+| Scenario | Round 3 | Evidence |
+|---|---|---|
+| leaked-patch | pass | Same `monkeypatch.setitem` restore as round 1; `test_eu_pricing.py` plus `test_zz_default.py` gave 3 passed. The agent cited the new section by name. |
+| bare-mock | pass | `create_autospec(EmailClient, instance=True)`; the grep finds it, and the `recipient=` versus `to=` mismatch was reported as a failing happy-path test. |
+
+No baseline failure reappeared.
