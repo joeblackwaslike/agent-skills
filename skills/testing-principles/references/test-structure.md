@@ -26,7 +26,7 @@ Put the condition and the outcome in the name. If the name needs "and", the test
 
 ## One behavior
 
-A test fails for one reason. Several asserts are fine when they describe one outcome (a response's status, body and headers). They are wrong when they check unrelated outcomes, because the first failure hides the rest and the name stops being true.
+A test fails for one reason. Several asserts are fine when they describe one outcome, such as a response's status, body and headers. Asserts on unrelated outcomes belong in separate tests, since the first failure hides the rest and the name stops being true.
 
 ## No logic
 
@@ -64,20 +64,20 @@ Use the same order in every test so a reviewer's eye lands on the same parts eac
 6. Interaction assertions: each mock's expected calls, in the order the code makes them, and that nothing else was called (P10).
 7. Not-called assertions: doubles that must have stayed untouched.
 
-Mocks are asserted together, each with its own block of expected calls. Checking "called once with these arguments" and "no other calls" in one shape is what keeps a wrong or extra call from passing.
+Give each mock its own block of expected calls. Checking the calls and "nothing else" in one shape stops a wrong or extra call from passing.
 
 ## Argument and parameter order
 
-When a test takes parameters (parametrized values, fixtures, doubles), list them in order of importance so reviews go faster:
+When a test takes inputs (table values, supplied data, doubles), list them in order of importance so reviews go faster:
 
-1. Parametrized values, in the order the parametrization is declared.
-2. Stubs: data objects supplied by fixtures.
+1. Table values, in the order the table declares them.
+2. Stubs, the data objects the code reads.
 3. The instance under test (a handler, a service). It usually has something doubled, but not always.
 4. Mocks the test asserts on at the end.
-5. Doubles the test needs but never asserts on (for example a patched HTTP client).
+5. Doubles the test needs but never asserts on, such as a blocked network client.
 
-The order tells the reader which items the test is about, before they read the body.
+The order shows the reader what the test is about before they reach the body.
 
 ## Sources
 
-The body shape and argument order come from Joe's backend testing guide. The DAMP and behavior-first points paraphrase Google's *Software Engineering at Google* chapter 12 and its testing blog. Naming and one-behavior guidance is common to all the sources.
+The body shape and argument order come from Joe's backend testing guide. The points on complete and concise tests, DAMP over DRY, behavior over methods, naming, logic in tests and failure messages follow the sections of the same names in Google's *Software Engineering at Google*, chapter 12 (paraphrased). Fowler's "The Practical Test Pyramid" also has a test structure section; the Arrange-Act-Assert framing here is informed by it.

@@ -15,9 +15,9 @@ Pick by what you need to prove (P5), not by habit.
 | End-to-end | A user-visible journey works through the whole running system | Everything the user touches | Only what cannot be run (paid third parties) |
 | Acceptance | The system meets a requirement in the stakeholder's words | As the requirement demands | As needed |
 | Behavioral | The system does what a scenario says, written as given/when/then | As the scenario demands | As needed |
-| Property-based | A rule holds for many generated inputs, not just chosen ones | The code under test | As in unit |
+| Property-based | A rule holds across many generated inputs | The code under test | As in unit |
 
-Notes that stop the kinds blurring:
+Three notes keep the kinds from blurring.
 
 - Functional and end-to-end differ by reach. A functional test drives one entry point in-process. An end-to-end test drives the system as a user does, through the real front door.
 - Acceptance and behavioral differ by source. Acceptance is anchored to a requirement. Behavioral is anchored to a scenario format. A single test can be both.
@@ -28,7 +28,7 @@ Notes that stop the kinds blurring:
 | You need to be sure that... | Kind |
 |---|---|
 | A calculation, parser or branch returns the right value | Unit |
-| A rule holds for every input, not just the three you thought of | Property-based |
+| A rule holds for every input, beyond the three you thought of | Property-based |
 | A query, mapping or migration works against a real store | Integration |
 | Two services still agree after one of them changed | Contract |
 | An endpoint or command returns the right result for a request | Functional |
@@ -49,12 +49,12 @@ For every meaningful feature (P6):
 
 If one kind already proves a behavior cheaply and reliably, a second test of it in another kind adds cost and no information. Prove each behavior you care about somewhere, so a failure tells you where to look.
 
-Google, Fowler and Microsoft advise few end-to-end tests. This skill departs from that (P6): a feature with no journey test can pass every lower test and still not work.
+Fowler's pyramid puts few tests at the top, and Google's chapter 13 prefers state testing over interaction testing. This skill departs from both (P6, P10): a feature with no journey test can pass every lower test and still not work.
 
 ## Performance, load and chaos
 
-These answer different questions: how fast, how much, what breaks under failure. They need their own tools, environments and baselines, and they are out of scope here. Treat them as separate work. Do not let a unit or end-to-end test double as a benchmark: timing assertions in ordinary tests are a flake source (P14, P15).
+These answer different questions: how fast, how much, what breaks under failure. They need separate tooling and are out of scope here. Do not let a unit or end-to-end test double as a benchmark: timing assertions in ordinary tests are a flake source (P14, P15).
 
 ## Sources
 
-Paraphrased from the ideas in Google's *Software Engineering at Google* chapters 11 to 14, Fowler's "The Practical Test Pyramid", and the Microsoft Engineering Playbook on automated testing, adjusted to this skill's vocabulary and to P6.
+Informed by Fowler's "The Practical Test Pyramid" (its unit, integration, contract, end-to-end and acceptance sections) and the Microsoft Engineering Playbook's testing page, including its outcomes-to-techniques map. Written in this skill's vocabulary and departing from both on P6.
