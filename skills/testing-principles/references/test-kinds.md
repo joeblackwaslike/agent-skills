@@ -2,7 +2,7 @@
 
 A kind says what a test covers. The kinds are unit, integration, contract, functional, end-to-end, acceptance, behavioral and property-based. Coverage and mutation testing judge tests; they are not kinds (P7). Isolation comes in degrees (fresh state, cleanup, rollback), which is a separate axis from kind.
 
-Pick by what you need to prove (P5), not by habit.
+Pick the kind from what you need to prove (P5).
 
 ## The eight kinds
 
@@ -49,11 +49,11 @@ For every meaningful feature (P6):
 
 If one kind already proves a behavior cheaply and reliably, a second test of it in another kind adds cost and no information. Prove each behavior you care about somewhere, so a failure tells you where to look.
 
-Fowler's pyramid puts few tests at the top, and Google's chapter 13 prefers state testing over interaction testing. This skill departs from both (P6, P10): a feature with no journey test can pass every lower test and still not work.
+Fowler's pyramid puts few tests at the top, and Google's chapter 13 prefers state testing over interaction testing. This skill departs from the pyramid on P6, because a feature with no journey test can pass every lower test and still not work. Its departure on P10 rests on Google's chapter 13 alone.
 
 ## Performance, load and chaos
 
-These answer different questions: how fast, how much, what breaks under failure. They need separate tooling and are out of scope here. Do not let a unit or end-to-end test double as a benchmark: timing assertions in ordinary tests are a flake source (P14, P15).
+Performance, load and chaos testing ask how fast, how much, and what breaks under failure, so they need separate tooling and are out of scope here. Do not let a unit or end-to-end test double as a benchmark: timing assertions in ordinary tests are a flake source (P14, P15).
 
 ## Sources
 

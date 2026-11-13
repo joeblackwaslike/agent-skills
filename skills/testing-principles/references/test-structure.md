@@ -14,7 +14,7 @@ One Act per test. A second Act means a second behavior and a second test. Given/
 
 ## Naming
 
-Name the behavior, not the method. A reader should learn the rule from the test list alone.
+A name states the behavior the test proves, so a reader learns the rule from the test list alone.
 
 | Weak | Better |
 |---|---|
@@ -54,7 +54,7 @@ A failing test should say what was expected, what happened, and enough context t
 
 ## Body shape
 
-Use the same order in every test so a reviewer's eye lands on the same parts each time. Uniformity is the readability tool here: the reader pattern-matches instead of decoding.
+Use the same order in every test so a reviewer's eye lands on the same parts each time. A fixed order lets the reader scan every test the same way.
 
 1. Constants and stubs: the data the code reads.
 2. Mock set-up: what each double returns or raises.
