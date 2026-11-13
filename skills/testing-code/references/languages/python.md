@@ -60,7 +60,7 @@ tests/integration/test_service_db.py
 ```
 
 - Name files `test_*.py`, functions `test_*`, classes `Test*` with no `__init__`. Name each test for the behavior: `test_place_order_sends_receipt_after_charge`, not `test_place_order_1`.
-- Use `--import-mode=importlib`. The pytest docs describe it as importing test modules without changing `sys.path`, so test file names do not need to be unique and no `__init__.py` files are required under `tests/`. The cost is that test modules cannot import each other, and a `tests/helpers.py` is not importable. Fixtures are unaffected because tests never import `conftest.py`. Put helpers that tests import directly inside the package, for example `src/orders/testing/`, or expose them as fixtures.
+- Use `--import-mode=importlib`. The pytest docs describe it as importing test modules without changing `sys.path`, so test file names do not need to be unique and no `__init__.py` files are required under `tests/`. The cost is that test modules do not rely on importing each other, so a `tests/helpers.py` is not importable by name. Fixtures are unaffected because tests never import `conftest.py`. Put helpers that tests import directly inside the package, for example `src/orders/testing/`, or expose them as fixtures.
 - With `src/` layout, install the project into the environment (`uv sync`) so tests import the installed package, not the working directory.
 - Mirror the package in `tests/unit/`. A kind-specific directory (`tests/integration/`) is how you scope fixtures and markers; see the conftest section below.
 
@@ -86,6 +86,10 @@ def upload_dir(tmp_path):
 - Fixtures can be methods on a test class. The class then holds the constants the fixtures and the test share, which keeps expected values next to the code that uses them:
 
 ```python
+import pytest
+from pretend import stub
+
+
 class TestPlaceOrder:
     customer_email = "ada@example.com"
     total_cents = 4200
@@ -110,21 +114,28 @@ The [fixtures runbook](../runbooks/fixtures.md) has the steps for deciding what 
 - **Keep it small.** A `conftest.py` that mixes ten unrelated fixtures hides what each test depends on. Once a reader can no longer hold the file in their head, move fixtures down to the directory that uses them, or into plugin modules named for what they provide.
 - **Do not import from it.** `from tests.conftest import x` couples a test to the file and breaks under `importlib` mode. Make `x` a fixture.
 
-A minimal root file that registers a marker, applies it by directory, and shares one fixture:
+A minimal root `tests/conftest.py` that registers a marker and applies it by directory. The `engine` fixture lives in `tests/integration/conftest.py`, so a unit run never imports `sqlalchemy`:
 
 ```python
 import pytest
-from sqlalchemy import create_engine
 
 
 def pytest_configure(config):
     config.addinivalue_line("markers", "integration: needs a real database")
 
 
-def pytest_collection_modifyitems(items):
+def pytest_collection_modifyitems(config, items):
+    integration_dir = config.rootpath / "tests" / "integration"
     for item in items:
-        if "integration" in item.path.parts:
+        if item.path.is_relative_to(integration_dir):
             item.add_marker(pytest.mark.integration)
+            item.add_marker(pytest.mark.enable_socket)
+```
+
+```python
+# tests/integration/conftest.py
+import pytest
+from sqlalchemy import create_engine
 
 
 @pytest.fixture(scope="session")
@@ -132,7 +143,7 @@ def engine():
     return create_engine("postgresql+psycopg://localhost/app_test")
 ```
 
-With `strict = true`, every marker a test uses must be registered, so the `pytest_configure` line (or the `markers` ini option) is required, not optional.
+With `strict = true`, every marker a test uses must be registered, so the `pytest_configure` line (or the `markers` ini option) is required, not optional. The `enable_socket` mark is registered by pytest-socket, and it lifts the suite-wide socket block (see the network section below) for the integration directory.
 
 ## Doubles: stub, mock, autospec equivalent, fake
 
@@ -143,6 +154,7 @@ Choose the kind of double by what the test asserts (see [doubles](../../../testi
 Use `stub` for data. It responds only to the attributes you gave it, so reading an attribute the code was never meant to read raises `AttributeError` instead of returning a silent `Mock`.
 
 ```python
+import pytest
 from pretend import stub
 
 charge = stub(id="ch_123", status="succeeded")
@@ -164,6 +176,7 @@ with pytest.raises(AttributeError):
 Build every mock from the real signature. A bare `Mock()` accepts any call, including calls with the wrong arguments and calls to methods that do not exist; a renamed method keeps the test green while production breaks ([stale doubles](../code-smells.md#stale-doubles)). Autospec fixes that: attribute access and call signatures are checked against the real object, and a wrong call raises.
 
 ```python
+# class body elided: these fixtures are methods of a test class
 @pytest.fixture
 def payment_gateway_mock(self, mocker):
     gateway = mocker.create_autospec(PaymentGateway, instance=True)
@@ -179,6 +192,7 @@ def payment_gateway_mock(self, mocker):
 - When the code under test instantiates the class itself, patch the class with the instance mock as its return value:
 
 ```python
+# class body elided, as above
 @pytest.fixture
 def payment_gateway_mock(self, mocker):
     gateway = mocker.create_autospec(PaymentGateway, instance=True)
@@ -255,7 +269,14 @@ def test_place_order_applies_member_discount(
 `assert_calls_on` is a snippet to copy into your own test-support module, not a package to install. It is the exact-call rule from the [test body template](../test-body-template.md) in one helper: the listed calls must appear on the mock in that order with nothing between them, and with `exact_count=True` the mock may have received no other call.
 
 ```python
-def assert_calls_on(mock_obj, calls, exact_count=False):
+from unittest.mock import NonCallableMock, _Call
+
+
+def assert_calls_on(
+    mock_obj: NonCallableMock,
+    calls: list[_Call],
+    exact_count: bool = False,
+) -> None:
     """Assert that `calls` were made on `mock_obj`, in order.
 
     `calls` is a list of `unittest.mock.call` objects. They must appear in
@@ -276,6 +297,8 @@ def assert_calls_on(mock_obj, calls, exact_count=False):
 Usage, with the mock from a fixture:
 
 ```python
+from unittest.mock import call
+
 assert_calls_on(
     payment_gateway_mock,
     [call.charge(card_token, total_cents)],
@@ -284,7 +307,7 @@ assert_calls_on(
 ```
 
 - `mock_calls` records calls on child attributes, so `call.charge(...)` keeps the method name with the call. That is why the list reads like the production code.
-- A `MagicMock` also records magic-method calls (`str(m.return_value)` adds `call().__str__()`). Use `exact_count=True` on autospecced mocks, and leave it off a `MagicMock` that the code turns into a string.
+- An autospecced mock is still a `MagicMock`. An unset method return value is another `MagicMock`, and truthiness, `str()` or iteration of it records a magic-method call on the parent: after `if gateway.is_ready(): ...`, `mock_calls` holds `call.is_ready()` and `call.is_ready().__bool__()`. Give each method the code branches on a concrete `return_value` before using `exact_count=True`, as the decorator example below does. Leave `exact_count` off only for a mock whose return value the code turns into a string.
 - A mock that must stay untouched gets `mock.assert_not_called()` (the last block of the template). To say that nothing at all happened on a mock with children, assert `mock.mock_calls == []`.
 
 ### Fake
@@ -309,8 +332,38 @@ class InMemoryOrders:
 
 A decorator is tested by decorating a plain function and patching the collaborator where the decorator looks it up. The inner function is a stub returning a sentinel, so the test asserts on what the decorator did around it.
 
+The decorator under test, in `orders/auth.py`:
+
+```python
+import functools
+
+
+class PermissionService:
+    def has_scope(self, user_id, scope):
+        raise NotImplementedError
+
+
+def require_scope(scope):
+    def decorator(view):
+        @functools.wraps(view)
+        def wrapper(*args, user_id=None, **kwargs):
+            if not PermissionService().has_scope(user_id, scope):
+                raise PermissionError(scope)
+            return view(*args, user_id=user_id, **kwargs)
+
+        return wrapper
+
+    return decorator
+```
+
+The test, with `assert_calls_on` saved in `src/orders/testing.py` as the layout section suggests. The fixture gives `has_scope` a concrete `return_value`, so the `if` in the decorator records no `__bool__` call and `exact_count=True` holds:
+
 ```python
 from unittest.mock import call, sentinel
+
+import pytest
+from orders.auth import PermissionService, require_scope
+from orders.testing import assert_calls_on
 
 
 class TestRequireScope:
@@ -327,6 +380,7 @@ class TestRequireScope:
     @pytest.fixture
     def permissions_mock(self, mocker):
         permissions = mocker.create_autospec(PermissionService, instance=True)
+        permissions.has_scope.return_value = True
         mocker.patch("orders.auth.PermissionService", return_value=permissions)
         return permissions
 
@@ -342,7 +396,15 @@ class TestRequireScope:
             [call.has_scope(user_id, self.scope)],
             exact_count=True,
         )
+
+    def test_rejects_user_without_scope(self, decorated_view, permissions_mock):
+        permissions_mock.has_scope.return_value = False
+
+        with pytest.raises(PermissionError, match=self.scope):
+            decorated_view(user_id=7)
 ```
+
+Run on pytest 9.2.0 with pytest-mock 3.17.0: both tests pass. Delete the `return_value = True` line and the first fails with `expected exactly 1 calls ... got 2`.
 
 ## Parametrization
 
@@ -382,6 +444,10 @@ This is supported by pytest and is useful when the thing you vary is an object a
 `indirect=True` sends the parameter value to the fixture of the same name as `request.param`, rather than to the test body. The fixture turns it into the object.
 
 ```python
+import pytest
+from pretend import stub
+
+
 class TestPlaceOrder:
     member_cases = [
         stub(email="ada@example.com", is_member=True, discount_cents=500),
@@ -404,8 +470,14 @@ class TestPlaceOrder:
     def cart(self, request):
         return request.param
 
-    @pytest.mark.parametrize("cart", cart_cases, indirect=True)
-    @pytest.mark.parametrize("customer", member_cases, indirect=True)
+    # "customer" feeds the customer fixture, "cart" feeds the cart fixture:
+    # each value arrives there as request.param, not in the test body.
+    @pytest.mark.parametrize(
+        "cart", cart_cases, indirect=True, ids=["one-item", "two-items"]
+    )
+    @pytest.mark.parametrize(
+        "customer", member_cases, indirect=True, ids=["member", "non-member"]
+    )
     def test_order_is_confirmed(self, customer, cart, order_service):
         result = order_service.place(customer, cart)
 
@@ -414,7 +486,7 @@ class TestPlaceOrder:
 
 - Pass `indirect=["x"]` to route only some of the names to fixtures; the rest stay plain parameters.
 - The decorator runs when the class body is executed, so its lists can only use module-level names and class attributes, not other fixtures. Define the lists on the class, as above.
-- Each stacked decorator multiplies the test count, and the combined cases are only as readable as the ids. Add `ids=` to every list.
+- Each stacked decorator multiplies the test count, and the combined cases are only as readable as the ids. Add `ids=` to every list, as the example does.
 - Assert on a literal that holds for all the combinations. If the expected result differs per case, carry the expected value inside the parameter object, not in an `if` in the test.
 - Prefer separate, named fixtures when you only have two or three variants. They read better and fail with a clearer name.
 
@@ -424,12 +496,14 @@ A test that reads the clock, the random generator, the network or the order of i
 
 ### Time
 
-Three options, in order of preference:
+Four options, in order of preference:
 
 1. **Inject a clock.** Give the code a `now` callable (or a clock object) as a parameter with a real default, and pass a fixed one in the test. It needs no library, works under threads and async, and shows the dependency in the signature.
 
 ```python
 from datetime import datetime, timezone
+
+from pretend import stub
 
 
 def is_expired(token, now=lambda: datetime.now(timezone.utc)):
@@ -465,7 +539,7 @@ def test_token_expires_after_an_hour(time_machine):
 
 3. **freezegun** (`@freeze_time("2026-01-01")`) patches the `datetime` module and the `time` functions. It has the longer history and the bigger user base; its PyPI classifiers list Python up to 3.13 as of this check, so confirm your interpreter before choosing it for a new project.
 
-4. **Fixed dates, when you can neither inject nor patch.** A date built as `datetime.now() - timedelta(days=30)` still reads the real clock, however wide the margin, and a team habit of writing dates that way does not make it deterministic. Use literal dates far from the present on each side of the boundary, such as `datetime(2000, 1, 1)` for "long ago" and `datetime(3000, 1, 1)` for "far ahead". Only the call that reads the clock inside the code under test stays real, and the fixed dates keep its answer constant.
+4. **Fixed dates, when you can neither inject nor patch.** A date built as `datetime.now() - timedelta(days=30)` reads the real clock too, however wide the margin. Use literal dates far from the present on each side of the boundary, such as `datetime(2000, 1, 1)` for "long ago" and `datetime(3000, 1, 1)` for "far ahead". This protects the test from the real date drifting across the boundary, so the answer is the same on any day the test runs. It does not make the clock call inside the code under test deterministic. That call still reads real time, so a test that needs one exact instant needs one of the first three options.
 
 Time is process-global: while it is frozen, every thread and coroutine sees it, and other processes (a database server) do not. Never leave a freeze active across tests; use the fixture or the marker, which undo it.
 
@@ -482,7 +556,7 @@ Block the network for the whole suite and allow it per test where a kind needs i
 addopts = ["--disable-socket", "--allow-unix-socket"]
 ```
 
-`pytest-socket` also gives the `socket_enabled` fixture, the `enable_socket` mark, and `--allow-hosts=127.0.0.1` for local services. If you would rather not add a plugin, an autouse fixture does the job:
+`pytest-socket` also gives the `socket_enabled` fixture, the `enable_socket` mark, and `--allow-hosts=127.0.0.1` for local services. The suite-wide block applies to fixtures too, so a session-scoped integration `engine` fixture would fail on its first connection. The `enable_socket` mark that `pytest_collection_modifyitems` adds to everything under `tests/integration` (see the conftest section) lifts the block there. If you would rather not add a plugin, an autouse fixture is a coarser substitute:
 
 ```python
 @pytest.fixture(autouse=True)
@@ -492,6 +566,8 @@ def no_network(monkeypatch):
 
     monkeypatch.setattr("socket.socket.connect", refuse)
 ```
+
+The fixture is coarser than pytest-socket. It blocks `connect` on every socket type and nothing else, so `connect_ex`, `sendto`, UDP and DNS lookups stay open, and there is no per-test opt-out.
 
 With the network blocked, a unit test that calls the internet fails at once instead of passing on a good day. For a service you do control, run it locally in the integration kind instead of mocking the socket.
 
@@ -509,11 +585,11 @@ When a shuffled run fails, rerun with the printed seed to reproduce the order, t
 Code that starts a background thread or schedules an async task and gives you no handle makes a test either `sleep` or race. Choose in this order:
 
 1. **Inject the executor or queue.** Accept it as a parameter, pass a synchronous one in the test, and nothing runs in the background.
-2. **Patch the thread factory** so the target runs inline:
+2. **Patch the thread factory** so the target runs inline. The module under test imports the name it owns (`from threading import Thread`), and the test patches that name:
 
 ```python
 def test_close_publishes_event(mocker, service):
-    thread_mock = mocker.patch("service.threading.Thread", autospec=True)
+    thread_mock = mocker.patch("service.Thread", autospec=True)
 
     service.close()
 
@@ -521,7 +597,7 @@ def test_close_publishes_event(mocker, service):
     target()
 ```
 
-This works when the code passes `target` as a keyword; read it from `call_args.args` otherwise. Assert on the effect after calling `target()`, as in any other test.
+This works when the code passes `target` as a keyword; read it from `call_args.args` otherwise. Assert on the effect after calling `target()`, as in any other test. Patching `service.threading.Thread` replaces more than it appears to. `service.threading` is the global `threading` module, so every thread started anywhere in the process, including by libraries, gets the mock until the test ends. After `mock.patch("service.threading.Thread")`, `threading.Thread` is the mock; after `mock.patch("service.Thread")` it stays real. Patch a name the module owns, or inject the factory (option 1).
 
 3. **Find and join the real thread.** When you cannot change the code, locate the worker and wait for it with a timeout rather than a sleep:
 
