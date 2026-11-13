@@ -21,7 +21,7 @@ Real or not. Before you report any finding, open the cited lines again and the n
 
 Two calibration cases that keep recurring. First, two parts of a skill that disagree (a checklist against its own reference, a rule against an exception) are minor unless following the text literally makes an agent do something harmful, skip a gate the skill's whole purpose depends on, or produces an example that fails. If the worst result is one extra or one skipped low-stakes step, it is minor. Second, two skills with overlapping descriptions are not a finding unless you can name a realistic request where the overlap sends an agent to the wrong skill and the right one never loads. Skills that load together and each do their own part are not overlapping in a way that matters.
 
-Calibration. Before you rate anything major, ask whether the skill already has a defense your finding ignores: a rationalization table row, a red flag, a gate elsewhere, a verification step. If it does, rate the finding minor or drop it. A well defended skill should yield few findings. When you find none of severity major or above, say "no findings of severity major or above" plainly. Do not lower the bar to find some.
+Calibration. Before you rate anything major, ask whether the skill already has a defense your finding ignores: a rationalization table row, a red flag, a gate elsewhere, a verification step. If it does, drop it or list it under SUGGESTIONS. A well defended skill should yield few findings. When you find none of severity major or above, say "no findings of severity major or above" plainly. Do not lower the bar to find some.
 
 Finding format. For each finding, report exactly:
 - id (F1, F2, ...)
