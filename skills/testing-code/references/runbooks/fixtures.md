@@ -25,7 +25,7 @@ A fixture that returns one fixed object forces every test to use that object. Re
 - **Factory**: a function with sensible defaults and keyword overrides. `make_order(total=ORDER_TOTAL)`. Use it when tests differ in a few fields.
 - **Builder**: a chain of calls for objects with many optional parts or an order of construction. `an_order().with_item(ITEM).shipped().build()`. Use it when a factory's override list is getting long.
 - Defaults are valid and boring. Each test overrides only the field it is about, so the override tells the reader what matters.
-- Unique fields (ids, emails) are generated per call, not hard-coded, so two objects in one test cannot collide.
+- Unique fields (ids, emails) come from a per-test counter or a seeded generator, so two objects in one test cannot collide and a failure can be replayed (P14).
 - Randomness in a factory is seeded or absent (P14).
 
 ## 4. Put teardown next to setup
@@ -45,7 +45,7 @@ Use a table when the same behavior is checked with different inputs. The decisio
 2. The inputs are values passed straight to the act: parametrize the test itself.
 3. Advanced: the inputs decide how the fixture is built (which database engine, which user role). Tools support this as indirect or parametrized fixtures, but it hides the input one hop away, so reach for it only when step 2 cannot express the case.
 4. The rows need different assertions, not only different data: they are different behaviors. Write separate tests (P3).
-5. More than about ten rows, or rows with branching logic in the test body: move the cases to a data file or a property-based test.
+5. Rows with branching logic in the test body, or a table too long to read at a glance (ten rows is a rule of thumb): move the cases to a data file or a property-based test.
 
 ## 6. Name them for what they are
 

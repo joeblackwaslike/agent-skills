@@ -25,7 +25,7 @@ An end-to-end test is defined by how far it reaches, the whole running system. A
 ## Steps
 
 1. Take one criterion and rewrite it as one observable outcome: "a customer with an expired card sees a decline message and is not charged".
-2. Confirm the wording with the owner of the criteria. If the criterion is vague, ask before writing the test, because a vague criterion gives a test with no clear way to fail.
+2. Confirm the wording with the owner of the criteria. If the criterion is vague, ask before writing the test, because a vague criterion gives a test with no clear way to fail. When the owner is not available, for example an agent running unattended, write down the wording you assumed and where it came from in the test or the PR description, so the owner can correct it later.
 3. Name the test after the criterion, using the owner's words, and reference its source.
 4. Write the body in the [test body template](../test-body-template.md). The act is what the stakeholder does; the result asserts are what the criterion says should be true.
 5. Run it red first and confirm it fails because the criterion is unmet (P19).
@@ -53,7 +53,7 @@ An end-to-end test is defined by how far it reaches, the whole running system. A
 - Inject the clock and seed randomness. A criterion about "after 30 days" needs a clock the test sets (P14).
 - No bare sleeps. Wait for a condition with a timeout.
 - Block real network access by default.
-- A flaky acceptance test is a defect with an owner and a deadline (P15).
+- A flaky acceptance test is a defect with an owner and a deadline (P15). Diagnose it with [flakes/triage.md](../flakes/triage.md), and use [flakes/quarantine.md](../flakes/quarantine.md) if the fix cannot land now.
 
 ## Common mistakes
 

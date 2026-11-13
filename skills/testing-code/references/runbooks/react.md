@@ -1,6 +1,6 @@
 # React runbook
 
-How to test React components with Testing Library, user-event and MSW. Pick the kind first from the [unit](unit.md) or [functional](functional.md) runbook; use the [end-to-end](end-to-end.md) and [Playwright](playwright.md) runbooks when you need a real browser. Verified against the Testing Library docs, user-event 14 and MSW 3 docs.
+How to test React components with Testing Library, user-event and MSW. Pick the kind first from the [unit](unit.md) or [functional](functional.md) runbook; use the [end-to-end](end-to-end.md) and [Playwright](playwright.md) runbooks when you need a real browser. Verified against the Testing Library docs, user-event 14 and MSW 3 docs on 2026-11-13.
 
 ## 1. Render and query like a user
 
@@ -33,20 +33,25 @@ MSW intercepts requests at the network level, so the component, its hooks and it
 
 1. Define handlers for the happy path in one file and create the server with `setupServer(...handlers)`.
 2. In the test setup file: `beforeAll(() => server.listen({ onUnhandledFrame: 'error' }))`, `afterEach(() => server.resetHandlers())`, `afterAll(() => server.close())`.
-3. `onUnhandledFrame: 'error'` makes a request with no handler fail the test. The default only warns. Earlier MSW versions named this option `onUnhandledRequest`; check your installed version.
+3. `onUnhandledFrame: 'error'` makes a request with no handler fail the test. The default only warns. The option is `onUnhandledFrame` in MSW 3 (checked against 3.0.5 on 2026-11-13). Earlier MSW versions named it `onUnhandledRequest`; use whichever name your installed version documents.
 4. A test that needs a different response calls `server.use(...)` with an override. `resetHandlers` removes it after the test, so it is undone automatically (P13).
 5. Keep the response values as named constants shared by the handler and the assertion (P4).
-6. Check the handlers against the real API with a [contract](contract.md) test, or they go stale (P11).
+6. Relative handler URLs such as `/api/users/1` need the test environment to supply a base URL. In jsdom the base is the URL the environment is configured with, so confirm yours sets one; without it, use absolute URLs.
+7. Check the handlers against the real API with a [contract](contract.md) test, or they go stale (P11).
 
 ```tsx
 import { http, HttpResponse } from 'msw'
 import { server } from './server'
 import { renderWithProviders, screen } from './test-utils'
 
-test('shows the error state when the server fails', async () => {
-  server.use(http.get('/api/users/1', () => new HttpResponse(null, { status: 500 })))
+const USER_ID = '1'
+const USER_URL = `/api/users/${USER_ID}`
+const SERVER_ERROR_STATUS = 500
 
-  renderWithProviders(<UserPage id="1" />)
+test('shows the error state when the server fails', async () => {
+  server.use(http.get(USER_URL, () => new HttpResponse(null, { status: SERVER_ERROR_STATUS })))
+
+  renderWithProviders(<UserPage id={USER_ID} />)
 
   expect(await screen.findByText(/something went wrong/i)).toBeInTheDocument()
 })
@@ -58,13 +63,15 @@ To assert the request a component sent, record it inside the handler and check i
 import userEvent from '@testing-library/user-event'
 
 const NEW_NAME = 'Alice'
+const USERS_URL = '/api/users'
+const CREATED_STATUS = 201
 
-test('saving posts the entered name', async () => {
-  let body: unknown
+test('saving posts the entered name once', async () => {
+  const bodies: unknown[] = []
   server.use(
-    http.post('/api/users', async ({ request }) => {
-      body = await request.json()
-      return HttpResponse.json({ id: '1' }, { status: 201 })
+    http.post(USERS_URL, async ({ request }) => {
+      bodies.push(await request.json())
+      return HttpResponse.json({ id: USER_ID }, { status: CREATED_STATUS })
     }),
   )
   const user = userEvent.setup()
@@ -74,9 +81,11 @@ test('saving posts the entered name', async () => {
   await user.click(screen.getByRole('button', { name: /save/i }))
 
   expect(await screen.findByText(/saved/i)).toBeInTheDocument()
-  expect(body).toEqual({ name: NEW_NAME })
+  expect(bodies).toEqual([{ name: NEW_NAME }])
 })
 ```
+
+Recording every body in an array and comparing the whole array means a double submit fails the test (P10).
 
 ## 5. What stays out
 

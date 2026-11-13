@@ -15,7 +15,7 @@ The steps for writing a test and getting it green. The standard it must meet liv
 1. **Load the standard.** Read the `testing-principles` files below that the task needs, starting with its `SKILL.md`.
 2. **Pick the kind** from what you need to prove (P5, P6), then open that kind's runbook.
 3. **Read the language page** for mechanics: fixtures, doubles, parametrization, async, tooling.
-4. **Write the test body** with `references/test-body-template.md`: constants, mocks, act, expected, result asserts, mock asserts in call order, not-called asserts. Write it first and watch it fail for the intended reason (P19).
+4. **Write the test body** with `references/test-body-template.md`: constants, mocks, act, expected, result asserts, mock asserts in call order, not-called asserts. Write it first and watch it fail for the intended reason (P19). Code already exists: break or revert the production line the test covers, confirm the test fails for the intended reason, then restore it (see [tests that cannot fail](references/code-smells.md#tests-that-cannot-fail) and [test-driven development](../testing-principles/references/test-driven-development.md)).
 5. **Build fixtures and doubles.** Stubs for data, mocks for effects, fakes when several calls matter. Check each double against the real thing (P11).
 6. **Check isolation and determinism.** Run the test alone, in a different order, and repeated. Inject the clock, seed randomness, block the network (P13, P14). A date built as now minus N days still reads the real clock, so use fixed dates when you cannot inject it.
 7. **Run it, then run the suite.** Scan the test against `references/code-smells.md` before calling it done.

@@ -25,7 +25,7 @@ Use another kind when it fits better. Pure logic belongs in a [unit](unit.md) te
 1. Pick one feature behavior and one entry point: "POST an order with a valid card creates it and returns 201".
 2. List what is real (the app, its stores) and what is doubled (external third parties).
 3. Write the test in the [test body template](../test-body-template.md). The act sends one request or runs one command; result asserts check the response first, then stored state; mock asserts cover outbound calls.
-4. Run it red first and confirm it fails for the intended reason, for example a missing route, not a configuration error (P19).
+4. Run it red first and confirm it fails for the intended reason, for example a missing route, not a configuration error (P19). Code already exists: break or revert the production line the test covers, confirm the test fails for the intended reason, then restore it (see [tests that cannot fail](../code-smells.md#tests-that-cannot-fail) and [test-driven development](../../../testing-principles/references/test-driven-development.md)).
 5. Make it pass.
 6. Confirm the network is blocked: remove the stub for one external call and check that the test fails instead of reaching the real service. Put the stub back.
 7. Add the next case: one error path, one edge, one authorization rule, each as its own test.
@@ -59,6 +59,7 @@ Use another kind when it fits better. Pure logic belongs in a [unit](unit.md) te
 - Background work the entry point starts is awaited by polling a condition with a timeout, never a bare sleep.
 - Parallel runs need separate store namespaces or instances.
 - Do not assert on response bodies that include generated values unless you pin them.
+- A test that still flakes goes through [flakes/triage.md](../flakes/triage.md), and [flakes/quarantine.md](../flakes/quarantine.md) if the fix cannot land now.
 
 ## Common mistakes
 

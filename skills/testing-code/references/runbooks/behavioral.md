@@ -53,6 +53,7 @@ Use another kind when it fits better. Pure logic with a plain input and output r
 - Time is part of many Givens ("overdue", "after the trial ends"). Inject the clock and set it in the Given (P14).
 - Seed randomness; no bare sleeps; block the network by default (P14).
 - Shared step helpers must not hold state between scenarios.
+- A scenario that still flakes goes through [flakes/triage.md](../flakes/triage.md), and [flakes/quarantine.md](../flakes/quarantine.md) if the fix cannot land now.
 
 ## Common mistakes
 

@@ -48,7 +48,7 @@ Use another kind when it fits better. An exact, arbitrary business answer, such 
 
 ## Determinism and isolation
 
-- The generation seed is fixed or recorded for every run, and the failure prints it (P14). A failure that cannot be replayed is a flake (P15).
+- CI uses a fresh seed per run and prints it in the failure output, so the failing run can be replayed (P14). Pin a seed only while reproducing a failure. A failure that cannot be replayed is a flake (P15).
 - Each generated case is independent. Properties must not write to shared state, or iterations affect each other and tests affect other tests (P13); see [isolation](../../../testing-principles/references/isolation.md).
 - The property is deterministic given the input. If the code under test reads the clock or randomness, inject them.
 - No bare sleeps. Time-bound each run so a pathological input fails loudly.

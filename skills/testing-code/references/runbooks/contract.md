@@ -54,7 +54,7 @@ Use another kind when the question differs. Whether your code uses the dependenc
 - Provider tests set up the state each interaction assumes, in the test, and clear it afterwards (P13).
 - Do not call a shared staging service from a build that runs in parallel; use an owned instance or a stub of the provider's downstream boundaries.
 - Generated ids, timestamps and ordering in a response should be matched by shape, not by value, or pinned by injection.
-- A contract run against a remote service that sometimes times out is a flake. Quarantine it with an owner and a date; never retry it to green (P15).
+- A contract run against a remote service that sometimes times out is a flake. Diagnose it with [flakes/triage.md](../flakes/triage.md), then quarantine it with an owner and a date ([flakes/quarantine.md](../flakes/quarantine.md)); never retry it to green (P15).
 
 ## Common mistakes
 

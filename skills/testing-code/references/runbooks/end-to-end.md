@@ -26,10 +26,10 @@ Use another kind when it fits better. A branch inside the journey belongs in a [
 1. Pick one journey from the Journey selection list below and state it as a sentence: "a shopper searches, adds an item and checks out".
 2. List what is real and what is doubled. Default to real; double only what you cannot run.
 3. Write the test in the [test body template](../test-body-template.md). The act is the user's actions in order; result asserts check what the user sees and what the system stored; mock asserts cover outbound calls to doubled third parties.
-4. Run it red first and confirm it fails for the intended reason, such as a missing page, not a broken environment (P19).
+4. Run it red first and confirm it fails for the intended reason, such as a missing page, not a broken environment (P19). Code already exists: break or revert the production line the journey covers, confirm the test fails for the intended reason, then restore it.
 5. Make it pass.
 6. Add the next case for the same feature: one edge case or one error path a user can reach, each as its own test.
-7. Run it alone, then in parallel with the rest of the suite, then repeatedly to look for flakes (P13, P15).
+7. Run it alone, then in parallel with the rest of the suite, then repeated, for example `--repeat-each=20` as in [playwright.md](playwright.md#7-check-for-flakes), to look for flakes (P13, P15). Twenty is only a starting point; [flakes/triage.md](../flakes/triage.md) says how to choose a count from a failure rate.
 
 ## Cases to cover
 
@@ -56,7 +56,7 @@ For each meaningful feature, one happy path plus edge cases and errors (P6).
 - Inject or freeze the clock where the system allows it, seed randomness, and assert on values the test sets (P14).
 - Wait for a visible condition with a timeout. Never a bare sleep (P14).
 - Block real calls to third parties by default so an unstubbed call fails loudly.
-- Treat a flaky journey as a defect: quarantine it with an owner and a deadline, never retry it to green silently (P15). The flake guides are in [flakes](../../../testing-principles/references/flakes/categories.md).
+- Treat a flaky journey as a defect: quarantine it with an owner and a deadline, never retry it to green silently (P15). Diagnose it with [flakes/triage.md](../flakes/triage.md), hold it out with [flakes/quarantine.md](../flakes/quarantine.md), and sort the cause with the [flake categories](../../../testing-principles/references/flakes/categories.md).
 - Keep each journey fast and independent of the others (P17). If the whole set is too slow for every change, run it on a schedule and say which, and keep every P6 journey in it.
 
 ## Common mistakes
@@ -89,7 +89,7 @@ Each journey costs maintenance and runtime, so choose them on purpose.
 1. List the journeys that carry the feature's value: what a user came to do. Start with the one whose failure would cost the most.
 2. For each, write the happy path first. That is the journey a stakeholder would name without prompting.
 3. Add the edge cases and errors a user can actually reach through the interface. If a case needs a state the interface cannot produce, test it in a lower kind.
-4. Keep every journey in the P6 set: the happy path plus each edge case and error a user can reach. Drop only extra journeys outside that set, meaning ones that add a branch but no case a user can reach. If a journey fails and no lower test fails, add the lower test.
+4. Keep every journey in the P6 set: the happy path plus each edge case and error a user can reach. A journey outside that set is one that covers only a branch no user can reach, or repeats a case another journey already covers. Drop those. If a journey fails and no lower test fails, add the lower test.
 5. Write the list down with an owner against each journey. It holds at least the P6 set for each meaningful feature, and you review it when the feature changes.
 
 ## Sources

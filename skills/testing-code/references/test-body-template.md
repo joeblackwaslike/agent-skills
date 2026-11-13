@@ -11,15 +11,16 @@ Seven blocks, in this order, separated by one blank line each. Skip a block when
 3. **Act.** Call the code under test once. Keep the result if there is one.
 4. **Expected.** Build the expected object with helpers or plain literals. This is the only place the test prepares data for its assertions.
 5. **Result asserts.** Assert the return value against the expected object first, then any other assertion that does not involve a mock. Follow the order in which the code under test does things.
-6. **Mock asserts.** One exact-call assertion per mock, listed in the order the code under test makes the calls. Write each call to look like the call in the production code. When a mock stands for a collaborator with a nested object, keep the object name with the method in the call list.
+6. **Mock asserts.** One exact-call assertion per mock, listing that mock's calls in the order the code under test makes them. Write each call to look like the call in the production code. When a mock stands for a collaborator with a nested object, keep the object name with the method in the call list. Order is verified per mock. Independent mocks record nothing about each other, so when the order across mocks matters, attach them to one parent (a manager mock) and assert the parent's `mock_calls`, or record an event log and assert the log.
 7. **Not-called asserts.** A mock that must stay untouched gets `assert mock.mock_calls == []`. That covers every method and child, where `assert_not_called` checks only the mock's own call.
 
 ## Rules that make it work
 
 - Constants live in the test or on the test class, never in a distant helper (see [values defined far from the test](code-smells.md#values-defined-far-from-the-test)).
 - A mock assertion lists every call the mock received, and fails on any extra one (P10). Asserting only that one method was called once leaves everything else unchecked.
-- Order assertions as the code does its work. A reader can then hold the production function in one hand and the test in the other.
+- Order assertions as the code does its work. A reader can then hold the production function in one hand and the test in the other. This orders the asserts on the page. It does not prove the code called one mock before another.
 - No loops, conditionals or computed expectations in any block (P3).
+- Several separate result asserts are fine when the framework's assertion introspection, or one exact-object comparison, keeps each failure readable. Otherwise see [assertion roulette](code-smells.md#assertion-roulette).
 - Each mock normally comes from a fixture, so the test body only configures it. The fixture mechanics belong to the language page.
 
 ## One worked example
@@ -36,7 +37,8 @@ def test_place_order_charges_card_and_sends_receipt(
     customer_email = "ada@example.com"
     card_token = "tok_visa"
     total_cents = 4200
-    charge = stub(id="ch_123", status="succeeded")
+    charge_id = "ch_123"
+    charge = stub(id=charge_id, status="succeeded")
 
     payment_gateway_mock.charge.return_value = charge
 
@@ -49,7 +51,7 @@ def test_place_order_charges_card_and_sends_receipt(
         audit_log=audit_log_mock,
     )
 
-    expected_result = OrderConfirmation(charge_id="ch_123", total_cents=4200)
+    expected_result = OrderConfirmation(charge_id=charge_id, total_cents=total_cents)
 
     assert result == expected_result
 
@@ -60,14 +62,14 @@ def test_place_order_charges_card_and_sends_receipt(
     )
     assert_calls_on(
         mailer_mock,
-        [call.send_receipt(customer_email, charge_id="ch_123")],
+        [call.send_receipt(customer_email, charge_id=charge_id)],
         exact_count=True,
     )
 
     assert audit_log_mock.mock_calls == []
 ```
 
-Block by block: the first four lines are constants (the last is a stub), the assignment is the mock block, `place_order` is the act, `expected_result` is the expected block, `assert result` is the result assert, the two `assert_calls_on` calls are the mock asserts in the order the function calls the gateway and then the mailer, and the last line is the not-called assert.
+Block by block: the first five lines are constants (the last is a stub), the assignment is the mock block, `place_order` is the act, `expected_result` is the expected block, `assert result` is the result assert, the two `assert_calls_on` calls are the mock asserts (one per mock), and the last line is the not-called assert. The example does not check that the gateway was called before the mailer. To pin that, attach both mocks to a manager mock and compare its `mock_calls`.
 
 ## Before and after
 
@@ -85,7 +87,7 @@ The template gives each mock the same block and fails if the code calls anything
 
 ## Where it comes from
 
-This is Joe Black's house template, refined across his own backend tests. The claim that a uniform shape lowers review effort is his. The no-logic rule is informed by the Google Testing Blog's "Don't Put Logic in Tests".
+The template was written by Joe Black and refined across his backend tests. The no-logic rule is informed by the Google Testing Blog's "Don't Put Logic in Tests".
 
 ## Related
 

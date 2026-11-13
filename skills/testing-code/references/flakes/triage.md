@@ -69,7 +69,7 @@ Evidence to write in the commit or issue: the cause category, the condition that
 
 ## 6. If you cannot reproduce it
 
-Time-box the effort, then stop guessing.
+Time-box the effort, then stop guessing. A default is about two hours, or each condition in step 2 run once, whichever comes first. Extend it only when a condition has already narrowed the cause.
 
 1. Add what the next failure would need: log the seed, the order, the clock and the resource state on failure.
 2. Record the flake in the tracker (see [tracking](tracking.md)).

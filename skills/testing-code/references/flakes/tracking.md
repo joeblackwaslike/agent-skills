@@ -35,7 +35,7 @@ Order the open records so the next one to work on is obvious.
 3. Then the number of distinct pipelines or branches affected.
 4. Then age. An old record is a record nobody owns.
 
-Rank by evidence from the history, not by who complained last. Two tests with the same signature across different tests point at a shared cause such as a fixture or a service; fix that once.
+Rank by evidence from the history, not by who complained last. The same signature across different tests points at a shared cause such as a fixture or a service; fix that once.
 
 ## 4. Assign and review
 
@@ -51,7 +51,15 @@ Rank by evidence from the history, not by who complained last. Two tests with th
 
 ## 6. Where to store it
 
-Use the project's existing tracker and a label such as `flaky-test`. A spreadsheet or a markdown table is acceptable for a small project if it has the fields above and a person reviews it. A separate system nobody opens is worse than a label on the existing one. The failure history comes from the CI provider's test reports or a results store; link to it from the record.
+Use the project's existing tracker and a label such as `flaky-test`. On GitHub, one record could be opened like this (an example, not a mandate):
+
+```bash
+gh issue create --label flaky-test --assignee "@me" \
+  --title "Flaky: tests/test_orders.py::test_checkout" \
+  --body "Signature: TimeoutError waiting for order row. First seen: 2026-11-13, run 123. Category: unknown. Status: open."
+```
+
+The body carries the fields from section 1. A spreadsheet or a markdown table is acceptable for a small project if it has the fields above and a person reviews it. A separate system nobody opens is worse than a label on the existing one. The failure history comes from the CI provider's test reports or a results store; link to it from the record.
 
 ## Common mistakes
 

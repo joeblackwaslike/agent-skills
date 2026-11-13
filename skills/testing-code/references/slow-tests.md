@@ -44,6 +44,7 @@ Match the outlier to a row, apply the fix, and measure again before moving on.
 1. Run the changed tests shuffled and in parallel after every speed change.
 2. If a test newly fails or flakes, the speed change caused it. Revert it or fix the cause.
 3. Do not mark a slow test as skipped to make the total look better. It leaves the suite less safe and the number meaningless.
+4. Never delete a P6 journey for speed; move it to a scheduled run (see [runbooks/end-to-end.md](runbooks/end-to-end.md)).
 
 ## 5. Check the result matters
 

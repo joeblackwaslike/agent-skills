@@ -1,6 +1,6 @@
 # Playwright runbook
 
-How to drive a browser journey with Playwright Test so it stays stable. Use it together with the [end-to-end](end-to-end.md) runbook, which says which journeys to write. This page is the browser mechanics. Verified against Playwright docs, current release 1.65.
+How to drive a browser journey with Playwright Test so it stays stable. Use it together with the [end-to-end](end-to-end.md) runbook, which says which journeys to write. This page is the browser mechanics. Checked against the Playwright docs on 2026-11-13, when the current release was 1.65.
 
 ## 1. Locate by role first, test id when role is not enough
 
@@ -40,6 +40,7 @@ import { test, expect } from '@playwright/test'
 import { ItemsPage } from './pages/items-page'
 
 const SEARCH_TERM = 'lamp'
+const MATCHING_ITEMS = ['Brass lamp', 'Desk lamp']
 
 test('search narrows the list to matching items', async ({ page }) => {
   const items = new ItemsPage(page)
@@ -47,9 +48,11 @@ test('search narrows the list to matching items', async ({ page }) => {
 
   await items.search(SEARCH_TERM)
 
-  await expect(items.itemCards.first()).toContainText(SEARCH_TERM)
+  await expect(items.itemCards).toHaveText(MATCHING_ITEMS)
 })
 ```
+
+`toHaveText` with an array checks every card and the count, so an unfiltered list fails the test. The two item names come from the data the journey seeds.
 
 - Actions return nothing or the next page object. Assertions stay in the test, so a failure shows the expectation.
 - Keep one page object per page or component. Share nothing mutable between them (P13).
@@ -80,6 +83,7 @@ import { defineConfig } from '@playwright/test'
 
 export default defineConfig({
   forbidOnly: !!process.env.CI,
+  failOnFlakyTests: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   use: {
@@ -89,13 +93,14 @@ export default defineConfig({
 ```
 
 - `forbidOnly` fails the run if a stray `test.only` is committed.
-- `retries` give you a trace of a failure and let the report count flaky tests. A test that passes on retry is flaky, so handle it with the steps in section 7 (P15).
+- `failOnFlakyTests` makes the run exit non-zero when a test passed only on retry. Without it a retried pass exits 0 and the flake disappears from the result, which P15 forbids.
+- `retries` give you a trace of a failure and let the report count flaky tests. A test that passes on retry is flaky, so handle it with the steps in section 7 (P15), and record it as described in [flakes/tracking.md](../flakes/tracking.md).
 - `workers: 1` on CI is a conservative start. Raise it once the journeys are isolated; the default is half the logical cores.
-- `trace: 'on-first-retry'` records a trace for each retried test. Open it with `bunx playwright show-trace trace.zip`, or from the HTML report.
+- `trace: 'on-first-retry'` records a trace on the first retry of a failed test only. With `retries: 0`, as on a developer machine, nothing is recorded. Open it with `bunx playwright show-trace trace.zip`, or from the HTML report.
 
 ## 6. Traces with context.tracing
 
-Prefer the config option above, which also records assertions. Use `context.tracing` only when you need a trace outside the test runner or around part of a test.
+Prefer the config option above. Use `context.tracing` only when you need a trace outside the test runner or around part of a test.
 
 ```typescript
 await context.tracing.start({ screenshots: true, snapshots: true })
@@ -110,7 +115,7 @@ Do not use `browser.startTracing` for this; it records a Chromium performance tr
 1. Run the test many times: `bunx playwright test path/to/file.spec.ts --repeat-each=20`.
 2. Run it again with several workers to expose shared state.
 3. A failure in any run means a flake. Classify the cause with the [flake categories](../../../testing-principles/references/flakes/categories.md), fix the cause, and repeat.
-4. If the fix cannot land now, quarantine the test by following [flakes/quarantine.md](../flakes/quarantine.md). It names the owner and the deadline; do not delete the test and do not retry it to green (P15). Playwright marks a test as not-run with `test.fixme`.
+4. If the fix cannot land now, quarantine the test by following [flakes/quarantine.md](../flakes/quarantine.md). It names the owner and the deadline; do not delete the test and do not retry it to green (P15). Mark it with `test.fail()`, which keeps running the test and reports when it unexpectedly passes. Use `test.fixme` (the test does not run) only as the dated-skip fallback that quarantine.md describes.
 
 ## Common mistakes
 
@@ -124,7 +129,7 @@ Do not use `browser.startTracing` for this; it records a Chromium performance tr
 - [ ] Locators use role, label, text or `data-testid`.
 - [ ] Page objects hold actions; tests hold assertions.
 - [ ] No fixed sleeps; assertions are awaited.
-- [ ] `forbidOnly`, `retries`, `workers` and `trace: 'on-first-retry'` are set for CI.
+- [ ] `forbidOnly`, `failOnFlakyTests`, `retries`, `workers` and `trace: 'on-first-retry'` are set for CI, and flaky passes are recorded.
 - [ ] The test passed `--repeat-each` runs, alone and in parallel.
 
 More patterns, including report templates and CI wiring, in the ECC [e2e-testing skill](https://github.com/affaan-m/ECC/blob/main/skills/e2e-testing/SKILL.md).

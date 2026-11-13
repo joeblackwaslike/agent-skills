@@ -32,10 +32,16 @@ def send_receipt(order, sender):
 
 ```python
 def test_send_receipt_mails_the_customer(email_sender_mock):
-    send_receipt(ORDER, email_sender_mock)
+    customer_email = "ada@example.com"
+    receipt_body = "1 x lamp"
+    order = Order(email=customer_email, lines=[("lamp", 1)])
 
-    email_sender_mock.send.assert_called_once_with(to=CUSTOMER_EMAIL, body=RECEIPT_BODY)
+    send_receipt(order, email_sender_mock)
+
+    assert email_sender_mock.mock_calls == [call.send(to=customer_email, body=receipt_body)]
 ```
+
+The test assumes `render(order)` returns `"1 x lamp"` for that order. The assertion lists every call the mock received, so an extra call fails it (P10).
 
 The thin wrapper that production code passes in holds the one third-party call:
 
@@ -61,6 +67,18 @@ When you must patch, replace the name in the module that reads it, not the modul
 2. Find how that file got the name. If it imported the name from another module, it holds its own reference.
 3. Patch the reference in the file under test.
 4. If the patch seems to do nothing, you replaced the name at the wrong end of the import. Go back to step 2.
+
+```python
+# b.py
+from a import f      # b now holds its own reference to f
+
+def run():
+    return f()
+```
+
+Patch `b.f`, not `a.f`: `run` reads the name from `b`, so replacing it in `a` changes nothing it sees.
+
+The exception is a module imported as a whole. If `b.py` does `import smtplib` and calls `smtplib.SMTP(...)`, the lookup happens on the `smtplib` module at call time. Patch the attribute on the module you import (`smtplib.SMTP`), and every caller that goes through that module sees the double.
 
 ## Boundaries only
 

@@ -23,7 +23,7 @@ Use another kind when the thing to prove is how parts behave together. A query t
 
 1. Pick one behavior and state it as a sentence: "does X when Y". That sentence becomes the test name (P3).
 2. Write the test body in the [test body template](../test-body-template.md): constants, mocks, act, expected, result asserts, mock asserts, not-called asserts.
-3. Run it before the code exists or before the fix. Confirm it fails for the intended reason, not for a typo or an import error (P19).
+3. Run it before the code exists or before the fix. Confirm it fails for the intended reason, not for a typo or an import error (P19). Code already exists: break or revert the production line the test covers, confirm the test fails for the intended reason, then restore it (see [tests that cannot fail](../code-smells.md#tests-that-cannot-fail) and [test-driven development](../../../testing-principles/references/test-driven-development.md)).
 4. Write the least code that passes.
 5. Run it again and confirm green. Run the whole file, then the neighbors, to catch coupling.
 6. Repeat from step 1 for the next branch. Do not stack several behaviors into one test.
@@ -56,6 +56,7 @@ A flaky unit test is a defect, and it is the cheapest kind to keep hermetic (P13
 - No state shared between tests: no module-level cache, singleton or class attribute that one test writes and another reads. A test must pass alone, shuffled and in parallel.
 - Build each test's data in the test. If a fixture owns it, a reader should still see the values in the test (P4).
 - If a unit test needs a sleep, the unit is doing concurrent work that belongs behind an injected seam. Poll with a timeout or restructure.
+- A test that still flakes goes through [flakes/triage.md](../flakes/triage.md), and [flakes/quarantine.md](../flakes/quarantine.md) if the fix cannot land now.
 
 ## Common mistakes
 

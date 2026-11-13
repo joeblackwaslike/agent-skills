@@ -62,7 +62,7 @@ An unexpected pass is not an exit. A flaky test passes sometimes.
 ## Common mistakes
 
 - A skip with no owner and no date: it never comes back ([tests that cannot fail](../code-smells.md#tests-that-cannot-fail) is where it ends).
-- Quarantining by retry plugin so the test runs but the pipeline stays green: the failure vanishes from the results.
+- Quarantining by retry plugin so the test runs but the pipeline stays green: the failure vanishes from the results. A separate non-gating job is different, because its failure is still reported somewhere someone reads.
 - Exiting after one clean run.
 - Moving a test to a non-gating job nobody reads.
 - Quarantining a test whose cause is [shared mutable state](../code-smells.md#shared-mutable-state) and leaving the test that leaks it in the gate.
