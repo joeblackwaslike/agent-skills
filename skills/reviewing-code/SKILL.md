@@ -47,7 +47,7 @@ Do the steps in order. Fix problems as you find them, then re-run step 2 when yo
 | `performance-optimizer` | claims a speedup or changes a hot path |
 | `code-simplifier` | adds a new module or more than about 200 lines of new code |
 | `refactor-cleaner` | refactors or removes code |
-| `reviewing-skills` roles | adds or edits any file under `skills/`. Dispatch a `general-purpose` agent told to load `reviewing-skills` and run one role. The instruction-quality role is always kept; content, routing and pipeline follow the trigger table in that skill's "Inside /self-review" section. |
+| `reviewing-skills` roles | adds or edits any file under `skills/`. Dispatch a `general-purpose` agent whose whole prompt is the filled role template from the `reviewing-skills` runbook; do not tell it to load the skill. The instruction-quality role is always kept; content, routing and pipeline follow the trigger table in that skill's "Inside /self-review" section. |
 | `plugin-validator` | changes a plugin's manifests, hooks, commands, agents, mcp, or skill layout |
 | `agent-evaluator` | is mainly prose written for a reader: a spec, plan, design doc, report or runbook. It scores accuracy, completeness, clarity, actionability and conciseness. |
 | `doc-updater` | changes code that docs describe, so the docs need checking |

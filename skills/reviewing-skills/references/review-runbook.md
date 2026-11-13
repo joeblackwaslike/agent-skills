@@ -17,7 +17,7 @@ flowchart TD
   S5 --> T
   S7 --> T[Triage each finding]
   T --> F[Fix]
-  F --> Q{Fixes made?}
+  F --> Q{Fixed a blocker or major or changed a rule?}
   Q -->|yes, under 2 re-reviews| R[Scoped re-review] --> T
   Q -->|no, or 2 re-reviews done| G[Rerun gate]
   G -->|FAIL| F
@@ -31,6 +31,7 @@ flowchart TD
 3. Write the intent in one sentence: what behavior the skill changes, for whom. If you cannot, the skill is not ready for review. You keep this sentence and never hand it to a reviewer.
 4. Name the kind of each skill: discipline, workflow, doc-wrapper, router, reference catalog, command or hook, agent pipeline. The reviewers use the kind to decide which principles apply (principles 1, 2, 8 and 9 do not apply to a doc-wrapper or catalog).
 5. Note whether the skill dispatches agents. That decides whether the pipeline reviewer runs.
+6. Measure with `git diff --shortstat $BASE -- skills/<name>` and `git diff $BASE -- skills/<name> | wc -c`. Above 400 changed lines or 200,000 characters, whichever comes first, split along a seam before step 2.
 
 ## 2. Mechanical gate
 
@@ -66,7 +67,7 @@ Inside `/self-review`, the cap, the drop order and the 20-line rule are in [SKIL
 
 Every reviewer is a new agent. Never resume one and never fork yourself, because either carries your context. Run the first four in parallel in one message, then the verifier. Each runs on `model: sonnet` where the platform lets you choose a model.
 
-- **Claude Code.** Agent tool, `subagent_type: "general-purpose"`, `model: "sonnet"`, prompt set to the filled template for one role. The template is the whole instruction, so the agent does not load this skill. A `general-purpose` agent has write tools, so read-only rests on the template's rules and not on the agent. After each reviewer returns, run `git status` and look for changes you did not make before triage. A thin `skill-reviewer` agent, once installed, has read-only tools and is the better target; pass it the same prompt.
+- **Claude Code.** Agent tool, `subagent_type: "general-purpose"`, `model: "sonnet"`, prompt set to the filled template for one role. The template is the whole instruction, so the agent does not load this skill. A `general-purpose` agent has write tools, so read-only rests on the template's rules and not on the agent. After each reviewer returns, run `git status` and look for changes you did not make before triage. A thin `skill-reviewer` agent, once installed, has no Write or Edit tool and is the better target; pass it the same prompt. Its Bash tool can still write, so keep the `git status` check.
 - **Codex and Gemini.** Run the sequential fallback below unless a subagent tool is present in your session. If one is, dispatch fresh subagents with the filled templates on a mid-tier model, not your own. Tool names per platform are not verified here, so check what your session lists.
 
 ### What to give and what to withhold

@@ -24,14 +24,14 @@ flowchart TD
   B -->|green| C[3 to 6 Read, check, scenarios, playbooks]
   C --> D[7 Reviewer agents]
   D --> E[Triage and fix]
-  E --> G{Changed anything?}
+  E --> G{Fixed a blocker or major or changed a rule?}
   G -->|yes, under 2 re-reviews so far| D2[Scoped re-review] --> E
   G -->|no, or 2 re-reviews done| B2[Rerun gate]
   B2 -->|red| F
   B2 -->|green| H[8 Report]
 ```
 
-1. **Size and intent.** State in one sentence what behavior the skill should change and for whom, and name its kind (discipline, workflow, doc-wrapper, router, reference catalog, command or hook, agent pipeline). A skill that cannot be summarized this way is not ready for review. When a change to a skill passes about 400 hand-written lines or 200,000 diff characters, split it along a seam first.
+1. **Size and intent.** State in one sentence what behavior the skill should change and for whom, and name its kind (discipline, workflow, doc-wrapper, router, reference catalog, command or hook, agent pipeline). A skill that cannot be summarized this way is not ready for review. Measure with `git diff --shortstat $BASE -- skills/<name>` and `git diff $BASE -- skills/<name> | wc -c`. Above 400 changed lines or 200,000 characters, whichever comes first, split along a seam before step 2.
 2. **Mechanical gate.** Run `bun <base directory>/scripts/skill-check.ts <skill-dir>`. It costs no LLM tokens. Fix every FAIL before reading further, and list SKIPPED checks under gate gaps. Detail: [references/mechanical-gate.md](references/mechanical-gate.md).
 3. **Read against `skill-principles`**, in order: routing and description, authority, rationalization, specificity and contradictions, examples, diagrams, pipelines. How to read and write up findings: [references/review-guide.md](references/review-guide.md).
 4. **Check what the files cannot show.** Sibling skills with overlapping triggers, project rules the skill contradicts (`CLAUDE.md`, `AGENTS.md`), commands and scripts it calls, and every claim about a library, API or standard, verified against current docs.
@@ -70,6 +70,7 @@ Stop and go back to the step if you catch yourself thinking any of these.
 
 `reviewing-code` runs this skill whenever a diff adds or edits any file under `skills/`. The wiring is Claude-only; the skill works the same elsewhere when invoked by name.
 
+- A reviewer agent receives its filled template as its whole prompt. It never loads this skill and never dispatches agents.
 - Step 1 of self-review also runs `skill-check` on each touched skill.
 - Step 6 prints the report through this skill's `scripts/report.ts`, a superset of the reviewing-code copy that adds `--gate-skipped` and `--scenarios`.
 - Step 2 dispatches the reviewers alongside `code-reviewer`. They count toward the cap of 6, and `code-reviewer` still runs on a skills-only diff.
@@ -90,5 +91,5 @@ Load only what the step needs.
 - [references/pressure-scenarios.md](references/pressure-scenarios.md): scenario kinds, the results table, the major-finding rules. Step 5.
 - [references/playbooks/index.md](references/playbooks/index.md): one playbook per kind of skill. Step 6.
 - [references/checklist.md](references/checklist.md): the condensed final pass.
-- [references/worked-example.md](references/worked-example.md): one complete review, for calibrating tone and content.
+- [references/worked-example.md](references/worked-example.md): how this skill was tested, with acceptance results and known recall gaps. For the shape of a finding, read the Examples section of [review-guide.md](references/review-guide.md).
 - The `skill-principles` skill: `references/principles.md` for step 3.
