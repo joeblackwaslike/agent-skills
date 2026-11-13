@@ -466,3 +466,74 @@ The REFACTOR edits and their later rewording came after round 1, so leaked-patch
 | bare-mock | pass | `create_autospec(EmailClient, instance=True)`; the grep finds it, and the `recipient=` versus `to=` mismatch was reported as a failing happy-path test. |
 
 No baseline failure reappeared.
+
+## GREEN results, both skills
+
+Five fresh Sonnet 5.5 agents, one per scenario, on the round 2 fixtures and prompts from this doc, 2026-11-13. Each read `skills/testing-code/SKILL.md` and `skills/testing-principles/SKILL.md` first and loaded the references their routing tables pointed to. The preamble dropped its first two sentences. The retry-to-green prompt carried the git handle `@joeblack` and today's date, as in the principles-only round 2, because an agent cannot invent an owner.
+
+### Round 1
+
+| Scenario | Baseline | Both skills | Evidence |
+|---|---|---|---|
+| clock-network | failure | failure persists | The grep finds `datetime.now() - timedelta(...)` on lines 17 and 31. 4 passed with `-p blocknet`. |
+| leaked-patch | pass | pass (regression guard) | `monkeypatch.setitem(settings, "region", settings["region"])` registers the undo before `use_region("eu")`. The new tests plus `test_zz_default.py` gave 3 passed. |
+| bare-mock | pass | pass (regression guard) | `create_autospec(EmailClient, instance=True)` and an exact `mock_calls == [call.send_email(...)]` assertion. The happy path is red on the `recipient=` versus `to=` mismatch, and the agent reported it. |
+| sleep-async | failure | avoided | No fixed `time.sleep`. The agent patched `threading.Thread` and ran the captured `target` inline. With `time.sleep(0.9)` in `app/jobs.py` the test still passes. |
+| retry-to-green | failure | avoided | `xfail(strict=False, raises=AssertionError)` with a reason naming `@joeblack` and `2026-11-20`. The agent's 60 runs and my 20 gave no non-zero exit. |
+
+Four of five avoided the baseline failure on the first run. Mechanics from `languages/python.md` appeared in every scenario that needed them, which is what `testing-code` adds over `testing-principles` alone:
+
+- `monkeypatch.setitem` with the current value as the new value, to get an undo for a helper that has none (leaked-patch).
+- `create_autospec(..., instance=True)` and an exact `mock_calls` list (bare-mock), and `create_autospec(urllib.request.urlopen)` in clock-network.
+- `io.BytesIO` as a fake response body (clock-network).
+- Option 2 of the async section, patching the thread factory so the target runs inline (sleep-async).
+- `xfail` with `strict=False` and `raises=`, a registered `quarantine` marker, and `-ra` so XFAIL and XPASS show in the summary (retry-to-green).
+
+retry-to-green followed `flakes/quarantine.md`. The agent read `triage.md`, `quarantine.md` and `tracking.md`, chose the expected-fail mechanism the page recommends over a skip, put an owner and a date in the reason, and kept the test running and reporting. It also said a tracking record still had to be filed. The literal grep for `rerun|retry|flaky|monkeypatch|sleep` hits the word "flaky" inside the reason text and the marker description in `pyproject.toml`. It finds no retry loop, rerun plugin, patch or sleep, so the check holds for what it was written to catch.
+
+On sleep-async, the check passes and the page offers this form, but the test no longer runs a real thread and depends on how `start_job` builds its `Thread`. Joining the real thread (option 3) is the stronger test. The page lists the options in order of preference, so I left it.
+
+The rationalization that persisted in clock-network, verbatim: "The clock follows `tests/test_users.py`: signup is `datetime.now()` minus 1 day or 30 days, with no datetime patching. That is a fixed input with a wide margin, so it can't flake."
+
+The rule that "now minus N days" still reads the clock lived only in `testing-principles/references/flakes/nondeterminism.md`, which this agent never loaded. The `testing-code` pages it did read (`unit.md`, `languages/python.md`) covered injecting and patching the clock, and said nothing about the case where neither is allowed.
+
+### REFACTOR
+
+Commit `fix(testing-code): close clock rationalization, use fixed dates when the clock cannot be injected`:
+
+- `languages/python.md`, Time section: a fourth option. A date built as now minus N days still reads the clock, however wide the margin, and a team habit does not change that. When you can neither inject nor patch, use literal dates far from the present on each side of the boundary.
+- `runbooks/unit.md`, determinism bullet: one sentence with the same rule, linking the Python page.
+- `SKILL.md`, step 6: the same rule in one sentence, so an agent that reads only the entry page sees it.
+
+None of the wording names the fixture's functions or fields.
+
+### Round 2, clock-network only
+
+| Scenario | Both skills, after REFACTOR | Evidence |
+|---|---|---|
+| clock-network | avoided | The `datetime.now(` grep finds nothing. Fixed dates `datetime(2000, 1, 1)` (expired) and `datetime(3000, 1, 1)` (trial). 4 passed with `-p blocknet`. The agent patched `urlopen` with an autospec and kept `usd_rate` real. It said it departed from "don't stub the rate path" because of P8 and P14, and suggested a separate non-gating network test if the lead wants a live call. |
+
+All five scenarios hold their pass check with both skills, four on the first run and clock-network on the second.
+
+### Description trigger check
+
+One fresh Sonnet 5.5 agent with no tools got only the `description` fields of `testing-code`, `testing-principles`, `reviewing-code`, `engineering-principles`, `git-github-workflows` and `senior-engineering-best-practices`, plus the 12 prompts.
+
+| # | Prompt | Run 1 | Run 2 (after description edit) |
+|---|---|---|---|
+| 1 | write tests for the invoice parser | testing-code | testing-code |
+| 2 | this test fails one run in ten | testing-code | testing-code |
+| 3 | our test suite takes 40 minutes | testing-code | testing-code |
+| 4 | red green refactor this function | testing-principles (miss) | testing-code |
+| 5 | should this be an integration test or an end-to-end test | testing-principles | testing-principles |
+| 6 | is my diff ready for a PR | reviewing-code | reviewing-code |
+| 7 | how do I structure this module | engineering-principles | engineering-principles |
+| 8 | what is a good mock vs stub vs fake | testing-principles | testing-principles |
+| 9 | add a pytest fixture for the database | testing-code | testing-code |
+| 10 | review this PR for me | none | none |
+| 11 | why is this test flaky in CI | testing-code | testing-code |
+| 12 | write a failing test first for the bug | testing-principles (miss) | testing-code |
+
+Run 1 missed prompts 4 and 12. Both ask for the work to be done, and `testing-principles` listed "red green refactor" and "write a failing test" as its own triggers. The edit moved those phrases to `testing-code` ("write a failing test first", "red green refactor this") and left `testing-principles` with what "test first" and "red green refactor" mean. `testing-code` is now 381 characters and `testing-principles` 374, both under the 400 target, and the description lint reports 0 failures. Run 2 routes every prompt as expected except 10.
+
+Prompt 10 routes to none in both runs. "Review this PR for me" reads as someone else's PR, and `reviewing-code` excludes that on purpose, though the task brief expected `reviewing-code`. I changed no description for it, because widening `reviewing-code` would cut against its exclusion. If the prompt means the user's own PR, "is my diff ready" and "polish this before I share it" already cover it.

@@ -1,6 +1,6 @@
 # Patches
 
-Replacing a name at test time so the code under test uses a double. Covers P12. The language mechanics (the patch helper, how to spec the replacement, how undo is wired) live in the `testing-code` patching runbook.
+Replacing a name at test time so the code under test uses a double. Covers P12. The language mechanics (the patch helper, how to spec the replacement, how undo is wired) live in the [`testing-code` patching runbook](../../testing-code/references/runbooks/patching.md).
 
 ## Prefer injection
 

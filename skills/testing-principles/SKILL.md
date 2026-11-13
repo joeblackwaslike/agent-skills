@@ -1,7 +1,7 @@
 ---
 name: testing-principles
 description: >-
-  Use when deciding what a good test or test suite looks like: which kind of test to write, mock vs stub vs fake, isolation, determinism, flaky or slow tests, coverage, TDD. Also "test first", "red green refactor", "write a failing test". Not for writing or diagnosing tests step by step (use testing-code). Not for reviewing a diff (use reviewing-code).
+  Use when deciding what a good test or test suite looks like: which kind of test to write, mock vs stub vs fake, isolation, determinism, flaky or slow tests, coverage, TDD. Also what "test first" and "red green refactor" mean. Not for writing tests, doing red green refactor or diagnosing flakes step by step (use testing-code). Not for reviewing a diff (use reviewing-code).
 metadata:
   last_updated: "2026-11-13"
 ---
@@ -75,6 +75,6 @@ Fowler's test pyramid favors few tests at the top, and both Google's chapter 13 
 
 ## Related skills
 
-- `testing-code`: steps, runbooks per kind, language mechanics, and flake and slow-test diagnosis. Its runbooks are named in plain text here: unit, integration, contract, functional, end-to-end, acceptance, behavioral, property-based, mutation-testing.
+- [`testing-code`](../testing-code/SKILL.md): steps, runbooks per kind, language mechanics, and flake and slow-test diagnosis. Its runbooks: [unit](../testing-code/references/runbooks/unit.md), [integration](../testing-code/references/runbooks/integration.md), [contract](../testing-code/references/runbooks/contract.md), [functional](../testing-code/references/runbooks/functional.md), [end-to-end](../testing-code/references/runbooks/end-to-end.md), [acceptance](../testing-code/references/runbooks/acceptance.md), [behavioral](../testing-code/references/runbooks/behavioral.md), [property-based](../testing-code/references/runbooks/property-based.md), [mutation-testing](../testing-code/references/runbooks/mutation-testing.md).
 - `reviewing-code`: checking a finished diff, tests included.
 - `engineering-principles`: where logic belongs and how much abstraction is enough.

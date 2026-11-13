@@ -1,6 +1,6 @@
 # Fixtures
 
-What a good fixture is. A fixture is the prepared state a test needs before it acts: data, a client, a configured double. This page covers the design. Scope choices, factories, builders, teardown mechanics and parametrized fixtures live in the `testing-code` fixtures runbook. Supports P3, P4, P13 and P18.
+What a good fixture is. A fixture is the prepared state a test needs before it acts: data, a client, a configured double. This page covers the design. Scope choices, factories, builders, teardown mechanics and parametrized fixtures live in the [`testing-code` fixtures runbook](../../testing-code/references/runbooks/fixtures.md). Supports P3, P4, P13 and P18.
 
 ## One state change
 

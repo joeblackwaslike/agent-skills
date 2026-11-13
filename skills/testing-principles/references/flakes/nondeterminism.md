@@ -32,7 +32,7 @@ The network is blocked by default in every test except the kinds built to cross 
 - A real call depends on a machine you do not control: its availability, latency, data and rate limits. Any of them changes without a code change.
 - A test that passes only because a remote service happens to be up cannot distinguish a regression from an outage.
 - Real calls make the suite slow and can put real load on a third party.
-- Blocking the network at the suite level turns a hidden dependency into an immediate, loud failure that names the test responsible. Allow it only in the kinds of test built to cross the boundary, and name those explicitly.
+- Blocking the network for the whole suite turns a hidden dependency into an immediate, loud failure that names the test responsible. Allow it only in the kinds of test built to cross the boundary, and name those explicitly.
 - The replacement is a double of the boundary (P8), checked against the real service by a contract test run on its own schedule (P11).
 
 ## Concurrency and async

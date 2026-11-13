@@ -1,6 +1,6 @@
 # Performance
 
-Why suites get slow, and how to keep them fast without making them fragile. Covers P17 and leans on P13. Profiling commands and slow-test reports live in the `testing-code` slow-tests runbook.
+Why suites get slow, and how to keep them fast without making them fragile. Covers P17 and leans on P13. Profiling commands and slow-test reports live in the [`testing-code` slow-tests runbook](../../testing-code/references/slow-tests.md).
 
 ## What makes tests slow
 
