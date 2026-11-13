@@ -16,7 +16,7 @@ bun <base directory>/scripts/skill-check.ts <skill-dir> [--json] [--repo <path>]
 | `name` | FAIL | `name` differs from the directory name. |
 | `size` | FAIL | `SKILL.md` is over 20,000 bytes. |
 | `description` | FAIL, WARN | Run through the repo's `scripts/lint-descriptions.py`, so the thresholds are the repo's, not a second copy. A WARN is over the 400-character target. |
-| `link:*` | FAIL | A relative link in a doc does not resolve. |
+| `link:*` | FAIL | A relative link in a doc does not resolve. The checker only follows inline `[text](target)` links, so it skips links with a title after the target, angle-bracket targets and reference-style definitions. |
 | `orphan:*` | WARN | A file under `references/` that nothing routes to. |
 | `registry:*` | FAIL | No row for the skill in `SKILLS.md` or `README.md`. |
 | `overlap` | WARN | Another skill's description has a Jaccard score of 0.4 or more against this one. Advisory. |

@@ -71,6 +71,7 @@ Stop and go back to the step if you catch yourself thinking any of these.
 `reviewing-code` runs this skill whenever a diff adds or edits any file under `skills/`. The wiring is Claude-only; the skill works the same elsewhere when invoked by name.
 
 - Step 1 of self-review also runs `skill-check` on each touched skill.
+- Step 6 prints the report through this skill's `scripts/report.ts`, a superset of the reviewing-code copy that adds `--gate-skipped` and `--scenarios`.
 - Step 2 dispatches the reviewers alongside `code-reviewer`. They count toward the cap of 6, and `code-reviewer` still runs on a skills-only diff.
 - The instruction-quality reviewer is always kept, at the same priority as `code-reviewer`. The content reviewer runs when references or scripts changed, or a code block in SKILL.md changed. The routing reviewer runs when a description changed or a skill was added. The pipeline reviewer runs only when the skill dispatches agents.
 - The 20-line count covers lines changed under `skills/**`, excluding the registry files (`SKILLS.md`, `README.md`). Below 20 lines, run only the gate and the instruction-quality reviewer, plus the routing reviewer when a description changed. A changed description overrides the 20-line count and runs the routing reviewer.

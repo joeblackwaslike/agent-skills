@@ -6,6 +6,7 @@
 A PR adds refunds: `POST /v1/orders/{order_id}/refunds`, a `refunds` table and its migration. The linked spec says support staff can issue full or partial refunds, never more than was paid, with an audit trail of who refunded what and why. An abridged excerpt:
 
 ```python
+# fragment
 @router.post("/v1/orders/{order_id}/refunds", status_code=201)
 async def create_refund(
     order_id: int,
@@ -30,6 +31,7 @@ async def create_refund(
 ```
 
 ```python
+# fragment
 def upgrade() -> None:
     op.create_table(
         "refunds",
