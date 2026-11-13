@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { expect, test } from "bun:test";
 
 const run = (...args: string[]) => {
@@ -165,4 +166,19 @@ test("--rereviews 2 is accepted at the boundary", () => {
   const r = run(...ok, "--rereviews", "2", "--last-rereview-findings", "0");
   expect(r.code).toBe(0);
   expect(r.out).toContain("Re-reviews: 2, last one 0 findings");
+});
+
+const sibling = `${import.meta.dir}/../../reviewing-code/scripts/report.ts`;
+const runSibling = (...args: string[]) => Bun.spawnSync([process.execPath, "run", sibling, ...args]).exitCode;
+
+test("exit codes match the reviewing-code copy on the shared flag set", () => {
+  expect(existsSync(sibling)).toBe(true);
+  const cases = [
+    ok,
+    ["--verdict", "ready", "--intent", "x", "--check", "just check=0", "--check", "just test=1", "--behavior-skipped", "d"],
+    ["--verdict", "ready", "--intent", "x", "--check", "just check=0", "--check", "just test=0"],
+    ["--verdict", "maybe", "--intent", "x", "--check", "a=0"],
+  ];
+  const results = cases.map((args) => [run(...args).code, runSibling(...args)]);
+  expect(results).toEqual([[0, 0], [2, 2], [2, 2], [2, 2]]);
 });

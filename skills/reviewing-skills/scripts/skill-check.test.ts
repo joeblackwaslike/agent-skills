@@ -1,5 +1,5 @@
 import { afterAll, expect, test } from "bun:test";
-import { mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { readFileSync } from "node:fs";
@@ -44,6 +44,7 @@ test("clean skill in a repo has no fail", () => {
   const { dir, root } = make({ repo: true });
   const r = checkSkill(dir, opts({ repo: root }));
   expect(r.checks.filter((c) => c.status === "fail")).toEqual([]);
+  expect(r.checks.filter((c) => c.status === "pass").length).toBeGreaterThanOrEqual(5);
 });
 
 test("bad frontmatter key fails", () => {
@@ -455,4 +456,176 @@ test("a typescript block whose only diagnostics are unresolved imports passes", 
   const r = withSpawn(tscSpawn("b0.ts(1,15): error TS2307: Cannot find module 'zod' or its corresponding type declarations."), () => checkSkill(dir, { blocks: true }));
   expect(find(r, "blocks")?.status).toBe("pass");
   expect(find(r, "block:typescript")).toBeUndefined();
+});
+
+const specOrphan = (dir: string) => find(checkSkill(dir, opts()), "orphan");
+
+test("a reference mentioned as plain prose is not an orphan", () => {
+  const { dir } = make({ body: "See references/a.md for details.\n", files: { "references/a.md": "# a\n" } });
+  expect(specOrphan(dir)?.status).toBe("pass");
+});
+
+test("a reference named only inside a fenced block is still an orphan", () => {
+  const { dir } = make({ body: fence("text", "references/a.md"), files: { "references/a.md": "# a\n" } });
+  expect(specOrphan(dir)?.status).toBe("warn");
+});
+
+test("the orphan mention check respects path boundaries on both sides", () => {
+  for (const mention of ["see references/data.md", "see myreferences/a.md", "see references/a.mdx"]) {
+    const { dir } = make({ body: `${mention}\n`, files: { "references/a.md": "# a\n", "references/data.md": "# d\n" } });
+    const orphans = all(checkSkill(dir, opts()), "orphan").filter((c) => c.status === "warn").map((c) => c.id);
+    expect(orphans).toContain("orphan:references/a.md");
+  }
+});
+
+test("without a repo option the repo is found by walking up to .git", () => {
+  const { dir, root } = make();
+  mkdirSync(join(root, ".git"));
+  writeFileSync(join(root, "SKILLS.md"), "| `demo` | x |\n");
+  const c = find(checkSkill(dir, opts()), "registry:SKILLS.md");
+  expect(c?.status).toBe("pass");
+});
+
+test("frontmatter without a description fails and names the key", () => {
+  const { dir } = make({ fm: "name: demo" });
+  const c = find(checkSkill(dir, opts()), "frontmatter");
+  expect(c?.status).toBe("fail");
+  expect(c?.detail).toContain("missing key(s): description");
+});
+
+test("a SKILL.md with no frontmatter block fails without throwing", () => {
+  const { dir } = make();
+  writeFileSync(join(dir, "SKILL.md"), "# Demo\n\nNo block here.\n");
+  const r = checkSkill(dir, opts());
+  expect(find(r, "frontmatter")?.detail).toBe("no frontmatter block");
+  expect(find(r, "frontmatter")?.status).toBe("fail");
+});
+
+const caseInsensitiveFs = (() => {
+  const d = mkdtempSync(join(tmpdir(), "skill-check-case-"));
+  roots.push(d);
+  writeFileSync(join(d, "skill.md"), "x");
+  return existsSync(join(d, "SKILL.md"));
+})();
+
+// On a case-insensitive filesystem a lowercase skill.md is indistinguishable from SKILL.md, so the check cannot fire.
+test.skipIf(caseInsensitiveFs)("a lowercase skill.md alone fails with the filename hint", () => {
+  const { dir } = make();
+  rmSync(join(dir, "SKILL.md"));
+  writeFileSync(join(dir, "skill.md"), "---\nname: demo\ndescription: x\n---\n");
+  const c = find(checkSkill(dir, opts()), "frontmatter");
+  expect(c?.status).toBe("fail");
+  expect(c?.detail).toContain("uppercase");
+});
+
+const spyLangs = (body: string) => {
+  const { dir } = make({ body });
+  const seen: string[] = [];
+  const r = checkSkill(dir, { blocks: true, runBlocks: (lang, codes) => (seen.push(lang), codes.map(() => ({ status: "ok" as const, detail: "" }))) });
+  return { seen, r };
+};
+
+test.each([
+  ["py", "python"],
+  ["ts", "typescript"],
+  ["sh", "bash"],
+  ["shell", "bash"],
+  ["Python", "python"],
+])("fence tag %s is checked as %s", (tag, lang) => {
+  expect(spyLangs(fence(tag, "x")).seen).toEqual([lang]);
+});
+
+test("a tilde fence is extracted", () => {
+  expect(spyLangs("~~~python\nx = 1\n~~~\n").seen).toEqual(["python"]);
+});
+
+test("a // fragment marker skips a typescript block and is counted", () => {
+  const { seen, r } = spyLangs(fence("typescript", "// fragment\nconst a: number = 'x';") + fence("python", "x = 1"));
+  expect(seen).toEqual(["python"]);
+  expect(find(r, "blocks")?.detail).toContain("1 fragment(s) skipped");
+});
+
+test("SKILL.md at exactly 20000 bytes passes and 20001 fails", () => {
+  const sized = (n: number) => {
+    const { dir } = make();
+    const path = join(dir, "SKILL.md");
+    const have = Buffer.byteLength(readFileSync(path, "utf8"));
+    writeFileSync(path, readFileSync(path, "utf8") + "x".repeat(n - have));
+    return find(checkSkill(dir, opts()), "size");
+  };
+  expect(sized(20_000)?.status).toBe("pass");
+  expect(sized(20_001)?.status).toBe("fail");
+});
+
+test("the diagram heuristic needs three branching lines", () => {
+  const two = make({ body: "if a, do x.\nOtherwise do y.\n" });
+  expect(find(checkSkill(two.dir, opts()), "heuristic:diagram")).toBeUndefined();
+  const three = make({ body: BRANCHY });
+  expect(find(checkSkill(three.dir, opts()), "heuristic:diagram")?.status).toBe("warn");
+});
+
+test("the fetched-doc exemption needs both source and fetched_at", () => {
+  for (const half of ["source: https://example.com/a", "fetched_at: 2026-01-01"]) {
+    const { dir } = make({ body: "[h](references/half.md)\n", files: { "references/half.md": `---\n${half}\n---\n[img](../missing.png)\n` } });
+    const r = checkSkill(dir, opts());
+    expect(r.checks.filter((c) => c.status === "fail").map((c) => c.id)).toEqual(["link:references/half.md:../missing.png"]);
+    expect(find(r, "fetched")).toBeUndefined();
+  }
+});
+
+const lint = (stdout: string, status = 0, stderr = "") => {
+  const { dir } = make();
+  return find(withSpawn(() => ({ status, stdout, stderr }), () => checkSkill(dir, opts())), "description");
+};
+
+test("description lint output maps to fail, warn, pass and skipped", () => {
+  expect(lint("FAIL demo: too long\n", 1)).toMatchObject({ status: "fail", detail: "demo: too long" });
+  expect(lint("WARN demo: wordy\n", 0)).toMatchObject({ status: "warn", detail: "demo: wordy" });
+  expect(lint("", 0)).toMatchObject({ status: "pass" });
+  const broken = lint("", 1, "Traceback\nModuleNotFoundError: yaml\n");
+  expect(broken?.status).toBe("skipped");
+  expect(broken?.detail).toContain("ModuleNotFoundError: yaml");
+});
+
+const withBlocks = (body: string, fake: SpawnFn) => {
+  const { dir } = make({ body });
+  return withEmptyPath(() => withSpawn(fake, () => checkSkill(dir, { blocks: true })));
+};
+
+const lineOf = (dir: string, nth: number) => {
+  const lines = readFileSync(join(dir, "SKILL.md"), "utf8").split("\n");
+  return lines.flatMap((l, n) => (l.startsWith("```") && /^```\w/.test(l) ? [n + 1] : []))[nth];
+};
+
+test("pyright diagnostics are mapped to the right block", () => {
+  const { dir } = make({ body: fence("python", "x = 1") + fence("python", "y: int = 'a'") });
+  const r = withEmptyPath(() => withSpawn(() => ({ status: 1, stdout: pyJson({ file: "/t/b1.py", message: "bad type" }), stderr: "" }), () => checkSkill(dir, { blocks: true })));
+  const fails = r.checks.filter((c) => c.status === "fail");
+  expect(fails.map((c) => c.id)).toEqual([`block:SKILL.md:${lineOf(dir, 1)}`]);
+  expect(fails[0].detail).toContain("bad type");
+});
+
+test("pyright output that is not JSON is skipped as unavailable", () => {
+  const r = withBlocks(fence("python", "x = 1"), () => ({ status: 1, stdout: "npm ERR! offline", stderr: "" }));
+  expect(find(r, "block:python")?.detail).toContain("pyright unavailable");
+  expect(r.checks.some((c) => c.status === "fail")).toBe(false);
+});
+
+test("tsc diagnostics are mapped to the right block", () => {
+  const { dir } = make({ body: fence("typescript", "const a = 1;") + fence("typescript", "const b: number = 'x';") });
+  const text = "b1.ts(1,7): error TS2322: Type 'string' is not assignable to type 'number'.";
+  const r = withEmptyPath(() => withSpawn(tscSpawn(text), () => checkSkill(dir, { blocks: true })));
+  expect(r.checks.filter((c) => c.status === "fail").map((c) => c.id)).toEqual([`block:SKILL.md:${lineOf(dir, 1)}`]);
+});
+
+test("a failed tsc install is skipped with the offline hint", () => {
+  const r = withBlocks(fence("typescript", "const a = 1;"), tscSpawn("", 1));
+  expect(find(r, "block:typescript")?.detail).toContain("offline");
+  expect(r.checks.some((c) => c.status === "fail")).toBe(false);
+});
+
+test("a tsc timeout is skipped with the timeout detail", () => {
+  const timeout = { error: Object.assign(new Error("timed out"), { code: "ETIMEDOUT" }), status: null, stdout: "", stderr: "" };
+  const r = withBlocks(fence("typescript", "const a = 1;"), (c) => (c === "bun" ? { status: 0, stdout: "", stderr: "" } : timeout));
+  expect(find(r, "block:typescript")?.detail).toContain("timed out after 120s");
 });
