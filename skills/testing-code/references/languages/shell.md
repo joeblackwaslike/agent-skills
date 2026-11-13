@@ -151,7 +151,7 @@ Notes on the pieces:
 - `run` captures the command's combined stdout and stderr in `$output`, its exit code in `$status`, and the lines in the `${lines[@]}` array. `assert_success`, `assert_failure N`, `assert_output` and `assert_line` read those. The raw form works without the helper library: `[ "$status" -eq 0 ]`.
 - `run` executes its command in a subshell, so a variable the script sets is gone afterwards. Assert on output, exit code and files.
 - `run cmd | other` pipes `run`'s own output, not the command's. Use `run bats_pipe cmd \| other` when the pipeline is what you mean to test.
-- Flags on `run` (`run ! cmd`, `run -N cmd`) and `run bats_pipe` need the file to call `bats_require_minimum_version 1.5.0` at the top, as the test above does. Without it bats 1.14.0 still runs the test but prints warning BW02; Reproduced with bats 1.14.0 on 2026-11-13, where the call removes the warning.
+- Flags on `run` (`run ! cmd`, `run -N cmd`) and `run bats_pipe` need the file to call `bats_require_minimum_version 1.5.0` at the top, as the test above does. Without it bats 1.14.0 still runs the test but prints warning BW02. Reproduced with bats 1.14.0 on 2026-11-13: the call removes the warning.
 - Prefer `run -0 cmd` or plain `cmd` when you only need success: bats runs tests with `set -e`. To assert failure use `run ! cmd` or `run -N cmd`; a bare `! cmd` does not fail the test unless it is the last command.
 - `env -i` starts the script with an empty environment, so nothing in the developer's or CI's shell leaks into the test (more under Isolation).
 

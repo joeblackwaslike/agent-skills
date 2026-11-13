@@ -159,7 +159,7 @@ A query does not reach the network unless an extension such as a foreign data wr
 
 ### Ordering
 
-SQL gives no row order without `ORDER BY`, and the same query can return rows differently after an index or a vacuum. Always `ORDER BY` in a query you compare with `results_eq`, or use `set_eq` or `bag_eq` when order does not matter and say so. Do not assert on a sequence or identity value: sequences are not rolled back, so a `GENERATED ... AS IDENTITY` column returns different ids depending on what ran before. I checked this: after an insert inside a rolled-back transaction, the next insert received id 2, not 1. Assert on the columns you set, not on the generated key.
+SQL gives no row order without `ORDER BY`, and the same query can return rows differently after an index or a vacuum. Always `ORDER BY` in a query you compare with `results_eq`, or use `set_eq` or `bag_eq` when order does not matter and say so. Do not assert on a sequence or identity value: sequences are not rolled back, so a `GENERATED ... AS IDENTITY` column returns different ids depending on what ran before. After an insert inside a rolled-back transaction, the next insert received id 2, not 1 (PostgreSQL 18.6, 2026-11-13). Assert on the columns you set, not on the generated key.
 
 ## Isolation and cleanup
 
@@ -179,7 +179,7 @@ Measure first ([slow tests runbook](../slow-tests.md)). The levers for SQL:
 
 - Applying migrations dominates. Apply them once to a template database and clone it per run, rather than re-running them in each test.
 - Transactions that roll back are cheap. A test that creates a table or two per file is fast; loading thousands of rows per test is not. Keep seed data to the rows the assertion names.
-- Test an execution plan only where the plan is a requirement, such as "this lookup uses the index", and say why in the test. An `EXPLAIN` text check breaks when PostgreSQL's planner changes between versions and when table statistics change, so use it for a few important queries, and have the test insert enough rows for the planner to prefer the index. A latency threshold on a shared machine is a flaky test ([flakes](../flakes/triage.md)). I did not run an `EXPLAIN` test on this page.
+- Test an execution plan only where the plan is a requirement, such as "this lookup uses the index", and say why in the test. An `EXPLAIN` text check breaks when PostgreSQL's planner changes between versions and when table statistics change, so use it for a few important queries, and have the test insert enough rows for the planner to prefer the index. A latency threshold on a shared machine is a flaky test ([flakes](../flakes/triage.md)). An `EXPLAIN` test was not run for this page.
 - Run one file while iterating (`psql -f db/tests/accounts.test.sql` shows the TAP lines) and `pg_prove` over the whole directory before you push.
 
 ## Coverage, mutation and property-based tools
@@ -240,7 +240,7 @@ SELECT * FROM finish();
 ROLLBACK;
 ```
 
-This ran and passed. In a real suite the `ALTER` lines are your migration's up and down scripts, run with `\i` or from a function, and the starting table comes from the previous migration. The second `up` is what catches a down that leaves something behind. A migration that rewrites data (splitting a column, backfilling) gets seed rows that cover each branch of the rewrite and an assertion on every row, not only the count. To compare the migrated schema with the model, dump both with `pg_dump --schema-only` and diff them, or use pgTAP's `has_*` and `col_*` assertions for the columns that matter. I did not run a schema diff on this page.
+This ran and passed. In a real suite the `ALTER` lines are your migration's up and down scripts, run with `\i` or from a function, and the starting table comes from the previous migration. The second `up` is what catches a down that leaves something behind. A migration that rewrites data (splitting a column, backfilling) gets seed rows that cover each branch of the rewrite and an assertion on every row, not only the count. To compare the migrated schema with the model, dump both with `pg_dump --schema-only` and diff them, or use pgTAP's `has_*` and `col_*` assertions for the columns that matter. A schema diff was not run for this page.
 
 Run the migration tests against a database built from the real migration files, not a hand-built copy. The [integration runbook](../runbooks/integration.md) has the steps. Application code that talks to the database is usually tested through its own language's page with a database fixture; this page covers the SQL objects themselves.
 

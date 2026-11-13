@@ -324,7 +324,7 @@ fn user(overrides: impl FnOnce(&mut User)) -> User {
 
 For databases:
 
-- **Rollback per test**: open a transaction at the start of the test, run the code against it, and drop it without committing. In sqlx a transaction that is dropped uncommitted rolls back; This was not run for this page, so confirm it for your driver. It works only when the code under test uses the connection or transaction you pass in.
+- **Rollback per test**: open a transaction at the start of the test, run the code against it, and drop it without committing. In sqlx a transaction that is dropped uncommitted rolls back. This was not run for this page, so confirm it for your driver. It works only when the code under test uses the connection or transaction you pass in.
 - **Truncate or recreate** when the code opens its own connections. A throwaway database per test (created from a template, dropped at the end) is slower but isolates fully; nextest's process-per-test makes the cleanup easy to keep per test.
 - Run migrations once per test run, against a throwaway database, then rely on rollback or truncate per test.
 - Mark expensive database tests `#[ignore = "needs database"]` only if the default run must stay fast, and run them in their own job with `cargo test -- --ignored` or, under nextest, `cargo nextest run --run-ignored only`. Use a different reason prefix from a quarantine, so the two jobs select different tests.

@@ -22,7 +22,7 @@ Versions below were checked on 2026-11-13 against the npm registry and each tool
 Default to pnpm for dependencies and Bun as the runtime for application code unless the project already uses another toolchain. Run tools through `pnpm exec` or `bunx`. Run vitest and MSW on Node (see the next paragraph).
 
 ```sh
-pnpm add -D vitest msw fast-check @vitest/coverage-istanbul   # plus vitest-mock-extended, typescript and @types/node as needed
+pnpm add -D vitest msw fast-check @vitest/coverage-istanbul vitest-mock-extended typescript @types/node
 pnpm exec vitest run
 ```
 
@@ -168,7 +168,7 @@ vi.mocked(sendEmail).mockResolvedValue({ queued: true })
 
    `vi.mocked` changes only the type. It does not mock anything. Pass `{ partial: true }` to allow a partial return and `{ deep: true }` to type nested members as mocks.
 
-3. **`vitest-mock-extended`** (6.0.1), for an interface with many methods. `mock<PaymentGateway>()` returns an object whose every method is a mock, and it compiled and worked in the examples here. At runtime it answers any property name, so a typo is caught by the type checker, not by the mock; the compiler is again the spec. I did not check `ts-mockito` or the library's argument-matcher API, so this page does not cover them.
+3. **`vitest-mock-extended`** (6.0.1), for an interface with many methods. `mock<PaymentGateway>()` returns an object whose every method is a mock, and it compiled and worked in the examples here. At runtime it answers any property name, so a typo is caught by the type checker, not by the mock; the compiler is again the spec. `ts-mockito` and the library's argument-matcher API were not checked, so this page does not cover them.
 
 `vi.mockObject(obj)` (from 3.2) mocks every method of a real object and keeps its types; it suits a class you did not write.
 
