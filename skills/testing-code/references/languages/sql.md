@@ -12,9 +12,9 @@ Versions below were checked on 2026-11-13 against the pgTAP GitHub releases, the
 | PostgreSQL | 18.6 locally; the project's versions page lists 18.7 as current | the database under test |
 | pg_prove | ships in the CPAN distribution TAP::Parser::SourceHandler::pgTAP 3.37 (2025-03-30) | runs test files, sets the exit code |
 
-What ran: I built pgTAP 1.3.4 from its tag with `make`, loaded the generated `sql/pgtap.sql` into a database on a throwaway PostgreSQL 18.6 cluster, and ran every SQL example below through `psql`. That used no `CREATE EXTENSION`, so the packaged-extension install path (`make install`, then `CREATE EXTENSION pgtap`, which the pgTAP README gives) was not run. `pg_prove` was not installed and not run. `pgtap_version()` on the loaded file returned `1.3`. The throwaway cluster was stopped afterwards.
+What ran: pgTAP 1.3.4 was built from its tag with `make`, loaded the generated `sql/pgtap.sql` into a database on a throwaway PostgreSQL 18.6 cluster, and ran every SQL example below through `psql`. That used no `CREATE EXTENSION`, so the packaged-extension install path (`make install`, then `CREATE EXTENSION pgtap`, which the pgTAP README gives) was not run. `pg_prove` was not installed and not run. `pgtap_version()` on the loaded file returned `1.3`. The throwaway cluster was stopped afterwards.
 
-Plain `psql` runs a test file but always exits 0, even when a test fails. I confirmed that with a deliberately failing test. The pass or fail verdict, and a non-zero exit for CI, comes from `pg_prove`, which reads the TAP stream. A pipeline that runs only `psql -f` does not gate anything.
+Plain `psql` runs a test file but always exits 0, even when a test fails. A deliberately failing test showed this (PostgreSQL 18.6, pgTAP 1.3.4, 2026-11-13). The pass or fail verdict, and a non-zero exit for CI, comes from `pg_prove`, which reads the TAP stream. A pipeline that runs only `psql -f` does not gate anything.
 
 ```sh
 pg_prove -d mydb db/tests/*.test.sql db/tests/migrations/*.test.sql
@@ -117,7 +117,7 @@ SQL has no mock library, and for the usual targets it needs none. The database i
 
 - **A stub for data** is a row. Insert the rows the test reads, in the test file.
 - **A stub for a function** is a replacement defined in the test: create a schema `stubs` with a same-named function, then `SET LOCAL search_path = stubs, pg_catalog, public;`. It disappears at the rollback. Use this for a function that reads the clock or calls out of the database. pgTAP does not do this for you. Two limits, both observed here. Built-in schemas are searched first unless you list them yourself, so name `pg_catalog` after `stubs`. And the stub reaches only names resolved when the function runs: a stubbed `now()` took effect inside a SQL function body, but not in a parameter default (`as_of timestamptz DEFAULT now()`), which was bound to the real `now()` when the function was created.
-- **A mock does not exist.** A trigger or function that logs calls to a temporary table gives you recorded calls to assert on (assert the table's whole contents with `results_eq`, ordered). That is the exact-call rule (P10) for SQL. I did not run such a trigger; the pattern needs only ordinary PostgreSQL.
+- **A mock does not exist.** A trigger or function that logs calls to a temporary table gives you recorded calls to assert on (assert the table's whole contents with `results_eq`, ordered). That is the exact-call rule (P10) for SQL. This trigger was not run for this page; the pattern needs only ordinary PostgreSQL.
 - **A fake** is a table with the same shape as the real one but no constraints or indexes, used when a function takes a table name. It trades fidelity for convenience, so test at least once with the real table.
 
 Autospec has no equivalent, because SQL checks the names and types when the statement is prepared. A call with the wrong arguments fails at once.
@@ -151,7 +151,7 @@ Write the expected value as a literal in each row (P3). If the expected side is 
 
 ### Randomness
 
-`setseed(x)` makes `random()` repeat within a session. I confirmed two reads after the same `setseed(0.5)` were equal. Better to pass the value in. Do not assert on a generated UUID or random token; assert its format (`matches` in pgTAP, or a length and character check).
+`setseed(x)` makes `random()` repeat within a session. Two reads after the same `setseed(0.5)` were equal (PostgreSQL 18.6, 2026-11-13). Better to pass the value in. Do not assert on a generated UUID or random token; assert its format (`matches` in pgTAP, or a length and character check).
 
 ### Network
 
@@ -165,7 +165,7 @@ SQL gives no row order without `ORDER BY`, and the same query can return rows di
 
 - Each file runs in a transaction and ends in `ROLLBACK`, so nothing a test creates outlives it (P13). The pgTAP docs say `runtests()` also rolls back after each test function and at the end, and name one exception, sequences.
 - A transaction does not isolate everything. A `COMMIT` inside the code under test, a call through `dblink`, `VACUUM`, `CREATE INDEX CONCURRENTLY` or anything else that cannot run inside a transaction, ends the isolation. For those, use a database made for the test.
-- **Separate database per run.** Create a database from a template that already has the migrations applied (`CREATE DATABASE test_run_17 TEMPLATE migrated_template`), run the files against it, drop it. No other connection may be open on the template while it is cloned, so keep migrations and test sessions off it. This is the PostgreSQL feature for cloning a database quickly; I did not run it on this page. It makes parallel runs safe, because each has its own database.
+- **Separate database per run.** Create a database from a template that already has the migrations applied (`CREATE DATABASE test_run_17 TEMPLATE migrated_template`), run the files against it, drop it. No other connection may be open on the template while it is cloned, so keep migrations and test sessions off it. This is the PostgreSQL feature for cloning a database quickly; it was not run for this page. It makes parallel runs safe, because each has its own database.
 - **Parallel runs against one database** work only when every file rolls back and no two files touch the same fixed row or lock the same table. A DDL statement takes locks that make parallel files wait or deadlock. If files create the same table name in separate transactions, one blocks the other until it ends, so give each file its own schema or prefer the template database.
 - Keep test objects out of production. Use a test database, never the one your application uses. A test file must not point at a production connection string.
 
@@ -184,11 +184,11 @@ Measure first ([slow tests runbook](../slow-tests.md)). The levers for SQL:
 
 ## Coverage, mutation and property-based tools
 
-**Coverage:** I found no standard line-coverage tool for SQL or PL/pgSQL that I could verify, so I do not recommend one. The substitute is structural: pgTAP's schema assertions (`has_table`, `has_column`, `col_not_null`, `has_function`, `has_index`) state what must exist, so a dropped constraint fails a test. Coverage is a signal, not a target (P7).
+**Coverage:** No standard line-coverage tool for SQL or PL/pgSQL could be verified, so none is recommended here. The substitute is structural: pgTAP's schema assertions (`has_table`, `has_column`, `col_not_null`, `has_function`, `has_index`) state what must exist, so a dropped constraint fails a test. Coverage is a signal, not a target (P7).
 
-**Mutation:** there is no standard mutation tool for SQL that I could verify. The manual form of the [mutation testing runbook](../runbooks/mutation-testing.md) works: weaken a constraint (drop a `CHECK`, remove `NOT NULL`, change `<=` to `<`) in a scratch copy and see which test fails. The assertions on this page that expect an error (`throws_ok` on 23514 and 23505) fail if the constraint is removed.
+**Mutation:** no standard mutation tool for SQL could be verified. The manual form of the [mutation testing runbook](../runbooks/mutation-testing.md) works: weaken a constraint (drop a `CHECK`, remove `NOT NULL`, change `<=` to `<`) in a scratch copy and see which test fails. The assertions on this page that expect an error (`throws_ok` on 23514 and 23505) fail if the constraint is removed.
 
-**Property-based:** there is no generator-and-shrink tool for pgTAP that I could verify. What exists is plain SQL. `generate_series` builds a range of inputs and `is_empty` asserts that no input breaks the property, so it is an exhaustive check over a range, not random generation:
+**Property-based:** no generator-and-shrink tool for pgTAP could be verified. What exists is plain SQL. `generate_series` builds a range of inputs and `is_empty` asserts that no input breaks the property, so it is an exhaustive check over a range, not random generation:
 
 ```sql
 SELECT is_empty($$
@@ -272,7 +272,7 @@ SELECT CASE WHEN current_setting('server_version_num')::int >= 180000
     ELSE ok(true, 'old-server check') END;
 ```
 
-Run through `psql`, the first assertion printed `not ok 2 - known failing # TODO ORDERS-412...` followed by the failure diagnostics, and the second printed `ok 3 # SKIP only meaningful before 18`. Whether a `# TODO` failure counts as a pass for the exit code is `pg_prove`'s TAP harness behavior, which I did not run. Check it before you rely on it in CI.
+Run through `psql`, the first assertion printed `not ok 2 - known failing # TODO ORDERS-412...` followed by the failure diagnostics, and the second printed `ok 3 # SKIP only meaningful before 18`. Whether a `# TODO` failure counts as a pass for the exit code is `pg_prove`'s TAP harness behavior, which was not run for this page. Check it before you rely on it in CI.
 
 - Use `todo` for a test of a known bug or a flake you still want data on; it reports when it starts passing.
 - Use `skip` for a test that cannot run in this environment, or for a flaky test you are deleting or fixing. It stops reporting.

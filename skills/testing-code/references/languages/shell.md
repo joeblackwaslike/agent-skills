@@ -144,14 +144,14 @@ CALLS_EXPECTED
 }
 ```
 
-`assert_output -` reads the expected text from stdin and compares the whole output, so a third, unexpected call fails the test. This was confirmed on this page by appending an extra `curl` line to the script: the test failed and printed expected and actual side by side. A test that only checked "curl was called" would have passed.
+`assert_output -` reads the expected text from stdin and compares the whole output, so a third, unexpected call fails the test. Appending an extra `curl` line to the script made the test fail and print expected and actual side by side (bats 1.14.0, 2026-11-13). A test that only checked "curl was called" would have passed.
 
 Notes on the pieces:
 
 - `run` captures the command's combined stdout and stderr in `$output`, its exit code in `$status`, and the lines in the `${lines[@]}` array. `assert_success`, `assert_failure N`, `assert_output` and `assert_line` read those. The raw form works without the helper library: `[ "$status" -eq 0 ]`.
 - `run` executes its command in a subshell, so a variable the script sets is gone afterwards. Assert on output, exit code and files.
 - `run cmd | other` pipes `run`'s own output, not the command's. Use `run bats_pipe cmd \| other` when the pipeline is what you mean to test.
-- Flags on `run` (`run ! cmd`, `run -N cmd`) and `run bats_pipe` need the file to call `bats_require_minimum_version 1.5.0` at the top, as the test above does. Without it bats 1.14.0 still runs the test but prints warning BW02; I reproduced the warning and confirmed that the call removes it.
+- Flags on `run` (`run ! cmd`, `run -N cmd`) and `run bats_pipe` need the file to call `bats_require_minimum_version 1.5.0` at the top, as the test above does. Without it bats 1.14.0 still runs the test but prints warning BW02; Reproduced with bats 1.14.0 on 2026-11-13, where the call removes the warning.
 - Prefer `run -0 cmd` or plain `cmd` when you only need success: bats runs tests with `set -e`. To assert failure use `run ! cmd` or `run -N cmd`; a bare `! cmd` does not fail the test unless it is the last command.
 - `env -i` starts the script with an empty environment, so nothing in the developer's or CI's shell leaks into the test (more under Isolation).
 
@@ -190,7 +190,7 @@ Two ways, in order of preference.
 
 ### Randomness
 
-Assigning to `RANDOM` seeds bash's generator, so `RANDOM=42` before reading it gives the same sequence each time (confirmed with two reads on this machine). Better, have the script take the value from a variable or argument and pass a fixed one. For `mktemp` or `$$`, assert on a pattern or on the structure, not on the name.
+Assigning to `RANDOM` seeds bash's generator, so `RANDOM=42` before reading it gives the same sequence each time (two reads gave the same value, checked 2026-11-13). Better, have the script take the value from a variable or argument and pass a fixed one. For `mktemp` or `$$`, assert on a pattern or on the structure, not on the name.
 
 ### Network
 
@@ -211,23 +211,23 @@ Bats runs the tests of a file in the order they appear, but do not rely on that.
 
 ## Async
 
-Shell is synchronous, so the async machinery of other languages has no counterpart. What applies is background jobs and waiting on them. Wait on a condition, not on time: poll for a file, a pid or a line of output with a bounded loop, and fail with a clear message if it never comes ([bare sleeps](../code-smells.md#bare-sleeps)). Use `wait "$pid"` and check its status for jobs the test started. Set a per-test timeout so a hang fails instead of stalling the job: bats documents `BATS_TEST_TIMEOUT` (seconds, set in `setup_file` at the latest, since later changes do not alter a running countdown). I read it in the docs and did not run it.
+Shell is synchronous, so the async machinery of other languages has no counterpart. What applies is background jobs and waiting on them. Wait on a condition, not on time: poll for a file, a pid or a line of output with a bounded loop, and fail with a clear message if it never comes ([bare sleeps](../code-smells.md#bare-sleeps)). Use `wait "$pid"` and check its status for jobs the test started. Set a per-test timeout so a hang fails instead of stalling the job: bats documents `BATS_TEST_TIMEOUT` (seconds, set in `setup_file` at the latest, since later changes do not alter a running countdown). This comes from the docs and was not run.
 
 ## Performance
 
 Measure first ([slow tests runbook](../slow-tests.md)). The shell levers:
 
 - Each test starts a process, and stubs start more. A test that runs ten commands in a loop is slower than ten small tests. A test of one command should take milliseconds.
-- `bats --jobs N` runs tests in parallel. Bats' docs say it needs GNU parallel (or a compatible replacement) and that test order is not guaranteed. Without it, running `bats --jobs 2` on this machine printed `parallel: command not found`, executed zero of seven tests and exited 1, so a missing dependency fails the run.
+- `bats --jobs N` runs tests in parallel. Bats' docs say it needs GNU parallel (or a compatible replacement) and that test order is not guaranteed. Without it, `bats --jobs 2` (bats 1.14.0, 2026-11-13) printed `parallel: command not found`, executed zero of seven tests and exited 1, so a missing dependency fails the run.
 - Before you turn `--jobs` on, each test must own its state, which `$BATS_TEST_TMPDIR`, `env -i` and a temp `HOME` provide. Fixed paths, a fixed port, and anything in `$BATS_FILE_TMPDIR` that tests write to will collide. Bats offers `--no-parallelize-within-files` and `BATS_NO_PARALLELIZE_WITHIN_FILE=true` (set in `setup_file`) to keep one file serial, and `--no-parallelize-across-files` for the reverse. After you first enable `--jobs`, run the suite repeatedly to find coupling the serial run hid.
 - Do not `sleep` to wait. Stub the slow command, or poll with a bound.
 - Run one file while iterating (`bats test/notify.bats`) or one test (`bats -f "posts the short"`), and the whole suite before you push.
 
 ## Coverage, mutation and property-based tools
 
-**Coverage:** kcov can measure line coverage of a bats run; bats-core's own CI invokes `kcov` around `bats` (found in its workflow file). I did not run it, and shell coverage tooling is thinner than in other languages. Coverage shows what never ran, not whether it was checked (P7).
+**Coverage:** kcov can measure line coverage of a bats run; bats-core's own CI invokes `kcov` around `bats` (found in its workflow file). It was not run for this page, and shell coverage tooling is thinner than in other languages. Coverage shows what never ran, not whether it was checked (P7).
 
-**Mutation:** there is no standard mutation tool for bash that I could verify. The manual version of the [mutation testing runbook](../runbooks/mutation-testing.md) still works: change a condition or delete a command in the script and see whether a test fails. The extra-`curl` change under Doubles was exactly that, and the exact-call assertion caught it.
+**Mutation:** no standard mutation tool for bash was found. The manual version of the [mutation testing runbook](../runbooks/mutation-testing.md) still works: change a condition or delete a command in the script and see whether a test fails. The extra-`curl` change under Doubles was exactly that, and the exact-call assertion caught it.
 
 **Property-based:** there is no standard property tool for bash. For a pure text-transforming function, loop a fixed list of awkward inputs (empty string, spaces, quotes, newlines, glob characters) through one registered test per input with `bats_test_function`, and assert an invariant such as "output has no spaces". That is a table, not shrinking or generation. The [property-based runbook](../runbooks/property-based.md) says when a property is worth it.
 
@@ -305,7 +305,7 @@ The [quarantine runbook](../flakes/quarantine.md) decides whether to quarantine 
 - The gating run (`bats test/`) shows the test as skipped with the reason. The non-gating job runs the same files with `RUN_QUARANTINED=1` and `continue-on-error` in CI, and its results are watched.
 - The unconditional `skip "reason"` form was run and printed the reason in the result line. It silences the test everywhere, so use it only for a test that is being deleted or fixed, not for a flake you still want data on.
 - Put owner, date and the tracking link in the reason string so a search finds them.
-- Bats has `BATS_TEST_RETRIES`, which reruns a failing test. It hides a flake rather than quarantining it, so the runbook's tracking still applies. Bats documents the variable; I did not run it.
+- Bats has `BATS_TEST_RETRIES`, which reruns a failing test. It hides a flake rather than quarantining it, so the runbook's tracking still applies. Bats documents the variable; it was not run for this page.
 - Tags give a second route: put `# bats test_tags=quarantined` above the test, have the gate run `bats --filter-tags '!quarantined'` and the non-gating job run `--filter-tags quarantined`. Both filters ran and selected the expected tests. Unlike the environment variable, this runs the test without editing its body.
 
 ## Further reading

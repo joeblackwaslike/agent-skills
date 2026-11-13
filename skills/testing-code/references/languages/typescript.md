@@ -366,7 +366,7 @@ Databases:
 - **Rollback per test** is the fast default: open a transaction in `beforeEach`, hand the transaction to the code under test, roll it back in the cleanup. It works only when the code uses the connection you passed in.
 - **Truncate after each test** when the code opens its own connections and a surrounding transaction cannot contain its writes.
 - Run migrations once in `globalSetup` against a throwaway database, then rely on rollback or truncate per test.
-- Under parallel files, give each worker its own database or schema. The vitest `setupFiles` docs name `process.env.VITEST_POOL_ID` as the per-worker value to build that name from; I did not run it here.
+- Under parallel files, give each worker its own database or schema. The vitest `setupFiles` docs name `process.env.VITEST_POOL_ID` as the per-worker value to build that name from; this was not run for this page.
 - Never rely on rows another test inserted.
 - Keep database tests in a separate directory or suffix so a unit run can skip them.
 

@@ -243,7 +243,7 @@ Inject the generator or take a seed as a parameter. proptest prints a failing in
 Rust has no global network interceptor like MSW. Two options:
 
 1. **Put the HTTP client behind a trait** and use a mock or fake in unit tests. The network is never touched.
-2. **Run an in-process server** (wiremock or httpmock; I checked their versions only) on a random local port for the integration kind, and point the client at it.
+2. **Run an in-process server** (wiremock or httpmock; only their versions were checked) on a random local port for the integration kind, and point the client at it.
 
 Either way, a unit test that reaches the real internet is a bug in the test.
 
@@ -324,7 +324,7 @@ fn user(overrides: impl FnOnce(&mut User)) -> User {
 
 For databases:
 
-- **Rollback per test**: open a transaction at the start of the test, run the code against it, and drop it without committing. In sqlx a transaction that is dropped uncommitted rolls back; I did not run this here, so confirm it for your driver. It works only when the code under test uses the connection or transaction you pass in.
+- **Rollback per test**: open a transaction at the start of the test, run the code against it, and drop it without committing. In sqlx a transaction that is dropped uncommitted rolls back; This was not run for this page, so confirm it for your driver. It works only when the code under test uses the connection or transaction you pass in.
 - **Truncate or recreate** when the code opens its own connections. A throwaway database per test (created from a template, dropped at the end) is slower but isolates fully; nextest's process-per-test makes the cleanup easy to keep per test.
 - Run migrations once per test run, against a throwaway database, then rely on rollback or truncate per test.
 - Mark expensive database tests `#[ignore = "needs database"]` only if the default run must stay fast, and run them in their own job with `cargo test -- --ignored` or, under nextest, `cargo nextest run --run-ignored only`. Use a different reason prefix from a quarantine, so the two jobs select different tests.
@@ -362,7 +362,7 @@ fn worker_publishes_event() {
 ```
 
 - The gating run (`cargo test` or `cargo nextest run`) skips it. The reason shows in `cargo test` output.
-- The non-gating job runs only the ignored tests: `cargo nextest run --run-ignored only` or `cargo test -- --ignored`. Both ran here and executed the ignored test; the job exits non-zero when it fails, so mark it non-blocking in CI (`continue-on-error` in GitHub Actions) and watch its results.
+- The non-gating job runs only the ignored tests: `cargo nextest run --run-ignored only` or `cargo test -- --ignored`. Both executed the ignored test (cargo 1.99.1, 2026-11-13); the job exits non-zero when it fails, so mark it non-blocking in CI (`continue-on-error` in GitHub Actions) and watch its results.
 - `--run-ignored all` (nextest) or `--include-ignored` (cargo test) runs everything together, for a full local run.
 - That arrangement is the runbook's "separate non-gating run": the test keeps running and reporting, just not in the gate.
 - Put the owner, the date and the tracking link in the reason string so a search finds them.

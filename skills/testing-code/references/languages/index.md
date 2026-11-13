@@ -28,9 +28,7 @@ Every page has the same thirteen sections in the same order, so you can jump to 
 | shell | bash, shellcheck | bats-core 1.14 with bats-support, bats-assert, bats-file | commands stubbed through `PATH` with a call-recording stub | none standard | none standard (manual mutation only) | [shell.md](shell.md) |
 | SQL | PostgreSQL | pgTAP 1.3.4, run with `pg_prove` | rollback isolation; a stub function in a `stubs` schema for the clock | none standard (`generate_series` with `is_empty` for range checks) | none standard (manual mutation only) | [sql.md](sql.md) |
 
-The tool names come from the design for this skill. Each page checks its own versions and records them under "Toolchain and verified versions"; take versions from the page, not from memory.
-
-The tool names above were corrected against verification on 2026-11-13. Unverified on the shell and SQL pages, and labeled as such there: kcov coverage for shell, `pg_prove` itself (not installed on the checking machine), `bats --jobs` (GNU parallel was absent), and template-database cloning.
+Versions are verified on each page, dated, under "Toolchain and verified versions"; take them from the page, not from memory.
 
 ## Choosing a page
 
