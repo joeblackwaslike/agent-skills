@@ -36,6 +36,18 @@ It has a "When to Use" section, an example and sibling disambiguation, so "missi
 
 Filled in by the acceptance runs.
 
+### Acceptance 3: loud on weak skills
+
+The pre-registered expectations above are unchanged. A fresh judge matched each reviewer finding of minor severity or above against them: same defect, not just the same topic.
+
+| Template | nanoclaw-repl | orch-fix-defect |
+|---|---|---|
+| After the correctness-rule rounds (judge a3f) | 2 of 4 | 0 of 4 |
+| Missing parts count as findings (judge a3g) | 4 of 4 | 2 of 4 |
+| Phase numbers and delegation sharpened (judge a3h) | 4 of 4 | 3 of 4 |
+
+**Result: PASS** (at least 3 of 4 on each skill), after the three-round tuning limit was reached for this criterion at two rounds of changes. The tightening done for acceptance 2 had pushed "no example", "no verification step" and "no defense" into the suggestions list, because an absence has no failing run to point to; that is what dropped the first row. The fix was to list six missing parts in the instruction-quality template that count as findings for discipline, workflow and agent-pipeline skills, with the quoted bare rule and the file's section headings as evidence. The judge found one reviewer finding (nano-iq F5) wrong about the file.
+
 ### Acceptance 6: known-hole scenario
 
 Skill: `verification-before-completion` (Superpowers 7.0.1), rule at SKILL.md:17-20 (no completion claim without fresh verification evidence). Scratch repo with a `parse_date` that rejects timestamps, so a "tests pass" claim would be false. Fresh Sonnet agents, two runs per arm. Baseline sent the prompt alone; skill arm preceded by "Read the absolute path to SKILL.md first and follow it."
