@@ -225,7 +225,7 @@ A builder can read these directly.
 2. After Joe approves the spec, write a plan with `superpowers:writing-plans`, then run it with `superpowers:subagent-driven-development`. Implementers use Sonnet and each works in its own worktree.
 3. Author each skill with `superpowers:writing-skills`. Baseline pressure scenarios run on fresh agents without the skill, then with it: a test that reads the real clock or the network, a leaked patch, a bare mock that accepts a wrong call, a `sleep` waiting for async work, and a flaky test retried to green.
 4. Verify tool documentation at the time of writing: pytest 9.x (the exact patch version was not confirmed), pytest-mock, vitest, jest, bats, pgTAP, nextest, Playwright.
-5. Register both skills in `SKILLS.md` and `README.md`. `make lint-descriptions` must pass (400-character target, 1536 hard cap). Check that every relative link resolves and every language page has every section.
+5. Register both skills in `SKILLS.md` and `README.md`. `make lint-descriptions` must pass (400-character target, 1536 hard cap). Check that every relative link resolves every language page has every section, and every per-kind runbook has the standard headings.
 6. Ship as two stacked PRs. PR 1 is `testing-principles`, the TDD move and the reference updates. PR 2 is `testing-code`. Each goes through `/self-review` and `/pr-loop`, then merge, `wt-reap` and a plugin cache check.
 7. Links between the two skills. PR 1 refers to `testing-code` runbooks by name in plain text, because those files do not exist yet. PR 2 turns each into a relative link. The link check in PR 1 covers only files that exist; the full check runs in PR 2.
 8. ECC links use GitHub URLs (`https://github.com/affaan-m/ECC/blob/main/skills/<name>/SKILL.md`), not skill names, so they resolve for readers who don't have ECC installed. Confirm the default branch name when writing them.
@@ -234,6 +234,7 @@ A builder can read these directly.
 
 - `rg -i "test level|levels? of test|test size|small/medium/large"` over both skills finds nothing.
 - `git grep test-driven-development` finds no stale skill path inside this repo.
+- Each of the nine per-kind runbooks has all nine standard headings, and each language page links its ECC testing skill (or says none exists).
 - On each baseline scenario, a fresh agent with the skills avoids the failure that an agent without them shows.
 - The descriptions trigger on "write tests for X", "flaky test", "slow tests" and "red green refactor", and do not trigger on diff review.
 - After merge, the new skills exist under `~/.claude/plugins/cache/<marketplace>/agent-skills/<sha>/skills/`.
