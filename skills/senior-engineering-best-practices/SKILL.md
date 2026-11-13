@@ -18,7 +18,7 @@ senior engineer makes by reflex, plus a router to the skills that already cover 
 home elsewhere.
 
 **This skill does not duplicate what already exists.** If a situation is already covered by
-`test-driven-development`, `solid-principles`, `domain-driven-design`, `code-architectures`, or a `superpowers` skill,
+`testing-principles`, `solid-principles`, `domain-driven-design`, `code-architectures`, or a `superpowers` skill,
 route there — see [Route to an existing skill](#route-to-an-existing-skill) below. This skill's
 own `references/` hold only instincts that had no home before it existed.
 

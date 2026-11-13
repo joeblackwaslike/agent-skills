@@ -97,7 +97,6 @@ Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode
 
 | Skill | What it does |
 | --- | --- |
-| `test-driven-development` | Test-first for TypeScript and Python — red-green-refactor, applied to features and bugfixes |
 | `domain-driven-design` | Aggregates, entities, value objects, domain events, repositories, bounded contexts |
 | `code-architectures` | Hexagonal/clean layering, CQRS, event sourcing, event-driven design, sagas, monolith vs microservices, service communication, distributed data |
 | `solid-principles` | Designing and refactoring classes, modules, and interfaces |
@@ -105,6 +104,7 @@ Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode
 | `reviewing-code` | Self-review your own diff before a PR with fresh-eyes reviewer agents; ships the `/self-review` command |
 | `engineering-principles` | Principles for writing and designing code (scope, design, correctness, readability) plus Python, TypeScript, Rust, shell and SQL idioms |
 | `design-patterns` | Catalog of production design patterns (Strategy, Observer, Repository, Retry, Circuit Breaker, Outbox and more) with Python and TypeScript references; defaults to no pattern |
+| `testing-principles` | The written standard for tests (what to test, kinds, doubles, isolation, flakes, coverage, mutation) with the test-driven development reference inside it |
 
 ### Vercel
 

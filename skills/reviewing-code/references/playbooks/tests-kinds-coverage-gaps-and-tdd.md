@@ -1,19 +1,19 @@
-# Tests: levels, coverage, gaps and TDD
+# Tests: kinds, coverage, gaps and TDD
 
 *Leans on: make it work, make it right, make it fast; Fail Fast; KISS.*
 
-Review tests for what they would catch, not for how many there are. Each level of test answers a different question, and a gap usually means a question nobody asked.
+Review tests for what they would catch, not for how many there are. Each kind of test answers a different question, and a gap usually means a question nobody asked.
 
-**What each level should prove**
+**What each kind should prove**
 
-| Level | Question it answers | What to check in review |
+| Kind | Question it answers | What to check in review |
 | --- | --- | --- |
 | Unit | Does this piece of logic do the right thing for each input? | Fast, isolated from I/O, one behavior per test, no mocks of the unit's own collaborators unless they are I/O |
 | Functional / integration | Do the pieces work together through real seams: database, queue, HTTP layer? | Uses a real database (a container or transactional test database), not mocks of SQLAlchemy; exercises the endpoint through the app's test client |
-| End-to-end | Does the deployed system work for a whole user flow? | Few of them, covering the critical journeys only; stable selectors; no fixed sleeps; independent of each other's data |
+| End-to-end | Does the deployed system work for a whole user flow? | At least a few per meaningful feature: a happy path plus edge cases and errors; stable selectors; no fixed sleeps; independent of each other's data |
 | Acceptance | Does it do what the spec or ticket asked, in the business's terms? | Each acceptance criterion in the spec maps to at least one test, written in domain language, ideally readable by the person who wrote the criteria |
 
-Most logic belongs in unit tests; the seams belong in integration tests; end-to-end tests are kept to the flows that would cost the most if broken. A suite that is mostly end-to-end is slow and tells you little about where a failure is.
+Most logic belongs in unit tests; the seams belong in integration tests; end-to-end tests cover each meaningful feature without duplicating every lower-kind case. A suite that is mostly end-to-end is slow and tells you little about where a failure is. The `testing-principles` skill (P5, P6, P15) is the standard for this; check the diff against it.
 
 **Coverage and gaps**
 
@@ -21,7 +21,7 @@ Most logic belongs in unit tests; the seams belong in integration tests; end-to-
 - **Check the assertions.** For a feature, ask what small, wrong change to the code would still pass the tests: an off-by-one, a flipped condition, a removed line. If one exists, there is a gap. Mutation testing (for example `mutmut`) automates this question for critical modules; StrykerJS does the same for TypeScript.
 - **Where gaps usually are.** Error paths, boundaries (empty, one, max, max + 1), authorization negatives, concurrency and retries, time zones, migrations and backfills, and the behavior of deprecated paths that must keep working.
 - **Bug fixes.** The fix comes with a test that fails without it. If the PR doesn't show that, check out the branch, revert the fix locally, and run the test.
-- **Determinism.** No wall-clock time, randomness without a seed, network, ordering assumptions, or shared state. A flaky test is fixed or deleted, not retried.
+- **Determinism.** No wall-clock time, randomness without a seed, network, ordering assumptions, or shared state. A flaky test is quarantined with an owner and a deadline, never retried to green silently (P15).
 
 **Reviewing TDD work**
 

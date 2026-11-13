@@ -7,7 +7,7 @@ description: >-
   Triggers on "how should I structure this", "is this too complex", "should I
   abstract this". Not for checking a finished diff before a PR (use
   reviewing-code). Not for deep SOLID, TDD or DDD (use solid-principles,
-  test-driven-development, domain-driven-design). Not for choosing or
+  testing-principles, domain-driven-design). Not for choosing or
   implementing a named pattern (use design-patterns). Not for system-level
   layering, CQRS, sagas, event-driven design or service splits (use code-architectures).
 metadata:
@@ -42,7 +42,7 @@ The one-paragraph summaries at the top of `principles.md` ("Principles") are eno
 ## Related skills
 
 - `solid-principles`: the full SRP/OCP/LSP/ISP/DIP treatment with bad-to-good examples.
-- `test-driven-development`: the red-green-refactor discipline and test doubles.
+- `testing-principles`: what a good test is, plus the red-green-refactor discipline (its `test-driven-development` reference) and test doubles.
 - `domain-driven-design`: aggregates, value objects and bounded contexts.
 - `code-architectures`: layering, CQRS, event sourcing, event-driven design and service boundaries.
 - `senior-engineering-best-practices`: verifying docs before a workaround, root-cause discipline, blast radius, dependency judgment.
