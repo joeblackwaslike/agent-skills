@@ -159,5 +159,5 @@ corrupt yours.
 Strategic design hands you a set of bounded contexts, each with its own ubiquitous language
 and a known relationship to its neighbors. *Inside* one context you then apply the tactical
 patterns: aggregates, value objects, domain events, repositories. Read
-`tactical-patterns.md` next, and [application-architecture.md](../../architectures/references/application/application-architecture.md) for how to lay a single
+`tactical-patterns.md` next, and [application-architecture.md](../../code-architectures/references/application/application-architecture.md) for how to lay a single
 context's code out on disk.

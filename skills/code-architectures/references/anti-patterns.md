@@ -51,3 +51,15 @@ Even a lightweight read-only query against the same DB keeps the aggregate clean
 **The tell:** A multi-service workflow is a chain of events with no record of which steps can be undone. A failure at step four leaves a charged customer and no stock, and nobody knows who cleans up.
 
 **The fix:** Sort every step into compensable, pivot or retryable, write an idempotent compensation for each compensable step, store the saga's progress, and put the hardest-to-undo steps after the pivot. See [sagas.md](event-driven/sagas.md).
+
+## 6. Chatty services
+
+**The tell:** One request fans out into a dozen calls between the same two services, or two services change and deploy together every time. Latency adds up and an outage in one takes the other down with it.
+
+**The fix:** The boundary or the interface is wrong. Offer one coarser operation, let the caller hold a copy of the data it keeps asking for, or merge the services. See [service-communication.md](distributed/service-communication.md) and [monolith-vs-microservices.md](distributed/monolith-vs-microservices.md).
+
+## 7. Services sharing a database
+
+**The tell:** Two services read or write the same tables. A schema change in one breaks the other, and neither can deploy alone.
+
+**The fix:** Give each service private data reachable only through its API, and feed other services copies through events. If two things must change together atomically, they belong in one service. See [microservices.md](distributed/microservices.md) and [distributed-data.md](distributed/distributed-data.md).

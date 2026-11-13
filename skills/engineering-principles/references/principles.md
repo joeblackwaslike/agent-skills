@@ -589,5 +589,5 @@ Beck's "make it work" means a test proves the behavior before anything is refact
 - **Does it test behavior, not implementation?** Assertions on private calls and mock interactions break on every refactor and pass when behavior is wrong. Heavy patching of your own modules is a coupling finding, not a testing technique.
 - **Is it obviously correct?** Test code has no logic of its own to get wrong, and its expected values are literals.
 
-The two test playbooks in the `reviewing-code` skill and the `test-driven-development` skill cover test levels, coverage, TDD, fixtures and helpers.
+The two test playbooks in the `reviewing-code` skill and the `testing-principles` skill (its `test-driven-development` reference) cover test kinds, coverage, TDD, fixtures and helpers.
 

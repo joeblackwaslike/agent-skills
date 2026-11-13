@@ -5,8 +5,10 @@ description: >-
   as a reviewer who didn't write it. Triggers on "/self-review", "about to open
   a PR", "polish this before I share it", "is my diff ready", or before
   `gh pr create`. Not for reviewing someone else's PR. Not for writing or
-  designing code (use engineering-principles). Not for opening the PR, driving
-  it to merge or answering review feedback (use git-github-workflows).
+  designing code (use engineering-principles). Not for writing or choosing
+  tests (use testing-code, and testing-principles for the standard). Not for
+  opening the PR, driving it to merge or answering review feedback (use
+  git-github-workflows).
 ---
 
 # Reviewing Code

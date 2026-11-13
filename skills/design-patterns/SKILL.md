@@ -1,7 +1,7 @@
 ---
 name: design-patterns
 description: >-
-  Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Dependency injection, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Not for whether to abstract at all (use engineering-principles), SOLID refactors (use solid-principles), aggregates (use domain-driven-design), CQRS, event sourcing, sagas or event-driven design (use architectures).
+  Use when picking or implementing a named pattern: Strategy, Observer, Adapter, Decorator, Factory, Repository, Unit of Work, Dependency injection, Retry with backoff, Circuit Breaker, Idempotency key, Outbox, Result type. Not for whether to abstract at all (use engineering-principles), SOLID refactors (use solid-principles), aggregates (use domain-driven-design), CQRS, event sourcing, sagas, event-driven design, service boundaries or service-to-service communication (use code-architectures).
 metadata:
   last_updated: "2026-11-11"
 ---
@@ -57,4 +57,4 @@ Facade is described inside the adapter file and Null Object inside the result-op
 - `engineering-principles`: whether to abstract at all, and how much. Read it first if you are unsure a pattern is warranted.
 - `solid-principles`: the SRP/OCP/LSP/ISP/DIP treatment that most patterns apply, plus the anti-patterns for needless indirection.
 - `domain-driven-design`: aggregates and repositories inside aggregates.
-- `architectures`: layering, CQRS, event sourcing and service boundaries. Architecture-level material lives there, not here.
+- `code-architectures`: layering, CQRS, event sourcing and service boundaries. Architecture-level material lives there, not here.
