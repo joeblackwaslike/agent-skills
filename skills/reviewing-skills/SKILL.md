@@ -77,7 +77,7 @@ Stop and go back to the step if you catch yourself thinking any of these.
 - The instruction-quality reviewer is always kept, at the same priority as `code-reviewer`. The content reviewer runs when references or scripts changed, or a code block in SKILL.md changed. The routing reviewer runs when a description changed or a skill was added. The pipeline reviewer runs only when the skill dispatches agents.
 - The 20-line count covers lines changed under `skills/**`, excluding the registry files (`SKILLS.md`, `README.md`). Below 20 lines, run only the gate and the instruction-quality reviewer, plus the routing reviewer when a description changed. A changed description overrides the 20-line count and runs the routing reviewer.
 - When the cap forces drops, drop these after `agent-evaluator` and `type-design-analyzer` and before the language reviewers, in this order: pipeline, routing, content.
-- A dropped content slot also drops the claim verifier, and its rows are reported as unchecked claims. When the content role did not run but another reviewer returned HANDOFF rows, the claim verifier still runs and takes one slot of the cap. If the cap forces a drop, drop the verifier and report its rows as unchecked claims.
+- The claim verifier runs when any reviewer returned HANDOFF rows, whether or not the content role ran. It shares the content role's slot when that role ran, and takes its own slot otherwise. If the cap forces a drop, drop the verifier last among the content-related slots and report its rows as unchecked claims.
 - Pressure scenarios stay off unless asked. Say in the report that behavior is untested.
 
 ## References

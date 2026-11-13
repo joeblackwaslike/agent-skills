@@ -116,7 +116,7 @@ Other parts of the skill partly cover the first (the red flag "Using 'should', '
 
 ### Acceptance 2 results under the correctness rule (three tuning rounds)
 
-A fresh Sonnet judge opened every cited line and ran what it could. Findings are minor severity or above, duplicates counted once. Precision is the share the judge found real.
+A fresh Sonnet judge opened every cited line and ran what it could. Findings are minor severity or above, duplicates counted once, except round 0, whose judge (a2c) counted a finding two reviewers both raised twice and counted the claim verifier's confirmed rows as findings, so its denominators are larger and not comparable with the later rounds. Precision is the share the judge found real.
 
 | Round | Template change | verification-before-completion | test-driven-development | systematic-debugging |
 |---|---|---|---|---|

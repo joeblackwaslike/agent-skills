@@ -15,7 +15,7 @@ The persuasion reference quotes compliance figures from a study. They are not ve
 
 ## Which principles apply
 
-Principles 3 to 7 and 10 apply to every skill. Principles 1, 2, 8 and 9 apply to discipline skills, workflow skills and agent pipelines. A doc-wrapper or reference catalog is not flagged for a missing rationalization table.
+Principles 3 to 5, 7 and 10 apply to every skill. Principle 6 applies to any skill with a flow, branch or loop, and a reference catalog is exempt. Principles 1, 2, 8 and 9 apply to discipline skills, workflow skills and agent pipelines. A doc-wrapper or reference catalog is not flagged for a missing rationalization table.
 
 ## One authority vocabulary
 
