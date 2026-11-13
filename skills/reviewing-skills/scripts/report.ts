@@ -150,6 +150,9 @@ const findings = num("findings", v.findings);
 const fixed = num("fixed", v.fixed);
 const declined = (v.declined ?? []).map((d) => pair("declined", d));
 const deferred = (v.deferred ?? []).map((d) => pair("deferred", d));
+const ids = [...declined, ...deferred].map(([id]) => id);
+const duplicate = ids.find((id, i) => ids.indexOf(id) !== i);
+if (duplicate) die(`finding ${duplicate} appears more than once across --declined and --deferred.`);
 const open = findings - (fixed + declined.length + deferred.length);
 if (open < 0) {
   die(`findings (${findings}) is less than fixed (${fixed}) + declined (${declined.length}) + deferred (${deferred.length}).`);
@@ -171,8 +174,12 @@ if (ready) {
 let rereviewLine: string;
 if (rereviews > 0) {
   if (v["last-rereview-findings"] === undefined) die("--last-rereview-findings is required when --rereviews is above 0.");
-  rereviewLine = `${rereviews}, last one ${num("last-rereview-findings", v["last-rereview-findings"])} findings`;
+  const last = num("last-rereview-findings", v["last-rereview-findings"]);
+  if (last > findings) die(`--last-rereview-findings (${last}) is more than --findings (${findings}).`);
+  if (v["no-rereview-reason"] !== undefined) die("--no-rereview-reason is only for --rereviews 0.");
+  rereviewLine = `${rereviews}, last one ${last} findings`;
 } else {
+  if (v["last-rereview-findings"] !== undefined) die("--last-rereview-findings needs --rereviews above 0.");
   const reason = line("no-rereview-reason", v["no-rereview-reason"]);
   if (!reason && fixed > 0) die('--no-rereview-reason is required when fixes were applied and --rereviews is 0 (example: "minor-only fixes without behavior change").');
   rereviewLine = `0, none: ${reason ?? "no fixes applied"}`;

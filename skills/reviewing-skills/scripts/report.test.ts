@@ -130,6 +130,10 @@ const rejected: [string, string[], string][] = [
   ["newline in a single-line field", [...ok, "--surface", "a\nVerdict: forged"], "single line"],
   ["unknown flag", [...ok, "--bogus"], "bogus"],
   ["flag with no value", ["--verdict"], "verdict"],
+  ["last-rereview-findings with no re-reviews", [...ok, "--last-rereview-findings", "0"], "--last-rereview-findings"],
+  ["no-rereview-reason with re-reviews", [...ok, "--rereviews", "1", "--last-rereview-findings", "0", "--no-rereview-reason", "why"], "--no-rereview-reason"],
+  ["last-rereview-findings above findings", [...ok, "--findings", "1", "--fixed", "1", "--rereviews", "1", "--last-rereview-findings", "2"], "--last-rereview-findings"],
+  ["same id declined and deferred", [...ok, "--findings", "2", "--declined", "F1=why", "--deferred", "F1=bd-1"], "F1"],
 ];
 
 test.each(rejected)("exit 2 and empty stdout: %s", (_name, args, needle) => {
@@ -149,4 +153,16 @@ test("exit 2: more open blockers or majors than undispositioned findings", () =>
   const r = run("--verdict", "not-ready", "--intent", "x", "--check", "just check=0", "--findings", "1", "--fixed", "1", "--open-major", "1", "--no-rereview-reason", "none");
   expect(r.code).toBe(2);
   expect(r.err).toContain("open-major");
+});
+
+test("two --declined entries are joined by a semicolon", () => {
+  const r = run(...ok, "--findings", "2", "--declined", "F1=a", "--declined", "F2=b");
+  expect(r.code).toBe(0);
+  expect(r.out).toContain("Declined: F1 a; F2 b\n");
+});
+
+test("--rereviews 2 is accepted at the boundary", () => {
+  const r = run(...ok, "--rereviews", "2", "--last-rereview-findings", "0");
+  expect(r.code).toBe(0);
+  expect(r.out).toContain("Re-reviews: 2, last one 0 findings");
 });
