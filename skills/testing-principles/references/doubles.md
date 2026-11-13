@@ -47,7 +47,7 @@ When a test uses a mock, say precisely what should have happened (P10). Assert f
 3. Their order: assert the calls in the order the code makes them.
 4. That nothing else was called.
 
-People skip the fourth. A check that a call happened passes when the code also made three extra, wrong calls. Compare the full list of calls to the expected list, so an extra, missing or reordered call fails the test. Where order truly does not matter to the outcome, say so once in the test and compare the calls as an unordered set. That is the only exception to P10's order rule.
+People skip the fourth. A check that a call happened passes when the code also made three extra, wrong calls. Compare the full list of calls to the expected list, so an extra, missing or reordered call fails the test. Where order truly does not matter to the outcome, say so once in the test and compare the calls as an unordered collection that keeps duplicates, so one expected call and two identical actual calls still fail. That is the only exception to P10's order rule.
 
 Give each mock its own expected-call block. A double that must stay untouched gets an explicit not-called assertion, so a regression that starts using it is caught.
 

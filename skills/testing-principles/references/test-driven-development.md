@@ -39,9 +39,9 @@ Then the next failing test.
 The failure must be a real one. Before touching production code, confirm one of two states.
 
 - **Runtime RED.** The test target builds, the new or changed test actually runs, and it fails.
-- **Compile-time RED.** The test newly references or exercises code that does not exist yet, and the compile failure is the intended signal (common in statically typed languages).
+- **Compile-time RED.** The test newly references or exercises code that does not exist yet, and the compile failure is the intended signal (common in statically typed languages). An unresolved import of the symbol under test counts the same way.
 
-In both cases the cause is the missing or wrong behavior. A failure from a syntax error, broken setup, a missing dependency, or an unrelated regression does not count. A test that was written but never built and executed does not count either. If the run reports an error where you expected an assertion failure (an import error, a reference error), fix the test until the assertion itself fails.
+In both cases the cause is the missing or wrong behavior. A failure from a syntax error, broken setup, a missing dependency, or an unrelated regression does not count. A test that was written but never built and executed does not count either. If the run reports an error where you expected an assertion failure, and the error is not the missing symbol under test (an import of something else, a reference error in the setup), fix the test until the assertion itself fails.
 
 ### GREEN
 
@@ -58,7 +58,7 @@ Only when green. Remove duplication in tests and in production code, and improve
 Uncle Bob's tighter restatement of the loop, useful when you catch yourself getting ahead.
 
 1. Write no production code until you have a failing test.
-2. Write no more of a test than is enough to fail. A compile or import error counts as failing.
+2. Write no more of a test than is enough to fail. A compile error, or an unresolved import of the symbol under test, counts as failing (compile-time RED above). Any other import or setup error does not.
 3. Write no more production code than is enough to pass the one failing test.
 
 These keep the cycle at seconds to minutes. If you write thirty lines of test before running anything, you are batching, so shrink the step.
@@ -118,7 +118,7 @@ Stop and start over if any of these is true.
 - A test that passed the first time it ran.
 - You cannot say why the test failed in the red phase.
 - "I'll add tests later."
-- An assertion on a mock's call count where the outcome could have been checked as state.
+- An assertion on how many times a stub or an internal helper was called, where the outcome could have been checked as state. Calls that are the behavior (the code told a collaborator to do something) are asserted exactly; see [doubles.md](doubles.md) and P10.
 - Any "just this once" or "already checked manually."
 
 ## When stuck

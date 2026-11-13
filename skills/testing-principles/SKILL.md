@@ -46,7 +46,7 @@ Nineteen principles say what a good test and a good suite are. Cite them by ID (
 
 ## When a local rule contradicts a principle
 
-Follow the principle unless the user explicitly overrides it. Look first for a form that satisfies both: fixed inputs instead of a patched dependency, an explicit wait instead of a guess, a dated quarantine instead of a retry. If the user does override it, comply and name the principle in the first lines of your reply. A repo or team rule is not a user override unless the user invokes it for this task. Otherwise follow the principle and name the conflicting local rule in the first lines of your reply.
+Follow the principle unless the user explicitly overrides it. Look first for a form that satisfies both: fixed inputs instead of a patched dependency, an explicit wait instead of a guess, a dated quarantine instead of a retry. An explicit override names the principle or accepts the tradeoff ("skip the clock injection, I know it can flake"). Citing a house style, a team convention or a file to copy is not one. If the user does override it, comply and name the principle in the first lines of your reply. Otherwise follow the principle and name the conflicting local rule in the first lines of your reply.
 
 ## What to load
 
