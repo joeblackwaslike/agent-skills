@@ -76,7 +76,7 @@ An earlier draft had `frameworks/` in `testing-principles` and per-framework rec
 **Choosing kinds**
 
 - **P5.** Pick the kind from what you need to prove: unit for logic and branches, integration for the seams between parts, contract for provider and consumer agreement, end-to-end for the user-visible journey.
-- **P6.** Every meaningful feature has an end-to-end test; the lower kinds cover the branches and edge cases around it.
+- **P6.** Every meaningful feature has at least a few end-to-end tests: one for the happy path and the rest for edge cases and errors. The lower kinds cover the branches around them.
 - **P7.** Coverage is a signal, never a target. Judge a suite by the behaviors it protects, and test the tests with mutation testing.
 
 **Doubles and patches**
@@ -102,7 +102,7 @@ An earlier draft had `frameworks/` in `testing-principles` and per-framework rec
 
 ### Where Joe departs from the sources
 
-Google, Fowler and Microsoft all recommend few end-to-end tests (P6 departs) and rank interaction verification last (P10 departs). Joe's position is that every meaningful feature needs an end-to-end test and that asserting what a mock received is an essential part of a test. The skill states his position. The spec records the departure so nobody "fixes" it later by consulting the sources.
+Google, Fowler and Microsoft all recommend few end-to-end tests (P6 departs) and rank interaction verification last (P10 departs). Joe's position is that every meaningful feature needs at least a few end-to-end tests (a happy path plus edge cases and errors) and that asserting what a mock received is an essential part of a test. The skill states his position. The spec records the departure so nobody "fixes" it later by consulting the sources.
 
 ### References
 
@@ -134,6 +134,7 @@ Google, Fowler and Microsoft all recommend few end-to-end tests (P6 departs) and
 | `test-body-template.md` | Joe's annotated template: constants, mocks, act, expected, result asserts, mock asserts, not-called asserts |
 | `code-smells.md` | test code smells, each as symptom, why it hurts, fix, and the principle it breaks. Covers change-detector tests, logic in tests, over-specified or over-mocked setup, shared mutable state, bare sleeps, values defined far from the test, assertion roulette, one test covering several behaviors, testing private internals, tests that cannot fail, stale doubles |
 | `runbooks/` | one per kind: `unit.md`, `integration.md`, `contract.md`, `functional.md`, `end-to-end.md`, `acceptance.md`, `behavioral.md`, `property-based.md`, `mutation-testing.md` |
+| `runbooks/` standard headings | every per-kind runbook has at least these headings, in this order, and may add its own after them. See "Standard runbook headings" below |
 | `runbooks/fixtures.md` | choosing scope, factories and builders, teardown, parametrized and indirect fixtures |
 | `runbooks/patching.md` | patching safely in practice, and refactoring untestable code to take an injected dependency |
 | `runbooks/playwright.md` | page objects with `data-testid`, auto-wait instead of fixed sleeps, `context.tracing`, CI settings (retries, workers, forbidOnly, trace on first retry), a flake check with `--repeat-each`, quarantine. Links ECC `e2e-testing` |
@@ -144,6 +145,20 @@ Google, Fowler and Microsoft all recommend few end-to-end tests (P6 departs) and
 | `slow-tests.md` | measure first, find outliers, fix by cause, measure again |
 | `languages/index.md` | quick-map table across languages |
 | `languages/python.md`, `typescript.md`, `rust.md`, `shell.md`, `sql.md` | one page per language, identical sections (below) |
+
+### Standard runbook headings
+
+The nine per-kind runbooks (`unit.md` through `mutation-testing.md`) share this minimum set, in this order. A runbook may add headings after them for what is specific to its kind (the end-to-end runbook adds journey selection, the property-based runbook adds property families). A runbook may not drop one; where a heading doesn't apply, it says why in a line.
+
+1. **What it proves**: the question this kind answers, and the principle numbers behind it.
+2. **When to write it**: the situations that call for this kind, and when another kind fits better.
+3. **Setup**: what must exist first (fixtures, data, services, doubles allowed).
+4. **Steps**: numbered, from picking the behavior to a passing test.
+5. **Cases to cover**: the happy path, edge cases and errors expected for this kind. For end-to-end, one happy path plus edge cases and errors per feature (P6).
+6. **Doubles and patches**: what to keep real and what to replace in this kind, with the mock-assertion rule (P10) where mocks appear.
+7. **Determinism and isolation**: the flake risks specific to this kind and their mitigations (P13, P14).
+8. **Common mistakes**: the smells that hit this kind, linking `code-smells.md`.
+9. **Done check**: a short checklist the test must pass before it is finished.
 
 ### Language page sections
 
@@ -161,17 +176,17 @@ Every page has the same sections, in this order:
 - Coverage, mutation and property-based tools
 - Integration and data: factories, databases, rollbacks
 - Anti-patterns
-- Further reading, with ECC links
+- Further reading, with the ECC testing skill for that language linked first (see below)
 
 Content per language:
 
-- **Python.** pytest, pytest-mock `mocker`, `pretend.stub`, `create_autospec`, the `assert_calls_on` helper from Joe's guide, `src/` layout with `--import-mode=importlib`, strict mode, `tmp_path`, hypothesis, mutmut. Indirect parametrization is documented as supported and marked advanced. Autospec belongs here, not in the principles.
+- **Python.** pytest, a `conftest.py` section (where it lives, what belongs in it versus a test module, fixture scoping across directories, shared fixtures and hooks, keeping it small), pytest-mock `mocker`, `pretend.stub`, `create_autospec`, the `assert_calls_on` helper from Joe's guide, `src/` layout with `--import-mode=importlib`, strict mode, `tmp_path`, hypothesis, mutmut. Indirect parametrization is documented as supported and marked advanced. Autospec belongs here, not in the principles.
 - **TypeScript.** vitest first (Bun runtime), jest differences, MSW, fast-check, Stryker.
 - **Rust.** cargo test, nextest, rstest, proptest, mockall. Links ECC `rust-testing`.
 - **Shell.** bats-core, shellcheck, stubbing commands through `PATH`.
 - **SQL.** pgTAP, rollback isolation, migration tests.
 
-ECC has no TypeScript, shell or SQL testing skill, so those pages link ECC's `tdd-workflow` where relevant and nothing else.
+Every language page links the ECC testing skill for that language under "Further reading". ECC has `python-testing` and `rust-testing`. It has no TypeScript, shell or SQL testing skill, so those three pages say so in one line and link ECC's `tdd-workflow` and, for TypeScript, `e2e-testing`. The builder re-checks the ECC checkout for newly added `{language}-testing` skills when writing each page.
 
 ## test-driven-development.md
 
