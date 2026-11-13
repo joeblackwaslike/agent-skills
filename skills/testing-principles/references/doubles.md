@@ -1,0 +1,80 @@
+# Test doubles
+
+Which stand-in to use for a collaborator, and how to check it. Covers P8 to P11. Library syntax, spec'd mocks and the Python helpers live in `testing-code`, not here.
+
+## Real or double
+
+Use the real collaborator when it is cheap and deterministic: a value object, a pure function, an in-process helper (P8). Use a double at the boundaries where the real thing is slow, random, shared or outside your control: network, clock, third-party services, slow stores.
+
+A double costs you something. It can drift from the real thing (P11), and it ties the test to how the code talks to it. If the real collaborator is fast and predictable, the double is pure overhead.
+
+## Five doubles, by job
+
+The vocabulary follows Meszaros's xUnit Patterns, as Fowler's "Mocks Aren't Stubs" summarizes it.
+
+| Double | Its job | Test checks |
+|---|---|---|
+| Dummy | Fills a parameter that the code never uses | Nothing |
+| Stub | Returns canned data the code reads | The result, not the stub |
+| Fake | A small working implementation that takes a shortcut, such as an in-memory repository | The result, via state |
+| Mock | Stands in for an effect the code causes, and the test asserts it | The interactions (P10) |
+| Spy | A stub that also records how it was called | The recorded calls, after the fact |
+
+Pick by what the code does with the collaborator (P9).
+
+- The code reads from it: stub.
+- The code causes an effect through it (sends a message, writes a record, enqueues a job): mock.
+- The behavior across several calls matters (write, then read it back; a lookup that depends on earlier writes): fake.
+- It must be passed but is never touched: dummy.
+
+## Stubs for data, mocks for behavior
+
+House style draws a hard line between the two, because the double tells the reviewer what the test is about.
+
+- A stub signals "this object only exists so the code under test has something to read". Reviewers can skip it.
+- A mock signals "this test asserts something about this object". Reviewers read its expectations.
+- Build a stub with only the attributes the code reads. The stub then documents the minimal interface the test needs, and an unexpected attribute access fails loudly instead of returning a silent default.
+- Data records (rows, models, DTOs) are almost always stubs. Handlers, services and clients that cause effects are usually mocks, and their methods return stubs.
+
+Do not use a mock as a data container. A permissive mock invents every attribute you ask for, so a typo in the code under test still passes.
+
+## Assert the interactions exactly
+
+When a test uses a mock, say precisely what should have happened (P10). Assert four things:
+
+1. Which calls the code made.
+2. Their arguments.
+3. Their order, when order matters to the outcome.
+4. That nothing else was called.
+
+People skip the fourth. A check that a call happened passes when the code also made three extra, wrong calls. Compare the full list of calls to the expected list, so an extra, missing or reordered call fails the test.
+
+Give each mock its own expected-call block. A double that must stay untouched gets an explicit not-called assertion, so a regression that starts using it is caught.
+
+Keep expectations about outcomes the behavior depends on. A call to a logger is rarely worth pinning; a call that charges a card always is.
+
+### Where this departs from common advice
+
+Fowler's "Mocks Aren't Stubs" prefers state verification where it is practical, and notes that mock-based tests couple to how the code works. Google's guidance, as the skill's index records, ranks interaction checks last. For a double that only supplies data, that advice holds. For effects it doesn't. When the behavior is "the code told a collaborator to do X", the call is the observable result, and asserting it exactly is how the test proves anything. That is the house position (P10), so don't remove such assertions by consulting those sources.
+
+## Never nest separately created mocks
+
+Do not assign one independently created mock as an attribute of another. Each mock records only its own calls, so the parent sees nothing that happened on the nested child. You lose the ability to check ordering across them, and "nothing else was called" holds for the parent while the child is unchecked.
+
+Build the whole collaborator once, from one description of the real object, and let that one object own its attributes. If the code reaches through two levels, treat that as a signal that the seam is too deep and move it closer (see `patches.md`).
+
+## Check doubles against the real thing
+
+A double is a claim about how the real collaborator behaves. When the real one changes, the double does not, and the test stays green against a world that no longer exists (P11).
+
+- **Mocks and stubs** are checked structurally: the double only accepts the names and call shapes the real object has. A call with a wrong argument count or a misspelled method fails in the test, not in production. `testing-code` shows the mechanism per language.
+- **Fakes** are checked behaviorally. Run one shared contract suite against both the fake and the real implementation. If the fake passes cases the real one fails, the fake is wrong.
+- **Boundary doubles** (a payment provider, a third-party API) are covered by a contract test (P5), or by a periodic run against the real service.
+
+A double with no such check is a stale-double risk. Name it as a gap in review.
+
+## Related
+
+- `fixtures.md` for where doubles live in a test.
+- `patches.md` for how a double gets in front of the code.
+- `test-structure.md` for the body order that puts expectations last.
