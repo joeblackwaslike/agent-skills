@@ -1,6 +1,6 @@
 # Doc-wrapper skills
 
-*Leans on principles 3, 4, 5, 7 and 10. Does not apply: 1, 2, 6, 8 and 9. A doc-wrapper is not flagged for a missing rationalization table, and it has no pipeline to specify.*
+*Leans on principles 3, 4, 5, 7 and 10. Principle 6 applies only if the wrapper carries a branching runbook. Does not apply: 1, 2, 8 and 9. A doc-wrapper is not flagged for a missing rationalization table, and it has no pipeline to specify.*
 
 A doc-wrapper (`working-with-X`, `developing-X`) puts a tool's official documentation where an agent can load it on demand. The agent trusts what it reads. The main risk is that the content is stale, and a stale copy looks identical to a fresh one. The principles are in [principles.md](../../../skill-principles/references/principles.md).
 
@@ -40,8 +40,8 @@ Wrong: description: Use when working with Dolt. Covers the full dolt CLI (init, 
   sql-server, branch, merge, diff, commit, remote, backup, gc), the system tables,
   and DoltHub. For the bd workflow, use beads-operations.
 
-Right: description: Use when you need exact Dolt behavior: a `dolt` command or flag,
-  SQL versioning, or the server under beads. Not for the bd workflow (use beads-operations).
+Right: description: Use when you need exact Dolt CLI or SQL-versioning behavior, or are
+  touching the Dolt server under beads. Not for the bd workflow (use beads-operations).
 ```
 
 The right version keeps the cues a user produces and drops the inventory. The agent finds the subcommands in the routing table, where they cost nothing until needed.

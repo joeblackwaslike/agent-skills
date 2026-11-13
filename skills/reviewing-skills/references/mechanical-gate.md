@@ -15,7 +15,7 @@ bun <base directory>/scripts/skill-check.ts <skill-dir> [--json] [--repo <path>]
 | `frontmatter` | FAIL | Frontmatter missing, or a key outside the allowed set. |
 | `name` | FAIL | `name` differs from the directory name. |
 | `size` | FAIL | `SKILL.md` is over 20,000 bytes. |
-| `description` | FAIL, WARN | Run through the repo's `scripts/lint-descriptions.py`, so the thresholds are the repo's, not a second copy. A WARN is over the 400-character target. |
+| `description` | FAIL, WARN, SKIPPED | Run through the repo's `scripts/lint-descriptions.py`, so the thresholds are the repo's, not a second copy. A WARN is over the 400-character target. SKIPPED when python3, PyYAML or `lint-descriptions.py` is unavailable; count it as a gate gap. |
 | `link:*` | FAIL | A relative link in a doc does not resolve. The checker only follows inline `[text](target)` links, so it skips links with a title after the target, angle-bracket targets and reference-style definitions. |
 | `orphan:*` | WARN | A file under `references/` that nothing routes to. |
 | `registry:*` | FAIL | No row for the skill in `SKILLS.md` or `README.md`. |
@@ -60,4 +60,4 @@ That is the reviewers' work. Do not treat a green gate as a verdict.
 
 ## Report
 
-Pass each command you ran as `--check "<command>=<exit code>"`, for example `--check "bun skill-check.ts skills/foo=0"`. Put SKIPPED counts in `--gate-skipped` and the reasons in `--gate-gaps`. When there is nothing to report, pass `--gate-gaps "none"`, since `report.ts` accepts READY without it only when the checks are literally `just check` and `just test`.
+Pass each command you ran as `--check "<command>=<exit code>"`, for example `--check "bun skill-check.ts skills/foo=0"`. Put SKIPPED counts in `--gate-skipped` and the reasons in `--gate-gaps`. When there is nothing to report, pass `--gate-gaps "none"`. `report.ts` accepts READY without `--gate-gaps` only when the `--check` list includes both `just check` and `just test`; other checks may sit beside them.

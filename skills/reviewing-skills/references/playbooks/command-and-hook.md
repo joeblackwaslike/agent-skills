@@ -44,4 +44,4 @@ Wrong: allowed-tools: Bash, Write, Edit, Read
 Right: allowed-tools: Read, Grep, Glob, Skill, Bash(git diff:*), Bash(git log:*)
 ```
 
-The right version grants only what a read-and-report command uses and narrows `Bash` to the git commands it runs, so a reader can tell a deliberate grant from a default.
+The right version pre-approves only what a read-and-report command uses and limits the `Bash` pre-approval to the git commands it runs, so a reader can tell a deliberate grant from a default. It does not remove any other tool; use `disallowedTools` or deny rules for that.

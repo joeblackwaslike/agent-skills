@@ -68,14 +68,14 @@ Every finding has the same fields.
 | kind | claim when it comes from a promise-ledger row, otherwise other (content reviewer) |
 | rationalization risk | When the finding is one, also the missing defense (table, red flags list, loophole closer or predicate) and the drafted "Excuse and Reality" row |
 
-Severity is anchored on the failure scenario.
+Severity is anchored on the failure scenario. [reviewer-templates/common.md](reviewer-templates/common.md) owns these definitions.
 
 - **blocker**: the text makes an agent do something destructive or unsafe, or the skill cannot work. Do not ship.
 - **major**: a plausible agent following the text does the wrong thing on a realistic request, and nothing else in the skill stops it.
-- **minor**: the wrong thing needs an unusual request, or another part of the skill mostly covers it, or a reader is misled about a fact in a way that does not change what they do.
+- **minor**: the wrong thing needs an unusual request, or a reader is misled about a fact in a way that does not change what they do. A gap that another part of the skill already closes, or mostly covers, is not a finding. List it under SUGGESTIONS.
 - **nit**: wording or a typo with no behavior consequence. Listed, never counted.
 
-A design choice that is debatable (a deliberate tradeoff, or a stated hedge with a stated reason) is a suggestion unless it contradicts something else in the skill. Before rating anything major, check whether the skill already has a defense the finding ignores (a table row, a red flag, a gate elsewhere, a verification step). If it does, rate it minor or drop it. A well defended skill should yield few findings, and "no findings of severity major or above" is a valid result.
+A design choice that is debatable (a deliberate tradeoff, or a stated hedge with a stated reason) is a suggestion unless it contradicts something else in the skill. Before rating anything major, check whether the skill already has a defense the finding ignores (a table row, a red flag, a gate elsewhere, a verification step). If it does, drop it or list it under SUGGESTIONS. A well defended skill should yield few findings, and "no findings of severity major or above" is a valid result.
 
 Improvements with no failure scenario go in a separate SUGGESTIONS list. They carry no severity, are not counted, and appear in the report only as a short appendix on request.
 
@@ -104,6 +104,7 @@ evidence: "Reviewers should check the diff size before dispatching."
 failure scenario: an agent asked to review a 2,000-line change will dispatch reviewers on it anyway, because the text says "should" and gives no size, so "should" lets it skip the check and no size is given.
 authority: current guidance, recommended gate
 replacement: "Before dispatching, run `git diff --shortstat`. Past 400 changed lines, split the change first. Do not dispatch on a diff above that."
+confidence: high
 ```
 
 A bad finding: "The wording in flow.md is a bit soft and could be firmer." No quote, no failure, no replacement, no stakes.

@@ -39,9 +39,9 @@ The weakness is a row in the runbook table: "Reply to, react to, or resolve revi
 Wrong: For review comments, see the PR runbook (steps 6 to 9) and maybe the
   review skill.
 
-Right: To reply to or resolve a review comment, read "Reply to each thread" in
-  references/pull-requests/driving-a-pr-to-approval.md. To judge whether a
-  comment is right first, use superpowers:receiving-code-review.
+Right: To reply to or resolve a review comment, read "Reply to each thread" and then
+  "Resolve conversations" in references/pull-requests/driving-a-pr-to-approval.md.
+  To judge whether a comment is right first, use superpowers:receiving-code-review.
 ```
 
-The right version names a heading, which survives renumbering better than a step range (the runbook's headings carry numbers today, so a rename still needs a grep). It also says in what order to use the two destinations.
+The right version names headings, which survive renumbering better than a step range (the runbook's headings carry numbers today, so a rename still needs a grep). It also says in what order to use the two destinations.
