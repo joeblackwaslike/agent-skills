@@ -49,7 +49,7 @@ For every meaningful feature (P6):
 
 If one kind already proves a behavior cheaply and reliably, a second test of it in another kind adds cost and no information. Prove each behavior you care about somewhere, so a failure tells you where to look.
 
-Fowler's pyramid puts few tests at the top, and Google's chapter 13 prefers state testing over interaction testing. This skill departs from the pyramid on P6, because a feature with no journey test can pass every lower test and still not work. Its departure on P10 rests on Google's chapter 13 alone.
+Fowler's pyramid puts few tests at the top, and Google's chapter 13 prefers state testing over interaction testing. This skill departs from the pyramid on P6, because a feature with no journey test can pass every lower test and still not work. Its departure on P10 goes against Google's chapter 13 and Fowler's "Mocks Aren't Stubs", which both prefer state verification.
 
 ## Performance, load and chaos
 
