@@ -23,7 +23,7 @@ Every page has the same thirteen sections in the same order, so you can jump to 
 | Language | Toolchain | Runner | Double library | Property tool | Mutation tool | Page |
 |---|---|---|---|---|---|---|
 | Python | uv, pytest | pytest | pytest-mock (`mocker`), `unittest.mock.create_autospec`, `pretend.stub` | hypothesis | mutmut | [python.md](python.md) |
-| TypeScript | pnpm (Bun for app code; run the tests on Node, see the page) | vitest 5 (jest differences noted) | vitest `vi` mocks with `satisfies`-typed objects, MSW for HTTP | fast-check | Stryker (config read from docs, not run) | [typescript.md](typescript.md) |
+| TypeScript | pnpm for dependencies and Bun for app code by default, unless the project already uses another toolchain; run vitest and MSW on Node (see the page) | vitest 5 (jest differences noted) | vitest `vi` mocks with `satisfies`-typed objects, MSW for HTTP | fast-check | Stryker (config read from docs, not run) | [typescript.md](typescript.md) |
 | Rust | cargo | cargo test, cargo-nextest | mockall, rstest for cases | proptest | cargo-mutants (exists, version checked, not run) | [rust.md](rust.md) |
 | shell | bash, shellcheck | bats-core 1.14 with bats-support, bats-assert, bats-file | commands stubbed through `PATH` with a call-recording stub | none standard | none standard (manual mutation only) | [shell.md](shell.md) |
 | SQL | PostgreSQL | pgTAP 1.3.4, run with `pg_prove` | rollback isolation; a stub function in a `stubs` schema for the clock | none standard (`generate_series` with `is_empty` for range checks) | none standard (manual mutation only) | [sql.md](sql.md) |

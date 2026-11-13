@@ -16,17 +16,17 @@ Versions below were checked on 2026-11-13 against the npm registry and each tool
 | @stryker-mutator/core, @stryker-mutator/vitest-runner | 10.1.1 | Node 22+ | mutation testing (configuration read from docs, not run) |
 | @vitest/coverage-istanbul, @vitest/coverage-v8 | 5.1.0 | | coverage providers |
 | vitest-mock-extended | 6.0.1 | | generated typed mocks |
-| TypeScript | 5.9.3 used for the examples; npm `latest` is 7.0.2, not exercised here | | `tsc --noEmit` over the tests |
+| TypeScript | 7.0.2 (npm `latest`); the examples were first written against 5.9.3 and also pass `tsc --noEmit --strict` on 7.0.2 with no errors | | `tsc --noEmit` over the tests |
 | pnpm, Bun, Node | 11.0.8, 1.4.4, 26.13.0 | | the local toolchain these examples ran on |
 
-Use pnpm for dependencies and workspaces and Bun as the runtime for application code; run tools through `pnpm exec` or `bunx`, never npm, npx, yarn or tsx.
+Default to pnpm for dependencies and Bun as the runtime for application code unless the project already uses another toolchain. Run tools through `pnpm exec` or `bunx`. Run vitest and MSW on Node (see the next paragraph).
 
 ```sh
-pnpm add -D vitest msw fast-check @vitest/coverage-istanbul
+pnpm add -D vitest msw fast-check @vitest/coverage-istanbul   # plus vitest-mock-extended, typescript and @types/node as needed
 pnpm exec vitest run
 ```
 
-The runtime that runs the tests changes the result. The examples on this page passed on Node (`pnpm exec vitest run`: 15 passed, 1 expected fail, 1 todo). The same file under Bun (`bunx --bun vitest run`, forks and threads pools both) passed everything except the MSW tests: requests went out to the real network and failed with `ENOTFOUND`. That is one observation on one machine and the cause is untested. Until you have checked it on your own setup, run vitest on Node and keep Bun for the application, or put a single MSW smoke test first and trust the suite only once it passes on the runtime you chose. The vitest coverage docs also say the `v8` provider does not work on Bun, so use `istanbul` there.
+The runtime that runs the tests changes the result. The examples on this page passed on Node (`pnpm exec vitest run`: 15 passed, 1 expected fail, 1 todo). The same file under Bun (`bunx --bun vitest run`, forks and threads pools both) passed everything except the MSW tests: requests went out to the real network and failed with `ENOTFOUND`. The lead to look for is this stderr line: `Failed to replace a global value at "_wrapHandle": not a global value.` That is one observation on one machine and the cause is untested. A test that expects any rejection passes spuriously when interception is off, because the real network failure is also a rejection. Make the MSW smoke test assert the status the 404 handler returns, run it first, and trust the suite only once it passes on the runtime you chose. Until you have checked it on your own setup, run vitest on Node and keep Bun for the application. The vitest coverage docs also say the `v8` provider does not work on Bun, so use `istanbul` there.
 
 A minimal config:
 
@@ -117,6 +117,7 @@ withGateway('starts with no calls', ({ gateway }) => {
 })
 ```
 
+- The empty destructuring pattern in `async ({}, use)` is required by vitest, which reads the fixture names from the first parameter. It trips ESLint's `no-empty-pattern`, so disable that rule for the line.
 - Each test gets its own fixture value, which is the default you want (P13). Create shared, expensive state in `beforeAll` and treat it as read-only.
 - Expected values stay in the test or in `const` declarations at the top of its `describe`, not in a distant helper ([values defined far from the test](../code-smells.md#values-defined-far-from-the-test)).
 - `setupFiles` is for things every test needs, such as starting the MSW server. Keep it small for the same reason an autouse fixture is small in Python.
@@ -262,7 +263,7 @@ Inject the generator or seed it. `vi.spyOn(Math, 'random').mockReturnValue(0.5)`
 
 ### Network
 
-Intercept at the network boundary with MSW so the code under test uses its real HTTP client. MSW 3 imports from entry points (`msw/http`, `msw/node`) and names the unhandled option `onUnhandledFrame`:
+Intercept at the network boundary with MSW so the code under test uses its real HTTP client. The MSW 3 migration notes move the handlers to entry points (`msw/http`, `msw/node`) and rename the unhandled option to `onUnhandledFrame`:
 
 ```ts
 import { http, HttpResponse } from 'msw/http'
@@ -280,7 +281,7 @@ it('throws on a 404', async () => {
 })
 ```
 
-`onUnhandledFrame: 'error'` makes a request with no handler fail the test instead of reaching the internet, which is the TypeScript counterpart of blocking sockets. Use handlers per test with `server.use`; `resetHandlers` removes them. Put the `listen`, `resetHandlers` and `close` lines in a `setupFiles` module so every test gets them. Per the MSW 3 migration notes, the 2.x name `onUnhandledRequest` was renamed and the root `msw` import no longer exports `http`. See the Bun note in the first section before you rely on interception under Bun.
+`onUnhandledFrame: 'error'` makes a request with no handler fail the test instead of reaching the internet, which is the TypeScript counterpart of blocking sockets. Use handlers per test with `server.use`; `resetHandlers` removes them. Put the `listen`, `resetHandlers` and `close` lines in a `setupFiles` module so every test gets them. The rename matters. On msw 3.0.5 the 2.x name `onUnhandledRequest: 'error'` is still accepted but ignored: MSW prints a warning and the request goes to the network (checked against a local HTTP server, where it returned the real response, while `onUnhandledFrame: 'error'` threw). The migration notes list `msw/http` as the new home of `http` and `HttpResponse`, so this page imports from there. `import { http } from 'msw'` also works on 3.0.5 and is the same function, so the entry point is a style choice. See the Bun note in the first section before you rely on interception under Bun.
 
 ### Ordering
 
@@ -299,7 +300,7 @@ Shuffle to find tests that depend on their neighbors: `pnpm exec vitest run --se
 
 - Return or `await` the promise. A test that starts async work and does not await it passes before the work runs. Assert rejections with `await expect(promise).rejects.toThrow(...)`.
 - Wait on a condition, not on time. `vi.waitFor(() => { if (!ready) throw new Error('not ready') })` retries the callback until it stops throwing or times out. `expect.poll(() => value).toBe(true)` retries the whole assertion and must be awaited; `.resolves`, `.rejects` and `toThrow` do not work with it. This is the fix for a [bare sleep](../code-smells.md#bare-sleeps).
-- With fake timers enabled, `vi.waitFor` and `expect.poll` advance the fake clock between attempts, so they do not hang.
+- With fake timers enabled, `vi.waitFor` and `expect.poll` advance the fake clock between attempts, so they do not hang. They advance it one poll interval at a time, so the real time they cost grows with the fake delay. For an instant test, call `await vi.advanceTimersByTimeAsync(delayMs)` and assert after it.
 - `test.concurrent` runs tests in one file at the same time. Use it only for tests that share nothing; sequential is the safe default.
 - A hung test needs a limit: set `testTimeout` in the config. Treat a timeout as a failure to investigate, not a number to raise.
 - Jest has no `vi.waitFor` or `expect.poll`; the Testing Library `waitFor` plays that role there.
@@ -382,7 +383,7 @@ The shared list is in [code smells](../code-smells.md). The ones that show up mo
 - A loop or conditional in the body to build the expected value ([logic in tests](../code-smells.md#logic-in-tests)).
 - `await new Promise((r) => setTimeout(r, 500))` to wait for work ([bare sleeps](../code-smells.md#bare-sleeps)). Use `vi.waitFor` or `expect.poll`.
 - Fake timers or a stubbed global left on after the test ([shared mutable state](../code-smells.md#shared-mutable-state)).
-- A `.only` committed by accident. Set `allowOnly: false` in CI (vitest fails a run containing `.only` when `CI` is set).
+- A `.only` committed by accident. Vitest's `allowOnly` already defaults to false when the `CI` environment variable is set, so a run containing `.only` fails there. Set `allowOnly: false` explicitly if your CI does not export `CI`.
 - `toThrow()` with no argument, which passes on any error including a typo.
 - Snapshot assertions of a whole large object, which nobody reads when they change.
 - A `skip` or `todo` with no reason, owner or date.

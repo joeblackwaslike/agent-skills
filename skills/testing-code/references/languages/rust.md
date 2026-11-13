@@ -28,8 +28,10 @@ mockall = "0.15"
 rstest = "0.28"
 proptest = "1.12"
 tempfile = "3.27"
-tokio = { version = "1.54", features = ["rt", "macros", "time", "test-util"] }
+tokio = { version = "1.54", features = ["rt", "rt-multi-thread", "macros", "time", "test-util"] }
 ```
+
+`rt-multi-thread` is only for `#[tokio::test(flavor = "multi_thread")]`; without it that flavor does not compile. Drop it if every async test uses the default runtime.
 
 Run the suite with `cargo test`, or with `cargo nextest run` once you install it (`cargo install cargo-nextest --locked`). `cargo test` runs the tests of one binary as threads in one process. nextest runs each test in its own process, which its docs give as a deliberate, permanent design choice. Two things follow. A test that leaks global state or aborts cannot hurt its neighbors, and killing one test (for a timeout) is safe. And any state you hoped to share between tests through a `static` is not shared under nextest, so a suite that passes only under `cargo test` was depending on that sharing ([shared mutable state](../code-smells.md#shared-mutable-state)).
 
@@ -121,7 +123,7 @@ fn sends_one_receipt_after_a_successful_charge(
         .with(eq(TOKEN), eq(TOTAL_CENTS))
         .times(1)
         .in_sequence(&mut order)
-        .return_const(charge.clone());
+        .return_const(charge);
     mailer_mock
         .expect_send_receipt()
         .with(eq(EMAIL), eq("ch_123"))
@@ -141,14 +143,32 @@ fn sends_one_receipt_after_a_successful_charge(
 - `.with(eq(..))` pins the arguments of that expectation. `.times(1)` pins how often it is called; `.times(n)` or a range also work. Without `.times`, an expectation allows any number of calls, which is the gap P10 warns about, so always write it.
 - A call that matches no expectation panics, so an extra or wrong call fails the test at once. That covers the "no other calls" half of the rule. A missing call is caught when the mock is dropped, or earlier by `checkpoint()`. Both were confirmed with `#[should_panic]` tests while writing this page.
 - `.never()` is the not-called assert. A method with no expectation at all also panics if called, so `.never()` is for stating the intent.
-- `Sequence` pins the order of calls across expectations and across mocks, the counterpart of the "list calls in the order the code makes them" rule. Use it when the order is behavior (charge before receipt), not for every mock.
+- Order is part of the assertion by default (P10), so pin it with `Sequence`. One `Sequence` can span several mocks, as in the example (charge before receipt), and several expectations on one mock (two receipts in the order the code sends them):
+
+```rust
+let mut order = Sequence::new();
+mailer_mock
+    .expect_send_receipt()
+    .with(eq("ada@example.com"), eq("ch_123"))
+    .times(1)
+    .in_sequence(&mut order)
+    .return_const(());
+mailer_mock
+    .expect_send_receipt()
+    .with(eq("bo@example.com"), eq("ch_123"))
+    .times(1)
+    .in_sequence(&mut order)
+    .return_const(());
+```
+
+Calls made in the other order panic. Leave the `Sequence` out only when the order has no effect on the outcome, and say so once in the test, for example in a one-line comment.
 - `checkpoint()` validates every expectation now and clears them, so you can set new ones mid-test. Call it at the end when you want the failure to point at the test body instead of at the drop.
-- For an argument you cannot compare with `eq`, `withf(|x| ...)` takes a closure. mockall's docs say a method with a non-`'static` type parameter needs `withf`, not `with`.
-- Return values: `return_const(value)` clones a value on each call; `returning(|args| ...)` computes one, and is the only option for a value that cannot be cloned.
+- For an argument you cannot compare with `eq`, `withf(|x| ...)` takes a closure. mockall's docs say a method with a lifetime parameter, or a concretized generic method, cannot be matched with `with` and needs `withf`.
+- Return values: `return_const(value)` clones the value on each call, and `returning(|args| ...)` computes a fresh one per call. For a value that cannot be cloned and is returned once, use `return_once(move |args| value)`.
 
 Ownership and lifetimes, for the places a double trips:
 
-- **Setting expectations borrows the mock mutably; passing it to the code borrows it immutably.** That is why the mock is `mut` and why every `expect_*` call comes before `place_order(&gateway_mock, ...)`. You cannot add an expectation while the code holds a shared reference to the mock. Finish the setup, then lend it.
+- **Setting expectations borrows the mock mutably; passing it to the code borrows it immutably.** That is why the mock is `mut` and why every `expect_*` call comes before `place_order(&gateway_mock, ...)`. You cannot add an expectation while the code holds a shared reference to the mock, so finish the setup and then lend it. That is safe advice rather than a hard rule: with non-lexical lifetimes, a shared borrow only has to end before the next `expect_*` call.
 - **Moving a mock gives it away.** `consume(Box::new(mailer))` moves `mailer` into the box, so calling `mailer.checkpoint()` afterwards is a compile error ("borrow of moved value"). The mock is still verified when `consume` drops it. If you need to inspect it after, pass a reference instead of moving it.
 - **Mocks and references.** A mocked method that returns a reference works only when that reference lives as long as the mock or is `'static`, per the mockall docs. If a trait method returns a borrowed value tied to its arguments, return an owned value (`String`, `Vec`) in the trait instead, or test through a fake.
 - **Mocked traits are checked at compile time, so many failures are compile errors.** If the mock won't build for a generic or lifetime-heavy trait, a hand-written fake (a plain struct implementing the trait with a `Vec` of recorded calls) is often shorter than fighting `automock`.
@@ -165,9 +185,15 @@ A fake is a small working stand-in: a struct implementing the trait over a `Hash
 struct InMemoryOrders {
     rows: std::cell::RefCell<std::collections::HashMap<String, Order>>,
 }
+
+impl Orders for InMemoryOrders {
+    fn save(&self, id: &str, order: Order) {
+        self.rows.borrow_mut().insert(id.to_string(), order);
+    }
+}
 ```
 
-Use one when the test cares about the outcome, not the calls ([change-detector tests](../code-smells.md#change-detector-tests)). `RefCell` lets a trait method that takes `&self` still mutate the map; it moves the borrow check from compile time to runtime. If the fake must be shared between threads, use `Mutex` instead.
+Here `Orders` is the trait the code under test depends on, and `save` takes `&self`. Use a fake when the test cares about the outcome, not the calls ([change-detector tests](../code-smells.md#change-detector-tests)). `RefCell` lets a trait method that takes `&self` still mutate the map; it moves the borrow check from compile time to runtime. If the fake must be shared between threads, use `Mutex` instead.
 
 ## Parametrization
 
@@ -206,7 +232,7 @@ async fn waits_without_real_time() {
 }
 ```
 
-`start_paused = true` needs tokio's `test-util` feature. With the clock paused, tokio advances it by itself whenever the runtime has nothing to do, so a one-hour sleep finishes at once. The same is available inside a test as `tokio::time::pause()` and `tokio::time::advance(duration)`. Use `tokio::time::Instant` for measuring; `std::time::Instant` is not paused. The example above ran here.
+`start_paused = true` needs tokio's `test-util` feature and works only on the default `current_thread` flavor: `#[tokio::test(flavor = "multi_thread", start_paused = true)]` fails to compile with "The `start_paused` option requires the `current_thread` runtime flavor". With the clock paused, tokio advances it by itself whenever the runtime has nothing to do, so a one-hour sleep finishes at once. The same is available inside a test as `tokio::time::pause()` and `tokio::time::advance(duration)`. Use `tokio::time::Instant` for measuring; `std::time::Instant` is not paused. The example above ran here.
 
 ### Randomness
 
@@ -235,7 +261,7 @@ Either way, a unit test that reaches the real internet is a bug in the test.
 
 ## Async
 
-- Use `#[tokio::test]` for async tests. It builds a runtime per test. The default is a single-threaded runtime; ask for `flavor = "multi_thread"` only when the code needs it.
+- Use `#[tokio::test]` for async tests. It builds a runtime per test. The default is a single-threaded runtime; ask for `flavor = "multi_thread"` only when the code needs it, and enable tokio's `rt-multi-thread` feature for it.
 - Wait on a condition, not on time. Use a channel, `tokio::sync::Notify`, or `tokio::time::timeout(Duration::from_secs(5), future)` so a hang becomes a failure instead of a stuck job ([bare sleeps](../code-smells.md#bare-sleeps)). With paused time, `timeout` costs no real seconds.
 - rstest supports `async` fixtures and tests, and a `#[timeout(...)]` attribute on async tests (the `async-timeout` feature is on by default).
 - Await spawned tasks (`handle.await`) before asserting. A test that spawns work and returns first passes before the work runs.
@@ -275,13 +301,14 @@ proptest! {
     #[test]
     fn price_always_has_two_decimals(cents in 0u64..10_000_000_000) {
         let text = format_price(cents);
-        let (_, decimals) = text.rsplit_once('.').unwrap();
-        prop_assert_eq!(decimals.len(), 2);
+        prop_assert!(text
+            .rsplit_once('.')
+            .is_some_and(|(_, decimals)| decimals.len() == 2));
     }
 }
 ```
 
-Use `prop_assert!` and `prop_assert_eq!` inside `proptest!`. A failing case is saved to a `proptest-regressions` file beside the source and replayed first on later runs; commit that file. `PROPTEST_CASES` overrides the number of cases. The [property-based runbook](../runbooks/property-based.md) covers choosing properties.
+Use `prop_assert!` and `prop_assert_eq!` inside `proptest!`. A failing case is saved to a file under a `proptest-regressions/` directory at the crate root (next to `src/`, mirroring the source path with a `.txt` extension, per the proptest docs for the default persistence) and replayed first on later runs; commit that directory. `PROPTEST_CASES` overrides the number of cases. The [property-based runbook](../runbooks/property-based.md) covers choosing properties.
 
 ## Integration and data: factories, databases, rollbacks
 
@@ -300,7 +327,7 @@ For databases:
 - **Rollback per test**: open a transaction at the start of the test, run the code against it, and drop it without committing. In sqlx a transaction that is dropped uncommitted rolls back; I did not run this here, so confirm it for your driver. It works only when the code under test uses the connection or transaction you pass in.
 - **Truncate or recreate** when the code opens its own connections. A throwaway database per test (created from a template, dropped at the end) is slower but isolates fully; nextest's process-per-test makes the cleanup easy to keep per test.
 - Run migrations once per test run, against a throwaway database, then rely on rollback or truncate per test.
-- Mark expensive database tests `#[ignore = "needs database"]` only if the default run must stay fast, and run them in their own job with `--run-ignored only`. Use a different reason prefix from a quarantine, so the two jobs select different tests.
+- Mark expensive database tests `#[ignore = "needs database"]` only if the default run must stay fast, and run them in their own job with `cargo test -- --ignored` or, under nextest, `cargo nextest run --run-ignored only`. Use a different reason prefix from a quarantine, so the two jobs select different tests.
 
 The [integration runbook](../runbooks/integration.md) has the steps.
 
@@ -310,7 +337,8 @@ The shared list is in [code smells](../code-smells.md). The ones that show up mo
 
 - A mock expectation with no `.times()`, so any number of calls pass ([tests that cannot fail](../code-smells.md#tests-that-cannot-fail)).
 - `.returning(|_| ...)` closures with logic inside, which grow into a second implementation ([logic in tests](../code-smells.md#logic-in-tests)).
-- Mocking every collaborator and pinning the order of internal calls with `Sequence` where the order is not behavior ([change-detector tests](../code-smells.md#change-detector-tests)).
+- Expectations with no `Sequence` where the order of calls is part of the outcome, so a swapped pair passes. Where the order has no effect, leaving it out is fine if the test says so once.
+- Mocking every collaborator so the test restates the implementation ([change-detector tests](../code-smells.md#change-detector-tests)).
 - Twenty lines of expectation setup for a three-line function ([over-specified or over-mocked setup](../code-smells.md#over-specified-or-over-mocked-setup)). Write a small fake instead.
 - `std::thread::sleep` or `tokio::time::sleep` in a test to wait for work ([bare sleeps](../code-smells.md#bare-sleeps)).
 - `unwrap()` chains everywhere. A test that returns `Result<(), E>` and uses `?` stops at the first error with its message, and reads shorter.

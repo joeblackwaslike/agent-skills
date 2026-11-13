@@ -17,7 +17,7 @@ What ran: I built pgTAP 1.3.4 from its tag with `make`, loaded the generated `sq
 Plain `psql` runs a test file but always exits 0, even when a test fails. I confirmed that with a deliberately failing test. The pass or fail verdict, and a non-zero exit for CI, comes from `pg_prove`, which reads the TAP stream. A pipeline that runs only `psql -f` does not gate anything.
 
 ```sh
-pg_prove -d mydb test/*.sql
+pg_prove -d mydb db/tests/*.test.sql db/tests/migrations/*.test.sql
 ```
 
 pgTAP's docs give `pg_prove -U postgres sql/*.sql` as the form for a batch of files; pass the usual PostgreSQL connection options.
@@ -165,7 +165,7 @@ SQL gives no row order without `ORDER BY`, and the same query can return rows di
 
 - Each file runs in a transaction and ends in `ROLLBACK`, so nothing a test creates outlives it (P13). The pgTAP docs say `runtests()` also rolls back after each test function and at the end, and name one exception, sequences.
 - A transaction does not isolate everything. A `COMMIT` inside the code under test, a call through `dblink`, `VACUUM`, `CREATE INDEX CONCURRENTLY` or anything else that cannot run inside a transaction, ends the isolation. For those, use a database made for the test.
-- **Separate database per run.** Create a database from a template that already has the migrations applied (`CREATE DATABASE test_run_17 TEMPLATE migrated_template`), run the files against it, drop it. This is the PostgreSQL feature for cloning a database quickly; I did not run it on this page. It makes parallel runs safe, because each has its own database.
+- **Separate database per run.** Create a database from a template that already has the migrations applied (`CREATE DATABASE test_run_17 TEMPLATE migrated_template`), run the files against it, drop it. No other connection may be open on the template while it is cloned, so keep migrations and test sessions off it. This is the PostgreSQL feature for cloning a database quickly; I did not run it on this page. It makes parallel runs safe, because each has its own database.
 - **Parallel runs against one database** work only when every file rolls back and no two files touch the same fixed row or lock the same table. A DDL statement takes locks that make parallel files wait or deadlock. If files create the same table name in separate transactions, one blocks the other until it ends, so give each file its own schema or prefer the template database.
 - Keep test objects out of production. Use a test database, never the one your application uses. A test file must not point at a production connection string.
 
@@ -180,7 +180,7 @@ Measure first ([slow tests runbook](../slow-tests.md)). The levers for SQL:
 - Applying migrations dominates. Apply them once to a template database and clone it per run, rather than re-running them in each test.
 - Transactions that roll back are cheap. A test that creates a table or two per file is fast; loading thousands of rows per test is not. Keep seed data to the rows the assertion names.
 - Test an execution plan only where the plan is a requirement, such as "this lookup uses the index", and say why in the test. An `EXPLAIN` text check breaks when PostgreSQL's planner changes between versions and when table statistics change, so use it for a few important queries, and have the test insert enough rows for the planner to prefer the index. A latency threshold on a shared machine is a flaky test ([flakes](../flakes/triage.md)). I did not run an `EXPLAIN` test on this page.
-- Run one file while iterating (`psql -f test/accounts.test.sql` shows the TAP lines) and `pg_prove` over the whole directory before you push.
+- Run one file while iterating (`psql -f db/tests/accounts.test.sql` shows the TAP lines) and `pg_prove` over the whole directory before you push.
 
 ## Coverage, mutation and property-based tools
 

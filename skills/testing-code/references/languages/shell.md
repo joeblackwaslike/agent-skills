@@ -235,7 +235,7 @@ Measure first ([slow tests runbook](../slow-tests.md)). The shell levers:
 
 For shell, integration means running the script against real files and real commands in a temporary directory. This is the kind where nothing is stubbed that is cheap and deterministic (P8).
 
-The script under test, `bin/archive-old-logs.sh`, deletes `.log` files older than 30 days from the directory it is given:
+The script under test, `bin/delete-old-logs.sh`, deletes `.log` files older than 30 days from the directory it is given:
 
 ```bash
 #!/usr/bin/env bash
@@ -246,18 +246,24 @@ find "$1" -name '*.log' -mtime +30 -delete
 The test:
 
 ```bash
-@test "archives only the old files in the target directory" {
-  mkdir "$BATS_TEST_TMPDIR/logs"
+@test "deletes only .log files older than 30 days" {
+  mkdir "$BATS_TEST_TMPDIR/logs" "$BATS_TEST_TMPDIR/elsewhere"
   touch -t 202001010000 "$BATS_TEST_TMPDIR/logs/old.log"
+  touch -t 202001010000 "$BATS_TEST_TMPDIR/logs/old.txt"
   touch "$BATS_TEST_TMPDIR/logs/new.log"
+  touch -t 202001010000 "$BATS_TEST_TMPDIR/elsewhere/old.log"
 
-  run "$BATS_TEST_DIRNAME/../bin/archive-old-logs.sh" "$BATS_TEST_TMPDIR/logs"
+  run "$BATS_TEST_DIRNAME/../bin/delete-old-logs.sh" "$BATS_TEST_TMPDIR/logs"
 
   assert_success
-  [ -f "$BATS_TEST_TMPDIR/logs/new.log" ]
   [ ! -e "$BATS_TEST_TMPDIR/logs/old.log" ]
+  [ -f "$BATS_TEST_TMPDIR/logs/new.log" ]
+  [ -f "$BATS_TEST_TMPDIR/logs/old.txt" ]
+  [ -f "$BATS_TEST_TMPDIR/elsewhere/old.log" ]
 }
 ```
+
+The test checks both halves of "only": the old file is gone, and the new file, the old non-log file and an old log outside the target directory all survive. It passed on bats 1.14.0.
 
 - A factory is a small helper that creates a directory tree, a fixture file or a git repository in the temp directory (`git init` in `$BATS_TEST_TMPDIR`, a commit with fixed author and date variables).
 - bats-file adds `assert_file_exist`, `assert_file_not_exist`, `assert_dir_exist` and `temp_make`; they give readable failures. Plain `[ -f path ]` works without the library. Only assert on paths under the temp directory.
@@ -297,7 +303,7 @@ The [quarantine runbook](../flakes/quarantine.md) decides whether to quarantine 
 ```
 
 - The gating run (`bats test/`) shows the test as skipped with the reason. The non-gating job runs the same files with `RUN_QUARANTINED=1` and `continue-on-error` in CI, and its results are watched.
-- The unconditional `skip "reason"` form (used as the last test in the run above) was run and printed the reason in the result line. It silences the test everywhere, so use it only for a test that is being deleted or fixed, not for a flake you still want data on.
+- The unconditional `skip "reason"` form was run and printed the reason in the result line. It silences the test everywhere, so use it only for a test that is being deleted or fixed, not for a flake you still want data on.
 - Put owner, date and the tracking link in the reason string so a search finds them.
 - Bats has `BATS_TEST_RETRIES`, which reruns a failing test. It hides a flake rather than quarantining it, so the runbook's tracking still applies. Bats documents the variable; I did not run it.
 - Tags give a second route: put `# bats test_tags=quarantined` above the test, have the gate run `bats --filter-tags '!quarantined'` and the non-gating job run `--filter-tags quarantined`. Both filters ran and selected the expected tests. Unlike the environment variable, this runs the test without editing its body.
