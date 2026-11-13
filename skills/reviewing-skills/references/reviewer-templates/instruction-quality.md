@@ -43,8 +43,8 @@ Missing parts. For a discipline, workflow or agent-pipeline skill, a part the pr
 - A rule an agent breaks under pressure with no excuse table, red flags list or loophole closer, and no exception for the case where the rule cannot be followed (minor, major when violating it is costly).
 - A procedure with no observable check that a step worked. Example: a rule to reproduce a bug as a failing test, with nothing saying what output shows it failed for the right reason, or what shows the fix turned it green (minor).
 - A procedure with no example of an invocation or of the output the agent should produce (minor).
-- Phase numbers, gate names or tiers used as if defined, when they are defined only in another skill or nowhere (minor).
-- A delegation to another agent that does not say who decides, which handoff, how many rounds, or when to stop (minor).
+- Phase numbers, gate names or tiers (for example "phases 0, 2, 4" or "Gate 1") used with no definition in this skill's own files, when a reader of this skill alone could not say what they mean. A sibling skill that defines them does not remove the finding unless this skill names where to look. This is separate from, and in addition to, a mismatch between the two files (minor).
+- A step that hands work to another agent or phase without saying, in this skill's own files, which model or role, what the handoff contains, how many rounds are allowed, and who decides when to stop. Report it when any of these four is missing, even if a sibling skill's engine covers some of them (minor).
 - Guidance such as "keep sessions focused" or "compact after major milestones" with no observable trigger and no test for whether it was followed (minor).
 The failure scenario for these is the step the agent skips or misjudges with no way to tell. The evidence is the quoted bare rule and the section list, so no run is needed. Do not report a missing part that another part of the same skill supplies.
 
