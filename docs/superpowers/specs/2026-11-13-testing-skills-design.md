@@ -181,7 +181,7 @@ This file becomes the permanent home of the TDD skill.
 - Drop ECC-only tooling. Replace ECC's `waitForTimeout` example, which its own e2e skill calls an anti-pattern. Add an ECC (MIT) attribution line.
 - Delete `skills/test-driven-development/`. Update every reference in this repo: `AGENTS.md`, `README.md`, `SKILLS.md`, `skills/engineering-principles/SKILL.md` and its `references/principles.md`, `skills/senior-engineering-best-practices/SKILL.md`, the 2026-11-11 engineering-principles spec, and the `reviewing-code` tests playbook.
 - Outside this repo, and a separate follow-up: `agent-harness` README, `rules/ecc/common/testing.md`, `dist/CLAUDE.md`. List them in the PR description.
-- The `reviewing-skills` worktree holds a copy of the old skill. Coordinate so that branch does not bring the old path back.
+- The `feat/reviewing-skills` branch does not modify the TDD skill, so deleting it causes no merge conflict. The branch does add three files that mention it: `docs/superpowers/specs/2026-11-12-reviewing-skills-design.md`, `skills/reviewing-skills/references/playbooks/discipline-skill.md` and `skills/reviewing-skills/references/worked-example.md`. Whichever branch lands second runs `git grep test-driven-development` and updates what it finds. This work does not edit the other branch.
 
 ## Sources and how they are used
 
@@ -191,6 +191,19 @@ This file becomes the permanent home of the TDD skill.
 - Microsoft Engineering Playbook (automated testing) and pytest documentation (good practices, fixtures, parametrization, monkeypatch, tmp_path, marks).
 - ECC (MIT, Copyright Affaan Mustafa): `tdd-workflow`, `e2e-testing`, `python-testing`, `rust-testing`, `react-testing`. ECC names follow `{language}-testing`.
 
+## Source locations
+
+A builder can read these directly.
+
+- Joe's guide: `/Users/joe/github/joeblackwaslike/joes-tech-docs/Backend Testing Style Guidelines 1c5d530f29e480e5b0dcf9cdcc242ef4_with_inline_examples.md` (local, 2,463 lines). Its appendix defines `assert_calls_on`, so the Python page ships that helper as a documented snippet, not as importable code.
+- Joe's TDD skill: `skills/test-driven-development/` in this repo.
+- ECC checkout: `/Users/joe/github/affaan-m/ECC`, with `skills/tdd-workflow/SKILL.md`, `skills/e2e-testing/SKILL.md`, `skills/python-testing/`, `skills/rust-testing/` and `skills/react-testing/`. Remote: `github.com/affaan-m/ECC`.
+- Web sources, fetched at build time:
+  - Google: `https://abseil.io/resources/swe-book/html/ch11.html` through `ch14.html`, and `https://testing.googleblog.com/`
+  - Fowler: `https://martinfowler.com/articles/mocksArentStubs.html`, `https://martinfowler.com/articles/nonDeterminism.html`, `https://martinfowler.com/articles/practical-test-pyramid.html`
+  - Microsoft: `https://microsoft.github.io/code-with-engineering-playbook/automated-testing/`
+  - pytest: `https://docs.pytest.org/en/stable/explanation/goodpractices.html`, plus its fixtures, parametrize, monkeypatch, tmp_path and mark pages
+
 ## Delivery
 
 1. This spec is the first commit on `feat/testing-skills`, in the worktree `.worktrees/testing-skills`.
@@ -199,6 +212,8 @@ This file becomes the permanent home of the TDD skill.
 4. Verify tool documentation at the time of writing: pytest 9.x (the exact patch version was not confirmed), pytest-mock, vitest, jest, bats, pgTAP, nextest, Playwright.
 5. Register both skills in `SKILLS.md` and `README.md`. `make lint-descriptions` must pass (400-character target, 1536 hard cap). Check that every relative link resolves and every language page has every section.
 6. Ship as two stacked PRs. PR 1 is `testing-principles`, the TDD move and the reference updates. PR 2 is `testing-code`. Each goes through `/self-review` and `/pr-loop`, then merge, `wt-reap` and a plugin cache check.
+7. Links between the two skills. PR 1 refers to `testing-code` runbooks by name in plain text, because those files do not exist yet. PR 2 turns each into a relative link. The link check in PR 1 covers only files that exist; the full check runs in PR 2.
+8. ECC links use GitHub URLs (`https://github.com/affaan-m/ECC/blob/main/skills/<name>/SKILL.md`), not skill names, so they resolve for readers who don't have ECC installed. Confirm the default branch name when writing them.
 
 ## Acceptance
 
@@ -211,7 +226,7 @@ This file becomes the permanent home of the TDD skill.
 ## Open items to verify while building
 
 - The SWE book license. The research reported CC BY-NC-ND 4.0; confirm on abseil.io before relying on it.
-- The ECC repository URL, for outward links.
+- The ECC default branch name, for the outward links.
 - The current pytest patch version.
 
 ## Left to the builder
