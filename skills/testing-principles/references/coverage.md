@@ -35,11 +35,11 @@ A target turns a signal into a goal, and people then reach the goal by the cheap
 - A mandated number invites assertion-free tests, tests copied only to execute lines, and tests of trivial code.
 - Google's guidance also holds that no single ideal number applies to every product. The right amount of testing depends on how critical the code is, how often it changes, and how long it will live.
 
-The number still works as an alarm. Informed by Fowler's view, a very low one, below half, signals trouble. A high one says little.
+The number still works as an alarm. Fowler treats a very low number, below half, as a sign of trouble; a high one says little.
 
 ## How to read gaps
 
-The value of a coverage report is in what it shows is missing.
+A coverage report is useful for the code it shows is untested.
 
 - Read the uncovered lines and branches, not the total. For each one, ask whether a bug there would matter.
 - Uncovered code that handles money, authentication, data loss, or error recovery is a real gap. Uncovered debug logging usually is not.

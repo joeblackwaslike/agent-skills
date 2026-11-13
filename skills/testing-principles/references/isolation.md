@@ -24,7 +24,7 @@ There are three ways to give a test a known starting state. They differ in how m
 
 - Prefer the cheapest degree that fits. In-memory state and fakes are cheap enough for fresh state every time.
 - Cleanup puts the failure far from the cause. If you rely on it, make cleanup run even when the test fails, and make a failure inside cleanup loud. A cleanup that throws and is swallowed leaves the next test to fail.
-- Shared, long-lived state is a speed optimization, not a default. Share only what tests never write to (see [fixtures.md](fixtures.md) and `performance.md`).
+- Share long-lived state only to save time, and only for state tests never write to (see [fixtures.md](fixtures.md) and `performance.md`).
 
 ## Order independence
 

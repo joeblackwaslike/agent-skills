@@ -11,8 +11,8 @@ A test that sometimes fails for no reason teaches people to ignore failures. Fow
 The system clock returns a different answer on every call, so any test that reads it can change between runs.
 
 - Code under test receives the clock as a dependency or reads it through one wrapper. The test replaces that with a fixed value (P14).
-- A frozen clock should be reset after each test. A clock left frozen is a shared-state leak (see `isolation-failures.md`).
-- Tests that assume "today" is the same date an hour later fail near midnight and at month end. Pin the date, not the offset.
+- A frozen clock should be reset after each test. A clock left frozen is a shared-state leak (see [isolation-failures.md](isolation-failures.md)).
+- Tests that assume "today" is the same date an hour later fail near midnight and at month end. Pin the date; don't compute it relative to now.
 - Ids or keys derived from clock ticks can collide when the machine gets faster.
 
 ## Randomness

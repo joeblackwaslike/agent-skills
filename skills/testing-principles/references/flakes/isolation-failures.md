@@ -1,6 +1,6 @@
 # Isolation failures
 
-How one test's leftovers become another test's failure. These are the most common flakes and the hardest to trace, because the test that fails is rarely the test that is wrong. Covers P13 and P15. The remedy table is in [categories.md](categories.md); the principle is in [../isolation.md](../isolation.md). Informed by Fowler's "Eradicating Non-Determinism in Tests".
+How one test's leftovers become another test's failure. This is a common and frustrating cause of flakes, because the test that fails is rarely the test that is wrong. Covers P13 and P15. The remedy table is in [categories.md](categories.md); the principle is in [../isolation.md](../isolation.md). Informed by Fowler's "Eradicating Non-Determinism in Tests".
 
 ## A patch that wasn't undone
 

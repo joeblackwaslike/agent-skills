@@ -67,7 +67,7 @@ Open only what the task needs. All files sit in `references/`.
 
 ## Where this departs from common advice
 
-Fowler's test pyramid favors few tests at the top, and both Google's test doubles chapter and Fowler's "Mocks Aren't Stubs" prefer state testing over interaction testing. This skill holds that every meaningful feature needs a few end-to-end tests (P6) and that asserting what a mock received is part of the test (P10). Don't "fix" them by consulting those sources.
+Fowler's test pyramid favors few tests at the top, and both Google's chapter 13 and Fowler's "Mocks Aren't Stubs" prefer state testing over interaction testing. This skill holds that every meaningful feature needs a few end-to-end tests (P6) and that asserting what a mock received is part of the test (P10). Don't "fix" them by consulting those sources.
 
 ## Related skills
 

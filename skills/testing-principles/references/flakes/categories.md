@@ -6,7 +6,7 @@ A flaky test passes and fails with no change to code, tests, or environment. It 
 
 | Category | Typical symptom | Cause | Remedy |
 |---|---|---|---|
-| Isolation | Passes alone, fails in the suite; fails only after another test | State from one test reaches another: rows, patches, singletons, shared fixtures | Fresh state per test, rollback, or auto-undone cleanup (P13). See `isolation-failures.md`. |
+| Isolation | Passes alone, fails in the suite; fails only after another test | State from one test reaches another: rows, patches, singletons, shared fixtures | Fresh state per test, rollback, or auto-undone cleanup (P13). See [isolation-failures.md](isolation-failures.md). |
 | Async | Fails under load or on slow machines; passes on retry | Test reads a result before background work finishes, often after a fixed sleep | Wait on a callback or event, or poll with a timeout. Never bare-sleep (P14). |
 | Remote services | Fails when a service is slow, down, or changes its data | Test depends on a system outside the process | Double the boundary and check the double with a contract test (P8, P11, P14). |
 | Time | Fails near midnight, month end, or a time zone change; fails at certain hours | Test reads the real clock or assumes the date is stable | Inject the clock and freeze it for the test (P14). |
@@ -17,7 +17,7 @@ A flaky test passes and fails with no change to code, tests, or environment. It 
 ## Notes
 
 - Several categories can combine. A test that sleeps (async) on a loaded CI machine (environment) is one defect with two contributing causes. Fix the wait first, then re-check.
-- Sleeping longer lowers the failure rate, slows the suite, and leaves the cause in place (see `nondeterminism.md`).
+- Sleeping longer slows the suite and leaves the cause in place (see `nondeterminism.md`).
 - Rerunning a failure until it passes hides the defect from the signal the suite exists to give (P15).
 - Order and parallelism expose isolation flakes. Run the suite shuffled to surface them.
 - A flake that cannot be fixed immediately is quarantined with an owner and a deadline (P15). The mechanics are in the `testing-code` quarantine runbook.

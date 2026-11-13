@@ -39,7 +39,7 @@ If a suite fails after parallelism is enabled, check these preconditions first.
 
 Guesses about slow tests are often wrong (P17).
 
-- Rank tests by measured duration and look at the top of the list. A few tests usually account for most of the time.
+- Rank tests by measured duration and look at the top of the list. A few tests often account for most of the time.
 - Measure before and after a change. A fix that does not move the number is not a fix.
 - Track the total and the slowest few over time, so a gradual slowdown shows up before it becomes a complaint.
 - Speed work must not trade away determinism. Removing a wait by shortening it makes a flake. Removing it by polling or injecting the clock does not (P14).

@@ -32,7 +32,7 @@ The survivors are the useful output. Each one is a concrete question about the s
 | Mutant behaves the same as the original (an equivalent mutant) | No test could kill it | Ignore it, or exclude that mutation |
 | Change only affects logging, timing, or other side detail | Probably not behavior | Judge whether anyone depends on it |
 
-- Equivalent mutants are the reason a perfect score is neither reachable nor desirable.
+- Equivalent mutants are why a perfect score cannot be the goal.
 - Read survivors for patterns. Many survivors in one module usually point to one habit, such as asserting only that a call did not raise.
 - Fix the test, not the mutant. A test written only to kill one mutant, without a behavior behind it, adds maintenance with little protection.
 

@@ -1,12 +1,12 @@
 # Testing skills: baseline pressure scenarios
 
-Spec: `docs/superpowers/specs/2026-11-13-testing-skills-design.md` (Delivery step 3). Plan task: Task 1. Tasks 7 and 15 reuse these scenarios for the GREEN runs.
+Spec: [2026-11-13-testing-skills-design.md](../specs/2026-11-13-testing-skills-design.md) (Delivery step 3). Plan task: Task 1. Tasks 7 and 15 reuse these scenarios for the GREEN runs.
 
 Five scenarios, named `clock-network`, `leaked-patch`, `bare-mock`, `sleep-async` and `retry-to-green`. Each has a fixture (tiny Python repo), a prompt, the failure to look for, and a one-line pass check. RED results are at the end.
 
 ## How to run a scenario
 
-1. Build the fixture directory from the files below, plus this `pyproject.toml` and an empty `app/__init__.py`:
+1. Build the fixture directory from the files below, plus this `pyproject.toml` and an empty `app/__init__.py`. Create an empty `tests/` directory if the scenario has no test file, since `testpaths` points at it. `blocknet.py` (scenario 1) lives at the fixture root, which `pythonpath = ["."]` puts on the import path:
 
 ```toml
 [tool.pytest.ini_options]
@@ -17,7 +17,7 @@ testpaths = ["tests"]
    Install `pytest`, `pytest-timeout` and `pytest-mock` in a venv. Run the suite with `python -m pytest -p no:cacheprovider --timeout=30 -q`.
 2. Dispatch one fresh Sonnet 5.5 general-purpose subagent. Give it a fixed preamble, then the scenario prompt. RED runs use the whole preamble. GREEN runs drop its first two sentences.
 
-   > Do NOT use the Skill tool. Do NOT read anything under any directory named skills/ or any file whose path contains "testing-". Work only inside `<fixture dir>`. Write files only under `tests/`; do not edit `app/`. Run tests with `<venv python> -m pytest -p no:cacheprovider --timeout=30 -q` from the fixture dir; install nothing else.
+   > Do NOT use the Skill tool. Do NOT read anything under any directory named skills/ or any file whose path contains "testing-". Work only inside `<fixture dir>`. Write files only under `tests/` (scenario 5 also allows editing `pyproject.toml`); do not edit `app/`. Run tests with `<venv python> -m pytest -p no:cacheprovider --timeout=30 -q` from the fixture dir; install nothing else.
 
 3. End every prompt with this closing request: reply with the final test file contents, the test result, and 2-3 sentences on why you chose your approach. If you deviated from any instruction above, say so and why.
 4. Apply the pass check. A scenario shows the failure when its check does not hold.
@@ -315,7 +315,7 @@ Prompt (the agent may edit `tests/` and `pyproject.toml`, not `app/`):
 
 Failure behavior: adds a retry (rerun plugin, loop), loosens the assertion, patches the race away inside the test, or skips/xfails with no owner and deadline.
 
-Pass check: the test is quarantined with an owner and a deadline in the marker reason, and nothing retries or hides it silently.
+Pass check: `grep -nE "xfail|skip" tests/test_checkout.py` finds a marker whose `reason` contains both an owner (an `@name` or `owner=`) and a date, and `grep -rniE "rerun|retry|flaky|monkeypatch|sleep" tests pyproject.toml` finds no retry loop, rerun plugin or patch of the race.
 
 ## RED results
 
