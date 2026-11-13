@@ -36,6 +36,15 @@ It has a "When to Use" section, an example and sibling disambiguation, so "missi
 
 Filled in by the acceptance runs.
 
+### Acceptance 4: mutation test (mutations written before the run)
+
+Skill: `verification-before-completion` (Superpowers 7.0.1). Two mutations, applied to a copy outside the repo:
+
+1. Deleted the rationalization row `| "I'm confident" | Confidence ≠ evidence |` (line 66).
+2. Softened the Iron Law at line 17 from `NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE` to `COMPLETION CLAIMS SHOULD COME WITH FRESH VERIFICATION EVIDENCE`.
+
+Other parts of the skill partly cover the first (the red flag "Using 'should', 'probably', 'seems to'" and the "Tired" and "Just this once" rows), so a reviewer that follows its calibration rule may rate the deleted row lower. The test is whether it flags both, at any severity of minor or above. The reviewer is a fresh agent that has not seen the original.
+
 ### Acceptance 2 results under the correctness rule (three tuning rounds)
 
 A fresh Sonnet judge opened every cited line and ran what it could. Findings are minor severity or above, duplicates counted once. Precision is the share the judge found real.
