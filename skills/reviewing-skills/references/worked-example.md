@@ -36,6 +36,17 @@ It has a "When to Use" section, an example and sibling disambiguation, so "missi
 
 Filled in by the acceptance runs.
 
+### Acceptance 1: recall on the held-out half
+
+Reviewers read the 24-file `design-patterns` snapshot as it stood before the review fixes. Each run was eight reviewers (instruction-quality, routing, six content shards of at most four files). Two scores, as the spec defines them, judged by a fresh Sonnet agent that held the answer key. The held-out half has six majors (rows 1, 6, 13, 17, 37, 41) and ten others.
+
+| Run | Verifier | Majors matched (floor 4 of 6) | Others matched | Verified defects | Result |
+|---|---|---|---|---|---|
+| 1 | yes (82 rows: 7 confirmed defects) | 2 of 6 (rows 6, 17) | 5 of 10 | 24 of 26 real (92%), 24 defects found, 7 on the list | floor not met |
+| 2 | none | 1 of 6 (row 6) | 4 of 10 | 18 of 20 real (90%), 18 defects found | floor not met |
+
+**Result: NOT PASSED.** The criterion needs 2 of 3 runs to pass, and two runs missed the floor, so I did not run a third. The reviewer clears the verified-defects bar both times and finds 18 to 24 real defects per run, most of them off the list. What it does not do is catch the particular majors on the list. Row 41 (a README row) cannot be seen from the snapshot, because reviewers saw the current README, and row 46 probably cannot be seen either; the floor is still missed without them (2 of 5, 1 of 5). The visible misses share a cause: the reviewer read the line, compared it with the code, and wrote "holds" in its promise ledger when the prose and code disagree in a small way (row 1: prose says a concurrent duplicate sees an in-flight marker, the code only re-enters; row 13: "silently priced at full" for an unknown coupon; row 8: cancel "before it ships" with no matching table entry; row 17: a settings value that fails open). The template asks for a ledger entry per claim but does not make the reviewer test the claim against a hostile input. I did not tune further on the held-out half, to keep it unseen.
+
 ### Acceptance 3: loud on weak skills
 
 The pre-registered expectations above are unchanged. A fresh judge matched each reviewer finding of minor severity or above against them: same defect, not just the same topic.
