@@ -36,6 +36,30 @@ It has a "When to Use" section, an example and sibling disambiguation, so "missi
 
 Filled in by the acceptance runs.
 
+### Acceptance 5: dogfood
+
+Run as the PR's own `/self-review`, on `skill-principles` and `reviewing-skills` and on the wiring in `reviewing-code`. The gate passed on both skills (the description check needs PyYAML and was run in a venv that has it). Round 1 used the maximum of six roles: `code-reviewer`, `pr-test-analyzer`, `typescript-reviewer`, and the instruction-quality, content (six shards) and routing roles of this skill, each run on both skills where it applied. The pipeline role was dropped by the drop order. A claim verifier ran on 27 handoff rows and confirmed 5 defects, all minor.
+
+| Round | Result |
+|---|---|
+| 1 | 1 major (a second copy of `report.ts` that can drift from the `reviewing-code` copy) and about 30 minors, including a real major in the wiring text that told a child agent both to load the skill and not to |
+| Fixes | 14 commits: gate false failures on unresolved imports and indented fences, pinned tool versions, stricter `report.ts` input checks, about 35 new tests (each seen to fail under its mutation first), 20 prose fixes, four claims corrected after the verifier checked them |
+| Re-review 1 | 1 major (a stale twin of the re-review rule), 3 minors; fixed |
+| Re-review 2 | 0 major, 1 nit; fixed |
+
+A fresh Sonnet agent then re-opened every major and minor finding from both rounds against the final tree. **Result: PASS, no open blockers or majors.** It found 5 minors still open, none of which makes an agent do the wrong thing: the `report.ts` fork (it rated this minor, since the wiring text now names which copy to use and a parity test covers the shared rules), no CI step that runs the new `bun` tests (also true of the existing `reviewing-code` script tests), the README registry check failing in a repo with a README and no skill table, an unpinned `pyright` found on PATH and the gate preferring the target repo's lint script, and dedenting that counts characters instead of columns. The diff is 275 KB, over the 200,000-character review budget, and was kept as one PR on purpose.
+
+### Acceptance summary
+
+| # | Criterion | Result |
+|---|---|---|
+| 1 | Recall on the held-out half | NOT PASSED (floor missed in two runs; verified-defects bar met) |
+| 2 | Quiet on strong skills | PASSED once on the round-3 template; NOT PASSED on the final template (83.8% pooled against 90%) |
+| 3 | Loud on weak skills | PASSED on the final template (4 of 4 and 3 of 4) |
+| 4 | Mutation test | NOT PASSED (1 of 2) |
+| 5 | Dogfood | PASSED |
+| 6 | Known-hole scenario | NOT PASSED (the baseline never failed) |
+
 ### Acceptance 1: recall on the held-out half
 
 Reviewers read the 24-file `design-patterns` snapshot as it stood before the review fixes. Each run was eight reviewers (instruction-quality, routing, six content shards of at most four files). Two scores, as the spec defines them, judged by a fresh Sonnet agent that held the answer key. The held-out half has six majors (rows 1, 6, 13, 17, 37, 41) and ten others.
