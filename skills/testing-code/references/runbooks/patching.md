@@ -31,6 +31,9 @@ def send_receipt(order, sender):
 ```
 
 ```python
+from unittest.mock import call
+
+
 def test_send_receipt_mails_the_customer(email_sender_mock):
     customer_email = "ada@example.com"
     receipt_body = "1 x lamp"

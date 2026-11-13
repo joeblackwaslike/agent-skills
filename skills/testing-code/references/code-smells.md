@@ -1,6 +1,7 @@
 # Test code smells
 
 Each smell names what you see, why it hurts, how to fix it, and the principle it breaks (IDs from [testing-principles](../../testing-principles/SKILL.md)).
+
 Attribution: the names Mystery Guest, Assertion Roulette and Eager Test come from Gerard Meszaros's xUnit Test Patterns, as catalogued at xunitpatterns.com. The change-detector and logic-in-tests entries take their names from two Google Testing Blog posts, "Change-Detector Tests Considered Harmful" and "Don't Put Logic in Tests"; the explanations, and every other entry, are this skill's own.
 
 ## Smells
