@@ -79,7 +79,9 @@ test("SKILL.md over 20,000 bytes fails", () => {
   expect(find(checkSkill(dir, opts()), "size")?.status).toBe("fail");
 });
 
-test("description over 400 characters warns", () => {
+const hasYaml = Bun.spawnSync(["python3", "-c", "import yaml"]).exitCode === 0;
+
+test.skipIf(!hasYaml)("description over 400 characters warns", () => {
   const long = `Use when testing. ${"word ".repeat(90)}`;
   const { dir } = make({ fm: `name: demo\ndescription: ${long}` });
   expect(find(checkSkill(dir, opts()), "description")?.status).toBe("warn");
@@ -267,7 +269,7 @@ test("kind is inferred from numbered steps, MUST/NEVER and a working-with- name"
   expect(all(checkSkill(wrapper.dir, opts()), "heuristic")).toEqual([]);
 });
 
-test("a description over 1000 characters fails", () => {
+test.skipIf(!hasYaml)("a description over 1000 characters fails", () => {
   const { dir } = make({ fm: `name: demo\ndescription: Use when testing. ${"word ".repeat(210)}` });
   expect(find(checkSkill(dir, opts()), "description")?.status).toBe("fail");
 });
