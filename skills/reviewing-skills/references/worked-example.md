@@ -93,7 +93,17 @@ A fresh Sonnet judge opened every cited line and ran what it could. Findings are
 
 After round 3, test-driven-development and systematic-debugging pass the per-skill rule and verification-before-completion does not. Its one not-real finding was a borderline call, and counted real it would be 3 of 3. Pooled across the three skills, round 3 is 26 of 28 (92.9%). The judges disagreed on the same material across rounds (systematic-debugging scored 86%, 64% and 79% on near-identical findings), so judge noise is about as large as the differences being tuned.
 
-**Result: PASS, pooled.** After round 3, Joe chose to score the three skills together instead of one by one, since verification-before-completion had only three findings and one borderline call decided its percentage. Round 3 pooled is 26 of 28 real (92.9%) and both majors (the `find-polluter.sh` false "all clean" and the `grep 'DEBUG git init'` capture) were confirmed. This changed the rule after one skill failed the per-skill version; the per-skill numbers above are kept for that reason.
+**Re-check on the final template (after the acceptance 3 change added "missing parts").** Two more full runs, each scored by a fresh judge with the same rule:
+
+| Run | Template | Pooled real / counted | Precision | Majors |
+|---|---|---|---|---|
+| Round 3 (judge a2f) | before "missing parts" | 26 / 28 | 92.9% | 2 reported, 2 confirmed |
+| Final A (judge a2i) | with "missing parts", emergency-exception clause | 36 / 41 | 87.8% | 2 reported, 1 not confirmed |
+| Final B (judge a2j) | clause removed, missing parts minor | 31 / 37 | 83.8% | 1 reported, 1 confirmed |
+
+Across the six runs since tuning began, pooled precision has been 81%, 72%, 75%, 93%, 88% and 84%. The judge is itself noisy: the same material scored 86%, 64% and 79% on near-identical findings. The reviewer's misses are consistent in kind: speculative overlap and "no reciprocal exclusion" findings, a recurring "defense-in-depth vs one change" tension that line 282 already orders, and documentation-history items. **Result on the final template: NOT PASSED** (83.8% against 90%). It passed once, on the round-3 template. The tightening that fixed acceptance 3 (missing parts count as findings) and the tightening that passed acceptance 2 pull in opposite directions at the margin, and I could not find one template that clears both bars stably. This went past the three tuning rounds the spec allows for acceptance 2, which I did not treat as a license to lower the bar; I stopped tuning here.
+
+**Earlier result: PASS, pooled.** After round 3, Joe chose to score the three skills together instead of one by one, since verification-before-completion had only three findings and one borderline call decided its percentage. Round 3 pooled is 26 of 28 real (92.9%) and both majors (the `find-polluter.sh` false "all clean" and the `grep 'DEBUG git init'` capture) were confirmed. This changed the rule after one skill failed the per-skill version; the per-skill numbers above are kept for that reason.
 
 Confirmed defects in the strong skills, found by reviewers and reproduced by the judges: `find-polluter.sh` reports "all tests clean" and exits 0 when it skipped every test because the target path already exists (the documented `.git` example in `root-cause-tracing.md` triggers it); the `npm test 2>&1 | grep 'DEBUG git init'` capture drops the stack it tells you to analyze; the `startsWith(tmpDir)` guard accepts `/tmp-evil/x`; `waitFor` is called without its required `description` argument. One earlier claim of mine was wrong: the vitest automock example in `writing-good-tests.md` is not a real defect, because the bad and good examples mock different modules.
 
