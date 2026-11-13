@@ -2,7 +2,7 @@
 
 A taxonomy from cause to remedy. The `testing-code` flakes/triage runbook narrows a flaky test to one row here, then applies the remedy. Covers P13, P14, P15. The first five rows follow the causes Fowler names in "Eradicating Non-Determinism in Tests"; environment and UI timing are added here.
 
-A flaky test passes and fails with no change to code, tests, or environment. It is a defect in the test or in the code, never an acceptable state (P15).
+A flaky test passes and fails with no change to the code or the tests. It is a defect in the test or in the code, never an acceptable state (P15).
 
 | Category | Typical symptom | Cause | Remedy |
 |---|---|---|---|

@@ -4,7 +4,7 @@ Where flaky results come from when the test has nothing wrong with its logic. A 
 
 ## Why it matters
 
-A test that sometimes fails for no reason teaches people to ignore failures. Fowler's argument is that once a team shrugs at one red result, it stops trusting the rest of the suite. The damage reaches the signal from every test in the suite (P15).
+A test that sometimes fails for no reason teaches people to ignore failures. Fowler discusses how unreliable tests lead people to stop paying attention to whether the suite passes or fails. The damage reaches the signal from every test in the suite (P15).
 
 ## Time
 
@@ -13,21 +13,21 @@ The system clock returns a different answer on every call, so any test that read
 - Code under test receives the clock as a dependency or reads it through one wrapper. The test replaces that with a fixed value (P14).
 - A frozen clock should be reset after each test. A clock left frozen is a shared-state leak (see [isolation-failures.md](isolation-failures.md)).
 - Tests that assume "today" is the same date an hour later fail near midnight and at month end. Pin the date; don't compute it relative to now.
-- A date built as "now minus N days" still reads the clock, however wide the margin. When the code under test reads the clock itself and you cannot patch or inject it, use fixed dates so far from the present that the outcome cannot change (a date far in the past or future cannot change which side of a deadline it falls on).
+- A date built as "now minus N days" still reads the clock, however wide the margin. When the code under test reads the clock itself and you cannot patch or inject it, use a fixed date in the distant past, or a far-future sentinel such as the year 9999. A near-future literal becomes past one day.
 - Ids or keys derived from clock ticks can collide when the machine gets faster.
 
 ## Randomness
 
 Random values make a test fail only on some draws.
 
-- Seed the generator in the test, or inject a fixed one (P14).
-- Log the seed on failure so a failing draw can be replayed.
-- Randomized tests have a place for exploring edge cases, and they serve a different purpose than a regression test. Keep the seed explicit.
+- Example tests seed the generator with a fixed value, or inject a fixed one (P14).
+- Generative and property tests seed per run and print or record the seed, so a failing draw replays.
+- Randomized tests explore edge cases and serve a different purpose than a regression test. Keep the seed explicit.
 - A fixed random source also surfaces collision bugs, such as temp files with random names, that otherwise appear rarely.
 
 ## Network
 
-The network is blocked by default in every test (P14).
+The network is blocked by default in every test except the kinds built to cross the boundary (P14).
 
 - A real call depends on a machine you do not control: its availability, latency, data and rate limits. Any of them changes without a code change.
 - A test that passes only because a remote service happens to be up cannot distinguish a regression from an outage.
@@ -40,9 +40,9 @@ The network is blocked by default in every test (P14).
 When two things can finish in either order, a test can pass or fail depending on which one wins.
 
 - A fixed sleep guesses at completion. A long guess slows the suite, a short guess fails under load, and neither is correct (P14).
-- A local habit or style rule does not make a bare sleep correct. Join or await the concurrent work directly, using what the runtime already provides.
+- Join or await the concurrent work directly, using what the runtime already provides.
 - Wait on an explicit signal: a callback, an event, a returned handle. If none exists, poll for the observable result with a short interval and a high timeout. Take both values from one configuration place.
-- A timeout fails the test with a clear name.
+- A timeout should fail the test with a named message.
 - Moving logic out of the concurrent part and testing it synchronously removes the wait. Keep the concurrent shell thin.
 
 ## Environment drift

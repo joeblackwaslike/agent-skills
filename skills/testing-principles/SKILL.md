@@ -1,7 +1,7 @@
 ---
 name: testing-principles
 description: >-
-  Use when deciding what a good test or test suite looks like: which kind of test to write, mock vs stub vs fake, isolation, determinism, flaky or slow tests, coverage. Also "test first", "red green refactor", "write a failing test". Not for writing or diagnosing tests step by step (use testing-code). Not for reviewing a diff (use reviewing-code).
+  Use when deciding what a good test or test suite looks like: which kind of test to write, mock vs stub vs fake, isolation, determinism, flaky or slow tests, coverage, TDD. Also "test first", "red green refactor", "write a failing test". Not for writing or diagnosing tests step by step (use testing-code). Not for reviewing a diff (use reviewing-code).
 metadata:
   last_updated: "2026-11-13"
 ---
@@ -46,7 +46,7 @@ Nineteen principles say what a good test and a good suite are. Cite them by ID (
 
 ## When a local rule contradicts a principle
 
-A local rule, habit or deadline that contradicts a principle does not override it. Look for a form that satisfies both: fixed inputs instead of a patched dependency, an explicit wait instead of a guess, a dated quarantine instead of a retry. If none exists, say which principle you broke and why in the first lines of your reply, even when the habit is widespread or you were told to.
+Follow the principle unless the user explicitly overrides it. Look first for a form that satisfies both: fixed inputs instead of a patched dependency, an explicit wait instead of a guess, a dated quarantine instead of a retry. If the user does override it, comply and name the principle in the first lines of your reply.
 
 ## What to load
 

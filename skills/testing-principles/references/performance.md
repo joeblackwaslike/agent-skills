@@ -11,8 +11,8 @@ Slowness comes from a short list of sources. Each has a different fix.
 | Real network or remote service | Latency per call, plus retries on failure | Double the boundary (P8, P14) |
 | Real sleeps and fixed waits | The full wait, every run | Poll with a timeout, or inject the clock (P14) |
 | Heavy setup repeated per test | Database loads, app boot, large builders | Cheaper fixtures, or a shared immutable one |
-| Broad tests used for narrow logic | Whole stack to check one branch | Test the branch at the smallest kind that covers it (P1) |
-| Process and container startup | Seconds per start | Start once per run, not per test |
+| Broad tests used for narrow logic | Whole stack to check one branch | Test the branch at the lowest-cost kind that covers it (P5) |
+| Process and container startup | Slow per start | Start once per run, not per test |
 | Serial execution of independent tests | Wall time equals the sum | Parallelize, once the preconditions below hold |
 
 ## Fixture scope cost
@@ -22,7 +22,7 @@ Setup shared across many tests is cheaper and riskier than setup repeated per te
 - A per-test fixture cannot leak, so it is the default (see [fixtures.md](fixtures.md)).
 - Widening scope trades safety for speed. It is justified when setup is measurably slow and the state is never mutated by tests.
 - A shared fixture that tests do mutate is the usual origin of order-dependent failures (P13; see `flakes/isolation-failures.md`). The saved seconds are paid back in debugging time.
-- Fowler suggests building a mostly-immutable starting state once and having tests avoid changing it, and he calls this more error-prone than rebuilding per test.
+- Fowler discusses building a mostly-immutable starting state once and having tests avoid changing it, and notes that it is more error-prone than rebuilding per test.
 
 ## Preconditions for parallelism
 

@@ -1,6 +1,6 @@
 # Property-based testing
 
-When to state a rule that must hold for many inputs instead of listing a few examples. Property-based is a kind of test, alongside unit and integration (see [test-kinds.md](test-kinds.md)). Covers P14 for seeded randomness and P1 for what to protect. Writing generators, shrinking, and tool use are in the `testing-code` property-based runbook.
+When to state a rule that must hold for many inputs instead of listing a few examples. Property-based is a kind of test, alongside unit and integration (see [test-kinds.md](test-kinds.md)). Covers P14 for seeded randomness. Writing generators, shrinking, and tool use are in the `testing-code` property-based runbook.
 
 ## What a property is
 
@@ -46,7 +46,7 @@ Examples and properties work together. Keep the examples that document intent an
 
 - State the property in domain terms, and name it after the rule it protects.
 - Constrain generated inputs to the valid domain with the generator, not by discarding most of them afterwards.
-- Seed the generator and record the seed on failure, so the failing case can be replayed (P14). A failure that cannot be reproduced is a flake (P15).
+- Seed per run and print or record the seed, so a failing case can be replayed (P14). A failure that cannot be reproduced is a flake (P15).
 - Keep a found failure as a fixed example test, so the regression stays covered if generation changes.
 - Keep the run count modest in the fast suite. Larger counts belong in a scheduled run (P17).
 - Avoid properties with side effects on shared state, which break isolation (P13).

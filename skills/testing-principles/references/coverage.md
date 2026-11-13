@@ -10,7 +10,7 @@ Coverage reports which parts of the code ran while the suite ran. It does not re
 - A test with no assertions raises coverage exactly as much as a test with strong ones.
 - Covered means executed. Tested means a check would fail if the behavior broke.
 
-Google's testing guidance makes the same distinction: coverage shows that lines or branches were executed, not that they were checked correctly.
+The Google Testing Blog post "Code Coverage Best Practices" makes the same distinction: coverage shows that lines or branches were executed, not that they were checked correctly.
 
 ## Line versus branch
 
@@ -30,21 +30,21 @@ Prefer branch coverage when the tooling offers it.
 A target turns a signal into a goal, and people then reach the goal by the cheapest route.
 
 - Fowler notes that high numbers are easy to reach with low-quality tests, and that this pulls effort toward code that rarely fails and away from code that matters.
-- Once a threshold exists, work above it stops even where more testing would be prudent. Google's guidance warns that engineers may treat a target as a checkbox.
-- A suspiciously perfect number is a smell. Fowler would be suspicious of 100%, because it suggests tests written to please the report.
+- Once a threshold exists, work above it stops even where more testing would be prudent. the same Google post warns against copying tests just to hit the number.
+- A suspiciously perfect number is a smell. Fowler says he is suspicious of 100%, because it suggests tests written to please the report.
 - A mandated number invites assertion-free tests, tests copied only to execute lines, and tests of trivial code.
-- Google's guidance also holds that no single ideal number applies to every product. The right amount of testing depends on how critical the code is, how often it changes, and how long it will live.
+- The Google post also holds that no single ideal number applies to every product. The right amount of testing depends on how critical the code is, how often it changes, and how long it will live.
 
 The number still works as an alarm. Fowler treats a very low number, below half, as a sign of trouble; a high one says little.
 
 ## How to read gaps
 
-A coverage report is useful for the code it shows is untested.
+A coverage report is useful for showing which code is untested.
 
 - Read the uncovered lines and branches, not the total. For each one, ask whether a bug there would matter.
 - Uncovered code that handles money, authentication, data loss, or error recovery is a real gap. Uncovered debug logging usually is not.
 - Look at the gaps in changed code first. Coverage shown beside a diff during review lets reviewers judge whether the untested lines are important.
-- A gap is a prompt to write a behavior-focused test (P1) or to decide, on purpose, that the risk is acceptable.
+- A gap is a prompt to write a behavior-focused test (P7) or to decide, on purpose, that the risk is acceptable.
 - Code that frequently changes deserves more attention than code that has been stable for years.
 - When a gap sits in code that is hard to reach from a test, the cause is often a missing seam (P18), and the fix is in the design.
 

@@ -12,7 +12,7 @@ NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
 
 If production code exists that no failing test demanded, it is unverified. Delete it and let a test drive it back into existence. Deleting it means removing it, with no commented-out copy and no branch kept for reference. Code you keep gets copied while you write the test, and a test written while looking at the answer is a test written after.
 
-A test that passes the first time you run it proves nothing, because you never saw it catch anything. If you didn't watch the test fail, you don't know it tests the right thing.
+A test that passes the first time you run it does not show the test can fail, because you never saw it catch anything. If you didn't watch the test fail, you don't know it tests the right thing.
 
 ## Red, green, refactor
 
@@ -31,7 +31,7 @@ Then the next failing test.
 
 - One behavior. If the name needs "and", split the test.
 - Name the behavior (`rejects an empty email`), not `test1`.
-- Assert on observable behavior, not on a mock (P2, P10).
+- Assert the observable outcome (P2). When the outcome is an effect on a collaborator, assert the mock's interactions exactly (P10).
 - Write the test as the API you wish existed. You are the first user of the code, and awkward setup is the design telling you it is hard to use.
 
 ### Verified RED
@@ -51,7 +51,7 @@ Run the single test, then the whole file or suite. Confirm that everything passe
 
 ### REFACTOR
 
-Only when green. Remove duplication in tests and in production code, improve names, and replace the fake with the real implementation. Re-run after each change. New behavior needs a new failing test.
+Only when green. Remove duplication in tests and in production code, and improve names. Re-run after each change. Behavior does not change here; new behavior needs a new failing test.
 
 ## The Three Laws
 
@@ -75,7 +75,7 @@ Kent Beck's three gears. Shift down when unsure and up when confident.
 
 | Letter | Property | Meaning |
 |---|---|---|
-| F | Fast | Milliseconds, so the loop stays tight (P17). |
+| F | Fast | Quick enough that you run it after every change (P17). |
 | I | Isolated | No test depends on another's order or leftover state (P13). |
 | R | Repeatable | Same result on every run and machine. Inject the clock, seed randomness, block the network (P14). |
 | S | Self-validating | A clear pass or fail, with no reading logs to decide. |
@@ -108,7 +108,7 @@ Each entry is something an agent or a person says to skip the failing test. Ever
 | "I have to mock everything." | The code is too coupled. Inject dependencies (P12). |
 | "TDD slows me down." | It is faster than the debugging it prevents. |
 | "It's the spirit that counts, not the ritual." | The watched failure is the proof. There is no shortcut to it. |
-| "This case is different." | It isn't. Write the test. |
+| "This case is different." | Write the test. |
 
 ## Red flags
 
@@ -118,7 +118,7 @@ Stop and start over if any of these is true.
 - A test that passed the first time it ran.
 - You cannot say why the test failed in the red phase.
 - "I'll add tests later."
-- An assertion on a mock's call count where real behavior was available.
+- An assertion on a mock's call count where the outcome could have been checked as state.
 - Any "just this once" or "already checked manually."
 
 ## When stuck
@@ -145,7 +145,7 @@ A test coupled to internals fails on every refactor and teaches people to distru
 
 - **The failing test is the specification.** An agent given a vague task fills the gaps with plausible guesses. A test that fails for a stated reason pins down what done means before any code exists.
 - **Tests written after the code get fitted to it.** An agent that reads its own implementation first writes assertions that describe what the code does, bugs included. A test seen failing first cannot have been fitted to code that did not exist.
-- **Agents rationalize fluently.** Agents produce these excuses fluently. The rule has to be mechanical (see a failure, then write code) because a persuasive reason to skip is always available.
+- **Agents rationalize fluently.** The rule has to be mechanical (see a failure, then write code) because a persuasive reason to skip is always available.
 - **Regression safety scales with speed.** An agent changes many files quickly. A suite that fails for the right reasons catches regressions at the pace the agent changes files.
 - **The RED and GREEN output together are the evidence.** "Tests pass" from a run the agent never saw fail is weak, while a failure followed by a pass shows the test can tell broken from fixed.
 
@@ -226,7 +226,7 @@ To prove a regression test, revert the fix, watch the test fail, restore the fix
 - [ ] Tests assert behavior, and mocks appear only at boundaries ([doubles.md](doubles.md)).
 - [ ] Edge cases and error paths are covered, not only the happy path ([test-kinds.md](test-kinds.md)).
 
-If a box is empty, you skipped a step. Start the cycle again.
+A missing box is a missing step.
 
 ## Related
 

@@ -12,6 +12,10 @@ Three blocks, in this order, separated by blank lines.
 
 One Act per test. A second Act means a second behavior and a second test. Given/When/Then is the same shape in scenario words.
 
+## Public interface
+
+Test behavior through the public interface, not methods or internals (P2). One behavior can span several methods, and one method can serve several behaviors, so a test per method pins the structure of the code. A test that goes through the public interface survives a refactor that keeps behavior the same. If a rewrite breaks the test while behavior holds, the test was coupled to internals. Informed by Google's *Software Engineering at Google*, chapter 12.
+
 ## Naming
 
 A name states the behavior the test proves, so a reader learns the rule from the test list alone.
@@ -59,9 +63,9 @@ Use the same order in every test so a reviewer's eye lands on the same parts eac
 1. Constants and stubs: the data the code reads.
 2. Mock set-up: what each double returns or raises.
 3. Act: one call.
-4. Expected values: built as literals or from the stubs.
+4. Expected values: built as literals or named constants, not computed from the stubs.
 5. Result assertions: the return value first, then anything else not about doubles.
-6. Interaction assertions: each mock's expected calls, in the order the code makes them, and that nothing else was called (P10).
+6. Interaction assertions: each mock's expected calls, in the order the code makes them (assert in call order), and that nothing else was called (P10).
 7. Not-called assertions: doubles that must have stayed untouched.
 
 Give each mock its own block of expected calls. Checking the calls and "nothing else" in one shape stops a wrong or extra call from passing.

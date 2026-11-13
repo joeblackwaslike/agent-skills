@@ -7,7 +7,7 @@ What it means for a test to stand alone. Covers P13. The cause-by-cause failure 
 A hermetic test brings everything it needs and touches nothing it did not bring (P13).
 
 - It builds its own state and does not read state another test, a previous run, or a developer's machine left behind.
-- It does not reach outside the process unless the kind of test is built for that (see [test-kinds.md](test-kinds.md)). The network, the real clock and shared files are outside.
+- It does not reach outside the test's own resources unless the kind of test is built for that (see [test-kinds.md](test-kinds.md)). The network, the real clock and shared files are outside.
 - Nothing it creates outlives it: no row, file, patch, environment variable, or running process.
 
 The practical check is behavioral. A hermetic test passes in any order, alone or in a subset, and alongside its neighbors running in parallel.
@@ -32,7 +32,7 @@ Tests that pass only in a particular order depend on state they did not create (
 
 - Each test creates the state it asserts on. It does not assume a prior test created it.
 - Process-wide state counts: singletons, module-level caches, environment variables, the current user, the clock, registered handlers. Reset or avoid them.
-- Fowler prefers isolation to declared test ordering, because isolation lets you run a subset and run in parallel. The same reasoning applies here.
+- Fowler discusses isolation as an alternative to declared test ordering. Isolation lets you run a subset and run in parallel, and that reasoning applies here.
 - A suite is only known to be order independent if it has been run in shuffled order. A suite that always runs in the same order can hide the dependency for years.
 
 ## Real collaborators are allowed

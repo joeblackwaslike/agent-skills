@@ -20,7 +20,7 @@ The vocabulary follows Meszaros's xUnit Patterns, as Fowler's "Mocks Aren't Stub
 | Mock | Stands in for an effect the code causes, and the test asserts it | The interactions (P10) |
 | Spy | A stub that also records how it was called | The recorded calls, after the fact |
 
-Pick by what the code does with the collaborator (P9).
+P9 names the three main jobs (stub, mock, fake). Dummy and spy are the other two Meszaros terms. Pick by what the code does with the collaborator (P9).
 
 - The code reads from it: stub.
 - The code causes an effect through it (sends a message, writes a record, enqueues a job): mock.
@@ -33,7 +33,7 @@ House style draws a hard line between the two, because the double tells the revi
 
 - A stub signals "this object only exists so the code under test has something to read". Reviewers can skip it.
 - A mock signals "this test asserts something about this object". Reviewers read its expectations.
-- Build a stub with only the attributes the code reads. The stub then documents the minimal interface the test needs, and an unexpected attribute access fails loudly instead of returning a silent default.
+- A stub is either a plain data record, or built against the real type. Build a non-record stub with only the attributes the code reads, so it documents the minimal interface the test needs and an unexpected attribute access fails loudly instead of returning a silent default.
 - Data records (rows, models, DTOs) are almost always stubs. Handlers, services and clients that cause effects are usually mocks, and their methods return stubs.
 
 Do not use a mock as a data container. A permissive mock invents every attribute you ask for, so a typo in the code under test still passes.
@@ -44,18 +44,18 @@ When a test uses a mock, say precisely what should have happened (P10). Assert f
 
 1. Which calls the code made.
 2. Their arguments.
-3. Their order, when order matters to the outcome.
+3. Their order: assert the calls in the order the code makes them.
 4. That nothing else was called.
 
-People skip the fourth. A check that a call happened passes when the code also made three extra, wrong calls. Compare the full list of calls to the expected list, so an extra, missing or reordered call fails the test.
+People skip the fourth. A check that a call happened passes when the code also made three extra, wrong calls. Compare the full list of calls to the expected list, so an extra, missing or reordered call fails the test. Where order truly does not matter to the outcome, say so once in the test and compare the calls as an unordered set. That is the only exception to P10's order rule.
 
 Give each mock its own expected-call block. A double that must stay untouched gets an explicit not-called assertion, so a regression that starts using it is caught.
 
-Keep expectations about outcomes the behavior depends on. A call to a logger is rarely worth pinning; a call that charges a card always is.
+Keep expectations about outcomes the behavior depends on. Do not mock logger-like collaborators at all; use a real or no-op one. That way the exact-list rule is never relaxed for a mock. A call that charges a card is always worth pinning.
 
 ### Where this departs from common advice
 
-Fowler's "Mocks Aren't Stubs" prefers state verification where it is practical, and notes that mock-based tests couple to how the code works. Google's guidance, as the skill's index records, ranks interaction checks last. For a double that only supplies data, that advice holds. For effects it doesn't. When the behavior is "the code told a collaborator to do X", the call is the observable result, and asserting it exactly is how the test proves anything. That is the house position (P10), so don't remove such assertions by consulting those sources.
+Fowler's "Mocks Aren't Stubs" prefers state verification where it is practical, and notes that mock-based tests couple to how the code works. Google's chapter 13 prefers state testing over interaction testing. For a double that only supplies data, that advice holds. For effects it doesn't. When the behavior is "the code told a collaborator to do X", the call is the observable result, and asserting it exactly is how the test proves anything. That is the house position (P10), so don't remove such assertions by consulting those sources.
 
 ## Never nest separately created mocks
 
@@ -67,9 +67,9 @@ Build the whole collaborator once, from one description of the real object, and 
 
 A double is a claim about how the real collaborator behaves. When the real one changes, the double does not, and the test stays green against a world that no longer exists (P11).
 
-- **Mocks and stubs** are checked structurally: the double only accepts the names and call shapes the real object has. A call with a wrong argument count or a misspelled method fails in the test, not in production. `testing-code` shows the mechanism per language.
+- **Mocks and stubs** are checked structurally (plain data-record stubs are exempt): the double only accepts the names and call shapes the real object has. A call with a wrong argument count or a misspelled method fails in the test, not in production. `testing-code` shows the mechanism per language.
 - **Fakes** are checked behaviorally. Run one shared contract suite against both the fake and the real implementation. If the fake passes cases the real one fails, the fake is wrong.
-- **Boundary doubles** (a payment provider, a third-party API) are covered by a contract test (P5), or by a periodic run against the real service.
+- **Boundary doubles** (a payment provider, a third-party API) are covered by a contract test (P11), or by a periodic run against the real service.
 
 A double with no such check is a stale-double risk. Name it as a gap in review.
 

@@ -38,10 +38,8 @@ Every patch is removed when the test ends, pass or fail, by machinery and not by
 
 ## Replace with something checkable
 
-A patch swaps in a double, and the double follows the rules in `doubles.md`: structurally checked against the real object so a wrong call fails, asserted exactly if it is a mock (P10, P11). Put the patch and its double in one named fixture (see `fixtures.md`).
+A patch swaps in a double, and the double follows the rules in `doubles.md`: built against the real object so a wrong call fails (a plain data record is the only exemption), asserted exactly if it is a mock (P10, P11). Put the patch and its double in one named fixture (see `fixtures.md`).
 
 ## Decision
 
-1. Can the code take the dependency as a parameter? Inject.
-2. Is the dependency a boundary? Patch at the lookup site, auto-undone.
-3. Neither? Add a seam to the code, then go back to step 1.
+Inject when the code can take the dependency as a parameter. Patch only when the dependency is a boundary, at the lookup site and auto-undone. If neither holds, add a seam to the code and inject through it.

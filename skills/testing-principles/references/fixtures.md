@@ -24,7 +24,7 @@ Create state per test by default. Widen the scope only when setup is measurably 
 
 - Per-test state cannot leak between tests.
 - Wider scope shares one instance, so one test's change reaches the next. That is the root of order-dependent failures (see `isolation.md`).
-- Measure before widening (P17). A fixture that costs 5 ms does not need sharing.
+- Measure before widening (P17). A fixture measured as cheap does not need sharing.
 
 ## Meaningful names
 
@@ -40,7 +40,7 @@ House convention: name stubs for the thing they stand for and mocks with a `_moc
 
 ## Fixtures house mocks and stubs
 
-Putting doubles in fixtures keeps test bodies short: the body holds the call and the assertions, and the setup sits behind named fixtures. A well-named remote definition costs the reader less than a screen of inline setup, though it does add one hop. Keep the hop worth it with the rules above.
+Putting doubles in fixtures keeps test bodies short: the body holds the call and the assertions, and the setup sits behind named fixtures. A well-named remote definition costs the reader less than a screen of inline setup, though it does add one hop. Keep the values the test depends on visible in the test as named constants (P4), and leave only the wiring behind the fixture.
 
 Fixtures that build doubles may have side effects, such as installing a double in front of the code (see `patches.md`). That is expected, as long as the undo is automatic.
 
@@ -58,6 +58,10 @@ Define the values a test checks as named constants, then use the same constants 
 - A fixture that returns different things depending on a flag: two fixtures.
 - Fixtures that depend on each other in a long chain: flatten the chain, or the test is covering too much.
 - A shared mutable fixture in a wide scope: see `isolation.md` and `flakes/isolation-failures.md`.
+
+## Test infrastructure is code
+
+Treat fixtures, builders and helpers as code (P18): review them, refactor them, and keep third-party calls behind thin facades so tests have one place to double.
 
 ## Related
 

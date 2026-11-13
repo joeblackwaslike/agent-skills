@@ -19,7 +19,7 @@ Pick the kind from what you need to prove (P5).
 
 Three notes keep the kinds from blurring.
 
-- Functional and end-to-end differ by reach. A functional test drives one entry point in-process. An end-to-end test drives the system as a user does, through the real front door.
+- Functional and end-to-end differ by reach. In this skill's usage, a functional test drives one entry point in-process. An end-to-end test drives the system as a user does, through the real front door.
 - Acceptance and behavioral differ by source. Acceptance is anchored to a requirement. Behavioral is anchored to a scenario format. A single test can be both.
 - A contract test is the answer to P11: it keeps a double honest by checking it against the real thing.
 
@@ -41,13 +41,13 @@ Three notes keep the kinds from blurring.
 
 For every meaningful feature (P6):
 
-1. Write at least a few end-to-end tests. One covers the happy path. The rest cover edge cases and error paths a user can reach.
-2. Cover the branches around those journeys with unit tests, so an end-to-end failure points at a small area.
-3. Add integration tests for each seam the feature adds (a new query, a new queue consumer).
-4. Add a contract test wherever you double a boundary you do not own (P11).
-5. Add property-based tests for rules that range over a large input space (parsers, serializers, ordering, arithmetic).
+- Write at least a few end-to-end tests: one for the happy path, the rest for edge cases and error paths a user can reach.
+- Cover the branches around those journeys with unit tests, so an end-to-end failure points at a small area.
+- Add integration tests for each seam the feature adds (a new query, a new queue consumer).
+- Add a contract test wherever you double a boundary you do not own (P11).
+- Add property-based tests for rules that range over a large input space (parsers, serializers, ordering, arithmetic).
 
-If one kind already proves a behavior cheaply and reliably, a second test of it in another kind adds cost and no information. Prove each behavior you care about somewhere, so a failure tells you where to look.
+The overlap between an end-to-end test and the lower-kind tests is intentional. The journey test shows the feature works, and the lower tests show where it broke. Beyond that, a second test of the same behavior in another kind that adds no localization is cost with no information.
 
 Fowler's pyramid puts few tests at the top, and Google's chapter 13 prefers state testing over interaction testing. This skill departs from the pyramid on P6, because a feature with no journey test can pass every lower test and still not work. Its departure on P10 goes against Google's chapter 13 and Fowler's "Mocks Aren't Stubs", which both prefer state verification.
 
