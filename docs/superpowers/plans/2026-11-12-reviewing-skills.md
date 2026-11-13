@@ -4,7 +4,7 @@
 
 **Goal:** Ship two skills, `skill-principles` (the written standard for skills) and `reviewing-skills` (the review process, gate, reviewer templates and report script), and wire them into `/self-review` so a diff touching `skills/` gets a skill-aware review.
 
-**Architecture:** Mirror `engineering-principles` and `reviewing-code`. All review knowledge lives in the skills. A TypeScript gate (`skill-check.ts`) does the mechanical checks, a forked `report.ts` emits the verdict, and four reviewer prompt templates are dispatched by `/self-review` or `/review-skill`. Worktree `.worktrees/reviewing-skills`, one branch, one PR.
+**Architecture:** Mirror `engineering-principles` and `reviewing-code`. All review knowledge lives in the skills. A TypeScript gate (`skill-check.ts`) does the mechanical checks, a forked `report.ts` emits the verdict, and reviewer prompt templates (as built: a shared block, four roles and a claim verifier) are dispatched by `/self-review` or `/review-skill`. Worktree `.worktrees/reviewing-skills`, one branch, one PR.
 
 **Tech Stack:** Markdown skills, TypeScript on Bun (`bun test`), the existing `scripts/lint-descriptions.py`, pyright and tsc via `bunx` for block checks.
 
@@ -97,7 +97,7 @@ Task order follows the spec's build order. Tasks 1 to 4 can each be reviewed alo
 
 **Interfaces:**
 - Consumes: Task 1 principle numbers; Task 2 CLI and `Report`; Task 3 flags.
-- Produces: the eight-step procedure; four reviewer prompt templates (instruction-quality, content, routing and overlap, pipeline) each ending in the finding format (severity, location, quoted evidence, failure mode, current and recommended authority, replacement text); the sequential fallback for platforms without a subagent tool; the `/self-review` trigger rules text that Task 7 copies.
+- Produces: the eight-step procedure; reviewer prompt templates (as built, six files: common, claim-verifier and the four roles: instruction-quality, content, routing and overlap, pipeline) each ending in the finding format (severity, location, quoted evidence, failure mode, current and recommended authority, replacement text); the sequential fallback for platforms without a subagent tool; the `/self-review` trigger rules text that Task 7 copies.
 
 - [ ] **Step 1: RED.** Run 3 fresh Sonnet agents asked to review `skills/design-patterns/SKILL.md` and two reference files with only the old `skill-reviewer` prompt. Record what they miss against the ground-truth tuning half.
 - [ ] **Step 2: Write the docs.** `SKILL.md` follows `reviewing-code/SKILL.md`'s shape: procedure, reviewer table, references list. Reviewer templates withhold the author's reasoning, name the model, and require quoted evidence. Pressure-scenario doc defines the results table (scenario, arm, verdict, quoted line), at least 2 runs per arm, and the major-finding rules for a failed skill arm and a triggered negative control.
@@ -124,7 +124,7 @@ Task order follows the spec's build order. Tasks 1 to 4 can each be reviewed alo
 - Consumes: everything above. Produces the six acceptance results in the spec, with versions, paths, and the hidden-half score.
 
 - [ ] **Step 1: Split** the 33 eligible ground-truth issues into tuning and held-out halves (controller only; implementers see the tuning half). Record the split in the scratchpad, not the repo.
-- [ ] **Step 2: Run acceptance 1** on the design-patterns files at the three commits, 3 runs, judged by a fresh Sonnet agent that is not the builder. Pass at 80% of majors and 50% of the rest on the held-out half in 2 of 3 runs. On a miss, iterate prompts and playbooks, up to 3 rounds, then report NOT READY with the numbers.
+- [ ] **Step 2: Run acceptance 1** on the design-patterns files at the three commits, 3 runs, judged by a fresh Sonnet agent that is not the builder. Pass bar as the spec's acceptance 1 states it (the earlier 80% of majors and 50% of the rest was superseded). On a miss, iterate prompts and playbooks, up to 3 rounds, then report NOT READY with the numbers.
 - [ ] **Step 3: Acceptance 2, 3, 4, 6** as written in the spec (three Superpowers skills, two ECC stubs with expected lists committed first, the named mutation, the known-hole scenario).
 - [ ] **Step 4: Write `worked-example.md`** with real findings from the design-patterns run and all six results tables. Commit.
 
@@ -137,7 +137,7 @@ Task order follows the spec's build order. Tasks 1 to 4 can each be reviewed alo
 **Interfaces:**
 - Consumes: the trigger rules text from Task 4. `/review-skill <name|path> [--scenarios]` loads `reviewing-skills` and runs it.
 
-- [ ] **Step 1: Edit `reviewing-code/SKILL.md` step 8 table:** replace the `skill-reviewer` row with a `reviewing-skills` row (always keep, dispatch a `general-purpose` agent told to load the skill and run one role) and place the pipeline, routing and content roles after `agent-evaluator` and `type-design-analyzer` in the drop order, as the spec's Wiring section states.
+- [ ] **Step 1: Edit `reviewing-code/SKILL.md` step 8 table:** replace the `skill-reviewer` row with a `reviewing-skills` row (always keep, dispatch a `general-purpose` agent whose whole prompt is the filled role template) and place the pipeline, routing and content roles after `agent-evaluator` and `type-design-analyzer` in the drop order, as the spec's Wiring section states.
 - [ ] **Step 2: Edit `self-review.md`** step 1 (run `skill-check` for diffs under `skills/`) and step 2 (the dispatch rules, 20-line rule with the description override, `code-reviewer` still runs). Mark the wiring Claude-only.
 - [ ] **Step 3: Update** `skills-and-instruction-files.md` to link to `reviewing-skills`; add related-skills links in `authoring-agent-skills`, `agent-instructions`, `reviewing-code`; add rows to `SKILLS.md` and `README.md` for both skills; write `commands/review-skill.md`.
 - [ ] **Step 4: Verify.** `make lint-descriptions` passes; every changed link resolves; `bun test` passes for both scripts. Commit.

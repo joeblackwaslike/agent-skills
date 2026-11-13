@@ -1,6 +1,6 @@
 # Worked example and acceptance record
 
-This file records how `reviewing-skills` was tested. The sections below are filled in as each run finishes. Fixtures are read in place, not vendored.
+This file records how `reviewing-skills` was tested. Fixtures are read in place, not vendored.
 
 ## Fixture versions
 
@@ -34,7 +34,6 @@ It has a "When to Use" section, an example and sibling disambiguation, so "missi
 
 ## Acceptance results
 
-Filled in by the acceptance runs.
 
 ### Acceptance 5: dogfood
 

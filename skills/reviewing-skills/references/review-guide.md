@@ -64,7 +64,7 @@ Every finding has the same fields.
 | failure scenario | "an agent asked to <realistic request> will <wrong behavior> because the text says <quote>", or for a false claim the quoted claim and what is true instead |
 | authority | Current and recommended: gate, guidance or informational |
 | replacement | Text ready to paste |
-| confidence | high, medium or low |
+| confidence | high or medium |
 | kind | claim when it comes from a promise-ledger row, otherwise other (content reviewer) |
 | rationalization risk | When the finding is one, also the missing defense (table, red flags list, loophole closer or predicate) and the drafted "Excuse and Reality" row |
 
@@ -73,7 +73,7 @@ Severity is anchored on the failure scenario. [reviewer-templates/common.md](rev
 - **blocker**: the text makes an agent do something destructive or unsafe, or the skill cannot work. Do not ship.
 - **major**: a plausible agent following the text does the wrong thing on a realistic request, and nothing else in the skill stops it.
 - **minor**: the wrong thing needs an unusual request, or a reader is misled about a fact in a way that does not change what they do. A gap that another part of the skill already closes, or mostly covers, is not a finding. List it under SUGGESTIONS.
-- **nit**: wording or a typo with no behavior consequence. Listed, never counted.
+- **nit**: wording or a typo with no behavior consequence. Listed and counted, and never blocks READY.
 
 A design choice that is debatable (a deliberate tradeoff, or a stated hedge with a stated reason) is a suggestion unless it contradicts something else in the skill. Before rating anything major, check whether the skill already has a defense the finding ignores (a table row, a red flag, a gate elsewhere, a verification step). If it does, drop it or list it under SUGGESTIONS. A well defended skill should yield few findings, and "no findings of severity major or above" is a valid result.
 
@@ -101,7 +101,7 @@ A good finding:
 ```text
 F2 major  references/flow.md:31
 evidence: "Reviewers should check the diff size before dispatching."
-failure scenario: an agent asked to review a 2,000-line change will dispatch reviewers on it anyway, because the text says "should" and gives no size, so "should" lets it skip the check and no size is given.
+failure scenario: an agent asked to review a 2,000-line change dispatches reviewers on it anyway, because the text says "should" and gives no size, so nothing stops it.
 authority: current guidance, recommended gate
 replacement: "Before dispatching, run `git diff --shortstat`. Past 400 changed lines, split the change first. Do not dispatch on a diff above that."
 confidence: high

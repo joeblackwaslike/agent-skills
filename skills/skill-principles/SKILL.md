@@ -1,7 +1,7 @@
 ---
 name: skill-principles
 description: >-
-  Use when writing or editing the instructions inside a SKILL.md: how strongly to word a rule, descriptions and triggers, rationalization defenses, examples, diagrams, pipelines of subagents. Not for checking a finished skill (use reviewing-skills). Not for repo layout, naming or registration (use authoring-agent-skills).
+  Use when writing or editing the instructions inside a SKILL.md, or judging whether a rule, trigger description, example or subagent pipeline in one is well made. Not for checking a finished skill (use reviewing-skills). Not for repo layout, naming or registration (use authoring-agent-skills).
 metadata:
   last_updated: "2026-11-11"
 ---

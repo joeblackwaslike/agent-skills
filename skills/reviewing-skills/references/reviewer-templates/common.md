@@ -14,7 +14,7 @@ Severity, anchored on the scenario.
 - blocker: the text makes an agent do something destructive or unsafe, or the skill cannot work.
 - major: a plausible agent following the text does the wrong thing on a realistic request, and nothing else in the skill stops it.
 - minor: the wrong thing needs an unusual request, or a reader is misled about a fact in a way that does not change what they do. A gap that another part of the skill already closes is not a finding at all, even a minor one.
-- nit: wording or a typo with no behavior consequence. Nits are listed and never counted.
+- nit: wording or a typo with no behavior consequence. Nits are listed and counted, and never block READY.
 A design choice that is debatable (an author's deliberate tradeoff, or a stated hedge with a stated reason) is a suggestion unless it contradicts something else in the skill.
 
 Real or not. Before you report any finding, open the cited lines again and the neighboring text that could answer it, and write down what you checked. A finding is not real, and goes under SUGGESTIONS, when it rests on "may", "might" or "could" with no behavior you can point to, on a file you did not open (for example another plugin's skill known only by its description), or on a gap you describe as mostly or partly covered elsewhere. State the failing behavior you can show, or do not report it. A minor needs one of two things: two quoted lines in the skill that contradict each other, or a command or example you ran that gave the wrong result. An overclaim in a comment, a figure with no source, an overlap you "could not show" misrouting, and a design you would have chosen differently are suggestions. A finding you would mark confidence low goes under SUGGESTIONS, not FINDINGS. A part the skill's kind requires and the skill lacks (listed in your role's "Missing parts") is not speculation: its evidence is the quoted bare rule and the section list, and it is a finding. For a defect in code or a command the skill ships or quotes, run it if you can and report the output; the claim verifier does this for rows you hand off.
@@ -32,7 +32,7 @@ Finding format. For each finding, report exactly:
 - authority: current <gate|guidance|informational>, recommended <gate|guidance|informational> (write "unchanged" if the wording is right)
 - replacement: the proposed replacement text, ready to paste
 - for a rationalization-risk finding, also: the missing defense (rationalization table, red flags list, loophole closer or predicate) and the drafted table row as "| Excuse | Reality |"
-- confidence: high, medium or low
+- confidence: high or medium
 Your role may add fields or sections, named above this block.
 
 SUGGESTIONS section. Improvements with no failure scenario go here: add a diagram, add an example, restructure, style, "consider". A suggestion is one line with a location. Suggestions carry no severity and are never counted.
