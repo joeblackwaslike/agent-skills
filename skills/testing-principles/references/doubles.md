@@ -33,7 +33,7 @@ House style draws a hard line between the two, because the double tells the revi
 
 - A stub signals "this object only exists so the code under test has something to read". Reviewers can skip it.
 - A mock signals "this test asserts something about this object". Reviewers read its expectations.
-- A stub is either a plain data record, or built against the real type. Build a non-record stub with only the attributes the code reads, so it documents the minimal interface the test needs and an unexpected attribute access fails loudly instead of returning a silent default.
+- A stub is either a plain data record, or built against the real type. For a non-record stub, set only the attributes the code reads, which documents the minimal interface the test needs. Anything else the code touches fails loudly because the real type has no such attribute, so a stray access cannot return a silent default. Plain data records are exempt from this structural check.
 - Data records (rows, models, DTOs) are almost always stubs. Handlers, services and clients that cause effects are usually mocks, and their methods return stubs.
 
 Do not use a mock as a data container. A permissive mock invents every attribute you ask for, so a typo in the code under test still passes.
@@ -51,7 +51,7 @@ People skip the fourth. A check that a call happened passes when the code also m
 
 Give each mock its own expected-call block. A double that must stay untouched gets an explicit not-called assertion, so a regression that starts using it is caught.
 
-Keep expectations about outcomes the behavior depends on. Do not mock logger-like collaborators at all; use a real or no-op one. That way the exact-list rule is never relaxed for a mock. A call that charges a card is always worth pinning.
+Keep expectations about outcomes the behavior depends on. Do not mock logger-like collaborators (those whose calls are not part of the behavior under test, such as logging or metrics); use a real or no-op one. That way the exact-list rule is never relaxed for a mock. A call that charges a card is always worth pinning.
 
 ### Where this departs from common advice
 
@@ -67,7 +67,7 @@ Build the whole collaborator once, from one description of the real object, and 
 
 A double is a claim about how the real collaborator behaves. When the real one changes, the double does not, and the test stays green against a world that no longer exists (P11).
 
-- **Mocks and stubs** are checked structurally (plain data-record stubs are exempt): the double only accepts the names and call shapes the real object has. A call with a wrong argument count or a misspelled method fails in the test, not in production. `testing-code` shows the mechanism per language.
+- **Mocks and stubs** are checked structurally (plain data-record stubs are exempt, per the stub rule above): the double only accepts the names and call shapes the real object has. A call with a wrong argument count or a misspelled method fails in the test, not in production. `testing-code` shows the mechanism per language.
 - **Fakes** are checked behaviorally. Run one shared contract suite against both the fake and the real implementation. If the fake passes cases the real one fails, the fake is wrong.
 - **Boundary doubles** (a payment provider, a third-party API) are covered by a contract test (P11), or by a periodic run against the real service.
 

@@ -13,7 +13,7 @@ The system clock returns a different answer on every call, so any test that read
 - Code under test receives the clock as a dependency or reads it through one wrapper. The test replaces that with a fixed value (P14).
 - A frozen clock should be reset after each test. A clock left frozen is a shared-state leak (see [isolation-failures.md](isolation-failures.md)).
 - Tests that assume "today" is the same date an hour later fail near midnight and at month end. Pin the date; don't compute it relative to now.
-- A date built as "now minus N days" still reads the clock, however wide the margin. When the code under test reads the clock itself and you cannot patch or inject it, use a fixed date in the distant past, or a far-future sentinel such as the year 9999. A near-future literal becomes past one day.
+- A date built as "now minus N days" still reads the clock, however wide the margin. When the code under test reads the clock itself and you cannot patch or inject it, use a fixed date in the distant past, or a far-future sentinel such as the year 3000 (dates near the maximum can overflow in date arithmetic). A near-future literal stops being in the future once that date arrives.
 - Ids or keys derived from clock ticks can collide when the machine gets faster.
 
 ## Randomness

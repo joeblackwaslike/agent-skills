@@ -223,10 +223,8 @@ To prove a regression test, revert the fix, watch the test fail, restore the fix
 - [ ] Each test failed for the expected reason (verified RED).
 - [ ] Each fix is the minimum that passes, with no speculative options.
 - [ ] The full suite passes with clean output.
-- [ ] Tests assert behavior, and mocks appear only at boundaries ([doubles.md](doubles.md)).
+- [ ] Tests assert behavior, and mocks appear only at boundaries (see [doubles.md](doubles.md) for what counts as a mock and how to assert on one).
 - [ ] Edge cases and error paths are covered, not only the happy path ([test-kinds.md](test-kinds.md)).
-
-A missing box is a missing step.
 
 ## Related
 

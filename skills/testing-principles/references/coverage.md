@@ -30,7 +30,7 @@ Prefer branch coverage when the tooling offers it.
 A target turns a signal into a goal, and people then reach the goal by the cheapest route.
 
 - Fowler notes that high numbers are easy to reach with low-quality tests, and that this pulls effort toward code that rarely fails and away from code that matters.
-- Once a threshold exists, work above it stops even where more testing would be prudent. the same Google post warns against copying tests just to hit the number.
+- Once a threshold exists, work above it stops even where more testing would be prudent. The same Google post cautions against copy-pasting tests just to raise coverage.
 - A suspiciously perfect number is a smell. Fowler says he is suspicious of 100%, because it suggests tests written to please the report.
 - A mandated number invites assertion-free tests, tests copied only to execute lines, and tests of trivial code.
 - The Google post also holds that no single ideal number applies to every product. The right amount of testing depends on how critical the code is, how often it changes, and how long it will live.

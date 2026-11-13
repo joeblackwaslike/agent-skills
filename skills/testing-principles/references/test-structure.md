@@ -65,7 +65,7 @@ Use the same order in every test so a reviewer's eye lands on the same parts eac
 3. Act: one call.
 4. Expected values: built as literals or named constants, not computed from the stubs.
 5. Result assertions: the return value first, then anything else not about doubles.
-6. Interaction assertions: each mock's expected calls, in the order the code makes them (assert in call order), and that nothing else was called (P10).
+6. Interaction assertions: each mock's expected calls, in the order the code makes them, and that nothing else was called (P10). The one exception, where order is irrelevant to the outcome, is in [doubles.md](doubles.md), which also covers what counts as a mock.
 7. Not-called assertions: doubles that must have stayed untouched.
 
 Give each mock its own block of expected calls. Checking the calls and "nothing else" in one shape stops a wrong or extra call from passing.
