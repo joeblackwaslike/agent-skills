@@ -11,7 +11,7 @@ metadata:
 
 A skill reads well to its author and then gets argued around, misread or never triggered. Review the whole skill directory as an agent who has never seen it, and as a reviewer who did not write it. The aim is a skill that changes agent behavior, with a stronger wording attached to every defect found.
 
-The standard the review applies is the `skill-principles` skill. Load it for step 3. This skill is the process: what to run, which reviewers to dispatch, how to write findings, and how to prove the skill works.
+The standard the review applies is the `skill-principles` skill. Load it for step 3. This skill is the process. It covers what to run, which reviewers to dispatch, how to write findings, and how to prove the skill works.
 
 ## Procedure
 

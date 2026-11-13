@@ -25,7 +25,7 @@ Principles 3 to 7 and 10 apply to every skill. Principles 1, 2, 8 and 9 apply to
 
 ## Vocabulary
 
-- **Authority** is gate, guidance or informational. The devices in principle 1 are how a gate or guidance is written, not a second scale.
+- **Authority** is gate, guidance or informational. The devices in principle 1 are ways to write a gate or guidance, and add no second scale.
 - **Severity** is blocker, major, minor or nit, the same as `reviewing-code`.
 - **`fragment` marker.** A code block whose first line is `# fragment` or `// fragment` is a deliberately partial snippet and is skipped by the mechanical code check. Anywhere else in the block the marker does nothing.
 

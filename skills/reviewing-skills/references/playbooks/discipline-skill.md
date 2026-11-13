@@ -2,7 +2,7 @@
 
 *Leans on principles 1, 2, 3, 4 and 8. Also applies: 5, 7 and 10. Principles 6 and 9 apply only if the skill has a branching flow or dispatches agents.*
 
-A discipline skill exists to hold a rule against pressure: write the test first, verify before claiming done, never skip the gate. Its readers are not confused. They are tempted. Review it as a defense, and ask where an agent in a hurry would get out. The principles are in [principles.md](../../../skill-principles/references/principles.md).
+A discipline skill exists to hold a rule against pressure: write the test first, verify before claiming done, never skip the gate. Its readers understand the rule and are tempted to break it. Review it as a defense, and ask where an agent in a hurry would get out. The principles are in [principles.md](../../../skill-principles/references/principles.md).
 
 ## What to check
 
