@@ -115,7 +115,7 @@ Do not use `browser.startTracing` for this; it records a Chromium performance tr
 1. Run the test many times: `bunx playwright test path/to/file.spec.ts --repeat-each=20`.
 2. Run it again with several workers to expose shared state.
 3. A failure in any run means a flake. Classify the cause with the [flake categories](../../../testing-principles/references/flakes/categories.md), fix the cause, and repeat.
-4. If the fix cannot land now, quarantine the test by following [flakes/quarantine.md](../flakes/quarantine.md). It names the owner and the deadline; do not delete the test and do not retry it to green (P15). Mark it with `test.fail()`, which keeps running the test and reports when it unexpectedly passes. Use `test.fixme` (the test does not run) only where quarantine.md allows a skip with a dated reason, because running the test costs too much.
+4. If the fix cannot land now, quarantine the test by following [flakes/quarantine.md](../flakes/quarantine.md). It names the owner and the deadline; do not delete the test and do not retry it to green (P15). Tag the test (for example `@quarantine`), leave it out of the gating run with `--grep-invert @quarantine`, and run it in a separate non-gating job so it keeps reporting. Do not use `test.fail()` for a flaky test: it asserts that the test fails, so every passing run turns red. Reserve `test.fail()` for a deterministic known bug. Use `test.fixme` (the test does not run) only where quarantine.md allows a skip with a dated reason, because running the test costs too much.
 
 ## Common mistakes
 

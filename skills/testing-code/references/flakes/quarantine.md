@@ -24,6 +24,8 @@ Three ways to get a test out of the gate. The trade-off is what happens to the t
 
 **Recommendation.** Prefer a mechanism that keeps the test running and reporting without gating: an expected-fail marker, or a separate non-gating job. A skipped test gets no coverage of the race while it is quarantined, and you learn nothing about whether the cause is gone. Fall back to a skip with a dated reason only when running it has a cost: it hits a paid or rate-limited service, it corrupts shared state you cannot isolate, or it makes the non-gating job itself unstable.
 
+A flaky test passes on some runs, so the expected-fail marker has to tolerate a pass. A non-strict marker does (Python's `xfail(strict=False)`). A marker that insists on failure, such as Playwright's `test.fail()`, turns every passing run of a flaky test into a gate failure, so use it only for a deterministic known bug. For a flaky test in a tool like that, use the separate non-gating run.
+
 Expected-fail has a catch. A test that fails for the wrong reason (a typo that raises an error) still counts as the expected failure. Where the tool allows, name the exception or the signature it is allowed to fail with.
 
 Fowler's advice is to keep quarantined tests in a different suite from the healthy ones, so the healthy suite stays trustworthy. That matches the separate-job option here.
