@@ -180,7 +180,7 @@ if (rereviews > 0) {
 } else {
   if (v["last-rereview-findings"] !== undefined) die("--last-rereview-findings needs --rereviews above 0.");
   const reason = line("no-rereview-reason", v["no-rereview-reason"]);
-  if (!reason && fixed > 0) die('--no-rereview-reason is required when fixes were applied and --rereviews is 0 (example: "minor-only fixes without behavior change").');
+  if (!reason && fixed > 0) die('--no-rereview-reason is required when fixes were applied and --rereviews is 0 (example: "minor-only fixes that changed no rule").');
   rereviewLine = `0, none: ${reason ?? "no fixes applied"}`;
 }
 

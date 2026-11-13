@@ -55,8 +55,8 @@ test("a check command may contain =", () => {
 });
 
 test("re-review and no-re-review lines", () => {
-  const none = run(...ok, "--findings", "1", "--fixed", "1", "--no-rereview-reason", "minor-only fixes without behavior change");
-  expect(none.out).toContain("Re-reviews: 0, none: minor-only fixes without behavior change");
+  const none = run(...ok, "--findings", "1", "--fixed", "1", "--no-rereview-reason", "minor-only fixes that changed no rule");
+  expect(none.out).toContain("Re-reviews: 0, none: minor-only fixes that changed no rule");
   const clean = run(...ok);
   expect(clean.out).toContain("Re-reviews: 0, none: no fixes applied");
 });
