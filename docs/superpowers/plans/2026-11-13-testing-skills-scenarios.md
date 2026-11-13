@@ -333,7 +333,12 @@ Which results you can rerun from this doc:
 | leaked-patch | `monkeypatch.setitem` | `try/finally` restore | no |
 | bare-mock | `create_autospec` | `create_autospec`, found the `recipient=` bug | no |
 | sleep-async | patched `JOB_DELAY`, bounded poll | fixed `time.sleep(0.5)` | yes |
-| retry-to-green | single run, same fixture as this doc | not rerun | yes |
+
+retry-to-green has one run only, on the fixture and prompt in this doc, so it is rerunnable and has no earlier version:
+
+| Scenario | Single run (same fixture as this doc, rerunnable, never rerun) | Failure shown |
+|---|---|---|
+| retry-to-green | race hidden by patching `time.sleep` in the test | yes |
 
 Three of five show the failure, which meets the Task 1 threshold. Two do not, and the notes below say what that means for Tasks 7 and 15.
 
