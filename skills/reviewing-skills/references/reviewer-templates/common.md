@@ -13,9 +13,11 @@ What counts as a finding. A finding needs a concrete failure scenario in one sen
 Severity, anchored on the scenario.
 - blocker: the text makes an agent do something destructive or unsafe, or the skill cannot work.
 - major: a plausible agent following the text does the wrong thing on a realistic request, and nothing else in the skill stops it.
-- minor: the wrong thing needs an unusual request, or another part of the skill mostly covers it, or a reader is misled about a fact in a way that does not change what they do.
+- minor: the wrong thing needs an unusual request, or a reader is misled about a fact in a way that does not change what they do. A gap that another part of the skill already closes is not a finding at all, even a minor one.
 - nit: wording or a typo with no behavior consequence. Nits are listed and never counted.
 A design choice that is debatable (an author's deliberate tradeoff, or a stated hedge with a stated reason) is a suggestion unless it contradicts something else in the skill.
+
+Real or not. Before you report any finding, open the cited lines again and the neighboring text that could answer it, and write down what you checked. A finding is not real, and goes under SUGGESTIONS, when it rests on "may", "might" or "could" with no behavior you can point to, on a file you did not open (for example another plugin's skill known only by its description), or on a gap you describe as mostly or partly covered elsewhere. State the failing behavior you can show, or do not report it. For a defect in code or a command the skill ships or quotes, run it if you can and report the output; the claim verifier does this for rows you hand off.
 
 Calibration. Before you rate anything major, ask whether the skill already has a defense your finding ignores: a rationalization table row, a red flag, a gate elsewhere, a verification step. If it does, rate the finding minor or drop it. A well defended skill should yield few findings. When you find none of severity major or above, say "no findings of severity major or above" plainly. Do not lower the bar to find some.
 

@@ -35,3 +35,7 @@ It has a "When to Use" section, an example and sibling disambiguation, so "missi
 ## Acceptance results
 
 Filled in by the acceptance runs.
+
+### Acceptance 2 rule change (Joe's call, 2026-11-13)
+
+The original rule allowed at most three findings of minor severity or above per strong skill. The first run reported 2 findings on `verification-before-completion`, 14 on `test-driven-development` and 24 on `systematic-debugging`. The judge confirmed most of them against the files, including two concrete bugs (a script that reports "all tests clean" without running tests when the target path exists, and a vitest example whose automock makes the claimed behavior impossible). Joe's reasoning: a fixed count is too rigid, and a longer skill has more places to be wrong. The rule now scores correctness (at least 90% real, no unconfirmed major) and reports findings per 100 lines without scoring them.
