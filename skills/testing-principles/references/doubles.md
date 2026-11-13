@@ -1,6 +1,6 @@
 # Test doubles
 
-Which stand-in to use for a collaborator, and how to check it. Covers P8 to P11. Library syntax, spec'd mocks and the Python helpers live in `testing-code`, not here.
+Which stand-in to use for a collaborator, and how to check it. Covers P8 to P11. Library syntax, spec'd mocks and the Python helpers live in [`testing-code`](../../testing-code/references/languages/index.md), not here.
 
 ## Real or double
 
@@ -67,7 +67,7 @@ Build the whole collaborator once, from one description of the real object, and 
 
 A double is a claim about how the real collaborator behaves. When the real one changes, the double does not, and the test stays green against a world that no longer exists (P11).
 
-- **Mocks and stubs** are checked structurally (plain data-record stubs are exempt, per the stub rule above): the double only accepts the names and call shapes the real object has. A call with a wrong argument count or a misspelled method fails in the test, not in production. `testing-code` shows the mechanism per language.
+- **Mocks and stubs** are checked structurally (plain data-record stubs are exempt, per the stub rule above): the double only accepts the names and call shapes the real object has. A call with a wrong argument count or a misspelled method fails in the test, not in production. [`testing-code`](../../testing-code/references/languages/index.md) shows the mechanism per language.
 - **Fakes** are checked behaviorally. Run one shared contract suite against both the fake and the real implementation. If the fake passes cases the real one fails, the fake is wrong.
 - **Boundary doubles** (a payment provider, a third-party API) are covered by a contract test (P11), or by a periodic run against the real service.
 

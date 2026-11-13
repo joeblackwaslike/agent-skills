@@ -1,6 +1,6 @@
 # Test-driven development
 
-The discipline of writing the test first, watching it fail, and only then writing the code. Covers P19 (red before green) and leans on P2, P3 and P13. Steps for a specific language or runner are in the `testing-code` runbooks. The shorter `superpowers:test-driven-development` skill enforces the loop; this page holds the background and the evidence rules.
+The discipline of writing the test first, watching it fail, and only then writing the code. Covers P19 (red before green) and leans on P2, P3 and P13. Steps for a specific language or runner are in the [`testing-code` runbooks](../../testing-code/references/languages/index.md). The shorter `superpowers:test-driven-development` skill enforces the loop; this page holds the background and the evidence rules.
 
 Adapted in part from the `tdd-workflow` skill in [ECC](https://github.com/affaan-m/ECC) (MIT, Copyright Affaan Mustafa).
 

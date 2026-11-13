@@ -1,6 +1,6 @@
 # Property-based testing
 
-When to state a rule that must hold for many inputs instead of listing a few examples. Property-based is a kind of test, alongside unit and integration (see [test-kinds.md](test-kinds.md)). Covers P14 for seeded randomness. Writing generators, shrinking, and tool use are in the `testing-code` property-based runbook.
+When to state a rule that must hold for many inputs instead of listing a few examples. Property-based is a kind of test, alongside unit and integration (see [test-kinds.md](test-kinds.md)). Covers P14 for seeded randomness. Writing generators, shrinking, and tool use are in the [`testing-code` property-based runbook](../../testing-code/references/runbooks/property-based.md).
 
 ## What a property is
 

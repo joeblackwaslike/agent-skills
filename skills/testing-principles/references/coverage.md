@@ -1,6 +1,6 @@
 # Coverage
 
-What a coverage number measures, what it leaves out, and how to use it. Covers P7. Mutation testing, the better check on assertion strength, is in [mutation.md](mutation.md). Coverage is a technique for judging tests, not a kind of test. Tool setup and report commands live on the `testing-code` language pages.
+What a coverage number measures, what it leaves out, and how to use it. Covers P7. Mutation testing, the better check on assertion strength, is in [mutation.md](mutation.md). Coverage is a technique for judging tests, not a kind of test. Tool setup and report commands live on the [`testing-code` language pages](../../testing-code/references/languages/index.md).
 
 ## What coverage measures
 

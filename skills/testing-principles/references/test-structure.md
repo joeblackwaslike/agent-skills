@@ -1,6 +1,6 @@
 # Test structure
 
-How one test is shaped so a reader sees what it proves and a failure says why. Covers P3, P4 and P16. The Python helpers and fixture mechanics live in `testing-code`, not here.
+How one test is shaped so a reader sees what it proves and a failure says why. Covers P3, P4 and P16. The Python helpers and fixture mechanics live in [`testing-code`](../../testing-code/references/languages/python.md), not here.
 
 ## Arrange, Act, Assert
 

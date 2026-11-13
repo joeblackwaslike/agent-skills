@@ -1,6 +1,6 @@
 # Mutation testing
 
-Using small deliberate bugs to judge whether a suite would notice real ones. Covers P7, which means mutation testing on the code that earns it, not on every module. It is a technique for judging tests, not a kind of test, and it stays separate from [coverage.md](coverage.md) because it answers a different question. Running it, reading reports, and tool setup are in the `testing-code` mutation-testing runbook.
+Using small deliberate bugs to judge whether a suite would notice real ones. Covers P7, which means mutation testing on the code that earns it, not on every module. It is a technique for judging tests, not a kind of test, and it stays separate from [coverage.md](coverage.md) because it answers a different question. Running it, reading reports, and tool setup are in the [`testing-code` mutation-testing runbook](../../testing-code/references/runbooks/mutation-testing.md).
 
 ## What it does
 

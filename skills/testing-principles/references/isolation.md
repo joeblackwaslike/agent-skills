@@ -1,6 +1,6 @@
 # Isolation
 
-What it means for a test to stand alone. Covers P13. The cause-by-cause failure modes are in `flakes/isolation-failures.md`; the mechanics of cleanup and rollback live in the `testing-code` fixtures runbook.
+What it means for a test to stand alone. Covers P13. The cause-by-cause failure modes are in `flakes/isolation-failures.md`; the mechanics of cleanup and rollback live in the [`testing-code` fixtures runbook](../../testing-code/references/runbooks/fixtures.md).
 
 ## Hermetic tests
 

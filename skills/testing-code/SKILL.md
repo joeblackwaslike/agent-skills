@@ -1,0 +1,57 @@
+---
+name: testing-code
+description: >-
+  Use when writing tests for code ("write tests for X", "write a failing test first", "red green refactor this", flaky or slow tests): pick the kind, write the test body, build fixtures and doubles, run it, and diagnose flaky or slow suites. Not for reviewing a diff (use reviewing-code). Not for deciding what a good test is (use testing-principles; read it first for the standard).
+metadata:
+  last_updated: "2026-11-13"
+---
+
+# Testing Code
+
+The steps for writing a test and getting it green. The standard it must meet lives in `testing-principles`; cite its principles by ID (P3, P10).
+
+## Workflow
+
+1. **Load the standard.** Read the `testing-principles` files below that the task needs, starting with its `SKILL.md`.
+2. **Pick the kind** from what you need to prove (P5, P6), then open that kind's runbook.
+3. **Read the language page** for mechanics: fixtures, doubles, parametrization, async, tooling.
+4. **Write the test body** with `references/test-body-template.md`: constants, mocks, act, expected, result asserts, mock asserts in call order, not-called asserts. Write it first and watch it fail for the intended reason (P19).
+5. **Build fixtures and doubles.** Stubs for data, mocks for effects, fakes when several calls matter. Check each double against the real thing (P11).
+6. **Check isolation and determinism.** Run the test alone, in a different order, and repeated. Inject the clock, seed randomness, block the network (P13, P14). A date built as now minus N days still reads the real clock, so use fixed dates when you cannot inject it.
+7. **Run it, then run the suite.** Scan the test against `references/code-smells.md` before calling it done.
+8. **Flaky or slow?** Go to the `flakes/` runbooks or `slow-tests.md`. Never retry a flake to green (P15).
+
+## Routing
+
+| You are... | Read |
+|---|---|
+| Writing any test body | [test-body-template.md](references/test-body-template.md) |
+| Checking a test you wrote or found | [code-smells.md](references/code-smells.md) |
+| Writing a unit, integration, contract, functional, end-to-end, acceptance, behavioral or property-based test | [runbooks/unit.md](references/runbooks/unit.md), [runbooks/integration.md](references/runbooks/integration.md), [runbooks/contract.md](references/runbooks/contract.md), [runbooks/functional.md](references/runbooks/functional.md), [runbooks/end-to-end.md](references/runbooks/end-to-end.md), [runbooks/acceptance.md](references/runbooks/acceptance.md), [runbooks/behavioral.md](references/runbooks/behavioral.md), [runbooks/property-based.md](references/runbooks/property-based.md) |
+| Judging a suite with mutation testing | [runbooks/mutation-testing.md](references/runbooks/mutation-testing.md) |
+| Designing fixtures | [runbooks/fixtures.md](references/runbooks/fixtures.md) |
+| Patching safely, or refactoring code to take an injected dependency | [runbooks/patching.md](references/runbooks/patching.md) |
+| Testing a browser journey or a React component | [runbooks/playwright.md](references/runbooks/playwright.md), [runbooks/react.md](references/runbooks/react.md) |
+| Chasing a flaky test | [flakes/triage.md](references/flakes/triage.md), then [flakes/tracking.md](references/flakes/tracking.md) and [flakes/quarantine.md](references/flakes/quarantine.md) |
+| Speeding up a suite | [slow-tests.md](references/slow-tests.md) |
+| Needing tool mechanics for a language | [languages/index.md](references/languages/index.md), then [languages/python.md](references/languages/python.md), [languages/typescript.md](references/languages/typescript.md), [languages/rust.md](references/languages/rust.md), [languages/shell.md](references/languages/shell.md) or [languages/sql.md](references/languages/sql.md) |
+
+## Standard to load
+
+From `../testing-principles/`, open only what the task needs:
+
+- [SKILL.md](../testing-principles/SKILL.md): the nineteen principles and a load table.
+- [test-kinds.md](../testing-principles/references/test-kinds.md): choosing the kind.
+- [test-structure.md](../testing-principles/references/test-structure.md): naming, shape, one behavior.
+- [doubles.md](../testing-principles/references/doubles.md): stub, mock, fake, real.
+- [fixtures.md](../testing-principles/references/fixtures.md) and [patches.md](../testing-principles/references/patches.md): fixture design and where to patch.
+- [isolation.md](../testing-principles/references/isolation.md): hermetic tests.
+- [flakes/categories.md](../testing-principles/references/flakes/categories.md): sorting a flake by cause.
+- [performance.md](../testing-principles/references/performance.md): slow suites.
+- [test-driven-development.md](../testing-principles/references/test-driven-development.md): red before green.
+
+## Related skills
+
+- `testing-principles`: what a good test and suite look like.
+- `reviewing-code`: checking a finished diff, tests included.
+- `engineering-principles`: where logic belongs, which decides what is easy to test.
