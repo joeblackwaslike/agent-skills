@@ -64,3 +64,10 @@ Do not touch: `.claude-plugin/plugin.json` or `.codex-plugin/plugin.json` (no `v
 ## Left to the builder
 
 Exact wording and section order inside each page. Whether the fetched DBML page needs trimming. Which SchemaCrawler lint checks to name on the tools page, once confirmed against its docs.
+
+## Changes during the build
+
+- `references/evolving-an-existing-schema.md` was dropped. Two no-skill baseline runs already read the existing schema, flagged missing columns and wrote online migrations, and the migrations playbook covers sequencing. The content became step 1 of `design-method.md`.
+- `references/dbml.md` became `dbml-syntax.md` and `dbml-cli.md`, fetched from the raw markdown in holistics/dbml (`docs.md`, `cli.md`). The CLI page is needed for `dbml2sql`.
+- Baseline finding that shaped the skill. Agents already knew keys, constraints and tenant isolation. The failure was output shape: 2,500 to 2,800 words of Postgres DDL with access patterns late. So `SKILL.md` carries a six-part contract with a size bound, not a tutorial.
+- Not verified. The worked DBML example was not run through `dbml2sql`, because installing the CLI was not permitted in the build session. It was checked by hand against the fetched syntax page.
