@@ -1,0 +1,171 @@
+---
+source: "https://raw.githubusercontent.com/holistics/dbml/master/dbml-homepage/docs/cli.md"
+fetched_at: "2026-11-14T04:49:16.676Z"
+sha256: "f922b4f0c38cb8b7399ee2246c83525fe4f299e91e9105c6e75949ae9b583e3b"
+---
+
+# CLI
+
+[![NPM](https://img.shields.io/npm/v/@dbml/cli)](https://www.npmjs.com/package/@dbml/cli)
+
+DBML comes with a built-in CLI that enables conversion/generation between various formats from the command line.
+
+![img](/img/dbml-cli.gif)
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- **Node.js**: From `@dbml/cli@3.7.1`, you need to have Node.js version 18.0.0 or higher installed.
+
+## Installation
+
+```bash npm2yarn
+npm install -g @dbml/cli
+```
+
+## Convert a DBML file to SQL
+
+```bash
+$ dbml2sql schema.dbml
+
+CREATE TABLE "staff" (
+  "id" INT PRIMARY KEY,
+  "name" VARCHAR,
+  "age" INT,
+  "email" VARCHAR
+);
+...
+```
+
+By default it will generate to "PostgreSQL". To specify which database to generate to:
+
+```bash
+$ dbml2sql schema.dbml --mysql
+
+CREATE TABLE `staff` (
+  `id` INT PRIMARY KEY,
+  `name` VARCHAR(255),
+  `age` INT,
+  `email` VARCHAR(255)
+);
+...
+```
+
+If your schema is split across multiple files using the [module system](./syntax/module-system), pass the entry point file. The CLI will automatically resolve all imported files:
+
+```bash
+$ dbml2sql project.dbml --postgres
+```
+
+To **output to a file** you may use `--out-file` or `-o`:
+
+```bash
+$ dbml2sql schema.dbml -o schema.sql
+  ✔ Generated SQL dump file (PostgreSQL): schema.sql
+```
+
+### Syntax Manual
+
+```bash
+$ dbml2sql <path-to-dbml-file>
+           [--mysql|--postgres|--mssql|--oracle]
+           [-o|--out-file <output-filepath>]
+```
+
+## Convert a SQL file to DBML
+
+To convert SQL to DBML file:
+
+```bash
+$ sql2dbml dump.sql --postgres
+
+Table staff {
+  id int [pk]
+  name varchar
+  age int
+  email varchar
+}
+...
+```
+
+**Output to a file:**
+
+```bash
+$ sql2dbml --mysql dump.sql -o mydatabase.dbml
+  ✔ Generated DBML file from SQL file (MySQL): mydatabase.dbml
+```
+
+### Syntax Manual
+
+```bash
+$ sql2dbml <path-to-sql-file>
+           [--mysql|--postgres|--mssql|--postgres-legacy|--mysql-legacy|--mssql-legacy|--snowflake|--oracle]
+           [-o|--out-file <output-filepath>]
+```
+
+Note: The `--postgres-legacy`, `--mysql-legacy` and `mssql-legacy` options import PostgreSQL/MySQL/MSSQL to dbml using the old parsers. It's quicker but less accurate.
+
+## Generate DBML directly from a database
+
+```bash
+$ db2dbml postgres 'postgresql://dbml_user:dbml_pass@localhost:5432/dbname?schemas=public'
+
+Table "staff" {
+  "id" int4 [pk, not null]
+  "name" varchar
+  "age" int4
+  "email" varchar
+}
+...
+
+```
+
+**Output to a file:**
+
+```bash
+$ db2dbml postgres 'postgresql://dbml_user:dbml_pass@localhost:5432/dbname?schemas=public' -o schema.dbml
+  ✔ Generated DBML file from database's connection: schema.dbml
+```
+
+### Syntax Manual
+
+```bash
+$ db2dbml postgres|mysql|mssql|snowflake|bigquery|oracle
+          <connection-string>
+          [-o|--out-file <output-filepath>]
+```
+
+Connection string examples:
+
+- postgres: `'postgresql://user:password@localhost:5432/dbname?schemas=schema1,schema2,schema3'`
+- mysql: `'mysql://user:password@localhost:3306/dbname'`
+- mssql: `'Server=localhost,1433;Database=master;User Id=sa;Password=your_password;Encrypt=true;TrustServerCertificate=true;Schemas=schema1,schema2,schema3;'`
+- snowflake: `'SERVER=<account_identifier>.<region>;UID=<your_username>;PWD=<your_password>;DATABASE=<your_database>;WAREHOUSE=<your_warehouse>;ROLE=<your_role>;SCHEMAS=schema1,schema2,schema3;'`
+- bigquery: `/path_to_json_credential.json`
+- oracle: `'username/password@[//]host[:port][/service_name]'`
+
+For BigQuery, the credential file supports flexible authentication:
+
+**1. Application Default Credentials (ADC):**
+
+- Empty file: `{}` - uses environment authentication
+- Override specific fields: `{"project_id": "my-project", "datasets": [...]}`
+
+For more information about ADC, see [How Application Default Credentials works](https://cloud.google.com/docs/authentication/application-default-credentials)
+
+**2. Explicit Service Account (bypasses ADC):**
+
+```json
+{
+  "project_id": "your-project-id",
+  "client_email": "your-client-email",
+  "private_key": "your-private-key",
+  "datasets": ["dataset_1", "dataset_2", ...]
+}
+```
+
+:::note
+
+- Both `client_email` and `private_key` must be provided together.
+- If `datasets` is not specified or is empty, all accessible datasets will be fetched.

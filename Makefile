@@ -2,7 +2,7 @@ SHELL := /bin/bash
 .DEFAULT_GOAL := update-all
 UPDATE_SCRIPTS := $(shell find skills -path '*/scripts/update*.js' -o -path '*/scripts/update*.sh' 2>/dev/null | sort)
 
-.PHONY: lint-descriptions update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode update-working-with-cursor update-working-with-pieces update-working-with-github-actions update-working-with-vercel-ai-sdk update-working-with-beads update-working-with-git update-working-with-github update-developing-for-github update-working-with-dolt update-working-with-vercel update-working-with-vercel-api update-working-with-zsh update-working-with-bash update-working-with-release-please update-working-with-serena update-beadboard-operations
+.PHONY: lint-descriptions update-all list-update-scripts update-working-with-claude-code update-devcontainers update-working-with-codex update-working-with-gemini update-working-with-opencode update-working-with-cursor update-working-with-pieces update-working-with-github-actions update-working-with-vercel-ai-sdk update-working-with-beads update-working-with-git update-working-with-github update-developing-for-github update-working-with-dolt update-working-with-vercel update-working-with-vercel-api update-working-with-zsh update-working-with-bash update-working-with-release-please update-working-with-serena update-beadboard-operations update-data-modeling
 
 lint-descriptions: ## Lint SKILL.md descriptions against the skill-listing budget
 	python3 -I scripts/lint-descriptions.py
@@ -22,6 +22,9 @@ update-working-with-claude-code: ## Update working-with-claude-code references
 
 update-devcontainers: ## Update devcontainers generated reference docs
 	node skills/devcontainers/scripts/update.js
+
+update-data-modeling: ## Update data-modeling DBML reference docs
+	node skills/data-modeling/scripts/update_dbml_docs.js
 
 update-working-with-codex: ## Update working-with-codex references
 	node skills/working-with-codex/scripts/update_docs.js
