@@ -2,7 +2,7 @@
 
 *Leans on: KISS, YAGNI, least privilege, high cohesion, least astonishment.*
 
-Skills (`SKILL.md` folders), custom commands and similar instruction files are executable prompts: an agent follows them, runs their scripts and acts on the user's machine. Review them as code that happens to be written in English. The [Claude Code skills docs](https://code.claude.com/docs/en/skills) describe the format.
+Skills (`SKILL.md` folders), custom commands and similar instruction files are executable prompts: an agent follows them, runs their scripts and acts on the user's machine. Review them as code that happens to be written in English. For depth, use the [reviewing-skills](../../../reviewing-skills/SKILL.md) skill, which `/self-review` runs on any diff under `skills/`; this playbook is the short version. The [Claude Code skills docs](https://code.claude.com/docs/en/skills) describe the format.
 
 - **The description is the trigger.** The frontmatter `description` decides when the skill loads, and it's always in context. It says what the skill does and when to use it, key use case first, specific enough not to fire on unrelated requests and broad enough to fire on the right ones.
 - **Frontmatter is exactly right.** Field names match the documentation, hyphens included. Claude Code silently ignores a field it doesn't recognize, so a typo quietly disables a setting.
