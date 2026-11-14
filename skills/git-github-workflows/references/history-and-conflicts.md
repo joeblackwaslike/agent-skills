@@ -5,21 +5,21 @@ Which way to integrate a branch, what to do when it conflicts, and how to keep a
 ## Merge or rebase
 
 | Situation | Do |
-|---|---|
+| --- | --- |
 | Your own PR branch is behind `main` | `git fetch && git rebase origin/main`, then `git push --force-with-lease` |
 | Landing a PR on `main` | Squash-merge (`gh pr merge --squash --delete-branch`) |
 | Pulling `main` into the main checkout after a merge | `git pull --ff-only` |
 | Someone else pushed to your branch | Merge or pull, don't rebase over their commits |
-| A bot pushed a suggestion commit | Fetch first, `--force-with-lease` will refuse if you skip it |
+| A bot pushed a suggestion commit | `git pull --rebase` so the bot commit survives, then `--force-with-lease` (a bare fetch lets the lease pass and a rebase would drop it) |
 
 Never rebase `main`, a protected branch, a branch that already merged, or a branch another person has built on. Rebase rewrites commits, so anyone holding the old ones ends up with duplicates and conflicts.
 
-Rebase before merging, then don't re-pull in the main checkout. A `git pull --rebase` there rewrites the landed commit and leaves the worktree branch pointing at the old hash, which makes it look unmerged (see `worktree-conventions.md`).
+When the branch lives in a worktree, rebase there (`git fetch && git rebase origin/main`), fast-forward the main checkout, then push. Don't run `git pull --rebase` in the main checkout after the merge: it rewrites the landed commit and leaves the worktree branch on the old hash, so the branch looks unmerged to `wt-reap`.
 
 ## Resolving a conflict
 
 1. `git status` lists the conflicted files. Open each one and decide what the code should do, not which side to keep.
-2. Edit out the markers. `git checkout --ours` and `--theirs` swap meaning during a rebase, so check `merging-and-conflicts.md` before using them.
+2. Edit out the markers. During a rebase `--ours` is the branch you are rebasing onto and `--theirs` is your own commit, the reverse of a merge (`working-with-git/references/howto/merging-and-conflicts.md`).
 3. Run the repo's tests and linter. A clean merge can still break the build.
 4. `git add` the files, then `git rebase --continue` (or `git commit` for a merge). To back out, `git rebase --abort` or `git merge --abort`.
 
@@ -40,7 +40,7 @@ git push origin main
 ## Undoing a mistake
 
 | You want to | Go to |
-|---|---|
+| --- | --- |
 | Unstage, discard, or un-commit locally | `working-with-git/references/howto/fixing-mistakes.md` |
 | Undo a commit that is already pushed | `git revert`, never a force push to `main` |
 | Recover lost commits | reflog, same page |

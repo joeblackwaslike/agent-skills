@@ -46,7 +46,7 @@ Use `<type>/<slug>`, optionally with a ticket number.
 
 - Committing straight to `main` in a repo that uses PRs. Single-owner repos with no PR step push to `main` by design.
 - Committing secrets, `.env` files, or generated output (`dist/`, `node_modules/`).
-- Giant PRs. Split past about 400 hand-written lines (size gate in `driving-a-pr-to-approval.md`).
+- Giant PRs. Split them at the size gate in `driving-a-pr-to-approval.md`.
 - Vague messages such as "update" or "fix", and branches that live for weeks.
 - Rewriting history on `main` or on a branch other people use. Revert instead (see `history-and-conflicts.md`).
 

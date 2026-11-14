@@ -1,6 +1,6 @@
 ---
 name: git-github-workflows
-description: "Use when committing, opening a PR, driving it to merge, answering reviewer or AI-bot feedback, working in a worktree, cutting a release, cleaning up branches, merge vs rebase, or resolving conflicts. Not for command flags (git worktree, gh pr: working-with-git, working-with-github), CI workflow YAML (working-with-github-actions), GitHub Apps (developing-for-github), or self-review before the PR (reviewing-code)."
+description: "Use when committing, opening a PR, driving it to merge, answering reviewer or AI-bot feedback, working in a worktree, cutting a release, cleaning up branches, choosing merge vs rebase, or resolving a conflict. Not for tool mechanics (working-with-git, working-with-github), workflow YAML (working-with-github-actions), GitHub Apps (developing-for-github), or pre-PR self-review (reviewing-code)."
 metadata:
   last_updated: "2026-11-14"
 ---
@@ -52,7 +52,7 @@ Reach for these when you need the tool's own behavior, not a process.
 
 | Question | Skill |
 |---|---|
-| A git command or flag, history rewriting, bisect, reflog recovery, merges and conflicts, git servers | `agent-skills:working-with-git` |
+| A git command or flag, history rewriting, bisect, reflog recovery, merge and conflict command mechanics, git servers | `agent-skills:working-with-git` |
 | A `gh` command or flag, REST or GraphQL, rate limits, tokens, rulesets, issues, Dependabot and CodeQL config | `agent-skills:working-with-github` |
 | Workflow YAML, Actions, runners, OIDC cloud deploys, release-please wiring | `agent-skills:working-with-github-actions` |
 | A GitHub App, OAuth app, webhook consumer or Octokit bot | `agent-skills:developing-for-github` |
