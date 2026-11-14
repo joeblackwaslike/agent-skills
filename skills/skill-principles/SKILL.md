@@ -21,7 +21,7 @@ Ten principles cover most of what makes a skill's instructions work. Apply them 
 9. **Agent pipelines are specified.** Roles, models, handoff files, verdict words, scoped re-review, round caps, no sub-dispatch from workers.
 10. **Verification is built in.** A check the agent runs and a reviewer can rerun.
 
-Principles 3 to 7 and 10 apply to every skill. Principles 1, 2, 8 and 9 apply to discipline skills, workflow skills and agent pipelines; a doc-wrapper or catalog is not flagged for a missing rationalization table.
+Principles 3 to 5, 7 and 10 apply to every skill. Principle 6 applies to a skill with a flow, branch or loop; a reference catalog is exempt. Principles 1, 2, 8 and 9 apply to discipline skills, workflow skills and agent pipelines; a doc-wrapper or catalog is not flagged for a missing rationalization table.
 
 ## Vocabulary
 
