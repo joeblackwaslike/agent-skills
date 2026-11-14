@@ -14,7 +14,7 @@ Playbook paths: [data modeling](../../reviewing-code/references/playbooks/data-m
 - Does every table have a primary key, and does its id type match the existing schema? (data modeling, keys)
 - Is each invariant a database constraint and not only a check in code? (data modeling, constraints)
 - Does each foreign key have a deliberate `ON DELETE` choice and an index on the referencing column? (data modeling, foreign key behavior)
-- Can a child row point at a parent that belongs to a different tenant or owner?
+- Does the model prevent a child row from pointing at a parent that belongs to a different tenant or owner?
 
 ## Types and shape
 
