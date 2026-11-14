@@ -39,7 +39,7 @@ Run these instead of improvising the sequence.
 | Post reviews, inline comments, suggestions or check results through the API | [references/pull-requests/code-review-via-api.md](references/pull-requests/code-review-via-api.md) |
 | Feature work in an isolated worktree, parallel or subagent work, removing a worktree | [references/worktree-conventions.md](references/worktree-conventions.md) |
 | Which branching model to use; branch names; the branch, PR, merge loop in general | [references/github-flow.md](references/github-flow.md) |
-| Merge or rebase, resolving a conflict, syncing a fork, undoing a mistake | [references/history-and-conflicts.md](references/history-and-conflicts.md) |
+| Merge, rebase, resolve conflicts, sync forks, undo mistakes | [references/history-and-conflicts.md](references/history-and-conflicts.md) |
 | Drive a PR through review, merge and release | [references/releases/pr-to-release.md](references/releases/pr-to-release.md) |
 | Cut a release, upload assets, write the changelog | [references/releases/releases-and-assets.md](references/releases/releases-and-assets.md) |
 | Release from several branches with environments | [references/releases/multi-branch-release.md](references/releases/multi-branch-release.md) |

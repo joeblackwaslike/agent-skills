@@ -9,8 +9,10 @@ Which way to integrate a branch, what to do when it conflicts, and how to keep a
 | Your own PR branch is behind `main` (no bot commits on the remote) | `git fetch && git rebase origin/main`, then `git push --force-with-lease` |
 | Landing a PR on `main` | Squash-merge (`gh pr merge --squash --delete-branch`) |
 | Pulling `main` into the main checkout after a merge | `git pull --ff-only` |
-| Someone else pushed to your branch | Merge or pull, don't rebase over their commits |
+| Someone else pushed to your branch | Merge or pull. Never rebase over their commits |
 | A bot pushed a suggestion commit | `git pull --rebase` so the bot commit survives, then `git rebase origin/main` if still behind, then `--force-with-lease` (a bare fetch lets the lease pass and a rebase would drop the commit) |
+
+Before any force push, run `git log HEAD..origin/<branch>`. Anything it lists is a remote commit (a bot suggestion, a collaborator) that the rebase would drop, so pull it in first. The lease alone can't help once a fetch has updated your remote-tracking ref.
 
 Never rebase `main`, a protected branch, a branch that already merged, or a branch another person has built on. Rebase rewrites commits, so anyone holding the old ones ends up with duplicates and conflicts.
 
@@ -35,7 +37,7 @@ git merge --ff-only upstream/main
 git push origin main
 ```
 
-`--ff-only` fails if your `main` has local commits. Move those to a branch instead of merging them in. Before running any `gh` command against a fork, pin the repo as in step 0 of `pull-requests/driving-a-pr-to-approval.md`.
+`--ff-only` rejects diverged history, but it succeeds as a no-op when your `main` is simply ahead of `upstream/main`, and the push then publishes those commits. Run `git log upstream/main..main` first; if it lists anything, move those commits to a branch. Before running any `gh` command against a fork, pin the repo as in step 0 of `pull-requests/driving-a-pr-to-approval.md`.
 
 ## Undoing a mistake
 
