@@ -98,6 +98,7 @@ Clone this repo, then add its `skills/` directory to `skills.paths` in `opencode
 | Skill | What it does |
 | --- | --- |
 | `domain-driven-design` | Aggregates, entities, value objects, domain events, repositories, bounded contexts |
+| `data-modeling` | Design new tables and relationships for a feature: access patterns first, a one-page spec section with a DBML model, and a review checklist |
 | `code-architectures` | Hexagonal/clean layering, CQRS, event sourcing, event-driven design, sagas, monolith vs microservices, service communication, distributed data |
 | `solid-principles` | Designing and refactoring classes, modules, and interfaces |
 | `senior-engineering-best-practices` | Career-built senior-engineer judgment — due diligence, root-cause discipline, blast-radius/dependency/observability judgment |
