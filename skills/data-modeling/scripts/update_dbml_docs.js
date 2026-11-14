@@ -30,6 +30,9 @@ function fetchUrl(url) {
     https
       .get(url, { timeout: FETCH_TIMEOUT_MS }, (res) => {
         res.setEncoding('utf8');
+        res.on('error', (error) => {
+          reject(new Error(`response error fetching ${url}: ${error.message}`));
+        });
         let data = '';
         res.on('data', (chunk) => (data += chunk));
         res.on('end', () => {

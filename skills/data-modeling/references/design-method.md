@@ -108,6 +108,7 @@ The label feature above, written as a spec section.
 - Composite foreign keys on `(tenant_id, task_id)` and `(tenant_id, label_id)` stop a label from being attached to a task in another tenant. They need a unique `(tenant_id, id)` on `tasks` and on `labels`.
 - Deleting a task or a label removes its join rows. Nothing else references them.
 - `(tenant_id, name)` is unique with no soft-delete exemption because labels are hard-deleted.
+- `created_at` is a UTC `timestamp`. The engine type, with or without a time zone, is chosen in the plan.
 
 **Open questions.** Can a project restrict which labels its tasks use? If yes, the join table needs a project scope.
 
