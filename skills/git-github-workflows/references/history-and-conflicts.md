@@ -12,7 +12,7 @@ Which way to integrate a branch, what to do when it conflicts, and how to keep a
 | Someone else pushed to your branch | Merge or pull. Never rebase over their commits |
 | A bot pushed a suggestion commit | `git pull --rebase` so the bot commit survives, then `git rebase origin/main` if still behind, then `--force-with-lease` (a bare fetch lets the lease pass and a rebase would drop the commit) |
 
-Before any force push, run `git log HEAD..origin/<branch>`. Anything it lists is a remote commit (a bot suggestion, a collaborator) that the rebase would drop, so pull it in first. The lease alone can't help once a fetch has updated your remote-tracking ref.
+Before any force push, run `git fetch && git log HEAD..origin/<branch>`. Anything it lists is a remote commit (a bot suggestion, a collaborator) that the rebase would drop, so pull it in first. The lease only guards against commits that land after your last fetch, because a fetch moves the ref it compares against.
 
 Never rebase `main`, a protected branch, a branch that already merged, or a branch another person has built on. Rebase rewrites commits, so anyone holding the old ones ends up with duplicates and conflicts.
 
