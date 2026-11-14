@@ -6,15 +6,15 @@ Which way to integrate a branch, what to do when it conflicts, and how to keep a
 
 | Situation | Do |
 | --- | --- |
-| Your own PR branch is behind `main` | `git fetch && git rebase origin/main`, then `git push --force-with-lease` |
+| Your own PR branch is behind `main` (no bot commits on the remote) | `git fetch && git rebase origin/main`, then `git push --force-with-lease` |
 | Landing a PR on `main` | Squash-merge (`gh pr merge --squash --delete-branch`) |
 | Pulling `main` into the main checkout after a merge | `git pull --ff-only` |
 | Someone else pushed to your branch | Merge or pull, don't rebase over their commits |
-| A bot pushed a suggestion commit | `git pull --rebase` so the bot commit survives, then `--force-with-lease` (a bare fetch lets the lease pass and a rebase would drop it) |
+| A bot pushed a suggestion commit | `git pull --rebase` so the bot commit survives, then `git rebase origin/main` if still behind, then `--force-with-lease` (a bare fetch lets the lease pass and a rebase would drop the commit) |
 
 Never rebase `main`, a protected branch, a branch that already merged, or a branch another person has built on. Rebase rewrites commits, so anyone holding the old ones ends up with duplicates and conflicts.
 
-When the branch lives in a worktree, rebase there (`git fetch && git rebase origin/main`), fast-forward the main checkout, then push. Don't run `git pull --rebase` in the main checkout after the merge: it rewrites the landed commit and leaves the worktree branch on the old hash, so the branch looks unmerged to `wt-reap`.
+When the branch lives in a worktree, rebase there (`git fetch && git rebase origin/main`), fast-forward the main checkout, then push. Don't run `git pull --rebase` in the main checkout after the merge: it rewrites the landed commit and leaves the worktree branch on the old hash, so the branch looks unmerged to `wt-reap`, the worktree reaper (see `commands/git-cleanup.md`).
 
 ## Resolving a conflict
 

@@ -1,6 +1,6 @@
 ---
 name: git-github-workflows
-description: "Use when committing, opening a PR, driving it to merge, answering reviewer or AI-bot feedback, working in a worktree, cutting a release, cleaning up branches, choosing merge vs rebase, or resolving a conflict. Not for tool mechanics (working-with-git, working-with-github), workflow YAML (working-with-github-actions), GitHub Apps (developing-for-github), or pre-PR self-review (reviewing-code)."
+description: "Use when committing, opening a PR, driving it to merge, answering reviewer or AI-bot feedback, working in a worktree, cutting a release, cleaning up branches, choosing merge vs rebase, or resolving a conflict. Not for command flags (working-with-git, working-with-github), workflow YAML (working-with-github-actions), GitHub Apps (developing-for-github), or pre-PR self-review (reviewing-code)."
 metadata:
   last_updated: "2026-11-14"
 ---
