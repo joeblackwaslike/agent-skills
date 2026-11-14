@@ -1,8 +1,8 @@
 ---
 name: git-github-workflows
-description: "Use when committing, opening a PR, driving it to merge, answering reviewer or AI-bot feedback, working in a worktree, cutting a release, or cleaning up branches. Not for command flags (git worktree, gh pr: working-with-git, working-with-github), CI workflow YAML (working-with-github-actions), GitHub Apps (developing-for-github), or self-review before the PR (reviewing-code)."
+description: "Use when committing, opening a PR, driving it to merge, answering reviewer or AI-bot feedback, working in a worktree, cutting a release, cleaning up branches, merge vs rebase, or resolving conflicts. Not for command flags (git worktree, gh pr: working-with-git, working-with-github), CI workflow YAML (working-with-github-actions), GitHub Apps (developing-for-github), or self-review before the PR (reviewing-code)."
 metadata:
-  last_updated: "2026-11-10"
+  last_updated: "2026-11-14"
 ---
 
 # Git & GitHub Workflows
@@ -38,7 +38,8 @@ Run these instead of improvising the sequence.
 | Read that feedback and tune the reviewer | [references/pull-requests/tuning-the-ai-reviewer.md](references/pull-requests/tuning-the-ai-reviewer.md) |
 | Post reviews, inline comments, suggestions or check results through the API | [references/pull-requests/code-review-via-api.md](references/pull-requests/code-review-via-api.md) |
 | Feature work in an isolated worktree, parallel or subagent work, removing a worktree | [references/worktree-conventions.md](references/worktree-conventions.md) |
-| Which branching model to use; the branch, PR, merge loop in general | [references/github-flow.md](references/github-flow.md) |
+| Which branching model to use; branch names; the branch, PR, merge loop in general | [references/github-flow.md](references/github-flow.md) |
+| Merge or rebase, resolving a conflict, syncing a fork, undoing a mistake | [references/history-and-conflicts.md](references/history-and-conflicts.md) |
 | Drive a PR through review, merge and release | [references/releases/pr-to-release.md](references/releases/pr-to-release.md) |
 | Cut a release, upload assets, write the changelog | [references/releases/releases-and-assets.md](references/releases/releases-and-assets.md) |
 | Release from several branches with environments | [references/releases/multi-branch-release.md](references/releases/multi-branch-release.md) |
