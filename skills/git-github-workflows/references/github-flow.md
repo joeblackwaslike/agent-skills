@@ -28,6 +28,28 @@ gh pr merge --squash --delete-branch         # merge + cleanup
 - **One branch per unrelated change.** Don't bundle a refactor with a feature — it complicates review and reverts.
 - **Protect `main`** with required checks and reviews (see `multi-branch-release.md` for rulesets).
 
+## Branch names
+
+Use `<type>/<slug>`, optionally with a ticket number.
+
+| Prefix | For | Example |
+| --- | --- | --- |
+| `feat/` | New behavior | `feat/csv-export` |
+| `fix/` | Bug fixes | `fix/456-null-pointer` |
+| `hotfix/` | Urgent production patches | `hotfix/session-leak` |
+| `release/` | A maintained release line | `release/2.3` |
+| `experiment/` | Throwaway spikes, never merged as is | `experiment/new-cache` |
+
+`chore/`, `docs/` and `refactor/` follow the Conventional Commit types.
+
+## Anti-patterns
+
+- Committing straight to `main` in a repo that uses PRs. Single-owner repos with no PR step push to `main` by design.
+- Committing secrets, `.env` files, or generated output (`dist/`, `node_modules/`).
+- Giant PRs. Split them at the size gate in `driving-a-pr-to-approval.md`.
+- Vague messages such as "update" or "fix", and branches that live for weeks.
+- Rewriting history on `main` or on a branch other people use. Revert instead (see `history-and-conflicts.md`).
+
 ## When GitHub Flow is enough
 
 It's enough — and ideal — when you **deploy from `main`** and only ever support the **latest** version: web apps, services, most internal tooling, and libraries on a rolling release. Continuous delivery off a protected `main` is its sweet spot.
