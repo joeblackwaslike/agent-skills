@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/holistics/dbml/master/dbml-homepage/docs/docs.md"
-fetched_at: "2026-11-14T04:49:16.676Z"
-sha256: "fb6841f1b43bff20b8db248ab70d8acd27a84e76f0697b9b232984c73c920e1f"
+fetched_at: "2026-11-14T05:03:45.487Z"
+sha256: "dd32d6d1c34eac7b0c058677f5416040122526fa6300f508a04cc3fc4d53ff87"
 ---
 
 # DBML Syntax — Core Database Markup
@@ -81,9 +81,9 @@ Table schema_name.table_name {
 - settings are wrapped in `square brackets []`
 - string value is wrapped in a `single quote as 'string'`
 - `column_name` can be stated in just plain text, or wrapped in a `double quote as "column name"`
-- `note: 'string to add notes'`: add a metadata note to this table *(enrichment & visualization only — see [Table Notes](./syntax/enrichment-visualization.md#table-notes))*
+- `note: 'string to add notes'`: add a metadata note to this table *(enrichment & visualization only — see [Table Notes](https://dbml.dbdiagram.io/syntax/enrichment-visualization#table-notes))*
 
-We also support free-form custom properties, e.g. `Table users [owner: "data-team"]`. See [Inline Custom Properties](./syntax/enrichment-visualization.md#inline-custom-properties).
+We also support free-form custom properties, e.g. `Table users [owner: "data-team"]`. See [Inline Custom Properties](https://dbml.dbdiagram.io/syntax/enrichment-visualization#inline-custom-properties).
 
 :::tip
 Use [TablePartial](#tablepartial) to reuse common fields, settings and indexes across multiple tables. Inject partials into a table using the `~partial_name` syntax.
@@ -123,9 +123,9 @@ The list of column settings you can use:
 - `default: some_value`: set a default value of the column, please refer to the 'Default Value' section below
 - `increment`: mark the column as auto-increment
 - ``check: `check expression`‎``: add a check expression to this column using a backtick expression. Multiple checks can be defined on a column. For checks involving multiple columns, refer to the [Check Definition](#check-definition) section
-- `note: 'string to add notes'`: add a metadata note to this column *(enrichment & visualization only — see [Column Notes](./syntax/enrichment-visualization.md#column-notes))*
+- `note: 'string to add notes'`: add a metadata note to this column *(enrichment & visualization only — see [Column Notes](https://dbml.dbdiagram.io/syntax/enrichment-visualization#column-notes))*
 
-We also support free-form custom properties, e.g. `email varchar [classification: "confidential"]`. See [Inline Custom Properties](./syntax/enrichment-visualization.md#inline-custom-properties).
+We also support free-form custom properties, e.g. `email varchar [classification: "confidential"]`. See [Inline Custom Properties](https://dbml.dbdiagram.io/syntax/enrichment-visualization#inline-custom-properties).
 
 **Note:** You can use a workaround for un-supported settings by adding the setting name into the column type name, such as `id "bigint unsigned" [pk]`
 
@@ -229,7 +229,7 @@ A primary key index cannot have a descending column: `(id, country [desc]) [pk]`
 - `name`: name of index
 - `unique`: unique index
 - `pk`: primary key
-- `note`: a metadata note for the index *(enrichment & visualization only — see [Index Notes](./syntax/enrichment-visualization.md#index-notes))*
+- `note`: a metadata note for the index *(enrichment & visualization only — see [Index Notes](https://dbml.dbdiagram.io/syntax/enrichment-visualization#index-notes))*
 
 ## Relationships & Foreign Key Definitions
 
@@ -339,9 +339,9 @@ Ref {
 - `delete / update: cascade | restrict | set null | set default | no action`:
 define referential actions. Similar to `ON DELETE/UPDATE CASCADE/...` in SQL.
 
-For the `color` setting on relationships, see [Colors](./syntax/enrichment-visualization.md#colors).
+For the `color` setting on relationships, see [Colors](https://dbml.dbdiagram.io/syntax/enrichment-visualization#colors).
 
-Any other key in the settings list is a [custom property](./syntax/enrichment-visualization.md#custom-properties), e.g. `[delete: cascade, owner: "data-team"]`. A named ref can also get properties from a [`Metadata Ref` block](./syntax/enrichment-visualization.md#metadata-block).
+Any other key in the settings list is a [custom property](https://dbml.dbdiagram.io/syntax/enrichment-visualization#custom-properties), e.g. `[delete: cascade, owner: "data-team"]`. A named ref can also get properties from a [`Metadata Ref` block](https://dbml.dbdiagram.io/syntax/enrichment-visualization#metadata-block).
 
 *Relationship settings and names are not supported for inline form ref.*
 

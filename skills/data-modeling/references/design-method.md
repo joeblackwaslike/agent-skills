@@ -18,7 +18,7 @@ List every read and write the feature makes before drawing any table. One row ea
 | Pattern | Actor | Reads or writes | Filter and order | Volume |
 | --- | --- | --- | --- | --- |
 | List labels on a task | Any user | Reads `labels` via the join table | By task | A few per task |
-| Find tasks with a label | Any user | Reads the join table | By label, newest task first | Hundreds per label |
+| Find tasks with a label | Any user | Reads the join table | By label | Hundreds per label |
 | Create a label | Admin | Writes `labels` | Name unique per tenant | Rare |
 
 ## 3. Name entities and relationships
@@ -40,7 +40,7 @@ Write one DBML block for the new tables. Use `TablePartial` for columns every ta
 - Inline `ref:` cannot carry `delete:` or `update:` settings. Use a separate `Ref:` line when the delete behavior is part of the design.
 - The documented index settings are `type`, `name`, `unique`, `pk` and `note`. A partial unique index, which soft delete often calls for, cannot be written. State it in the decisions part.
 
-Write column types from DBML's plain set (`int`, `bigint`, `varchar`, `text`, `date`, `timestamp`) so the sketch stays engine-neutral, and state the time-zone handling in the decisions. Stub each existing table a new table references, as `tenants` and `tasks` are below, so the block parses on its own.
+Write column types from DBML's plain set (`int`, `bigint`, `uuid`, `varchar`, `text`, `date`, `timestamp`) so the sketch stays engine-neutral, and state the time-zone handling in the decisions. Stub each existing table a new table references, as `tenants` and `tasks` are below, so the block parses on its own.
 
 ```dbml
 Table tenants {
@@ -49,6 +49,11 @@ Table tenants {
 
 Table tasks {
   id bigint [pk]
+  tenant_id uuid [not null]
+
+  indexes {
+    (tenant_id, id) [unique]
+  }
 }
 
 Table labels {
@@ -59,11 +64,13 @@ Table labels {
   created_at timestamp [not null, default: `now()`]
 
   indexes {
+    (tenant_id, id) [unique]
     (tenant_id, name) [unique]
   }
 }
 
 Table task_labels {
+  tenant_id uuid [not null]
   task_id bigint [not null]
   label_id bigint [not null]
   created_at timestamp [not null, default: `now()`]
@@ -74,8 +81,8 @@ Table task_labels {
   }
 }
 
-Ref: task_labels.task_id > tasks.id [delete: cascade]
-Ref: task_labels.label_id > labels.id [delete: cascade]
+Ref: task_labels.(tenant_id, task_id) > tasks.(tenant_id, id) [delete: cascade]
+Ref: task_labels.(tenant_id, label_id) > labels.(tenant_id, id) [delete: cascade]
 ```
 
 See `dbml-syntax.md` for the full syntax and `dbml-cli.md` for converting DBML to SQL.
@@ -88,7 +95,7 @@ Run `model-review-checklist.md` against the draft. Then cut the section down to 
 
 The label feature above, written as a spec section.
 
-**Existing schema.** Plural snake_case tables, `bigint` identity ids, `created_at` on every table, `tenant_id` on tenant-scoped tables. `tasks` already has `tenant_id` and `project_id`.
+**Existing schema.** Plural snake_case tables, `bigint` identity ids (`tenants` uses `uuid`), `created_at` on every table, `tenant_id` on tenant-scoped tables. `tasks` already has `tenant_id` and `project_id`.
 
 **Access patterns.** The table in step 2.
 
@@ -98,9 +105,10 @@ The label feature above, written as a spec section.
 
 - Labels belong to a tenant, not a project, so one label can span projects.
 - The join table has a composite primary key and no surrogate id, since it carries no data of its own.
+- Composite foreign keys on `(tenant_id, task_id)` and `(tenant_id, label_id)` stop a label from being attached to a task in another tenant. They need a unique `(tenant_id, id)` on `tasks` and on `labels`.
 - Deleting a task or a label removes its join rows. Nothing else references them.
 - `(tenant_id, name)` is unique with no soft-delete exemption because labels are hard-deleted.
 
 **Open questions.** Can a project restrict which labels its tasks use? If yes, the join table needs a project scope.
 
-**Migration.** Additive, two new tables, no backfill.
+**Migration.** Additive: two new tables and a unique index on `tasks (tenant_id, id)`, no backfill.

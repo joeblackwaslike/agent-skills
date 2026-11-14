@@ -1,6 +1,6 @@
 # Linting a model with tools
 
-The checklist in `model-review-checklist.md` is the default way to lint a model, and it needs nothing installed. Use the tools below when a scratch database is easy to get and the schema is large enough that reading it misses things. Nothing here is required to finish a design.
+The checklist in `model-review-checklist.md` is the default way to lint a model, and it needs nothing installed. Use the tools below when a scratch database is easy to get and the schema is large enough that reading it misses things. Nothing here is required to finish a design. The tool facts below were checked against each project's docs on 2026-11-13, so confirm current versions and licensing before relying on them.
 
 ## Two kinds of linter
 

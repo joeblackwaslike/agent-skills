@@ -8,7 +8,7 @@ metadata:
 
 # Data Modeling
 
-Use this skill while designing a feature that adds data to a relational database, before any migration or ORM code exists. It produces one short data-model section for the spec. Joe reads that section to approve the design, so it has to be reviewable in a few minutes.
+Use this skill while designing a feature that adds data to a relational database, before any migration or ORM code exists. It produces one short data-model section for the spec. A human reviewer reads that section to approve the design, so it has to be reviewable in a few minutes.
 
 The queries a feature runs decide the model. Tables follow from them. Dialect-specific DDL and migration mechanics come later, in the plan.
 
@@ -27,12 +27,12 @@ A data-model section has six parts, in this order, and fits on one page, about s
 
 1. **Existing schema.** The conventions the new tables follow (naming, id type, timestamps, soft delete, tenancy) and the gaps the feature exposes, one line each.
 2. **Access patterns.** A table with one row per query or write the feature makes: who runs it, what it reads or writes, the filters and ordering, and the expected volume.
-3. **Model.** One DBML block covering every new table, relationship, key and constraint.
+3. **Model.** One DBML block covering every new table, relationship, key and constraint. Existing tables it references appear as id-only stubs so the block parses.
 4. **Decisions.** One line each for the choices a reviewer could reasonably dispute, with the reason.
-5. **Open questions.** Only the ones where Joe's answer changes the model.
+5. **Open questions.** Only the ones where the reviewer's answer changes the model.
 6. **Migration.** One line saying whether the change is additive and whether it needs a backfill.
 
-Edit procedures, transaction steps, index-build commands and dialect syntax go in the plan. The spec states what the data is and why.
+Write-path procedures, transaction steps, index-build commands and dialect syntax go in the plan. The spec states what the data is and why.
 
 ## Route first
 
@@ -54,4 +54,4 @@ Edit procedures, transaction steps, index-build commands and dialect syntax go i
 - `reviewing-code` reviews a finished schema diff. The playbooks linked above are its checklists, and this skill reuses them for depth.
 - `brainstorming` and `writing-plans` are where the spec section lives and where the implementation detail goes.
 
-The reference pages on DBML are fetched snapshots. Refresh them with `node scripts/update_dbml_docs.js`.
+The reference pages on DBML are fetched snapshots. Refresh them from the repo root with `make update-data-modeling`.

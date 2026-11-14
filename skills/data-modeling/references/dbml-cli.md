@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/holistics/dbml/master/dbml-homepage/docs/cli.md"
-fetched_at: "2026-11-14T04:49:16.676Z"
-sha256: "f922b4f0c38cb8b7399ee2246c83525fe4f299e91e9105c6e75949ae9b583e3b"
+fetched_at: "2026-11-14T05:03:45.487Z"
+sha256: "3511907dd380861956af9a49f05139f0ae74eca378dc037641eb4d8e4e81987b"
 ---
 
 # CLI
@@ -10,7 +10,7 @@ sha256: "f922b4f0c38cb8b7399ee2246c83525fe4f299e91e9105c6e75949ae9b583e3b"
 
 DBML comes with a built-in CLI that enables conversion/generation between various formats from the command line.
 
-![img](/img/dbml-cli.gif)
+![img](https://dbml.dbdiagram.io/img/dbml-cli.gif)
 
 ## Prerequisites
 
@@ -52,7 +52,7 @@ CREATE TABLE `staff` (
 ...
 ```
 
-If your schema is split across multiple files using the [module system](./syntax/module-system), pass the entry point file. The CLI will automatically resolve all imported files:
+If your schema is split across multiple files using the [module system](https://dbml.dbdiagram.io/syntax/module-system), pass the entry point file. The CLI will automatically resolve all imported files:
 
 ```bash
 $ dbml2sql project.dbml --postgres
