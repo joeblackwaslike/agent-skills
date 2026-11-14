@@ -27,7 +27,7 @@ A data-model section has six parts, in this order, and fits on one page, about s
 
 1. **Existing schema.** The conventions the new tables follow (naming, id type, timestamps, soft delete, tenancy) and the gaps the feature exposes, one line each.
 2. **Access patterns.** A table with one row per query or write the feature makes: who runs it, what it reads or writes, the filters and ordering, and the expected volume.
-3. **Model.** One DBML block covering every new table, relationship, key and constraint. Existing tables it references appear as id-only stubs so the block parses.
+3. **Model.** One DBML block covering every new table, relationship, key and constraint. Existing tables it references appear as stubs holding only the columns and keys the new tables reference, so the block parses.
 4. **Decisions.** One line each for the choices a reviewer could reasonably dispute, with the reason.
 5. **Open questions.** Only the ones where the reviewer's answer changes the model.
 6. **Migration.** One line saying whether the change is additive and whether it needs a backfill.

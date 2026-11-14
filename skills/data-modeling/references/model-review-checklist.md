@@ -31,4 +31,4 @@ Playbook paths: [data modeling](../../reviewing-code/references/playbooks/data-m
 
 - Does the migration line say whether the change is additive and whether it needs a backfill? Sequencing details go in the plan. ([migrations](../../reviewing-code/references/playbooks/migrations-and-deployment-sequencing.md))
 - Does the section have exactly the six parts from `SKILL.md`, in order, on one page?
-- Does the DBML block parse? `linting-tools.md` lists commands that check it. If no tool was available, say so in the open questions.
+- Does the DBML block parse? `linting-tools.md` lists commands that check it. If no tool was available, say so when you hand the section over.

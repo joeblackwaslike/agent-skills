@@ -4,7 +4,7 @@
  * Fetches the official DBML syntax and CLI docs (markdown source in holistics/dbml)
  * into references/ with source, fetched_at and sha256 frontmatter.
  *
- * Usage: node scripts/update_dbml_docs.js
+ * Usage: make update-data-modeling (from the repo root)
  */
 
 const https = require('https');
